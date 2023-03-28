@@ -2,31 +2,38 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_dnssec_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetDnssecOutput, crate::error::GetDNSSECError> {
+) -> std::result::Result<
+    crate::operation::get_dnssec::GetDnssecOutput,
+    crate::operation::get_dnssec::GetDNSSECError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetDNSSECError::unhandled)?;
+        .map_err(crate::operation::get_dnssec::GetDNSSECError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::GetDNSSECError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::get_dnssec::GetDNSSECError::unhandled(
+                generic,
+            ))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidArgument" => crate::error::GetDNSSECError::InvalidArgument({
+        "InvalidArgument" => crate::operation::get_dnssec::GetDNSSECError::InvalidArgument({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_argument::Builder::default();
+                let mut output = crate::types::error::builders::InvalidArgumentBuilder::default();
                 let _ = response;
                 output =
                     crate::protocol_serde::shape_invalid_argument::de_invalid_argument_xml_err(
                         response.body().as_ref(),
                         output,
                     )
-                    .map_err(crate::error::GetDNSSECError::unhandled)?;
+                    .map_err(crate::operation::get_dnssec::GetDNSSECError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -35,17 +42,17 @@ pub fn de_get_dnssec_http_error(
             }
             tmp
         }),
-        "InvalidInput" => crate::error::GetDNSSECError::InvalidInput({
+        "InvalidInput" => crate::operation::get_dnssec::GetDNSSECError::InvalidInput({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_input::Builder::default();
+                let mut output = crate::types::error::builders::InvalidInputBuilder::default();
                 let _ = response;
                 output = crate::protocol_serde::shape_invalid_input::de_invalid_input_xml_err(
                     response.body().as_ref(),
                     output,
                 )
-                .map_err(crate::error::GetDNSSECError::unhandled)?;
+                .map_err(crate::operation::get_dnssec::GetDNSSECError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -54,13 +61,13 @@ pub fn de_get_dnssec_http_error(
             }
             tmp
         }),
-        "NoSuchHostedZone" => crate::error::GetDNSSECError::NoSuchHostedZone({
+        "NoSuchHostedZone" => crate::operation::get_dnssec::GetDNSSECError::NoSuchHostedZone({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::error::no_such_hosted_zone::Builder::default();
+                let mut output = crate::types::error::builders::NoSuchHostedZoneBuilder::default();
                 let _ = response;
-                output = crate::protocol_serde::shape_no_such_hosted_zone::de_no_such_hosted_zone_xml_err(response.body().as_ref(), output).map_err(crate::error::GetDNSSECError::unhandled)?;
+                output = crate::protocol_serde::shape_no_such_hosted_zone::de_no_such_hosted_zone_xml_err(response.body().as_ref(), output).map_err(crate::operation::get_dnssec::GetDNSSECError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -69,23 +76,26 @@ pub fn de_get_dnssec_http_error(
             }
             tmp
         }),
-        _ => crate::error::GetDNSSECError::generic(generic),
+        _ => crate::operation::get_dnssec::GetDNSSECError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_dnssec_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetDnssecOutput, crate::error::GetDNSSECError> {
+) -> std::result::Result<
+    crate::operation::get_dnssec::GetDnssecOutput,
+    crate::operation::get_dnssec::GetDNSSECError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_dnssec_output::Builder::default();
+        let mut output = crate::operation::get_dnssec::builders::GetDnssecOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_get_dnssec::de_get_dnssec(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::GetDNSSECError::unhandled)?;
+        .map_err(crate::operation::get_dnssec::GetDNSSECError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -96,8 +106,11 @@ pub fn de_get_dnssec_http_response(
 #[allow(unused_mut)]
 pub fn de_get_dnssec(
     inp: &[u8],
-    mut builder: crate::output::get_dnssec_output::Builder,
-) -> Result<crate::output::get_dnssec_output::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    mut builder: crate::operation::get_dnssec::builders::GetDnssecOutputBuilder,
+) -> Result<
+    crate::operation::get_dnssec::builders::GetDnssecOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

@@ -2,26 +2,33 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_unlock_rule_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::UnlockRuleOutput, crate::error::UnlockRuleError> {
+) -> std::result::Result<
+    crate::operation::unlock_rule::UnlockRuleOutput,
+    crate::operation::unlock_rule::UnlockRuleError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::UnlockRuleError::unhandled)?;
+        .map_err(crate::operation::unlock_rule::UnlockRuleError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::UnlockRuleError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::unlock_rule::UnlockRuleError::unhandled(
+                generic,
+            ))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConflictException" => crate::error::UnlockRuleError::ConflictException({
+        "ConflictException" => crate::operation::unlock_rule::UnlockRuleError::ConflictException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::error::conflict_exception::Builder::default();
+                let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
                 let _ = response;
-                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UnlockRuleError::unhandled)?;
+                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::unlock_rule::UnlockRuleError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -30,68 +37,81 @@ pub fn de_unlock_rule_http_error(
             }
             tmp
         }),
-        "InternalServerException" => crate::error::UnlockRuleError::InternalServerException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "InternalServerException" => {
+            crate::operation::unlock_rule::UnlockRuleError::InternalServerException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UnlockRuleError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ResourceNotFoundException" => crate::error::UnlockRuleError::ResourceNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InternalServerExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::unlock_rule::UnlockRuleError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::operation::unlock_rule::UnlockRuleError::ResourceNotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::resource_not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UnlockRuleError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ValidationException" => crate::error::UnlockRuleError::ValidationException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::unlock_rule::UnlockRuleError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ValidationException" => {
+            crate::operation::unlock_rule::UnlockRuleError::ValidationException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UnlockRuleError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::UnlockRuleError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::unlock_rule::UnlockRuleError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::unlock_rule::UnlockRuleError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_unlock_rule_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::UnlockRuleOutput, crate::error::UnlockRuleError> {
+) -> std::result::Result<
+    crate::operation::unlock_rule::UnlockRuleOutput,
+    crate::operation::unlock_rule::UnlockRuleError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::unlock_rule_output::Builder::default();
+        let mut output =
+            crate::operation::unlock_rule::builders::UnlockRuleOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_unlock_rule::de_unlock_rule(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::UnlockRuleError::unhandled)?;
+        .map_err(crate::operation::unlock_rule::UnlockRuleError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -101,9 +121,9 @@ pub fn de_unlock_rule_http_response(
 
 pub(crate) fn de_unlock_rule(
     value: &[u8],
-    mut builder: crate::output::unlock_rule_output::Builder,
+    mut builder: crate::operation::unlock_rule::builders::UnlockRuleOutputBuilder,
 ) -> Result<
-    crate::output::unlock_rule_output::Builder,
+    crate::operation::unlock_rule::builders::UnlockRuleOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =
@@ -156,7 +176,7 @@ pub(crate) fn de_unlock_rule(
                             )?
                             .map(|s| {
                                 s.to_unescaped()
-                                    .map(|u| crate::model::LockState::from(u.as_ref()))
+                                    .map(|u| crate::types::LockState::from(u.as_ref()))
                             })
                             .transpose()?,
                         );
@@ -173,7 +193,7 @@ pub(crate) fn de_unlock_rule(
                             )?
                             .map(|s| {
                                 s.to_unescaped()
-                                    .map(|u| crate::model::ResourceType::from(u.as_ref()))
+                                    .map(|u| crate::types::ResourceType::from(u.as_ref()))
                             })
                             .transpose()?,
                         );
@@ -192,7 +212,7 @@ pub(crate) fn de_unlock_rule(
                             )?
                             .map(|s| {
                                 s.to_unescaped()
-                                    .map(|u| crate::model::RuleStatus::from(u.as_ref()))
+                                    .map(|u| crate::types::RuleStatus::from(u.as_ref()))
                             })
                             .transpose()?,
                         );

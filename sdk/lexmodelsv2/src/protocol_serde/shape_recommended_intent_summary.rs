@@ -2,7 +2,7 @@
 pub(crate) fn de_recommended_intent_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::RecommendedIntentSummary>,
+    Option<crate::types::RecommendedIntentSummary>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::recommended_intent_summary::Builder::default();
+            let mut builder = crate::types::builders::RecommendedIntentSummaryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

@@ -2,8 +2,11 @@
 #[allow(unused_mut)]
 pub fn de_invalid_web_acl_id_xml_err(
     inp: &[u8],
-    mut builder: crate::error::invalid_web_acl_id::Builder,
-) -> Result<crate::error::invalid_web_acl_id::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    mut builder: crate::types::error::builders::InvalidWebAclIdBuilder,
+) -> Result<
+    crate::types::error::builders::InvalidWebAclIdBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     if inp.is_empty() {
         return Ok(builder);
     }

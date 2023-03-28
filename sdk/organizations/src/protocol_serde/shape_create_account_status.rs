@@ -2,7 +2,7 @@
 pub(crate) fn de_create_account_status<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::CreateAccountStatus>,
+    Option<crate::types::CreateAccountStatus>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::create_account_status::Builder::default();
+            let mut builder = crate::types::builders::CreateAccountStatusBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -48,7 +48,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::CreateAccountState::from(u.as_ref())
+                                            crate::types::CreateAccountState::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -95,7 +95,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::CreateAccountFailureReason::from(
+                                            crate::types::CreateAccountFailureReason::from(
                                                 u.as_ref(),
                                             )
                                         })

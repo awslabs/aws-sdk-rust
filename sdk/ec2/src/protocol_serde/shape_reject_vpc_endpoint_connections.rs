@@ -3,31 +3,28 @@
 pub fn de_reject_vpc_endpoint_connections_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::RejectVpcEndpointConnectionsOutput,
-    crate::error::RejectVpcEndpointConnectionsError,
+    crate::operation::reject_vpc_endpoint_connections::RejectVpcEndpointConnectionsOutput,
+    crate::operation::reject_vpc_endpoint_connections::RejectVpcEndpointConnectionsError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::RejectVpcEndpointConnectionsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::reject_vpc_endpoint_connections::RejectVpcEndpointConnectionsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::RejectVpcEndpointConnectionsError::generic(
-        generic,
-    ))
+    Err(crate::operation::reject_vpc_endpoint_connections::RejectVpcEndpointConnectionsError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_reject_vpc_endpoint_connections_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::RejectVpcEndpointConnectionsOutput,
-    crate::error::RejectVpcEndpointConnectionsError,
+    crate::operation::reject_vpc_endpoint_connections::RejectVpcEndpointConnectionsOutput,
+    crate::operation::reject_vpc_endpoint_connections::RejectVpcEndpointConnectionsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::reject_vpc_endpoint_connections_output::Builder::default();
+        let mut output = crate::operation::reject_vpc_endpoint_connections::builders::RejectVpcEndpointConnectionsOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_reject_vpc_endpoint_connections::de_reject_vpc_endpoint_connections(response.body().as_ref(), output).map_err(crate::error::RejectVpcEndpointConnectionsError::unhandled)?;
+        output = crate::protocol_serde::shape_reject_vpc_endpoint_connections::de_reject_vpc_endpoint_connections(response.body().as_ref(), output).map_err(crate::operation::reject_vpc_endpoint_connections::RejectVpcEndpointConnectionsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -36,13 +33,7 @@ pub fn de_reject_vpc_endpoint_connections_http_response(
 }
 
 #[allow(unused_mut)]
-pub fn de_reject_vpc_endpoint_connections(
-    inp: &[u8],
-    mut builder: crate::output::reject_vpc_endpoint_connections_output::Builder,
-) -> Result<
-    crate::output::reject_vpc_endpoint_connections_output::Builder,
-    aws_smithy_xml::decode::XmlDecodeError,
-> {
+pub fn de_reject_vpc_endpoint_connections(inp: &[u8], mut builder: crate::operation::reject_vpc_endpoint_connections::builders::RejectVpcEndpointConnectionsOutputBuilder) -> Result<crate::operation::reject_vpc_endpoint_connections::builders::RejectVpcEndpointConnectionsOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

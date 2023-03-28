@@ -2,7 +2,7 @@
 pub(crate) fn de_online_ab_definition<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::OnlineAbDefinition>,
+    Option<crate::types::OnlineAbDefinition>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::online_ab_definition::Builder::default();
+            let mut builder = crate::types::builders::OnlineAbDefinitionBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

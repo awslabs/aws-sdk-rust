@@ -2,7 +2,7 @@
 pub(crate) fn de_slot_type_values<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SlotTypeValue>>,
+    Option<std::vec::Vec<crate::types::SlotTypeValue>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

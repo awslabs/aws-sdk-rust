@@ -2,7 +2,7 @@
 pub(crate) fn de_security_profile_target_mapping<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::SecurityProfileTargetMapping>,
+    Option<crate::types::SecurityProfileTargetMapping>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::security_profile_target_mapping::Builder::default();
+            let mut builder =
+                crate::types::builders::SecurityProfileTargetMappingBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

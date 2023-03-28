@@ -2,7 +2,7 @@
 pub(crate) fn de_attributes_require_verification_before_update_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::VerifiedAttributeType>>,
+    Option<std::vec::Vec<crate::types::VerifiedAttributeType>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -29,7 +29,7 @@ where
                         )?
                         .map(|s| {
                             s.to_unescaped()
-                                .map(|u| crate::model::VerifiedAttributeType::from(u.as_ref()))
+                                .map(|u| crate::types::VerifiedAttributeType::from(u.as_ref()))
                         })
                         .transpose()?;
                         if let Some(value) = value {

@@ -2,7 +2,7 @@
 pub(crate) fn de_undetected_signature_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::UndetectedSignature>>,
+    Option<std::vec::Vec<crate::types::UndetectedSignature>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

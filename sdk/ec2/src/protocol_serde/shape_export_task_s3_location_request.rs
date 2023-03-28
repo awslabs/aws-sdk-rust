@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_export_task_s3_location_request(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::ExportTaskS3LocationRequest,
+    input: &crate::types::ExportTaskS3LocationRequest,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("S3Bucket");

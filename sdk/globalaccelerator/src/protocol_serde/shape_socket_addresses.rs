@@ -2,7 +2,7 @@
 pub(crate) fn de_socket_addresses<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SocketAddress>>,
+    Option<std::vec::Vec<crate::types::SocketAddress>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

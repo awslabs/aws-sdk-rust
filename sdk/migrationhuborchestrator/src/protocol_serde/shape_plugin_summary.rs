@@ -2,7 +2,7 @@
 pub(crate) fn de_plugin_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::PluginSummary>,
+    Option<crate::types::PluginSummary>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::plugin_summary::Builder::default();
+            let mut builder = crate::types::builders::PluginSummaryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -48,7 +48,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::PluginHealth::from(u.as_ref()))
+                                            .map(|u| crate::types::PluginHealth::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

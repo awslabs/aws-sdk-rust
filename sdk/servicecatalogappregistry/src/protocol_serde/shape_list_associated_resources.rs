@@ -3,75 +3,78 @@
 pub fn de_list_associated_resources_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListAssociatedResourcesOutput,
-    crate::error::ListAssociatedResourcesError,
+    crate::operation::list_associated_resources::ListAssociatedResourcesOutput,
+    crate::operation::list_associated_resources::ListAssociatedResourcesError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListAssociatedResourcesError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::list_associated_resources::ListAssociatedResourcesError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::error::ListAssociatedResourcesError::unhandled(
+        None => return Err(
+            crate::operation::list_associated_resources::ListAssociatedResourcesError::unhandled(
                 generic,
-            ))
-        }
+            ),
+        ),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerException" => {
-            crate::error::ListAssociatedResourcesError::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAssociatedResourcesError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ResourceNotFoundException" => {
-            crate::error::ListAssociatedResourcesError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAssociatedResourcesError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ValidationException" => crate::error::ListAssociatedResourcesError::ValidationException({
+        "InternalServerException" => crate::operation::list_associated_resources::ListAssociatedResourcesError::InternalServerException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAssociatedResourcesError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_associated_resources::ListAssociatedResourcesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::ListAssociatedResourcesError::generic(generic),
+        "ResourceNotFoundException" => crate::operation::list_associated_resources::ListAssociatedResourcesError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_associated_resources::ListAssociatedResourcesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ValidationException" => crate::operation::list_associated_resources::ListAssociatedResourcesError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_associated_resources::ListAssociatedResourcesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::list_associated_resources::ListAssociatedResourcesError::generic(generic)
     })
 }
 
@@ -79,19 +82,14 @@ pub fn de_list_associated_resources_http_error(
 pub fn de_list_associated_resources_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListAssociatedResourcesOutput,
-    crate::error::ListAssociatedResourcesError,
+    crate::operation::list_associated_resources::ListAssociatedResourcesOutput,
+    crate::operation::list_associated_resources::ListAssociatedResourcesError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_associated_resources_output::Builder::default();
+        let mut output = crate::operation::list_associated_resources::builders::ListAssociatedResourcesOutputBuilder::default();
         let _ = response;
-        output =
-            crate::protocol_serde::shape_list_associated_resources::de_list_associated_resources(
-                response.body().as_ref(),
-                output,
-            )
-            .map_err(crate::error::ListAssociatedResourcesError::unhandled)?;
+        output = crate::protocol_serde::shape_list_associated_resources::de_list_associated_resources(response.body().as_ref(), output).map_err(crate::operation::list_associated_resources::ListAssociatedResourcesError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -101,9 +99,9 @@ pub fn de_list_associated_resources_http_response(
 
 pub(crate) fn de_list_associated_resources(
     value: &[u8],
-    mut builder: crate::output::list_associated_resources_output::Builder,
+    mut builder: crate::operation::list_associated_resources::builders::ListAssociatedResourcesOutputBuilder,
 ) -> Result<
-    crate::output::list_associated_resources_output::Builder,
+    crate::operation::list_associated_resources::builders::ListAssociatedResourcesOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

@@ -2,7 +2,7 @@
 pub(crate) fn de_heterogeneous<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::Heterogeneous>,
+    Option<crate::types::Heterogeneous>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::heterogeneous::Builder::default();
+            let mut builder = crate::types::builders::HeterogeneousBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -53,7 +53,7 @@ where
 
 pub fn ser_heterogeneous(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::Heterogeneous,
+    input: &crate::types::Heterogeneous,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.target_database_engine {
         let mut array_2 = object.key("targetDatabaseEngine").start_array();

@@ -2,7 +2,7 @@
 pub(crate) fn de_security_config_summaries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SecurityConfigSummary>>,
+    Option<std::vec::Vec<crate::types::SecurityConfigSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

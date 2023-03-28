@@ -2,7 +2,7 @@
 pub(crate) fn de_voice_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Voice>>,
+    Option<std::vec::Vec<crate::types::Voice>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

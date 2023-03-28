@@ -2,7 +2,7 @@
 pub(crate) fn de_update_vehicle_response_items<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::UpdateVehicleResponseItem>>,
+    Option<std::vec::Vec<crate::types::UpdateVehicleResponseItem>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

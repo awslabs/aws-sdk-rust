@@ -3,96 +3,89 @@
 pub fn de_describe_domain_change_progress_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeDomainChangeProgressOutput,
-    crate::error::DescribeDomainChangeProgressError,
+    crate::operation::describe_domain_change_progress::DescribeDomainChangeProgressOutput,
+    crate::operation::describe_domain_change_progress::DescribeDomainChangeProgressError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeDomainChangeProgressError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::describe_domain_change_progress::DescribeDomainChangeProgressError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::DescribeDomainChangeProgressError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::describe_domain_change_progress::DescribeDomainChangeProgressError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BaseException" => crate::error::DescribeDomainChangeProgressError::BaseException({
+        "BaseException" => crate::operation::describe_domain_change_progress::DescribeDomainChangeProgressError::BaseException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::base_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_base_exception::de_base_exception_json_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::DescribeDomainChangeProgressError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::BaseExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_base_exception::de_base_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_domain_change_progress::DescribeDomainChangeProgressError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "InternalException" => {
-            crate::error::DescribeDomainChangeProgressError::InternalException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalException" => crate::operation::describe_domain_change_progress::DescribeDomainChangeProgressError::InternalException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InternalExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_exception::de_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDomainChangeProgressError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_exception::de_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_domain_change_progress::DescribeDomainChangeProgressError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ResourceNotFoundException" => {
-            crate::error::DescribeDomainChangeProgressError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::describe_domain_change_progress::DescribeDomainChangeProgressError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDomainChangeProgressError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_domain_change_progress::DescribeDomainChangeProgressError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ValidationException" => {
-            crate::error::DescribeDomainChangeProgressError::ValidationException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ValidationException" => crate::operation::describe_domain_change_progress::DescribeDomainChangeProgressError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::validation_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDomainChangeProgressError::unhandled)?;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_domain_change_progress::DescribeDomainChangeProgressError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DescribeDomainChangeProgressError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::describe_domain_change_progress::DescribeDomainChangeProgressError::generic(generic)
     })
 }
 
@@ -100,14 +93,14 @@ pub fn de_describe_domain_change_progress_http_error(
 pub fn de_describe_domain_change_progress_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeDomainChangeProgressOutput,
-    crate::error::DescribeDomainChangeProgressError,
+    crate::operation::describe_domain_change_progress::DescribeDomainChangeProgressOutput,
+    crate::operation::describe_domain_change_progress::DescribeDomainChangeProgressError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_domain_change_progress_output::Builder::default();
+        let mut output = crate::operation::describe_domain_change_progress::builders::DescribeDomainChangeProgressOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_describe_domain_change_progress::de_describe_domain_change_progress(response.body().as_ref(), output).map_err(crate::error::DescribeDomainChangeProgressError::unhandled)?;
+        output = crate::protocol_serde::shape_describe_domain_change_progress::de_describe_domain_change_progress(response.body().as_ref(), output).map_err(crate::operation::describe_domain_change_progress::DescribeDomainChangeProgressError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -115,13 +108,7 @@ pub fn de_describe_domain_change_progress_http_response(
     })
 }
 
-pub(crate) fn de_describe_domain_change_progress(
-    value: &[u8],
-    mut builder: crate::output::describe_domain_change_progress_output::Builder,
-) -> Result<
-    crate::output::describe_domain_change_progress_output::Builder,
-    aws_smithy_json::deserialize::error::DeserializeError,
-> {
+pub(crate) fn de_describe_domain_change_progress(value: &[u8], mut builder: crate::operation::describe_domain_change_progress::builders::DescribeDomainChangeProgressOutputBuilder) -> Result<crate::operation::describe_domain_change_progress::builders::DescribeDomainChangeProgressOutputBuilder, aws_smithy_json::deserialize::error::DeserializeError>{
     let mut tokens_owned =
         aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
             .peekable();

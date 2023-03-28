@@ -2,7 +2,7 @@
 pub(crate) fn de_write_requests<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::WriteRequest>>,
+    Option<std::vec::Vec<crate::types::WriteRequest>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_signin_delegate_group_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SigninDelegateGroup>>,
+    Option<std::vec::Vec<crate::types::SigninDelegateGroup>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

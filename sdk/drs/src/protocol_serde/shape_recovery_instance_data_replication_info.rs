@@ -2,7 +2,7 @@
 pub(crate) fn de_recovery_instance_data_replication_info<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::RecoveryInstanceDataReplicationInfo>,
+    Option<crate::types::RecoveryInstanceDataReplicationInfo>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::recovery_instance_data_replication_info::Builder::default();
+                crate::types::builders::RecoveryInstanceDataReplicationInfoBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -51,7 +51,7 @@ where
                                 builder = builder.set_data_replication_state(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?.map(|s|
                                         s.to_unescaped().map(|u|
-                                            crate::model::RecoveryInstanceDataReplicationState::from(u.as_ref())
+                                            crate::types::RecoveryInstanceDataReplicationState::from(u.as_ref())
                                         )
                                     ).transpose()?
                                 );

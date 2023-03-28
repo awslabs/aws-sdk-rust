@@ -2,7 +2,7 @@
 pub(crate) fn de_reported_runtime_context_states<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ReportedRuntimeContextState>>,
+    Option<std::vec::Vec<crate::types::ReportedRuntimeContextState>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

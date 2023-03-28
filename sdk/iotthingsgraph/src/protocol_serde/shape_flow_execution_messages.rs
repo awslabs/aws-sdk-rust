@@ -2,7 +2,7 @@
 pub(crate) fn de_flow_execution_messages<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::FlowExecutionMessage>>,
+    Option<std::vec::Vec<crate::types::FlowExecutionMessage>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

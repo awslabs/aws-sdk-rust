@@ -3,94 +3,89 @@
 pub fn de_get_notification_configuration_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetNotificationConfigurationOutput,
-    crate::error::GetNotificationConfigurationError,
+    crate::operation::get_notification_configuration::GetNotificationConfigurationOutput,
+    crate::operation::get_notification_configuration::GetNotificationConfigurationError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetNotificationConfigurationError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::get_notification_configuration::GetNotificationConfigurationError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::GetNotificationConfigurationError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::get_notification_configuration::GetNotificationConfigurationError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerException" => {
-            crate::error::GetNotificationConfigurationError::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalServerException" => crate::operation::get_notification_configuration::GetNotificationConfigurationError::InternalServerException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetNotificationConfigurationError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_notification_configuration::GetNotificationConfigurationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ResourceNotFoundException" => {
-            crate::error::GetNotificationConfigurationError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::get_notification_configuration::GetNotificationConfigurationError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetNotificationConfigurationError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_notification_configuration::GetNotificationConfigurationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ThrottlingException" => {
-            crate::error::GetNotificationConfigurationError::ThrottlingException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ThrottlingException" => crate::operation::get_notification_configuration::GetNotificationConfigurationError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetNotificationConfigurationError::unhandled)?;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_notification_configuration::GetNotificationConfigurationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ValidationException" => {
-            crate::error::GetNotificationConfigurationError::ValidationException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ValidationException" => crate::operation::get_notification_configuration::GetNotificationConfigurationError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::validation_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetNotificationConfigurationError::unhandled)?;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_notification_configuration::GetNotificationConfigurationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::GetNotificationConfigurationError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::get_notification_configuration::GetNotificationConfigurationError::generic(generic)
     })
 }
 
@@ -98,14 +93,14 @@ pub fn de_get_notification_configuration_http_error(
 pub fn de_get_notification_configuration_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetNotificationConfigurationOutput,
-    crate::error::GetNotificationConfigurationError,
+    crate::operation::get_notification_configuration::GetNotificationConfigurationOutput,
+    crate::operation::get_notification_configuration::GetNotificationConfigurationError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_notification_configuration_output::Builder::default();
+        let mut output = crate::operation::get_notification_configuration::builders::GetNotificationConfigurationOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_get_notification_configuration::de_get_notification_configuration(response.body().as_ref(), output).map_err(crate::error::GetNotificationConfigurationError::unhandled)?;
+        output = crate::protocol_serde::shape_get_notification_configuration::de_get_notification_configuration(response.body().as_ref(), output).map_err(crate::operation::get_notification_configuration::GetNotificationConfigurationError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -113,13 +108,7 @@ pub fn de_get_notification_configuration_http_response(
     })
 }
 
-pub(crate) fn de_get_notification_configuration(
-    value: &[u8],
-    mut builder: crate::output::get_notification_configuration_output::Builder,
-) -> Result<
-    crate::output::get_notification_configuration_output::Builder,
-    aws_smithy_json::deserialize::error::DeserializeError,
-> {
+pub(crate) fn de_get_notification_configuration(value: &[u8], mut builder: crate::operation::get_notification_configuration::builders::GetNotificationConfigurationOutputBuilder) -> Result<crate::operation::get_notification_configuration::builders::GetNotificationConfigurationOutputBuilder, aws_smithy_json::deserialize::error::DeserializeError>{
     let mut tokens_owned =
         aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
             .peekable();

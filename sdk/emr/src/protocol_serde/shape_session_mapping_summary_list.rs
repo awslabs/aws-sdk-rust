@@ -2,7 +2,7 @@
 pub(crate) fn de_session_mapping_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SessionMappingSummary>>,
+    Option<std::vec::Vec<crate::types::SessionMappingSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

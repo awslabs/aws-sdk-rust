@@ -2,168 +2,183 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_modify_user_group_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ModifyUserGroupOutput, crate::error::ModifyUserGroupError> {
+) -> std::result::Result<
+    crate::operation::modify_user_group::ModifyUserGroupOutput,
+    crate::operation::modify_user_group::ModifyUserGroupError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ModifyUserGroupError::unhandled)?;
+        .map_err(crate::operation::modify_user_group::ModifyUserGroupError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ModifyUserGroupError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::modify_user_group::ModifyUserGroupError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DefaultUserRequired" => crate::error::ModifyUserGroupError::DefaultUserRequired({
+        "DefaultUserRequired" => crate::operation::modify_user_group::ModifyUserGroupError::DefaultUserRequired({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::default_user_required::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_default_user_required::de_default_user_required_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyUserGroupError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "DuplicateUserName" => crate::error::ModifyUserGroupError::DuplicateUserNameFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::duplicate_user_name_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_duplicate_user_name_fault::de_duplicate_user_name_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyUserGroupError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InvalidParameterCombination" => {
-            crate::error::ModifyUserGroupError::InvalidParameterCombinationException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_parameter_combination_exception::Builder::default();
+                    let mut output = crate::types::error::builders::DefaultUserRequiredBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_combination_exception::de_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyUserGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_default_user_required::de_default_user_required_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_user_group::ModifyUserGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidParameterValue" => {
-            crate::error::ModifyUserGroupError::InvalidParameterValueException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_parameter_value_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyUserGroupError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InvalidUserGroupState" => {
-            crate::error::ModifyUserGroupError::InvalidUserGroupStateFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_user_group_state_fault::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_user_group_state_fault::de_invalid_user_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyUserGroupError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ServiceLinkedRoleNotFoundFault" => {
-            crate::error::ModifyUserGroupError::ServiceLinkedRoleNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::service_linked_role_not_found_fault::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_service_linked_role_not_found_fault::de_service_linked_role_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyUserGroupError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "UserGroupNotFound" => crate::error::ModifyUserGroupError::UserGroupNotFoundFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::user_group_not_found_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_user_group_not_found_fault::de_user_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyUserGroupError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "UserNotFound" => crate::error::ModifyUserGroupError::UserNotFoundFault({
+        "DuplicateUserName" => crate::operation::modify_user_group::ModifyUserGroupError::DuplicateUserNameFault({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::user_not_found_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_user_not_found_fault::de_user_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyUserGroupError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::DuplicateUserNameFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_duplicate_user_name_fault::de_duplicate_user_name_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_user_group::ModifyUserGroupError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::ModifyUserGroupError::generic(generic),
+        "InvalidParameterCombination" => crate::operation::modify_user_group::ModifyUserGroupError::InvalidParameterCombinationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidParameterCombinationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_parameter_combination_exception::de_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_user_group::ModifyUserGroupError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidParameterValue" => crate::operation::modify_user_group::ModifyUserGroupError::InvalidParameterValueException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_user_group::ModifyUserGroupError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidUserGroupState" => crate::operation::modify_user_group::ModifyUserGroupError::InvalidUserGroupStateFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidUserGroupStateFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_user_group_state_fault::de_invalid_user_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_user_group::ModifyUserGroupError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ServiceLinkedRoleNotFoundFault" => crate::operation::modify_user_group::ModifyUserGroupError::ServiceLinkedRoleNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ServiceLinkedRoleNotFoundFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_service_linked_role_not_found_fault::de_service_linked_role_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_user_group::ModifyUserGroupError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "UserGroupNotFound" => crate::operation::modify_user_group::ModifyUserGroupError::UserGroupNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::UserGroupNotFoundFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_user_group_not_found_fault::de_user_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_user_group::ModifyUserGroupError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "UserNotFound" => crate::operation::modify_user_group::ModifyUserGroupError::UserNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::UserNotFoundFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_user_not_found_fault::de_user_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_user_group::ModifyUserGroupError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::modify_user_group::ModifyUserGroupError::generic(generic)
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_modify_user_group_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ModifyUserGroupOutput, crate::error::ModifyUserGroupError> {
+) -> std::result::Result<
+    crate::operation::modify_user_group::ModifyUserGroupOutput,
+    crate::operation::modify_user_group::ModifyUserGroupError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::modify_user_group_output::Builder::default();
+        let mut output =
+            crate::operation::modify_user_group::builders::ModifyUserGroupOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_modify_user_group::de_modify_user_group(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ModifyUserGroupError::unhandled)?;
+        .map_err(crate::operation::modify_user_group::ModifyUserGroupError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -174,9 +189,11 @@ pub fn de_modify_user_group_http_response(
 #[allow(unused_mut)]
 pub fn de_modify_user_group(
     inp: &[u8],
-    mut builder: crate::output::modify_user_group_output::Builder,
-) -> Result<crate::output::modify_user_group_output::Builder, aws_smithy_xml::decode::XmlDecodeError>
-{
+    mut builder: crate::operation::modify_user_group::builders::ModifyUserGroupOutputBuilder,
+) -> Result<
+    crate::operation::modify_user_group::builders::ModifyUserGroupOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

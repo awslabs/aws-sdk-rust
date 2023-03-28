@@ -2,7 +2,7 @@
 pub(crate) fn de_applications<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ApplicationConfig>>,
+    Option<std::vec::Vec<crate::types::ApplicationConfig>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

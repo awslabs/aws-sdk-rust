@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_launch_template_capacity_reservation_specification_request(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::LaunchTemplateCapacityReservationSpecificationRequest,
+    input: &crate::types::LaunchTemplateCapacityReservationSpecificationRequest,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("CapacityReservationPreference");

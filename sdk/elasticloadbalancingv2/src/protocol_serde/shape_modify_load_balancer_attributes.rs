@@ -3,62 +3,55 @@
 pub fn de_modify_load_balancer_attributes_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ModifyLoadBalancerAttributesOutput,
-    crate::error::ModifyLoadBalancerAttributesError,
+    crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesOutput,
+    crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ModifyLoadBalancerAttributesError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::ModifyLoadBalancerAttributesError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidConfigurationRequest" => {
-            crate::error::ModifyLoadBalancerAttributesError::InvalidConfigurationRequestException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidConfigurationRequest" => crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesError::InvalidConfigurationRequestException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_configuration_request_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidConfigurationRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_configuration_request_exception::de_invalid_configuration_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyLoadBalancerAttributesError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_configuration_request_exception::de_invalid_configuration_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "LoadBalancerNotFound" => {
-            crate::error::ModifyLoadBalancerAttributesError::LoadBalancerNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "LoadBalancerNotFound" => crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesError::LoadBalancerNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::load_balancer_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::LoadBalancerNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_load_balancer_not_found_exception::de_load_balancer_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyLoadBalancerAttributesError::unhandled)?;
+                    output = crate::protocol_serde::shape_load_balancer_not_found_exception::de_load_balancer_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::ModifyLoadBalancerAttributesError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesError::generic(generic)
     })
 }
 
@@ -66,14 +59,14 @@ pub fn de_modify_load_balancer_attributes_http_error(
 pub fn de_modify_load_balancer_attributes_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ModifyLoadBalancerAttributesOutput,
-    crate::error::ModifyLoadBalancerAttributesError,
+    crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesOutput,
+    crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::modify_load_balancer_attributes_output::Builder::default();
+        let mut output = crate::operation::modify_load_balancer_attributes::builders::ModifyLoadBalancerAttributesOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_modify_load_balancer_attributes::de_modify_load_balancer_attributes(response.body().as_ref(), output).map_err(crate::error::ModifyLoadBalancerAttributesError::unhandled)?;
+        output = crate::protocol_serde::shape_modify_load_balancer_attributes::de_modify_load_balancer_attributes(response.body().as_ref(), output).map_err(crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -82,13 +75,7 @@ pub fn de_modify_load_balancer_attributes_http_response(
 }
 
 #[allow(unused_mut)]
-pub fn de_modify_load_balancer_attributes(
-    inp: &[u8],
-    mut builder: crate::output::modify_load_balancer_attributes_output::Builder,
-) -> Result<
-    crate::output::modify_load_balancer_attributes_output::Builder,
-    aws_smithy_xml::decode::XmlDecodeError,
-> {
+pub fn de_modify_load_balancer_attributes(inp: &[u8], mut builder: crate::operation::modify_load_balancer_attributes::builders::ModifyLoadBalancerAttributesOutputBuilder) -> Result<crate::operation::modify_load_balancer_attributes::builders::ModifyLoadBalancerAttributesOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

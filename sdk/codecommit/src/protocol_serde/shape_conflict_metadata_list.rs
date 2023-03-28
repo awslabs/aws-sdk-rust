@@ -2,7 +2,7 @@
 pub(crate) fn de_conflict_metadata_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ConflictMetadata>>,
+    Option<std::vec::Vec<crate::types::ConflictMetadata>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

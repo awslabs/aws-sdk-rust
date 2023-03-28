@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use aws_sdk_dynamodb::input::PutItemInput;
-use aws_sdk_dynamodb::model::AttributeValue;
+use aws_sdk_dynamodb::operation::put_item::PutItemInput;
+use aws_sdk_dynamodb::types::AttributeValue;
 use aws_sdk_dynamodb::Config;
 use criterion::{criterion_group, criterion_main, Criterion};
 use futures_util::FutureExt;

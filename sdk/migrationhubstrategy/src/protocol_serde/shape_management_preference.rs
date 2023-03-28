@@ -2,7 +2,7 @@
 pub(crate) fn de_management_preference<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ManagementPreference>,
+    Option<crate::types::ManagementPreference>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -29,26 +29,26 @@ where
                     }
                     variant = match key.to_unescaped()?.as_ref() {
                             "awsManagedResources" => {
-                                Some(crate::model::ManagementPreference::AwsManagedResources(
+                                Some(crate::types::ManagementPreference::AwsManagedResources(
                                     crate::protocol_serde::shape_aws_managed_resources::de_aws_managed_resources(tokens)?
                                     .ok_or_else(|| aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'awsManagedResources' cannot be null"))?
                                 ))
                             }
                             "selfManageResources" => {
-                                Some(crate::model::ManagementPreference::SelfManageResources(
+                                Some(crate::types::ManagementPreference::SelfManageResources(
                                     crate::protocol_serde::shape_self_manage_resources::de_self_manage_resources(tokens)?
                                     .ok_or_else(|| aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'selfManageResources' cannot be null"))?
                                 ))
                             }
                             "noPreference" => {
-                                Some(crate::model::ManagementPreference::NoPreference(
+                                Some(crate::types::ManagementPreference::NoPreference(
                                     crate::protocol_serde::shape_no_management_preference::de_no_management_preference(tokens)?
                                     .ok_or_else(|| aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'noPreference' cannot be null"))?
                                 ))
                             }
                             _ => {
                                                                       aws_smithy_json::deserialize::token::skip_value(tokens)?;
-                                                                      Some(crate::model::ManagementPreference::Unknown)
+                                                                      Some(crate::types::ManagementPreference::Unknown)
                                                                     }
                         };
                 }
@@ -75,10 +75,10 @@ where
 
 pub fn ser_management_preference(
     object_2: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::ManagementPreference,
+    input: &crate::types::ManagementPreference,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     match input {
-        crate::model::ManagementPreference::AwsManagedResources(inner) => {
+        crate::types::ManagementPreference::AwsManagedResources(inner) => {
             #[allow(unused_mut)]
             let mut object_1 = object_2.key("awsManagedResources").start_object();
             crate::protocol_serde::shape_aws_managed_resources::ser_aws_managed_resources(
@@ -87,7 +87,7 @@ pub fn ser_management_preference(
             )?;
             object_1.finish();
         }
-        crate::model::ManagementPreference::SelfManageResources(inner) => {
+        crate::types::ManagementPreference::SelfManageResources(inner) => {
             #[allow(unused_mut)]
             let mut object_2 = object_2.key("selfManageResources").start_object();
             crate::protocol_serde::shape_self_manage_resources::ser_self_manage_resources(
@@ -96,7 +96,7 @@ pub fn ser_management_preference(
             )?;
             object_2.finish();
         }
-        crate::model::ManagementPreference::NoPreference(inner) => {
+        crate::types::ManagementPreference::NoPreference(inner) => {
             #[allow(unused_mut)]
             let mut object_3 = object_2.key("noPreference").start_object();
             crate::protocol_serde::shape_no_management_preference::ser_no_management_preference(
@@ -105,7 +105,7 @@ pub fn ser_management_preference(
             )?;
             object_3.finish();
         }
-        crate::model::ManagementPreference::Unknown => {
+        crate::types::ManagementPreference::Unknown => {
             return Err(
                 aws_smithy_http::operation::error::SerializationError::unknown_variant(
                     "ManagementPreference",

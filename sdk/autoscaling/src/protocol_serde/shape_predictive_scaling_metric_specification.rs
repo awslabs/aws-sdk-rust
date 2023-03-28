@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_predictive_scaling_metric_specification(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::PredictiveScalingMetricSpecification,
+    input: &crate::types::PredictiveScalingMetricSpecification,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("TargetValue");
@@ -48,11 +48,11 @@ pub fn ser_predictive_scaling_metric_specification(
 pub fn de_predictive_scaling_metric_specification(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    crate::model::PredictiveScalingMetricSpecification,
+    crate::types::PredictiveScalingMetricSpecification,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     #[allow(unused_mut)]
-    let mut builder = crate::model::PredictiveScalingMetricSpecification::builder();
+    let mut builder = crate::types::PredictiveScalingMetricSpecification::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("TargetValue") /* TargetValue com.amazonaws.autoscaling#PredictiveScalingMetricSpecification$TargetValue */ =>  {

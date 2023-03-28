@@ -2,46 +2,49 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_test_failover_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::TestFailoverOutput, crate::error::TestFailoverError> {
+) -> std::result::Result<
+    crate::operation::test_failover::TestFailoverOutput,
+    crate::operation::test_failover::TestFailoverError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::TestFailoverError::unhandled)?;
+        .map_err(crate::operation::test_failover::TestFailoverError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::TestFailoverError::unhandled(generic)),
+        None => return Err(crate::operation::test_failover::TestFailoverError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "APICallRateForCustomerExceeded" => {
-            crate::error::TestFailoverError::ApiCallRateForCustomerExceededFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            crate::operation::test_failover::TestFailoverError::ApiCallRateForCustomerExceededFault(
+                {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::api_call_rate_for_customer_exceeded_fault::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_api_call_rate_for_customer_exceeded_fault::de_api_call_rate_for_customer_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::TestFailoverError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ApiCallRateForCustomerExceededFaultBuilder::default();
+                        let _ = response;
+                        output = crate::protocol_serde::shape_api_call_rate_for_customer_exceeded_fault::de_api_call_rate_for_customer_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::test_failover::TestFailoverError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
         }
         "InvalidCacheClusterState" => {
-            crate::error::TestFailoverError::InvalidCacheClusterStateFault({
+            crate::operation::test_failover::TestFailoverError::InvalidCacheClusterStateFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_cache_cluster_state_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidCacheClusterStateFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_cache_cluster_state_fault::de_invalid_cache_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::TestFailoverError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_cache_cluster_state_fault::de_invalid_cache_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::test_failover::TestFailoverError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -51,30 +54,15 @@ pub fn de_test_failover_http_error(
                 tmp
             })
         }
-        "InvalidKMSKeyFault" => crate::error::TestFailoverError::InvalidKmsKeyFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::invalid_kms_key_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_kms_key_fault::de_invalid_kms_key_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::TestFailoverError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InvalidParameterCombination" => {
-            crate::error::TestFailoverError::InvalidParameterCombinationException({
+        "InvalidKMSKeyFault" => {
+            crate::operation::test_failover::TestFailoverError::InvalidKmsKeyFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::invalid_parameter_combination_exception::Builder::default();
+                        crate::types::error::builders::InvalidKmsKeyFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_combination_exception::de_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TestFailoverError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_kms_key_fault::de_invalid_kms_key_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::test_failover::TestFailoverError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -83,16 +71,34 @@ pub fn de_test_failover_http_error(
                 }
                 tmp
             })
+        }
+        "InvalidParameterCombination" => {
+            crate::operation::test_failover::TestFailoverError::InvalidParameterCombinationException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidParameterCombinationExceptionBuilder::default();
+                        let _ = response;
+                        output = crate::protocol_serde::shape_invalid_parameter_combination_exception::de_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::test_failover::TestFailoverError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
         }
         "InvalidParameterValue" => {
-            crate::error::TestFailoverError::InvalidParameterValueException({
+            crate::operation::test_failover::TestFailoverError::InvalidParameterValueException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_parameter_value_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TestFailoverError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::test_failover::TestFailoverError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -103,14 +109,13 @@ pub fn de_test_failover_http_error(
             })
         }
         "InvalidReplicationGroupState" => {
-            crate::error::TestFailoverError::InvalidReplicationGroupStateFault({
+            crate::operation::test_failover::TestFailoverError::InvalidReplicationGroupStateFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_replication_group_state_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidReplicationGroupStateFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_replication_group_state_fault::de_invalid_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::TestFailoverError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_replication_group_state_fault::de_invalid_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::test_failover::TestFailoverError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -120,30 +125,32 @@ pub fn de_test_failover_http_error(
                 tmp
             })
         }
-        "NodeGroupNotFoundFault" => crate::error::TestFailoverError::NodeGroupNotFoundFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::node_group_not_found_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_node_group_not_found_fault::de_node_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::TestFailoverError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ReplicationGroupNotFoundFault" => {
-            crate::error::TestFailoverError::ReplicationGroupNotFoundFault({
+        "NodeGroupNotFoundFault" => {
+            crate::operation::test_failover::TestFailoverError::NodeGroupNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::replication_group_not_found_fault::Builder::default();
+                        crate::types::error::builders::NodeGroupNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_replication_group_not_found_fault::de_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::TestFailoverError::unhandled)?;
+                    output = crate::protocol_serde::shape_node_group_not_found_fault::de_node_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::test_failover::TestFailoverError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ReplicationGroupNotFoundFault" => {
+            crate::operation::test_failover::TestFailoverError::ReplicationGroupNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ReplicationGroupNotFoundFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_replication_group_not_found_fault::de_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::test_failover::TestFailoverError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -154,14 +161,13 @@ pub fn de_test_failover_http_error(
             })
         }
         "TestFailoverNotAvailableFault" => {
-            crate::error::TestFailoverError::TestFailoverNotAvailableFault({
+            crate::operation::test_failover::TestFailoverError::TestFailoverNotAvailableFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::test_failover_not_available_fault::Builder::default();
+                    let mut output = crate::types::error::builders::TestFailoverNotAvailableFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_test_failover_not_available_fault::de_test_failover_not_available_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::TestFailoverError::unhandled)?;
+                    output = crate::protocol_serde::shape_test_failover_not_available_fault::de_test_failover_not_available_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::test_failover::TestFailoverError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -171,23 +177,27 @@ pub fn de_test_failover_http_error(
                 tmp
             })
         }
-        _ => crate::error::TestFailoverError::generic(generic),
+        _ => crate::operation::test_failover::TestFailoverError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_test_failover_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::TestFailoverOutput, crate::error::TestFailoverError> {
+) -> std::result::Result<
+    crate::operation::test_failover::TestFailoverOutput,
+    crate::operation::test_failover::TestFailoverError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::test_failover_output::Builder::default();
+        let mut output =
+            crate::operation::test_failover::builders::TestFailoverOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_test_failover::de_test_failover(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::TestFailoverError::unhandled)?;
+        .map_err(crate::operation::test_failover::TestFailoverError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -198,8 +208,11 @@ pub fn de_test_failover_http_response(
 #[allow(unused_mut)]
 pub fn de_test_failover(
     inp: &[u8],
-    mut builder: crate::output::test_failover_output::Builder,
-) -> Result<crate::output::test_failover_output::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    mut builder: crate::operation::test_failover::builders::TestFailoverOutputBuilder,
+) -> Result<
+    crate::operation::test_failover::builders::TestFailoverOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

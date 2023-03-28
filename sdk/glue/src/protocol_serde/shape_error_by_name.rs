@@ -2,7 +2,7 @@
 pub(crate) fn de_error_by_name<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<std::string::String, crate::model::ErrorDetail>>,
+    Option<std::collections::HashMap<std::string::String, crate::types::ErrorDetail>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

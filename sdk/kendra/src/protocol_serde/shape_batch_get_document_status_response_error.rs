@@ -2,7 +2,7 @@
 pub(crate) fn de_batch_get_document_status_response_error<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::BatchGetDocumentStatusResponseError>,
+    Option<crate::types::BatchGetDocumentStatusResponseError>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::batch_get_document_status_response_error::Builder::default();
+                crate::types::builders::BatchGetDocumentStatusResponseErrorBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -40,7 +40,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::ErrorCode::from(u.as_ref()))
+                                            .map(|u| crate::types::ErrorCode::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

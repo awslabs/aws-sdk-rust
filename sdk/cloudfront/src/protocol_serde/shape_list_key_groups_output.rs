@@ -2,20 +2,20 @@
 pub fn de_key_group_list_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::KeyGroupList>,
-    crate::error::ListKeyGroupsError,
+    std::option::Option<crate::types::KeyGroupList>,
+    crate::operation::list_key_groups::ListKeyGroupsError,
 > {
     (!body.is_empty())
         .then(|| {
             crate::protocol_serde::shape_list_key_groups_output::de_key_group_list(body)
-                .map_err(crate::error::ListKeyGroupsError::unhandled)
+                .map_err(crate::operation::list_key_groups::ListKeyGroupsError::unhandled)
         })
         .transpose()
 }
 
 pub fn de_key_group_list(
     inp: &[u8],
-) -> Result<crate::model::KeyGroupList, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::KeyGroupList, aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;

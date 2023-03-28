@@ -2,7 +2,7 @@
 pub(crate) fn de_share_rules<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ShareRule>>,
+    Option<std::vec::Vec<crate::types::ShareRule>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_phone_number_order_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::PhoneNumberOrder>>,
+    Option<std::vec::Vec<crate::types::PhoneNumberOrder>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

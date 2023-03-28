@@ -2,7 +2,7 @@
 pub(crate) fn de_transcript_filter<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::TranscriptFilter>,
+    Option<crate::types::TranscriptFilter>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::transcript_filter::Builder::default();
+            let mut builder = crate::types::builders::TranscriptFilterBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -53,7 +53,7 @@ where
 
 pub fn ser_transcript_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::TranscriptFilter,
+    input: &crate::types::TranscriptFilter,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.lex_transcript_filter {
         #[allow(unused_mut)]

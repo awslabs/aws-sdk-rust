@@ -2,7 +2,7 @@
 pub(crate) fn de_failure_description<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::FailureDescription>,
+    Option<crate::types::FailureDescription>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::failure_description::Builder::default();
+            let mut builder = crate::types::builders::FailureDescriptionBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::DeliveryStreamFailureType::from(
+                                            crate::types::DeliveryStreamFailureType::from(
                                                 u.as_ref(),
                                             )
                                         })

@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_target_capacity_specification_request(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::TargetCapacitySpecificationRequest,
+    input: &crate::types::TargetCapacitySpecificationRequest,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("TotalTargetCapacity");

@@ -2,7 +2,7 @@
 pub(crate) fn de_extended_key_usage_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ExtendedKeyUsage>>,
+    Option<std::vec::Vec<crate::types::ExtendedKeyUsage>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,9 +2,11 @@
 #[allow(unused_mut)]
 pub fn de_cannot_delete_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::cannot_delete_exception::Builder,
-) -> Result<crate::error::cannot_delete_exception::Builder, aws_smithy_xml::decode::XmlDecodeError>
-{
+    mut builder: crate::types::error::builders::CannotDeleteExceptionBuilder,
+) -> Result<
+    crate::types::error::builders::CannotDeleteExceptionBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     if inp.is_empty() {
         return Ok(builder);
     }

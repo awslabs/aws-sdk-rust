@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_load_balancer_attribute_not_found_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::load_balancer_attribute_not_found_exception::Builder,
+    mut builder: crate::types::error::builders::LoadBalancerAttributeNotFoundExceptionBuilder,
 ) -> Result<
-    crate::error::load_balancer_attribute_not_found_exception::Builder,
+    crate::types::error::builders::LoadBalancerAttributeNotFoundExceptionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

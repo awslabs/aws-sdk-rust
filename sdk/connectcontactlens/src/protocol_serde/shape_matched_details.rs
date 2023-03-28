@@ -2,7 +2,7 @@
 pub(crate) fn de_matched_details<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<std::string::String, crate::model::CategoryDetails>>,
+    Option<std::collections::HashMap<std::string::String, crate::types::CategoryDetails>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

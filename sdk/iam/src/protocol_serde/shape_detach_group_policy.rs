@@ -2,92 +2,115 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_detach_group_policy_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DetachGroupPolicyOutput, crate::error::DetachGroupPolicyError>
-{
+) -> std::result::Result<
+    crate::operation::detach_group_policy::DetachGroupPolicyOutput,
+    crate::operation::detach_group_policy::DetachGroupPolicyError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DetachGroupPolicyError::unhandled)?;
+        .map_err(crate::operation::detach_group_policy::DetachGroupPolicyError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DetachGroupPolicyError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::detach_group_policy::DetachGroupPolicyError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidInput" => crate::error::DetachGroupPolicyError::InvalidInputException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "InvalidInput" => {
+            crate::operation::detach_group_policy::DetachGroupPolicyError::InvalidInputException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_input_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_input_exception::de_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DetachGroupPolicyError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "LimitExceeded" => crate::error::DetachGroupPolicyError::LimitExceededException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InvalidInputExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_input_exception::de_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::detach_group_policy::DetachGroupPolicyError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "LimitExceeded" => {
+            crate::operation::detach_group_policy::DetachGroupPolicyError::LimitExceededException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::limit_exceeded_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DetachGroupPolicyError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "NoSuchEntity" => crate::error::DetachGroupPolicyError::NoSuchEntityException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::LimitExceededExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::detach_group_policy::DetachGroupPolicyError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "NoSuchEntity" => {
+            crate::operation::detach_group_policy::DetachGroupPolicyError::NoSuchEntityException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::no_such_entity_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_no_such_entity_exception::de_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DetachGroupPolicyError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ServiceFailure" => crate::error::DetachGroupPolicyError::ServiceFailureException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::service_failure_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DetachGroupPolicyError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::DetachGroupPolicyError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::NoSuchEntityExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_no_such_entity_exception::de_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::detach_group_policy::DetachGroupPolicyError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ServiceFailure" => {
+            crate::operation::detach_group_policy::DetachGroupPolicyError::ServiceFailureException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::types::error::builders::ServiceFailureExceptionBuilder::default(
+                            );
+                        let _ = response;
+                        output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::detach_group_policy::DetachGroupPolicyError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        _ => crate::operation::detach_group_policy::DetachGroupPolicyError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_detach_group_policy_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DetachGroupPolicyOutput, crate::error::DetachGroupPolicyError>
-{
+) -> std::result::Result<
+    crate::operation::detach_group_policy::DetachGroupPolicyOutput,
+    crate::operation::detach_group_policy::DetachGroupPolicyError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::detach_group_policy_output::Builder::default();
+        let mut output = crate::operation::detach_group_policy::builders::DetachGroupPolicyOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

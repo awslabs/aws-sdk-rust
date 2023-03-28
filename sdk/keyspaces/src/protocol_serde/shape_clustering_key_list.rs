@@ -2,7 +2,7 @@
 pub(crate) fn de_clustering_key_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ClusteringKey>>,
+    Option<std::vec::Vec<crate::types::ClusteringKey>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

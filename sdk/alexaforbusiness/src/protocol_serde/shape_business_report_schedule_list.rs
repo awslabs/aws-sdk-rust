@@ -2,7 +2,7 @@
 pub(crate) fn de_business_report_schedule_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::BusinessReportSchedule>>,
+    Option<std::vec::Vec<crate::types::BusinessReportSchedule>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

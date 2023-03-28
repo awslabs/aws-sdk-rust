@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_cmaf_additional_manifest<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CmafAdditionalManifest>>,
+    Option<std::vec::Vec<crate::types::CmafAdditionalManifest>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

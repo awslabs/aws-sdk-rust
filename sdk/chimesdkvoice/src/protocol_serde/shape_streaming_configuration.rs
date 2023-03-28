@@ -2,7 +2,7 @@
 pub(crate) fn de_streaming_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::StreamingConfiguration>,
+    Option<crate::types::StreamingConfiguration>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::streaming_configuration::Builder::default();
+            let mut builder = crate::types::builders::StreamingConfigurationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -69,7 +69,7 @@ where
 
 pub fn ser_streaming_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::StreamingConfiguration,
+    input: &crate::types::StreamingConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.data_retention_in_hours {
         object.key("DataRetentionInHours").number(

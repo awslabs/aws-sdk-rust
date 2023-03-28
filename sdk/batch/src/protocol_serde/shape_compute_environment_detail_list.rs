@@ -2,7 +2,7 @@
 pub(crate) fn de_compute_environment_detail_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ComputeEnvironmentDetail>>,
+    Option<std::vec::Vec<crate::types::ComputeEnvironmentDetail>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

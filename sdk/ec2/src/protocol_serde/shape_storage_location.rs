@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_storage_location(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::StorageLocation,
+    input: &crate::types::StorageLocation,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Bucket");

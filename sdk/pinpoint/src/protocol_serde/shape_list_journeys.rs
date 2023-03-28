@@ -2,58 +2,68 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_journeys_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListJourneysOutput, crate::error::ListJourneysError> {
+) -> std::result::Result<
+    crate::operation::list_journeys::ListJourneysOutput,
+    crate::operation::list_journeys::ListJourneysError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListJourneysError::unhandled)?;
+        .map_err(crate::operation::list_journeys::ListJourneysError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListJourneysError::unhandled(generic)),
+        None => return Err(crate::operation::list_journeys::ListJourneysError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::ListJourneysError::BadRequestException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListJourneysError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ForbiddenException" => crate::error::ListJourneysError::ForbiddenException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListJourneysError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InternalServerErrorException" => {
-            crate::error::ListJourneysError::InternalServerErrorException({
+        "BadRequestException" => {
+            crate::operation::list_journeys::ListJourneysError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::internal_server_error_exception::Builder::default();
+                        crate::types::error::builders::BadRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListJourneysError::unhandled)?;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_journeys::ListJourneysError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ForbiddenException" => {
+            crate::operation::list_journeys::ListJourneysError::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ForbiddenExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_journeys::ListJourneysError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InternalServerErrorException" => {
+            crate::operation::list_journeys::ListJourneysError::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InternalServerErrorExceptionBuilder::default(
+                        );
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_journeys::ListJourneysError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -64,13 +74,14 @@ pub fn de_list_journeys_http_error(
             })
         }
         "MethodNotAllowedException" => {
-            crate::error::ListJourneysError::MethodNotAllowedException({
+            crate::operation::list_journeys::ListJourneysError::MethodNotAllowedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::method_not_allowed_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::MethodNotAllowedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_method_not_allowed_exception::de_method_not_allowed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListJourneysError::unhandled)?;
+                    output = crate::protocol_serde::shape_method_not_allowed_exception::de_method_not_allowed_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_journeys::ListJourneysError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -80,62 +91,75 @@ pub fn de_list_journeys_http_error(
                 tmp
             })
         }
-        "NotFoundException" => crate::error::ListJourneysError::NotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "NotFoundException" => {
+            crate::operation::list_journeys::ListJourneysError::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListJourneysError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "PayloadTooLargeException" => crate::error::ListJourneysError::PayloadTooLargeException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::NotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_journeys::ListJourneysError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "PayloadTooLargeException" => {
+            crate::operation::list_journeys::ListJourneysError::PayloadTooLargeException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::payload_too_large_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_payload_too_large_exception::de_payload_too_large_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListJourneysError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "TooManyRequestsException" => crate::error::ListJourneysError::TooManyRequestsException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::PayloadTooLargeExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_payload_too_large_exception::de_payload_too_large_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_journeys::ListJourneysError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "TooManyRequestsException" => {
+            crate::operation::list_journeys::ListJourneysError::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListJourneysError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::ListJourneysError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_journeys::ListJourneysError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::list_journeys::ListJourneysError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_journeys_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListJourneysOutput, crate::error::ListJourneysError> {
+) -> std::result::Result<
+    crate::operation::list_journeys::ListJourneysOutput,
+    crate::operation::list_journeys::ListJourneysError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_journeys_output::Builder::default();
+        let mut output =
+            crate::operation::list_journeys::builders::ListJourneysOutputBuilder::default();
         let _ = response;
         output = output.set_journeys_response(
             crate::protocol_serde::shape_list_journeys_output::de_journeys_response_payload(

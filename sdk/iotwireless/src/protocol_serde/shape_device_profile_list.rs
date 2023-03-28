@@ -2,7 +2,7 @@
 pub(crate) fn de_device_profile_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DeviceProfile>>,
+    Option<std::vec::Vec<crate::types::DeviceProfile>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

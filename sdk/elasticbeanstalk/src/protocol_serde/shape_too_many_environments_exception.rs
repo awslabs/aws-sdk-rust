@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_too_many_environments_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::too_many_environments_exception::Builder,
+    mut builder: crate::types::error::builders::TooManyEnvironmentsExceptionBuilder,
 ) -> Result<
-    crate::error::too_many_environments_exception::Builder,
+    crate::types::error::builders::TooManyEnvironmentsExceptionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

@@ -2,7 +2,7 @@
 pub(crate) fn de_batch_delete_rum_metric_definitions_errors<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::BatchDeleteRumMetricDefinitionsError>>,
+    Option<std::vec::Vec<crate::types::BatchDeleteRumMetricDefinitionsError>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

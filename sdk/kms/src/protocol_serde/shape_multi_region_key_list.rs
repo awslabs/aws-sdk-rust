@@ -2,7 +2,7 @@
 pub(crate) fn de_multi_region_key_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::MultiRegionKey>>,
+    Option<std::vec::Vec<crate::types::MultiRegionKey>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_icd10_cm_entity_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Icd10CmEntity>>,
+    Option<std::vec::Vec<crate::types::Icd10CmEntity>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

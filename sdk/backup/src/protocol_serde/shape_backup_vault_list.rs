@@ -2,7 +2,7 @@
 pub(crate) fn de_backup_vault_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::BackupVaultListMember>>,
+    Option<std::vec::Vec<crate::types::BackupVaultListMember>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

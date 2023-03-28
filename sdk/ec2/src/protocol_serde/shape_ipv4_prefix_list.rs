@@ -2,7 +2,7 @@
 pub fn de_ipv4_prefix_list(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::Ipv4PrefixSpecificationRequest>,
+    std::vec::Vec<crate::types::Ipv4PrefixSpecificationRequest>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

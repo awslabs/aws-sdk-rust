@@ -2,7 +2,7 @@
 pub(crate) fn de_workflow_steps_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::WorkflowStepSummary>>,
+    Option<std::vec::Vec<crate::types::WorkflowStepSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

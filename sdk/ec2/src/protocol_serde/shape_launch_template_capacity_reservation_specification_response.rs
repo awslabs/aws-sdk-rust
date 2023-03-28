@@ -2,19 +2,19 @@
 pub fn de_launch_template_capacity_reservation_specification_response(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    crate::model::LaunchTemplateCapacityReservationSpecificationResponse,
+    crate::types::LaunchTemplateCapacityReservationSpecificationResponse,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     #[allow(unused_mut)]
     let mut builder =
-        crate::model::LaunchTemplateCapacityReservationSpecificationResponse::builder();
+        crate::types::LaunchTemplateCapacityReservationSpecificationResponse::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("capacityReservationPreference") /* CapacityReservationPreference com.amazonaws.ec2#LaunchTemplateCapacityReservationSpecificationResponse$CapacityReservationPreference */ =>  {
                 let var_1 =
                     Some(
-                        Result::<crate::model::CapacityReservationPreference, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::CapacityReservationPreference::from(
+                        Result::<crate::types::CapacityReservationPreference, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::CapacityReservationPreference::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

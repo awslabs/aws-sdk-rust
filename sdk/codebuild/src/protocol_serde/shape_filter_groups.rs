@@ -2,7 +2,7 @@
 pub(crate) fn de_filter_groups<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<std::vec::Vec<crate::model::WebhookFilter>>>,
+    Option<std::vec::Vec<std::vec::Vec<crate::types::WebhookFilter>>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

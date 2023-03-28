@@ -3,37 +3,45 @@
 pub fn de_detach_traffic_sources_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DetachTrafficSourcesOutput,
-    crate::error::DetachTrafficSourcesError,
+    crate::operation::detach_traffic_sources::DetachTrafficSourcesOutput,
+    crate::operation::detach_traffic_sources::DetachTrafficSourcesError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DetachTrafficSourcesError::unhandled)?;
+        .map_err(crate::operation::detach_traffic_sources::DetachTrafficSourcesError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DetachTrafficSourcesError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::detach_traffic_sources::DetachTrafficSourcesError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceContention" => crate::error::DetachTrafficSourcesError::ResourceContentionFault({
+        "ResourceContention" => crate::operation::detach_traffic_sources::DetachTrafficSourcesError::ResourceContentionFault({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::resource_contention_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_resource_contention_fault::de_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DetachTrafficSourcesError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ResourceContentionFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_contention_fault::de_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::detach_traffic_sources::DetachTrafficSourcesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::DetachTrafficSourcesError::generic(generic),
+        _ => crate::operation::detach_traffic_sources::DetachTrafficSourcesError::generic(generic)
     })
 }
 
@@ -41,12 +49,12 @@ pub fn de_detach_traffic_sources_http_error(
 pub fn de_detach_traffic_sources_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DetachTrafficSourcesOutput,
-    crate::error::DetachTrafficSourcesError,
+    crate::operation::detach_traffic_sources::DetachTrafficSourcesOutput,
+    crate::operation::detach_traffic_sources::DetachTrafficSourcesError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::detach_traffic_sources_output::Builder::default();
+        let mut output = crate::operation::detach_traffic_sources::builders::DetachTrafficSourcesOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

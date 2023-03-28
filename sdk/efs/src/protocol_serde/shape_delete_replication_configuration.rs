@@ -3,92 +3,89 @@
 pub fn de_delete_replication_configuration_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteReplicationConfigurationOutput,
-    crate::error::DeleteReplicationConfigurationError,
+    crate::operation::delete_replication_configuration::DeleteReplicationConfigurationOutput,
+    crate::operation::delete_replication_configuration::DeleteReplicationConfigurationError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteReplicationConfigurationError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::delete_replication_configuration::DeleteReplicationConfigurationError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => return Err(crate::error::DeleteReplicationConfigurationError::unhandled(generic)),
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::delete_replication_configuration::DeleteReplicationConfigurationError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequest" => crate::error::DeleteReplicationConfigurationError::BadRequest({
+        "BadRequest" => crate::operation::delete_replication_configuration::DeleteReplicationConfigurationError::BadRequest({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_bad_request::de_bad_request_json_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::DeleteReplicationConfigurationError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::BadRequestBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_bad_request::de_bad_request_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_replication_configuration::DeleteReplicationConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "FileSystemNotFound" => {
-            crate::error::DeleteReplicationConfigurationError::FileSystemNotFound({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "FileSystemNotFound" => crate::operation::delete_replication_configuration::DeleteReplicationConfigurationError::FileSystemNotFound({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::file_system_not_found::Builder::default();
+                    let mut output = crate::types::error::builders::FileSystemNotFoundBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_file_system_not_found::de_file_system_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteReplicationConfigurationError::unhandled)?;
+                    output = crate::protocol_serde::shape_file_system_not_found::de_file_system_not_found_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_replication_configuration::DeleteReplicationConfigurationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InternalServerError" => {
-            crate::error::DeleteReplicationConfigurationError::InternalServerError({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InternalServerError" => crate::operation::delete_replication_configuration::DeleteReplicationConfigurationError::InternalServerError({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_error::Builder::default();
+                    let mut output = crate::types::error::builders::InternalServerErrorBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteReplicationConfigurationError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_replication_configuration::DeleteReplicationConfigurationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ReplicationNotFound" => {
-            crate::error::DeleteReplicationConfigurationError::ReplicationNotFound({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ReplicationNotFound" => crate::operation::delete_replication_configuration::DeleteReplicationConfigurationError::ReplicationNotFound({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::replication_not_found::Builder::default();
+                    let mut output = crate::types::error::builders::ReplicationNotFoundBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_replication_not_found::de_replication_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteReplicationConfigurationError::unhandled)?;
+                    output = crate::protocol_serde::shape_replication_not_found::de_replication_not_found_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_replication_configuration::DeleteReplicationConfigurationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DeleteReplicationConfigurationError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::delete_replication_configuration::DeleteReplicationConfigurationError::generic(generic)
     })
 }
 
@@ -96,12 +93,12 @@ pub fn de_delete_replication_configuration_http_error(
 pub fn de_delete_replication_configuration_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteReplicationConfigurationOutput,
-    crate::error::DeleteReplicationConfigurationError,
+    crate::operation::delete_replication_configuration::DeleteReplicationConfigurationOutput,
+    crate::operation::delete_replication_configuration::DeleteReplicationConfigurationError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_replication_configuration_output::Builder::default();
+        let mut output = crate::operation::delete_replication_configuration::builders::DeleteReplicationConfigurationOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

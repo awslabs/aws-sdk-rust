@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_harvest_job<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::HarvestJob>>,
+    Option<std::vec::Vec<crate::types::HarvestJob>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

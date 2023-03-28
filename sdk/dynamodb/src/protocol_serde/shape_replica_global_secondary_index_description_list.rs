@@ -2,7 +2,7 @@
 pub(crate) fn de_replica_global_secondary_index_description_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ReplicaGlobalSecondaryIndexDescription>>,
+    Option<std::vec::Vec<crate::types::ReplicaGlobalSecondaryIndexDescription>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

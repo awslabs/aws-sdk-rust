@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_access_log(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::AccessLog,
+    input: &crate::types::AccessLog,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Enabled");
@@ -32,9 +32,9 @@ pub fn ser_access_log(
 
 pub fn de_access_log(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::AccessLog, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::AccessLog, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::AccessLog::builder();
+    let mut builder = crate::types::AccessLog::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Enabled") /* Enabled com.amazonaws.elasticloadbalancing#AccessLog$Enabled */ =>  {

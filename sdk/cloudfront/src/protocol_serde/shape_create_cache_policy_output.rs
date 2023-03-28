@@ -2,13 +2,13 @@
 pub fn de_cache_policy_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::CachePolicy>,
-    crate::error::CreateCachePolicyError,
+    std::option::Option<crate::types::CachePolicy>,
+    crate::operation::create_cache_policy::CreateCachePolicyError,
 > {
     (!body.is_empty())
         .then(|| {
             crate::protocol_serde::shape_create_cache_policy_output::de_cache_policy(body)
-                .map_err(crate::error::CreateCachePolicyError::unhandled)
+                .map_err(crate::operation::create_cache_policy::CreateCachePolicyError::unhandled)
         })
         .transpose()
 }
@@ -35,7 +35,7 @@ pub(crate) fn de_location_header(
 
 pub fn de_cache_policy(
     inp: &[u8],
-) -> Result<crate::model::CachePolicy, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::CachePolicy, aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;

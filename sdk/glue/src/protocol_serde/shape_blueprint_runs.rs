@@ -2,7 +2,7 @@
 pub(crate) fn de_blueprint_runs<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::BlueprintRun>>,
+    Option<std::vec::Vec<crate::types::BlueprintRun>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

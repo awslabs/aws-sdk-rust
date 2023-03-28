@@ -3,111 +3,121 @@
 pub fn de_get_batch_job_execution_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetBatchJobExecutionOutput,
-    crate::error::GetBatchJobExecutionError,
+    crate::operation::get_batch_job_execution::GetBatchJobExecutionOutput,
+    crate::operation::get_batch_job_execution::GetBatchJobExecutionError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetBatchJobExecutionError::unhandled)?;
+        .map_err(crate::operation::get_batch_job_execution::GetBatchJobExecutionError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::GetBatchJobExecutionError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::get_batch_job_execution::GetBatchJobExecutionError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => {
-            crate::error::GetBatchJobExecutionError::AccessDeniedException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "AccessDeniedException" => crate::operation::get_batch_job_execution::GetBatchJobExecutionError::AccessDeniedException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetBatchJobExecutionError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_batch_job_execution::GetBatchJobExecutionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InternalServerException" => {
-            crate::error::GetBatchJobExecutionError::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InternalServerException" => crate::operation::get_batch_job_execution::GetBatchJobExecutionError::InternalServerException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetBatchJobExecutionError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_batch_job_execution::GetBatchJobExecutionError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::protocol_serde::shape_internal_server_exception::de_retry_after_seconds_header(response.headers())
-                                                .map_err(|_|crate::error::GetBatchJobExecutionError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::operation::get_batch_job_execution::GetBatchJobExecutionError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ResourceNotFoundException" => {
-            crate::error::GetBatchJobExecutionError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::get_batch_job_execution::GetBatchJobExecutionError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetBatchJobExecutionError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_batch_job_execution::GetBatchJobExecutionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ThrottlingException" => crate::error::GetBatchJobExecutionError::ThrottlingException({
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ThrottlingException" => crate::operation::get_batch_job_execution::GetBatchJobExecutionError::ThrottlingException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::throttling_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetBatchJobExecutionError::unhandled)?;
-                output = output.set_retry_after_seconds(
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_batch_job_execution::GetBatchJobExecutionError::unhandled)?;
+                    output = output.set_retry_after_seconds(
                         crate::protocol_serde::shape_throttling_exception::de_retry_after_seconds_header(response.headers())
-                                                .map_err(|_|crate::error::GetBatchJobExecutionError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::operation::get_batch_job_execution::GetBatchJobExecutionError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
-                let output = output.meta(generic);
-                output.build()
-            };
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "ValidationException" => crate::error::GetBatchJobExecutionError::ValidationException({
+        "ValidationException" => crate::operation::get_batch_job_execution::GetBatchJobExecutionError::ValidationException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetBatchJobExecutionError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_batch_job_execution::GetBatchJobExecutionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::GetBatchJobExecutionError::generic(generic),
+        _ => crate::operation::get_batch_job_execution::GetBatchJobExecutionError::generic(generic)
     })
 }
 
@@ -115,18 +125,18 @@ pub fn de_get_batch_job_execution_http_error(
 pub fn de_get_batch_job_execution_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetBatchJobExecutionOutput,
-    crate::error::GetBatchJobExecutionError,
+    crate::operation::get_batch_job_execution::GetBatchJobExecutionOutput,
+    crate::operation::get_batch_job_execution::GetBatchJobExecutionError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_batch_job_execution_output::Builder::default();
+        let mut output = crate::operation::get_batch_job_execution::builders::GetBatchJobExecutionOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_get_batch_job_execution::de_get_batch_job_execution(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::GetBatchJobExecutionError::unhandled)?;
+        .map_err(crate::operation::get_batch_job_execution::GetBatchJobExecutionError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -136,9 +146,9 @@ pub fn de_get_batch_job_execution_http_response(
 
 pub(crate) fn de_get_batch_job_execution(
     value: &[u8],
-    mut builder: crate::output::get_batch_job_execution_output::Builder,
+    mut builder: crate::operation::get_batch_job_execution::builders::GetBatchJobExecutionOutputBuilder,
 ) -> Result<
-    crate::output::get_batch_job_execution_output::Builder,
+    crate::operation::get_batch_job_execution::builders::GetBatchJobExecutionOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =
@@ -202,7 +212,7 @@ pub(crate) fn de_get_batch_job_execution(
                             )?
                             .map(|s| {
                                 s.to_unescaped()
-                                    .map(|u| crate::model::BatchJobType::from(u.as_ref()))
+                                    .map(|u| crate::types::BatchJobType::from(u.as_ref()))
                             })
                             .transpose()?,
                         );
@@ -231,7 +241,7 @@ pub(crate) fn de_get_batch_job_execution(
                             )?
                             .map(|s| {
                                 s.to_unescaped().map(|u| {
-                                    crate::model::BatchJobExecutionStatus::from(u.as_ref())
+                                    crate::types::BatchJobExecutionStatus::from(u.as_ref())
                                 })
                             })
                             .transpose()?,

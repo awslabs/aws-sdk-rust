@@ -2,96 +2,119 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_records_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListRecordsOutput, crate::error::ListRecordsError> {
+) -> std::result::Result<
+    crate::operation::list_records::ListRecordsOutput,
+    crate::operation::list_records::ListRecordsError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListRecordsError::unhandled)?;
+        .map_err(crate::operation::list_records::ListRecordsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListRecordsError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::list_records::ListRecordsError::unhandled(
+                generic,
+            ))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalErrorException" => crate::error::ListRecordsError::InternalErrorException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "InternalErrorException" => {
+            crate::operation::list_records::ListRecordsError::InternalErrorException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_error_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_error_exception::de_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRecordsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InvalidParameterException" => crate::error::ListRecordsError::InvalidParameterException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InternalErrorExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_error_exception::de_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_records::ListRecordsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidParameterException" => {
+            crate::operation::list_records::ListRecordsError::InvalidParameterException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_parameter_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRecordsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "NotAuthorizedException" => crate::error::ListRecordsError::NotAuthorizedException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InvalidParameterExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_records::ListRecordsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "NotAuthorizedException" => {
+            crate::operation::list_records::ListRecordsError::NotAuthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_authorized_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_not_authorized_exception::de_not_authorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRecordsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "TooManyRequestsException" => crate::error::ListRecordsError::TooManyRequestsException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::NotAuthorizedExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_not_authorized_exception::de_not_authorized_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_records::ListRecordsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "TooManyRequestsException" => {
+            crate::operation::list_records::ListRecordsError::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRecordsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::ListRecordsError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_records::ListRecordsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::list_records::ListRecordsError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_records_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListRecordsOutput, crate::error::ListRecordsError> {
+) -> std::result::Result<
+    crate::operation::list_records::ListRecordsOutput,
+    crate::operation::list_records::ListRecordsError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_records_output::Builder::default();
+        let mut output =
+            crate::operation::list_records::builders::ListRecordsOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_records::de_list_records(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListRecordsError::unhandled)?;
+        .map_err(crate::operation::list_records::ListRecordsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -101,9 +124,9 @@ pub fn de_list_records_http_response(
 
 pub(crate) fn de_list_records(
     value: &[u8],
-    mut builder: crate::output::list_records_output::Builder,
+    mut builder: crate::operation::list_records::builders::ListRecordsOutputBuilder,
 ) -> Result<
-    crate::output::list_records_output::Builder,
+    crate::operation::list_records::builders::ListRecordsOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

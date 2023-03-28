@@ -2,28 +2,37 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_fleets_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeleteFleetsOutput, crate::error::DeleteFleetsError> {
+) -> std::result::Result<
+    crate::operation::delete_fleets::DeleteFleetsOutput,
+    crate::operation::delete_fleets::DeleteFleetsError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteFleetsError::unhandled)?;
+        .map_err(crate::operation::delete_fleets::DeleteFleetsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::DeleteFleetsError::generic(generic))
+    Err(crate::operation::delete_fleets::DeleteFleetsError::generic(
+        generic,
+    ))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_fleets_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeleteFleetsOutput, crate::error::DeleteFleetsError> {
+) -> std::result::Result<
+    crate::operation::delete_fleets::DeleteFleetsOutput,
+    crate::operation::delete_fleets::DeleteFleetsError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_fleets_output::Builder::default();
+        let mut output =
+            crate::operation::delete_fleets::builders::DeleteFleetsOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_delete_fleets::de_delete_fleets(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DeleteFleetsError::unhandled)?;
+        .map_err(crate::operation::delete_fleets::DeleteFleetsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -34,8 +43,11 @@ pub fn de_delete_fleets_http_response(
 #[allow(unused_mut)]
 pub fn de_delete_fleets(
     inp: &[u8],
-    mut builder: crate::output::delete_fleets_output::Builder,
-) -> Result<crate::output::delete_fleets_output::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    mut builder: crate::operation::delete_fleets::builders::DeleteFleetsOutputBuilder,
+) -> Result<
+    crate::operation::delete_fleets::builders::DeleteFleetsOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

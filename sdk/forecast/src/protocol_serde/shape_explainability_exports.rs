@@ -2,7 +2,7 @@
 pub(crate) fn de_explainability_exports<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ExplainabilityExportSummary>>,
+    Option<std::vec::Vec<crate::types::ExplainabilityExportSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

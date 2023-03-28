@@ -2,7 +2,7 @@
 pub fn de_server_certificate_metadata_list_type(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::ServerCertificateMetadata>,
+    std::vec::Vec<crate::types::ServerCertificateMetadata>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

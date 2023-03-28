@@ -2,9 +2,11 @@
 #[allow(unused_mut)]
 pub fn de_resource_in_use_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::resource_in_use_exception::Builder,
-) -> Result<crate::error::resource_in_use_exception::Builder, aws_smithy_xml::decode::XmlDecodeError>
-{
+    mut builder: crate::types::error::builders::ResourceInUseExceptionBuilder,
+) -> Result<
+    crate::types::error::builders::ResourceInUseExceptionBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     if inp.is_empty() {
         return Ok(builder);
     }

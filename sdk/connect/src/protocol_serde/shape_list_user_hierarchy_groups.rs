@@ -3,109 +3,112 @@
 pub fn de_list_user_hierarchy_groups_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListUserHierarchyGroupsOutput,
-    crate::error::ListUserHierarchyGroupsError,
+    crate::operation::list_user_hierarchy_groups::ListUserHierarchyGroupsOutput,
+    crate::operation::list_user_hierarchy_groups::ListUserHierarchyGroupsError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListUserHierarchyGroupsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::list_user_hierarchy_groups::ListUserHierarchyGroupsError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::error::ListUserHierarchyGroupsError::unhandled(
+        None => return Err(
+            crate::operation::list_user_hierarchy_groups::ListUserHierarchyGroupsError::unhandled(
                 generic,
-            ))
-        }
+            ),
+        ),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServiceException" => {
-            crate::error::ListUserHierarchyGroupsError::InternalServiceException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::internal_service_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_service_exception::de_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListUserHierarchyGroupsError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InvalidParameterException" => {
-            crate::error::ListUserHierarchyGroupsError::InvalidParameterException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListUserHierarchyGroupsError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InvalidRequestException" => {
-            crate::error::ListUserHierarchyGroupsError::InvalidRequestException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_request_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListUserHierarchyGroupsError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ResourceNotFoundException" => {
-            crate::error::ListUserHierarchyGroupsError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListUserHierarchyGroupsError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ThrottlingException" => crate::error::ListUserHierarchyGroupsError::ThrottlingException({
+        "InternalServiceException" => crate::operation::list_user_hierarchy_groups::ListUserHierarchyGroupsError::InternalServiceException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::throttling_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListUserHierarchyGroupsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InternalServiceExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_service_exception::de_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_user_hierarchy_groups::ListUserHierarchyGroupsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::ListUserHierarchyGroupsError::generic(generic),
+        "InvalidParameterException" => crate::operation::list_user_hierarchy_groups::ListUserHierarchyGroupsError::InvalidParameterException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidParameterExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_user_hierarchy_groups::ListUserHierarchyGroupsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidRequestException" => crate::operation::list_user_hierarchy_groups::ListUserHierarchyGroupsError::InvalidRequestException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidRequestExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_user_hierarchy_groups::ListUserHierarchyGroupsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::list_user_hierarchy_groups::ListUserHierarchyGroupsError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_user_hierarchy_groups::ListUserHierarchyGroupsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ThrottlingException" => crate::operation::list_user_hierarchy_groups::ListUserHierarchyGroupsError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_user_hierarchy_groups::ListUserHierarchyGroupsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::list_user_hierarchy_groups::ListUserHierarchyGroupsError::generic(generic)
     })
 }
 
@@ -113,19 +116,14 @@ pub fn de_list_user_hierarchy_groups_http_error(
 pub fn de_list_user_hierarchy_groups_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListUserHierarchyGroupsOutput,
-    crate::error::ListUserHierarchyGroupsError,
+    crate::operation::list_user_hierarchy_groups::ListUserHierarchyGroupsOutput,
+    crate::operation::list_user_hierarchy_groups::ListUserHierarchyGroupsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_user_hierarchy_groups_output::Builder::default();
+        let mut output = crate::operation::list_user_hierarchy_groups::builders::ListUserHierarchyGroupsOutputBuilder::default();
         let _ = response;
-        output =
-            crate::protocol_serde::shape_list_user_hierarchy_groups::de_list_user_hierarchy_groups(
-                response.body().as_ref(),
-                output,
-            )
-            .map_err(crate::error::ListUserHierarchyGroupsError::unhandled)?;
+        output = crate::protocol_serde::shape_list_user_hierarchy_groups::de_list_user_hierarchy_groups(response.body().as_ref(), output).map_err(crate::operation::list_user_hierarchy_groups::ListUserHierarchyGroupsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -135,9 +133,9 @@ pub fn de_list_user_hierarchy_groups_http_response(
 
 pub(crate) fn de_list_user_hierarchy_groups(
     value: &[u8],
-    mut builder: crate::output::list_user_hierarchy_groups_output::Builder,
+    mut builder: crate::operation::list_user_hierarchy_groups::builders::ListUserHierarchyGroupsOutputBuilder,
 ) -> Result<
-    crate::output::list_user_hierarchy_groups_output::Builder,
+    crate::operation::list_user_hierarchy_groups::builders::ListUserHierarchyGroupsOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

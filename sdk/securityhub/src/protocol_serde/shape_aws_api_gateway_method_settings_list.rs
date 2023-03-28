@@ -2,7 +2,7 @@
 pub(crate) fn de_aws_api_gateway_method_settings_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AwsApiGatewayMethodSettings>>,
+    Option<std::vec::Vec<crate::types::AwsApiGatewayMethodSettings>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

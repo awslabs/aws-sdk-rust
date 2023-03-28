@@ -2,7 +2,7 @@
 pub(crate) fn de_alarm_state_information_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AlarmStateInformation>>,
+    Option<std::vec::Vec<crate::types::AlarmStateInformation>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

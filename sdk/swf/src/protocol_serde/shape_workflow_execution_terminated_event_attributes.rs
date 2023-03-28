@@ -2,7 +2,7 @@
 pub(crate) fn de_workflow_execution_terminated_event_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::WorkflowExecutionTerminatedEventAttributes>,
+    Option<crate::types::WorkflowExecutionTerminatedEventAttributes>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,8 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::workflow_execution_terminated_event_attributes::Builder::default();
+                crate::types::builders::WorkflowExecutionTerminatedEventAttributesBuilder::default(
+                );
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -49,7 +50,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::ChildPolicy::from(u.as_ref()))
+                                            .map(|u| crate::types::ChildPolicy::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -61,7 +62,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::WorkflowExecutionTerminatedCause::from(
+                                            crate::types::WorkflowExecutionTerminatedCause::from(
                                                 u.as_ref(),
                                             )
                                         })

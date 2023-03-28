@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_ipv4_prefix_specification_request(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::Ipv4PrefixSpecificationRequest,
+    input: &crate::types::Ipv4PrefixSpecificationRequest,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Ipv4Prefix");
@@ -14,9 +14,9 @@ pub fn ser_ipv4_prefix_specification_request(
 
 pub fn de_ipv4_prefix_specification_request(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::Ipv4PrefixSpecificationRequest, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::Ipv4PrefixSpecificationRequest, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::Ipv4PrefixSpecificationRequest::builder();
+    let mut builder = crate::types::Ipv4PrefixSpecificationRequest::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Ipv4Prefix") /* Ipv4Prefix com.amazonaws.ec2#Ipv4PrefixSpecificationRequest$Ipv4Prefix */ =>  {

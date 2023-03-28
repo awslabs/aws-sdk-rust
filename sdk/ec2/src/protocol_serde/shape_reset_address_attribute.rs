@@ -3,33 +3,36 @@
 pub fn de_reset_address_attribute_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ResetAddressAttributeOutput,
-    crate::error::ResetAddressAttributeError,
+    crate::operation::reset_address_attribute::ResetAddressAttributeOutput,
+    crate::operation::reset_address_attribute::ResetAddressAttributeError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ResetAddressAttributeError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::reset_address_attribute::ResetAddressAttributeError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::ResetAddressAttributeError::generic(generic))
+    Err(crate::operation::reset_address_attribute::ResetAddressAttributeError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_reset_address_attribute_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ResetAddressAttributeOutput,
-    crate::error::ResetAddressAttributeError,
+    crate::operation::reset_address_attribute::ResetAddressAttributeOutput,
+    crate::operation::reset_address_attribute::ResetAddressAttributeError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::reset_address_attribute_output::Builder::default();
+        let mut output = crate::operation::reset_address_attribute::builders::ResetAddressAttributeOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_reset_address_attribute::de_reset_address_attribute(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ResetAddressAttributeError::unhandled)?;
+        .map_err(
+            crate::operation::reset_address_attribute::ResetAddressAttributeError::unhandled,
+        )?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -40,9 +43,9 @@ pub fn de_reset_address_attribute_http_response(
 #[allow(unused_mut)]
 pub fn de_reset_address_attribute(
     inp: &[u8],
-    mut builder: crate::output::reset_address_attribute_output::Builder,
+    mut builder: crate::operation::reset_address_attribute::builders::ResetAddressAttributeOutputBuilder,
 ) -> Result<
-    crate::output::reset_address_attribute_output::Builder,
+    crate::operation::reset_address_attribute::builders::ResetAddressAttributeOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

@@ -2,7 +2,7 @@
 pub(crate) fn de_managed_rule_group_versions<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ManagedRuleGroupVersion>>,
+    Option<std::vec::Vec<crate::types::ManagedRuleGroupVersion>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

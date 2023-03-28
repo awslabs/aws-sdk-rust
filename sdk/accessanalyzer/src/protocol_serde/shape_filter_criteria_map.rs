@@ -2,7 +2,7 @@
 pub(crate) fn de_filter_criteria_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<std::string::String, crate::model::Criterion>>,
+    Option<std::collections::HashMap<std::string::String, crate::types::Criterion>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

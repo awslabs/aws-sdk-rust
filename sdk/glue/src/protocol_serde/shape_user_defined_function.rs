@@ -2,7 +2,7 @@
 pub(crate) fn de_user_defined_function<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::UserDefinedFunction>,
+    Option<crate::types::UserDefinedFunction>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::user_defined_function::Builder::default();
+            let mut builder = crate::types::builders::UserDefinedFunctionBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -66,7 +66,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::PrincipalType::from(u.as_ref()))
+                                            .map(|u| crate::types::PrincipalType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

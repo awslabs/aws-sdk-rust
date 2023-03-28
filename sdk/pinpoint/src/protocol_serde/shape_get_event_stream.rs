@@ -2,58 +2,70 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_event_stream_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetEventStreamOutput, crate::error::GetEventStreamError> {
+) -> std::result::Result<
+    crate::operation::get_event_stream::GetEventStreamOutput,
+    crate::operation::get_event_stream::GetEventStreamError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetEventStreamError::unhandled)?;
+        .map_err(crate::operation::get_event_stream::GetEventStreamError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::GetEventStreamError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::get_event_stream::GetEventStreamError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::GetEventStreamError::BadRequestException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEventStreamError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ForbiddenException" => crate::error::GetEventStreamError::ForbiddenException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEventStreamError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InternalServerErrorException" => {
-            crate::error::GetEventStreamError::InternalServerErrorException({
+        "BadRequestException" => {
+            crate::operation::get_event_stream::GetEventStreamError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::internal_server_error_exception::Builder::default();
+                        crate::types::error::builders::BadRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEventStreamError::unhandled)?;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_event_stream::GetEventStreamError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ForbiddenException" => {
+            crate::operation::get_event_stream::GetEventStreamError::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ForbiddenExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_event_stream::GetEventStreamError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InternalServerErrorException" => {
+            crate::operation::get_event_stream::GetEventStreamError::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InternalServerErrorExceptionBuilder::default(
+                        );
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_event_stream::GetEventStreamError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -64,13 +76,14 @@ pub fn de_get_event_stream_http_error(
             })
         }
         "MethodNotAllowedException" => {
-            crate::error::GetEventStreamError::MethodNotAllowedException({
+            crate::operation::get_event_stream::GetEventStreamError::MethodNotAllowedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::method_not_allowed_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::MethodNotAllowedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_method_not_allowed_exception::de_method_not_allowed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEventStreamError::unhandled)?;
+                    output = crate::protocol_serde::shape_method_not_allowed_exception::de_method_not_allowed_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_event_stream::GetEventStreamError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -80,29 +93,33 @@ pub fn de_get_event_stream_http_error(
                 tmp
             })
         }
-        "NotFoundException" => crate::error::GetEventStreamError::NotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEventStreamError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "PayloadTooLargeException" => {
-            crate::error::GetEventStreamError::PayloadTooLargeException({
+        "NotFoundException" => {
+            crate::operation::get_event_stream::GetEventStreamError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::payload_too_large_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::NotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_payload_too_large_exception::de_payload_too_large_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEventStreamError::unhandled)?;
+                    output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_event_stream::GetEventStreamError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "PayloadTooLargeException" => {
+            crate::operation::get_event_stream::GetEventStreamError::PayloadTooLargeException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::PayloadTooLargeExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_payload_too_large_exception::de_payload_too_large_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_event_stream::GetEventStreamError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -113,13 +130,14 @@ pub fn de_get_event_stream_http_error(
             })
         }
         "TooManyRequestsException" => {
-            crate::error::GetEventStreamError::TooManyRequestsException({
+            crate::operation::get_event_stream::GetEventStreamError::TooManyRequestsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEventStreamError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_event_stream::GetEventStreamError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -129,17 +147,21 @@ pub fn de_get_event_stream_http_error(
                 tmp
             })
         }
-        _ => crate::error::GetEventStreamError::generic(generic),
+        _ => crate::operation::get_event_stream::GetEventStreamError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_event_stream_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetEventStreamOutput, crate::error::GetEventStreamError> {
+) -> std::result::Result<
+    crate::operation::get_event_stream::GetEventStreamOutput,
+    crate::operation::get_event_stream::GetEventStreamError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_event_stream_output::Builder::default();
+        let mut output =
+            crate::operation::get_event_stream::builders::GetEventStreamOutputBuilder::default();
         let _ = response;
         output = output.set_event_stream(
             crate::protocol_serde::shape_get_event_stream_output::de_event_stream_payload(

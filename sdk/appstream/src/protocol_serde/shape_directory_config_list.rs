@@ -2,7 +2,7 @@
 pub(crate) fn de_directory_config_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DirectoryConfig>>,
+    Option<std::vec::Vec<crate::types::DirectoryConfig>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_scan_ec2_instance_with_findings_result<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ScanEc2InstanceWithFindingsResult>,
+    Option<crate::types::ScanEc2InstanceWithFindingsResult>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::scan_ec2_instance_with_findings_result::Builder::default();
+                crate::types::builders::ScanEc2InstanceWithFindingsResultBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

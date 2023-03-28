@@ -3,37 +3,47 @@
 pub fn de_modify_certificates_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ModifyCertificatesOutput,
-    crate::error::ModifyCertificatesError,
+    crate::operation::modify_certificates::ModifyCertificatesOutput,
+    crate::operation::modify_certificates::ModifyCertificatesError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ModifyCertificatesError::unhandled)?;
+        .map_err(crate::operation::modify_certificates::ModifyCertificatesError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ModifyCertificatesError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::modify_certificates::ModifyCertificatesError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CertificateNotFound" => crate::error::ModifyCertificatesError::CertificateNotFoundFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::certificate_not_found_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_certificate_not_found_fault::de_certificate_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyCertificatesError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::ModifyCertificatesError::generic(generic),
+        "CertificateNotFound" => {
+            crate::operation::modify_certificates::ModifyCertificatesError::CertificateNotFoundFault(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::types::error::builders::CertificateNotFoundFaultBuilder::default(
+                            );
+                        let _ = response;
+                        output = crate::protocol_serde::shape_certificate_not_found_fault::de_certificate_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_certificates::ModifyCertificatesError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        _ => crate::operation::modify_certificates::ModifyCertificatesError::generic(generic),
     })
 }
 
@@ -41,18 +51,18 @@ pub fn de_modify_certificates_http_error(
 pub fn de_modify_certificates_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ModifyCertificatesOutput,
-    crate::error::ModifyCertificatesError,
+    crate::operation::modify_certificates::ModifyCertificatesOutput,
+    crate::operation::modify_certificates::ModifyCertificatesError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::modify_certificates_output::Builder::default();
+        let mut output = crate::operation::modify_certificates::builders::ModifyCertificatesOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_modify_certificates::de_modify_certificates(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ModifyCertificatesError::unhandled)?;
+        .map_err(crate::operation::modify_certificates::ModifyCertificatesError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -63,9 +73,9 @@ pub fn de_modify_certificates_http_response(
 #[allow(unused_mut)]
 pub fn de_modify_certificates(
     inp: &[u8],
-    mut builder: crate::output::modify_certificates_output::Builder,
+    mut builder: crate::operation::modify_certificates::builders::ModifyCertificatesOutputBuilder,
 ) -> Result<
-    crate::output::modify_certificates_output::Builder,
+    crate::operation::modify_certificates::builders::ModifyCertificatesOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

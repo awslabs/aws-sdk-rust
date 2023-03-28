@@ -5,12 +5,12 @@
 pub enum Error {
     /// <p>You have specified a template that is invalid or supported.</p>
     ConformancePackTemplateValidationException(
-        crate::error::ConformancePackTemplateValidationException,
+        crate::types::error::ConformancePackTemplateValidationException,
     ),
     /// <p>Using the same client token with one or more different parameters. Specify a new client token with the parameter changes and try again.</p>
-    IdempotentParameterMismatch(crate::error::IdempotentParameterMismatch),
+    IdempotentParameterMismatch(crate::types::error::IdempotentParameterMismatch),
     /// <p>Your Amazon S3 bucket policy does not permit Config to write to it.</p>
-    InsufficientDeliveryPolicyException(crate::error::InsufficientDeliveryPolicyException),
+    InsufficientDeliveryPolicyException(crate::types::error::InsufficientDeliveryPolicyException),
     /// <p>Indicates one of the following errors:</p>
     /// <ul>
     /// <li> <p>For PutConfigRule, the rule cannot be created because the IAM role assigned to Config lacks permissions to perform the config:Put* action.</p> </li>
@@ -22,109 +22,121 @@ pub enum Error {
     /// <li> <p>You do not have permission to read Amazon S3 bucket or call SSM:GetDocument.</p> </li>
     /// </ul> </li>
     /// </ul>
-    InsufficientPermissionsException(crate::error::InsufficientPermissionsException),
+    InsufficientPermissionsException(crate::types::error::InsufficientPermissionsException),
     /// <p>You have provided a configuration recorder name that is not valid.</p>
     InvalidConfigurationRecorderNameException(
-        crate::error::InvalidConfigurationRecorderNameException,
+        crate::types::error::InvalidConfigurationRecorderNameException,
     ),
     /// <p>The specified delivery channel name is invalid.</p>
-    InvalidDeliveryChannelNameException(crate::error::InvalidDeliveryChannelNameException),
+    InvalidDeliveryChannelNameException(crate::types::error::InvalidDeliveryChannelNameException),
     /// <p>The syntax of the query is incorrect.</p>
-    InvalidExpressionException(crate::error::InvalidExpressionException),
+    InvalidExpressionException(crate::types::error::InvalidExpressionException),
     /// <p>The specified limit is outside the allowable range.</p>
-    InvalidLimitException(crate::error::InvalidLimitException),
+    InvalidLimitException(crate::types::error::InvalidLimitException),
     /// <p>The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the previous response to get the next page of results.</p>
-    InvalidNextTokenException(crate::error::InvalidNextTokenException),
+    InvalidNextTokenException(crate::types::error::InvalidNextTokenException),
     /// <p>One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.</p>
-    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
     /// <p>Config throws an exception if the recording group does not contain a valid list of resource types. Invalid values might also be incorrectly formatted.</p>
-    InvalidRecordingGroupException(crate::error::InvalidRecordingGroupException),
+    InvalidRecordingGroupException(crate::types::error::InvalidRecordingGroupException),
     /// <p>The specified <code>ResultToken</code> is invalid.</p>
-    InvalidResultTokenException(crate::error::InvalidResultTokenException),
+    InvalidResultTokenException(crate::types::error::InvalidResultTokenException),
     /// <p>You have provided a null or empty role ARN.</p>
-    InvalidRoleException(crate::error::InvalidRoleException),
+    InvalidRoleException(crate::types::error::InvalidRoleException),
     /// <p>The specified Amazon S3 key prefix is invalid.</p>
-    InvalidS3KeyPrefixException(crate::error::InvalidS3KeyPrefixException),
+    InvalidS3KeyPrefixException(crate::types::error::InvalidS3KeyPrefixException),
     /// <p>The specified Amazon KMS Key ARN is invalid.</p>
-    InvalidS3KmsKeyArnException(crate::error::InvalidS3KmsKeyArnException),
+    InvalidS3KmsKeyArnException(crate::types::error::InvalidS3KmsKeyArnException),
     /// <p>The specified Amazon SNS topic does not exist.</p>
-    InvalidSnsTopicArnException(crate::error::InvalidSnsTopicArnException),
+    InvalidSnsTopicArnException(crate::types::error::InvalidSnsTopicArnException),
     /// <p>The specified time range is invalid. The earlier time is not chronologically before the later time.</p>
-    InvalidTimeRangeException(crate::error::InvalidTimeRangeException),
+    InvalidTimeRangeException(crate::types::error::InvalidTimeRangeException),
     /// <p>You cannot delete the delivery channel you specified because the configuration recorder is running.</p>
     LastDeliveryChannelDeleteFailedException(
-        crate::error::LastDeliveryChannelDeleteFailedException,
+        crate::types::error::LastDeliveryChannelDeleteFailedException,
     ),
     /// <p>For <code>StartConfigRulesEvaluation</code> API, this exception is thrown if an evaluation is in progress or if you call the <code>StartConfigRulesEvaluation</code> API more than once per minute.</p>
     /// <p>For <code>PutConfigurationAggregator</code> API, this exception is thrown if the number of accounts and aggregators exceeds the limit.</p>
-    LimitExceededException(crate::error::LimitExceededException),
+    LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>You have reached the limit of active custom resource types in your account. There is a limit of 100,000. Delete unused resources using <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteResourceConfig.html">DeleteResourceConfig</a> <code></code>.</p>
-    MaxActiveResourcesExceededException(crate::error::MaxActiveResourcesExceededException),
+    MaxActiveResourcesExceededException(crate::types::error::MaxActiveResourcesExceededException),
     /// <p>Failed to add the Config rule because the account already contains the maximum number of 150 rules. Consider deleting any deactivated rules before you add new rules.</p>
-    MaxNumberOfConfigRulesExceededException(crate::error::MaxNumberOfConfigRulesExceededException),
+    MaxNumberOfConfigRulesExceededException(
+        crate::types::error::MaxNumberOfConfigRulesExceededException,
+    ),
     /// <p>You have reached the limit of the number of recorders you can create.</p>
     MaxNumberOfConfigurationRecordersExceededException(
-        crate::error::MaxNumberOfConfigurationRecordersExceededException,
+        crate::types::error::MaxNumberOfConfigurationRecordersExceededException,
     ),
     /// <p>You have reached the limit of the number of conformance packs you can create in an account. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html"> <b>Service Limits</b> </a> in the Config Developer Guide.</p>
     MaxNumberOfConformancePacksExceededException(
-        crate::error::MaxNumberOfConformancePacksExceededException,
+        crate::types::error::MaxNumberOfConformancePacksExceededException,
     ),
     /// <p>You have reached the limit of the number of delivery channels you can create.</p>
     MaxNumberOfDeliveryChannelsExceededException(
-        crate::error::MaxNumberOfDeliveryChannelsExceededException,
+        crate::types::error::MaxNumberOfDeliveryChannelsExceededException,
     ),
     /// <p>You have reached the limit of the number of organization Config rules you can create. For more information, see see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html"> <b>Service Limits</b> </a> in the Config Developer Guide.</p>
     MaxNumberOfOrganizationConfigRulesExceededException(
-        crate::error::MaxNumberOfOrganizationConfigRulesExceededException,
+        crate::types::error::MaxNumberOfOrganizationConfigRulesExceededException,
     ),
     /// <p>You have reached the limit of the number of organization conformance packs you can create in an account. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html"> <b>Service Limits</b> </a> in the Config Developer Guide.</p>
     MaxNumberOfOrganizationConformancePacksExceededException(
-        crate::error::MaxNumberOfOrganizationConformancePacksExceededException,
+        crate::types::error::MaxNumberOfOrganizationConformancePacksExceededException,
     ),
     /// <p>Failed to add the retention configuration because a retention configuration with that name already exists.</p>
     MaxNumberOfRetentionConfigurationsExceededException(
-        crate::error::MaxNumberOfRetentionConfigurationsExceededException,
+        crate::types::error::MaxNumberOfRetentionConfigurationsExceededException,
     ),
     /// <p>There are no configuration recorders available to provide the role needed to describe your resources. Create a configuration recorder.</p>
     NoAvailableConfigurationRecorderException(
-        crate::error::NoAvailableConfigurationRecorderException,
+        crate::types::error::NoAvailableConfigurationRecorderException,
     ),
     /// <p>There is no delivery channel available to record configurations.</p>
-    NoAvailableDeliveryChannelException(crate::error::NoAvailableDeliveryChannelException),
+    NoAvailableDeliveryChannelException(crate::types::error::NoAvailableDeliveryChannelException),
     /// <p>Organization is no longer available.</p>
-    NoAvailableOrganizationException(crate::error::NoAvailableOrganizationException),
+    NoAvailableOrganizationException(crate::types::error::NoAvailableOrganizationException),
     /// <p>There is no configuration recorder running.</p>
-    NoRunningConfigurationRecorderException(crate::error::NoRunningConfigurationRecorderException),
+    NoRunningConfigurationRecorderException(
+        crate::types::error::NoRunningConfigurationRecorderException,
+    ),
     /// <p>The specified Amazon S3 bucket does not exist.</p>
-    NoSuchBucketException(crate::error::NoSuchBucketException),
+    NoSuchBucketException(crate::types::error::NoSuchBucketException),
     /// <p>The Config rule in the request is invalid. Verify that the rule is an Config Custom Policy rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs) are used before trying again.</p>
-    NoSuchConfigRuleException(crate::error::NoSuchConfigRuleException),
+    NoSuchConfigRuleException(crate::types::error::NoSuchConfigRuleException),
     /// <p>Config rule that you passed in the filter does not exist.</p>
     NoSuchConfigRuleInConformancePackException(
-        crate::error::NoSuchConfigRuleInConformancePackException,
+        crate::types::error::NoSuchConfigRuleInConformancePackException,
     ),
     /// <p>You have specified a configuration aggregator that does not exist.</p>
-    NoSuchConfigurationAggregatorException(crate::error::NoSuchConfigurationAggregatorException),
+    NoSuchConfigurationAggregatorException(
+        crate::types::error::NoSuchConfigurationAggregatorException,
+    ),
     /// <p>You have specified a configuration recorder that does not exist.</p>
-    NoSuchConfigurationRecorderException(crate::error::NoSuchConfigurationRecorderException),
+    NoSuchConfigurationRecorderException(crate::types::error::NoSuchConfigurationRecorderException),
     /// <p>You specified one or more conformance packs that do not exist.</p>
-    NoSuchConformancePackException(crate::error::NoSuchConformancePackException),
+    NoSuchConformancePackException(crate::types::error::NoSuchConformancePackException),
     /// <p>You have specified a delivery channel that does not exist.</p>
-    NoSuchDeliveryChannelException(crate::error::NoSuchDeliveryChannelException),
+    NoSuchDeliveryChannelException(crate::types::error::NoSuchDeliveryChannelException),
     /// <p>The Config rule in the request is invalid. Verify that the rule is an organization Config Custom Policy rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs) are used before trying again.</p>
-    NoSuchOrganizationConfigRuleException(crate::error::NoSuchOrganizationConfigRuleException),
+    NoSuchOrganizationConfigRuleException(
+        crate::types::error::NoSuchOrganizationConfigRuleException,
+    ),
     /// <p>Config organization conformance pack that you passed in the filter does not exist.</p>
     /// <p>For DeleteOrganizationConformancePack, you tried to delete an organization conformance pack that does not exist.</p>
     NoSuchOrganizationConformancePackException(
-        crate::error::NoSuchOrganizationConformancePackException,
+        crate::types::error::NoSuchOrganizationConformancePackException,
     ),
     /// <p>You specified an Config rule without a remediation configuration.</p>
-    NoSuchRemediationConfigurationException(crate::error::NoSuchRemediationConfigurationException),
+    NoSuchRemediationConfigurationException(
+        crate::types::error::NoSuchRemediationConfigurationException,
+    ),
     /// <p>You tried to delete a remediation exception that does not exist.</p>
-    NoSuchRemediationExceptionException(crate::error::NoSuchRemediationExceptionException),
+    NoSuchRemediationExceptionException(crate::types::error::NoSuchRemediationExceptionException),
     /// <p>You have specified a retention configuration that does not exist.</p>
-    NoSuchRetentionConfigurationException(crate::error::NoSuchRetentionConfigurationException),
+    NoSuchRetentionConfigurationException(
+        crate::types::error::NoSuchRetentionConfigurationException,
+    ),
     /// <p>For <code>PutConfigurationAggregator</code> API, you can see this exception for the following reasons:</p>
     /// <ul>
     /// <li> <p>No permission to call <code>EnableAWSServiceAccess</code> API</p> </li>
@@ -133,21 +145,23 @@ pub enum Error {
     /// <li> <p>You are not a registered delegated administrator for Config with permissions to call <code>ListDelegatedAdministrators</code> API. Ensure that the management account registers delagated administrator for Config service principle name before the delegated administrator creates an aggregator.</p> </li>
     /// </ul>
     /// <p>For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code> APIs, Config throws an exception if APIs are called from member accounts. All APIs must be called from organization management account.</p>
-    OrganizationAccessDeniedException(crate::error::OrganizationAccessDeniedException),
+    OrganizationAccessDeniedException(crate::types::error::OrganizationAccessDeniedException),
     /// <p>Config resource cannot be created because your organization does not have all features enabled.</p>
     OrganizationAllFeaturesNotEnabledException(
-        crate::error::OrganizationAllFeaturesNotEnabledException,
+        crate::types::error::OrganizationAllFeaturesNotEnabledException,
     ),
     /// <p>You have specified a template that is invalid or supported.</p>
     OrganizationConformancePackTemplateValidationException(
-        crate::error::OrganizationConformancePackTemplateValidationException,
+        crate::types::error::OrganizationConformancePackTemplateValidationException,
     ),
     /// <p>The configuration item size is outside the allowable range.</p>
-    OversizedConfigurationItemException(crate::error::OversizedConfigurationItemException),
+    OversizedConfigurationItemException(crate::types::error::OversizedConfigurationItemException),
     /// <p>Remediation action is in progress. You can either cancel execution in Amazon Web Services Systems Manager or wait and try again later. </p>
-    RemediationInProgressException(crate::error::RemediationInProgressException),
+    RemediationInProgressException(crate::types::error::RemediationInProgressException),
     /// <p>Two users are trying to modify the same query at the same time. Wait for a moment and try again.</p>
-    ResourceConcurrentModificationException(crate::error::ResourceConcurrentModificationException),
+    ResourceConcurrentModificationException(
+        crate::types::error::ResourceConcurrentModificationException,
+    ),
     /// <p>You see this exception in the following cases: </p>
     /// <ul>
     /// <li> <p>For DeleteConfigRule, Config is deleting this rule. Try your request again later.</p> </li>
@@ -158,17 +172,17 @@ pub enum Error {
     /// <li> <p>For PutConformancePack and PutOrganizationConformancePack, a conformance pack creation, update, and deletion is in progress. Try your request again later.</p> </li>
     /// <li> <p>For DeleteConformancePack, a conformance pack creation, update, and deletion is in progress. Try your request again later.</p> </li>
     /// </ul>
-    ResourceInUseException(crate::error::ResourceInUseException),
+    ResourceInUseException(crate::types::error::ResourceInUseException),
     /// <p>You have specified a resource that is either unknown or has not been discovered.</p>
-    ResourceNotDiscoveredException(crate::error::ResourceNotDiscoveredException),
+    ResourceNotDiscoveredException(crate::types::error::ResourceNotDiscoveredException),
     /// <p>You have specified a resource that does not exist.</p>
-    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>You have reached the limit of the number of tags you can use. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html"> <b>Service Limits</b> </a> in the Config Developer Guide.</p>
-    TooManyTagsException(crate::error::TooManyTagsException),
+    TooManyTagsException(crate::types::error::TooManyTagsException),
     /// <p>The requested action is invalid.</p>
     /// <p>For PutStoredQuery, you will see this exception if there are missing required fields or if the input value fails the validation, or if you are trying to create more than 300 queries.</p>
     /// <p>For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are missing required fields or if the input value fails the validation.</p>
-    ValidationException(crate::error::ValidationException),
+    ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled),
 }
@@ -233,15 +247,47 @@ impl std::fmt::Display for Error {
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::batch_get_aggregate_resource_config::BatchGetAggregateResourceConfigError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::batch_get_aggregate_resource_config::BatchGetAggregateResourceConfigError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl
+    From<
+        crate::operation::batch_get_aggregate_resource_config::BatchGetAggregateResourceConfigError,
+    > for Error
+{
+    fn from(
+        err: crate::operation::batch_get_aggregate_resource_config::BatchGetAggregateResourceConfigError,
+    ) -> Self {
+        match err {
+            crate::operation::batch_get_aggregate_resource_config::BatchGetAggregateResourceConfigError::NoSuchConfigurationAggregatorException(inner) => Error::NoSuchConfigurationAggregatorException(inner),
+            crate::operation::batch_get_aggregate_resource_config::BatchGetAggregateResourceConfigError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::batch_get_aggregate_resource_config::BatchGetAggregateResourceConfigError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::BatchGetAggregateResourceConfigError, R>>
-    for Error
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::batch_get_resource_config::BatchGetResourceConfigError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::BatchGetAggregateResourceConfigError,
+            crate::operation::batch_get_resource_config::BatchGetResourceConfigError,
             R,
         >,
     ) -> Self {
@@ -260,56 +306,28 @@ where
         }
     }
 }
-impl From<crate::error::BatchGetAggregateResourceConfigError> for Error {
-    fn from(err: crate::error::BatchGetAggregateResourceConfigError) -> Self {
+impl From<crate::operation::batch_get_resource_config::BatchGetResourceConfigError> for Error {
+    fn from(err: crate::operation::batch_get_resource_config::BatchGetResourceConfigError) -> Self {
         match err {
-            crate::error::BatchGetAggregateResourceConfigError::NoSuchConfigurationAggregatorException(inner) => Error::NoSuchConfigurationAggregatorException(inner),
-            crate::error::BatchGetAggregateResourceConfigError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::BatchGetAggregateResourceConfigError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::BatchGetResourceConfigError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::BatchGetResourceConfigError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::BatchGetResourceConfigError> for Error {
-    fn from(err: crate::error::BatchGetResourceConfigError) -> Self {
-        match err {
-            crate::error::BatchGetResourceConfigError::NoAvailableConfigurationRecorderException(inner) => Error::NoAvailableConfigurationRecorderException(inner),
-            crate::error::BatchGetResourceConfigError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::BatchGetResourceConfigError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::batch_get_resource_config::BatchGetResourceConfigError::NoAvailableConfigurationRecorderException(inner) => Error::NoAvailableConfigurationRecorderException(inner),
+            crate::operation::batch_get_resource_config::BatchGetResourceConfigError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::batch_get_resource_config::BatchGetResourceConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::DeleteAggregationAuthorizationError, R>>
-    for Error
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_aggregation_authorization::DeleteAggregationAuthorizationError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::DeleteAggregationAuthorizationError,
+            crate::operation::delete_aggregation_authorization::DeleteAggregationAuthorizationError,
             R,
         >,
     ) -> Self {
@@ -328,265 +346,31 @@ where
         }
     }
 }
-impl From<crate::error::DeleteAggregationAuthorizationError> for Error {
-    fn from(err: crate::error::DeleteAggregationAuthorizationError) -> Self {
-        match err {
-            crate::error::DeleteAggregationAuthorizationError::InvalidParameterValueException(
-                inner,
-            ) => Error::InvalidParameterValueException(inner),
-            crate::error::DeleteAggregationAuthorizationError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteConfigRuleError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteConfigRuleError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DeleteConfigRuleError> for Error {
-    fn from(err: crate::error::DeleteConfigRuleError) -> Self {
-        match err {
-            crate::error::DeleteConfigRuleError::NoSuchConfigRuleException(inner) => {
-                Error::NoSuchConfigRuleException(inner)
-            }
-            crate::error::DeleteConfigRuleError::ResourceInUseException(inner) => {
-                Error::ResourceInUseException(inner)
-            }
-            crate::error::DeleteConfigRuleError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteConfigurationAggregatorError, R>>
+impl From<crate::operation::delete_aggregation_authorization::DeleteAggregationAuthorizationError>
     for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteConfigurationAggregatorError, R>,
+        err: crate::operation::delete_aggregation_authorization::DeleteAggregationAuthorizationError,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DeleteConfigurationAggregatorError> for Error {
-    fn from(err: crate::error::DeleteConfigurationAggregatorError) -> Self {
-        match err {
-            crate::error::DeleteConfigurationAggregatorError::NoSuchConfigurationAggregatorException(inner) => Error::NoSuchConfigurationAggregatorException(inner),
-            crate::error::DeleteConfigurationAggregatorError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteConfigurationRecorderError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteConfigurationRecorderError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DeleteConfigurationRecorderError> for Error {
-    fn from(err: crate::error::DeleteConfigurationRecorderError) -> Self {
-        match err {
-            crate::error::DeleteConfigurationRecorderError::NoSuchConfigurationRecorderException(inner) => Error::NoSuchConfigurationRecorderException(inner),
-            crate::error::DeleteConfigurationRecorderError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteConformancePackError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteConformancePackError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DeleteConformancePackError> for Error {
-    fn from(err: crate::error::DeleteConformancePackError) -> Self {
-        match err {
-            crate::error::DeleteConformancePackError::NoSuchConformancePackException(inner) => {
-                Error::NoSuchConformancePackException(inner)
-            }
-            crate::error::DeleteConformancePackError::ResourceInUseException(inner) => {
-                Error::ResourceInUseException(inner)
-            }
-            crate::error::DeleteConformancePackError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteDeliveryChannelError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteDeliveryChannelError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DeleteDeliveryChannelError> for Error {
-    fn from(err: crate::error::DeleteDeliveryChannelError) -> Self {
-        match err {
-            crate::error::DeleteDeliveryChannelError::LastDeliveryChannelDeleteFailedException(
-                inner,
-            ) => Error::LastDeliveryChannelDeleteFailedException(inner),
-            crate::error::DeleteDeliveryChannelError::NoSuchDeliveryChannelException(inner) => {
-                Error::NoSuchDeliveryChannelException(inner)
-            }
-            crate::error::DeleteDeliveryChannelError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteEvaluationResultsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteEvaluationResultsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DeleteEvaluationResultsError> for Error {
-    fn from(err: crate::error::DeleteEvaluationResultsError) -> Self {
-        match err {
-            crate::error::DeleteEvaluationResultsError::NoSuchConfigRuleException(inner) => {
-                Error::NoSuchConfigRuleException(inner)
-            }
-            crate::error::DeleteEvaluationResultsError::ResourceInUseException(inner) => {
-                Error::ResourceInUseException(inner)
-            }
-            crate::error::DeleteEvaluationResultsError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteOrganizationConfigRuleError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteOrganizationConfigRuleError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DeleteOrganizationConfigRuleError> for Error {
-    fn from(err: crate::error::DeleteOrganizationConfigRuleError) -> Self {
-        match err {
-            crate::error::DeleteOrganizationConfigRuleError::NoSuchOrganizationConfigRuleException(inner) => Error::NoSuchOrganizationConfigRuleException(inner),
-            crate::error::DeleteOrganizationConfigRuleError::OrganizationAccessDeniedException(inner) => Error::OrganizationAccessDeniedException(inner),
-            crate::error::DeleteOrganizationConfigRuleError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
-            crate::error::DeleteOrganizationConfigRuleError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_aggregation_authorization::DeleteAggregationAuthorizationError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::delete_aggregation_authorization::DeleteAggregationAuthorizationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::DeleteOrganizationConformancePackError, R>>
-    for Error
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_config_rule::DeleteConfigRuleError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::DeleteOrganizationConformancePackError,
+            crate::operation::delete_config_rule::DeleteConfigRuleError,
             R,
         >,
     ) -> Self {
@@ -605,25 +389,28 @@ where
         }
     }
 }
-impl From<crate::error::DeleteOrganizationConformancePackError> for Error {
-    fn from(err: crate::error::DeleteOrganizationConformancePackError) -> Self {
+impl From<crate::operation::delete_config_rule::DeleteConfigRuleError> for Error {
+    fn from(err: crate::operation::delete_config_rule::DeleteConfigRuleError) -> Self {
         match err {
-            crate::error::DeleteOrganizationConformancePackError::NoSuchOrganizationConformancePackException(inner) => Error::NoSuchOrganizationConformancePackException(inner),
-            crate::error::DeleteOrganizationConformancePackError::OrganizationAccessDeniedException(inner) => Error::OrganizationAccessDeniedException(inner),
-            crate::error::DeleteOrganizationConformancePackError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
-            crate::error::DeleteOrganizationConformancePackError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_config_rule::DeleteConfigRuleError::NoSuchConfigRuleException(inner) => Error::NoSuchConfigRuleException(inner),
+            crate::operation::delete_config_rule::DeleteConfigRuleError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::delete_config_rule::DeleteConfigRuleError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::DeletePendingAggregationRequestError, R>>
-    for Error
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_configuration_aggregator::DeleteConfigurationAggregatorError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::DeletePendingAggregationRequestError,
+            crate::operation::delete_configuration_aggregator::DeleteConfigurationAggregatorError,
             R,
         >,
     ) -> Self {
@@ -642,27 +429,31 @@ where
         }
     }
 }
-impl From<crate::error::DeletePendingAggregationRequestError> for Error {
-    fn from(err: crate::error::DeletePendingAggregationRequestError) -> Self {
+impl From<crate::operation::delete_configuration_aggregator::DeleteConfigurationAggregatorError>
+    for Error
+{
+    fn from(
+        err: crate::operation::delete_configuration_aggregator::DeleteConfigurationAggregatorError,
+    ) -> Self {
         match err {
-            crate::error::DeletePendingAggregationRequestError::InvalidParameterValueException(
-                inner,
-            ) => Error::InvalidParameterValueException(inner),
-            crate::error::DeletePendingAggregationRequestError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::delete_configuration_aggregator::DeleteConfigurationAggregatorError::NoSuchConfigurationAggregatorException(inner) => Error::NoSuchConfigurationAggregatorException(inner),
+            crate::operation::delete_configuration_aggregator::DeleteConfigurationAggregatorError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::DeleteRemediationConfigurationError, R>>
-    for Error
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_configuration_recorder::DeleteConfigurationRecorderError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::DeleteRemediationConfigurationError,
+            crate::operation::delete_configuration_recorder::DeleteConfigurationRecorderError,
             R,
         >,
     ) -> Self {
@@ -681,24 +472,33 @@ where
         }
     }
 }
-impl From<crate::error::DeleteRemediationConfigurationError> for Error {
-    fn from(err: crate::error::DeleteRemediationConfigurationError) -> Self {
+impl From<crate::operation::delete_configuration_recorder::DeleteConfigurationRecorderError>
+    for Error
+{
+    fn from(
+        err: crate::operation::delete_configuration_recorder::DeleteConfigurationRecorderError,
+    ) -> Self {
         match err {
-            crate::error::DeleteRemediationConfigurationError::InsufficientPermissionsException(inner) => Error::InsufficientPermissionsException(inner),
-            crate::error::DeleteRemediationConfigurationError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::DeleteRemediationConfigurationError::NoSuchRemediationConfigurationException(inner) => Error::NoSuchRemediationConfigurationException(inner),
-            crate::error::DeleteRemediationConfigurationError::RemediationInProgressException(inner) => Error::RemediationInProgressException(inner),
-            crate::error::DeleteRemediationConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_configuration_recorder::DeleteConfigurationRecorderError::NoSuchConfigurationRecorderException(inner) => Error::NoSuchConfigurationRecorderException(inner),
+            crate::operation::delete_configuration_recorder::DeleteConfigurationRecorderError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteRemediationExceptionsError, R>>
-    for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_conformance_pack::DeleteConformancePackError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteRemediationExceptionsError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_conformance_pack::DeleteConformancePackError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -715,25 +515,30 @@ where
         }
     }
 }
-impl From<crate::error::DeleteRemediationExceptionsError> for Error {
-    fn from(err: crate::error::DeleteRemediationExceptionsError) -> Self {
+impl From<crate::operation::delete_conformance_pack::DeleteConformancePackError> for Error {
+    fn from(err: crate::operation::delete_conformance_pack::DeleteConformancePackError) -> Self {
         match err {
-            crate::error::DeleteRemediationExceptionsError::NoSuchRemediationExceptionException(
-                inner,
-            ) => Error::NoSuchRemediationExceptionException(inner),
-            crate::error::DeleteRemediationExceptionsError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::delete_conformance_pack::DeleteConformancePackError::NoSuchConformancePackException(inner) => Error::NoSuchConformancePackException(inner),
+            crate::operation::delete_conformance_pack::DeleteConformancePackError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::delete_conformance_pack::DeleteConformancePackError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteResourceConfigError, R>>
-    for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_delivery_channel::DeleteDeliveryChannelError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteResourceConfigError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_delivery_channel::DeleteDeliveryChannelError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -750,26 +555,2903 @@ where
         }
     }
 }
-impl From<crate::error::DeleteResourceConfigError> for Error {
-    fn from(err: crate::error::DeleteResourceConfigError) -> Self {
+impl From<crate::operation::delete_delivery_channel::DeleteDeliveryChannelError> for Error {
+    fn from(err: crate::operation::delete_delivery_channel::DeleteDeliveryChannelError) -> Self {
         match err {
-            crate::error::DeleteResourceConfigError::NoRunningConfigurationRecorderException(
+            crate::operation::delete_delivery_channel::DeleteDeliveryChannelError::LastDeliveryChannelDeleteFailedException(inner) => Error::LastDeliveryChannelDeleteFailedException(inner),
+            crate::operation::delete_delivery_channel::DeleteDeliveryChannelError::NoSuchDeliveryChannelException(inner) => Error::NoSuchDeliveryChannelException(inner),
+            crate::operation::delete_delivery_channel::DeleteDeliveryChannelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_evaluation_results::DeleteEvaluationResultsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_evaluation_results::DeleteEvaluationResultsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_evaluation_results::DeleteEvaluationResultsError> for Error {
+    fn from(
+        err: crate::operation::delete_evaluation_results::DeleteEvaluationResultsError,
+    ) -> Self {
+        match err {
+            crate::operation::delete_evaluation_results::DeleteEvaluationResultsError::NoSuchConfigRuleException(inner) => Error::NoSuchConfigRuleException(inner),
+            crate::operation::delete_evaluation_results::DeleteEvaluationResultsError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::delete_evaluation_results::DeleteEvaluationResultsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_organization_config_rule::DeleteOrganizationConfigRuleError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_organization_config_rule::DeleteOrganizationConfigRuleError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_organization_config_rule::DeleteOrganizationConfigRuleError>
+    for Error
+{
+    fn from(
+        err: crate::operation::delete_organization_config_rule::DeleteOrganizationConfigRuleError,
+    ) -> Self {
+        match err {
+            crate::operation::delete_organization_config_rule::DeleteOrganizationConfigRuleError::NoSuchOrganizationConfigRuleException(inner) => Error::NoSuchOrganizationConfigRuleException(inner),
+            crate::operation::delete_organization_config_rule::DeleteOrganizationConfigRuleError::OrganizationAccessDeniedException(inner) => Error::OrganizationAccessDeniedException(inner),
+            crate::operation::delete_organization_config_rule::DeleteOrganizationConfigRuleError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::delete_organization_config_rule::DeleteOrganizationConfigRuleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_organization_conformance_pack::DeleteOrganizationConformancePackError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_organization_conformance_pack::DeleteOrganizationConformancePackError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::delete_organization_conformance_pack::DeleteOrganizationConformancePackError> for Error {
+    fn from(err: crate::operation::delete_organization_conformance_pack::DeleteOrganizationConformancePackError) -> Self {
+        match err {
+            crate::operation::delete_organization_conformance_pack::DeleteOrganizationConformancePackError::NoSuchOrganizationConformancePackException(inner) => Error::NoSuchOrganizationConformancePackException(inner),
+            crate::operation::delete_organization_conformance_pack::DeleteOrganizationConformancePackError::OrganizationAccessDeniedException(inner) => Error::OrganizationAccessDeniedException(inner),
+            crate::operation::delete_organization_conformance_pack::DeleteOrganizationConformancePackError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::delete_organization_conformance_pack::DeleteOrganizationConformancePackError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_pending_aggregation_request::DeletePendingAggregationRequestError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_pending_aggregation_request::DeletePendingAggregationRequestError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl
+    From<crate::operation::delete_pending_aggregation_request::DeletePendingAggregationRequestError>
+    for Error
+{
+    fn from(
+        err: crate::operation::delete_pending_aggregation_request::DeletePendingAggregationRequestError,
+    ) -> Self {
+        match err {
+            crate::operation::delete_pending_aggregation_request::DeletePendingAggregationRequestError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::delete_pending_aggregation_request::DeletePendingAggregationRequestError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_remediation_configuration::DeleteRemediationConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_remediation_configuration::DeleteRemediationConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_remediation_configuration::DeleteRemediationConfigurationError>
+    for Error
+{
+    fn from(
+        err: crate::operation::delete_remediation_configuration::DeleteRemediationConfigurationError,
+    ) -> Self {
+        match err {
+            crate::operation::delete_remediation_configuration::DeleteRemediationConfigurationError::InsufficientPermissionsException(inner) => Error::InsufficientPermissionsException(inner),
+            crate::operation::delete_remediation_configuration::DeleteRemediationConfigurationError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::delete_remediation_configuration::DeleteRemediationConfigurationError::NoSuchRemediationConfigurationException(inner) => Error::NoSuchRemediationConfigurationException(inner),
+            crate::operation::delete_remediation_configuration::DeleteRemediationConfigurationError::RemediationInProgressException(inner) => Error::RemediationInProgressException(inner),
+            crate::operation::delete_remediation_configuration::DeleteRemediationConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_remediation_exceptions::DeleteRemediationExceptionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_remediation_exceptions::DeleteRemediationExceptionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_remediation_exceptions::DeleteRemediationExceptionsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::delete_remediation_exceptions::DeleteRemediationExceptionsError,
+    ) -> Self {
+        match err {
+            crate::operation::delete_remediation_exceptions::DeleteRemediationExceptionsError::NoSuchRemediationExceptionException(inner) => Error::NoSuchRemediationExceptionException(inner),
+            crate::operation::delete_remediation_exceptions::DeleteRemediationExceptionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_resource_config::DeleteResourceConfigError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_resource_config::DeleteResourceConfigError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_resource_config::DeleteResourceConfigError> for Error {
+    fn from(err: crate::operation::delete_resource_config::DeleteResourceConfigError) -> Self {
+        match err {
+            crate::operation::delete_resource_config::DeleteResourceConfigError::NoRunningConfigurationRecorderException(inner) => Error::NoRunningConfigurationRecorderException(inner),
+            crate::operation::delete_resource_config::DeleteResourceConfigError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_resource_config::DeleteResourceConfigError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_retention_configuration::DeleteRetentionConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_retention_configuration::DeleteRetentionConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_retention_configuration::DeleteRetentionConfigurationError>
+    for Error
+{
+    fn from(
+        err: crate::operation::delete_retention_configuration::DeleteRetentionConfigurationError,
+    ) -> Self {
+        match err {
+            crate::operation::delete_retention_configuration::DeleteRetentionConfigurationError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::delete_retention_configuration::DeleteRetentionConfigurationError::NoSuchRetentionConfigurationException(inner) => Error::NoSuchRetentionConfigurationException(inner),
+            crate::operation::delete_retention_configuration::DeleteRetentionConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_stored_query::DeleteStoredQueryError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_stored_query::DeleteStoredQueryError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_stored_query::DeleteStoredQueryError> for Error {
+    fn from(err: crate::operation::delete_stored_query::DeleteStoredQueryError) -> Self {
+        match err {
+            crate::operation::delete_stored_query::DeleteStoredQueryError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_stored_query::DeleteStoredQueryError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_stored_query::DeleteStoredQueryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::deliver_config_snapshot::DeliverConfigSnapshotError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::deliver_config_snapshot::DeliverConfigSnapshotError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::deliver_config_snapshot::DeliverConfigSnapshotError> for Error {
+    fn from(err: crate::operation::deliver_config_snapshot::DeliverConfigSnapshotError) -> Self {
+        match err {
+            crate::operation::deliver_config_snapshot::DeliverConfigSnapshotError::NoAvailableConfigurationRecorderException(inner) => Error::NoAvailableConfigurationRecorderException(inner),
+            crate::operation::deliver_config_snapshot::DeliverConfigSnapshotError::NoRunningConfigurationRecorderException(inner) => Error::NoRunningConfigurationRecorderException(inner),
+            crate::operation::deliver_config_snapshot::DeliverConfigSnapshotError::NoSuchDeliveryChannelException(inner) => Error::NoSuchDeliveryChannelException(inner),
+            crate::operation::deliver_config_snapshot::DeliverConfigSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::describe_aggregate_compliance_by_config_rules::DescribeAggregateComplianceByConfigRulesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::describe_aggregate_compliance_by_config_rules::DescribeAggregateComplianceByConfigRulesError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::describe_aggregate_compliance_by_config_rules::DescribeAggregateComplianceByConfigRulesError> for Error {
+    fn from(err: crate::operation::describe_aggregate_compliance_by_config_rules::DescribeAggregateComplianceByConfigRulesError) -> Self {
+        match err {
+            crate::operation::describe_aggregate_compliance_by_config_rules::DescribeAggregateComplianceByConfigRulesError::InvalidLimitException(inner) => Error::InvalidLimitException(inner),
+            crate::operation::describe_aggregate_compliance_by_config_rules::DescribeAggregateComplianceByConfigRulesError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::describe_aggregate_compliance_by_config_rules::DescribeAggregateComplianceByConfigRulesError::NoSuchConfigurationAggregatorException(inner) => Error::NoSuchConfigurationAggregatorException(inner),
+            crate::operation::describe_aggregate_compliance_by_config_rules::DescribeAggregateComplianceByConfigRulesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::describe_aggregate_compliance_by_config_rules::DescribeAggregateComplianceByConfigRulesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::describe_aggregate_compliance_by_conformance_packs::DescribeAggregateComplianceByConformancePacksError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::describe_aggregate_compliance_by_conformance_packs::DescribeAggregateComplianceByConformancePacksError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::describe_aggregate_compliance_by_conformance_packs::DescribeAggregateComplianceByConformancePacksError> for Error {
+    fn from(err: crate::operation::describe_aggregate_compliance_by_conformance_packs::DescribeAggregateComplianceByConformancePacksError) -> Self {
+        match err {
+            crate::operation::describe_aggregate_compliance_by_conformance_packs::DescribeAggregateComplianceByConformancePacksError::InvalidLimitException(inner) => Error::InvalidLimitException(inner),
+            crate::operation::describe_aggregate_compliance_by_conformance_packs::DescribeAggregateComplianceByConformancePacksError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::describe_aggregate_compliance_by_conformance_packs::DescribeAggregateComplianceByConformancePacksError::NoSuchConfigurationAggregatorException(inner) => Error::NoSuchConfigurationAggregatorException(inner),
+            crate::operation::describe_aggregate_compliance_by_conformance_packs::DescribeAggregateComplianceByConformancePacksError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::describe_aggregate_compliance_by_conformance_packs::DescribeAggregateComplianceByConformancePacksError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::describe_aggregation_authorizations::DescribeAggregationAuthorizationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::describe_aggregation_authorizations::DescribeAggregationAuthorizationsError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::describe_aggregation_authorizations::DescribeAggregationAuthorizationsError> for Error {
+    fn from(err: crate::operation::describe_aggregation_authorizations::DescribeAggregationAuthorizationsError) -> Self {
+        match err {
+            crate::operation::describe_aggregation_authorizations::DescribeAggregationAuthorizationsError::InvalidLimitException(inner) => Error::InvalidLimitException(inner),
+            crate::operation::describe_aggregation_authorizations::DescribeAggregationAuthorizationsError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::describe_aggregation_authorizations::DescribeAggregationAuthorizationsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::describe_aggregation_authorizations::DescribeAggregationAuthorizationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::describe_compliance_by_config_rule::DescribeComplianceByConfigRuleError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::describe_compliance_by_config_rule::DescribeComplianceByConfigRuleError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::describe_compliance_by_config_rule::DescribeComplianceByConfigRuleError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_compliance_by_config_rule::DescribeComplianceByConfigRuleError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_compliance_by_config_rule::DescribeComplianceByConfigRuleError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::describe_compliance_by_config_rule::DescribeComplianceByConfigRuleError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::describe_compliance_by_config_rule::DescribeComplianceByConfigRuleError::NoSuchConfigRuleException(inner) => Error::NoSuchConfigRuleException(inner),
+            crate::operation::describe_compliance_by_config_rule::DescribeComplianceByConfigRuleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_compliance_by_resource::DescribeComplianceByResourceError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_compliance_by_resource::DescribeComplianceByResourceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_compliance_by_resource::DescribeComplianceByResourceError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_compliance_by_resource::DescribeComplianceByResourceError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_compliance_by_resource::DescribeComplianceByResourceError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::describe_compliance_by_resource::DescribeComplianceByResourceError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::describe_compliance_by_resource::DescribeComplianceByResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::describe_config_rule_evaluation_status::DescribeConfigRuleEvaluationStatusError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::describe_config_rule_evaluation_status::DescribeConfigRuleEvaluationStatusError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::describe_config_rule_evaluation_status::DescribeConfigRuleEvaluationStatusError> for Error {
+    fn from(err: crate::operation::describe_config_rule_evaluation_status::DescribeConfigRuleEvaluationStatusError) -> Self {
+        match err {
+            crate::operation::describe_config_rule_evaluation_status::DescribeConfigRuleEvaluationStatusError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::describe_config_rule_evaluation_status::DescribeConfigRuleEvaluationStatusError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::describe_config_rule_evaluation_status::DescribeConfigRuleEvaluationStatusError::NoSuchConfigRuleException(inner) => Error::NoSuchConfigRuleException(inner),
+            crate::operation::describe_config_rule_evaluation_status::DescribeConfigRuleEvaluationStatusError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_config_rules::DescribeConfigRulesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_config_rules::DescribeConfigRulesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_config_rules::DescribeConfigRulesError> for Error {
+    fn from(err: crate::operation::describe_config_rules::DescribeConfigRulesError) -> Self {
+        match err {
+            crate::operation::describe_config_rules::DescribeConfigRulesError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::describe_config_rules::DescribeConfigRulesError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::describe_config_rules::DescribeConfigRulesError::NoSuchConfigRuleException(inner) => Error::NoSuchConfigRuleException(inner),
+            crate::operation::describe_config_rules::DescribeConfigRulesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::describe_configuration_aggregators::DescribeConfigurationAggregatorsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::describe_configuration_aggregators::DescribeConfigurationAggregatorsError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl
+    From<
+        crate::operation::describe_configuration_aggregators::DescribeConfigurationAggregatorsError,
+    > for Error
+{
+    fn from(
+        err: crate::operation::describe_configuration_aggregators::DescribeConfigurationAggregatorsError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_configuration_aggregators::DescribeConfigurationAggregatorsError::InvalidLimitException(inner) => Error::InvalidLimitException(inner),
+            crate::operation::describe_configuration_aggregators::DescribeConfigurationAggregatorsError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::describe_configuration_aggregators::DescribeConfigurationAggregatorsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::describe_configuration_aggregators::DescribeConfigurationAggregatorsError::NoSuchConfigurationAggregatorException(inner) => Error::NoSuchConfigurationAggregatorException(inner),
+            crate::operation::describe_configuration_aggregators::DescribeConfigurationAggregatorsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::describe_configuration_aggregator_sources_status::DescribeConfigurationAggregatorSourcesStatusError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::describe_configuration_aggregator_sources_status::DescribeConfigurationAggregatorSourcesStatusError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::describe_configuration_aggregator_sources_status::DescribeConfigurationAggregatorSourcesStatusError> for Error {
+    fn from(err: crate::operation::describe_configuration_aggregator_sources_status::DescribeConfigurationAggregatorSourcesStatusError) -> Self {
+        match err {
+            crate::operation::describe_configuration_aggregator_sources_status::DescribeConfigurationAggregatorSourcesStatusError::InvalidLimitException(inner) => Error::InvalidLimitException(inner),
+            crate::operation::describe_configuration_aggregator_sources_status::DescribeConfigurationAggregatorSourcesStatusError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::describe_configuration_aggregator_sources_status::DescribeConfigurationAggregatorSourcesStatusError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::describe_configuration_aggregator_sources_status::DescribeConfigurationAggregatorSourcesStatusError::NoSuchConfigurationAggregatorException(inner) => Error::NoSuchConfigurationAggregatorException(inner),
+            crate::operation::describe_configuration_aggregator_sources_status::DescribeConfigurationAggregatorSourcesStatusError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_configuration_recorders::DescribeConfigurationRecordersError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_configuration_recorders::DescribeConfigurationRecordersError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_configuration_recorders::DescribeConfigurationRecordersError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_configuration_recorders::DescribeConfigurationRecordersError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_configuration_recorders::DescribeConfigurationRecordersError::NoSuchConfigurationRecorderException(inner) => Error::NoSuchConfigurationRecorderException(inner),
+            crate::operation::describe_configuration_recorders::DescribeConfigurationRecordersError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::describe_configuration_recorder_status::DescribeConfigurationRecorderStatusError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::describe_configuration_recorder_status::DescribeConfigurationRecorderStatusError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::describe_configuration_recorder_status::DescribeConfigurationRecorderStatusError> for Error {
+    fn from(err: crate::operation::describe_configuration_recorder_status::DescribeConfigurationRecorderStatusError) -> Self {
+        match err {
+            crate::operation::describe_configuration_recorder_status::DescribeConfigurationRecorderStatusError::NoSuchConfigurationRecorderException(inner) => Error::NoSuchConfigurationRecorderException(inner),
+            crate::operation::describe_configuration_recorder_status::DescribeConfigurationRecorderStatusError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::describe_conformance_pack_compliance::DescribeConformancePackComplianceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::describe_conformance_pack_compliance::DescribeConformancePackComplianceError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::describe_conformance_pack_compliance::DescribeConformancePackComplianceError> for Error {
+    fn from(err: crate::operation::describe_conformance_pack_compliance::DescribeConformancePackComplianceError) -> Self {
+        match err {
+            crate::operation::describe_conformance_pack_compliance::DescribeConformancePackComplianceError::InvalidLimitException(inner) => Error::InvalidLimitException(inner),
+            crate::operation::describe_conformance_pack_compliance::DescribeConformancePackComplianceError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::describe_conformance_pack_compliance::DescribeConformancePackComplianceError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::describe_conformance_pack_compliance::DescribeConformancePackComplianceError::NoSuchConfigRuleInConformancePackException(inner) => Error::NoSuchConfigRuleInConformancePackException(inner),
+            crate::operation::describe_conformance_pack_compliance::DescribeConformancePackComplianceError::NoSuchConformancePackException(inner) => Error::NoSuchConformancePackException(inner),
+            crate::operation::describe_conformance_pack_compliance::DescribeConformancePackComplianceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_conformance_packs::DescribeConformancePacksError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_conformance_packs::DescribeConformancePacksError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_conformance_packs::DescribeConformancePacksError> for Error {
+    fn from(
+        err: crate::operation::describe_conformance_packs::DescribeConformancePacksError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_conformance_packs::DescribeConformancePacksError::InvalidLimitException(inner) => Error::InvalidLimitException(inner),
+            crate::operation::describe_conformance_packs::DescribeConformancePacksError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::describe_conformance_packs::DescribeConformancePacksError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::describe_conformance_packs::DescribeConformancePacksError::NoSuchConformancePackException(inner) => Error::NoSuchConformancePackException(inner),
+            crate::operation::describe_conformance_packs::DescribeConformancePacksError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_conformance_pack_status::DescribeConformancePackStatusError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_conformance_pack_status::DescribeConformancePackStatusError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_conformance_pack_status::DescribeConformancePackStatusError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_conformance_pack_status::DescribeConformancePackStatusError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_conformance_pack_status::DescribeConformancePackStatusError::InvalidLimitException(inner) => Error::InvalidLimitException(inner),
+            crate::operation::describe_conformance_pack_status::DescribeConformancePackStatusError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::describe_conformance_pack_status::DescribeConformancePackStatusError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::describe_conformance_pack_status::DescribeConformancePackStatusError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_delivery_channels::DescribeDeliveryChannelsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_delivery_channels::DescribeDeliveryChannelsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_delivery_channels::DescribeDeliveryChannelsError> for Error {
+    fn from(
+        err: crate::operation::describe_delivery_channels::DescribeDeliveryChannelsError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_delivery_channels::DescribeDeliveryChannelsError::NoSuchDeliveryChannelException(inner) => Error::NoSuchDeliveryChannelException(inner),
+            crate::operation::describe_delivery_channels::DescribeDeliveryChannelsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_delivery_channel_status::DescribeDeliveryChannelStatusError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_delivery_channel_status::DescribeDeliveryChannelStatusError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_delivery_channel_status::DescribeDeliveryChannelStatusError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_delivery_channel_status::DescribeDeliveryChannelStatusError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_delivery_channel_status::DescribeDeliveryChannelStatusError::NoSuchDeliveryChannelException(inner) => Error::NoSuchDeliveryChannelException(inner),
+            crate::operation::describe_delivery_channel_status::DescribeDeliveryChannelStatusError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::describe_organization_config_rules::DescribeOrganizationConfigRulesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::describe_organization_config_rules::DescribeOrganizationConfigRulesError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl
+    From<crate::operation::describe_organization_config_rules::DescribeOrganizationConfigRulesError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_organization_config_rules::DescribeOrganizationConfigRulesError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_organization_config_rules::DescribeOrganizationConfigRulesError::InvalidLimitException(inner) => Error::InvalidLimitException(inner),
+            crate::operation::describe_organization_config_rules::DescribeOrganizationConfigRulesError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::describe_organization_config_rules::DescribeOrganizationConfigRulesError::NoSuchOrganizationConfigRuleException(inner) => Error::NoSuchOrganizationConfigRuleException(inner),
+            crate::operation::describe_organization_config_rules::DescribeOrganizationConfigRulesError::OrganizationAccessDeniedException(inner) => Error::OrganizationAccessDeniedException(inner),
+            crate::operation::describe_organization_config_rules::DescribeOrganizationConfigRulesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::describe_organization_config_rule_statuses::DescribeOrganizationConfigRuleStatusesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::describe_organization_config_rule_statuses::DescribeOrganizationConfigRuleStatusesError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::describe_organization_config_rule_statuses::DescribeOrganizationConfigRuleStatusesError> for Error {
+    fn from(err: crate::operation::describe_organization_config_rule_statuses::DescribeOrganizationConfigRuleStatusesError) -> Self {
+        match err {
+            crate::operation::describe_organization_config_rule_statuses::DescribeOrganizationConfigRuleStatusesError::InvalidLimitException(inner) => Error::InvalidLimitException(inner),
+            crate::operation::describe_organization_config_rule_statuses::DescribeOrganizationConfigRuleStatusesError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::describe_organization_config_rule_statuses::DescribeOrganizationConfigRuleStatusesError::NoSuchOrganizationConfigRuleException(inner) => Error::NoSuchOrganizationConfigRuleException(inner),
+            crate::operation::describe_organization_config_rule_statuses::DescribeOrganizationConfigRuleStatusesError::OrganizationAccessDeniedException(inner) => Error::OrganizationAccessDeniedException(inner),
+            crate::operation::describe_organization_config_rule_statuses::DescribeOrganizationConfigRuleStatusesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::describe_organization_conformance_packs::DescribeOrganizationConformancePacksError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::describe_organization_conformance_packs::DescribeOrganizationConformancePacksError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::describe_organization_conformance_packs::DescribeOrganizationConformancePacksError> for Error {
+    fn from(err: crate::operation::describe_organization_conformance_packs::DescribeOrganizationConformancePacksError) -> Self {
+        match err {
+            crate::operation::describe_organization_conformance_packs::DescribeOrganizationConformancePacksError::InvalidLimitException(inner) => Error::InvalidLimitException(inner),
+            crate::operation::describe_organization_conformance_packs::DescribeOrganizationConformancePacksError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::describe_organization_conformance_packs::DescribeOrganizationConformancePacksError::NoSuchOrganizationConformancePackException(inner) => Error::NoSuchOrganizationConformancePackException(inner),
+            crate::operation::describe_organization_conformance_packs::DescribeOrganizationConformancePacksError::OrganizationAccessDeniedException(inner) => Error::OrganizationAccessDeniedException(inner),
+            crate::operation::describe_organization_conformance_packs::DescribeOrganizationConformancePacksError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::describe_organization_conformance_pack_statuses::DescribeOrganizationConformancePackStatusesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::describe_organization_conformance_pack_statuses::DescribeOrganizationConformancePackStatusesError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::describe_organization_conformance_pack_statuses::DescribeOrganizationConformancePackStatusesError> for Error {
+    fn from(err: crate::operation::describe_organization_conformance_pack_statuses::DescribeOrganizationConformancePackStatusesError) -> Self {
+        match err {
+            crate::operation::describe_organization_conformance_pack_statuses::DescribeOrganizationConformancePackStatusesError::InvalidLimitException(inner) => Error::InvalidLimitException(inner),
+            crate::operation::describe_organization_conformance_pack_statuses::DescribeOrganizationConformancePackStatusesError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::describe_organization_conformance_pack_statuses::DescribeOrganizationConformancePackStatusesError::NoSuchOrganizationConformancePackException(inner) => Error::NoSuchOrganizationConformancePackException(inner),
+            crate::operation::describe_organization_conformance_pack_statuses::DescribeOrganizationConformancePackStatusesError::OrganizationAccessDeniedException(inner) => Error::OrganizationAccessDeniedException(inner),
+            crate::operation::describe_organization_conformance_pack_statuses::DescribeOrganizationConformancePackStatusesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::describe_pending_aggregation_requests::DescribePendingAggregationRequestsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::describe_pending_aggregation_requests::DescribePendingAggregationRequestsError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::describe_pending_aggregation_requests::DescribePendingAggregationRequestsError> for Error {
+    fn from(err: crate::operation::describe_pending_aggregation_requests::DescribePendingAggregationRequestsError) -> Self {
+        match err {
+            crate::operation::describe_pending_aggregation_requests::DescribePendingAggregationRequestsError::InvalidLimitException(inner) => Error::InvalidLimitException(inner),
+            crate::operation::describe_pending_aggregation_requests::DescribePendingAggregationRequestsError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::describe_pending_aggregation_requests::DescribePendingAggregationRequestsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::describe_pending_aggregation_requests::DescribePendingAggregationRequestsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::describe_remediation_configurations::DescribeRemediationConfigurationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::describe_remediation_configurations::DescribeRemediationConfigurationsError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::describe_remediation_configurations::DescribeRemediationConfigurationsError> for Error {
+    fn from(err: crate::operation::describe_remediation_configurations::DescribeRemediationConfigurationsError) -> Self {
+        match err {
+            crate::operation::describe_remediation_configurations::DescribeRemediationConfigurationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_remediation_exceptions::DescribeRemediationExceptionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_remediation_exceptions::DescribeRemediationExceptionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_remediation_exceptions::DescribeRemediationExceptionsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_remediation_exceptions::DescribeRemediationExceptionsError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_remediation_exceptions::DescribeRemediationExceptionsError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::describe_remediation_exceptions::DescribeRemediationExceptionsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::describe_remediation_exceptions::DescribeRemediationExceptionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::describe_remediation_execution_status::DescribeRemediationExecutionStatusError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::describe_remediation_execution_status::DescribeRemediationExecutionStatusError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::describe_remediation_execution_status::DescribeRemediationExecutionStatusError> for Error {
+    fn from(err: crate::operation::describe_remediation_execution_status::DescribeRemediationExecutionStatusError) -> Self {
+        match err {
+            crate::operation::describe_remediation_execution_status::DescribeRemediationExecutionStatusError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::describe_remediation_execution_status::DescribeRemediationExecutionStatusError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::describe_remediation_execution_status::DescribeRemediationExecutionStatusError::NoSuchRemediationConfigurationException(inner) => Error::NoSuchRemediationConfigurationException(inner),
+            crate::operation::describe_remediation_execution_status::DescribeRemediationExecutionStatusError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::describe_retention_configurations::DescribeRetentionConfigurationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::describe_retention_configurations::DescribeRetentionConfigurationsError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::describe_retention_configurations::DescribeRetentionConfigurationsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_retention_configurations::DescribeRetentionConfigurationsError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_retention_configurations::DescribeRetentionConfigurationsError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::describe_retention_configurations::DescribeRetentionConfigurationsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::describe_retention_configurations::DescribeRetentionConfigurationsError::NoSuchRetentionConfigurationException(inner) => Error::NoSuchRetentionConfigurationException(inner),
+            crate::operation::describe_retention_configurations::DescribeRetentionConfigurationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_aggregate_compliance_details_by_config_rule::GetAggregateComplianceDetailsByConfigRuleError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_aggregate_compliance_details_by_config_rule::GetAggregateComplianceDetailsByConfigRuleError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::get_aggregate_compliance_details_by_config_rule::GetAggregateComplianceDetailsByConfigRuleError> for Error {
+    fn from(err: crate::operation::get_aggregate_compliance_details_by_config_rule::GetAggregateComplianceDetailsByConfigRuleError) -> Self {
+        match err {
+            crate::operation::get_aggregate_compliance_details_by_config_rule::GetAggregateComplianceDetailsByConfigRuleError::InvalidLimitException(inner) => Error::InvalidLimitException(inner),
+            crate::operation::get_aggregate_compliance_details_by_config_rule::GetAggregateComplianceDetailsByConfigRuleError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::get_aggregate_compliance_details_by_config_rule::GetAggregateComplianceDetailsByConfigRuleError::NoSuchConfigurationAggregatorException(inner) => Error::NoSuchConfigurationAggregatorException(inner),
+            crate::operation::get_aggregate_compliance_details_by_config_rule::GetAggregateComplianceDetailsByConfigRuleError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_aggregate_compliance_details_by_config_rule::GetAggregateComplianceDetailsByConfigRuleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_aggregate_config_rule_compliance_summary::GetAggregateConfigRuleComplianceSummaryError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_aggregate_config_rule_compliance_summary::GetAggregateConfigRuleComplianceSummaryError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::get_aggregate_config_rule_compliance_summary::GetAggregateConfigRuleComplianceSummaryError> for Error {
+    fn from(err: crate::operation::get_aggregate_config_rule_compliance_summary::GetAggregateConfigRuleComplianceSummaryError) -> Self {
+        match err {
+            crate::operation::get_aggregate_config_rule_compliance_summary::GetAggregateConfigRuleComplianceSummaryError::InvalidLimitException(inner) => Error::InvalidLimitException(inner),
+            crate::operation::get_aggregate_config_rule_compliance_summary::GetAggregateConfigRuleComplianceSummaryError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::get_aggregate_config_rule_compliance_summary::GetAggregateConfigRuleComplianceSummaryError::NoSuchConfigurationAggregatorException(inner) => Error::NoSuchConfigurationAggregatorException(inner),
+            crate::operation::get_aggregate_config_rule_compliance_summary::GetAggregateConfigRuleComplianceSummaryError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_aggregate_config_rule_compliance_summary::GetAggregateConfigRuleComplianceSummaryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_aggregate_conformance_pack_compliance_summary::GetAggregateConformancePackComplianceSummaryError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_aggregate_conformance_pack_compliance_summary::GetAggregateConformancePackComplianceSummaryError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::get_aggregate_conformance_pack_compliance_summary::GetAggregateConformancePackComplianceSummaryError> for Error {
+    fn from(err: crate::operation::get_aggregate_conformance_pack_compliance_summary::GetAggregateConformancePackComplianceSummaryError) -> Self {
+        match err {
+            crate::operation::get_aggregate_conformance_pack_compliance_summary::GetAggregateConformancePackComplianceSummaryError::InvalidLimitException(inner) => Error::InvalidLimitException(inner),
+            crate::operation::get_aggregate_conformance_pack_compliance_summary::GetAggregateConformancePackComplianceSummaryError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::get_aggregate_conformance_pack_compliance_summary::GetAggregateConformancePackComplianceSummaryError::NoSuchConfigurationAggregatorException(inner) => Error::NoSuchConfigurationAggregatorException(inner),
+            crate::operation::get_aggregate_conformance_pack_compliance_summary::GetAggregateConformancePackComplianceSummaryError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_aggregate_conformance_pack_compliance_summary::GetAggregateConformancePackComplianceSummaryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_aggregate_discovered_resource_counts::GetAggregateDiscoveredResourceCountsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_aggregate_discovered_resource_counts::GetAggregateDiscoveredResourceCountsError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::get_aggregate_discovered_resource_counts::GetAggregateDiscoveredResourceCountsError> for Error {
+    fn from(err: crate::operation::get_aggregate_discovered_resource_counts::GetAggregateDiscoveredResourceCountsError) -> Self {
+        match err {
+            crate::operation::get_aggregate_discovered_resource_counts::GetAggregateDiscoveredResourceCountsError::InvalidLimitException(inner) => Error::InvalidLimitException(inner),
+            crate::operation::get_aggregate_discovered_resource_counts::GetAggregateDiscoveredResourceCountsError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::get_aggregate_discovered_resource_counts::GetAggregateDiscoveredResourceCountsError::NoSuchConfigurationAggregatorException(inner) => Error::NoSuchConfigurationAggregatorException(inner),
+            crate::operation::get_aggregate_discovered_resource_counts::GetAggregateDiscoveredResourceCountsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_aggregate_discovered_resource_counts::GetAggregateDiscoveredResourceCountsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_aggregate_resource_config::GetAggregateResourceConfigError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_aggregate_resource_config::GetAggregateResourceConfigError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_aggregate_resource_config::GetAggregateResourceConfigError>
+    for Error
+{
+    fn from(
+        err: crate::operation::get_aggregate_resource_config::GetAggregateResourceConfigError,
+    ) -> Self {
+        match err {
+            crate::operation::get_aggregate_resource_config::GetAggregateResourceConfigError::NoSuchConfigurationAggregatorException(inner) => Error::NoSuchConfigurationAggregatorException(inner),
+            crate::operation::get_aggregate_resource_config::GetAggregateResourceConfigError::OversizedConfigurationItemException(inner) => Error::OversizedConfigurationItemException(inner),
+            crate::operation::get_aggregate_resource_config::GetAggregateResourceConfigError::ResourceNotDiscoveredException(inner) => Error::ResourceNotDiscoveredException(inner),
+            crate::operation::get_aggregate_resource_config::GetAggregateResourceConfigError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_aggregate_resource_config::GetAggregateResourceConfigError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_compliance_details_by_config_rule::GetComplianceDetailsByConfigRuleError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_compliance_details_by_config_rule::GetComplianceDetailsByConfigRuleError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::get_compliance_details_by_config_rule::GetComplianceDetailsByConfigRuleError> for Error {
+    fn from(err: crate::operation::get_compliance_details_by_config_rule::GetComplianceDetailsByConfigRuleError) -> Self {
+        match err {
+            crate::operation::get_compliance_details_by_config_rule::GetComplianceDetailsByConfigRuleError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::get_compliance_details_by_config_rule::GetComplianceDetailsByConfigRuleError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::get_compliance_details_by_config_rule::GetComplianceDetailsByConfigRuleError::NoSuchConfigRuleException(inner) => Error::NoSuchConfigRuleException(inner),
+            crate::operation::get_compliance_details_by_config_rule::GetComplianceDetailsByConfigRuleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_compliance_details_by_resource::GetComplianceDetailsByResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_compliance_details_by_resource::GetComplianceDetailsByResourceError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::get_compliance_details_by_resource::GetComplianceDetailsByResourceError>
+    for Error
+{
+    fn from(
+        err: crate::operation::get_compliance_details_by_resource::GetComplianceDetailsByResourceError,
+    ) -> Self {
+        match err {
+            crate::operation::get_compliance_details_by_resource::GetComplianceDetailsByResourceError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::get_compliance_details_by_resource::GetComplianceDetailsByResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_compliance_summary_by_config_rule::GetComplianceSummaryByConfigRuleError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_compliance_summary_by_config_rule::GetComplianceSummaryByConfigRuleError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::get_compliance_summary_by_config_rule::GetComplianceSummaryByConfigRuleError> for Error {
+    fn from(err: crate::operation::get_compliance_summary_by_config_rule::GetComplianceSummaryByConfigRuleError) -> Self {
+        match err {
+            crate::operation::get_compliance_summary_by_config_rule::GetComplianceSummaryByConfigRuleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_compliance_summary_by_resource_type::GetComplianceSummaryByResourceTypeError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_compliance_summary_by_resource_type::GetComplianceSummaryByResourceTypeError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::get_compliance_summary_by_resource_type::GetComplianceSummaryByResourceTypeError> for Error {
+    fn from(err: crate::operation::get_compliance_summary_by_resource_type::GetComplianceSummaryByResourceTypeError) -> Self {
+        match err {
+            crate::operation::get_compliance_summary_by_resource_type::GetComplianceSummaryByResourceTypeError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::get_compliance_summary_by_resource_type::GetComplianceSummaryByResourceTypeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_conformance_pack_compliance_details::GetConformancePackComplianceDetailsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_conformance_pack_compliance_details::GetConformancePackComplianceDetailsError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::get_conformance_pack_compliance_details::GetConformancePackComplianceDetailsError> for Error {
+    fn from(err: crate::operation::get_conformance_pack_compliance_details::GetConformancePackComplianceDetailsError) -> Self {
+        match err {
+            crate::operation::get_conformance_pack_compliance_details::GetConformancePackComplianceDetailsError::InvalidLimitException(inner) => Error::InvalidLimitException(inner),
+            crate::operation::get_conformance_pack_compliance_details::GetConformancePackComplianceDetailsError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::get_conformance_pack_compliance_details::GetConformancePackComplianceDetailsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::get_conformance_pack_compliance_details::GetConformancePackComplianceDetailsError::NoSuchConfigRuleInConformancePackException(inner) => Error::NoSuchConfigRuleInConformancePackException(inner),
+            crate::operation::get_conformance_pack_compliance_details::GetConformancePackComplianceDetailsError::NoSuchConformancePackException(inner) => Error::NoSuchConformancePackException(inner),
+            crate::operation::get_conformance_pack_compliance_details::GetConformancePackComplianceDetailsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_conformance_pack_compliance_summary::GetConformancePackComplianceSummaryError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_conformance_pack_compliance_summary::GetConformancePackComplianceSummaryError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::get_conformance_pack_compliance_summary::GetConformancePackComplianceSummaryError> for Error {
+    fn from(err: crate::operation::get_conformance_pack_compliance_summary::GetConformancePackComplianceSummaryError) -> Self {
+        match err {
+            crate::operation::get_conformance_pack_compliance_summary::GetConformancePackComplianceSummaryError::InvalidLimitException(inner) => Error::InvalidLimitException(inner),
+            crate::operation::get_conformance_pack_compliance_summary::GetConformancePackComplianceSummaryError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::get_conformance_pack_compliance_summary::GetConformancePackComplianceSummaryError::NoSuchConformancePackException(inner) => Error::NoSuchConformancePackException(inner),
+            crate::operation::get_conformance_pack_compliance_summary::GetConformancePackComplianceSummaryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_custom_rule_policy::GetCustomRulePolicyError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_custom_rule_policy::GetCustomRulePolicyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_custom_rule_policy::GetCustomRulePolicyError> for Error {
+    fn from(err: crate::operation::get_custom_rule_policy::GetCustomRulePolicyError) -> Self {
+        match err {
+            crate::operation::get_custom_rule_policy::GetCustomRulePolicyError::NoSuchConfigRuleException(inner) => Error::NoSuchConfigRuleException(inner),
+            crate::operation::get_custom_rule_policy::GetCustomRulePolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCountsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCountsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCountsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCountsError,
+    ) -> Self {
+        match err {
+            crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCountsError::InvalidLimitException(inner) => Error::InvalidLimitException(inner),
+            crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCountsError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCountsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCountsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_organization_config_rule_detailed_status::GetOrganizationConfigRuleDetailedStatusError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_organization_config_rule_detailed_status::GetOrganizationConfigRuleDetailedStatusError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::get_organization_config_rule_detailed_status::GetOrganizationConfigRuleDetailedStatusError> for Error {
+    fn from(err: crate::operation::get_organization_config_rule_detailed_status::GetOrganizationConfigRuleDetailedStatusError) -> Self {
+        match err {
+            crate::operation::get_organization_config_rule_detailed_status::GetOrganizationConfigRuleDetailedStatusError::InvalidLimitException(inner) => Error::InvalidLimitException(inner),
+            crate::operation::get_organization_config_rule_detailed_status::GetOrganizationConfigRuleDetailedStatusError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::get_organization_config_rule_detailed_status::GetOrganizationConfigRuleDetailedStatusError::NoSuchOrganizationConfigRuleException(inner) => Error::NoSuchOrganizationConfigRuleException(inner),
+            crate::operation::get_organization_config_rule_detailed_status::GetOrganizationConfigRuleDetailedStatusError::OrganizationAccessDeniedException(inner) => Error::OrganizationAccessDeniedException(inner),
+            crate::operation::get_organization_config_rule_detailed_status::GetOrganizationConfigRuleDetailedStatusError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_organization_conformance_pack_detailed_status::GetOrganizationConformancePackDetailedStatusError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_organization_conformance_pack_detailed_status::GetOrganizationConformancePackDetailedStatusError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::get_organization_conformance_pack_detailed_status::GetOrganizationConformancePackDetailedStatusError> for Error {
+    fn from(err: crate::operation::get_organization_conformance_pack_detailed_status::GetOrganizationConformancePackDetailedStatusError) -> Self {
+        match err {
+            crate::operation::get_organization_conformance_pack_detailed_status::GetOrganizationConformancePackDetailedStatusError::InvalidLimitException(inner) => Error::InvalidLimitException(inner),
+            crate::operation::get_organization_conformance_pack_detailed_status::GetOrganizationConformancePackDetailedStatusError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::get_organization_conformance_pack_detailed_status::GetOrganizationConformancePackDetailedStatusError::NoSuchOrganizationConformancePackException(inner) => Error::NoSuchOrganizationConformancePackException(inner),
+            crate::operation::get_organization_conformance_pack_detailed_status::GetOrganizationConformancePackDetailedStatusError::OrganizationAccessDeniedException(inner) => Error::OrganizationAccessDeniedException(inner),
+            crate::operation::get_organization_conformance_pack_detailed_status::GetOrganizationConformancePackDetailedStatusError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_organization_custom_rule_policy::GetOrganizationCustomRulePolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_organization_custom_rule_policy::GetOrganizationCustomRulePolicyError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl
+    From<
+        crate::operation::get_organization_custom_rule_policy::GetOrganizationCustomRulePolicyError,
+    > for Error
+{
+    fn from(
+        err: crate::operation::get_organization_custom_rule_policy::GetOrganizationCustomRulePolicyError,
+    ) -> Self {
+        match err {
+            crate::operation::get_organization_custom_rule_policy::GetOrganizationCustomRulePolicyError::NoSuchOrganizationConfigRuleException(inner) => Error::NoSuchOrganizationConfigRuleException(inner),
+            crate::operation::get_organization_custom_rule_policy::GetOrganizationCustomRulePolicyError::OrganizationAccessDeniedException(inner) => Error::OrganizationAccessDeniedException(inner),
+            crate::operation::get_organization_custom_rule_policy::GetOrganizationCustomRulePolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_resource_config_history::GetResourceConfigHistoryError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_resource_config_history::GetResourceConfigHistoryError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_resource_config_history::GetResourceConfigHistoryError> for Error {
+    fn from(
+        err: crate::operation::get_resource_config_history::GetResourceConfigHistoryError,
+    ) -> Self {
+        match err {
+            crate::operation::get_resource_config_history::GetResourceConfigHistoryError::InvalidLimitException(inner) => Error::InvalidLimitException(inner),
+            crate::operation::get_resource_config_history::GetResourceConfigHistoryError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::get_resource_config_history::GetResourceConfigHistoryError::InvalidTimeRangeException(inner) => Error::InvalidTimeRangeException(inner),
+            crate::operation::get_resource_config_history::GetResourceConfigHistoryError::NoAvailableConfigurationRecorderException(inner) => Error::NoAvailableConfigurationRecorderException(inner),
+            crate::operation::get_resource_config_history::GetResourceConfigHistoryError::ResourceNotDiscoveredException(inner) => Error::ResourceNotDiscoveredException(inner),
+            crate::operation::get_resource_config_history::GetResourceConfigHistoryError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_resource_config_history::GetResourceConfigHistoryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_resource_evaluation_summary::GetResourceEvaluationSummaryError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_resource_evaluation_summary::GetResourceEvaluationSummaryError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_resource_evaluation_summary::GetResourceEvaluationSummaryError>
+    for Error
+{
+    fn from(
+        err: crate::operation::get_resource_evaluation_summary::GetResourceEvaluationSummaryError,
+    ) -> Self {
+        match err {
+            crate::operation::get_resource_evaluation_summary::GetResourceEvaluationSummaryError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_resource_evaluation_summary::GetResourceEvaluationSummaryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_stored_query::GetStoredQueryError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_stored_query::GetStoredQueryError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_stored_query::GetStoredQueryError> for Error {
+    fn from(err: crate::operation::get_stored_query::GetStoredQueryError) -> Self {
+        match err {
+            crate::operation::get_stored_query::GetStoredQueryError::ResourceNotFoundException(
                 inner,
-            ) => Error::NoRunningConfigurationRecorderException(inner),
-            crate::error::DeleteResourceConfigError::ValidationException(inner) => {
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_stored_query::GetStoredQueryError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
-            crate::error::DeleteResourceConfigError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_stored_query::GetStoredQueryError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteRetentionConfigurationError, R>>
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_aggregate_discovered_resources::ListAggregateDiscoveredResourcesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_aggregate_discovered_resources::ListAggregateDiscoveredResourcesError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::list_aggregate_discovered_resources::ListAggregateDiscoveredResourcesError> for Error {
+    fn from(err: crate::operation::list_aggregate_discovered_resources::ListAggregateDiscoveredResourcesError) -> Self {
+        match err {
+            crate::operation::list_aggregate_discovered_resources::ListAggregateDiscoveredResourcesError::InvalidLimitException(inner) => Error::InvalidLimitException(inner),
+            crate::operation::list_aggregate_discovered_resources::ListAggregateDiscoveredResourcesError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::list_aggregate_discovered_resources::ListAggregateDiscoveredResourcesError::NoSuchConfigurationAggregatorException(inner) => Error::NoSuchConfigurationAggregatorException(inner),
+            crate::operation::list_aggregate_discovered_resources::ListAggregateDiscoveredResourcesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_aggregate_discovered_resources::ListAggregateDiscoveredResourcesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_conformance_pack_compliance_scores::ListConformancePackComplianceScoresError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_conformance_pack_compliance_scores::ListConformancePackComplianceScoresError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::list_conformance_pack_compliance_scores::ListConformancePackComplianceScoresError> for Error {
+    fn from(err: crate::operation::list_conformance_pack_compliance_scores::ListConformancePackComplianceScoresError) -> Self {
+        match err {
+            crate::operation::list_conformance_pack_compliance_scores::ListConformancePackComplianceScoresError::InvalidLimitException(inner) => Error::InvalidLimitException(inner),
+            crate::operation::list_conformance_pack_compliance_scores::ListConformancePackComplianceScoresError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::list_conformance_pack_compliance_scores::ListConformancePackComplianceScoresError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::list_conformance_pack_compliance_scores::ListConformancePackComplianceScoresError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_discovered_resources::ListDiscoveredResourcesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_discovered_resources::ListDiscoveredResourcesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_discovered_resources::ListDiscoveredResourcesError> for Error {
+    fn from(
+        err: crate::operation::list_discovered_resources::ListDiscoveredResourcesError,
+    ) -> Self {
+        match err {
+            crate::operation::list_discovered_resources::ListDiscoveredResourcesError::InvalidLimitException(inner) => Error::InvalidLimitException(inner),
+            crate::operation::list_discovered_resources::ListDiscoveredResourcesError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::list_discovered_resources::ListDiscoveredResourcesError::NoAvailableConfigurationRecorderException(inner) => Error::NoAvailableConfigurationRecorderException(inner),
+            crate::operation::list_discovered_resources::ListDiscoveredResourcesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_discovered_resources::ListDiscoveredResourcesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_resource_evaluations::ListResourceEvaluationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_resource_evaluations::ListResourceEvaluationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_resource_evaluations::ListResourceEvaluationsError> for Error {
+    fn from(
+        err: crate::operation::list_resource_evaluations::ListResourceEvaluationsError,
+    ) -> Self {
+        match err {
+            crate::operation::list_resource_evaluations::ListResourceEvaluationsError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::list_resource_evaluations::ListResourceEvaluationsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::list_resource_evaluations::ListResourceEvaluationsError::InvalidTimeRangeException(inner) => Error::InvalidTimeRangeException(inner),
+            crate::operation::list_resource_evaluations::ListResourceEvaluationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_stored_queries::ListStoredQueriesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_stored_queries::ListStoredQueriesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_stored_queries::ListStoredQueriesError> for Error {
+    fn from(err: crate::operation::list_stored_queries::ListStoredQueriesError) -> Self {
+        match err {
+            crate::operation::list_stored_queries::ListStoredQueriesError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::list_stored_queries::ListStoredQueriesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_stored_queries::ListStoredQueriesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_tags_for_resource::ListTagsForResourceError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_tags_for_resource::ListTagsForResourceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> for Error {
+    fn from(err: crate::operation::list_tags_for_resource::ListTagsForResourceError) -> Self {
+        match err {
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::InvalidLimitException(inner) => Error::InvalidLimitException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::put_aggregation_authorization::PutAggregationAuthorizationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::put_aggregation_authorization::PutAggregationAuthorizationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::put_aggregation_authorization::PutAggregationAuthorizationError>
+    for Error
+{
+    fn from(
+        err: crate::operation::put_aggregation_authorization::PutAggregationAuthorizationError,
+    ) -> Self {
+        match err {
+            crate::operation::put_aggregation_authorization::PutAggregationAuthorizationError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::put_aggregation_authorization::PutAggregationAuthorizationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<crate::operation::put_config_rule::PutConfigRuleError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::put_config_rule::PutConfigRuleError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::put_config_rule::PutConfigRuleError> for Error {
+    fn from(err: crate::operation::put_config_rule::PutConfigRuleError) -> Self {
+        match err {
+            crate::operation::put_config_rule::PutConfigRuleError::InsufficientPermissionsException(inner) => Error::InsufficientPermissionsException(inner),
+            crate::operation::put_config_rule::PutConfigRuleError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::put_config_rule::PutConfigRuleError::MaxNumberOfConfigRulesExceededException(inner) => Error::MaxNumberOfConfigRulesExceededException(inner),
+            crate::operation::put_config_rule::PutConfigRuleError::NoAvailableConfigurationRecorderException(inner) => Error::NoAvailableConfigurationRecorderException(inner),
+            crate::operation::put_config_rule::PutConfigRuleError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::put_config_rule::PutConfigRuleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::put_configuration_aggregator::PutConfigurationAggregatorError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::put_configuration_aggregator::PutConfigurationAggregatorError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::put_configuration_aggregator::PutConfigurationAggregatorError>
+    for Error
+{
+    fn from(
+        err: crate::operation::put_configuration_aggregator::PutConfigurationAggregatorError,
+    ) -> Self {
+        match err {
+            crate::operation::put_configuration_aggregator::PutConfigurationAggregatorError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::put_configuration_aggregator::PutConfigurationAggregatorError::InvalidRoleException(inner) => Error::InvalidRoleException(inner),
+            crate::operation::put_configuration_aggregator::PutConfigurationAggregatorError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::put_configuration_aggregator::PutConfigurationAggregatorError::NoAvailableOrganizationException(inner) => Error::NoAvailableOrganizationException(inner),
+            crate::operation::put_configuration_aggregator::PutConfigurationAggregatorError::OrganizationAccessDeniedException(inner) => Error::OrganizationAccessDeniedException(inner),
+            crate::operation::put_configuration_aggregator::PutConfigurationAggregatorError::OrganizationAllFeaturesNotEnabledException(inner) => Error::OrganizationAllFeaturesNotEnabledException(inner),
+            crate::operation::put_configuration_aggregator::PutConfigurationAggregatorError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::put_configuration_recorder::PutConfigurationRecorderError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::put_configuration_recorder::PutConfigurationRecorderError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::put_configuration_recorder::PutConfigurationRecorderError> for Error {
+    fn from(
+        err: crate::operation::put_configuration_recorder::PutConfigurationRecorderError,
+    ) -> Self {
+        match err {
+            crate::operation::put_configuration_recorder::PutConfigurationRecorderError::InvalidConfigurationRecorderNameException(inner) => Error::InvalidConfigurationRecorderNameException(inner),
+            crate::operation::put_configuration_recorder::PutConfigurationRecorderError::InvalidRecordingGroupException(inner) => Error::InvalidRecordingGroupException(inner),
+            crate::operation::put_configuration_recorder::PutConfigurationRecorderError::InvalidRoleException(inner) => Error::InvalidRoleException(inner),
+            crate::operation::put_configuration_recorder::PutConfigurationRecorderError::MaxNumberOfConfigurationRecordersExceededException(inner) => Error::MaxNumberOfConfigurationRecordersExceededException(inner),
+            crate::operation::put_configuration_recorder::PutConfigurationRecorderError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::put_conformance_pack::PutConformancePackError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::put_conformance_pack::PutConformancePackError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::put_conformance_pack::PutConformancePackError> for Error {
+    fn from(err: crate::operation::put_conformance_pack::PutConformancePackError) -> Self {
+        match err {
+            crate::operation::put_conformance_pack::PutConformancePackError::ConformancePackTemplateValidationException(inner) => Error::ConformancePackTemplateValidationException(inner),
+            crate::operation::put_conformance_pack::PutConformancePackError::InsufficientPermissionsException(inner) => Error::InsufficientPermissionsException(inner),
+            crate::operation::put_conformance_pack::PutConformancePackError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::put_conformance_pack::PutConformancePackError::MaxNumberOfConformancePacksExceededException(inner) => Error::MaxNumberOfConformancePacksExceededException(inner),
+            crate::operation::put_conformance_pack::PutConformancePackError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::put_conformance_pack::PutConformancePackError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::put_delivery_channel::PutDeliveryChannelError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::put_delivery_channel::PutDeliveryChannelError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::put_delivery_channel::PutDeliveryChannelError> for Error {
+    fn from(err: crate::operation::put_delivery_channel::PutDeliveryChannelError) -> Self {
+        match err {
+            crate::operation::put_delivery_channel::PutDeliveryChannelError::InsufficientDeliveryPolicyException(inner) => Error::InsufficientDeliveryPolicyException(inner),
+            crate::operation::put_delivery_channel::PutDeliveryChannelError::InvalidDeliveryChannelNameException(inner) => Error::InvalidDeliveryChannelNameException(inner),
+            crate::operation::put_delivery_channel::PutDeliveryChannelError::InvalidS3KeyPrefixException(inner) => Error::InvalidS3KeyPrefixException(inner),
+            crate::operation::put_delivery_channel::PutDeliveryChannelError::InvalidS3KmsKeyArnException(inner) => Error::InvalidS3KmsKeyArnException(inner),
+            crate::operation::put_delivery_channel::PutDeliveryChannelError::InvalidSnsTopicArnException(inner) => Error::InvalidSnsTopicArnException(inner),
+            crate::operation::put_delivery_channel::PutDeliveryChannelError::MaxNumberOfDeliveryChannelsExceededException(inner) => Error::MaxNumberOfDeliveryChannelsExceededException(inner),
+            crate::operation::put_delivery_channel::PutDeliveryChannelError::NoAvailableConfigurationRecorderException(inner) => Error::NoAvailableConfigurationRecorderException(inner),
+            crate::operation::put_delivery_channel::PutDeliveryChannelError::NoSuchBucketException(inner) => Error::NoSuchBucketException(inner),
+            crate::operation::put_delivery_channel::PutDeliveryChannelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::put_evaluations::PutEvaluationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::put_evaluations::PutEvaluationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::put_evaluations::PutEvaluationsError> for Error {
+    fn from(err: crate::operation::put_evaluations::PutEvaluationsError) -> Self {
+        match err {
+            crate::operation::put_evaluations::PutEvaluationsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::put_evaluations::PutEvaluationsError::InvalidResultTokenException(inner) => Error::InvalidResultTokenException(inner),
+            crate::operation::put_evaluations::PutEvaluationsError::NoSuchConfigRuleException(inner) => Error::NoSuchConfigRuleException(inner),
+            crate::operation::put_evaluations::PutEvaluationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::put_external_evaluation::PutExternalEvaluationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::put_external_evaluation::PutExternalEvaluationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::put_external_evaluation::PutExternalEvaluationError> for Error {
+    fn from(err: crate::operation::put_external_evaluation::PutExternalEvaluationError) -> Self {
+        match err {
+            crate::operation::put_external_evaluation::PutExternalEvaluationError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::put_external_evaluation::PutExternalEvaluationError::NoSuchConfigRuleException(inner) => Error::NoSuchConfigRuleException(inner),
+            crate::operation::put_external_evaluation::PutExternalEvaluationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::put_organization_config_rule::PutOrganizationConfigRuleError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::put_organization_config_rule::PutOrganizationConfigRuleError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::put_organization_config_rule::PutOrganizationConfigRuleError>
+    for Error
+{
+    fn from(
+        err: crate::operation::put_organization_config_rule::PutOrganizationConfigRuleError,
+    ) -> Self {
+        match err {
+            crate::operation::put_organization_config_rule::PutOrganizationConfigRuleError::InsufficientPermissionsException(inner) => Error::InsufficientPermissionsException(inner),
+            crate::operation::put_organization_config_rule::PutOrganizationConfigRuleError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::put_organization_config_rule::PutOrganizationConfigRuleError::MaxNumberOfOrganizationConfigRulesExceededException(inner) => Error::MaxNumberOfOrganizationConfigRulesExceededException(inner),
+            crate::operation::put_organization_config_rule::PutOrganizationConfigRuleError::NoAvailableOrganizationException(inner) => Error::NoAvailableOrganizationException(inner),
+            crate::operation::put_organization_config_rule::PutOrganizationConfigRuleError::OrganizationAccessDeniedException(inner) => Error::OrganizationAccessDeniedException(inner),
+            crate::operation::put_organization_config_rule::PutOrganizationConfigRuleError::OrganizationAllFeaturesNotEnabledException(inner) => Error::OrganizationAllFeaturesNotEnabledException(inner),
+            crate::operation::put_organization_config_rule::PutOrganizationConfigRuleError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::put_organization_config_rule::PutOrganizationConfigRuleError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::put_organization_config_rule::PutOrganizationConfigRuleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackError>
+    for Error
+{
+    fn from(
+        err: crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackError,
+    ) -> Self {
+        match err {
+            crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackError::InsufficientPermissionsException(inner) => Error::InsufficientPermissionsException(inner),
+            crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackError::MaxNumberOfOrganizationConformancePacksExceededException(inner) => Error::MaxNumberOfOrganizationConformancePacksExceededException(inner),
+            crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackError::NoAvailableOrganizationException(inner) => Error::NoAvailableOrganizationException(inner),
+            crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackError::OrganizationAccessDeniedException(inner) => Error::OrganizationAccessDeniedException(inner),
+            crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackError::OrganizationAllFeaturesNotEnabledException(inner) => Error::OrganizationAllFeaturesNotEnabledException(inner),
+            crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackError::OrganizationConformancePackTemplateValidationException(inner) => Error::OrganizationConformancePackTemplateValidationException(inner),
+            crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::put_remediation_configurations::PutRemediationConfigurationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::put_remediation_configurations::PutRemediationConfigurationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::put_remediation_configurations::PutRemediationConfigurationsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::put_remediation_configurations::PutRemediationConfigurationsError,
+    ) -> Self {
+        match err {
+            crate::operation::put_remediation_configurations::PutRemediationConfigurationsError::InsufficientPermissionsException(inner) => Error::InsufficientPermissionsException(inner),
+            crate::operation::put_remediation_configurations::PutRemediationConfigurationsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::put_remediation_configurations::PutRemediationConfigurationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::put_remediation_exceptions::PutRemediationExceptionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::put_remediation_exceptions::PutRemediationExceptionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::put_remediation_exceptions::PutRemediationExceptionsError> for Error {
+    fn from(
+        err: crate::operation::put_remediation_exceptions::PutRemediationExceptionsError,
+    ) -> Self {
+        match err {
+            crate::operation::put_remediation_exceptions::PutRemediationExceptionsError::InsufficientPermissionsException(inner) => Error::InsufficientPermissionsException(inner),
+            crate::operation::put_remediation_exceptions::PutRemediationExceptionsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::put_remediation_exceptions::PutRemediationExceptionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::put_resource_config::PutResourceConfigError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::put_resource_config::PutResourceConfigError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::put_resource_config::PutResourceConfigError> for Error {
+    fn from(err: crate::operation::put_resource_config::PutResourceConfigError) -> Self {
+        match err {
+            crate::operation::put_resource_config::PutResourceConfigError::InsufficientPermissionsException(inner) => Error::InsufficientPermissionsException(inner),
+            crate::operation::put_resource_config::PutResourceConfigError::MaxActiveResourcesExceededException(inner) => Error::MaxActiveResourcesExceededException(inner),
+            crate::operation::put_resource_config::PutResourceConfigError::NoRunningConfigurationRecorderException(inner) => Error::NoRunningConfigurationRecorderException(inner),
+            crate::operation::put_resource_config::PutResourceConfigError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::put_resource_config::PutResourceConfigError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::put_retention_configuration::PutRetentionConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::put_retention_configuration::PutRetentionConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::put_retention_configuration::PutRetentionConfigurationError> for Error {
+    fn from(
+        err: crate::operation::put_retention_configuration::PutRetentionConfigurationError,
+    ) -> Self {
+        match err {
+            crate::operation::put_retention_configuration::PutRetentionConfigurationError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::put_retention_configuration::PutRetentionConfigurationError::MaxNumberOfRetentionConfigurationsExceededException(inner) => Error::MaxNumberOfRetentionConfigurationsExceededException(inner),
+            crate::operation::put_retention_configuration::PutRetentionConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::put_stored_query::PutStoredQueryError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::put_stored_query::PutStoredQueryError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::put_stored_query::PutStoredQueryError> for Error {
+    fn from(err: crate::operation::put_stored_query::PutStoredQueryError) -> Self {
+        match err {
+            crate::operation::put_stored_query::PutStoredQueryError::ResourceConcurrentModificationException(inner) => Error::ResourceConcurrentModificationException(inner),
+            crate::operation::put_stored_query::PutStoredQueryError::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
+            crate::operation::put_stored_query::PutStoredQueryError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::put_stored_query::PutStoredQueryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::select_aggregate_resource_config::SelectAggregateResourceConfigError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::select_aggregate_resource_config::SelectAggregateResourceConfigError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::select_aggregate_resource_config::SelectAggregateResourceConfigError>
+    for Error
+{
+    fn from(
+        err: crate::operation::select_aggregate_resource_config::SelectAggregateResourceConfigError,
+    ) -> Self {
+        match err {
+            crate::operation::select_aggregate_resource_config::SelectAggregateResourceConfigError::InvalidExpressionException(inner) => Error::InvalidExpressionException(inner),
+            crate::operation::select_aggregate_resource_config::SelectAggregateResourceConfigError::InvalidLimitException(inner) => Error::InvalidLimitException(inner),
+            crate::operation::select_aggregate_resource_config::SelectAggregateResourceConfigError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::select_aggregate_resource_config::SelectAggregateResourceConfigError::NoSuchConfigurationAggregatorException(inner) => Error::NoSuchConfigurationAggregatorException(inner),
+            crate::operation::select_aggregate_resource_config::SelectAggregateResourceConfigError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::select_resource_config::SelectResourceConfigError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::select_resource_config::SelectResourceConfigError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::select_resource_config::SelectResourceConfigError> for Error {
+    fn from(err: crate::operation::select_resource_config::SelectResourceConfigError) -> Self {
+        match err {
+            crate::operation::select_resource_config::SelectResourceConfigError::InvalidExpressionException(inner) => Error::InvalidExpressionException(inner),
+            crate::operation::select_resource_config::SelectResourceConfigError::InvalidLimitException(inner) => Error::InvalidLimitException(inner),
+            crate::operation::select_resource_config::SelectResourceConfigError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::select_resource_config::SelectResourceConfigError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::start_config_rules_evaluation::StartConfigRulesEvaluationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::start_config_rules_evaluation::StartConfigRulesEvaluationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::start_config_rules_evaluation::StartConfigRulesEvaluationError>
+    for Error
+{
+    fn from(
+        err: crate::operation::start_config_rules_evaluation::StartConfigRulesEvaluationError,
+    ) -> Self {
+        match err {
+            crate::operation::start_config_rules_evaluation::StartConfigRulesEvaluationError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::start_config_rules_evaluation::StartConfigRulesEvaluationError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::start_config_rules_evaluation::StartConfigRulesEvaluationError::NoSuchConfigRuleException(inner) => Error::NoSuchConfigRuleException(inner),
+            crate::operation::start_config_rules_evaluation::StartConfigRulesEvaluationError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::start_config_rules_evaluation::StartConfigRulesEvaluationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::start_configuration_recorder::StartConfigurationRecorderError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::start_configuration_recorder::StartConfigurationRecorderError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::start_configuration_recorder::StartConfigurationRecorderError>
+    for Error
+{
+    fn from(
+        err: crate::operation::start_configuration_recorder::StartConfigurationRecorderError,
+    ) -> Self {
+        match err {
+            crate::operation::start_configuration_recorder::StartConfigurationRecorderError::NoAvailableDeliveryChannelException(inner) => Error::NoAvailableDeliveryChannelException(inner),
+            crate::operation::start_configuration_recorder::StartConfigurationRecorderError::NoSuchConfigurationRecorderException(inner) => Error::NoSuchConfigurationRecorderException(inner),
+            crate::operation::start_configuration_recorder::StartConfigurationRecorderError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::start_remediation_execution::StartRemediationExecutionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::start_remediation_execution::StartRemediationExecutionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::start_remediation_execution::StartRemediationExecutionError> for Error {
+    fn from(
+        err: crate::operation::start_remediation_execution::StartRemediationExecutionError,
+    ) -> Self {
+        match err {
+            crate::operation::start_remediation_execution::StartRemediationExecutionError::InsufficientPermissionsException(inner) => Error::InsufficientPermissionsException(inner),
+            crate::operation::start_remediation_execution::StartRemediationExecutionError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::start_remediation_execution::StartRemediationExecutionError::NoSuchRemediationConfigurationException(inner) => Error::NoSuchRemediationConfigurationException(inner),
+            crate::operation::start_remediation_execution::StartRemediationExecutionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::start_resource_evaluation::StartResourceEvaluationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::start_resource_evaluation::StartResourceEvaluationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::start_resource_evaluation::StartResourceEvaluationError> for Error {
+    fn from(
+        err: crate::operation::start_resource_evaluation::StartResourceEvaluationError,
+    ) -> Self {
+        match err {
+            crate::operation::start_resource_evaluation::StartResourceEvaluationError::IdempotentParameterMismatch(inner) => Error::IdempotentParameterMismatch(inner),
+            crate::operation::start_resource_evaluation::StartResourceEvaluationError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::start_resource_evaluation::StartResourceEvaluationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::stop_configuration_recorder::StopConfigurationRecorderError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::stop_configuration_recorder::StopConfigurationRecorderError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::stop_configuration_recorder::StopConfigurationRecorderError> for Error {
+    fn from(
+        err: crate::operation::stop_configuration_recorder::StopConfigurationRecorderError,
+    ) -> Self {
+        match err {
+            crate::operation::stop_configuration_recorder::StopConfigurationRecorderError::NoSuchConfigurationRecorderException(inner) => Error::NoSuchConfigurationRecorderException(inner),
+            crate::operation::stop_configuration_recorder::StopConfigurationRecorderError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteRetentionConfigurationError, R>,
+        err: aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -786,2740 +3468,35 @@ where
         }
     }
 }
-impl From<crate::error::DeleteRetentionConfigurationError> for Error {
-    fn from(err: crate::error::DeleteRetentionConfigurationError) -> Self {
+impl From<crate::operation::tag_resource::TagResourceError> for Error {
+    fn from(err: crate::operation::tag_resource::TagResourceError) -> Self {
         match err {
-            crate::error::DeleteRetentionConfigurationError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::DeleteRetentionConfigurationError::NoSuchRetentionConfigurationException(inner) => Error::NoSuchRetentionConfigurationException(inner),
-            crate::error::DeleteRetentionConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteStoredQueryError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteStoredQueryError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DeleteStoredQueryError> for Error {
-    fn from(err: crate::error::DeleteStoredQueryError) -> Self {
-        match err {
-            crate::error::DeleteStoredQueryError::ResourceNotFoundException(inner) => {
+            crate::operation::tag_resource::TagResourceError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::error::DeleteStoredQueryError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::DeleteStoredQueryError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeliverConfigSnapshotError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeliverConfigSnapshotError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DeliverConfigSnapshotError> for Error {
-    fn from(err: crate::error::DeliverConfigSnapshotError) -> Self {
-        match err {
-            crate::error::DeliverConfigSnapshotError::NoAvailableConfigurationRecorderException(
-                inner,
-            ) => Error::NoAvailableConfigurationRecorderException(inner),
-            crate::error::DeliverConfigSnapshotError::NoRunningConfigurationRecorderException(
-                inner,
-            ) => Error::NoRunningConfigurationRecorderException(inner),
-            crate::error::DeliverConfigSnapshotError::NoSuchDeliveryChannelException(inner) => {
-                Error::NoSuchDeliveryChannelException(inner)
-            }
-            crate::error::DeliverConfigSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::DescribeAggregateComplianceByConfigRulesError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DescribeAggregateComplianceByConfigRulesError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribeAggregateComplianceByConfigRulesError> for Error {
-    fn from(err: crate::error::DescribeAggregateComplianceByConfigRulesError) -> Self {
-        match err {
-            crate::error::DescribeAggregateComplianceByConfigRulesError::InvalidLimitException(inner) => Error::InvalidLimitException(inner),
-            crate::error::DescribeAggregateComplianceByConfigRulesError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-            crate::error::DescribeAggregateComplianceByConfigRulesError::NoSuchConfigurationAggregatorException(inner) => Error::NoSuchConfigurationAggregatorException(inner),
-            crate::error::DescribeAggregateComplianceByConfigRulesError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DescribeAggregateComplianceByConfigRulesError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::DescribeAggregateComplianceByConformancePacksError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DescribeAggregateComplianceByConformancePacksError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribeAggregateComplianceByConformancePacksError> for Error {
-    fn from(err: crate::error::DescribeAggregateComplianceByConformancePacksError) -> Self {
-        match err {
-            crate::error::DescribeAggregateComplianceByConformancePacksError::InvalidLimitException(inner) => Error::InvalidLimitException(inner),
-            crate::error::DescribeAggregateComplianceByConformancePacksError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-            crate::error::DescribeAggregateComplianceByConformancePacksError::NoSuchConfigurationAggregatorException(inner) => Error::NoSuchConfigurationAggregatorException(inner),
-            crate::error::DescribeAggregateComplianceByConformancePacksError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DescribeAggregateComplianceByConformancePacksError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::DescribeAggregationAuthorizationsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DescribeAggregationAuthorizationsError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribeAggregationAuthorizationsError> for Error {
-    fn from(err: crate::error::DescribeAggregationAuthorizationsError) -> Self {
-        match err {
-            crate::error::DescribeAggregationAuthorizationsError::InvalidLimitException(inner) => Error::InvalidLimitException(inner),
-            crate::error::DescribeAggregationAuthorizationsError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-            crate::error::DescribeAggregationAuthorizationsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::DescribeAggregationAuthorizationsError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::DescribeComplianceByConfigRuleError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DescribeComplianceByConfigRuleError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribeComplianceByConfigRuleError> for Error {
-    fn from(err: crate::error::DescribeComplianceByConfigRuleError) -> Self {
-        match err {
-            crate::error::DescribeComplianceByConfigRuleError::InvalidNextTokenException(inner) => {
-                Error::InvalidNextTokenException(inner)
-            }
-            crate::error::DescribeComplianceByConfigRuleError::InvalidParameterValueException(
-                inner,
-            ) => Error::InvalidParameterValueException(inner),
-            crate::error::DescribeComplianceByConfigRuleError::NoSuchConfigRuleException(inner) => {
-                Error::NoSuchConfigRuleException(inner)
-            }
-            crate::error::DescribeComplianceByConfigRuleError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeComplianceByResourceError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeComplianceByResourceError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribeComplianceByResourceError> for Error {
-    fn from(err: crate::error::DescribeComplianceByResourceError) -> Self {
-        match err {
-            crate::error::DescribeComplianceByResourceError::InvalidNextTokenException(inner) => {
-                Error::InvalidNextTokenException(inner)
-            }
-            crate::error::DescribeComplianceByResourceError::InvalidParameterValueException(
-                inner,
-            ) => Error::InvalidParameterValueException(inner),
-            crate::error::DescribeComplianceByResourceError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<crate::error::DescribeConfigRuleEvaluationStatusError, R>,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DescribeConfigRuleEvaluationStatusError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribeConfigRuleEvaluationStatusError> for Error {
-    fn from(err: crate::error::DescribeConfigRuleEvaluationStatusError) -> Self {
-        match err {
-            crate::error::DescribeConfigRuleEvaluationStatusError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-            crate::error::DescribeConfigRuleEvaluationStatusError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::DescribeConfigRuleEvaluationStatusError::NoSuchConfigRuleException(inner) => Error::NoSuchConfigRuleException(inner),
-            crate::error::DescribeConfigRuleEvaluationStatusError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeConfigRulesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeConfigRulesError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribeConfigRulesError> for Error {
-    fn from(err: crate::error::DescribeConfigRulesError) -> Self {
-        match err {
-            crate::error::DescribeConfigRulesError::InvalidNextTokenException(inner) => {
-                Error::InvalidNextTokenException(inner)
-            }
-            crate::error::DescribeConfigRulesError::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
-            }
-            crate::error::DescribeConfigRulesError::NoSuchConfigRuleException(inner) => {
-                Error::NoSuchConfigRuleException(inner)
-            }
-            crate::error::DescribeConfigRulesError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::DescribeConfigurationAggregatorsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DescribeConfigurationAggregatorsError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribeConfigurationAggregatorsError> for Error {
-    fn from(err: crate::error::DescribeConfigurationAggregatorsError) -> Self {
-        match err {
-            crate::error::DescribeConfigurationAggregatorsError::InvalidLimitException(inner) => Error::InvalidLimitException(inner),
-            crate::error::DescribeConfigurationAggregatorsError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-            crate::error::DescribeConfigurationAggregatorsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::DescribeConfigurationAggregatorsError::NoSuchConfigurationAggregatorException(inner) => Error::NoSuchConfigurationAggregatorException(inner),
-            crate::error::DescribeConfigurationAggregatorsError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::DescribeConfigurationAggregatorSourcesStatusError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DescribeConfigurationAggregatorSourcesStatusError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribeConfigurationAggregatorSourcesStatusError> for Error {
-    fn from(err: crate::error::DescribeConfigurationAggregatorSourcesStatusError) -> Self {
-        match err {
-            crate::error::DescribeConfigurationAggregatorSourcesStatusError::InvalidLimitException(inner) => Error::InvalidLimitException(inner),
-            crate::error::DescribeConfigurationAggregatorSourcesStatusError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-            crate::error::DescribeConfigurationAggregatorSourcesStatusError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::DescribeConfigurationAggregatorSourcesStatusError::NoSuchConfigurationAggregatorException(inner) => Error::NoSuchConfigurationAggregatorException(inner),
-            crate::error::DescribeConfigurationAggregatorSourcesStatusError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::DescribeConfigurationRecordersError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DescribeConfigurationRecordersError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribeConfigurationRecordersError> for Error {
-    fn from(err: crate::error::DescribeConfigurationRecordersError) -> Self {
-        match err {
-            crate::error::DescribeConfigurationRecordersError::NoSuchConfigurationRecorderException(inner) => Error::NoSuchConfigurationRecorderException(inner),
-            crate::error::DescribeConfigurationRecordersError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::DescribeConfigurationRecorderStatusError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DescribeConfigurationRecorderStatusError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribeConfigurationRecorderStatusError> for Error {
-    fn from(err: crate::error::DescribeConfigurationRecorderStatusError) -> Self {
-        match err {
-            crate::error::DescribeConfigurationRecorderStatusError::NoSuchConfigurationRecorderException(inner) => Error::NoSuchConfigurationRecorderException(inner),
-            crate::error::DescribeConfigurationRecorderStatusError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::DescribeConformancePackComplianceError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DescribeConformancePackComplianceError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribeConformancePackComplianceError> for Error {
-    fn from(err: crate::error::DescribeConformancePackComplianceError) -> Self {
-        match err {
-            crate::error::DescribeConformancePackComplianceError::InvalidLimitException(inner) => Error::InvalidLimitException(inner),
-            crate::error::DescribeConformancePackComplianceError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-            crate::error::DescribeConformancePackComplianceError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::DescribeConformancePackComplianceError::NoSuchConfigRuleInConformancePackException(inner) => Error::NoSuchConfigRuleInConformancePackException(inner),
-            crate::error::DescribeConformancePackComplianceError::NoSuchConformancePackException(inner) => Error::NoSuchConformancePackException(inner),
-            crate::error::DescribeConformancePackComplianceError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeConformancePacksError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeConformancePacksError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribeConformancePacksError> for Error {
-    fn from(err: crate::error::DescribeConformancePacksError) -> Self {
-        match err {
-            crate::error::DescribeConformancePacksError::InvalidLimitException(inner) => {
-                Error::InvalidLimitException(inner)
-            }
-            crate::error::DescribeConformancePacksError::InvalidNextTokenException(inner) => {
-                Error::InvalidNextTokenException(inner)
-            }
-            crate::error::DescribeConformancePacksError::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
-            }
-            crate::error::DescribeConformancePacksError::NoSuchConformancePackException(inner) => {
-                Error::NoSuchConformancePackException(inner)
-            }
-            crate::error::DescribeConformancePacksError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeConformancePackStatusError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeConformancePackStatusError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribeConformancePackStatusError> for Error {
-    fn from(err: crate::error::DescribeConformancePackStatusError) -> Self {
-        match err {
-            crate::error::DescribeConformancePackStatusError::InvalidLimitException(inner) => {
-                Error::InvalidLimitException(inner)
-            }
-            crate::error::DescribeConformancePackStatusError::InvalidNextTokenException(inner) => {
-                Error::InvalidNextTokenException(inner)
-            }
-            crate::error::DescribeConformancePackStatusError::InvalidParameterValueException(
-                inner,
-            ) => Error::InvalidParameterValueException(inner),
-            crate::error::DescribeConformancePackStatusError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeDeliveryChannelsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeDeliveryChannelsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribeDeliveryChannelsError> for Error {
-    fn from(err: crate::error::DescribeDeliveryChannelsError) -> Self {
-        match err {
-            crate::error::DescribeDeliveryChannelsError::NoSuchDeliveryChannelException(inner) => {
-                Error::NoSuchDeliveryChannelException(inner)
-            }
-            crate::error::DescribeDeliveryChannelsError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeDeliveryChannelStatusError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeDeliveryChannelStatusError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribeDeliveryChannelStatusError> for Error {
-    fn from(err: crate::error::DescribeDeliveryChannelStatusError) -> Self {
-        match err {
-            crate::error::DescribeDeliveryChannelStatusError::NoSuchDeliveryChannelException(
-                inner,
-            ) => Error::NoSuchDeliveryChannelException(inner),
-            crate::error::DescribeDeliveryChannelStatusError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::DescribeOrganizationConfigRulesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DescribeOrganizationConfigRulesError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribeOrganizationConfigRulesError> for Error {
-    fn from(err: crate::error::DescribeOrganizationConfigRulesError) -> Self {
-        match err {
-            crate::error::DescribeOrganizationConfigRulesError::InvalidLimitException(inner) => Error::InvalidLimitException(inner),
-            crate::error::DescribeOrganizationConfigRulesError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-            crate::error::DescribeOrganizationConfigRulesError::NoSuchOrganizationConfigRuleException(inner) => Error::NoSuchOrganizationConfigRuleException(inner),
-            crate::error::DescribeOrganizationConfigRulesError::OrganizationAccessDeniedException(inner) => Error::OrganizationAccessDeniedException(inner),
-            crate::error::DescribeOrganizationConfigRulesError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::DescribeOrganizationConfigRuleStatusesError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DescribeOrganizationConfigRuleStatusesError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribeOrganizationConfigRuleStatusesError> for Error {
-    fn from(err: crate::error::DescribeOrganizationConfigRuleStatusesError) -> Self {
-        match err {
-            crate::error::DescribeOrganizationConfigRuleStatusesError::InvalidLimitException(inner) => Error::InvalidLimitException(inner),
-            crate::error::DescribeOrganizationConfigRuleStatusesError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-            crate::error::DescribeOrganizationConfigRuleStatusesError::NoSuchOrganizationConfigRuleException(inner) => Error::NoSuchOrganizationConfigRuleException(inner),
-            crate::error::DescribeOrganizationConfigRuleStatusesError::OrganizationAccessDeniedException(inner) => Error::OrganizationAccessDeniedException(inner),
-            crate::error::DescribeOrganizationConfigRuleStatusesError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::DescribeOrganizationConformancePacksError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DescribeOrganizationConformancePacksError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribeOrganizationConformancePacksError> for Error {
-    fn from(err: crate::error::DescribeOrganizationConformancePacksError) -> Self {
-        match err {
-            crate::error::DescribeOrganizationConformancePacksError::InvalidLimitException(inner) => Error::InvalidLimitException(inner),
-            crate::error::DescribeOrganizationConformancePacksError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-            crate::error::DescribeOrganizationConformancePacksError::NoSuchOrganizationConformancePackException(inner) => Error::NoSuchOrganizationConformancePackException(inner),
-            crate::error::DescribeOrganizationConformancePacksError::OrganizationAccessDeniedException(inner) => Error::OrganizationAccessDeniedException(inner),
-            crate::error::DescribeOrganizationConformancePacksError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::DescribeOrganizationConformancePackStatusesError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DescribeOrganizationConformancePackStatusesError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribeOrganizationConformancePackStatusesError> for Error {
-    fn from(err: crate::error::DescribeOrganizationConformancePackStatusesError) -> Self {
-        match err {
-            crate::error::DescribeOrganizationConformancePackStatusesError::InvalidLimitException(inner) => Error::InvalidLimitException(inner),
-            crate::error::DescribeOrganizationConformancePackStatusesError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-            crate::error::DescribeOrganizationConformancePackStatusesError::NoSuchOrganizationConformancePackException(inner) => Error::NoSuchOrganizationConformancePackException(inner),
-            crate::error::DescribeOrganizationConformancePackStatusesError::OrganizationAccessDeniedException(inner) => Error::OrganizationAccessDeniedException(inner),
-            crate::error::DescribeOrganizationConformancePackStatusesError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<crate::error::DescribePendingAggregationRequestsError, R>,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DescribePendingAggregationRequestsError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribePendingAggregationRequestsError> for Error {
-    fn from(err: crate::error::DescribePendingAggregationRequestsError) -> Self {
-        match err {
-            crate::error::DescribePendingAggregationRequestsError::InvalidLimitException(inner) => Error::InvalidLimitException(inner),
-            crate::error::DescribePendingAggregationRequestsError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-            crate::error::DescribePendingAggregationRequestsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::DescribePendingAggregationRequestsError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::DescribeRemediationConfigurationsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DescribeRemediationConfigurationsError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribeRemediationConfigurationsError> for Error {
-    fn from(err: crate::error::DescribeRemediationConfigurationsError) -> Self {
-        match err {
-            crate::error::DescribeRemediationConfigurationsError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeRemediationExceptionsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeRemediationExceptionsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribeRemediationExceptionsError> for Error {
-    fn from(err: crate::error::DescribeRemediationExceptionsError) -> Self {
-        match err {
-            crate::error::DescribeRemediationExceptionsError::InvalidNextTokenException(inner) => {
-                Error::InvalidNextTokenException(inner)
-            }
-            crate::error::DescribeRemediationExceptionsError::InvalidParameterValueException(
-                inner,
-            ) => Error::InvalidParameterValueException(inner),
-            crate::error::DescribeRemediationExceptionsError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<crate::error::DescribeRemediationExecutionStatusError, R>,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DescribeRemediationExecutionStatusError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribeRemediationExecutionStatusError> for Error {
-    fn from(err: crate::error::DescribeRemediationExecutionStatusError) -> Self {
-        match err {
-            crate::error::DescribeRemediationExecutionStatusError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-            crate::error::DescribeRemediationExecutionStatusError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::DescribeRemediationExecutionStatusError::NoSuchRemediationConfigurationException(inner) => Error::NoSuchRemediationConfigurationException(inner),
-            crate::error::DescribeRemediationExecutionStatusError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::DescribeRetentionConfigurationsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DescribeRetentionConfigurationsError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribeRetentionConfigurationsError> for Error {
-    fn from(err: crate::error::DescribeRetentionConfigurationsError) -> Self {
-        match err {
-            crate::error::DescribeRetentionConfigurationsError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-            crate::error::DescribeRetentionConfigurationsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::DescribeRetentionConfigurationsError::NoSuchRetentionConfigurationException(inner) => Error::NoSuchRetentionConfigurationException(inner),
-            crate::error::DescribeRetentionConfigurationsError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::GetAggregateComplianceDetailsByConfigRuleError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::GetAggregateComplianceDetailsByConfigRuleError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetAggregateComplianceDetailsByConfigRuleError> for Error {
-    fn from(err: crate::error::GetAggregateComplianceDetailsByConfigRuleError) -> Self {
-        match err {
-            crate::error::GetAggregateComplianceDetailsByConfigRuleError::InvalidLimitException(inner) => Error::InvalidLimitException(inner),
-            crate::error::GetAggregateComplianceDetailsByConfigRuleError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-            crate::error::GetAggregateComplianceDetailsByConfigRuleError::NoSuchConfigurationAggregatorException(inner) => Error::NoSuchConfigurationAggregatorException(inner),
-            crate::error::GetAggregateComplianceDetailsByConfigRuleError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::GetAggregateComplianceDetailsByConfigRuleError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::GetAggregateConfigRuleComplianceSummaryError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::GetAggregateConfigRuleComplianceSummaryError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetAggregateConfigRuleComplianceSummaryError> for Error {
-    fn from(err: crate::error::GetAggregateConfigRuleComplianceSummaryError) -> Self {
-        match err {
-            crate::error::GetAggregateConfigRuleComplianceSummaryError::InvalidLimitException(inner) => Error::InvalidLimitException(inner),
-            crate::error::GetAggregateConfigRuleComplianceSummaryError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-            crate::error::GetAggregateConfigRuleComplianceSummaryError::NoSuchConfigurationAggregatorException(inner) => Error::NoSuchConfigurationAggregatorException(inner),
-            crate::error::GetAggregateConfigRuleComplianceSummaryError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::GetAggregateConfigRuleComplianceSummaryError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::GetAggregateConformancePackComplianceSummaryError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::GetAggregateConformancePackComplianceSummaryError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetAggregateConformancePackComplianceSummaryError> for Error {
-    fn from(err: crate::error::GetAggregateConformancePackComplianceSummaryError) -> Self {
-        match err {
-            crate::error::GetAggregateConformancePackComplianceSummaryError::InvalidLimitException(inner) => Error::InvalidLimitException(inner),
-            crate::error::GetAggregateConformancePackComplianceSummaryError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-            crate::error::GetAggregateConformancePackComplianceSummaryError::NoSuchConfigurationAggregatorException(inner) => Error::NoSuchConfigurationAggregatorException(inner),
-            crate::error::GetAggregateConformancePackComplianceSummaryError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::GetAggregateConformancePackComplianceSummaryError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::GetAggregateDiscoveredResourceCountsError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::GetAggregateDiscoveredResourceCountsError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetAggregateDiscoveredResourceCountsError> for Error {
-    fn from(err: crate::error::GetAggregateDiscoveredResourceCountsError) -> Self {
-        match err {
-            crate::error::GetAggregateDiscoveredResourceCountsError::InvalidLimitException(inner) => Error::InvalidLimitException(inner),
-            crate::error::GetAggregateDiscoveredResourceCountsError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-            crate::error::GetAggregateDiscoveredResourceCountsError::NoSuchConfigurationAggregatorException(inner) => Error::NoSuchConfigurationAggregatorException(inner),
-            crate::error::GetAggregateDiscoveredResourceCountsError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::GetAggregateDiscoveredResourceCountsError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetAggregateResourceConfigError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetAggregateResourceConfigError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetAggregateResourceConfigError> for Error {
-    fn from(err: crate::error::GetAggregateResourceConfigError) -> Self {
-        match err {
-            crate::error::GetAggregateResourceConfigError::NoSuchConfigurationAggregatorException(inner) => Error::NoSuchConfigurationAggregatorException(inner),
-            crate::error::GetAggregateResourceConfigError::OversizedConfigurationItemException(inner) => Error::OversizedConfigurationItemException(inner),
-            crate::error::GetAggregateResourceConfigError::ResourceNotDiscoveredException(inner) => Error::ResourceNotDiscoveredException(inner),
-            crate::error::GetAggregateResourceConfigError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::GetAggregateResourceConfigError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::GetComplianceDetailsByConfigRuleError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::GetComplianceDetailsByConfigRuleError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetComplianceDetailsByConfigRuleError> for Error {
-    fn from(err: crate::error::GetComplianceDetailsByConfigRuleError) -> Self {
-        match err {
-            crate::error::GetComplianceDetailsByConfigRuleError::InvalidNextTokenException(
-                inner,
-            ) => Error::InvalidNextTokenException(inner),
-            crate::error::GetComplianceDetailsByConfigRuleError::InvalidParameterValueException(
-                inner,
-            ) => Error::InvalidParameterValueException(inner),
-            crate::error::GetComplianceDetailsByConfigRuleError::NoSuchConfigRuleException(
-                inner,
-            ) => Error::NoSuchConfigRuleException(inner),
-            crate::error::GetComplianceDetailsByConfigRuleError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::GetComplianceDetailsByResourceError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::GetComplianceDetailsByResourceError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetComplianceDetailsByResourceError> for Error {
-    fn from(err: crate::error::GetComplianceDetailsByResourceError) -> Self {
-        match err {
-            crate::error::GetComplianceDetailsByResourceError::InvalidParameterValueException(
-                inner,
-            ) => Error::InvalidParameterValueException(inner),
-            crate::error::GetComplianceDetailsByResourceError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::GetComplianceSummaryByConfigRuleError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::GetComplianceSummaryByConfigRuleError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetComplianceSummaryByConfigRuleError> for Error {
-    fn from(err: crate::error::GetComplianceSummaryByConfigRuleError) -> Self {
-        match err {
-            crate::error::GetComplianceSummaryByConfigRuleError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<crate::error::GetComplianceSummaryByResourceTypeError, R>,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::GetComplianceSummaryByResourceTypeError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetComplianceSummaryByResourceTypeError> for Error {
-    fn from(err: crate::error::GetComplianceSummaryByResourceTypeError) -> Self {
-        match err {
-            crate::error::GetComplianceSummaryByResourceTypeError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::GetComplianceSummaryByResourceTypeError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::GetConformancePackComplianceDetailsError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::GetConformancePackComplianceDetailsError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetConformancePackComplianceDetailsError> for Error {
-    fn from(err: crate::error::GetConformancePackComplianceDetailsError) -> Self {
-        match err {
-            crate::error::GetConformancePackComplianceDetailsError::InvalidLimitException(inner) => Error::InvalidLimitException(inner),
-            crate::error::GetConformancePackComplianceDetailsError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-            crate::error::GetConformancePackComplianceDetailsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::GetConformancePackComplianceDetailsError::NoSuchConfigRuleInConformancePackException(inner) => Error::NoSuchConfigRuleInConformancePackException(inner),
-            crate::error::GetConformancePackComplianceDetailsError::NoSuchConformancePackException(inner) => Error::NoSuchConformancePackException(inner),
-            crate::error::GetConformancePackComplianceDetailsError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::GetConformancePackComplianceSummaryError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::GetConformancePackComplianceSummaryError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetConformancePackComplianceSummaryError> for Error {
-    fn from(err: crate::error::GetConformancePackComplianceSummaryError) -> Self {
-        match err {
-            crate::error::GetConformancePackComplianceSummaryError::InvalidLimitException(inner) => Error::InvalidLimitException(inner),
-            crate::error::GetConformancePackComplianceSummaryError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-            crate::error::GetConformancePackComplianceSummaryError::NoSuchConformancePackException(inner) => Error::NoSuchConformancePackException(inner),
-            crate::error::GetConformancePackComplianceSummaryError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetCustomRulePolicyError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetCustomRulePolicyError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetCustomRulePolicyError> for Error {
-    fn from(err: crate::error::GetCustomRulePolicyError) -> Self {
-        match err {
-            crate::error::GetCustomRulePolicyError::NoSuchConfigRuleException(inner) => {
-                Error::NoSuchConfigRuleException(inner)
-            }
-            crate::error::GetCustomRulePolicyError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetDiscoveredResourceCountsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetDiscoveredResourceCountsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetDiscoveredResourceCountsError> for Error {
-    fn from(err: crate::error::GetDiscoveredResourceCountsError) -> Self {
-        match err {
-            crate::error::GetDiscoveredResourceCountsError::InvalidLimitException(inner) => {
-                Error::InvalidLimitException(inner)
-            }
-            crate::error::GetDiscoveredResourceCountsError::InvalidNextTokenException(inner) => {
-                Error::InvalidNextTokenException(inner)
-            }
-            crate::error::GetDiscoveredResourceCountsError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::GetDiscoveredResourceCountsError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::GetOrganizationConfigRuleDetailedStatusError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::GetOrganizationConfigRuleDetailedStatusError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetOrganizationConfigRuleDetailedStatusError> for Error {
-    fn from(err: crate::error::GetOrganizationConfigRuleDetailedStatusError) -> Self {
-        match err {
-            crate::error::GetOrganizationConfigRuleDetailedStatusError::InvalidLimitException(inner) => Error::InvalidLimitException(inner),
-            crate::error::GetOrganizationConfigRuleDetailedStatusError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-            crate::error::GetOrganizationConfigRuleDetailedStatusError::NoSuchOrganizationConfigRuleException(inner) => Error::NoSuchOrganizationConfigRuleException(inner),
-            crate::error::GetOrganizationConfigRuleDetailedStatusError::OrganizationAccessDeniedException(inner) => Error::OrganizationAccessDeniedException(inner),
-            crate::error::GetOrganizationConfigRuleDetailedStatusError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::GetOrganizationConformancePackDetailedStatusError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::GetOrganizationConformancePackDetailedStatusError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetOrganizationConformancePackDetailedStatusError> for Error {
-    fn from(err: crate::error::GetOrganizationConformancePackDetailedStatusError) -> Self {
-        match err {
-            crate::error::GetOrganizationConformancePackDetailedStatusError::InvalidLimitException(inner) => Error::InvalidLimitException(inner),
-            crate::error::GetOrganizationConformancePackDetailedStatusError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-            crate::error::GetOrganizationConformancePackDetailedStatusError::NoSuchOrganizationConformancePackException(inner) => Error::NoSuchOrganizationConformancePackException(inner),
-            crate::error::GetOrganizationConformancePackDetailedStatusError::OrganizationAccessDeniedException(inner) => Error::OrganizationAccessDeniedException(inner),
-            crate::error::GetOrganizationConformancePackDetailedStatusError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::GetOrganizationCustomRulePolicyError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::GetOrganizationCustomRulePolicyError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetOrganizationCustomRulePolicyError> for Error {
-    fn from(err: crate::error::GetOrganizationCustomRulePolicyError) -> Self {
-        match err {
-            crate::error::GetOrganizationCustomRulePolicyError::NoSuchOrganizationConfigRuleException(inner) => Error::NoSuchOrganizationConfigRuleException(inner),
-            crate::error::GetOrganizationCustomRulePolicyError::OrganizationAccessDeniedException(inner) => Error::OrganizationAccessDeniedException(inner),
-            crate::error::GetOrganizationCustomRulePolicyError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetResourceConfigHistoryError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetResourceConfigHistoryError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetResourceConfigHistoryError> for Error {
-    fn from(err: crate::error::GetResourceConfigHistoryError) -> Self {
-        match err {
-            crate::error::GetResourceConfigHistoryError::InvalidLimitException(inner) => Error::InvalidLimitException(inner),
-            crate::error::GetResourceConfigHistoryError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-            crate::error::GetResourceConfigHistoryError::InvalidTimeRangeException(inner) => Error::InvalidTimeRangeException(inner),
-            crate::error::GetResourceConfigHistoryError::NoAvailableConfigurationRecorderException(inner) => Error::NoAvailableConfigurationRecorderException(inner),
-            crate::error::GetResourceConfigHistoryError::ResourceNotDiscoveredException(inner) => Error::ResourceNotDiscoveredException(inner),
-            crate::error::GetResourceConfigHistoryError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::GetResourceConfigHistoryError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetResourceEvaluationSummaryError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetResourceEvaluationSummaryError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetResourceEvaluationSummaryError> for Error {
-    fn from(err: crate::error::GetResourceEvaluationSummaryError) -> Self {
-        match err {
-            crate::error::GetResourceEvaluationSummaryError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::GetResourceEvaluationSummaryError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetStoredQueryError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetStoredQueryError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetStoredQueryError> for Error {
-    fn from(err: crate::error::GetStoredQueryError) -> Self {
-        match err {
-            crate::error::GetStoredQueryError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::GetStoredQueryError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::GetStoredQueryError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::ListAggregateDiscoveredResourcesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::ListAggregateDiscoveredResourcesError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::ListAggregateDiscoveredResourcesError> for Error {
-    fn from(err: crate::error::ListAggregateDiscoveredResourcesError) -> Self {
-        match err {
-            crate::error::ListAggregateDiscoveredResourcesError::InvalidLimitException(inner) => Error::InvalidLimitException(inner),
-            crate::error::ListAggregateDiscoveredResourcesError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-            crate::error::ListAggregateDiscoveredResourcesError::NoSuchConfigurationAggregatorException(inner) => Error::NoSuchConfigurationAggregatorException(inner),
-            crate::error::ListAggregateDiscoveredResourcesError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::ListAggregateDiscoveredResourcesError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::ListConformancePackComplianceScoresError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::ListConformancePackComplianceScoresError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::ListConformancePackComplianceScoresError> for Error {
-    fn from(err: crate::error::ListConformancePackComplianceScoresError) -> Self {
-        match err {
-            crate::error::ListConformancePackComplianceScoresError::InvalidLimitException(inner) => Error::InvalidLimitException(inner),
-            crate::error::ListConformancePackComplianceScoresError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-            crate::error::ListConformancePackComplianceScoresError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::ListConformancePackComplianceScoresError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListDiscoveredResourcesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListDiscoveredResourcesError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::ListDiscoveredResourcesError> for Error {
-    fn from(err: crate::error::ListDiscoveredResourcesError) -> Self {
-        match err {
-            crate::error::ListDiscoveredResourcesError::InvalidLimitException(inner) => Error::InvalidLimitException(inner),
-            crate::error::ListDiscoveredResourcesError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-            crate::error::ListDiscoveredResourcesError::NoAvailableConfigurationRecorderException(inner) => Error::NoAvailableConfigurationRecorderException(inner),
-            crate::error::ListDiscoveredResourcesError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::ListDiscoveredResourcesError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListResourceEvaluationsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListResourceEvaluationsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::ListResourceEvaluationsError> for Error {
-    fn from(err: crate::error::ListResourceEvaluationsError) -> Self {
-        match err {
-            crate::error::ListResourceEvaluationsError::InvalidNextTokenException(inner) => {
-                Error::InvalidNextTokenException(inner)
-            }
-            crate::error::ListResourceEvaluationsError::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
-            }
-            crate::error::ListResourceEvaluationsError::InvalidTimeRangeException(inner) => {
-                Error::InvalidTimeRangeException(inner)
-            }
-            crate::error::ListResourceEvaluationsError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListStoredQueriesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListStoredQueriesError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::ListStoredQueriesError> for Error {
-    fn from(err: crate::error::ListStoredQueriesError) -> Self {
-        match err {
-            crate::error::ListStoredQueriesError::InvalidNextTokenException(inner) => {
-                Error::InvalidNextTokenException(inner)
-            }
-            crate::error::ListStoredQueriesError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::ListStoredQueriesError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::ListTagsForResourceError> for Error {
-    fn from(err: crate::error::ListTagsForResourceError) -> Self {
-        match err {
-            crate::error::ListTagsForResourceError::InvalidLimitException(inner) => {
-                Error::InvalidLimitException(inner)
-            }
-            crate::error::ListTagsForResourceError::InvalidNextTokenException(inner) => {
-                Error::InvalidNextTokenException(inner)
-            }
-            crate::error::ListTagsForResourceError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::ListTagsForResourceError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutAggregationAuthorizationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::PutAggregationAuthorizationError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::PutAggregationAuthorizationError> for Error {
-    fn from(err: crate::error::PutAggregationAuthorizationError) -> Self {
-        match err {
-            crate::error::PutAggregationAuthorizationError::InvalidParameterValueException(
-                inner,
-            ) => Error::InvalidParameterValueException(inner),
-            crate::error::PutAggregationAuthorizationError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutConfigRuleError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::PutConfigRuleError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::PutConfigRuleError> for Error {
-    fn from(err: crate::error::PutConfigRuleError) -> Self {
-        match err {
-            crate::error::PutConfigRuleError::InsufficientPermissionsException(inner) => {
-                Error::InsufficientPermissionsException(inner)
-            }
-            crate::error::PutConfigRuleError::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
-            }
-            crate::error::PutConfigRuleError::MaxNumberOfConfigRulesExceededException(inner) => {
-                Error::MaxNumberOfConfigRulesExceededException(inner)
-            }
-            crate::error::PutConfigRuleError::NoAvailableConfigurationRecorderException(inner) => {
-                Error::NoAvailableConfigurationRecorderException(inner)
-            }
-            crate::error::PutConfigRuleError::ResourceInUseException(inner) => {
-                Error::ResourceInUseException(inner)
-            }
-            crate::error::PutConfigRuleError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutConfigurationAggregatorError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::PutConfigurationAggregatorError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::PutConfigurationAggregatorError> for Error {
-    fn from(err: crate::error::PutConfigurationAggregatorError) -> Self {
-        match err {
-            crate::error::PutConfigurationAggregatorError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::PutConfigurationAggregatorError::InvalidRoleException(inner) => Error::InvalidRoleException(inner),
-            crate::error::PutConfigurationAggregatorError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::error::PutConfigurationAggregatorError::NoAvailableOrganizationException(inner) => Error::NoAvailableOrganizationException(inner),
-            crate::error::PutConfigurationAggregatorError::OrganizationAccessDeniedException(inner) => Error::OrganizationAccessDeniedException(inner),
-            crate::error::PutConfigurationAggregatorError::OrganizationAllFeaturesNotEnabledException(inner) => Error::OrganizationAllFeaturesNotEnabledException(inner),
-            crate::error::PutConfigurationAggregatorError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutConfigurationRecorderError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::PutConfigurationRecorderError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::PutConfigurationRecorderError> for Error {
-    fn from(err: crate::error::PutConfigurationRecorderError) -> Self {
-        match err {
-            crate::error::PutConfigurationRecorderError::InvalidConfigurationRecorderNameException(inner) => Error::InvalidConfigurationRecorderNameException(inner),
-            crate::error::PutConfigurationRecorderError::InvalidRecordingGroupException(inner) => Error::InvalidRecordingGroupException(inner),
-            crate::error::PutConfigurationRecorderError::InvalidRoleException(inner) => Error::InvalidRoleException(inner),
-            crate::error::PutConfigurationRecorderError::MaxNumberOfConfigurationRecordersExceededException(inner) => Error::MaxNumberOfConfigurationRecordersExceededException(inner),
-            crate::error::PutConfigurationRecorderError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutConformancePackError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::PutConformancePackError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::PutConformancePackError> for Error {
-    fn from(err: crate::error::PutConformancePackError) -> Self {
-        match err {
-            crate::error::PutConformancePackError::ConformancePackTemplateValidationException(
-                inner,
-            ) => Error::ConformancePackTemplateValidationException(inner),
-            crate::error::PutConformancePackError::InsufficientPermissionsException(inner) => {
-                Error::InsufficientPermissionsException(inner)
-            }
-            crate::error::PutConformancePackError::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
-            }
-            crate::error::PutConformancePackError::MaxNumberOfConformancePacksExceededException(
-                inner,
-            ) => Error::MaxNumberOfConformancePacksExceededException(inner),
-            crate::error::PutConformancePackError::ResourceInUseException(inner) => {
-                Error::ResourceInUseException(inner)
-            }
-            crate::error::PutConformancePackError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutDeliveryChannelError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::PutDeliveryChannelError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::PutDeliveryChannelError> for Error {
-    fn from(err: crate::error::PutDeliveryChannelError) -> Self {
-        match err {
-            crate::error::PutDeliveryChannelError::InsufficientDeliveryPolicyException(inner) => {
-                Error::InsufficientDeliveryPolicyException(inner)
-            }
-            crate::error::PutDeliveryChannelError::InvalidDeliveryChannelNameException(inner) => {
-                Error::InvalidDeliveryChannelNameException(inner)
-            }
-            crate::error::PutDeliveryChannelError::InvalidS3KeyPrefixException(inner) => {
-                Error::InvalidS3KeyPrefixException(inner)
-            }
-            crate::error::PutDeliveryChannelError::InvalidS3KmsKeyArnException(inner) => {
-                Error::InvalidS3KmsKeyArnException(inner)
-            }
-            crate::error::PutDeliveryChannelError::InvalidSnsTopicArnException(inner) => {
-                Error::InvalidSnsTopicArnException(inner)
-            }
-            crate::error::PutDeliveryChannelError::MaxNumberOfDeliveryChannelsExceededException(
-                inner,
-            ) => Error::MaxNumberOfDeliveryChannelsExceededException(inner),
-            crate::error::PutDeliveryChannelError::NoAvailableConfigurationRecorderException(
-                inner,
-            ) => Error::NoAvailableConfigurationRecorderException(inner),
-            crate::error::PutDeliveryChannelError::NoSuchBucketException(inner) => {
-                Error::NoSuchBucketException(inner)
-            }
-            crate::error::PutDeliveryChannelError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutEvaluationsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::PutEvaluationsError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::PutEvaluationsError> for Error {
-    fn from(err: crate::error::PutEvaluationsError) -> Self {
-        match err {
-            crate::error::PutEvaluationsError::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
-            }
-            crate::error::PutEvaluationsError::InvalidResultTokenException(inner) => {
-                Error::InvalidResultTokenException(inner)
-            }
-            crate::error::PutEvaluationsError::NoSuchConfigRuleException(inner) => {
-                Error::NoSuchConfigRuleException(inner)
-            }
-            crate::error::PutEvaluationsError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutExternalEvaluationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::PutExternalEvaluationError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::PutExternalEvaluationError> for Error {
-    fn from(err: crate::error::PutExternalEvaluationError) -> Self {
-        match err {
-            crate::error::PutExternalEvaluationError::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
-            }
-            crate::error::PutExternalEvaluationError::NoSuchConfigRuleException(inner) => {
-                Error::NoSuchConfigRuleException(inner)
-            }
-            crate::error::PutExternalEvaluationError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutOrganizationConfigRuleError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::PutOrganizationConfigRuleError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::PutOrganizationConfigRuleError> for Error {
-    fn from(err: crate::error::PutOrganizationConfigRuleError) -> Self {
-        match err {
-            crate::error::PutOrganizationConfigRuleError::InsufficientPermissionsException(inner) => Error::InsufficientPermissionsException(inner),
-            crate::error::PutOrganizationConfigRuleError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::PutOrganizationConfigRuleError::MaxNumberOfOrganizationConfigRulesExceededException(inner) => Error::MaxNumberOfOrganizationConfigRulesExceededException(inner),
-            crate::error::PutOrganizationConfigRuleError::NoAvailableOrganizationException(inner) => Error::NoAvailableOrganizationException(inner),
-            crate::error::PutOrganizationConfigRuleError::OrganizationAccessDeniedException(inner) => Error::OrganizationAccessDeniedException(inner),
-            crate::error::PutOrganizationConfigRuleError::OrganizationAllFeaturesNotEnabledException(inner) => Error::OrganizationAllFeaturesNotEnabledException(inner),
-            crate::error::PutOrganizationConfigRuleError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
-            crate::error::PutOrganizationConfigRuleError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::PutOrganizationConfigRuleError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::PutOrganizationConformancePackError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::PutOrganizationConformancePackError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::PutOrganizationConformancePackError> for Error {
-    fn from(err: crate::error::PutOrganizationConformancePackError) -> Self {
-        match err {
-            crate::error::PutOrganizationConformancePackError::InsufficientPermissionsException(inner) => Error::InsufficientPermissionsException(inner),
-            crate::error::PutOrganizationConformancePackError::MaxNumberOfOrganizationConformancePacksExceededException(inner) => Error::MaxNumberOfOrganizationConformancePacksExceededException(inner),
-            crate::error::PutOrganizationConformancePackError::NoAvailableOrganizationException(inner) => Error::NoAvailableOrganizationException(inner),
-            crate::error::PutOrganizationConformancePackError::OrganizationAccessDeniedException(inner) => Error::OrganizationAccessDeniedException(inner),
-            crate::error::PutOrganizationConformancePackError::OrganizationAllFeaturesNotEnabledException(inner) => Error::OrganizationAllFeaturesNotEnabledException(inner),
-            crate::error::PutOrganizationConformancePackError::OrganizationConformancePackTemplateValidationException(inner) => Error::OrganizationConformancePackTemplateValidationException(inner),
-            crate::error::PutOrganizationConformancePackError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
-            crate::error::PutOrganizationConformancePackError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::PutOrganizationConformancePackError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutRemediationConfigurationsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::PutRemediationConfigurationsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::PutRemediationConfigurationsError> for Error {
-    fn from(err: crate::error::PutRemediationConfigurationsError) -> Self {
-        match err {
-            crate::error::PutRemediationConfigurationsError::InsufficientPermissionsException(
-                inner,
-            ) => Error::InsufficientPermissionsException(inner),
-            crate::error::PutRemediationConfigurationsError::InvalidParameterValueException(
-                inner,
-            ) => Error::InvalidParameterValueException(inner),
-            crate::error::PutRemediationConfigurationsError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutRemediationExceptionsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::PutRemediationExceptionsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::PutRemediationExceptionsError> for Error {
-    fn from(err: crate::error::PutRemediationExceptionsError) -> Self {
-        match err {
-            crate::error::PutRemediationExceptionsError::InsufficientPermissionsException(
-                inner,
-            ) => Error::InsufficientPermissionsException(inner),
-            crate::error::PutRemediationExceptionsError::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
-            }
-            crate::error::PutRemediationExceptionsError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutResourceConfigError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::PutResourceConfigError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::PutResourceConfigError> for Error {
-    fn from(err: crate::error::PutResourceConfigError) -> Self {
-        match err {
-            crate::error::PutResourceConfigError::InsufficientPermissionsException(inner) => {
-                Error::InsufficientPermissionsException(inner)
-            }
-            crate::error::PutResourceConfigError::MaxActiveResourcesExceededException(inner) => {
-                Error::MaxActiveResourcesExceededException(inner)
-            }
-            crate::error::PutResourceConfigError::NoRunningConfigurationRecorderException(
-                inner,
-            ) => Error::NoRunningConfigurationRecorderException(inner),
-            crate::error::PutResourceConfigError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::PutResourceConfigError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutRetentionConfigurationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::PutRetentionConfigurationError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::PutRetentionConfigurationError> for Error {
-    fn from(err: crate::error::PutRetentionConfigurationError) -> Self {
-        match err {
-            crate::error::PutRetentionConfigurationError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::PutRetentionConfigurationError::MaxNumberOfRetentionConfigurationsExceededException(inner) => Error::MaxNumberOfRetentionConfigurationsExceededException(inner),
-            crate::error::PutRetentionConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutStoredQueryError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::PutStoredQueryError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::PutStoredQueryError> for Error {
-    fn from(err: crate::error::PutStoredQueryError) -> Self {
-        match err {
-            crate::error::PutStoredQueryError::ResourceConcurrentModificationException(inner) => {
-                Error::ResourceConcurrentModificationException(inner)
-            }
-            crate::error::PutStoredQueryError::TooManyTagsException(inner) => {
+            crate::operation::tag_resource::TagResourceError::TooManyTagsException(inner) => {
                 Error::TooManyTagsException(inner)
             }
-            crate::error::PutStoredQueryError::ValidationException(inner) => {
+            crate::operation::tag_resource::TagResourceError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
-            crate::error::PutStoredQueryError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::SelectAggregateResourceConfigError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::SelectAggregateResourceConfigError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::SelectAggregateResourceConfigError> for Error {
-    fn from(err: crate::error::SelectAggregateResourceConfigError) -> Self {
-        match err {
-            crate::error::SelectAggregateResourceConfigError::InvalidExpressionException(inner) => Error::InvalidExpressionException(inner),
-            crate::error::SelectAggregateResourceConfigError::InvalidLimitException(inner) => Error::InvalidLimitException(inner),
-            crate::error::SelectAggregateResourceConfigError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-            crate::error::SelectAggregateResourceConfigError::NoSuchConfigurationAggregatorException(inner) => Error::NoSuchConfigurationAggregatorException(inner),
-            crate::error::SelectAggregateResourceConfigError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::SelectResourceConfigError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::SelectResourceConfigError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::SelectResourceConfigError> for Error {
-    fn from(err: crate::error::SelectResourceConfigError) -> Self {
-        match err {
-            crate::error::SelectResourceConfigError::InvalidExpressionException(inner) => {
-                Error::InvalidExpressionException(inner)
-            }
-            crate::error::SelectResourceConfigError::InvalidLimitException(inner) => {
-                Error::InvalidLimitException(inner)
-            }
-            crate::error::SelectResourceConfigError::InvalidNextTokenException(inner) => {
-                Error::InvalidNextTokenException(inner)
-            }
-            crate::error::SelectResourceConfigError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartConfigRulesEvaluationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::StartConfigRulesEvaluationError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::StartConfigRulesEvaluationError> for Error {
-    fn from(err: crate::error::StartConfigRulesEvaluationError) -> Self {
-        match err {
-            crate::error::StartConfigRulesEvaluationError::InvalidParameterValueException(
-                inner,
-            ) => Error::InvalidParameterValueException(inner),
-            crate::error::StartConfigRulesEvaluationError::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::StartConfigRulesEvaluationError::NoSuchConfigRuleException(inner) => {
-                Error::NoSuchConfigRuleException(inner)
-            }
-            crate::error::StartConfigRulesEvaluationError::ResourceInUseException(inner) => {
-                Error::ResourceInUseException(inner)
-            }
-            crate::error::StartConfigRulesEvaluationError::Unhandled(inner) => {
+            crate::operation::tag_resource::TagResourceError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartConfigurationRecorderError, R>>
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::StartConfigurationRecorderError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::untag_resource::UntagResourceError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -3536,191 +3513,18 @@ where
         }
     }
 }
-impl From<crate::error::StartConfigurationRecorderError> for Error {
-    fn from(err: crate::error::StartConfigurationRecorderError) -> Self {
+impl From<crate::operation::untag_resource::UntagResourceError> for Error {
+    fn from(err: crate::operation::untag_resource::UntagResourceError) -> Self {
         match err {
-            crate::error::StartConfigurationRecorderError::NoAvailableDeliveryChannelException(
+            crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(
                 inner,
-            ) => Error::NoAvailableDeliveryChannelException(inner),
-            crate::error::StartConfigurationRecorderError::NoSuchConfigurationRecorderException(
-                inner,
-            ) => Error::NoSuchConfigurationRecorderException(inner),
-            crate::error::StartConfigurationRecorderError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartRemediationExecutionError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::StartRemediationExecutionError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::StartRemediationExecutionError> for Error {
-    fn from(err: crate::error::StartRemediationExecutionError) -> Self {
-        match err {
-            crate::error::StartRemediationExecutionError::InsufficientPermissionsException(inner) => Error::InsufficientPermissionsException(inner),
-            crate::error::StartRemediationExecutionError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::StartRemediationExecutionError::NoSuchRemediationConfigurationException(inner) => Error::NoSuchRemediationConfigurationException(inner),
-            crate::error::StartRemediationExecutionError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartResourceEvaluationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::StartResourceEvaluationError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::StartResourceEvaluationError> for Error {
-    fn from(err: crate::error::StartResourceEvaluationError) -> Self {
-        match err {
-            crate::error::StartResourceEvaluationError::IdempotentParameterMismatch(inner) => {
-                Error::IdempotentParameterMismatch(inner)
-            }
-            crate::error::StartResourceEvaluationError::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
-            }
-            crate::error::StartResourceEvaluationError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StopConfigurationRecorderError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::StopConfigurationRecorderError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::StopConfigurationRecorderError> for Error {
-    fn from(err: crate::error::StopConfigurationRecorderError) -> Self {
-        match err {
-            crate::error::StopConfigurationRecorderError::NoSuchConfigurationRecorderException(
-                inner,
-            ) => Error::NoSuchConfigurationRecorderException(inner),
-            crate::error::StopConfigurationRecorderError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::TagResourceError> for Error {
-    fn from(err: crate::error::TagResourceError) -> Self {
-        match err {
-            crate::error::TagResourceError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::TagResourceError::TooManyTagsException(inner) => {
-                Error::TooManyTagsException(inner)
-            }
-            crate::error::TagResourceError::ValidationException(inner) => {
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::untag_resource::UntagResourceError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
-            crate::error::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
+            crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::UntagResourceError> for Error {
-    fn from(err: crate::error::UntagResourceError) -> Self {
-        match err {
-            crate::error::UntagResourceError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::UntagResourceError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

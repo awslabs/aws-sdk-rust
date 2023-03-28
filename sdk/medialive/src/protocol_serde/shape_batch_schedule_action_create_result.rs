@@ -2,7 +2,7 @@
 pub(crate) fn de_batch_schedule_action_create_result<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::BatchScheduleActionCreateResult>,
+    Option<crate::types::BatchScheduleActionCreateResult>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::batch_schedule_action_create_result::Builder::default();
+            let mut builder =
+                crate::types::builders::BatchScheduleActionCreateResultBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

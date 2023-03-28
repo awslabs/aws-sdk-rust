@@ -2,7 +2,7 @@
 pub(crate) fn de_topic_rule_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::TopicRuleListItem>>,
+    Option<std::vec::Vec<crate::types::TopicRuleListItem>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

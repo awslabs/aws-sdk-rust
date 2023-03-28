@@ -2,7 +2,7 @@
 pub(crate) fn de_client_properties_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ClientPropertiesResult>>,
+    Option<std::vec::Vec<crate::types::ClientPropertiesResult>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

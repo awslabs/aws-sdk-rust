@@ -2,7 +2,7 @@
 pub(crate) fn de_sql_parameters_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SqlParameter>>,
+    Option<std::vec::Vec<crate::types::SqlParameter>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

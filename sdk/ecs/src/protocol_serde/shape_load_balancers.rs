@@ -2,7 +2,7 @@
 pub(crate) fn de_load_balancers<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::LoadBalancer>>,
+    Option<std::vec::Vec<crate::types::LoadBalancer>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

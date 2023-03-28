@@ -3,104 +3,113 @@
 pub fn de_list_jobs_by_pipeline_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListJobsByPipelineOutput,
-    crate::error::ListJobsByPipelineError,
+    crate::operation::list_jobs_by_pipeline::ListJobsByPipelineOutput,
+    crate::operation::list_jobs_by_pipeline::ListJobsByPipelineError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListJobsByPipelineError::unhandled)?;
+        .map_err(crate::operation::list_jobs_by_pipeline::ListJobsByPipelineError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListJobsByPipelineError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::list_jobs_by_pipeline::ListJobsByPipelineError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::ListJobsByPipelineError::AccessDeniedException({
+        "AccessDeniedException" => crate::operation::list_jobs_by_pipeline::ListJobsByPipelineError::AccessDeniedException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::access_denied_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListJobsByPipelineError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_jobs_by_pipeline::ListJobsByPipelineError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "IncompatibleVersionException" => {
-            crate::error::ListJobsByPipelineError::IncompatibleVersionException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::incompatible_version_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_incompatible_version_exception::de_incompatible_version_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListJobsByPipelineError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InternalServiceException" => {
-            crate::error::ListJobsByPipelineError::InternalServiceException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::internal_service_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_service_exception::de_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListJobsByPipelineError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ResourceNotFoundException" => {
-            crate::error::ListJobsByPipelineError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListJobsByPipelineError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ValidationException" => crate::error::ListJobsByPipelineError::ValidationException({
+        "IncompatibleVersionException" => crate::operation::list_jobs_by_pipeline::ListJobsByPipelineError::IncompatibleVersionException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListJobsByPipelineError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::IncompatibleVersionExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_incompatible_version_exception::de_incompatible_version_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_jobs_by_pipeline::ListJobsByPipelineError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::ListJobsByPipelineError::generic(generic),
+        "InternalServiceException" => crate::operation::list_jobs_by_pipeline::ListJobsByPipelineError::InternalServiceException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InternalServiceExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_service_exception::de_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_jobs_by_pipeline::ListJobsByPipelineError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::list_jobs_by_pipeline::ListJobsByPipelineError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_jobs_by_pipeline::ListJobsByPipelineError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ValidationException" => crate::operation::list_jobs_by_pipeline::ListJobsByPipelineError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_jobs_by_pipeline::ListJobsByPipelineError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::list_jobs_by_pipeline::ListJobsByPipelineError::generic(generic)
     })
 }
 
@@ -108,18 +117,18 @@ pub fn de_list_jobs_by_pipeline_http_error(
 pub fn de_list_jobs_by_pipeline_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListJobsByPipelineOutput,
-    crate::error::ListJobsByPipelineError,
+    crate::operation::list_jobs_by_pipeline::ListJobsByPipelineOutput,
+    crate::operation::list_jobs_by_pipeline::ListJobsByPipelineError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_jobs_by_pipeline_output::Builder::default();
+        let mut output = crate::operation::list_jobs_by_pipeline::builders::ListJobsByPipelineOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_jobs_by_pipeline::de_list_jobs_by_pipeline(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListJobsByPipelineError::unhandled)?;
+        .map_err(crate::operation::list_jobs_by_pipeline::ListJobsByPipelineError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -129,9 +138,9 @@ pub fn de_list_jobs_by_pipeline_http_response(
 
 pub(crate) fn de_list_jobs_by_pipeline(
     value: &[u8],
-    mut builder: crate::output::list_jobs_by_pipeline_output::Builder,
+    mut builder: crate::operation::list_jobs_by_pipeline::builders::ListJobsByPipelineOutputBuilder,
 ) -> Result<
-    crate::output::list_jobs_by_pipeline_output::Builder,
+    crate::operation::list_jobs_by_pipeline::builders::ListJobsByPipelineOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

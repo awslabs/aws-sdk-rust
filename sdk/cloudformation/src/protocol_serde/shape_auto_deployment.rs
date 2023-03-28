@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_auto_deployment(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::AutoDeployment,
+    input: &crate::types::AutoDeployment,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Enabled");
@@ -19,9 +19,9 @@ pub fn ser_auto_deployment(
 
 pub fn de_auto_deployment(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::AutoDeployment, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::AutoDeployment, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::AutoDeployment::builder();
+    let mut builder = crate::types::AutoDeployment::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Enabled") /* Enabled com.amazonaws.cloudformation#AutoDeployment$Enabled */ =>  {

@@ -2,7 +2,7 @@
 pub(crate) fn de_device_identifier_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DeviceIdentifier>>,
+    Option<std::vec::Vec<crate::types::DeviceIdentifier>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

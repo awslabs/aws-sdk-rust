@@ -2,7 +2,7 @@
 pub(crate) fn de_batch_delete_delegation_by_assessment_errors<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::BatchDeleteDelegationByAssessmentError>>,
+    Option<std::vec::Vec<crate::types::BatchDeleteDelegationByAssessmentError>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

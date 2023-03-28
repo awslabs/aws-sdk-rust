@@ -2,7 +2,7 @@
 pub(crate) fn de_ecs_service_projected_utilization_metric<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::EcsServiceProjectedUtilizationMetric>,
+    Option<crate::types::EcsServiceProjectedUtilizationMetric>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::ecs_service_projected_utilization_metric::Builder::default();
+                crate::types::builders::EcsServiceProjectedUtilizationMetricBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -31,7 +31,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::EcsServiceMetricName::from(u.as_ref())
+                                            crate::types::EcsServiceMetricName::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -44,7 +44,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::EcsServiceMetricStatistic::from(
+                                            crate::types::EcsServiceMetricStatistic::from(
                                                 u.as_ref(),
                                             )
                                         })

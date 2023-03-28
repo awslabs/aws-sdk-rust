@@ -2,7 +2,7 @@
 pub(crate) fn de_face_detail_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::FaceDetail>>,
+    Option<std::vec::Vec<crate::types::FaceDetail>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

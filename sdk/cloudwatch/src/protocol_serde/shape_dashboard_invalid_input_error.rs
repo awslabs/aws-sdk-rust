@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_dashboard_invalid_input_error_xml_err(
     inp: &[u8],
-    mut builder: crate::error::dashboard_invalid_input_error::Builder,
+    mut builder: crate::types::error::builders::DashboardInvalidInputErrorBuilder,
 ) -> Result<
-    crate::error::dashboard_invalid_input_error::Builder,
+    crate::types::error::builders::DashboardInvalidInputErrorBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

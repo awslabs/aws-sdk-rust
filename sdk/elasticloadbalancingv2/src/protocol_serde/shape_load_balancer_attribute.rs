@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_load_balancer_attribute(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::LoadBalancerAttribute,
+    input: &crate::types::LoadBalancerAttribute,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Key");
@@ -19,9 +19,9 @@ pub fn ser_load_balancer_attribute(
 
 pub fn de_load_balancer_attribute(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::LoadBalancerAttribute, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::LoadBalancerAttribute, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::LoadBalancerAttribute::builder();
+    let mut builder = crate::types::LoadBalancerAttribute::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Key") /* Key com.amazonaws.elasticloadbalancingv2#LoadBalancerAttribute$Key */ =>  {

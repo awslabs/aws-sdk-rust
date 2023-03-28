@@ -2,7 +2,7 @@
 pub(crate) fn de_axis_label_options_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AxisLabelOptions>>,
+    Option<std::vec::Vec<crate::types::AxisLabelOptions>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

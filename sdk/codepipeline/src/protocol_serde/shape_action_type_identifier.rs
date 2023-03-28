@@ -2,7 +2,7 @@
 pub(crate) fn de_action_type_identifier<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ActionTypeIdentifier>,
+    Option<crate::types::ActionTypeIdentifier>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::action_type_identifier::Builder::default();
+            let mut builder = crate::types::builders::ActionTypeIdentifierBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::ActionCategory::from(u.as_ref()))
+                                            .map(|u| crate::types::ActionCategory::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -87,7 +87,7 @@ where
 
 pub fn ser_action_type_identifier(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::ActionTypeIdentifier,
+    input: &crate::types::ActionTypeIdentifier,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.category {
         object.key("category").string(var_1.as_str());

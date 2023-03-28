@@ -2,7 +2,7 @@
 pub fn de_verified_access_instance_logging_configuration_list(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::VerifiedAccessInstanceLoggingConfiguration>,
+    std::vec::Vec<crate::types::VerifiedAccessInstanceLoggingConfiguration>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

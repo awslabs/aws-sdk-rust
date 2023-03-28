@@ -2,7 +2,7 @@
 pub(crate) fn de_insight_category_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::InsightCategory>>,
+    Option<std::vec::Vec<crate::types::InsightCategory>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -29,7 +29,7 @@ where
                         )?
                         .map(|s| {
                             s.to_unescaped()
-                                .map(|u| crate::model::InsightCategory::from(u.as_ref()))
+                                .map(|u| crate::types::InsightCategory::from(u.as_ref()))
                         })
                         .transpose()?;
                         if let Some(value) = value {

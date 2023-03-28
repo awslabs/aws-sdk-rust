@@ -2,13 +2,13 @@
 pub fn de_campaigns_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::CampaignsResponse>,
-    crate::error::GetCampaignsError,
+    std::option::Option<crate::types::CampaignsResponse>,
+    crate::operation::get_campaigns::GetCampaignsError,
 > {
     (!body.is_empty())
         .then(|| {
             crate::protocol_serde::shape_campaigns_response::de_campaigns_response_payload(body)
-                .map_err(crate::error::GetCampaignsError::unhandled)
+                .map_err(crate::operation::get_campaigns::GetCampaignsError::unhandled)
         })
         .transpose()
 }

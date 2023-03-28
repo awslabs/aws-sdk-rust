@@ -2,7 +2,7 @@
 pub(crate) fn de_control_metadata_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ControlMetadata>>,
+    Option<std::vec::Vec<crate::types::ControlMetadata>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

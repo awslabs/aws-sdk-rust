@@ -2,13 +2,15 @@
 pub fn de_virtual_service_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::VirtualServiceData>,
-    crate::error::CreateVirtualServiceError,
+    std::option::Option<crate::types::VirtualServiceData>,
+    crate::operation::create_virtual_service::CreateVirtualServiceError,
 > {
     (!body.is_empty())
         .then(|| {
             crate::protocol_serde::shape_virtual_service_data::de_virtual_service_data_payload(body)
-                .map_err(crate::error::CreateVirtualServiceError::unhandled)
+                .map_err(
+                    crate::operation::create_virtual_service::CreateVirtualServiceError::unhandled,
+                )
         })
         .transpose()
 }

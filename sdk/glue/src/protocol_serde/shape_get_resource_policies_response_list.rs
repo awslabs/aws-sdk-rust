@@ -2,7 +2,7 @@
 pub(crate) fn de_get_resource_policies_response_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::GluePolicy>>,
+    Option<std::vec::Vec<crate::types::GluePolicy>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

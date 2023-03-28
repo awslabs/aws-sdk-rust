@@ -2,7 +2,7 @@
 pub(crate) fn de_invalid_parameter_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<std::string::String, crate::model::InvalidParameterDetail>>,
+    Option<std::collections::HashMap<std::string::String, crate::types::InvalidParameterDetail>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

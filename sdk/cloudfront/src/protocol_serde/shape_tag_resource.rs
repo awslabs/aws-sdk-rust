@@ -2,30 +2,37 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_tag_resource_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
+) -> std::result::Result<
+    crate::operation::tag_resource::TagResourceOutput,
+    crate::operation::tag_resource::TagResourceError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::TagResourceError::unhandled)?;
+        .map_err(crate::operation::tag_resource::TagResourceError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::TagResourceError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::tag_resource::TagResourceError::unhandled(
+                generic,
+            ))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDenied" => crate::error::TagResourceError::AccessDenied({
+        "AccessDenied" => crate::operation::tag_resource::TagResourceError::AccessDenied({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::error::access_denied::Builder::default();
+                let mut output = crate::types::error::builders::AccessDeniedBuilder::default();
                 let _ = response;
                 output = crate::protocol_serde::shape_access_denied::de_access_denied_xml_err(
                     response.body().as_ref(),
                     output,
                 )
-                .map_err(crate::error::TagResourceError::unhandled)?;
+                .map_err(crate::operation::tag_resource::TagResourceError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -34,18 +41,18 @@ pub fn de_tag_resource_http_error(
             }
             tmp
         }),
-        "InvalidArgument" => crate::error::TagResourceError::InvalidArgument({
+        "InvalidArgument" => crate::operation::tag_resource::TagResourceError::InvalidArgument({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_argument::Builder::default();
+                let mut output = crate::types::error::builders::InvalidArgumentBuilder::default();
                 let _ = response;
                 output =
                     crate::protocol_serde::shape_invalid_argument::de_invalid_argument_xml_err(
                         response.body().as_ref(),
                         output,
                     )
-                    .map_err(crate::error::TagResourceError::unhandled)?;
+                    .map_err(crate::operation::tag_resource::TagResourceError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -54,17 +61,17 @@ pub fn de_tag_resource_http_error(
             }
             tmp
         }),
-        "InvalidTagging" => crate::error::TagResourceError::InvalidTagging({
+        "InvalidTagging" => crate::operation::tag_resource::TagResourceError::InvalidTagging({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_tagging::Builder::default();
+                let mut output = crate::types::error::builders::InvalidTaggingBuilder::default();
                 let _ = response;
                 output = crate::protocol_serde::shape_invalid_tagging::de_invalid_tagging_xml_err(
                     response.body().as_ref(),
                     output,
                 )
-                .map_err(crate::error::TagResourceError::unhandled)?;
+                .map_err(crate::operation::tag_resource::TagResourceError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -73,18 +80,18 @@ pub fn de_tag_resource_http_error(
             }
             tmp
         }),
-        "NoSuchResource" => crate::error::TagResourceError::NoSuchResource({
+        "NoSuchResource" => crate::operation::tag_resource::TagResourceError::NoSuchResource({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::error::no_such_resource::Builder::default();
+                let mut output = crate::types::error::builders::NoSuchResourceBuilder::default();
                 let _ = response;
                 output =
                     crate::protocol_serde::shape_no_such_resource::de_no_such_resource_xml_err(
                         response.body().as_ref(),
                         output,
                     )
-                    .map_err(crate::error::TagResourceError::unhandled)?;
+                    .map_err(crate::operation::tag_resource::TagResourceError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -93,17 +100,21 @@ pub fn de_tag_resource_http_error(
             }
             tmp
         }),
-        _ => crate::error::TagResourceError::generic(generic),
+        _ => crate::operation::tag_resource::TagResourceError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_tag_resource_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
+) -> std::result::Result<
+    crate::operation::tag_resource::TagResourceOutput,
+    crate::operation::tag_resource::TagResourceError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::tag_resource_output::Builder::default();
+        let mut output =
+            crate::operation::tag_resource::builders::TagResourceOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

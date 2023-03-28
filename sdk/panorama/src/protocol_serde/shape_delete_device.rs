@@ -2,76 +2,31 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_device_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeleteDeviceOutput, crate::error::DeleteDeviceError> {
+) -> std::result::Result<
+    crate::operation::delete_device::DeleteDeviceOutput,
+    crate::operation::delete_device::DeleteDeviceError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteDeviceError::unhandled)?;
+        .map_err(crate::operation::delete_device::DeleteDeviceError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DeleteDeviceError::unhandled(generic)),
+        None => return Err(crate::operation::delete_device::DeleteDeviceError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::DeleteDeviceError::AccessDeniedException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::access_denied_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDeviceError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ConflictException" => crate::error::DeleteDeviceError::ConflictException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::conflict_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDeviceError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InternalServerException" => crate::error::DeleteDeviceError::InternalServerException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDeviceError::unhandled)?;
-                output = output.set_retry_after_seconds(
-                        crate::protocol_serde::shape_internal_server_exception::de_retry_after_seconds_header(response.headers())
-                                                .map_err(|_|crate::error::DeleteDeviceError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
-                    );
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ResourceNotFoundException" => {
-            crate::error::DeleteDeviceError::ResourceNotFoundException({
+        "AccessDeniedException" => {
+            crate::operation::delete_device::DeleteDeviceError::AccessDeniedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::AccessDeniedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDeviceError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_device::DeleteDeviceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -81,38 +36,103 @@ pub fn de_delete_device_http_error(
                 tmp
             })
         }
-        "ValidationException" => crate::error::DeleteDeviceError::ValidationException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "ConflictException" => {
+            crate::operation::delete_device::DeleteDeviceError::ConflictException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDeviceError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::DeleteDeviceError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ConflictExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_device::DeleteDeviceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InternalServerException" => {
+            crate::operation::delete_device::DeleteDeviceError::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InternalServerExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_device::DeleteDeviceError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::protocol_serde::shape_internal_server_exception::de_retry_after_seconds_header(response.headers())
+                                                .map_err(|_|crate::operation::delete_device::DeleteDeviceError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
+                    );
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::operation::delete_device::DeleteDeviceError::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_device::DeleteDeviceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ValidationException" => {
+            crate::operation::delete_device::DeleteDeviceError::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_device::DeleteDeviceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::delete_device::DeleteDeviceError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_device_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeleteDeviceOutput, crate::error::DeleteDeviceError> {
+) -> std::result::Result<
+    crate::operation::delete_device::DeleteDeviceOutput,
+    crate::operation::delete_device::DeleteDeviceError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_device_output::Builder::default();
+        let mut output =
+            crate::operation::delete_device::builders::DeleteDeviceOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_delete_device::de_delete_device(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DeleteDeviceError::unhandled)?;
+        .map_err(crate::operation::delete_device::DeleteDeviceError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -122,9 +142,9 @@ pub fn de_delete_device_http_response(
 
 pub(crate) fn de_delete_device(
     value: &[u8],
-    mut builder: crate::output::delete_device_output::Builder,
+    mut builder: crate::operation::delete_device::builders::DeleteDeviceOutputBuilder,
 ) -> Result<
-    crate::output::delete_device_output::Builder,
+    crate::operation::delete_device::builders::DeleteDeviceOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

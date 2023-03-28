@@ -2,7 +2,7 @@
 pub(crate) fn de_aws_iam_instance_profile_roles<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AwsIamInstanceProfileRole>>,
+    Option<std::vec::Vec<crate::types::AwsIamInstanceProfileRole>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

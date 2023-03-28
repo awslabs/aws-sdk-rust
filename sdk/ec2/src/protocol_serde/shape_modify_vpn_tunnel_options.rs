@@ -3,34 +3,37 @@
 pub fn de_modify_vpn_tunnel_options_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ModifyVpnTunnelOptionsOutput,
-    crate::error::ModifyVpnTunnelOptionsError,
+    crate::operation::modify_vpn_tunnel_options::ModifyVpnTunnelOptionsOutput,
+    crate::operation::modify_vpn_tunnel_options::ModifyVpnTunnelOptionsError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ModifyVpnTunnelOptionsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::modify_vpn_tunnel_options::ModifyVpnTunnelOptionsError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::ModifyVpnTunnelOptionsError::generic(generic))
+    Err(crate::operation::modify_vpn_tunnel_options::ModifyVpnTunnelOptionsError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_modify_vpn_tunnel_options_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ModifyVpnTunnelOptionsOutput,
-    crate::error::ModifyVpnTunnelOptionsError,
+    crate::operation::modify_vpn_tunnel_options::ModifyVpnTunnelOptionsOutput,
+    crate::operation::modify_vpn_tunnel_options::ModifyVpnTunnelOptionsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::modify_vpn_tunnel_options_output::Builder::default();
+        let mut output = crate::operation::modify_vpn_tunnel_options::builders::ModifyVpnTunnelOptionsOutputBuilder::default();
         let _ = response;
         output =
             crate::protocol_serde::shape_modify_vpn_tunnel_options::de_modify_vpn_tunnel_options(
                 response.body().as_ref(),
                 output,
             )
-            .map_err(crate::error::ModifyVpnTunnelOptionsError::unhandled)?;
+            .map_err(
+                crate::operation::modify_vpn_tunnel_options::ModifyVpnTunnelOptionsError::unhandled,
+            )?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -41,9 +44,9 @@ pub fn de_modify_vpn_tunnel_options_http_response(
 #[allow(unused_mut)]
 pub fn de_modify_vpn_tunnel_options(
     inp: &[u8],
-    mut builder: crate::output::modify_vpn_tunnel_options_output::Builder,
+    mut builder: crate::operation::modify_vpn_tunnel_options::builders::ModifyVpnTunnelOptionsOutputBuilder,
 ) -> Result<
-    crate::output::modify_vpn_tunnel_options_output::Builder,
+    crate::operation::modify_vpn_tunnel_options::builders::ModifyVpnTunnelOptionsOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

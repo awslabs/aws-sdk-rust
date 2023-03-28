@@ -2,7 +2,7 @@
 pub(crate) fn de_datastore_properties<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::DatastoreProperties>,
+    Option<crate::types::DatastoreProperties>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::datastore_properties::Builder::default();
+            let mut builder = crate::types::builders::DatastorePropertiesBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -57,7 +57,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::DatastoreStatus::from(u.as_ref())
+                                            crate::types::DatastoreStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -78,7 +78,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::FhirVersion::from(u.as_ref()))
+                                            .map(|u| crate::types::FhirVersion::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

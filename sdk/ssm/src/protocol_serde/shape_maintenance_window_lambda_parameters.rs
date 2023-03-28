@@ -2,7 +2,7 @@
 pub(crate) fn de_maintenance_window_lambda_parameters<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::MaintenanceWindowLambdaParameters>,
+    Option<crate::types::MaintenanceWindowLambdaParameters>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::maintenance_window_lambda_parameters::Builder::default();
+                crate::types::builders::MaintenanceWindowLambdaParametersBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -74,7 +74,7 @@ where
 
 pub fn ser_maintenance_window_lambda_parameters(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::MaintenanceWindowLambdaParameters,
+    input: &crate::types::MaintenanceWindowLambdaParameters,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.client_context {
         object.key("ClientContext").string(var_1.as_str());

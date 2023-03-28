@@ -2,7 +2,7 @@
 pub(crate) fn de_mfa_option_list_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::MfaOptionType>>,
+    Option<std::vec::Vec<crate::types::MfaOptionType>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

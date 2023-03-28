@@ -2,7 +2,7 @@
 pub(crate) fn de_dataset_metadata_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DatasetMetadata>>,
+    Option<std::vec::Vec<crate::types::DatasetMetadata>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

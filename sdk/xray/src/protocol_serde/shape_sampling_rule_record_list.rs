@@ -2,7 +2,7 @@
 pub(crate) fn de_sampling_rule_record_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SamplingRuleRecord>>,
+    Option<std::vec::Vec<crate::types::SamplingRuleRecord>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_reservation_purchase_recommendation<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ReservationPurchaseRecommendation>,
+    Option<crate::types::ReservationPurchaseRecommendation>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::reservation_purchase_recommendation::Builder::default();
+            let mut builder =
+                crate::types::builders::ReservationPurchaseRecommendationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +31,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::AccountScope::from(u.as_ref()))
+                                            .map(|u| crate::types::AccountScope::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -42,7 +43,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::LookbackPeriodInDays::from(u.as_ref())
+                                            crate::types::LookbackPeriodInDays::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -55,7 +56,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::TermInYears::from(u.as_ref()))
+                                            .map(|u| crate::types::TermInYears::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -67,7 +68,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::PaymentOption::from(u.as_ref()))
+                                            .map(|u| crate::types::PaymentOption::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

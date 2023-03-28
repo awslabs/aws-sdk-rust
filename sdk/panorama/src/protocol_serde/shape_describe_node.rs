@@ -2,76 +2,31 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_node_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DescribeNodeOutput, crate::error::DescribeNodeError> {
+) -> std::result::Result<
+    crate::operation::describe_node::DescribeNodeOutput,
+    crate::operation::describe_node::DescribeNodeError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeNodeError::unhandled)?;
+        .map_err(crate::operation::describe_node::DescribeNodeError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DescribeNodeError::unhandled(generic)),
+        None => return Err(crate::operation::describe_node::DescribeNodeError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::DescribeNodeError::AccessDeniedException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::access_denied_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeNodeError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ConflictException" => crate::error::DescribeNodeError::ConflictException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::conflict_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeNodeError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InternalServerException" => crate::error::DescribeNodeError::InternalServerException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeNodeError::unhandled)?;
-                output = output.set_retry_after_seconds(
-                        crate::protocol_serde::shape_internal_server_exception::de_retry_after_seconds_header(response.headers())
-                                                .map_err(|_|crate::error::DescribeNodeError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
-                    );
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ResourceNotFoundException" => {
-            crate::error::DescribeNodeError::ResourceNotFoundException({
+        "AccessDeniedException" => {
+            crate::operation::describe_node::DescribeNodeError::AccessDeniedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::AccessDeniedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeNodeError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_node::DescribeNodeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -81,38 +36,103 @@ pub fn de_describe_node_http_error(
                 tmp
             })
         }
-        "ValidationException" => crate::error::DescribeNodeError::ValidationException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "ConflictException" => {
+            crate::operation::describe_node::DescribeNodeError::ConflictException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeNodeError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::DescribeNodeError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ConflictExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_node::DescribeNodeError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InternalServerException" => {
+            crate::operation::describe_node::DescribeNodeError::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InternalServerExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_node::DescribeNodeError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::protocol_serde::shape_internal_server_exception::de_retry_after_seconds_header(response.headers())
+                                                .map_err(|_|crate::operation::describe_node::DescribeNodeError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
+                    );
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::operation::describe_node::DescribeNodeError::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_node::DescribeNodeError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ValidationException" => {
+            crate::operation::describe_node::DescribeNodeError::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_node::DescribeNodeError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::describe_node::DescribeNodeError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_node_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DescribeNodeOutput, crate::error::DescribeNodeError> {
+) -> std::result::Result<
+    crate::operation::describe_node::DescribeNodeOutput,
+    crate::operation::describe_node::DescribeNodeError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_node_output::Builder::default();
+        let mut output =
+            crate::operation::describe_node::builders::DescribeNodeOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_describe_node::de_describe_node(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DescribeNodeError::unhandled)?;
+        .map_err(crate::operation::describe_node::DescribeNodeError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -122,9 +142,9 @@ pub fn de_describe_node_http_response(
 
 pub(crate) fn de_describe_node(
     value: &[u8],
-    mut builder: crate::output::describe_node_output::Builder,
+    mut builder: crate::operation::describe_node::builders::DescribeNodeOutputBuilder,
 ) -> Result<
-    crate::output::describe_node_output::Builder,
+    crate::operation::describe_node::builders::DescribeNodeOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =
@@ -153,7 +173,7 @@ pub(crate) fn de_describe_node(
                             )?
                             .map(|s| {
                                 s.to_unescaped()
-                                    .map(|u| crate::model::NodeCategory::from(u.as_ref()))
+                                    .map(|u| crate::types::NodeCategory::from(u.as_ref()))
                             })
                             .transpose()?,
                         );

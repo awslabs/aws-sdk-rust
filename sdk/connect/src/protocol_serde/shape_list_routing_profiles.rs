@@ -3,105 +3,113 @@
 pub fn de_list_routing_profiles_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListRoutingProfilesOutput,
-    crate::error::ListRoutingProfilesError,
+    crate::operation::list_routing_profiles::ListRoutingProfilesOutput,
+    crate::operation::list_routing_profiles::ListRoutingProfilesError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListRoutingProfilesError::unhandled)?;
+        .map_err(crate::operation::list_routing_profiles::ListRoutingProfilesError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListRoutingProfilesError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::list_routing_profiles::ListRoutingProfilesError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServiceException" => {
-            crate::error::ListRoutingProfilesError::InternalServiceException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::internal_service_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_service_exception::de_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRoutingProfilesError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InvalidParameterException" => {
-            crate::error::ListRoutingProfilesError::InvalidParameterException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRoutingProfilesError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InvalidRequestException" => {
-            crate::error::ListRoutingProfilesError::InvalidRequestException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_request_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRoutingProfilesError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ResourceNotFoundException" => {
-            crate::error::ListRoutingProfilesError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRoutingProfilesError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ThrottlingException" => crate::error::ListRoutingProfilesError::ThrottlingException({
+        "InternalServiceException" => crate::operation::list_routing_profiles::ListRoutingProfilesError::InternalServiceException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::throttling_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRoutingProfilesError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InternalServiceExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_service_exception::de_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_routing_profiles::ListRoutingProfilesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::ListRoutingProfilesError::generic(generic),
+        "InvalidParameterException" => crate::operation::list_routing_profiles::ListRoutingProfilesError::InvalidParameterException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidParameterExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_routing_profiles::ListRoutingProfilesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidRequestException" => crate::operation::list_routing_profiles::ListRoutingProfilesError::InvalidRequestException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidRequestExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_routing_profiles::ListRoutingProfilesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::list_routing_profiles::ListRoutingProfilesError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_routing_profiles::ListRoutingProfilesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ThrottlingException" => crate::operation::list_routing_profiles::ListRoutingProfilesError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_routing_profiles::ListRoutingProfilesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::list_routing_profiles::ListRoutingProfilesError::generic(generic)
     })
 }
 
@@ -109,18 +117,18 @@ pub fn de_list_routing_profiles_http_error(
 pub fn de_list_routing_profiles_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListRoutingProfilesOutput,
-    crate::error::ListRoutingProfilesError,
+    crate::operation::list_routing_profiles::ListRoutingProfilesOutput,
+    crate::operation::list_routing_profiles::ListRoutingProfilesError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_routing_profiles_output::Builder::default();
+        let mut output = crate::operation::list_routing_profiles::builders::ListRoutingProfilesOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_routing_profiles::de_list_routing_profiles(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListRoutingProfilesError::unhandled)?;
+        .map_err(crate::operation::list_routing_profiles::ListRoutingProfilesError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -130,9 +138,9 @@ pub fn de_list_routing_profiles_http_response(
 
 pub(crate) fn de_list_routing_profiles(
     value: &[u8],
-    mut builder: crate::output::list_routing_profiles_output::Builder,
+    mut builder: crate::operation::list_routing_profiles::builders::ListRoutingProfilesOutputBuilder,
 ) -> Result<
-    crate::output::list_routing_profiles_output::Builder,
+    crate::operation::list_routing_profiles::builders::ListRoutingProfilesOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

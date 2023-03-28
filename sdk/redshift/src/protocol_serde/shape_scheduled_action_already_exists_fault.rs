@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_scheduled_action_already_exists_fault_xml_err(
     inp: &[u8],
-    mut builder: crate::error::scheduled_action_already_exists_fault::Builder,
+    mut builder: crate::types::error::builders::ScheduledActionAlreadyExistsFaultBuilder,
 ) -> Result<
-    crate::error::scheduled_action_already_exists_fault::Builder,
+    crate::types::error::builders::ScheduledActionAlreadyExistsFaultBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

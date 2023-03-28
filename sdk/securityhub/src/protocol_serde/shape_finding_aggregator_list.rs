@@ -2,7 +2,7 @@
 pub(crate) fn de_finding_aggregator_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::FindingAggregator>>,
+    Option<std::vec::Vec<crate::types::FindingAggregator>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

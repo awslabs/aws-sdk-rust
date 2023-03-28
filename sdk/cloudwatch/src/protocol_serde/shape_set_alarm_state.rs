@@ -2,42 +2,33 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_set_alarm_state_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::SetAlarmStateOutput, crate::error::SetAlarmStateError> {
+) -> std::result::Result<
+    crate::operation::set_alarm_state::SetAlarmStateOutput,
+    crate::operation::set_alarm_state::SetAlarmStateError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::SetAlarmStateError::unhandled)?;
+        .map_err(crate::operation::set_alarm_state::SetAlarmStateError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::SetAlarmStateError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::set_alarm_state::SetAlarmStateError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidFormat" => crate::error::SetAlarmStateError::InvalidFormatFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::invalid_format_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_format_fault::de_invalid_format_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::SetAlarmStateError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ResourceNotFound" => {
-            crate::error::SetAlarmStateError::ResourceNotFound({
+        "InvalidFormat" => {
+            crate::operation::set_alarm_state::SetAlarmStateError::InvalidFormatFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::InvalidFormatFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found::de_resource_not_found_xml_err(response.body().as_ref(), output).map_err(crate::error::SetAlarmStateError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_format_fault::de_invalid_format_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::set_alarm_state::SetAlarmStateError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -47,17 +38,39 @@ pub fn de_set_alarm_state_http_error(
                 tmp
             })
         }
-        _ => crate::error::SetAlarmStateError::generic(generic),
+        "ResourceNotFound" => {
+            crate::operation::set_alarm_state::SetAlarmStateError::ResourceNotFound({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ResourceNotFoundBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_not_found::de_resource_not_found_xml_err(response.body().as_ref(), output).map_err(crate::operation::set_alarm_state::SetAlarmStateError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::set_alarm_state::SetAlarmStateError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_set_alarm_state_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::SetAlarmStateOutput, crate::error::SetAlarmStateError> {
+) -> std::result::Result<
+    crate::operation::set_alarm_state::SetAlarmStateOutput,
+    crate::operation::set_alarm_state::SetAlarmStateError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::set_alarm_state_output::Builder::default();
+        let mut output =
+            crate::operation::set_alarm_state::builders::SetAlarmStateOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

@@ -3,152 +3,147 @@
 pub fn de_delete_replication_group_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteReplicationGroupOutput,
-    crate::error::DeleteReplicationGroupError,
+    crate::operation::delete_replication_group::DeleteReplicationGroupOutput,
+    crate::operation::delete_replication_group::DeleteReplicationGroupError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteReplicationGroupError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::delete_replication_group::DeleteReplicationGroupError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::DeleteReplicationGroupError::unhandled(
-                generic,
-            ))
-        }
-    };
+    let error_code =
+        match generic.code() {
+            Some(code) => code,
+            None => return Err(
+                crate::operation::delete_replication_group::DeleteReplicationGroupError::unhandled(
+                    generic,
+                ),
+            ),
+        };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterCombination" => {
-            crate::error::DeleteReplicationGroupError::InvalidParameterCombinationException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidParameterCombination" => crate::operation::delete_replication_group::DeleteReplicationGroupError::InvalidParameterCombinationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_parameter_combination_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidParameterCombinationExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_combination_exception::de_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteReplicationGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_combination_exception::de_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_replication_group::DeleteReplicationGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidParameterValue" => {
-            crate::error::DeleteReplicationGroupError::InvalidParameterValueException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidParameterValue" => crate::operation::delete_replication_group::DeleteReplicationGroupError::InvalidParameterValueException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_parameter_value_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteReplicationGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_replication_group::DeleteReplicationGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidReplicationGroupState" => {
-            crate::error::DeleteReplicationGroupError::InvalidReplicationGroupStateFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidReplicationGroupState" => crate::operation::delete_replication_group::DeleteReplicationGroupError::InvalidReplicationGroupStateFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_replication_group_state_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidReplicationGroupStateFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_replication_group_state_fault::de_invalid_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteReplicationGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_replication_group_state_fault::de_invalid_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_replication_group::DeleteReplicationGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ReplicationGroupNotFoundFault" => {
-            crate::error::DeleteReplicationGroupError::ReplicationGroupNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ReplicationGroupNotFoundFault" => crate::operation::delete_replication_group::DeleteReplicationGroupError::ReplicationGroupNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::replication_group_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::ReplicationGroupNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_replication_group_not_found_fault::de_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteReplicationGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_replication_group_not_found_fault::de_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_replication_group::DeleteReplicationGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "SnapshotAlreadyExistsFault" => {
-            crate::error::DeleteReplicationGroupError::SnapshotAlreadyExistsFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "SnapshotAlreadyExistsFault" => crate::operation::delete_replication_group::DeleteReplicationGroupError::SnapshotAlreadyExistsFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::snapshot_already_exists_fault::Builder::default();
+                    let mut output = crate::types::error::builders::SnapshotAlreadyExistsFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_snapshot_already_exists_fault::de_snapshot_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteReplicationGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_snapshot_already_exists_fault::de_snapshot_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_replication_group::DeleteReplicationGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "SnapshotFeatureNotSupportedFault" => {
-            crate::error::DeleteReplicationGroupError::SnapshotFeatureNotSupportedFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "SnapshotFeatureNotSupportedFault" => crate::operation::delete_replication_group::DeleteReplicationGroupError::SnapshotFeatureNotSupportedFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::snapshot_feature_not_supported_fault::Builder::default();
+                    let mut output = crate::types::error::builders::SnapshotFeatureNotSupportedFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_snapshot_feature_not_supported_fault::de_snapshot_feature_not_supported_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteReplicationGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_snapshot_feature_not_supported_fault::de_snapshot_feature_not_supported_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_replication_group::DeleteReplicationGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "SnapshotQuotaExceededFault" => {
-            crate::error::DeleteReplicationGroupError::SnapshotQuotaExceededFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "SnapshotQuotaExceededFault" => crate::operation::delete_replication_group::DeleteReplicationGroupError::SnapshotQuotaExceededFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::snapshot_quota_exceeded_fault::Builder::default();
+                    let mut output = crate::types::error::builders::SnapshotQuotaExceededFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_snapshot_quota_exceeded_fault::de_snapshot_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteReplicationGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_snapshot_quota_exceeded_fault::de_snapshot_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_replication_group::DeleteReplicationGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DeleteReplicationGroupError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::delete_replication_group::DeleteReplicationGroupError::generic(generic)
     })
 }
 
@@ -156,19 +151,21 @@ pub fn de_delete_replication_group_http_error(
 pub fn de_delete_replication_group_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteReplicationGroupOutput,
-    crate::error::DeleteReplicationGroupError,
+    crate::operation::delete_replication_group::DeleteReplicationGroupOutput,
+    crate::operation::delete_replication_group::DeleteReplicationGroupError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_replication_group_output::Builder::default();
+        let mut output = crate::operation::delete_replication_group::builders::DeleteReplicationGroupOutputBuilder::default();
         let _ = response;
         output =
             crate::protocol_serde::shape_delete_replication_group::de_delete_replication_group(
                 response.body().as_ref(),
                 output,
             )
-            .map_err(crate::error::DeleteReplicationGroupError::unhandled)?;
+            .map_err(
+                crate::operation::delete_replication_group::DeleteReplicationGroupError::unhandled,
+            )?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -179,9 +176,9 @@ pub fn de_delete_replication_group_http_response(
 #[allow(unused_mut)]
 pub fn de_delete_replication_group(
     inp: &[u8],
-    mut builder: crate::output::delete_replication_group_output::Builder,
+    mut builder: crate::operation::delete_replication_group::builders::DeleteReplicationGroupOutputBuilder,
 ) -> Result<
-    crate::output::delete_replication_group_output::Builder,
+    crate::operation::delete_replication_group::builders::DeleteReplicationGroupOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

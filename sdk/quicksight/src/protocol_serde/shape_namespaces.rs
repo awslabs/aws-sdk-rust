@@ -2,7 +2,7 @@
 pub(crate) fn de_namespaces<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::NamespaceInfoV2>>,
+    Option<std::vec::Vec<crate::types::NamespaceInfoV2>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

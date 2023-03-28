@@ -2,7 +2,7 @@
 pub fn de_health_check_observations(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::HealthCheckObservation>,
+    std::vec::Vec<crate::types::HealthCheckObservation>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

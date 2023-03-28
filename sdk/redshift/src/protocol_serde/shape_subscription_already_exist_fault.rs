@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_subscription_already_exist_fault_xml_err(
     inp: &[u8],
-    mut builder: crate::error::subscription_already_exist_fault::Builder,
+    mut builder: crate::types::error::builders::SubscriptionAlreadyExistFaultBuilder,
 ) -> Result<
-    crate::error::subscription_already_exist_fault::Builder,
+    crate::types::error::builders::SubscriptionAlreadyExistFaultBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

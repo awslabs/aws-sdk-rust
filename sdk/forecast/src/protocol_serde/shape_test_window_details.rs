@@ -2,7 +2,7 @@
 pub(crate) fn de_test_window_details<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::TestWindowSummary>>,
+    Option<std::vec::Vec<crate::types::TestWindowSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

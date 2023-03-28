@@ -2,7 +2,7 @@
 pub(crate) fn de_batch_remove_facet_from_object_response<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::BatchRemoveFacetFromObjectResponse>,
+    Option<crate::types::BatchRemoveFacetFromObjectResponse>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::batch_remove_facet_from_object_response::Builder::default();
+                crate::types::builders::BatchRemoveFacetFromObjectResponseBuilder::default();
             aws_smithy_json::deserialize::token::skip_to_end(tokens)?;
             Ok(Some(builder.build()))
         }

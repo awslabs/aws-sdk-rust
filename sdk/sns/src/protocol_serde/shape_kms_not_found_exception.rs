@@ -2,9 +2,11 @@
 #[allow(unused_mut)]
 pub fn de_kms_not_found_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::kms_not_found_exception::Builder,
-) -> Result<crate::error::kms_not_found_exception::Builder, aws_smithy_xml::decode::XmlDecodeError>
-{
+    mut builder: crate::types::error::builders::KmsNotFoundExceptionBuilder,
+) -> Result<
+    crate::types::error::builders::KmsNotFoundExceptionBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     if inp.is_empty() {
         return Ok(builder);
     }

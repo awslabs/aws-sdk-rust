@@ -2,7 +2,7 @@
 pub(crate) fn de_image_scan_findings_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ImageScanFindingsSummary>,
+    Option<crate::types::ImageScanFindingsSummary>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::image_scan_findings_summary::Builder::default();
+            let mut builder = crate::types::builders::ImageScanFindingsSummaryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

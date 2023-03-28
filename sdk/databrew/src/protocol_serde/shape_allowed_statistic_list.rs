@@ -2,7 +2,7 @@
 pub(crate) fn de_allowed_statistic_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AllowedStatistics>>,
+    Option<std::vec::Vec<crate::types::AllowedStatistics>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

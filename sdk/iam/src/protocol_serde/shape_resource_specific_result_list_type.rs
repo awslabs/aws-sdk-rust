@@ -2,7 +2,7 @@
 pub fn de_resource_specific_result_list_type(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::ResourceSpecificResult>,
+    std::vec::Vec<crate::types::ResourceSpecificResult>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

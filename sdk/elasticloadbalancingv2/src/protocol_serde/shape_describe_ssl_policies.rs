@@ -3,40 +3,45 @@
 pub fn de_describe_ssl_policies_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeSslPoliciesOutput,
-    crate::error::DescribeSSLPoliciesError,
+    crate::operation::describe_ssl_policies::DescribeSslPoliciesOutput,
+    crate::operation::describe_ssl_policies::DescribeSSLPoliciesError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeSSLPoliciesError::unhandled)?;
+        .map_err(crate::operation::describe_ssl_policies::DescribeSSLPoliciesError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DescribeSSLPoliciesError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::describe_ssl_policies::DescribeSSLPoliciesError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "SSLPolicyNotFound" => {
-            crate::error::DescribeSSLPoliciesError::SslPolicyNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "SSLPolicyNotFound" => crate::operation::describe_ssl_policies::DescribeSSLPoliciesError::SslPolicyNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::ssl_policy_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::SslPolicyNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_ssl_policy_not_found_exception::de_ssl_policy_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeSSLPoliciesError::unhandled)?;
+                    output = crate::protocol_serde::shape_ssl_policy_not_found_exception::de_ssl_policy_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::describe_ssl_policies::DescribeSSLPoliciesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DescribeSSLPoliciesError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::describe_ssl_policies::DescribeSSLPoliciesError::generic(generic)
     })
 }
 
@@ -44,18 +49,18 @@ pub fn de_describe_ssl_policies_http_error(
 pub fn de_describe_ssl_policies_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeSslPoliciesOutput,
-    crate::error::DescribeSSLPoliciesError,
+    crate::operation::describe_ssl_policies::DescribeSslPoliciesOutput,
+    crate::operation::describe_ssl_policies::DescribeSSLPoliciesError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_ssl_policies_output::Builder::default();
+        let mut output = crate::operation::describe_ssl_policies::builders::DescribeSslPoliciesOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_describe_ssl_policies::de_describe_ssl_policies(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DescribeSSLPoliciesError::unhandled)?;
+        .map_err(crate::operation::describe_ssl_policies::DescribeSSLPoliciesError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -66,9 +71,9 @@ pub fn de_describe_ssl_policies_http_response(
 #[allow(unused_mut)]
 pub fn de_describe_ssl_policies(
     inp: &[u8],
-    mut builder: crate::output::describe_ssl_policies_output::Builder,
+    mut builder: crate::operation::describe_ssl_policies::builders::DescribeSslPoliciesOutputBuilder,
 ) -> Result<
-    crate::output::describe_ssl_policies_output::Builder,
+    crate::operation::describe_ssl_policies::builders::DescribeSslPoliciesOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

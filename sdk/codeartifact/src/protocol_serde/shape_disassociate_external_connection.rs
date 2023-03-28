@@ -3,146 +3,144 @@
 pub fn de_disassociate_external_connection_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DisassociateExternalConnectionOutput,
-    crate::error::DisassociateExternalConnectionError,
+    crate::operation::disassociate_external_connection::DisassociateExternalConnectionOutput,
+    crate::operation::disassociate_external_connection::DisassociateExternalConnectionError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DisassociateExternalConnectionError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::disassociate_external_connection::DisassociateExternalConnectionError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => return Err(crate::error::DisassociateExternalConnectionError::unhandled(generic)),
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::disassociate_external_connection::DisassociateExternalConnectionError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => {
-            crate::error::DisassociateExternalConnectionError::AccessDeniedException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "AccessDeniedException" => crate::operation::disassociate_external_connection::DisassociateExternalConnectionError::AccessDeniedException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateExternalConnectionError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::disassociate_external_connection::DisassociateExternalConnectionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ConflictException" => {
-            crate::error::DisassociateExternalConnectionError::ConflictException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ConflictException" => crate::operation::disassociate_external_connection::DisassociateExternalConnectionError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::conflict_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateExternalConnectionError::unhandled)?;
+                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::disassociate_external_connection::DisassociateExternalConnectionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InternalServerException" => {
-            crate::error::DisassociateExternalConnectionError::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InternalServerException" => crate::operation::disassociate_external_connection::DisassociateExternalConnectionError::InternalServerException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateExternalConnectionError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::disassociate_external_connection::DisassociateExternalConnectionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ResourceNotFoundException" => {
-            crate::error::DisassociateExternalConnectionError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::disassociate_external_connection::DisassociateExternalConnectionError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateExternalConnectionError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::disassociate_external_connection::DisassociateExternalConnectionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ServiceQuotaExceededException" => {
-            crate::error::DisassociateExternalConnectionError::ServiceQuotaExceededException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ServiceQuotaExceededException" => crate::operation::disassociate_external_connection::DisassociateExternalConnectionError::ServiceQuotaExceededException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::service_quota_exceeded_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateExternalConnectionError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::disassociate_external_connection::DisassociateExternalConnectionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ThrottlingException" => {
-            crate::error::DisassociateExternalConnectionError::ThrottlingException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ThrottlingException" => crate::operation::disassociate_external_connection::DisassociateExternalConnectionError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateExternalConnectionError::unhandled)?;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::disassociate_external_connection::DisassociateExternalConnectionError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::protocol_serde::shape_throttling_exception::de_retry_after_seconds_header(response.headers())
-                                                .map_err(|_|crate::error::DisassociateExternalConnectionError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::operation::disassociate_external_connection::DisassociateExternalConnectionError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ValidationException" => {
-            crate::error::DisassociateExternalConnectionError::ValidationException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ValidationException" => crate::operation::disassociate_external_connection::DisassociateExternalConnectionError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::validation_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateExternalConnectionError::unhandled)?;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::disassociate_external_connection::DisassociateExternalConnectionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DisassociateExternalConnectionError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::disassociate_external_connection::DisassociateExternalConnectionError::generic(generic)
     })
 }
 
@@ -150,14 +148,14 @@ pub fn de_disassociate_external_connection_http_error(
 pub fn de_disassociate_external_connection_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DisassociateExternalConnectionOutput,
-    crate::error::DisassociateExternalConnectionError,
+    crate::operation::disassociate_external_connection::DisassociateExternalConnectionOutput,
+    crate::operation::disassociate_external_connection::DisassociateExternalConnectionError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::disassociate_external_connection_output::Builder::default();
+        let mut output = crate::operation::disassociate_external_connection::builders::DisassociateExternalConnectionOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_disassociate_external_connection::de_disassociate_external_connection(response.body().as_ref(), output).map_err(crate::error::DisassociateExternalConnectionError::unhandled)?;
+        output = crate::protocol_serde::shape_disassociate_external_connection::de_disassociate_external_connection(response.body().as_ref(), output).map_err(crate::operation::disassociate_external_connection::DisassociateExternalConnectionError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -165,13 +163,7 @@ pub fn de_disassociate_external_connection_http_response(
     })
 }
 
-pub(crate) fn de_disassociate_external_connection(
-    value: &[u8],
-    mut builder: crate::output::disassociate_external_connection_output::Builder,
-) -> Result<
-    crate::output::disassociate_external_connection_output::Builder,
-    aws_smithy_json::deserialize::error::DeserializeError,
-> {
+pub(crate) fn de_disassociate_external_connection(value: &[u8], mut builder: crate::operation::disassociate_external_connection::builders::DisassociateExternalConnectionOutputBuilder) -> Result<crate::operation::disassociate_external_connection::builders::DisassociateExternalConnectionOutputBuilder, aws_smithy_json::deserialize::error::DeserializeError>{
     let mut tokens_owned =
         aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
             .peekable();

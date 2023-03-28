@@ -2,7 +2,7 @@
 pub(crate) fn de_service_template_supported_component_source_input_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ServiceTemplateSupportedComponentSourceType>>,
+    Option<std::vec::Vec<crate::types::ServiceTemplateSupportedComponentSourceType>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -29,7 +29,7 @@ where
                         )?
                         .map(|s| {
                             s.to_unescaped().map(|u| {
-                                crate::model::ServiceTemplateSupportedComponentSourceType::from(
+                                crate::types::ServiceTemplateSupportedComponentSourceType::from(
                                     u.as_ref(),
                                 )
                             })

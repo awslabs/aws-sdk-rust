@@ -2,7 +2,7 @@
 pub(crate) fn de_aws_redshift_cluster_cluster_parameter_groups<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AwsRedshiftClusterClusterParameterGroup>>,
+    Option<std::vec::Vec<crate::types::AwsRedshiftClusterClusterParameterGroup>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

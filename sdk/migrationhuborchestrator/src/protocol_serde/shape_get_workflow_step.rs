@@ -2,57 +2,35 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_workflow_step_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetWorkflowStepOutput, crate::error::GetWorkflowStepError> {
+) -> std::result::Result<
+    crate::operation::get_workflow_step::GetWorkflowStepOutput,
+    crate::operation::get_workflow_step::GetWorkflowStepError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetWorkflowStepError::unhandled)?;
+        .map_err(crate::operation::get_workflow_step::GetWorkflowStepError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::GetWorkflowStepError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::get_workflow_step::GetWorkflowStepError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::GetWorkflowStepError::AccessDeniedException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::access_denied_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetWorkflowStepError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InternalServerException" => crate::error::GetWorkflowStepError::InternalServerException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetWorkflowStepError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ResourceNotFoundException" => {
-            crate::error::GetWorkflowStepError::ResourceNotFoundException({
+        "AccessDeniedException" => {
+            crate::operation::get_workflow_step::GetWorkflowStepError::AccessDeniedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::AccessDeniedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetWorkflowStepError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_workflow_step::GetWorkflowStepError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -62,38 +40,81 @@ pub fn de_get_workflow_step_http_error(
                 tmp
             })
         }
-        "ThrottlingException" => crate::error::GetWorkflowStepError::ThrottlingException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "InternalServerException" => {
+            crate::operation::get_workflow_step::GetWorkflowStepError::InternalServerException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::throttling_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetWorkflowStepError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::GetWorkflowStepError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InternalServerExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_workflow_step::GetWorkflowStepError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::operation::get_workflow_step::GetWorkflowStepError::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_workflow_step::GetWorkflowStepError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ThrottlingException" => {
+            crate::operation::get_workflow_step::GetWorkflowStepError::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_workflow_step::GetWorkflowStepError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::get_workflow_step::GetWorkflowStepError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_workflow_step_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetWorkflowStepOutput, crate::error::GetWorkflowStepError> {
+) -> std::result::Result<
+    crate::operation::get_workflow_step::GetWorkflowStepOutput,
+    crate::operation::get_workflow_step::GetWorkflowStepError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_workflow_step_output::Builder::default();
+        let mut output =
+            crate::operation::get_workflow_step::builders::GetWorkflowStepOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_get_workflow_step::de_get_workflow_step(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::GetWorkflowStepError::unhandled)?;
+        .map_err(crate::operation::get_workflow_step::GetWorkflowStepError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -103,9 +124,9 @@ pub fn de_get_workflow_step_http_response(
 
 pub(crate) fn de_get_workflow_step(
     value: &[u8],
-    mut builder: crate::output::get_workflow_step_output::Builder,
+    mut builder: crate::operation::get_workflow_step::builders::GetWorkflowStepOutputBuilder,
 ) -> Result<
-    crate::output::get_workflow_step_output::Builder,
+    crate::operation::get_workflow_step::builders::GetWorkflowStepOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =
@@ -195,7 +216,7 @@ pub(crate) fn de_get_workflow_step(
                             )?
                             .map(|s| {
                                 s.to_unescaped()
-                                    .map(|u| crate::model::Owner::from(u.as_ref()))
+                                    .map(|u| crate::types::Owner::from(u.as_ref()))
                             })
                             .transpose()?,
                         );
@@ -221,7 +242,7 @@ pub(crate) fn de_get_workflow_step(
                             )?
                             .map(|s| {
                                 s.to_unescaped()
-                                    .map(|u| crate::model::StepStatus::from(u.as_ref()))
+                                    .map(|u| crate::types::StepStatus::from(u.as_ref()))
                             })
                             .transpose()?,
                         );
@@ -242,7 +263,7 @@ pub(crate) fn de_get_workflow_step(
                             )?
                             .map(|s| {
                                 s.to_unescaped()
-                                    .map(|u| crate::model::StepActionType::from(u.as_ref()))
+                                    .map(|u| crate::types::StepActionType::from(u.as_ref()))
                             })
                             .transpose()?,
                         );

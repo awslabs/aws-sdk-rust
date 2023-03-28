@@ -2,7 +2,7 @@
 pub(crate) fn de_read_only_task_template_fields<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ReadOnlyFieldInfo>>,
+    Option<std::vec::Vec<crate::types::ReadOnlyFieldInfo>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

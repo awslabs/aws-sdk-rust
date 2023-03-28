@@ -2,9 +2,11 @@
 #[allow(unused_mut)]
 pub fn de_invalid_viewer_certificate_xml_err(
     inp: &[u8],
-    mut builder: crate::error::invalid_viewer_certificate::Builder,
-) -> Result<crate::error::invalid_viewer_certificate::Builder, aws_smithy_xml::decode::XmlDecodeError>
-{
+    mut builder: crate::types::error::builders::InvalidViewerCertificateBuilder,
+) -> Result<
+    crate::types::error::builders::InvalidViewerCertificateBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     if inp.is_empty() {
         return Ok(builder);
     }

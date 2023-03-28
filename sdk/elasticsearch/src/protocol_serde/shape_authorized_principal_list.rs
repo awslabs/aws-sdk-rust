@@ -2,7 +2,7 @@
 pub(crate) fn de_authorized_principal_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AuthorizedPrincipal>>,
+    Option<std::vec::Vec<crate::types::AuthorizedPrincipal>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

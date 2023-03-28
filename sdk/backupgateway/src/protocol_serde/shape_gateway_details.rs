@@ -2,7 +2,7 @@
 pub(crate) fn de_gateway_details<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::GatewayDetails>,
+    Option<crate::types::GatewayDetails>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::gateway_details::Builder::default();
+            let mut builder = crate::types::builders::GatewayDetailsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -48,7 +48,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::GatewayType::from(u.as_ref()))
+                                            .map(|u| crate::types::GatewayType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

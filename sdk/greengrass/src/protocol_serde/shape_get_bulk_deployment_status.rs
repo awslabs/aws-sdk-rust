@@ -3,41 +3,44 @@
 pub fn de_get_bulk_deployment_status_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetBulkDeploymentStatusOutput,
-    crate::error::GetBulkDeploymentStatusError,
+    crate::operation::get_bulk_deployment_status::GetBulkDeploymentStatusOutput,
+    crate::operation::get_bulk_deployment_status::GetBulkDeploymentStatusError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetBulkDeploymentStatusError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::get_bulk_deployment_status::GetBulkDeploymentStatusError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::error::GetBulkDeploymentStatusError::unhandled(
+        None => return Err(
+            crate::operation::get_bulk_deployment_status::GetBulkDeploymentStatusError::unhandled(
                 generic,
-            ))
-        }
+            ),
+        ),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::GetBulkDeploymentStatusError::BadRequestException({
+        "BadRequestException" => crate::operation::get_bulk_deployment_status::GetBulkDeploymentStatusError::BadRequestException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetBulkDeploymentStatusError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_bulk_deployment_status::GetBulkDeploymentStatusError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::GetBulkDeploymentStatusError::generic(generic),
+        _ => crate::operation::get_bulk_deployment_status::GetBulkDeploymentStatusError::generic(generic)
     })
 }
 
@@ -45,19 +48,14 @@ pub fn de_get_bulk_deployment_status_http_error(
 pub fn de_get_bulk_deployment_status_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetBulkDeploymentStatusOutput,
-    crate::error::GetBulkDeploymentStatusError,
+    crate::operation::get_bulk_deployment_status::GetBulkDeploymentStatusOutput,
+    crate::operation::get_bulk_deployment_status::GetBulkDeploymentStatusError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_bulk_deployment_status_output::Builder::default();
+        let mut output = crate::operation::get_bulk_deployment_status::builders::GetBulkDeploymentStatusOutputBuilder::default();
         let _ = response;
-        output =
-            crate::protocol_serde::shape_get_bulk_deployment_status::de_get_bulk_deployment_status(
-                response.body().as_ref(),
-                output,
-            )
-            .map_err(crate::error::GetBulkDeploymentStatusError::unhandled)?;
+        output = crate::protocol_serde::shape_get_bulk_deployment_status::de_get_bulk_deployment_status(response.body().as_ref(), output).map_err(crate::operation::get_bulk_deployment_status::GetBulkDeploymentStatusError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -67,9 +65,9 @@ pub fn de_get_bulk_deployment_status_http_response(
 
 pub(crate) fn de_get_bulk_deployment_status(
     value: &[u8],
-    mut builder: crate::output::get_bulk_deployment_status_output::Builder,
+    mut builder: crate::operation::get_bulk_deployment_status::builders::GetBulkDeploymentStatusOutputBuilder,
 ) -> Result<
-    crate::output::get_bulk_deployment_status_output::Builder,
+    crate::operation::get_bulk_deployment_status::builders::GetBulkDeploymentStatusOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =
@@ -94,7 +92,7 @@ pub(crate) fn de_get_bulk_deployment_status(
                             )?
                             .map(|s| {
                                 s.to_unescaped()
-                                    .map(|u| crate::model::BulkDeploymentStatus::from(u.as_ref()))
+                                    .map(|u| crate::types::BulkDeploymentStatus::from(u.as_ref()))
                             })
                             .transpose()?,
                         );

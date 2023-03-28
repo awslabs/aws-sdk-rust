@@ -2,7 +2,7 @@
 pub(crate) fn de_batch_list_attached_indices_response<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::BatchListAttachedIndicesResponse>,
+    Option<crate::types::BatchListAttachedIndicesResponse>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::batch_list_attached_indices_response::Builder::default();
+                crate::types::builders::BatchListAttachedIndicesResponseBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

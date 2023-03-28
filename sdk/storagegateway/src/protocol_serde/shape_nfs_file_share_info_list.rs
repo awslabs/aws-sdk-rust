@@ -2,7 +2,7 @@
 pub(crate) fn de_nfs_file_share_info_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::NfsFileShareInfo>>,
+    Option<std::vec::Vec<crate::types::NfsFileShareInfo>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

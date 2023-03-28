@@ -2,9 +2,11 @@
 #[allow(unused_mut)]
 pub fn de_expired_token_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::expired_token_exception::Builder,
-) -> Result<crate::error::expired_token_exception::Builder, aws_smithy_xml::decode::XmlDecodeError>
-{
+    mut builder: crate::types::error::builders::ExpiredTokenExceptionBuilder,
+) -> Result<
+    crate::types::error::builders::ExpiredTokenExceptionBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     if inp.is_empty() {
         return Ok(builder);
     }

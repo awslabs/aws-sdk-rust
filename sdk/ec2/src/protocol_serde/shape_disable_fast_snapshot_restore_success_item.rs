@@ -2,11 +2,11 @@
 pub fn de_disable_fast_snapshot_restore_success_item(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    crate::model::DisableFastSnapshotRestoreSuccessItem,
+    crate::types::DisableFastSnapshotRestoreSuccessItem,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     #[allow(unused_mut)]
-    let mut builder = crate::model::DisableFastSnapshotRestoreSuccessItem::builder();
+    let mut builder = crate::types::DisableFastSnapshotRestoreSuccessItem::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("snapshotId") /* SnapshotId com.amazonaws.ec2#DisableFastSnapshotRestoreSuccessItem$SnapshotId */ =>  {
@@ -38,8 +38,8 @@ pub fn de_disable_fast_snapshot_restore_success_item(
             s if s.matches("state") /* State com.amazonaws.ec2#DisableFastSnapshotRestoreSuccessItem$State */ =>  {
                 let var_3 =
                     Some(
-                        Result::<crate::model::FastSnapshotRestoreStateCode, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::FastSnapshotRestoreStateCode::from(
+                        Result::<crate::types::FastSnapshotRestoreStateCode, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::FastSnapshotRestoreStateCode::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

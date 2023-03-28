@@ -2,7 +2,7 @@
 pub(crate) fn de_logging_configurations<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::LoggingConfiguration>>,
+    Option<std::vec::Vec<crate::types::LoggingConfiguration>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

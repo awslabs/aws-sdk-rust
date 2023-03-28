@@ -2,7 +2,7 @@
 pub(crate) fn de_instance_association_status_infos<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::InstanceAssociationStatusInfo>>,
+    Option<std::vec::Vec<crate::types::InstanceAssociationStatusInfo>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

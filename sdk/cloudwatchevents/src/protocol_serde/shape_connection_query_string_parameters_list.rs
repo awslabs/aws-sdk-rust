@@ -2,7 +2,7 @@
 pub(crate) fn de_connection_query_string_parameters_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ConnectionQueryStringParameter>>,
+    Option<std::vec::Vec<crate::types::ConnectionQueryStringParameter>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

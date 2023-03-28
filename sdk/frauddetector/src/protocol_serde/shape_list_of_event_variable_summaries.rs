@@ -2,7 +2,7 @@
 pub(crate) fn de_list_of_event_variable_summaries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::EventVariableSummary>>,
+    Option<std::vec::Vec<crate::types::EventVariableSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

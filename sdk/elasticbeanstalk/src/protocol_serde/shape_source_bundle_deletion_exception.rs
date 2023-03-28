@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_source_bundle_deletion_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::source_bundle_deletion_exception::Builder,
+    mut builder: crate::types::error::builders::SourceBundleDeletionExceptionBuilder,
 ) -> Result<
-    crate::error::source_bundle_deletion_exception::Builder,
+    crate::types::error::builders::SourceBundleDeletionExceptionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

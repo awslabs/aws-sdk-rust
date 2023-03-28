@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_launch_template_overrides(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::LaunchTemplateOverrides,
+    input: &crate::types::LaunchTemplateOverrides,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("InstanceType");
@@ -52,16 +52,16 @@ pub fn ser_launch_template_overrides(
 
 pub fn de_launch_template_overrides(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::LaunchTemplateOverrides, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::LaunchTemplateOverrides, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::LaunchTemplateOverrides::builder();
+    let mut builder = crate::types::LaunchTemplateOverrides::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("instanceType") /* InstanceType com.amazonaws.ec2#LaunchTemplateOverrides$InstanceType */ =>  {
                 let var_15 =
                     Some(
-                        Result::<crate::model::InstanceType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::InstanceType::from(
+                        Result::<crate::types::InstanceType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::InstanceType::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

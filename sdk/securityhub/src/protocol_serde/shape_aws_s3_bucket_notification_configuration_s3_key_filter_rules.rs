@@ -2,7 +2,7 @@
 pub(crate) fn de_aws_s3_bucket_notification_configuration_s3_key_filter_rules<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AwsS3BucketNotificationConfigurationS3KeyFilterRule>>,
+    Option<std::vec::Vec<crate::types::AwsS3BucketNotificationConfigurationS3KeyFilterRule>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

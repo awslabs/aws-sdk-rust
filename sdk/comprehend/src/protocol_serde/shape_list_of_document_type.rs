@@ -2,7 +2,7 @@
 pub(crate) fn de_list_of_document_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DocumentTypeListItem>>,
+    Option<std::vec::Vec<crate::types::DocumentTypeListItem>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

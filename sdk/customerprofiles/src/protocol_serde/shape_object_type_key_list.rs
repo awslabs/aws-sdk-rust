@@ -2,7 +2,7 @@
 pub(crate) fn de_object_type_key_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ObjectTypeKey>>,
+    Option<std::vec::Vec<crate::types::ObjectTypeKey>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,77 +2,33 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_put_code_binding_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::PutCodeBindingOutput, crate::error::PutCodeBindingError> {
+) -> std::result::Result<
+    crate::operation::put_code_binding::PutCodeBindingOutput,
+    crate::operation::put_code_binding::PutCodeBindingError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::PutCodeBindingError::unhandled)?;
+        .map_err(crate::operation::put_code_binding::PutCodeBindingError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::PutCodeBindingError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::put_code_binding::PutCodeBindingError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::PutCodeBindingError::BadRequestException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutCodeBindingError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ForbiddenException" => crate::error::PutCodeBindingError::ForbiddenException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutCodeBindingError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "GoneException" => crate::error::PutCodeBindingError::GoneException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::gone_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_gone_exception::de_gone_exception_json_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::PutCodeBindingError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InternalServerErrorException" => {
-            crate::error::PutCodeBindingError::InternalServerErrorException({
+        "BadRequestException" => {
+            crate::operation::put_code_binding::PutCodeBindingError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::internal_server_error_exception::Builder::default();
+                        crate::types::error::builders::BadRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutCodeBindingError::unhandled)?;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_code_binding::PutCodeBindingError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -82,29 +38,15 @@ pub fn de_put_code_binding_http_error(
                 tmp
             })
         }
-        "NotFoundException" => crate::error::PutCodeBindingError::NotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutCodeBindingError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "TooManyRequestsException" => {
-            crate::error::PutCodeBindingError::TooManyRequestsException({
+        "ForbiddenException" => {
+            crate::operation::put_code_binding::PutCodeBindingError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::ForbiddenExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutCodeBindingError::unhandled)?;
+                    output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_code_binding::PutCodeBindingError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -114,38 +56,124 @@ pub fn de_put_code_binding_http_error(
                 tmp
             })
         }
-        "UnauthorizedException" => crate::error::PutCodeBindingError::UnauthorizedException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "GoneException" => {
+            crate::operation::put_code_binding::PutCodeBindingError::GoneException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutCodeBindingError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::PutCodeBindingError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::GoneExceptionBuilder::default();
+                    let _ = response;
+                    output =
+                        crate::protocol_serde::shape_gone_exception::de_gone_exception_json_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(
+                            crate::operation::put_code_binding::PutCodeBindingError::unhandled,
+                        )?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InternalServerErrorException" => {
+            crate::operation::put_code_binding::PutCodeBindingError::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InternalServerErrorExceptionBuilder::default(
+                        );
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_code_binding::PutCodeBindingError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "NotFoundException" => {
+            crate::operation::put_code_binding::PutCodeBindingError::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::NotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_code_binding::PutCodeBindingError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "TooManyRequestsException" => {
+            crate::operation::put_code_binding::PutCodeBindingError::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_code_binding::PutCodeBindingError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "UnauthorizedException" => {
+            crate::operation::put_code_binding::PutCodeBindingError::UnauthorizedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::UnauthorizedExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_code_binding::PutCodeBindingError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::put_code_binding::PutCodeBindingError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_put_code_binding_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::PutCodeBindingOutput, crate::error::PutCodeBindingError> {
+) -> std::result::Result<
+    crate::operation::put_code_binding::PutCodeBindingOutput,
+    crate::operation::put_code_binding::PutCodeBindingError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::put_code_binding_output::Builder::default();
+        let mut output =
+            crate::operation::put_code_binding::builders::PutCodeBindingOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_put_code_binding::de_put_code_binding(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::PutCodeBindingError::unhandled)?;
+        .map_err(crate::operation::put_code_binding::PutCodeBindingError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -155,9 +183,9 @@ pub fn de_put_code_binding_http_response(
 
 pub(crate) fn de_put_code_binding(
     value: &[u8],
-    mut builder: crate::output::put_code_binding_output::Builder,
+    mut builder: crate::operation::put_code_binding::builders::PutCodeBindingOutputBuilder,
 ) -> Result<
-    crate::output::put_code_binding_output::Builder,
+    crate::operation::put_code_binding::builders::PutCodeBindingOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =
@@ -202,7 +230,7 @@ pub(crate) fn de_put_code_binding(
                             )?
                             .map(|s| {
                                 s.to_unescaped()
-                                    .map(|u| crate::model::CodeGenerationStatus::from(u.as_ref()))
+                                    .map(|u| crate::types::CodeGenerationStatus::from(u.as_ref()))
                             })
                             .transpose()?,
                         );

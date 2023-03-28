@@ -2,7 +2,7 @@
 pub(crate) fn de_cdn_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::CdnConfiguration>,
+    Option<crate::types::CdnConfiguration>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::cdn_configuration::Builder::default();
+            let mut builder = crate::types::builders::CdnConfigurationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -66,7 +66,7 @@ where
 
 pub fn ser_cdn_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::CdnConfiguration,
+    input: &crate::types::CdnConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.ad_segment_url_prefix {
         object.key("AdSegmentUrlPrefix").string(var_1.as_str());

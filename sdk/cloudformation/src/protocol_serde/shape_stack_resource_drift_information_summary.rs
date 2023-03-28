@@ -2,18 +2,18 @@
 pub fn de_stack_resource_drift_information_summary(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    crate::model::StackResourceDriftInformationSummary,
+    crate::types::StackResourceDriftInformationSummary,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     #[allow(unused_mut)]
-    let mut builder = crate::model::StackResourceDriftInformationSummary::builder();
+    let mut builder = crate::types::StackResourceDriftInformationSummary::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("StackResourceDriftStatus") /* StackResourceDriftStatus com.amazonaws.cloudformation#StackResourceDriftInformationSummary$StackResourceDriftStatus */ =>  {
                 let var_1 =
                     Some(
-                        Result::<crate::model::StackResourceDriftStatus, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::StackResourceDriftStatus::from(
+                        Result::<crate::types::StackResourceDriftStatus, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::StackResourceDriftStatus::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

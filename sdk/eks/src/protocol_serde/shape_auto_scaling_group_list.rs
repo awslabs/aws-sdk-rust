@@ -2,7 +2,7 @@
 pub(crate) fn de_auto_scaling_group_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AutoScalingGroup>>,
+    Option<std::vec::Vec<crate::types::AutoScalingGroup>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

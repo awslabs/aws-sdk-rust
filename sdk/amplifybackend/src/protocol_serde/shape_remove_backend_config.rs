@@ -3,86 +3,96 @@
 pub fn de_remove_backend_config_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::RemoveBackendConfigOutput,
-    crate::error::RemoveBackendConfigError,
+    crate::operation::remove_backend_config::RemoveBackendConfigOutput,
+    crate::operation::remove_backend_config::RemoveBackendConfigError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::RemoveBackendConfigError::unhandled)?;
+        .map_err(crate::operation::remove_backend_config::RemoveBackendConfigError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::RemoveBackendConfigError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::remove_backend_config::RemoveBackendConfigError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::RemoveBackendConfigError::BadRequestException({
+        "BadRequestException" => crate::operation::remove_backend_config::RemoveBackendConfigError::BadRequestException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveBackendConfigError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "GatewayTimeoutException" => {
-            crate::error::RemoveBackendConfigError::GatewayTimeoutException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::gateway_timeout_exception::Builder::default();
+                    let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_gateway_timeout_exception::de_gateway_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveBackendConfigError::unhandled)?;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::remove_backend_config::RemoveBackendConfigError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "NotFoundException" => crate::error::RemoveBackendConfigError::NotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveBackendConfigError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "TooManyRequestsException" => {
-            crate::error::RemoveBackendConfigError::TooManyRequestsException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "GatewayTimeoutException" => crate::operation::remove_backend_config::RemoveBackendConfigError::GatewayTimeoutException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    let mut output = crate::types::error::builders::GatewayTimeoutExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveBackendConfigError::unhandled)?;
+                    output = crate::protocol_serde::shape_gateway_timeout_exception::de_gateway_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::remove_backend_config::RemoveBackendConfigError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::RemoveBackendConfigError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "NotFoundException" => crate::operation::remove_backend_config::RemoveBackendConfigError::NotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::NotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::remove_backend_config::RemoveBackendConfigError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TooManyRequestsException" => crate::operation::remove_backend_config::RemoveBackendConfigError::TooManyRequestsException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::remove_backend_config::RemoveBackendConfigError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::remove_backend_config::RemoveBackendConfigError::generic(generic)
     })
 }
 
@@ -90,18 +100,18 @@ pub fn de_remove_backend_config_http_error(
 pub fn de_remove_backend_config_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::RemoveBackendConfigOutput,
-    crate::error::RemoveBackendConfigError,
+    crate::operation::remove_backend_config::RemoveBackendConfigOutput,
+    crate::operation::remove_backend_config::RemoveBackendConfigError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::remove_backend_config_output::Builder::default();
+        let mut output = crate::operation::remove_backend_config::builders::RemoveBackendConfigOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_remove_backend_config::de_remove_backend_config(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::RemoveBackendConfigError::unhandled)?;
+        .map_err(crate::operation::remove_backend_config::RemoveBackendConfigError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -111,9 +121,9 @@ pub fn de_remove_backend_config_http_response(
 
 pub(crate) fn de_remove_backend_config(
     value: &[u8],
-    mut builder: crate::output::remove_backend_config_output::Builder,
+    mut builder: crate::operation::remove_backend_config::builders::RemoveBackendConfigOutputBuilder,
 ) -> Result<
-    crate::output::remove_backend_config_output::Builder,
+    crate::operation::remove_backend_config::builders::RemoveBackendConfigOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

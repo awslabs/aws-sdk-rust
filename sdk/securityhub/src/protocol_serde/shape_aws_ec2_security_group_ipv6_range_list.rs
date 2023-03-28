@@ -2,7 +2,7 @@
 pub(crate) fn de_aws_ec2_security_group_ipv6_range_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AwsEc2SecurityGroupIpv6Range>>,
+    Option<std::vec::Vec<crate::types::AwsEc2SecurityGroupIpv6Range>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

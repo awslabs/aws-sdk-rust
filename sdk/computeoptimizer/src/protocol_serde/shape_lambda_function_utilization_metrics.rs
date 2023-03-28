@@ -2,7 +2,7 @@
 pub(crate) fn de_lambda_function_utilization_metrics<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::LambdaFunctionUtilizationMetric>>,
+    Option<std::vec::Vec<crate::types::LambdaFunctionUtilizationMetric>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

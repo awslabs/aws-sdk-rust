@@ -2,18 +2,18 @@
 pub fn de_verified_access_endpoint_load_balancer_options(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    crate::model::VerifiedAccessEndpointLoadBalancerOptions,
+    crate::types::VerifiedAccessEndpointLoadBalancerOptions,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     #[allow(unused_mut)]
-    let mut builder = crate::model::VerifiedAccessEndpointLoadBalancerOptions::builder();
+    let mut builder = crate::types::VerifiedAccessEndpointLoadBalancerOptions::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("protocol") /* Protocol com.amazonaws.ec2#VerifiedAccessEndpointLoadBalancerOptions$Protocol */ =>  {
                 let var_1 =
                     Some(
-                        Result::<crate::model::VerifiedAccessEndpointProtocol, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::VerifiedAccessEndpointProtocol::from(
+                        Result::<crate::types::VerifiedAccessEndpointProtocol, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::VerifiedAccessEndpointProtocol::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

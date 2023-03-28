@@ -2,95 +2,72 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_project_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::CreateProjectOutput, crate::error::CreateProjectError> {
+) -> std::result::Result<
+    crate::operation::create_project::CreateProjectOutput,
+    crate::operation::create_project::CreateProjectError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::CreateProjectError::unhandled)?;
+        .map_err(crate::operation::create_project::CreateProjectError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::CreateProjectError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::create_project::CreateProjectError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::CreateProjectError::BadRequestException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateProjectError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InternalFailureException" => crate::error::CreateProjectError::InternalFailureException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_failure_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateProjectError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "LimitExceededException" => crate::error::CreateProjectError::LimitExceededException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::limit_exceeded_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateProjectError::unhandled)?;
-                output = output.set_retry_after_seconds(
-                        crate::protocol_serde::shape_limit_exceeded_exception::de_retry_after_seconds_header(response.headers())
-                                                .map_err(|_|crate::error::CreateProjectError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
-                    );
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "NotFoundException" => crate::error::CreateProjectError::NotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateProjectError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ServiceUnavailableException" => {
-            crate::error::CreateProjectError::ServiceUnavailableException({
+        "BadRequestException" => {
+            crate::operation::create_project::CreateProjectError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::service_unavailable_exception::Builder::default();
+                        crate::types::error::builders::BadRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateProjectError::unhandled)?;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_project::CreateProjectError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InternalFailureException" => {
+            crate::operation::create_project::CreateProjectError::InternalFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InternalFailureExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_project::CreateProjectError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "LimitExceededException" => {
+            crate::operation::create_project::CreateProjectError::LimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::LimitExceededExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_project::CreateProjectError::unhandled)?;
                     output = output.set_retry_after_seconds(
-                        crate::protocol_serde::shape_service_unavailable_exception::de_retry_after_seconds_header(response.headers())
-                                                .map_err(|_|crate::error::CreateProjectError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                        crate::protocol_serde::shape_limit_exceeded_exception::de_retry_after_seconds_header(response.headers())
+                                                .map_err(|_|crate::operation::create_project::CreateProjectError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     let output = output.meta(generic);
                     output.build()
@@ -101,57 +78,108 @@ pub fn de_create_project_http_error(
                 tmp
             })
         }
-        "TooManyRequestsException" => crate::error::CreateProjectError::TooManyRequestsException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "NotFoundException" => {
+            crate::operation::create_project::CreateProjectError::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateProjectError::unhandled)?;
-                output = output.set_retry_after_seconds(
-                        crate::protocol_serde::shape_too_many_requests_exception::de_retry_after_seconds_header(response.headers())
-                                                .map_err(|_|crate::error::CreateProjectError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::NotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_project::CreateProjectError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::operation::create_project::CreateProjectError::ServiceUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ServiceUnavailableExceptionBuilder::default(
+                        );
+                    let _ = response;
+                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_project::CreateProjectError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::protocol_serde::shape_service_unavailable_exception::de_retry_after_seconds_header(response.headers())
+                                                .map_err(|_|crate::operation::create_project::CreateProjectError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "UnauthorizedException" => crate::error::CreateProjectError::UnauthorizedException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "TooManyRequestsException" => {
+            crate::operation::create_project::CreateProjectError::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateProjectError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::CreateProjectError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_project::CreateProjectError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::protocol_serde::shape_too_many_requests_exception::de_retry_after_seconds_header(response.headers())
+                                                .map_err(|_|crate::operation::create_project::CreateProjectError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                    );
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "UnauthorizedException" => {
+            crate::operation::create_project::CreateProjectError::UnauthorizedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::UnauthorizedExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_project::CreateProjectError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::create_project::CreateProjectError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_project_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::CreateProjectOutput, crate::error::CreateProjectError> {
+) -> std::result::Result<
+    crate::operation::create_project::CreateProjectOutput,
+    crate::operation::create_project::CreateProjectError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::create_project_output::Builder::default();
+        let mut output =
+            crate::operation::create_project::builders::CreateProjectOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_create_project::de_create_project(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::CreateProjectError::unhandled)?;
+        .map_err(crate::operation::create_project::CreateProjectError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -161,9 +189,9 @@ pub fn de_create_project_http_response(
 
 pub(crate) fn de_create_project(
     value: &[u8],
-    mut builder: crate::output::create_project_output::Builder,
+    mut builder: crate::operation::create_project::builders::CreateProjectOutputBuilder,
 ) -> Result<
-    crate::output::create_project_output::Builder,
+    crate::operation::create_project::builders::CreateProjectOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

@@ -2,7 +2,7 @@
 pub(crate) fn de_ops_entity_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::OpsEntity>>,
+    Option<std::vec::Vec<crate::types::OpsEntity>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

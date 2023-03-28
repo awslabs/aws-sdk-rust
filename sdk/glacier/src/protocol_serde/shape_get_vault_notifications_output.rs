@@ -2,10 +2,10 @@
 pub fn de_vault_notification_config_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::VaultNotificationConfig>,
-    crate::error::GetVaultNotificationsError,
+    std::option::Option<crate::types::VaultNotificationConfig>,
+    crate::operation::get_vault_notifications::GetVaultNotificationsError,
 > {
     (!body.is_empty()).then(||{
-        crate::protocol_serde::shape_vault_notification_config::de_vault_notification_config_payload(body).map_err(crate::error::GetVaultNotificationsError::unhandled)
+        crate::protocol_serde::shape_vault_notification_config::de_vault_notification_config_payload(body).map_err(crate::operation::get_vault_notifications::GetVaultNotificationsError::unhandled)
     }).transpose()
 }

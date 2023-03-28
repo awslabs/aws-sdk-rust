@@ -3,66 +3,55 @@
 pub fn de_list_distributions_by_key_group_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListDistributionsByKeyGroupOutput,
-    crate::error::ListDistributionsByKeyGroupError,
+    crate::operation::list_distributions_by_key_group::ListDistributionsByKeyGroupOutput,
+    crate::operation::list_distributions_by_key_group::ListDistributionsByKeyGroupError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListDistributionsByKeyGroupError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::list_distributions_by_key_group::ListDistributionsByKeyGroupError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::ListDistributionsByKeyGroupError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::list_distributions_by_key_group::ListDistributionsByKeyGroupError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidArgument" => crate::error::ListDistributionsByKeyGroupError::InvalidArgument({
+        "InvalidArgument" => crate::operation::list_distributions_by_key_group::ListDistributionsByKeyGroupError::InvalidArgument({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::invalid_argument::Builder::default();
-                let _ = response;
-                output =
-                    crate::protocol_serde::shape_invalid_argument::de_invalid_argument_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListDistributionsByKeyGroupError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidArgumentBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_argument::de_invalid_argument_xml_err(response.body().as_ref(), output).map_err(crate::operation::list_distributions_by_key_group::ListDistributionsByKeyGroupError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "NoSuchResource" => crate::error::ListDistributionsByKeyGroupError::NoSuchResource({
+        "NoSuchResource" => crate::operation::list_distributions_by_key_group::ListDistributionsByKeyGroupError::NoSuchResource({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::no_such_resource::Builder::default();
-                let _ = response;
-                output =
-                    crate::protocol_serde::shape_no_such_resource::de_no_such_resource_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListDistributionsByKeyGroupError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::NoSuchResourceBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_no_such_resource::de_no_such_resource_xml_err(response.body().as_ref(), output).map_err(crate::operation::list_distributions_by_key_group::ListDistributionsByKeyGroupError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::ListDistributionsByKeyGroupError::generic(generic),
+        _ => crate::operation::list_distributions_by_key_group::ListDistributionsByKeyGroupError::generic(generic)
     })
 }
 
@@ -70,12 +59,12 @@ pub fn de_list_distributions_by_key_group_http_error(
 pub fn de_list_distributions_by_key_group_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListDistributionsByKeyGroupOutput,
-    crate::error::ListDistributionsByKeyGroupError,
+    crate::operation::list_distributions_by_key_group::ListDistributionsByKeyGroupOutput,
+    crate::operation::list_distributions_by_key_group::ListDistributionsByKeyGroupError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_distributions_by_key_group_output::Builder::default();
+        let mut output = crate::operation::list_distributions_by_key_group::builders::ListDistributionsByKeyGroupOutputBuilder::default();
         let _ = response;
         output = output.set_distribution_id_list(
             crate::protocol_serde::shape_list_distributions_by_key_group_output::de_distribution_id_list_payload(response.body().as_ref())?

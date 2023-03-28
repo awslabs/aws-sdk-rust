@@ -2,7 +2,7 @@
 pub(crate) fn de_motion_graphics_activate_schedule_action_settings<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::MotionGraphicsActivateScheduleActionSettings>,
+    Option<crate::types::MotionGraphicsActivateScheduleActionSettings>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,8 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder =
-                crate::model::motion_graphics_activate_schedule_action_settings::Builder::default();
+            let mut builder = crate::types::builders::MotionGraphicsActivateScheduleActionSettingsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -85,7 +84,7 @@ where
 
 pub fn ser_motion_graphics_activate_schedule_action_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::MotionGraphicsActivateScheduleActionSettings,
+    input: &crate::types::MotionGraphicsActivateScheduleActionSettings,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if input.duration != 0 {
         object.key("duration").number(

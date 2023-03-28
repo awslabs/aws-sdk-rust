@@ -2,66 +2,79 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_vpc_links_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetVpcLinksOutput, crate::error::GetVpcLinksError> {
+) -> std::result::Result<
+    crate::operation::get_vpc_links::GetVpcLinksOutput,
+    crate::operation::get_vpc_links::GetVpcLinksError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetVpcLinksError::unhandled)?;
+        .map_err(crate::operation::get_vpc_links::GetVpcLinksError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::GetVpcLinksError::unhandled(generic)),
+        None => return Err(crate::operation::get_vpc_links::GetVpcLinksError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::GetVpcLinksError::BadRequestException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "BadRequestException" => {
+            crate::operation::get_vpc_links::GetVpcLinksError::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVpcLinksError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "TooManyRequestsException" => crate::error::GetVpcLinksError::TooManyRequestsException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::BadRequestExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_vpc_links::GetVpcLinksError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "TooManyRequestsException" => {
+            crate::operation::get_vpc_links::GetVpcLinksError::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVpcLinksError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::GetVpcLinksError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_vpc_links::GetVpcLinksError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::get_vpc_links::GetVpcLinksError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_vpc_links_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetVpcLinksOutput, crate::error::GetVpcLinksError> {
+) -> std::result::Result<
+    crate::operation::get_vpc_links::GetVpcLinksOutput,
+    crate::operation::get_vpc_links::GetVpcLinksError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_vpc_links_output::Builder::default();
+        let mut output =
+            crate::operation::get_vpc_links::builders::GetVpcLinksOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_get_vpc_links::de_get_vpc_links(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::GetVpcLinksError::unhandled)?;
+        .map_err(crate::operation::get_vpc_links::GetVpcLinksError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -71,9 +84,9 @@ pub fn de_get_vpc_links_http_response(
 
 pub(crate) fn de_get_vpc_links(
     value: &[u8],
-    mut builder: crate::output::get_vpc_links_output::Builder,
+    mut builder: crate::operation::get_vpc_links::builders::GetVpcLinksOutputBuilder,
 ) -> Result<
-    crate::output::get_vpc_links_output::Builder,
+    crate::operation::get_vpc_links::builders::GetVpcLinksOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

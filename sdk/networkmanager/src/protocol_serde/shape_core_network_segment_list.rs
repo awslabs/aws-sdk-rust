@@ -2,7 +2,7 @@
 pub(crate) fn de_core_network_segment_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CoreNetworkSegment>>,
+    Option<std::vec::Vec<crate::types::CoreNetworkSegment>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

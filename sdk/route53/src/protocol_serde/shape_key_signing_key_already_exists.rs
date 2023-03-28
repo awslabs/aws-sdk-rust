@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_key_signing_key_already_exists_xml_err(
     inp: &[u8],
-    mut builder: crate::error::key_signing_key_already_exists::Builder,
+    mut builder: crate::types::error::builders::KeySigningKeyAlreadyExistsBuilder,
 ) -> Result<
-    crate::error::key_signing_key_already_exists::Builder,
+    crate::types::error::builders::KeySigningKeyAlreadyExistsBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

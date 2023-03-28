@@ -2,7 +2,7 @@
 pub(crate) fn de_inbound_cross_cluster_search_connection_status<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::InboundCrossClusterSearchConnectionStatus>,
+    Option<crate::types::InboundCrossClusterSearchConnectionStatus>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::inbound_cross_cluster_search_connection_status::Builder::default();
+                crate::types::builders::InboundCrossClusterSearchConnectionStatusBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -28,7 +28,7 @@ where
                                 builder = builder.set_status_code(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?.map(|s|
                                         s.to_unescaped().map(|u|
-                                            crate::model::InboundCrossClusterSearchConnectionStatusCode::from(u.as_ref())
+                                            crate::types::InboundCrossClusterSearchConnectionStatusCode::from(u.as_ref())
                                         )
                                     ).transpose()?
                                 );

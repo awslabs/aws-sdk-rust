@@ -2,212 +2,234 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_modify_rule_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ModifyRuleOutput, crate::error::ModifyRuleError> {
+) -> std::result::Result<
+    crate::operation::modify_rule::ModifyRuleOutput,
+    crate::operation::modify_rule::ModifyRuleError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ModifyRuleError::unhandled)?;
+        .map_err(crate::operation::modify_rule::ModifyRuleError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ModifyRuleError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::modify_rule::ModifyRuleError::unhandled(
+                generic,
+            ))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "IncompatibleProtocols" => crate::error::ModifyRuleError::IncompatibleProtocolsException({
+        "IncompatibleProtocols" => crate::operation::modify_rule::ModifyRuleError::IncompatibleProtocolsException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::incompatible_protocols_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_incompatible_protocols_exception::de_incompatible_protocols_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyRuleError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InvalidLoadBalancerAction" => {
-            crate::error::ModifyRuleError::InvalidLoadBalancerActionException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_load_balancer_action_exception::Builder::default();
+                    let mut output = crate::types::error::builders::IncompatibleProtocolsExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_load_balancer_action_exception::de_invalid_load_balancer_action_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyRuleError::unhandled)?;
+                    output = crate::protocol_serde::shape_incompatible_protocols_exception::de_incompatible_protocols_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_rule::ModifyRuleError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "OperationNotPermitted" => crate::error::ModifyRuleError::OperationNotPermittedException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output =
-                    crate::error::operation_not_permitted_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_operation_not_permitted_exception::de_operation_not_permitted_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyRuleError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "RuleNotFound" => crate::error::ModifyRuleError::RuleNotFoundException({
+        "InvalidLoadBalancerAction" => crate::operation::modify_rule::ModifyRuleError::InvalidLoadBalancerActionException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::rule_not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_rule_not_found_exception::de_rule_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyRuleError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "TargetGroupAssociationLimit" => {
-            crate::error::ModifyRuleError::TargetGroupAssociationLimitException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::target_group_association_limit_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidLoadBalancerActionExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_target_group_association_limit_exception::de_target_group_association_limit_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyRuleError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_load_balancer_action_exception::de_invalid_load_balancer_action_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_rule::ModifyRuleError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "TargetGroupNotFound" => crate::error::ModifyRuleError::TargetGroupNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::target_group_not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_target_group_not_found_exception::de_target_group_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyRuleError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "TooManyActions" => crate::error::ModifyRuleError::TooManyActionsException({
+        "OperationNotPermitted" => crate::operation::modify_rule::ModifyRuleError::OperationNotPermittedException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::too_many_actions_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_too_many_actions_exception::de_too_many_actions_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyRuleError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "TooManyRegistrationsForTargetId" => {
-            crate::error::ModifyRuleError::TooManyRegistrationsForTargetIdException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_registrations_for_target_id_exception::Builder::default();
+                    let mut output = crate::types::error::builders::OperationNotPermittedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_registrations_for_target_id_exception::de_too_many_registrations_for_target_id_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyRuleError::unhandled)?;
+                    output = crate::protocol_serde::shape_operation_not_permitted_exception::de_operation_not_permitted_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_rule::ModifyRuleError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "TooManyTargets" => crate::error::ModifyRuleError::TooManyTargetsException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::too_many_targets_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_too_many_targets_exception::de_too_many_targets_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyRuleError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "TooManyUniqueTargetGroupsPerLoadBalancer" => {
-            crate::error::ModifyRuleError::TooManyUniqueTargetGroupsPerLoadBalancerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "RuleNotFound" => crate::operation::modify_rule::ModifyRuleError::RuleNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_unique_target_groups_per_load_balancer_exception::Builder::default();
+                    let mut output = crate::types::error::builders::RuleNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_unique_target_groups_per_load_balancer_exception::de_too_many_unique_target_groups_per_load_balancer_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyRuleError::unhandled)?;
+                    output = crate::protocol_serde::shape_rule_not_found_exception::de_rule_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_rule::ModifyRuleError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "UnsupportedProtocol" => crate::error::ModifyRuleError::UnsupportedProtocolException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::unsupported_protocol_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_unsupported_protocol_exception::de_unsupported_protocol_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyRuleError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::ModifyRuleError::generic(generic),
+        "TargetGroupAssociationLimit" => crate::operation::modify_rule::ModifyRuleError::TargetGroupAssociationLimitException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::TargetGroupAssociationLimitExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_target_group_association_limit_exception::de_target_group_association_limit_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_rule::ModifyRuleError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TargetGroupNotFound" => crate::operation::modify_rule::ModifyRuleError::TargetGroupNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::TargetGroupNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_target_group_not_found_exception::de_target_group_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_rule::ModifyRuleError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TooManyActions" => crate::operation::modify_rule::ModifyRuleError::TooManyActionsException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::TooManyActionsExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_too_many_actions_exception::de_too_many_actions_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_rule::ModifyRuleError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TooManyRegistrationsForTargetId" => crate::operation::modify_rule::ModifyRuleError::TooManyRegistrationsForTargetIdException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::TooManyRegistrationsForTargetIdExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_too_many_registrations_for_target_id_exception::de_too_many_registrations_for_target_id_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_rule::ModifyRuleError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TooManyTargets" => crate::operation::modify_rule::ModifyRuleError::TooManyTargetsException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::TooManyTargetsExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_too_many_targets_exception::de_too_many_targets_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_rule::ModifyRuleError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TooManyUniqueTargetGroupsPerLoadBalancer" => crate::operation::modify_rule::ModifyRuleError::TooManyUniqueTargetGroupsPerLoadBalancerException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::TooManyUniqueTargetGroupsPerLoadBalancerExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_too_many_unique_target_groups_per_load_balancer_exception::de_too_many_unique_target_groups_per_load_balancer_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_rule::ModifyRuleError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "UnsupportedProtocol" => crate::operation::modify_rule::ModifyRuleError::UnsupportedProtocolException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::UnsupportedProtocolExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_unsupported_protocol_exception::de_unsupported_protocol_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_rule::ModifyRuleError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::modify_rule::ModifyRuleError::generic(generic)
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_modify_rule_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ModifyRuleOutput, crate::error::ModifyRuleError> {
+) -> std::result::Result<
+    crate::operation::modify_rule::ModifyRuleOutput,
+    crate::operation::modify_rule::ModifyRuleError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::modify_rule_output::Builder::default();
+        let mut output =
+            crate::operation::modify_rule::builders::ModifyRuleOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_modify_rule::de_modify_rule(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ModifyRuleError::unhandled)?;
+        .map_err(crate::operation::modify_rule::ModifyRuleError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -218,8 +240,11 @@ pub fn de_modify_rule_http_response(
 #[allow(unused_mut)]
 pub fn de_modify_rule(
     inp: &[u8],
-    mut builder: crate::output::modify_rule_output::Builder,
-) -> Result<crate::output::modify_rule_output::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    mut builder: crate::operation::modify_rule::builders::ModifyRuleOutputBuilder,
+) -> Result<
+    crate::operation::modify_rule::builders::ModifyRuleOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

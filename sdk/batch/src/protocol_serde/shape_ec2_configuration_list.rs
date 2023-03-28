@@ -2,7 +2,7 @@
 pub(crate) fn de_ec2_configuration_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Ec2Configuration>>,
+    Option<std::vec::Vec<crate::types::Ec2Configuration>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

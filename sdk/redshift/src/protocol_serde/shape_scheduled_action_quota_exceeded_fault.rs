@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_scheduled_action_quota_exceeded_fault_xml_err(
     inp: &[u8],
-    mut builder: crate::error::scheduled_action_quota_exceeded_fault::Builder,
+    mut builder: crate::types::error::builders::ScheduledActionQuotaExceededFaultBuilder,
 ) -> Result<
-    crate::error::scheduled_action_quota_exceeded_fault::Builder,
+    crate::types::error::builders::ScheduledActionQuotaExceededFaultBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

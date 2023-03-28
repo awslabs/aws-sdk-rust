@@ -2,7 +2,7 @@
 pub(crate) fn de_time_series_transformations<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::TimeSeriesTransformation>>,
+    Option<std::vec::Vec<crate::types::TimeSeriesTransformation>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

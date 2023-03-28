@@ -2,7 +2,7 @@
 pub(crate) fn de_replication_pending_modified_values<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ReplicationPendingModifiedValues>,
+    Option<crate::types::ReplicationPendingModifiedValues>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::replication_pending_modified_values::Builder::default();
+            let mut builder =
+                crate::types::builders::ReplicationPendingModifiedValuesBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

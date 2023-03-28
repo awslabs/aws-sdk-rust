@@ -2,7 +2,7 @@
 pub(crate) fn de_game_server_group<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::GameServerGroup>,
+    Option<crate::types::GameServerGroup>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::game_server_group::Builder::default();
+            let mut builder = crate::types::builders::GameServerGroupBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -62,7 +62,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::BalancingStrategy::from(u.as_ref())
+                                            crate::types::BalancingStrategy::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -75,7 +75,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::GameServerProtectionPolicy::from(
+                                            crate::types::GameServerProtectionPolicy::from(
                                                 u.as_ref(),
                                             )
                                         })
@@ -99,7 +99,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::GameServerGroupStatus::from(u.as_ref())
+                                            crate::types::GameServerGroupStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

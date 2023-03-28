@@ -2,7 +2,7 @@
 pub(crate) fn de_aws_rds_db_subnet_group_subnets<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AwsRdsDbSubnetGroupSubnet>>,
+    Option<std::vec::Vec<crate::types::AwsRdsDbSubnetGroupSubnet>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

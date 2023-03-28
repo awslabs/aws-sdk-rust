@@ -2,7 +2,7 @@
 pub(crate) fn de_array_of_array<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ArrayValue>>,
+    Option<std::vec::Vec<crate::types::ArrayValue>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

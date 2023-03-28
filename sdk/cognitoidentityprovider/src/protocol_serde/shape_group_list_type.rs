@@ -2,7 +2,7 @@
 pub(crate) fn de_group_list_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::GroupType>>,
+    Option<std::vec::Vec<crate::types::GroupType>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

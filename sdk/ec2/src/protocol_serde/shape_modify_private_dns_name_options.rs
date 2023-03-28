@@ -3,31 +3,28 @@
 pub fn de_modify_private_dns_name_options_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ModifyPrivateDnsNameOptionsOutput,
-    crate::error::ModifyPrivateDnsNameOptionsError,
+    crate::operation::modify_private_dns_name_options::ModifyPrivateDnsNameOptionsOutput,
+    crate::operation::modify_private_dns_name_options::ModifyPrivateDnsNameOptionsError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ModifyPrivateDnsNameOptionsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::modify_private_dns_name_options::ModifyPrivateDnsNameOptionsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::ModifyPrivateDnsNameOptionsError::generic(
-        generic,
-    ))
+    Err(crate::operation::modify_private_dns_name_options::ModifyPrivateDnsNameOptionsError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_modify_private_dns_name_options_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ModifyPrivateDnsNameOptionsOutput,
-    crate::error::ModifyPrivateDnsNameOptionsError,
+    crate::operation::modify_private_dns_name_options::ModifyPrivateDnsNameOptionsOutput,
+    crate::operation::modify_private_dns_name_options::ModifyPrivateDnsNameOptionsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::modify_private_dns_name_options_output::Builder::default();
+        let mut output = crate::operation::modify_private_dns_name_options::builders::ModifyPrivateDnsNameOptionsOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_modify_private_dns_name_options::de_modify_private_dns_name_options(response.body().as_ref(), output).map_err(crate::error::ModifyPrivateDnsNameOptionsError::unhandled)?;
+        output = crate::protocol_serde::shape_modify_private_dns_name_options::de_modify_private_dns_name_options(response.body().as_ref(), output).map_err(crate::operation::modify_private_dns_name_options::ModifyPrivateDnsNameOptionsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -36,13 +33,7 @@ pub fn de_modify_private_dns_name_options_http_response(
 }
 
 #[allow(unused_mut)]
-pub fn de_modify_private_dns_name_options(
-    inp: &[u8],
-    mut builder: crate::output::modify_private_dns_name_options_output::Builder,
-) -> Result<
-    crate::output::modify_private_dns_name_options_output::Builder,
-    aws_smithy_xml::decode::XmlDecodeError,
-> {
+pub fn de_modify_private_dns_name_options(inp: &[u8], mut builder: crate::operation::modify_private_dns_name_options::builders::ModifyPrivateDnsNameOptionsOutputBuilder) -> Result<crate::operation::modify_private_dns_name_options::builders::ModifyPrivateDnsNameOptionsOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

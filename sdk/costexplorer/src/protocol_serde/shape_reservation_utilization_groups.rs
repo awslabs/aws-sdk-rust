@@ -2,7 +2,7 @@
 pub(crate) fn de_reservation_utilization_groups<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ReservationUtilizationGroup>>,
+    Option<std::vec::Vec<crate::types::ReservationUtilizationGroup>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

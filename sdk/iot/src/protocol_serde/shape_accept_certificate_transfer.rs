@@ -3,147 +3,142 @@
 pub fn de_accept_certificate_transfer_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::AcceptCertificateTransferOutput,
-    crate::error::AcceptCertificateTransferError,
+    crate::operation::accept_certificate_transfer::AcceptCertificateTransferOutput,
+    crate::operation::accept_certificate_transfer::AcceptCertificateTransferError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::AcceptCertificateTransferError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::accept_certificate_transfer::AcceptCertificateTransferError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::AcceptCertificateTransferError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::accept_certificate_transfer::AcceptCertificateTransferError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalFailureException" => {
-            crate::error::AcceptCertificateTransferError::InternalFailureException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalFailureException" => crate::operation::accept_certificate_transfer::AcceptCertificateTransferError::InternalFailureException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_failure_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InternalFailureExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AcceptCertificateTransferError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::accept_certificate_transfer::AcceptCertificateTransferError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidRequestException" => {
-            crate::error::AcceptCertificateTransferError::InvalidRequestException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidRequestException" => crate::operation::accept_certificate_transfer::AcceptCertificateTransferError::InvalidRequestException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_request_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AcceptCertificateTransferError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::accept_certificate_transfer::AcceptCertificateTransferError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ResourceNotFoundException" => {
-            crate::error::AcceptCertificateTransferError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::accept_certificate_transfer::AcceptCertificateTransferError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AcceptCertificateTransferError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::accept_certificate_transfer::AcceptCertificateTransferError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ServiceUnavailableException" => {
-            crate::error::AcceptCertificateTransferError::ServiceUnavailableException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ServiceUnavailableException" => crate::operation::accept_certificate_transfer::AcceptCertificateTransferError::ServiceUnavailableException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::service_unavailable_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AcceptCertificateTransferError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::accept_certificate_transfer::AcceptCertificateTransferError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ThrottlingException" => {
-            crate::error::AcceptCertificateTransferError::ThrottlingException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ThrottlingException" => crate::operation::accept_certificate_transfer::AcceptCertificateTransferError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AcceptCertificateTransferError::unhandled)?;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::accept_certificate_transfer::AcceptCertificateTransferError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "TransferAlreadyCompletedException" => {
-            crate::error::AcceptCertificateTransferError::TransferAlreadyCompletedException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TransferAlreadyCompletedException" => crate::operation::accept_certificate_transfer::AcceptCertificateTransferError::TransferAlreadyCompletedException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::transfer_already_completed_exception::Builder::default();
+                    let mut output = crate::types::error::builders::TransferAlreadyCompletedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_transfer_already_completed_exception::de_transfer_already_completed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AcceptCertificateTransferError::unhandled)?;
+                    output = crate::protocol_serde::shape_transfer_already_completed_exception::de_transfer_already_completed_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::accept_certificate_transfer::AcceptCertificateTransferError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "UnauthorizedException" => {
-            crate::error::AcceptCertificateTransferError::UnauthorizedException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "UnauthorizedException" => crate::operation::accept_certificate_transfer::AcceptCertificateTransferError::UnauthorizedException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::unauthorized_exception::Builder::default();
+                    let mut output = crate::types::error::builders::UnauthorizedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AcceptCertificateTransferError::unhandled)?;
+                    output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::accept_certificate_transfer::AcceptCertificateTransferError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::AcceptCertificateTransferError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::accept_certificate_transfer::AcceptCertificateTransferError::generic(generic)
     })
 }
 
@@ -151,12 +146,12 @@ pub fn de_accept_certificate_transfer_http_error(
 pub fn de_accept_certificate_transfer_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::AcceptCertificateTransferOutput,
-    crate::error::AcceptCertificateTransferError,
+    crate::operation::accept_certificate_transfer::AcceptCertificateTransferOutput,
+    crate::operation::accept_certificate_transfer::AcceptCertificateTransferError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::accept_certificate_transfer_output::Builder::default();
+        let mut output = crate::operation::accept_certificate_transfer::builders::AcceptCertificateTransferOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

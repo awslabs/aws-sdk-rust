@@ -2,7 +2,7 @@
 pub(crate) fn de_policy_versions<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::PolicyVersion>>,
+    Option<std::vec::Vec<crate::types::PolicyVersion>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

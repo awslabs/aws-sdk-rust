@@ -2,28 +2,35 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_flow_logs_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::CreateFlowLogsOutput, crate::error::CreateFlowLogsError> {
+) -> std::result::Result<
+    crate::operation::create_flow_logs::CreateFlowLogsOutput,
+    crate::operation::create_flow_logs::CreateFlowLogsError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::CreateFlowLogsError::unhandled)?;
+        .map_err(crate::operation::create_flow_logs::CreateFlowLogsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::CreateFlowLogsError::generic(generic))
+    Err(crate::operation::create_flow_logs::CreateFlowLogsError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_flow_logs_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::CreateFlowLogsOutput, crate::error::CreateFlowLogsError> {
+) -> std::result::Result<
+    crate::operation::create_flow_logs::CreateFlowLogsOutput,
+    crate::operation::create_flow_logs::CreateFlowLogsError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::create_flow_logs_output::Builder::default();
+        let mut output =
+            crate::operation::create_flow_logs::builders::CreateFlowLogsOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_create_flow_logs::de_create_flow_logs(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::CreateFlowLogsError::unhandled)?;
+        .map_err(crate::operation::create_flow_logs::CreateFlowLogsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -34,9 +41,11 @@ pub fn de_create_flow_logs_http_response(
 #[allow(unused_mut)]
 pub fn de_create_flow_logs(
     inp: &[u8],
-    mut builder: crate::output::create_flow_logs_output::Builder,
-) -> Result<crate::output::create_flow_logs_output::Builder, aws_smithy_xml::decode::XmlDecodeError>
-{
+    mut builder: crate::operation::create_flow_logs::builders::CreateFlowLogsOutputBuilder,
+) -> Result<
+    crate::operation::create_flow_logs::builders::CreateFlowLogsOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

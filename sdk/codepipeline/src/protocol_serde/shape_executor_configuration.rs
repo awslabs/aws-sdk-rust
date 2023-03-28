@@ -2,7 +2,7 @@
 pub(crate) fn de_executor_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ExecutorConfiguration>,
+    Option<crate::types::ExecutorConfiguration>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::executor_configuration::Builder::default();
+            let mut builder = crate::types::builders::ExecutorConfigurationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -58,7 +58,7 @@ where
 
 pub fn ser_executor_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::ExecutorConfiguration,
+    input: &crate::types::ExecutorConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.lambda_executor_configuration {
         #[allow(unused_mut)]

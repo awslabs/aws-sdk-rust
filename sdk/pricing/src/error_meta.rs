@@ -4,15 +4,15 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>The pagination token expired. Try again without a pagination token.</p>
-    ExpiredNextTokenException(crate::error::ExpiredNextTokenException),
+    ExpiredNextTokenException(crate::types::error::ExpiredNextTokenException),
     /// <p>An error on the server occurred during the processing of your request. Try again later.</p>
-    InternalErrorException(crate::error::InternalErrorException),
+    InternalErrorException(crate::types::error::InternalErrorException),
     /// <p>The pagination token is invalid. Try again without a pagination token.</p>
-    InvalidNextTokenException(crate::error::InvalidNextTokenException),
+    InvalidNextTokenException(crate::types::error::InvalidNextTokenException),
     /// <p>One or more parameters had an invalid value.</p>
-    InvalidParameterException(crate::error::InvalidParameterException),
+    InvalidParameterException(crate::types::error::InvalidParameterException),
     /// <p>The requested resource can't be found.</p>
-    NotFoundException(crate::error::NotFoundException),
+    NotFoundException(crate::types::error::NotFoundException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled),
 }
@@ -28,12 +28,21 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeServicesError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_services::DescribeServicesError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeServicesError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_services::DescribeServicesError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -50,34 +59,33 @@ where
         }
     }
 }
-impl From<crate::error::DescribeServicesError> for Error {
-    fn from(err: crate::error::DescribeServicesError) -> Self {
+impl From<crate::operation::describe_services::DescribeServicesError> for Error {
+    fn from(err: crate::operation::describe_services::DescribeServicesError) -> Self {
         match err {
-            crate::error::DescribeServicesError::ExpiredNextTokenException(inner) => {
-                Error::ExpiredNextTokenException(inner)
-            }
-            crate::error::DescribeServicesError::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::DescribeServicesError::InvalidNextTokenException(inner) => {
-                Error::InvalidNextTokenException(inner)
-            }
-            crate::error::DescribeServicesError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::DescribeServicesError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DescribeServicesError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::describe_services::DescribeServicesError::ExpiredNextTokenException(inner) => Error::ExpiredNextTokenException(inner),
+            crate::operation::describe_services::DescribeServicesError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::describe_services::DescribeServicesError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::describe_services::DescribeServicesError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::describe_services::DescribeServicesError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::describe_services::DescribeServicesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetAttributeValuesError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_attribute_values::GetAttributeValuesError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetAttributeValuesError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_attribute_values::GetAttributeValuesError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -94,33 +102,26 @@ where
         }
     }
 }
-impl From<crate::error::GetAttributeValuesError> for Error {
-    fn from(err: crate::error::GetAttributeValuesError) -> Self {
+impl From<crate::operation::get_attribute_values::GetAttributeValuesError> for Error {
+    fn from(err: crate::operation::get_attribute_values::GetAttributeValuesError) -> Self {
         match err {
-            crate::error::GetAttributeValuesError::ExpiredNextTokenException(inner) => {
-                Error::ExpiredNextTokenException(inner)
-            }
-            crate::error::GetAttributeValuesError::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::GetAttributeValuesError::InvalidNextTokenException(inner) => {
-                Error::InvalidNextTokenException(inner)
-            }
-            crate::error::GetAttributeValuesError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::GetAttributeValuesError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetAttributeValuesError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_attribute_values::GetAttributeValuesError::ExpiredNextTokenException(inner) => Error::ExpiredNextTokenException(inner),
+            crate::operation::get_attribute_values::GetAttributeValuesError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::get_attribute_values::GetAttributeValuesError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::get_attribute_values::GetAttributeValuesError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_attribute_values::GetAttributeValuesError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_attribute_values::GetAttributeValuesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetProductsError, R>> for Error
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_products::GetProductsError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetProductsError, R>) -> Self {
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::get_products::GetProductsError, R>,
+    ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
@@ -136,25 +137,27 @@ where
         }
     }
 }
-impl From<crate::error::GetProductsError> for Error {
-    fn from(err: crate::error::GetProductsError) -> Self {
+impl From<crate::operation::get_products::GetProductsError> for Error {
+    fn from(err: crate::operation::get_products::GetProductsError) -> Self {
         match err {
-            crate::error::GetProductsError::ExpiredNextTokenException(inner) => {
+            crate::operation::get_products::GetProductsError::ExpiredNextTokenException(inner) => {
                 Error::ExpiredNextTokenException(inner)
             }
-            crate::error::GetProductsError::InternalErrorException(inner) => {
+            crate::operation::get_products::GetProductsError::InternalErrorException(inner) => {
                 Error::InternalErrorException(inner)
             }
-            crate::error::GetProductsError::InvalidNextTokenException(inner) => {
+            crate::operation::get_products::GetProductsError::InvalidNextTokenException(inner) => {
                 Error::InvalidNextTokenException(inner)
             }
-            crate::error::GetProductsError::InvalidParameterException(inner) => {
+            crate::operation::get_products::GetProductsError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
             }
-            crate::error::GetProductsError::NotFoundException(inner) => {
+            crate::operation::get_products::GetProductsError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::GetProductsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_products::GetProductsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }

@@ -2,7 +2,7 @@
 pub(crate) fn de_home_directory_mappings<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::HomeDirectoryMapEntry>>,
+    Option<std::vec::Vec<crate::types::HomeDirectoryMapEntry>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

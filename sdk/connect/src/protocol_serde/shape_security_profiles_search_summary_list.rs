@@ -2,7 +2,7 @@
 pub(crate) fn de_security_profiles_search_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SecurityProfileSearchSummary>>,
+    Option<std::vec::Vec<crate::types::SecurityProfileSearchSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

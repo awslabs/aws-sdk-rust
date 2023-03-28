@@ -3,112 +3,112 @@
 pub fn de_create_keys_and_certificate_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateKeysAndCertificateOutput,
-    crate::error::CreateKeysAndCertificateError,
+    crate::operation::create_keys_and_certificate::CreateKeysAndCertificateOutput,
+    crate::operation::create_keys_and_certificate::CreateKeysAndCertificateError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::CreateKeysAndCertificateError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::create_keys_and_certificate::CreateKeysAndCertificateError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::error::CreateKeysAndCertificateError::unhandled(
+        None => return Err(
+            crate::operation::create_keys_and_certificate::CreateKeysAndCertificateError::unhandled(
                 generic,
-            ))
-        }
+            ),
+        ),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalFailureException" => {
-            crate::error::CreateKeysAndCertificateError::InternalFailureException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalFailureException" => crate::operation::create_keys_and_certificate::CreateKeysAndCertificateError::InternalFailureException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_failure_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InternalFailureExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateKeysAndCertificateError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_keys_and_certificate::CreateKeysAndCertificateError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidRequestException" => {
-            crate::error::CreateKeysAndCertificateError::InvalidRequestException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidRequestException" => crate::operation::create_keys_and_certificate::CreateKeysAndCertificateError::InvalidRequestException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_request_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateKeysAndCertificateError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_keys_and_certificate::CreateKeysAndCertificateError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ServiceUnavailableException" => {
-            crate::error::CreateKeysAndCertificateError::ServiceUnavailableException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ServiceUnavailableException" => crate::operation::create_keys_and_certificate::CreateKeysAndCertificateError::ServiceUnavailableException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::service_unavailable_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateKeysAndCertificateError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_keys_and_certificate::CreateKeysAndCertificateError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ThrottlingException" => {
-            crate::error::CreateKeysAndCertificateError::ThrottlingException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ThrottlingException" => crate::operation::create_keys_and_certificate::CreateKeysAndCertificateError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateKeysAndCertificateError::unhandled)?;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_keys_and_certificate::CreateKeysAndCertificateError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "UnauthorizedException" => {
-            crate::error::CreateKeysAndCertificateError::UnauthorizedException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "UnauthorizedException" => crate::operation::create_keys_and_certificate::CreateKeysAndCertificateError::UnauthorizedException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::unauthorized_exception::Builder::default();
+                    let mut output = crate::types::error::builders::UnauthorizedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateKeysAndCertificateError::unhandled)?;
+                    output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_keys_and_certificate::CreateKeysAndCertificateError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::CreateKeysAndCertificateError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::create_keys_and_certificate::CreateKeysAndCertificateError::generic(generic)
     })
 }
 
@@ -116,14 +116,14 @@ pub fn de_create_keys_and_certificate_http_error(
 pub fn de_create_keys_and_certificate_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateKeysAndCertificateOutput,
-    crate::error::CreateKeysAndCertificateError,
+    crate::operation::create_keys_and_certificate::CreateKeysAndCertificateOutput,
+    crate::operation::create_keys_and_certificate::CreateKeysAndCertificateError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::create_keys_and_certificate_output::Builder::default();
+        let mut output = crate::operation::create_keys_and_certificate::builders::CreateKeysAndCertificateOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_create_keys_and_certificate::de_create_keys_and_certificate(response.body().as_ref(), output).map_err(crate::error::CreateKeysAndCertificateError::unhandled)?;
+        output = crate::protocol_serde::shape_create_keys_and_certificate::de_create_keys_and_certificate(response.body().as_ref(), output).map_err(crate::operation::create_keys_and_certificate::CreateKeysAndCertificateError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -133,9 +133,9 @@ pub fn de_create_keys_and_certificate_http_response(
 
 pub(crate) fn de_create_keys_and_certificate(
     value: &[u8],
-    mut builder: crate::output::create_keys_and_certificate_output::Builder,
+    mut builder: crate::operation::create_keys_and_certificate::builders::CreateKeysAndCertificateOutputBuilder,
 ) -> Result<
-    crate::output::create_keys_and_certificate_output::Builder,
+    crate::operation::create_keys_and_certificate::builders::CreateKeysAndCertificateOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

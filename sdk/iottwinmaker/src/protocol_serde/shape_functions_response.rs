@@ -2,7 +2,7 @@
 pub(crate) fn de_functions_response<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<std::string::String, crate::model::FunctionResponse>>,
+    Option<std::collections::HashMap<std::string::String, crate::types::FunctionResponse>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

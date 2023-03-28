@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_stop_action(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::StopAction,
+    input: &crate::types::StopAction,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Scope");
@@ -19,16 +19,16 @@ pub fn ser_stop_action(
 
 pub fn de_stop_action(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::StopAction, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::StopAction, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::StopAction::builder();
+    let mut builder = crate::types::StopAction::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Scope") /* Scope com.amazonaws.ses#StopAction$Scope */ =>  {
                 let var_5 =
                     Some(
-                        Result::<crate::model::StopScope, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::StopScope::from(
+                        Result::<crate::types::StopScope, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::StopScope::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

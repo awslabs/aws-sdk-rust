@@ -2,7 +2,7 @@
 pub(crate) fn de_group_parameter_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::GroupConfigurationParameter>>,
+    Option<std::vec::Vec<crate::types::GroupConfigurationParameter>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

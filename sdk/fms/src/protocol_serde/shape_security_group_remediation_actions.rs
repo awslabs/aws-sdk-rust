@@ -2,7 +2,7 @@
 pub(crate) fn de_security_group_remediation_actions<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SecurityGroupRemediationAction>>,
+    Option<std::vec::Vec<crate::types::SecurityGroupRemediationAction>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

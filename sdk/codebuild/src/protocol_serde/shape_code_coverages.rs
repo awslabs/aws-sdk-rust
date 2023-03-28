@@ -2,7 +2,7 @@
 pub(crate) fn de_code_coverages<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CodeCoverage>>,
+    Option<std::vec::Vec<crate::types::CodeCoverage>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

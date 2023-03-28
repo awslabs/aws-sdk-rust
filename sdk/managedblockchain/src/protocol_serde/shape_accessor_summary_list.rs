@@ -2,7 +2,7 @@
 pub(crate) fn de_accessor_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AccessorSummary>>,
+    Option<std::vec::Vec<crate::types::AccessorSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

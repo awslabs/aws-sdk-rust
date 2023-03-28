@@ -2,7 +2,7 @@
 pub(crate) fn de_notification_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::NotificationConfiguration>,
+    Option<crate::types::NotificationConfiguration>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::notification_configuration::Builder::default();
+            let mut builder = crate::types::builders::NotificationConfigurationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ConfigurationStatus::from(u.as_ref())
+                                            crate::types::ConfigurationStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -66,7 +66,7 @@ where
 
 pub fn ser_notification_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::NotificationConfiguration,
+    input: &crate::types::NotificationConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.status {
         object.key("Status").string(var_1.as_str());

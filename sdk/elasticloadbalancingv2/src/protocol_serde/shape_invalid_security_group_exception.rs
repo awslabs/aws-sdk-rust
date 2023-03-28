@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_invalid_security_group_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::invalid_security_group_exception::Builder,
+    mut builder: crate::types::error::builders::InvalidSecurityGroupExceptionBuilder,
 ) -> Result<
-    crate::error::invalid_security_group_exception::Builder,
+    crate::types::error::builders::InvalidSecurityGroupExceptionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

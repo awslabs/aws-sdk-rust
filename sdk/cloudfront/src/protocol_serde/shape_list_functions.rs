@@ -2,65 +2,80 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_functions_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListFunctionsOutput, crate::error::ListFunctionsError> {
+) -> std::result::Result<
+    crate::operation::list_functions::ListFunctionsOutput,
+    crate::operation::list_functions::ListFunctionsError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListFunctionsError::unhandled)?;
+        .map_err(crate::operation::list_functions::ListFunctionsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListFunctionsError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::list_functions::ListFunctionsError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidArgument" => crate::error::ListFunctionsError::InvalidArgument({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "InvalidArgument" => {
+            crate::operation::list_functions::ListFunctionsError::InvalidArgument({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_argument::Builder::default();
-                let _ = response;
-                output =
-                    crate::protocol_serde::shape_invalid_argument::de_invalid_argument_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListFunctionsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "UnsupportedOperation" => crate::error::ListFunctionsError::UnsupportedOperation({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InvalidArgumentBuilder::default();
+                    let _ = response;
+                    output =
+                        crate::protocol_serde::shape_invalid_argument::de_invalid_argument_xml_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::operation::list_functions::ListFunctionsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "UnsupportedOperation" => {
+            crate::operation::list_functions::ListFunctionsError::UnsupportedOperation({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unsupported_operation::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_unsupported_operation::de_unsupported_operation_xml_err(response.body().as_ref(), output).map_err(crate::error::ListFunctionsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::ListFunctionsError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::UnsupportedOperationBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_unsupported_operation::de_unsupported_operation_xml_err(response.body().as_ref(), output).map_err(crate::operation::list_functions::ListFunctionsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::list_functions::ListFunctionsError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_functions_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListFunctionsOutput, crate::error::ListFunctionsError> {
+) -> std::result::Result<
+    crate::operation::list_functions::ListFunctionsOutput,
+    crate::operation::list_functions::ListFunctionsError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_functions_output::Builder::default();
+        let mut output =
+            crate::operation::list_functions::builders::ListFunctionsOutputBuilder::default();
         let _ = response;
         output = output.set_function_list(
             crate::protocol_serde::shape_list_functions_output::de_function_list_payload(

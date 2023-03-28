@@ -2,7 +2,7 @@
 pub(crate) fn de_network_route_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::NetworkRoute>>,
+    Option<std::vec::Vec<crate::types::NetworkRoute>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

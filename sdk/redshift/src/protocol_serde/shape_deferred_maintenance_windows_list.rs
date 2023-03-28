@@ -2,7 +2,7 @@
 pub fn de_deferred_maintenance_windows_list(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::DeferredMaintenanceWindow>,
+    std::vec::Vec<crate::types::DeferredMaintenanceWindow>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

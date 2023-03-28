@@ -3,48 +3,41 @@
 pub fn de_get_public_key_config_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetPublicKeyConfigOutput,
-    crate::error::GetPublicKeyConfigError,
+    crate::operation::get_public_key_config::GetPublicKeyConfigOutput,
+    crate::operation::get_public_key_config::GetPublicKeyConfigError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetPublicKeyConfigError::unhandled)?;
+        .map_err(crate::operation::get_public_key_config::GetPublicKeyConfigError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::GetPublicKeyConfigError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::get_public_key_config::GetPublicKeyConfigError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDenied" => crate::error::GetPublicKeyConfigError::AccessDenied({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::access_denied::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_access_denied::de_access_denied_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::GetPublicKeyConfigError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "NoSuchPublicKey" => {
-            crate::error::GetPublicKeyConfigError::NoSuchPublicKey({
+        "AccessDenied" => {
+            crate::operation::get_public_key_config::GetPublicKeyConfigError::AccessDenied({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::no_such_public_key::Builder::default();
+                    let mut output = crate::types::error::builders::AccessDeniedBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_no_such_public_key::de_no_such_public_key_xml_err(response.body().as_ref(), output).map_err(crate::error::GetPublicKeyConfigError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied::de_access_denied_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(
+                        crate::operation::get_public_key_config::GetPublicKeyConfigError::unhandled,
+                    )?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -54,7 +47,25 @@ pub fn de_get_public_key_config_http_error(
                 tmp
             })
         }
-        _ => crate::error::GetPublicKeyConfigError::generic(generic),
+        "NoSuchPublicKey" => {
+            crate::operation::get_public_key_config::GetPublicKeyConfigError::NoSuchPublicKey({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::NoSuchPublicKeyBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_no_such_public_key::de_no_such_public_key_xml_err(response.body().as_ref(), output).map_err(crate::operation::get_public_key_config::GetPublicKeyConfigError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::get_public_key_config::GetPublicKeyConfigError::generic(generic),
     })
 }
 
@@ -62,19 +73,19 @@ pub fn de_get_public_key_config_http_error(
 pub fn de_get_public_key_config_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetPublicKeyConfigOutput,
-    crate::error::GetPublicKeyConfigError,
+    crate::operation::get_public_key_config::GetPublicKeyConfigOutput,
+    crate::operation::get_public_key_config::GetPublicKeyConfigError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_public_key_config_output::Builder::default();
+        let mut output = crate::operation::get_public_key_config::builders::GetPublicKeyConfigOutputBuilder::default();
         let _ = response;
         output = output.set_e_tag(
             crate::protocol_serde::shape_get_public_key_config_output::de_e_tag_header(
                 response.headers(),
             )
             .map_err(|_| {
-                crate::error::GetPublicKeyConfigError::unhandled(
+                crate::operation::get_public_key_config::GetPublicKeyConfigError::unhandled(
                     "Failed to parse ETag from header `ETag",
                 )
             })?,

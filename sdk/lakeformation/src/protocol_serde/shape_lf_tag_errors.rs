@@ -2,7 +2,7 @@
 pub(crate) fn de_lf_tag_errors<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::LfTagError>>,
+    Option<std::vec::Vec<crate::types::LfTagError>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

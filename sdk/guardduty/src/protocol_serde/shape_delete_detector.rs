@@ -2,43 +2,33 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_detector_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeleteDetectorOutput, crate::error::DeleteDetectorError> {
+) -> std::result::Result<
+    crate::operation::delete_detector::DeleteDetectorOutput,
+    crate::operation::delete_detector::DeleteDetectorError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteDetectorError::unhandled)?;
+        .map_err(crate::operation::delete_detector::DeleteDetectorError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DeleteDetectorError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::delete_detector::DeleteDetectorError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::DeleteDetectorError::BadRequestException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDetectorError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InternalServerErrorException" => {
-            crate::error::DeleteDetectorError::InternalServerErrorException({
+        "BadRequestException" => {
+            crate::operation::delete_detector::DeleteDetectorError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::internal_server_error_exception::Builder::default();
+                        crate::types::error::builders::BadRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDetectorError::unhandled)?;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_detector::DeleteDetectorError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -48,17 +38,40 @@ pub fn de_delete_detector_http_error(
                 tmp
             })
         }
-        _ => crate::error::DeleteDetectorError::generic(generic),
+        "InternalServerErrorException" => {
+            crate::operation::delete_detector::DeleteDetectorError::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InternalServerErrorExceptionBuilder::default(
+                        );
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_detector::DeleteDetectorError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::delete_detector::DeleteDetectorError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_detector_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeleteDetectorOutput, crate::error::DeleteDetectorError> {
+) -> std::result::Result<
+    crate::operation::delete_detector::DeleteDetectorOutput,
+    crate::operation::delete_detector::DeleteDetectorError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_detector_output::Builder::default();
+        let mut output =
+            crate::operation::delete_detector::builders::DeleteDetectorOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

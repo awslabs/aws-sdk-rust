@@ -2,66 +2,79 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_type_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DescribeTypeOutput, crate::error::DescribeTypeError> {
+) -> std::result::Result<
+    crate::operation::describe_type::DescribeTypeOutput,
+    crate::operation::describe_type::DescribeTypeError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeTypeError::unhandled)?;
+        .map_err(crate::operation::describe_type::DescribeTypeError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DescribeTypeError::unhandled(generic)),
+        None => return Err(crate::operation::describe_type::DescribeTypeError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CFNRegistryException" => crate::error::DescribeTypeError::CfnRegistryException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "CFNRegistryException" => {
+            crate::operation::describe_type::DescribeTypeError::CfnRegistryException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::cfn_registry_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_cfn_registry_exception::de_cfn_registry_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeTypeError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "TypeNotFoundException" => crate::error::DescribeTypeError::TypeNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::CfnRegistryExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_cfn_registry_exception::de_cfn_registry_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::describe_type::DescribeTypeError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "TypeNotFoundException" => {
+            crate::operation::describe_type::DescribeTypeError::TypeNotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::type_not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_type_not_found_exception::de_type_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeTypeError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::DescribeTypeError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::TypeNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_type_not_found_exception::de_type_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::describe_type::DescribeTypeError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::describe_type::DescribeTypeError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_type_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DescribeTypeOutput, crate::error::DescribeTypeError> {
+) -> std::result::Result<
+    crate::operation::describe_type::DescribeTypeOutput,
+    crate::operation::describe_type::DescribeTypeError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_type_output::Builder::default();
+        let mut output =
+            crate::operation::describe_type::builders::DescribeTypeOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_describe_type::de_describe_type(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DescribeTypeError::unhandled)?;
+        .map_err(crate::operation::describe_type::DescribeTypeError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -72,8 +85,11 @@ pub fn de_describe_type_http_response(
 #[allow(unused_mut)]
 pub fn de_describe_type(
     inp: &[u8],
-    mut builder: crate::output::describe_type_output::Builder,
-) -> Result<crate::output::describe_type_output::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    mut builder: crate::operation::describe_type::builders::DescribeTypeOutputBuilder,
+) -> Result<
+    crate::operation::describe_type::builders::DescribeTypeOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -112,8 +128,8 @@ pub fn de_describe_type(
             s if s.matches("Type") /* Type com.amazonaws.cloudformation.synthetic#DescribeTypeOutput$Type */ =>  {
                 let var_2 =
                     Some(
-                        Result::<crate::model::RegistryType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::RegistryType::from(
+                        Result::<crate::types::RegistryType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::RegistryType::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
@@ -167,8 +183,8 @@ pub fn de_describe_type(
             s if s.matches("TypeTestsStatus") /* TypeTestsStatus com.amazonaws.cloudformation.synthetic#DescribeTypeOutput$TypeTestsStatus */ =>  {
                 let var_6 =
                     Some(
-                        Result::<crate::model::TypeTestsStatus, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::TypeTestsStatus::from(
+                        Result::<crate::types::TypeTestsStatus, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::TypeTestsStatus::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
@@ -220,8 +236,8 @@ pub fn de_describe_type(
             s if s.matches("ProvisioningType") /* ProvisioningType com.amazonaws.cloudformation.synthetic#DescribeTypeOutput$ProvisioningType */ =>  {
                 let var_10 =
                     Some(
-                        Result::<crate::model::ProvisioningType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::ProvisioningType::from(
+                        Result::<crate::types::ProvisioningType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::ProvisioningType::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
@@ -234,8 +250,8 @@ pub fn de_describe_type(
             s if s.matches("DeprecatedStatus") /* DeprecatedStatus com.amazonaws.cloudformation.synthetic#DescribeTypeOutput$DeprecatedStatus */ =>  {
                 let var_11 =
                     Some(
-                        Result::<crate::model::DeprecatedStatus, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::DeprecatedStatus::from(
+                        Result::<crate::types::DeprecatedStatus, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::DeprecatedStatus::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
@@ -281,8 +297,8 @@ pub fn de_describe_type(
             s if s.matches("Visibility") /* Visibility com.amazonaws.cloudformation.synthetic#DescribeTypeOutput$Visibility */ =>  {
                 let var_15 =
                     Some(
-                        Result::<crate::model::Visibility, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::Visibility::from(
+                        Result::<crate::types::Visibility, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::Visibility::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

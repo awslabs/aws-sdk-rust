@@ -2,7 +2,7 @@
 pub(crate) fn de_ip_set_descriptors<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::IpSetDescriptor>>,
+    Option<std::vec::Vec<crate::types::IpSetDescriptor>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

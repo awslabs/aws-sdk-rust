@@ -2,7 +2,7 @@
 pub(crate) fn de_event_risk_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::EventRiskType>,
+    Option<crate::types::EventRiskType>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::event_risk_type::Builder::default();
+            let mut builder = crate::types::builders::EventRiskTypeBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::RiskDecisionType::from(u.as_ref())
+                                            crate::types::RiskDecisionType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -43,7 +43,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::RiskLevelType::from(u.as_ref()))
+                                            .map(|u| crate::types::RiskLevelType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

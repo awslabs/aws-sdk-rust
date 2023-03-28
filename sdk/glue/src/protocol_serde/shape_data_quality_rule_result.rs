@@ -2,7 +2,7 @@
 pub(crate) fn de_data_quality_rule_result<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::DataQualityRuleResult>,
+    Option<crate::types::DataQualityRuleResult>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::data_quality_rule_result::Builder::default();
+            let mut builder = crate::types::builders::DataQualityRuleResultBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -57,7 +57,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::DataQualityRuleResultStatus::from(
+                                            crate::types::DataQualityRuleResultStatus::from(
                                                 u.as_ref(),
                                             )
                                         })

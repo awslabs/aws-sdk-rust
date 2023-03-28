@@ -2,7 +2,7 @@
 pub(crate) fn de_requested_service_quota_change_history_list_definition<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::RequestedServiceQuotaChange>>,
+    Option<std::vec::Vec<crate::types::RequestedServiceQuotaChange>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

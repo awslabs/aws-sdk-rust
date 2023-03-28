@@ -2,27 +2,33 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_time_series_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListTimeSeriesOutput, crate::error::ListTimeSeriesError> {
+) -> std::result::Result<
+    crate::operation::list_time_series::ListTimeSeriesOutput,
+    crate::operation::list_time_series::ListTimeSeriesError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListTimeSeriesError::unhandled)?;
+        .map_err(crate::operation::list_time_series::ListTimeSeriesError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListTimeSeriesError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::list_time_series::ListTimeSeriesError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalFailureException" => {
-            crate::error::ListTimeSeriesError::InternalFailureException({
+            crate::operation::list_time_series::ListTimeSeriesError::InternalFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_failure_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::InternalFailureExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTimeSeriesError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_time_series::ListTimeSeriesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -32,29 +38,33 @@ pub fn de_list_time_series_http_error(
                 tmp
             })
         }
-        "InvalidRequestException" => crate::error::ListTimeSeriesError::InvalidRequestException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "InvalidRequestException" => {
+            crate::operation::list_time_series::ListTimeSeriesError::InvalidRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_request_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTimeSeriesError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InvalidRequestExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_time_series::ListTimeSeriesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "ResourceNotFoundException" => {
-            crate::error::ListTimeSeriesError::ResourceNotFoundException({
+            crate::operation::list_time_series::ListTimeSeriesError::ResourceNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTimeSeriesError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_time_series::ListTimeSeriesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -64,38 +74,45 @@ pub fn de_list_time_series_http_error(
                 tmp
             })
         }
-        "ThrottlingException" => crate::error::ListTimeSeriesError::ThrottlingException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "ThrottlingException" => {
+            crate::operation::list_time_series::ListTimeSeriesError::ThrottlingException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::throttling_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTimeSeriesError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::ListTimeSeriesError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_time_series::ListTimeSeriesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::list_time_series::ListTimeSeriesError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_time_series_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListTimeSeriesOutput, crate::error::ListTimeSeriesError> {
+) -> std::result::Result<
+    crate::operation::list_time_series::ListTimeSeriesOutput,
+    crate::operation::list_time_series::ListTimeSeriesError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_time_series_output::Builder::default();
+        let mut output =
+            crate::operation::list_time_series::builders::ListTimeSeriesOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_time_series::de_list_time_series(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListTimeSeriesError::unhandled)?;
+        .map_err(crate::operation::list_time_series::ListTimeSeriesError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -105,9 +122,9 @@ pub fn de_list_time_series_http_response(
 
 pub(crate) fn de_list_time_series(
     value: &[u8],
-    mut builder: crate::output::list_time_series_output::Builder,
+    mut builder: crate::operation::list_time_series::builders::ListTimeSeriesOutputBuilder,
 ) -> Result<
-    crate::output::list_time_series_output::Builder,
+    crate::operation::list_time_series::builders::ListTimeSeriesOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

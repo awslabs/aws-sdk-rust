@@ -3,129 +3,125 @@
 pub fn de_delete_events_configuration_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteEventsConfigurationOutput,
-    crate::error::DeleteEventsConfigurationError,
+    crate::operation::delete_events_configuration::DeleteEventsConfigurationOutput,
+    crate::operation::delete_events_configuration::DeleteEventsConfigurationError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteEventsConfigurationError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::delete_events_configuration::DeleteEventsConfigurationError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::DeleteEventsConfigurationError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::delete_events_configuration::DeleteEventsConfigurationError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => {
-            crate::error::DeleteEventsConfigurationError::BadRequestException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "BadRequestException" => crate::operation::delete_events_configuration::DeleteEventsConfigurationError::BadRequestException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::bad_request_exception::Builder::default();
+                    let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteEventsConfigurationError::unhandled)?;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_events_configuration::DeleteEventsConfigurationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ForbiddenException" => crate::error::DeleteEventsConfigurationError::ForbiddenException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteEventsConfigurationError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "ResourceLimitExceededException" => {
-            crate::error::DeleteEventsConfigurationError::ResourceLimitExceededException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "ForbiddenException" => crate::operation::delete_events_configuration::DeleteEventsConfigurationError::ForbiddenException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::resource_limit_exceeded_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ForbiddenExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_limit_exceeded_exception::de_resource_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteEventsConfigurationError::unhandled)?;
+                    output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_events_configuration::DeleteEventsConfigurationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ServiceFailureException" => {
-            crate::error::DeleteEventsConfigurationError::ServiceFailureException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceLimitExceededException" => crate::operation::delete_events_configuration::DeleteEventsConfigurationError::ResourceLimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ResourceLimitExceededExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteEventsConfigurationError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_limit_exceeded_exception::de_resource_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_events_configuration::DeleteEventsConfigurationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ServiceUnavailableException" => {
-            crate::error::DeleteEventsConfigurationError::ServiceUnavailableException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ServiceFailureException" => crate::operation::delete_events_configuration::DeleteEventsConfigurationError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::service_unavailable_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ServiceFailureExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteEventsConfigurationError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_events_configuration::DeleteEventsConfigurationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "UnauthorizedClientException" => {
-            crate::error::DeleteEventsConfigurationError::UnauthorizedClientException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ServiceUnavailableException" => crate::operation::delete_events_configuration::DeleteEventsConfigurationError::ServiceUnavailableException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::unauthorized_client_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_unauthorized_client_exception::de_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteEventsConfigurationError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_events_configuration::DeleteEventsConfigurationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DeleteEventsConfigurationError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "UnauthorizedClientException" => crate::operation::delete_events_configuration::DeleteEventsConfigurationError::UnauthorizedClientException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::UnauthorizedClientExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_unauthorized_client_exception::de_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_events_configuration::DeleteEventsConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::delete_events_configuration::DeleteEventsConfigurationError::generic(generic)
     })
 }
 
@@ -133,12 +129,12 @@ pub fn de_delete_events_configuration_http_error(
 pub fn de_delete_events_configuration_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteEventsConfigurationOutput,
-    crate::error::DeleteEventsConfigurationError,
+    crate::operation::delete_events_configuration::DeleteEventsConfigurationOutput,
+    crate::operation::delete_events_configuration::DeleteEventsConfigurationError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_events_configuration_output::Builder::default();
+        let mut output = crate::operation::delete_events_configuration::builders::DeleteEventsConfigurationOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

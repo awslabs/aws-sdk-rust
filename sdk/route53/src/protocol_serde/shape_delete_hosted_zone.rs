@@ -2,92 +2,35 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_hosted_zone_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeleteHostedZoneOutput, crate::error::DeleteHostedZoneError>
-{
+) -> std::result::Result<
+    crate::operation::delete_hosted_zone::DeleteHostedZoneOutput,
+    crate::operation::delete_hosted_zone::DeleteHostedZoneError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteHostedZoneError::unhandled)?;
+        .map_err(crate::operation::delete_hosted_zone::DeleteHostedZoneError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DeleteHostedZoneError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::delete_hosted_zone::DeleteHostedZoneError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "HostedZoneNotEmpty" => crate::error::DeleteHostedZoneError::HostedZoneNotEmpty({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::hosted_zone_not_empty::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_hosted_zone_not_empty::de_hosted_zone_not_empty_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteHostedZoneError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InvalidDomainName" => crate::error::DeleteHostedZoneError::InvalidDomainName({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::invalid_domain_name::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_domain_name::de_invalid_domain_name_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteHostedZoneError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InvalidInput" => crate::error::DeleteHostedZoneError::InvalidInput({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::invalid_input::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_input::de_invalid_input_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::DeleteHostedZoneError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "NoSuchHostedZone" => crate::error::DeleteHostedZoneError::NoSuchHostedZone({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::no_such_hosted_zone::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_no_such_hosted_zone::de_no_such_hosted_zone_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteHostedZoneError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "PriorRequestNotComplete" => {
-            crate::error::DeleteHostedZoneError::PriorRequestNotComplete({
+        "HostedZoneNotEmpty" => {
+            crate::operation::delete_hosted_zone::DeleteHostedZoneError::HostedZoneNotEmpty({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::prior_request_not_complete::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::HostedZoneNotEmptyBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_prior_request_not_complete::de_prior_request_not_complete_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteHostedZoneError::unhandled)?;
+                    output = crate::protocol_serde::shape_hosted_zone_not_empty::de_hosted_zone_not_empty_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_hosted_zone::DeleteHostedZoneError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -97,24 +40,105 @@ pub fn de_delete_hosted_zone_http_error(
                 tmp
             })
         }
-        _ => crate::error::DeleteHostedZoneError::generic(generic),
+        "InvalidDomainName" => {
+            crate::operation::delete_hosted_zone::DeleteHostedZoneError::InvalidDomainName({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InvalidDomainNameBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_domain_name::de_invalid_domain_name_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_hosted_zone::DeleteHostedZoneError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidInput" => {
+            crate::operation::delete_hosted_zone::DeleteHostedZoneError::InvalidInput({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidInputBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_input::de_invalid_input_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(
+                        crate::operation::delete_hosted_zone::DeleteHostedZoneError::unhandled,
+                    )?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "NoSuchHostedZone" => {
+            crate::operation::delete_hosted_zone::DeleteHostedZoneError::NoSuchHostedZone({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::NoSuchHostedZoneBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_no_such_hosted_zone::de_no_such_hosted_zone_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_hosted_zone::DeleteHostedZoneError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "PriorRequestNotComplete" => {
+            crate::operation::delete_hosted_zone::DeleteHostedZoneError::PriorRequestNotComplete({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::PriorRequestNotCompleteBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_prior_request_not_complete::de_prior_request_not_complete_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_hosted_zone::DeleteHostedZoneError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::delete_hosted_zone::DeleteHostedZoneError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_hosted_zone_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeleteHostedZoneOutput, crate::error::DeleteHostedZoneError>
-{
+) -> std::result::Result<
+    crate::operation::delete_hosted_zone::DeleteHostedZoneOutput,
+    crate::operation::delete_hosted_zone::DeleteHostedZoneError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_hosted_zone_output::Builder::default();
+        let mut output =
+            crate::operation::delete_hosted_zone::builders::DeleteHostedZoneOutputBuilder::default(
+            );
         let _ = response;
         output = crate::protocol_serde::shape_delete_hosted_zone::de_delete_hosted_zone(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DeleteHostedZoneError::unhandled)?;
+        .map_err(crate::operation::delete_hosted_zone::DeleteHostedZoneError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -125,9 +149,11 @@ pub fn de_delete_hosted_zone_http_response(
 #[allow(unused_mut)]
 pub fn de_delete_hosted_zone(
     inp: &[u8],
-    mut builder: crate::output::delete_hosted_zone_output::Builder,
-) -> Result<crate::output::delete_hosted_zone_output::Builder, aws_smithy_xml::decode::XmlDecodeError>
-{
+    mut builder: crate::operation::delete_hosted_zone::builders::DeleteHostedZoneOutputBuilder,
+) -> Result<
+    crate::operation::delete_hosted_zone::builders::DeleteHostedZoneOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

@@ -2,7 +2,7 @@
 pub(crate) fn de_target_resource_type_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::TargetResourceTypeSummary>>,
+    Option<std::vec::Vec<crate::types::TargetResourceTypeSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

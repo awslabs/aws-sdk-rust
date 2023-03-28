@@ -2,58 +2,72 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_put_object_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::PutObjectOutput, crate::error::PutObjectError> {
+) -> std::result::Result<
+    crate::operation::put_object::PutObjectOutput,
+    crate::operation::put_object::PutObjectError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::PutObjectError::unhandled)?;
+        .map_err(crate::operation::put_object::PutObjectError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::PutObjectError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::put_object::PutObjectError::unhandled(
+                generic,
+            ))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::PutObjectError::AccessDeniedException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::access_denied_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutObjectError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "IllegalArgumentException" => crate::error::PutObjectError::IllegalArgumentException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::illegal_argument_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_illegal_argument_exception::de_illegal_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutObjectError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "KMSInvalidKeyUsageException" => {
-            crate::error::PutObjectError::KmsInvalidKeyUsageException({
+        "AccessDeniedException" => {
+            crate::operation::put_object::PutObjectError::AccessDeniedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::kms_invalid_key_usage_exception::Builder::default();
+                        crate::types::error::builders::AccessDeniedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_kms_invalid_key_usage_exception::de_kms_invalid_key_usage_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutObjectError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_object::PutObjectError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "IllegalArgumentException" => {
+            crate::operation::put_object::PutObjectError::IllegalArgumentException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::IllegalArgumentExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_illegal_argument_exception::de_illegal_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_object::PutObjectError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "KMSInvalidKeyUsageException" => {
+            crate::operation::put_object::PutObjectError::KmsInvalidKeyUsageException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::KmsInvalidKeyUsageExceptionBuilder::default(
+                        );
+                    let _ = response;
+                    output = crate::protocol_serde::shape_kms_invalid_key_usage_exception::de_kms_invalid_key_usage_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_object::PutObjectError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -64,14 +78,13 @@ pub fn de_put_object_http_error(
             })
         }
         "NotReadableInputStreamException" => {
-            crate::error::PutObjectError::NotReadableInputStreamException({
+            crate::operation::put_object::PutObjectError::NotReadableInputStreamException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::not_readable_input_stream_exception::Builder::default();
+                    let mut output = crate::types::error::builders::NotReadableInputStreamExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_not_readable_input_stream_exception::de_not_readable_input_stream_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutObjectError::unhandled)?;
+                    output = crate::protocol_serde::shape_not_readable_input_stream_exception::de_not_readable_input_stream_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_object::PutObjectError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -81,13 +94,14 @@ pub fn de_put_object_http_error(
                 tmp
             })
         }
-        "RetryableException" => crate::error::PutObjectError::RetryableException({
+        "RetryableException" => crate::operation::put_object::PutObjectError::RetryableException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::error::retryable_exception::Builder::default();
+                let mut output =
+                    crate::types::error::builders::RetryableExceptionBuilder::default();
                 let _ = response;
-                output = crate::protocol_serde::shape_retryable_exception::de_retryable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutObjectError::unhandled)?;
+                output = crate::protocol_serde::shape_retryable_exception::de_retryable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_object::PutObjectError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -96,30 +110,34 @@ pub fn de_put_object_http_error(
             }
             tmp
         }),
-        "ServiceInternalException" => crate::error::PutObjectError::ServiceInternalException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "ServiceInternalException" => {
+            crate::operation::put_object::PutObjectError::ServiceInternalException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::service_internal_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_service_internal_exception::de_service_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutObjectError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ServiceInternalExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_service_internal_exception::de_service_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_object::PutObjectError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "ServiceUnavailableException" => {
-            crate::error::PutObjectError::ServiceUnavailableException({
+            crate::operation::put_object::PutObjectError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::service_unavailable_exception::Builder::default();
+                        crate::types::error::builders::ServiceUnavailableExceptionBuilder::default(
+                        );
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutObjectError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_object::PutObjectError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -129,38 +147,44 @@ pub fn de_put_object_http_error(
                 tmp
             })
         }
-        "ThrottlingException" => crate::error::PutObjectError::ThrottlingException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "ThrottlingException" => {
+            crate::operation::put_object::PutObjectError::ThrottlingException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::throttling_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutObjectError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::PutObjectError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::put_object::PutObjectError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::put_object::PutObjectError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_put_object_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::PutObjectOutput, crate::error::PutObjectError> {
+) -> std::result::Result<
+    crate::operation::put_object::PutObjectOutput,
+    crate::operation::put_object::PutObjectError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::put_object_output::Builder::default();
+        let mut output = crate::operation::put_object::builders::PutObjectOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_put_object::de_put_object(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::PutObjectError::unhandled)?;
+        .map_err(crate::operation::put_object::PutObjectError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -170,9 +194,9 @@ pub fn de_put_object_http_response(
 
 pub(crate) fn de_put_object(
     value: &[u8],
-    mut builder: crate::output::put_object_output::Builder,
+    mut builder: crate::operation::put_object::builders::PutObjectOutputBuilder,
 ) -> Result<
-    crate::output::put_object_output::Builder,
+    crate::operation::put_object::builders::PutObjectOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =
@@ -201,7 +225,7 @@ pub(crate) fn de_put_object(
                             )?
                             .map(|s| {
                                 s.to_unescaped()
-                                    .map(|u| crate::model::DataChecksumAlgorithm::from(u.as_ref()))
+                                    .map(|u| crate::types::DataChecksumAlgorithm::from(u.as_ref()))
                             })
                             .transpose()?,
                         );
@@ -222,7 +246,7 @@ pub(crate) fn de_put_object(
                             )?
                             .map(|s| {
                                 s.to_unescaped().map(|u| {
-                                    crate::model::SummaryChecksumAlgorithm::from(u.as_ref())
+                                    crate::types::SummaryChecksumAlgorithm::from(u.as_ref())
                                 })
                             })
                             .transpose()?,

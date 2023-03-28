@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_iam_role_missing_permissions_fault_xml_err(
     inp: &[u8],
-    mut builder: crate::error::iam_role_missing_permissions_fault::Builder,
+    mut builder: crate::types::error::builders::IamRoleMissingPermissionsFaultBuilder,
 ) -> Result<
-    crate::error::iam_role_missing_permissions_fault::Builder,
+    crate::types::error::builders::IamRoleMissingPermissionsFaultBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

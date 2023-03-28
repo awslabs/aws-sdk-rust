@@ -2,28 +2,35 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_pipeline_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DescribePipelineOutput, crate::error::DescribePipelineError>
-{
+) -> std::result::Result<
+    crate::operation::describe_pipeline::DescribePipelineOutput,
+    crate::operation::describe_pipeline::DescribePipelineError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribePipelineError::unhandled)?;
+        .map_err(crate::operation::describe_pipeline::DescribePipelineError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DescribePipelineError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::describe_pipeline::DescribePipelineError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalFailureException" => {
-            crate::error::DescribePipelineError::InternalFailureException({
+            crate::operation::describe_pipeline::DescribePipelineError::InternalFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_failure_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::InternalFailureExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribePipelineError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_pipeline::DescribePipelineError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -34,13 +41,14 @@ pub fn de_describe_pipeline_http_error(
             })
         }
         "InvalidRequestException" => {
-            crate::error::DescribePipelineError::InvalidRequestException({
+            crate::operation::describe_pipeline::DescribePipelineError::InvalidRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_request_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::InvalidRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribePipelineError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_pipeline::DescribePipelineError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -51,13 +59,14 @@ pub fn de_describe_pipeline_http_error(
             })
         }
         "ResourceNotFoundException" => {
-            crate::error::DescribePipelineError::ResourceNotFoundException({
+            crate::operation::describe_pipeline::DescribePipelineError::ResourceNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribePipelineError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_pipeline::DescribePipelineError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -68,14 +77,33 @@ pub fn de_describe_pipeline_http_error(
             })
         }
         "ServiceUnavailableException" => {
-            crate::error::DescribePipelineError::ServiceUnavailableException({
+            crate::operation::describe_pipeline::DescribePipelineError::ServiceUnavailableException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
+                        let _ = response;
+                        output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_pipeline::DescribePipelineError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        "ThrottlingException" => {
+            crate::operation::describe_pipeline::DescribePipelineError::ThrottlingException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::service_unavailable_exception::Builder::default();
+                        crate::types::error::builders::ThrottlingExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribePipelineError::unhandled)?;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_pipeline::DescribePipelineError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -85,39 +113,27 @@ pub fn de_describe_pipeline_http_error(
                 tmp
             })
         }
-        "ThrottlingException" => crate::error::DescribePipelineError::ThrottlingException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::throttling_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribePipelineError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::DescribePipelineError::generic(generic),
+        _ => crate::operation::describe_pipeline::DescribePipelineError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_pipeline_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DescribePipelineOutput, crate::error::DescribePipelineError>
-{
+) -> std::result::Result<
+    crate::operation::describe_pipeline::DescribePipelineOutput,
+    crate::operation::describe_pipeline::DescribePipelineError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_pipeline_output::Builder::default();
+        let mut output =
+            crate::operation::describe_pipeline::builders::DescribePipelineOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_describe_pipeline::de_describe_pipeline(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DescribePipelineError::unhandled)?;
+        .map_err(crate::operation::describe_pipeline::DescribePipelineError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -127,9 +143,9 @@ pub fn de_describe_pipeline_http_response(
 
 pub(crate) fn de_describe_pipeline(
     value: &[u8],
-    mut builder: crate::output::describe_pipeline_output::Builder,
+    mut builder: crate::operation::describe_pipeline::builders::DescribePipelineOutputBuilder,
 ) -> Result<
-    crate::output::describe_pipeline_output::Builder,
+    crate::operation::describe_pipeline::builders::DescribePipelineOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

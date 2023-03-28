@@ -2,28 +2,35 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_snapshot_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::CreateSnapshotOutput, crate::error::CreateSnapshotError> {
+) -> std::result::Result<
+    crate::operation::create_snapshot::CreateSnapshotOutput,
+    crate::operation::create_snapshot::CreateSnapshotError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::CreateSnapshotError::unhandled)?;
+        .map_err(crate::operation::create_snapshot::CreateSnapshotError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::CreateSnapshotError::generic(generic))
+    Err(crate::operation::create_snapshot::CreateSnapshotError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_snapshot_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::CreateSnapshotOutput, crate::error::CreateSnapshotError> {
+) -> std::result::Result<
+    crate::operation::create_snapshot::CreateSnapshotOutput,
+    crate::operation::create_snapshot::CreateSnapshotError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::create_snapshot_output::Builder::default();
+        let mut output =
+            crate::operation::create_snapshot::builders::CreateSnapshotOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_create_snapshot::de_create_snapshot(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::CreateSnapshotError::unhandled)?;
+        .map_err(crate::operation::create_snapshot::CreateSnapshotError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -34,9 +41,11 @@ pub fn de_create_snapshot_http_response(
 #[allow(unused_mut)]
 pub fn de_create_snapshot(
     inp: &[u8],
-    mut builder: crate::output::create_snapshot_output::Builder,
-) -> Result<crate::output::create_snapshot_output::Builder, aws_smithy_xml::decode::XmlDecodeError>
-{
+    mut builder: crate::operation::create_snapshot::builders::CreateSnapshotOutputBuilder,
+) -> Result<
+    crate::operation::create_snapshot::builders::CreateSnapshotOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -161,8 +170,8 @@ pub fn de_create_snapshot(
             s if s.matches("status") /* State com.amazonaws.ec2.synthetic#CreateSnapshotOutput$State */ =>  {
                 let var_9 =
                     Some(
-                        Result::<crate::model::SnapshotState, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::SnapshotState::from(
+                        Result::<crate::types::SnapshotState, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::SnapshotState::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
@@ -252,8 +261,8 @@ pub fn de_create_snapshot(
             s if s.matches("storageTier") /* StorageTier com.amazonaws.ec2.synthetic#CreateSnapshotOutput$StorageTier */ =>  {
                 let var_16 =
                     Some(
-                        Result::<crate::model::StorageTier, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::StorageTier::from(
+                        Result::<crate::types::StorageTier, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::StorageTier::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

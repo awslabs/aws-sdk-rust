@@ -2,7 +2,7 @@
 pub(crate) fn de_lifecycle_policy_rule_action<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::LifecyclePolicyRuleAction>,
+    Option<crate::types::LifecyclePolicyRuleAction>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::lifecycle_policy_rule_action::Builder::default();
+            let mut builder = crate::types::builders::LifecyclePolicyRuleActionBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ImageActionType::from(u.as_ref())
+                                            crate::types::ImageActionType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

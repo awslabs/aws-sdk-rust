@@ -2,60 +2,33 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_thing_types_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListThingTypesOutput, crate::error::ListThingTypesError> {
+) -> std::result::Result<
+    crate::operation::list_thing_types::ListThingTypesOutput,
+    crate::operation::list_thing_types::ListThingTypesError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListThingTypesError::unhandled)?;
+        .map_err(crate::operation::list_thing_types::ListThingTypesError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListThingTypesError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::list_thing_types::ListThingTypesError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalFailureException" => {
-            crate::error::ListThingTypesError::InternalFailureException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::internal_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListThingTypesError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InvalidRequestException" => crate::error::ListThingTypesError::InvalidRequestException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::invalid_request_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListThingTypesError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ServiceUnavailableException" => {
-            crate::error::ListThingTypesError::ServiceUnavailableException({
+            crate::operation::list_thing_types::ListThingTypesError::InternalFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::service_unavailable_exception::Builder::default();
+                        crate::types::error::builders::InternalFailureExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListThingTypesError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_thing_types::ListThingTypesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -65,53 +38,100 @@ pub fn de_list_thing_types_http_error(
                 tmp
             })
         }
-        "ThrottlingException" => crate::error::ListThingTypesError::ThrottlingException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "InvalidRequestException" => {
+            crate::operation::list_thing_types::ListThingTypesError::InvalidRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::throttling_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListThingTypesError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "UnauthorizedException" => crate::error::ListThingTypesError::UnauthorizedException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InvalidRequestExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_thing_types::ListThingTypesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::operation::list_thing_types::ListThingTypesError::ServiceUnavailableException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListThingTypesError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::ListThingTypesError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ServiceUnavailableExceptionBuilder::default(
+                        );
+                    let _ = response;
+                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_thing_types::ListThingTypesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ThrottlingException" => {
+            crate::operation::list_thing_types::ListThingTypesError::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_thing_types::ListThingTypesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "UnauthorizedException" => {
+            crate::operation::list_thing_types::ListThingTypesError::UnauthorizedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::UnauthorizedExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_thing_types::ListThingTypesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::list_thing_types::ListThingTypesError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_thing_types_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListThingTypesOutput, crate::error::ListThingTypesError> {
+) -> std::result::Result<
+    crate::operation::list_thing_types::ListThingTypesOutput,
+    crate::operation::list_thing_types::ListThingTypesError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_thing_types_output::Builder::default();
+        let mut output =
+            crate::operation::list_thing_types::builders::ListThingTypesOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_thing_types::de_list_thing_types(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListThingTypesError::unhandled)?;
+        .map_err(crate::operation::list_thing_types::ListThingTypesError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -121,9 +141,9 @@ pub fn de_list_thing_types_http_response(
 
 pub(crate) fn de_list_thing_types(
     value: &[u8],
-    mut builder: crate::output::list_thing_types_output::Builder,
+    mut builder: crate::operation::list_thing_types::builders::ListThingTypesOutputBuilder,
 ) -> Result<
-    crate::output::list_thing_types_output::Builder,
+    crate::operation::list_thing_types::builders::ListThingTypesOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

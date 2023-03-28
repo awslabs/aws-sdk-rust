@@ -2,9 +2,11 @@
 #[allow(unused_mut)]
 pub fn de_receipt_handle_is_invalid_xml_err(
     inp: &[u8],
-    mut builder: crate::error::receipt_handle_is_invalid::Builder,
-) -> Result<crate::error::receipt_handle_is_invalid::Builder, aws_smithy_xml::decode::XmlDecodeError>
-{
+    mut builder: crate::types::error::builders::ReceiptHandleIsInvalidBuilder,
+) -> Result<
+    crate::types::error::builders::ReceiptHandleIsInvalidBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     if inp.is_empty() {
         return Ok(builder);
     }

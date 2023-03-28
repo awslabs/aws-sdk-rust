@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_instance_refresh_in_progress_fault_xml_err(
     inp: &[u8],
-    mut builder: crate::error::instance_refresh_in_progress_fault::Builder,
+    mut builder: crate::types::error::builders::InstanceRefreshInProgressFaultBuilder,
 ) -> Result<
-    crate::error::instance_refresh_in_progress_fault::Builder,
+    crate::types::error::builders::InstanceRefreshInProgressFaultBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

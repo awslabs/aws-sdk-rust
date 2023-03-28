@@ -2,7 +2,7 @@
 pub(crate) fn de_protected_query_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ProtectedQuerySummary>>,
+    Option<std::vec::Vec<crate::types::ProtectedQuerySummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

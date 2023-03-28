@@ -2,7 +2,7 @@
 pub(crate) fn de_built_in_slot_type_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::BuiltInSlotTypeSummary>>,
+    Option<std::vec::Vec<crate::types::BuiltInSlotTypeSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

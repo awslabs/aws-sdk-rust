@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_action_required<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ActionRequired>>,
+    Option<std::vec::Vec<crate::types::ActionRequired>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_batch_get_view_errors<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::BatchGetViewError>>,
+    Option<std::vec::Vec<crate::types::BatchGetViewError>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_root_directory<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::RootDirectory>,
+    Option<crate::types::RootDirectory>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::root_directory::Builder::default();
+            let mut builder = crate::types::builders::RootDirectoryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -64,7 +64,7 @@ where
 
 pub fn ser_root_directory(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::RootDirectory,
+    input: &crate::types::RootDirectory,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.path {
         object.key("Path").string(var_1.as_str());

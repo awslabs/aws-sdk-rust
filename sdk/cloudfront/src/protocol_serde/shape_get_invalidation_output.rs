@@ -2,20 +2,20 @@
 pub fn de_invalidation_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::Invalidation>,
-    crate::error::GetInvalidationError,
+    std::option::Option<crate::types::Invalidation>,
+    crate::operation::get_invalidation::GetInvalidationError,
 > {
     (!body.is_empty())
         .then(|| {
             crate::protocol_serde::shape_get_invalidation_output::de_invalidation(body)
-                .map_err(crate::error::GetInvalidationError::unhandled)
+                .map_err(crate::operation::get_invalidation::GetInvalidationError::unhandled)
         })
         .transpose()
 }
 
 pub fn de_invalidation(
     inp: &[u8],
-) -> Result<crate::model::Invalidation, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::Invalidation, aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;

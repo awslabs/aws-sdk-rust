@@ -2,7 +2,7 @@
 pub(crate) fn de_scans<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Scan>>,
+    Option<std::vec::Vec<crate::types::Scan>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

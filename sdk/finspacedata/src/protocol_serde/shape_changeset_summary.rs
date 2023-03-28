@@ -2,7 +2,7 @@
 pub(crate) fn de_changeset_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ChangesetSummary>,
+    Option<crate::types::ChangesetSummary>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::changeset_summary::Builder::default();
+            let mut builder = crate::types::builders::ChangesetSummaryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -57,7 +57,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::ChangeType::from(u.as_ref()))
+                                            .map(|u| crate::types::ChangeType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -92,7 +92,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::IngestionStatus::from(u.as_ref())
+                                            crate::types::IngestionStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

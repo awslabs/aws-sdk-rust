@@ -2,7 +2,7 @@
 pub(crate) fn de_trusted_advisor_resource_detail_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::TrustedAdvisorResourceDetail>>,
+    Option<std::vec::Vec<crate::types::TrustedAdvisorResourceDetail>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

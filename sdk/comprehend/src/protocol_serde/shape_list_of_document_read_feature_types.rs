@@ -2,7 +2,7 @@
 pub(crate) fn de_list_of_document_read_feature_types<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DocumentReadFeatureTypes>>,
+    Option<std::vec::Vec<crate::types::DocumentReadFeatureTypes>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -29,7 +29,7 @@ where
                         )?
                         .map(|s| {
                             s.to_unescaped()
-                                .map(|u| crate::model::DocumentReadFeatureTypes::from(u.as_ref()))
+                                .map(|u| crate::types::DocumentReadFeatureTypes::from(u.as_ref()))
                         })
                         .transpose()?;
                         if let Some(value) = value {

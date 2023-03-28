@@ -2,7 +2,7 @@
 pub(crate) fn de_rate_based_statement_managed_keys_ip_set<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::RateBasedStatementManagedKeysIpSet>,
+    Option<crate::types::RateBasedStatementManagedKeysIpSet>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::rate_based_statement_managed_keys_ip_set::Builder::default();
+                crate::types::builders::RateBasedStatementManagedKeysIpSetBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -31,7 +31,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::IpAddressVersion::from(u.as_ref())
+                                            crate::types::IpAddressVersion::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

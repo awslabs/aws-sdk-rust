@@ -2,7 +2,7 @@
 pub(crate) fn de_shared_image_permissions_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SharedImagePermissions>>,
+    Option<std::vec::Vec<crate::types::SharedImagePermissions>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

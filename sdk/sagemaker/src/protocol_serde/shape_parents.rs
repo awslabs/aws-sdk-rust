@@ -2,7 +2,7 @@
 pub(crate) fn de_parents<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Parent>>,
+    Option<std::vec::Vec<crate::types::Parent>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

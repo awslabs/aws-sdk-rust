@@ -2,7 +2,7 @@
 pub(crate) fn de_target_group_info_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::TargetGroupInfo>>,
+    Option<std::vec::Vec<crate::types::TargetGroupInfo>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

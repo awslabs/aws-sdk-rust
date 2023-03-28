@@ -2,7 +2,7 @@
 pub(crate) fn de_create_vehicle_responses<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CreateVehicleResponseItem>>,
+    Option<std::vec::Vec<crate::types::CreateVehicleResponseItem>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

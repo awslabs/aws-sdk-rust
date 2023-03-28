@@ -2,7 +2,7 @@
 pub(crate) fn de_account_enrollment_statuses<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AccountEnrollmentStatus>>,
+    Option<std::vec::Vec<crate::types::AccountEnrollmentStatus>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

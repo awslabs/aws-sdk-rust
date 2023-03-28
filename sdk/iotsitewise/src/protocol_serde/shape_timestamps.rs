@@ -2,7 +2,7 @@
 pub(crate) fn de_timestamps<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::TimeInNanos>>,
+    Option<std::vec::Vec<crate::types::TimeInNanos>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

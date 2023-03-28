@@ -2,7 +2,7 @@
 pub(crate) fn de_migration_alerts<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::MigrationAlert>>,
+    Option<std::vec::Vec<crate::types::MigrationAlert>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

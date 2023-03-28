@@ -3,109 +3,108 @@
 pub fn de_set_subscription_attributes_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::SetSubscriptionAttributesOutput,
-    crate::error::SetSubscriptionAttributesError,
+    crate::operation::set_subscription_attributes::SetSubscriptionAttributesOutput,
+    crate::operation::set_subscription_attributes::SetSubscriptionAttributesError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::SetSubscriptionAttributesError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::set_subscription_attributes::SetSubscriptionAttributesError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::SetSubscriptionAttributesError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::set_subscription_attributes::SetSubscriptionAttributesError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AuthorizationError" => {
-            crate::error::SetSubscriptionAttributesError::AuthorizationErrorException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::authorization_error_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_authorization_error_exception::de_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetSubscriptionAttributesError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "FilterPolicyLimitExceeded" => {
-            crate::error::SetSubscriptionAttributesError::FilterPolicyLimitExceededException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::filter_policy_limit_exceeded_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_filter_policy_limit_exceeded_exception::de_filter_policy_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetSubscriptionAttributesError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InternalError" => crate::error::SetSubscriptionAttributesError::InternalErrorException({
+        "AuthorizationError" => crate::operation::set_subscription_attributes::SetSubscriptionAttributesError::AuthorizationErrorException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_error_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_error_exception::de_internal_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetSubscriptionAttributesError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::AuthorizationErrorExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_authorization_error_exception::de_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::set_subscription_attributes::SetSubscriptionAttributesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "InvalidParameter" => {
-            crate::error::SetSubscriptionAttributesError::InvalidParameterException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "FilterPolicyLimitExceeded" => crate::operation::set_subscription_attributes::SetSubscriptionAttributesError::FilterPolicyLimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let mut output = crate::types::error::builders::FilterPolicyLimitExceededExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetSubscriptionAttributesError::unhandled)?;
+                    output = crate::protocol_serde::shape_filter_policy_limit_exceeded_exception::de_filter_policy_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::set_subscription_attributes::SetSubscriptionAttributesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "NotFound" => crate::error::SetSubscriptionAttributesError::NotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetSubscriptionAttributesError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::SetSubscriptionAttributesError::generic(generic),
+        "InternalError" => crate::operation::set_subscription_attributes::SetSubscriptionAttributesError::InternalErrorException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InternalErrorExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_error_exception::de_internal_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::set_subscription_attributes::SetSubscriptionAttributesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidParameter" => crate::operation::set_subscription_attributes::SetSubscriptionAttributesError::InvalidParameterException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidParameterExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::set_subscription_attributes::SetSubscriptionAttributesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "NotFound" => crate::operation::set_subscription_attributes::SetSubscriptionAttributesError::NotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::NotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::set_subscription_attributes::SetSubscriptionAttributesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::set_subscription_attributes::SetSubscriptionAttributesError::generic(generic)
     })
 }
 
@@ -113,12 +112,12 @@ pub fn de_set_subscription_attributes_http_error(
 pub fn de_set_subscription_attributes_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::SetSubscriptionAttributesOutput,
-    crate::error::SetSubscriptionAttributesError,
+    crate::operation::set_subscription_attributes::SetSubscriptionAttributesOutput,
+    crate::operation::set_subscription_attributes::SetSubscriptionAttributesError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::set_subscription_attributes_output::Builder::default();
+        let mut output = crate::operation::set_subscription_attributes::builders::SetSubscriptionAttributesOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

@@ -2,119 +2,144 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_portal_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetPortalOutput, crate::error::GetPortalError> {
+) -> std::result::Result<
+    crate::operation::get_portal::GetPortalOutput,
+    crate::operation::get_portal::GetPortalError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetPortalError::unhandled)?;
+        .map_err(crate::operation::get_portal::GetPortalError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::GetPortalError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::get_portal::GetPortalError::unhandled(
+                generic,
+            ))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::GetPortalError::AccessDeniedException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "AccessDeniedException" => {
+            crate::operation::get_portal::GetPortalError::AccessDeniedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::access_denied_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPortalError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InternalServerException" => crate::error::GetPortalError::InternalServerException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::AccessDeniedExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_portal::GetPortalError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InternalServerException" => {
+            crate::operation::get_portal::GetPortalError::InternalServerException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPortalError::unhandled)?;
-                output = output.set_retry_after_seconds(
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InternalServerExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_portal::GetPortalError::unhandled)?;
+                    output = output.set_retry_after_seconds(
                         crate::protocol_serde::shape_internal_server_exception::de_retry_after_seconds_header(response.headers())
-                                                .map_err(|_|crate::error::GetPortalError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::operation::get_portal::GetPortalError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ResourceNotFoundException" => crate::error::GetPortalError::ResourceNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::operation::get_portal::GetPortalError::ResourceNotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::resource_not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPortalError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ThrottlingException" => crate::error::GetPortalError::ThrottlingException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_portal::GetPortalError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ThrottlingException" => {
+            crate::operation::get_portal::GetPortalError::ThrottlingException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::throttling_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPortalError::unhandled)?;
-                output = output.set_retry_after_seconds(
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_portal::GetPortalError::unhandled)?;
+                    output = output.set_retry_after_seconds(
                         crate::protocol_serde::shape_throttling_exception::de_retry_after_seconds_header(response.headers())
-                                                .map_err(|_|crate::error::GetPortalError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::operation::get_portal::GetPortalError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ValidationException" => crate::error::GetPortalError::ValidationException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ValidationException" => {
+            crate::operation::get_portal::GetPortalError::ValidationException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPortalError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::GetPortalError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_portal::GetPortalError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::get_portal::GetPortalError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_portal_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetPortalOutput, crate::error::GetPortalError> {
+) -> std::result::Result<
+    crate::operation::get_portal::GetPortalOutput,
+    crate::operation::get_portal::GetPortalError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_portal_output::Builder::default();
+        let mut output = crate::operation::get_portal::builders::GetPortalOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_get_portal::de_get_portal(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::GetPortalError::unhandled)?;
+        .map_err(crate::operation::get_portal::GetPortalError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -124,9 +149,9 @@ pub fn de_get_portal_http_response(
 
 pub(crate) fn de_get_portal(
     value: &[u8],
-    mut builder: crate::output::get_portal_output::Builder,
+    mut builder: crate::operation::get_portal::builders::GetPortalOutputBuilder,
 ) -> Result<
-    crate::output::get_portal_output::Builder,
+    crate::operation::get_portal::builders::GetPortalOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

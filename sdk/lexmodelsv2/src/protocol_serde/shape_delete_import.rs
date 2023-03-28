@@ -2,43 +2,50 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_import_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeleteImportOutput, crate::error::DeleteImportError> {
+) -> std::result::Result<
+    crate::operation::delete_import::DeleteImportOutput,
+    crate::operation::delete_import::DeleteImportError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteImportError::unhandled)?;
+        .map_err(crate::operation::delete_import::DeleteImportError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DeleteImportError::unhandled(generic)),
+        None => return Err(crate::operation::delete_import::DeleteImportError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerException" => crate::error::DeleteImportError::InternalServerException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteImportError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "PreconditionFailedException" => {
-            crate::error::DeleteImportError::PreconditionFailedException({
+        "InternalServerException" => {
+            crate::operation::delete_import::DeleteImportError::InternalServerException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::precondition_failed_exception::Builder::default();
+                        crate::types::error::builders::InternalServerExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_precondition_failed_exception::de_precondition_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteImportError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_import::DeleteImportError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "PreconditionFailedException" => {
+            crate::operation::delete_import::DeleteImportError::PreconditionFailedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::PreconditionFailedExceptionBuilder::default(
+                        );
+                    let _ = response;
+                    output = crate::protocol_serde::shape_precondition_failed_exception::de_precondition_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_import::DeleteImportError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -49,14 +56,13 @@ pub fn de_delete_import_http_error(
             })
         }
         "ServiceQuotaExceededException" => {
-            crate::error::DeleteImportError::ServiceQuotaExceededException({
+            crate::operation::delete_import::DeleteImportError::ServiceQuotaExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::service_quota_exceeded_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteImportError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_import::DeleteImportError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -66,57 +72,67 @@ pub fn de_delete_import_http_error(
                 tmp
             })
         }
-        "ThrottlingException" => crate::error::DeleteImportError::ThrottlingException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "ThrottlingException" => {
+            crate::operation::delete_import::DeleteImportError::ThrottlingException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::throttling_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteImportError::unhandled)?;
-                output = output.set_retry_after_seconds(
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_import::DeleteImportError::unhandled)?;
+                    output = output.set_retry_after_seconds(
                         crate::protocol_serde::shape_throttling_exception::de_retry_after_seconds_header(response.headers())
-                                                .map_err(|_|crate::error::DeleteImportError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::operation::delete_import::DeleteImportError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ValidationException" => crate::error::DeleteImportError::ValidationException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ValidationException" => {
+            crate::operation::delete_import::DeleteImportError::ValidationException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteImportError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::DeleteImportError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_import::DeleteImportError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::delete_import::DeleteImportError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_import_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeleteImportOutput, crate::error::DeleteImportError> {
+) -> std::result::Result<
+    crate::operation::delete_import::DeleteImportOutput,
+    crate::operation::delete_import::DeleteImportError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_import_output::Builder::default();
+        let mut output =
+            crate::operation::delete_import::builders::DeleteImportOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_delete_import::de_delete_import(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DeleteImportError::unhandled)?;
+        .map_err(crate::operation::delete_import::DeleteImportError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -126,9 +142,9 @@ pub fn de_delete_import_http_response(
 
 pub(crate) fn de_delete_import(
     value: &[u8],
-    mut builder: crate::output::delete_import_output::Builder,
+    mut builder: crate::operation::delete_import::builders::DeleteImportOutputBuilder,
 ) -> Result<
-    crate::output::delete_import_output::Builder,
+    crate::operation::delete_import::builders::DeleteImportOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =
@@ -157,7 +173,7 @@ pub(crate) fn de_delete_import(
                             )?
                             .map(|s| {
                                 s.to_unescaped()
-                                    .map(|u| crate::model::ImportStatus::from(u.as_ref()))
+                                    .map(|u| crate::types::ImportStatus::from(u.as_ref()))
                             })
                             .transpose()?,
                         );

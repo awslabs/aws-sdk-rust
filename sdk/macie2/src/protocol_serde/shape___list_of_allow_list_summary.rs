@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_allow_list_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AllowListSummary>>,
+    Option<std::vec::Vec<crate::types::AllowListSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

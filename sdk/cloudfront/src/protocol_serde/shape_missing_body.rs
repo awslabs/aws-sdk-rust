@@ -2,8 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_missing_body_xml_err(
     inp: &[u8],
-    mut builder: crate::error::missing_body::Builder,
-) -> Result<crate::error::missing_body::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    mut builder: crate::types::error::builders::MissingBodyBuilder,
+) -> Result<crate::types::error::builders::MissingBodyBuilder, aws_smithy_xml::decode::XmlDecodeError>
+{
     if inp.is_empty() {
         return Ok(builder);
     }

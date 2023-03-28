@@ -2,7 +2,7 @@
 pub(crate) fn de_update_free_tier_config<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::UpdateFreeTierConfig>,
+    Option<crate::types::UpdateFreeTierConfig>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::update_free_tier_config::Builder::default();
+            let mut builder = crate::types::builders::UpdateFreeTierConfigBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -55,7 +55,7 @@ where
 
 pub fn ser_update_free_tier_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::UpdateFreeTierConfig,
+    input: &crate::types::UpdateFreeTierConfig,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.activated {
         object.key("Activated").boolean(*var_1);

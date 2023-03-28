@@ -2,7 +2,7 @@
 pub(crate) fn de_batch_depends_on<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::BatchJobDependency>>,
+    Option<std::vec::Vec<crate::types::BatchJobDependency>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

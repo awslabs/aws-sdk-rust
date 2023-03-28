@@ -3,62 +3,61 @@
 pub fn de_delete_load_balancer_policy_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteLoadBalancerPolicyOutput,
-    crate::error::DeleteLoadBalancerPolicyError,
+    crate::operation::delete_load_balancer_policy::DeleteLoadBalancerPolicyOutput,
+    crate::operation::delete_load_balancer_policy::DeleteLoadBalancerPolicyError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteLoadBalancerPolicyError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::delete_load_balancer_policy::DeleteLoadBalancerPolicyError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::error::DeleteLoadBalancerPolicyError::unhandled(
+        None => return Err(
+            crate::operation::delete_load_balancer_policy::DeleteLoadBalancerPolicyError::unhandled(
                 generic,
-            ))
-        }
+            ),
+        ),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LoadBalancerNotFound" => {
-            crate::error::DeleteLoadBalancerPolicyError::AccessPointNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "LoadBalancerNotFound" => crate::operation::delete_load_balancer_policy::DeleteLoadBalancerPolicyError::AccessPointNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::access_point_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::AccessPointNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_access_point_not_found_exception::de_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteLoadBalancerPolicyError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_point_not_found_exception::de_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_load_balancer_policy::DeleteLoadBalancerPolicyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidConfigurationRequest" => {
-            crate::error::DeleteLoadBalancerPolicyError::InvalidConfigurationRequestException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidConfigurationRequest" => crate::operation::delete_load_balancer_policy::DeleteLoadBalancerPolicyError::InvalidConfigurationRequestException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_configuration_request_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidConfigurationRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_configuration_request_exception::de_invalid_configuration_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteLoadBalancerPolicyError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_configuration_request_exception::de_invalid_configuration_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_load_balancer_policy::DeleteLoadBalancerPolicyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DeleteLoadBalancerPolicyError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::delete_load_balancer_policy::DeleteLoadBalancerPolicyError::generic(generic)
     })
 }
 
@@ -66,12 +65,12 @@ pub fn de_delete_load_balancer_policy_http_error(
 pub fn de_delete_load_balancer_policy_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteLoadBalancerPolicyOutput,
-    crate::error::DeleteLoadBalancerPolicyError,
+    crate::operation::delete_load_balancer_policy::DeleteLoadBalancerPolicyOutput,
+    crate::operation::delete_load_balancer_policy::DeleteLoadBalancerPolicyError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_load_balancer_policy_output::Builder::default();
+        let mut output = crate::operation::delete_load_balancer_policy::builders::DeleteLoadBalancerPolicyOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

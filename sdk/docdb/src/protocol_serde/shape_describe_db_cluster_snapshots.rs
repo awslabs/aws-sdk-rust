@@ -3,44 +3,40 @@
 pub fn de_describe_db_cluster_snapshots_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeDbClusterSnapshotsOutput,
-    crate::error::DescribeDBClusterSnapshotsError,
+    crate::operation::describe_db_cluster_snapshots::DescribeDbClusterSnapshotsOutput,
+    crate::operation::describe_db_cluster_snapshots::DescribeDBClusterSnapshotsError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeDBClusterSnapshotsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::describe_db_cluster_snapshots::DescribeDBClusterSnapshotsError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::DescribeDBClusterSnapshotsError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::describe_db_cluster_snapshots::DescribeDBClusterSnapshotsError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBClusterSnapshotNotFoundFault" => {
-            crate::error::DescribeDBClusterSnapshotsError::DbClusterSnapshotNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "DBClusterSnapshotNotFoundFault" => crate::operation::describe_db_cluster_snapshots::DescribeDBClusterSnapshotsError::DbClusterSnapshotNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::db_cluster_snapshot_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::DbClusterSnapshotNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_db_cluster_snapshot_not_found_fault::de_db_cluster_snapshot_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeDBClusterSnapshotsError::unhandled)?;
+                    output = crate::protocol_serde::shape_db_cluster_snapshot_not_found_fault::de_db_cluster_snapshot_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::describe_db_cluster_snapshots::DescribeDBClusterSnapshotsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DescribeDBClusterSnapshotsError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::describe_db_cluster_snapshots::DescribeDBClusterSnapshotsError::generic(generic)
     })
 }
 
@@ -48,14 +44,14 @@ pub fn de_describe_db_cluster_snapshots_http_error(
 pub fn de_describe_db_cluster_snapshots_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeDbClusterSnapshotsOutput,
-    crate::error::DescribeDBClusterSnapshotsError,
+    crate::operation::describe_db_cluster_snapshots::DescribeDbClusterSnapshotsOutput,
+    crate::operation::describe_db_cluster_snapshots::DescribeDBClusterSnapshotsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_db_cluster_snapshots_output::Builder::default();
+        let mut output = crate::operation::describe_db_cluster_snapshots::builders::DescribeDbClusterSnapshotsOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_describe_db_cluster_snapshots::de_describe_db_cluster_snapshots(response.body().as_ref(), output).map_err(crate::error::DescribeDBClusterSnapshotsError::unhandled)?;
+        output = crate::protocol_serde::shape_describe_db_cluster_snapshots::de_describe_db_cluster_snapshots(response.body().as_ref(), output).map_err(crate::operation::describe_db_cluster_snapshots::DescribeDBClusterSnapshotsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -64,13 +60,7 @@ pub fn de_describe_db_cluster_snapshots_http_response(
 }
 
 #[allow(unused_mut)]
-pub fn de_describe_db_cluster_snapshots(
-    inp: &[u8],
-    mut builder: crate::output::describe_db_cluster_snapshots_output::Builder,
-) -> Result<
-    crate::output::describe_db_cluster_snapshots_output::Builder,
-    aws_smithy_xml::decode::XmlDecodeError,
-> {
+pub fn de_describe_db_cluster_snapshots(inp: &[u8], mut builder: crate::operation::describe_db_cluster_snapshots::builders::DescribeDbClusterSnapshotsOutputBuilder) -> Result<crate::operation::describe_db_cluster_snapshots::builders::DescribeDbClusterSnapshotsOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

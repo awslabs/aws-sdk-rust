@@ -3,62 +3,62 @@
 pub fn de_modify_db_parameter_group_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ModifyDbParameterGroupOutput,
-    crate::error::ModifyDBParameterGroupError,
+    crate::operation::modify_db_parameter_group::ModifyDbParameterGroupOutput,
+    crate::operation::modify_db_parameter_group::ModifyDBParameterGroupError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ModifyDBParameterGroupError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::modify_db_parameter_group::ModifyDBParameterGroupError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::ModifyDBParameterGroupError::unhandled(
-                generic,
-            ))
-        }
-    };
+    let error_code =
+        match generic.code() {
+            Some(code) => code,
+            None => return Err(
+                crate::operation::modify_db_parameter_group::ModifyDBParameterGroupError::unhandled(
+                    generic,
+                ),
+            ),
+        };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBParameterGroupNotFound" => {
-            crate::error::ModifyDBParameterGroupError::DbParameterGroupNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "DBParameterGroupNotFound" => crate::operation::modify_db_parameter_group::ModifyDBParameterGroupError::DbParameterGroupNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::db_parameter_group_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::DbParameterGroupNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_db_parameter_group_not_found_fault::de_db_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyDBParameterGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_db_parameter_group_not_found_fault::de_db_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_db_parameter_group::ModifyDBParameterGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidDBParameterGroupState" => {
-            crate::error::ModifyDBParameterGroupError::InvalidDbParameterGroupStateFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidDBParameterGroupState" => crate::operation::modify_db_parameter_group::ModifyDBParameterGroupError::InvalidDbParameterGroupStateFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_db_parameter_group_state_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidDbParameterGroupStateFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_db_parameter_group_state_fault::de_invalid_db_parameter_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyDBParameterGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_db_parameter_group_state_fault::de_invalid_db_parameter_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_db_parameter_group::ModifyDBParameterGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::ModifyDBParameterGroupError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::modify_db_parameter_group::ModifyDBParameterGroupError::generic(generic)
     })
 }
 
@@ -66,19 +66,21 @@ pub fn de_modify_db_parameter_group_http_error(
 pub fn de_modify_db_parameter_group_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ModifyDbParameterGroupOutput,
-    crate::error::ModifyDBParameterGroupError,
+    crate::operation::modify_db_parameter_group::ModifyDbParameterGroupOutput,
+    crate::operation::modify_db_parameter_group::ModifyDBParameterGroupError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::modify_db_parameter_group_output::Builder::default();
+        let mut output = crate::operation::modify_db_parameter_group::builders::ModifyDbParameterGroupOutputBuilder::default();
         let _ = response;
         output =
             crate::protocol_serde::shape_modify_db_parameter_group::de_modify_db_parameter_group(
                 response.body().as_ref(),
                 output,
             )
-            .map_err(crate::error::ModifyDBParameterGroupError::unhandled)?;
+            .map_err(
+                crate::operation::modify_db_parameter_group::ModifyDBParameterGroupError::unhandled,
+            )?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -89,9 +91,9 @@ pub fn de_modify_db_parameter_group_http_response(
 #[allow(unused_mut)]
 pub fn de_modify_db_parameter_group(
     inp: &[u8],
-    mut builder: crate::output::modify_db_parameter_group_output::Builder,
+    mut builder: crate::operation::modify_db_parameter_group::builders::ModifyDbParameterGroupOutputBuilder,
 ) -> Result<
-    crate::output::modify_db_parameter_group_output::Builder,
+    crate::operation::modify_db_parameter_group::builders::ModifyDbParameterGroupOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

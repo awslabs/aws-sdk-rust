@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_broker_engine_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::BrokerEngineType>>,
+    Option<std::vec::Vec<crate::types::BrokerEngineType>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

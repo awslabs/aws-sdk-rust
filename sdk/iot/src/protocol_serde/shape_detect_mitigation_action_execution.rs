@@ -2,7 +2,7 @@
 pub(crate) fn de_detect_mitigation_action_execution<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::DetectMitigationActionExecution>,
+    Option<crate::types::DetectMitigationActionExecution>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::detect_mitigation_action_execution::Builder::default();
+            let mut builder =
+                crate::types::builders::DetectMitigationActionExecutionBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -79,7 +80,7 @@ where
                                 builder = builder.set_status(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?.map(|s|
                                         s.to_unescaped().map(|u|
-                                            crate::model::DetectMitigationActionExecutionStatus::from(u.as_ref())
+                                            crate::types::DetectMitigationActionExecutionStatus::from(u.as_ref())
                                         )
                                     ).transpose()?
                                 );

@@ -3,61 +3,57 @@
 pub fn de_disassociate_role_from_group_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DisassociateRoleFromGroupOutput,
-    crate::error::DisassociateRoleFromGroupError,
+    crate::operation::disassociate_role_from_group::DisassociateRoleFromGroupOutput,
+    crate::operation::disassociate_role_from_group::DisassociateRoleFromGroupError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DisassociateRoleFromGroupError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::disassociate_role_from_group::DisassociateRoleFromGroupError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::DisassociateRoleFromGroupError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::disassociate_role_from_group::DisassociateRoleFromGroupError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => {
-            crate::error::DisassociateRoleFromGroupError::BadRequestException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "BadRequestException" => crate::operation::disassociate_role_from_group::DisassociateRoleFromGroupError::BadRequestException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::bad_request_exception::Builder::default();
+                    let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateRoleFromGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::disassociate_role_from_group::DisassociateRoleFromGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InternalServerErrorException" => {
-            crate::error::DisassociateRoleFromGroupError::InternalServerErrorException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InternalServerErrorException" => crate::operation::disassociate_role_from_group::DisassociateRoleFromGroupError::InternalServerErrorException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::internal_server_error_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InternalServerErrorExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateRoleFromGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::disassociate_role_from_group::DisassociateRoleFromGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DisassociateRoleFromGroupError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::disassociate_role_from_group::DisassociateRoleFromGroupError::generic(generic)
     })
 }
 
@@ -65,14 +61,14 @@ pub fn de_disassociate_role_from_group_http_error(
 pub fn de_disassociate_role_from_group_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DisassociateRoleFromGroupOutput,
-    crate::error::DisassociateRoleFromGroupError,
+    crate::operation::disassociate_role_from_group::DisassociateRoleFromGroupOutput,
+    crate::operation::disassociate_role_from_group::DisassociateRoleFromGroupError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::disassociate_role_from_group_output::Builder::default();
+        let mut output = crate::operation::disassociate_role_from_group::builders::DisassociateRoleFromGroupOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_disassociate_role_from_group::de_disassociate_role_from_group(response.body().as_ref(), output).map_err(crate::error::DisassociateRoleFromGroupError::unhandled)?;
+        output = crate::protocol_serde::shape_disassociate_role_from_group::de_disassociate_role_from_group(response.body().as_ref(), output).map_err(crate::operation::disassociate_role_from_group::DisassociateRoleFromGroupError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -80,13 +76,7 @@ pub fn de_disassociate_role_from_group_http_response(
     })
 }
 
-pub(crate) fn de_disassociate_role_from_group(
-    value: &[u8],
-    mut builder: crate::output::disassociate_role_from_group_output::Builder,
-) -> Result<
-    crate::output::disassociate_role_from_group_output::Builder,
-    aws_smithy_json::deserialize::error::DeserializeError,
-> {
+pub(crate) fn de_disassociate_role_from_group(value: &[u8], mut builder: crate::operation::disassociate_role_from_group::builders::DisassociateRoleFromGroupOutputBuilder) -> Result<crate::operation::disassociate_role_from_group::builders::DisassociateRoleFromGroupOutputBuilder, aws_smithy_json::deserialize::error::DeserializeError>{
     let mut tokens_owned =
         aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
             .peekable();

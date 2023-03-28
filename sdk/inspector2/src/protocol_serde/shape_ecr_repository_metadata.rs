@@ -2,7 +2,7 @@
 pub(crate) fn de_ecr_repository_metadata<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::EcrRepositoryMetadata>,
+    Option<crate::types::EcrRepositoryMetadata>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::ecr_repository_metadata::Builder::default();
+            let mut builder = crate::types::builders::EcrRepositoryMetadataBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -39,7 +39,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::EcrScanFrequency::from(u.as_ref())
+                                            crate::types::EcrScanFrequency::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

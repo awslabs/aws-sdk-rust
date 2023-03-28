@@ -3,31 +3,34 @@
 pub fn de_purchase_scheduled_instances_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::PurchaseScheduledInstancesOutput,
-    crate::error::PurchaseScheduledInstancesError,
+    crate::operation::purchase_scheduled_instances::PurchaseScheduledInstancesOutput,
+    crate::operation::purchase_scheduled_instances::PurchaseScheduledInstancesError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::PurchaseScheduledInstancesError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::purchase_scheduled_instances::PurchaseScheduledInstancesError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::PurchaseScheduledInstancesError::generic(
-        generic,
-    ))
+    Err(
+        crate::operation::purchase_scheduled_instances::PurchaseScheduledInstancesError::generic(
+            generic,
+        ),
+    )
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_purchase_scheduled_instances_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::PurchaseScheduledInstancesOutput,
-    crate::error::PurchaseScheduledInstancesError,
+    crate::operation::purchase_scheduled_instances::PurchaseScheduledInstancesOutput,
+    crate::operation::purchase_scheduled_instances::PurchaseScheduledInstancesError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::purchase_scheduled_instances_output::Builder::default();
+        let mut output = crate::operation::purchase_scheduled_instances::builders::PurchaseScheduledInstancesOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_purchase_scheduled_instances::de_purchase_scheduled_instances(response.body().as_ref(), output).map_err(crate::error::PurchaseScheduledInstancesError::unhandled)?;
+        output = crate::protocol_serde::shape_purchase_scheduled_instances::de_purchase_scheduled_instances(response.body().as_ref(), output).map_err(crate::operation::purchase_scheduled_instances::PurchaseScheduledInstancesError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -36,13 +39,7 @@ pub fn de_purchase_scheduled_instances_http_response(
 }
 
 #[allow(unused_mut)]
-pub fn de_purchase_scheduled_instances(
-    inp: &[u8],
-    mut builder: crate::output::purchase_scheduled_instances_output::Builder,
-) -> Result<
-    crate::output::purchase_scheduled_instances_output::Builder,
-    aws_smithy_xml::decode::XmlDecodeError,
-> {
+pub fn de_purchase_scheduled_instances(inp: &[u8], mut builder: crate::operation::purchase_scheduled_instances::builders::PurchaseScheduledInstancesOutputBuilder) -> Result<crate::operation::purchase_scheduled_instances::builders::PurchaseScheduledInstancesOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

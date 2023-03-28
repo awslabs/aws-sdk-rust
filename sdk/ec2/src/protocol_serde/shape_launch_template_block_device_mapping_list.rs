@@ -2,7 +2,7 @@
 pub fn de_launch_template_block_device_mapping_list(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::LaunchTemplateBlockDeviceMapping>,
+    std::vec::Vec<crate::types::LaunchTemplateBlockDeviceMapping>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

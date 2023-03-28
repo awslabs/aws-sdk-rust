@@ -2,7 +2,7 @@
 pub(crate) fn de_table_version_errors<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::TableVersionError>>,
+    Option<std::vec::Vec<crate::types::TableVersionError>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

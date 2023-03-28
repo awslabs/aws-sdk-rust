@@ -2,7 +2,7 @@
 pub(crate) fn de_data_repository_associations<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DataRepositoryAssociation>>,
+    Option<std::vec::Vec<crate::types::DataRepositoryAssociation>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

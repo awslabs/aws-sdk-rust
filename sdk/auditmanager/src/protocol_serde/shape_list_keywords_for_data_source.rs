@@ -3,77 +3,74 @@
 pub fn de_list_keywords_for_data_source_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListKeywordsForDataSourceOutput,
-    crate::error::ListKeywordsForDataSourceError,
+    crate::operation::list_keywords_for_data_source::ListKeywordsForDataSourceOutput,
+    crate::operation::list_keywords_for_data_source::ListKeywordsForDataSourceError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListKeywordsForDataSourceError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::list_keywords_for_data_source::ListKeywordsForDataSourceError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::ListKeywordsForDataSourceError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::list_keywords_for_data_source::ListKeywordsForDataSourceError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => {
-            crate::error::ListKeywordsForDataSourceError::AccessDeniedException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "AccessDeniedException" => crate::operation::list_keywords_for_data_source::ListKeywordsForDataSourceError::AccessDeniedException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListKeywordsForDataSourceError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_keywords_for_data_source::ListKeywordsForDataSourceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InternalServerException" => {
-            crate::error::ListKeywordsForDataSourceError::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InternalServerException" => crate::operation::list_keywords_for_data_source::ListKeywordsForDataSourceError::InternalServerException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListKeywordsForDataSourceError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_keywords_for_data_source::ListKeywordsForDataSourceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ValidationException" => {
-            crate::error::ListKeywordsForDataSourceError::ValidationException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ValidationException" => crate::operation::list_keywords_for_data_source::ListKeywordsForDataSourceError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::validation_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListKeywordsForDataSourceError::unhandled)?;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_keywords_for_data_source::ListKeywordsForDataSourceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::ListKeywordsForDataSourceError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::list_keywords_for_data_source::ListKeywordsForDataSourceError::generic(generic)
     })
 }
 
@@ -81,14 +78,14 @@ pub fn de_list_keywords_for_data_source_http_error(
 pub fn de_list_keywords_for_data_source_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListKeywordsForDataSourceOutput,
-    crate::error::ListKeywordsForDataSourceError,
+    crate::operation::list_keywords_for_data_source::ListKeywordsForDataSourceOutput,
+    crate::operation::list_keywords_for_data_source::ListKeywordsForDataSourceError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_keywords_for_data_source_output::Builder::default();
+        let mut output = crate::operation::list_keywords_for_data_source::builders::ListKeywordsForDataSourceOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_list_keywords_for_data_source::de_list_keywords_for_data_source(response.body().as_ref(), output).map_err(crate::error::ListKeywordsForDataSourceError::unhandled)?;
+        output = crate::protocol_serde::shape_list_keywords_for_data_source::de_list_keywords_for_data_source(response.body().as_ref(), output).map_err(crate::operation::list_keywords_for_data_source::ListKeywordsForDataSourceError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -96,13 +93,7 @@ pub fn de_list_keywords_for_data_source_http_response(
     })
 }
 
-pub(crate) fn de_list_keywords_for_data_source(
-    value: &[u8],
-    mut builder: crate::output::list_keywords_for_data_source_output::Builder,
-) -> Result<
-    crate::output::list_keywords_for_data_source_output::Builder,
-    aws_smithy_json::deserialize::error::DeserializeError,
-> {
+pub(crate) fn de_list_keywords_for_data_source(value: &[u8], mut builder: crate::operation::list_keywords_for_data_source::builders::ListKeywordsForDataSourceOutputBuilder) -> Result<crate::operation::list_keywords_for_data_source::builders::ListKeywordsForDataSourceOutputBuilder, aws_smithy_json::deserialize::error::DeserializeError>{
     let mut tokens_owned =
         aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
             .peekable();

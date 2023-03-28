@@ -3,31 +3,34 @@
 pub fn de_associate_subnet_cidr_block_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::AssociateSubnetCidrBlockOutput,
-    crate::error::AssociateSubnetCidrBlockError,
+    crate::operation::associate_subnet_cidr_block::AssociateSubnetCidrBlockOutput,
+    crate::operation::associate_subnet_cidr_block::AssociateSubnetCidrBlockError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::AssociateSubnetCidrBlockError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::associate_subnet_cidr_block::AssociateSubnetCidrBlockError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::AssociateSubnetCidrBlockError::generic(
-        generic,
-    ))
+    Err(
+        crate::operation::associate_subnet_cidr_block::AssociateSubnetCidrBlockError::generic(
+            generic,
+        ),
+    )
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_associate_subnet_cidr_block_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::AssociateSubnetCidrBlockOutput,
-    crate::error::AssociateSubnetCidrBlockError,
+    crate::operation::associate_subnet_cidr_block::AssociateSubnetCidrBlockOutput,
+    crate::operation::associate_subnet_cidr_block::AssociateSubnetCidrBlockError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::associate_subnet_cidr_block_output::Builder::default();
+        let mut output = crate::operation::associate_subnet_cidr_block::builders::AssociateSubnetCidrBlockOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_associate_subnet_cidr_block::de_associate_subnet_cidr_block(response.body().as_ref(), output).map_err(crate::error::AssociateSubnetCidrBlockError::unhandled)?;
+        output = crate::protocol_serde::shape_associate_subnet_cidr_block::de_associate_subnet_cidr_block(response.body().as_ref(), output).map_err(crate::operation::associate_subnet_cidr_block::AssociateSubnetCidrBlockError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -38,9 +41,9 @@ pub fn de_associate_subnet_cidr_block_http_response(
 #[allow(unused_mut)]
 pub fn de_associate_subnet_cidr_block(
     inp: &[u8],
-    mut builder: crate::output::associate_subnet_cidr_block_output::Builder,
+    mut builder: crate::operation::associate_subnet_cidr_block::builders::AssociateSubnetCidrBlockOutputBuilder,
 ) -> Result<
-    crate::output::associate_subnet_cidr_block_output::Builder,
+    crate::operation::associate_subnet_cidr_block::builders::AssociateSubnetCidrBlockOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

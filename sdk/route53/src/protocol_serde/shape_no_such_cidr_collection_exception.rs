@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_no_such_cidr_collection_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::no_such_cidr_collection_exception::Builder,
+    mut builder: crate::types::error::builders::NoSuchCidrCollectionExceptionBuilder,
 ) -> Result<
-    crate::error::no_such_cidr_collection_exception::Builder,
+    crate::types::error::builders::NoSuchCidrCollectionExceptionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

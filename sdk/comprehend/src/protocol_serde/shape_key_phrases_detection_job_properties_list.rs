@@ -2,7 +2,7 @@
 pub(crate) fn de_key_phrases_detection_job_properties_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::KeyPhrasesDetectionJobProperties>>,
+    Option<std::vec::Vec<crate::types::KeyPhrasesDetectionJobProperties>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

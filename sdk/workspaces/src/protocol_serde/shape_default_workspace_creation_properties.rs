@@ -2,7 +2,7 @@
 pub(crate) fn de_default_workspace_creation_properties<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::DefaultWorkspaceCreationProperties>,
+    Option<crate::types::DefaultWorkspaceCreationProperties>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::default_workspace_creation_properties::Builder::default();
+                crate::types::builders::DefaultWorkspaceCreationPropertiesBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

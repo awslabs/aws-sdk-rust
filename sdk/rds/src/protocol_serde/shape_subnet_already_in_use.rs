@@ -2,8 +2,11 @@
 #[allow(unused_mut)]
 pub fn de_subnet_already_in_use_xml_err(
     inp: &[u8],
-    mut builder: crate::error::subnet_already_in_use::Builder,
-) -> Result<crate::error::subnet_already_in_use::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    mut builder: crate::types::error::builders::SubnetAlreadyInUseBuilder,
+) -> Result<
+    crate::types::error::builders::SubnetAlreadyInUseBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     if inp.is_empty() {
         return Ok(builder);
     }

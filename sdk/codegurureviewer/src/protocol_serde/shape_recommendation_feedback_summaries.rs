@@ -2,7 +2,7 @@
 pub(crate) fn de_recommendation_feedback_summaries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::RecommendationFeedbackSummary>>,
+    Option<std::vec::Vec<crate::types::RecommendationFeedbackSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

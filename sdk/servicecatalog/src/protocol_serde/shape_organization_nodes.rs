@@ -2,7 +2,7 @@
 pub(crate) fn de_organization_nodes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::OrganizationNode>>,
+    Option<std::vec::Vec<crate::types::OrganizationNode>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_transit_gateway_route_table_attachment<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::TransitGatewayRouteTableAttachment>,
+    Option<crate::types::TransitGatewayRouteTableAttachment>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::transit_gateway_route_table_attachment::Builder::default();
+                crate::types::builders::TransitGatewayRouteTableAttachmentBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

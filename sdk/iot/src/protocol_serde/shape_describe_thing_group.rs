@@ -3,88 +3,94 @@
 pub fn de_describe_thing_group_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeThingGroupOutput,
-    crate::error::DescribeThingGroupError,
+    crate::operation::describe_thing_group::DescribeThingGroupOutput,
+    crate::operation::describe_thing_group::DescribeThingGroupError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeThingGroupError::unhandled)?;
+        .map_err(crate::operation::describe_thing_group::DescribeThingGroupError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DescribeThingGroupError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::describe_thing_group::DescribeThingGroupError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalFailureException" => {
-            crate::error::DescribeThingGroupError::InternalFailureException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::internal_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeThingGroupError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InvalidRequestException" => {
-            crate::error::DescribeThingGroupError::InvalidRequestException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_request_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeThingGroupError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ResourceNotFoundException" => {
-            crate::error::DescribeThingGroupError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeThingGroupError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ThrottlingException" => crate::error::DescribeThingGroupError::ThrottlingException({
+        "InternalFailureException" => crate::operation::describe_thing_group::DescribeThingGroupError::InternalFailureException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::throttling_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeThingGroupError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InternalFailureExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_thing_group::DescribeThingGroupError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::DescribeThingGroupError::generic(generic),
+        "InvalidRequestException" => crate::operation::describe_thing_group::DescribeThingGroupError::InvalidRequestException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidRequestExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_thing_group::DescribeThingGroupError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::describe_thing_group::DescribeThingGroupError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_thing_group::DescribeThingGroupError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ThrottlingException" => crate::operation::describe_thing_group::DescribeThingGroupError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_thing_group::DescribeThingGroupError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::describe_thing_group::DescribeThingGroupError::generic(generic)
     })
 }
 
@@ -92,18 +98,18 @@ pub fn de_describe_thing_group_http_error(
 pub fn de_describe_thing_group_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeThingGroupOutput,
-    crate::error::DescribeThingGroupError,
+    crate::operation::describe_thing_group::DescribeThingGroupOutput,
+    crate::operation::describe_thing_group::DescribeThingGroupError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_thing_group_output::Builder::default();
+        let mut output = crate::operation::describe_thing_group::builders::DescribeThingGroupOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_describe_thing_group::de_describe_thing_group(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DescribeThingGroupError::unhandled)?;
+        .map_err(crate::operation::describe_thing_group::DescribeThingGroupError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -113,9 +119,9 @@ pub fn de_describe_thing_group_http_response(
 
 pub(crate) fn de_describe_thing_group(
     value: &[u8],
-    mut builder: crate::output::describe_thing_group_output::Builder,
+    mut builder: crate::operation::describe_thing_group::builders::DescribeThingGroupOutputBuilder,
 ) -> Result<
-    crate::output::describe_thing_group_output::Builder,
+    crate::operation::describe_thing_group::builders::DescribeThingGroupOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =
@@ -162,7 +168,7 @@ pub(crate) fn de_describe_thing_group(
                             )?
                             .map(|s| {
                                 s.to_unescaped()
-                                    .map(|u| crate::model::DynamicGroupStatus::from(u.as_ref()))
+                                    .map(|u| crate::types::DynamicGroupStatus::from(u.as_ref()))
                             })
                             .transpose()?,
                         );

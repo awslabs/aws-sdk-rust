@@ -2,7 +2,7 @@
 pub(crate) fn de_catalog_target_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CatalogTarget>>,
+    Option<std::vec::Vec<crate::types::CatalogTarget>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

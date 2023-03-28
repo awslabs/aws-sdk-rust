@@ -2,7 +2,7 @@
 pub(crate) fn de_sub_slot_specification_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<std::string::String, crate::model::Specifications>>,
+    Option<std::collections::HashMap<std::string::String, crate::types::Specifications>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

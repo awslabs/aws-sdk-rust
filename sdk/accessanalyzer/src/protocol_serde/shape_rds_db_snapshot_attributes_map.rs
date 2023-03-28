@@ -3,7 +3,7 @@ pub(crate) fn de_rds_db_snapshot_attributes_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<
-        std::collections::HashMap<std::string::String, crate::model::RdsDbSnapshotAttributeValue>,
+        std::collections::HashMap<std::string::String, crate::types::RdsDbSnapshotAttributeValue>,
     >,
     aws_smithy_json::deserialize::error::DeserializeError,
 >

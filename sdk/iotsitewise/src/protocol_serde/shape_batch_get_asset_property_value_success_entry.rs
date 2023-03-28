@@ -2,7 +2,7 @@
 pub(crate) fn de_batch_get_asset_property_value_success_entry<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::BatchGetAssetPropertyValueSuccessEntry>,
+    Option<crate::types::BatchGetAssetPropertyValueSuccessEntry>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::batch_get_asset_property_value_success_entry::Builder::default();
+                crate::types::builders::BatchGetAssetPropertyValueSuccessEntryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

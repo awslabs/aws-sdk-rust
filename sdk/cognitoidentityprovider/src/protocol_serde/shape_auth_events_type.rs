@@ -2,7 +2,7 @@
 pub(crate) fn de_auth_events_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AuthEventType>>,
+    Option<std::vec::Vec<crate::types::AuthEventType>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

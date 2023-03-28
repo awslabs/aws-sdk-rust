@@ -2,7 +2,7 @@
 pub(crate) fn de_list_device_positions_response_entry<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ListDevicePositionsResponseEntry>,
+    Option<crate::types::ListDevicePositionsResponseEntry>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::list_device_positions_response_entry::Builder::default();
+                crate::types::builders::ListDevicePositionsResponseEntryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

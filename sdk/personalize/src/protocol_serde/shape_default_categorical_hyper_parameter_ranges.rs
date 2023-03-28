@@ -2,7 +2,7 @@
 pub(crate) fn de_default_categorical_hyper_parameter_ranges<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DefaultCategoricalHyperParameterRange>>,
+    Option<std::vec::Vec<crate::types::DefaultCategoricalHyperParameterRange>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

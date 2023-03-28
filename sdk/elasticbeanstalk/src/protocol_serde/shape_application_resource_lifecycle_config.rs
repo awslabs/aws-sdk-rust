@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_application_resource_lifecycle_config(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::ApplicationResourceLifecycleConfig,
+    input: &crate::types::ApplicationResourceLifecycleConfig,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("ServiceRole");
@@ -19,10 +19,10 @@ pub fn ser_application_resource_lifecycle_config(
 
 pub fn de_application_resource_lifecycle_config(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::ApplicationResourceLifecycleConfig, aws_smithy_xml::decode::XmlDecodeError>
+) -> Result<crate::types::ApplicationResourceLifecycleConfig, aws_smithy_xml::decode::XmlDecodeError>
 {
     #[allow(unused_mut)]
-    let mut builder = crate::model::ApplicationResourceLifecycleConfig::builder();
+    let mut builder = crate::types::ApplicationResourceLifecycleConfig::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ServiceRole") /* ServiceRole com.amazonaws.elasticbeanstalk#ApplicationResourceLifecycleConfig$ServiceRole */ =>  {

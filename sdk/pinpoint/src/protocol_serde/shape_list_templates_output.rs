@@ -2,13 +2,13 @@
 pub fn de_templates_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::TemplatesResponse>,
-    crate::error::ListTemplatesError,
+    std::option::Option<crate::types::TemplatesResponse>,
+    crate::operation::list_templates::ListTemplatesError,
 > {
     (!body.is_empty())
         .then(|| {
             crate::protocol_serde::shape_templates_response::de_templates_response_payload(body)
-                .map_err(crate::error::ListTemplatesError::unhandled)
+                .map_err(crate::operation::list_templates::ListTemplatesError::unhandled)
         })
         .transpose()
 }

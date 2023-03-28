@@ -2,7 +2,7 @@
 pub fn de_app_cookie_stickiness_policies(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::AppCookieStickinessPolicy>,
+    std::vec::Vec<crate::types::AppCookieStickinessPolicy>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

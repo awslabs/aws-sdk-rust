@@ -2,11 +2,11 @@
 pub fn de_verified_access_log_kinesis_data_firehose_destination(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    crate::model::VerifiedAccessLogKinesisDataFirehoseDestination,
+    crate::types::VerifiedAccessLogKinesisDataFirehoseDestination,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     #[allow(unused_mut)]
-    let mut builder = crate::model::VerifiedAccessLogKinesisDataFirehoseDestination::builder();
+    let mut builder = crate::types::VerifiedAccessLogKinesisDataFirehoseDestination::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("enabled") /* Enabled com.amazonaws.ec2#VerifiedAccessLogKinesisDataFirehoseDestination$Enabled */ =>  {

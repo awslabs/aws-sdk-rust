@@ -2,7 +2,7 @@
 pub(crate) fn de_test_grid_session<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::TestGridSession>,
+    Option<crate::types::TestGridSession>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::test_grid_session::Builder::default();
+            let mut builder = crate::types::builders::TestGridSessionBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -39,7 +39,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::TestGridSessionStatus::from(u.as_ref())
+                                            crate::types::TestGridSessionStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

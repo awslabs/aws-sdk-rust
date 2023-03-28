@@ -2,7 +2,7 @@
 pub(crate) fn de_profiler_rule_configurations<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ProfilerRuleConfiguration>>,
+    Option<std::vec::Vec<crate::types::ProfilerRuleConfiguration>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

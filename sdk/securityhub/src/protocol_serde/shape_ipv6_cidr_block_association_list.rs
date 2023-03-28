@@ -2,7 +2,7 @@
 pub(crate) fn de_ipv6_cidr_block_association_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Ipv6CidrBlockAssociation>>,
+    Option<std::vec::Vec<crate::types::Ipv6CidrBlockAssociation>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

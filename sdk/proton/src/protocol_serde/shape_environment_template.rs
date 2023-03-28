@@ -2,7 +2,7 @@
 pub(crate) fn de_environment_template<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::EnvironmentTemplate>,
+    Option<crate::types::EnvironmentTemplate>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::environment_template::Builder::default();
+            let mut builder = crate::types::builders::EnvironmentTemplateBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -100,7 +100,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::Provisioning::from(u.as_ref()))
+                                            .map(|u| crate::types::Provisioning::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

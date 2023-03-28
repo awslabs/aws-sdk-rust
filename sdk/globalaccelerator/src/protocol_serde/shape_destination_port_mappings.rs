@@ -2,7 +2,7 @@
 pub(crate) fn de_destination_port_mappings<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DestinationPortMapping>>,
+    Option<std::vec::Vec<crate::types::DestinationPortMapping>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

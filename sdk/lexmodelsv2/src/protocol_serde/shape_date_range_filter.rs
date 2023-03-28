@@ -2,7 +2,7 @@
 pub(crate) fn de_date_range_filter<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::DateRangeFilter>,
+    Option<crate::types::DateRangeFilter>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::date_range_filter::Builder::default();
+            let mut builder = crate::types::builders::DateRangeFilterBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -64,7 +64,7 @@ where
 
 pub fn ser_date_range_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::DateRangeFilter,
+    input: &crate::types::DateRangeFilter,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.start_date_time {
         object

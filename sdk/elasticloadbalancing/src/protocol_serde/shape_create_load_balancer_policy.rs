@@ -3,115 +3,112 @@
 pub fn de_create_load_balancer_policy_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateLoadBalancerPolicyOutput,
-    crate::error::CreateLoadBalancerPolicyError,
+    crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyOutput,
+    crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::CreateLoadBalancerPolicyError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::error::CreateLoadBalancerPolicyError::unhandled(
+        None => return Err(
+            crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyError::unhandled(
                 generic,
-            ))
-        }
+            ),
+        ),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LoadBalancerNotFound" => {
-            crate::error::CreateLoadBalancerPolicyError::AccessPointNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "LoadBalancerNotFound" => crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyError::AccessPointNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::access_point_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::AccessPointNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_access_point_not_found_exception::de_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerPolicyError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_point_not_found_exception::de_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "DuplicatePolicyName" => {
-            crate::error::CreateLoadBalancerPolicyError::DuplicatePolicyNameException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "DuplicatePolicyName" => crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyError::DuplicatePolicyNameException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::duplicate_policy_name_exception::Builder::default();
+                    let mut output = crate::types::error::builders::DuplicatePolicyNameExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_duplicate_policy_name_exception::de_duplicate_policy_name_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerPolicyError::unhandled)?;
+                    output = crate::protocol_serde::shape_duplicate_policy_name_exception::de_duplicate_policy_name_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidConfigurationRequest" => {
-            crate::error::CreateLoadBalancerPolicyError::InvalidConfigurationRequestException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidConfigurationRequest" => crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyError::InvalidConfigurationRequestException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_configuration_request_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidConfigurationRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_configuration_request_exception::de_invalid_configuration_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerPolicyError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_configuration_request_exception::de_invalid_configuration_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "PolicyTypeNotFound" => {
-            crate::error::CreateLoadBalancerPolicyError::PolicyTypeNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "PolicyTypeNotFound" => crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyError::PolicyTypeNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::policy_type_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::PolicyTypeNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_policy_type_not_found_exception::de_policy_type_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerPolicyError::unhandled)?;
+                    output = crate::protocol_serde::shape_policy_type_not_found_exception::de_policy_type_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "TooManyPolicies" => {
-            crate::error::CreateLoadBalancerPolicyError::TooManyPoliciesException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TooManyPolicies" => crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyError::TooManyPoliciesException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_policies_exception::Builder::default();
+                    let mut output = crate::types::error::builders::TooManyPoliciesExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_policies_exception::de_too_many_policies_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerPolicyError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_policies_exception::de_too_many_policies_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::CreateLoadBalancerPolicyError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyError::generic(generic)
     })
 }
 
@@ -119,12 +116,12 @@ pub fn de_create_load_balancer_policy_http_error(
 pub fn de_create_load_balancer_policy_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateLoadBalancerPolicyOutput,
-    crate::error::CreateLoadBalancerPolicyError,
+    crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyOutput,
+    crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::create_load_balancer_policy_output::Builder::default();
+        let mut output = crate::operation::create_load_balancer_policy::builders::CreateLoadBalancerPolicyOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

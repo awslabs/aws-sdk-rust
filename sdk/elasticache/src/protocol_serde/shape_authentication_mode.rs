@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_authentication_mode(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::AuthenticationMode,
+    input: &crate::types::AuthenticationMode,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Type");

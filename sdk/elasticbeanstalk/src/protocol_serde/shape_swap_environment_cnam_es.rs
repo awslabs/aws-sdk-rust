@@ -3,27 +3,28 @@
 pub fn de_swap_environment_cnam_es_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::SwapEnvironmentCnamEsOutput,
-    crate::error::SwapEnvironmentCNAMEsError,
+    crate::operation::swap_environment_cnam_es::SwapEnvironmentCnamEsOutput,
+    crate::operation::swap_environment_cnam_es::SwapEnvironmentCNAMEsError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::SwapEnvironmentCNAMEsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::swap_environment_cnam_es::SwapEnvironmentCNAMEsError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::SwapEnvironmentCNAMEsError::generic(generic))
+    Err(crate::operation::swap_environment_cnam_es::SwapEnvironmentCNAMEsError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_swap_environment_cnam_es_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::SwapEnvironmentCnamEsOutput,
-    crate::error::SwapEnvironmentCNAMEsError,
+    crate::operation::swap_environment_cnam_es::SwapEnvironmentCnamEsOutput,
+    crate::operation::swap_environment_cnam_es::SwapEnvironmentCNAMEsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::swap_environment_cnam_es_output::Builder::default();
+        let mut output = crate::operation::swap_environment_cnam_es::builders::SwapEnvironmentCnamEsOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

@@ -2,7 +2,7 @@
 pub(crate) fn de_contact_method<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ContactMethod>,
+    Option<crate::types::ContactMethod>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::contact_method::Builder::default();
+            let mut builder = crate::types::builders::ContactMethodBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -39,7 +39,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ContactMethodStatus::from(u.as_ref())
+                                            crate::types::ContactMethodStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -52,7 +52,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ContactProtocol::from(u.as_ref())
+                                            crate::types::ContactProtocol::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -96,7 +96,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::ResourceType::from(u.as_ref()))
+                                            .map(|u| crate::types::ResourceType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

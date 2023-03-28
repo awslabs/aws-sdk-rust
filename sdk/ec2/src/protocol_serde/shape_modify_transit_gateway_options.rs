@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_modify_transit_gateway_options(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::ModifyTransitGatewayOptions,
+    input: &crate::types::ModifyTransitGatewayOptions,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("AddTransitGatewayCidrBlocks");

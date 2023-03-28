@@ -70,7 +70,7 @@ pub(crate) fn de_e_tag_header(
 pub(crate) fn de_request_charged_header(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
-    std::option::Option<crate::model::RequestCharged>,
+    std::option::Option<crate::types::RequestCharged>,
     aws_smithy_http::header::ParseError,
 > {
     let headers = header_map.get_all("x-amz-request-charged").iter();
@@ -116,7 +116,7 @@ pub(crate) fn de_ssekms_key_id_header(
 pub(crate) fn de_server_side_encryption_header(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
-    std::option::Option<crate::model::ServerSideEncryption>,
+    std::option::Option<crate::types::ServerSideEncryption>,
     aws_smithy_http::header::ParseError,
 > {
     let headers = header_map.get_all("x-amz-server-side-encryption").iter();

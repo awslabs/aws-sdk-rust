@@ -2,7 +2,7 @@
 pub(crate) fn de_assessment_metadata<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::AssessmentMetadata>,
+    Option<crate::types::AssessmentMetadata>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::assessment_metadata::Builder::default();
+            let mut builder = crate::types::builders::AssessmentMetadataBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -66,7 +66,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::AssessmentStatus::from(u.as_ref())
+                                            crate::types::AssessmentStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

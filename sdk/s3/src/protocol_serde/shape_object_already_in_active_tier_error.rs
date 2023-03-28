@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_object_already_in_active_tier_error_xml_err(
     inp: &[u8],
-    mut builder: crate::error::object_already_in_active_tier_error::Builder,
+    mut builder: crate::types::error::builders::ObjectAlreadyInActiveTierErrorBuilder,
 ) -> Result<
-    crate::error::object_already_in_active_tier_error::Builder,
+    crate::types::error::builders::ObjectAlreadyInActiveTierErrorBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

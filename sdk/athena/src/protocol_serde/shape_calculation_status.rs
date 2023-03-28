@@ -2,7 +2,7 @@
 pub(crate) fn de_calculation_status<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::CalculationStatus>,
+    Option<crate::types::CalculationStatus>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::calculation_status::Builder::default();
+            let mut builder = crate::types::builders::CalculationStatusBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -46,7 +46,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::CalculationExecutionState::from(
+                                            crate::types::CalculationExecutionState::from(
                                                 u.as_ref(),
                                             )
                                         })

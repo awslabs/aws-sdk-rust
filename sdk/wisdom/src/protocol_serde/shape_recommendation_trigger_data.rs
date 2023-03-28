@@ -2,7 +2,7 @@
 pub(crate) fn de_recommendation_trigger_data<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::RecommendationTriggerData>,
+    Option<crate::types::RecommendationTriggerData>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -29,14 +29,14 @@ where
                     }
                     variant = match key.to_unescaped()?.as_ref() {
                             "query" => {
-                                Some(crate::model::RecommendationTriggerData::Query(
+                                Some(crate::types::RecommendationTriggerData::Query(
                                     crate::protocol_serde::shape_query_recommendation_trigger_data::de_query_recommendation_trigger_data(tokens)?
                                     .ok_or_else(|| aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'query' cannot be null"))?
                                 ))
                             }
                             _ => {
                                                                       aws_smithy_json::deserialize::token::skip_value(tokens)?;
-                                                                      Some(crate::model::RecommendationTriggerData::Unknown)
+                                                                      Some(crate::types::RecommendationTriggerData::Unknown)
                                                                     }
                         };
                 }

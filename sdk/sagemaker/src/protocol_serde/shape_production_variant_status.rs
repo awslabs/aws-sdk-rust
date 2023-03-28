@@ -2,7 +2,7 @@
 pub(crate) fn de_production_variant_status<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ProductionVariantStatus>,
+    Option<crate::types::ProductionVariantStatus>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::production_variant_status::Builder::default();
+            let mut builder = crate::types::builders::ProductionVariantStatusBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::VariantStatus::from(u.as_ref()))
+                                            .map(|u| crate::types::VariantStatus::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

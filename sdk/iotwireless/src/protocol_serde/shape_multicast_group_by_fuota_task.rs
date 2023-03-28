@@ -2,7 +2,7 @@
 pub(crate) fn de_multicast_group_by_fuota_task<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::MulticastGroupByFuotaTask>,
+    Option<crate::types::MulticastGroupByFuotaTask>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::multicast_group_by_fuota_task::Builder::default();
+            let mut builder = crate::types::builders::MulticastGroupByFuotaTaskBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

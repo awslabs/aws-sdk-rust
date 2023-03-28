@@ -3,56 +3,62 @@
 pub fn de_describe_load_balancers_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeLoadBalancersOutput,
-    crate::error::DescribeLoadBalancersError,
+    crate::operation::describe_load_balancers::DescribeLoadBalancersOutput,
+    crate::operation::describe_load_balancers::DescribeLoadBalancersError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeLoadBalancersError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::describe_load_balancers::DescribeLoadBalancersError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    let error_code = match generic.code() {
-        Some(code) => code,
-        None => return Err(crate::error::DescribeLoadBalancersError::unhandled(generic)),
-    };
+    let error_code =
+        match generic.code() {
+            Some(code) => code,
+            None => return Err(
+                crate::operation::describe_load_balancers::DescribeLoadBalancersError::unhandled(
+                    generic,
+                ),
+            ),
+        };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidNextToken" => {
-            crate::error::DescribeLoadBalancersError::InvalidNextToken({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidNextToken" => crate::operation::describe_load_balancers::DescribeLoadBalancersError::InvalidNextToken({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_next_token::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidNextTokenBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_next_token::de_invalid_next_token_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeLoadBalancersError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_next_token::de_invalid_next_token_xml_err(response.body().as_ref(), output).map_err(crate::operation::describe_load_balancers::DescribeLoadBalancersError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ResourceContention" => {
-            crate::error::DescribeLoadBalancersError::ResourceContentionFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceContention" => crate::operation::describe_load_balancers::DescribeLoadBalancersError::ResourceContentionFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_contention_fault::Builder::default();
+                    let mut output = crate::types::error::builders::ResourceContentionFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_contention_fault::de_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeLoadBalancersError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_contention_fault::de_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::describe_load_balancers::DescribeLoadBalancersError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DescribeLoadBalancersError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::describe_load_balancers::DescribeLoadBalancersError::generic(generic)
     })
 }
 
@@ -60,18 +66,20 @@ pub fn de_describe_load_balancers_http_error(
 pub fn de_describe_load_balancers_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeLoadBalancersOutput,
-    crate::error::DescribeLoadBalancersError,
+    crate::operation::describe_load_balancers::DescribeLoadBalancersOutput,
+    crate::operation::describe_load_balancers::DescribeLoadBalancersError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_load_balancers_output::Builder::default();
+        let mut output = crate::operation::describe_load_balancers::builders::DescribeLoadBalancersOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_describe_load_balancers::de_describe_load_balancers(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DescribeLoadBalancersError::unhandled)?;
+        .map_err(
+            crate::operation::describe_load_balancers::DescribeLoadBalancersError::unhandled,
+        )?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -82,9 +90,9 @@ pub fn de_describe_load_balancers_http_response(
 #[allow(unused_mut)]
 pub fn de_describe_load_balancers(
     inp: &[u8],
-    mut builder: crate::output::describe_load_balancers_output::Builder,
+    mut builder: crate::operation::describe_load_balancers::builders::DescribeLoadBalancersOutputBuilder,
 ) -> Result<
-    crate::output::describe_load_balancers_output::Builder,
+    crate::operation::describe_load_balancers::builders::DescribeLoadBalancersOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

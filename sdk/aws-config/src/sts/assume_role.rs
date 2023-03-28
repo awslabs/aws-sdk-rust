@@ -8,10 +8,9 @@
 use crate::provider_config::ProviderConfig;
 use aws_credential_types::cache::CredentialsCache;
 use aws_credential_types::provider::{self, error::CredentialsError, future, ProvideCredentials};
-use aws_sdk_sts::error::AssumeRoleError;
-use aws_sdk_sts::input::AssumeRoleInput;
 use aws_sdk_sts::middleware::DefaultMiddleware;
-use aws_sdk_sts::model::PolicyDescriptorType;
+use aws_sdk_sts::operation::assume_role::{AssumeRoleError, AssumeRoleInput};
+use aws_sdk_sts::types::PolicyDescriptorType;
 use aws_smithy_client::erase::DynConnector;
 use aws_smithy_http::result::SdkError;
 use aws_smithy_types::error::display::DisplayErrorContext;
@@ -49,7 +48,7 @@ pub struct AssumeRoleProvider {
 struct Inner {
     sts: aws_smithy_client::Client<DynConnector, DefaultMiddleware>,
     conf: aws_sdk_sts::Config,
-    op: aws_sdk_sts::input::AssumeRoleInput,
+    op: AssumeRoleInput,
 }
 
 impl AssumeRoleProvider {
@@ -128,7 +127,7 @@ impl AssumeRoleProviderBuilder {
     ///
     /// This parameter is optional
     /// For more information, see
-    /// [policy](aws_sdk_sts::input::assume_role_input::Builder::policy_arns)
+    /// [policy](aws_sdk_sts::operation::assume_role::builders::AssumeRoleInputBuilder::policy_arns)
     pub fn policy(mut self, policy: impl Into<String>) -> Self {
         self.policy = Some(policy.into());
         self
@@ -138,7 +137,7 @@ impl AssumeRoleProviderBuilder {
     ///
     /// This parameter is optional.
     /// For more information, see
-    /// [policy_arns](aws_sdk_sts::input::assume_role_input::Builder::policy_arns)
+    /// [policy_arns](aws_sdk_sts::operation::assume_role::builders::AssumeRoleInputBuilder::policy_arns)
     pub fn policy_arns(mut self, policy_arns: Vec<PolicyDescriptorType>) -> Self {
         self.policy_arns = Some(policy_arns);
         self
@@ -155,7 +154,7 @@ impl AssumeRoleProviderBuilder {
     /// but your administrator set the maximum session duration to 6 hours, you cannot assume the role.
     ///
     /// For more information, see
-    /// [duration_seconds](aws_sdk_sts::input::assume_role_input::Builder::duration_seconds)
+    /// [duration_seconds](aws_sdk_sts::operation::assume_role::builders::AssumeRoleInputBuilder::duration_seconds)
     pub fn session_length(mut self, length: Duration) -> Self {
         self.session_length = Some(length);
         self

@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_media_package_output_destination_settings<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::MediaPackageOutputDestinationSettings>>,
+    Option<std::vec::Vec<crate::types::MediaPackageOutputDestinationSettings>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

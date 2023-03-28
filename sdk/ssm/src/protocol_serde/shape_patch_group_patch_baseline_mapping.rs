@@ -2,7 +2,7 @@
 pub(crate) fn de_patch_group_patch_baseline_mapping<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::PatchGroupPatchBaselineMapping>,
+    Option<crate::types::PatchGroupPatchBaselineMapping>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::patch_group_patch_baseline_mapping::Builder::default();
+            let mut builder =
+                crate::types::builders::PatchGroupPatchBaselineMappingBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

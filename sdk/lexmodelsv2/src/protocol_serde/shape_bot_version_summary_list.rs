@@ -2,7 +2,7 @@
 pub(crate) fn de_bot_version_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::BotVersionSummary>>,
+    Option<std::vec::Vec<crate::types::BotVersionSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

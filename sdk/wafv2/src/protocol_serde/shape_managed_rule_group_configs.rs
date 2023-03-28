@@ -2,7 +2,7 @@
 pub(crate) fn de_managed_rule_group_configs<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ManagedRuleGroupConfig>>,
+    Option<std::vec::Vec<crate::types::ManagedRuleGroupConfig>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub fn de_failed_capacity_reservation_fleet_cancellation_result_set(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::FailedCapacityReservationFleetCancellationResult>,
+    std::vec::Vec<crate::types::FailedCapacityReservationFleetCancellationResult>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

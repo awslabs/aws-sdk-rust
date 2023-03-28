@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_cloudwatch_logs_export_configuration(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::CloudwatchLogsExportConfiguration,
+    input: &crate::types::CloudwatchLogsExportConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("EnableLogTypes");

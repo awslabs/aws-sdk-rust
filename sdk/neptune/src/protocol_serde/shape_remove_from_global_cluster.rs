@@ -3,79 +3,78 @@
 pub fn de_remove_from_global_cluster_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::RemoveFromGlobalClusterOutput,
-    crate::error::RemoveFromGlobalClusterError,
+    crate::operation::remove_from_global_cluster::RemoveFromGlobalClusterOutput,
+    crate::operation::remove_from_global_cluster::RemoveFromGlobalClusterError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::RemoveFromGlobalClusterError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::remove_from_global_cluster::RemoveFromGlobalClusterError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::error::RemoveFromGlobalClusterError::unhandled(
+        None => return Err(
+            crate::operation::remove_from_global_cluster::RemoveFromGlobalClusterError::unhandled(
                 generic,
-            ))
-        }
+            ),
+        ),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBClusterNotFoundFault" => {
-            crate::error::RemoveFromGlobalClusterError::DbClusterNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "DBClusterNotFoundFault" => crate::operation::remove_from_global_cluster::RemoveFromGlobalClusterError::DbClusterNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::db_cluster_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::DbClusterNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_db_cluster_not_found_fault::de_db_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveFromGlobalClusterError::unhandled)?;
+                    output = crate::protocol_serde::shape_db_cluster_not_found_fault::de_db_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::remove_from_global_cluster::RemoveFromGlobalClusterError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "GlobalClusterNotFoundFault" => {
-            crate::error::RemoveFromGlobalClusterError::GlobalClusterNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "GlobalClusterNotFoundFault" => crate::operation::remove_from_global_cluster::RemoveFromGlobalClusterError::GlobalClusterNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::global_cluster_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::GlobalClusterNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_global_cluster_not_found_fault::de_global_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveFromGlobalClusterError::unhandled)?;
+                    output = crate::protocol_serde::shape_global_cluster_not_found_fault::de_global_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::remove_from_global_cluster::RemoveFromGlobalClusterError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidGlobalClusterStateFault" => {
-            crate::error::RemoveFromGlobalClusterError::InvalidGlobalClusterStateFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidGlobalClusterStateFault" => crate::operation::remove_from_global_cluster::RemoveFromGlobalClusterError::InvalidGlobalClusterStateFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_global_cluster_state_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidGlobalClusterStateFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_global_cluster_state_fault::de_invalid_global_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveFromGlobalClusterError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_global_cluster_state_fault::de_invalid_global_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::remove_from_global_cluster::RemoveFromGlobalClusterError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::RemoveFromGlobalClusterError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::remove_from_global_cluster::RemoveFromGlobalClusterError::generic(generic)
     })
 }
 
@@ -83,19 +82,14 @@ pub fn de_remove_from_global_cluster_http_error(
 pub fn de_remove_from_global_cluster_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::RemoveFromGlobalClusterOutput,
-    crate::error::RemoveFromGlobalClusterError,
+    crate::operation::remove_from_global_cluster::RemoveFromGlobalClusterOutput,
+    crate::operation::remove_from_global_cluster::RemoveFromGlobalClusterError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::remove_from_global_cluster_output::Builder::default();
+        let mut output = crate::operation::remove_from_global_cluster::builders::RemoveFromGlobalClusterOutputBuilder::default();
         let _ = response;
-        output =
-            crate::protocol_serde::shape_remove_from_global_cluster::de_remove_from_global_cluster(
-                response.body().as_ref(),
-                output,
-            )
-            .map_err(crate::error::RemoveFromGlobalClusterError::unhandled)?;
+        output = crate::protocol_serde::shape_remove_from_global_cluster::de_remove_from_global_cluster(response.body().as_ref(), output).map_err(crate::operation::remove_from_global_cluster::RemoveFromGlobalClusterError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -106,9 +100,9 @@ pub fn de_remove_from_global_cluster_http_response(
 #[allow(unused_mut)]
 pub fn de_remove_from_global_cluster(
     inp: &[u8],
-    mut builder: crate::output::remove_from_global_cluster_output::Builder,
+    mut builder: crate::operation::remove_from_global_cluster::builders::RemoveFromGlobalClusterOutputBuilder,
 ) -> Result<
-    crate::output::remove_from_global_cluster_output::Builder,
+    crate::operation::remove_from_global_cluster::builders::RemoveFromGlobalClusterOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

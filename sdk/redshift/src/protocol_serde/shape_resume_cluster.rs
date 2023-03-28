@@ -2,43 +2,33 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_resume_cluster_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ResumeClusterOutput, crate::error::ResumeClusterError> {
+) -> std::result::Result<
+    crate::operation::resume_cluster::ResumeClusterOutput,
+    crate::operation::resume_cluster::ResumeClusterError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ResumeClusterError::unhandled)?;
+        .map_err(crate::operation::resume_cluster::ResumeClusterError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ResumeClusterError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::resume_cluster::ResumeClusterError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ClusterNotFound" => crate::error::ResumeClusterError::ClusterNotFoundFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::cluster_not_found_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_cluster_not_found_fault::de_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ResumeClusterError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InsufficientClusterCapacity" => {
-            crate::error::ResumeClusterError::InsufficientClusterCapacityFault({
+        "ClusterNotFound" => {
+            crate::operation::resume_cluster::ResumeClusterError::ClusterNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::insufficient_cluster_capacity_fault::Builder::default();
+                        crate::types::error::builders::ClusterNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_insufficient_cluster_capacity_fault::de_insufficient_cluster_capacity_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ResumeClusterError::unhandled)?;
+                    output = crate::protocol_serde::shape_cluster_not_found_fault::de_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::resume_cluster::ResumeClusterError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -48,38 +38,64 @@ pub fn de_resume_cluster_http_error(
                 tmp
             })
         }
-        "InvalidClusterState" => crate::error::ResumeClusterError::InvalidClusterStateFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "InsufficientClusterCapacity" => {
+            crate::operation::resume_cluster::ResumeClusterError::InsufficientClusterCapacityFault(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InsufficientClusterCapacityFaultBuilder::default();
+                        let _ = response;
+                        output = crate::protocol_serde::shape_insufficient_cluster_capacity_fault::de_insufficient_cluster_capacity_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::resume_cluster::ResumeClusterError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        "InvalidClusterState" => {
+            crate::operation::resume_cluster::ResumeClusterError::InvalidClusterStateFault({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_cluster_state_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_cluster_state_fault::de_invalid_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ResumeClusterError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::ResumeClusterError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InvalidClusterStateFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_cluster_state_fault::de_invalid_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::resume_cluster::ResumeClusterError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::resume_cluster::ResumeClusterError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_resume_cluster_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ResumeClusterOutput, crate::error::ResumeClusterError> {
+) -> std::result::Result<
+    crate::operation::resume_cluster::ResumeClusterOutput,
+    crate::operation::resume_cluster::ResumeClusterError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::resume_cluster_output::Builder::default();
+        let mut output =
+            crate::operation::resume_cluster::builders::ResumeClusterOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_resume_cluster::de_resume_cluster(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ResumeClusterError::unhandled)?;
+        .map_err(crate::operation::resume_cluster::ResumeClusterError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -90,8 +106,11 @@ pub fn de_resume_cluster_http_response(
 #[allow(unused_mut)]
 pub fn de_resume_cluster(
     inp: &[u8],
-    mut builder: crate::output::resume_cluster_output::Builder,
-) -> Result<crate::output::resume_cluster_output::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    mut builder: crate::operation::resume_cluster::builders::ResumeClusterOutputBuilder,
+) -> Result<
+    crate::operation::resume_cluster::builders::ResumeClusterOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

@@ -2,7 +2,7 @@
 pub(crate) fn de_session_manager_output_url<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::SessionManagerOutputUrl>,
+    Option<crate::types::SessionManagerOutputUrl>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::session_manager_output_url::Builder::default();
+            let mut builder = crate::types::builders::SessionManagerOutputUrlBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

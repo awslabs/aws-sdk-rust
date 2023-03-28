@@ -3,78 +3,79 @@
 pub fn de_get_speech_synthesis_task_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetSpeechSynthesisTaskOutput,
-    crate::error::GetSpeechSynthesisTaskError,
+    crate::operation::get_speech_synthesis_task::GetSpeechSynthesisTaskOutput,
+    crate::operation::get_speech_synthesis_task::GetSpeechSynthesisTaskError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetSpeechSynthesisTaskError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::get_speech_synthesis_task::GetSpeechSynthesisTaskError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::GetSpeechSynthesisTaskError::unhandled(
-                generic,
-            ))
-        }
-    };
+    let error_code =
+        match generic.code() {
+            Some(code) => code,
+            None => return Err(
+                crate::operation::get_speech_synthesis_task::GetSpeechSynthesisTaskError::unhandled(
+                    generic,
+                ),
+            ),
+        };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidTaskIdException" => {
-            crate::error::GetSpeechSynthesisTaskError::InvalidTaskIdException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidTaskIdException" => crate::operation::get_speech_synthesis_task::GetSpeechSynthesisTaskError::InvalidTaskIdException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_task_id_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidTaskIdExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_task_id_exception::de_invalid_task_id_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSpeechSynthesisTaskError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_task_id_exception::de_invalid_task_id_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_speech_synthesis_task::GetSpeechSynthesisTaskError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ServiceFailureException" => {
-            crate::error::GetSpeechSynthesisTaskError::ServiceFailureException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ServiceFailureException" => crate::operation::get_speech_synthesis_task::GetSpeechSynthesisTaskError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ServiceFailureExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSpeechSynthesisTaskError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_speech_synthesis_task::GetSpeechSynthesisTaskError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "SynthesisTaskNotFoundException" => {
-            crate::error::GetSpeechSynthesisTaskError::SynthesisTaskNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "SynthesisTaskNotFoundException" => crate::operation::get_speech_synthesis_task::GetSpeechSynthesisTaskError::SynthesisTaskNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::synthesis_task_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::SynthesisTaskNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_synthesis_task_not_found_exception::de_synthesis_task_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSpeechSynthesisTaskError::unhandled)?;
+                    output = crate::protocol_serde::shape_synthesis_task_not_found_exception::de_synthesis_task_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_speech_synthesis_task::GetSpeechSynthesisTaskError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::GetSpeechSynthesisTaskError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::get_speech_synthesis_task::GetSpeechSynthesisTaskError::generic(generic)
     })
 }
 
@@ -82,19 +83,21 @@ pub fn de_get_speech_synthesis_task_http_error(
 pub fn de_get_speech_synthesis_task_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetSpeechSynthesisTaskOutput,
-    crate::error::GetSpeechSynthesisTaskError,
+    crate::operation::get_speech_synthesis_task::GetSpeechSynthesisTaskOutput,
+    crate::operation::get_speech_synthesis_task::GetSpeechSynthesisTaskError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_speech_synthesis_task_output::Builder::default();
+        let mut output = crate::operation::get_speech_synthesis_task::builders::GetSpeechSynthesisTaskOutputBuilder::default();
         let _ = response;
         output =
             crate::protocol_serde::shape_get_speech_synthesis_task::de_get_speech_synthesis_task(
                 response.body().as_ref(),
                 output,
             )
-            .map_err(crate::error::GetSpeechSynthesisTaskError::unhandled)?;
+            .map_err(
+                crate::operation::get_speech_synthesis_task::GetSpeechSynthesisTaskError::unhandled,
+            )?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -104,9 +107,9 @@ pub fn de_get_speech_synthesis_task_http_response(
 
 pub(crate) fn de_get_speech_synthesis_task(
     value: &[u8],
-    mut builder: crate::output::get_speech_synthesis_task_output::Builder,
+    mut builder: crate::operation::get_speech_synthesis_task::builders::GetSpeechSynthesisTaskOutputBuilder,
 ) -> Result<
-    crate::output::get_speech_synthesis_task_output::Builder,
+    crate::operation::get_speech_synthesis_task::builders::GetSpeechSynthesisTaskOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

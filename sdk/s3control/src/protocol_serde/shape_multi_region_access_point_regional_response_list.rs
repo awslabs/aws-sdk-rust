@@ -2,7 +2,7 @@
 pub fn de_multi_region_access_point_regional_response_list(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::MultiRegionAccessPointRegionalResponse>,
+    std::vec::Vec<crate::types::MultiRegionAccessPointRegionalResponse>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

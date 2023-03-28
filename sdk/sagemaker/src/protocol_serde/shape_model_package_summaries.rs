@@ -5,7 +5,7 @@ pub(crate) fn de_model_package_summaries<'a, I>(
     Option<
         std::collections::HashMap<
             std::string::String,
-            crate::model::BatchDescribeModelPackageSummary,
+            crate::types::BatchDescribeModelPackageSummary,
         >,
     >,
     aws_smithy_json::deserialize::error::DeserializeError,

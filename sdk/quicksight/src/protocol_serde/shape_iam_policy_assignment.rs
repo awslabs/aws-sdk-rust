@@ -2,7 +2,7 @@
 pub(crate) fn de_iam_policy_assignment<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::IamPolicyAssignment>,
+    Option<crate::types::IamPolicyAssignment>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::iam_policy_assignment::Builder::default();
+            let mut builder = crate::types::builders::IamPolicyAssignmentBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -73,7 +73,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::AssignmentStatus::from(u.as_ref())
+                                            crate::types::AssignmentStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

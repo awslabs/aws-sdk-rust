@@ -2,7 +2,7 @@
 pub(crate) fn de_streaming_session<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::StreamingSession>,
+    Option<crate::types::StreamingSession>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::streaming_session::Builder::default();
+            let mut builder = crate::types::builders::StreamingSessionBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -92,7 +92,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::StreamingSessionState::from(u.as_ref())
+                                            crate::types::StreamingSessionState::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -105,7 +105,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::StreamingSessionStatusCode::from(
+                                            crate::types::StreamingSessionStatusCode::from(
                                                 u.as_ref(),
                                             )
                                         })
@@ -218,7 +218,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::SessionBackupMode::from(u.as_ref())
+                                            crate::types::SessionBackupMode::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -240,7 +240,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::VolumeRetentionMode::from(u.as_ref())
+                                            crate::types::VolumeRetentionMode::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -253,7 +253,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::SessionPersistenceMode::from(u.as_ref())
+                                            crate::types::SessionPersistenceMode::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -271,7 +271,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::AutomaticTerminationMode::from(u.as_ref())
+                                            crate::types::AutomaticTerminationMode::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

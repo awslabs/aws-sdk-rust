@@ -2,43 +2,35 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_signing_jobs_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListSigningJobsOutput, crate::error::ListSigningJobsError> {
+) -> std::result::Result<
+    crate::operation::list_signing_jobs::ListSigningJobsOutput,
+    crate::operation::list_signing_jobs::ListSigningJobsError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListSigningJobsError::unhandled)?;
+        .map_err(crate::operation::list_signing_jobs::ListSigningJobsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListSigningJobsError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::list_signing_jobs::ListSigningJobsError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::ListSigningJobsError::AccessDeniedException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::access_denied_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSigningJobsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InternalServiceErrorException" => {
-            crate::error::ListSigningJobsError::InternalServiceErrorException({
+        "AccessDeniedException" => {
+            crate::operation::list_signing_jobs::ListSigningJobsError::AccessDeniedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::internal_service_error_exception::Builder::default();
+                        crate::types::error::builders::AccessDeniedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_service_error_exception::de_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSigningJobsError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_signing_jobs::ListSigningJobsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -48,14 +40,34 @@ pub fn de_list_signing_jobs_http_error(
                 tmp
             })
         }
+        "InternalServiceErrorException" => {
+            crate::operation::list_signing_jobs::ListSigningJobsError::InternalServiceErrorException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InternalServiceErrorExceptionBuilder::default();
+                        let _ = response;
+                        output = crate::protocol_serde::shape_internal_service_error_exception::de_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_signing_jobs::ListSigningJobsError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
         "TooManyRequestsException" => {
-            crate::error::ListSigningJobsError::TooManyRequestsException({
+            crate::operation::list_signing_jobs::ListSigningJobsError::TooManyRequestsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSigningJobsError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_signing_jobs::ListSigningJobsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -65,38 +77,45 @@ pub fn de_list_signing_jobs_http_error(
                 tmp
             })
         }
-        "ValidationException" => crate::error::ListSigningJobsError::ValidationException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "ValidationException" => {
+            crate::operation::list_signing_jobs::ListSigningJobsError::ValidationException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSigningJobsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::ListSigningJobsError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_signing_jobs::ListSigningJobsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::list_signing_jobs::ListSigningJobsError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_signing_jobs_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListSigningJobsOutput, crate::error::ListSigningJobsError> {
+) -> std::result::Result<
+    crate::operation::list_signing_jobs::ListSigningJobsOutput,
+    crate::operation::list_signing_jobs::ListSigningJobsError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_signing_jobs_output::Builder::default();
+        let mut output =
+            crate::operation::list_signing_jobs::builders::ListSigningJobsOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_signing_jobs::de_list_signing_jobs(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListSigningJobsError::unhandled)?;
+        .map_err(crate::operation::list_signing_jobs::ListSigningJobsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -106,9 +125,9 @@ pub fn de_list_signing_jobs_http_response(
 
 pub(crate) fn de_list_signing_jobs(
     value: &[u8],
-    mut builder: crate::output::list_signing_jobs_output::Builder,
+    mut builder: crate::operation::list_signing_jobs::builders::ListSigningJobsOutputBuilder,
 ) -> Result<
-    crate::output::list_signing_jobs_output::Builder,
+    crate::operation::list_signing_jobs::builders::ListSigningJobsOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

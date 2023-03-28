@@ -2,7 +2,7 @@
 pub fn de_access_scope_analysis_finding_list(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::AccessScopeAnalysisFinding>,
+    std::vec::Vec<crate::types::AccessScopeAnalysisFinding>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

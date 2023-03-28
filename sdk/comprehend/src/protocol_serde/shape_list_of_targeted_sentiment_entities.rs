@@ -2,7 +2,7 @@
 pub(crate) fn de_list_of_targeted_sentiment_entities<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::TargetedSentimentEntity>>,
+    Option<std::vec::Vec<crate::types::TargetedSentimentEntity>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

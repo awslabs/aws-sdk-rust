@@ -2,7 +2,7 @@
 pub(crate) fn de_handshake_resources<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::HandshakeResource>>,
+    Option<std::vec::Vec<crate::types::HandshakeResource>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

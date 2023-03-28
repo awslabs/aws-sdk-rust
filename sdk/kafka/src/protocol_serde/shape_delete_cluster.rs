@@ -2,58 +2,33 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_cluster_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeleteClusterOutput, crate::error::DeleteClusterError> {
+) -> std::result::Result<
+    crate::operation::delete_cluster::DeleteClusterOutput,
+    crate::operation::delete_cluster::DeleteClusterError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteClusterError::unhandled)?;
+        .map_err(crate::operation::delete_cluster::DeleteClusterError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DeleteClusterError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::delete_cluster::DeleteClusterError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::DeleteClusterError::BadRequestException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteClusterError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ForbiddenException" => crate::error::DeleteClusterError::ForbiddenException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteClusterError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InternalServerErrorException" => {
-            crate::error::DeleteClusterError::InternalServerErrorException({
+        "BadRequestException" => {
+            crate::operation::delete_cluster::DeleteClusterError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::internal_server_error_exception::Builder::default();
+                        crate::types::error::builders::BadRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteClusterError::unhandled)?;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_cluster::DeleteClusterError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -63,38 +38,82 @@ pub fn de_delete_cluster_http_error(
                 tmp
             })
         }
-        "NotFoundException" => crate::error::DeleteClusterError::NotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "ForbiddenException" => {
+            crate::operation::delete_cluster::DeleteClusterError::ForbiddenException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteClusterError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::DeleteClusterError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ForbiddenExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_cluster::DeleteClusterError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InternalServerErrorException" => {
+            crate::operation::delete_cluster::DeleteClusterError::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InternalServerErrorExceptionBuilder::default(
+                        );
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_cluster::DeleteClusterError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "NotFoundException" => {
+            crate::operation::delete_cluster::DeleteClusterError::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::NotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_cluster::DeleteClusterError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::delete_cluster::DeleteClusterError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_cluster_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeleteClusterOutput, crate::error::DeleteClusterError> {
+) -> std::result::Result<
+    crate::operation::delete_cluster::DeleteClusterOutput,
+    crate::operation::delete_cluster::DeleteClusterError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_cluster_output::Builder::default();
+        let mut output =
+            crate::operation::delete_cluster::builders::DeleteClusterOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_delete_cluster::de_delete_cluster(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DeleteClusterError::unhandled)?;
+        .map_err(crate::operation::delete_cluster::DeleteClusterError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -104,9 +123,9 @@ pub fn de_delete_cluster_http_response(
 
 pub(crate) fn de_delete_cluster(
     value: &[u8],
-    mut builder: crate::output::delete_cluster_output::Builder,
+    mut builder: crate::operation::delete_cluster::builders::DeleteClusterOutputBuilder,
 ) -> Result<
-    crate::output::delete_cluster_output::Builder,
+    crate::operation::delete_cluster::builders::DeleteClusterOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =
@@ -135,7 +154,7 @@ pub(crate) fn de_delete_cluster(
                             )?
                             .map(|s| {
                                 s.to_unescaped()
-                                    .map(|u| crate::model::ClusterState::from(u.as_ref()))
+                                    .map(|u| crate::types::ClusterState::from(u.as_ref()))
                             })
                             .transpose()?,
                         );

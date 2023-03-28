@@ -2,7 +2,7 @@
 pub(crate) fn de_performance_insights_metric_dimension_group<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::PerformanceInsightsMetricDimensionGroup>,
+    Option<crate::types::PerformanceInsightsMetricDimensionGroup>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::performance_insights_metric_dimension_group::Builder::default();
+                crate::types::builders::PerformanceInsightsMetricDimensionGroupBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

@@ -2,7 +2,7 @@
 pub(crate) fn de_custom_rules<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CustomRule>>,
+    Option<std::vec::Vec<crate::types::CustomRule>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

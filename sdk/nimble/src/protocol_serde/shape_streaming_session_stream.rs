@@ -2,7 +2,7 @@
 pub(crate) fn de_streaming_session_stream<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::StreamingSessionStream>,
+    Option<crate::types::StreamingSessionStream>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::streaming_session_stream::Builder::default();
+            let mut builder = crate::types::builders::StreamingSessionStreamBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -64,7 +64,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::StreamingSessionStreamState::from(
+                                            crate::types::StreamingSessionStreamState::from(
                                                 u.as_ref(),
                                             )
                                         })
@@ -79,7 +79,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::StreamingSessionStreamStatusCode::from(
+                                            crate::types::StreamingSessionStreamStatusCode::from(
                                                 u.as_ref(),
                                             )
                                         })

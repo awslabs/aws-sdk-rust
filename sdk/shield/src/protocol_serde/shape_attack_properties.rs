@@ -2,7 +2,7 @@
 pub(crate) fn de_attack_properties<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AttackProperty>>,
+    Option<std::vec::Vec<crate::types::AttackProperty>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

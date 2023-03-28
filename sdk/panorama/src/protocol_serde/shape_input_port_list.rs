@@ -2,7 +2,7 @@
 pub(crate) fn de_input_port_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::NodeInputPort>>,
+    Option<std::vec::Vec<crate::types::NodeInputPort>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

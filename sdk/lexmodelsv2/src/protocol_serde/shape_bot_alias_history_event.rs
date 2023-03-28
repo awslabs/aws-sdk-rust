@@ -2,7 +2,7 @@
 pub(crate) fn de_bot_alias_history_event<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::BotAliasHistoryEvent>,
+    Option<crate::types::BotAliasHistoryEvent>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::bot_alias_history_event::Builder::default();
+            let mut builder = crate::types::builders::BotAliasHistoryEventBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

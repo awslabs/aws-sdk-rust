@@ -2,7 +2,7 @@
 pub(crate) fn de_synthesis_task<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::SynthesisTask>,
+    Option<crate::types::SynthesisTask>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::synthesis_task::Builder::default();
+            let mut builder = crate::types::builders::SynthesisTaskBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::Engine::from(u.as_ref()))
+                                            .map(|u| crate::types::Engine::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -51,7 +51,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::TaskStatus::from(u.as_ref()))
+                                            .map(|u| crate::types::TaskStatus::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -112,7 +112,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::OutputFormat::from(u.as_ref()))
+                                            .map(|u| crate::types::OutputFormat::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -138,7 +138,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::TextType::from(u.as_ref()))
+                                            .map(|u| crate::types::TextType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -150,7 +150,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::VoiceId::from(u.as_ref()))
+                                            .map(|u| crate::types::VoiceId::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -162,7 +162,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::LanguageCode::from(u.as_ref()))
+                                            .map(|u| crate::types::LanguageCode::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

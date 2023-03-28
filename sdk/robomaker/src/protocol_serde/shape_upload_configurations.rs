@@ -2,7 +2,7 @@
 pub(crate) fn de_upload_configurations<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::UploadConfiguration>>,
+    Option<std::vec::Vec<crate::types::UploadConfiguration>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

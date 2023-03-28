@@ -2,7 +2,7 @@
 pub(crate) fn de_icd10_cm_entity<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::Icd10CmEntity>,
+    Option<crate::types::Icd10CmEntity>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::icd10_cm_entity::Builder::default();
+            let mut builder = crate::types::builders::Icd10CmEntityBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -48,7 +48,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::Icd10CmEntityCategory::from(u.as_ref())
+                                            crate::types::Icd10CmEntityCategory::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -61,7 +61,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::Icd10CmEntityType::from(u.as_ref())
+                                            crate::types::Icd10CmEntityType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

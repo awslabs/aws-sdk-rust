@@ -3,39 +3,38 @@
 pub fn de_get_account_authorization_details_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetAccountAuthorizationDetailsOutput,
-    crate::error::GetAccountAuthorizationDetailsError,
+    crate::operation::get_account_authorization_details::GetAccountAuthorizationDetailsOutput,
+    crate::operation::get_account_authorization_details::GetAccountAuthorizationDetailsError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetAccountAuthorizationDetailsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::get_account_authorization_details::GetAccountAuthorizationDetailsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => return Err(crate::error::GetAccountAuthorizationDetailsError::unhandled(generic)),
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::get_account_authorization_details::GetAccountAuthorizationDetailsError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ServiceFailure" => {
-            crate::error::GetAccountAuthorizationDetailsError::ServiceFailureException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "ServiceFailure" => crate::operation::get_account_authorization_details::GetAccountAuthorizationDetailsError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ServiceFailureExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetAccountAuthorizationDetailsError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::get_account_authorization_details::GetAccountAuthorizationDetailsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::GetAccountAuthorizationDetailsError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::get_account_authorization_details::GetAccountAuthorizationDetailsError::generic(generic)
     })
 }
 
@@ -43,15 +42,14 @@ pub fn de_get_account_authorization_details_http_error(
 pub fn de_get_account_authorization_details_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetAccountAuthorizationDetailsOutput,
-    crate::error::GetAccountAuthorizationDetailsError,
+    crate::operation::get_account_authorization_details::GetAccountAuthorizationDetailsOutput,
+    crate::operation::get_account_authorization_details::GetAccountAuthorizationDetailsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::output::get_account_authorization_details_output::Builder::default();
+        let mut output = crate::operation::get_account_authorization_details::builders::GetAccountAuthorizationDetailsOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_get_account_authorization_details::de_get_account_authorization_details(response.body().as_ref(), output).map_err(crate::error::GetAccountAuthorizationDetailsError::unhandled)?;
+        output = crate::protocol_serde::shape_get_account_authorization_details::de_get_account_authorization_details(response.body().as_ref(), output).map_err(crate::operation::get_account_authorization_details::GetAccountAuthorizationDetailsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -60,13 +58,7 @@ pub fn de_get_account_authorization_details_http_response(
 }
 
 #[allow(unused_mut)]
-pub fn de_get_account_authorization_details(
-    inp: &[u8],
-    mut builder: crate::output::get_account_authorization_details_output::Builder,
-) -> Result<
-    crate::output::get_account_authorization_details_output::Builder,
-    aws_smithy_xml::decode::XmlDecodeError,
-> {
+pub fn de_get_account_authorization_details(inp: &[u8], mut builder: crate::operation::get_account_authorization_details::builders::GetAccountAuthorizationDetailsOutputBuilder) -> Result<crate::operation::get_account_authorization_details::builders::GetAccountAuthorizationDetailsOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

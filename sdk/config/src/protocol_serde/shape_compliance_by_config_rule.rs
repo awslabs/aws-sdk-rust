@@ -2,7 +2,7 @@
 pub(crate) fn de_compliance_by_config_rule<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ComplianceByConfigRule>,
+    Option<crate::types::ComplianceByConfigRule>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::compliance_by_config_rule::Builder::default();
+            let mut builder = crate::types::builders::ComplianceByConfigRuleBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

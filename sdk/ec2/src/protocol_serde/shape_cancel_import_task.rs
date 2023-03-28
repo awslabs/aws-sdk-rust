@@ -2,30 +2,36 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_cancel_import_task_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::CancelImportTaskOutput, crate::error::CancelImportTaskError>
-{
+) -> std::result::Result<
+    crate::operation::cancel_import_task::CancelImportTaskOutput,
+    crate::operation::cancel_import_task::CancelImportTaskError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::CancelImportTaskError::unhandled)?;
+        .map_err(crate::operation::cancel_import_task::CancelImportTaskError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::CancelImportTaskError::generic(generic))
+    Err(crate::operation::cancel_import_task::CancelImportTaskError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_cancel_import_task_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::CancelImportTaskOutput, crate::error::CancelImportTaskError>
-{
+) -> std::result::Result<
+    crate::operation::cancel_import_task::CancelImportTaskOutput,
+    crate::operation::cancel_import_task::CancelImportTaskError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::cancel_import_task_output::Builder::default();
+        let mut output =
+            crate::operation::cancel_import_task::builders::CancelImportTaskOutputBuilder::default(
+            );
         let _ = response;
         output = crate::protocol_serde::shape_cancel_import_task::de_cancel_import_task(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::CancelImportTaskError::unhandled)?;
+        .map_err(crate::operation::cancel_import_task::CancelImportTaskError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -36,9 +42,11 @@ pub fn de_cancel_import_task_http_response(
 #[allow(unused_mut)]
 pub fn de_cancel_import_task(
     inp: &[u8],
-    mut builder: crate::output::cancel_import_task_output::Builder,
-) -> Result<crate::output::cancel_import_task_output::Builder, aws_smithy_xml::decode::XmlDecodeError>
-{
+    mut builder: crate::operation::cancel_import_task::builders::CancelImportTaskOutputBuilder,
+) -> Result<
+    crate::operation::cancel_import_task::builders::CancelImportTaskOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

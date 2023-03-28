@@ -2,7 +2,7 @@
 pub(crate) fn de_firewall_policy_stateful_rule_group_references_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::FirewallPolicyStatefulRuleGroupReferencesDetails>>,
+    Option<std::vec::Vec<crate::types::FirewallPolicyStatefulRuleGroupReferencesDetails>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

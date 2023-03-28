@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_invalid_scheduled_action_fault_xml_err(
     inp: &[u8],
-    mut builder: crate::error::invalid_scheduled_action_fault::Builder,
+    mut builder: crate::types::error::builders::InvalidScheduledActionFaultBuilder,
 ) -> Result<
-    crate::error::invalid_scheduled_action_fault::Builder,
+    crate::types::error::builders::InvalidScheduledActionFaultBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

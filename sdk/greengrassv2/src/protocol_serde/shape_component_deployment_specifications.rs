@@ -5,7 +5,7 @@ pub(crate) fn de_component_deployment_specifications<'a, I>(
     Option<
         std::collections::HashMap<
             std::string::String,
-            crate::model::ComponentDeploymentSpecification,
+            crate::types::ComponentDeploymentSpecification,
         >,
     >,
     aws_smithy_json::deserialize::error::DeserializeError,

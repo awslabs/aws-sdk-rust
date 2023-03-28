@@ -2,7 +2,7 @@
 pub(crate) fn de_booking_options<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::BookingOptions>,
+    Option<crate::types::BookingOptions>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::booking_options::Builder::default();
+            let mut builder = crate::types::builders::BookingOptionsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -69,7 +69,7 @@ where
 
 pub fn ser_booking_options(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::BookingOptions,
+    input: &crate::types::BookingOptions,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if input.auto_accept_requests {
         object

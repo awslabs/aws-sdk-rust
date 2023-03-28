@@ -3,43 +3,44 @@
 pub fn de_describe_type_registration_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeTypeRegistrationOutput,
-    crate::error::DescribeTypeRegistrationError,
+    crate::operation::describe_type_registration::DescribeTypeRegistrationOutput,
+    crate::operation::describe_type_registration::DescribeTypeRegistrationError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeTypeRegistrationError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::describe_type_registration::DescribeTypeRegistrationError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::error::DescribeTypeRegistrationError::unhandled(
+        None => return Err(
+            crate::operation::describe_type_registration::DescribeTypeRegistrationError::unhandled(
                 generic,
-            ))
-        }
+            ),
+        ),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CFNRegistryException" => {
-            crate::error::DescribeTypeRegistrationError::CfnRegistryException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "CFNRegistryException" => crate::operation::describe_type_registration::DescribeTypeRegistrationError::CfnRegistryException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::cfn_registry_exception::Builder::default();
+                    let mut output = crate::types::error::builders::CfnRegistryExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_cfn_registry_exception::de_cfn_registry_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeTypeRegistrationError::unhandled)?;
+                    output = crate::protocol_serde::shape_cfn_registry_exception::de_cfn_registry_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::describe_type_registration::DescribeTypeRegistrationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DescribeTypeRegistrationError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::describe_type_registration::DescribeTypeRegistrationError::generic(generic)
     })
 }
 
@@ -47,19 +48,14 @@ pub fn de_describe_type_registration_http_error(
 pub fn de_describe_type_registration_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeTypeRegistrationOutput,
-    crate::error::DescribeTypeRegistrationError,
+    crate::operation::describe_type_registration::DescribeTypeRegistrationOutput,
+    crate::operation::describe_type_registration::DescribeTypeRegistrationError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_type_registration_output::Builder::default();
+        let mut output = crate::operation::describe_type_registration::builders::DescribeTypeRegistrationOutputBuilder::default();
         let _ = response;
-        output =
-            crate::protocol_serde::shape_describe_type_registration::de_describe_type_registration(
-                response.body().as_ref(),
-                output,
-            )
-            .map_err(crate::error::DescribeTypeRegistrationError::unhandled)?;
+        output = crate::protocol_serde::shape_describe_type_registration::de_describe_type_registration(response.body().as_ref(), output).map_err(crate::operation::describe_type_registration::DescribeTypeRegistrationError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -70,9 +66,9 @@ pub fn de_describe_type_registration_http_response(
 #[allow(unused_mut)]
 pub fn de_describe_type_registration(
     inp: &[u8],
-    mut builder: crate::output::describe_type_registration_output::Builder,
+    mut builder: crate::operation::describe_type_registration::builders::DescribeTypeRegistrationOutputBuilder,
 ) -> Result<
-    crate::output::describe_type_registration_output::Builder,
+    crate::operation::describe_type_registration::builders::DescribeTypeRegistrationOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
@@ -100,8 +96,8 @@ pub fn de_describe_type_registration(
             s if s.matches("ProgressStatus") /* ProgressStatus com.amazonaws.cloudformation.synthetic#DescribeTypeRegistrationOutput$ProgressStatus */ =>  {
                 let var_1 =
                     Some(
-                        Result::<crate::model::RegistrationStatus, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::RegistrationStatus::from(
+                        Result::<crate::types::RegistrationStatus, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::RegistrationStatus::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

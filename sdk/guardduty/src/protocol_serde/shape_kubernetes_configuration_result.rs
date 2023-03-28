@@ -2,7 +2,7 @@
 pub(crate) fn de_kubernetes_configuration_result<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::KubernetesConfigurationResult>,
+    Option<crate::types::KubernetesConfigurationResult>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::kubernetes_configuration_result::Builder::default();
+            let mut builder =
+                crate::types::builders::KubernetesConfigurationResultBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

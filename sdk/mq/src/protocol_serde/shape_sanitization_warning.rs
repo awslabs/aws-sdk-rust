@@ -2,7 +2,7 @@
 pub(crate) fn de_sanitization_warning<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::SanitizationWarning>,
+    Option<crate::types::SanitizationWarning>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::sanitization_warning::Builder::default();
+            let mut builder = crate::types::builders::SanitizationWarningBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -48,7 +48,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::SanitizationWarningReason::from(
+                                            crate::types::SanitizationWarningReason::from(
                                                 u.as_ref(),
                                             )
                                         })

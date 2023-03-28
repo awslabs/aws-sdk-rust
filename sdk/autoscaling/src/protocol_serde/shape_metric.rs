@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_metric(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::Metric,
+    input: &crate::types::Metric,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Namespace");
@@ -30,9 +30,9 @@ pub fn ser_metric(
 
 pub fn de_metric(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::Metric, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::Metric, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::Metric::builder();
+    let mut builder = crate::types::Metric::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Namespace") /* Namespace com.amazonaws.autoscaling#Metric$Namespace */ =>  {

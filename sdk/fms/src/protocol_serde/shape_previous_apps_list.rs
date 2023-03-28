@@ -2,7 +2,7 @@
 pub(crate) fn de_previous_apps_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::App>>>,
+    Option<std::collections::HashMap<std::string::String, std::vec::Vec<crate::types::App>>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

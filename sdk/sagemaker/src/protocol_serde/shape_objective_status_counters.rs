@@ -2,7 +2,7 @@
 pub(crate) fn de_objective_status_counters<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ObjectiveStatusCounters>,
+    Option<crate::types::ObjectiveStatusCounters>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::objective_status_counters::Builder::default();
+            let mut builder = crate::types::builders::ObjectiveStatusCountersBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

@@ -2,7 +2,7 @@
 pub(crate) fn de_batch_create_channel_membership_errors<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::BatchCreateChannelMembershipError>>,
+    Option<std::vec::Vec<crate::types::BatchCreateChannelMembershipError>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,27 +2,33 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_voices_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DescribeVoicesOutput, crate::error::DescribeVoicesError> {
+) -> std::result::Result<
+    crate::operation::describe_voices::DescribeVoicesOutput,
+    crate::operation::describe_voices::DescribeVoicesError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeVoicesError::unhandled)?;
+        .map_err(crate::operation::describe_voices::DescribeVoicesError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DescribeVoicesError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::describe_voices::DescribeVoicesError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidNextTokenException" => {
-            crate::error::DescribeVoicesError::InvalidNextTokenException({
+            crate::operation::describe_voices::DescribeVoicesError::InvalidNextTokenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_next_token_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::InvalidNextTokenExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_next_token_exception::de_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeVoicesError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_next_token_exception::de_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_voices::DescribeVoicesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -32,38 +38,45 @@ pub fn de_describe_voices_http_error(
                 tmp
             })
         }
-        "ServiceFailureException" => crate::error::DescribeVoicesError::ServiceFailureException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "ServiceFailureException" => {
+            crate::operation::describe_voices::DescribeVoicesError::ServiceFailureException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::service_failure_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeVoicesError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::DescribeVoicesError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ServiceFailureExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_voices::DescribeVoicesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::describe_voices::DescribeVoicesError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_voices_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DescribeVoicesOutput, crate::error::DescribeVoicesError> {
+) -> std::result::Result<
+    crate::operation::describe_voices::DescribeVoicesOutput,
+    crate::operation::describe_voices::DescribeVoicesError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_voices_output::Builder::default();
+        let mut output =
+            crate::operation::describe_voices::builders::DescribeVoicesOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_describe_voices::de_describe_voices(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DescribeVoicesError::unhandled)?;
+        .map_err(crate::operation::describe_voices::DescribeVoicesError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -73,9 +86,9 @@ pub fn de_describe_voices_http_response(
 
 pub(crate) fn de_describe_voices(
     value: &[u8],
-    mut builder: crate::output::describe_voices_output::Builder,
+    mut builder: crate::operation::describe_voices::builders::DescribeVoicesOutputBuilder,
 ) -> Result<
-    crate::output::describe_voices_output::Builder,
+    crate::operation::describe_voices::builders::DescribeVoicesOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

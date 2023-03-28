@@ -2,7 +2,7 @@
 pub(crate) fn de_physical_table_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<std::string::String, crate::model::PhysicalTable>>,
+    Option<std::collections::HashMap<std::string::String, crate::types::PhysicalTable>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

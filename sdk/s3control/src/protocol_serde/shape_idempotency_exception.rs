@@ -2,8 +2,11 @@
 #[allow(unused_mut)]
 pub fn de_idempotency_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::idempotency_exception::Builder,
-) -> Result<crate::error::idempotency_exception::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    mut builder: crate::types::error::builders::IdempotencyExceptionBuilder,
+) -> Result<
+    crate::types::error::builders::IdempotencyExceptionBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     if inp.is_empty() {
         return Ok(builder);
     }

@@ -2,7 +2,7 @@
 pub(crate) fn de_theme_version_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ThemeVersionSummary>>,
+    Option<std::vec::Vec<crate::types::ThemeVersionSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

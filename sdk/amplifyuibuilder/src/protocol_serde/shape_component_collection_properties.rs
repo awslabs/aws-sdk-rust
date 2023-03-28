@@ -3,7 +3,7 @@ pub(crate) fn de_component_collection_properties<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<
-        std::collections::HashMap<std::string::String, crate::model::ComponentDataConfiguration>,
+        std::collections::HashMap<std::string::String, crate::types::ComponentDataConfiguration>,
     >,
     aws_smithy_json::deserialize::error::DeserializeError,
 >

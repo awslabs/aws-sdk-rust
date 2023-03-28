@@ -3,72 +3,79 @@
 pub fn de_list_signing_profiles_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListSigningProfilesOutput,
-    crate::error::ListSigningProfilesError,
+    crate::operation::list_signing_profiles::ListSigningProfilesOutput,
+    crate::operation::list_signing_profiles::ListSigningProfilesError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListSigningProfilesError::unhandled)?;
+        .map_err(crate::operation::list_signing_profiles::ListSigningProfilesError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListSigningProfilesError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::list_signing_profiles::ListSigningProfilesError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::ListSigningProfilesError::AccessDeniedException({
+        "AccessDeniedException" => crate::operation::list_signing_profiles::ListSigningProfilesError::AccessDeniedException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::access_denied_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSigningProfilesError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_signing_profiles::ListSigningProfilesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "InternalServiceErrorException" => {
-            crate::error::ListSigningProfilesError::InternalServiceErrorException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalServiceErrorException" => crate::operation::list_signing_profiles::ListSigningProfilesError::InternalServiceErrorException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::internal_service_error_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InternalServiceErrorExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_service_error_exception::de_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSigningProfilesError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_service_error_exception::de_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_signing_profiles::ListSigningProfilesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "TooManyRequestsException" => {
-            crate::error::ListSigningProfilesError::TooManyRequestsException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TooManyRequestsException" => crate::operation::list_signing_profiles::ListSigningProfilesError::TooManyRequestsException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSigningProfilesError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_signing_profiles::ListSigningProfilesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::ListSigningProfilesError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::list_signing_profiles::ListSigningProfilesError::generic(generic)
     })
 }
 
@@ -76,18 +83,18 @@ pub fn de_list_signing_profiles_http_error(
 pub fn de_list_signing_profiles_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListSigningProfilesOutput,
-    crate::error::ListSigningProfilesError,
+    crate::operation::list_signing_profiles::ListSigningProfilesOutput,
+    crate::operation::list_signing_profiles::ListSigningProfilesError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_signing_profiles_output::Builder::default();
+        let mut output = crate::operation::list_signing_profiles::builders::ListSigningProfilesOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_signing_profiles::de_list_signing_profiles(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListSigningProfilesError::unhandled)?;
+        .map_err(crate::operation::list_signing_profiles::ListSigningProfilesError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -97,9 +104,9 @@ pub fn de_list_signing_profiles_http_response(
 
 pub(crate) fn de_list_signing_profiles(
     value: &[u8],
-    mut builder: crate::output::list_signing_profiles_output::Builder,
+    mut builder: crate::operation::list_signing_profiles::builders::ListSigningProfilesOutputBuilder,
 ) -> Result<
-    crate::output::list_signing_profiles_output::Builder,
+    crate::operation::list_signing_profiles::builders::ListSigningProfilesOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

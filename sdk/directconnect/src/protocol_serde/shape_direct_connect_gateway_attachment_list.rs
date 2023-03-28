@@ -2,7 +2,7 @@
 pub(crate) fn de_direct_connect_gateway_attachment_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DirectConnectGatewayAttachment>>,
+    Option<std::vec::Vec<crate::types::DirectConnectGatewayAttachment>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

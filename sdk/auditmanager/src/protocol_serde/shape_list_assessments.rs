@@ -2,81 +2,101 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_assessments_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListAssessmentsOutput, crate::error::ListAssessmentsError> {
+) -> std::result::Result<
+    crate::operation::list_assessments::ListAssessmentsOutput,
+    crate::operation::list_assessments::ListAssessmentsError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListAssessmentsError::unhandled)?;
+        .map_err(crate::operation::list_assessments::ListAssessmentsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListAssessmentsError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::list_assessments::ListAssessmentsError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::ListAssessmentsError::AccessDeniedException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "AccessDeniedException" => {
+            crate::operation::list_assessments::ListAssessmentsError::AccessDeniedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::access_denied_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAssessmentsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InternalServerException" => crate::error::ListAssessmentsError::InternalServerException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::AccessDeniedExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_assessments::ListAssessmentsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InternalServerException" => {
+            crate::operation::list_assessments::ListAssessmentsError::InternalServerException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAssessmentsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ValidationException" => crate::error::ListAssessmentsError::ValidationException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InternalServerExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_assessments::ListAssessmentsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ValidationException" => {
+            crate::operation::list_assessments::ListAssessmentsError::ValidationException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAssessmentsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::ListAssessmentsError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_assessments::ListAssessmentsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::list_assessments::ListAssessmentsError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_assessments_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListAssessmentsOutput, crate::error::ListAssessmentsError> {
+) -> std::result::Result<
+    crate::operation::list_assessments::ListAssessmentsOutput,
+    crate::operation::list_assessments::ListAssessmentsError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_assessments_output::Builder::default();
+        let mut output =
+            crate::operation::list_assessments::builders::ListAssessmentsOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_assessments::de_list_assessments(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListAssessmentsError::unhandled)?;
+        .map_err(crate::operation::list_assessments::ListAssessmentsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -86,9 +106,9 @@ pub fn de_list_assessments_http_response(
 
 pub(crate) fn de_list_assessments(
     value: &[u8],
-    mut builder: crate::output::list_assessments_output::Builder,
+    mut builder: crate::operation::list_assessments::builders::ListAssessmentsOutputBuilder,
 ) -> Result<
-    crate::output::list_assessments_output::Builder,
+    crate::operation::list_assessments::builders::ListAssessmentsOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

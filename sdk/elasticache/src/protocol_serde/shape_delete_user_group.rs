@@ -2,105 +2,115 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_user_group_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeleteUserGroupOutput, crate::error::DeleteUserGroupError> {
+) -> std::result::Result<
+    crate::operation::delete_user_group::DeleteUserGroupOutput,
+    crate::operation::delete_user_group::DeleteUserGroupError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteUserGroupError::unhandled)?;
+        .map_err(crate::operation::delete_user_group::DeleteUserGroupError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DeleteUserGroupError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::delete_user_group::DeleteUserGroupError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValue" => {
-            crate::error::DeleteUserGroupError::InvalidParameterValueException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_parameter_value_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteUserGroupError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InvalidUserGroupState" => {
-            crate::error::DeleteUserGroupError::InvalidUserGroupStateFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_user_group_state_fault::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_user_group_state_fault::de_invalid_user_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteUserGroupError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ServiceLinkedRoleNotFoundFault" => {
-            crate::error::DeleteUserGroupError::ServiceLinkedRoleNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::service_linked_role_not_found_fault::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_service_linked_role_not_found_fault::de_service_linked_role_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteUserGroupError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "UserGroupNotFound" => crate::error::DeleteUserGroupError::UserGroupNotFoundFault({
+        "InvalidParameterValue" => crate::operation::delete_user_group::DeleteUserGroupError::InvalidParameterValueException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::user_group_not_found_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_user_group_not_found_fault::de_user_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteUserGroupError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_user_group::DeleteUserGroupError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::DeleteUserGroupError::generic(generic),
+        "InvalidUserGroupState" => crate::operation::delete_user_group::DeleteUserGroupError::InvalidUserGroupStateFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidUserGroupStateFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_user_group_state_fault::de_invalid_user_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_user_group::DeleteUserGroupError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ServiceLinkedRoleNotFoundFault" => crate::operation::delete_user_group::DeleteUserGroupError::ServiceLinkedRoleNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ServiceLinkedRoleNotFoundFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_service_linked_role_not_found_fault::de_service_linked_role_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_user_group::DeleteUserGroupError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "UserGroupNotFound" => crate::operation::delete_user_group::DeleteUserGroupError::UserGroupNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::UserGroupNotFoundFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_user_group_not_found_fault::de_user_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_user_group::DeleteUserGroupError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::delete_user_group::DeleteUserGroupError::generic(generic)
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_user_group_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeleteUserGroupOutput, crate::error::DeleteUserGroupError> {
+) -> std::result::Result<
+    crate::operation::delete_user_group::DeleteUserGroupOutput,
+    crate::operation::delete_user_group::DeleteUserGroupError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_user_group_output::Builder::default();
+        let mut output =
+            crate::operation::delete_user_group::builders::DeleteUserGroupOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_delete_user_group::de_delete_user_group(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DeleteUserGroupError::unhandled)?;
+        .map_err(crate::operation::delete_user_group::DeleteUserGroupError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -111,9 +121,11 @@ pub fn de_delete_user_group_http_response(
 #[allow(unused_mut)]
 pub fn de_delete_user_group(
     inp: &[u8],
-    mut builder: crate::output::delete_user_group_output::Builder,
-) -> Result<crate::output::delete_user_group_output::Builder, aws_smithy_xml::decode::XmlDecodeError>
-{
+    mut builder: crate::operation::delete_user_group::builders::DeleteUserGroupOutputBuilder,
+) -> Result<
+    crate::operation::delete_user_group::builders::DeleteUserGroupOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

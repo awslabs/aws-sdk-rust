@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_test_failover_not_available_fault_xml_err(
     inp: &[u8],
-    mut builder: crate::error::test_failover_not_available_fault::Builder,
+    mut builder: crate::types::error::builders::TestFailoverNotAvailableFaultBuilder,
 ) -> Result<
-    crate::error::test_failover_not_available_fault::Builder,
+    crate::types::error::builders::TestFailoverNotAvailableFaultBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

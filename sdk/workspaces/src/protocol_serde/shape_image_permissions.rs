@@ -2,7 +2,7 @@
 pub(crate) fn de_image_permissions<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ImagePermission>>,
+    Option<std::vec::Vec<crate::types::ImagePermission>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

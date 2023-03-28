@@ -2,7 +2,7 @@
 pub(crate) fn de_simple_rule_evaluation<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::SimpleRuleEvaluation>,
+    Option<crate::types::SimpleRuleEvaluation>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::simple_rule_evaluation::Builder::default();
+            let mut builder = crate::types::builders::SimpleRuleEvaluationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -39,7 +39,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ComparisonOperator::from(u.as_ref())
+                                            crate::types::ComparisonOperator::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

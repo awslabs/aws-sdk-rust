@@ -2,7 +2,7 @@
 pub(crate) fn de_aws_waf_rule_group_rules_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AwsWafRuleGroupRulesDetails>>,
+    Option<std::vec::Vec<crate::types::AwsWafRuleGroupRulesDetails>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

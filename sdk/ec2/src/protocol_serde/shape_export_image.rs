@@ -2,28 +2,37 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_export_image_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ExportImageOutput, crate::error::ExportImageError> {
+) -> std::result::Result<
+    crate::operation::export_image::ExportImageOutput,
+    crate::operation::export_image::ExportImageError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ExportImageError::unhandled)?;
+        .map_err(crate::operation::export_image::ExportImageError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::ExportImageError::generic(generic))
+    Err(crate::operation::export_image::ExportImageError::generic(
+        generic,
+    ))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_export_image_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ExportImageOutput, crate::error::ExportImageError> {
+) -> std::result::Result<
+    crate::operation::export_image::ExportImageOutput,
+    crate::operation::export_image::ExportImageError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::export_image_output::Builder::default();
+        let mut output =
+            crate::operation::export_image::builders::ExportImageOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_export_image::de_export_image(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ExportImageError::unhandled)?;
+        .map_err(crate::operation::export_image::ExportImageError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -34,8 +43,11 @@ pub fn de_export_image_http_response(
 #[allow(unused_mut)]
 pub fn de_export_image(
     inp: &[u8],
-    mut builder: crate::output::export_image_output::Builder,
-) -> Result<crate::output::export_image_output::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    mut builder: crate::operation::export_image::builders::ExportImageOutputBuilder,
+) -> Result<
+    crate::operation::export_image::builders::ExportImageOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -66,8 +78,8 @@ pub fn de_export_image(
             s if s.matches("diskImageFormat") /* DiskImageFormat com.amazonaws.ec2.synthetic#ExportImageOutput$DiskImageFormat */ =>  {
                 let var_2 =
                     Some(
-                        Result::<crate::model::DiskImageFormat, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::DiskImageFormat::from(
+                        Result::<crate::types::DiskImageFormat, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::DiskImageFormat::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

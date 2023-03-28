@@ -2,7 +2,7 @@
 pub(crate) fn de_batch_get_asset_property_aggregates_skipped_entry<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::BatchGetAssetPropertyAggregatesSkippedEntry>,
+    Option<crate::types::BatchGetAssetPropertyAggregatesSkippedEntry>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,8 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::batch_get_asset_property_aggregates_skipped_entry::Builder::default();
+                crate::types::builders::BatchGetAssetPropertyAggregatesSkippedEntryBuilder::default(
+                );
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -40,7 +41,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::BatchEntryCompletionStatus::from(
+                                            crate::types::BatchEntryCompletionStatus::from(
                                                 u.as_ref(),
                                             )
                                         })

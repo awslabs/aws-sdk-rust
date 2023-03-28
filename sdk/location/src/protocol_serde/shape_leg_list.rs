@@ -2,7 +2,7 @@
 pub(crate) fn de_leg_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Leg>>,
+    Option<std::vec::Vec<crate::types::Leg>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_empty_batch_request_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::empty_batch_request_exception::Builder,
+    mut builder: crate::types::error::builders::EmptyBatchRequestExceptionBuilder,
 ) -> Result<
-    crate::error::empty_batch_request_exception::Builder,
+    crate::types::error::builders::EmptyBatchRequestExceptionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

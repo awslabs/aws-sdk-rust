@@ -2,7 +2,7 @@
 pub(crate) fn de_indexing_filter<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::IndexingFilter>,
+    Option<crate::types::IndexingFilter>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::indexing_filter::Builder::default();
+            let mut builder = crate::types::builders::IndexingFilterBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -53,7 +53,7 @@ where
 
 pub fn ser_indexing_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::IndexingFilter,
+    input: &crate::types::IndexingFilter,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.named_shadow_names {
         let mut array_2 = object.key("namedShadowNames").start_array();

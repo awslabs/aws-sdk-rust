@@ -2,7 +2,7 @@
 pub(crate) fn de_metric_data_error_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::MetricDataError>>,
+    Option<std::vec::Vec<crate::types::MetricDataError>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

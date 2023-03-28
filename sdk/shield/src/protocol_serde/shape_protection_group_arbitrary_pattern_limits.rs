@@ -2,7 +2,7 @@
 pub(crate) fn de_protection_group_arbitrary_pattern_limits<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ProtectionGroupArbitraryPatternLimits>,
+    Option<crate::types::ProtectionGroupArbitraryPatternLimits>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::protection_group_arbitrary_pattern_limits::Builder::default();
+                crate::types::builders::ProtectionGroupArbitraryPatternLimitsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

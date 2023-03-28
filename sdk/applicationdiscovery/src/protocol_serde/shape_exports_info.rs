@@ -2,7 +2,7 @@
 pub(crate) fn de_exports_info<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ExportInfo>>,
+    Option<std::vec::Vec<crate::types::ExportInfo>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

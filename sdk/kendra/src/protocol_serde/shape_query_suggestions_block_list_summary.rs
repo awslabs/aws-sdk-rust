@@ -2,7 +2,7 @@
 pub(crate) fn de_query_suggestions_block_list_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::QuerySuggestionsBlockListSummary>,
+    Option<crate::types::QuerySuggestionsBlockListSummary>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::query_suggestions_block_list_summary::Builder::default();
+                crate::types::builders::QuerySuggestionsBlockListSummaryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -49,7 +49,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::QuerySuggestionsBlockListStatus::from(
+                                            crate::types::QuerySuggestionsBlockListStatus::from(
                                                 u.as_ref(),
                                             )
                                         })

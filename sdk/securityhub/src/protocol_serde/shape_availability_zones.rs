@@ -2,7 +2,7 @@
 pub(crate) fn de_availability_zones<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AvailabilityZone>>,
+    Option<std::vec::Vec<crate::types::AvailabilityZone>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

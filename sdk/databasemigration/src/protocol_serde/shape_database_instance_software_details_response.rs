@@ -2,7 +2,7 @@
 pub(crate) fn de_database_instance_software_details_response<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::DatabaseInstanceSoftwareDetailsResponse>,
+    Option<crate::types::DatabaseInstanceSoftwareDetailsResponse>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::database_instance_software_details_response::Builder::default();
+                crate::types::builders::DatabaseInstanceSoftwareDetailsResponseBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

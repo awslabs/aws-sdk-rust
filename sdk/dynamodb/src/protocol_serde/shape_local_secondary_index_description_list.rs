@@ -2,7 +2,7 @@
 pub(crate) fn de_local_secondary_index_description_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::LocalSecondaryIndexDescription>>,
+    Option<std::vec::Vec<crate::types::LocalSecondaryIndexDescription>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

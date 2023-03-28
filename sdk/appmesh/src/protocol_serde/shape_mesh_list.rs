@@ -2,7 +2,7 @@
 pub(crate) fn de_mesh_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::MeshRef>>,
+    Option<std::vec::Vec<crate::types::MeshRef>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

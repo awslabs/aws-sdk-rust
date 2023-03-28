@@ -2,7 +2,7 @@
 pub(crate) fn de_cloudwatch_alarm_action<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::CloudwatchAlarmAction>,
+    Option<crate::types::CloudwatchAlarmAction>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::cloudwatch_alarm_action::Builder::default();
+            let mut builder = crate::types::builders::CloudwatchAlarmActionBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -84,7 +84,7 @@ where
 
 pub fn ser_cloudwatch_alarm_action(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::CloudwatchAlarmAction,
+    input: &crate::types::CloudwatchAlarmAction,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.role_arn {
         object.key("roleArn").string(var_1.as_str());

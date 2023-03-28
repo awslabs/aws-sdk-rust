@@ -2,7 +2,7 @@
 pub(crate) fn de_compute_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Compute>>,
+    Option<std::vec::Vec<crate::types::Compute>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_listed_flow<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ListedFlow>>,
+    Option<std::vec::Vec<crate::types::ListedFlow>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

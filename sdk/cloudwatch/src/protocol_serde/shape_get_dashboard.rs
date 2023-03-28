@@ -2,58 +2,31 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_dashboard_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetDashboardOutput, crate::error::GetDashboardError> {
+) -> std::result::Result<
+    crate::operation::get_dashboard::GetDashboardOutput,
+    crate::operation::get_dashboard::GetDashboardError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetDashboardError::unhandled)?;
+        .map_err(crate::operation::get_dashboard::GetDashboardError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::GetDashboardError::unhandled(generic)),
+        None => return Err(crate::operation::get_dashboard::GetDashboardError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceNotFound" => crate::error::GetDashboardError::DashboardNotFoundError({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::dashboard_not_found_error::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_dashboard_not_found_error::de_dashboard_not_found_error_xml_err(response.body().as_ref(), output).map_err(crate::error::GetDashboardError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InternalServiceError" => crate::error::GetDashboardError::InternalServiceFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_service_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_service_fault::de_internal_service_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::GetDashboardError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InvalidParameterValue" => {
-            crate::error::GetDashboardError::InvalidParameterValueException({
+        "ResourceNotFound" => {
+            crate::operation::get_dashboard::GetDashboardError::DashboardNotFoundError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::invalid_parameter_value_exception::Builder::default();
+                        crate::types::error::builders::DashboardNotFoundErrorBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetDashboardError::unhandled)?;
+                    output = crate::protocol_serde::shape_dashboard_not_found_error::de_dashboard_not_found_error_xml_err(response.body().as_ref(), output).map_err(crate::operation::get_dashboard::GetDashboardError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -63,23 +36,62 @@ pub fn de_get_dashboard_http_error(
                 tmp
             })
         }
-        _ => crate::error::GetDashboardError::generic(generic),
+        "InternalServiceError" => {
+            crate::operation::get_dashboard::GetDashboardError::InternalServiceFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InternalServiceFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_service_fault::de_internal_service_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::get_dashboard::GetDashboardError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidParameterValue" => {
+            crate::operation::get_dashboard::GetDashboardError::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::get_dashboard::GetDashboardError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::get_dashboard::GetDashboardError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_dashboard_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetDashboardOutput, crate::error::GetDashboardError> {
+) -> std::result::Result<
+    crate::operation::get_dashboard::GetDashboardOutput,
+    crate::operation::get_dashboard::GetDashboardError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_dashboard_output::Builder::default();
+        let mut output =
+            crate::operation::get_dashboard::builders::GetDashboardOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_get_dashboard::de_get_dashboard(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::GetDashboardError::unhandled)?;
+        .map_err(crate::operation::get_dashboard::GetDashboardError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -90,8 +102,11 @@ pub fn de_get_dashboard_http_response(
 #[allow(unused_mut)]
 pub fn de_get_dashboard(
     inp: &[u8],
-    mut builder: crate::output::get_dashboard_output::Builder,
-) -> Result<crate::output::get_dashboard_output::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    mut builder: crate::operation::get_dashboard::builders::GetDashboardOutputBuilder,
+) -> Result<
+    crate::operation::get_dashboard::builders::GetDashboardOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

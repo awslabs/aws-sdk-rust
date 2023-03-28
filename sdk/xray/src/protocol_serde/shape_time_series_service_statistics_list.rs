@@ -2,7 +2,7 @@
 pub(crate) fn de_time_series_service_statistics_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::TimeSeriesServiceStatistics>>,
+    Option<std::vec::Vec<crate::types::TimeSeriesServiceStatistics>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

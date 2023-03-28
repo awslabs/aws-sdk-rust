@@ -2,7 +2,7 @@
 pub(crate) fn de_tag_query_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::TagQueryConfiguration>,
+    Option<crate::types::TagQueryConfiguration>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::tag_query_configuration::Builder::default();
+            let mut builder = crate::types::builders::TagQueryConfigurationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -57,7 +57,7 @@ where
 
 pub fn ser_tag_query_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::TagQueryConfiguration,
+    input: &crate::types::TagQueryConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.tag_key {
         object.key("tagKey").string(var_1.as_str());

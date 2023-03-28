@@ -2,7 +2,7 @@
 pub(crate) fn de_batch_delete_device_position_history_error<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::BatchDeleteDevicePositionHistoryError>,
+    Option<crate::types::BatchDeleteDevicePositionHistoryError>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::batch_delete_device_position_history_error::Builder::default();
+                crate::types::builders::BatchDeleteDevicePositionHistoryErrorBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

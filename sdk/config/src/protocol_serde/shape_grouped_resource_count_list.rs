@@ -2,7 +2,7 @@
 pub(crate) fn de_grouped_resource_count_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::GroupedResourceCount>>,
+    Option<std::vec::Vec<crate::types::GroupedResourceCount>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

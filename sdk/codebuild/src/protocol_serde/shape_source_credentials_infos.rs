@@ -2,7 +2,7 @@
 pub(crate) fn de_source_credentials_infos<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SourceCredentialsInfo>>,
+    Option<std::vec::Vec<crate::types::SourceCredentialsInfo>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

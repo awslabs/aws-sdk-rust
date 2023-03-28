@@ -2,7 +2,7 @@
 pub(crate) fn de_user_defined_function_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::UserDefinedFunction>>,
+    Option<std::vec::Vec<crate::types::UserDefinedFunction>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

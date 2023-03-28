@@ -2,7 +2,7 @@
 pub(crate) fn de_usage_report_subscription_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::UsageReportSubscription>>,
+    Option<std::vec::Vec<crate::types::UsageReportSubscription>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

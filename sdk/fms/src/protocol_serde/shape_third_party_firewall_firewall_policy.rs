@@ -2,7 +2,7 @@
 pub(crate) fn de_third_party_firewall_firewall_policy<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ThirdPartyFirewallFirewallPolicy>,
+    Option<crate::types::ThirdPartyFirewallFirewallPolicy>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::third_party_firewall_firewall_policy::Builder::default();
+                crate::types::builders::ThirdPartyFirewallFirewallPolicyBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

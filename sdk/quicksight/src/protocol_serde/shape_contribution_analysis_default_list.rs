@@ -2,7 +2,7 @@
 pub(crate) fn de_contribution_analysis_default_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ContributionAnalysisDefault>>,
+    Option<std::vec::Vec<crate::types::ContributionAnalysisDefault>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

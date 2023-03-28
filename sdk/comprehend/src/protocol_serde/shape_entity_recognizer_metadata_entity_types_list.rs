@@ -2,7 +2,7 @@
 pub(crate) fn de_entity_recognizer_metadata_entity_types_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::EntityRecognizerMetadataEntityTypesListItem>>,
+    Option<std::vec::Vec<crate::types::EntityRecognizerMetadataEntityTypesListItem>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

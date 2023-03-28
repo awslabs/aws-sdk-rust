@@ -2,7 +2,7 @@
 pub(crate) fn de_proactive_insights<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ProactiveInsightSummary>>,
+    Option<std::vec::Vec<crate::types::ProactiveInsightSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

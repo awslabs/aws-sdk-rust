@@ -2,7 +2,7 @@
 pub(crate) fn de_host_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Host>>,
+    Option<std::vec::Vec<crate::types::Host>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

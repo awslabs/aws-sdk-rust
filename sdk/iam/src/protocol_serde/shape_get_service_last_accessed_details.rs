@@ -3,60 +3,55 @@
 pub fn de_get_service_last_accessed_details_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetServiceLastAccessedDetailsOutput,
-    crate::error::GetServiceLastAccessedDetailsError,
+    crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetailsOutput,
+    crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetailsError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetServiceLastAccessedDetailsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetailsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::GetServiceLastAccessedDetailsError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetailsError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidInput" => {
-            crate::error::GetServiceLastAccessedDetailsError::InvalidInputException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidInput" => crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetailsError::InvalidInputException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_input_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidInputExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_input_exception::de_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetServiceLastAccessedDetailsError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_input_exception::de_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetailsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "NoSuchEntity" => {
-            crate::error::GetServiceLastAccessedDetailsError::NoSuchEntityException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "NoSuchEntity" => crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetailsError::NoSuchEntityException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::no_such_entity_exception::Builder::default();
+                    let mut output = crate::types::error::builders::NoSuchEntityExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_no_such_entity_exception::de_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetServiceLastAccessedDetailsError::unhandled)?;
+                    output = crate::protocol_serde::shape_no_such_entity_exception::de_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetailsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::GetServiceLastAccessedDetailsError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetailsError::generic(generic)
     })
 }
 
@@ -64,15 +59,14 @@ pub fn de_get_service_last_accessed_details_http_error(
 pub fn de_get_service_last_accessed_details_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetServiceLastAccessedDetailsOutput,
-    crate::error::GetServiceLastAccessedDetailsError,
+    crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetailsOutput,
+    crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetailsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::output::get_service_last_accessed_details_output::Builder::default();
+        let mut output = crate::operation::get_service_last_accessed_details::builders::GetServiceLastAccessedDetailsOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_get_service_last_accessed_details::de_get_service_last_accessed_details(response.body().as_ref(), output).map_err(crate::error::GetServiceLastAccessedDetailsError::unhandled)?;
+        output = crate::protocol_serde::shape_get_service_last_accessed_details::de_get_service_last_accessed_details(response.body().as_ref(), output).map_err(crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetailsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -81,13 +75,7 @@ pub fn de_get_service_last_accessed_details_http_response(
 }
 
 #[allow(unused_mut)]
-pub fn de_get_service_last_accessed_details(
-    inp: &[u8],
-    mut builder: crate::output::get_service_last_accessed_details_output::Builder,
-) -> Result<
-    crate::output::get_service_last_accessed_details_output::Builder,
-    aws_smithy_xml::decode::XmlDecodeError,
-> {
+pub fn de_get_service_last_accessed_details(inp: &[u8], mut builder: crate::operation::get_service_last_accessed_details::builders::GetServiceLastAccessedDetailsOutputBuilder) -> Result<crate::operation::get_service_last_accessed_details::builders::GetServiceLastAccessedDetailsOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -113,8 +101,8 @@ pub fn de_get_service_last_accessed_details(
             s if s.matches("JobStatus") /* JobStatus com.amazonaws.iam.synthetic#GetServiceLastAccessedDetailsOutput$JobStatus */ =>  {
                 let var_1 =
                     Some(
-                        Result::<crate::model::JobStatusType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::JobStatusType::from(
+                        Result::<crate::types::JobStatusType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::JobStatusType::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
@@ -127,8 +115,8 @@ pub fn de_get_service_last_accessed_details(
             s if s.matches("JobType") /* JobType com.amazonaws.iam.synthetic#GetServiceLastAccessedDetailsOutput$JobType */ =>  {
                 let var_2 =
                     Some(
-                        Result::<crate::model::AccessAdvisorUsageGranularityType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::AccessAdvisorUsageGranularityType::from(
+                        Result::<crate::types::AccessAdvisorUsageGranularityType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::AccessAdvisorUsageGranularityType::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

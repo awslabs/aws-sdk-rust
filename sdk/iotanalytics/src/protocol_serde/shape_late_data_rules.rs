@@ -2,7 +2,7 @@
 pub(crate) fn de_late_data_rules<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::LateDataRule>>,
+    Option<std::vec::Vec<crate::types::LateDataRule>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

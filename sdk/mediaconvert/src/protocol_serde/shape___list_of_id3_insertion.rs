@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_id3_insertion<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Id3Insertion>>,
+    Option<std::vec::Vec<crate::types::Id3Insertion>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

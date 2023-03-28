@@ -2,7 +2,7 @@
 pub(crate) fn de_environment_images<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::EnvironmentImage>>,
+    Option<std::vec::Vec<crate::types::EnvironmentImage>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

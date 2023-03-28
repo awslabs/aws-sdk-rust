@@ -2,7 +2,7 @@
 pub(crate) fn de_savings_plans_amortized_commitment<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::SavingsPlansAmortizedCommitment>,
+    Option<crate::types::SavingsPlansAmortizedCommitment>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::savings_plans_amortized_commitment::Builder::default();
+            let mut builder =
+                crate::types::builders::SavingsPlansAmortizedCommitmentBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_cache_policy_already_exists_xml_err(
     inp: &[u8],
-    mut builder: crate::error::cache_policy_already_exists::Builder,
+    mut builder: crate::types::error::builders::CachePolicyAlreadyExistsBuilder,
 ) -> Result<
-    crate::error::cache_policy_already_exists::Builder,
+    crate::types::error::builders::CachePolicyAlreadyExistsBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

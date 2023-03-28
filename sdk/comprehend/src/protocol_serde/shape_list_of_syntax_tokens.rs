@@ -2,7 +2,7 @@
 pub(crate) fn de_list_of_syntax_tokens<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SyntaxToken>>,
+    Option<std::vec::Vec<crate::types::SyntaxToken>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

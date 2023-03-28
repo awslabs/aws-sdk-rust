@@ -2,7 +2,7 @@
 pub(crate) fn de_list_of_random_split_entry<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::RandomSplitEntry>>,
+    Option<std::vec::Vec<crate::types::RandomSplitEntry>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

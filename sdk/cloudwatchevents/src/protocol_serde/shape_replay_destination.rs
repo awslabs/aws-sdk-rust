@@ -2,7 +2,7 @@
 pub(crate) fn de_replay_destination<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ReplayDestination>,
+    Option<crate::types::ReplayDestination>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::replay_destination::Builder::default();
+            let mut builder = crate::types::builders::ReplayDestinationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -62,7 +62,7 @@ where
 
 pub fn ser_replay_destination(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::ReplayDestination,
+    input: &crate::types::ReplayDestination,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.arn {
         object.key("Arn").string(var_1.as_str());

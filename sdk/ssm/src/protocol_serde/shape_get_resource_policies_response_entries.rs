@@ -2,7 +2,7 @@
 pub(crate) fn de_get_resource_policies_response_entries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::GetResourcePoliciesResponseEntry>>,
+    Option<std::vec::Vec<crate::types::GetResourcePoliciesResponseEntry>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

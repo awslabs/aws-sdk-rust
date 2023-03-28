@@ -2,7 +2,7 @@
 pub(crate) fn de_knowledge_base_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::KnowledgeBaseSummary>>,
+    Option<std::vec::Vec<crate::types::KnowledgeBaseSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

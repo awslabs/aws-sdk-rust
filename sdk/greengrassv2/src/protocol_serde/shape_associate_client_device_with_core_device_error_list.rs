@@ -2,7 +2,7 @@
 pub(crate) fn de_associate_client_device_with_core_device_error_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AssociateClientDeviceWithCoreDeviceErrorEntry>>,
+    Option<std::vec::Vec<crate::types::AssociateClientDeviceWithCoreDeviceErrorEntry>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

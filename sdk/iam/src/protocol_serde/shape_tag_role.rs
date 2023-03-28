@@ -2,27 +2,47 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_tag_role_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::TagRoleOutput, crate::error::TagRoleError> {
+) -> std::result::Result<
+    crate::operation::tag_role::TagRoleOutput,
+    crate::operation::tag_role::TagRoleError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::TagRoleError::unhandled)?;
+        .map_err(crate::operation::tag_role::TagRoleError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::TagRoleError::unhandled(generic)),
+        None => return Err(crate::operation::tag_role::TagRoleError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConcurrentModification" => crate::error::TagRoleError::ConcurrentModificationException({
+        "ConcurrentModification" => {
+            crate::operation::tag_role::TagRoleError::ConcurrentModificationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ConcurrentModificationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_concurrent_modification_exception::de_concurrent_modification_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::tag_role::TagRoleError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidInput" => crate::operation::tag_role::TagRoleError::InvalidInputException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output =
-                    crate::error::concurrent_modification_exception::Builder::default();
+                    crate::types::error::builders::InvalidInputExceptionBuilder::default();
                 let _ = response;
-                output = crate::protocol_serde::shape_concurrent_modification_exception::de_concurrent_modification_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagRoleError::unhandled)?;
+                output = crate::protocol_serde::shape_invalid_input_exception::de_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::tag_role::TagRoleError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -31,13 +51,14 @@ pub fn de_tag_role_http_error(
             }
             tmp
         }),
-        "InvalidInput" => crate::error::TagRoleError::InvalidInputException({
+        "LimitExceeded" => crate::operation::tag_role::TagRoleError::LimitExceededException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_input_exception::Builder::default();
+                let mut output =
+                    crate::types::error::builders::LimitExceededExceptionBuilder::default();
                 let _ = response;
-                output = crate::protocol_serde::shape_invalid_input_exception::de_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagRoleError::unhandled)?;
+                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::tag_role::TagRoleError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -46,13 +67,14 @@ pub fn de_tag_role_http_error(
             }
             tmp
         }),
-        "LimitExceeded" => crate::error::TagRoleError::LimitExceededException({
+        "NoSuchEntity" => crate::operation::tag_role::TagRoleError::NoSuchEntityException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                let mut output =
+                    crate::types::error::builders::NoSuchEntityExceptionBuilder::default();
                 let _ = response;
-                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagRoleError::unhandled)?;
+                output = crate::protocol_serde::shape_no_such_entity_exception::de_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::tag_role::TagRoleError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -61,13 +83,14 @@ pub fn de_tag_role_http_error(
             }
             tmp
         }),
-        "NoSuchEntity" => crate::error::TagRoleError::NoSuchEntityException({
+        "ServiceFailure" => crate::operation::tag_role::TagRoleError::ServiceFailureException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::error::no_such_entity_exception::Builder::default();
+                let mut output =
+                    crate::types::error::builders::ServiceFailureExceptionBuilder::default();
                 let _ = response;
-                output = crate::protocol_serde::shape_no_such_entity_exception::de_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagRoleError::unhandled)?;
+                output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::tag_role::TagRoleError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -76,32 +99,20 @@ pub fn de_tag_role_http_error(
             }
             tmp
         }),
-        "ServiceFailure" => crate::error::TagRoleError::ServiceFailureException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::service_failure_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagRoleError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::TagRoleError::generic(generic),
+        _ => crate::operation::tag_role::TagRoleError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_tag_role_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::TagRoleOutput, crate::error::TagRoleError> {
+) -> std::result::Result<
+    crate::operation::tag_role::TagRoleOutput,
+    crate::operation::tag_role::TagRoleError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::tag_role_output::Builder::default();
+        let mut output = crate::operation::tag_role::builders::TagRoleOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

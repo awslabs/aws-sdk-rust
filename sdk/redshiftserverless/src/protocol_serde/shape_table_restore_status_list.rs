@@ -2,7 +2,7 @@
 pub(crate) fn de_table_restore_status_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::TableRestoreStatus>>,
+    Option<std::vec::Vec<crate::types::TableRestoreStatus>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

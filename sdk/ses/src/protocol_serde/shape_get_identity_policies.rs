@@ -3,33 +3,33 @@
 pub fn de_get_identity_policies_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetIdentityPoliciesOutput,
-    crate::error::GetIdentityPoliciesError,
+    crate::operation::get_identity_policies::GetIdentityPoliciesOutput,
+    crate::operation::get_identity_policies::GetIdentityPoliciesError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetIdentityPoliciesError::unhandled)?;
+        .map_err(crate::operation::get_identity_policies::GetIdentityPoliciesError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::GetIdentityPoliciesError::generic(generic))
+    Err(crate::operation::get_identity_policies::GetIdentityPoliciesError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_identity_policies_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetIdentityPoliciesOutput,
-    crate::error::GetIdentityPoliciesError,
+    crate::operation::get_identity_policies::GetIdentityPoliciesOutput,
+    crate::operation::get_identity_policies::GetIdentityPoliciesError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_identity_policies_output::Builder::default();
+        let mut output = crate::operation::get_identity_policies::builders::GetIdentityPoliciesOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_get_identity_policies::de_get_identity_policies(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::GetIdentityPoliciesError::unhandled)?;
+        .map_err(crate::operation::get_identity_policies::GetIdentityPoliciesError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -40,9 +40,9 @@ pub fn de_get_identity_policies_http_response(
 #[allow(unused_mut)]
 pub fn de_get_identity_policies(
     inp: &[u8],
-    mut builder: crate::output::get_identity_policies_output::Builder,
+    mut builder: crate::operation::get_identity_policies::builders::GetIdentityPoliciesOutputBuilder,
 ) -> Result<
-    crate::output::get_identity_policies_output::Builder,
+    crate::operation::get_identity_policies::builders::GetIdentityPoliciesOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

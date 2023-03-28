@@ -2,7 +2,7 @@
 pub(crate) fn de_aws_ecs_container_details_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AwsEcsContainerDetails>>,
+    Option<std::vec::Vec<crate::types::AwsEcsContainerDetails>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

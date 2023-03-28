@@ -2,7 +2,7 @@
 pub(crate) fn de_list_of_model_version_evaluations<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ModelVersionEvaluation>>,
+    Option<std::vec::Vec<crate::types::ModelVersionEvaluation>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

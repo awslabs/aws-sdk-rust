@@ -2,7 +2,7 @@
 pub fn de_traffic_mirror_network_service_list(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::TrafficMirrorNetworkService>,
+    std::vec::Vec<crate::types::TrafficMirrorNetworkService>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();
@@ -10,8 +10,8 @@ pub fn de_traffic_mirror_network_service_list(
         match tag.start_el() {
             s if s.matches("item") /* member com.amazonaws.ec2#TrafficMirrorNetworkServiceList$member */ =>  {
                 out.push(
-                    Result::<crate::model::TrafficMirrorNetworkService, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                        crate::model::TrafficMirrorNetworkService::from(
+                    Result::<crate::types::TrafficMirrorNetworkService, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                        crate::types::TrafficMirrorNetworkService::from(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                         )
                     )

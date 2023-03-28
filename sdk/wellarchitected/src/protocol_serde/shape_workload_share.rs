@@ -2,7 +2,7 @@
 pub(crate) fn de_workload_share<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::WorkloadShare>,
+    Option<crate::types::WorkloadShare>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::workload_share::Builder::default();
+            let mut builder = crate::types::builders::WorkloadShareBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -57,7 +57,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::PermissionType::from(u.as_ref()))
+                                            .map(|u| crate::types::PermissionType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -69,7 +69,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::ShareStatus::from(u.as_ref()))
+                                            .map(|u| crate::types::ShareStatus::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

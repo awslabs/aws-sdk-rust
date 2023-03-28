@@ -3,60 +3,61 @@
 pub fn de_delete_inbound_connection_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteInboundConnectionOutput,
-    crate::error::DeleteInboundConnectionError,
+    crate::operation::delete_inbound_connection::DeleteInboundConnectionOutput,
+    crate::operation::delete_inbound_connection::DeleteInboundConnectionError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteInboundConnectionError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::delete_inbound_connection::DeleteInboundConnectionError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::error::DeleteInboundConnectionError::unhandled(
+        None => return Err(
+            crate::operation::delete_inbound_connection::DeleteInboundConnectionError::unhandled(
                 generic,
-            ))
-        }
+            ),
+        ),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DisabledOperationException" => {
-            crate::error::DeleteInboundConnectionError::DisabledOperationException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "DisabledOperationException" => crate::operation::delete_inbound_connection::DeleteInboundConnectionError::DisabledOperationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::disabled_operation_exception::Builder::default();
+                    let mut output = crate::types::error::builders::DisabledOperationExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_disabled_operation_exception::de_disabled_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteInboundConnectionError::unhandled)?;
+                    output = crate::protocol_serde::shape_disabled_operation_exception::de_disabled_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_inbound_connection::DeleteInboundConnectionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ResourceNotFoundException" => {
-            crate::error::DeleteInboundConnectionError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::delete_inbound_connection::DeleteInboundConnectionError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteInboundConnectionError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_inbound_connection::DeleteInboundConnectionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DeleteInboundConnectionError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::delete_inbound_connection::DeleteInboundConnectionError::generic(generic)
     })
 }
 
@@ -64,19 +65,14 @@ pub fn de_delete_inbound_connection_http_error(
 pub fn de_delete_inbound_connection_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteInboundConnectionOutput,
-    crate::error::DeleteInboundConnectionError,
+    crate::operation::delete_inbound_connection::DeleteInboundConnectionOutput,
+    crate::operation::delete_inbound_connection::DeleteInboundConnectionError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_inbound_connection_output::Builder::default();
+        let mut output = crate::operation::delete_inbound_connection::builders::DeleteInboundConnectionOutputBuilder::default();
         let _ = response;
-        output =
-            crate::protocol_serde::shape_delete_inbound_connection::de_delete_inbound_connection(
-                response.body().as_ref(),
-                output,
-            )
-            .map_err(crate::error::DeleteInboundConnectionError::unhandled)?;
+        output = crate::protocol_serde::shape_delete_inbound_connection::de_delete_inbound_connection(response.body().as_ref(), output).map_err(crate::operation::delete_inbound_connection::DeleteInboundConnectionError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -86,9 +82,9 @@ pub fn de_delete_inbound_connection_http_response(
 
 pub(crate) fn de_delete_inbound_connection(
     value: &[u8],
-    mut builder: crate::output::delete_inbound_connection_output::Builder,
+    mut builder: crate::operation::delete_inbound_connection::builders::DeleteInboundConnectionOutputBuilder,
 ) -> Result<
-    crate::output::delete_inbound_connection_output::Builder,
+    crate::operation::delete_inbound_connection::builders::DeleteInboundConnectionOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

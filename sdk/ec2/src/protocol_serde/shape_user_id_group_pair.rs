@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_user_id_group_pair(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::UserIdGroupPair,
+    input: &crate::types::UserIdGroupPair,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Description");
@@ -44,9 +44,9 @@ pub fn ser_user_id_group_pair(
 
 pub fn de_user_id_group_pair(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::UserIdGroupPair, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::UserIdGroupPair, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::UserIdGroupPair::builder();
+    let mut builder = crate::types::UserIdGroupPair::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("description") /* Description com.amazonaws.ec2#UserIdGroupPair$Description */ =>  {

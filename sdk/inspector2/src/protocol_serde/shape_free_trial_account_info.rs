@@ -2,7 +2,7 @@
 pub(crate) fn de_free_trial_account_info<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::FreeTrialAccountInfo>,
+    Option<crate::types::FreeTrialAccountInfo>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::free_trial_account_info::Builder::default();
+            let mut builder = crate::types::builders::FreeTrialAccountInfoBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

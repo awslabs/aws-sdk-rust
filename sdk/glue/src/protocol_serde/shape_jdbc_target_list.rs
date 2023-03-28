@@ -2,7 +2,7 @@
 pub(crate) fn de_jdbc_target_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::JdbcTarget>>,
+    Option<std::vec::Vec<crate::types::JdbcTarget>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

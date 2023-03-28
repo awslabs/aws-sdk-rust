@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_invalid_cloud_watch_destination_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::invalid_cloud_watch_destination_exception::Builder,
+    mut builder: crate::types::error::builders::InvalidCloudWatchDestinationExceptionBuilder,
 ) -> Result<
-    crate::error::invalid_cloud_watch_destination_exception::Builder,
+    crate::types::error::builders::InvalidCloudWatchDestinationExceptionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

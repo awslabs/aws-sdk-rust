@@ -2,7 +2,7 @@
 pub(crate) fn de_visual_custom_action_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::VisualCustomAction>>,
+    Option<std::vec::Vec<crate::types::VisualCustomAction>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

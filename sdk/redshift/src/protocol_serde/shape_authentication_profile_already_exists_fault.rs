@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_authentication_profile_already_exists_fault_xml_err(
     inp: &[u8],
-    mut builder: crate::error::authentication_profile_already_exists_fault::Builder,
+    mut builder: crate::types::error::builders::AuthenticationProfileAlreadyExistsFaultBuilder,
 ) -> Result<
-    crate::error::authentication_profile_already_exists_fault::Builder,
+    crate::types::error::builders::AuthenticationProfileAlreadyExistsFaultBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

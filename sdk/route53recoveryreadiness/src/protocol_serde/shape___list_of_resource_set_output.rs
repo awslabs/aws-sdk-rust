@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_resource_set_output<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ResourceSetOutput>>,
+    Option<std::vec::Vec<crate::types::ResourceSetOutput>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

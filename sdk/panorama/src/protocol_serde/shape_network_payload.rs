@@ -2,7 +2,7 @@
 pub(crate) fn de_network_payload<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::NetworkPayload>,
+    Option<crate::types::NetworkPayload>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::network_payload::Builder::default();
+            let mut builder = crate::types::builders::NetworkPayloadBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -65,7 +65,7 @@ where
 
 pub fn ser_network_payload(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::NetworkPayload,
+    input: &crate::types::NetworkPayload,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.ethernet0 {
         #[allow(unused_mut)]

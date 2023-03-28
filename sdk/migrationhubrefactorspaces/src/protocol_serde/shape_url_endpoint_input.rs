@@ -2,7 +2,7 @@
 pub(crate) fn de_url_endpoint_input<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::UrlEndpointInput>,
+    Option<crate::types::UrlEndpointInput>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::url_endpoint_input::Builder::default();
+            let mut builder = crate::types::builders::UrlEndpointInputBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -66,7 +66,7 @@ where
 
 pub fn ser_url_endpoint_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::UrlEndpointInput,
+    input: &crate::types::UrlEndpointInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.url {
         object.key("Url").string(var_1.as_str());

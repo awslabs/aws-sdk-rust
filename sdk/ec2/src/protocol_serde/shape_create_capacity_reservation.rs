@@ -3,31 +3,34 @@
 pub fn de_create_capacity_reservation_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateCapacityReservationOutput,
-    crate::error::CreateCapacityReservationError,
+    crate::operation::create_capacity_reservation::CreateCapacityReservationOutput,
+    crate::operation::create_capacity_reservation::CreateCapacityReservationError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::CreateCapacityReservationError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::create_capacity_reservation::CreateCapacityReservationError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::CreateCapacityReservationError::generic(
-        generic,
-    ))
+    Err(
+        crate::operation::create_capacity_reservation::CreateCapacityReservationError::generic(
+            generic,
+        ),
+    )
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_capacity_reservation_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateCapacityReservationOutput,
-    crate::error::CreateCapacityReservationError,
+    crate::operation::create_capacity_reservation::CreateCapacityReservationOutput,
+    crate::operation::create_capacity_reservation::CreateCapacityReservationError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::create_capacity_reservation_output::Builder::default();
+        let mut output = crate::operation::create_capacity_reservation::builders::CreateCapacityReservationOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_create_capacity_reservation::de_create_capacity_reservation(response.body().as_ref(), output).map_err(crate::error::CreateCapacityReservationError::unhandled)?;
+        output = crate::protocol_serde::shape_create_capacity_reservation::de_create_capacity_reservation(response.body().as_ref(), output).map_err(crate::operation::create_capacity_reservation::CreateCapacityReservationError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -38,9 +41,9 @@ pub fn de_create_capacity_reservation_http_response(
 #[allow(unused_mut)]
 pub fn de_create_capacity_reservation(
     inp: &[u8],
-    mut builder: crate::output::create_capacity_reservation_output::Builder,
+    mut builder: crate::operation::create_capacity_reservation::builders::CreateCapacityReservationOutputBuilder,
 ) -> Result<
-    crate::output::create_capacity_reservation_output::Builder,
+    crate::operation::create_capacity_reservation::builders::CreateCapacityReservationOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

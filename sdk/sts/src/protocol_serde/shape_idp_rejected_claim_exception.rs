@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_idp_rejected_claim_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::idp_rejected_claim_exception::Builder,
+    mut builder: crate::types::error::builders::IdpRejectedClaimExceptionBuilder,
 ) -> Result<
-    crate::error::idp_rejected_claim_exception::Builder,
+    crate::types::error::builders::IdpRejectedClaimExceptionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

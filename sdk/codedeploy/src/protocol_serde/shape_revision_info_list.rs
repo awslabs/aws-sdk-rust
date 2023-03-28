@@ -2,7 +2,7 @@
 pub(crate) fn de_revision_info_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::RevisionInfo>>,
+    Option<std::vec::Vec<crate::types::RevisionInfo>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

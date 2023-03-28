@@ -2,7 +2,7 @@
 pub(crate) fn de_organization_event<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::OrganizationEvent>,
+    Option<crate::types::OrganizationEvent>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::organization_event::Builder::default();
+            let mut builder = crate::types::builders::OrganizationEventBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -57,7 +57,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::EventTypeCategory::from(u.as_ref())
+                                            crate::types::EventTypeCategory::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -70,7 +70,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::EventScopeCode::from(u.as_ref()))
+                                            .map(|u| crate::types::EventScopeCode::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -115,7 +115,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::EventStatusCode::from(u.as_ref())
+                                            crate::types::EventStatusCode::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

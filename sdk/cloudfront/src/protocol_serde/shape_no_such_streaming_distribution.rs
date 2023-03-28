@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_no_such_streaming_distribution_xml_err(
     inp: &[u8],
-    mut builder: crate::error::no_such_streaming_distribution::Builder,
+    mut builder: crate::types::error::builders::NoSuchStreamingDistributionBuilder,
 ) -> Result<
-    crate::error::no_such_streaming_distribution::Builder,
+    crate::types::error::builders::NoSuchStreamingDistributionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

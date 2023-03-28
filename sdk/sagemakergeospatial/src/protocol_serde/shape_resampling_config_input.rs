@@ -2,7 +2,7 @@
 pub(crate) fn de_resampling_config_input<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ResamplingConfigInput>,
+    Option<crate::types::ResamplingConfigInput>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::resampling_config_input::Builder::default();
+            let mut builder = crate::types::builders::ResamplingConfigInputBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -35,7 +35,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::AlgorithmNameResampling::from(u.as_ref())
+                                            crate::types::AlgorithmNameResampling::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -71,7 +71,7 @@ where
 
 pub fn ser_resampling_config_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::ResamplingConfigInput,
+    input: &crate::types::ResamplingConfigInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.output_resolution {
         #[allow(unused_mut)]

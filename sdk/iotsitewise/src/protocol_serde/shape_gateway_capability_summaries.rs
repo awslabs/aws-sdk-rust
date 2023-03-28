@@ -2,7 +2,7 @@
 pub(crate) fn de_gateway_capability_summaries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::GatewayCapabilitySummary>>,
+    Option<std::vec::Vec<crate::types::GatewayCapabilitySummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

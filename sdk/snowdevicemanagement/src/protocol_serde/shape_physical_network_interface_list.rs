@@ -2,7 +2,7 @@
 pub(crate) fn de_physical_network_interface_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::PhysicalNetworkInterface>>,
+    Option<std::vec::Vec<crate::types::PhysicalNetworkInterface>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_wave_aggregated_status<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::WaveAggregatedStatus>,
+    Option<crate::types::WaveAggregatedStatus>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::wave_aggregated_status::Builder::default();
+            let mut builder = crate::types::builders::WaveAggregatedStatusBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -48,7 +48,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::WaveHealthStatus::from(u.as_ref())
+                                            crate::types::WaveHealthStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -61,7 +61,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::WaveProgressStatus::from(u.as_ref())
+                                            crate::types::WaveProgressStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

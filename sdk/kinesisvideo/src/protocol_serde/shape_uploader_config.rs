@@ -2,7 +2,7 @@
 pub(crate) fn de_uploader_config<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::UploaderConfig>,
+    Option<crate::types::UploaderConfig>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::uploader_config::Builder::default();
+            let mut builder = crate::types::builders::UploaderConfigBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -53,7 +53,7 @@ where
 
 pub fn ser_uploader_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::UploaderConfig,
+    input: &crate::types::UploaderConfig,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.schedule_config {
         #[allow(unused_mut)]

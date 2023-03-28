@@ -2,7 +2,7 @@
 pub fn de_application_description_list(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::ApplicationDescription>,
+    std::vec::Vec<crate::types::ApplicationDescription>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

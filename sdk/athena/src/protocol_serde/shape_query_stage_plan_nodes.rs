@@ -2,7 +2,7 @@
 pub(crate) fn de_query_stage_plan_nodes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::QueryStagePlanNode>>,
+    Option<std::vec::Vec<crate::types::QueryStagePlanNode>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

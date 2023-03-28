@@ -2,51 +2,65 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_session_token_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetSessionTokenOutput, crate::error::GetSessionTokenError> {
+) -> std::result::Result<
+    crate::operation::get_session_token::GetSessionTokenOutput,
+    crate::operation::get_session_token::GetSessionTokenError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetSessionTokenError::unhandled)?;
+        .map_err(crate::operation::get_session_token::GetSessionTokenError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::GetSessionTokenError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::get_session_token::GetSessionTokenError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "RegionDisabledException" => crate::error::GetSessionTokenError::RegionDisabledException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "RegionDisabledException" => {
+            crate::operation::get_session_token::GetSessionTokenError::RegionDisabledException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::region_disabled_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_region_disabled_exception::de_region_disabled_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetSessionTokenError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::GetSessionTokenError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::RegionDisabledExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_region_disabled_exception::de_region_disabled_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::get_session_token::GetSessionTokenError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::get_session_token::GetSessionTokenError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_session_token_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetSessionTokenOutput, crate::error::GetSessionTokenError> {
+) -> std::result::Result<
+    crate::operation::get_session_token::GetSessionTokenOutput,
+    crate::operation::get_session_token::GetSessionTokenError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_session_token_output::Builder::default();
+        let mut output =
+            crate::operation::get_session_token::builders::GetSessionTokenOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_get_session_token::de_get_session_token(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::GetSessionTokenError::unhandled)?;
+        .map_err(crate::operation::get_session_token::GetSessionTokenError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -57,9 +71,11 @@ pub fn de_get_session_token_http_response(
 #[allow(unused_mut)]
 pub fn de_get_session_token(
     inp: &[u8],
-    mut builder: crate::output::get_session_token_output::Builder,
-) -> Result<crate::output::get_session_token_output::Builder, aws_smithy_xml::decode::XmlDecodeError>
-{
+    mut builder: crate::operation::get_session_token::builders::GetSessionTokenOutputBuilder,
+) -> Result<
+    crate::operation::get_session_token::builders::GetSessionTokenOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

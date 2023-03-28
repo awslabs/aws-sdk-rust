@@ -2,7 +2,7 @@
 pub fn de_transit_gateway_connect_peer_list(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::TransitGatewayConnectPeer>,
+    std::vec::Vec<crate::types::TransitGatewayConnectPeer>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

@@ -2,7 +2,7 @@
 pub(crate) fn de_package_version_error_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<std::string::String, crate::model::PackageVersionError>>,
+    Option<std::collections::HashMap<std::string::String, crate::types::PackageVersionError>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

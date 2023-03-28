@@ -2,7 +2,7 @@
 pub(crate) fn de_eks_attempt_container_details<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::EksAttemptContainerDetail>>,
+    Option<std::vec::Vec<crate::types::EksAttemptContainerDetail>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

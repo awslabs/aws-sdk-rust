@@ -2,7 +2,7 @@
 pub(crate) fn de_antenna_demod_decode_details<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::AntennaDemodDecodeDetails>,
+    Option<crate::types::AntennaDemodDecodeDetails>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::antenna_demod_decode_details::Builder::default();
+            let mut builder = crate::types::builders::AntennaDemodDecodeDetailsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

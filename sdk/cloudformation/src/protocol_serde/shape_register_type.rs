@@ -2,51 +2,61 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_register_type_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::RegisterTypeOutput, crate::error::RegisterTypeError> {
+) -> std::result::Result<
+    crate::operation::register_type::RegisterTypeOutput,
+    crate::operation::register_type::RegisterTypeError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::RegisterTypeError::unhandled)?;
+        .map_err(crate::operation::register_type::RegisterTypeError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::RegisterTypeError::unhandled(generic)),
+        None => return Err(crate::operation::register_type::RegisterTypeError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CFNRegistryException" => crate::error::RegisterTypeError::CfnRegistryException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "CFNRegistryException" => {
+            crate::operation::register_type::RegisterTypeError::CfnRegistryException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::cfn_registry_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_cfn_registry_exception::de_cfn_registry_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::RegisterTypeError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::RegisterTypeError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::CfnRegistryExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_cfn_registry_exception::de_cfn_registry_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::register_type::RegisterTypeError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::register_type::RegisterTypeError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_register_type_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::RegisterTypeOutput, crate::error::RegisterTypeError> {
+) -> std::result::Result<
+    crate::operation::register_type::RegisterTypeOutput,
+    crate::operation::register_type::RegisterTypeError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::register_type_output::Builder::default();
+        let mut output =
+            crate::operation::register_type::builders::RegisterTypeOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_register_type::de_register_type(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::RegisterTypeError::unhandled)?;
+        .map_err(crate::operation::register_type::RegisterTypeError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -57,8 +67,11 @@ pub fn de_register_type_http_response(
 #[allow(unused_mut)]
 pub fn de_register_type(
     inp: &[u8],
-    mut builder: crate::output::register_type_output::Builder,
-) -> Result<crate::output::register_type_output::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    mut builder: crate::operation::register_type::builders::RegisterTypeOutputBuilder,
+) -> Result<
+    crate::operation::register_type::builders::RegisterTypeOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

@@ -2,7 +2,7 @@
 pub(crate) fn de_dataset_detail_org_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::DatasetDetailOrgAttributes>,
+    Option<crate::types::DatasetDetailOrgAttributes>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -29,20 +29,20 @@ where
                     }
                     variant = match key.to_unescaped()?.as_ref() {
                             "vsam" => {
-                                Some(crate::model::DatasetDetailOrgAttributes::Vsam(
+                                Some(crate::types::DatasetDetailOrgAttributes::Vsam(
                                     crate::protocol_serde::shape_vsam_detail_attributes::de_vsam_detail_attributes(tokens)?
                                     .ok_or_else(|| aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'vsam' cannot be null"))?
                                 ))
                             }
                             "gdg" => {
-                                Some(crate::model::DatasetDetailOrgAttributes::Gdg(
+                                Some(crate::types::DatasetDetailOrgAttributes::Gdg(
                                     crate::protocol_serde::shape_gdg_detail_attributes::de_gdg_detail_attributes(tokens)?
                                     .ok_or_else(|| aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'gdg' cannot be null"))?
                                 ))
                             }
                             _ => {
                                                                       aws_smithy_json::deserialize::token::skip_value(tokens)?;
-                                                                      Some(crate::model::DatasetDetailOrgAttributes::Unknown)
+                                                                      Some(crate::types::DatasetDetailOrgAttributes::Unknown)
                                                                     }
                         };
                 }

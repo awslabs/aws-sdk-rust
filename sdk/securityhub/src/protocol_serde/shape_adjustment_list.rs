@@ -2,7 +2,7 @@
 pub(crate) fn de_adjustment_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Adjustment>>,
+    Option<std::vec::Vec<crate::types::Adjustment>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

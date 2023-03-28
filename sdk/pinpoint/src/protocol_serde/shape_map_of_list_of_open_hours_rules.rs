@@ -4,8 +4,8 @@ pub(crate) fn de_map_of_list_of_open_hours_rules<'a, I>(
 ) -> Result<
     Option<
         std::collections::HashMap<
-            crate::model::DayOfWeek,
-            std::vec::Vec<crate::model::OpenHoursRule>,
+            crate::types::DayOfWeek,
+            std::vec::Vec<crate::types::OpenHoursRule>,
         >,
     >,
     aws_smithy_json::deserialize::error::DeserializeError,
@@ -28,7 +28,7 @@ where
                     Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         let key = key
                             .to_unescaped()
-                            .map(|u| crate::model::DayOfWeek::from(u.as_ref()))?;
+                            .map(|u| crate::types::DayOfWeek::from(u.as_ref()))?;
                         let value =
                             crate::protocol_serde::shape_list_of_open_hours_rules::de_list_of_open_hours_rules(tokens)?
                         ;

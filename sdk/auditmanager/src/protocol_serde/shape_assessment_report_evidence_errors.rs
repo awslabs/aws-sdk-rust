@@ -2,7 +2,7 @@
 pub(crate) fn de_assessment_report_evidence_errors<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AssessmentReportEvidenceError>>,
+    Option<std::vec::Vec<crate::types::AssessmentReportEvidenceError>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

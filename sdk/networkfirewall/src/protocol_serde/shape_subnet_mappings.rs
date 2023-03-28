@@ -2,7 +2,7 @@
 pub(crate) fn de_subnet_mappings<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SubnetMapping>>,
+    Option<std::vec::Vec<crate::types::SubnetMapping>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

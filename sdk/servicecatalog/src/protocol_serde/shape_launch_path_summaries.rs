@@ -2,7 +2,7 @@
 pub(crate) fn de_launch_path_summaries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::LaunchPathSummary>>,
+    Option<std::vec::Vec<crate::types::LaunchPathSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -3,62 +3,55 @@
 pub fn de_get_reusable_delegation_set_limit_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetReusableDelegationSetLimitOutput,
-    crate::error::GetReusableDelegationSetLimitError,
+    crate::operation::get_reusable_delegation_set_limit::GetReusableDelegationSetLimitOutput,
+    crate::operation::get_reusable_delegation_set_limit::GetReusableDelegationSetLimitError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetReusableDelegationSetLimitError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::get_reusable_delegation_set_limit::GetReusableDelegationSetLimitError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::GetReusableDelegationSetLimitError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::get_reusable_delegation_set_limit::GetReusableDelegationSetLimitError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidInput" => crate::error::GetReusableDelegationSetLimitError::InvalidInput({
+        "InvalidInput" => crate::operation::get_reusable_delegation_set_limit::GetReusableDelegationSetLimitError::InvalidInput({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::invalid_input::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_input::de_invalid_input_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::GetReusableDelegationSetLimitError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "NoSuchDelegationSet" => {
-            crate::error::GetReusableDelegationSetLimitError::NoSuchDelegationSet({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::no_such_delegation_set::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidInputBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_no_such_delegation_set::de_no_such_delegation_set_xml_err(response.body().as_ref(), output).map_err(crate::error::GetReusableDelegationSetLimitError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_input::de_invalid_input_xml_err(response.body().as_ref(), output).map_err(crate::operation::get_reusable_delegation_set_limit::GetReusableDelegationSetLimitError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::GetReusableDelegationSetLimitError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "NoSuchDelegationSet" => crate::operation::get_reusable_delegation_set_limit::GetReusableDelegationSetLimitError::NoSuchDelegationSet({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::NoSuchDelegationSetBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_no_such_delegation_set::de_no_such_delegation_set_xml_err(response.body().as_ref(), output).map_err(crate::operation::get_reusable_delegation_set_limit::GetReusableDelegationSetLimitError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::get_reusable_delegation_set_limit::GetReusableDelegationSetLimitError::generic(generic)
     })
 }
 
@@ -66,15 +59,14 @@ pub fn de_get_reusable_delegation_set_limit_http_error(
 pub fn de_get_reusable_delegation_set_limit_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetReusableDelegationSetLimitOutput,
-    crate::error::GetReusableDelegationSetLimitError,
+    crate::operation::get_reusable_delegation_set_limit::GetReusableDelegationSetLimitOutput,
+    crate::operation::get_reusable_delegation_set_limit::GetReusableDelegationSetLimitError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::output::get_reusable_delegation_set_limit_output::Builder::default();
+        let mut output = crate::operation::get_reusable_delegation_set_limit::builders::GetReusableDelegationSetLimitOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_get_reusable_delegation_set_limit::de_get_reusable_delegation_set_limit(response.body().as_ref(), output).map_err(crate::error::GetReusableDelegationSetLimitError::unhandled)?;
+        output = crate::protocol_serde::shape_get_reusable_delegation_set_limit::de_get_reusable_delegation_set_limit(response.body().as_ref(), output).map_err(crate::operation::get_reusable_delegation_set_limit::GetReusableDelegationSetLimitError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -83,13 +75,7 @@ pub fn de_get_reusable_delegation_set_limit_http_response(
 }
 
 #[allow(unused_mut)]
-pub fn de_get_reusable_delegation_set_limit(
-    inp: &[u8],
-    mut builder: crate::output::get_reusable_delegation_set_limit_output::Builder,
-) -> Result<
-    crate::output::get_reusable_delegation_set_limit_output::Builder,
-    aws_smithy_xml::decode::XmlDecodeError,
-> {
+pub fn de_get_reusable_delegation_set_limit(inp: &[u8], mut builder: crate::operation::get_reusable_delegation_set_limit::builders::GetReusableDelegationSetLimitOutputBuilder) -> Result<crate::operation::get_reusable_delegation_set_limit::builders::GetReusableDelegationSetLimitOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

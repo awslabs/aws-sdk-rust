@@ -2,7 +2,7 @@
 pub(crate) fn de_code_gen_configuration_nodes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<std::string::String, crate::model::CodeGenConfigurationNode>>,
+    Option<std::collections::HashMap<std::string::String, crate::types::CodeGenConfigurationNode>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

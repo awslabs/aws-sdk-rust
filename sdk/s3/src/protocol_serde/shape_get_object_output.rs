@@ -11,7 +11,10 @@ pub(crate) fn de_accept_ranges_header(
 
 pub fn de_body_payload(
     body: &mut aws_smithy_http::body::SdkBody,
-) -> std::result::Result<aws_smithy_http::byte_stream::ByteStream, crate::error::GetObjectError> {
+) -> std::result::Result<
+    aws_smithy_http::byte_stream::ByteStream,
+    crate::operation::get_object::GetObjectError,
+> {
     // replace the body with an empty body
     let body = std::mem::replace(body, aws_smithy_http::body::SdkBody::taken());
     Ok(aws_smithy_http::byte_stream::ByteStream::new(body))
@@ -266,7 +269,7 @@ pub(crate) fn de_missing_meta_header(
 pub(crate) fn de_object_lock_legal_hold_status_header(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
-    std::option::Option<crate::model::ObjectLockLegalHoldStatus>,
+    std::option::Option<crate::types::ObjectLockLegalHoldStatus>,
     aws_smithy_http::header::ParseError,
 > {
     let headers = header_map.get_all("x-amz-object-lock-legal-hold").iter();
@@ -276,7 +279,7 @@ pub(crate) fn de_object_lock_legal_hold_status_header(
 pub(crate) fn de_object_lock_mode_header(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
-    std::option::Option<crate::model::ObjectLockMode>,
+    std::option::Option<crate::types::ObjectLockMode>,
     aws_smithy_http::header::ParseError,
 > {
     let headers = header_map.get_all("x-amz-object-lock-mode").iter();
@@ -326,7 +329,7 @@ pub(crate) fn de_parts_count_header(
 pub(crate) fn de_replication_status_header(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
-    std::option::Option<crate::model::ReplicationStatus>,
+    std::option::Option<crate::types::ReplicationStatus>,
     aws_smithy_http::header::ParseError,
 > {
     let headers = header_map.get_all("x-amz-replication-status").iter();
@@ -336,7 +339,7 @@ pub(crate) fn de_replication_status_header(
 pub(crate) fn de_request_charged_header(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
-    std::option::Option<crate::model::RequestCharged>,
+    std::option::Option<crate::types::RequestCharged>,
     aws_smithy_http::header::ParseError,
 > {
     let headers = header_map.get_all("x-amz-request-charged").iter();
@@ -392,7 +395,7 @@ pub(crate) fn de_ssekms_key_id_header(
 pub(crate) fn de_server_side_encryption_header(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
-    std::option::Option<crate::model::ServerSideEncryption>,
+    std::option::Option<crate::types::ServerSideEncryption>,
     aws_smithy_http::header::ParseError,
 > {
     let headers = header_map.get_all("x-amz-server-side-encryption").iter();
@@ -402,7 +405,7 @@ pub(crate) fn de_server_side_encryption_header(
 pub(crate) fn de_storage_class_header(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
-    std::option::Option<crate::model::StorageClass>,
+    std::option::Option<crate::types::StorageClass>,
     aws_smithy_http::header::ParseError,
 > {
     let headers = header_map.get_all("x-amz-storage-class").iter();

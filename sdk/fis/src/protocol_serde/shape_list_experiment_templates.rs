@@ -3,41 +3,44 @@
 pub fn de_list_experiment_templates_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListExperimentTemplatesOutput,
-    crate::error::ListExperimentTemplatesError,
+    crate::operation::list_experiment_templates::ListExperimentTemplatesOutput,
+    crate::operation::list_experiment_templates::ListExperimentTemplatesError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListExperimentTemplatesError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::list_experiment_templates::ListExperimentTemplatesError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::error::ListExperimentTemplatesError::unhandled(
+        None => return Err(
+            crate::operation::list_experiment_templates::ListExperimentTemplatesError::unhandled(
                 generic,
-            ))
-        }
+            ),
+        ),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ValidationException" => crate::error::ListExperimentTemplatesError::ValidationException({
+        "ValidationException" => crate::operation::list_experiment_templates::ListExperimentTemplatesError::ValidationException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListExperimentTemplatesError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_experiment_templates::ListExperimentTemplatesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::ListExperimentTemplatesError::generic(generic),
+        _ => crate::operation::list_experiment_templates::ListExperimentTemplatesError::generic(generic)
     })
 }
 
@@ -45,19 +48,14 @@ pub fn de_list_experiment_templates_http_error(
 pub fn de_list_experiment_templates_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListExperimentTemplatesOutput,
-    crate::error::ListExperimentTemplatesError,
+    crate::operation::list_experiment_templates::ListExperimentTemplatesOutput,
+    crate::operation::list_experiment_templates::ListExperimentTemplatesError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_experiment_templates_output::Builder::default();
+        let mut output = crate::operation::list_experiment_templates::builders::ListExperimentTemplatesOutputBuilder::default();
         let _ = response;
-        output =
-            crate::protocol_serde::shape_list_experiment_templates::de_list_experiment_templates(
-                response.body().as_ref(),
-                output,
-            )
-            .map_err(crate::error::ListExperimentTemplatesError::unhandled)?;
+        output = crate::protocol_serde::shape_list_experiment_templates::de_list_experiment_templates(response.body().as_ref(), output).map_err(crate::operation::list_experiment_templates::ListExperimentTemplatesError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -67,9 +65,9 @@ pub fn de_list_experiment_templates_http_response(
 
 pub(crate) fn de_list_experiment_templates(
     value: &[u8],
-    mut builder: crate::output::list_experiment_templates_output::Builder,
+    mut builder: crate::operation::list_experiment_templates::builders::ListExperimentTemplatesOutputBuilder,
 ) -> Result<
-    crate::output::list_experiment_templates_output::Builder,
+    crate::operation::list_experiment_templates::builders::ListExperimentTemplatesOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

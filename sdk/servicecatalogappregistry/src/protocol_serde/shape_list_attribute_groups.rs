@@ -3,54 +3,62 @@
 pub fn de_list_attribute_groups_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListAttributeGroupsOutput,
-    crate::error::ListAttributeGroupsError,
+    crate::operation::list_attribute_groups::ListAttributeGroupsOutput,
+    crate::operation::list_attribute_groups::ListAttributeGroupsError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListAttributeGroupsError::unhandled)?;
+        .map_err(crate::operation::list_attribute_groups::ListAttributeGroupsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListAttributeGroupsError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::list_attribute_groups::ListAttributeGroupsError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerException" => {
-            crate::error::ListAttributeGroupsError::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalServerException" => crate::operation::list_attribute_groups::ListAttributeGroupsError::InternalServerException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAttributeGroupsError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_attribute_groups::ListAttributeGroupsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ValidationException" => crate::error::ListAttributeGroupsError::ValidationException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAttributeGroupsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::ListAttributeGroupsError::generic(generic),
+        "ValidationException" => crate::operation::list_attribute_groups::ListAttributeGroupsError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_attribute_groups::ListAttributeGroupsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::list_attribute_groups::ListAttributeGroupsError::generic(generic)
     })
 }
 
@@ -58,18 +66,18 @@ pub fn de_list_attribute_groups_http_error(
 pub fn de_list_attribute_groups_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListAttributeGroupsOutput,
-    crate::error::ListAttributeGroupsError,
+    crate::operation::list_attribute_groups::ListAttributeGroupsOutput,
+    crate::operation::list_attribute_groups::ListAttributeGroupsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_attribute_groups_output::Builder::default();
+        let mut output = crate::operation::list_attribute_groups::builders::ListAttributeGroupsOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_attribute_groups::de_list_attribute_groups(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListAttributeGroupsError::unhandled)?;
+        .map_err(crate::operation::list_attribute_groups::ListAttributeGroupsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -79,9 +87,9 @@ pub fn de_list_attribute_groups_http_response(
 
 pub(crate) fn de_list_attribute_groups(
     value: &[u8],
-    mut builder: crate::output::list_attribute_groups_output::Builder,
+    mut builder: crate::operation::list_attribute_groups::builders::ListAttributeGroupsOutputBuilder,
 ) -> Result<
-    crate::output::list_attribute_groups_output::Builder,
+    crate::operation::list_attribute_groups::builders::ListAttributeGroupsOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

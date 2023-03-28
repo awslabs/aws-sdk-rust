@@ -2,7 +2,7 @@
 pub(crate) fn de_cvss_score_adjustment_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CvssScoreAdjustment>>,
+    Option<std::vec::Vec<crate::types::CvssScoreAdjustment>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

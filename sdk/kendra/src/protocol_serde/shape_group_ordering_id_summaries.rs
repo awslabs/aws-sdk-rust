@@ -2,7 +2,7 @@
 pub(crate) fn de_group_ordering_id_summaries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::GroupOrderingIdSummary>>,
+    Option<std::vec::Vec<crate::types::GroupOrderingIdSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

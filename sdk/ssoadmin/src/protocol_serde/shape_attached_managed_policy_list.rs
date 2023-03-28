@@ -2,7 +2,7 @@
 pub(crate) fn de_attached_managed_policy_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AttachedManagedPolicy>>,
+    Option<std::vec::Vec<crate::types::AttachedManagedPolicy>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_launches_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Launch>>,
+    Option<std::vec::Vec<crate::types::Launch>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

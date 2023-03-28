@@ -2,7 +2,7 @@
 pub(crate) fn de_metric_policy_rules<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::MetricPolicyRule>>,
+    Option<std::vec::Vec<crate::types::MetricPolicyRule>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

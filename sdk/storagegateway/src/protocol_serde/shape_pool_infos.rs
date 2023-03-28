@@ -2,7 +2,7 @@
 pub(crate) fn de_pool_infos<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::PoolInfo>>,
+    Option<std::vec::Vec<crate::types::PoolInfo>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_field_level_encryption_config_already_exists_xml_err(
     inp: &[u8],
-    mut builder: crate::error::field_level_encryption_config_already_exists::Builder,
+    mut builder: crate::types::error::builders::FieldLevelEncryptionConfigAlreadyExistsBuilder,
 ) -> Result<
-    crate::error::field_level_encryption_config_already_exists::Builder,
+    crate::types::error::builders::FieldLevelEncryptionConfigAlreadyExistsBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

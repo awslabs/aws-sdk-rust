@@ -2,8 +2,11 @@
 #[allow(unused_mut)]
 pub fn de_too_many_functions_xml_err(
     inp: &[u8],
-    mut builder: crate::error::too_many_functions::Builder,
-) -> Result<crate::error::too_many_functions::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    mut builder: crate::types::error::builders::TooManyFunctionsBuilder,
+) -> Result<
+    crate::types::error::builders::TooManyFunctionsBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     if inp.is_empty() {
         return Ok(builder);
     }

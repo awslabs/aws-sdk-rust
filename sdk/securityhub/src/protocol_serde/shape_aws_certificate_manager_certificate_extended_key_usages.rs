@@ -2,7 +2,7 @@
 pub(crate) fn de_aws_certificate_manager_certificate_extended_key_usages<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AwsCertificateManagerCertificateExtendedKeyUsage>>,
+    Option<std::vec::Vec<crate::types::AwsCertificateManagerCertificateExtendedKeyUsage>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

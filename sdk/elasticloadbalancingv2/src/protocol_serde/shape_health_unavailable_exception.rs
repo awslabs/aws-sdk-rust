@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_health_unavailable_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::health_unavailable_exception::Builder,
+    mut builder: crate::types::error::builders::HealthUnavailableExceptionBuilder,
 ) -> Result<
-    crate::error::health_unavailable_exception::Builder,
+    crate::types::error::builders::HealthUnavailableExceptionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

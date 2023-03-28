@@ -2,44 +2,35 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_reboot_db_instance_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::RebootDbInstanceOutput, crate::error::RebootDBInstanceError>
-{
+) -> std::result::Result<
+    crate::operation::reboot_db_instance::RebootDbInstanceOutput,
+    crate::operation::reboot_db_instance::RebootDBInstanceError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::RebootDBInstanceError::unhandled)?;
+        .map_err(crate::operation::reboot_db_instance::RebootDBInstanceError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::RebootDBInstanceError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::reboot_db_instance::RebootDBInstanceError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBInstanceNotFound" => crate::error::RebootDBInstanceError::DbInstanceNotFoundFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::db_instance_not_found_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_db_instance_not_found_fault::de_db_instance_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RebootDBInstanceError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InvalidDBInstanceState" => {
-            crate::error::RebootDBInstanceError::InvalidDbInstanceStateFault({
+        "DBInstanceNotFound" => {
+            crate::operation::reboot_db_instance::RebootDBInstanceError::DbInstanceNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::invalid_db_instance_state_fault::Builder::default();
+                        crate::types::error::builders::DbInstanceNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_db_instance_state_fault::de_invalid_db_instance_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RebootDBInstanceError::unhandled)?;
+                    output = crate::protocol_serde::shape_db_instance_not_found_fault::de_db_instance_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::reboot_db_instance::RebootDBInstanceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -49,24 +40,47 @@ pub fn de_reboot_db_instance_http_error(
                 tmp
             })
         }
-        _ => crate::error::RebootDBInstanceError::generic(generic),
+        "InvalidDBInstanceState" => {
+            crate::operation::reboot_db_instance::RebootDBInstanceError::InvalidDbInstanceStateFault(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidDbInstanceStateFaultBuilder::default();
+                        let _ = response;
+                        output = crate::protocol_serde::shape_invalid_db_instance_state_fault::de_invalid_db_instance_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::reboot_db_instance::RebootDBInstanceError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        _ => crate::operation::reboot_db_instance::RebootDBInstanceError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_reboot_db_instance_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::RebootDbInstanceOutput, crate::error::RebootDBInstanceError>
-{
+) -> std::result::Result<
+    crate::operation::reboot_db_instance::RebootDbInstanceOutput,
+    crate::operation::reboot_db_instance::RebootDBInstanceError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::reboot_db_instance_output::Builder::default();
+        let mut output =
+            crate::operation::reboot_db_instance::builders::RebootDbInstanceOutputBuilder::default(
+            );
         let _ = response;
         output = crate::protocol_serde::shape_reboot_db_instance::de_reboot_db_instance(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::RebootDBInstanceError::unhandled)?;
+        .map_err(crate::operation::reboot_db_instance::RebootDBInstanceError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -77,9 +91,11 @@ pub fn de_reboot_db_instance_http_response(
 #[allow(unused_mut)]
 pub fn de_reboot_db_instance(
     inp: &[u8],
-    mut builder: crate::output::reboot_db_instance_output::Builder,
-) -> Result<crate::output::reboot_db_instance_output::Builder, aws_smithy_xml::decode::XmlDecodeError>
-{
+    mut builder: crate::operation::reboot_db_instance::builders::RebootDbInstanceOutputBuilder,
+) -> Result<
+    crate::operation::reboot_db_instance::builders::RebootDbInstanceOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

@@ -3,111 +3,112 @@
 pub fn de_get_identity_resolution_job_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetIdentityResolutionJobOutput,
-    crate::error::GetIdentityResolutionJobError,
+    crate::operation::get_identity_resolution_job::GetIdentityResolutionJobOutput,
+    crate::operation::get_identity_resolution_job::GetIdentityResolutionJobError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetIdentityResolutionJobError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::get_identity_resolution_job::GetIdentityResolutionJobError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::error::GetIdentityResolutionJobError::unhandled(
+        None => return Err(
+            crate::operation::get_identity_resolution_job::GetIdentityResolutionJobError::unhandled(
                 generic,
-            ))
-        }
+            ),
+        ),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => {
-            crate::error::GetIdentityResolutionJobError::AccessDeniedException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "AccessDeniedException" => crate::operation::get_identity_resolution_job::GetIdentityResolutionJobError::AccessDeniedException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetIdentityResolutionJobError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_identity_resolution_job::GetIdentityResolutionJobError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "BadRequestException" => {
-            crate::error::GetIdentityResolutionJobError::BadRequestException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "BadRequestException" => crate::operation::get_identity_resolution_job::GetIdentityResolutionJobError::BadRequestException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::bad_request_exception::Builder::default();
+                    let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetIdentityResolutionJobError::unhandled)?;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_identity_resolution_job::GetIdentityResolutionJobError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InternalServerException" => {
-            crate::error::GetIdentityResolutionJobError::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InternalServerException" => crate::operation::get_identity_resolution_job::GetIdentityResolutionJobError::InternalServerException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetIdentityResolutionJobError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_identity_resolution_job::GetIdentityResolutionJobError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ResourceNotFoundException" => {
-            crate::error::GetIdentityResolutionJobError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::get_identity_resolution_job::GetIdentityResolutionJobError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetIdentityResolutionJobError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_identity_resolution_job::GetIdentityResolutionJobError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ThrottlingException" => {
-            crate::error::GetIdentityResolutionJobError::ThrottlingException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ThrottlingException" => crate::operation::get_identity_resolution_job::GetIdentityResolutionJobError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetIdentityResolutionJobError::unhandled)?;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_identity_resolution_job::GetIdentityResolutionJobError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::GetIdentityResolutionJobError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::get_identity_resolution_job::GetIdentityResolutionJobError::generic(generic)
     })
 }
 
@@ -115,14 +116,14 @@ pub fn de_get_identity_resolution_job_http_error(
 pub fn de_get_identity_resolution_job_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetIdentityResolutionJobOutput,
-    crate::error::GetIdentityResolutionJobError,
+    crate::operation::get_identity_resolution_job::GetIdentityResolutionJobOutput,
+    crate::operation::get_identity_resolution_job::GetIdentityResolutionJobError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_identity_resolution_job_output::Builder::default();
+        let mut output = crate::operation::get_identity_resolution_job::builders::GetIdentityResolutionJobOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_get_identity_resolution_job::de_get_identity_resolution_job(response.body().as_ref(), output).map_err(crate::error::GetIdentityResolutionJobError::unhandled)?;
+        output = crate::protocol_serde::shape_get_identity_resolution_job::de_get_identity_resolution_job(response.body().as_ref(), output).map_err(crate::operation::get_identity_resolution_job::GetIdentityResolutionJobError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -132,9 +133,9 @@ pub fn de_get_identity_resolution_job_http_response(
 
 pub(crate) fn de_get_identity_resolution_job(
     value: &[u8],
-    mut builder: crate::output::get_identity_resolution_job_output::Builder,
+    mut builder: crate::operation::get_identity_resolution_job::builders::GetIdentityResolutionJobOutputBuilder,
 ) -> Result<
-    crate::output::get_identity_resolution_job_output::Builder,
+    crate::operation::get_identity_resolution_job::builders::GetIdentityResolutionJobOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =
@@ -230,7 +231,7 @@ pub(crate) fn de_get_identity_resolution_job(
                             )?
                             .map(|s| {
                                 s.to_unescaped().map(|u| {
-                                    crate::model::IdentityResolutionJobStatus::from(u.as_ref())
+                                    crate::types::IdentityResolutionJobStatus::from(u.as_ref())
                                 })
                             })
                             .transpose()?,

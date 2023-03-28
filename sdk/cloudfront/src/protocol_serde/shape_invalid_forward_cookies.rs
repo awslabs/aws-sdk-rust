@@ -2,9 +2,11 @@
 #[allow(unused_mut)]
 pub fn de_invalid_forward_cookies_xml_err(
     inp: &[u8],
-    mut builder: crate::error::invalid_forward_cookies::Builder,
-) -> Result<crate::error::invalid_forward_cookies::Builder, aws_smithy_xml::decode::XmlDecodeError>
-{
+    mut builder: crate::types::error::builders::InvalidForwardCookiesBuilder,
+) -> Result<
+    crate::types::error::builders::InvalidForwardCookiesBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     if inp.is_empty() {
         return Ok(builder);
     }

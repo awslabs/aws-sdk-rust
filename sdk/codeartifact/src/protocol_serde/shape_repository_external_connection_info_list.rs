@@ -2,7 +2,7 @@
 pub(crate) fn de_repository_external_connection_info_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::RepositoryExternalConnectionInfo>>,
+    Option<std::vec::Vec<crate::types::RepositoryExternalConnectionInfo>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

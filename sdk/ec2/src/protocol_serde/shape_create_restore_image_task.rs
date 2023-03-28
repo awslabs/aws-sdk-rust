@@ -3,34 +3,37 @@
 pub fn de_create_restore_image_task_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateRestoreImageTaskOutput,
-    crate::error::CreateRestoreImageTaskError,
+    crate::operation::create_restore_image_task::CreateRestoreImageTaskOutput,
+    crate::operation::create_restore_image_task::CreateRestoreImageTaskError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::CreateRestoreImageTaskError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::create_restore_image_task::CreateRestoreImageTaskError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::CreateRestoreImageTaskError::generic(generic))
+    Err(crate::operation::create_restore_image_task::CreateRestoreImageTaskError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_restore_image_task_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateRestoreImageTaskOutput,
-    crate::error::CreateRestoreImageTaskError,
+    crate::operation::create_restore_image_task::CreateRestoreImageTaskOutput,
+    crate::operation::create_restore_image_task::CreateRestoreImageTaskError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::create_restore_image_task_output::Builder::default();
+        let mut output = crate::operation::create_restore_image_task::builders::CreateRestoreImageTaskOutputBuilder::default();
         let _ = response;
         output =
             crate::protocol_serde::shape_create_restore_image_task::de_create_restore_image_task(
                 response.body().as_ref(),
                 output,
             )
-            .map_err(crate::error::CreateRestoreImageTaskError::unhandled)?;
+            .map_err(
+                crate::operation::create_restore_image_task::CreateRestoreImageTaskError::unhandled,
+            )?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -41,9 +44,9 @@ pub fn de_create_restore_image_task_http_response(
 #[allow(unused_mut)]
 pub fn de_create_restore_image_task(
     inp: &[u8],
-    mut builder: crate::output::create_restore_image_task_output::Builder,
+    mut builder: crate::operation::create_restore_image_task::builders::CreateRestoreImageTaskOutputBuilder,
 ) -> Result<
-    crate::output::create_restore_image_task_output::Builder,
+    crate::operation::create_restore_image_task::builders::CreateRestoreImageTaskOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

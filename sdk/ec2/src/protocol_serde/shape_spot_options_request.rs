@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_spot_options_request(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::SpotOptionsRequest,
+    input: &crate::types::SpotOptionsRequest,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("AllocationStrategy");

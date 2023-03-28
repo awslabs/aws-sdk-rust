@@ -2,7 +2,7 @@
 pub(crate) fn de_batch_predictions<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::BatchPrediction>>,
+    Option<std::vec::Vec<crate::types::BatchPrediction>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_ice_server_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::IceServer>>,
+    Option<std::vec::Vec<crate::types::IceServer>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

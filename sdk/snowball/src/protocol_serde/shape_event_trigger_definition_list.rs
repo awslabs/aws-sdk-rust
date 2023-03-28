@@ -2,7 +2,7 @@
 pub(crate) fn de_event_trigger_definition_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::EventTriggerDefinition>>,
+    Option<std::vec::Vec<crate::types::EventTriggerDefinition>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

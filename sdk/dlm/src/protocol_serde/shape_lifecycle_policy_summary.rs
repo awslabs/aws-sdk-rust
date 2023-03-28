@@ -2,7 +2,7 @@
 pub(crate) fn de_lifecycle_policy_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::LifecyclePolicySummary>,
+    Option<crate::types::LifecyclePolicySummary>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::lifecycle_policy_summary::Builder::default();
+            let mut builder = crate::types::builders::LifecyclePolicySummaryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -48,7 +48,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::GettablePolicyStateValues::from(
+                                            crate::types::GettablePolicyStateValues::from(
                                                 u.as_ref(),
                                             )
                                         })
@@ -68,7 +68,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::PolicyTypeValues::from(u.as_ref())
+                                            crate::types::PolicyTypeValues::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

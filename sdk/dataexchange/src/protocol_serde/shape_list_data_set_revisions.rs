@@ -3,86 +3,96 @@
 pub fn de_list_data_set_revisions_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListDataSetRevisionsOutput,
-    crate::error::ListDataSetRevisionsError,
+    crate::operation::list_data_set_revisions::ListDataSetRevisionsOutput,
+    crate::operation::list_data_set_revisions::ListDataSetRevisionsError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListDataSetRevisionsError::unhandled)?;
+        .map_err(crate::operation::list_data_set_revisions::ListDataSetRevisionsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListDataSetRevisionsError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::list_data_set_revisions::ListDataSetRevisionsError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerException" => {
-            crate::error::ListDataSetRevisionsError::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalServerException" => crate::operation::list_data_set_revisions::ListDataSetRevisionsError::InternalServerException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDataSetRevisionsError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_data_set_revisions::ListDataSetRevisionsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ResourceNotFoundException" => {
-            crate::error::ListDataSetRevisionsError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::list_data_set_revisions::ListDataSetRevisionsError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDataSetRevisionsError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_data_set_revisions::ListDataSetRevisionsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ThrottlingException" => crate::error::ListDataSetRevisionsError::ThrottlingException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::throttling_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDataSetRevisionsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "ValidationException" => crate::error::ListDataSetRevisionsError::ValidationException({
+        "ThrottlingException" => crate::operation::list_data_set_revisions::ListDataSetRevisionsError::ThrottlingException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDataSetRevisionsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_data_set_revisions::ListDataSetRevisionsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::ListDataSetRevisionsError::generic(generic),
+        "ValidationException" => crate::operation::list_data_set_revisions::ListDataSetRevisionsError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_data_set_revisions::ListDataSetRevisionsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::list_data_set_revisions::ListDataSetRevisionsError::generic(generic)
     })
 }
 
@@ -90,18 +100,18 @@ pub fn de_list_data_set_revisions_http_error(
 pub fn de_list_data_set_revisions_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListDataSetRevisionsOutput,
-    crate::error::ListDataSetRevisionsError,
+    crate::operation::list_data_set_revisions::ListDataSetRevisionsOutput,
+    crate::operation::list_data_set_revisions::ListDataSetRevisionsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_data_set_revisions_output::Builder::default();
+        let mut output = crate::operation::list_data_set_revisions::builders::ListDataSetRevisionsOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_data_set_revisions::de_list_data_set_revisions(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListDataSetRevisionsError::unhandled)?;
+        .map_err(crate::operation::list_data_set_revisions::ListDataSetRevisionsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -111,9 +121,9 @@ pub fn de_list_data_set_revisions_http_response(
 
 pub(crate) fn de_list_data_set_revisions(
     value: &[u8],
-    mut builder: crate::output::list_data_set_revisions_output::Builder,
+    mut builder: crate::operation::list_data_set_revisions::builders::ListDataSetRevisionsOutputBuilder,
 ) -> Result<
-    crate::output::list_data_set_revisions_output::Builder,
+    crate::operation::list_data_set_revisions::builders::ListDataSetRevisionsOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

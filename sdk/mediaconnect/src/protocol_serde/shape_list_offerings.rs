@@ -2,43 +2,52 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_offerings_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListOfferingsOutput, crate::error::ListOfferingsError> {
+) -> std::result::Result<
+    crate::operation::list_offerings::ListOfferingsOutput,
+    crate::operation::list_offerings::ListOfferingsError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListOfferingsError::unhandled)?;
+        .map_err(crate::operation::list_offerings::ListOfferingsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListOfferingsError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::list_offerings::ListOfferingsError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::ListOfferingsError::BadRequestException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListOfferingsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InternalServerErrorException" => {
-            crate::error::ListOfferingsError::InternalServerErrorException({
+        "BadRequestException" => {
+            crate::operation::list_offerings::ListOfferingsError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::internal_server_error_exception::Builder::default();
+                        crate::types::error::builders::BadRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListOfferingsError::unhandled)?;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_offerings::ListOfferingsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InternalServerErrorException" => {
+            crate::operation::list_offerings::ListOfferingsError::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InternalServerErrorExceptionBuilder::default(
+                        );
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_offerings::ListOfferingsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -49,14 +58,15 @@ pub fn de_list_offerings_http_error(
             })
         }
         "ServiceUnavailableException" => {
-            crate::error::ListOfferingsError::ServiceUnavailableException({
+            crate::operation::list_offerings::ListOfferingsError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::service_unavailable_exception::Builder::default();
+                        crate::types::error::builders::ServiceUnavailableExceptionBuilder::default(
+                        );
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListOfferingsError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_offerings::ListOfferingsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -66,38 +76,45 @@ pub fn de_list_offerings_http_error(
                 tmp
             })
         }
-        "TooManyRequestsException" => crate::error::ListOfferingsError::TooManyRequestsException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "TooManyRequestsException" => {
+            crate::operation::list_offerings::ListOfferingsError::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListOfferingsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::ListOfferingsError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_offerings::ListOfferingsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::list_offerings::ListOfferingsError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_offerings_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListOfferingsOutput, crate::error::ListOfferingsError> {
+) -> std::result::Result<
+    crate::operation::list_offerings::ListOfferingsOutput,
+    crate::operation::list_offerings::ListOfferingsError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_offerings_output::Builder::default();
+        let mut output =
+            crate::operation::list_offerings::builders::ListOfferingsOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_offerings::de_list_offerings(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListOfferingsError::unhandled)?;
+        .map_err(crate::operation::list_offerings::ListOfferingsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -107,9 +124,9 @@ pub fn de_list_offerings_http_response(
 
 pub(crate) fn de_list_offerings(
     value: &[u8],
-    mut builder: crate::output::list_offerings_output::Builder,
+    mut builder: crate::operation::list_offerings::builders::ListOfferingsOutputBuilder,
 ) -> Result<
-    crate::output::list_offerings_output::Builder,
+    crate::operation::list_offerings::builders::ListOfferingsOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

@@ -2,7 +2,7 @@
 pub(crate) fn de_certificate_validation_record<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::CertificateValidationRecord>,
+    Option<crate::types::CertificateValidationRecord>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::certificate_validation_record::Builder::default();
+            let mut builder = crate::types::builders::CertificateValidationRecordBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -57,7 +57,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::CertificateValidationRecordStatus::from(
+                                            crate::types::CertificateValidationRecordStatus::from(
                                                 u.as_ref(),
                                             )
                                         })

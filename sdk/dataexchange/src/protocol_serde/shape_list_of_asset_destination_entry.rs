@@ -2,7 +2,7 @@
 pub(crate) fn de_list_of_asset_destination_entry<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AssetDestinationEntry>>,
+    Option<std::vec::Vec<crate::types::AssetDestinationEntry>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

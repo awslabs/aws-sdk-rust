@@ -2,7 +2,7 @@
 pub(crate) fn de_subscribed_rule_group_summaries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SubscribedRuleGroupSummary>>,
+    Option<std::vec::Vec<crate::types::SubscribedRuleGroupSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

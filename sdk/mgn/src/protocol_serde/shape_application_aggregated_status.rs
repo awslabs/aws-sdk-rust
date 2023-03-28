@@ -2,7 +2,7 @@
 pub(crate) fn de_application_aggregated_status<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ApplicationAggregatedStatus>,
+    Option<crate::types::ApplicationAggregatedStatus>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::application_aggregated_status::Builder::default();
+            let mut builder = crate::types::builders::ApplicationAggregatedStatusBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -39,7 +39,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ApplicationHealthStatus::from(u.as_ref())
+                                            crate::types::ApplicationHealthStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -52,7 +52,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ApplicationProgressStatus::from(
+                                            crate::types::ApplicationProgressStatus::from(
                                                 u.as_ref(),
                                             )
                                         })

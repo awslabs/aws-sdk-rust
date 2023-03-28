@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_reserved_instance_limit_price(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::ReservedInstanceLimitPrice,
+    input: &crate::types::ReservedInstanceLimitPrice,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Amount");

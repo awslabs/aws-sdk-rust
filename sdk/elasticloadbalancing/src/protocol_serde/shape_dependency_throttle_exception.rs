@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_dependency_throttle_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::dependency_throttle_exception::Builder,
+    mut builder: crate::types::error::builders::DependencyThrottleExceptionBuilder,
 ) -> Result<
-    crate::error::dependency_throttle_exception::Builder,
+    crate::types::error::builders::DependencyThrottleExceptionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

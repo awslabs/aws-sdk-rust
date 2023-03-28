@@ -2,7 +2,7 @@
 pub(crate) fn de_base_screenshots<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::BaseScreenshot>>,
+    Option<std::vec::Vec<crate::types::BaseScreenshot>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

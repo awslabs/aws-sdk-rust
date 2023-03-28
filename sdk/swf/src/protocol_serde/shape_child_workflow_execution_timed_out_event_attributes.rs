@@ -2,7 +2,7 @@
 pub(crate) fn de_child_workflow_execution_timed_out_event_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ChildWorkflowExecutionTimedOutEventAttributes>,
+    Option<crate::types::ChildWorkflowExecutionTimedOutEventAttributes>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,9 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder =
-                crate::model::child_workflow_execution_timed_out_event_attributes::Builder::default(
-                );
+            let mut builder = crate::types::builders::ChildWorkflowExecutionTimedOutEventAttributesBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -44,7 +42,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::WorkflowExecutionTimeoutType::from(
+                                            crate::types::WorkflowExecutionTimeoutType::from(
                                                 u.as_ref(),
                                             )
                                         })

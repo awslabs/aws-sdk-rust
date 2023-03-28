@@ -2,7 +2,7 @@
 pub fn de_endpoint_authorizations(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::EndpointAuthorization>,
+    std::vec::Vec<crate::types::EndpointAuthorization>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

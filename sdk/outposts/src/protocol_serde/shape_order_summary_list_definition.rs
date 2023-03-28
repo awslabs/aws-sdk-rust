@@ -2,7 +2,7 @@
 pub(crate) fn de_order_summary_list_definition<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::OrderSummary>>,
+    Option<std::vec::Vec<crate::types::OrderSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

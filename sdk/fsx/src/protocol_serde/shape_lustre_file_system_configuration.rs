@@ -2,7 +2,7 @@
 pub(crate) fn de_lustre_file_system_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::LustreFileSystemConfiguration>,
+    Option<crate::types::LustreFileSystemConfiguration>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::lustre_file_system_configuration::Builder::default();
+            let mut builder =
+                crate::types::builders::LustreFileSystemConfigurationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -44,7 +45,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::LustreDeploymentType::from(u.as_ref())
+                                            crate::types::LustreDeploymentType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -100,7 +101,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::DriveCacheType::from(u.as_ref()))
+                                            .map(|u| crate::types::DriveCacheType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -112,7 +113,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::DataCompressionType::from(u.as_ref())
+                                            crate::types::DataCompressionType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

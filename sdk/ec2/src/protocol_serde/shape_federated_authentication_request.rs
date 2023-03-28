@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_federated_authentication_request(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::FederatedAuthenticationRequest,
+    input: &crate::types::FederatedAuthenticationRequest,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("SAMLProviderArn");

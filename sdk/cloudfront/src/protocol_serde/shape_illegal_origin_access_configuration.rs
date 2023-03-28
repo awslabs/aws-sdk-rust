@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_illegal_origin_access_configuration_xml_err(
     inp: &[u8],
-    mut builder: crate::error::illegal_origin_access_configuration::Builder,
+    mut builder: crate::types::error::builders::IllegalOriginAccessConfigurationBuilder,
 ) -> Result<
-    crate::error::illegal_origin_access_configuration::Builder,
+    crate::types::error::builders::IllegalOriginAccessConfigurationBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

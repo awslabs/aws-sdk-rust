@@ -2,11 +2,11 @@
 pub fn de_verified_access_trust_provider_condensed(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    crate::model::VerifiedAccessTrustProviderCondensed,
+    crate::types::VerifiedAccessTrustProviderCondensed,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     #[allow(unused_mut)]
-    let mut builder = crate::model::VerifiedAccessTrustProviderCondensed::builder();
+    let mut builder = crate::types::VerifiedAccessTrustProviderCondensed::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("verifiedAccessTrustProviderId") /* VerifiedAccessTrustProviderId com.amazonaws.ec2#VerifiedAccessTrustProviderCondensed$VerifiedAccessTrustProviderId */ =>  {
@@ -38,8 +38,8 @@ pub fn de_verified_access_trust_provider_condensed(
             s if s.matches("trustProviderType") /* TrustProviderType com.amazonaws.ec2#VerifiedAccessTrustProviderCondensed$TrustProviderType */ =>  {
                 let var_3 =
                     Some(
-                        Result::<crate::model::TrustProviderType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::TrustProviderType::from(
+                        Result::<crate::types::TrustProviderType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::TrustProviderType::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
@@ -52,8 +52,8 @@ pub fn de_verified_access_trust_provider_condensed(
             s if s.matches("userTrustProviderType") /* UserTrustProviderType com.amazonaws.ec2#VerifiedAccessTrustProviderCondensed$UserTrustProviderType */ =>  {
                 let var_4 =
                     Some(
-                        Result::<crate::model::UserTrustProviderType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::UserTrustProviderType::from(
+                        Result::<crate::types::UserTrustProviderType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::UserTrustProviderType::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
@@ -66,8 +66,8 @@ pub fn de_verified_access_trust_provider_condensed(
             s if s.matches("deviceTrustProviderType") /* DeviceTrustProviderType com.amazonaws.ec2#VerifiedAccessTrustProviderCondensed$DeviceTrustProviderType */ =>  {
                 let var_5 =
                     Some(
-                        Result::<crate::model::DeviceTrustProviderType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::DeviceTrustProviderType::from(
+                        Result::<crate::types::DeviceTrustProviderType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::DeviceTrustProviderType::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

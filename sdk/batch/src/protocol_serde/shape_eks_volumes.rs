@@ -2,7 +2,7 @@
 pub(crate) fn de_eks_volumes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::EksVolume>>,
+    Option<std::vec::Vec<crate::types::EksVolume>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

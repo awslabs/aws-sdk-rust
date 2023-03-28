@@ -2,11 +2,11 @@
 pub fn de_serverless_v2_scaling_configuration_info(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    crate::model::ServerlessV2ScalingConfigurationInfo,
+    crate::types::ServerlessV2ScalingConfigurationInfo,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     #[allow(unused_mut)]
-    let mut builder = crate::model::ServerlessV2ScalingConfigurationInfo::builder();
+    let mut builder = crate::types::ServerlessV2ScalingConfigurationInfo::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("MinCapacity") /* MinCapacity com.amazonaws.rds#ServerlessV2ScalingConfigurationInfo$MinCapacity */ =>  {

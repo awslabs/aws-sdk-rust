@@ -2,7 +2,7 @@
 pub(crate) fn de_put_partner_events_result_entry_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::PutPartnerEventsResultEntry>>,
+    Option<std::vec::Vec<crate::types::PutPartnerEventsResultEntry>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

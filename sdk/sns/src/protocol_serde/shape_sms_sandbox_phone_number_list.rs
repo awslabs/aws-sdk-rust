@@ -2,7 +2,7 @@
 pub fn de_sms_sandbox_phone_number_list(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::SmsSandboxPhoneNumber>,
+    std::vec::Vec<crate::types::SmsSandboxPhoneNumber>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

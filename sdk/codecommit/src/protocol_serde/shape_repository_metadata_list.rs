@@ -2,7 +2,7 @@
 pub(crate) fn de_repository_metadata_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::RepositoryMetadata>>,
+    Option<std::vec::Vec<crate::types::RepositoryMetadata>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

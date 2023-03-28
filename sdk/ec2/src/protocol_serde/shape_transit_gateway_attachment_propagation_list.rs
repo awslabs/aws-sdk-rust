@@ -2,7 +2,7 @@
 pub fn de_transit_gateway_attachment_propagation_list(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::TransitGatewayAttachmentPropagation>,
+    std::vec::Vec<crate::types::TransitGatewayAttachmentPropagation>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_continuous_deployment_policy_in_use_xml_err(
     inp: &[u8],
-    mut builder: crate::error::continuous_deployment_policy_in_use::Builder,
+    mut builder: crate::types::error::builders::ContinuousDeploymentPolicyInUseBuilder,
 ) -> Result<
-    crate::error::continuous_deployment_policy_in_use::Builder,
+    crate::types::error::builders::ContinuousDeploymentPolicyInUseBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

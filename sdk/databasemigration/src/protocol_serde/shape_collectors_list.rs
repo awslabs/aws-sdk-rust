@@ -2,7 +2,7 @@
 pub(crate) fn de_collectors_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CollectorShortInfoResponse>>,
+    Option<std::vec::Vec<crate::types::CollectorShortInfoResponse>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

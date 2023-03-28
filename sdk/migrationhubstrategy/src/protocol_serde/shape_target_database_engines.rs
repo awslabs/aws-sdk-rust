@@ -2,7 +2,7 @@
 pub(crate) fn de_target_database_engines<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::TargetDatabaseEngine>>,
+    Option<std::vec::Vec<crate::types::TargetDatabaseEngine>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -29,7 +29,7 @@ where
                         )?
                         .map(|s| {
                             s.to_unescaped()
-                                .map(|u| crate::model::TargetDatabaseEngine::from(u.as_ref()))
+                                .map(|u| crate::types::TargetDatabaseEngine::from(u.as_ref()))
                         })
                         .transpose()?;
                         if let Some(value) = value {

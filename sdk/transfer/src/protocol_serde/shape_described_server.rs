@@ -2,7 +2,7 @@
 pub(crate) fn de_described_server<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::DescribedServer>,
+    Option<crate::types::DescribedServer>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::described_server::Builder::default();
+            let mut builder = crate::types::builders::DescribedServerBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -53,7 +53,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::Domain::from(u.as_ref()))
+                                            .map(|u| crate::types::Domain::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -70,7 +70,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::EndpointType::from(u.as_ref()))
+                                            .map(|u| crate::types::EndpointType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -96,7 +96,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::IdentityProviderType::from(u.as_ref())
+                                            crate::types::IdentityProviderType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -159,7 +159,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::State::from(u.as_ref()))
+                                            .map(|u| crate::types::State::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

@@ -2,7 +2,7 @@
 pub(crate) fn de_sig_v4_authorization<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::SigV4Authorization>,
+    Option<crate::types::SigV4Authorization>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::sig_v4_authorization::Builder::default();
+            let mut builder = crate::types::builders::SigV4AuthorizationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -75,7 +75,7 @@ where
 
 pub fn ser_sig_v4_authorization(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::SigV4Authorization,
+    input: &crate::types::SigV4Authorization,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.signing_region {
         object.key("signingRegion").string(var_1.as_str());

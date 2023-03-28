@@ -2,11 +2,11 @@
 pub fn de_continuous_deployment_policy_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::ContinuousDeploymentPolicy>,
-    crate::error::UpdateContinuousDeploymentPolicyError,
+    std::option::Option<crate::types::ContinuousDeploymentPolicy>,
+    crate::operation::update_continuous_deployment_policy::UpdateContinuousDeploymentPolicyError,
 > {
     (!body.is_empty()).then(||{
-        crate::protocol_serde::shape_update_continuous_deployment_policy_output::de_continuous_deployment_policy(body).map_err(crate::error::UpdateContinuousDeploymentPolicyError::unhandled)
+        crate::protocol_serde::shape_update_continuous_deployment_policy_output::de_continuous_deployment_policy(body).map_err(crate::operation::update_continuous_deployment_policy::UpdateContinuousDeploymentPolicyError::unhandled)
     }).transpose()
 }
 
@@ -22,7 +22,7 @@ pub(crate) fn de_e_tag_header(
 
 pub fn de_continuous_deployment_policy(
     inp: &[u8],
-) -> Result<crate::model::ContinuousDeploymentPolicy, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::ContinuousDeploymentPolicy, aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;

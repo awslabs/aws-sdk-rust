@@ -2,7 +2,7 @@
 pub(crate) fn de_challenge_response_list_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ChallengeResponseType>>,
+    Option<std::vec::Vec<crate::types::ChallengeResponseType>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

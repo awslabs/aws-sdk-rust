@@ -2,26 +2,30 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_put_warm_pool_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::PutWarmPoolOutput, crate::error::PutWarmPoolError> {
+) -> std::result::Result<
+    crate::operation::put_warm_pool::PutWarmPoolOutput,
+    crate::operation::put_warm_pool::PutWarmPoolError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::PutWarmPoolError::unhandled)?;
+        .map_err(crate::operation::put_warm_pool::PutWarmPoolError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::PutWarmPoolError::unhandled(generic)),
+        None => return Err(crate::operation::put_warm_pool::PutWarmPoolError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceeded" => crate::error::PutWarmPoolError::LimitExceededFault({
+        "LimitExceeded" => crate::operation::put_warm_pool::PutWarmPoolError::LimitExceededFault({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::error::limit_exceeded_fault::Builder::default();
+                let mut output =
+                    crate::types::error::builders::LimitExceededFaultBuilder::default();
                 let _ = response;
-                output = crate::protocol_serde::shape_limit_exceeded_fault::de_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PutWarmPoolError::unhandled)?;
+                output = crate::protocol_serde::shape_limit_exceeded_fault::de_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::put_warm_pool::PutWarmPoolError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -30,32 +34,39 @@ pub fn de_put_warm_pool_http_error(
             }
             tmp
         }),
-        "ResourceContention" => crate::error::PutWarmPoolError::ResourceContentionFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "ResourceContention" => {
+            crate::operation::put_warm_pool::PutWarmPoolError::ResourceContentionFault({
                 #[allow(unused_mut)]
-                let mut output = crate::error::resource_contention_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_resource_contention_fault::de_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PutWarmPoolError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::PutWarmPoolError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ResourceContentionFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_contention_fault::de_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::put_warm_pool::PutWarmPoolError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::put_warm_pool::PutWarmPoolError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_put_warm_pool_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::PutWarmPoolOutput, crate::error::PutWarmPoolError> {
+) -> std::result::Result<
+    crate::operation::put_warm_pool::PutWarmPoolOutput,
+    crate::operation::put_warm_pool::PutWarmPoolError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::put_warm_pool_output::Builder::default();
+        let mut output =
+            crate::operation::put_warm_pool::builders::PutWarmPoolOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

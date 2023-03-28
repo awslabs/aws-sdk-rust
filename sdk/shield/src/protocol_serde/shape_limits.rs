@@ -2,7 +2,7 @@
 pub(crate) fn de_limits<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Limit>>,
+    Option<std::vec::Vec<crate::types::Limit>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

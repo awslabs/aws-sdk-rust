@@ -2,11 +2,11 @@
 pub fn de_physical_resource_id_context_key_value_pair(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    crate::model::PhysicalResourceIdContextKeyValuePair,
+    crate::types::PhysicalResourceIdContextKeyValuePair,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     #[allow(unused_mut)]
-    let mut builder = crate::model::PhysicalResourceIdContextKeyValuePair::builder();
+    let mut builder = crate::types::PhysicalResourceIdContextKeyValuePair::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Key") /* Key com.amazonaws.cloudformation#PhysicalResourceIdContextKeyValuePair$Key */ =>  {

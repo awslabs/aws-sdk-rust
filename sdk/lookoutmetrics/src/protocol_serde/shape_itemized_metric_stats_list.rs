@@ -2,7 +2,7 @@
 pub(crate) fn de_itemized_metric_stats_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ItemizedMetricStats>>,
+    Option<std::vec::Vec<crate::types::ItemizedMetricStats>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

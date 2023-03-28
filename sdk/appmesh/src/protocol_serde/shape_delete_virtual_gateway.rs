@@ -3,137 +3,147 @@
 pub fn de_delete_virtual_gateway_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteVirtualGatewayOutput,
-    crate::error::DeleteVirtualGatewayError,
+    crate::operation::delete_virtual_gateway::DeleteVirtualGatewayOutput,
+    crate::operation::delete_virtual_gateway::DeleteVirtualGatewayError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteVirtualGatewayError::unhandled)?;
+        .map_err(crate::operation::delete_virtual_gateway::DeleteVirtualGatewayError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DeleteVirtualGatewayError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::delete_virtual_gateway::DeleteVirtualGatewayError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::DeleteVirtualGatewayError::BadRequestException({
+        "BadRequestException" => crate::operation::delete_virtual_gateway::DeleteVirtualGatewayError::BadRequestException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVirtualGatewayError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_virtual_gateway::DeleteVirtualGatewayError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "ForbiddenException" => crate::error::DeleteVirtualGatewayError::ForbiddenException({
+        "ForbiddenException" => crate::operation::delete_virtual_gateway::DeleteVirtualGatewayError::ForbiddenException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVirtualGatewayError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ForbiddenExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_virtual_gateway::DeleteVirtualGatewayError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "InternalServerErrorException" => {
-            crate::error::DeleteVirtualGatewayError::InternalServerErrorException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalServerErrorException" => crate::operation::delete_virtual_gateway::DeleteVirtualGatewayError::InternalServerErrorException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::internal_server_error_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InternalServerErrorExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVirtualGatewayError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_virtual_gateway::DeleteVirtualGatewayError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "NotFoundException" => crate::error::DeleteVirtualGatewayError::NotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVirtualGatewayError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "ResourceInUseException" => {
-            crate::error::DeleteVirtualGatewayError::ResourceInUseException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "NotFoundException" => crate::operation::delete_virtual_gateway::DeleteVirtualGatewayError::NotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_in_use_exception::Builder::default();
+                    let mut output = crate::types::error::builders::NotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_in_use_exception::de_resource_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVirtualGatewayError::unhandled)?;
+                    output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_virtual_gateway::DeleteVirtualGatewayError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ServiceUnavailableException" => {
-            crate::error::DeleteVirtualGatewayError::ServiceUnavailableException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceInUseException" => crate::operation::delete_virtual_gateway::DeleteVirtualGatewayError::ResourceInUseException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::service_unavailable_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ResourceInUseExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVirtualGatewayError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_in_use_exception::de_resource_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_virtual_gateway::DeleteVirtualGatewayError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "TooManyRequestsException" => {
-            crate::error::DeleteVirtualGatewayError::TooManyRequestsException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ServiceUnavailableException" => crate::operation::delete_virtual_gateway::DeleteVirtualGatewayError::ServiceUnavailableException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVirtualGatewayError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_virtual_gateway::DeleteVirtualGatewayError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DeleteVirtualGatewayError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TooManyRequestsException" => crate::operation::delete_virtual_gateway::DeleteVirtualGatewayError::TooManyRequestsException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_virtual_gateway::DeleteVirtualGatewayError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::delete_virtual_gateway::DeleteVirtualGatewayError::generic(generic)
     })
 }
 
@@ -141,12 +151,12 @@ pub fn de_delete_virtual_gateway_http_error(
 pub fn de_delete_virtual_gateway_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteVirtualGatewayOutput,
-    crate::error::DeleteVirtualGatewayError,
+    crate::operation::delete_virtual_gateway::DeleteVirtualGatewayOutput,
+    crate::operation::delete_virtual_gateway::DeleteVirtualGatewayError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_virtual_gateway_output::Builder::default();
+        let mut output = crate::operation::delete_virtual_gateway::builders::DeleteVirtualGatewayOutputBuilder::default();
         let _ = response;
         output = output.set_virtual_gateway(
             crate::protocol_serde::shape_delete_virtual_gateway_output::de_virtual_gateway_payload(

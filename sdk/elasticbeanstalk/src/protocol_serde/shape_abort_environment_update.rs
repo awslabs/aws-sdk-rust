@@ -3,44 +3,45 @@
 pub fn de_abort_environment_update_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::AbortEnvironmentUpdateOutput,
-    crate::error::AbortEnvironmentUpdateError,
+    crate::operation::abort_environment_update::AbortEnvironmentUpdateOutput,
+    crate::operation::abort_environment_update::AbortEnvironmentUpdateError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::AbortEnvironmentUpdateError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::abort_environment_update::AbortEnvironmentUpdateError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::AbortEnvironmentUpdateError::unhandled(
-                generic,
-            ))
-        }
-    };
+    let error_code =
+        match generic.code() {
+            Some(code) => code,
+            None => return Err(
+                crate::operation::abort_environment_update::AbortEnvironmentUpdateError::unhandled(
+                    generic,
+                ),
+            ),
+        };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InsufficientPrivilegesException" => {
-            crate::error::AbortEnvironmentUpdateError::InsufficientPrivilegesException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InsufficientPrivilegesException" => crate::operation::abort_environment_update::AbortEnvironmentUpdateError::InsufficientPrivilegesException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::insufficient_privileges_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InsufficientPrivilegesExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_insufficient_privileges_exception::de_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AbortEnvironmentUpdateError::unhandled)?;
+                    output = crate::protocol_serde::shape_insufficient_privileges_exception::de_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::abort_environment_update::AbortEnvironmentUpdateError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::AbortEnvironmentUpdateError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::abort_environment_update::AbortEnvironmentUpdateError::generic(generic)
     })
 }
 
@@ -48,12 +49,12 @@ pub fn de_abort_environment_update_http_error(
 pub fn de_abort_environment_update_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::AbortEnvironmentUpdateOutput,
-    crate::error::AbortEnvironmentUpdateError,
+    crate::operation::abort_environment_update::AbortEnvironmentUpdateOutput,
+    crate::operation::abort_environment_update::AbortEnvironmentUpdateError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::abort_environment_update_output::Builder::default();
+        let mut output = crate::operation::abort_environment_update::builders::AbortEnvironmentUpdateOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

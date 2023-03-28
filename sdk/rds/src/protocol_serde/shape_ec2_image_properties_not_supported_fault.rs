@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_ec2_image_properties_not_supported_fault_xml_err(
     inp: &[u8],
-    mut builder: crate::error::ec2_image_properties_not_supported_fault::Builder,
+    mut builder: crate::types::error::builders::Ec2ImagePropertiesNotSupportedFaultBuilder,
 ) -> Result<
-    crate::error::ec2_image_properties_not_supported_fault::Builder,
+    crate::types::error::builders::Ec2ImagePropertiesNotSupportedFaultBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

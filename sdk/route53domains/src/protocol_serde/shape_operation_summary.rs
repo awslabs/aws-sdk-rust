@@ -2,7 +2,7 @@
 pub(crate) fn de_operation_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::OperationSummary>,
+    Option<crate::types::OperationSummary>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::operation_summary::Builder::default();
+            let mut builder = crate::types::builders::OperationSummaryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -39,7 +39,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::OperationStatus::from(u.as_ref())
+                                            crate::types::OperationStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -52,7 +52,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::OperationType::from(u.as_ref()))
+                                            .map(|u| crate::types::OperationType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -90,7 +90,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::StatusFlag::from(u.as_ref()))
+                                            .map(|u| crate::types::StatusFlag::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

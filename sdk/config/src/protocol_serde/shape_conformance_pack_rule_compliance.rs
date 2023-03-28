@@ -2,7 +2,7 @@
 pub(crate) fn de_conformance_pack_rule_compliance<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ConformancePackRuleCompliance>,
+    Option<crate::types::ConformancePackRuleCompliance>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::conformance_pack_rule_compliance::Builder::default();
+            let mut builder =
+                crate::types::builders::ConformancePackRuleComplianceBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -39,7 +40,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ConformancePackComplianceType::from(
+                                            crate::types::ConformancePackComplianceType::from(
                                                 u.as_ref(),
                                             )
                                         })

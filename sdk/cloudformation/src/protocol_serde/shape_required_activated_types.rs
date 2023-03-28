@@ -2,7 +2,7 @@
 pub fn de_required_activated_types(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::RequiredActivatedType>,
+    std::vec::Vec<crate::types::RequiredActivatedType>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

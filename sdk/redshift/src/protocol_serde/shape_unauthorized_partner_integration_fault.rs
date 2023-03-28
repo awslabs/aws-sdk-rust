@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_unauthorized_partner_integration_fault_xml_err(
     inp: &[u8],
-    mut builder: crate::error::unauthorized_partner_integration_fault::Builder,
+    mut builder: crate::types::error::builders::UnauthorizedPartnerIntegrationFaultBuilder,
 ) -> Result<
-    crate::error::unauthorized_partner_integration_fault::Builder,
+    crate::types::error::builders::UnauthorizedPartnerIntegrationFaultBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

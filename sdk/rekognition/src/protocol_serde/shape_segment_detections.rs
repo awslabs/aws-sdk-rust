@@ -2,7 +2,7 @@
 pub(crate) fn de_segment_detections<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SegmentDetection>>,
+    Option<std::vec::Vec<crate::types::SegmentDetection>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

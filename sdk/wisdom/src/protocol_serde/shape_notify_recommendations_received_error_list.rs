@@ -2,7 +2,7 @@
 pub(crate) fn de_notify_recommendations_received_error_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::NotifyRecommendationsReceivedError>>,
+    Option<std::vec::Vec<crate::types::NotifyRecommendationsReceivedError>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_http_endpoint_destination_description<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::HttpEndpointDestinationDescription>,
+    Option<crate::types::HttpEndpointDestinationDescription>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::http_endpoint_destination_description::Builder::default();
+                crate::types::builders::HttpEndpointDestinationDescriptionBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -70,7 +70,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::HttpEndpointS3BackupMode::from(u.as_ref())
+                                            crate::types::HttpEndpointS3BackupMode::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

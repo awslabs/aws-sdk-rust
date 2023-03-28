@@ -2,7 +2,7 @@
 pub(crate) fn de_compatible_kafka_version<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::CompatibleKafkaVersion>,
+    Option<crate::types::CompatibleKafkaVersion>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::compatible_kafka_version::Builder::default();
+            let mut builder = crate::types::builders::CompatibleKafkaVersionBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

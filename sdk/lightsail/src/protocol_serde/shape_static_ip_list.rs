@@ -2,7 +2,7 @@
 pub(crate) fn de_static_ip_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::StaticIp>>,
+    Option<std::vec::Vec<crate::types::StaticIp>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

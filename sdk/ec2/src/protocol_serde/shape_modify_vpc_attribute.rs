@@ -3,27 +3,27 @@
 pub fn de_modify_vpc_attribute_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ModifyVpcAttributeOutput,
-    crate::error::ModifyVpcAttributeError,
+    crate::operation::modify_vpc_attribute::ModifyVpcAttributeOutput,
+    crate::operation::modify_vpc_attribute::ModifyVpcAttributeError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ModifyVpcAttributeError::unhandled)?;
+        .map_err(crate::operation::modify_vpc_attribute::ModifyVpcAttributeError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::ModifyVpcAttributeError::generic(generic))
+    Err(crate::operation::modify_vpc_attribute::ModifyVpcAttributeError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_modify_vpc_attribute_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ModifyVpcAttributeOutput,
-    crate::error::ModifyVpcAttributeError,
+    crate::operation::modify_vpc_attribute::ModifyVpcAttributeOutput,
+    crate::operation::modify_vpc_attribute::ModifyVpcAttributeError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::modify_vpc_attribute_output::Builder::default();
+        let mut output = crate::operation::modify_vpc_attribute::builders::ModifyVpcAttributeOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

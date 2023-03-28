@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_recovery_group_output<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::RecoveryGroupOutput>>,
+    Option<std::vec::Vec<crate::types::RecoveryGroupOutput>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

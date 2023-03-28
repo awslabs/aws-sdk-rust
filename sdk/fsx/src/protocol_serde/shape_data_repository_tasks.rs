@@ -2,7 +2,7 @@
 pub(crate) fn de_data_repository_tasks<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DataRepositoryTask>>,
+    Option<std::vec::Vec<crate::types::DataRepositoryTask>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

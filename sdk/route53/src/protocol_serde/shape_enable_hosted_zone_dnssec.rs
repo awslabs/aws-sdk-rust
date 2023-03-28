@@ -3,189 +3,181 @@
 pub fn de_enable_hosted_zone_dnssec_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::EnableHostedZoneDnssecOutput,
-    crate::error::EnableHostedZoneDNSSECError,
+    crate::operation::enable_hosted_zone_dnssec::EnableHostedZoneDnssecOutput,
+    crate::operation::enable_hosted_zone_dnssec::EnableHostedZoneDNSSECError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::EnableHostedZoneDNSSECError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::enable_hosted_zone_dnssec::EnableHostedZoneDNSSECError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::EnableHostedZoneDNSSECError::unhandled(
-                generic,
-            ))
-        }
-    };
+    let error_code =
+        match generic.code() {
+            Some(code) => code,
+            None => return Err(
+                crate::operation::enable_hosted_zone_dnssec::EnableHostedZoneDNSSECError::unhandled(
+                    generic,
+                ),
+            ),
+        };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConcurrentModification" => {
-            crate::error::EnableHostedZoneDNSSECError::ConcurrentModification({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "ConcurrentModification" => crate::operation::enable_hosted_zone_dnssec::EnableHostedZoneDNSSECError::ConcurrentModification({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::concurrent_modification::Builder::default();
+                    let mut output = crate::types::error::builders::ConcurrentModificationBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_concurrent_modification::de_concurrent_modification_xml_err(response.body().as_ref(), output).map_err(crate::error::EnableHostedZoneDNSSECError::unhandled)?;
+                    output = crate::protocol_serde::shape_concurrent_modification::de_concurrent_modification_xml_err(response.body().as_ref(), output).map_err(crate::operation::enable_hosted_zone_dnssec::EnableHostedZoneDNSSECError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "DNSSECNotFound" => crate::error::EnableHostedZoneDNSSECError::DnssecNotFound({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::dnssec_not_found::Builder::default();
-                let _ = response;
-                output =
-                    crate::protocol_serde::shape_dnssec_not_found::de_dnssec_not_found_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::EnableHostedZoneDNSSECError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "HostedZonePartiallyDelegated" => {
-            crate::error::EnableHostedZoneDNSSECError::HostedZonePartiallyDelegated({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "DNSSECNotFound" => crate::operation::enable_hosted_zone_dnssec::EnableHostedZoneDNSSECError::DnssecNotFound({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::hosted_zone_partially_delegated::Builder::default();
+                    let mut output = crate::types::error::builders::DnssecNotFoundBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_hosted_zone_partially_delegated::de_hosted_zone_partially_delegated_xml_err(response.body().as_ref(), output).map_err(crate::error::EnableHostedZoneDNSSECError::unhandled)?;
+                    output = crate::protocol_serde::shape_dnssec_not_found::de_dnssec_not_found_xml_err(response.body().as_ref(), output).map_err(crate::operation::enable_hosted_zone_dnssec::EnableHostedZoneDNSSECError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidArgument" => crate::error::EnableHostedZoneDNSSECError::InvalidArgument({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::invalid_argument::Builder::default();
-                let _ = response;
-                output =
-                    crate::protocol_serde::shape_invalid_argument::de_invalid_argument_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::EnableHostedZoneDNSSECError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "InvalidInput" => crate::error::EnableHostedZoneDNSSECError::InvalidInput({
+        "HostedZonePartiallyDelegated" => crate::operation::enable_hosted_zone_dnssec::EnableHostedZoneDNSSECError::HostedZonePartiallyDelegated({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::invalid_input::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_input::de_invalid_input_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::EnableHostedZoneDNSSECError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InvalidKeySigningKeyStatus" => {
-            crate::error::EnableHostedZoneDNSSECError::InvalidKeySigningKeyStatus({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_key_signing_key_status::Builder::default();
+                    let mut output = crate::types::error::builders::HostedZonePartiallyDelegatedBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_key_signing_key_status::de_invalid_key_signing_key_status_xml_err(response.body().as_ref(), output).map_err(crate::error::EnableHostedZoneDNSSECError::unhandled)?;
+                    output = crate::protocol_serde::shape_hosted_zone_partially_delegated::de_hosted_zone_partially_delegated_xml_err(response.body().as_ref(), output).map_err(crate::operation::enable_hosted_zone_dnssec::EnableHostedZoneDNSSECError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidKMSArn" => crate::error::EnableHostedZoneDNSSECError::InvalidKmsArn({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::invalid_kms_arn::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_kms_arn::de_invalid_kms_arn_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::EnableHostedZoneDNSSECError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "KeySigningKeyWithActiveStatusNotFound" => {
-            crate::error::EnableHostedZoneDNSSECError::KeySigningKeyWithActiveStatusNotFound({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidArgument" => crate::operation::enable_hosted_zone_dnssec::EnableHostedZoneDNSSECError::InvalidArgument({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::key_signing_key_with_active_status_not_found::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidArgumentBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_key_signing_key_with_active_status_not_found::de_key_signing_key_with_active_status_not_found_xml_err(response.body().as_ref(), output).map_err(crate::error::EnableHostedZoneDNSSECError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_argument::de_invalid_argument_xml_err(response.body().as_ref(), output).map_err(crate::operation::enable_hosted_zone_dnssec::EnableHostedZoneDNSSECError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "NoSuchHostedZone" => crate::error::EnableHostedZoneDNSSECError::NoSuchHostedZone({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::no_such_hosted_zone::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_no_such_hosted_zone::de_no_such_hosted_zone_xml_err(response.body().as_ref(), output).map_err(crate::error::EnableHostedZoneDNSSECError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::EnableHostedZoneDNSSECError::generic(generic),
+        "InvalidInput" => crate::operation::enable_hosted_zone_dnssec::EnableHostedZoneDNSSECError::InvalidInput({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidInputBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_input::de_invalid_input_xml_err(response.body().as_ref(), output).map_err(crate::operation::enable_hosted_zone_dnssec::EnableHostedZoneDNSSECError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidKeySigningKeyStatus" => crate::operation::enable_hosted_zone_dnssec::EnableHostedZoneDNSSECError::InvalidKeySigningKeyStatus({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidKeySigningKeyStatusBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_key_signing_key_status::de_invalid_key_signing_key_status_xml_err(response.body().as_ref(), output).map_err(crate::operation::enable_hosted_zone_dnssec::EnableHostedZoneDNSSECError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidKMSArn" => crate::operation::enable_hosted_zone_dnssec::EnableHostedZoneDNSSECError::InvalidKmsArn({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidKmsArnBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_kms_arn::de_invalid_kms_arn_xml_err(response.body().as_ref(), output).map_err(crate::operation::enable_hosted_zone_dnssec::EnableHostedZoneDNSSECError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "KeySigningKeyWithActiveStatusNotFound" => crate::operation::enable_hosted_zone_dnssec::EnableHostedZoneDNSSECError::KeySigningKeyWithActiveStatusNotFound({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::KeySigningKeyWithActiveStatusNotFoundBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_key_signing_key_with_active_status_not_found::de_key_signing_key_with_active_status_not_found_xml_err(response.body().as_ref(), output).map_err(crate::operation::enable_hosted_zone_dnssec::EnableHostedZoneDNSSECError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "NoSuchHostedZone" => crate::operation::enable_hosted_zone_dnssec::EnableHostedZoneDNSSECError::NoSuchHostedZone({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::NoSuchHostedZoneBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_no_such_hosted_zone::de_no_such_hosted_zone_xml_err(response.body().as_ref(), output).map_err(crate::operation::enable_hosted_zone_dnssec::EnableHostedZoneDNSSECError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::enable_hosted_zone_dnssec::EnableHostedZoneDNSSECError::generic(generic)
     })
 }
 
@@ -193,19 +185,21 @@ pub fn de_enable_hosted_zone_dnssec_http_error(
 pub fn de_enable_hosted_zone_dnssec_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::EnableHostedZoneDnssecOutput,
-    crate::error::EnableHostedZoneDNSSECError,
+    crate::operation::enable_hosted_zone_dnssec::EnableHostedZoneDnssecOutput,
+    crate::operation::enable_hosted_zone_dnssec::EnableHostedZoneDNSSECError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::enable_hosted_zone_dnssec_output::Builder::default();
+        let mut output = crate::operation::enable_hosted_zone_dnssec::builders::EnableHostedZoneDnssecOutputBuilder::default();
         let _ = response;
         output =
             crate::protocol_serde::shape_enable_hosted_zone_dnssec::de_enable_hosted_zone_dnssec(
                 response.body().as_ref(),
                 output,
             )
-            .map_err(crate::error::EnableHostedZoneDNSSECError::unhandled)?;
+            .map_err(
+                crate::operation::enable_hosted_zone_dnssec::EnableHostedZoneDNSSECError::unhandled,
+            )?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -216,9 +210,9 @@ pub fn de_enable_hosted_zone_dnssec_http_response(
 #[allow(unused_mut)]
 pub fn de_enable_hosted_zone_dnssec(
     inp: &[u8],
-    mut builder: crate::output::enable_hosted_zone_dnssec_output::Builder,
+    mut builder: crate::operation::enable_hosted_zone_dnssec::builders::EnableHostedZoneDnssecOutputBuilder,
 ) -> Result<
-    crate::output::enable_hosted_zone_dnssec_output::Builder,
+    crate::operation::enable_hosted_zone_dnssec::builders::EnableHostedZoneDnssecOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

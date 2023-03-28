@@ -2,7 +2,7 @@
 pub(crate) fn de_report_groups<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ReportGroup>>,
+    Option<std::vec::Vec<crate::types::ReportGroup>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

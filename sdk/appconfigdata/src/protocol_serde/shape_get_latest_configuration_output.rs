@@ -3,7 +3,7 @@ pub fn de_configuration_payload(
     body: &[u8],
 ) -> std::result::Result<
     std::option::Option<aws_smithy_types::Blob>,
-    crate::error::GetLatestConfigurationError,
+    crate::operation::get_latest_configuration::GetLatestConfigurationError,
 > {
     (!body.is_empty())
         .then(|| Ok(aws_smithy_types::Blob::new(body)))

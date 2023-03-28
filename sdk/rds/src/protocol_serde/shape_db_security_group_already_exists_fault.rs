@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_db_security_group_already_exists_fault_xml_err(
     inp: &[u8],
-    mut builder: crate::error::db_security_group_already_exists_fault::Builder,
+    mut builder: crate::types::error::builders::DbSecurityGroupAlreadyExistsFaultBuilder,
 ) -> Result<
-    crate::error::db_security_group_already_exists_fault::Builder,
+    crate::types::error::builders::DbSecurityGroupAlreadyExistsFaultBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

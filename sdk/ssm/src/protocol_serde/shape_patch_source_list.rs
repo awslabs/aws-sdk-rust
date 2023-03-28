@@ -2,7 +2,7 @@
 pub(crate) fn de_patch_source_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::PatchSource>>,
+    Option<std::vec::Vec<crate::types::PatchSource>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_searched_log_streams<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SearchedLogStream>>,
+    Option<std::vec::Vec<crate::types::SearchedLogStream>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

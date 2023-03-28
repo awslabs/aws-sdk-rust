@@ -2,7 +2,7 @@
 pub(crate) fn de_global_secondary_index_description<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::GlobalSecondaryIndexDescription>,
+    Option<crate::types::GlobalSecondaryIndexDescription>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::global_secondary_index_description::Builder::default();
+            let mut builder =
+                crate::types::builders::GlobalSecondaryIndexDescriptionBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -49,7 +50,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::IndexStatus::from(u.as_ref()))
+                                            .map(|u| crate::types::IndexStatus::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

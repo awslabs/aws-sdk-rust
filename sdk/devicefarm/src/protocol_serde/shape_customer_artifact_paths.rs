@@ -2,7 +2,7 @@
 pub(crate) fn de_customer_artifact_paths<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::CustomerArtifactPaths>,
+    Option<crate::types::CustomerArtifactPaths>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::customer_artifact_paths::Builder::default();
+            let mut builder = crate::types::builders::CustomerArtifactPathsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -65,7 +65,7 @@ where
 
 pub fn ser_customer_artifact_paths(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::CustomerArtifactPaths,
+    input: &crate::types::CustomerArtifactPaths,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.ios_paths {
         let mut array_2 = object.key("iosPaths").start_array();

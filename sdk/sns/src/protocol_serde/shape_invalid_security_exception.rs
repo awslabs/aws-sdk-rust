@@ -2,9 +2,11 @@
 #[allow(unused_mut)]
 pub fn de_invalid_security_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::invalid_security_exception::Builder,
-) -> Result<crate::error::invalid_security_exception::Builder, aws_smithy_xml::decode::XmlDecodeError>
-{
+    mut builder: crate::types::error::builders::InvalidSecurityExceptionBuilder,
+) -> Result<
+    crate::types::error::builders::InvalidSecurityExceptionBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     if inp.is_empty() {
         return Ok(builder);
     }

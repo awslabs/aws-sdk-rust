@@ -2,28 +2,34 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_untag_role_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::UntagRoleOutput, crate::error::UntagRoleError> {
+) -> std::result::Result<
+    crate::operation::untag_role::UntagRoleOutput,
+    crate::operation::untag_role::UntagRoleError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::UntagRoleError::unhandled)?;
+        .map_err(crate::operation::untag_role::UntagRoleError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::UntagRoleError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::untag_role::UntagRoleError::unhandled(
+                generic,
+            ))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ConcurrentModification" => {
-            crate::error::UntagRoleError::ConcurrentModificationException({
+            crate::operation::untag_role::UntagRoleError::ConcurrentModificationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::concurrent_modification_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ConcurrentModificationExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_concurrent_modification_exception::de_concurrent_modification_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UntagRoleError::unhandled)?;
+                    output = crate::protocol_serde::shape_concurrent_modification_exception::de_concurrent_modification_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::untag_role::UntagRoleError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -33,13 +39,14 @@ pub fn de_untag_role_http_error(
                 tmp
             })
         }
-        "NoSuchEntity" => crate::error::UntagRoleError::NoSuchEntityException({
+        "NoSuchEntity" => crate::operation::untag_role::UntagRoleError::NoSuchEntityException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::error::no_such_entity_exception::Builder::default();
+                let mut output =
+                    crate::types::error::builders::NoSuchEntityExceptionBuilder::default();
                 let _ = response;
-                output = crate::protocol_serde::shape_no_such_entity_exception::de_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UntagRoleError::unhandled)?;
+                output = crate::protocol_serde::shape_no_such_entity_exception::de_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::untag_role::UntagRoleError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -48,32 +55,38 @@ pub fn de_untag_role_http_error(
             }
             tmp
         }),
-        "ServiceFailure" => crate::error::UntagRoleError::ServiceFailureException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "ServiceFailure" => {
+            crate::operation::untag_role::UntagRoleError::ServiceFailureException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::service_failure_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UntagRoleError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::UntagRoleError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ServiceFailureExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::untag_role::UntagRoleError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::untag_role::UntagRoleError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_untag_role_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::UntagRoleOutput, crate::error::UntagRoleError> {
+) -> std::result::Result<
+    crate::operation::untag_role::UntagRoleOutput,
+    crate::operation::untag_role::UntagRoleError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::untag_role_output::Builder::default();
+        let mut output = crate::operation::untag_role::builders::UntagRoleOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

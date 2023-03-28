@@ -2,7 +2,7 @@
 pub(crate) fn de_commit_diff_source_code_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::CommitDiffSourceCodeType>,
+    Option<crate::types::CommitDiffSourceCodeType>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::commit_diff_source_code_type::Builder::default();
+            let mut builder = crate::types::builders::CommitDiffSourceCodeTypeBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -75,7 +75,7 @@ where
 
 pub fn ser_commit_diff_source_code_type(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::CommitDiffSourceCodeType,
+    input: &crate::types::CommitDiffSourceCodeType,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.source_commit {
         object.key("SourceCommit").string(var_1.as_str());

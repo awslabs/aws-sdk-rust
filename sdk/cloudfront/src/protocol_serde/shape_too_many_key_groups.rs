@@ -2,8 +2,11 @@
 #[allow(unused_mut)]
 pub fn de_too_many_key_groups_xml_err(
     inp: &[u8],
-    mut builder: crate::error::too_many_key_groups::Builder,
-) -> Result<crate::error::too_many_key_groups::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    mut builder: crate::types::error::builders::TooManyKeyGroupsBuilder,
+) -> Result<
+    crate::types::error::builders::TooManyKeyGroupsBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     if inp.is_empty() {
         return Ok(builder);
     }

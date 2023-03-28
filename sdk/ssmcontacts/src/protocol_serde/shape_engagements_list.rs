@@ -2,7 +2,7 @@
 pub(crate) fn de_engagements_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Engagement>>,
+    Option<std::vec::Vec<crate::types::Engagement>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

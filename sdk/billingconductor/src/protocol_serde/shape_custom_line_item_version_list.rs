@@ -2,7 +2,7 @@
 pub(crate) fn de_custom_line_item_version_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CustomLineItemVersionListElement>>,
+    Option<std::vec::Vec<crate::types::CustomLineItemVersionListElement>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

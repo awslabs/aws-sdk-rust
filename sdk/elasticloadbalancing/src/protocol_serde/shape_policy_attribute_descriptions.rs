@@ -2,7 +2,7 @@
 pub fn de_policy_attribute_descriptions(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::PolicyAttributeDescription>,
+    std::vec::Vec<crate::types::PolicyAttributeDescription>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

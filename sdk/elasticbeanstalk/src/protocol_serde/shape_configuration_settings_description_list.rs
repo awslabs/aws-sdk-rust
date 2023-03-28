@@ -2,7 +2,7 @@
 pub fn de_configuration_settings_description_list(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::ConfigurationSettingsDescription>,
+    std::vec::Vec<crate::types::ConfigurationSettingsDescription>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

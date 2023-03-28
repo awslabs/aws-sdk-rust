@@ -2,26 +2,106 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_tag_resource_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
+) -> std::result::Result<
+    crate::operation::tag_resource::TagResourceOutput,
+    crate::operation::tag_resource::TagResourceError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::TagResourceError::unhandled)?;
+        .map_err(crate::operation::tag_resource::TagResourceError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::TagResourceError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::tag_resource::TagResourceError::unhandled(
+                generic,
+            ))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AuthorizationError" => crate::error::TagResourceError::AuthorizationErrorException({
+        "AuthorizationError" => {
+            crate::operation::tag_resource::TagResourceError::AuthorizationErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::AuthorizationErrorExceptionBuilder::default(
+                        );
+                    let _ = response;
+                    output = crate::protocol_serde::shape_authorization_error_exception::de_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::tag_resource::TagResourceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ConcurrentAccess" => {
+            crate::operation::tag_resource::TagResourceError::ConcurrentAccessException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ConcurrentAccessExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_concurrent_access_exception::de_concurrent_access_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::tag_resource::TagResourceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidParameter" => {
+            crate::operation::tag_resource::TagResourceError::InvalidParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InvalidParameterExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::tag_resource::TagResourceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ResourceNotFound" => {
+            crate::operation::tag_resource::TagResourceError::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::tag_resource::TagResourceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "StaleTag" => crate::operation::tag_resource::TagResourceError::StaleTagException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::error::authorization_error_exception::Builder::default();
+                let mut output = crate::types::error::builders::StaleTagExceptionBuilder::default();
                 let _ = response;
-                output = crate::protocol_serde::shape_authorization_error_exception::de_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                output = crate::protocol_serde::shape_stale_tag_exception::de_stale_tag_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::tag_resource::TagResourceError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -30,13 +110,32 @@ pub fn de_tag_resource_http_error(
             }
             tmp
         }),
-        "ConcurrentAccess" => crate::error::TagResourceError::ConcurrentAccessException({
+        "TagLimitExceeded" => {
+            crate::operation::tag_resource::TagResourceError::TagLimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::TagLimitExceededExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_tag_limit_exceeded_exception::de_tag_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::tag_resource::TagResourceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "TagPolicy" => crate::operation::tag_resource::TagResourceError::TagPolicyException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::error::concurrent_access_exception::Builder::default();
+                let mut output =
+                    crate::types::error::builders::TagPolicyExceptionBuilder::default();
                 let _ = response;
-                output = crate::protocol_serde::shape_concurrent_access_exception::de_concurrent_access_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                output = crate::protocol_serde::shape_tag_policy_exception::de_tag_policy_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::tag_resource::TagResourceError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -45,92 +144,21 @@ pub fn de_tag_resource_http_error(
             }
             tmp
         }),
-        "InvalidParameter" => crate::error::TagResourceError::InvalidParameterException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::invalid_parameter_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ResourceNotFound" => crate::error::TagResourceError::ResourceNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::resource_not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "StaleTag" => crate::error::TagResourceError::StaleTagException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::stale_tag_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_stale_tag_exception::de_stale_tag_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "TagLimitExceeded" => crate::error::TagResourceError::TagLimitExceededException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::tag_limit_exceeded_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_tag_limit_exceeded_exception::de_tag_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "TagPolicy" => crate::error::TagResourceError::TagPolicyException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::tag_policy_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_tag_policy_exception::de_tag_policy_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::TagResourceError::generic(generic),
+        _ => crate::operation::tag_resource::TagResourceError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_tag_resource_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
+) -> std::result::Result<
+    crate::operation::tag_resource::TagResourceOutput,
+    crate::operation::tag_resource::TagResourceError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::tag_resource_output::Builder::default();
+        let mut output =
+            crate::operation::tag_resource::builders::TagResourceOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

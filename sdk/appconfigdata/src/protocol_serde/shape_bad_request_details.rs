@@ -2,7 +2,7 @@
 pub(crate) fn de_bad_request_details<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::BadRequestDetails>,
+    Option<crate::types::BadRequestDetails>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -29,14 +29,14 @@ where
                     }
                     variant = match key.to_unescaped()?.as_ref() {
                             "InvalidParameters" => {
-                                Some(crate::model::BadRequestDetails::InvalidParameters(
+                                Some(crate::types::BadRequestDetails::InvalidParameters(
                                     crate::protocol_serde::shape_invalid_parameter_map::de_invalid_parameter_map(tokens)?
                                     .ok_or_else(|| aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'InvalidParameters' cannot be null"))?
                                 ))
                             }
                             _ => {
                                                                       aws_smithy_json::deserialize::token::skip_value(tokens)?;
-                                                                      Some(crate::model::BadRequestDetails::Unknown)
+                                                                      Some(crate::types::BadRequestDetails::Unknown)
                                                                     }
                         };
                 }

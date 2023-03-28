@@ -2,7 +2,7 @@
 pub(crate) fn de_vpc_endpoint_error_details<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::VpcEndpointErrorDetail>>,
+    Option<std::vec::Vec<crate::types::VpcEndpointErrorDetail>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

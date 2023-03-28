@@ -2,7 +2,7 @@
 pub(crate) fn de_bucket_bundle_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::BucketBundle>>,
+    Option<std::vec::Vec<crate::types::BucketBundle>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

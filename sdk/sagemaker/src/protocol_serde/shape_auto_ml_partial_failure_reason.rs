@@ -2,7 +2,7 @@
 pub(crate) fn de_auto_ml_partial_failure_reason<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::AutoMlPartialFailureReason>,
+    Option<crate::types::AutoMlPartialFailureReason>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::auto_ml_partial_failure_reason::Builder::default();
+            let mut builder = crate::types::builders::AutoMlPartialFailureReasonBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

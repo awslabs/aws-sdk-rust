@@ -2,7 +2,7 @@
 pub(crate) fn de_access_policy_summaries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AccessPolicySummary>>,
+    Option<std::vec::Vec<crate::types::AccessPolicySummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

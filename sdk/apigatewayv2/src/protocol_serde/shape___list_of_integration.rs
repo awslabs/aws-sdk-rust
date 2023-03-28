@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_integration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Integration>>,
+    Option<std::vec::Vec<crate::types::Integration>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

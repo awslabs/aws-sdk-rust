@@ -3,61 +3,55 @@
 pub fn de_delete_publishing_destination_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeletePublishingDestinationOutput,
-    crate::error::DeletePublishingDestinationError,
+    crate::operation::delete_publishing_destination::DeletePublishingDestinationOutput,
+    crate::operation::delete_publishing_destination::DeletePublishingDestinationError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeletePublishingDestinationError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::delete_publishing_destination::DeletePublishingDestinationError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::DeletePublishingDestinationError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::delete_publishing_destination::DeletePublishingDestinationError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => {
-            crate::error::DeletePublishingDestinationError::BadRequestException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "BadRequestException" => crate::operation::delete_publishing_destination::DeletePublishingDestinationError::BadRequestException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::bad_request_exception::Builder::default();
+                    let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeletePublishingDestinationError::unhandled)?;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_publishing_destination::DeletePublishingDestinationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InternalServerErrorException" => {
-            crate::error::DeletePublishingDestinationError::InternalServerErrorException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InternalServerErrorException" => crate::operation::delete_publishing_destination::DeletePublishingDestinationError::InternalServerErrorException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::internal_server_error_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InternalServerErrorExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeletePublishingDestinationError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_publishing_destination::DeletePublishingDestinationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DeletePublishingDestinationError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::delete_publishing_destination::DeletePublishingDestinationError::generic(generic)
     })
 }
 
@@ -65,12 +59,12 @@ pub fn de_delete_publishing_destination_http_error(
 pub fn de_delete_publishing_destination_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeletePublishingDestinationOutput,
-    crate::error::DeletePublishingDestinationError,
+    crate::operation::delete_publishing_destination::DeletePublishingDestinationOutput,
+    crate::operation::delete_publishing_destination::DeletePublishingDestinationError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_publishing_destination_output::Builder::default();
+        let mut output = crate::operation::delete_publishing_destination::builders::DeletePublishingDestinationOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

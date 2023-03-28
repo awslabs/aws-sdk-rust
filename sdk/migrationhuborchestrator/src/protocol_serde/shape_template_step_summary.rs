@@ -2,7 +2,7 @@
 pub(crate) fn de_template_step_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::TemplateStepSummary>,
+    Option<crate::types::TemplateStepSummary>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::template_step_summary::Builder::default();
+            let mut builder = crate::types::builders::TemplateStepSummaryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -66,7 +66,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::StepActionType::from(u.as_ref()))
+                                            .map(|u| crate::types::StepActionType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -78,7 +78,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::TargetType::from(u.as_ref()))
+                                            .map(|u| crate::types::TargetType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -90,7 +90,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::Owner::from(u.as_ref()))
+                                            .map(|u| crate::types::Owner::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

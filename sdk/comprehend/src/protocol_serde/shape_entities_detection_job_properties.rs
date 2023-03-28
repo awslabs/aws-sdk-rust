@@ -2,7 +2,7 @@
 pub(crate) fn de_entities_detection_job_properties<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::EntitiesDetectionJobProperties>,
+    Option<crate::types::EntitiesDetectionJobProperties>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::entities_detection_job_properties::Builder::default();
+            let mut builder =
+                crate::types::builders::EntitiesDetectionJobPropertiesBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -57,7 +58,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::JobStatus::from(u.as_ref()))
+                                            .map(|u| crate::types::JobStatus::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -113,7 +114,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::LanguageCode::from(u.as_ref()))
+                                            .map(|u| crate::types::LanguageCode::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

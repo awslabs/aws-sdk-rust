@@ -2,9 +2,11 @@
 #[allow(unused_mut)]
 pub fn de_conflicting_domain_exists_xml_err(
     inp: &[u8],
-    mut builder: crate::error::conflicting_domain_exists::Builder,
-) -> Result<crate::error::conflicting_domain_exists::Builder, aws_smithy_xml::decode::XmlDecodeError>
-{
+    mut builder: crate::types::error::builders::ConflictingDomainExistsBuilder,
+) -> Result<
+    crate::types::error::builders::ConflictingDomainExistsBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     if inp.is_empty() {
         return Ok(builder);
     }

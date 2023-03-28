@@ -2,7 +2,7 @@
 pub(crate) fn de_dialog_code_hook_invocation_setting<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::DialogCodeHookInvocationSetting>,
+    Option<crate::types::DialogCodeHookInvocationSetting>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::dialog_code_hook_invocation_setting::Builder::default();
+            let mut builder =
+                crate::types::builders::DialogCodeHookInvocationSettingBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -76,7 +77,7 @@ where
 
 pub fn ser_dialog_code_hook_invocation_setting(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::DialogCodeHookInvocationSetting,
+    input: &crate::types::DialogCodeHookInvocationSetting,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.enable_code_hook_invocation {
         object.key("enableCodeHookInvocation").boolean(*var_1);

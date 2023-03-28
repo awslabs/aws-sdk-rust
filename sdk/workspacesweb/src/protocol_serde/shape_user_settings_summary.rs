@@ -2,7 +2,7 @@
 pub(crate) fn de_user_settings_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::UserSettingsSummary>,
+    Option<crate::types::UserSettingsSummary>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::user_settings_summary::Builder::default();
+            let mut builder = crate::types::builders::UserSettingsSummaryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -39,7 +39,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::EnabledType::from(u.as_ref()))
+                                            .map(|u| crate::types::EnabledType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -51,7 +51,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::EnabledType::from(u.as_ref()))
+                                            .map(|u| crate::types::EnabledType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -63,7 +63,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::EnabledType::from(u.as_ref()))
+                                            .map(|u| crate::types::EnabledType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -75,7 +75,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::EnabledType::from(u.as_ref()))
+                                            .map(|u| crate::types::EnabledType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -87,7 +87,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::EnabledType::from(u.as_ref()))
+                                            .map(|u| crate::types::EnabledType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

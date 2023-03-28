@@ -2,7 +2,7 @@
 pub(crate) fn de_ecs_service_recommendation_options<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::EcsServiceRecommendationOption>>,
+    Option<std::vec::Vec<crate::types::EcsServiceRecommendationOption>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

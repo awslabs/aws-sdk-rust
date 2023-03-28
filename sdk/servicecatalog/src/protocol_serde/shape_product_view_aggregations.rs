@@ -5,7 +5,7 @@ pub(crate) fn de_product_view_aggregations<'a, I>(
     Option<
         std::collections::HashMap<
             std::string::String,
-            std::vec::Vec<crate::model::ProductViewAggregationValue>,
+            std::vec::Vec<crate::types::ProductViewAggregationValue>,
         >,
     >,
     aws_smithy_json::deserialize::error::DeserializeError,

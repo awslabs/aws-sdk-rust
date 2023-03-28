@@ -2,7 +2,7 @@
 pub(crate) fn de_comprehend_medical_async_job_properties_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ComprehendMedicalAsyncJobProperties>>,
+    Option<std::vec::Vec<crate::types::ComprehendMedicalAsyncJobProperties>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_tag_option_summaries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::TagOptionSummary>>,
+    Option<std::vec::Vec<crate::types::TagOptionSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

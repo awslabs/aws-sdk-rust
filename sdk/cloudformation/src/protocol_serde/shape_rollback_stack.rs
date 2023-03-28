@@ -2,28 +2,34 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_rollback_stack_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::RollbackStackOutput, crate::error::RollbackStackError> {
+) -> std::result::Result<
+    crate::operation::rollback_stack::RollbackStackOutput,
+    crate::operation::rollback_stack::RollbackStackError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::RollbackStackError::unhandled)?;
+        .map_err(crate::operation::rollback_stack::RollbackStackError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::RollbackStackError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::rollback_stack::RollbackStackError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "TokenAlreadyExistsException" => {
-            crate::error::RollbackStackError::TokenAlreadyExistsException({
+            crate::operation::rollback_stack::RollbackStackError::TokenAlreadyExistsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::token_already_exists_exception::Builder::default();
+                        crate::types::error::builders::TokenAlreadyExistsExceptionBuilder::default(
+                        );
                     let _ = response;
-                    output = crate::protocol_serde::shape_token_already_exists_exception::de_token_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::RollbackStackError::unhandled)?;
+                    output = crate::protocol_serde::shape_token_already_exists_exception::de_token_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::rollback_stack::RollbackStackError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -33,23 +39,27 @@ pub fn de_rollback_stack_http_error(
                 tmp
             })
         }
-        _ => crate::error::RollbackStackError::generic(generic),
+        _ => crate::operation::rollback_stack::RollbackStackError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_rollback_stack_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::RollbackStackOutput, crate::error::RollbackStackError> {
+) -> std::result::Result<
+    crate::operation::rollback_stack::RollbackStackOutput,
+    crate::operation::rollback_stack::RollbackStackError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::rollback_stack_output::Builder::default();
+        let mut output =
+            crate::operation::rollback_stack::builders::RollbackStackOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_rollback_stack::de_rollback_stack(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::RollbackStackError::unhandled)?;
+        .map_err(crate::operation::rollback_stack::RollbackStackError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -60,8 +70,11 @@ pub fn de_rollback_stack_http_response(
 #[allow(unused_mut)]
 pub fn de_rollback_stack(
     inp: &[u8],
-    mut builder: crate::output::rollback_stack_output::Builder,
-) -> Result<crate::output::rollback_stack_output::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    mut builder: crate::operation::rollback_stack::builders::RollbackStackOutputBuilder,
+) -> Result<
+    crate::operation::rollback_stack::builders::RollbackStackOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

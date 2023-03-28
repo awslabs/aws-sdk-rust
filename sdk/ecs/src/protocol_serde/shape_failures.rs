@@ -2,7 +2,7 @@
 pub(crate) fn de_failures<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Failure>>,
+    Option<std::vec::Vec<crate::types::Failure>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

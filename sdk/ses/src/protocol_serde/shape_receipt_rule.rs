@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_receipt_rule(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::ReceiptRule,
+    input: &crate::types::ReceiptRule,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Name");
@@ -51,9 +51,9 @@ pub fn ser_receipt_rule(
 
 pub fn de_receipt_rule(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::ReceiptRule, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::ReceiptRule, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::ReceiptRule::builder();
+    let mut builder = crate::types::ReceiptRule::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Name") /* Name com.amazonaws.ses#ReceiptRule$Name */ =>  {
@@ -87,8 +87,8 @@ pub fn de_receipt_rule(
             s if s.matches("TlsPolicy") /* TlsPolicy com.amazonaws.ses#ReceiptRule$TlsPolicy */ =>  {
                 let var_19 =
                     Some(
-                        Result::<crate::model::TlsPolicy, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::TlsPolicy::from(
+                        Result::<crate::types::TlsPolicy, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::TlsPolicy::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

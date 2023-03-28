@@ -2,7 +2,7 @@
 pub(crate) fn de_error_root_cause_services<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ErrorRootCauseService>>,
+    Option<std::vec::Vec<crate::types::ErrorRootCauseService>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

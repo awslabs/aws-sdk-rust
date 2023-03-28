@@ -2,95 +2,109 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_register_targets_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::RegisterTargetsOutput, crate::error::RegisterTargetsError> {
+) -> std::result::Result<
+    crate::operation::register_targets::RegisterTargetsOutput,
+    crate::operation::register_targets::RegisterTargetsError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::RegisterTargetsError::unhandled)?;
+        .map_err(crate::operation::register_targets::RegisterTargetsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::RegisterTargetsError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::register_targets::RegisterTargetsError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidTarget" => crate::error::RegisterTargetsError::InvalidTargetException({
+        "InvalidTarget" => crate::operation::register_targets::RegisterTargetsError::InvalidTargetException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::invalid_target_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_target_exception::de_invalid_target_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::RegisterTargetsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "TargetGroupNotFound" => {
-            crate::error::RegisterTargetsError::TargetGroupNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::target_group_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidTargetExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_target_group_not_found_exception::de_target_group_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::RegisterTargetsError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_target_exception::de_invalid_target_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::register_targets::RegisterTargetsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "TooManyRegistrationsForTargetId" => {
-            crate::error::RegisterTargetsError::TooManyRegistrationsForTargetIdException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_registrations_for_target_id_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_too_many_registrations_for_target_id_exception::de_too_many_registrations_for_target_id_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::RegisterTargetsError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "TooManyTargets" => crate::error::RegisterTargetsError::TooManyTargetsException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::too_many_targets_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_too_many_targets_exception::de_too_many_targets_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::RegisterTargetsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::RegisterTargetsError::generic(generic),
+        "TargetGroupNotFound" => crate::operation::register_targets::RegisterTargetsError::TargetGroupNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::TargetGroupNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_target_group_not_found_exception::de_target_group_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::register_targets::RegisterTargetsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TooManyRegistrationsForTargetId" => crate::operation::register_targets::RegisterTargetsError::TooManyRegistrationsForTargetIdException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::TooManyRegistrationsForTargetIdExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_too_many_registrations_for_target_id_exception::de_too_many_registrations_for_target_id_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::register_targets::RegisterTargetsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TooManyTargets" => crate::operation::register_targets::RegisterTargetsError::TooManyTargetsException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::TooManyTargetsExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_too_many_targets_exception::de_too_many_targets_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::register_targets::RegisterTargetsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::register_targets::RegisterTargetsError::generic(generic)
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_register_targets_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::RegisterTargetsOutput, crate::error::RegisterTargetsError> {
+) -> std::result::Result<
+    crate::operation::register_targets::RegisterTargetsOutput,
+    crate::operation::register_targets::RegisterTargetsError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::register_targets_output::Builder::default();
+        let mut output =
+            crate::operation::register_targets::builders::RegisterTargetsOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

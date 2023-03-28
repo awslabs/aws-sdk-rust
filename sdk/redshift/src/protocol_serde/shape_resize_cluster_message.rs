@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_resize_cluster_message(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::ResizeClusterMessage,
+    input: &crate::types::ResizeClusterMessage,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("ClusterIdentifier");
@@ -47,9 +47,9 @@ pub fn ser_resize_cluster_message(
 
 pub fn de_resize_cluster_message(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::ResizeClusterMessage, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::ResizeClusterMessage, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::ResizeClusterMessage::builder();
+    let mut builder = crate::types::ResizeClusterMessage::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ClusterIdentifier") /* ClusterIdentifier com.amazonaws.redshift#ResizeClusterMessage$ClusterIdentifier */ =>  {

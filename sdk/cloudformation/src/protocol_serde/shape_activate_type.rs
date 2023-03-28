@@ -2,66 +2,79 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_activate_type_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ActivateTypeOutput, crate::error::ActivateTypeError> {
+) -> std::result::Result<
+    crate::operation::activate_type::ActivateTypeOutput,
+    crate::operation::activate_type::ActivateTypeError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ActivateTypeError::unhandled)?;
+        .map_err(crate::operation::activate_type::ActivateTypeError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ActivateTypeError::unhandled(generic)),
+        None => return Err(crate::operation::activate_type::ActivateTypeError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CFNRegistryException" => crate::error::ActivateTypeError::CfnRegistryException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "CFNRegistryException" => {
+            crate::operation::activate_type::ActivateTypeError::CfnRegistryException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::cfn_registry_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_cfn_registry_exception::de_cfn_registry_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ActivateTypeError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "TypeNotFoundException" => crate::error::ActivateTypeError::TypeNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::CfnRegistryExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_cfn_registry_exception::de_cfn_registry_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::activate_type::ActivateTypeError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "TypeNotFoundException" => {
+            crate::operation::activate_type::ActivateTypeError::TypeNotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::type_not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_type_not_found_exception::de_type_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ActivateTypeError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::ActivateTypeError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::TypeNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_type_not_found_exception::de_type_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::activate_type::ActivateTypeError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::activate_type::ActivateTypeError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_activate_type_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ActivateTypeOutput, crate::error::ActivateTypeError> {
+) -> std::result::Result<
+    crate::operation::activate_type::ActivateTypeOutput,
+    crate::operation::activate_type::ActivateTypeError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::activate_type_output::Builder::default();
+        let mut output =
+            crate::operation::activate_type::builders::ActivateTypeOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_activate_type::de_activate_type(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ActivateTypeError::unhandled)?;
+        .map_err(crate::operation::activate_type::ActivateTypeError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -72,8 +85,11 @@ pub fn de_activate_type_http_response(
 #[allow(unused_mut)]
 pub fn de_activate_type(
     inp: &[u8],
-    mut builder: crate::output::activate_type_output::Builder,
-) -> Result<crate::output::activate_type_output::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    mut builder: crate::operation::activate_type::builders::ActivateTypeOutputBuilder,
+) -> Result<
+    crate::operation::activate_type::builders::ActivateTypeOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

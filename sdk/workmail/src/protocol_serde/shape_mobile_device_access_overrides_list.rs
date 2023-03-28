@@ -2,7 +2,7 @@
 pub(crate) fn de_mobile_device_access_overrides_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::MobileDeviceAccessOverride>>,
+    Option<std::vec::Vec<crate::types::MobileDeviceAccessOverride>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

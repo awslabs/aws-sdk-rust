@@ -2,7 +2,7 @@
 pub(crate) fn de_account_assignment_operation_status_metadata<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::AccountAssignmentOperationStatusMetadata>,
+    Option<crate::types::AccountAssignmentOperationStatusMetadata>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::account_assignment_operation_status_metadata::Builder::default();
+                crate::types::builders::AccountAssignmentOperationStatusMetadataBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -31,7 +31,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::StatusValues::from(u.as_ref()))
+                                            .map(|u| crate::types::StatusValues::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

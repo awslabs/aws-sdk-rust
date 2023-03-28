@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_matching_resource<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::MatchingResource>>,
+    Option<std::vec::Vec<crate::types::MatchingResource>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

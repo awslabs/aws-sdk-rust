@@ -2,7 +2,7 @@
 pub(crate) fn de_journal_kinesis_stream_description_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::JournalKinesisStreamDescription>>,
+    Option<std::vec::Vec<crate::types::JournalKinesisStreamDescription>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

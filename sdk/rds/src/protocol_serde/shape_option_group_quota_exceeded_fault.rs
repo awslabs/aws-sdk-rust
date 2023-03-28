@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_option_group_quota_exceeded_fault_xml_err(
     inp: &[u8],
-    mut builder: crate::error::option_group_quota_exceeded_fault::Builder,
+    mut builder: crate::types::error::builders::OptionGroupQuotaExceededFaultBuilder,
 ) -> Result<
-    crate::error::option_group_quota_exceeded_fault::Builder,
+    crate::types::error::builders::OptionGroupQuotaExceededFaultBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

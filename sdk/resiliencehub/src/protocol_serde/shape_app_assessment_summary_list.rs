@@ -2,7 +2,7 @@
 pub(crate) fn de_app_assessment_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AppAssessmentSummary>>,
+    Option<std::vec::Vec<crate::types::AppAssessmentSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

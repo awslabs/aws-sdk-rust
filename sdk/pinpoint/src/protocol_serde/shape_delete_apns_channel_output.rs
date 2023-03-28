@@ -2,15 +2,15 @@
 pub fn de_apns_channel_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::ApnsChannelResponse>,
-    crate::error::DeleteApnsChannelError,
+    std::option::Option<crate::types::ApnsChannelResponse>,
+    crate::operation::delete_apns_channel::DeleteApnsChannelError,
 > {
     (!body.is_empty())
         .then(|| {
             crate::protocol_serde::shape_apns_channel_response::de_apns_channel_response_payload(
                 body,
             )
-            .map_err(crate::error::DeleteApnsChannelError::unhandled)
+            .map_err(crate::operation::delete_apns_channel::DeleteApnsChannelError::unhandled)
         })
         .transpose()
 }

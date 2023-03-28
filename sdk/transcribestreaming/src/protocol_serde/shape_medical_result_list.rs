@@ -2,7 +2,7 @@
 pub(crate) fn de_medical_result_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::MedicalResult>>,
+    Option<std::vec::Vec<crate::types::MedicalResult>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

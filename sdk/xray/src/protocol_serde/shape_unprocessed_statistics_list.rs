@@ -2,7 +2,7 @@
 pub(crate) fn de_unprocessed_statistics_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::UnprocessedStatistics>>,
+    Option<std::vec::Vec<crate::types::UnprocessedStatistics>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

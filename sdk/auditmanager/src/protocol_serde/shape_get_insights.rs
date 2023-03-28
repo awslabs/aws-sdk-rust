@@ -2,66 +2,83 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_insights_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetInsightsOutput, crate::error::GetInsightsError> {
+) -> std::result::Result<
+    crate::operation::get_insights::GetInsightsOutput,
+    crate::operation::get_insights::GetInsightsError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetInsightsError::unhandled)?;
+        .map_err(crate::operation::get_insights::GetInsightsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::GetInsightsError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::get_insights::GetInsightsError::unhandled(
+                generic,
+            ))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::GetInsightsError::AccessDeniedException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "AccessDeniedException" => {
+            crate::operation::get_insights::GetInsightsError::AccessDeniedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::access_denied_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetInsightsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InternalServerException" => crate::error::GetInsightsError::InternalServerException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::AccessDeniedExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_insights::GetInsightsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InternalServerException" => {
+            crate::operation::get_insights::GetInsightsError::InternalServerException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetInsightsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::GetInsightsError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InternalServerExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_insights::GetInsightsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::get_insights::GetInsightsError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_insights_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetInsightsOutput, crate::error::GetInsightsError> {
+) -> std::result::Result<
+    crate::operation::get_insights::GetInsightsOutput,
+    crate::operation::get_insights::GetInsightsError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_insights_output::Builder::default();
+        let mut output =
+            crate::operation::get_insights::builders::GetInsightsOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_get_insights::de_get_insights(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::GetInsightsError::unhandled)?;
+        .map_err(crate::operation::get_insights::GetInsightsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -71,9 +88,9 @@ pub fn de_get_insights_http_response(
 
 pub(crate) fn de_get_insights(
     value: &[u8],
-    mut builder: crate::output::get_insights_output::Builder,
+    mut builder: crate::operation::get_insights::builders::GetInsightsOutputBuilder,
 ) -> Result<
-    crate::output::get_insights_output::Builder,
+    crate::operation::get_insights::builders::GetInsightsOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

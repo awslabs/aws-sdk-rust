@@ -2,7 +2,7 @@
 pub(crate) fn de_batch_put_geofence_error_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::BatchPutGeofenceError>>,
+    Option<std::vec::Vec<crate::types::BatchPutGeofenceError>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

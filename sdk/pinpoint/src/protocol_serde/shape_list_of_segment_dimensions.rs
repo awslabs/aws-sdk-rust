@@ -2,7 +2,7 @@
 pub(crate) fn de_list_of_segment_dimensions<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SegmentDimensions>>,
+    Option<std::vec::Vec<crate::types::SegmentDimensions>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

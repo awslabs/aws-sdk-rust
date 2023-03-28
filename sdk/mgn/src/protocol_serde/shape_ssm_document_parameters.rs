@@ -5,7 +5,7 @@ pub(crate) fn de_ssm_document_parameters<'a, I>(
     Option<
         std::collections::HashMap<
             std::string::String,
-            std::vec::Vec<crate::model::SsmParameterStoreParameter>,
+            std::vec::Vec<crate::types::SsmParameterStoreParameter>,
         >,
     >,
     aws_smithy_json::deserialize::error::DeserializeError,

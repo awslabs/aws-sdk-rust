@@ -3,79 +3,78 @@
 pub fn de_list_managed_insight_rules_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListManagedInsightRulesOutput,
-    crate::error::ListManagedInsightRulesError,
+    crate::operation::list_managed_insight_rules::ListManagedInsightRulesOutput,
+    crate::operation::list_managed_insight_rules::ListManagedInsightRulesError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListManagedInsightRulesError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::list_managed_insight_rules::ListManagedInsightRulesError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::error::ListManagedInsightRulesError::unhandled(
+        None => return Err(
+            crate::operation::list_managed_insight_rules::ListManagedInsightRulesError::unhandled(
                 generic,
-            ))
-        }
+            ),
+        ),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidNextToken" => {
-            crate::error::ListManagedInsightRulesError::InvalidNextToken({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidNextToken" => crate::operation::list_managed_insight_rules::ListManagedInsightRulesError::InvalidNextToken({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_next_token::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidNextTokenBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_next_token::de_invalid_next_token_xml_err(response.body().as_ref(), output).map_err(crate::error::ListManagedInsightRulesError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_next_token::de_invalid_next_token_xml_err(response.body().as_ref(), output).map_err(crate::operation::list_managed_insight_rules::ListManagedInsightRulesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidParameterValue" => {
-            crate::error::ListManagedInsightRulesError::InvalidParameterValueException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidParameterValue" => crate::operation::list_managed_insight_rules::ListManagedInsightRulesError::InvalidParameterValueException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_parameter_value_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListManagedInsightRulesError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::list_managed_insight_rules::ListManagedInsightRulesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "MissingParameter" => {
-            crate::error::ListManagedInsightRulesError::MissingRequiredParameterException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "MissingParameter" => crate::operation::list_managed_insight_rules::ListManagedInsightRulesError::MissingRequiredParameterException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::missing_required_parameter_exception::Builder::default();
+                    let mut output = crate::types::error::builders::MissingRequiredParameterExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_missing_required_parameter_exception::de_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListManagedInsightRulesError::unhandled)?;
+                    output = crate::protocol_serde::shape_missing_required_parameter_exception::de_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::list_managed_insight_rules::ListManagedInsightRulesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::ListManagedInsightRulesError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::list_managed_insight_rules::ListManagedInsightRulesError::generic(generic)
     })
 }
 
@@ -83,19 +82,14 @@ pub fn de_list_managed_insight_rules_http_error(
 pub fn de_list_managed_insight_rules_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListManagedInsightRulesOutput,
-    crate::error::ListManagedInsightRulesError,
+    crate::operation::list_managed_insight_rules::ListManagedInsightRulesOutput,
+    crate::operation::list_managed_insight_rules::ListManagedInsightRulesError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_managed_insight_rules_output::Builder::default();
+        let mut output = crate::operation::list_managed_insight_rules::builders::ListManagedInsightRulesOutputBuilder::default();
         let _ = response;
-        output =
-            crate::protocol_serde::shape_list_managed_insight_rules::de_list_managed_insight_rules(
-                response.body().as_ref(),
-                output,
-            )
-            .map_err(crate::error::ListManagedInsightRulesError::unhandled)?;
+        output = crate::protocol_serde::shape_list_managed_insight_rules::de_list_managed_insight_rules(response.body().as_ref(), output).map_err(crate::operation::list_managed_insight_rules::ListManagedInsightRulesError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -106,9 +100,9 @@ pub fn de_list_managed_insight_rules_http_response(
 #[allow(unused_mut)]
 pub fn de_list_managed_insight_rules(
     inp: &[u8],
-    mut builder: crate::output::list_managed_insight_rules_output::Builder,
+    mut builder: crate::operation::list_managed_insight_rules::builders::ListManagedInsightRulesOutputBuilder,
 ) -> Result<
-    crate::output::list_managed_insight_rules_output::Builder,
+    crate::operation::list_managed_insight_rules::builders::ListManagedInsightRulesOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

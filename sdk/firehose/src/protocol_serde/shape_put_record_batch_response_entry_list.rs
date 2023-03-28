@@ -2,7 +2,7 @@
 pub(crate) fn de_put_record_batch_response_entry_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::PutRecordBatchResponseEntry>>,
+    Option<std::vec::Vec<crate::types::PutRecordBatchResponseEntry>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

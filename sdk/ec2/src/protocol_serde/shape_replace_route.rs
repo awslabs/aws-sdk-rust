@@ -2,22 +2,31 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_replace_route_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ReplaceRouteOutput, crate::error::ReplaceRouteError> {
+) -> std::result::Result<
+    crate::operation::replace_route::ReplaceRouteOutput,
+    crate::operation::replace_route::ReplaceRouteError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ReplaceRouteError::unhandled)?;
+        .map_err(crate::operation::replace_route::ReplaceRouteError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::ReplaceRouteError::generic(generic))
+    Err(crate::operation::replace_route::ReplaceRouteError::generic(
+        generic,
+    ))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_replace_route_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ReplaceRouteOutput, crate::error::ReplaceRouteError> {
+) -> std::result::Result<
+    crate::operation::replace_route::ReplaceRouteOutput,
+    crate::operation::replace_route::ReplaceRouteError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::replace_route_output::Builder::default();
+        let mut output =
+            crate::operation::replace_route::builders::ReplaceRouteOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

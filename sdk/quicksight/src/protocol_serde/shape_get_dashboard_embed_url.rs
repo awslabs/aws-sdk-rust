@@ -3,230 +3,232 @@
 pub fn de_get_dashboard_embed_url_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetDashboardEmbedUrlOutput,
-    crate::error::GetDashboardEmbedUrlError,
+    crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlOutput,
+    crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetDashboardEmbedUrlError::unhandled)?;
+        .map_err(crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::GetDashboardEmbedUrlError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => {
-            crate::error::GetDashboardEmbedUrlError::AccessDeniedException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::access_denied_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDashboardEmbedUrlError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "DomainNotWhitelistedException" => {
-            crate::error::GetDashboardEmbedUrlError::DomainNotWhitelistedException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::domain_not_whitelisted_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_domain_not_whitelisted_exception::de_domain_not_whitelisted_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDashboardEmbedUrlError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "IdentityTypeNotSupportedException" => {
-            crate::error::GetDashboardEmbedUrlError::IdentityTypeNotSupportedException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::identity_type_not_supported_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_identity_type_not_supported_exception::de_identity_type_not_supported_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDashboardEmbedUrlError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InternalFailureException" => {
-            crate::error::GetDashboardEmbedUrlError::InternalFailureException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::internal_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDashboardEmbedUrlError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InvalidParameterValueException" => {
-            crate::error::GetDashboardEmbedUrlError::InvalidParameterValueException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_parameter_value_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDashboardEmbedUrlError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "QuickSightUserNotFoundException" => {
-            crate::error::GetDashboardEmbedUrlError::QuickSightUserNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::quick_sight_user_not_found_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_quick_sight_user_not_found_exception::de_quick_sight_user_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDashboardEmbedUrlError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ResourceExistsException" => {
-            crate::error::GetDashboardEmbedUrlError::ResourceExistsException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_exists_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_exists_exception::de_resource_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDashboardEmbedUrlError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ResourceNotFoundException" => {
-            crate::error::GetDashboardEmbedUrlError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDashboardEmbedUrlError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "SessionLifetimeInMinutesInvalidException" => {
-            crate::error::GetDashboardEmbedUrlError::SessionLifetimeInMinutesInvalidException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::session_lifetime_in_minutes_invalid_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_session_lifetime_in_minutes_invalid_exception::de_session_lifetime_in_minutes_invalid_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDashboardEmbedUrlError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ThrottlingException" => crate::error::GetDashboardEmbedUrlError::ThrottlingException({
+        "AccessDeniedException" => crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlError::AccessDeniedException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::throttling_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDashboardEmbedUrlError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "UnsupportedPricingPlanException" => {
-            crate::error::GetDashboardEmbedUrlError::UnsupportedPricingPlanException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "DomainNotWhitelistedException" => crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlError::DomainNotWhitelistedException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::unsupported_pricing_plan_exception::Builder::default();
+                    let mut output = crate::types::error::builders::DomainNotWhitelistedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_unsupported_pricing_plan_exception::de_unsupported_pricing_plan_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDashboardEmbedUrlError::unhandled)?;
+                    output = crate::protocol_serde::shape_domain_not_whitelisted_exception::de_domain_not_whitelisted_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "UnsupportedUserEditionException" => {
-            crate::error::GetDashboardEmbedUrlError::UnsupportedUserEditionException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "IdentityTypeNotSupportedException" => crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlError::IdentityTypeNotSupportedException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::unsupported_user_edition_exception::Builder::default();
+                    let mut output = crate::types::error::builders::IdentityTypeNotSupportedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_unsupported_user_edition_exception::de_unsupported_user_edition_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDashboardEmbedUrlError::unhandled)?;
+                    output = crate::protocol_serde::shape_identity_type_not_supported_exception::de_identity_type_not_supported_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::GetDashboardEmbedUrlError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InternalFailureException" => crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlError::InternalFailureException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InternalFailureExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidParameterValueException" => crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlError::InvalidParameterValueException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "QuickSightUserNotFoundException" => crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlError::QuickSightUserNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::QuickSightUserNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_quick_sight_user_not_found_exception::de_quick_sight_user_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceExistsException" => crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlError::ResourceExistsException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ResourceExistsExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_exists_exception::de_resource_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "SessionLifetimeInMinutesInvalidException" => crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlError::SessionLifetimeInMinutesInvalidException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::SessionLifetimeInMinutesInvalidExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_session_lifetime_in_minutes_invalid_exception::de_session_lifetime_in_minutes_invalid_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ThrottlingException" => crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "UnsupportedPricingPlanException" => crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlError::UnsupportedPricingPlanException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::UnsupportedPricingPlanExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_unsupported_pricing_plan_exception::de_unsupported_pricing_plan_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "UnsupportedUserEditionException" => crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlError::UnsupportedUserEditionException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::UnsupportedUserEditionExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_unsupported_user_edition_exception::de_unsupported_user_edition_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlError::generic(generic)
     })
 }
 
@@ -234,18 +236,18 @@ pub fn de_get_dashboard_embed_url_http_error(
 pub fn de_get_dashboard_embed_url_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetDashboardEmbedUrlOutput,
-    crate::error::GetDashboardEmbedUrlError,
+    crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlOutput,
+    crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_dashboard_embed_url_output::Builder::default();
+        let mut output = crate::operation::get_dashboard_embed_url::builders::GetDashboardEmbedUrlOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_get_dashboard_embed_url::de_get_dashboard_embed_url(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::GetDashboardEmbedUrlError::unhandled)?;
+        .map_err(crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlError::unhandled)?;
         output = output.set_status(Some(response.status().as_u16() as _));
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
@@ -256,9 +258,9 @@ pub fn de_get_dashboard_embed_url_http_response(
 
 pub(crate) fn de_get_dashboard_embed_url(
     value: &[u8],
-    mut builder: crate::output::get_dashboard_embed_url_output::Builder,
+    mut builder: crate::operation::get_dashboard_embed_url::builders::GetDashboardEmbedUrlOutputBuilder,
 ) -> Result<
-    crate::output::get_dashboard_embed_url_output::Builder,
+    crate::operation::get_dashboard_embed_url::builders::GetDashboardEmbedUrlOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

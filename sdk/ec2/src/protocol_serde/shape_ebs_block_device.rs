@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_ebs_block_device(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::EbsBlockDevice,
+    input: &crate::types::EbsBlockDevice,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("DeleteOnTermination");
@@ -63,9 +63,9 @@ pub fn ser_ebs_block_device(
 
 pub fn de_ebs_block_device(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::EbsBlockDevice, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::EbsBlockDevice, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::EbsBlockDevice::builder();
+    let mut builder = crate::types::EbsBlockDevice::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("deleteOnTermination") /* DeleteOnTermination com.amazonaws.ec2#EbsBlockDevice$DeleteOnTermination */ =>  {
@@ -129,8 +129,8 @@ pub fn de_ebs_block_device(
             s if s.matches("volumeType") /* VolumeType com.amazonaws.ec2#EbsBlockDevice$VolumeType */ =>  {
                 let var_23 =
                     Some(
-                        Result::<crate::model::VolumeType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::VolumeType::from(
+                        Result::<crate::types::VolumeType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::VolumeType::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

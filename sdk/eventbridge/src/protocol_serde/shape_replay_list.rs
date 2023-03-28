@@ -2,7 +2,7 @@
 pub(crate) fn de_replay_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Replay>>,
+    Option<std::vec::Vec<crate::types::Replay>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

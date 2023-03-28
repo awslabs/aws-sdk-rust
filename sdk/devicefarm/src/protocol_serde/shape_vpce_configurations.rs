@@ -2,7 +2,7 @@
 pub(crate) fn de_vpce_configurations<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::VpceConfiguration>>,
+    Option<std::vec::Vec<crate::types::VpceConfiguration>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

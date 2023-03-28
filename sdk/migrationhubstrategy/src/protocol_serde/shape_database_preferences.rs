@@ -2,7 +2,7 @@
 pub(crate) fn de_database_preferences<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::DatabasePreferences>,
+    Option<crate::types::DatabasePreferences>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::database_preferences::Builder::default();
+            let mut builder = crate::types::builders::DatabasePreferencesBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::DatabaseManagementPreference::from(
+                                            crate::types::DatabaseManagementPreference::from(
                                                 u.as_ref(),
                                             )
                                         })
@@ -68,7 +68,7 @@ where
 
 pub fn ser_database_preferences(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::DatabasePreferences,
+    input: &crate::types::DatabasePreferences,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.database_management_preference {
         object

@@ -2,7 +2,7 @@
 pub(crate) fn de_list_vector_enrichment_job_output_config<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ListVectorEnrichmentJobOutputConfig>,
+    Option<crate::types::ListVectorEnrichmentJobOutputConfig>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::list_vector_enrichment_job_output_config::Builder::default();
+                crate::types::builders::ListVectorEnrichmentJobOutputConfigBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -49,7 +49,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::VectorEnrichmentJobType::from(u.as_ref())
+                                            crate::types::VectorEnrichmentJobType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -79,7 +79,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::VectorEnrichmentJobStatus::from(
+                                            crate::types::VectorEnrichmentJobStatus::from(
                                                 u.as_ref(),
                                             )
                                         })

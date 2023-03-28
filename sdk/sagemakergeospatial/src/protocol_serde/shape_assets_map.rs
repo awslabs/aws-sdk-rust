@@ -2,7 +2,7 @@
 pub(crate) fn de_assets_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<std::string::String, crate::model::AssetValue>>,
+    Option<std::collections::HashMap<std::string::String, crate::types::AssetValue>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

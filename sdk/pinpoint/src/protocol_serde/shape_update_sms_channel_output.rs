@@ -2,13 +2,13 @@
 pub fn de_sms_channel_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::SmsChannelResponse>,
-    crate::error::UpdateSmsChannelError,
+    std::option::Option<crate::types::SmsChannelResponse>,
+    crate::operation::update_sms_channel::UpdateSmsChannelError,
 > {
     (!body.is_empty())
         .then(|| {
             crate::protocol_serde::shape_sms_channel_response::de_sms_channel_response_payload(body)
-                .map_err(crate::error::UpdateSmsChannelError::unhandled)
+                .map_err(crate::operation::update_sms_channel::UpdateSmsChannelError::unhandled)
         })
         .transpose()
 }

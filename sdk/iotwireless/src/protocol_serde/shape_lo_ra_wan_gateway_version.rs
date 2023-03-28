@@ -2,7 +2,7 @@
 pub(crate) fn de_lo_ra_wan_gateway_version<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::LoRaWanGatewayVersion>,
+    Option<crate::types::LoRaWanGatewayVersion>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::lo_ra_wan_gateway_version::Builder::default();
+            let mut builder = crate::types::builders::LoRaWanGatewayVersionBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -75,7 +75,7 @@ where
 
 pub fn ser_lo_ra_wan_gateway_version(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::LoRaWanGatewayVersion,
+    input: &crate::types::LoRaWanGatewayVersion,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.package_version {
         object.key("PackageVersion").string(var_1.as_str());

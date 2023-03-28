@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_listener(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::Listener,
+    input: &crate::types::Listener,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Protocol");
@@ -40,9 +40,9 @@ pub fn ser_listener(
 
 pub fn de_listener(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::Listener, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::Listener, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::Listener::builder();
+    let mut builder = crate::types::Listener::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Protocol") /* Protocol com.amazonaws.elasticloadbalancing#Listener$Protocol */ =>  {

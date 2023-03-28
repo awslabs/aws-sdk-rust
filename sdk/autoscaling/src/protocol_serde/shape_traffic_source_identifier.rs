@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_traffic_source_identifier(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::TrafficSourceIdentifier,
+    input: &crate::types::TrafficSourceIdentifier,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Identifier");
@@ -14,9 +14,9 @@ pub fn ser_traffic_source_identifier(
 
 pub fn de_traffic_source_identifier(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::TrafficSourceIdentifier, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::TrafficSourceIdentifier, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::TrafficSourceIdentifier::builder();
+    let mut builder = crate::types::TrafficSourceIdentifier::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Identifier") /* Identifier com.amazonaws.autoscaling#TrafficSourceIdentifier$Identifier */ =>  {

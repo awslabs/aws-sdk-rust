@@ -2,30 +2,33 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_versions_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListVersionsOutput, crate::error::ListVersionsError> {
+) -> std::result::Result<
+    crate::operation::list_versions::ListVersionsOutput,
+    crate::operation::list_versions::ListVersionsError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListVersionsError::unhandled)?;
+        .map_err(crate::operation::list_versions::ListVersionsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListVersionsError::unhandled(generic)),
+        None => return Err(crate::operation::list_versions::ListVersionsError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BaseException" => crate::error::ListVersionsError::BaseException({
+        "BaseException" => crate::operation::list_versions::ListVersionsError::BaseException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::error::base_exception::Builder::default();
+                let mut output = crate::types::error::builders::BaseExceptionBuilder::default();
                 let _ = response;
                 output = crate::protocol_serde::shape_base_exception::de_base_exception_json_err(
                     response.body().as_ref(),
                     output,
                 )
-                .map_err(crate::error::ListVersionsError::unhandled)?;
+                .map_err(crate::operation::list_versions::ListVersionsError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -34,29 +37,15 @@ pub fn de_list_versions_http_error(
             }
             tmp
         }),
-        "InternalException" => crate::error::ListVersionsError::InternalException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_exception::de_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListVersionsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ResourceNotFoundException" => {
-            crate::error::ListVersionsError::ResourceNotFoundException({
+        "InternalException" => {
+            crate::operation::list_versions::ListVersionsError::InternalException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::InternalExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListVersionsError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_exception::de_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_versions::ListVersionsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -66,38 +55,63 @@ pub fn de_list_versions_http_error(
                 tmp
             })
         }
-        "ValidationException" => crate::error::ListVersionsError::ValidationException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "ResourceNotFoundException" => {
+            crate::operation::list_versions::ListVersionsError::ResourceNotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListVersionsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::ListVersionsError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_versions::ListVersionsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ValidationException" => {
+            crate::operation::list_versions::ListVersionsError::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_versions::ListVersionsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::list_versions::ListVersionsError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_versions_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListVersionsOutput, crate::error::ListVersionsError> {
+) -> std::result::Result<
+    crate::operation::list_versions::ListVersionsOutput,
+    crate::operation::list_versions::ListVersionsError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_versions_output::Builder::default();
+        let mut output =
+            crate::operation::list_versions::builders::ListVersionsOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_versions::de_list_versions(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListVersionsError::unhandled)?;
+        .map_err(crate::operation::list_versions::ListVersionsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -107,9 +121,9 @@ pub fn de_list_versions_http_response(
 
 pub(crate) fn de_list_versions(
     value: &[u8],
-    mut builder: crate::output::list_versions_output::Builder,
+    mut builder: crate::operation::list_versions::builders::ListVersionsOutputBuilder,
 ) -> Result<
-    crate::output::list_versions_output::Builder,
+    crate::operation::list_versions::builders::ListVersionsOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

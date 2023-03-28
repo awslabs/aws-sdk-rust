@@ -2,9 +2,11 @@
 #[allow(unused_mut)]
 pub fn de_no_such_key_signing_key_xml_err(
     inp: &[u8],
-    mut builder: crate::error::no_such_key_signing_key::Builder,
-) -> Result<crate::error::no_such_key_signing_key::Builder, aws_smithy_xml::decode::XmlDecodeError>
-{
+    mut builder: crate::types::error::builders::NoSuchKeySigningKeyBuilder,
+) -> Result<
+    crate::types::error::builders::NoSuchKeySigningKeyBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     if inp.is_empty() {
         return Ok(builder);
     }

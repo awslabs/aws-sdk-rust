@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_duplicate_policy_name_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::duplicate_policy_name_exception::Builder,
+    mut builder: crate::types::error::builders::DuplicatePolicyNameExceptionBuilder,
 ) -> Result<
-    crate::error::duplicate_policy_name_exception::Builder,
+    crate::types::error::builders::DuplicatePolicyNameExceptionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

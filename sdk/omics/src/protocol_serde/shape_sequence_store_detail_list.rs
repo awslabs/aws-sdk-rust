@@ -2,7 +2,7 @@
 pub(crate) fn de_sequence_store_detail_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SequenceStoreDetail>>,
+    Option<std::vec::Vec<crate::types::SequenceStoreDetail>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

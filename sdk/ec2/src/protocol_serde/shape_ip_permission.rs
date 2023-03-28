@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_ip_permission(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::IpPermission,
+    input: &crate::types::IpPermission,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("FromPort");
@@ -76,9 +76,9 @@ pub fn ser_ip_permission(
 
 pub fn de_ip_permission(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::IpPermission, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::IpPermission, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::IpPermission::builder();
+    let mut builder = crate::types::IpPermission::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("fromPort") /* FromPort com.amazonaws.ec2#IpPermission$FromPort */ =>  {

@@ -2,7 +2,7 @@
 pub(crate) fn de_custom_images<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CustomImage>>,
+    Option<std::vec::Vec<crate::types::CustomImage>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

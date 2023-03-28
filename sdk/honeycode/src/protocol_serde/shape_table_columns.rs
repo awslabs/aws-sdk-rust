@@ -2,7 +2,7 @@
 pub(crate) fn de_table_columns<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::TableColumn>>,
+    Option<std::vec::Vec<crate::types::TableColumn>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

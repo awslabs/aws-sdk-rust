@@ -2,7 +2,7 @@
 pub(crate) fn de_listed_execution<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ListedExecution>,
+    Option<crate::types::ListedExecution>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::listed_execution::Builder::default();
+            let mut builder = crate::types::builders::ListedExecutionBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -51,7 +51,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ExecutionStatus::from(u.as_ref())
+                                            crate::types::ExecutionStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

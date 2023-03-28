@@ -2,7 +2,7 @@
 pub(crate) fn de_lexicon_description_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::LexiconDescription>>,
+    Option<std::vec::Vec<crate::types::LexiconDescription>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

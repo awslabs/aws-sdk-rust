@@ -2,7 +2,7 @@
 pub(crate) fn de_deliverability_test_reports<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DeliverabilityTestReport>>,
+    Option<std::vec::Vec<crate::types::DeliverabilityTestReport>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

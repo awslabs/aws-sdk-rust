@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_deployment<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Deployment>>,
+    Option<std::vec::Vec<crate::types::Deployment>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

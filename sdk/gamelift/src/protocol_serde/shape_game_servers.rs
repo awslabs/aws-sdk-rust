@@ -2,7 +2,7 @@
 pub(crate) fn de_game_servers<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::GameServer>>,
+    Option<std::vec::Vec<crate::types::GameServer>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

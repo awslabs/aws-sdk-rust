@@ -2,7 +2,7 @@
 pub(crate) fn de_run_command_targets<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::RunCommandTarget>>,
+    Option<std::vec::Vec<crate::types::RunCommandTarget>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

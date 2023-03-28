@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_snapshot_schedule_update_in_progress_fault_xml_err(
     inp: &[u8],
-    mut builder: crate::error::snapshot_schedule_update_in_progress_fault::Builder,
+    mut builder: crate::types::error::builders::SnapshotScheduleUpdateInProgressFaultBuilder,
 ) -> Result<
-    crate::error::snapshot_schedule_update_in_progress_fault::Builder,
+    crate::types::error::builders::SnapshotScheduleUpdateInProgressFaultBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

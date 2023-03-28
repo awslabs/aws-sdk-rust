@@ -2,7 +2,7 @@
 pub(crate) fn de_additional_datasets<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AdditionalDataset>>,
+    Option<std::vec::Vec<crate::types::AdditionalDataset>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

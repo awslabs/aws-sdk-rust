@@ -2,7 +2,7 @@
 pub(crate) fn de_launched_instance<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::LaunchedInstance>,
+    Option<crate::types::LaunchedInstance>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::launched_instance::Builder::default();
+            let mut builder = crate::types::builders::LaunchedInstanceBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -48,7 +48,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::FirstBoot::from(u.as_ref()))
+                                            .map(|u| crate::types::FirstBoot::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

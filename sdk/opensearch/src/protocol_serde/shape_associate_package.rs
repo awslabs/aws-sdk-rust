@@ -2,92 +2,35 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_associate_package_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::AssociatePackageOutput, crate::error::AssociatePackageError>
-{
+) -> std::result::Result<
+    crate::operation::associate_package::AssociatePackageOutput,
+    crate::operation::associate_package::AssociatePackageError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::AssociatePackageError::unhandled)?;
+        .map_err(crate::operation::associate_package::AssociatePackageError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::AssociatePackageError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::associate_package::AssociatePackageError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::AssociatePackageError::AccessDeniedException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::access_denied_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociatePackageError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "BaseException" => crate::error::AssociatePackageError::BaseException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::base_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_base_exception::de_base_exception_json_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::AssociatePackageError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ConflictException" => crate::error::AssociatePackageError::ConflictException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::conflict_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociatePackageError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InternalException" => crate::error::AssociatePackageError::InternalException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_exception::de_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociatePackageError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ResourceNotFoundException" => {
-            crate::error::AssociatePackageError::ResourceNotFoundException({
+        "AccessDeniedException" => {
+            crate::operation::associate_package::AssociatePackageError::AccessDeniedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::AccessDeniedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociatePackageError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::associate_package::AssociatePackageError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -97,39 +40,123 @@ pub fn de_associate_package_http_error(
                 tmp
             })
         }
-        "ValidationException" => crate::error::AssociatePackageError::ValidationException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "BaseException" => {
+            crate::operation::associate_package::AssociatePackageError::BaseException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociatePackageError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::AssociatePackageError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::BaseExceptionBuilder::default();
+                    let _ = response;
+                    output =
+                        crate::protocol_serde::shape_base_exception::de_base_exception_json_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(
+                            crate::operation::associate_package::AssociatePackageError::unhandled,
+                        )?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ConflictException" => {
+            crate::operation::associate_package::AssociatePackageError::ConflictException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ConflictExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::associate_package::AssociatePackageError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InternalException" => {
+            crate::operation::associate_package::AssociatePackageError::InternalException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InternalExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_exception::de_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::associate_package::AssociatePackageError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::operation::associate_package::AssociatePackageError::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::associate_package::AssociatePackageError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ValidationException" => {
+            crate::operation::associate_package::AssociatePackageError::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::associate_package::AssociatePackageError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::associate_package::AssociatePackageError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_associate_package_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::AssociatePackageOutput, crate::error::AssociatePackageError>
-{
+) -> std::result::Result<
+    crate::operation::associate_package::AssociatePackageOutput,
+    crate::operation::associate_package::AssociatePackageError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::associate_package_output::Builder::default();
+        let mut output =
+            crate::operation::associate_package::builders::AssociatePackageOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_associate_package::de_associate_package(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::AssociatePackageError::unhandled)?;
+        .map_err(crate::operation::associate_package::AssociatePackageError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -139,9 +166,9 @@ pub fn de_associate_package_http_response(
 
 pub(crate) fn de_associate_package(
     value: &[u8],
-    mut builder: crate::output::associate_package_output::Builder,
+    mut builder: crate::operation::associate_package::builders::AssociatePackageOutputBuilder,
 ) -> Result<
-    crate::output::associate_package_output::Builder,
+    crate::operation::associate_package::builders::AssociatePackageOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

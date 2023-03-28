@@ -2,7 +2,7 @@
 pub(crate) fn de_lambda_function_utilization_metric<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::LambdaFunctionUtilizationMetric>,
+    Option<crate::types::LambdaFunctionUtilizationMetric>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::lambda_function_utilization_metric::Builder::default();
+            let mut builder =
+                crate::types::builders::LambdaFunctionUtilizationMetricBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +31,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::LambdaFunctionMetricName::from(u.as_ref())
+                                            crate::types::LambdaFunctionMetricName::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -43,7 +44,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::LambdaFunctionMetricStatistic::from(
+                                            crate::types::LambdaFunctionMetricStatistic::from(
                                                 u.as_ref(),
                                             )
                                         })

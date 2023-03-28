@@ -2,7 +2,7 @@
 pub(crate) fn de_cognito_identity_provider_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CognitoIdentityProvider>>,
+    Option<std::vec::Vec<crate::types::CognitoIdentityProvider>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,310 +2,334 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_modify_listener_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ModifyListenerOutput, crate::error::ModifyListenerError> {
+) -> std::result::Result<
+    crate::operation::modify_listener::ModifyListenerOutput,
+    crate::operation::modify_listener::ModifyListenerError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ModifyListenerError::unhandled)?;
+        .map_err(crate::operation::modify_listener::ModifyListenerError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ModifyListenerError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::modify_listener::ModifyListenerError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ALPNPolicyNotFound" => {
-            crate::error::ModifyListenerError::AlpnPolicyNotSupportedException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "ALPNPolicyNotFound" => crate::operation::modify_listener::ModifyListenerError::AlpnPolicyNotSupportedException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::alpn_policy_not_supported_exception::Builder::default();
+                    let mut output = crate::types::error::builders::AlpnPolicyNotSupportedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_alpn_policy_not_supported_exception::de_alpn_policy_not_supported_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyListenerError::unhandled)?;
+                    output = crate::protocol_serde::shape_alpn_policy_not_supported_exception::de_alpn_policy_not_supported_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_listener::ModifyListenerError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "CertificateNotFound" => crate::error::ModifyListenerError::CertificateNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::certificate_not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_certificate_not_found_exception::de_certificate_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyListenerError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "DuplicateListener" => crate::error::ModifyListenerError::DuplicateListenerException({
+        "CertificateNotFound" => crate::operation::modify_listener::ModifyListenerError::CertificateNotFoundException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::duplicate_listener_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_duplicate_listener_exception::de_duplicate_listener_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyListenerError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "IncompatibleProtocols" => {
-            crate::error::ModifyListenerError::IncompatibleProtocolsException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::incompatible_protocols_exception::Builder::default();
+                    let mut output = crate::types::error::builders::CertificateNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_incompatible_protocols_exception::de_incompatible_protocols_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyListenerError::unhandled)?;
+                    output = crate::protocol_serde::shape_certificate_not_found_exception::de_certificate_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_listener::ModifyListenerError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidConfigurationRequest" => {
-            crate::error::ModifyListenerError::InvalidConfigurationRequestException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "DuplicateListener" => crate::operation::modify_listener::ModifyListenerError::DuplicateListenerException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_configuration_request_exception::Builder::default();
+                    let mut output = crate::types::error::builders::DuplicateListenerExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_configuration_request_exception::de_invalid_configuration_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyListenerError::unhandled)?;
+                    output = crate::protocol_serde::shape_duplicate_listener_exception::de_duplicate_listener_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_listener::ModifyListenerError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidLoadBalancerAction" => {
-            crate::error::ModifyListenerError::InvalidLoadBalancerActionException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "IncompatibleProtocols" => crate::operation::modify_listener::ModifyListenerError::IncompatibleProtocolsException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_load_balancer_action_exception::Builder::default();
+                    let mut output = crate::types::error::builders::IncompatibleProtocolsExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_load_balancer_action_exception::de_invalid_load_balancer_action_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyListenerError::unhandled)?;
+                    output = crate::protocol_serde::shape_incompatible_protocols_exception::de_incompatible_protocols_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_listener::ModifyListenerError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ListenerNotFound" => crate::error::ModifyListenerError::ListenerNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::listener_not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_listener_not_found_exception::de_listener_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyListenerError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "SSLPolicyNotFound" => crate::error::ModifyListenerError::SslPolicyNotFoundException({
+        "InvalidConfigurationRequest" => crate::operation::modify_listener::ModifyListenerError::InvalidConfigurationRequestException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::ssl_policy_not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_ssl_policy_not_found_exception::de_ssl_policy_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyListenerError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "TargetGroupAssociationLimit" => {
-            crate::error::ModifyListenerError::TargetGroupAssociationLimitException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::target_group_association_limit_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidConfigurationRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_target_group_association_limit_exception::de_target_group_association_limit_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyListenerError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_configuration_request_exception::de_invalid_configuration_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_listener::ModifyListenerError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "TargetGroupNotFound" => crate::error::ModifyListenerError::TargetGroupNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::target_group_not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_target_group_not_found_exception::de_target_group_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyListenerError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "TooManyActions" => crate::error::ModifyListenerError::TooManyActionsException({
+        "InvalidLoadBalancerAction" => crate::operation::modify_listener::ModifyListenerError::InvalidLoadBalancerActionException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::too_many_actions_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_too_many_actions_exception::de_too_many_actions_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyListenerError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "TooManyCertificates" => crate::error::ModifyListenerError::TooManyCertificatesException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::too_many_certificates_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_too_many_certificates_exception::de_too_many_certificates_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyListenerError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "TooManyListeners" => crate::error::ModifyListenerError::TooManyListenersException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::too_many_listeners_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_too_many_listeners_exception::de_too_many_listeners_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyListenerError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "TooManyRegistrationsForTargetId" => {
-            crate::error::ModifyListenerError::TooManyRegistrationsForTargetIdException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_registrations_for_target_id_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidLoadBalancerActionExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_registrations_for_target_id_exception::de_too_many_registrations_for_target_id_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyListenerError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_load_balancer_action_exception::de_invalid_load_balancer_action_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_listener::ModifyListenerError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "TooManyTargets" => crate::error::ModifyListenerError::TooManyTargetsException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::too_many_targets_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_too_many_targets_exception::de_too_many_targets_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyListenerError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "TooManyUniqueTargetGroupsPerLoadBalancer" => {
-            crate::error::ModifyListenerError::TooManyUniqueTargetGroupsPerLoadBalancerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "ListenerNotFound" => crate::operation::modify_listener::ModifyListenerError::ListenerNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_unique_target_groups_per_load_balancer_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ListenerNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_unique_target_groups_per_load_balancer_exception::de_too_many_unique_target_groups_per_load_balancer_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyListenerError::unhandled)?;
+                    output = crate::protocol_serde::shape_listener_not_found_exception::de_listener_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_listener::ModifyListenerError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "UnsupportedProtocol" => crate::error::ModifyListenerError::UnsupportedProtocolException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::unsupported_protocol_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_unsupported_protocol_exception::de_unsupported_protocol_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyListenerError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::ModifyListenerError::generic(generic),
+        "SSLPolicyNotFound" => crate::operation::modify_listener::ModifyListenerError::SslPolicyNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::SslPolicyNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_ssl_policy_not_found_exception::de_ssl_policy_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_listener::ModifyListenerError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TargetGroupAssociationLimit" => crate::operation::modify_listener::ModifyListenerError::TargetGroupAssociationLimitException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::TargetGroupAssociationLimitExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_target_group_association_limit_exception::de_target_group_association_limit_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_listener::ModifyListenerError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TargetGroupNotFound" => crate::operation::modify_listener::ModifyListenerError::TargetGroupNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::TargetGroupNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_target_group_not_found_exception::de_target_group_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_listener::ModifyListenerError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TooManyActions" => crate::operation::modify_listener::ModifyListenerError::TooManyActionsException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::TooManyActionsExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_too_many_actions_exception::de_too_many_actions_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_listener::ModifyListenerError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TooManyCertificates" => crate::operation::modify_listener::ModifyListenerError::TooManyCertificatesException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::TooManyCertificatesExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_too_many_certificates_exception::de_too_many_certificates_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_listener::ModifyListenerError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TooManyListeners" => crate::operation::modify_listener::ModifyListenerError::TooManyListenersException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::TooManyListenersExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_too_many_listeners_exception::de_too_many_listeners_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_listener::ModifyListenerError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TooManyRegistrationsForTargetId" => crate::operation::modify_listener::ModifyListenerError::TooManyRegistrationsForTargetIdException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::TooManyRegistrationsForTargetIdExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_too_many_registrations_for_target_id_exception::de_too_many_registrations_for_target_id_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_listener::ModifyListenerError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TooManyTargets" => crate::operation::modify_listener::ModifyListenerError::TooManyTargetsException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::TooManyTargetsExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_too_many_targets_exception::de_too_many_targets_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_listener::ModifyListenerError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TooManyUniqueTargetGroupsPerLoadBalancer" => crate::operation::modify_listener::ModifyListenerError::TooManyUniqueTargetGroupsPerLoadBalancerException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::TooManyUniqueTargetGroupsPerLoadBalancerExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_too_many_unique_target_groups_per_load_balancer_exception::de_too_many_unique_target_groups_per_load_balancer_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_listener::ModifyListenerError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "UnsupportedProtocol" => crate::operation::modify_listener::ModifyListenerError::UnsupportedProtocolException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::UnsupportedProtocolExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_unsupported_protocol_exception::de_unsupported_protocol_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_listener::ModifyListenerError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::modify_listener::ModifyListenerError::generic(generic)
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_modify_listener_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ModifyListenerOutput, crate::error::ModifyListenerError> {
+) -> std::result::Result<
+    crate::operation::modify_listener::ModifyListenerOutput,
+    crate::operation::modify_listener::ModifyListenerError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::modify_listener_output::Builder::default();
+        let mut output =
+            crate::operation::modify_listener::builders::ModifyListenerOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_modify_listener::de_modify_listener(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ModifyListenerError::unhandled)?;
+        .map_err(crate::operation::modify_listener::ModifyListenerError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -316,9 +340,11 @@ pub fn de_modify_listener_http_response(
 #[allow(unused_mut)]
 pub fn de_modify_listener(
     inp: &[u8],
-    mut builder: crate::output::modify_listener_output::Builder,
-) -> Result<crate::output::modify_listener_output::Builder, aws_smithy_xml::decode::XmlDecodeError>
-{
+    mut builder: crate::operation::modify_listener::builders::ModifyListenerOutputBuilder,
+) -> Result<
+    crate::operation::modify_listener::builders::ModifyListenerOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

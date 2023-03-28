@@ -2,7 +2,7 @@
 pub(crate) fn de_file_system_association_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::FileSystemAssociationSummary>>,
+    Option<std::vec::Vec<crate::types::FileSystemAssociationSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

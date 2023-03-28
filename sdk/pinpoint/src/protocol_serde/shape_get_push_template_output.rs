@@ -2,10 +2,10 @@
 pub fn de_push_notification_template_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::PushNotificationTemplateResponse>,
-    crate::error::GetPushTemplateError,
+    std::option::Option<crate::types::PushNotificationTemplateResponse>,
+    crate::operation::get_push_template::GetPushTemplateError,
 > {
     (!body.is_empty()).then(||{
-        crate::protocol_serde::shape_push_notification_template_response::de_push_notification_template_response_payload(body).map_err(crate::error::GetPushTemplateError::unhandled)
+        crate::protocol_serde::shape_push_notification_template_response::de_push_notification_template_response_payload(body).map_err(crate::operation::get_push_template::GetPushTemplateError::unhandled)
     }).transpose()
 }

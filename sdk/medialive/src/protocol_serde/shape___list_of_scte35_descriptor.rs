@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_scte35_descriptor<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Scte35Descriptor>>,
+    Option<std::vec::Vec<crate::types::Scte35Descriptor>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

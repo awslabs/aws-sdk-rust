@@ -2,7 +2,7 @@
 pub(crate) fn de_what_if_analyses<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::WhatIfAnalysisSummary>>,
+    Option<std::vec::Vec<crate::types::WhatIfAnalysisSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

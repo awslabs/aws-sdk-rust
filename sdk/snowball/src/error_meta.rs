@@ -4,29 +4,29 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>Job creation failed. Currently, clusters support five nodes. If you have fewer than five nodes for your cluster and you have more nodes to create for this cluster, try again and create jobs until your cluster has exactly five nodes.</p>
-    ClusterLimitExceededException(crate::error::ClusterLimitExceededException),
+    ClusterLimitExceededException(crate::types::error::ClusterLimitExceededException),
     /// <p>You get this exception when you call <code>CreateReturnShippingLabel</code> more than once when other requests are not completed.</p>
-    ConflictException(crate::error::ConflictException),
+    ConflictException(crate::types::error::ConflictException),
     /// <p>Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted action.</p>
-    Ec2RequestFailedException(crate::error::Ec2RequestFailedException),
+    Ec2RequestFailedException(crate::types::error::Ec2RequestFailedException),
     /// <p>The address provided was invalid. Check the address with your region's carrier, and try again.</p>
-    InvalidAddressException(crate::error::InvalidAddressException),
+    InvalidAddressException(crate::types::error::InvalidAddressException),
     /// <p>Job or cluster creation failed. One or more inputs were invalid. Confirm that the <code>CreateClusterRequest$SnowballType</code> value supports your <code>CreateJobRequest$JobType</code>, and try again.</p>
-    InvalidInputCombinationException(crate::error::InvalidInputCombinationException),
+    InvalidInputCombinationException(crate::types::error::InvalidInputCombinationException),
     /// <p>The action can't be performed because the job's current state doesn't allow that action to be performed.</p>
-    InvalidJobStateException(crate::error::InvalidJobStateException),
+    InvalidJobStateException(crate::types::error::InvalidJobStateException),
     /// <p>The <code>NextToken</code> string was altered unexpectedly, and the operation has stopped. Run the operation without changing the <code>NextToken</code> string, and try again.</p>
-    InvalidNextTokenException(crate::error::InvalidNextTokenException),
+    InvalidNextTokenException(crate::types::error::InvalidNextTokenException),
     /// <p>The specified resource can't be found. Check the information you provided in your last request, and try again.</p>
-    InvalidResourceException(crate::error::InvalidResourceException),
+    InvalidResourceException(crate::types::error::InvalidResourceException),
     /// <p>The provided Key Management Service key lacks the permissions to perform the specified <code>CreateJob</code> or <code>UpdateJob</code> action.</p>
-    KmsRequestFailedException(crate::error::KmsRequestFailedException),
+    KmsRequestFailedException(crate::types::error::KmsRequestFailedException),
     /// <p>You get this exception if you call <code>CreateReturnShippingLabel</code> and a valid return shipping label already exists. In this case, use <code>DescribeReturnShippingLabel</code> to get the URL.</p>
     ReturnShippingLabelAlreadyExistsException(
-        crate::error::ReturnShippingLabelAlreadyExistsException,
+        crate::types::error::ReturnShippingLabelAlreadyExistsException,
     ),
     /// <p>The address is either outside the serviceable area for your region, or an error occurred. Check the address with your region's carrier and try again. If the issue persists, contact Amazon Web Services Support.</p>
-    UnsupportedAddressException(crate::error::UnsupportedAddressException),
+    UnsupportedAddressException(crate::types::error::UnsupportedAddressException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled),
 }
@@ -48,199 +48,17 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CancelClusterError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CancelClusterError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::CancelClusterError> for Error {
-    fn from(err: crate::error::CancelClusterError) -> Self {
-        match err {
-            crate::error::CancelClusterError::InvalidJobStateException(inner) => {
-                Error::InvalidJobStateException(inner)
-            }
-            crate::error::CancelClusterError::InvalidResourceException(inner) => {
-                Error::InvalidResourceException(inner)
-            }
-            crate::error::CancelClusterError::KmsRequestFailedException(inner) => {
-                Error::KmsRequestFailedException(inner)
-            }
-            crate::error::CancelClusterError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CancelJobError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CancelJobError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::CancelJobError> for Error {
-    fn from(err: crate::error::CancelJobError) -> Self {
-        match err {
-            crate::error::CancelJobError::InvalidJobStateException(inner) => {
-                Error::InvalidJobStateException(inner)
-            }
-            crate::error::CancelJobError::InvalidResourceException(inner) => {
-                Error::InvalidResourceException(inner)
-            }
-            crate::error::CancelJobError::KmsRequestFailedException(inner) => {
-                Error::KmsRequestFailedException(inner)
-            }
-            crate::error::CancelJobError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateAddressError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateAddressError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::CreateAddressError> for Error {
-    fn from(err: crate::error::CreateAddressError) -> Self {
-        match err {
-            crate::error::CreateAddressError::InvalidAddressException(inner) => {
-                Error::InvalidAddressException(inner)
-            }
-            crate::error::CreateAddressError::UnsupportedAddressException(inner) => {
-                Error::UnsupportedAddressException(inner)
-            }
-            crate::error::CreateAddressError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateClusterError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateClusterError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::CreateClusterError> for Error {
-    fn from(err: crate::error::CreateClusterError) -> Self {
-        match err {
-            crate::error::CreateClusterError::Ec2RequestFailedException(inner) => {
-                Error::Ec2RequestFailedException(inner)
-            }
-            crate::error::CreateClusterError::InvalidInputCombinationException(inner) => {
-                Error::InvalidInputCombinationException(inner)
-            }
-            crate::error::CreateClusterError::InvalidResourceException(inner) => {
-                Error::InvalidResourceException(inner)
-            }
-            crate::error::CreateClusterError::KmsRequestFailedException(inner) => {
-                Error::KmsRequestFailedException(inner)
-            }
-            crate::error::CreateClusterError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateJobError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateJobError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::CreateJobError> for Error {
-    fn from(err: crate::error::CreateJobError) -> Self {
-        match err {
-            crate::error::CreateJobError::ClusterLimitExceededException(inner) => {
-                Error::ClusterLimitExceededException(inner)
-            }
-            crate::error::CreateJobError::Ec2RequestFailedException(inner) => {
-                Error::Ec2RequestFailedException(inner)
-            }
-            crate::error::CreateJobError::InvalidInputCombinationException(inner) => {
-                Error::InvalidInputCombinationException(inner)
-            }
-            crate::error::CreateJobError::InvalidResourceException(inner) => {
-                Error::InvalidResourceException(inner)
-            }
-            crate::error::CreateJobError::KmsRequestFailedException(inner) => {
-                Error::KmsRequestFailedException(inner)
-            }
-            crate::error::CreateJobError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateLongTermPricingError, R>>
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::cancel_cluster::CancelClusterError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateLongTermPricingError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::cancel_cluster::CancelClusterError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -257,419 +75,31 @@ where
         }
     }
 }
-impl From<crate::error::CreateLongTermPricingError> for Error {
-    fn from(err: crate::error::CreateLongTermPricingError) -> Self {
+impl From<crate::operation::cancel_cluster::CancelClusterError> for Error {
+    fn from(err: crate::operation::cancel_cluster::CancelClusterError) -> Self {
         match err {
-            crate::error::CreateLongTermPricingError::InvalidResourceException(inner) => {
-                Error::InvalidResourceException(inner)
-            }
-            crate::error::CreateLongTermPricingError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateReturnShippingLabelError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateReturnShippingLabelError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::CreateReturnShippingLabelError> for Error {
-    fn from(err: crate::error::CreateReturnShippingLabelError) -> Self {
-        match err {
-            crate::error::CreateReturnShippingLabelError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::CreateReturnShippingLabelError::InvalidInputCombinationException(inner) => Error::InvalidInputCombinationException(inner),
-            crate::error::CreateReturnShippingLabelError::InvalidJobStateException(inner) => Error::InvalidJobStateException(inner),
-            crate::error::CreateReturnShippingLabelError::InvalidResourceException(inner) => Error::InvalidResourceException(inner),
-            crate::error::CreateReturnShippingLabelError::ReturnShippingLabelAlreadyExistsException(inner) => Error::ReturnShippingLabelAlreadyExistsException(inner),
-            crate::error::CreateReturnShippingLabelError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeAddressError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeAddressError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribeAddressError> for Error {
-    fn from(err: crate::error::DescribeAddressError) -> Self {
-        match err {
-            crate::error::DescribeAddressError::InvalidResourceException(inner) => {
-                Error::InvalidResourceException(inner)
-            }
-            crate::error::DescribeAddressError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeAddressesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeAddressesError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribeAddressesError> for Error {
-    fn from(err: crate::error::DescribeAddressesError) -> Self {
-        match err {
-            crate::error::DescribeAddressesError::InvalidNextTokenException(inner) => {
-                Error::InvalidNextTokenException(inner)
-            }
-            crate::error::DescribeAddressesError::InvalidResourceException(inner) => {
-                Error::InvalidResourceException(inner)
-            }
-            crate::error::DescribeAddressesError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeClusterError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeClusterError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribeClusterError> for Error {
-    fn from(err: crate::error::DescribeClusterError) -> Self {
-        match err {
-            crate::error::DescribeClusterError::InvalidResourceException(inner) => {
-                Error::InvalidResourceException(inner)
-            }
-            crate::error::DescribeClusterError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeJobError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeJobError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribeJobError> for Error {
-    fn from(err: crate::error::DescribeJobError) -> Self {
-        match err {
-            crate::error::DescribeJobError::InvalidResourceException(inner) => {
-                Error::InvalidResourceException(inner)
-            }
-            crate::error::DescribeJobError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeReturnShippingLabelError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeReturnShippingLabelError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribeReturnShippingLabelError> for Error {
-    fn from(err: crate::error::DescribeReturnShippingLabelError) -> Self {
-        match err {
-            crate::error::DescribeReturnShippingLabelError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::DescribeReturnShippingLabelError::InvalidJobStateException(inner) => {
-                Error::InvalidJobStateException(inner)
-            }
-            crate::error::DescribeReturnShippingLabelError::InvalidResourceException(inner) => {
-                Error::InvalidResourceException(inner)
-            }
-            crate::error::DescribeReturnShippingLabelError::Unhandled(inner) => {
+            crate::operation::cancel_cluster::CancelClusterError::InvalidJobStateException(
+                inner,
+            ) => Error::InvalidJobStateException(inner),
+            crate::operation::cancel_cluster::CancelClusterError::InvalidResourceException(
+                inner,
+            ) => Error::InvalidResourceException(inner),
+            crate::operation::cancel_cluster::CancelClusterError::KmsRequestFailedException(
+                inner,
+            ) => Error::KmsRequestFailedException(inner),
+            crate::operation::cancel_cluster::CancelClusterError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetJobManifestError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetJobManifestError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetJobManifestError> for Error {
-    fn from(err: crate::error::GetJobManifestError) -> Self {
-        match err {
-            crate::error::GetJobManifestError::InvalidJobStateException(inner) => {
-                Error::InvalidJobStateException(inner)
-            }
-            crate::error::GetJobManifestError::InvalidResourceException(inner) => {
-                Error::InvalidResourceException(inner)
-            }
-            crate::error::GetJobManifestError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetJobUnlockCodeError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetJobUnlockCodeError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetJobUnlockCodeError> for Error {
-    fn from(err: crate::error::GetJobUnlockCodeError) -> Self {
-        match err {
-            crate::error::GetJobUnlockCodeError::InvalidJobStateException(inner) => {
-                Error::InvalidJobStateException(inner)
-            }
-            crate::error::GetJobUnlockCodeError::InvalidResourceException(inner) => {
-                Error::InvalidResourceException(inner)
-            }
-            crate::error::GetJobUnlockCodeError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetSnowballUsageError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetSnowballUsageError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetSnowballUsageError> for Error {
-    fn from(err: crate::error::GetSnowballUsageError) -> Self {
-        match err {
-            crate::error::GetSnowballUsageError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetSoftwareUpdatesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetSoftwareUpdatesError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetSoftwareUpdatesError> for Error {
-    fn from(err: crate::error::GetSoftwareUpdatesError) -> Self {
-        match err {
-            crate::error::GetSoftwareUpdatesError::InvalidJobStateException(inner) => {
-                Error::InvalidJobStateException(inner)
-            }
-            crate::error::GetSoftwareUpdatesError::InvalidResourceException(inner) => {
-                Error::InvalidResourceException(inner)
-            }
-            crate::error::GetSoftwareUpdatesError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListClusterJobsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListClusterJobsError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::ListClusterJobsError> for Error {
-    fn from(err: crate::error::ListClusterJobsError) -> Self {
-        match err {
-            crate::error::ListClusterJobsError::InvalidNextTokenException(inner) => {
-                Error::InvalidNextTokenException(inner)
-            }
-            crate::error::ListClusterJobsError::InvalidResourceException(inner) => {
-                Error::InvalidResourceException(inner)
-            }
-            crate::error::ListClusterJobsError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListClustersError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListClustersError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::ListClustersError> for Error {
-    fn from(err: crate::error::ListClustersError) -> Self {
-        match err {
-            crate::error::ListClustersError::InvalidNextTokenException(inner) => {
-                Error::InvalidNextTokenException(inner)
-            }
-            crate::error::ListClustersError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListCompatibleImagesError, R>>
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::cancel_job::CancelJobError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListCompatibleImagesError, R>,
+        err: aws_smithy_http::result::SdkError<crate::operation::cancel_job::CancelJobError, R>,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -686,55 +116,35 @@ where
         }
     }
 }
-impl From<crate::error::ListCompatibleImagesError> for Error {
-    fn from(err: crate::error::ListCompatibleImagesError) -> Self {
+impl From<crate::operation::cancel_job::CancelJobError> for Error {
+    fn from(err: crate::operation::cancel_job::CancelJobError) -> Self {
         match err {
-            crate::error::ListCompatibleImagesError::Ec2RequestFailedException(inner) => {
-                Error::Ec2RequestFailedException(inner)
+            crate::operation::cancel_job::CancelJobError::InvalidJobStateException(inner) => {
+                Error::InvalidJobStateException(inner)
             }
-            crate::error::ListCompatibleImagesError::InvalidNextTokenException(inner) => {
-                Error::InvalidNextTokenException(inner)
+            crate::operation::cancel_job::CancelJobError::InvalidResourceException(inner) => {
+                Error::InvalidResourceException(inner)
             }
-            crate::error::ListCompatibleImagesError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::cancel_job::CancelJobError::KmsRequestFailedException(inner) => {
+                Error::KmsRequestFailedException(inner)
+            }
+            crate::operation::cancel_job::CancelJobError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListJobsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListJobsError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::ListJobsError> for Error {
-    fn from(err: crate::error::ListJobsError) -> Self {
-        match err {
-            crate::error::ListJobsError::InvalidNextTokenException(inner) => {
-                Error::InvalidNextTokenException(inner)
-            }
-            crate::error::ListJobsError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListLongTermPricingError, R>> for Error
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::create_address::CreateAddressError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListLongTermPricingError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_address::CreateAddressError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -751,24 +161,33 @@ where
         }
     }
 }
-impl From<crate::error::ListLongTermPricingError> for Error {
-    fn from(err: crate::error::ListLongTermPricingError) -> Self {
+impl From<crate::operation::create_address::CreateAddressError> for Error {
+    fn from(err: crate::operation::create_address::CreateAddressError) -> Self {
         match err {
-            crate::error::ListLongTermPricingError::InvalidNextTokenException(inner) => {
-                Error::InvalidNextTokenException(inner)
+            crate::operation::create_address::CreateAddressError::InvalidAddressException(
+                inner,
+            ) => Error::InvalidAddressException(inner),
+            crate::operation::create_address::CreateAddressError::UnsupportedAddressException(
+                inner,
+            ) => Error::UnsupportedAddressException(inner),
+            crate::operation::create_address::CreateAddressError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
-            crate::error::ListLongTermPricingError::InvalidResourceException(inner) => {
-                Error::InvalidResourceException(inner)
-            }
-            crate::error::ListLongTermPricingError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateClusterError, R>> for Error
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::create_cluster::CreateClusterError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateClusterError, R>) -> Self {
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_cluster::CreateClusterError,
+            R,
+        >,
+    ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
@@ -784,33 +203,25 @@ where
         }
     }
 }
-impl From<crate::error::UpdateClusterError> for Error {
-    fn from(err: crate::error::UpdateClusterError) -> Self {
+impl From<crate::operation::create_cluster::CreateClusterError> for Error {
+    fn from(err: crate::operation::create_cluster::CreateClusterError) -> Self {
         match err {
-            crate::error::UpdateClusterError::Ec2RequestFailedException(inner) => {
-                Error::Ec2RequestFailedException(inner)
-            }
-            crate::error::UpdateClusterError::InvalidInputCombinationException(inner) => {
-                Error::InvalidInputCombinationException(inner)
-            }
-            crate::error::UpdateClusterError::InvalidJobStateException(inner) => {
-                Error::InvalidJobStateException(inner)
-            }
-            crate::error::UpdateClusterError::InvalidResourceException(inner) => {
-                Error::InvalidResourceException(inner)
-            }
-            crate::error::UpdateClusterError::KmsRequestFailedException(inner) => {
-                Error::KmsRequestFailedException(inner)
-            }
-            crate::error::UpdateClusterError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::create_cluster::CreateClusterError::Ec2RequestFailedException(inner) => Error::Ec2RequestFailedException(inner),
+            crate::operation::create_cluster::CreateClusterError::InvalidInputCombinationException(inner) => Error::InvalidInputCombinationException(inner),
+            crate::operation::create_cluster::CreateClusterError::InvalidResourceException(inner) => Error::InvalidResourceException(inner),
+            crate::operation::create_cluster::CreateClusterError::KmsRequestFailedException(inner) => Error::KmsRequestFailedException(inner),
+            crate::operation::create_cluster::CreateClusterError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateJobError, R>> for Error
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_job::CreateJobError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateJobError, R>) -> Self {
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::create_job::CreateJobError, R>,
+    ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
@@ -826,38 +237,45 @@ where
         }
     }
 }
-impl From<crate::error::UpdateJobError> for Error {
-    fn from(err: crate::error::UpdateJobError) -> Self {
+impl From<crate::operation::create_job::CreateJobError> for Error {
+    fn from(err: crate::operation::create_job::CreateJobError) -> Self {
         match err {
-            crate::error::UpdateJobError::ClusterLimitExceededException(inner) => {
+            crate::operation::create_job::CreateJobError::ClusterLimitExceededException(inner) => {
                 Error::ClusterLimitExceededException(inner)
             }
-            crate::error::UpdateJobError::Ec2RequestFailedException(inner) => {
+            crate::operation::create_job::CreateJobError::Ec2RequestFailedException(inner) => {
                 Error::Ec2RequestFailedException(inner)
             }
-            crate::error::UpdateJobError::InvalidInputCombinationException(inner) => {
-                Error::InvalidInputCombinationException(inner)
-            }
-            crate::error::UpdateJobError::InvalidJobStateException(inner) => {
-                Error::InvalidJobStateException(inner)
-            }
-            crate::error::UpdateJobError::InvalidResourceException(inner) => {
+            crate::operation::create_job::CreateJobError::InvalidInputCombinationException(
+                inner,
+            ) => Error::InvalidInputCombinationException(inner),
+            crate::operation::create_job::CreateJobError::InvalidResourceException(inner) => {
                 Error::InvalidResourceException(inner)
             }
-            crate::error::UpdateJobError::KmsRequestFailedException(inner) => {
+            crate::operation::create_job::CreateJobError::KmsRequestFailedException(inner) => {
                 Error::KmsRequestFailedException(inner)
             }
-            crate::error::UpdateJobError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::create_job::CreateJobError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateJobShipmentStateError, R>>
-    for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_long_term_pricing::CreateLongTermPricingError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateJobShipmentStateError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_long_term_pricing::CreateLongTermPricingError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -874,26 +292,729 @@ where
         }
     }
 }
-impl From<crate::error::UpdateJobShipmentStateError> for Error {
-    fn from(err: crate::error::UpdateJobShipmentStateError) -> Self {
+impl From<crate::operation::create_long_term_pricing::CreateLongTermPricingError> for Error {
+    fn from(err: crate::operation::create_long_term_pricing::CreateLongTermPricingError) -> Self {
         match err {
-            crate::error::UpdateJobShipmentStateError::InvalidJobStateException(inner) => {
+            crate::operation::create_long_term_pricing::CreateLongTermPricingError::InvalidResourceException(inner) => Error::InvalidResourceException(inner),
+            crate::operation::create_long_term_pricing::CreateLongTermPricingError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_return_shipping_label::CreateReturnShippingLabelError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_return_shipping_label::CreateReturnShippingLabelError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_return_shipping_label::CreateReturnShippingLabelError>
+    for Error
+{
+    fn from(
+        err: crate::operation::create_return_shipping_label::CreateReturnShippingLabelError,
+    ) -> Self {
+        match err {
+            crate::operation::create_return_shipping_label::CreateReturnShippingLabelError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_return_shipping_label::CreateReturnShippingLabelError::InvalidInputCombinationException(inner) => Error::InvalidInputCombinationException(inner),
+            crate::operation::create_return_shipping_label::CreateReturnShippingLabelError::InvalidJobStateException(inner) => Error::InvalidJobStateException(inner),
+            crate::operation::create_return_shipping_label::CreateReturnShippingLabelError::InvalidResourceException(inner) => Error::InvalidResourceException(inner),
+            crate::operation::create_return_shipping_label::CreateReturnShippingLabelError::ReturnShippingLabelAlreadyExistsException(inner) => Error::ReturnShippingLabelAlreadyExistsException(inner),
+            crate::operation::create_return_shipping_label::CreateReturnShippingLabelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_address::DescribeAddressError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_address::DescribeAddressError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_address::DescribeAddressError> for Error {
+    fn from(err: crate::operation::describe_address::DescribeAddressError) -> Self {
+        match err {
+            crate::operation::describe_address::DescribeAddressError::InvalidResourceException(
+                inner,
+            ) => Error::InvalidResourceException(inner),
+            crate::operation::describe_address::DescribeAddressError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_addresses::DescribeAddressesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_addresses::DescribeAddressesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_addresses::DescribeAddressesError> for Error {
+    fn from(err: crate::operation::describe_addresses::DescribeAddressesError) -> Self {
+        match err {
+            crate::operation::describe_addresses::DescribeAddressesError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::describe_addresses::DescribeAddressesError::InvalidResourceException(inner) => Error::InvalidResourceException(inner),
+            crate::operation::describe_addresses::DescribeAddressesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_cluster::DescribeClusterError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_cluster::DescribeClusterError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_cluster::DescribeClusterError> for Error {
+    fn from(err: crate::operation::describe_cluster::DescribeClusterError) -> Self {
+        match err {
+            crate::operation::describe_cluster::DescribeClusterError::InvalidResourceException(
+                inner,
+            ) => Error::InvalidResourceException(inner),
+            crate::operation::describe_cluster::DescribeClusterError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::describe_job::DescribeJobError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::describe_job::DescribeJobError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_job::DescribeJobError> for Error {
+    fn from(err: crate::operation::describe_job::DescribeJobError) -> Self {
+        match err {
+            crate::operation::describe_job::DescribeJobError::InvalidResourceException(inner) => {
+                Error::InvalidResourceException(inner)
+            }
+            crate::operation::describe_job::DescribeJobError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_return_shipping_label::DescribeReturnShippingLabelError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_return_shipping_label::DescribeReturnShippingLabelError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_return_shipping_label::DescribeReturnShippingLabelError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_return_shipping_label::DescribeReturnShippingLabelError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_return_shipping_label::DescribeReturnShippingLabelError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::describe_return_shipping_label::DescribeReturnShippingLabelError::InvalidJobStateException(inner) => Error::InvalidJobStateException(inner),
+            crate::operation::describe_return_shipping_label::DescribeReturnShippingLabelError::InvalidResourceException(inner) => Error::InvalidResourceException(inner),
+            crate::operation::describe_return_shipping_label::DescribeReturnShippingLabelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_job_manifest::GetJobManifestError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_job_manifest::GetJobManifestError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_job_manifest::GetJobManifestError> for Error {
+    fn from(err: crate::operation::get_job_manifest::GetJobManifestError) -> Self {
+        match err {
+            crate::operation::get_job_manifest::GetJobManifestError::InvalidJobStateException(
+                inner,
+            ) => Error::InvalidJobStateException(inner),
+            crate::operation::get_job_manifest::GetJobManifestError::InvalidResourceException(
+                inner,
+            ) => Error::InvalidResourceException(inner),
+            crate::operation::get_job_manifest::GetJobManifestError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_job_unlock_code::GetJobUnlockCodeError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_job_unlock_code::GetJobUnlockCodeError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_job_unlock_code::GetJobUnlockCodeError> for Error {
+    fn from(err: crate::operation::get_job_unlock_code::GetJobUnlockCodeError) -> Self {
+        match err {
+            crate::operation::get_job_unlock_code::GetJobUnlockCodeError::InvalidJobStateException(inner) => Error::InvalidJobStateException(inner),
+            crate::operation::get_job_unlock_code::GetJobUnlockCodeError::InvalidResourceException(inner) => Error::InvalidResourceException(inner),
+            crate::operation::get_job_unlock_code::GetJobUnlockCodeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_snowball_usage::GetSnowballUsageError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_snowball_usage::GetSnowballUsageError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_snowball_usage::GetSnowballUsageError> for Error {
+    fn from(err: crate::operation::get_snowball_usage::GetSnowballUsageError) -> Self {
+        match err {
+            crate::operation::get_snowball_usage::GetSnowballUsageError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_software_updates::GetSoftwareUpdatesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_software_updates::GetSoftwareUpdatesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_software_updates::GetSoftwareUpdatesError> for Error {
+    fn from(err: crate::operation::get_software_updates::GetSoftwareUpdatesError) -> Self {
+        match err {
+            crate::operation::get_software_updates::GetSoftwareUpdatesError::InvalidJobStateException(inner) => Error::InvalidJobStateException(inner),
+            crate::operation::get_software_updates::GetSoftwareUpdatesError::InvalidResourceException(inner) => Error::InvalidResourceException(inner),
+            crate::operation::get_software_updates::GetSoftwareUpdatesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_cluster_jobs::ListClusterJobsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_cluster_jobs::ListClusterJobsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_cluster_jobs::ListClusterJobsError> for Error {
+    fn from(err: crate::operation::list_cluster_jobs::ListClusterJobsError) -> Self {
+        match err {
+            crate::operation::list_cluster_jobs::ListClusterJobsError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::list_cluster_jobs::ListClusterJobsError::InvalidResourceException(inner) => Error::InvalidResourceException(inner),
+            crate::operation::list_cluster_jobs::ListClusterJobsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::list_clusters::ListClustersError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_clusters::ListClustersError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_clusters::ListClustersError> for Error {
+    fn from(err: crate::operation::list_clusters::ListClustersError) -> Self {
+        match err {
+            crate::operation::list_clusters::ListClustersError::InvalidNextTokenException(
+                inner,
+            ) => Error::InvalidNextTokenException(inner),
+            crate::operation::list_clusters::ListClustersError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_compatible_images::ListCompatibleImagesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_compatible_images::ListCompatibleImagesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_compatible_images::ListCompatibleImagesError> for Error {
+    fn from(err: crate::operation::list_compatible_images::ListCompatibleImagesError) -> Self {
+        match err {
+            crate::operation::list_compatible_images::ListCompatibleImagesError::Ec2RequestFailedException(inner) => Error::Ec2RequestFailedException(inner),
+            crate::operation::list_compatible_images::ListCompatibleImagesError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::list_compatible_images::ListCompatibleImagesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_jobs::ListJobsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::list_jobs::ListJobsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_jobs::ListJobsError> for Error {
+    fn from(err: crate::operation::list_jobs::ListJobsError) -> Self {
+        match err {
+            crate::operation::list_jobs::ListJobsError::InvalidNextTokenException(inner) => {
+                Error::InvalidNextTokenException(inner)
+            }
+            crate::operation::list_jobs::ListJobsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_long_term_pricing::ListLongTermPricingError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_long_term_pricing::ListLongTermPricingError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_long_term_pricing::ListLongTermPricingError> for Error {
+    fn from(err: crate::operation::list_long_term_pricing::ListLongTermPricingError) -> Self {
+        match err {
+            crate::operation::list_long_term_pricing::ListLongTermPricingError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::list_long_term_pricing::ListLongTermPricingError::InvalidResourceException(inner) => Error::InvalidResourceException(inner),
+            crate::operation::list_long_term_pricing::ListLongTermPricingError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::update_cluster::UpdateClusterError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_cluster::UpdateClusterError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_cluster::UpdateClusterError> for Error {
+    fn from(err: crate::operation::update_cluster::UpdateClusterError) -> Self {
+        match err {
+            crate::operation::update_cluster::UpdateClusterError::Ec2RequestFailedException(inner) => Error::Ec2RequestFailedException(inner),
+            crate::operation::update_cluster::UpdateClusterError::InvalidInputCombinationException(inner) => Error::InvalidInputCombinationException(inner),
+            crate::operation::update_cluster::UpdateClusterError::InvalidJobStateException(inner) => Error::InvalidJobStateException(inner),
+            crate::operation::update_cluster::UpdateClusterError::InvalidResourceException(inner) => Error::InvalidResourceException(inner),
+            crate::operation::update_cluster::UpdateClusterError::KmsRequestFailedException(inner) => Error::KmsRequestFailedException(inner),
+            crate::operation::update_cluster::UpdateClusterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_job::UpdateJobError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::update_job::UpdateJobError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_job::UpdateJobError> for Error {
+    fn from(err: crate::operation::update_job::UpdateJobError) -> Self {
+        match err {
+            crate::operation::update_job::UpdateJobError::ClusterLimitExceededException(inner) => {
+                Error::ClusterLimitExceededException(inner)
+            }
+            crate::operation::update_job::UpdateJobError::Ec2RequestFailedException(inner) => {
+                Error::Ec2RequestFailedException(inner)
+            }
+            crate::operation::update_job::UpdateJobError::InvalidInputCombinationException(
+                inner,
+            ) => Error::InvalidInputCombinationException(inner),
+            crate::operation::update_job::UpdateJobError::InvalidJobStateException(inner) => {
                 Error::InvalidJobStateException(inner)
             }
-            crate::error::UpdateJobShipmentStateError::InvalidResourceException(inner) => {
+            crate::operation::update_job::UpdateJobError::InvalidResourceException(inner) => {
                 Error::InvalidResourceException(inner)
             }
-            crate::error::UpdateJobShipmentStateError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::update_job::UpdateJobError::KmsRequestFailedException(inner) => {
+                Error::KmsRequestFailedException(inner)
+            }
+            crate::operation::update_job::UpdateJobError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateLongTermPricingError, R>>
-    for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_job_shipment_state::UpdateJobShipmentStateError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateLongTermPricingError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_job_shipment_state::UpdateJobShipmentStateError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -910,13 +1031,51 @@ where
         }
     }
 }
-impl From<crate::error::UpdateLongTermPricingError> for Error {
-    fn from(err: crate::error::UpdateLongTermPricingError) -> Self {
+impl From<crate::operation::update_job_shipment_state::UpdateJobShipmentStateError> for Error {
+    fn from(err: crate::operation::update_job_shipment_state::UpdateJobShipmentStateError) -> Self {
         match err {
-            crate::error::UpdateLongTermPricingError::InvalidResourceException(inner) => {
-                Error::InvalidResourceException(inner)
+            crate::operation::update_job_shipment_state::UpdateJobShipmentStateError::InvalidJobStateException(inner) => Error::InvalidJobStateException(inner),
+            crate::operation::update_job_shipment_state::UpdateJobShipmentStateError::InvalidResourceException(inner) => Error::InvalidResourceException(inner),
+            crate::operation::update_job_shipment_state::UpdateJobShipmentStateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_long_term_pricing::UpdateLongTermPricingError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_long_term_pricing::UpdateLongTermPricingError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
-            crate::error::UpdateLongTermPricingError::Unhandled(inner) => Error::Unhandled(inner),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_long_term_pricing::UpdateLongTermPricingError> for Error {
+    fn from(err: crate::operation::update_long_term_pricing::UpdateLongTermPricingError) -> Self {
+        match err {
+            crate::operation::update_long_term_pricing::UpdateLongTermPricingError::InvalidResourceException(inner) => Error::InvalidResourceException(inner),
+            crate::operation::update_long_term_pricing::UpdateLongTermPricingError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

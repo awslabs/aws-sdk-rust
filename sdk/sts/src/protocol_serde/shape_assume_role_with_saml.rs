@@ -3,123 +3,130 @@
 pub fn de_assume_role_with_saml_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::AssumeRoleWithSamlOutput,
-    crate::error::AssumeRoleWithSAMLError,
+    crate::operation::assume_role_with_saml::AssumeRoleWithSamlOutput,
+    crate::operation::assume_role_with_saml::AssumeRoleWithSAMLError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::AssumeRoleWithSAMLError::unhandled)?;
+        .map_err(crate::operation::assume_role_with_saml::AssumeRoleWithSAMLError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::AssumeRoleWithSAMLError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::assume_role_with_saml::AssumeRoleWithSAMLError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ExpiredTokenException" => crate::error::AssumeRoleWithSAMLError::ExpiredTokenException({
+        "ExpiredTokenException" => crate::operation::assume_role_with_saml::AssumeRoleWithSAMLError::ExpiredTokenException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::expired_token_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_expired_token_exception::de_expired_token_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AssumeRoleWithSAMLError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ExpiredTokenExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_expired_token_exception::de_expired_token_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::assume_role_with_saml::AssumeRoleWithSAMLError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "IDPRejectedClaim" => crate::error::AssumeRoleWithSAMLError::IdpRejectedClaimException({
+        "IDPRejectedClaim" => crate::operation::assume_role_with_saml::AssumeRoleWithSAMLError::IdpRejectedClaimException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::idp_rejected_claim_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_idp_rejected_claim_exception::de_idp_rejected_claim_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AssumeRoleWithSAMLError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::IdpRejectedClaimExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_idp_rejected_claim_exception::de_idp_rejected_claim_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::assume_role_with_saml::AssumeRoleWithSAMLError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "InvalidIdentityToken" => {
-            crate::error::AssumeRoleWithSAMLError::InvalidIdentityTokenException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidIdentityToken" => crate::operation::assume_role_with_saml::AssumeRoleWithSAMLError::InvalidIdentityTokenException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_identity_token_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidIdentityTokenExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_identity_token_exception::de_invalid_identity_token_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AssumeRoleWithSAMLError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_identity_token_exception::de_invalid_identity_token_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::assume_role_with_saml::AssumeRoleWithSAMLError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "MalformedPolicyDocument" => {
-            crate::error::AssumeRoleWithSAMLError::MalformedPolicyDocumentException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "MalformedPolicyDocument" => crate::operation::assume_role_with_saml::AssumeRoleWithSAMLError::MalformedPolicyDocumentException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::malformed_policy_document_exception::Builder::default();
+                    let mut output = crate::types::error::builders::MalformedPolicyDocumentExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_malformed_policy_document_exception::de_malformed_policy_document_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AssumeRoleWithSAMLError::unhandled)?;
+                    output = crate::protocol_serde::shape_malformed_policy_document_exception::de_malformed_policy_document_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::assume_role_with_saml::AssumeRoleWithSAMLError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "PackedPolicyTooLarge" => {
-            crate::error::AssumeRoleWithSAMLError::PackedPolicyTooLargeException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "PackedPolicyTooLarge" => crate::operation::assume_role_with_saml::AssumeRoleWithSAMLError::PackedPolicyTooLargeException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::packed_policy_too_large_exception::Builder::default();
+                    let mut output = crate::types::error::builders::PackedPolicyTooLargeExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_packed_policy_too_large_exception::de_packed_policy_too_large_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AssumeRoleWithSAMLError::unhandled)?;
+                    output = crate::protocol_serde::shape_packed_policy_too_large_exception::de_packed_policy_too_large_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::assume_role_with_saml::AssumeRoleWithSAMLError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "RegionDisabledException" => {
-            crate::error::AssumeRoleWithSAMLError::RegionDisabledException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "RegionDisabledException" => crate::operation::assume_role_with_saml::AssumeRoleWithSAMLError::RegionDisabledException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::region_disabled_exception::Builder::default();
+                    let mut output = crate::types::error::builders::RegionDisabledExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_region_disabled_exception::de_region_disabled_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AssumeRoleWithSAMLError::unhandled)?;
+                    output = crate::protocol_serde::shape_region_disabled_exception::de_region_disabled_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::assume_role_with_saml::AssumeRoleWithSAMLError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::AssumeRoleWithSAMLError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::assume_role_with_saml::AssumeRoleWithSAMLError::generic(generic)
     })
 }
 
@@ -127,18 +134,18 @@ pub fn de_assume_role_with_saml_http_error(
 pub fn de_assume_role_with_saml_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::AssumeRoleWithSamlOutput,
-    crate::error::AssumeRoleWithSAMLError,
+    crate::operation::assume_role_with_saml::AssumeRoleWithSamlOutput,
+    crate::operation::assume_role_with_saml::AssumeRoleWithSAMLError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::assume_role_with_saml_output::Builder::default();
+        let mut output = crate::operation::assume_role_with_saml::builders::AssumeRoleWithSamlOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_assume_role_with_saml::de_assume_role_with_saml(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::AssumeRoleWithSAMLError::unhandled)?;
+        .map_err(crate::operation::assume_role_with_saml::AssumeRoleWithSAMLError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -149,9 +156,9 @@ pub fn de_assume_role_with_saml_http_response(
 #[allow(unused_mut)]
 pub fn de_assume_role_with_saml(
     inp: &[u8],
-    mut builder: crate::output::assume_role_with_saml_output::Builder,
+    mut builder: crate::operation::assume_role_with_saml::builders::AssumeRoleWithSamlOutputBuilder,
 ) -> Result<
-    crate::output::assume_role_with_saml_output::Builder,
+    crate::operation::assume_role_with_saml::builders::AssumeRoleWithSamlOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

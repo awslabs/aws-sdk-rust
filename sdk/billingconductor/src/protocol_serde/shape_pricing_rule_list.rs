@@ -2,7 +2,7 @@
 pub(crate) fn de_pricing_rule_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::PricingRuleListElement>>,
+    Option<std::vec::Vec<crate::types::PricingRuleListElement>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

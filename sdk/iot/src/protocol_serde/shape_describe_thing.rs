@@ -2,57 +2,69 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_thing_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DescribeThingOutput, crate::error::DescribeThingError> {
+) -> std::result::Result<
+    crate::operation::describe_thing::DescribeThingOutput,
+    crate::operation::describe_thing::DescribeThingError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeThingError::unhandled)?;
+        .map_err(crate::operation::describe_thing::DescribeThingError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DescribeThingError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::describe_thing::DescribeThingError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalFailureException" => crate::error::DescribeThingError::InternalFailureException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_failure_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeThingError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InvalidRequestException" => crate::error::DescribeThingError::InvalidRequestException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::invalid_request_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeThingError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ResourceNotFoundException" => {
-            crate::error::DescribeThingError::ResourceNotFoundException({
+        "InternalFailureException" => {
+            crate::operation::describe_thing::DescribeThingError::InternalFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::InternalFailureExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeThingError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_thing::DescribeThingError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidRequestException" => {
+            crate::operation::describe_thing::DescribeThingError::InvalidRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InvalidRequestExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_thing::DescribeThingError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::operation::describe_thing::DescribeThingError::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_thing::DescribeThingError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -63,14 +75,15 @@ pub fn de_describe_thing_http_error(
             })
         }
         "ServiceUnavailableException" => {
-            crate::error::DescribeThingError::ServiceUnavailableException({
+            crate::operation::describe_thing::DescribeThingError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::service_unavailable_exception::Builder::default();
+                        crate::types::error::builders::ServiceUnavailableExceptionBuilder::default(
+                        );
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeThingError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_thing::DescribeThingError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -80,53 +93,63 @@ pub fn de_describe_thing_http_error(
                 tmp
             })
         }
-        "ThrottlingException" => crate::error::DescribeThingError::ThrottlingException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "ThrottlingException" => {
+            crate::operation::describe_thing::DescribeThingError::ThrottlingException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::throttling_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeThingError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "UnauthorizedException" => crate::error::DescribeThingError::UnauthorizedException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_thing::DescribeThingError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "UnauthorizedException" => {
+            crate::operation::describe_thing::DescribeThingError::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeThingError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::DescribeThingError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::UnauthorizedExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_thing::DescribeThingError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::describe_thing::DescribeThingError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_thing_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DescribeThingOutput, crate::error::DescribeThingError> {
+) -> std::result::Result<
+    crate::operation::describe_thing::DescribeThingOutput,
+    crate::operation::describe_thing::DescribeThingError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_thing_output::Builder::default();
+        let mut output =
+            crate::operation::describe_thing::builders::DescribeThingOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_describe_thing::de_describe_thing(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DescribeThingError::unhandled)?;
+        .map_err(crate::operation::describe_thing::DescribeThingError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -136,9 +159,9 @@ pub fn de_describe_thing_http_response(
 
 pub(crate) fn de_describe_thing(
     value: &[u8],
-    mut builder: crate::output::describe_thing_output::Builder,
+    mut builder: crate::operation::describe_thing::builders::DescribeThingOutputBuilder,
 ) -> Result<
-    crate::output::describe_thing_output::Builder,
+    crate::operation::describe_thing::builders::DescribeThingOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

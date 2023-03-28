@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_key_pair_mismatch_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::key_pair_mismatch_exception::Builder,
+    mut builder: crate::types::error::builders::KeyPairMismatchExceptionBuilder,
 ) -> Result<
-    crate::error::key_pair_mismatch_exception::Builder,
+    crate::types::error::builders::KeyPairMismatchExceptionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

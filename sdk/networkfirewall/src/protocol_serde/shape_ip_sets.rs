@@ -2,7 +2,7 @@
 pub(crate) fn de_ip_sets<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<std::string::String, crate::model::IpSet>>,
+    Option<std::collections::HashMap<std::string::String, crate::types::IpSet>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

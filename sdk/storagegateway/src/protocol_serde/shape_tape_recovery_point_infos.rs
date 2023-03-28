@@ -2,7 +2,7 @@
 pub(crate) fn de_tape_recovery_point_infos<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::TapeRecoveryPointInfo>>,
+    Option<std::vec::Vec<crate::types::TapeRecoveryPointInfo>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,118 +2,132 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_data_sources_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListDataSourcesOutput, crate::error::ListDataSourcesError> {
+) -> std::result::Result<
+    crate::operation::list_data_sources::ListDataSourcesOutput,
+    crate::operation::list_data_sources::ListDataSourcesError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListDataSourcesError::unhandled)?;
+        .map_err(crate::operation::list_data_sources::ListDataSourcesError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListDataSourcesError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::list_data_sources::ListDataSourcesError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::ListDataSourcesError::AccessDeniedException({
+        "AccessDeniedException" => crate::operation::list_data_sources::ListDataSourcesError::AccessDeniedException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::access_denied_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDataSourcesError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_data_sources::ListDataSourcesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "InternalFailureException" => {
-            crate::error::ListDataSourcesError::InternalFailureException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::internal_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDataSourcesError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InvalidNextTokenException" => {
-            crate::error::ListDataSourcesError::InvalidNextTokenException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_next_token_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_next_token_exception::de_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDataSourcesError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InvalidParameterValueException" => {
-            crate::error::ListDataSourcesError::InvalidParameterValueException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_parameter_value_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDataSourcesError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ThrottlingException" => crate::error::ListDataSourcesError::ThrottlingException({
+        "InternalFailureException" => crate::operation::list_data_sources::ListDataSourcesError::InternalFailureException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::throttling_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDataSourcesError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InternalFailureExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_data_sources::ListDataSourcesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::ListDataSourcesError::generic(generic),
+        "InvalidNextTokenException" => crate::operation::list_data_sources::ListDataSourcesError::InvalidNextTokenException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidNextTokenExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_next_token_exception::de_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_data_sources::ListDataSourcesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidParameterValueException" => crate::operation::list_data_sources::ListDataSourcesError::InvalidParameterValueException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_data_sources::ListDataSourcesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ThrottlingException" => crate::operation::list_data_sources::ListDataSourcesError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_data_sources::ListDataSourcesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::list_data_sources::ListDataSourcesError::generic(generic)
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_data_sources_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListDataSourcesOutput, crate::error::ListDataSourcesError> {
+) -> std::result::Result<
+    crate::operation::list_data_sources::ListDataSourcesOutput,
+    crate::operation::list_data_sources::ListDataSourcesError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_data_sources_output::Builder::default();
+        let mut output =
+            crate::operation::list_data_sources::builders::ListDataSourcesOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_data_sources::de_list_data_sources(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListDataSourcesError::unhandled)?;
+        .map_err(crate::operation::list_data_sources::ListDataSourcesError::unhandled)?;
         output = output.set_status(Some(response.status().as_u16() as _));
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
@@ -124,9 +138,9 @@ pub fn de_list_data_sources_http_response(
 
 pub(crate) fn de_list_data_sources(
     value: &[u8],
-    mut builder: crate::output::list_data_sources_output::Builder,
+    mut builder: crate::operation::list_data_sources::builders::ListDataSourcesOutputBuilder,
 ) -> Result<
-    crate::output::list_data_sources_output::Builder,
+    crate::operation::list_data_sources::builders::ListDataSourcesOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

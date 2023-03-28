@@ -2,7 +2,7 @@
 pub(crate) fn de_attribute_group_details_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AttributeGroupDetails>>,
+    Option<std::vec::Vec<crate::types::AttributeGroupDetails>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

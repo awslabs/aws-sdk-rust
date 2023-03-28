@@ -2,7 +2,7 @@
 pub(crate) fn de_slot_hints_slot_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<std::string::String, crate::model::RuntimeHintDetails>>,
+    Option<std::collections::HashMap<std::string::String, crate::types::RuntimeHintDetails>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -3,61 +3,62 @@
 pub fn de_delete_cache_subnet_group_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteCacheSubnetGroupOutput,
-    crate::error::DeleteCacheSubnetGroupError,
+    crate::operation::delete_cache_subnet_group::DeleteCacheSubnetGroupOutput,
+    crate::operation::delete_cache_subnet_group::DeleteCacheSubnetGroupError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteCacheSubnetGroupError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::delete_cache_subnet_group::DeleteCacheSubnetGroupError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::DeleteCacheSubnetGroupError::unhandled(
-                generic,
-            ))
-        }
-    };
+    let error_code =
+        match generic.code() {
+            Some(code) => code,
+            None => return Err(
+                crate::operation::delete_cache_subnet_group::DeleteCacheSubnetGroupError::unhandled(
+                    generic,
+                ),
+            ),
+        };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CacheSubnetGroupInUse" => {
-            crate::error::DeleteCacheSubnetGroupError::CacheSubnetGroupInUse({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "CacheSubnetGroupInUse" => crate::operation::delete_cache_subnet_group::DeleteCacheSubnetGroupError::CacheSubnetGroupInUse({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::cache_subnet_group_in_use::Builder::default();
+                    let mut output = crate::types::error::builders::CacheSubnetGroupInUseBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_cache_subnet_group_in_use::de_cache_subnet_group_in_use_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCacheSubnetGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_cache_subnet_group_in_use::de_cache_subnet_group_in_use_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_cache_subnet_group::DeleteCacheSubnetGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "CacheSubnetGroupNotFoundFault" => {
-            crate::error::DeleteCacheSubnetGroupError::CacheSubnetGroupNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "CacheSubnetGroupNotFoundFault" => crate::operation::delete_cache_subnet_group::DeleteCacheSubnetGroupError::CacheSubnetGroupNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::cache_subnet_group_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::CacheSubnetGroupNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_cache_subnet_group_not_found_fault::de_cache_subnet_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCacheSubnetGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_cache_subnet_group_not_found_fault::de_cache_subnet_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_cache_subnet_group::DeleteCacheSubnetGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DeleteCacheSubnetGroupError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::delete_cache_subnet_group::DeleteCacheSubnetGroupError::generic(generic)
     })
 }
 
@@ -65,12 +66,12 @@ pub fn de_delete_cache_subnet_group_http_error(
 pub fn de_delete_cache_subnet_group_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteCacheSubnetGroupOutput,
-    crate::error::DeleteCacheSubnetGroupError,
+    crate::operation::delete_cache_subnet_group::DeleteCacheSubnetGroupOutput,
+    crate::operation::delete_cache_subnet_group::DeleteCacheSubnetGroupError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_cache_subnet_group_output::Builder::default();
+        let mut output = crate::operation::delete_cache_subnet_group::builders::DeleteCacheSubnetGroupOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

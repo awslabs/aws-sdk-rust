@@ -2,7 +2,7 @@
 pub(crate) fn de_handshake_parties<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::HandshakeParty>>,
+    Option<std::vec::Vec<crate::types::HandshakeParty>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

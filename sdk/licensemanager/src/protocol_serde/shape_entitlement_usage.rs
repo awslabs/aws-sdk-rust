@@ -2,7 +2,7 @@
 pub(crate) fn de_entitlement_usage<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::EntitlementUsage>,
+    Option<crate::types::EntitlementUsage>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::entitlement_usage::Builder::default();
+            let mut builder = crate::types::builders::EntitlementUsageBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -57,7 +57,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::EntitlementDataUnit::from(u.as_ref())
+                                            crate::types::EntitlementDataUnit::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

@@ -2,7 +2,7 @@
 pub(crate) fn de_security_service_policy_data<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::SecurityServicePolicyData>,
+    Option<crate::types::SecurityServicePolicyData>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::security_service_policy_data::Builder::default();
+            let mut builder = crate::types::builders::SecurityServicePolicyDataBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::SecurityServiceType::from(u.as_ref())
+                                            crate::types::SecurityServiceType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -77,7 +77,7 @@ where
 
 pub fn ser_security_service_policy_data(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::SecurityServicePolicyData,
+    input: &crate::types::SecurityServicePolicyData,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.r#type {
         object.key("Type").string(var_1.as_str());

@@ -2,7 +2,7 @@
 pub fn de_supported_ip_address_types(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::ServiceConnectivityType>,
+    std::vec::Vec<crate::types::ServiceConnectivityType>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();
@@ -10,8 +10,8 @@ pub fn de_supported_ip_address_types(
         match tag.start_el() {
             s if s.matches("item") /* member com.amazonaws.ec2#SupportedIpAddressTypes$member */ =>  {
                 out.push(
-                    Result::<crate::model::ServiceConnectivityType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                        crate::model::ServiceConnectivityType::from(
+                    Result::<crate::types::ServiceConnectivityType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                        crate::types::ServiceConnectivityType::from(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                         )
                     )

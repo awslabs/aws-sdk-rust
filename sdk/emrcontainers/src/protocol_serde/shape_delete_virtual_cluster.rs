@@ -3,54 +3,62 @@
 pub fn de_delete_virtual_cluster_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteVirtualClusterOutput,
-    crate::error::DeleteVirtualClusterError,
+    crate::operation::delete_virtual_cluster::DeleteVirtualClusterOutput,
+    crate::operation::delete_virtual_cluster::DeleteVirtualClusterError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteVirtualClusterError::unhandled)?;
+        .map_err(crate::operation::delete_virtual_cluster::DeleteVirtualClusterError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DeleteVirtualClusterError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::delete_virtual_cluster::DeleteVirtualClusterError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerException" => {
-            crate::error::DeleteVirtualClusterError::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalServerException" => crate::operation::delete_virtual_cluster::DeleteVirtualClusterError::InternalServerException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVirtualClusterError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_virtual_cluster::DeleteVirtualClusterError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ValidationException" => crate::error::DeleteVirtualClusterError::ValidationException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVirtualClusterError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::DeleteVirtualClusterError::generic(generic),
+        "ValidationException" => crate::operation::delete_virtual_cluster::DeleteVirtualClusterError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_virtual_cluster::DeleteVirtualClusterError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::delete_virtual_cluster::DeleteVirtualClusterError::generic(generic)
     })
 }
 
@@ -58,18 +66,18 @@ pub fn de_delete_virtual_cluster_http_error(
 pub fn de_delete_virtual_cluster_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteVirtualClusterOutput,
-    crate::error::DeleteVirtualClusterError,
+    crate::operation::delete_virtual_cluster::DeleteVirtualClusterOutput,
+    crate::operation::delete_virtual_cluster::DeleteVirtualClusterError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_virtual_cluster_output::Builder::default();
+        let mut output = crate::operation::delete_virtual_cluster::builders::DeleteVirtualClusterOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_delete_virtual_cluster::de_delete_virtual_cluster(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DeleteVirtualClusterError::unhandled)?;
+        .map_err(crate::operation::delete_virtual_cluster::DeleteVirtualClusterError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -79,9 +87,9 @@ pub fn de_delete_virtual_cluster_http_response(
 
 pub(crate) fn de_delete_virtual_cluster(
     value: &[u8],
-    mut builder: crate::output::delete_virtual_cluster_output::Builder,
+    mut builder: crate::operation::delete_virtual_cluster::builders::DeleteVirtualClusterOutputBuilder,
 ) -> Result<
-    crate::output::delete_virtual_cluster_output::Builder,
+    crate::operation::delete_virtual_cluster::builders::DeleteVirtualClusterOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

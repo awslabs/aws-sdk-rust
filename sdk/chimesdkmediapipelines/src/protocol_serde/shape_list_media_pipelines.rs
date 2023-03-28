@@ -3,140 +3,145 @@
 pub fn de_list_media_pipelines_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListMediaPipelinesOutput,
-    crate::error::ListMediaPipelinesError,
+    crate::operation::list_media_pipelines::ListMediaPipelinesOutput,
+    crate::operation::list_media_pipelines::ListMediaPipelinesError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListMediaPipelinesError::unhandled)?;
+        .map_err(crate::operation::list_media_pipelines::ListMediaPipelinesError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListMediaPipelinesError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::list_media_pipelines::ListMediaPipelinesError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::ListMediaPipelinesError::BadRequestException({
+        "BadRequestException" => crate::operation::list_media_pipelines::ListMediaPipelinesError::BadRequestException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListMediaPipelinesError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_media_pipelines::ListMediaPipelinesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "ForbiddenException" => crate::error::ListMediaPipelinesError::ForbiddenException({
+        "ForbiddenException" => crate::operation::list_media_pipelines::ListMediaPipelinesError::ForbiddenException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListMediaPipelinesError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ForbiddenExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_media_pipelines::ListMediaPipelinesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "ResourceLimitExceededException" => {
-            crate::error::ListMediaPipelinesError::ResourceLimitExceededException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "ResourceLimitExceededException" => crate::operation::list_media_pipelines::ListMediaPipelinesError::ResourceLimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::resource_limit_exceeded_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ResourceLimitExceededExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_limit_exceeded_exception::de_resource_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListMediaPipelinesError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_limit_exceeded_exception::de_resource_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_media_pipelines::ListMediaPipelinesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ServiceFailureException" => {
-            crate::error::ListMediaPipelinesError::ServiceFailureException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ServiceFailureException" => crate::operation::list_media_pipelines::ListMediaPipelinesError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ServiceFailureExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListMediaPipelinesError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_media_pipelines::ListMediaPipelinesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ServiceUnavailableException" => {
-            crate::error::ListMediaPipelinesError::ServiceUnavailableException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ServiceUnavailableException" => crate::operation::list_media_pipelines::ListMediaPipelinesError::ServiceUnavailableException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::service_unavailable_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListMediaPipelinesError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_media_pipelines::ListMediaPipelinesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ThrottledClientException" => {
-            crate::error::ListMediaPipelinesError::ThrottledClientException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ThrottledClientException" => crate::operation::list_media_pipelines::ListMediaPipelinesError::ThrottledClientException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::throttled_client_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ThrottledClientExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_throttled_client_exception::de_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListMediaPipelinesError::unhandled)?;
+                    output = crate::protocol_serde::shape_throttled_client_exception::de_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_media_pipelines::ListMediaPipelinesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "UnauthorizedClientException" => {
-            crate::error::ListMediaPipelinesError::UnauthorizedClientException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "UnauthorizedClientException" => crate::operation::list_media_pipelines::ListMediaPipelinesError::UnauthorizedClientException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::unauthorized_client_exception::Builder::default();
+                    let mut output = crate::types::error::builders::UnauthorizedClientExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_unauthorized_client_exception::de_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListMediaPipelinesError::unhandled)?;
+                    output = crate::protocol_serde::shape_unauthorized_client_exception::de_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_media_pipelines::ListMediaPipelinesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::ListMediaPipelinesError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::list_media_pipelines::ListMediaPipelinesError::generic(generic)
     })
 }
 
@@ -144,18 +149,18 @@ pub fn de_list_media_pipelines_http_error(
 pub fn de_list_media_pipelines_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListMediaPipelinesOutput,
-    crate::error::ListMediaPipelinesError,
+    crate::operation::list_media_pipelines::ListMediaPipelinesOutput,
+    crate::operation::list_media_pipelines::ListMediaPipelinesError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_media_pipelines_output::Builder::default();
+        let mut output = crate::operation::list_media_pipelines::builders::ListMediaPipelinesOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_media_pipelines::de_list_media_pipelines(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListMediaPipelinesError::unhandled)?;
+        .map_err(crate::operation::list_media_pipelines::ListMediaPipelinesError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -165,9 +170,9 @@ pub fn de_list_media_pipelines_http_response(
 
 pub(crate) fn de_list_media_pipelines(
     value: &[u8],
-    mut builder: crate::output::list_media_pipelines_output::Builder,
+    mut builder: crate::operation::list_media_pipelines::builders::ListMediaPipelinesOutputBuilder,
 ) -> Result<
-    crate::output::list_media_pipelines_output::Builder,
+    crate::operation::list_media_pipelines::builders::ListMediaPipelinesOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

@@ -2,7 +2,7 @@
 pub(crate) fn de_requested_service_quota_change<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::RequestedServiceQuotaChange>,
+    Option<crate::types::RequestedServiceQuotaChange>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::requested_service_quota_change::Builder::default();
+            let mut builder = crate::types::builders::RequestedServiceQuotaChangeBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -92,7 +92,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::RequestStatus::from(u.as_ref()))
+                                            .map(|u| crate::types::RequestStatus::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

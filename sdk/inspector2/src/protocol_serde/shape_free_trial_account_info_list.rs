@@ -2,7 +2,7 @@
 pub(crate) fn de_free_trial_account_info_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::FreeTrialAccountInfo>>,
+    Option<std::vec::Vec<crate::types::FreeTrialAccountInfo>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

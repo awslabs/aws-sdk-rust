@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_tag_quota_per_resource_exceeded_xml_err(
     inp: &[u8],
-    mut builder: crate::error::tag_quota_per_resource_exceeded::Builder,
+    mut builder: crate::types::error::builders::TagQuotaPerResourceExceededBuilder,
 ) -> Result<
-    crate::error::tag_quota_per_resource_exceeded::Builder,
+    crate::types::error::builders::TagQuotaPerResourceExceededBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

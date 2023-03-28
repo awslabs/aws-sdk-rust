@@ -3,69 +3,79 @@
 pub fn de_get_configuration_set_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetConfigurationSetOutput,
-    crate::error::GetConfigurationSetError,
+    crate::operation::get_configuration_set::GetConfigurationSetOutput,
+    crate::operation::get_configuration_set::GetConfigurationSetError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetConfigurationSetError::unhandled)?;
+        .map_err(crate::operation::get_configuration_set::GetConfigurationSetError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::GetConfigurationSetError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::get_configuration_set::GetConfigurationSetError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::GetConfigurationSetError::BadRequestException({
+        "BadRequestException" => crate::operation::get_configuration_set::GetConfigurationSetError::BadRequestException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetConfigurationSetError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "NotFoundException" => crate::error::GetConfigurationSetError::NotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetConfigurationSetError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "TooManyRequestsException" => {
-            crate::error::GetConfigurationSetError::TooManyRequestsException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetConfigurationSetError::unhandled)?;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_configuration_set::GetConfigurationSetError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::GetConfigurationSetError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "NotFoundException" => crate::operation::get_configuration_set::GetConfigurationSetError::NotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::NotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_configuration_set::GetConfigurationSetError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TooManyRequestsException" => crate::operation::get_configuration_set::GetConfigurationSetError::TooManyRequestsException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_configuration_set::GetConfigurationSetError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::get_configuration_set::GetConfigurationSetError::generic(generic)
     })
 }
 
@@ -73,18 +83,18 @@ pub fn de_get_configuration_set_http_error(
 pub fn de_get_configuration_set_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetConfigurationSetOutput,
-    crate::error::GetConfigurationSetError,
+    crate::operation::get_configuration_set::GetConfigurationSetOutput,
+    crate::operation::get_configuration_set::GetConfigurationSetError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_configuration_set_output::Builder::default();
+        let mut output = crate::operation::get_configuration_set::builders::GetConfigurationSetOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_get_configuration_set::de_get_configuration_set(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::GetConfigurationSetError::unhandled)?;
+        .map_err(crate::operation::get_configuration_set::GetConfigurationSetError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -94,9 +104,9 @@ pub fn de_get_configuration_set_http_response(
 
 pub(crate) fn de_get_configuration_set(
     value: &[u8],
-    mut builder: crate::output::get_configuration_set_output::Builder,
+    mut builder: crate::operation::get_configuration_set::builders::GetConfigurationSetOutputBuilder,
 ) -> Result<
-    crate::output::get_configuration_set_output::Builder,
+    crate::operation::get_configuration_set::builders::GetConfigurationSetOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

@@ -2,51 +2,65 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_actions_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListActionsOutput, crate::error::ListActionsError> {
+) -> std::result::Result<
+    crate::operation::list_actions::ListActionsOutput,
+    crate::operation::list_actions::ListActionsError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListActionsError::unhandled)?;
+        .map_err(crate::operation::list_actions::ListActionsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListActionsError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::list_actions::ListActionsError::unhandled(
+                generic,
+            ))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ValidationException" => crate::error::ListActionsError::ValidationException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "ValidationException" => {
+            crate::operation::list_actions::ListActionsError::ValidationException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListActionsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::ListActionsError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_actions::ListActionsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::list_actions::ListActionsError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_actions_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListActionsOutput, crate::error::ListActionsError> {
+) -> std::result::Result<
+    crate::operation::list_actions::ListActionsOutput,
+    crate::operation::list_actions::ListActionsError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_actions_output::Builder::default();
+        let mut output =
+            crate::operation::list_actions::builders::ListActionsOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_actions::de_list_actions(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListActionsError::unhandled)?;
+        .map_err(crate::operation::list_actions::ListActionsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -56,9 +70,9 @@ pub fn de_list_actions_http_response(
 
 pub(crate) fn de_list_actions(
     value: &[u8],
-    mut builder: crate::output::list_actions_output::Builder,
+    mut builder: crate::operation::list_actions::builders::ListActionsOutputBuilder,
 ) -> Result<
-    crate::output::list_actions_output::Builder,
+    crate::operation::list_actions::builders::ListActionsOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

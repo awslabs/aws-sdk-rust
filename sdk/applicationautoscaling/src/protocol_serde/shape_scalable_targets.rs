@@ -2,7 +2,7 @@
 pub(crate) fn de_scalable_targets<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ScalableTarget>>,
+    Option<std::vec::Vec<crate::types::ScalableTarget>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,10 +2,10 @@
 pub fn de_in_app_messages_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::InAppMessagesResponse>,
-    crate::error::GetInAppMessagesError,
+    std::option::Option<crate::types::InAppMessagesResponse>,
+    crate::operation::get_in_app_messages::GetInAppMessagesError,
 > {
     (!body.is_empty()).then(||{
-        crate::protocol_serde::shape_in_app_messages_response::de_in_app_messages_response_payload(body).map_err(crate::error::GetInAppMessagesError::unhandled)
+        crate::protocol_serde::shape_in_app_messages_response::de_in_app_messages_response_payload(body).map_err(crate::operation::get_in_app_messages::GetInAppMessagesError::unhandled)
     }).transpose()
 }

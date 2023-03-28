@@ -5,35 +5,35 @@
 pub enum Error {
     /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request.</p>
     /// <p></p>
-    ConflictException(crate::error::ConflictException),
+    ConflictException(crate::types::error::ConflictException),
     /// <p>The specified fleet has no available instances to fulfill a <code>CreateGameSession</code> request. Clients can retry such requests immediately or after a waiting period.</p>
-    FleetCapacityExceededException(crate::error::FleetCapacityExceededException),
+    FleetCapacityExceededException(crate::types::error::FleetCapacityExceededException),
     /// <p>The game instance is currently full and cannot allow the requested player(s) to join. Clients can retry such requests immediately or after a waiting period.</p>
-    GameSessionFullException(crate::error::GameSessionFullException),
+    GameSessionFullException(crate::types::error::GameSessionFullException),
     /// <p>A game session with this custom ID string already exists in this fleet. Resolve this conflict before retrying this request.</p>
-    IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
+    IdempotentParameterMismatchException(crate::types::error::IdempotentParameterMismatchException),
     /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
-    InternalServiceException(crate::error::InternalServiceException),
+    InternalServiceException(crate::types::error::InternalServiceException),
     /// <p>The requested operation would cause a conflict with the current state of a resource associated with the request and/or the fleet. Resolve the conflict before retrying.</p>
-    InvalidFleetStatusException(crate::error::InvalidFleetStatusException),
+    InvalidFleetStatusException(crate::types::error::InvalidFleetStatusException),
     /// <p>The requested operation would cause a conflict with the current state of a resource associated with the request and/or the game instance. Resolve the conflict before retrying.</p>
-    InvalidGameSessionStatusException(crate::error::InvalidGameSessionStatusException),
+    InvalidGameSessionStatusException(crate::types::error::InvalidGameSessionStatusException),
     /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
-    InvalidRequestException(crate::error::InvalidRequestException),
+    InvalidRequestException(crate::types::error::InvalidRequestException),
     /// <p>The requested operation would cause the resource to exceed the allowed service limit. Resolve the issue before retrying.</p>
-    LimitExceededException(crate::error::LimitExceededException),
+    LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>THe requested resources was not found. The resource was either not created yet or deleted.</p>
-    NotFoundException(crate::error::NotFoundException),
+    NotFoundException(crate::types::error::NotFoundException),
     /// <p>The specified game server group has no available game servers to fulfill a <code>ClaimGameServer</code> request. Clients can retry such requests immediately or after a waiting period.</p>
-    OutOfCapacityException(crate::error::OutOfCapacityException),
+    OutOfCapacityException(crate::types::error::OutOfCapacityException),
     /// <p>The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying.</p>
-    TaggingFailedException(crate::error::TaggingFailedException),
+    TaggingFailedException(crate::types::error::TaggingFailedException),
     /// <p>The service is unable to resolve the routing for a particular alias because it has a terminal <code>RoutingStrategy</code> associated with it. The message returned in this exception is the message defined in the routing strategy itself. Such requests should only be retried if the routing strategy for the specified alias is modified. </p>
-    TerminalRoutingStrategyException(crate::error::TerminalRoutingStrategyException),
+    TerminalRoutingStrategyException(crate::types::error::TerminalRoutingStrategyException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
-    UnauthorizedException(crate::error::UnauthorizedException),
+    UnauthorizedException(crate::types::error::UnauthorizedException),
     /// <p>The requested operation is not supported in the Region specified.</p>
-    UnsupportedRegionException(crate::error::UnsupportedRegionException),
+    UnsupportedRegionException(crate::types::error::UnsupportedRegionException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled),
 }
@@ -59,235 +59,13 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AcceptMatchError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::AcceptMatchError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::AcceptMatchError> for Error {
-    fn from(err: crate::error::AcceptMatchError) -> Self {
-        match err {
-            crate::error::AcceptMatchError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::AcceptMatchError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::AcceptMatchError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::AcceptMatchError::UnsupportedRegionException(inner) => {
-                Error::UnsupportedRegionException(inner)
-            }
-            crate::error::AcceptMatchError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ClaimGameServerError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ClaimGameServerError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::ClaimGameServerError> for Error {
-    fn from(err: crate::error::ClaimGameServerError) -> Self {
-        match err {
-            crate::error::ClaimGameServerError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::ClaimGameServerError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::ClaimGameServerError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::ClaimGameServerError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::ClaimGameServerError::OutOfCapacityException(inner) => {
-                Error::OutOfCapacityException(inner)
-            }
-            crate::error::ClaimGameServerError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::ClaimGameServerError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateAliasError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateAliasError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::CreateAliasError> for Error {
-    fn from(err: crate::error::CreateAliasError) -> Self {
-        match err {
-            crate::error::CreateAliasError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::CreateAliasError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::CreateAliasError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::CreateAliasError::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::CreateAliasError::TaggingFailedException(inner) => {
-                Error::TaggingFailedException(inner)
-            }
-            crate::error::CreateAliasError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::CreateAliasError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateBuildError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateBuildError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::CreateBuildError> for Error {
-    fn from(err: crate::error::CreateBuildError) -> Self {
-        match err {
-            crate::error::CreateBuildError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::CreateBuildError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::CreateBuildError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::CreateBuildError::TaggingFailedException(inner) => {
-                Error::TaggingFailedException(inner)
-            }
-            crate::error::CreateBuildError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::CreateBuildError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateFleetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateFleetError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::CreateFleetError> for Error {
-    fn from(err: crate::error::CreateFleetError) -> Self {
-        match err {
-            crate::error::CreateFleetError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::CreateFleetError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::CreateFleetError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::CreateFleetError::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::CreateFleetError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::CreateFleetError::TaggingFailedException(inner) => {
-                Error::TaggingFailedException(inner)
-            }
-            crate::error::CreateFleetError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::CreateFleetError::UnsupportedRegionException(inner) => {
-                Error::UnsupportedRegionException(inner)
-            }
-            crate::error::CreateFleetError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateFleetLocationsError, R>>
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::accept_match::AcceptMatchError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateFleetLocationsError, R>,
+        err: aws_smithy_http::result::SdkError<crate::operation::accept_match::AcceptMatchError, R>,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -304,243 +82,40 @@ where
         }
     }
 }
-impl From<crate::error::CreateFleetLocationsError> for Error {
-    fn from(err: crate::error::CreateFleetLocationsError) -> Self {
+impl From<crate::operation::accept_match::AcceptMatchError> for Error {
+    fn from(err: crate::operation::accept_match::AcceptMatchError) -> Self {
         match err {
-            crate::error::CreateFleetLocationsError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::CreateFleetLocationsError::InternalServiceException(inner) => {
+            crate::operation::accept_match::AcceptMatchError::InternalServiceException(inner) => {
                 Error::InternalServiceException(inner)
             }
-            crate::error::CreateFleetLocationsError::InvalidFleetStatusException(inner) => {
-                Error::InvalidFleetStatusException(inner)
-            }
-            crate::error::CreateFleetLocationsError::InvalidRequestException(inner) => {
+            crate::operation::accept_match::AcceptMatchError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
-            crate::error::CreateFleetLocationsError::NotFoundException(inner) => {
+            crate::operation::accept_match::AcceptMatchError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::CreateFleetLocationsError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::CreateFleetLocationsError::UnsupportedRegionException(inner) => {
+            crate::operation::accept_match::AcceptMatchError::UnsupportedRegionException(inner) => {
                 Error::UnsupportedRegionException(inner)
             }
-            crate::error::CreateFleetLocationsError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateGameServerGroupError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateGameServerGroupError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
+            crate::operation::accept_match::AcceptMatchError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::CreateGameServerGroupError> for Error {
-    fn from(err: crate::error::CreateGameServerGroupError) -> Self {
-        match err {
-            crate::error::CreateGameServerGroupError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::CreateGameServerGroupError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::CreateGameServerGroupError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::CreateGameServerGroupError::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::CreateGameServerGroupError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::CreateGameServerGroupError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateGameSessionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateGameSessionError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::CreateGameSessionError> for Error {
-    fn from(err: crate::error::CreateGameSessionError) -> Self {
-        match err {
-            crate::error::CreateGameSessionError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::CreateGameSessionError::FleetCapacityExceededException(inner) => {
-                Error::FleetCapacityExceededException(inner)
-            }
-            crate::error::CreateGameSessionError::IdempotentParameterMismatchException(inner) => {
-                Error::IdempotentParameterMismatchException(inner)
-            }
-            crate::error::CreateGameSessionError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::CreateGameSessionError::InvalidFleetStatusException(inner) => {
-                Error::InvalidFleetStatusException(inner)
-            }
-            crate::error::CreateGameSessionError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::CreateGameSessionError::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::CreateGameSessionError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::CreateGameSessionError::TerminalRoutingStrategyException(inner) => {
-                Error::TerminalRoutingStrategyException(inner)
-            }
-            crate::error::CreateGameSessionError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::CreateGameSessionError::UnsupportedRegionException(inner) => {
-                Error::UnsupportedRegionException(inner)
-            }
-            crate::error::CreateGameSessionError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateGameSessionQueueError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateGameSessionQueueError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::CreateGameSessionQueueError> for Error {
-    fn from(err: crate::error::CreateGameSessionQueueError) -> Self {
-        match err {
-            crate::error::CreateGameSessionQueueError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::CreateGameSessionQueueError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::CreateGameSessionQueueError::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::CreateGameSessionQueueError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::CreateGameSessionQueueError::TaggingFailedException(inner) => {
-                Error::TaggingFailedException(inner)
-            }
-            crate::error::CreateGameSessionQueueError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::CreateGameSessionQueueError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateLocationError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateLocationError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::CreateLocationError> for Error {
-    fn from(err: crate::error::CreateLocationError) -> Self {
-        match err {
-            crate::error::CreateLocationError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::CreateLocationError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::CreateLocationError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::CreateLocationError::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::CreateLocationError::TaggingFailedException(inner) => {
-                Error::TaggingFailedException(inner)
-            }
-            crate::error::CreateLocationError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::CreateLocationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::CreateMatchmakingConfigurationError, R>>
-    for Error
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::claim_game_server::ClaimGameServerError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::CreateMatchmakingConfigurationError,
+            crate::operation::claim_game_server::ClaimGameServerError,
             R,
         >,
     ) -> Self {
@@ -559,1936 +134,40 @@ where
         }
     }
 }
-impl From<crate::error::CreateMatchmakingConfigurationError> for Error {
-    fn from(err: crate::error::CreateMatchmakingConfigurationError) -> Self {
+impl From<crate::operation::claim_game_server::ClaimGameServerError> for Error {
+    fn from(err: crate::operation::claim_game_server::ClaimGameServerError) -> Self {
         match err {
-            crate::error::CreateMatchmakingConfigurationError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::CreateMatchmakingConfigurationError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::CreateMatchmakingConfigurationError::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::CreateMatchmakingConfigurationError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::CreateMatchmakingConfigurationError::TaggingFailedException(inner) => {
-                Error::TaggingFailedException(inner)
-            }
-            crate::error::CreateMatchmakingConfigurationError::UnsupportedRegionException(
-                inner,
-            ) => Error::UnsupportedRegionException(inner),
-            crate::error::CreateMatchmakingConfigurationError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateMatchmakingRuleSetError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateMatchmakingRuleSetError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::CreateMatchmakingRuleSetError> for Error {
-    fn from(err: crate::error::CreateMatchmakingRuleSetError) -> Self {
-        match err {
-            crate::error::CreateMatchmakingRuleSetError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::CreateMatchmakingRuleSetError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::CreateMatchmakingRuleSetError::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::CreateMatchmakingRuleSetError::TaggingFailedException(inner) => {
-                Error::TaggingFailedException(inner)
-            }
-            crate::error::CreateMatchmakingRuleSetError::UnsupportedRegionException(inner) => {
-                Error::UnsupportedRegionException(inner)
-            }
-            crate::error::CreateMatchmakingRuleSetError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreatePlayerSessionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreatePlayerSessionError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::CreatePlayerSessionError> for Error {
-    fn from(err: crate::error::CreatePlayerSessionError) -> Self {
-        match err {
-            crate::error::CreatePlayerSessionError::GameSessionFullException(inner) => {
-                Error::GameSessionFullException(inner)
-            }
-            crate::error::CreatePlayerSessionError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::CreatePlayerSessionError::InvalidGameSessionStatusException(inner) => {
-                Error::InvalidGameSessionStatusException(inner)
-            }
-            crate::error::CreatePlayerSessionError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::CreatePlayerSessionError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::CreatePlayerSessionError::TerminalRoutingStrategyException(inner) => {
-                Error::TerminalRoutingStrategyException(inner)
-            }
-            crate::error::CreatePlayerSessionError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::CreatePlayerSessionError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreatePlayerSessionsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreatePlayerSessionsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::CreatePlayerSessionsError> for Error {
-    fn from(err: crate::error::CreatePlayerSessionsError) -> Self {
-        match err {
-            crate::error::CreatePlayerSessionsError::GameSessionFullException(inner) => {
-                Error::GameSessionFullException(inner)
-            }
-            crate::error::CreatePlayerSessionsError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::CreatePlayerSessionsError::InvalidGameSessionStatusException(inner) => {
-                Error::InvalidGameSessionStatusException(inner)
-            }
-            crate::error::CreatePlayerSessionsError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::CreatePlayerSessionsError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::CreatePlayerSessionsError::TerminalRoutingStrategyException(inner) => {
-                Error::TerminalRoutingStrategyException(inner)
-            }
-            crate::error::CreatePlayerSessionsError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::CreatePlayerSessionsError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateScriptError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateScriptError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::CreateScriptError> for Error {
-    fn from(err: crate::error::CreateScriptError) -> Self {
-        match err {
-            crate::error::CreateScriptError::ConflictException(inner) => {
+            crate::operation::claim_game_server::ClaimGameServerError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
-            crate::error::CreateScriptError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::CreateScriptError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::CreateScriptError::TaggingFailedException(inner) => {
-                Error::TaggingFailedException(inner)
-            }
-            crate::error::CreateScriptError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::CreateScriptError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateVpcPeeringAuthorizationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateVpcPeeringAuthorizationError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::CreateVpcPeeringAuthorizationError> for Error {
-    fn from(err: crate::error::CreateVpcPeeringAuthorizationError) -> Self {
-        match err {
-            crate::error::CreateVpcPeeringAuthorizationError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::CreateVpcPeeringAuthorizationError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::CreateVpcPeeringAuthorizationError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::CreateVpcPeeringAuthorizationError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::CreateVpcPeeringAuthorizationError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateVpcPeeringConnectionError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateVpcPeeringConnectionError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::CreateVpcPeeringConnectionError> for Error {
-    fn from(err: crate::error::CreateVpcPeeringConnectionError) -> Self {
-        match err {
-            crate::error::CreateVpcPeeringConnectionError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::CreateVpcPeeringConnectionError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::CreateVpcPeeringConnectionError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::CreateVpcPeeringConnectionError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::CreateVpcPeeringConnectionError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteAliasError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteAliasError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DeleteAliasError> for Error {
-    fn from(err: crate::error::DeleteAliasError) -> Self {
-        match err {
-            crate::error::DeleteAliasError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DeleteAliasError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DeleteAliasError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteAliasError::TaggingFailedException(inner) => {
-                Error::TaggingFailedException(inner)
-            }
-            crate::error::DeleteAliasError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DeleteAliasError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteBuildError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteBuildError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DeleteBuildError> for Error {
-    fn from(err: crate::error::DeleteBuildError) -> Self {
-        match err {
-            crate::error::DeleteBuildError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DeleteBuildError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DeleteBuildError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteBuildError::TaggingFailedException(inner) => {
-                Error::TaggingFailedException(inner)
-            }
-            crate::error::DeleteBuildError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DeleteBuildError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteFleetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteFleetError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DeleteFleetError> for Error {
-    fn from(err: crate::error::DeleteFleetError) -> Self {
-        match err {
-            crate::error::DeleteFleetError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DeleteFleetError::InvalidFleetStatusException(inner) => {
-                Error::InvalidFleetStatusException(inner)
-            }
-            crate::error::DeleteFleetError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DeleteFleetError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteFleetError::TaggingFailedException(inner) => {
-                Error::TaggingFailedException(inner)
-            }
-            crate::error::DeleteFleetError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DeleteFleetError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteFleetLocationsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteFleetLocationsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DeleteFleetLocationsError> for Error {
-    fn from(err: crate::error::DeleteFleetLocationsError) -> Self {
-        match err {
-            crate::error::DeleteFleetLocationsError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DeleteFleetLocationsError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DeleteFleetLocationsError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteFleetLocationsError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DeleteFleetLocationsError::UnsupportedRegionException(inner) => {
-                Error::UnsupportedRegionException(inner)
-            }
-            crate::error::DeleteFleetLocationsError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteGameServerGroupError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteGameServerGroupError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DeleteGameServerGroupError> for Error {
-    fn from(err: crate::error::DeleteGameServerGroupError) -> Self {
-        match err {
-            crate::error::DeleteGameServerGroupError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DeleteGameServerGroupError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DeleteGameServerGroupError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteGameServerGroupError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DeleteGameServerGroupError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteGameSessionQueueError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteGameSessionQueueError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DeleteGameSessionQueueError> for Error {
-    fn from(err: crate::error::DeleteGameSessionQueueError) -> Self {
-        match err {
-            crate::error::DeleteGameSessionQueueError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DeleteGameSessionQueueError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DeleteGameSessionQueueError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteGameSessionQueueError::TaggingFailedException(inner) => {
-                Error::TaggingFailedException(inner)
-            }
-            crate::error::DeleteGameSessionQueueError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DeleteGameSessionQueueError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteLocationError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteLocationError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DeleteLocationError> for Error {
-    fn from(err: crate::error::DeleteLocationError) -> Self {
-        match err {
-            crate::error::DeleteLocationError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DeleteLocationError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DeleteLocationError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteLocationError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DeleteLocationError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::DeleteMatchmakingConfigurationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DeleteMatchmakingConfigurationError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DeleteMatchmakingConfigurationError> for Error {
-    fn from(err: crate::error::DeleteMatchmakingConfigurationError) -> Self {
-        match err {
-            crate::error::DeleteMatchmakingConfigurationError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DeleteMatchmakingConfigurationError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DeleteMatchmakingConfigurationError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteMatchmakingConfigurationError::TaggingFailedException(inner) => {
-                Error::TaggingFailedException(inner)
-            }
-            crate::error::DeleteMatchmakingConfigurationError::UnsupportedRegionException(
-                inner,
-            ) => Error::UnsupportedRegionException(inner),
-            crate::error::DeleteMatchmakingConfigurationError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteMatchmakingRuleSetError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteMatchmakingRuleSetError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DeleteMatchmakingRuleSetError> for Error {
-    fn from(err: crate::error::DeleteMatchmakingRuleSetError) -> Self {
-        match err {
-            crate::error::DeleteMatchmakingRuleSetError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DeleteMatchmakingRuleSetError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DeleteMatchmakingRuleSetError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteMatchmakingRuleSetError::TaggingFailedException(inner) => {
-                Error::TaggingFailedException(inner)
-            }
-            crate::error::DeleteMatchmakingRuleSetError::UnsupportedRegionException(inner) => {
-                Error::UnsupportedRegionException(inner)
-            }
-            crate::error::DeleteMatchmakingRuleSetError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteScalingPolicyError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteScalingPolicyError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DeleteScalingPolicyError> for Error {
-    fn from(err: crate::error::DeleteScalingPolicyError) -> Self {
-        match err {
-            crate::error::DeleteScalingPolicyError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DeleteScalingPolicyError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DeleteScalingPolicyError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteScalingPolicyError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DeleteScalingPolicyError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteScriptError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteScriptError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DeleteScriptError> for Error {
-    fn from(err: crate::error::DeleteScriptError) -> Self {
-        match err {
-            crate::error::DeleteScriptError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DeleteScriptError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DeleteScriptError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteScriptError::TaggingFailedException(inner) => {
-                Error::TaggingFailedException(inner)
-            }
-            crate::error::DeleteScriptError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DeleteScriptError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteVpcPeeringAuthorizationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteVpcPeeringAuthorizationError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DeleteVpcPeeringAuthorizationError> for Error {
-    fn from(err: crate::error::DeleteVpcPeeringAuthorizationError) -> Self {
-        match err {
-            crate::error::DeleteVpcPeeringAuthorizationError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DeleteVpcPeeringAuthorizationError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DeleteVpcPeeringAuthorizationError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteVpcPeeringAuthorizationError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DeleteVpcPeeringAuthorizationError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteVpcPeeringConnectionError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteVpcPeeringConnectionError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DeleteVpcPeeringConnectionError> for Error {
-    fn from(err: crate::error::DeleteVpcPeeringConnectionError) -> Self {
-        match err {
-            crate::error::DeleteVpcPeeringConnectionError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DeleteVpcPeeringConnectionError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DeleteVpcPeeringConnectionError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteVpcPeeringConnectionError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DeleteVpcPeeringConnectionError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeregisterComputeError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeregisterComputeError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DeregisterComputeError> for Error {
-    fn from(err: crate::error::DeregisterComputeError) -> Self {
-        match err {
-            crate::error::DeregisterComputeError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DeregisterComputeError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DeregisterComputeError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeregisterComputeError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DeregisterComputeError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeregisterGameServerError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeregisterGameServerError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DeregisterGameServerError> for Error {
-    fn from(err: crate::error::DeregisterGameServerError) -> Self {
-        match err {
-            crate::error::DeregisterGameServerError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DeregisterGameServerError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DeregisterGameServerError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeregisterGameServerError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DeregisterGameServerError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeAliasError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeAliasError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribeAliasError> for Error {
-    fn from(err: crate::error::DescribeAliasError) -> Self {
-        match err {
-            crate::error::DescribeAliasError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DescribeAliasError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribeAliasError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DescribeAliasError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DescribeAliasError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeBuildError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeBuildError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribeBuildError> for Error {
-    fn from(err: crate::error::DescribeBuildError) -> Self {
-        match err {
-            crate::error::DescribeBuildError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DescribeBuildError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribeBuildError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DescribeBuildError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DescribeBuildError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeComputeError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeComputeError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribeComputeError> for Error {
-    fn from(err: crate::error::DescribeComputeError) -> Self {
-        match err {
-            crate::error::DescribeComputeError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DescribeComputeError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribeComputeError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DescribeComputeError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DescribeComputeError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeEC2InstanceLimitsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeEC2InstanceLimitsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribeEC2InstanceLimitsError> for Error {
-    fn from(err: crate::error::DescribeEC2InstanceLimitsError) -> Self {
-        match err {
-            crate::error::DescribeEC2InstanceLimitsError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DescribeEC2InstanceLimitsError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribeEC2InstanceLimitsError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DescribeEC2InstanceLimitsError::UnsupportedRegionException(inner) => {
-                Error::UnsupportedRegionException(inner)
-            }
-            crate::error::DescribeEC2InstanceLimitsError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeFleetAttributesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeFleetAttributesError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribeFleetAttributesError> for Error {
-    fn from(err: crate::error::DescribeFleetAttributesError) -> Self {
-        match err {
-            crate::error::DescribeFleetAttributesError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DescribeFleetAttributesError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribeFleetAttributesError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DescribeFleetAttributesError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DescribeFleetAttributesError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeFleetCapacityError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeFleetCapacityError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribeFleetCapacityError> for Error {
-    fn from(err: crate::error::DescribeFleetCapacityError) -> Self {
-        match err {
-            crate::error::DescribeFleetCapacityError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DescribeFleetCapacityError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribeFleetCapacityError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DescribeFleetCapacityError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DescribeFleetCapacityError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeFleetEventsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeFleetEventsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribeFleetEventsError> for Error {
-    fn from(err: crate::error::DescribeFleetEventsError) -> Self {
-        match err {
-            crate::error::DescribeFleetEventsError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DescribeFleetEventsError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribeFleetEventsError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DescribeFleetEventsError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DescribeFleetEventsError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::DescribeFleetLocationAttributesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DescribeFleetLocationAttributesError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribeFleetLocationAttributesError> for Error {
-    fn from(err: crate::error::DescribeFleetLocationAttributesError) -> Self {
-        match err {
-            crate::error::DescribeFleetLocationAttributesError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DescribeFleetLocationAttributesError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribeFleetLocationAttributesError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DescribeFleetLocationAttributesError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DescribeFleetLocationAttributesError::UnsupportedRegionException(
-                inner,
-            ) => Error::UnsupportedRegionException(inner),
-            crate::error::DescribeFleetLocationAttributesError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeFleetLocationCapacityError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeFleetLocationCapacityError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribeFleetLocationCapacityError> for Error {
-    fn from(err: crate::error::DescribeFleetLocationCapacityError) -> Self {
-        match err {
-            crate::error::DescribeFleetLocationCapacityError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DescribeFleetLocationCapacityError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribeFleetLocationCapacityError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DescribeFleetLocationCapacityError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DescribeFleetLocationCapacityError::UnsupportedRegionException(inner) => {
-                Error::UnsupportedRegionException(inner)
-            }
-            crate::error::DescribeFleetLocationCapacityError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::DescribeFleetLocationUtilizationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DescribeFleetLocationUtilizationError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribeFleetLocationUtilizationError> for Error {
-    fn from(err: crate::error::DescribeFleetLocationUtilizationError) -> Self {
-        match err {
-            crate::error::DescribeFleetLocationUtilizationError::InternalServiceException(
+            crate::operation::claim_game_server::ClaimGameServerError::InternalServiceException(
                 inner,
             ) => Error::InternalServiceException(inner),
-            crate::error::DescribeFleetLocationUtilizationError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribeFleetLocationUtilizationError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DescribeFleetLocationUtilizationError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DescribeFleetLocationUtilizationError::UnsupportedRegionException(
-                inner,
-            ) => Error::UnsupportedRegionException(inner),
-            crate::error::DescribeFleetLocationUtilizationError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeFleetPortSettingsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeFleetPortSettingsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribeFleetPortSettingsError> for Error {
-    fn from(err: crate::error::DescribeFleetPortSettingsError) -> Self {
-        match err {
-            crate::error::DescribeFleetPortSettingsError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DescribeFleetPortSettingsError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribeFleetPortSettingsError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DescribeFleetPortSettingsError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DescribeFleetPortSettingsError::UnsupportedRegionException(inner) => {
-                Error::UnsupportedRegionException(inner)
-            }
-            crate::error::DescribeFleetPortSettingsError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeFleetUtilizationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeFleetUtilizationError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribeFleetUtilizationError> for Error {
-    fn from(err: crate::error::DescribeFleetUtilizationError) -> Self {
-        match err {
-            crate::error::DescribeFleetUtilizationError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DescribeFleetUtilizationError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribeFleetUtilizationError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DescribeFleetUtilizationError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DescribeFleetUtilizationError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeGameServerError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeGameServerError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribeGameServerError> for Error {
-    fn from(err: crate::error::DescribeGameServerError) -> Self {
-        match err {
-            crate::error::DescribeGameServerError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DescribeGameServerError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribeGameServerError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DescribeGameServerError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DescribeGameServerError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeGameServerGroupError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeGameServerGroupError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribeGameServerGroupError> for Error {
-    fn from(err: crate::error::DescribeGameServerGroupError) -> Self {
-        match err {
-            crate::error::DescribeGameServerGroupError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DescribeGameServerGroupError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribeGameServerGroupError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DescribeGameServerGroupError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DescribeGameServerGroupError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeGameServerInstancesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeGameServerInstancesError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribeGameServerInstancesError> for Error {
-    fn from(err: crate::error::DescribeGameServerInstancesError) -> Self {
-        match err {
-            crate::error::DescribeGameServerInstancesError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DescribeGameServerInstancesError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribeGameServerInstancesError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DescribeGameServerInstancesError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DescribeGameServerInstancesError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeGameSessionDetailsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeGameSessionDetailsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribeGameSessionDetailsError> for Error {
-    fn from(err: crate::error::DescribeGameSessionDetailsError) -> Self {
-        match err {
-            crate::error::DescribeGameSessionDetailsError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DescribeGameSessionDetailsError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribeGameSessionDetailsError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DescribeGameSessionDetailsError::TerminalRoutingStrategyException(
-                inner,
-            ) => Error::TerminalRoutingStrategyException(inner),
-            crate::error::DescribeGameSessionDetailsError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DescribeGameSessionDetailsError::UnsupportedRegionException(inner) => {
-                Error::UnsupportedRegionException(inner)
-            }
-            crate::error::DescribeGameSessionDetailsError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeGameSessionPlacementError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeGameSessionPlacementError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribeGameSessionPlacementError> for Error {
-    fn from(err: crate::error::DescribeGameSessionPlacementError) -> Self {
-        match err {
-            crate::error::DescribeGameSessionPlacementError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DescribeGameSessionPlacementError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribeGameSessionPlacementError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DescribeGameSessionPlacementError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DescribeGameSessionPlacementError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeGameSessionQueuesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeGameSessionQueuesError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribeGameSessionQueuesError> for Error {
-    fn from(err: crate::error::DescribeGameSessionQueuesError) -> Self {
-        match err {
-            crate::error::DescribeGameSessionQueuesError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DescribeGameSessionQueuesError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribeGameSessionQueuesError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DescribeGameSessionQueuesError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DescribeGameSessionQueuesError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeGameSessionsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeGameSessionsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribeGameSessionsError> for Error {
-    fn from(err: crate::error::DescribeGameSessionsError) -> Self {
-        match err {
-            crate::error::DescribeGameSessionsError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DescribeGameSessionsError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribeGameSessionsError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DescribeGameSessionsError::TerminalRoutingStrategyException(inner) => {
-                Error::TerminalRoutingStrategyException(inner)
-            }
-            crate::error::DescribeGameSessionsError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DescribeGameSessionsError::UnsupportedRegionException(inner) => {
-                Error::UnsupportedRegionException(inner)
-            }
-            crate::error::DescribeGameSessionsError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeInstancesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeInstancesError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribeInstancesError> for Error {
-    fn from(err: crate::error::DescribeInstancesError) -> Self {
-        match err {
-            crate::error::DescribeInstancesError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DescribeInstancesError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribeInstancesError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DescribeInstancesError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DescribeInstancesError::UnsupportedRegionException(inner) => {
-                Error::UnsupportedRegionException(inner)
-            }
-            crate::error::DescribeInstancesError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeMatchmakingError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeMatchmakingError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribeMatchmakingError> for Error {
-    fn from(err: crate::error::DescribeMatchmakingError) -> Self {
-        match err {
-            crate::error::DescribeMatchmakingError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DescribeMatchmakingError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribeMatchmakingError::UnsupportedRegionException(inner) => {
-                Error::UnsupportedRegionException(inner)
-            }
-            crate::error::DescribeMatchmakingError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::DescribeMatchmakingConfigurationsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DescribeMatchmakingConfigurationsError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribeMatchmakingConfigurationsError> for Error {
-    fn from(err: crate::error::DescribeMatchmakingConfigurationsError) -> Self {
-        match err {
-            crate::error::DescribeMatchmakingConfigurationsError::InternalServiceException(
-                inner,
-            ) => Error::InternalServiceException(inner),
-            crate::error::DescribeMatchmakingConfigurationsError::InvalidRequestException(
+            crate::operation::claim_game_server::ClaimGameServerError::InvalidRequestException(
                 inner,
             ) => Error::InvalidRequestException(inner),
-            crate::error::DescribeMatchmakingConfigurationsError::UnsupportedRegionException(
+            crate::operation::claim_game_server::ClaimGameServerError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::claim_game_server::ClaimGameServerError::OutOfCapacityException(
                 inner,
-            ) => Error::UnsupportedRegionException(inner),
-            crate::error::DescribeMatchmakingConfigurationsError::Unhandled(inner) => {
+            ) => Error::OutOfCapacityException(inner),
+            crate::operation::claim_game_server::ClaimGameServerError::UnauthorizedException(
+                inner,
+            ) => Error::UnauthorizedException(inner),
+            crate::operation::claim_game_server::ClaimGameServerError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeMatchmakingRuleSetsError, R>>
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_alias::CreateAliasError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeMatchmakingRuleSetsError, R>,
+        err: aws_smithy_http::result::SdkError<crate::operation::create_alias::CreateAliasError, R>,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -2505,206 +184,149 @@ where
         }
     }
 }
-impl From<crate::error::DescribeMatchmakingRuleSetsError> for Error {
-    fn from(err: crate::error::DescribeMatchmakingRuleSetsError) -> Self {
+impl From<crate::operation::create_alias::CreateAliasError> for Error {
+    fn from(err: crate::operation::create_alias::CreateAliasError) -> Self {
         match err {
-            crate::error::DescribeMatchmakingRuleSetsError::InternalServiceException(inner) => {
+            crate::operation::create_alias::CreateAliasError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_alias::CreateAliasError::InternalServiceException(inner) => {
                 Error::InternalServiceException(inner)
             }
-            crate::error::DescribeMatchmakingRuleSetsError::InvalidRequestException(inner) => {
+            crate::operation::create_alias::CreateAliasError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
-            crate::error::DescribeMatchmakingRuleSetsError::NotFoundException(inner) => {
+            crate::operation::create_alias::CreateAliasError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::create_alias::CreateAliasError::TaggingFailedException(inner) => {
+                Error::TaggingFailedException(inner)
+            }
+            crate::operation::create_alias::CreateAliasError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::create_alias::CreateAliasError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_build::CreateBuildError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::create_build::CreateBuildError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_build::CreateBuildError> for Error {
+    fn from(err: crate::operation::create_build::CreateBuildError) -> Self {
+        match err {
+            crate::operation::create_build::CreateBuildError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_build::CreateBuildError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::create_build::CreateBuildError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::create_build::CreateBuildError::TaggingFailedException(inner) => {
+                Error::TaggingFailedException(inner)
+            }
+            crate::operation::create_build::CreateBuildError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::create_build::CreateBuildError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_fleet::CreateFleetError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::create_fleet::CreateFleetError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_fleet::CreateFleetError> for Error {
+    fn from(err: crate::operation::create_fleet::CreateFleetError) -> Self {
+        match err {
+            crate::operation::create_fleet::CreateFleetError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_fleet::CreateFleetError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::create_fleet::CreateFleetError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::create_fleet::CreateFleetError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::create_fleet::CreateFleetError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DescribeMatchmakingRuleSetsError::UnsupportedRegionException(inner) => {
+            crate::operation::create_fleet::CreateFleetError::TaggingFailedException(inner) => {
+                Error::TaggingFailedException(inner)
+            }
+            crate::operation::create_fleet::CreateFleetError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::create_fleet::CreateFleetError::UnsupportedRegionException(inner) => {
                 Error::UnsupportedRegionException(inner)
             }
-            crate::error::DescribeMatchmakingRuleSetsError::Unhandled(inner) => {
+            crate::operation::create_fleet::CreateFleetError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribePlayerSessionsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribePlayerSessionsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribePlayerSessionsError> for Error {
-    fn from(err: crate::error::DescribePlayerSessionsError) -> Self {
-        match err {
-            crate::error::DescribePlayerSessionsError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DescribePlayerSessionsError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribePlayerSessionsError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DescribePlayerSessionsError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DescribePlayerSessionsError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeRuntimeConfigurationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeRuntimeConfigurationError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribeRuntimeConfigurationError> for Error {
-    fn from(err: crate::error::DescribeRuntimeConfigurationError) -> Self {
-        match err {
-            crate::error::DescribeRuntimeConfigurationError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DescribeRuntimeConfigurationError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribeRuntimeConfigurationError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DescribeRuntimeConfigurationError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DescribeRuntimeConfigurationError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeScalingPoliciesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeScalingPoliciesError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribeScalingPoliciesError> for Error {
-    fn from(err: crate::error::DescribeScalingPoliciesError) -> Self {
-        match err {
-            crate::error::DescribeScalingPoliciesError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DescribeScalingPoliciesError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribeScalingPoliciesError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DescribeScalingPoliciesError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DescribeScalingPoliciesError::UnsupportedRegionException(inner) => {
-                Error::UnsupportedRegionException(inner)
-            }
-            crate::error::DescribeScalingPoliciesError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeScriptError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeScriptError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribeScriptError> for Error {
-    fn from(err: crate::error::DescribeScriptError) -> Self {
-        match err {
-            crate::error::DescribeScriptError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DescribeScriptError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribeScriptError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DescribeScriptError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DescribeScriptError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::DescribeVpcPeeringAuthorizationsError, R>>
-    for Error
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_fleet_locations::CreateFleetLocationsError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::DescribeVpcPeeringAuthorizationsError,
+            crate::operation::create_fleet_locations::CreateFleetLocationsError,
             R,
         >,
     ) -> Self {
@@ -2723,1698 +345,227 @@ where
         }
     }
 }
-impl From<crate::error::DescribeVpcPeeringAuthorizationsError> for Error {
-    fn from(err: crate::error::DescribeVpcPeeringAuthorizationsError) -> Self {
+impl From<crate::operation::create_fleet_locations::CreateFleetLocationsError> for Error {
+    fn from(err: crate::operation::create_fleet_locations::CreateFleetLocationsError) -> Self {
         match err {
-            crate::error::DescribeVpcPeeringAuthorizationsError::InternalServiceException(
+            crate::operation::create_fleet_locations::CreateFleetLocationsError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_fleet_locations::CreateFleetLocationsError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::create_fleet_locations::CreateFleetLocationsError::InvalidFleetStatusException(inner) => Error::InvalidFleetStatusException(inner),
+            crate::operation::create_fleet_locations::CreateFleetLocationsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::create_fleet_locations::CreateFleetLocationsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_fleet_locations::CreateFleetLocationsError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::create_fleet_locations::CreateFleetLocationsError::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
+            crate::operation::create_fleet_locations::CreateFleetLocationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_game_server_group::CreateGameServerGroupError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_game_server_group::CreateGameServerGroupError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_game_server_group::CreateGameServerGroupError> for Error {
+    fn from(err: crate::operation::create_game_server_group::CreateGameServerGroupError) -> Self {
+        match err {
+            crate::operation::create_game_server_group::CreateGameServerGroupError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_game_server_group::CreateGameServerGroupError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::create_game_server_group::CreateGameServerGroupError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::create_game_server_group::CreateGameServerGroupError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_game_server_group::CreateGameServerGroupError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::create_game_server_group::CreateGameServerGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_game_session::CreateGameSessionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_game_session::CreateGameSessionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_game_session::CreateGameSessionError> for Error {
+    fn from(err: crate::operation::create_game_session::CreateGameSessionError) -> Self {
+        match err {
+            crate::operation::create_game_session::CreateGameSessionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_game_session::CreateGameSessionError::FleetCapacityExceededException(inner) => Error::FleetCapacityExceededException(inner),
+            crate::operation::create_game_session::CreateGameSessionError::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
+            crate::operation::create_game_session::CreateGameSessionError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::create_game_session::CreateGameSessionError::InvalidFleetStatusException(inner) => Error::InvalidFleetStatusException(inner),
+            crate::operation::create_game_session::CreateGameSessionError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::create_game_session::CreateGameSessionError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_game_session::CreateGameSessionError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_game_session::CreateGameSessionError::TerminalRoutingStrategyException(inner) => Error::TerminalRoutingStrategyException(inner),
+            crate::operation::create_game_session::CreateGameSessionError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::create_game_session::CreateGameSessionError::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
+            crate::operation::create_game_session::CreateGameSessionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_game_session_queue::CreateGameSessionQueueError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_game_session_queue::CreateGameSessionQueueError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_game_session_queue::CreateGameSessionQueueError> for Error {
+    fn from(err: crate::operation::create_game_session_queue::CreateGameSessionQueueError) -> Self {
+        match err {
+            crate::operation::create_game_session_queue::CreateGameSessionQueueError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::create_game_session_queue::CreateGameSessionQueueError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::create_game_session_queue::CreateGameSessionQueueError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_game_session_queue::CreateGameSessionQueueError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_game_session_queue::CreateGameSessionQueueError::TaggingFailedException(inner) => Error::TaggingFailedException(inner),
+            crate::operation::create_game_session_queue::CreateGameSessionQueueError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::create_game_session_queue::CreateGameSessionQueueError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_location::CreateLocationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_location::CreateLocationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_location::CreateLocationError> for Error {
+    fn from(err: crate::operation::create_location::CreateLocationError) -> Self {
+        match err {
+            crate::operation::create_location::CreateLocationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_location::CreateLocationError::InternalServiceException(
                 inner,
             ) => Error::InternalServiceException(inner),
-            crate::error::DescribeVpcPeeringAuthorizationsError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribeVpcPeeringAuthorizationsError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DescribeVpcPeeringAuthorizationsError::Unhandled(inner) => {
+            crate::operation::create_location::CreateLocationError::InvalidRequestException(
+                inner,
+            ) => Error::InvalidRequestException(inner),
+            crate::operation::create_location::CreateLocationError::LimitExceededException(
+                inner,
+            ) => Error::LimitExceededException(inner),
+            crate::operation::create_location::CreateLocationError::TaggingFailedException(
+                inner,
+            ) => Error::TaggingFailedException(inner),
+            crate::operation::create_location::CreateLocationError::UnauthorizedException(
+                inner,
+            ) => Error::UnauthorizedException(inner),
+            crate::operation::create_location::CreateLocationError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeVpcPeeringConnectionsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeVpcPeeringConnectionsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribeVpcPeeringConnectionsError> for Error {
-    fn from(err: crate::error::DescribeVpcPeeringConnectionsError) -> Self {
-        match err {
-            crate::error::DescribeVpcPeeringConnectionsError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DescribeVpcPeeringConnectionsError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribeVpcPeeringConnectionsError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DescribeVpcPeeringConnectionsError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::DescribeVpcPeeringConnectionsError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetComputeAccessError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetComputeAccessError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetComputeAccessError> for Error {
-    fn from(err: crate::error::GetComputeAccessError) -> Self {
-        match err {
-            crate::error::GetComputeAccessError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::GetComputeAccessError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::GetComputeAccessError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetComputeAccessError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::GetComputeAccessError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetComputeAuthTokenError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetComputeAuthTokenError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetComputeAuthTokenError> for Error {
-    fn from(err: crate::error::GetComputeAuthTokenError) -> Self {
-        match err {
-            crate::error::GetComputeAuthTokenError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::GetComputeAuthTokenError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::GetComputeAuthTokenError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetComputeAuthTokenError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::GetComputeAuthTokenError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetGameSessionLogUrlError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetGameSessionLogUrlError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetGameSessionLogUrlError> for Error {
-    fn from(err: crate::error::GetGameSessionLogUrlError) -> Self {
-        match err {
-            crate::error::GetGameSessionLogUrlError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::GetGameSessionLogUrlError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::GetGameSessionLogUrlError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetGameSessionLogUrlError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::GetGameSessionLogUrlError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetInstanceAccessError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetInstanceAccessError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetInstanceAccessError> for Error {
-    fn from(err: crate::error::GetInstanceAccessError) -> Self {
-        match err {
-            crate::error::GetInstanceAccessError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::GetInstanceAccessError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::GetInstanceAccessError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetInstanceAccessError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::GetInstanceAccessError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListAliasesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListAliasesError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::ListAliasesError> for Error {
-    fn from(err: crate::error::ListAliasesError) -> Self {
-        match err {
-            crate::error::ListAliasesError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::ListAliasesError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::ListAliasesError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::ListAliasesError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListBuildsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListBuildsError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::ListBuildsError> for Error {
-    fn from(err: crate::error::ListBuildsError) -> Self {
-        match err {
-            crate::error::ListBuildsError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::ListBuildsError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::ListBuildsError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::ListBuildsError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListComputeError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListComputeError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::ListComputeError> for Error {
-    fn from(err: crate::error::ListComputeError) -> Self {
-        match err {
-            crate::error::ListComputeError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::ListComputeError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::ListComputeError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::ListComputeError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListFleetsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListFleetsError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::ListFleetsError> for Error {
-    fn from(err: crate::error::ListFleetsError) -> Self {
-        match err {
-            crate::error::ListFleetsError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::ListFleetsError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::ListFleetsError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::ListFleetsError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::ListFleetsError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListGameServerGroupsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListGameServerGroupsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::ListGameServerGroupsError> for Error {
-    fn from(err: crate::error::ListGameServerGroupsError) -> Self {
-        match err {
-            crate::error::ListGameServerGroupsError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::ListGameServerGroupsError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::ListGameServerGroupsError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::ListGameServerGroupsError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListGameServersError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListGameServersError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::ListGameServersError> for Error {
-    fn from(err: crate::error::ListGameServersError) -> Self {
-        match err {
-            crate::error::ListGameServersError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::ListGameServersError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::ListGameServersError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::ListGameServersError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListLocationsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListLocationsError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::ListLocationsError> for Error {
-    fn from(err: crate::error::ListLocationsError) -> Self {
-        match err {
-            crate::error::ListLocationsError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::ListLocationsError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::ListLocationsError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::ListLocationsError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListScriptsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListScriptsError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::ListScriptsError> for Error {
-    fn from(err: crate::error::ListScriptsError) -> Self {
-        match err {
-            crate::error::ListScriptsError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::ListScriptsError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::ListScriptsError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::ListScriptsError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::ListTagsForResourceError> for Error {
-    fn from(err: crate::error::ListTagsForResourceError) -> Self {
-        match err {
-            crate::error::ListTagsForResourceError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::ListTagsForResourceError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::ListTagsForResourceError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::ListTagsForResourceError::TaggingFailedException(inner) => {
-                Error::TaggingFailedException(inner)
-            }
-            crate::error::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutScalingPolicyError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::PutScalingPolicyError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::PutScalingPolicyError> for Error {
-    fn from(err: crate::error::PutScalingPolicyError) -> Self {
-        match err {
-            crate::error::PutScalingPolicyError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::PutScalingPolicyError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::PutScalingPolicyError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::PutScalingPolicyError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::PutScalingPolicyError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::RegisterComputeError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::RegisterComputeError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::RegisterComputeError> for Error {
-    fn from(err: crate::error::RegisterComputeError) -> Self {
-        match err {
-            crate::error::RegisterComputeError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::RegisterComputeError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::RegisterComputeError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::RegisterComputeError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::RegisterComputeError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::RegisterGameServerError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::RegisterGameServerError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::RegisterGameServerError> for Error {
-    fn from(err: crate::error::RegisterGameServerError) -> Self {
-        match err {
-            crate::error::RegisterGameServerError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::RegisterGameServerError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::RegisterGameServerError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::RegisterGameServerError::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::RegisterGameServerError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::RegisterGameServerError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::RequestUploadCredentialsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::RequestUploadCredentialsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::RequestUploadCredentialsError> for Error {
-    fn from(err: crate::error::RequestUploadCredentialsError) -> Self {
-        match err {
-            crate::error::RequestUploadCredentialsError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::RequestUploadCredentialsError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::RequestUploadCredentialsError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::RequestUploadCredentialsError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::RequestUploadCredentialsError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ResolveAliasError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ResolveAliasError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::ResolveAliasError> for Error {
-    fn from(err: crate::error::ResolveAliasError) -> Self {
-        match err {
-            crate::error::ResolveAliasError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::ResolveAliasError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::ResolveAliasError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::ResolveAliasError::TerminalRoutingStrategyException(inner) => {
-                Error::TerminalRoutingStrategyException(inner)
-            }
-            crate::error::ResolveAliasError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::ResolveAliasError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ResumeGameServerGroupError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ResumeGameServerGroupError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::ResumeGameServerGroupError> for Error {
-    fn from(err: crate::error::ResumeGameServerGroupError) -> Self {
-        match err {
-            crate::error::ResumeGameServerGroupError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::ResumeGameServerGroupError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::ResumeGameServerGroupError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::ResumeGameServerGroupError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::ResumeGameServerGroupError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::SearchGameSessionsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::SearchGameSessionsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::SearchGameSessionsError> for Error {
-    fn from(err: crate::error::SearchGameSessionsError) -> Self {
-        match err {
-            crate::error::SearchGameSessionsError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::SearchGameSessionsError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::SearchGameSessionsError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::SearchGameSessionsError::TerminalRoutingStrategyException(inner) => {
-                Error::TerminalRoutingStrategyException(inner)
-            }
-            crate::error::SearchGameSessionsError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::SearchGameSessionsError::UnsupportedRegionException(inner) => {
-                Error::UnsupportedRegionException(inner)
-            }
-            crate::error::SearchGameSessionsError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartFleetActionsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::StartFleetActionsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::StartFleetActionsError> for Error {
-    fn from(err: crate::error::StartFleetActionsError) -> Self {
-        match err {
-            crate::error::StartFleetActionsError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::StartFleetActionsError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::StartFleetActionsError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::StartFleetActionsError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::StartFleetActionsError::UnsupportedRegionException(inner) => {
-                Error::UnsupportedRegionException(inner)
-            }
-            crate::error::StartFleetActionsError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartGameSessionPlacementError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::StartGameSessionPlacementError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::StartGameSessionPlacementError> for Error {
-    fn from(err: crate::error::StartGameSessionPlacementError) -> Self {
-        match err {
-            crate::error::StartGameSessionPlacementError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::StartGameSessionPlacementError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::StartGameSessionPlacementError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::StartGameSessionPlacementError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::StartGameSessionPlacementError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartMatchBackfillError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::StartMatchBackfillError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::StartMatchBackfillError> for Error {
-    fn from(err: crate::error::StartMatchBackfillError) -> Self {
-        match err {
-            crate::error::StartMatchBackfillError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::StartMatchBackfillError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::StartMatchBackfillError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::StartMatchBackfillError::UnsupportedRegionException(inner) => {
-                Error::UnsupportedRegionException(inner)
-            }
-            crate::error::StartMatchBackfillError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartMatchmakingError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::StartMatchmakingError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::StartMatchmakingError> for Error {
-    fn from(err: crate::error::StartMatchmakingError) -> Self {
-        match err {
-            crate::error::StartMatchmakingError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::StartMatchmakingError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::StartMatchmakingError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::StartMatchmakingError::UnsupportedRegionException(inner) => {
-                Error::UnsupportedRegionException(inner)
-            }
-            crate::error::StartMatchmakingError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StopFleetActionsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::StopFleetActionsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::StopFleetActionsError> for Error {
-    fn from(err: crate::error::StopFleetActionsError) -> Self {
-        match err {
-            crate::error::StopFleetActionsError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::StopFleetActionsError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::StopFleetActionsError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::StopFleetActionsError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::StopFleetActionsError::UnsupportedRegionException(inner) => {
-                Error::UnsupportedRegionException(inner)
-            }
-            crate::error::StopFleetActionsError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StopGameSessionPlacementError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::StopGameSessionPlacementError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::StopGameSessionPlacementError> for Error {
-    fn from(err: crate::error::StopGameSessionPlacementError) -> Self {
-        match err {
-            crate::error::StopGameSessionPlacementError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::StopGameSessionPlacementError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::StopGameSessionPlacementError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::StopGameSessionPlacementError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::StopGameSessionPlacementError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StopMatchmakingError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::StopMatchmakingError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::StopMatchmakingError> for Error {
-    fn from(err: crate::error::StopMatchmakingError) -> Self {
-        match err {
-            crate::error::StopMatchmakingError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::StopMatchmakingError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::StopMatchmakingError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::StopMatchmakingError::UnsupportedRegionException(inner) => {
-                Error::UnsupportedRegionException(inner)
-            }
-            crate::error::StopMatchmakingError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::SuspendGameServerGroupError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::SuspendGameServerGroupError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::SuspendGameServerGroupError> for Error {
-    fn from(err: crate::error::SuspendGameServerGroupError) -> Self {
-        match err {
-            crate::error::SuspendGameServerGroupError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::SuspendGameServerGroupError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::SuspendGameServerGroupError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::SuspendGameServerGroupError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::SuspendGameServerGroupError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::TagResourceError> for Error {
-    fn from(err: crate::error::TagResourceError) -> Self {
-        match err {
-            crate::error::TagResourceError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::TagResourceError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::TagResourceError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::TagResourceError::TaggingFailedException(inner) => {
-                Error::TaggingFailedException(inner)
-            }
-            crate::error::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::UntagResourceError> for Error {
-    fn from(err: crate::error::UntagResourceError) -> Self {
-        match err {
-            crate::error::UntagResourceError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::UntagResourceError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::UntagResourceError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UntagResourceError::TaggingFailedException(inner) => {
-                Error::TaggingFailedException(inner)
-            }
-            crate::error::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateAliasError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateAliasError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::UpdateAliasError> for Error {
-    fn from(err: crate::error::UpdateAliasError) -> Self {
-        match err {
-            crate::error::UpdateAliasError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::UpdateAliasError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::UpdateAliasError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateAliasError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::UpdateAliasError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateBuildError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateBuildError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::UpdateBuildError> for Error {
-    fn from(err: crate::error::UpdateBuildError) -> Self {
-        match err {
-            crate::error::UpdateBuildError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::UpdateBuildError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::UpdateBuildError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateBuildError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::UpdateBuildError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateFleetAttributesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateFleetAttributesError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::UpdateFleetAttributesError> for Error {
-    fn from(err: crate::error::UpdateFleetAttributesError) -> Self {
-        match err {
-            crate::error::UpdateFleetAttributesError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::UpdateFleetAttributesError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::UpdateFleetAttributesError::InvalidFleetStatusException(inner) => {
-                Error::InvalidFleetStatusException(inner)
-            }
-            crate::error::UpdateFleetAttributesError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::UpdateFleetAttributesError::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::UpdateFleetAttributesError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateFleetAttributesError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::UpdateFleetAttributesError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateFleetCapacityError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateFleetCapacityError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::UpdateFleetCapacityError> for Error {
-    fn from(err: crate::error::UpdateFleetCapacityError) -> Self {
-        match err {
-            crate::error::UpdateFleetCapacityError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::UpdateFleetCapacityError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::UpdateFleetCapacityError::InvalidFleetStatusException(inner) => {
-                Error::InvalidFleetStatusException(inner)
-            }
-            crate::error::UpdateFleetCapacityError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::UpdateFleetCapacityError::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::UpdateFleetCapacityError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateFleetCapacityError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::UpdateFleetCapacityError::UnsupportedRegionException(inner) => {
-                Error::UnsupportedRegionException(inner)
-            }
-            crate::error::UpdateFleetCapacityError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateFleetPortSettingsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateFleetPortSettingsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::UpdateFleetPortSettingsError> for Error {
-    fn from(err: crate::error::UpdateFleetPortSettingsError) -> Self {
-        match err {
-            crate::error::UpdateFleetPortSettingsError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::UpdateFleetPortSettingsError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::UpdateFleetPortSettingsError::InvalidFleetStatusException(inner) => {
-                Error::InvalidFleetStatusException(inner)
-            }
-            crate::error::UpdateFleetPortSettingsError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::UpdateFleetPortSettingsError::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::UpdateFleetPortSettingsError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateFleetPortSettingsError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::UpdateFleetPortSettingsError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateGameServerError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateGameServerError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::UpdateGameServerError> for Error {
-    fn from(err: crate::error::UpdateGameServerError) -> Self {
-        match err {
-            crate::error::UpdateGameServerError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::UpdateGameServerError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::UpdateGameServerError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateGameServerError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::UpdateGameServerError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateGameServerGroupError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateGameServerGroupError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::UpdateGameServerGroupError> for Error {
-    fn from(err: crate::error::UpdateGameServerGroupError) -> Self {
-        match err {
-            crate::error::UpdateGameServerGroupError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::UpdateGameServerGroupError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::UpdateGameServerGroupError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateGameServerGroupError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::UpdateGameServerGroupError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateGameSessionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateGameSessionError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::UpdateGameSessionError> for Error {
-    fn from(err: crate::error::UpdateGameSessionError) -> Self {
-        match err {
-            crate::error::UpdateGameSessionError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::UpdateGameSessionError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::UpdateGameSessionError::InvalidGameSessionStatusException(inner) => {
-                Error::InvalidGameSessionStatusException(inner)
-            }
-            crate::error::UpdateGameSessionError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::UpdateGameSessionError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateGameSessionError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::UpdateGameSessionError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateGameSessionQueueError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateGameSessionQueueError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::UpdateGameSessionQueueError> for Error {
-    fn from(err: crate::error::UpdateGameSessionQueueError) -> Self {
-        match err {
-            crate::error::UpdateGameSessionQueueError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::UpdateGameSessionQueueError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::UpdateGameSessionQueueError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateGameSessionQueueError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::UpdateGameSessionQueueError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::UpdateMatchmakingConfigurationError, R>>
-    for Error
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_matchmaking_configuration::CreateMatchmakingConfigurationError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::UpdateMatchmakingConfigurationError,
+            crate::operation::create_matchmaking_configuration::CreateMatchmakingConfigurationError,
             R,
         >,
     ) -> Self {
@@ -4433,34 +584,460 @@ where
         }
     }
 }
-impl From<crate::error::UpdateMatchmakingConfigurationError> for Error {
-    fn from(err: crate::error::UpdateMatchmakingConfigurationError) -> Self {
+impl From<crate::operation::create_matchmaking_configuration::CreateMatchmakingConfigurationError>
+    for Error
+{
+    fn from(
+        err: crate::operation::create_matchmaking_configuration::CreateMatchmakingConfigurationError,
+    ) -> Self {
         match err {
-            crate::error::UpdateMatchmakingConfigurationError::InternalServiceException(inner) => {
+            crate::operation::create_matchmaking_configuration::CreateMatchmakingConfigurationError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::create_matchmaking_configuration::CreateMatchmakingConfigurationError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::create_matchmaking_configuration::CreateMatchmakingConfigurationError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_matchmaking_configuration::CreateMatchmakingConfigurationError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_matchmaking_configuration::CreateMatchmakingConfigurationError::TaggingFailedException(inner) => Error::TaggingFailedException(inner),
+            crate::operation::create_matchmaking_configuration::CreateMatchmakingConfigurationError::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
+            crate::operation::create_matchmaking_configuration::CreateMatchmakingConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_matchmaking_rule_set::CreateMatchmakingRuleSetError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_matchmaking_rule_set::CreateMatchmakingRuleSetError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_matchmaking_rule_set::CreateMatchmakingRuleSetError> for Error {
+    fn from(
+        err: crate::operation::create_matchmaking_rule_set::CreateMatchmakingRuleSetError,
+    ) -> Self {
+        match err {
+            crate::operation::create_matchmaking_rule_set::CreateMatchmakingRuleSetError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::create_matchmaking_rule_set::CreateMatchmakingRuleSetError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::create_matchmaking_rule_set::CreateMatchmakingRuleSetError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_matchmaking_rule_set::CreateMatchmakingRuleSetError::TaggingFailedException(inner) => Error::TaggingFailedException(inner),
+            crate::operation::create_matchmaking_rule_set::CreateMatchmakingRuleSetError::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
+            crate::operation::create_matchmaking_rule_set::CreateMatchmakingRuleSetError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_player_session::CreatePlayerSessionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_player_session::CreatePlayerSessionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_player_session::CreatePlayerSessionError> for Error {
+    fn from(err: crate::operation::create_player_session::CreatePlayerSessionError) -> Self {
+        match err {
+            crate::operation::create_player_session::CreatePlayerSessionError::GameSessionFullException(inner) => Error::GameSessionFullException(inner),
+            crate::operation::create_player_session::CreatePlayerSessionError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::create_player_session::CreatePlayerSessionError::InvalidGameSessionStatusException(inner) => Error::InvalidGameSessionStatusException(inner),
+            crate::operation::create_player_session::CreatePlayerSessionError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::create_player_session::CreatePlayerSessionError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_player_session::CreatePlayerSessionError::TerminalRoutingStrategyException(inner) => Error::TerminalRoutingStrategyException(inner),
+            crate::operation::create_player_session::CreatePlayerSessionError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::create_player_session::CreatePlayerSessionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_player_sessions::CreatePlayerSessionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_player_sessions::CreatePlayerSessionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_player_sessions::CreatePlayerSessionsError> for Error {
+    fn from(err: crate::operation::create_player_sessions::CreatePlayerSessionsError) -> Self {
+        match err {
+            crate::operation::create_player_sessions::CreatePlayerSessionsError::GameSessionFullException(inner) => Error::GameSessionFullException(inner),
+            crate::operation::create_player_sessions::CreatePlayerSessionsError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::create_player_sessions::CreatePlayerSessionsError::InvalidGameSessionStatusException(inner) => Error::InvalidGameSessionStatusException(inner),
+            crate::operation::create_player_sessions::CreatePlayerSessionsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::create_player_sessions::CreatePlayerSessionsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_player_sessions::CreatePlayerSessionsError::TerminalRoutingStrategyException(inner) => Error::TerminalRoutingStrategyException(inner),
+            crate::operation::create_player_sessions::CreatePlayerSessionsError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::create_player_sessions::CreatePlayerSessionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::create_script::CreateScriptError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_script::CreateScriptError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_script::CreateScriptError> for Error {
+    fn from(err: crate::operation::create_script::CreateScriptError) -> Self {
+        match err {
+            crate::operation::create_script::CreateScriptError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_script::CreateScriptError::InternalServiceException(inner) => {
                 Error::InternalServiceException(inner)
             }
-            crate::error::UpdateMatchmakingConfigurationError::InvalidRequestException(inner) => {
+            crate::operation::create_script::CreateScriptError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
-            crate::error::UpdateMatchmakingConfigurationError::NotFoundException(inner) => {
+            crate::operation::create_script::CreateScriptError::TaggingFailedException(inner) => {
+                Error::TaggingFailedException(inner)
+            }
+            crate::operation::create_script::CreateScriptError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::create_script::CreateScriptError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_vpc_peering_authorization::CreateVpcPeeringAuthorizationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_vpc_peering_authorization::CreateVpcPeeringAuthorizationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_vpc_peering_authorization::CreateVpcPeeringAuthorizationError>
+    for Error
+{
+    fn from(
+        err: crate::operation::create_vpc_peering_authorization::CreateVpcPeeringAuthorizationError,
+    ) -> Self {
+        match err {
+            crate::operation::create_vpc_peering_authorization::CreateVpcPeeringAuthorizationError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::create_vpc_peering_authorization::CreateVpcPeeringAuthorizationError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::create_vpc_peering_authorization::CreateVpcPeeringAuthorizationError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_vpc_peering_authorization::CreateVpcPeeringAuthorizationError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::create_vpc_peering_authorization::CreateVpcPeeringAuthorizationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_vpc_peering_connection::CreateVpcPeeringConnectionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_vpc_peering_connection::CreateVpcPeeringConnectionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_vpc_peering_connection::CreateVpcPeeringConnectionError>
+    for Error
+{
+    fn from(
+        err: crate::operation::create_vpc_peering_connection::CreateVpcPeeringConnectionError,
+    ) -> Self {
+        match err {
+            crate::operation::create_vpc_peering_connection::CreateVpcPeeringConnectionError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::create_vpc_peering_connection::CreateVpcPeeringConnectionError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::create_vpc_peering_connection::CreateVpcPeeringConnectionError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_vpc_peering_connection::CreateVpcPeeringConnectionError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::create_vpc_peering_connection::CreateVpcPeeringConnectionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_alias::DeleteAliasError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::delete_alias::DeleteAliasError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_alias::DeleteAliasError> for Error {
+    fn from(err: crate::operation::delete_alias::DeleteAliasError) -> Self {
+        match err {
+            crate::operation::delete_alias::DeleteAliasError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::delete_alias::DeleteAliasError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::delete_alias::DeleteAliasError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::UpdateMatchmakingConfigurationError::UnsupportedRegionException(
+            crate::operation::delete_alias::DeleteAliasError::TaggingFailedException(inner) => {
+                Error::TaggingFailedException(inner)
+            }
+            crate::operation::delete_alias::DeleteAliasError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::delete_alias::DeleteAliasError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_build::DeleteBuildError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::delete_build::DeleteBuildError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_build::DeleteBuildError> for Error {
+    fn from(err: crate::operation::delete_build::DeleteBuildError) -> Self {
+        match err {
+            crate::operation::delete_build::DeleteBuildError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::delete_build::DeleteBuildError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::delete_build::DeleteBuildError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::delete_build::DeleteBuildError::TaggingFailedException(inner) => {
+                Error::TaggingFailedException(inner)
+            }
+            crate::operation::delete_build::DeleteBuildError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::delete_build::DeleteBuildError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_fleet::DeleteFleetError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::delete_fleet::DeleteFleetError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_fleet::DeleteFleetError> for Error {
+    fn from(err: crate::operation::delete_fleet::DeleteFleetError) -> Self {
+        match err {
+            crate::operation::delete_fleet::DeleteFleetError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::delete_fleet::DeleteFleetError::InvalidFleetStatusException(
                 inner,
-            ) => Error::UnsupportedRegionException(inner),
-            crate::error::UpdateMatchmakingConfigurationError::Unhandled(inner) => {
+            ) => Error::InvalidFleetStatusException(inner),
+            crate::operation::delete_fleet::DeleteFleetError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::delete_fleet::DeleteFleetError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::delete_fleet::DeleteFleetError::TaggingFailedException(inner) => {
+                Error::TaggingFailedException(inner)
+            }
+            crate::operation::delete_fleet::DeleteFleetError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::delete_fleet::DeleteFleetError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateRuntimeConfigurationError, R>>
-    for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_fleet_locations::DeleteFleetLocationsError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateRuntimeConfigurationError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_fleet_locations::DeleteFleetLocationsError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -4477,76 +1054,33 @@ where
         }
     }
 }
-impl From<crate::error::UpdateRuntimeConfigurationError> for Error {
-    fn from(err: crate::error::UpdateRuntimeConfigurationError) -> Self {
+impl From<crate::operation::delete_fleet_locations::DeleteFleetLocationsError> for Error {
+    fn from(err: crate::operation::delete_fleet_locations::DeleteFleetLocationsError) -> Self {
         match err {
-            crate::error::UpdateRuntimeConfigurationError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::UpdateRuntimeConfigurationError::InvalidFleetStatusException(inner) => {
-                Error::InvalidFleetStatusException(inner)
-            }
-            crate::error::UpdateRuntimeConfigurationError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::UpdateRuntimeConfigurationError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateRuntimeConfigurationError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::UpdateRuntimeConfigurationError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::delete_fleet_locations::DeleteFleetLocationsError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::delete_fleet_locations::DeleteFleetLocationsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::delete_fleet_locations::DeleteFleetLocationsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_fleet_locations::DeleteFleetLocationsError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::delete_fleet_locations::DeleteFleetLocationsError::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
+            crate::operation::delete_fleet_locations::DeleteFleetLocationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateScriptError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateScriptError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::UpdateScriptError> for Error {
-    fn from(err: crate::error::UpdateScriptError) -> Self {
-        match err {
-            crate::error::UpdateScriptError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::UpdateScriptError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::UpdateScriptError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateScriptError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::UpdateScriptError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ValidateMatchmakingRuleSetError, R>>
-    for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_game_server_group::DeleteGameServerGroupError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ValidateMatchmakingRuleSetError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_game_server_group::DeleteGameServerGroupError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -4563,21 +1097,3585 @@ where
         }
     }
 }
-impl From<crate::error::ValidateMatchmakingRuleSetError> for Error {
-    fn from(err: crate::error::ValidateMatchmakingRuleSetError) -> Self {
+impl From<crate::operation::delete_game_server_group::DeleteGameServerGroupError> for Error {
+    fn from(err: crate::operation::delete_game_server_group::DeleteGameServerGroupError) -> Self {
         match err {
-            crate::error::ValidateMatchmakingRuleSetError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
+            crate::operation::delete_game_server_group::DeleteGameServerGroupError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::delete_game_server_group::DeleteGameServerGroupError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::delete_game_server_group::DeleteGameServerGroupError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_game_server_group::DeleteGameServerGroupError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::delete_game_server_group::DeleteGameServerGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_game_session_queue::DeleteGameSessionQueueError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_game_session_queue::DeleteGameSessionQueueError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
-            crate::error::ValidateMatchmakingRuleSetError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_game_session_queue::DeleteGameSessionQueueError> for Error {
+    fn from(err: crate::operation::delete_game_session_queue::DeleteGameSessionQueueError) -> Self {
+        match err {
+            crate::operation::delete_game_session_queue::DeleteGameSessionQueueError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::delete_game_session_queue::DeleteGameSessionQueueError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::delete_game_session_queue::DeleteGameSessionQueueError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_game_session_queue::DeleteGameSessionQueueError::TaggingFailedException(inner) => Error::TaggingFailedException(inner),
+            crate::operation::delete_game_session_queue::DeleteGameSessionQueueError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::delete_game_session_queue::DeleteGameSessionQueueError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_location::DeleteLocationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_location::DeleteLocationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
-            crate::error::ValidateMatchmakingRuleSetError::UnsupportedRegionException(inner) => {
-                Error::UnsupportedRegionException(inner)
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_location::DeleteLocationError> for Error {
+    fn from(err: crate::operation::delete_location::DeleteLocationError) -> Self {
+        match err {
+            crate::operation::delete_location::DeleteLocationError::InternalServiceException(
+                inner,
+            ) => Error::InternalServiceException(inner),
+            crate::operation::delete_location::DeleteLocationError::InvalidRequestException(
+                inner,
+            ) => Error::InvalidRequestException(inner),
+            crate::operation::delete_location::DeleteLocationError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
             }
-            crate::error::ValidateMatchmakingRuleSetError::Unhandled(inner) => {
+            crate::operation::delete_location::DeleteLocationError::UnauthorizedException(
+                inner,
+            ) => Error::UnauthorizedException(inner),
+            crate::operation::delete_location::DeleteLocationError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_matchmaking_configuration::DeleteMatchmakingConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_matchmaking_configuration::DeleteMatchmakingConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_matchmaking_configuration::DeleteMatchmakingConfigurationError>
+    for Error
+{
+    fn from(
+        err: crate::operation::delete_matchmaking_configuration::DeleteMatchmakingConfigurationError,
+    ) -> Self {
+        match err {
+            crate::operation::delete_matchmaking_configuration::DeleteMatchmakingConfigurationError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::delete_matchmaking_configuration::DeleteMatchmakingConfigurationError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::delete_matchmaking_configuration::DeleteMatchmakingConfigurationError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_matchmaking_configuration::DeleteMatchmakingConfigurationError::TaggingFailedException(inner) => Error::TaggingFailedException(inner),
+            crate::operation::delete_matchmaking_configuration::DeleteMatchmakingConfigurationError::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
+            crate::operation::delete_matchmaking_configuration::DeleteMatchmakingConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_matchmaking_rule_set::DeleteMatchmakingRuleSetError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_matchmaking_rule_set::DeleteMatchmakingRuleSetError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_matchmaking_rule_set::DeleteMatchmakingRuleSetError> for Error {
+    fn from(
+        err: crate::operation::delete_matchmaking_rule_set::DeleteMatchmakingRuleSetError,
+    ) -> Self {
+        match err {
+            crate::operation::delete_matchmaking_rule_set::DeleteMatchmakingRuleSetError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::delete_matchmaking_rule_set::DeleteMatchmakingRuleSetError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::delete_matchmaking_rule_set::DeleteMatchmakingRuleSetError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_matchmaking_rule_set::DeleteMatchmakingRuleSetError::TaggingFailedException(inner) => Error::TaggingFailedException(inner),
+            crate::operation::delete_matchmaking_rule_set::DeleteMatchmakingRuleSetError::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
+            crate::operation::delete_matchmaking_rule_set::DeleteMatchmakingRuleSetError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_scaling_policy::DeleteScalingPolicyError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_scaling_policy::DeleteScalingPolicyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_scaling_policy::DeleteScalingPolicyError> for Error {
+    fn from(err: crate::operation::delete_scaling_policy::DeleteScalingPolicyError) -> Self {
+        match err {
+            crate::operation::delete_scaling_policy::DeleteScalingPolicyError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::delete_scaling_policy::DeleteScalingPolicyError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::delete_scaling_policy::DeleteScalingPolicyError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_scaling_policy::DeleteScalingPolicyError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::delete_scaling_policy::DeleteScalingPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::delete_script::DeleteScriptError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_script::DeleteScriptError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_script::DeleteScriptError> for Error {
+    fn from(err: crate::operation::delete_script::DeleteScriptError) -> Self {
+        match err {
+            crate::operation::delete_script::DeleteScriptError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::delete_script::DeleteScriptError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::delete_script::DeleteScriptError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::delete_script::DeleteScriptError::TaggingFailedException(inner) => {
+                Error::TaggingFailedException(inner)
+            }
+            crate::operation::delete_script::DeleteScriptError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::delete_script::DeleteScriptError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_vpc_peering_authorization::DeleteVpcPeeringAuthorizationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_vpc_peering_authorization::DeleteVpcPeeringAuthorizationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_vpc_peering_authorization::DeleteVpcPeeringAuthorizationError>
+    for Error
+{
+    fn from(
+        err: crate::operation::delete_vpc_peering_authorization::DeleteVpcPeeringAuthorizationError,
+    ) -> Self {
+        match err {
+            crate::operation::delete_vpc_peering_authorization::DeleteVpcPeeringAuthorizationError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::delete_vpc_peering_authorization::DeleteVpcPeeringAuthorizationError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::delete_vpc_peering_authorization::DeleteVpcPeeringAuthorizationError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_vpc_peering_authorization::DeleteVpcPeeringAuthorizationError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::delete_vpc_peering_authorization::DeleteVpcPeeringAuthorizationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnectionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnectionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnectionError>
+    for Error
+{
+    fn from(
+        err: crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnectionError,
+    ) -> Self {
+        match err {
+            crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnectionError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnectionError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnectionError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnectionError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnectionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::deregister_compute::DeregisterComputeError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::deregister_compute::DeregisterComputeError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::deregister_compute::DeregisterComputeError> for Error {
+    fn from(err: crate::operation::deregister_compute::DeregisterComputeError) -> Self {
+        match err {
+            crate::operation::deregister_compute::DeregisterComputeError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::deregister_compute::DeregisterComputeError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::deregister_compute::DeregisterComputeError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::deregister_compute::DeregisterComputeError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::deregister_compute::DeregisterComputeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::deregister_game_server::DeregisterGameServerError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::deregister_game_server::DeregisterGameServerError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::deregister_game_server::DeregisterGameServerError> for Error {
+    fn from(err: crate::operation::deregister_game_server::DeregisterGameServerError) -> Self {
+        match err {
+            crate::operation::deregister_game_server::DeregisterGameServerError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::deregister_game_server::DeregisterGameServerError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::deregister_game_server::DeregisterGameServerError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::deregister_game_server::DeregisterGameServerError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::deregister_game_server::DeregisterGameServerError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::describe_alias::DescribeAliasError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_alias::DescribeAliasError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_alias::DescribeAliasError> for Error {
+    fn from(err: crate::operation::describe_alias::DescribeAliasError) -> Self {
+        match err {
+            crate::operation::describe_alias::DescribeAliasError::InternalServiceException(
+                inner,
+            ) => Error::InternalServiceException(inner),
+            crate::operation::describe_alias::DescribeAliasError::InvalidRequestException(
+                inner,
+            ) => Error::InvalidRequestException(inner),
+            crate::operation::describe_alias::DescribeAliasError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::describe_alias::DescribeAliasError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::describe_alias::DescribeAliasError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::describe_build::DescribeBuildError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_build::DescribeBuildError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_build::DescribeBuildError> for Error {
+    fn from(err: crate::operation::describe_build::DescribeBuildError) -> Self {
+        match err {
+            crate::operation::describe_build::DescribeBuildError::InternalServiceException(
+                inner,
+            ) => Error::InternalServiceException(inner),
+            crate::operation::describe_build::DescribeBuildError::InvalidRequestException(
+                inner,
+            ) => Error::InvalidRequestException(inner),
+            crate::operation::describe_build::DescribeBuildError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::describe_build::DescribeBuildError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::describe_build::DescribeBuildError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_compute::DescribeComputeError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_compute::DescribeComputeError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_compute::DescribeComputeError> for Error {
+    fn from(err: crate::operation::describe_compute::DescribeComputeError) -> Self {
+        match err {
+            crate::operation::describe_compute::DescribeComputeError::InternalServiceException(
+                inner,
+            ) => Error::InternalServiceException(inner),
+            crate::operation::describe_compute::DescribeComputeError::InvalidRequestException(
+                inner,
+            ) => Error::InvalidRequestException(inner),
+            crate::operation::describe_compute::DescribeComputeError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::describe_compute::DescribeComputeError::UnauthorizedException(
+                inner,
+            ) => Error::UnauthorizedException(inner),
+            crate::operation::describe_compute::DescribeComputeError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_ec2_instance_limits::DescribeEC2InstanceLimitsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_ec2_instance_limits::DescribeEC2InstanceLimitsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_ec2_instance_limits::DescribeEC2InstanceLimitsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_ec2_instance_limits::DescribeEC2InstanceLimitsError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_ec2_instance_limits::DescribeEC2InstanceLimitsError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::describe_ec2_instance_limits::DescribeEC2InstanceLimitsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::describe_ec2_instance_limits::DescribeEC2InstanceLimitsError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::describe_ec2_instance_limits::DescribeEC2InstanceLimitsError::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
+            crate::operation::describe_ec2_instance_limits::DescribeEC2InstanceLimitsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_fleet_attributes::DescribeFleetAttributesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_fleet_attributes::DescribeFleetAttributesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_fleet_attributes::DescribeFleetAttributesError> for Error {
+    fn from(
+        err: crate::operation::describe_fleet_attributes::DescribeFleetAttributesError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_fleet_attributes::DescribeFleetAttributesError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::describe_fleet_attributes::DescribeFleetAttributesError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::describe_fleet_attributes::DescribeFleetAttributesError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::describe_fleet_attributes::DescribeFleetAttributesError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::describe_fleet_attributes::DescribeFleetAttributesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_fleet_capacity::DescribeFleetCapacityError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_fleet_capacity::DescribeFleetCapacityError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_fleet_capacity::DescribeFleetCapacityError> for Error {
+    fn from(err: crate::operation::describe_fleet_capacity::DescribeFleetCapacityError) -> Self {
+        match err {
+            crate::operation::describe_fleet_capacity::DescribeFleetCapacityError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::describe_fleet_capacity::DescribeFleetCapacityError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::describe_fleet_capacity::DescribeFleetCapacityError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::describe_fleet_capacity::DescribeFleetCapacityError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::describe_fleet_capacity::DescribeFleetCapacityError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_fleet_events::DescribeFleetEventsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_fleet_events::DescribeFleetEventsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_fleet_events::DescribeFleetEventsError> for Error {
+    fn from(err: crate::operation::describe_fleet_events::DescribeFleetEventsError) -> Self {
+        match err {
+            crate::operation::describe_fleet_events::DescribeFleetEventsError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::describe_fleet_events::DescribeFleetEventsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::describe_fleet_events::DescribeFleetEventsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::describe_fleet_events::DescribeFleetEventsError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::describe_fleet_events::DescribeFleetEventsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::describe_fleet_location_attributes::DescribeFleetLocationAttributesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::describe_fleet_location_attributes::DescribeFleetLocationAttributesError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl
+    From<crate::operation::describe_fleet_location_attributes::DescribeFleetLocationAttributesError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_fleet_location_attributes::DescribeFleetLocationAttributesError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_fleet_location_attributes::DescribeFleetLocationAttributesError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::describe_fleet_location_attributes::DescribeFleetLocationAttributesError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::describe_fleet_location_attributes::DescribeFleetLocationAttributesError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::describe_fleet_location_attributes::DescribeFleetLocationAttributesError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::describe_fleet_location_attributes::DescribeFleetLocationAttributesError::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
+            crate::operation::describe_fleet_location_attributes::DescribeFleetLocationAttributesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_fleet_location_capacity::DescribeFleetLocationCapacityError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_fleet_location_capacity::DescribeFleetLocationCapacityError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_fleet_location_capacity::DescribeFleetLocationCapacityError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_fleet_location_capacity::DescribeFleetLocationCapacityError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_fleet_location_capacity::DescribeFleetLocationCapacityError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::describe_fleet_location_capacity::DescribeFleetLocationCapacityError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::describe_fleet_location_capacity::DescribeFleetLocationCapacityError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::describe_fleet_location_capacity::DescribeFleetLocationCapacityError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::describe_fleet_location_capacity::DescribeFleetLocationCapacityError::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
+            crate::operation::describe_fleet_location_capacity::DescribeFleetLocationCapacityError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::describe_fleet_location_utilization::DescribeFleetLocationUtilizationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::describe_fleet_location_utilization::DescribeFleetLocationUtilizationError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::describe_fleet_location_utilization::DescribeFleetLocationUtilizationError> for Error {
+    fn from(err: crate::operation::describe_fleet_location_utilization::DescribeFleetLocationUtilizationError) -> Self {
+        match err {
+            crate::operation::describe_fleet_location_utilization::DescribeFleetLocationUtilizationError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::describe_fleet_location_utilization::DescribeFleetLocationUtilizationError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::describe_fleet_location_utilization::DescribeFleetLocationUtilizationError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::describe_fleet_location_utilization::DescribeFleetLocationUtilizationError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::describe_fleet_location_utilization::DescribeFleetLocationUtilizationError::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
+            crate::operation::describe_fleet_location_utilization::DescribeFleetLocationUtilizationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_fleet_port_settings::DescribeFleetPortSettingsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_fleet_port_settings::DescribeFleetPortSettingsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_fleet_port_settings::DescribeFleetPortSettingsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_fleet_port_settings::DescribeFleetPortSettingsError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_fleet_port_settings::DescribeFleetPortSettingsError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::describe_fleet_port_settings::DescribeFleetPortSettingsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::describe_fleet_port_settings::DescribeFleetPortSettingsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::describe_fleet_port_settings::DescribeFleetPortSettingsError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::describe_fleet_port_settings::DescribeFleetPortSettingsError::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
+            crate::operation::describe_fleet_port_settings::DescribeFleetPortSettingsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_fleet_utilization::DescribeFleetUtilizationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_fleet_utilization::DescribeFleetUtilizationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_fleet_utilization::DescribeFleetUtilizationError> for Error {
+    fn from(
+        err: crate::operation::describe_fleet_utilization::DescribeFleetUtilizationError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_fleet_utilization::DescribeFleetUtilizationError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::describe_fleet_utilization::DescribeFleetUtilizationError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::describe_fleet_utilization::DescribeFleetUtilizationError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::describe_fleet_utilization::DescribeFleetUtilizationError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::describe_fleet_utilization::DescribeFleetUtilizationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_game_server::DescribeGameServerError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_game_server::DescribeGameServerError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_game_server::DescribeGameServerError> for Error {
+    fn from(err: crate::operation::describe_game_server::DescribeGameServerError) -> Self {
+        match err {
+            crate::operation::describe_game_server::DescribeGameServerError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::describe_game_server::DescribeGameServerError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::describe_game_server::DescribeGameServerError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::describe_game_server::DescribeGameServerError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::describe_game_server::DescribeGameServerError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_game_server_group::DescribeGameServerGroupError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_game_server_group::DescribeGameServerGroupError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_game_server_group::DescribeGameServerGroupError> for Error {
+    fn from(
+        err: crate::operation::describe_game_server_group::DescribeGameServerGroupError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_game_server_group::DescribeGameServerGroupError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::describe_game_server_group::DescribeGameServerGroupError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::describe_game_server_group::DescribeGameServerGroupError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::describe_game_server_group::DescribeGameServerGroupError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::describe_game_server_group::DescribeGameServerGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_game_server_instances::DescribeGameServerInstancesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_game_server_instances::DescribeGameServerInstancesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_game_server_instances::DescribeGameServerInstancesError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_game_server_instances::DescribeGameServerInstancesError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_game_server_instances::DescribeGameServerInstancesError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::describe_game_server_instances::DescribeGameServerInstancesError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::describe_game_server_instances::DescribeGameServerInstancesError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::describe_game_server_instances::DescribeGameServerInstancesError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::describe_game_server_instances::DescribeGameServerInstancesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_game_session_details::DescribeGameSessionDetailsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_game_session_details::DescribeGameSessionDetailsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_game_session_details::DescribeGameSessionDetailsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_game_session_details::DescribeGameSessionDetailsError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_game_session_details::DescribeGameSessionDetailsError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::describe_game_session_details::DescribeGameSessionDetailsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::describe_game_session_details::DescribeGameSessionDetailsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::describe_game_session_details::DescribeGameSessionDetailsError::TerminalRoutingStrategyException(inner) => Error::TerminalRoutingStrategyException(inner),
+            crate::operation::describe_game_session_details::DescribeGameSessionDetailsError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::describe_game_session_details::DescribeGameSessionDetailsError::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
+            crate::operation::describe_game_session_details::DescribeGameSessionDetailsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_game_session_placement::DescribeGameSessionPlacementError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_game_session_placement::DescribeGameSessionPlacementError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_game_session_placement::DescribeGameSessionPlacementError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_game_session_placement::DescribeGameSessionPlacementError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_game_session_placement::DescribeGameSessionPlacementError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::describe_game_session_placement::DescribeGameSessionPlacementError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::describe_game_session_placement::DescribeGameSessionPlacementError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::describe_game_session_placement::DescribeGameSessionPlacementError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::describe_game_session_placement::DescribeGameSessionPlacementError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_game_session_queues::DescribeGameSessionQueuesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_game_session_queues::DescribeGameSessionQueuesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_game_session_queues::DescribeGameSessionQueuesError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_game_session_queues::DescribeGameSessionQueuesError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_game_session_queues::DescribeGameSessionQueuesError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::describe_game_session_queues::DescribeGameSessionQueuesError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::describe_game_session_queues::DescribeGameSessionQueuesError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::describe_game_session_queues::DescribeGameSessionQueuesError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::describe_game_session_queues::DescribeGameSessionQueuesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_game_sessions::DescribeGameSessionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_game_sessions::DescribeGameSessionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_game_sessions::DescribeGameSessionsError> for Error {
+    fn from(err: crate::operation::describe_game_sessions::DescribeGameSessionsError) -> Self {
+        match err {
+            crate::operation::describe_game_sessions::DescribeGameSessionsError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::describe_game_sessions::DescribeGameSessionsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::describe_game_sessions::DescribeGameSessionsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::describe_game_sessions::DescribeGameSessionsError::TerminalRoutingStrategyException(inner) => Error::TerminalRoutingStrategyException(inner),
+            crate::operation::describe_game_sessions::DescribeGameSessionsError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::describe_game_sessions::DescribeGameSessionsError::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
+            crate::operation::describe_game_sessions::DescribeGameSessionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_instances::DescribeInstancesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_instances::DescribeInstancesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_instances::DescribeInstancesError> for Error {
+    fn from(err: crate::operation::describe_instances::DescribeInstancesError) -> Self {
+        match err {
+            crate::operation::describe_instances::DescribeInstancesError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::describe_instances::DescribeInstancesError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::describe_instances::DescribeInstancesError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::describe_instances::DescribeInstancesError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::describe_instances::DescribeInstancesError::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
+            crate::operation::describe_instances::DescribeInstancesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_matchmaking::DescribeMatchmakingError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_matchmaking::DescribeMatchmakingError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_matchmaking::DescribeMatchmakingError> for Error {
+    fn from(err: crate::operation::describe_matchmaking::DescribeMatchmakingError) -> Self {
+        match err {
+            crate::operation::describe_matchmaking::DescribeMatchmakingError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::describe_matchmaking::DescribeMatchmakingError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::describe_matchmaking::DescribeMatchmakingError::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
+            crate::operation::describe_matchmaking::DescribeMatchmakingError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::describe_matchmaking_configurations::DescribeMatchmakingConfigurationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::describe_matchmaking_configurations::DescribeMatchmakingConfigurationsError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::describe_matchmaking_configurations::DescribeMatchmakingConfigurationsError> for Error {
+    fn from(err: crate::operation::describe_matchmaking_configurations::DescribeMatchmakingConfigurationsError) -> Self {
+        match err {
+            crate::operation::describe_matchmaking_configurations::DescribeMatchmakingConfigurationsError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::describe_matchmaking_configurations::DescribeMatchmakingConfigurationsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::describe_matchmaking_configurations::DescribeMatchmakingConfigurationsError::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
+            crate::operation::describe_matchmaking_configurations::DescribeMatchmakingConfigurationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_matchmaking_rule_sets::DescribeMatchmakingRuleSetsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_matchmaking_rule_sets::DescribeMatchmakingRuleSetsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_matchmaking_rule_sets::DescribeMatchmakingRuleSetsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_matchmaking_rule_sets::DescribeMatchmakingRuleSetsError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_matchmaking_rule_sets::DescribeMatchmakingRuleSetsError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::describe_matchmaking_rule_sets::DescribeMatchmakingRuleSetsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::describe_matchmaking_rule_sets::DescribeMatchmakingRuleSetsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::describe_matchmaking_rule_sets::DescribeMatchmakingRuleSetsError::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
+            crate::operation::describe_matchmaking_rule_sets::DescribeMatchmakingRuleSetsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_player_sessions::DescribePlayerSessionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_player_sessions::DescribePlayerSessionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_player_sessions::DescribePlayerSessionsError> for Error {
+    fn from(err: crate::operation::describe_player_sessions::DescribePlayerSessionsError) -> Self {
+        match err {
+            crate::operation::describe_player_sessions::DescribePlayerSessionsError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::describe_player_sessions::DescribePlayerSessionsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::describe_player_sessions::DescribePlayerSessionsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::describe_player_sessions::DescribePlayerSessionsError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::describe_player_sessions::DescribePlayerSessionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_runtime_configuration::DescribeRuntimeConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_runtime_configuration::DescribeRuntimeConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_runtime_configuration::DescribeRuntimeConfigurationError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_runtime_configuration::DescribeRuntimeConfigurationError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_runtime_configuration::DescribeRuntimeConfigurationError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::describe_runtime_configuration::DescribeRuntimeConfigurationError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::describe_runtime_configuration::DescribeRuntimeConfigurationError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::describe_runtime_configuration::DescribeRuntimeConfigurationError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::describe_runtime_configuration::DescribeRuntimeConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_scaling_policies::DescribeScalingPoliciesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_scaling_policies::DescribeScalingPoliciesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_scaling_policies::DescribeScalingPoliciesError> for Error {
+    fn from(
+        err: crate::operation::describe_scaling_policies::DescribeScalingPoliciesError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_scaling_policies::DescribeScalingPoliciesError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::describe_scaling_policies::DescribeScalingPoliciesError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::describe_scaling_policies::DescribeScalingPoliciesError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::describe_scaling_policies::DescribeScalingPoliciesError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::describe_scaling_policies::DescribeScalingPoliciesError::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
+            crate::operation::describe_scaling_policies::DescribeScalingPoliciesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_script::DescribeScriptError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_script::DescribeScriptError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_script::DescribeScriptError> for Error {
+    fn from(err: crate::operation::describe_script::DescribeScriptError) -> Self {
+        match err {
+            crate::operation::describe_script::DescribeScriptError::InternalServiceException(
+                inner,
+            ) => Error::InternalServiceException(inner),
+            crate::operation::describe_script::DescribeScriptError::InvalidRequestException(
+                inner,
+            ) => Error::InvalidRequestException(inner),
+            crate::operation::describe_script::DescribeScriptError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::describe_script::DescribeScriptError::UnauthorizedException(
+                inner,
+            ) => Error::UnauthorizedException(inner),
+            crate::operation::describe_script::DescribeScriptError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::describe_vpc_peering_authorizations::DescribeVpcPeeringAuthorizationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::describe_vpc_peering_authorizations::DescribeVpcPeeringAuthorizationsError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::describe_vpc_peering_authorizations::DescribeVpcPeeringAuthorizationsError> for Error {
+    fn from(err: crate::operation::describe_vpc_peering_authorizations::DescribeVpcPeeringAuthorizationsError) -> Self {
+        match err {
+            crate::operation::describe_vpc_peering_authorizations::DescribeVpcPeeringAuthorizationsError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::describe_vpc_peering_authorizations::DescribeVpcPeeringAuthorizationsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::describe_vpc_peering_authorizations::DescribeVpcPeeringAuthorizationsError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::describe_vpc_peering_authorizations::DescribeVpcPeeringAuthorizationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_compute_access::GetComputeAccessError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_compute_access::GetComputeAccessError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_compute_access::GetComputeAccessError> for Error {
+    fn from(err: crate::operation::get_compute_access::GetComputeAccessError) -> Self {
+        match err {
+            crate::operation::get_compute_access::GetComputeAccessError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::get_compute_access::GetComputeAccessError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::get_compute_access::GetComputeAccessError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_compute_access::GetComputeAccessError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::get_compute_access::GetComputeAccessError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_compute_auth_token::GetComputeAuthTokenError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_compute_auth_token::GetComputeAuthTokenError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_compute_auth_token::GetComputeAuthTokenError> for Error {
+    fn from(err: crate::operation::get_compute_auth_token::GetComputeAuthTokenError) -> Self {
+        match err {
+            crate::operation::get_compute_auth_token::GetComputeAuthTokenError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::get_compute_auth_token::GetComputeAuthTokenError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::get_compute_auth_token::GetComputeAuthTokenError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_compute_auth_token::GetComputeAuthTokenError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::get_compute_auth_token::GetComputeAuthTokenError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_game_session_log_url::GetGameSessionLogUrlError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_game_session_log_url::GetGameSessionLogUrlError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_game_session_log_url::GetGameSessionLogUrlError> for Error {
+    fn from(err: crate::operation::get_game_session_log_url::GetGameSessionLogUrlError) -> Self {
+        match err {
+            crate::operation::get_game_session_log_url::GetGameSessionLogUrlError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::get_game_session_log_url::GetGameSessionLogUrlError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::get_game_session_log_url::GetGameSessionLogUrlError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_game_session_log_url::GetGameSessionLogUrlError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::get_game_session_log_url::GetGameSessionLogUrlError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_instance_access::GetInstanceAccessError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_instance_access::GetInstanceAccessError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_instance_access::GetInstanceAccessError> for Error {
+    fn from(err: crate::operation::get_instance_access::GetInstanceAccessError) -> Self {
+        match err {
+            crate::operation::get_instance_access::GetInstanceAccessError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::get_instance_access::GetInstanceAccessError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::get_instance_access::GetInstanceAccessError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_instance_access::GetInstanceAccessError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::get_instance_access::GetInstanceAccessError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_aliases::ListAliasesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::list_aliases::ListAliasesError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_aliases::ListAliasesError> for Error {
+    fn from(err: crate::operation::list_aliases::ListAliasesError) -> Self {
+        match err {
+            crate::operation::list_aliases::ListAliasesError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::list_aliases::ListAliasesError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::list_aliases::ListAliasesError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::list_aliases::ListAliasesError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_builds::ListBuildsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::list_builds::ListBuildsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_builds::ListBuildsError> for Error {
+    fn from(err: crate::operation::list_builds::ListBuildsError) -> Self {
+        match err {
+            crate::operation::list_builds::ListBuildsError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::list_builds::ListBuildsError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::list_builds::ListBuildsError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::list_builds::ListBuildsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_compute::ListComputeError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::list_compute::ListComputeError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_compute::ListComputeError> for Error {
+    fn from(err: crate::operation::list_compute::ListComputeError) -> Self {
+        match err {
+            crate::operation::list_compute::ListComputeError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::list_compute::ListComputeError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::list_compute::ListComputeError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::list_compute::ListComputeError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_fleets::ListFleetsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::list_fleets::ListFleetsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_fleets::ListFleetsError> for Error {
+    fn from(err: crate::operation::list_fleets::ListFleetsError) -> Self {
+        match err {
+            crate::operation::list_fleets::ListFleetsError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::list_fleets::ListFleetsError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::list_fleets::ListFleetsError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::list_fleets::ListFleetsError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::list_fleets::ListFleetsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_game_server_groups::ListGameServerGroupsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_game_server_groups::ListGameServerGroupsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_game_server_groups::ListGameServerGroupsError> for Error {
+    fn from(err: crate::operation::list_game_server_groups::ListGameServerGroupsError) -> Self {
+        match err {
+            crate::operation::list_game_server_groups::ListGameServerGroupsError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::list_game_server_groups::ListGameServerGroupsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::list_game_server_groups::ListGameServerGroupsError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::list_game_server_groups::ListGameServerGroupsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_game_servers::ListGameServersError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_game_servers::ListGameServersError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_game_servers::ListGameServersError> for Error {
+    fn from(err: crate::operation::list_game_servers::ListGameServersError) -> Self {
+        match err {
+            crate::operation::list_game_servers::ListGameServersError::InternalServiceException(
+                inner,
+            ) => Error::InternalServiceException(inner),
+            crate::operation::list_game_servers::ListGameServersError::InvalidRequestException(
+                inner,
+            ) => Error::InvalidRequestException(inner),
+            crate::operation::list_game_servers::ListGameServersError::UnauthorizedException(
+                inner,
+            ) => Error::UnauthorizedException(inner),
+            crate::operation::list_game_servers::ListGameServersError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::list_locations::ListLocationsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_locations::ListLocationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_locations::ListLocationsError> for Error {
+    fn from(err: crate::operation::list_locations::ListLocationsError) -> Self {
+        match err {
+            crate::operation::list_locations::ListLocationsError::InternalServiceException(
+                inner,
+            ) => Error::InternalServiceException(inner),
+            crate::operation::list_locations::ListLocationsError::InvalidRequestException(
+                inner,
+            ) => Error::InvalidRequestException(inner),
+            crate::operation::list_locations::ListLocationsError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::list_locations::ListLocationsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_scripts::ListScriptsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::list_scripts::ListScriptsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_scripts::ListScriptsError> for Error {
+    fn from(err: crate::operation::list_scripts::ListScriptsError) -> Self {
+        match err {
+            crate::operation::list_scripts::ListScriptsError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::list_scripts::ListScriptsError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::list_scripts::ListScriptsError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::list_scripts::ListScriptsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_tags_for_resource::ListTagsForResourceError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_tags_for_resource::ListTagsForResourceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> for Error {
+    fn from(err: crate::operation::list_tags_for_resource::ListTagsForResourceError) -> Self {
+        match err {
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::TaggingFailedException(inner) => Error::TaggingFailedException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::put_scaling_policy::PutScalingPolicyError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::put_scaling_policy::PutScalingPolicyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::put_scaling_policy::PutScalingPolicyError> for Error {
+    fn from(err: crate::operation::put_scaling_policy::PutScalingPolicyError) -> Self {
+        match err {
+            crate::operation::put_scaling_policy::PutScalingPolicyError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::put_scaling_policy::PutScalingPolicyError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::put_scaling_policy::PutScalingPolicyError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::put_scaling_policy::PutScalingPolicyError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::put_scaling_policy::PutScalingPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::register_compute::RegisterComputeError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::register_compute::RegisterComputeError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::register_compute::RegisterComputeError> for Error {
+    fn from(err: crate::operation::register_compute::RegisterComputeError) -> Self {
+        match err {
+            crate::operation::register_compute::RegisterComputeError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::register_compute::RegisterComputeError::InternalServiceException(
+                inner,
+            ) => Error::InternalServiceException(inner),
+            crate::operation::register_compute::RegisterComputeError::InvalidRequestException(
+                inner,
+            ) => Error::InvalidRequestException(inner),
+            crate::operation::register_compute::RegisterComputeError::UnauthorizedException(
+                inner,
+            ) => Error::UnauthorizedException(inner),
+            crate::operation::register_compute::RegisterComputeError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::register_game_server::RegisterGameServerError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::register_game_server::RegisterGameServerError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::register_game_server::RegisterGameServerError> for Error {
+    fn from(err: crate::operation::register_game_server::RegisterGameServerError) -> Self {
+        match err {
+            crate::operation::register_game_server::RegisterGameServerError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::register_game_server::RegisterGameServerError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::register_game_server::RegisterGameServerError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::register_game_server::RegisterGameServerError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::register_game_server::RegisterGameServerError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::register_game_server::RegisterGameServerError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::request_upload_credentials::RequestUploadCredentialsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::request_upload_credentials::RequestUploadCredentialsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::request_upload_credentials::RequestUploadCredentialsError> for Error {
+    fn from(
+        err: crate::operation::request_upload_credentials::RequestUploadCredentialsError,
+    ) -> Self {
+        match err {
+            crate::operation::request_upload_credentials::RequestUploadCredentialsError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::request_upload_credentials::RequestUploadCredentialsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::request_upload_credentials::RequestUploadCredentialsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::request_upload_credentials::RequestUploadCredentialsError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::request_upload_credentials::RequestUploadCredentialsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::resolve_alias::ResolveAliasError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::resolve_alias::ResolveAliasError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::resolve_alias::ResolveAliasError> for Error {
+    fn from(err: crate::operation::resolve_alias::ResolveAliasError) -> Self {
+        match err {
+            crate::operation::resolve_alias::ResolveAliasError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::resolve_alias::ResolveAliasError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::resolve_alias::ResolveAliasError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::resolve_alias::ResolveAliasError::TerminalRoutingStrategyException(inner) => Error::TerminalRoutingStrategyException(inner),
+            crate::operation::resolve_alias::ResolveAliasError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::resolve_alias::ResolveAliasError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::resume_game_server_group::ResumeGameServerGroupError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::resume_game_server_group::ResumeGameServerGroupError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::resume_game_server_group::ResumeGameServerGroupError> for Error {
+    fn from(err: crate::operation::resume_game_server_group::ResumeGameServerGroupError) -> Self {
+        match err {
+            crate::operation::resume_game_server_group::ResumeGameServerGroupError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::resume_game_server_group::ResumeGameServerGroupError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::resume_game_server_group::ResumeGameServerGroupError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::resume_game_server_group::ResumeGameServerGroupError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::resume_game_server_group::ResumeGameServerGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::search_game_sessions::SearchGameSessionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::search_game_sessions::SearchGameSessionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::search_game_sessions::SearchGameSessionsError> for Error {
+    fn from(err: crate::operation::search_game_sessions::SearchGameSessionsError) -> Self {
+        match err {
+            crate::operation::search_game_sessions::SearchGameSessionsError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::search_game_sessions::SearchGameSessionsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::search_game_sessions::SearchGameSessionsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::search_game_sessions::SearchGameSessionsError::TerminalRoutingStrategyException(inner) => Error::TerminalRoutingStrategyException(inner),
+            crate::operation::search_game_sessions::SearchGameSessionsError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::search_game_sessions::SearchGameSessionsError::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
+            crate::operation::search_game_sessions::SearchGameSessionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::start_fleet_actions::StartFleetActionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::start_fleet_actions::StartFleetActionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::start_fleet_actions::StartFleetActionsError> for Error {
+    fn from(err: crate::operation::start_fleet_actions::StartFleetActionsError) -> Self {
+        match err {
+            crate::operation::start_fleet_actions::StartFleetActionsError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::start_fleet_actions::StartFleetActionsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::start_fleet_actions::StartFleetActionsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::start_fleet_actions::StartFleetActionsError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::start_fleet_actions::StartFleetActionsError::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
+            crate::operation::start_fleet_actions::StartFleetActionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::start_game_session_placement::StartGameSessionPlacementError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::start_game_session_placement::StartGameSessionPlacementError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::start_game_session_placement::StartGameSessionPlacementError>
+    for Error
+{
+    fn from(
+        err: crate::operation::start_game_session_placement::StartGameSessionPlacementError,
+    ) -> Self {
+        match err {
+            crate::operation::start_game_session_placement::StartGameSessionPlacementError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::start_game_session_placement::StartGameSessionPlacementError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::start_game_session_placement::StartGameSessionPlacementError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::start_game_session_placement::StartGameSessionPlacementError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::start_game_session_placement::StartGameSessionPlacementError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::start_match_backfill::StartMatchBackfillError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::start_match_backfill::StartMatchBackfillError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::start_match_backfill::StartMatchBackfillError> for Error {
+    fn from(err: crate::operation::start_match_backfill::StartMatchBackfillError) -> Self {
+        match err {
+            crate::operation::start_match_backfill::StartMatchBackfillError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::start_match_backfill::StartMatchBackfillError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::start_match_backfill::StartMatchBackfillError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::start_match_backfill::StartMatchBackfillError::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
+            crate::operation::start_match_backfill::StartMatchBackfillError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::start_matchmaking::StartMatchmakingError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::start_matchmaking::StartMatchmakingError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::start_matchmaking::StartMatchmakingError> for Error {
+    fn from(err: crate::operation::start_matchmaking::StartMatchmakingError) -> Self {
+        match err {
+            crate::operation::start_matchmaking::StartMatchmakingError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::start_matchmaking::StartMatchmakingError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::start_matchmaking::StartMatchmakingError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::start_matchmaking::StartMatchmakingError::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
+            crate::operation::start_matchmaking::StartMatchmakingError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::stop_fleet_actions::StopFleetActionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::stop_fleet_actions::StopFleetActionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::stop_fleet_actions::StopFleetActionsError> for Error {
+    fn from(err: crate::operation::stop_fleet_actions::StopFleetActionsError) -> Self {
+        match err {
+            crate::operation::stop_fleet_actions::StopFleetActionsError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::stop_fleet_actions::StopFleetActionsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::stop_fleet_actions::StopFleetActionsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::stop_fleet_actions::StopFleetActionsError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::stop_fleet_actions::StopFleetActionsError::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
+            crate::operation::stop_fleet_actions::StopFleetActionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::stop_game_session_placement::StopGameSessionPlacementError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::stop_game_session_placement::StopGameSessionPlacementError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::stop_game_session_placement::StopGameSessionPlacementError> for Error {
+    fn from(
+        err: crate::operation::stop_game_session_placement::StopGameSessionPlacementError,
+    ) -> Self {
+        match err {
+            crate::operation::stop_game_session_placement::StopGameSessionPlacementError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::stop_game_session_placement::StopGameSessionPlacementError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::stop_game_session_placement::StopGameSessionPlacementError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::stop_game_session_placement::StopGameSessionPlacementError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::stop_game_session_placement::StopGameSessionPlacementError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::stop_matchmaking::StopMatchmakingError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::stop_matchmaking::StopMatchmakingError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::stop_matchmaking::StopMatchmakingError> for Error {
+    fn from(err: crate::operation::stop_matchmaking::StopMatchmakingError) -> Self {
+        match err {
+            crate::operation::stop_matchmaking::StopMatchmakingError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::stop_matchmaking::StopMatchmakingError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::stop_matchmaking::StopMatchmakingError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::stop_matchmaking::StopMatchmakingError::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
+            crate::operation::stop_matchmaking::StopMatchmakingError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::suspend_game_server_group::SuspendGameServerGroupError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::suspend_game_server_group::SuspendGameServerGroupError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::suspend_game_server_group::SuspendGameServerGroupError> for Error {
+    fn from(err: crate::operation::suspend_game_server_group::SuspendGameServerGroupError) -> Self {
+        match err {
+            crate::operation::suspend_game_server_group::SuspendGameServerGroupError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::suspend_game_server_group::SuspendGameServerGroupError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::suspend_game_server_group::SuspendGameServerGroupError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::suspend_game_server_group::SuspendGameServerGroupError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::suspend_game_server_group::SuspendGameServerGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::tag_resource::TagResourceError> for Error {
+    fn from(err: crate::operation::tag_resource::TagResourceError) -> Self {
+        match err {
+            crate::operation::tag_resource::TagResourceError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::tag_resource::TagResourceError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::tag_resource::TagResourceError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::tag_resource::TagResourceError::TaggingFailedException(inner) => {
+                Error::TaggingFailedException(inner)
+            }
+            crate::operation::tag_resource::TagResourceError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::untag_resource::UntagResourceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::untag_resource::UntagResourceError> for Error {
+    fn from(err: crate::operation::untag_resource::UntagResourceError) -> Self {
+        match err {
+            crate::operation::untag_resource::UntagResourceError::InternalServiceException(
+                inner,
+            ) => Error::InternalServiceException(inner),
+            crate::operation::untag_resource::UntagResourceError::InvalidRequestException(
+                inner,
+            ) => Error::InvalidRequestException(inner),
+            crate::operation::untag_resource::UntagResourceError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::untag_resource::UntagResourceError::TaggingFailedException(inner) => {
+                Error::TaggingFailedException(inner)
+            }
+            crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_alias::UpdateAliasError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::update_alias::UpdateAliasError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_alias::UpdateAliasError> for Error {
+    fn from(err: crate::operation::update_alias::UpdateAliasError) -> Self {
+        match err {
+            crate::operation::update_alias::UpdateAliasError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::update_alias::UpdateAliasError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::update_alias::UpdateAliasError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::update_alias::UpdateAliasError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::update_alias::UpdateAliasError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_build::UpdateBuildError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::update_build::UpdateBuildError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_build::UpdateBuildError> for Error {
+    fn from(err: crate::operation::update_build::UpdateBuildError) -> Self {
+        match err {
+            crate::operation::update_build::UpdateBuildError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::update_build::UpdateBuildError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::update_build::UpdateBuildError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::update_build::UpdateBuildError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::update_build::UpdateBuildError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_fleet_attributes::UpdateFleetAttributesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_fleet_attributes::UpdateFleetAttributesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_fleet_attributes::UpdateFleetAttributesError> for Error {
+    fn from(err: crate::operation::update_fleet_attributes::UpdateFleetAttributesError) -> Self {
+        match err {
+            crate::operation::update_fleet_attributes::UpdateFleetAttributesError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_fleet_attributes::UpdateFleetAttributesError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::update_fleet_attributes::UpdateFleetAttributesError::InvalidFleetStatusException(inner) => Error::InvalidFleetStatusException(inner),
+            crate::operation::update_fleet_attributes::UpdateFleetAttributesError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::update_fleet_attributes::UpdateFleetAttributesError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::update_fleet_attributes::UpdateFleetAttributesError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_fleet_attributes::UpdateFleetAttributesError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::update_fleet_attributes::UpdateFleetAttributesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_fleet_capacity::UpdateFleetCapacityError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_fleet_capacity::UpdateFleetCapacityError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_fleet_capacity::UpdateFleetCapacityError> for Error {
+    fn from(err: crate::operation::update_fleet_capacity::UpdateFleetCapacityError) -> Self {
+        match err {
+            crate::operation::update_fleet_capacity::UpdateFleetCapacityError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_fleet_capacity::UpdateFleetCapacityError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::update_fleet_capacity::UpdateFleetCapacityError::InvalidFleetStatusException(inner) => Error::InvalidFleetStatusException(inner),
+            crate::operation::update_fleet_capacity::UpdateFleetCapacityError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::update_fleet_capacity::UpdateFleetCapacityError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::update_fleet_capacity::UpdateFleetCapacityError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_fleet_capacity::UpdateFleetCapacityError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::update_fleet_capacity::UpdateFleetCapacityError::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
+            crate::operation::update_fleet_capacity::UpdateFleetCapacityError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_fleet_port_settings::UpdateFleetPortSettingsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_fleet_port_settings::UpdateFleetPortSettingsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_fleet_port_settings::UpdateFleetPortSettingsError> for Error {
+    fn from(
+        err: crate::operation::update_fleet_port_settings::UpdateFleetPortSettingsError,
+    ) -> Self {
+        match err {
+            crate::operation::update_fleet_port_settings::UpdateFleetPortSettingsError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_fleet_port_settings::UpdateFleetPortSettingsError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::update_fleet_port_settings::UpdateFleetPortSettingsError::InvalidFleetStatusException(inner) => Error::InvalidFleetStatusException(inner),
+            crate::operation::update_fleet_port_settings::UpdateFleetPortSettingsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::update_fleet_port_settings::UpdateFleetPortSettingsError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::update_fleet_port_settings::UpdateFleetPortSettingsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_fleet_port_settings::UpdateFleetPortSettingsError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::update_fleet_port_settings::UpdateFleetPortSettingsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_game_server::UpdateGameServerError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_game_server::UpdateGameServerError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_game_server::UpdateGameServerError> for Error {
+    fn from(err: crate::operation::update_game_server::UpdateGameServerError) -> Self {
+        match err {
+            crate::operation::update_game_server::UpdateGameServerError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::update_game_server::UpdateGameServerError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::update_game_server::UpdateGameServerError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_game_server::UpdateGameServerError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::update_game_server::UpdateGameServerError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_game_server_group::UpdateGameServerGroupError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_game_server_group::UpdateGameServerGroupError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_game_server_group::UpdateGameServerGroupError> for Error {
+    fn from(err: crate::operation::update_game_server_group::UpdateGameServerGroupError) -> Self {
+        match err {
+            crate::operation::update_game_server_group::UpdateGameServerGroupError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::update_game_server_group::UpdateGameServerGroupError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::update_game_server_group::UpdateGameServerGroupError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_game_server_group::UpdateGameServerGroupError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::update_game_server_group::UpdateGameServerGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_game_session::UpdateGameSessionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_game_session::UpdateGameSessionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_game_session::UpdateGameSessionError> for Error {
+    fn from(err: crate::operation::update_game_session::UpdateGameSessionError) -> Self {
+        match err {
+            crate::operation::update_game_session::UpdateGameSessionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_game_session::UpdateGameSessionError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::update_game_session::UpdateGameSessionError::InvalidGameSessionStatusException(inner) => Error::InvalidGameSessionStatusException(inner),
+            crate::operation::update_game_session::UpdateGameSessionError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::update_game_session::UpdateGameSessionError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_game_session::UpdateGameSessionError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::update_game_session::UpdateGameSessionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_game_session_queue::UpdateGameSessionQueueError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_game_session_queue::UpdateGameSessionQueueError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_game_session_queue::UpdateGameSessionQueueError> for Error {
+    fn from(err: crate::operation::update_game_session_queue::UpdateGameSessionQueueError) -> Self {
+        match err {
+            crate::operation::update_game_session_queue::UpdateGameSessionQueueError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::update_game_session_queue::UpdateGameSessionQueueError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::update_game_session_queue::UpdateGameSessionQueueError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_game_session_queue::UpdateGameSessionQueueError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::update_game_session_queue::UpdateGameSessionQueueError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_matchmaking_configuration::UpdateMatchmakingConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_matchmaking_configuration::UpdateMatchmakingConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_matchmaking_configuration::UpdateMatchmakingConfigurationError>
+    for Error
+{
+    fn from(
+        err: crate::operation::update_matchmaking_configuration::UpdateMatchmakingConfigurationError,
+    ) -> Self {
+        match err {
+            crate::operation::update_matchmaking_configuration::UpdateMatchmakingConfigurationError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::update_matchmaking_configuration::UpdateMatchmakingConfigurationError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::update_matchmaking_configuration::UpdateMatchmakingConfigurationError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_matchmaking_configuration::UpdateMatchmakingConfigurationError::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
+            crate::operation::update_matchmaking_configuration::UpdateMatchmakingConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationError>
+    for Error
+{
+    fn from(
+        err: crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationError,
+    ) -> Self {
+        match err {
+            crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationError::InvalidFleetStatusException(inner) => Error::InvalidFleetStatusException(inner),
+            crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::update_script::UpdateScriptError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_script::UpdateScriptError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_script::UpdateScriptError> for Error {
+    fn from(err: crate::operation::update_script::UpdateScriptError) -> Self {
+        match err {
+            crate::operation::update_script::UpdateScriptError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::update_script::UpdateScriptError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::update_script::UpdateScriptError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::update_script::UpdateScriptError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::update_script::UpdateScriptError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetError>
+    for Error
+{
+    fn from(
+        err: crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetError,
+    ) -> Self {
+        match err {
+            crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetError::UnsupportedRegionException(inner) => Error::UnsupportedRegionException(inner),
+            crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

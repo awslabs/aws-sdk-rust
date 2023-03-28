@@ -2,7 +2,7 @@
 pub(crate) fn de_aws_s3_bucket_server_side_encryption_rules<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AwsS3BucketServerSideEncryptionRule>>,
+    Option<std::vec::Vec<crate::types::AwsS3BucketServerSideEncryptionRule>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

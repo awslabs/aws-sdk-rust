@@ -3,144 +3,151 @@
 pub fn de_delete_custom_log_source_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteCustomLogSourceOutput,
-    crate::error::DeleteCustomLogSourceError,
+    crate::operation::delete_custom_log_source::DeleteCustomLogSourceOutput,
+    crate::operation::delete_custom_log_source::DeleteCustomLogSourceError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteCustomLogSourceError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::delete_custom_log_source::DeleteCustomLogSourceError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    let error_code = match generic.code() {
-        Some(code) => code,
-        None => return Err(crate::error::DeleteCustomLogSourceError::unhandled(generic)),
-    };
+    let error_code =
+        match generic.code() {
+            Some(code) => code,
+            None => return Err(
+                crate::operation::delete_custom_log_source::DeleteCustomLogSourceError::unhandled(
+                    generic,
+                ),
+            ),
+        };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => {
-            crate::error::DeleteCustomLogSourceError::AccessDeniedException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "AccessDeniedException" => crate::operation::delete_custom_log_source::DeleteCustomLogSourceError::AccessDeniedException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteCustomLogSourceError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_custom_log_source::DeleteCustomLogSourceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "AccountNotFoundException" => {
-            crate::error::DeleteCustomLogSourceError::AccountNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "AccountNotFoundException" => crate::operation::delete_custom_log_source::DeleteCustomLogSourceError::AccountNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::account_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::AccountNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_account_not_found_exception::de_account_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteCustomLogSourceError::unhandled)?;
+                    output = crate::protocol_serde::shape_account_not_found_exception::de_account_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_custom_log_source::DeleteCustomLogSourceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "BucketNotFoundException" => {
-            crate::error::DeleteCustomLogSourceError::BucketNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "BucketNotFoundException" => crate::operation::delete_custom_log_source::DeleteCustomLogSourceError::BucketNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::bucket_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::BucketNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_bucket_not_found_exception::de_bucket_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteCustomLogSourceError::unhandled)?;
+                    output = crate::protocol_serde::shape_bucket_not_found_exception::de_bucket_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_custom_log_source::DeleteCustomLogSourceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ConflictSourceNamesException" => {
-            crate::error::DeleteCustomLogSourceError::ConflictSourceNamesException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ConflictSourceNamesException" => crate::operation::delete_custom_log_source::DeleteCustomLogSourceError::ConflictSourceNamesException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::conflict_source_names_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ConflictSourceNamesExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_conflict_source_names_exception::de_conflict_source_names_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteCustomLogSourceError::unhandled)?;
+                    output = crate::protocol_serde::shape_conflict_source_names_exception::de_conflict_source_names_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_custom_log_source::DeleteCustomLogSourceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InternalServerException" => {
-            crate::error::DeleteCustomLogSourceError::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InternalServerException" => crate::operation::delete_custom_log_source::DeleteCustomLogSourceError::InternalServerException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteCustomLogSourceError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_custom_log_source::DeleteCustomLogSourceError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::protocol_serde::shape_internal_server_exception::de_retry_after_seconds_header(response.headers())
-                                                .map_err(|_|crate::error::DeleteCustomLogSourceError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::operation::delete_custom_log_source::DeleteCustomLogSourceError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ResourceNotFoundException" => {
-            crate::error::DeleteCustomLogSourceError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteCustomLogSourceError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ValidationException" => crate::error::DeleteCustomLogSourceError::ValidationException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteCustomLogSourceError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::DeleteCustomLogSourceError::generic(generic),
+        "ResourceNotFoundException" => crate::operation::delete_custom_log_source::DeleteCustomLogSourceError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_custom_log_source::DeleteCustomLogSourceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ValidationException" => crate::operation::delete_custom_log_source::DeleteCustomLogSourceError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_custom_log_source::DeleteCustomLogSourceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::delete_custom_log_source::DeleteCustomLogSourceError::generic(generic)
     })
 }
 
@@ -148,19 +155,21 @@ pub fn de_delete_custom_log_source_http_error(
 pub fn de_delete_custom_log_source_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteCustomLogSourceOutput,
-    crate::error::DeleteCustomLogSourceError,
+    crate::operation::delete_custom_log_source::DeleteCustomLogSourceOutput,
+    crate::operation::delete_custom_log_source::DeleteCustomLogSourceError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_custom_log_source_output::Builder::default();
+        let mut output = crate::operation::delete_custom_log_source::builders::DeleteCustomLogSourceOutputBuilder::default();
         let _ = response;
         output =
             crate::protocol_serde::shape_delete_custom_log_source::de_delete_custom_log_source(
                 response.body().as_ref(),
                 output,
             )
-            .map_err(crate::error::DeleteCustomLogSourceError::unhandled)?;
+            .map_err(
+                crate::operation::delete_custom_log_source::DeleteCustomLogSourceError::unhandled,
+            )?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -170,9 +179,9 @@ pub fn de_delete_custom_log_source_http_response(
 
 pub(crate) fn de_delete_custom_log_source(
     value: &[u8],
-    mut builder: crate::output::delete_custom_log_source_output::Builder,
+    mut builder: crate::operation::delete_custom_log_source::builders::DeleteCustomLogSourceOutputBuilder,
 ) -> Result<
-    crate::output::delete_custom_log_source_output::Builder,
+    crate::operation::delete_custom_log_source::builders::DeleteCustomLogSourceOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

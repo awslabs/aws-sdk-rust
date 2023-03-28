@@ -2,43 +2,35 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_metrics_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListMetricsOutput, crate::error::ListMetricsError> {
+) -> std::result::Result<
+    crate::operation::list_metrics::ListMetricsOutput,
+    crate::operation::list_metrics::ListMetricsError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListMetricsError::unhandled)?;
+        .map_err(crate::operation::list_metrics::ListMetricsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListMetricsError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::list_metrics::ListMetricsError::unhandled(
+                generic,
+            ))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServiceError" => crate::error::ListMetricsError::InternalServiceFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_service_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_service_fault::de_internal_service_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ListMetricsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InvalidParameterValue" => {
-            crate::error::ListMetricsError::InvalidParameterValueException({
+        "InternalServiceError" => {
+            crate::operation::list_metrics::ListMetricsError::InternalServiceFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::invalid_parameter_value_exception::Builder::default();
+                        crate::types::error::builders::InternalServiceFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListMetricsError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_service_fault::de_internal_service_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::list_metrics::ListMetricsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -48,23 +40,44 @@ pub fn de_list_metrics_http_error(
                 tmp
             })
         }
-        _ => crate::error::ListMetricsError::generic(generic),
+        "InvalidParameterValue" => {
+            crate::operation::list_metrics::ListMetricsError::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::list_metrics::ListMetricsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::list_metrics::ListMetricsError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_metrics_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListMetricsOutput, crate::error::ListMetricsError> {
+) -> std::result::Result<
+    crate::operation::list_metrics::ListMetricsOutput,
+    crate::operation::list_metrics::ListMetricsError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_metrics_output::Builder::default();
+        let mut output =
+            crate::operation::list_metrics::builders::ListMetricsOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_metrics::de_list_metrics(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListMetricsError::unhandled)?;
+        .map_err(crate::operation::list_metrics::ListMetricsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -75,8 +88,11 @@ pub fn de_list_metrics_http_response(
 #[allow(unused_mut)]
 pub fn de_list_metrics(
     inp: &[u8],
-    mut builder: crate::output::list_metrics_output::Builder,
-) -> Result<crate::output::list_metrics_output::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    mut builder: crate::operation::list_metrics::builders::ListMetricsOutputBuilder,
+) -> Result<
+    crate::operation::list_metrics::builders::ListMetricsOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

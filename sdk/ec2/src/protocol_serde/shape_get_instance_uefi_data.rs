@@ -3,33 +3,33 @@
 pub fn de_get_instance_uefi_data_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetInstanceUefiDataOutput,
-    crate::error::GetInstanceUefiDataError,
+    crate::operation::get_instance_uefi_data::GetInstanceUefiDataOutput,
+    crate::operation::get_instance_uefi_data::GetInstanceUefiDataError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetInstanceUefiDataError::unhandled)?;
+        .map_err(crate::operation::get_instance_uefi_data::GetInstanceUefiDataError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::GetInstanceUefiDataError::generic(generic))
+    Err(crate::operation::get_instance_uefi_data::GetInstanceUefiDataError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_instance_uefi_data_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetInstanceUefiDataOutput,
-    crate::error::GetInstanceUefiDataError,
+    crate::operation::get_instance_uefi_data::GetInstanceUefiDataOutput,
+    crate::operation::get_instance_uefi_data::GetInstanceUefiDataError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_instance_uefi_data_output::Builder::default();
+        let mut output = crate::operation::get_instance_uefi_data::builders::GetInstanceUefiDataOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_get_instance_uefi_data::de_get_instance_uefi_data(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::GetInstanceUefiDataError::unhandled)?;
+        .map_err(crate::operation::get_instance_uefi_data::GetInstanceUefiDataError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -40,9 +40,9 @@ pub fn de_get_instance_uefi_data_http_response(
 #[allow(unused_mut)]
 pub fn de_get_instance_uefi_data(
     inp: &[u8],
-    mut builder: crate::output::get_instance_uefi_data_output::Builder,
+    mut builder: crate::operation::get_instance_uefi_data::builders::GetInstanceUefiDataOutputBuilder,
 ) -> Result<
-    crate::output::get_instance_uefi_data_output::Builder,
+    crate::operation::get_instance_uefi_data::builders::GetInstanceUefiDataOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

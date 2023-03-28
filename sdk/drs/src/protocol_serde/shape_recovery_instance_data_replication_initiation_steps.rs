@@ -2,7 +2,7 @@
 pub(crate) fn de_recovery_instance_data_replication_initiation_steps<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::RecoveryInstanceDataReplicationInitiationStep>>,
+    Option<std::vec::Vec<crate::types::RecoveryInstanceDataReplicationInitiationStep>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

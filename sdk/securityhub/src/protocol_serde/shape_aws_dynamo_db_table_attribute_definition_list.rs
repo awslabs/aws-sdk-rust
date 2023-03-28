@@ -2,7 +2,7 @@
 pub(crate) fn de_aws_dynamo_db_table_attribute_definition_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AwsDynamoDbTableAttributeDefinition>>,
+    Option<std::vec::Vec<crate::types::AwsDynamoDbTableAttributeDefinition>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

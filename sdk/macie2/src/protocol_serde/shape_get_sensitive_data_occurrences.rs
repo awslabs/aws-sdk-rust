@@ -3,130 +3,123 @@
 pub fn de_get_sensitive_data_occurrences_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetSensitiveDataOccurrencesOutput,
-    crate::error::GetSensitiveDataOccurrencesError,
+    crate::operation::get_sensitive_data_occurrences::GetSensitiveDataOccurrencesOutput,
+    crate::operation::get_sensitive_data_occurrences::GetSensitiveDataOccurrencesError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetSensitiveDataOccurrencesError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::get_sensitive_data_occurrences::GetSensitiveDataOccurrencesError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::GetSensitiveDataOccurrencesError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::get_sensitive_data_occurrences::GetSensitiveDataOccurrencesError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => {
-            crate::error::GetSensitiveDataOccurrencesError::AccessDeniedException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "AccessDeniedException" => crate::operation::get_sensitive_data_occurrences::GetSensitiveDataOccurrencesError::AccessDeniedException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSensitiveDataOccurrencesError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_sensitive_data_occurrences::GetSensitiveDataOccurrencesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InternalServerException" => {
-            crate::error::GetSensitiveDataOccurrencesError::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InternalServerException" => crate::operation::get_sensitive_data_occurrences::GetSensitiveDataOccurrencesError::InternalServerException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSensitiveDataOccurrencesError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_sensitive_data_occurrences::GetSensitiveDataOccurrencesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ResourceNotFoundException" => {
-            crate::error::GetSensitiveDataOccurrencesError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::get_sensitive_data_occurrences::GetSensitiveDataOccurrencesError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSensitiveDataOccurrencesError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_sensitive_data_occurrences::GetSensitiveDataOccurrencesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ServiceQuotaExceededException" => {
-            crate::error::GetSensitiveDataOccurrencesError::ServiceQuotaExceededException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ServiceQuotaExceededException" => crate::operation::get_sensitive_data_occurrences::GetSensitiveDataOccurrencesError::ServiceQuotaExceededException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::service_quota_exceeded_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSensitiveDataOccurrencesError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_sensitive_data_occurrences::GetSensitiveDataOccurrencesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ThrottlingException" => {
-            crate::error::GetSensitiveDataOccurrencesError::ThrottlingException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ThrottlingException" => crate::operation::get_sensitive_data_occurrences::GetSensitiveDataOccurrencesError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSensitiveDataOccurrencesError::unhandled)?;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_sensitive_data_occurrences::GetSensitiveDataOccurrencesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "UnprocessableEntityException" => {
-            crate::error::GetSensitiveDataOccurrencesError::UnprocessableEntityException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "UnprocessableEntityException" => crate::operation::get_sensitive_data_occurrences::GetSensitiveDataOccurrencesError::UnprocessableEntityException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::unprocessable_entity_exception::Builder::default();
+                    let mut output = crate::types::error::builders::UnprocessableEntityExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_unprocessable_entity_exception::de_unprocessable_entity_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSensitiveDataOccurrencesError::unhandled)?;
+                    output = crate::protocol_serde::shape_unprocessable_entity_exception::de_unprocessable_entity_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_sensitive_data_occurrences::GetSensitiveDataOccurrencesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::GetSensitiveDataOccurrencesError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::get_sensitive_data_occurrences::GetSensitiveDataOccurrencesError::generic(generic)
     })
 }
 
@@ -134,14 +127,14 @@ pub fn de_get_sensitive_data_occurrences_http_error(
 pub fn de_get_sensitive_data_occurrences_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetSensitiveDataOccurrencesOutput,
-    crate::error::GetSensitiveDataOccurrencesError,
+    crate::operation::get_sensitive_data_occurrences::GetSensitiveDataOccurrencesOutput,
+    crate::operation::get_sensitive_data_occurrences::GetSensitiveDataOccurrencesError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_sensitive_data_occurrences_output::Builder::default();
+        let mut output = crate::operation::get_sensitive_data_occurrences::builders::GetSensitiveDataOccurrencesOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_get_sensitive_data_occurrences::de_get_sensitive_data_occurrences(response.body().as_ref(), output).map_err(crate::error::GetSensitiveDataOccurrencesError::unhandled)?;
+        output = crate::protocol_serde::shape_get_sensitive_data_occurrences::de_get_sensitive_data_occurrences(response.body().as_ref(), output).map_err(crate::operation::get_sensitive_data_occurrences::GetSensitiveDataOccurrencesError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -149,13 +142,7 @@ pub fn de_get_sensitive_data_occurrences_http_response(
     })
 }
 
-pub(crate) fn de_get_sensitive_data_occurrences(
-    value: &[u8],
-    mut builder: crate::output::get_sensitive_data_occurrences_output::Builder,
-) -> Result<
-    crate::output::get_sensitive_data_occurrences_output::Builder,
-    aws_smithy_json::deserialize::error::DeserializeError,
-> {
+pub(crate) fn de_get_sensitive_data_occurrences(value: &[u8], mut builder: crate::operation::get_sensitive_data_occurrences::builders::GetSensitiveDataOccurrencesOutputBuilder) -> Result<crate::operation::get_sensitive_data_occurrences::builders::GetSensitiveDataOccurrencesOutputBuilder, aws_smithy_json::deserialize::error::DeserializeError>{
     let mut tokens_owned =
         aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
             .peekable();
@@ -187,7 +174,7 @@ pub(crate) fn de_get_sensitive_data_occurrences(
                             )?
                             .map(|s| {
                                 s.to_unescaped()
-                                    .map(|u| crate::model::RevealRequestStatus::from(u.as_ref()))
+                                    .map(|u| crate::types::RevealRequestStatus::from(u.as_ref()))
                             })
                             .transpose()?,
                         );

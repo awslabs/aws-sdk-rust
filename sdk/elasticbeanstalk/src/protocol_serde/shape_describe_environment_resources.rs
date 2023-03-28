@@ -3,44 +3,38 @@
 pub fn de_describe_environment_resources_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeEnvironmentResourcesOutput,
-    crate::error::DescribeEnvironmentResourcesError,
+    crate::operation::describe_environment_resources::DescribeEnvironmentResourcesOutput,
+    crate::operation::describe_environment_resources::DescribeEnvironmentResourcesError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeEnvironmentResourcesError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::describe_environment_resources::DescribeEnvironmentResourcesError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::DescribeEnvironmentResourcesError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::describe_environment_resources::DescribeEnvironmentResourcesError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InsufficientPrivilegesException" => {
-            crate::error::DescribeEnvironmentResourcesError::InsufficientPrivilegesException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InsufficientPrivilegesException" => crate::operation::describe_environment_resources::DescribeEnvironmentResourcesError::InsufficientPrivilegesException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::insufficient_privileges_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InsufficientPrivilegesExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_insufficient_privileges_exception::de_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeEnvironmentResourcesError::unhandled)?;
+                    output = crate::protocol_serde::shape_insufficient_privileges_exception::de_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::describe_environment_resources::DescribeEnvironmentResourcesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DescribeEnvironmentResourcesError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::describe_environment_resources::DescribeEnvironmentResourcesError::generic(generic)
     })
 }
 
@@ -48,14 +42,14 @@ pub fn de_describe_environment_resources_http_error(
 pub fn de_describe_environment_resources_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeEnvironmentResourcesOutput,
-    crate::error::DescribeEnvironmentResourcesError,
+    crate::operation::describe_environment_resources::DescribeEnvironmentResourcesOutput,
+    crate::operation::describe_environment_resources::DescribeEnvironmentResourcesError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_environment_resources_output::Builder::default();
+        let mut output = crate::operation::describe_environment_resources::builders::DescribeEnvironmentResourcesOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_describe_environment_resources::de_describe_environment_resources(response.body().as_ref(), output).map_err(crate::error::DescribeEnvironmentResourcesError::unhandled)?;
+        output = crate::protocol_serde::shape_describe_environment_resources::de_describe_environment_resources(response.body().as_ref(), output).map_err(crate::operation::describe_environment_resources::DescribeEnvironmentResourcesError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -64,13 +58,7 @@ pub fn de_describe_environment_resources_http_response(
 }
 
 #[allow(unused_mut)]
-pub fn de_describe_environment_resources(
-    inp: &[u8],
-    mut builder: crate::output::describe_environment_resources_output::Builder,
-) -> Result<
-    crate::output::describe_environment_resources_output::Builder,
-    aws_smithy_xml::decode::XmlDecodeError,
-> {
+pub fn de_describe_environment_resources(inp: &[u8], mut builder: crate::operation::describe_environment_resources::builders::DescribeEnvironmentResourcesOutputBuilder) -> Result<crate::operation::describe_environment_resources::builders::DescribeEnvironmentResourcesOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

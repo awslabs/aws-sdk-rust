@@ -2,42 +2,51 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_quantum_task_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetQuantumTaskOutput, crate::error::GetQuantumTaskError> {
+) -> std::result::Result<
+    crate::operation::get_quantum_task::GetQuantumTaskOutput,
+    crate::operation::get_quantum_task::GetQuantumTaskError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetQuantumTaskError::unhandled)?;
+        .map_err(crate::operation::get_quantum_task::GetQuantumTaskError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::GetQuantumTaskError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::get_quantum_task::GetQuantumTaskError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::GetQuantumTaskError::AccessDeniedException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::access_denied_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetQuantumTaskError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InternalServiceException" => {
-            crate::error::GetQuantumTaskError::InternalServiceException({
+        "AccessDeniedException" => {
+            crate::operation::get_quantum_task::GetQuantumTaskError::AccessDeniedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_service_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::AccessDeniedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_service_exception::de_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetQuantumTaskError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_quantum_task::GetQuantumTaskError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InternalServiceException" => {
+            crate::operation::get_quantum_task::GetQuantumTaskError::InternalServiceException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InternalServiceExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_service_exception::de_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_quantum_task::GetQuantumTaskError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -48,13 +57,14 @@ pub fn de_get_quantum_task_http_error(
             })
         }
         "ResourceNotFoundException" => {
-            crate::error::GetQuantumTaskError::ResourceNotFoundException({
+            crate::operation::get_quantum_task::GetQuantumTaskError::ResourceNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetQuantumTaskError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_quantum_task::GetQuantumTaskError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -64,53 +74,63 @@ pub fn de_get_quantum_task_http_error(
                 tmp
             })
         }
-        "ThrottlingException" => crate::error::GetQuantumTaskError::ThrottlingException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "ThrottlingException" => {
+            crate::operation::get_quantum_task::GetQuantumTaskError::ThrottlingException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::throttling_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetQuantumTaskError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ValidationException" => crate::error::GetQuantumTaskError::ValidationException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_quantum_task::GetQuantumTaskError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ValidationException" => {
+            crate::operation::get_quantum_task::GetQuantumTaskError::ValidationException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetQuantumTaskError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::GetQuantumTaskError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_quantum_task::GetQuantumTaskError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::get_quantum_task::GetQuantumTaskError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_quantum_task_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetQuantumTaskOutput, crate::error::GetQuantumTaskError> {
+) -> std::result::Result<
+    crate::operation::get_quantum_task::GetQuantumTaskOutput,
+    crate::operation::get_quantum_task::GetQuantumTaskError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_quantum_task_output::Builder::default();
+        let mut output =
+            crate::operation::get_quantum_task::builders::GetQuantumTaskOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_get_quantum_task::de_get_quantum_task(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::GetQuantumTaskError::unhandled)?;
+        .map_err(crate::operation::get_quantum_task::GetQuantumTaskError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -120,9 +140,9 @@ pub fn de_get_quantum_task_http_response(
 
 pub(crate) fn de_get_quantum_task(
     value: &[u8],
-    mut builder: crate::output::get_quantum_task_output::Builder,
+    mut builder: crate::operation::get_quantum_task::builders::GetQuantumTaskOutputBuilder,
 ) -> Result<
-    crate::output::get_quantum_task_output::Builder,
+    crate::operation::get_quantum_task::builders::GetQuantumTaskOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =
@@ -230,7 +250,7 @@ pub(crate) fn de_get_quantum_task(
                             )?
                             .map(|s| {
                                 s.to_unescaped()
-                                    .map(|u| crate::model::QuantumTaskStatus::from(u.as_ref()))
+                                    .map(|u| crate::types::QuantumTaskStatus::from(u.as_ref()))
                             })
                             .transpose()?,
                         );

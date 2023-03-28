@@ -2,73 +2,88 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_groups_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListGroupsOutput, crate::error::ListGroupsError> {
+) -> std::result::Result<
+    crate::operation::list_groups::ListGroupsOutput,
+    crate::operation::list_groups::ListGroupsError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListGroupsError::unhandled)?;
+        .map_err(crate::operation::list_groups::ListGroupsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListGroupsError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::list_groups::ListGroupsError::unhandled(
+                generic,
+            ))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::ListGroupsError::AccessDeniedException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::access_denied_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListGroupsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InternalFailureException" => crate::error::ListGroupsError::InternalFailureException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_failure_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListGroupsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InvalidNextTokenException" => crate::error::ListGroupsError::InvalidNextTokenException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::invalid_next_token_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_next_token_exception::de_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListGroupsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InvalidParameterValueException" => {
-            crate::error::ListGroupsError::InvalidParameterValueException({
+        "AccessDeniedException" => {
+            crate::operation::list_groups::ListGroupsError::AccessDeniedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::invalid_parameter_value_exception::Builder::default();
+                        crate::types::error::builders::AccessDeniedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListGroupsError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_groups::ListGroupsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InternalFailureException" => {
+            crate::operation::list_groups::ListGroupsError::InternalFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InternalFailureExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_groups::ListGroupsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidNextTokenException" => {
+            crate::operation::list_groups::ListGroupsError::InvalidNextTokenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InvalidNextTokenExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_next_token_exception::de_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_groups::ListGroupsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidParameterValueException" => {
+            crate::operation::list_groups::ListGroupsError::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_groups::ListGroupsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -79,14 +94,15 @@ pub fn de_list_groups_http_error(
             })
         }
         "PreconditionNotMetException" => {
-            crate::error::ListGroupsError::PreconditionNotMetException({
+            crate::operation::list_groups::ListGroupsError::PreconditionNotMetException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::precondition_not_met_exception::Builder::default();
+                        crate::types::error::builders::PreconditionNotMetExceptionBuilder::default(
+                        );
                     let _ = response;
-                    output = crate::protocol_serde::shape_precondition_not_met_exception::de_precondition_not_met_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListGroupsError::unhandled)?;
+                    output = crate::protocol_serde::shape_precondition_not_met_exception::de_precondition_not_met_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_groups::ListGroupsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -96,30 +112,34 @@ pub fn de_list_groups_http_error(
                 tmp
             })
         }
-        "ResourceNotFoundException" => crate::error::ListGroupsError::ResourceNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "ResourceNotFoundException" => {
+            crate::operation::list_groups::ListGroupsError::ResourceNotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::resource_not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListGroupsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_groups::ListGroupsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "ResourceUnavailableException" => {
-            crate::error::ListGroupsError::ResourceUnavailableException({
+            crate::operation::list_groups::ListGroupsError::ResourceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::resource_unavailable_exception::Builder::default();
+                        crate::types::error::builders::ResourceUnavailableExceptionBuilder::default(
+                        );
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_unavailable_exception::de_resource_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListGroupsError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_unavailable_exception::de_resource_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_groups::ListGroupsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -129,38 +149,45 @@ pub fn de_list_groups_http_error(
                 tmp
             })
         }
-        "ThrottlingException" => crate::error::ListGroupsError::ThrottlingException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "ThrottlingException" => {
+            crate::operation::list_groups::ListGroupsError::ThrottlingException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::throttling_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListGroupsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::ListGroupsError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_groups::ListGroupsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::list_groups::ListGroupsError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_groups_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListGroupsOutput, crate::error::ListGroupsError> {
+) -> std::result::Result<
+    crate::operation::list_groups::ListGroupsOutput,
+    crate::operation::list_groups::ListGroupsError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_groups_output::Builder::default();
+        let mut output =
+            crate::operation::list_groups::builders::ListGroupsOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_groups::de_list_groups(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListGroupsError::unhandled)?;
+        .map_err(crate::operation::list_groups::ListGroupsError::unhandled)?;
         output = output.set_status(Some(response.status().as_u16() as _));
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
@@ -171,9 +198,9 @@ pub fn de_list_groups_http_response(
 
 pub(crate) fn de_list_groups(
     value: &[u8],
-    mut builder: crate::output::list_groups_output::Builder,
+    mut builder: crate::operation::list_groups::builders::ListGroupsOutputBuilder,
 ) -> Result<
-    crate::output::list_groups_output::Builder,
+    crate::operation::list_groups::builders::ListGroupsOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

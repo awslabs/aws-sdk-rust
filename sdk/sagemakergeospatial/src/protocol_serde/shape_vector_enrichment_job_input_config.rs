@@ -2,7 +2,7 @@
 pub(crate) fn de_vector_enrichment_job_input_config<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::VectorEnrichmentJobInputConfig>,
+    Option<crate::types::VectorEnrichmentJobInputConfig>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::vector_enrichment_job_input_config::Builder::default();
+            let mut builder =
+                crate::types::builders::VectorEnrichmentJobInputConfigBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +31,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::VectorEnrichmentJobDocumentType::from(
+                                            crate::types::VectorEnrichmentJobDocumentType::from(
                                                 u.as_ref(),
                                             )
                                         })
@@ -68,7 +69,7 @@ where
 
 pub fn ser_vector_enrichment_job_input_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::VectorEnrichmentJobInputConfig,
+    input: &crate::types::VectorEnrichmentJobInputConfig,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.document_type {
         object.key("DocumentType").string(var_1.as_str());

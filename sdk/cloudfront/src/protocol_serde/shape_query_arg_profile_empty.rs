@@ -2,9 +2,11 @@
 #[allow(unused_mut)]
 pub fn de_query_arg_profile_empty_xml_err(
     inp: &[u8],
-    mut builder: crate::error::query_arg_profile_empty::Builder,
-) -> Result<crate::error::query_arg_profile_empty::Builder, aws_smithy_xml::decode::XmlDecodeError>
-{
+    mut builder: crate::types::error::builders::QueryArgProfileEmptyBuilder,
+) -> Result<
+    crate::types::error::builders::QueryArgProfileEmptyBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     if inp.is_empty() {
         return Ok(builder);
     }

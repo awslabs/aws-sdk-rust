@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_capacity_reservation_options_request(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::CapacityReservationOptionsRequest,
+    input: &crate::types::CapacityReservationOptionsRequest,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("UsageStrategy");

@@ -2,7 +2,7 @@
 pub(crate) fn de_data_repository_task<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::DataRepositoryTask>,
+    Option<crate::types::DataRepositoryTask>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::data_repository_task::Builder::default();
+            let mut builder = crate::types::builders::DataRepositoryTaskBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -39,7 +39,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::DataRepositoryTaskLifecycle::from(
+                                            crate::types::DataRepositoryTaskLifecycle::from(
                                                 u.as_ref(),
                                             )
                                         })
@@ -54,7 +54,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::DataRepositoryTaskType::from(u.as_ref())
+                                            crate::types::DataRepositoryTaskType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

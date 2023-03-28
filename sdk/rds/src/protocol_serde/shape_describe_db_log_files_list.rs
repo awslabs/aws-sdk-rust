@@ -2,7 +2,7 @@
 pub fn de_describe_db_log_files_list(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::DescribeDbLogFilesDetails>,
+    std::vec::Vec<crate::types::DescribeDbLogFilesDetails>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

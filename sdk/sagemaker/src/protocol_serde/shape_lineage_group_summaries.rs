@@ -2,7 +2,7 @@
 pub(crate) fn de_lineage_group_summaries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::LineageGroupSummary>>,
+    Option<std::vec::Vec<crate::types::LineageGroupSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

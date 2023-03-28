@@ -2,7 +2,7 @@
 pub fn de_reserved_instance_reservation_value_set(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::ReservedInstanceReservationValue>,
+    std::vec::Vec<crate::types::ReservedInstanceReservationValue>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_invalid_parameter_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::invalid_parameter_exception::Builder,
+    mut builder: crate::types::error::builders::InvalidParameterExceptionBuilder,
 ) -> Result<
-    crate::error::invalid_parameter_exception::Builder,
+    crate::types::error::builders::InvalidParameterExceptionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

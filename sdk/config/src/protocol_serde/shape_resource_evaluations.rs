@@ -2,7 +2,7 @@
 pub(crate) fn de_resource_evaluations<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ResourceEvaluation>>,
+    Option<std::vec::Vec<crate::types::ResourceEvaluation>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

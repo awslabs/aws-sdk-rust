@@ -2,7 +2,7 @@
 pub(crate) fn de_failed_resources_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<std::string::String, crate::model::FailureInfo>>,
+    Option<std::collections::HashMap<std::string::String, crate::types::FailureInfo>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_findings_filter_list_item<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::FindingsFilterListItem>>,
+    Option<std::vec::Vec<crate::types::FindingsFilterListItem>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

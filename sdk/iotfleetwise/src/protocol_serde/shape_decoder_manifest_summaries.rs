@@ -2,7 +2,7 @@
 pub(crate) fn de_decoder_manifest_summaries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DecoderManifestSummary>>,
+    Option<std::vec::Vec<crate::types::DecoderManifestSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

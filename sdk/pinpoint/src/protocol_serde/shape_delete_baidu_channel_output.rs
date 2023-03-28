@@ -2,15 +2,15 @@
 pub fn de_baidu_channel_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::BaiduChannelResponse>,
-    crate::error::DeleteBaiduChannelError,
+    std::option::Option<crate::types::BaiduChannelResponse>,
+    crate::operation::delete_baidu_channel::DeleteBaiduChannelError,
 > {
     (!body.is_empty())
         .then(|| {
             crate::protocol_serde::shape_baidu_channel_response::de_baidu_channel_response_payload(
                 body,
             )
-            .map_err(crate::error::DeleteBaiduChannelError::unhandled)
+            .map_err(crate::operation::delete_baidu_channel::DeleteBaiduChannelError::unhandled)
         })
         .transpose()
 }

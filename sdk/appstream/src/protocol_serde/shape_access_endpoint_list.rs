@@ -2,7 +2,7 @@
 pub(crate) fn de_access_endpoint_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AccessEndpoint>>,
+    Option<std::vec::Vec<crate::types::AccessEndpoint>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

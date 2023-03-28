@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_step_adjustment(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::StepAdjustment,
+    input: &crate::types::StepAdjustment,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("MetricIntervalLowerBound");
@@ -33,9 +33,9 @@ pub fn ser_step_adjustment(
 
 pub fn de_step_adjustment(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::StepAdjustment, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::StepAdjustment, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::StepAdjustment::builder();
+    let mut builder = crate::types::StepAdjustment::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("MetricIntervalLowerBound") /* MetricIntervalLowerBound com.amazonaws.autoscaling#StepAdjustment$MetricIntervalLowerBound */ =>  {

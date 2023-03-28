@@ -2,7 +2,7 @@
 pub(crate) fn de_batch_update_partition_failure_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::BatchUpdatePartitionFailureEntry>>,
+    Option<std::vec::Vec<crate::types::BatchUpdatePartitionFailureEntry>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_refresh_schemas_status<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::RefreshSchemasStatus>,
+    Option<crate::types::RefreshSchemasStatus>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::refresh_schemas_status::Builder::default();
+            let mut builder = crate::types::builders::RefreshSchemasStatusBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -48,7 +48,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::RefreshSchemasStatusTypeValue::from(
+                                            crate::types::RefreshSchemasStatusTypeValue::from(
                                                 u.as_ref(),
                                             )
                                         })

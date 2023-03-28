@@ -2,7 +2,7 @@
 pub(crate) fn de_variant_store_items<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::VariantStoreItem>>,
+    Option<std::vec::Vec<crate::types::VariantStoreItem>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

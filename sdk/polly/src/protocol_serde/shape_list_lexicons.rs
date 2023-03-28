@@ -2,27 +2,31 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_lexicons_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListLexiconsOutput, crate::error::ListLexiconsError> {
+) -> std::result::Result<
+    crate::operation::list_lexicons::ListLexiconsOutput,
+    crate::operation::list_lexicons::ListLexiconsError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListLexiconsError::unhandled)?;
+        .map_err(crate::operation::list_lexicons::ListLexiconsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListLexiconsError::unhandled(generic)),
+        None => return Err(crate::operation::list_lexicons::ListLexiconsError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidNextTokenException" => {
-            crate::error::ListLexiconsError::InvalidNextTokenException({
+            crate::operation::list_lexicons::ListLexiconsError::InvalidNextTokenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_next_token_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::InvalidNextTokenExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_next_token_exception::de_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListLexiconsError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_next_token_exception::de_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_lexicons::ListLexiconsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -32,38 +36,45 @@ pub fn de_list_lexicons_http_error(
                 tmp
             })
         }
-        "ServiceFailureException" => crate::error::ListLexiconsError::ServiceFailureException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "ServiceFailureException" => {
+            crate::operation::list_lexicons::ListLexiconsError::ServiceFailureException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::service_failure_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListLexiconsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::ListLexiconsError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ServiceFailureExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_lexicons::ListLexiconsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::list_lexicons::ListLexiconsError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_lexicons_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListLexiconsOutput, crate::error::ListLexiconsError> {
+) -> std::result::Result<
+    crate::operation::list_lexicons::ListLexiconsOutput,
+    crate::operation::list_lexicons::ListLexiconsError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_lexicons_output::Builder::default();
+        let mut output =
+            crate::operation::list_lexicons::builders::ListLexiconsOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_lexicons::de_list_lexicons(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListLexiconsError::unhandled)?;
+        .map_err(crate::operation::list_lexicons::ListLexiconsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -73,9 +84,9 @@ pub fn de_list_lexicons_http_response(
 
 pub(crate) fn de_list_lexicons(
     value: &[u8],
-    mut builder: crate::output::list_lexicons_output::Builder,
+    mut builder: crate::operation::list_lexicons::builders::ListLexiconsOutputBuilder,
 ) -> Result<
-    crate::output::list_lexicons_output::Builder,
+    crate::operation::list_lexicons::builders::ListLexiconsOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

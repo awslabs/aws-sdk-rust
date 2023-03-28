@@ -3,7 +3,7 @@ pub(crate) fn de_lake_configuration_response_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<
-        std::collections::HashMap<crate::model::Region, crate::model::LakeConfigurationResponse>,
+        std::collections::HashMap<crate::types::Region, crate::types::LakeConfigurationResponse>,
     >,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
@@ -25,7 +25,7 @@ where
                     Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         let key = key
                             .to_unescaped()
-                            .map(|u| crate::model::Region::from(u.as_ref()))?;
+                            .map(|u| crate::types::Region::from(u.as_ref()))?;
                         let value =
                             crate::protocol_serde::shape_lake_configuration_response::de_lake_configuration_response(tokens)?
                         ;

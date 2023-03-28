@@ -2,7 +2,7 @@
 pub(crate) fn de_usage_allocations<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::UsageAllocation>>,
+    Option<std::vec::Vec<crate::types::UsageAllocation>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_security_hub_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::SecurityHubConfiguration>,
+    Option<crate::types::SecurityHubConfiguration>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::security_hub_configuration::Builder::default();
+            let mut builder = crate::types::builders::SecurityHubConfigurationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -62,7 +62,7 @@ where
 
 pub fn ser_security_hub_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::SecurityHubConfiguration,
+    input: &crate::types::SecurityHubConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     {
         object

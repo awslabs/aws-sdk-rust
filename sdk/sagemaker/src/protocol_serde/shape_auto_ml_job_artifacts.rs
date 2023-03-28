@@ -2,7 +2,7 @@
 pub(crate) fn de_auto_ml_job_artifacts<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::AutoMlJobArtifacts>,
+    Option<crate::types::AutoMlJobArtifacts>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::auto_ml_job_artifacts::Builder::default();
+            let mut builder = crate::types::builders::AutoMlJobArtifactsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

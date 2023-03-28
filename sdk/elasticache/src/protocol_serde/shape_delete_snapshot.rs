@@ -2,102 +2,113 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_snapshot_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeleteSnapshotOutput, crate::error::DeleteSnapshotError> {
+) -> std::result::Result<
+    crate::operation::delete_snapshot::DeleteSnapshotOutput,
+    crate::operation::delete_snapshot::DeleteSnapshotError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteSnapshotError::unhandled)?;
+        .map_err(crate::operation::delete_snapshot::DeleteSnapshotError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DeleteSnapshotError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::delete_snapshot::DeleteSnapshotError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterCombination" => {
-            crate::error::DeleteSnapshotError::InvalidParameterCombinationException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidParameterCombination" => crate::operation::delete_snapshot::DeleteSnapshotError::InvalidParameterCombinationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_parameter_combination_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidParameterCombinationExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_combination_exception::de_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteSnapshotError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_combination_exception::de_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_snapshot::DeleteSnapshotError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidParameterValue" => {
-            crate::error::DeleteSnapshotError::InvalidParameterValueException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidParameterValue" => crate::operation::delete_snapshot::DeleteSnapshotError::InvalidParameterValueException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_parameter_value_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteSnapshotError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_snapshot::DeleteSnapshotError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidSnapshotState" => crate::error::DeleteSnapshotError::InvalidSnapshotStateFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::invalid_snapshot_state_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_snapshot_state_fault::de_invalid_snapshot_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteSnapshotError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "SnapshotNotFoundFault" => crate::error::DeleteSnapshotError::SnapshotNotFoundFault({
+        "InvalidSnapshotState" => crate::operation::delete_snapshot::DeleteSnapshotError::InvalidSnapshotStateFault({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::snapshot_not_found_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_snapshot_not_found_fault::de_snapshot_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteSnapshotError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidSnapshotStateFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_snapshot_state_fault::de_invalid_snapshot_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_snapshot::DeleteSnapshotError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::DeleteSnapshotError::generic(generic),
+        "SnapshotNotFoundFault" => crate::operation::delete_snapshot::DeleteSnapshotError::SnapshotNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::SnapshotNotFoundFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_snapshot_not_found_fault::de_snapshot_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_snapshot::DeleteSnapshotError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::delete_snapshot::DeleteSnapshotError::generic(generic)
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_snapshot_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeleteSnapshotOutput, crate::error::DeleteSnapshotError> {
+) -> std::result::Result<
+    crate::operation::delete_snapshot::DeleteSnapshotOutput,
+    crate::operation::delete_snapshot::DeleteSnapshotError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_snapshot_output::Builder::default();
+        let mut output =
+            crate::operation::delete_snapshot::builders::DeleteSnapshotOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_delete_snapshot::de_delete_snapshot(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DeleteSnapshotError::unhandled)?;
+        .map_err(crate::operation::delete_snapshot::DeleteSnapshotError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -108,9 +119,11 @@ pub fn de_delete_snapshot_http_response(
 #[allow(unused_mut)]
 pub fn de_delete_snapshot(
     inp: &[u8],
-    mut builder: crate::output::delete_snapshot_output::Builder,
-) -> Result<crate::output::delete_snapshot_output::Builder, aws_smithy_xml::decode::XmlDecodeError>
-{
+    mut builder: crate::operation::delete_snapshot::builders::DeleteSnapshotOutputBuilder,
+) -> Result<
+    crate::operation::delete_snapshot::builders::DeleteSnapshotOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

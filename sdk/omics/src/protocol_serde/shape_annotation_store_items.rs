@@ -2,7 +2,7 @@
 pub(crate) fn de_annotation_store_items<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AnnotationStoreItem>>,
+    Option<std::vec::Vec<crate::types::AnnotationStoreItem>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

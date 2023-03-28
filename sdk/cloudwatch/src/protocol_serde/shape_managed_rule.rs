@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_managed_rule(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::ManagedRule,
+    input: &crate::types::ManagedRule,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("TemplateName");

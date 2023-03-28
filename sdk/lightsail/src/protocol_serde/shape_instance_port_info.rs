@@ -2,7 +2,7 @@
 pub(crate) fn de_instance_port_info<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::InstancePortInfo>,
+    Option<crate::types::InstancePortInfo>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::instance_port_info::Builder::default();
+            let mut builder = crate::types::builders::InstancePortInfoBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -48,7 +48,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::NetworkProtocol::from(u.as_ref())
+                                            crate::types::NetworkProtocol::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -70,7 +70,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::PortAccessType::from(u.as_ref()))
+                                            .map(|u| crate::types::PortAccessType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -91,7 +91,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::AccessDirection::from(u.as_ref())
+                                            crate::types::AccessDirection::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

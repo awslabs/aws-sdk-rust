@@ -4,8 +4,8 @@ pub(crate) fn de_recommendation_compliance<'a, I>(
 ) -> Result<
     Option<
         std::collections::HashMap<
-            crate::model::DisruptionType,
-            crate::model::RecommendationDisruptionCompliance,
+            crate::types::DisruptionType,
+            crate::types::RecommendationDisruptionCompliance,
         >,
     >,
     aws_smithy_json::deserialize::error::DeserializeError,
@@ -28,7 +28,7 @@ where
                     Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         let key = key
                             .to_unescaped()
-                            .map(|u| crate::model::DisruptionType::from(u.as_ref()))?;
+                            .map(|u| crate::types::DisruptionType::from(u.as_ref()))?;
                         let value =
                             crate::protocol_serde::shape_recommendation_disruption_compliance::de_recommendation_disruption_compliance(tokens)?
                         ;

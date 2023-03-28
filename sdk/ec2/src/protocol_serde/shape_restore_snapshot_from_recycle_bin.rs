@@ -3,32 +3,28 @@
 pub fn de_restore_snapshot_from_recycle_bin_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::RestoreSnapshotFromRecycleBinOutput,
-    crate::error::RestoreSnapshotFromRecycleBinError,
+    crate::operation::restore_snapshot_from_recycle_bin::RestoreSnapshotFromRecycleBinOutput,
+    crate::operation::restore_snapshot_from_recycle_bin::RestoreSnapshotFromRecycleBinError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::RestoreSnapshotFromRecycleBinError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::restore_snapshot_from_recycle_bin::RestoreSnapshotFromRecycleBinError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::RestoreSnapshotFromRecycleBinError::generic(
-        generic,
-    ))
+    Err(crate::operation::restore_snapshot_from_recycle_bin::RestoreSnapshotFromRecycleBinError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_restore_snapshot_from_recycle_bin_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::RestoreSnapshotFromRecycleBinOutput,
-    crate::error::RestoreSnapshotFromRecycleBinError,
+    crate::operation::restore_snapshot_from_recycle_bin::RestoreSnapshotFromRecycleBinOutput,
+    crate::operation::restore_snapshot_from_recycle_bin::RestoreSnapshotFromRecycleBinError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::output::restore_snapshot_from_recycle_bin_output::Builder::default();
+        let mut output = crate::operation::restore_snapshot_from_recycle_bin::builders::RestoreSnapshotFromRecycleBinOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_restore_snapshot_from_recycle_bin::de_restore_snapshot_from_recycle_bin(response.body().as_ref(), output).map_err(crate::error::RestoreSnapshotFromRecycleBinError::unhandled)?;
+        output = crate::protocol_serde::shape_restore_snapshot_from_recycle_bin::de_restore_snapshot_from_recycle_bin(response.body().as_ref(), output).map_err(crate::operation::restore_snapshot_from_recycle_bin::RestoreSnapshotFromRecycleBinError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -37,13 +33,7 @@ pub fn de_restore_snapshot_from_recycle_bin_http_response(
 }
 
 #[allow(unused_mut)]
-pub fn de_restore_snapshot_from_recycle_bin(
-    inp: &[u8],
-    mut builder: crate::output::restore_snapshot_from_recycle_bin_output::Builder,
-) -> Result<
-    crate::output::restore_snapshot_from_recycle_bin_output::Builder,
-    aws_smithy_xml::decode::XmlDecodeError,
-> {
+pub fn de_restore_snapshot_from_recycle_bin(inp: &[u8], mut builder: crate::operation::restore_snapshot_from_recycle_bin::builders::RestoreSnapshotFromRecycleBinOutputBuilder) -> Result<crate::operation::restore_snapshot_from_recycle_bin::builders::RestoreSnapshotFromRecycleBinOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -155,8 +145,8 @@ pub fn de_restore_snapshot_from_recycle_bin(
             s if s.matches("status") /* State com.amazonaws.ec2.synthetic#RestoreSnapshotFromRecycleBinOutput$State */ =>  {
                 let var_8 =
                     Some(
-                        Result::<crate::model::SnapshotState, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::SnapshotState::from(
+                        Result::<crate::types::SnapshotState, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::SnapshotState::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

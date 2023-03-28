@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_too_many_traffic_policy_instances_xml_err(
     inp: &[u8],
-    mut builder: crate::error::too_many_traffic_policy_instances::Builder,
+    mut builder: crate::types::error::builders::TooManyTrafficPolicyInstancesBuilder,
 ) -> Result<
-    crate::error::too_many_traffic_policy_instances::Builder,
+    crate::types::error::builders::TooManyTrafficPolicyInstancesBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

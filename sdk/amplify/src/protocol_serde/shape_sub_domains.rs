@@ -2,7 +2,7 @@
 pub(crate) fn de_sub_domains<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SubDomain>>,
+    Option<std::vec::Vec<crate::types::SubDomain>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

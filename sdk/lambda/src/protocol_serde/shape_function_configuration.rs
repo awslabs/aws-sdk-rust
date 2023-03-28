@@ -2,7 +2,7 @@
 pub(crate) fn de_function_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::FunctionConfiguration>,
+    Option<crate::types::FunctionConfiguration>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::function_configuration::Builder::default();
+            let mut builder = crate::types::builders::FunctionConfigurationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -48,7 +48,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::Runtime::from(u.as_ref()))
+                                            .map(|u| crate::types::Runtime::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -193,7 +193,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::State::from(u.as_ref()))
+                                            .map(|u| crate::types::State::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -214,7 +214,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::StateReasonCode::from(u.as_ref())
+                                            crate::types::StateReasonCode::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -227,7 +227,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::LastUpdateStatus::from(u.as_ref())
+                                            crate::types::LastUpdateStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -249,7 +249,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::LastUpdateStatusReasonCode::from(
+                                            crate::types::LastUpdateStatusReasonCode::from(
                                                 u.as_ref(),
                                             )
                                         })
@@ -269,7 +269,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::PackageType::from(u.as_ref()))
+                                            .map(|u| crate::types::PackageType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

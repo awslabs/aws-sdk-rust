@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_batch_entry_ids_not_distinct_xml_err(
     inp: &[u8],
-    mut builder: crate::error::batch_entry_ids_not_distinct::Builder,
+    mut builder: crate::types::error::builders::BatchEntryIdsNotDistinctBuilder,
 ) -> Result<
-    crate::error::batch_entry_ids_not_distinct::Builder,
+    crate::types::error::builders::BatchEntryIdsNotDistinctBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

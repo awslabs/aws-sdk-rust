@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_option_group_already_exists_fault_xml_err(
     inp: &[u8],
-    mut builder: crate::error::option_group_already_exists_fault::Builder,
+    mut builder: crate::types::error::builders::OptionGroupAlreadyExistsFaultBuilder,
 ) -> Result<
-    crate::error::option_group_already_exists_fault::Builder,
+    crate::types::error::builders::OptionGroupAlreadyExistsFaultBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

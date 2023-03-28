@@ -2,7 +2,7 @@
 pub(crate) fn de_input_device_hd_settings<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::InputDeviceHdSettings>,
+    Option<crate::types::InputDeviceHdSettings>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::input_device_hd_settings::Builder::default();
+            let mut builder = crate::types::builders::InputDeviceHdSettingsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::InputDeviceActiveInput::from(u.as_ref())
+                                            crate::types::InputDeviceActiveInput::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -43,7 +43,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::InputDeviceConfiguredInput::from(
+                                            crate::types::InputDeviceConfiguredInput::from(
                                                 u.as_ref(),
                                             )
                                         })
@@ -58,7 +58,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::InputDeviceState::from(u.as_ref())
+                                            crate::types::InputDeviceState::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -97,7 +97,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::InputDeviceScanType::from(u.as_ref())
+                                            crate::types::InputDeviceScanType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

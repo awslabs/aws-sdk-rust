@@ -2,11 +2,11 @@
 pub fn de_delete_launch_template_versions_response_error_item(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    crate::model::DeleteLaunchTemplateVersionsResponseErrorItem,
+    crate::types::DeleteLaunchTemplateVersionsResponseErrorItem,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     #[allow(unused_mut)]
-    let mut builder = crate::model::DeleteLaunchTemplateVersionsResponseErrorItem::builder();
+    let mut builder = crate::types::DeleteLaunchTemplateVersionsResponseErrorItem::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("launchTemplateId") /* LaunchTemplateId com.amazonaws.ec2#DeleteLaunchTemplateVersionsResponseErrorItem$LaunchTemplateId */ =>  {

@@ -3,34 +3,34 @@
 pub fn de_modify_local_gateway_route_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ModifyLocalGatewayRouteOutput,
-    crate::error::ModifyLocalGatewayRouteError,
+    crate::operation::modify_local_gateway_route::ModifyLocalGatewayRouteOutput,
+    crate::operation::modify_local_gateway_route::ModifyLocalGatewayRouteError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ModifyLocalGatewayRouteError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::modify_local_gateway_route::ModifyLocalGatewayRouteError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::ModifyLocalGatewayRouteError::generic(generic))
+    Err(
+        crate::operation::modify_local_gateway_route::ModifyLocalGatewayRouteError::generic(
+            generic,
+        ),
+    )
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_modify_local_gateway_route_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ModifyLocalGatewayRouteOutput,
-    crate::error::ModifyLocalGatewayRouteError,
+    crate::operation::modify_local_gateway_route::ModifyLocalGatewayRouteOutput,
+    crate::operation::modify_local_gateway_route::ModifyLocalGatewayRouteError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::modify_local_gateway_route_output::Builder::default();
+        let mut output = crate::operation::modify_local_gateway_route::builders::ModifyLocalGatewayRouteOutputBuilder::default();
         let _ = response;
-        output =
-            crate::protocol_serde::shape_modify_local_gateway_route::de_modify_local_gateway_route(
-                response.body().as_ref(),
-                output,
-            )
-            .map_err(crate::error::ModifyLocalGatewayRouteError::unhandled)?;
+        output = crate::protocol_serde::shape_modify_local_gateway_route::de_modify_local_gateway_route(response.body().as_ref(), output).map_err(crate::operation::modify_local_gateway_route::ModifyLocalGatewayRouteError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -41,9 +41,9 @@ pub fn de_modify_local_gateway_route_http_response(
 #[allow(unused_mut)]
 pub fn de_modify_local_gateway_route(
     inp: &[u8],
-    mut builder: crate::output::modify_local_gateway_route_output::Builder,
+    mut builder: crate::operation::modify_local_gateway_route::builders::ModifyLocalGatewayRouteOutputBuilder,
 ) -> Result<
-    crate::output::modify_local_gateway_route_output::Builder,
+    crate::operation::modify_local_gateway_route::builders::ModifyLocalGatewayRouteOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

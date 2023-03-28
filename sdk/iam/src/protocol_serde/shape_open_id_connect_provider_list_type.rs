@@ -2,7 +2,7 @@
 pub fn de_open_id_connect_provider_list_type(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::OpenIdConnectProviderListEntry>,
+    std::vec::Vec<crate::types::OpenIdConnectProviderListEntry>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

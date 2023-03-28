@@ -2,7 +2,7 @@
 pub(crate) fn de_api_destination<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ApiDestination>,
+    Option<crate::types::ApiDestination>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::api_destination::Builder::default();
+            let mut builder = crate::types::builders::ApiDestinationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -48,7 +48,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ApiDestinationState::from(u.as_ref())
+                                            crate::types::ApiDestinationState::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -79,7 +79,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ApiDestinationHttpMethod::from(u.as_ref())
+                                            crate::types::ApiDestinationHttpMethod::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

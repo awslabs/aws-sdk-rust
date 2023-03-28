@@ -2,7 +2,7 @@
 pub(crate) fn de_mapping_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::MappingEntry>>,
+    Option<std::vec::Vec<crate::types::MappingEntry>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

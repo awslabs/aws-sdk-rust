@@ -2,7 +2,7 @@
 pub(crate) fn de_attack_property<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::AttackProperty>,
+    Option<crate::types::AttackProperty>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::attack_property::Builder::default();
+            let mut builder = crate::types::builders::AttackPropertyBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::AttackLayer::from(u.as_ref()))
+                                            .map(|u| crate::types::AttackLayer::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -42,7 +42,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::AttackPropertyIdentifier::from(u.as_ref())
+                                            crate::types::AttackPropertyIdentifier::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -60,7 +60,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::Unit::from(u.as_ref()))
+                                            .map(|u| crate::types::Unit::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

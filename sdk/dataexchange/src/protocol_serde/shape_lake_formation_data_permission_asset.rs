@@ -2,7 +2,7 @@
 pub(crate) fn de_lake_formation_data_permission_asset<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::LakeFormationDataPermissionAsset>,
+    Option<crate::types::LakeFormationDataPermissionAsset>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::lake_formation_data_permission_asset::Builder::default();
+                crate::types::builders::LakeFormationDataPermissionAssetBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -36,7 +36,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::LakeFormationDataPermissionType::from(
+                                            crate::types::LakeFormationDataPermissionType::from(
                                                 u.as_ref(),
                                             )
                                         })

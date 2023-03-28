@@ -2,7 +2,7 @@
 pub(crate) fn de_consumer_description<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ConsumerDescription>,
+    Option<crate::types::ConsumerDescription>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::consumer_description::Builder::default();
+            let mut builder = crate::types::builders::ConsumerDescriptionBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -48,7 +48,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::ConsumerStatus::from(u.as_ref()))
+                                            .map(|u| crate::types::ConsumerStatus::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

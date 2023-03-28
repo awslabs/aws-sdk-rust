@@ -2,7 +2,7 @@
 pub(crate) fn de_studio_component_script_parameter_key_value_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ScriptParameterKeyValue>>,
+    Option<std::vec::Vec<crate::types::ScriptParameterKeyValue>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

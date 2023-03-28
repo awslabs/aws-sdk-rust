@@ -2,7 +2,7 @@
 pub(crate) fn de_timestamp_metric_value_pair_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::TimestampMetricValuePair>>,
+    Option<std::vec::Vec<crate::types::TimestampMetricValuePair>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

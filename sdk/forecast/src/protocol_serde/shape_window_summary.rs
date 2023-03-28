@@ -2,7 +2,7 @@
 pub(crate) fn de_window_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::WindowSummary>,
+    Option<crate::types::WindowSummary>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::window_summary::Builder::default();
+            let mut builder = crate::types::builders::WindowSummaryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -55,7 +55,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::EvaluationType::from(u.as_ref()))
+                                            .map(|u| crate::types::EvaluationType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

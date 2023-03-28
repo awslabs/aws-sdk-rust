@@ -3,114 +3,113 @@
 pub fn de_create_db_subnet_group_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateDbSubnetGroupOutput,
-    crate::error::CreateDBSubnetGroupError,
+    crate::operation::create_db_subnet_group::CreateDbSubnetGroupOutput,
+    crate::operation::create_db_subnet_group::CreateDBSubnetGroupError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::CreateDBSubnetGroupError::unhandled)?;
+        .map_err(crate::operation::create_db_subnet_group::CreateDBSubnetGroupError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::CreateDBSubnetGroupError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::create_db_subnet_group::CreateDBSubnetGroupError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBSubnetGroupAlreadyExists" => {
-            crate::error::CreateDBSubnetGroupError::DbSubnetGroupAlreadyExistsFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::db_subnet_group_already_exists_fault::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_db_subnet_group_already_exists_fault::de_db_subnet_group_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBSubnetGroupError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "DBSubnetGroupDoesNotCoverEnoughAZs" => {
-            crate::error::CreateDBSubnetGroupError::DbSubnetGroupDoesNotCoverEnoughAZs({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::db_subnet_group_does_not_cover_enough_a_zs::Builder::default(
-                        );
-                    let _ = response;
-                    output = crate::protocol_serde::shape_db_subnet_group_does_not_cover_enough_a_zs::de_db_subnet_group_does_not_cover_enough_a_zs_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBSubnetGroupError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "DBSubnetGroupQuotaExceeded" => {
-            crate::error::CreateDBSubnetGroupError::DbSubnetGroupQuotaExceededFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::db_subnet_group_quota_exceeded_fault::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_db_subnet_group_quota_exceeded_fault::de_db_subnet_group_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBSubnetGroupError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "DBSubnetQuotaExceededFault" => {
-            crate::error::CreateDBSubnetGroupError::DbSubnetQuotaExceededFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::db_subnet_quota_exceeded_fault::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_db_subnet_quota_exceeded_fault::de_db_subnet_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBSubnetGroupError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InvalidSubnet" => crate::error::CreateDBSubnetGroupError::InvalidSubnet({
+        "DBSubnetGroupAlreadyExists" => crate::operation::create_db_subnet_group::CreateDBSubnetGroupError::DbSubnetGroupAlreadyExistsFault({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::invalid_subnet::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_subnet::de_invalid_subnet_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::CreateDBSubnetGroupError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::DbSubnetGroupAlreadyExistsFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_db_subnet_group_already_exists_fault::de_db_subnet_group_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_db_subnet_group::CreateDBSubnetGroupError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::CreateDBSubnetGroupError::generic(generic),
+        "DBSubnetGroupDoesNotCoverEnoughAZs" => crate::operation::create_db_subnet_group::CreateDBSubnetGroupError::DbSubnetGroupDoesNotCoverEnoughAZs({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::DbSubnetGroupDoesNotCoverEnoughAZsBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_db_subnet_group_does_not_cover_enough_a_zs::de_db_subnet_group_does_not_cover_enough_a_zs_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_db_subnet_group::CreateDBSubnetGroupError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "DBSubnetGroupQuotaExceeded" => crate::operation::create_db_subnet_group::CreateDBSubnetGroupError::DbSubnetGroupQuotaExceededFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::DbSubnetGroupQuotaExceededFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_db_subnet_group_quota_exceeded_fault::de_db_subnet_group_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_db_subnet_group::CreateDBSubnetGroupError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "DBSubnetQuotaExceededFault" => crate::operation::create_db_subnet_group::CreateDBSubnetGroupError::DbSubnetQuotaExceededFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::DbSubnetQuotaExceededFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_db_subnet_quota_exceeded_fault::de_db_subnet_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_db_subnet_group::CreateDBSubnetGroupError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidSubnet" => crate::operation::create_db_subnet_group::CreateDBSubnetGroupError::InvalidSubnet({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidSubnetBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_subnet::de_invalid_subnet_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_db_subnet_group::CreateDBSubnetGroupError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::create_db_subnet_group::CreateDBSubnetGroupError::generic(generic)
     })
 }
 
@@ -118,18 +117,18 @@ pub fn de_create_db_subnet_group_http_error(
 pub fn de_create_db_subnet_group_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateDbSubnetGroupOutput,
-    crate::error::CreateDBSubnetGroupError,
+    crate::operation::create_db_subnet_group::CreateDbSubnetGroupOutput,
+    crate::operation::create_db_subnet_group::CreateDBSubnetGroupError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::create_db_subnet_group_output::Builder::default();
+        let mut output = crate::operation::create_db_subnet_group::builders::CreateDbSubnetGroupOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_create_db_subnet_group::de_create_db_subnet_group(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::CreateDBSubnetGroupError::unhandled)?;
+        .map_err(crate::operation::create_db_subnet_group::CreateDBSubnetGroupError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -140,9 +139,9 @@ pub fn de_create_db_subnet_group_http_response(
 #[allow(unused_mut)]
 pub fn de_create_db_subnet_group(
     inp: &[u8],
-    mut builder: crate::output::create_db_subnet_group_output::Builder,
+    mut builder: crate::operation::create_db_subnet_group::builders::CreateDbSubnetGroupOutputBuilder,
 ) -> Result<
-    crate::output::create_db_subnet_group_output::Builder,
+    crate::operation::create_db_subnet_group::builders::CreateDbSubnetGroupOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

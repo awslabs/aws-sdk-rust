@@ -2,7 +2,7 @@
 pub(crate) fn de_list_of_required_sign_up_attributes_element<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::RequiredSignUpAttributesElement>>,
+    Option<std::vec::Vec<crate::types::RequiredSignUpAttributesElement>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -29,7 +29,7 @@ where
                         )?
                         .map(|s| {
                             s.to_unescaped().map(|u| {
-                                crate::model::RequiredSignUpAttributesElement::from(u.as_ref())
+                                crate::types::RequiredSignUpAttributesElement::from(u.as_ref())
                             })
                         })
                         .transpose()?;

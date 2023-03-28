@@ -4,7 +4,7 @@ pub(crate) fn de_customer_policy_scope_map<'a, I>(
 ) -> Result<
     Option<
         std::collections::HashMap<
-            crate::model::CustomerPolicyScopeIdType,
+            crate::types::CustomerPolicyScopeIdType,
             std::vec::Vec<std::string::String>,
         >,
     >,
@@ -28,7 +28,7 @@ where
                     Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         let key = key
                             .to_unescaped()
-                            .map(|u| crate::model::CustomerPolicyScopeIdType::from(u.as_ref()))?;
+                            .map(|u| crate::types::CustomerPolicyScopeIdType::from(u.as_ref()))?;
                         let value =
                             crate::protocol_serde::shape_customer_policy_scope_id_list::de_customer_policy_scope_id_list(tokens)?
                         ;

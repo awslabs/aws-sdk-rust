@@ -2,7 +2,7 @@
 pub(crate) fn de_vpc_info_cidr_block_set_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::VpcInfoCidrBlockSetDetails>>,
+    Option<std::vec::Vec<crate::types::VpcInfoCidrBlockSetDetails>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

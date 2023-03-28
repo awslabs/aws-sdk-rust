@@ -2,7 +2,7 @@
 pub(crate) fn de_migration_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::MigrationSummary>,
+    Option<crate::types::MigrationSummary>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::migration_summary::Builder::default();
+            let mut builder = crate::types::builders::MigrationSummaryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -57,7 +57,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::Locale::from(u.as_ref()))
+                                            .map(|u| crate::types::Locale::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -87,7 +87,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::MigrationStatus::from(u.as_ref())
+                                            crate::types::MigrationStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -100,7 +100,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::MigrationStrategy::from(u.as_ref())
+                                            crate::types::MigrationStrategy::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

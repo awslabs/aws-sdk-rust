@@ -2,7 +2,7 @@
 pub(crate) fn de_destination_flow_config_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DestinationFlowConfig>>,
+    Option<std::vec::Vec<crate::types::DestinationFlowConfig>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

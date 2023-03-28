@@ -2,7 +2,7 @@
 pub(crate) fn de_variable_value<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::VariableValue>,
+    Option<crate::types::VariableValue>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -28,13 +28,13 @@ where
                         );
                     }
                     variant = match key.to_unescaped()?.as_ref() {
-                        "boolValue" => Some(crate::model::VariableValue::BoolValue(
+                        "boolValue" => Some(crate::types::VariableValue::BoolValue(
                             aws_smithy_json::deserialize::token::expect_bool_or_null(
                                 tokens.next(),
                             )?
                             .unwrap_or_default(),
                         )),
-                        "stringValue" => Some(crate::model::VariableValue::StringValue(
+                        "stringValue" => Some(crate::types::VariableValue::StringValue(
                             aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
@@ -42,7 +42,7 @@ where
                             .transpose()?
                             .unwrap_or_default(),
                         )),
-                        "longValue" => Some(crate::model::VariableValue::LongValue(
+                        "longValue" => Some(crate::types::VariableValue::LongValue(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
@@ -50,7 +50,7 @@ where
                             .transpose()?
                             .unwrap_or_default(),
                         )),
-                        "doubleValue" => Some(crate::model::VariableValue::DoubleValue(
+                        "doubleValue" => Some(crate::types::VariableValue::DoubleValue(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
@@ -59,7 +59,7 @@ where
                         )),
                         _ => {
                             aws_smithy_json::deserialize::token::skip_value(tokens)?;
-                            Some(crate::model::VariableValue::Unknown)
+                            Some(crate::types::VariableValue::Unknown)
                         }
                     };
                 }
@@ -86,28 +86,28 @@ where
 
 pub fn ser_variable_value(
     object_3: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::VariableValue,
+    input: &crate::types::VariableValue,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     match input {
-        crate::model::VariableValue::BoolValue(inner) => {
+        crate::types::VariableValue::BoolValue(inner) => {
             object_3.key("boolValue").boolean(*inner);
         }
-        crate::model::VariableValue::StringValue(inner) => {
+        crate::types::VariableValue::StringValue(inner) => {
             object_3.key("stringValue").string(inner.as_str());
         }
-        crate::model::VariableValue::LongValue(inner) => {
+        crate::types::VariableValue::LongValue(inner) => {
             object_3.key("longValue").number(
                 #[allow(clippy::useless_conversion)]
                 aws_smithy_types::Number::NegInt((*inner).into()),
             );
         }
-        crate::model::VariableValue::DoubleValue(inner) => {
+        crate::types::VariableValue::DoubleValue(inner) => {
             object_3.key("doubleValue").number(
                 #[allow(clippy::useless_conversion)]
                 aws_smithy_types::Number::Float((*inner).into()),
             );
         }
-        crate::model::VariableValue::Unknown => {
+        crate::types::VariableValue::Unknown => {
             return Err(
                 aws_smithy_http::operation::error::SerializationError::unknown_variant(
                     "VariableValue",

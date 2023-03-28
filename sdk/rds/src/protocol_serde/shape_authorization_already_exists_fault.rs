@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_authorization_already_exists_fault_xml_err(
     inp: &[u8],
-    mut builder: crate::error::authorization_already_exists_fault::Builder,
+    mut builder: crate::types::error::builders::AuthorizationAlreadyExistsFaultBuilder,
 ) -> Result<
-    crate::error::authorization_already_exists_fault::Builder,
+    crate::types::error::builders::AuthorizationAlreadyExistsFaultBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

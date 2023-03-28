@@ -2,7 +2,7 @@
 pub(crate) fn de_column_hierarchy_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ColumnHierarchy>>,
+    Option<std::vec::Vec<crate::types::ColumnHierarchy>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

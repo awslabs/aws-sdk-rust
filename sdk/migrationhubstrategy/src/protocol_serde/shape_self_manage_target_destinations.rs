@@ -2,7 +2,7 @@
 pub(crate) fn de_self_manage_target_destinations<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SelfManageTargetDestination>>,
+    Option<std::vec::Vec<crate::types::SelfManageTargetDestination>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -29,7 +29,7 @@ where
                         )?
                         .map(|s| {
                             s.to_unescaped().map(|u| {
-                                crate::model::SelfManageTargetDestination::from(u.as_ref())
+                                crate::types::SelfManageTargetDestination::from(u.as_ref())
                             })
                         })
                         .transpose()?;

@@ -2,7 +2,7 @@
 pub(crate) fn de_trace_users<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::TraceUser>>,
+    Option<std::vec::Vec<crate::types::TraceUser>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

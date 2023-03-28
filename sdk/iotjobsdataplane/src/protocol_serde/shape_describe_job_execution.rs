@@ -3,124 +3,130 @@
 pub fn de_describe_job_execution_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeJobExecutionOutput,
-    crate::error::DescribeJobExecutionError,
+    crate::operation::describe_job_execution::DescribeJobExecutionOutput,
+    crate::operation::describe_job_execution::DescribeJobExecutionError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeJobExecutionError::unhandled)?;
+        .map_err(crate::operation::describe_job_execution::DescribeJobExecutionError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DescribeJobExecutionError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::describe_job_execution::DescribeJobExecutionError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CertificateValidationException" => {
-            crate::error::DescribeJobExecutionError::CertificateValidationException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::certificate_validation_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_certificate_validation_exception::de_certificate_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeJobExecutionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InvalidRequestException" => {
-            crate::error::DescribeJobExecutionError::InvalidRequestException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_request_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeJobExecutionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ResourceNotFoundException" => {
-            crate::error::DescribeJobExecutionError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeJobExecutionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ServiceUnavailableException" => {
-            crate::error::DescribeJobExecutionError::ServiceUnavailableException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::service_unavailable_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeJobExecutionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "TerminalStateException" => {
-            crate::error::DescribeJobExecutionError::TerminalStateException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::terminal_state_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_terminal_state_exception::de_terminal_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeJobExecutionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ThrottlingException" => crate::error::DescribeJobExecutionError::ThrottlingException({
+        "CertificateValidationException" => crate::operation::describe_job_execution::DescribeJobExecutionError::CertificateValidationException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::throttling_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeJobExecutionError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::CertificateValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_certificate_validation_exception::de_certificate_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_job_execution::DescribeJobExecutionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::DescribeJobExecutionError::generic(generic),
+        "InvalidRequestException" => crate::operation::describe_job_execution::DescribeJobExecutionError::InvalidRequestException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidRequestExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_job_execution::DescribeJobExecutionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::describe_job_execution::DescribeJobExecutionError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_job_execution::DescribeJobExecutionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ServiceUnavailableException" => crate::operation::describe_job_execution::DescribeJobExecutionError::ServiceUnavailableException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_job_execution::DescribeJobExecutionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TerminalStateException" => crate::operation::describe_job_execution::DescribeJobExecutionError::TerminalStateException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::TerminalStateExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_terminal_state_exception::de_terminal_state_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_job_execution::DescribeJobExecutionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ThrottlingException" => crate::operation::describe_job_execution::DescribeJobExecutionError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_job_execution::DescribeJobExecutionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::describe_job_execution::DescribeJobExecutionError::generic(generic)
     })
 }
 
@@ -128,18 +134,18 @@ pub fn de_describe_job_execution_http_error(
 pub fn de_describe_job_execution_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeJobExecutionOutput,
-    crate::error::DescribeJobExecutionError,
+    crate::operation::describe_job_execution::DescribeJobExecutionOutput,
+    crate::operation::describe_job_execution::DescribeJobExecutionError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_job_execution_output::Builder::default();
+        let mut output = crate::operation::describe_job_execution::builders::DescribeJobExecutionOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_describe_job_execution::de_describe_job_execution(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DescribeJobExecutionError::unhandled)?;
+        .map_err(crate::operation::describe_job_execution::DescribeJobExecutionError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -149,9 +155,9 @@ pub fn de_describe_job_execution_http_response(
 
 pub(crate) fn de_describe_job_execution(
     value: &[u8],
-    mut builder: crate::output::describe_job_execution_output::Builder,
+    mut builder: crate::operation::describe_job_execution::builders::DescribeJobExecutionOutputBuilder,
 ) -> Result<
-    crate::output::describe_job_execution_output::Builder,
+    crate::operation::describe_job_execution::builders::DescribeJobExecutionOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

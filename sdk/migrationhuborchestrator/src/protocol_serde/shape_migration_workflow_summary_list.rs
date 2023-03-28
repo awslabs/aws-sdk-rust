@@ -2,7 +2,7 @@
 pub(crate) fn de_migration_workflow_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::MigrationWorkflowSummary>>,
+    Option<std::vec::Vec<crate::types::MigrationWorkflowSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

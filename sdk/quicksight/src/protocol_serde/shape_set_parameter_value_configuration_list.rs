@@ -2,7 +2,7 @@
 pub(crate) fn de_set_parameter_value_configuration_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SetParameterValueConfiguration>>,
+    Option<std::vec::Vec<crate::types::SetParameterValueConfiguration>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

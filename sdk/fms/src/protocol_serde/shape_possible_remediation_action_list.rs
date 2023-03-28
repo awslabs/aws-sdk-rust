@@ -2,7 +2,7 @@
 pub(crate) fn de_possible_remediation_action_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::PossibleRemediationAction>>,
+    Option<std::vec::Vec<crate::types::PossibleRemediationAction>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

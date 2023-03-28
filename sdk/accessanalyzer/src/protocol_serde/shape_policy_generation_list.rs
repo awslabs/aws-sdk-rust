@@ -2,7 +2,7 @@
 pub(crate) fn de_policy_generation_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::PolicyGeneration>>,
+    Option<std::vec::Vec<crate::types::PolicyGeneration>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

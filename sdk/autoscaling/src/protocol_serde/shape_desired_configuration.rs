@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_desired_configuration(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::DesiredConfiguration,
+    input: &crate::types::DesiredConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("LaunchTemplate");
@@ -21,9 +21,9 @@ pub fn ser_desired_configuration(
 
 pub fn de_desired_configuration(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::DesiredConfiguration, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::DesiredConfiguration, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::DesiredConfiguration::builder();
+    let mut builder = crate::types::DesiredConfiguration::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("LaunchTemplate") /* LaunchTemplate com.amazonaws.autoscaling#DesiredConfiguration$LaunchTemplate */ =>  {

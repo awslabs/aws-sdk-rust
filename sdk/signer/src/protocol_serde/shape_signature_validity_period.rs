@@ -2,7 +2,7 @@
 pub(crate) fn de_signature_validity_period<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::SignatureValidityPeriod>,
+    Option<crate::types::SignatureValidityPeriod>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::signature_validity_period::Builder::default();
+            let mut builder = crate::types::builders::SignatureValidityPeriodBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -39,7 +39,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::ValidityType::from(u.as_ref()))
+                                            .map(|u| crate::types::ValidityType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -69,7 +69,7 @@ where
 
 pub fn ser_signature_validity_period(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::SignatureValidityPeriod,
+    input: &crate::types::SignatureValidityPeriod,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if input.value != 0 {
         object.key("value").number(

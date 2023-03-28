@@ -2,7 +2,7 @@
 pub(crate) fn de_list_resources_associated_to_custom_line_item_response_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ListResourcesAssociatedToCustomLineItemResponseElement>>,
+    Option<std::vec::Vec<crate::types::ListResourcesAssociatedToCustomLineItemResponseElement>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

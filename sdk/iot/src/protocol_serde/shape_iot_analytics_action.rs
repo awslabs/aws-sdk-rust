@@ -2,7 +2,7 @@
 pub(crate) fn de_iot_analytics_action<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::IotAnalyticsAction>,
+    Option<crate::types::IotAnalyticsAction>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::iot_analytics_action::Builder::default();
+            let mut builder = crate::types::builders::IotAnalyticsActionBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -82,7 +82,7 @@ where
 
 pub fn ser_iot_analytics_action(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::IotAnalyticsAction,
+    input: &crate::types::IotAnalyticsAction,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.channel_arn {
         object.key("channelArn").string(var_1.as_str());

@@ -2,7 +2,7 @@
 pub(crate) fn de_channel_moderated_by_app_instance_user_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ChannelModeratedByAppInstanceUserSummary>,
+    Option<crate::types::ChannelModeratedByAppInstanceUserSummary>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::channel_moderated_by_app_instance_user_summary::Builder::default();
+                crate::types::builders::ChannelModeratedByAppInstanceUserSummaryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

@@ -2,7 +2,7 @@
 pub(crate) fn de_realtime_contact_analysis_segments<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::RealtimeContactAnalysisSegment>>,
+    Option<std::vec::Vec<crate::types::RealtimeContactAnalysisSegment>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

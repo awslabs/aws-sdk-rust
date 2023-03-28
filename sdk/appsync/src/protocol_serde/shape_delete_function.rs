@@ -2,28 +2,52 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_function_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeleteFunctionOutput, crate::error::DeleteFunctionError> {
+) -> std::result::Result<
+    crate::operation::delete_function::DeleteFunctionOutput,
+    crate::operation::delete_function::DeleteFunctionError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteFunctionError::unhandled)?;
+        .map_err(crate::operation::delete_function::DeleteFunctionError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DeleteFunctionError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::delete_function::DeleteFunctionError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ConcurrentModificationException" => {
-            crate::error::DeleteFunctionError::ConcurrentModificationException({
+            crate::operation::delete_function::DeleteFunctionError::ConcurrentModificationException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ConcurrentModificationExceptionBuilder::default();
+                        let _ = response;
+                        output = crate::protocol_serde::shape_concurrent_modification_exception::de_concurrent_modification_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_function::DeleteFunctionError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        "InternalFailureException" => {
+            crate::operation::delete_function::DeleteFunctionError::InternalFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::concurrent_modification_exception::Builder::default();
+                        crate::types::error::builders::InternalFailureExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_concurrent_modification_exception::de_concurrent_modification_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_function::DeleteFunctionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -33,14 +57,15 @@ pub fn de_delete_function_http_error(
                 tmp
             })
         }
-        "InternalFailureException" => {
-            crate::error::DeleteFunctionError::InternalFailureException({
+        "NotFoundException" => {
+            crate::operation::delete_function::DeleteFunctionError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_failure_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::NotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionError::unhandled)?;
+                    output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_function::DeleteFunctionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -50,47 +75,39 @@ pub fn de_delete_function_http_error(
                 tmp
             })
         }
-        "NotFoundException" => crate::error::DeleteFunctionError::NotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "UnauthorizedException" => {
+            crate::operation::delete_function::DeleteFunctionError::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "UnauthorizedException" => crate::error::DeleteFunctionError::UnauthorizedException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::DeleteFunctionError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::UnauthorizedExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_function::DeleteFunctionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::delete_function::DeleteFunctionError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_function_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeleteFunctionOutput, crate::error::DeleteFunctionError> {
+) -> std::result::Result<
+    crate::operation::delete_function::DeleteFunctionOutput,
+    crate::operation::delete_function::DeleteFunctionError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_function_output::Builder::default();
+        let mut output =
+            crate::operation::delete_function::builders::DeleteFunctionOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

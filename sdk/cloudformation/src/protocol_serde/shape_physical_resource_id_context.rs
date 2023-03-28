@@ -2,7 +2,7 @@
 pub fn de_physical_resource_id_context(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::PhysicalResourceIdContextKeyValuePair>,
+    std::vec::Vec<crate::types::PhysicalResourceIdContextKeyValuePair>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

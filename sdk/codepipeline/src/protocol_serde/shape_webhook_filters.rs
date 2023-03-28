@@ -2,7 +2,7 @@
 pub(crate) fn de_webhook_filters<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::WebhookFilterRule>>,
+    Option<std::vec::Vec<crate::types::WebhookFilterRule>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

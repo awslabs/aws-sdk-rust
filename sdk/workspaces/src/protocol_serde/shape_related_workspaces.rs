@@ -2,7 +2,7 @@
 pub(crate) fn de_related_workspaces<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::RelatedWorkspaceProperties>>,
+    Option<std::vec::Vec<crate::types::RelatedWorkspaceProperties>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

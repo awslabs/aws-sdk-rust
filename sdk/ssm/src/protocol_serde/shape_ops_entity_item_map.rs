@@ -2,7 +2,7 @@
 pub(crate) fn de_ops_entity_item_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<std::string::String, crate::model::OpsEntityItem>>,
+    Option<std::collections::HashMap<std::string::String, crate::types::OpsEntityItem>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

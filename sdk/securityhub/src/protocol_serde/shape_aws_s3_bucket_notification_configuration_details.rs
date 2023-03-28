@@ -2,7 +2,7 @@
 pub(crate) fn de_aws_s3_bucket_notification_configuration_details<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AwsS3BucketNotificationConfigurationDetail>>,
+    Option<std::vec::Vec<crate::types::AwsS3BucketNotificationConfigurationDetail>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

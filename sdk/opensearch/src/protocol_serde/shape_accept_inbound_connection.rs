@@ -3,77 +3,78 @@
 pub fn de_accept_inbound_connection_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::AcceptInboundConnectionOutput,
-    crate::error::AcceptInboundConnectionError,
+    crate::operation::accept_inbound_connection::AcceptInboundConnectionOutput,
+    crate::operation::accept_inbound_connection::AcceptInboundConnectionError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::AcceptInboundConnectionError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::accept_inbound_connection::AcceptInboundConnectionError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::error::AcceptInboundConnectionError::unhandled(
+        None => return Err(
+            crate::operation::accept_inbound_connection::AcceptInboundConnectionError::unhandled(
                 generic,
-            ))
-        }
+            ),
+        ),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DisabledOperationException" => {
-            crate::error::AcceptInboundConnectionError::DisabledOperationException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "DisabledOperationException" => crate::operation::accept_inbound_connection::AcceptInboundConnectionError::DisabledOperationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::disabled_operation_exception::Builder::default();
+                    let mut output = crate::types::error::builders::DisabledOperationExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_disabled_operation_exception::de_disabled_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AcceptInboundConnectionError::unhandled)?;
+                    output = crate::protocol_serde::shape_disabled_operation_exception::de_disabled_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::accept_inbound_connection::AcceptInboundConnectionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "LimitExceededException" => {
-            crate::error::AcceptInboundConnectionError::LimitExceededException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "LimitExceededException" => crate::operation::accept_inbound_connection::AcceptInboundConnectionError::LimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AcceptInboundConnectionError::unhandled)?;
+                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::accept_inbound_connection::AcceptInboundConnectionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ResourceNotFoundException" => {
-            crate::error::AcceptInboundConnectionError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::accept_inbound_connection::AcceptInboundConnectionError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AcceptInboundConnectionError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::accept_inbound_connection::AcceptInboundConnectionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::AcceptInboundConnectionError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::accept_inbound_connection::AcceptInboundConnectionError::generic(generic)
     })
 }
 
@@ -81,19 +82,14 @@ pub fn de_accept_inbound_connection_http_error(
 pub fn de_accept_inbound_connection_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::AcceptInboundConnectionOutput,
-    crate::error::AcceptInboundConnectionError,
+    crate::operation::accept_inbound_connection::AcceptInboundConnectionOutput,
+    crate::operation::accept_inbound_connection::AcceptInboundConnectionError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::accept_inbound_connection_output::Builder::default();
+        let mut output = crate::operation::accept_inbound_connection::builders::AcceptInboundConnectionOutputBuilder::default();
         let _ = response;
-        output =
-            crate::protocol_serde::shape_accept_inbound_connection::de_accept_inbound_connection(
-                response.body().as_ref(),
-                output,
-            )
-            .map_err(crate::error::AcceptInboundConnectionError::unhandled)?;
+        output = crate::protocol_serde::shape_accept_inbound_connection::de_accept_inbound_connection(response.body().as_ref(), output).map_err(crate::operation::accept_inbound_connection::AcceptInboundConnectionError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -103,9 +99,9 @@ pub fn de_accept_inbound_connection_http_response(
 
 pub(crate) fn de_accept_inbound_connection(
     value: &[u8],
-    mut builder: crate::output::accept_inbound_connection_output::Builder,
+    mut builder: crate::operation::accept_inbound_connection::builders::AcceptInboundConnectionOutputBuilder,
 ) -> Result<
-    crate::output::accept_inbound_connection_output::Builder,
+    crate::operation::accept_inbound_connection::builders::AcceptInboundConnectionOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

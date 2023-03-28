@@ -2,7 +2,7 @@
 pub(crate) fn de_list_of_relationships<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::RelationshipsListItem>>,
+    Option<std::vec::Vec<crate::types::RelationshipsListItem>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

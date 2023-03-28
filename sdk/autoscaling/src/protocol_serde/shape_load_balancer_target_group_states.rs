@@ -2,7 +2,7 @@
 pub fn de_load_balancer_target_group_states(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::LoadBalancerTargetGroupState>,
+    std::vec::Vec<crate::types::LoadBalancerTargetGroupState>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

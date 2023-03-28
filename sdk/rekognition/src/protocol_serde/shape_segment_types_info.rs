@@ -2,7 +2,7 @@
 pub(crate) fn de_segment_types_info<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SegmentTypeInfo>>,
+    Option<std::vec::Vec<crate::types::SegmentTypeInfo>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

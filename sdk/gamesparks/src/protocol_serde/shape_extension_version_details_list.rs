@@ -2,7 +2,7 @@
 pub(crate) fn de_extension_version_details_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ExtensionVersionDetails>>,
+    Option<std::vec::Vec<crate::types::ExtensionVersionDetails>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

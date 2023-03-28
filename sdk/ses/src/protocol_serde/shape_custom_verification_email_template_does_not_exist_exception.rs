@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_custom_verification_email_template_does_not_exist_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::custom_verification_email_template_does_not_exist_exception::Builder,
+    mut builder: crate::types::error::builders::CustomVerificationEmailTemplateDoesNotExistExceptionBuilder,
 ) -> Result<
-    crate::error::custom_verification_email_template_does_not_exist_exception::Builder,
+    crate::types::error::builders::CustomVerificationEmailTemplateDoesNotExistExceptionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

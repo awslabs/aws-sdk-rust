@@ -2,7 +2,7 @@
 pub(crate) fn de_activate_read_set_job_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ActivateReadSetJobItem>>,
+    Option<std::vec::Vec<crate::types::ActivateReadSetJobItem>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

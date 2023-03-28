@@ -2,7 +2,7 @@
 pub(crate) fn de_earth_observation_job_output_bands<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::OutputBand>>,
+    Option<std::vec::Vec<crate::types::OutputBand>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

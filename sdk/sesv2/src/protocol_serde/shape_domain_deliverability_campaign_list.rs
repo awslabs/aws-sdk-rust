@@ -2,7 +2,7 @@
 pub(crate) fn de_domain_deliverability_campaign_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DomainDeliverabilityCampaign>>,
+    Option<std::vec::Vec<crate::types::DomainDeliverabilityCampaign>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

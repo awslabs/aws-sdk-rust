@@ -2,45 +2,52 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_report_jobs_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListReportJobsOutput, crate::error::ListReportJobsError> {
+) -> std::result::Result<
+    crate::operation::list_report_jobs::ListReportJobsOutput,
+    crate::operation::list_report_jobs::ListReportJobsError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListReportJobsError::unhandled)?;
+        .map_err(crate::operation::list_report_jobs::ListReportJobsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListReportJobsError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::list_report_jobs::ListReportJobsError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidParameterValueException" => {
-            crate::error::ListReportJobsError::InvalidParameterValueException({
+            crate::operation::list_report_jobs::ListReportJobsError::InvalidParameterValueException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
+                        let _ = response;
+                        output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_report_jobs::ListReportJobsError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        "ResourceNotFoundException" => {
+            crate::operation::list_report_jobs::ListReportJobsError::ResourceNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::invalid_parameter_value_exception::Builder::default();
+                        crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListReportJobsError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ResourceNotFoundException" => {
-            crate::error::ListReportJobsError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListReportJobsError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_report_jobs::ListReportJobsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -51,14 +58,15 @@ pub fn de_list_report_jobs_http_error(
             })
         }
         "ServiceUnavailableException" => {
-            crate::error::ListReportJobsError::ServiceUnavailableException({
+            crate::operation::list_report_jobs::ListReportJobsError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::service_unavailable_exception::Builder::default();
+                        crate::types::error::builders::ServiceUnavailableExceptionBuilder::default(
+                        );
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListReportJobsError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_report_jobs::ListReportJobsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -68,23 +76,27 @@ pub fn de_list_report_jobs_http_error(
                 tmp
             })
         }
-        _ => crate::error::ListReportJobsError::generic(generic),
+        _ => crate::operation::list_report_jobs::ListReportJobsError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_report_jobs_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListReportJobsOutput, crate::error::ListReportJobsError> {
+) -> std::result::Result<
+    crate::operation::list_report_jobs::ListReportJobsOutput,
+    crate::operation::list_report_jobs::ListReportJobsError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_report_jobs_output::Builder::default();
+        let mut output =
+            crate::operation::list_report_jobs::builders::ListReportJobsOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_report_jobs::de_list_report_jobs(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListReportJobsError::unhandled)?;
+        .map_err(crate::operation::list_report_jobs::ListReportJobsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -94,9 +106,9 @@ pub fn de_list_report_jobs_http_response(
 
 pub(crate) fn de_list_report_jobs(
     value: &[u8],
-    mut builder: crate::output::list_report_jobs_output::Builder,
+    mut builder: crate::operation::list_report_jobs::builders::ListReportJobsOutputBuilder,
 ) -> Result<
-    crate::output::list_report_jobs_output::Builder,
+    crate::operation::list_report_jobs::builders::ListReportJobsOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

@@ -2,7 +2,7 @@
 pub(crate) fn de_journal_s3_export_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::JournalS3ExportDescription>>,
+    Option<std::vec::Vec<crate::types::JournalS3ExportDescription>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_trigger_config_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::TriggerConfig>>,
+    Option<std::vec::Vec<crate::types::TriggerConfig>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

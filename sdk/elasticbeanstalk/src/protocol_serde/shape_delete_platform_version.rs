@@ -3,95 +3,96 @@
 pub fn de_delete_platform_version_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeletePlatformVersionOutput,
-    crate::error::DeletePlatformVersionError,
+    crate::operation::delete_platform_version::DeletePlatformVersionOutput,
+    crate::operation::delete_platform_version::DeletePlatformVersionError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeletePlatformVersionError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::delete_platform_version::DeletePlatformVersionError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    let error_code = match generic.code() {
-        Some(code) => code,
-        None => return Err(crate::error::DeletePlatformVersionError::unhandled(generic)),
-    };
+    let error_code =
+        match generic.code() {
+            Some(code) => code,
+            None => return Err(
+                crate::operation::delete_platform_version::DeletePlatformVersionError::unhandled(
+                    generic,
+                ),
+            ),
+        };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ElasticBeanstalkServiceException" => {
-            crate::error::DeletePlatformVersionError::ElasticBeanstalkServiceException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "ElasticBeanstalkServiceException" => crate::operation::delete_platform_version::DeletePlatformVersionError::ElasticBeanstalkServiceException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::elastic_beanstalk_service_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ElasticBeanstalkServiceExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_elastic_beanstalk_service_exception::de_elastic_beanstalk_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeletePlatformVersionError::unhandled)?;
+                    output = crate::protocol_serde::shape_elastic_beanstalk_service_exception::de_elastic_beanstalk_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_platform_version::DeletePlatformVersionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InsufficientPrivilegesException" => {
-            crate::error::DeletePlatformVersionError::InsufficientPrivilegesException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InsufficientPrivilegesException" => crate::operation::delete_platform_version::DeletePlatformVersionError::InsufficientPrivilegesException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::insufficient_privileges_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InsufficientPrivilegesExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_insufficient_privileges_exception::de_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeletePlatformVersionError::unhandled)?;
+                    output = crate::protocol_serde::shape_insufficient_privileges_exception::de_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_platform_version::DeletePlatformVersionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "OperationInProgressFailure" => {
-            crate::error::DeletePlatformVersionError::OperationInProgressException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "OperationInProgressFailure" => crate::operation::delete_platform_version::DeletePlatformVersionError::OperationInProgressException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::operation_in_progress_exception::Builder::default();
+                    let mut output = crate::types::error::builders::OperationInProgressExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_operation_in_progress_exception::de_operation_in_progress_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeletePlatformVersionError::unhandled)?;
+                    output = crate::protocol_serde::shape_operation_in_progress_exception::de_operation_in_progress_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_platform_version::DeletePlatformVersionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "PlatformVersionStillReferencedException" => {
-            crate::error::DeletePlatformVersionError::PlatformVersionStillReferencedException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "PlatformVersionStillReferencedException" => crate::operation::delete_platform_version::DeletePlatformVersionError::PlatformVersionStillReferencedException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::platform_version_still_referenced_exception::Builder::default(
-                        );
+                    let mut output = crate::types::error::builders::PlatformVersionStillReferencedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_platform_version_still_referenced_exception::de_platform_version_still_referenced_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeletePlatformVersionError::unhandled)?;
+                    output = crate::protocol_serde::shape_platform_version_still_referenced_exception::de_platform_version_still_referenced_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_platform_version::DeletePlatformVersionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DeletePlatformVersionError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::delete_platform_version::DeletePlatformVersionError::generic(generic)
     })
 }
 
@@ -99,18 +100,20 @@ pub fn de_delete_platform_version_http_error(
 pub fn de_delete_platform_version_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeletePlatformVersionOutput,
-    crate::error::DeletePlatformVersionError,
+    crate::operation::delete_platform_version::DeletePlatformVersionOutput,
+    crate::operation::delete_platform_version::DeletePlatformVersionError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_platform_version_output::Builder::default();
+        let mut output = crate::operation::delete_platform_version::builders::DeletePlatformVersionOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_delete_platform_version::de_delete_platform_version(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DeletePlatformVersionError::unhandled)?;
+        .map_err(
+            crate::operation::delete_platform_version::DeletePlatformVersionError::unhandled,
+        )?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -121,9 +124,9 @@ pub fn de_delete_platform_version_http_response(
 #[allow(unused_mut)]
 pub fn de_delete_platform_version(
     inp: &[u8],
-    mut builder: crate::output::delete_platform_version_output::Builder,
+    mut builder: crate::operation::delete_platform_version::builders::DeletePlatformVersionOutputBuilder,
 ) -> Result<
-    crate::output::delete_platform_version_output::Builder,
+    crate::operation::delete_platform_version::builders::DeletePlatformVersionOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

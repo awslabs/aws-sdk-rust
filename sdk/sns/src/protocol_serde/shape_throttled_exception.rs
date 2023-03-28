@@ -2,8 +2,11 @@
 #[allow(unused_mut)]
 pub fn de_throttled_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::throttled_exception::Builder,
-) -> Result<crate::error::throttled_exception::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    mut builder: crate::types::error::builders::ThrottledExceptionBuilder,
+) -> Result<
+    crate::types::error::builders::ThrottledExceptionBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     if inp.is_empty() {
         return Ok(builder);
     }

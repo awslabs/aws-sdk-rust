@@ -3,94 +3,89 @@
 pub fn de_authorize_db_security_group_ingress_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::AuthorizeDbSecurityGroupIngressOutput,
-    crate::error::AuthorizeDBSecurityGroupIngressError,
+    crate::operation::authorize_db_security_group_ingress::AuthorizeDbSecurityGroupIngressOutput,
+    crate::operation::authorize_db_security_group_ingress::AuthorizeDBSecurityGroupIngressError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::AuthorizeDBSecurityGroupIngressError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::authorize_db_security_group_ingress::AuthorizeDBSecurityGroupIngressError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => return Err(crate::error::AuthorizeDBSecurityGroupIngressError::unhandled(generic)),
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::authorize_db_security_group_ingress::AuthorizeDBSecurityGroupIngressError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AuthorizationAlreadyExists" => {
-            crate::error::AuthorizeDBSecurityGroupIngressError::AuthorizationAlreadyExistsFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "AuthorizationAlreadyExists" => crate::operation::authorize_db_security_group_ingress::AuthorizeDBSecurityGroupIngressError::AuthorizationAlreadyExistsFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::authorization_already_exists_fault::Builder::default();
+                    let mut output = crate::types::error::builders::AuthorizationAlreadyExistsFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_authorization_already_exists_fault::de_authorization_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AuthorizeDBSecurityGroupIngressError::unhandled)?;
+                    output = crate::protocol_serde::shape_authorization_already_exists_fault::de_authorization_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::authorize_db_security_group_ingress::AuthorizeDBSecurityGroupIngressError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "AuthorizationQuotaExceeded" => {
-            crate::error::AuthorizeDBSecurityGroupIngressError::AuthorizationQuotaExceededFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "AuthorizationQuotaExceeded" => crate::operation::authorize_db_security_group_ingress::AuthorizeDBSecurityGroupIngressError::AuthorizationQuotaExceededFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::authorization_quota_exceeded_fault::Builder::default();
+                    let mut output = crate::types::error::builders::AuthorizationQuotaExceededFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_authorization_quota_exceeded_fault::de_authorization_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AuthorizeDBSecurityGroupIngressError::unhandled)?;
+                    output = crate::protocol_serde::shape_authorization_quota_exceeded_fault::de_authorization_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::authorize_db_security_group_ingress::AuthorizeDBSecurityGroupIngressError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "DBSecurityGroupNotFound" => {
-            crate::error::AuthorizeDBSecurityGroupIngressError::DbSecurityGroupNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "DBSecurityGroupNotFound" => crate::operation::authorize_db_security_group_ingress::AuthorizeDBSecurityGroupIngressError::DbSecurityGroupNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::db_security_group_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::DbSecurityGroupNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_db_security_group_not_found_fault::de_db_security_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AuthorizeDBSecurityGroupIngressError::unhandled)?;
+                    output = crate::protocol_serde::shape_db_security_group_not_found_fault::de_db_security_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::authorize_db_security_group_ingress::AuthorizeDBSecurityGroupIngressError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidDBSecurityGroupState" => {
-            crate::error::AuthorizeDBSecurityGroupIngressError::InvalidDbSecurityGroupStateFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidDBSecurityGroupState" => crate::operation::authorize_db_security_group_ingress::AuthorizeDBSecurityGroupIngressError::InvalidDbSecurityGroupStateFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_db_security_group_state_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidDbSecurityGroupStateFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_db_security_group_state_fault::de_invalid_db_security_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AuthorizeDBSecurityGroupIngressError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_db_security_group_state_fault::de_invalid_db_security_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::authorize_db_security_group_ingress::AuthorizeDBSecurityGroupIngressError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::AuthorizeDBSecurityGroupIngressError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::authorize_db_security_group_ingress::AuthorizeDBSecurityGroupIngressError::generic(generic)
     })
 }
 
@@ -98,15 +93,14 @@ pub fn de_authorize_db_security_group_ingress_http_error(
 pub fn de_authorize_db_security_group_ingress_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::AuthorizeDbSecurityGroupIngressOutput,
-    crate::error::AuthorizeDBSecurityGroupIngressError,
+    crate::operation::authorize_db_security_group_ingress::AuthorizeDbSecurityGroupIngressOutput,
+    crate::operation::authorize_db_security_group_ingress::AuthorizeDBSecurityGroupIngressError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::output::authorize_db_security_group_ingress_output::Builder::default();
+        let mut output = crate::operation::authorize_db_security_group_ingress::builders::AuthorizeDbSecurityGroupIngressOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_authorize_db_security_group_ingress::de_authorize_db_security_group_ingress(response.body().as_ref(), output).map_err(crate::error::AuthorizeDBSecurityGroupIngressError::unhandled)?;
+        output = crate::protocol_serde::shape_authorize_db_security_group_ingress::de_authorize_db_security_group_ingress(response.body().as_ref(), output).map_err(crate::operation::authorize_db_security_group_ingress::AuthorizeDBSecurityGroupIngressError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -115,13 +109,7 @@ pub fn de_authorize_db_security_group_ingress_http_response(
 }
 
 #[allow(unused_mut)]
-pub fn de_authorize_db_security_group_ingress(
-    inp: &[u8],
-    mut builder: crate::output::authorize_db_security_group_ingress_output::Builder,
-) -> Result<
-    crate::output::authorize_db_security_group_ingress_output::Builder,
-    aws_smithy_xml::decode::XmlDecodeError,
-> {
+pub fn de_authorize_db_security_group_ingress(inp: &[u8], mut builder: crate::operation::authorize_db_security_group_ingress::builders::AuthorizeDbSecurityGroupIngressOutputBuilder) -> Result<crate::operation::authorize_db_security_group_ingress::builders::AuthorizeDbSecurityGroupIngressOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

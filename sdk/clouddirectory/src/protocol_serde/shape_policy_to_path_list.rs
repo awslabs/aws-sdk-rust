@@ -2,7 +2,7 @@
 pub(crate) fn de_policy_to_path_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::PolicyToPath>>,
+    Option<std::vec::Vec<crate::types::PolicyToPath>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

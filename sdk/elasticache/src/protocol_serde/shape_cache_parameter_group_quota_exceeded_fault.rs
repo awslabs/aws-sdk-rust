@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_cache_parameter_group_quota_exceeded_fault_xml_err(
     inp: &[u8],
-    mut builder: crate::error::cache_parameter_group_quota_exceeded_fault::Builder,
+    mut builder: crate::types::error::builders::CacheParameterGroupQuotaExceededFaultBuilder,
 ) -> Result<
-    crate::error::cache_parameter_group_quota_exceeded_fault::Builder,
+    crate::types::error::builders::CacheParameterGroupQuotaExceededFaultBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

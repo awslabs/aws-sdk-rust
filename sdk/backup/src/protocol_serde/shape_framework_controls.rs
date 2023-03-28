@@ -2,7 +2,7 @@
 pub(crate) fn de_framework_controls<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::FrameworkControl>>,
+    Option<std::vec::Vec<crate::types::FrameworkControl>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

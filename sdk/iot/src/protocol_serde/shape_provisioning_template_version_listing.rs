@@ -2,7 +2,7 @@
 pub(crate) fn de_provisioning_template_version_listing<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ProvisioningTemplateVersionSummary>>,
+    Option<std::vec::Vec<crate::types::ProvisioningTemplateVersionSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

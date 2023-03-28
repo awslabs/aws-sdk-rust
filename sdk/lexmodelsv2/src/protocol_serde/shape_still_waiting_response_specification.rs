@@ -2,7 +2,7 @@
 pub(crate) fn de_still_waiting_response_specification<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::StillWaitingResponseSpecification>,
+    Option<crate::types::StillWaitingResponseSpecification>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::still_waiting_response_specification::Builder::default();
+                crate::types::builders::StillWaitingResponseSpecificationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -79,7 +79,7 @@ where
 
 pub fn ser_still_waiting_response_specification(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::StillWaitingResponseSpecification,
+    input: &crate::types::StillWaitingResponseSpecification,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.message_groups {
         let mut array_2 = object.key("messageGroups").start_array();

@@ -2,43 +2,35 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_user_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::CreateUserOutput, crate::error::CreateUserError> {
+) -> std::result::Result<
+    crate::operation::create_user::CreateUserOutput,
+    crate::operation::create_user::CreateUserError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::CreateUserError::unhandled)?;
+        .map_err(crate::operation::create_user::CreateUserError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::CreateUserError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::create_user::CreateUserError::unhandled(
+                generic,
+            ))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DuplicateUserName" => crate::error::CreateUserError::DuplicateUserNameFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::duplicate_user_name_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_duplicate_user_name_fault::de_duplicate_user_name_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUserError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InvalidParameterCombination" => {
-            crate::error::CreateUserError::InvalidParameterCombinationException({
+        "DuplicateUserName" => {
+            crate::operation::create_user::CreateUserError::DuplicateUserNameFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::invalid_parameter_combination_exception::Builder::default();
+                        crate::types::error::builders::DuplicateUserNameFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_combination_exception::de_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUserError::unhandled)?;
+                    output = crate::protocol_serde::shape_duplicate_user_name_fault::de_duplicate_user_name_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_user::CreateUserError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -48,31 +40,48 @@ pub fn de_create_user_http_error(
                 tmp
             })
         }
-        "InvalidParameterValue" => crate::error::CreateUserError::InvalidParameterValueException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output =
-                    crate::error::invalid_parameter_value_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUserError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ServiceLinkedRoleNotFoundFault" => {
-            crate::error::CreateUserError::ServiceLinkedRoleNotFoundFault({
+        "InvalidParameterCombination" => {
+            crate::operation::create_user::CreateUserError::InvalidParameterCombinationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::service_linked_role_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidParameterCombinationExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_linked_role_not_found_fault::de_service_linked_role_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUserError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_combination_exception::de_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_user::CreateUserError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidParameterValue" => {
+            crate::operation::create_user::CreateUserError::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_user::CreateUserError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ServiceLinkedRoleNotFoundFault" => {
+            crate::operation::create_user::CreateUserError::ServiceLinkedRoleNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ServiceLinkedRoleNotFoundFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_service_linked_role_not_found_fault::de_service_linked_role_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_user::CreateUserError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -83,14 +92,15 @@ pub fn de_create_user_http_error(
             })
         }
         "TagQuotaPerResourceExceeded" => {
-            crate::error::CreateUserError::TagQuotaPerResourceExceeded({
+            crate::operation::create_user::CreateUserError::TagQuotaPerResourceExceeded({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::tag_quota_per_resource_exceeded::Builder::default();
+                        crate::types::error::builders::TagQuotaPerResourceExceededBuilder::default(
+                        );
                     let _ = response;
-                    output = crate::protocol_serde::shape_tag_quota_per_resource_exceeded::de_tag_quota_per_resource_exceeded_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUserError::unhandled)?;
+                    output = crate::protocol_serde::shape_tag_quota_per_resource_exceeded::de_tag_quota_per_resource_exceeded_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_user::CreateUserError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -100,53 +110,63 @@ pub fn de_create_user_http_error(
                 tmp
             })
         }
-        "UserAlreadyExists" => crate::error::CreateUserError::UserAlreadyExistsFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "UserAlreadyExists" => {
+            crate::operation::create_user::CreateUserError::UserAlreadyExistsFault({
                 #[allow(unused_mut)]
-                let mut output = crate::error::user_already_exists_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_user_already_exists_fault::de_user_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUserError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "UserQuotaExceeded" => crate::error::CreateUserError::UserQuotaExceededFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::UserAlreadyExistsFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_user_already_exists_fault::de_user_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_user::CreateUserError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "UserQuotaExceeded" => {
+            crate::operation::create_user::CreateUserError::UserQuotaExceededFault({
                 #[allow(unused_mut)]
-                let mut output = crate::error::user_quota_exceeded_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_user_quota_exceeded_fault::de_user_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUserError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::CreateUserError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::UserQuotaExceededFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_user_quota_exceeded_fault::de_user_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_user::CreateUserError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::create_user::CreateUserError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_user_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::CreateUserOutput, crate::error::CreateUserError> {
+) -> std::result::Result<
+    crate::operation::create_user::CreateUserOutput,
+    crate::operation::create_user::CreateUserError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::create_user_output::Builder::default();
+        let mut output =
+            crate::operation::create_user::builders::CreateUserOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_create_user::de_create_user(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::CreateUserError::unhandled)?;
+        .map_err(crate::operation::create_user::CreateUserError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -157,8 +177,11 @@ pub fn de_create_user_http_response(
 #[allow(unused_mut)]
 pub fn de_create_user(
     inp: &[u8],
-    mut builder: crate::output::create_user_output::Builder,
-) -> Result<crate::output::create_user_output::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    mut builder: crate::operation::create_user::builders::CreateUserOutputBuilder,
+) -> Result<
+    crate::operation::create_user::builders::CreateUserOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

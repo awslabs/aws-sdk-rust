@@ -2,7 +2,7 @@
 pub(crate) fn de_instance_health_status_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<std::string::String, crate::model::HealthStatus>>,
+    Option<std::collections::HashMap<std::string::String, crate::types::HealthStatus>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -27,7 +27,7 @@ where
                         )?
                         .map(|s| {
                             s.to_unescaped()
-                                .map(|u| crate::model::HealthStatus::from(u.as_ref()))
+                                .map(|u| crate::types::HealthStatus::from(u.as_ref()))
                         })
                         .transpose()?;
                         if let Some(value) = value {

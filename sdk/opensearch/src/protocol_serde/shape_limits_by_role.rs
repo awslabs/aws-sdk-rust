@@ -2,7 +2,7 @@
 pub(crate) fn de_limits_by_role<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<std::string::String, crate::model::Limits>>,
+    Option<std::collections::HashMap<std::string::String, crate::types::Limits>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

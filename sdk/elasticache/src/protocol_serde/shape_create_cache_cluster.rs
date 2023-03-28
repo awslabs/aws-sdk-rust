@@ -3,274 +3,264 @@
 pub fn de_create_cache_cluster_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateCacheClusterOutput,
-    crate::error::CreateCacheClusterError,
+    crate::operation::create_cache_cluster::CreateCacheClusterOutput,
+    crate::operation::create_cache_cluster::CreateCacheClusterError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::CreateCacheClusterError::unhandled)?;
+        .map_err(crate::operation::create_cache_cluster::CreateCacheClusterError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::CreateCacheClusterError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::create_cache_cluster::CreateCacheClusterError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CacheClusterAlreadyExists" => {
-            crate::error::CreateCacheClusterError::CacheClusterAlreadyExistsFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "CacheClusterAlreadyExists" => crate::operation::create_cache_cluster::CreateCacheClusterError::CacheClusterAlreadyExistsFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::cache_cluster_already_exists_fault::Builder::default();
+                    let mut output = crate::types::error::builders::CacheClusterAlreadyExistsFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_cache_cluster_already_exists_fault::de_cache_cluster_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheClusterError::unhandled)?;
+                    output = crate::protocol_serde::shape_cache_cluster_already_exists_fault::de_cache_cluster_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_cache_cluster::CreateCacheClusterError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "CacheParameterGroupNotFound" => {
-            crate::error::CreateCacheClusterError::CacheParameterGroupNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "CacheParameterGroupNotFound" => crate::operation::create_cache_cluster::CreateCacheClusterError::CacheParameterGroupNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::cache_parameter_group_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::CacheParameterGroupNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_cache_parameter_group_not_found_fault::de_cache_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheClusterError::unhandled)?;
+                    output = crate::protocol_serde::shape_cache_parameter_group_not_found_fault::de_cache_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_cache_cluster::CreateCacheClusterError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "CacheSecurityGroupNotFound" => {
-            crate::error::CreateCacheClusterError::CacheSecurityGroupNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "CacheSecurityGroupNotFound" => crate::operation::create_cache_cluster::CreateCacheClusterError::CacheSecurityGroupNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::cache_security_group_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::CacheSecurityGroupNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_cache_security_group_not_found_fault::de_cache_security_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheClusterError::unhandled)?;
+                    output = crate::protocol_serde::shape_cache_security_group_not_found_fault::de_cache_security_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_cache_cluster::CreateCacheClusterError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "CacheSubnetGroupNotFoundFault" => {
-            crate::error::CreateCacheClusterError::CacheSubnetGroupNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "CacheSubnetGroupNotFoundFault" => crate::operation::create_cache_cluster::CreateCacheClusterError::CacheSubnetGroupNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::cache_subnet_group_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::CacheSubnetGroupNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_cache_subnet_group_not_found_fault::de_cache_subnet_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheClusterError::unhandled)?;
+                    output = crate::protocol_serde::shape_cache_subnet_group_not_found_fault::de_cache_subnet_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_cache_cluster::CreateCacheClusterError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ClusterQuotaForCustomerExceeded" => {
-            crate::error::CreateCacheClusterError::ClusterQuotaForCustomerExceededFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ClusterQuotaForCustomerExceeded" => crate::operation::create_cache_cluster::CreateCacheClusterError::ClusterQuotaForCustomerExceededFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::cluster_quota_for_customer_exceeded_fault::Builder::default();
+                    let mut output = crate::types::error::builders::ClusterQuotaForCustomerExceededFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_cluster_quota_for_customer_exceeded_fault::de_cluster_quota_for_customer_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheClusterError::unhandled)?;
+                    output = crate::protocol_serde::shape_cluster_quota_for_customer_exceeded_fault::de_cluster_quota_for_customer_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_cache_cluster::CreateCacheClusterError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InsufficientCacheClusterCapacity" => {
-            crate::error::CreateCacheClusterError::InsufficientCacheClusterCapacityFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InsufficientCacheClusterCapacity" => crate::operation::create_cache_cluster::CreateCacheClusterError::InsufficientCacheClusterCapacityFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::insufficient_cache_cluster_capacity_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InsufficientCacheClusterCapacityFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_insufficient_cache_cluster_capacity_fault::de_insufficient_cache_cluster_capacity_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheClusterError::unhandled)?;
+                    output = crate::protocol_serde::shape_insufficient_cache_cluster_capacity_fault::de_insufficient_cache_cluster_capacity_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_cache_cluster::CreateCacheClusterError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidParameterCombination" => {
-            crate::error::CreateCacheClusterError::InvalidParameterCombinationException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidParameterCombination" => crate::operation::create_cache_cluster::CreateCacheClusterError::InvalidParameterCombinationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_parameter_combination_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidParameterCombinationExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_combination_exception::de_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheClusterError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_combination_exception::de_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_cache_cluster::CreateCacheClusterError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidParameterValue" => {
-            crate::error::CreateCacheClusterError::InvalidParameterValueException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidParameterValue" => crate::operation::create_cache_cluster::CreateCacheClusterError::InvalidParameterValueException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_parameter_value_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheClusterError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_cache_cluster::CreateCacheClusterError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidReplicationGroupState" => {
-            crate::error::CreateCacheClusterError::InvalidReplicationGroupStateFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidReplicationGroupState" => crate::operation::create_cache_cluster::CreateCacheClusterError::InvalidReplicationGroupStateFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_replication_group_state_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidReplicationGroupStateFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_replication_group_state_fault::de_invalid_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheClusterError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_replication_group_state_fault::de_invalid_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_cache_cluster::CreateCacheClusterError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidVPCNetworkStateFault" => {
-            crate::error::CreateCacheClusterError::InvalidVpcNetworkStateFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidVPCNetworkStateFault" => crate::operation::create_cache_cluster::CreateCacheClusterError::InvalidVpcNetworkStateFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_vpc_network_state_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidVpcNetworkStateFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_vpc_network_state_fault::de_invalid_vpc_network_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheClusterError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_vpc_network_state_fault::de_invalid_vpc_network_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_cache_cluster::CreateCacheClusterError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "NodeQuotaForClusterExceeded" => {
-            crate::error::CreateCacheClusterError::NodeQuotaForClusterExceededFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "NodeQuotaForClusterExceeded" => crate::operation::create_cache_cluster::CreateCacheClusterError::NodeQuotaForClusterExceededFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::node_quota_for_cluster_exceeded_fault::Builder::default();
+                    let mut output = crate::types::error::builders::NodeQuotaForClusterExceededFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_node_quota_for_cluster_exceeded_fault::de_node_quota_for_cluster_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheClusterError::unhandled)?;
+                    output = crate::protocol_serde::shape_node_quota_for_cluster_exceeded_fault::de_node_quota_for_cluster_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_cache_cluster::CreateCacheClusterError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "NodeQuotaForCustomerExceeded" => {
-            crate::error::CreateCacheClusterError::NodeQuotaForCustomerExceededFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "NodeQuotaForCustomerExceeded" => crate::operation::create_cache_cluster::CreateCacheClusterError::NodeQuotaForCustomerExceededFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::node_quota_for_customer_exceeded_fault::Builder::default();
+                    let mut output = crate::types::error::builders::NodeQuotaForCustomerExceededFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_node_quota_for_customer_exceeded_fault::de_node_quota_for_customer_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheClusterError::unhandled)?;
+                    output = crate::protocol_serde::shape_node_quota_for_customer_exceeded_fault::de_node_quota_for_customer_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_cache_cluster::CreateCacheClusterError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ReplicationGroupNotFoundFault" => {
-            crate::error::CreateCacheClusterError::ReplicationGroupNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ReplicationGroupNotFoundFault" => crate::operation::create_cache_cluster::CreateCacheClusterError::ReplicationGroupNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::replication_group_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::ReplicationGroupNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_replication_group_not_found_fault::de_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheClusterError::unhandled)?;
+                    output = crate::protocol_serde::shape_replication_group_not_found_fault::de_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_cache_cluster::CreateCacheClusterError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "TagQuotaPerResourceExceeded" => {
-            crate::error::CreateCacheClusterError::TagQuotaPerResourceExceeded({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TagQuotaPerResourceExceeded" => crate::operation::create_cache_cluster::CreateCacheClusterError::TagQuotaPerResourceExceeded({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::tag_quota_per_resource_exceeded::Builder::default();
+                    let mut output = crate::types::error::builders::TagQuotaPerResourceExceededBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_tag_quota_per_resource_exceeded::de_tag_quota_per_resource_exceeded_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheClusterError::unhandled)?;
+                    output = crate::protocol_serde::shape_tag_quota_per_resource_exceeded::de_tag_quota_per_resource_exceeded_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_cache_cluster::CreateCacheClusterError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::CreateCacheClusterError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::create_cache_cluster::CreateCacheClusterError::generic(generic)
     })
 }
 
@@ -278,18 +268,18 @@ pub fn de_create_cache_cluster_http_error(
 pub fn de_create_cache_cluster_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateCacheClusterOutput,
-    crate::error::CreateCacheClusterError,
+    crate::operation::create_cache_cluster::CreateCacheClusterOutput,
+    crate::operation::create_cache_cluster::CreateCacheClusterError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::create_cache_cluster_output::Builder::default();
+        let mut output = crate::operation::create_cache_cluster::builders::CreateCacheClusterOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_create_cache_cluster::de_create_cache_cluster(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::CreateCacheClusterError::unhandled)?;
+        .map_err(crate::operation::create_cache_cluster::CreateCacheClusterError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -300,9 +290,9 @@ pub fn de_create_cache_cluster_http_response(
 #[allow(unused_mut)]
 pub fn de_create_cache_cluster(
     inp: &[u8],
-    mut builder: crate::output::create_cache_cluster_output::Builder,
+    mut builder: crate::operation::create_cache_cluster::builders::CreateCacheClusterOutputBuilder,
 ) -> Result<
-    crate::output::create_cache_cluster_output::Builder,
+    crate::operation::create_cache_cluster::builders::CreateCacheClusterOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

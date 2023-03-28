@@ -22,17 +22,17 @@ pub(crate) fn de_location_header(
 pub fn de_response_headers_policy_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::ResponseHeadersPolicy>,
-    crate::error::CreateResponseHeadersPolicyError,
+    std::option::Option<crate::types::ResponseHeadersPolicy>,
+    crate::operation::create_response_headers_policy::CreateResponseHeadersPolicyError,
 > {
     (!body.is_empty()).then(||{
-        crate::protocol_serde::shape_create_response_headers_policy_output::de_response_headers_policy(body).map_err(crate::error::CreateResponseHeadersPolicyError::unhandled)
+        crate::protocol_serde::shape_create_response_headers_policy_output::de_response_headers_policy(body).map_err(crate::operation::create_response_headers_policy::CreateResponseHeadersPolicyError::unhandled)
     }).transpose()
 }
 
 pub fn de_response_headers_policy(
     inp: &[u8],
-) -> Result<crate::model::ResponseHeadersPolicy, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::ResponseHeadersPolicy, aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;

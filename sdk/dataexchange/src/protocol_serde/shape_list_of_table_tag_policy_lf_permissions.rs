@@ -2,7 +2,7 @@
 pub(crate) fn de_list_of_table_tag_policy_lf_permissions<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::TableTagPolicyLfPermission>>,
+    Option<std::vec::Vec<crate::types::TableTagPolicyLfPermission>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -29,7 +29,7 @@ where
                         )?
                         .map(|s| {
                             s.to_unescaped()
-                                .map(|u| crate::model::TableTagPolicyLfPermission::from(u.as_ref()))
+                                .map(|u| crate::types::TableTagPolicyLfPermission::from(u.as_ref()))
                         })
                         .transpose()?;
                         if let Some(value) = value {

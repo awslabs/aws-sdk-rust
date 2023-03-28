@@ -2,7 +2,7 @@
 pub(crate) fn de_orderable_replication_instance_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::OrderableReplicationInstance>>,
+    Option<std::vec::Vec<crate::types::OrderableReplicationInstance>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

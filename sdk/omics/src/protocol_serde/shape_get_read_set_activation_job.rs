@@ -3,124 +3,129 @@
 pub fn de_get_read_set_activation_job_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetReadSetActivationJobOutput,
-    crate::error::GetReadSetActivationJobError,
+    crate::operation::get_read_set_activation_job::GetReadSetActivationJobOutput,
+    crate::operation::get_read_set_activation_job::GetReadSetActivationJobError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetReadSetActivationJobError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::get_read_set_activation_job::GetReadSetActivationJobError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::error::GetReadSetActivationJobError::unhandled(
+        None => return Err(
+            crate::operation::get_read_set_activation_job::GetReadSetActivationJobError::unhandled(
                 generic,
-            ))
-        }
+            ),
+        ),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => {
-            crate::error::GetReadSetActivationJobError::AccessDeniedException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::access_denied_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetReadSetActivationJobError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InternalServerException" => {
-            crate::error::GetReadSetActivationJobError::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetReadSetActivationJobError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "RequestTimeoutException" => {
-            crate::error::GetReadSetActivationJobError::RequestTimeoutException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::request_timeout_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_request_timeout_exception::de_request_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetReadSetActivationJobError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ResourceNotFoundException" => {
-            crate::error::GetReadSetActivationJobError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetReadSetActivationJobError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ThrottlingException" => crate::error::GetReadSetActivationJobError::ThrottlingException({
+        "AccessDeniedException" => crate::operation::get_read_set_activation_job::GetReadSetActivationJobError::AccessDeniedException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::throttling_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetReadSetActivationJobError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_read_set_activation_job::GetReadSetActivationJobError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "ValidationException" => crate::error::GetReadSetActivationJobError::ValidationException({
+        "InternalServerException" => crate::operation::get_read_set_activation_job::GetReadSetActivationJobError::InternalServerException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetReadSetActivationJobError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_read_set_activation_job::GetReadSetActivationJobError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::GetReadSetActivationJobError::generic(generic),
+        "RequestTimeoutException" => crate::operation::get_read_set_activation_job::GetReadSetActivationJobError::RequestTimeoutException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::RequestTimeoutExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_request_timeout_exception::de_request_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_read_set_activation_job::GetReadSetActivationJobError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::get_read_set_activation_job::GetReadSetActivationJobError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_read_set_activation_job::GetReadSetActivationJobError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ThrottlingException" => crate::operation::get_read_set_activation_job::GetReadSetActivationJobError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_read_set_activation_job::GetReadSetActivationJobError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ValidationException" => crate::operation::get_read_set_activation_job::GetReadSetActivationJobError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_read_set_activation_job::GetReadSetActivationJobError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::get_read_set_activation_job::GetReadSetActivationJobError::generic(generic)
     })
 }
 
@@ -128,14 +133,14 @@ pub fn de_get_read_set_activation_job_http_error(
 pub fn de_get_read_set_activation_job_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetReadSetActivationJobOutput,
-    crate::error::GetReadSetActivationJobError,
+    crate::operation::get_read_set_activation_job::GetReadSetActivationJobOutput,
+    crate::operation::get_read_set_activation_job::GetReadSetActivationJobError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_read_set_activation_job_output::Builder::default();
+        let mut output = crate::operation::get_read_set_activation_job::builders::GetReadSetActivationJobOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_get_read_set_activation_job::de_get_read_set_activation_job(response.body().as_ref(), output).map_err(crate::error::GetReadSetActivationJobError::unhandled)?;
+        output = crate::protocol_serde::shape_get_read_set_activation_job::de_get_read_set_activation_job(response.body().as_ref(), output).map_err(crate::operation::get_read_set_activation_job::GetReadSetActivationJobError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -145,9 +150,9 @@ pub fn de_get_read_set_activation_job_http_response(
 
 pub(crate) fn de_get_read_set_activation_job(
     value: &[u8],
-    mut builder: crate::output::get_read_set_activation_job_output::Builder,
+    mut builder: crate::operation::get_read_set_activation_job::builders::GetReadSetActivationJobOutputBuilder,
 ) -> Result<
-    crate::output::get_read_set_activation_job_output::Builder,
+    crate::operation::get_read_set_activation_job::builders::GetReadSetActivationJobOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =
@@ -206,7 +211,7 @@ pub(crate) fn de_get_read_set_activation_job(
                             )?
                             .map(|s| {
                                 s.to_unescaped().map(|u| {
-                                    crate::model::ReadSetActivationJobStatus::from(u.as_ref())
+                                    crate::types::ReadSetActivationJobStatus::from(u.as_ref())
                                 })
                             })
                             .transpose()?,

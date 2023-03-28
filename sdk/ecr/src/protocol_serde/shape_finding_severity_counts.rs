@@ -2,7 +2,7 @@
 pub(crate) fn de_finding_severity_counts<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<crate::model::FindingSeverity, i32>>,
+    Option<std::collections::HashMap<crate::types::FindingSeverity, i32>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -23,7 +23,7 @@ where
                     Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         let key = key
                             .to_unescaped()
-                            .map(|u| crate::model::FindingSeverity::from(u.as_ref()))?;
+                            .map(|u| crate::types::FindingSeverity::from(u.as_ref()))?;
                         let value = aws_smithy_json::deserialize::token::expect_number_or_null(
                             tokens.next(),
                         )?

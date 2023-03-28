@@ -2,7 +2,7 @@
 pub(crate) fn de_kafka_cluster_encryption_in_transit_description<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::KafkaClusterEncryptionInTransitDescription>,
+    Option<crate::types::KafkaClusterEncryptionInTransitDescription>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,8 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::kafka_cluster_encryption_in_transit_description::Builder::default();
+                crate::types::builders::KafkaClusterEncryptionInTransitDescriptionBuilder::default(
+                );
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -31,7 +32,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::KafkaClusterEncryptionInTransitType::from(
+                                            crate::types::KafkaClusterEncryptionInTransitType::from(
                                                 u.as_ref(),
                                             )
                                         })

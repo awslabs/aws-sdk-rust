@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_multiplex_output_destination<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::MultiplexOutputDestination>>,
+    Option<std::vec::Vec<crate::types::MultiplexOutputDestination>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

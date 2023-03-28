@@ -2,7 +2,7 @@
 pub fn de_snapshot_recycle_bin_info_list(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::SnapshotRecycleBinInfo>,
+    std::vec::Vec<crate::types::SnapshotRecycleBinInfo>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

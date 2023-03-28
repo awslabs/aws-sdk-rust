@@ -2,7 +2,7 @@
 pub(crate) fn de_action_type_urls<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ActionTypeUrls>,
+    Option<crate::types::ActionTypeUrls>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::action_type_urls::Builder::default();
+            let mut builder = crate::types::builders::ActionTypeUrlsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -84,7 +84,7 @@ where
 
 pub fn ser_action_type_urls(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::ActionTypeUrls,
+    input: &crate::types::ActionTypeUrls,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.configuration_url {
         object.key("configurationUrl").string(var_1.as_str());

@@ -2,7 +2,7 @@
 pub(crate) fn de_aws_ecs_task_definition_container_definitions_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AwsEcsTaskDefinitionContainerDefinitionsDetails>>,
+    Option<std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsDetails>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

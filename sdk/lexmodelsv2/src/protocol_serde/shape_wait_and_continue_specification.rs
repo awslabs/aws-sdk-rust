@@ -2,7 +2,7 @@
 pub(crate) fn de_wait_and_continue_specification<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::WaitAndContinueSpecification>,
+    Option<crate::types::WaitAndContinueSpecification>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::wait_and_continue_specification::Builder::default();
+            let mut builder =
+                crate::types::builders::WaitAndContinueSpecificationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -70,7 +71,7 @@ where
 
 pub fn ser_wait_and_continue_specification(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::WaitAndContinueSpecification,
+    input: &crate::types::WaitAndContinueSpecification,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.waiting_response {
         #[allow(unused_mut)]

@@ -2,7 +2,7 @@
 pub(crate) fn de_associated_client_device_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AssociatedClientDevice>>,
+    Option<std::vec::Vec<crate::types::AssociatedClientDevice>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

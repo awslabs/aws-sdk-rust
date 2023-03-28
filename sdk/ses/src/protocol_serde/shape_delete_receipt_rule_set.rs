@@ -3,37 +3,45 @@
 pub fn de_delete_receipt_rule_set_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteReceiptRuleSetOutput,
-    crate::error::DeleteReceiptRuleSetError,
+    crate::operation::delete_receipt_rule_set::DeleteReceiptRuleSetOutput,
+    crate::operation::delete_receipt_rule_set::DeleteReceiptRuleSetError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteReceiptRuleSetError::unhandled)?;
+        .map_err(crate::operation::delete_receipt_rule_set::DeleteReceiptRuleSetError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DeleteReceiptRuleSetError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::delete_receipt_rule_set::DeleteReceiptRuleSetError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CannotDelete" => crate::error::DeleteReceiptRuleSetError::CannotDeleteException({
+        "CannotDelete" => crate::operation::delete_receipt_rule_set::DeleteReceiptRuleSetError::CannotDeleteException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::cannot_delete_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_cannot_delete_exception::de_cannot_delete_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteReceiptRuleSetError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::CannotDeleteExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_cannot_delete_exception::de_cannot_delete_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_receipt_rule_set::DeleteReceiptRuleSetError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::DeleteReceiptRuleSetError::generic(generic),
+        _ => crate::operation::delete_receipt_rule_set::DeleteReceiptRuleSetError::generic(generic)
     })
 }
 
@@ -41,12 +49,12 @@ pub fn de_delete_receipt_rule_set_http_error(
 pub fn de_delete_receipt_rule_set_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteReceiptRuleSetOutput,
-    crate::error::DeleteReceiptRuleSetError,
+    crate::operation::delete_receipt_rule_set::DeleteReceiptRuleSetOutput,
+    crate::operation::delete_receipt_rule_set::DeleteReceiptRuleSetError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_receipt_rule_set_output::Builder::default();
+        let mut output = crate::operation::delete_receipt_rule_set::builders::DeleteReceiptRuleSetOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

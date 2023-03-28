@@ -2,20 +2,22 @@
 pub fn de_policy_status_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::PolicyStatus>,
-    crate::error::GetBucketPolicyStatusError,
+    std::option::Option<crate::types::PolicyStatus>,
+    crate::operation::get_bucket_policy_status::GetBucketPolicyStatusError,
 > {
     (!body.is_empty())
         .then(|| {
             crate::protocol_serde::shape_get_bucket_policy_status_output::de_policy_status(body)
-                .map_err(crate::error::GetBucketPolicyStatusError::unhandled)
+                .map_err(
+                crate::operation::get_bucket_policy_status::GetBucketPolicyStatusError::unhandled,
+            )
         })
         .transpose()
 }
 
 pub fn de_policy_status(
     inp: &[u8],
-) -> Result<crate::model::PolicyStatus, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::PolicyStatus, aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;

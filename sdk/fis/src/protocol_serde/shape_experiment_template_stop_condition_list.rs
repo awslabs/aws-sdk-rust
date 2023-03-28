@@ -2,7 +2,7 @@
 pub(crate) fn de_experiment_template_stop_condition_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ExperimentTemplateStopCondition>>,
+    Option<std::vec::Vec<crate::types::ExperimentTemplateStopCondition>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

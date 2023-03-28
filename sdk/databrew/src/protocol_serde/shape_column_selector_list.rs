@@ -2,7 +2,7 @@
 pub(crate) fn de_column_selector_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ColumnSelector>>,
+    Option<std::vec::Vec<crate::types::ColumnSelector>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

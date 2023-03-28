@@ -2,7 +2,7 @@
 pub(crate) fn de_list_of_database_lf_tag_policy_permissions<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DatabaseLfTagPolicyPermission>>,
+    Option<std::vec::Vec<crate::types::DatabaseLfTagPolicyPermission>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -29,7 +29,7 @@ where
                         )?
                         .map(|s| {
                             s.to_unescaped().map(|u| {
-                                crate::model::DatabaseLfTagPolicyPermission::from(u.as_ref())
+                                crate::types::DatabaseLfTagPolicyPermission::from(u.as_ref())
                             })
                         })
                         .transpose()?;

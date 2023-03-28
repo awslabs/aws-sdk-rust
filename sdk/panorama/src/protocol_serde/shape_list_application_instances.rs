@@ -3,64 +3,65 @@
 pub fn de_list_application_instances_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListApplicationInstancesOutput,
-    crate::error::ListApplicationInstancesError,
+    crate::operation::list_application_instances::ListApplicationInstancesOutput,
+    crate::operation::list_application_instances::ListApplicationInstancesError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListApplicationInstancesError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::list_application_instances::ListApplicationInstancesError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::error::ListApplicationInstancesError::unhandled(
+        None => return Err(
+            crate::operation::list_application_instances::ListApplicationInstancesError::unhandled(
                 generic,
-            ))
-        }
+            ),
+        ),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => {
-            crate::error::ListApplicationInstancesError::AccessDeniedException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "AccessDeniedException" => crate::operation::list_application_instances::ListApplicationInstancesError::AccessDeniedException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListApplicationInstancesError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_application_instances::ListApplicationInstancesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InternalServerException" => {
-            crate::error::ListApplicationInstancesError::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InternalServerException" => crate::operation::list_application_instances::ListApplicationInstancesError::InternalServerException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListApplicationInstancesError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_application_instances::ListApplicationInstancesError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::protocol_serde::shape_internal_server_exception::de_retry_after_seconds_header(response.headers())
-                                                .map_err(|_|crate::error::ListApplicationInstancesError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::operation::list_application_instances::ListApplicationInstancesError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
                     );
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::ListApplicationInstancesError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::list_application_instances::ListApplicationInstancesError::generic(generic)
     })
 }
 
@@ -68,19 +69,14 @@ pub fn de_list_application_instances_http_error(
 pub fn de_list_application_instances_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListApplicationInstancesOutput,
-    crate::error::ListApplicationInstancesError,
+    crate::operation::list_application_instances::ListApplicationInstancesOutput,
+    crate::operation::list_application_instances::ListApplicationInstancesError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_application_instances_output::Builder::default();
+        let mut output = crate::operation::list_application_instances::builders::ListApplicationInstancesOutputBuilder::default();
         let _ = response;
-        output =
-            crate::protocol_serde::shape_list_application_instances::de_list_application_instances(
-                response.body().as_ref(),
-                output,
-            )
-            .map_err(crate::error::ListApplicationInstancesError::unhandled)?;
+        output = crate::protocol_serde::shape_list_application_instances::de_list_application_instances(response.body().as_ref(), output).map_err(crate::operation::list_application_instances::ListApplicationInstancesError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -90,9 +86,9 @@ pub fn de_list_application_instances_http_response(
 
 pub(crate) fn de_list_application_instances(
     value: &[u8],
-    mut builder: crate::output::list_application_instances_output::Builder,
+    mut builder: crate::operation::list_application_instances::builders::ListApplicationInstancesOutputBuilder,
 ) -> Result<
-    crate::output::list_application_instances_output::Builder,
+    crate::operation::list_application_instances::builders::ListApplicationInstancesOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

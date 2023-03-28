@@ -2,7 +2,7 @@
 pub(crate) fn de_glue_studio_schema_column_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::GlueStudioSchemaColumn>>,
+    Option<std::vec::Vec<crate::types::GlueStudioSchemaColumn>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

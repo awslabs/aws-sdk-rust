@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_managed_execution(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::ManagedExecution,
+    input: &crate::types::ManagedExecution,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Active");
@@ -14,9 +14,9 @@ pub fn ser_managed_execution(
 
 pub fn de_managed_execution(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::ManagedExecution, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::ManagedExecution, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::ManagedExecution::builder();
+    let mut builder = crate::types::ManagedExecution::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Active") /* Active com.amazonaws.cloudformation#ManagedExecution$Active */ =>  {

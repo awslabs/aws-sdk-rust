@@ -2,7 +2,7 @@
 pub(crate) fn de_sidewalk_account_info_with_fingerprint<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::SidewalkAccountInfoWithFingerprint>,
+    Option<crate::types::SidewalkAccountInfoWithFingerprint>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::sidewalk_account_info_with_fingerprint::Builder::default();
+                crate::types::builders::SidewalkAccountInfoWithFingerprintBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

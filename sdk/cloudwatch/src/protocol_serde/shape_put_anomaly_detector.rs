@@ -3,108 +3,111 @@
 pub fn de_put_anomaly_detector_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::PutAnomalyDetectorOutput,
-    crate::error::PutAnomalyDetectorError,
+    crate::operation::put_anomaly_detector::PutAnomalyDetectorOutput,
+    crate::operation::put_anomaly_detector::PutAnomalyDetectorError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::PutAnomalyDetectorError::unhandled)?;
+        .map_err(crate::operation::put_anomaly_detector::PutAnomalyDetectorError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::PutAnomalyDetectorError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::put_anomaly_detector::PutAnomalyDetectorError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServiceError" => crate::error::PutAnomalyDetectorError::InternalServiceFault({
+        "InternalServiceError" => crate::operation::put_anomaly_detector::PutAnomalyDetectorError::InternalServiceFault({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_service_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_service_fault::de_internal_service_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PutAnomalyDetectorError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InternalServiceFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_service_fault::de_internal_service_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::put_anomaly_detector::PutAnomalyDetectorError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "InvalidParameterCombination" => {
-            crate::error::PutAnomalyDetectorError::InvalidParameterCombinationException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidParameterCombination" => crate::operation::put_anomaly_detector::PutAnomalyDetectorError::InvalidParameterCombinationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_parameter_combination_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidParameterCombinationExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_combination_exception::de_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutAnomalyDetectorError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_combination_exception::de_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::put_anomaly_detector::PutAnomalyDetectorError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidParameterValue" => {
-            crate::error::PutAnomalyDetectorError::InvalidParameterValueException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidParameterValue" => crate::operation::put_anomaly_detector::PutAnomalyDetectorError::InvalidParameterValueException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_parameter_value_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutAnomalyDetectorError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::put_anomaly_detector::PutAnomalyDetectorError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "LimitExceededException" => {
-            crate::error::PutAnomalyDetectorError::LimitExceededException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "LimitExceededException" => crate::operation::put_anomaly_detector::PutAnomalyDetectorError::LimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutAnomalyDetectorError::unhandled)?;
+                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::put_anomaly_detector::PutAnomalyDetectorError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "MissingParameter" => {
-            crate::error::PutAnomalyDetectorError::MissingRequiredParameterException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "MissingParameter" => crate::operation::put_anomaly_detector::PutAnomalyDetectorError::MissingRequiredParameterException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::missing_required_parameter_exception::Builder::default();
+                    let mut output = crate::types::error::builders::MissingRequiredParameterExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_missing_required_parameter_exception::de_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutAnomalyDetectorError::unhandled)?;
+                    output = crate::protocol_serde::shape_missing_required_parameter_exception::de_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::put_anomaly_detector::PutAnomalyDetectorError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::PutAnomalyDetectorError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::put_anomaly_detector::PutAnomalyDetectorError::generic(generic)
     })
 }
 
@@ -112,12 +115,12 @@ pub fn de_put_anomaly_detector_http_error(
 pub fn de_put_anomaly_detector_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::PutAnomalyDetectorOutput,
-    crate::error::PutAnomalyDetectorError,
+    crate::operation::put_anomaly_detector::PutAnomalyDetectorOutput,
+    crate::operation::put_anomaly_detector::PutAnomalyDetectorError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::put_anomaly_detector_output::Builder::default();
+        let mut output = crate::operation::put_anomaly_detector::builders::PutAnomalyDetectorOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

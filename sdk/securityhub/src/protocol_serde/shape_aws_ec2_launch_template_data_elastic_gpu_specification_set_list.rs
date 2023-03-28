@@ -2,7 +2,7 @@
 pub(crate) fn de_aws_ec2_launch_template_data_elastic_gpu_specification_set_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails>>,
+    Option<std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

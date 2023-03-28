@@ -2,7 +2,7 @@
 pub(crate) fn de_sheet_control_layout_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SheetControlLayout>>,
+    Option<std::vec::Vec<crate::types::SheetControlLayout>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,27 +2,33 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_cli_token_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::CreateCliTokenOutput, crate::error::CreateCliTokenError> {
+) -> std::result::Result<
+    crate::operation::create_cli_token::CreateCliTokenOutput,
+    crate::operation::create_cli_token::CreateCliTokenError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::CreateCliTokenError::unhandled)?;
+        .map_err(crate::operation::create_cli_token::CreateCliTokenError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::CreateCliTokenError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::create_cli_token::CreateCliTokenError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ResourceNotFoundException" => {
-            crate::error::CreateCliTokenError::ResourceNotFoundException({
+            crate::operation::create_cli_token::CreateCliTokenError::ResourceNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCliTokenError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_cli_token::CreateCliTokenError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -32,23 +38,27 @@ pub fn de_create_cli_token_http_error(
                 tmp
             })
         }
-        _ => crate::error::CreateCliTokenError::generic(generic),
+        _ => crate::operation::create_cli_token::CreateCliTokenError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_cli_token_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::CreateCliTokenOutput, crate::error::CreateCliTokenError> {
+) -> std::result::Result<
+    crate::operation::create_cli_token::CreateCliTokenOutput,
+    crate::operation::create_cli_token::CreateCliTokenError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::create_cli_token_output::Builder::default();
+        let mut output =
+            crate::operation::create_cli_token::builders::CreateCliTokenOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_create_cli_token::de_create_cli_token(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::CreateCliTokenError::unhandled)?;
+        .map_err(crate::operation::create_cli_token::CreateCliTokenError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -58,9 +68,9 @@ pub fn de_create_cli_token_http_response(
 
 pub(crate) fn de_create_cli_token(
     value: &[u8],
-    mut builder: crate::output::create_cli_token_output::Builder,
+    mut builder: crate::operation::create_cli_token::builders::CreateCliTokenOutputBuilder,
 ) -> Result<
-    crate::output::create_cli_token_output::Builder,
+    crate::operation::create_cli_token::builders::CreateCliTokenOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

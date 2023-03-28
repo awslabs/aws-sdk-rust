@@ -2,7 +2,7 @@
 pub fn de_dashboard_validation_messages(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::DashboardValidationMessage>,
+    std::vec::Vec<crate::types::DashboardValidationMessage>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

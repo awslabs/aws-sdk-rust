@@ -2,50 +2,57 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_receipt_rule_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeleteReceiptRuleOutput, crate::error::DeleteReceiptRuleError>
-{
+) -> std::result::Result<
+    crate::operation::delete_receipt_rule::DeleteReceiptRuleOutput,
+    crate::operation::delete_receipt_rule::DeleteReceiptRuleError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteReceiptRuleError::unhandled)?;
+        .map_err(crate::operation::delete_receipt_rule::DeleteReceiptRuleError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DeleteReceiptRuleError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::delete_receipt_rule::DeleteReceiptRuleError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "RuleSetDoesNotExist" => {
-            crate::error::DeleteReceiptRuleError::RuleSetDoesNotExistException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "RuleSetDoesNotExist" => crate::operation::delete_receipt_rule::DeleteReceiptRuleError::RuleSetDoesNotExistException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::rule_set_does_not_exist_exception::Builder::default();
+                    let mut output = crate::types::error::builders::RuleSetDoesNotExistExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_rule_set_does_not_exist_exception::de_rule_set_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteReceiptRuleError::unhandled)?;
+                    output = crate::protocol_serde::shape_rule_set_does_not_exist_exception::de_rule_set_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_receipt_rule::DeleteReceiptRuleError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DeleteReceiptRuleError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::delete_receipt_rule::DeleteReceiptRuleError::generic(generic)
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_receipt_rule_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeleteReceiptRuleOutput, crate::error::DeleteReceiptRuleError>
-{
+) -> std::result::Result<
+    crate::operation::delete_receipt_rule::DeleteReceiptRuleOutput,
+    crate::operation::delete_receipt_rule::DeleteReceiptRuleError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_receipt_rule_output::Builder::default();
+        let mut output = crate::operation::delete_receipt_rule::builders::DeleteReceiptRuleOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

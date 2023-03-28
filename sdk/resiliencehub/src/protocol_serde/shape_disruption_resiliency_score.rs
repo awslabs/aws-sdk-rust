@@ -2,7 +2,7 @@
 pub(crate) fn de_disruption_resiliency_score<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<crate::model::DisruptionType, f64>>,
+    Option<std::collections::HashMap<crate::types::DisruptionType, f64>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -23,7 +23,7 @@ where
                     Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         let key = key
                             .to_unescaped()
-                            .map(|u| crate::model::DisruptionType::from(u.as_ref()))?;
+                            .map(|u| crate::types::DisruptionType::from(u.as_ref()))?;
                         let value = aws_smithy_json::deserialize::token::expect_number_or_null(
                             tokens.next(),
                         )?

@@ -4,19 +4,19 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>User does not have sufficient access to perform this action. </p>
-    AccessDeniedException(crate::error::AccessDeniedException),
+    AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>Updating or deleting a resource can cause an inconsistent state.</p>
-    ConflictException(crate::error::ConflictException),
+    ConflictException(crate::types::error::ConflictException),
     /// <p>Unexpected error during processing of request.</p>
-    InternalServerException(crate::error::InternalServerException),
+    InternalServerException(crate::types::error::InternalServerException),
     /// <p>Request references a resource which does not exist.</p>
-    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>Request would cause a service quota to be exceeded. The limit is 10 concurrent operations. </p>
-    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p> Request was denied due to request throttling.</p>
-    ThrottlingException(crate::error::ThrottlingException),
+    ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
-    ValidationException(crate::error::ValidationException),
+    ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled),
 }
@@ -34,108 +34,21 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DisableControlError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DisableControlError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DisableControlError> for Error {
-    fn from(err: crate::error::DisableControlError) -> Self {
-        match err {
-            crate::error::DisableControlError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::DisableControlError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::DisableControlError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::DisableControlError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DisableControlError::ServiceQuotaExceededException(inner) => {
-                Error::ServiceQuotaExceededException(inner)
-            }
-            crate::error::DisableControlError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::DisableControlError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::DisableControlError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::EnableControlError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::EnableControlError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::EnableControlError> for Error {
-    fn from(err: crate::error::EnableControlError) -> Self {
-        match err {
-            crate::error::EnableControlError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::EnableControlError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::EnableControlError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::EnableControlError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::EnableControlError::ServiceQuotaExceededException(inner) => {
-                Error::ServiceQuotaExceededException(inner)
-            }
-            crate::error::EnableControlError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::EnableControlError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::EnableControlError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetControlOperationError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::disable_control::DisableControlError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetControlOperationError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::disable_control::DisableControlError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -152,34 +65,31 @@ where
         }
     }
 }
-impl From<crate::error::GetControlOperationError> for Error {
-    fn from(err: crate::error::GetControlOperationError) -> Self {
+impl From<crate::operation::disable_control::DisableControlError> for Error {
+    fn from(err: crate::operation::disable_control::DisableControlError) -> Self {
         match err {
-            crate::error::GetControlOperationError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::GetControlOperationError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::GetControlOperationError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::GetControlOperationError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::GetControlOperationError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::GetControlOperationError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::disable_control::DisableControlError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::disable_control::DisableControlError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::disable_control::DisableControlError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::disable_control::DisableControlError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::disable_control::DisableControlError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::disable_control::DisableControlError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::disable_control::DisableControlError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::disable_control::DisableControlError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListEnabledControlsError, R>> for Error
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::enable_control::EnableControlError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListEnabledControlsError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::enable_control::EnableControlError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -196,25 +106,119 @@ where
         }
     }
 }
-impl From<crate::error::ListEnabledControlsError> for Error {
-    fn from(err: crate::error::ListEnabledControlsError) -> Self {
+impl From<crate::operation::enable_control::EnableControlError> for Error {
+    fn from(err: crate::operation::enable_control::EnableControlError) -> Self {
         match err {
-            crate::error::ListEnabledControlsError::AccessDeniedException(inner) => {
+            crate::operation::enable_control::EnableControlError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::ListEnabledControlsError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
+            crate::operation::enable_control::EnableControlError::ConflictException(inner) => {
+                Error::ConflictException(inner)
             }
-            crate::error::ListEnabledControlsError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::ListEnabledControlsError::ThrottlingException(inner) => {
+            crate::operation::enable_control::EnableControlError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::enable_control::EnableControlError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::enable_control::EnableControlError::ServiceQuotaExceededException(
+                inner,
+            ) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::enable_control::EnableControlError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
             }
-            crate::error::ListEnabledControlsError::ValidationException(inner) => {
+            crate::operation::enable_control::EnableControlError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
-            crate::error::ListEnabledControlsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::enable_control::EnableControlError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_control_operation::GetControlOperationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_control_operation::GetControlOperationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_control_operation::GetControlOperationError> for Error {
+    fn from(err: crate::operation::get_control_operation::GetControlOperationError) -> Self {
+        match err {
+            crate::operation::get_control_operation::GetControlOperationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_control_operation::GetControlOperationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_control_operation::GetControlOperationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_control_operation::GetControlOperationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_control_operation::GetControlOperationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_control_operation::GetControlOperationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_enabled_controls::ListEnabledControlsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_enabled_controls::ListEnabledControlsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_enabled_controls::ListEnabledControlsError> for Error {
+    fn from(err: crate::operation::list_enabled_controls::ListEnabledControlsError) -> Self {
+        match err {
+            crate::operation::list_enabled_controls::ListEnabledControlsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_enabled_controls::ListEnabledControlsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_enabled_controls::ListEnabledControlsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_enabled_controls::ListEnabledControlsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_enabled_controls::ListEnabledControlsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_enabled_controls::ListEnabledControlsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

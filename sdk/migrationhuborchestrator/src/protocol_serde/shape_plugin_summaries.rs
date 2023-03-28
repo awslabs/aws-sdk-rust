@@ -2,7 +2,7 @@
 pub(crate) fn de_plugin_summaries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::PluginSummary>>,
+    Option<std::vec::Vec<crate::types::PluginSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

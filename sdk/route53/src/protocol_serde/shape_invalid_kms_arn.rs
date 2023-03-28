@@ -2,8 +2,11 @@
 #[allow(unused_mut)]
 pub fn de_invalid_kms_arn_xml_err(
     inp: &[u8],
-    mut builder: crate::error::invalid_kms_arn::Builder,
-) -> Result<crate::error::invalid_kms_arn::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    mut builder: crate::types::error::builders::InvalidKmsArnBuilder,
+) -> Result<
+    crate::types::error::builders::InvalidKmsArnBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     if inp.is_empty() {
         return Ok(builder);
     }

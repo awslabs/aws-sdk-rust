@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_target_groups_config(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::TargetGroupsConfig,
+    input: &crate::types::TargetGroupsConfig,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("TargetGroups");
@@ -20,9 +20,9 @@ pub fn ser_target_groups_config(
 
 pub fn de_target_groups_config(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::TargetGroupsConfig, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::TargetGroupsConfig, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::TargetGroupsConfig::builder();
+    let mut builder = crate::types::TargetGroupsConfig::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("targetGroups") /* TargetGroups com.amazonaws.ec2#TargetGroupsConfig$TargetGroups */ =>  {

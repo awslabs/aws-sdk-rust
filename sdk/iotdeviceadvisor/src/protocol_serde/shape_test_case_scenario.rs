@@ -2,7 +2,7 @@
 pub(crate) fn de_test_case_scenario<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::TestCaseScenario>,
+    Option<crate::types::TestCaseScenario>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::test_case_scenario::Builder::default();
+            let mut builder = crate::types::builders::TestCaseScenarioBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -39,7 +39,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::TestCaseScenarioType::from(u.as_ref())
+                                            crate::types::TestCaseScenarioType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -52,7 +52,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::TestCaseScenarioStatus::from(u.as_ref())
+                                            crate::types::TestCaseScenarioStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

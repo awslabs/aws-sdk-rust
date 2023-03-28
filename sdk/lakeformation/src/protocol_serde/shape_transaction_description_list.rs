@@ -2,7 +2,7 @@
 pub(crate) fn de_transaction_description_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::TransactionDescription>>,
+    Option<std::vec::Vec<crate::types::TransactionDescription>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

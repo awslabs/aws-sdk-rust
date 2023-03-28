@@ -2,7 +2,7 @@
 pub(crate) fn de_reserved_elasticsearch_instance_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ReservedElasticsearchInstance>>,
+    Option<std::vec::Vec<crate::types::ReservedElasticsearchInstance>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

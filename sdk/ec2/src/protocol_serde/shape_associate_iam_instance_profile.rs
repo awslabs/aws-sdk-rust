@@ -3,31 +3,32 @@
 pub fn de_associate_iam_instance_profile_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::AssociateIamInstanceProfileOutput,
-    crate::error::AssociateIamInstanceProfileError,
+    crate::operation::associate_iam_instance_profile::AssociateIamInstanceProfileOutput,
+    crate::operation::associate_iam_instance_profile::AssociateIamInstanceProfileError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::AssociateIamInstanceProfileError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::associate_iam_instance_profile::AssociateIamInstanceProfileError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::AssociateIamInstanceProfileError::generic(
-        generic,
-    ))
+    Err(
+        crate::operation::associate_iam_instance_profile::AssociateIamInstanceProfileError::generic(
+            generic,
+        ),
+    )
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_associate_iam_instance_profile_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::AssociateIamInstanceProfileOutput,
-    crate::error::AssociateIamInstanceProfileError,
+    crate::operation::associate_iam_instance_profile::AssociateIamInstanceProfileOutput,
+    crate::operation::associate_iam_instance_profile::AssociateIamInstanceProfileError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::associate_iam_instance_profile_output::Builder::default();
+        let mut output = crate::operation::associate_iam_instance_profile::builders::AssociateIamInstanceProfileOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_associate_iam_instance_profile::de_associate_iam_instance_profile(response.body().as_ref(), output).map_err(crate::error::AssociateIamInstanceProfileError::unhandled)?;
+        output = crate::protocol_serde::shape_associate_iam_instance_profile::de_associate_iam_instance_profile(response.body().as_ref(), output).map_err(crate::operation::associate_iam_instance_profile::AssociateIamInstanceProfileError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -36,13 +37,7 @@ pub fn de_associate_iam_instance_profile_http_response(
 }
 
 #[allow(unused_mut)]
-pub fn de_associate_iam_instance_profile(
-    inp: &[u8],
-    mut builder: crate::output::associate_iam_instance_profile_output::Builder,
-) -> Result<
-    crate::output::associate_iam_instance_profile_output::Builder,
-    aws_smithy_xml::decode::XmlDecodeError,
-> {
+pub fn de_associate_iam_instance_profile(inp: &[u8], mut builder: crate::operation::associate_iam_instance_profile::builders::AssociateIamInstanceProfileOutputBuilder) -> Result<crate::operation::associate_iam_instance_profile::builders::AssociateIamInstanceProfileOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

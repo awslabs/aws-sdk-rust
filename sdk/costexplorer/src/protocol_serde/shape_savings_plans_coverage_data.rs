@@ -2,7 +2,7 @@
 pub(crate) fn de_savings_plans_coverage_data<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::SavingsPlansCoverageData>,
+    Option<crate::types::SavingsPlansCoverageData>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::savings_plans_coverage_data::Builder::default();
+            let mut builder = crate::types::builders::SavingsPlansCoverageDataBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

@@ -2,7 +2,7 @@
 pub(crate) fn de_business_calling_settings<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::BusinessCallingSettings>,
+    Option<crate::types::BusinessCallingSettings>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::business_calling_settings::Builder::default();
+            let mut builder = crate::types::builders::BusinessCallingSettingsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -57,7 +57,7 @@ where
 
 pub fn ser_business_calling_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::BusinessCallingSettings,
+    input: &crate::types::BusinessCallingSettings,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.cdr_bucket {
         object.key("CdrBucket").string(var_1.as_str());

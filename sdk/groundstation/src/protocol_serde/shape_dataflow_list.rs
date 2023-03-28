@@ -2,7 +2,7 @@
 pub(crate) fn de_dataflow_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DataflowDetail>>,
+    Option<std::vec::Vec<crate::types::DataflowDetail>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

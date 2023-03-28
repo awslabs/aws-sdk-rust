@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_reserved_instances_configuration(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::ReservedInstancesConfiguration,
+    input: &crate::types::ReservedInstancesConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("AvailabilityZone");
@@ -37,9 +37,9 @@ pub fn ser_reserved_instances_configuration(
 
 pub fn de_reserved_instances_configuration(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::ReservedInstancesConfiguration, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::ReservedInstancesConfiguration, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::ReservedInstancesConfiguration::builder();
+    let mut builder = crate::types::ReservedInstancesConfiguration::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("availabilityZone") /* AvailabilityZone com.amazonaws.ec2#ReservedInstancesConfiguration$AvailabilityZone */ =>  {
@@ -73,8 +73,8 @@ pub fn de_reserved_instances_configuration(
             s if s.matches("instanceType") /* InstanceType com.amazonaws.ec2#ReservedInstancesConfiguration$InstanceType */ =>  {
                 let var_13 =
                     Some(
-                        Result::<crate::model::InstanceType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::InstanceType::from(
+                        Result::<crate::types::InstanceType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::InstanceType::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
@@ -100,8 +100,8 @@ pub fn de_reserved_instances_configuration(
             s if s.matches("scope") /* Scope com.amazonaws.ec2#ReservedInstancesConfiguration$Scope */ =>  {
                 let var_15 =
                     Some(
-                        Result::<crate::model::Scope, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::Scope::from(
+                        Result::<crate::types::Scope, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::Scope::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

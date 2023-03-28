@@ -2,7 +2,7 @@
 pub(crate) fn de_document_description<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::DocumentDescription>,
+    Option<crate::types::DocumentDescription>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::document_description::Builder::default();
+            let mut builder = crate::types::builders::DocumentDescriptionBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -48,7 +48,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::DocumentHashType::from(u.as_ref())
+                                            crate::types::DocumentHashType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -105,7 +105,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::DocumentStatus::from(u.as_ref()))
+                                            .map(|u| crate::types::DocumentStatus::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -154,7 +154,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::DocumentType::from(u.as_ref()))
+                                            .map(|u| crate::types::DocumentType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -193,7 +193,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::DocumentFormat::from(u.as_ref()))
+                                            .map(|u| crate::types::DocumentFormat::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -261,7 +261,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::ReviewStatus::from(u.as_ref()))
+                                            .map(|u| crate::types::ReviewStatus::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

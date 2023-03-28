@@ -2,9 +2,11 @@
 #[allow(unused_mut)]
 pub fn de_tag_limit_exceeded_fault_xml_err(
     inp: &[u8],
-    mut builder: crate::error::tag_limit_exceeded_fault::Builder,
-) -> Result<crate::error::tag_limit_exceeded_fault::Builder, aws_smithy_xml::decode::XmlDecodeError>
-{
+    mut builder: crate::types::error::builders::TagLimitExceededFaultBuilder,
+) -> Result<
+    crate::types::error::builders::TagLimitExceededFaultBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     if inp.is_empty() {
         return Ok(builder);
     }

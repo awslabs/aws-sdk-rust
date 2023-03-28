@@ -3,86 +3,95 @@
 pub fn de_delete_server_certificate_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteServerCertificateOutput,
-    crate::error::DeleteServerCertificateError,
+    crate::operation::delete_server_certificate::DeleteServerCertificateOutput,
+    crate::operation::delete_server_certificate::DeleteServerCertificateError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteServerCertificateError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::delete_server_certificate::DeleteServerCertificateError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::error::DeleteServerCertificateError::unhandled(
+        None => return Err(
+            crate::operation::delete_server_certificate::DeleteServerCertificateError::unhandled(
                 generic,
-            ))
-        }
+            ),
+        ),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DeleteConflict" => crate::error::DeleteServerCertificateError::DeleteConflictException({
+        "DeleteConflict" => crate::operation::delete_server_certificate::DeleteServerCertificateError::DeleteConflictException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::delete_conflict_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_delete_conflict_exception::de_delete_conflict_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteServerCertificateError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::DeleteConflictExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_delete_conflict_exception::de_delete_conflict_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_server_certificate::DeleteServerCertificateError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "LimitExceeded" => crate::error::DeleteServerCertificateError::LimitExceededException({
+        "LimitExceeded" => crate::operation::delete_server_certificate::DeleteServerCertificateError::LimitExceededException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::limit_exceeded_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteServerCertificateError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_server_certificate::DeleteServerCertificateError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "NoSuchEntity" => crate::error::DeleteServerCertificateError::NoSuchEntityException({
+        "NoSuchEntity" => crate::operation::delete_server_certificate::DeleteServerCertificateError::NoSuchEntityException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::no_such_entity_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_no_such_entity_exception::de_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteServerCertificateError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::NoSuchEntityExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_no_such_entity_exception::de_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_server_certificate::DeleteServerCertificateError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "ServiceFailure" => crate::error::DeleteServerCertificateError::ServiceFailureException({
+        "ServiceFailure" => crate::operation::delete_server_certificate::DeleteServerCertificateError::ServiceFailureException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::service_failure_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteServerCertificateError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ServiceFailureExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_server_certificate::DeleteServerCertificateError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::DeleteServerCertificateError::generic(generic),
+        _ => crate::operation::delete_server_certificate::DeleteServerCertificateError::generic(generic)
     })
 }
 
@@ -90,12 +99,12 @@ pub fn de_delete_server_certificate_http_error(
 pub fn de_delete_server_certificate_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteServerCertificateOutput,
-    crate::error::DeleteServerCertificateError,
+    crate::operation::delete_server_certificate::DeleteServerCertificateOutput,
+    crate::operation::delete_server_certificate::DeleteServerCertificateError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_server_certificate_output::Builder::default();
+        let mut output = crate::operation::delete_server_certificate::builders::DeleteServerCertificateOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

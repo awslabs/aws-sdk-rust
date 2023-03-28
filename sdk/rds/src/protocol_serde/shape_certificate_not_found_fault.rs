@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_certificate_not_found_fault_xml_err(
     inp: &[u8],
-    mut builder: crate::error::certificate_not_found_fault::Builder,
+    mut builder: crate::types::error::builders::CertificateNotFoundFaultBuilder,
 ) -> Result<
-    crate::error::certificate_not_found_fault::Builder,
+    crate::types::error::builders::CertificateNotFoundFaultBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

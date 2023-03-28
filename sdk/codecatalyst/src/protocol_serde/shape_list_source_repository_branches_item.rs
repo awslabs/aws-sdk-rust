@@ -2,7 +2,7 @@
 pub(crate) fn de_list_source_repository_branches_item<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ListSourceRepositoryBranchesItem>,
+    Option<crate::types::ListSourceRepositoryBranchesItem>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::list_source_repository_branches_item::Builder::default();
+                crate::types::builders::ListSourceRepositoryBranchesItemBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

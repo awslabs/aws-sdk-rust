@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_instance(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::Instance,
+    input: &crate::types::Instance,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("InstanceId");
@@ -14,9 +14,9 @@ pub fn ser_instance(
 
 pub fn de_instance(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::Instance, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::Instance, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::Instance::builder();
+    let mut builder = crate::types::Instance::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("InstanceId") /* InstanceId com.amazonaws.elasticloadbalancing#Instance$InstanceId */ =>  {

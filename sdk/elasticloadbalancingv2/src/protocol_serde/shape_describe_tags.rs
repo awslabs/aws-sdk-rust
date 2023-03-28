@@ -2,97 +2,115 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_tags_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DescribeTagsOutput, crate::error::DescribeTagsError> {
+) -> std::result::Result<
+    crate::operation::describe_tags::DescribeTagsOutput,
+    crate::operation::describe_tags::DescribeTagsError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeTagsError::unhandled)?;
+        .map_err(crate::operation::describe_tags::DescribeTagsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DescribeTagsError::unhandled(generic)),
+        None => return Err(crate::operation::describe_tags::DescribeTagsError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ListenerNotFound" => crate::error::DescribeTagsError::ListenerNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "ListenerNotFound" => {
+            crate::operation::describe_tags::DescribeTagsError::ListenerNotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::listener_not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_listener_not_found_exception::de_listener_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeTagsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "LoadBalancerNotFound" => crate::error::DescribeTagsError::LoadBalancerNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ListenerNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_listener_not_found_exception::de_listener_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::describe_tags::DescribeTagsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "LoadBalancerNotFound" => {
+            crate::operation::describe_tags::DescribeTagsError::LoadBalancerNotFoundException({
                 #[allow(unused_mut)]
-                let mut output =
-                    crate::error::load_balancer_not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_load_balancer_not_found_exception::de_load_balancer_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeTagsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "RuleNotFound" => crate::error::DescribeTagsError::RuleNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::LoadBalancerNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_load_balancer_not_found_exception::de_load_balancer_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::describe_tags::DescribeTagsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "RuleNotFound" => {
+            crate::operation::describe_tags::DescribeTagsError::RuleNotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::rule_not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_rule_not_found_exception::de_rule_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeTagsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "TargetGroupNotFound" => crate::error::DescribeTagsError::TargetGroupNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::RuleNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_rule_not_found_exception::de_rule_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::describe_tags::DescribeTagsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "TargetGroupNotFound" => {
+            crate::operation::describe_tags::DescribeTagsError::TargetGroupNotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::target_group_not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_target_group_not_found_exception::de_target_group_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeTagsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::DescribeTagsError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::TargetGroupNotFoundExceptionBuilder::default(
+                        );
+                    let _ = response;
+                    output = crate::protocol_serde::shape_target_group_not_found_exception::de_target_group_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::describe_tags::DescribeTagsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::describe_tags::DescribeTagsError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_tags_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DescribeTagsOutput, crate::error::DescribeTagsError> {
+) -> std::result::Result<
+    crate::operation::describe_tags::DescribeTagsOutput,
+    crate::operation::describe_tags::DescribeTagsError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_tags_output::Builder::default();
+        let mut output =
+            crate::operation::describe_tags::builders::DescribeTagsOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_describe_tags::de_describe_tags(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DescribeTagsError::unhandled)?;
+        .map_err(crate::operation::describe_tags::DescribeTagsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -103,8 +121,11 @@ pub fn de_describe_tags_http_response(
 #[allow(unused_mut)]
 pub fn de_describe_tags(
     inp: &[u8],
-    mut builder: crate::output::describe_tags_output::Builder,
-) -> Result<crate::output::describe_tags_output::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    mut builder: crate::operation::describe_tags::builders::DescribeTagsOutputBuilder,
+) -> Result<
+    crate::operation::describe_tags::builders::DescribeTagsOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

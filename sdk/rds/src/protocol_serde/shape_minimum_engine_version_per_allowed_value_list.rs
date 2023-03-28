@@ -2,7 +2,7 @@
 pub fn de_minimum_engine_version_per_allowed_value_list(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::MinimumEngineVersionPerAllowedValue>,
+    std::vec::Vec<crate::types::MinimumEngineVersionPerAllowedValue>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_input_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::InputConfiguration>>,
+    Option<std::vec::Vec<crate::types::InputConfiguration>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

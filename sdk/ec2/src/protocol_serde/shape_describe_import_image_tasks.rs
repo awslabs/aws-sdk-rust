@@ -3,31 +3,34 @@
 pub fn de_describe_import_image_tasks_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeImportImageTasksOutput,
-    crate::error::DescribeImportImageTasksError,
+    crate::operation::describe_import_image_tasks::DescribeImportImageTasksOutput,
+    crate::operation::describe_import_image_tasks::DescribeImportImageTasksError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeImportImageTasksError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::describe_import_image_tasks::DescribeImportImageTasksError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::DescribeImportImageTasksError::generic(
-        generic,
-    ))
+    Err(
+        crate::operation::describe_import_image_tasks::DescribeImportImageTasksError::generic(
+            generic,
+        ),
+    )
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_import_image_tasks_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeImportImageTasksOutput,
-    crate::error::DescribeImportImageTasksError,
+    crate::operation::describe_import_image_tasks::DescribeImportImageTasksOutput,
+    crate::operation::describe_import_image_tasks::DescribeImportImageTasksError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_import_image_tasks_output::Builder::default();
+        let mut output = crate::operation::describe_import_image_tasks::builders::DescribeImportImageTasksOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_describe_import_image_tasks::de_describe_import_image_tasks(response.body().as_ref(), output).map_err(crate::error::DescribeImportImageTasksError::unhandled)?;
+        output = crate::protocol_serde::shape_describe_import_image_tasks::de_describe_import_image_tasks(response.body().as_ref(), output).map_err(crate::operation::describe_import_image_tasks::DescribeImportImageTasksError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -38,9 +41,9 @@ pub fn de_describe_import_image_tasks_http_response(
 #[allow(unused_mut)]
 pub fn de_describe_import_image_tasks(
     inp: &[u8],
-    mut builder: crate::output::describe_import_image_tasks_output::Builder,
+    mut builder: crate::operation::describe_import_image_tasks::builders::DescribeImportImageTasksOutputBuilder,
 ) -> Result<
-    crate::output::describe_import_image_tasks_output::Builder,
+    crate::operation::describe_import_image_tasks::builders::DescribeImportImageTasksOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

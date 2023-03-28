@@ -2,7 +2,7 @@
 pub fn de_managed_rule_descriptions(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::ManagedRuleDescription>,
+    std::vec::Vec<crate::types::ManagedRuleDescription>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

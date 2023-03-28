@@ -2,7 +2,7 @@
 pub(crate) fn de_volume_recommendations<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::VolumeRecommendation>>,
+    Option<std::vec::Vec<crate::types::VolumeRecommendation>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

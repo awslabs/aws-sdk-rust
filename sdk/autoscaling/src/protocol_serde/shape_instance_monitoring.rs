@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_instance_monitoring(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::InstanceMonitoring,
+    input: &crate::types::InstanceMonitoring,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Enabled");
@@ -14,9 +14,9 @@ pub fn ser_instance_monitoring(
 
 pub fn de_instance_monitoring(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::InstanceMonitoring, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::InstanceMonitoring, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::InstanceMonitoring::builder();
+    let mut builder = crate::types::InstanceMonitoring::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Enabled") /* Enabled com.amazonaws.autoscaling#InstanceMonitoring$Enabled */ =>  {

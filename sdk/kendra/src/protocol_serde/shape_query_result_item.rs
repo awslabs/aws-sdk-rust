@@ -2,7 +2,7 @@
 pub(crate) fn de_query_result_item<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::QueryResultItem>,
+    Option<crate::types::QueryResultItem>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::query_result_item::Builder::default();
+            let mut builder = crate::types::builders::QueryResultItemBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -39,7 +39,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::QueryResultType::from(u.as_ref())
+                                            crate::types::QueryResultType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -52,7 +52,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::QueryResultFormat::from(u.as_ref())
+                                            crate::types::QueryResultFormat::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

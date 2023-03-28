@@ -2,7 +2,7 @@
 pub fn de_local_gateway_route_table_vpc_association_set(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::LocalGatewayRouteTableVpcAssociation>,
+    std::vec::Vec<crate::types::LocalGatewayRouteTableVpcAssociation>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

@@ -2,7 +2,7 @@
 pub(crate) fn de_license_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::LicenseConfiguration>,
+    Option<crate::types::LicenseConfiguration>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::license_configuration::Builder::default();
+            let mut builder = crate::types::builders::LicenseConfigurationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -66,7 +66,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::LicenseCountingType::from(u.as_ref())
+                                            crate::types::LicenseCountingType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

@@ -2,7 +2,7 @@
 pub(crate) fn de_contact_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ContactData>>,
+    Option<std::vec::Vec<crate::types::ContactData>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

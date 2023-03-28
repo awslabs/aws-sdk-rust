@@ -2,7 +2,7 @@
 pub fn de_object_lambda_allowed_features_list(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::ObjectLambdaAllowedFeature>,
+    std::vec::Vec<crate::types::ObjectLambdaAllowedFeature>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();
@@ -10,8 +10,8 @@ pub fn de_object_lambda_allowed_features_list(
         match tag.start_el() {
             s if s.matches("AllowedFeature") /* member com.amazonaws.s3control#ObjectLambdaAllowedFeaturesList$member */ =>  {
                 out.push(
-                    Result::<crate::model::ObjectLambdaAllowedFeature, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                        crate::model::ObjectLambdaAllowedFeature::from(
+                    Result::<crate::types::ObjectLambdaAllowedFeature, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                        crate::types::ObjectLambdaAllowedFeature::from(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                         )
                     )

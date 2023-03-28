@@ -2,7 +2,7 @@
 pub(crate) fn de_folder_metadata_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::FolderMetadata>>,
+    Option<std::vec::Vec<crate::types::FolderMetadata>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

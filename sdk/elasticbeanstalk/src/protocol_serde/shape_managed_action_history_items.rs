@@ -2,7 +2,7 @@
 pub fn de_managed_action_history_items(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::ManagedActionHistoryItem>,
+    std::vec::Vec<crate::types::ManagedActionHistoryItem>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

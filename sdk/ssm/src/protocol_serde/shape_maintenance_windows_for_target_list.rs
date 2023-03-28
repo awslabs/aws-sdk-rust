@@ -2,7 +2,7 @@
 pub(crate) fn de_maintenance_windows_for_target_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::MaintenanceWindowIdentityForTarget>>,
+    Option<std::vec::Vec<crate::types::MaintenanceWindowIdentityForTarget>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

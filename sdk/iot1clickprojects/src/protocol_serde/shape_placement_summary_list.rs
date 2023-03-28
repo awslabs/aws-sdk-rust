@@ -2,7 +2,7 @@
 pub(crate) fn de_placement_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::PlacementSummary>>,
+    Option<std::vec::Vec<crate::types::PlacementSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

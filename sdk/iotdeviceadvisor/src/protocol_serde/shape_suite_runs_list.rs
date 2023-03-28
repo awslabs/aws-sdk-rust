@@ -2,7 +2,7 @@
 pub(crate) fn de_suite_runs_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SuiteRunInformation>>,
+    Option<std::vec::Vec<crate::types::SuiteRunInformation>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

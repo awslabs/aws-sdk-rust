@@ -2,8 +2,11 @@
 #[allow(unused_mut)]
 pub fn de_no_such_distribution_xml_err(
     inp: &[u8],
-    mut builder: crate::error::no_such_distribution::Builder,
-) -> Result<crate::error::no_such_distribution::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    mut builder: crate::types::error::builders::NoSuchDistributionBuilder,
+) -> Result<
+    crate::types::error::builders::NoSuchDistributionBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     if inp.is_empty() {
         return Ok(builder);
     }

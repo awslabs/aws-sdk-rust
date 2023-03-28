@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use aws_sdk_s3::error::GetObjectError;
-use aws_sdk_s3::operation::{GetObject, ListBuckets};
-use aws_sdk_s3::types::{RequestId, RequestIdExt};
+use aws_sdk_s3::operation::get_object::{GetObject, GetObjectError};
+use aws_sdk_s3::operation::list_buckets::ListBuckets;
+use aws_sdk_s3::operation::{RequestId, RequestIdExt};
 use aws_smithy_http::body::SdkBody;
 use aws_smithy_http::operation;
 use aws_smithy_http::response::ParseHttpResponse;

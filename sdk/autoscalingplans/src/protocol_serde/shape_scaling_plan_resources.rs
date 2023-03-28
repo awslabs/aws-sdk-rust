@@ -2,7 +2,7 @@
 pub(crate) fn de_scaling_plan_resources<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ScalingPlanResource>>,
+    Option<std::vec::Vec<crate::types::ScalingPlanResource>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

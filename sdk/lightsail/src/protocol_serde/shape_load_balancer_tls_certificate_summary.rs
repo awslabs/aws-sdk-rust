@@ -2,7 +2,7 @@
 pub(crate) fn de_load_balancer_tls_certificate_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::LoadBalancerTlsCertificateSummary>,
+    Option<crate::types::LoadBalancerTlsCertificateSummary>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::load_balancer_tls_certificate_summary::Builder::default();
+                crate::types::builders::LoadBalancerTlsCertificateSummaryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

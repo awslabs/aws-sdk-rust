@@ -2,28 +2,35 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_endpoint_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DescribeEndpointOutput, crate::error::DescribeEndpointError>
-{
+) -> std::result::Result<
+    crate::operation::describe_endpoint::DescribeEndpointOutput,
+    crate::operation::describe_endpoint::DescribeEndpointError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeEndpointError::unhandled)?;
+        .map_err(crate::operation::describe_endpoint::DescribeEndpointError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DescribeEndpointError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::describe_endpoint::DescribeEndpointError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalFailureException" => {
-            crate::error::DescribeEndpointError::InternalFailureException({
+            crate::operation::describe_endpoint::DescribeEndpointError::InternalFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_failure_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::InternalFailureExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeEndpointError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_endpoint::DescribeEndpointError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -34,13 +41,14 @@ pub fn de_describe_endpoint_http_error(
             })
         }
         "InvalidRequestException" => {
-            crate::error::DescribeEndpointError::InvalidRequestException({
+            crate::operation::describe_endpoint::DescribeEndpointError::InvalidRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_request_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::InvalidRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeEndpointError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_endpoint::DescribeEndpointError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -50,54 +58,63 @@ pub fn de_describe_endpoint_http_error(
                 tmp
             })
         }
-        "ThrottlingException" => crate::error::DescribeEndpointError::ThrottlingException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "ThrottlingException" => {
+            crate::operation::describe_endpoint::DescribeEndpointError::ThrottlingException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::throttling_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeEndpointError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "UnauthorizedException" => crate::error::DescribeEndpointError::UnauthorizedException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_endpoint::DescribeEndpointError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "UnauthorizedException" => {
+            crate::operation::describe_endpoint::DescribeEndpointError::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeEndpointError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::DescribeEndpointError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::UnauthorizedExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_endpoint::DescribeEndpointError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::describe_endpoint::DescribeEndpointError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_endpoint_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DescribeEndpointOutput, crate::error::DescribeEndpointError>
-{
+) -> std::result::Result<
+    crate::operation::describe_endpoint::DescribeEndpointOutput,
+    crate::operation::describe_endpoint::DescribeEndpointError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_endpoint_output::Builder::default();
+        let mut output =
+            crate::operation::describe_endpoint::builders::DescribeEndpointOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_describe_endpoint::de_describe_endpoint(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DescribeEndpointError::unhandled)?;
+        .map_err(crate::operation::describe_endpoint::DescribeEndpointError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -107,9 +124,9 @@ pub fn de_describe_endpoint_http_response(
 
 pub(crate) fn de_describe_endpoint(
     value: &[u8],
-    mut builder: crate::output::describe_endpoint_output::Builder,
+    mut builder: crate::operation::describe_endpoint::builders::DescribeEndpointOutputBuilder,
 ) -> Result<
-    crate::output::describe_endpoint_output::Builder,
+    crate::operation::describe_endpoint::builders::DescribeEndpointOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

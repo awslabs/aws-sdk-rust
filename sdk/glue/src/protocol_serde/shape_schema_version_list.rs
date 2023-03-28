@@ -2,7 +2,7 @@
 pub(crate) fn de_schema_version_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SchemaVersionListItem>>,
+    Option<std::vec::Vec<crate::types::SchemaVersionListItem>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

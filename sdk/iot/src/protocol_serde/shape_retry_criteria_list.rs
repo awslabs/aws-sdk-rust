@@ -2,7 +2,7 @@
 pub(crate) fn de_retry_criteria_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::RetryCriteria>>,
+    Option<std::vec::Vec<crate::types::RetryCriteria>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

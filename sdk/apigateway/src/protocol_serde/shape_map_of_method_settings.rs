@@ -2,7 +2,7 @@
 pub(crate) fn de_map_of_method_settings<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<std::string::String, crate::model::MethodSetting>>,
+    Option<std::collections::HashMap<std::string::String, crate::types::MethodSetting>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -3,106 +3,113 @@
 pub fn de_list_template_aliases_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListTemplateAliasesOutput,
-    crate::error::ListTemplateAliasesError,
+    crate::operation::list_template_aliases::ListTemplateAliasesOutput,
+    crate::operation::list_template_aliases::ListTemplateAliasesError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListTemplateAliasesError::unhandled)?;
+        .map_err(crate::operation::list_template_aliases::ListTemplateAliasesError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListTemplateAliasesError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::list_template_aliases::ListTemplateAliasesError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalFailureException" => {
-            crate::error::ListTemplateAliasesError::InternalFailureException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::internal_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTemplateAliasesError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InvalidNextTokenException" => {
-            crate::error::ListTemplateAliasesError::InvalidNextTokenException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_next_token_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_next_token_exception::de_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTemplateAliasesError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ResourceNotFoundException" => {
-            crate::error::ListTemplateAliasesError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTemplateAliasesError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ThrottlingException" => crate::error::ListTemplateAliasesError::ThrottlingException({
+        "InternalFailureException" => crate::operation::list_template_aliases::ListTemplateAliasesError::InternalFailureException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::throttling_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTemplateAliasesError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InternalFailureExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_template_aliases::ListTemplateAliasesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "UnsupportedUserEditionException" => {
-            crate::error::ListTemplateAliasesError::UnsupportedUserEditionException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidNextTokenException" => crate::operation::list_template_aliases::ListTemplateAliasesError::InvalidNextTokenException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::unsupported_user_edition_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidNextTokenExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_unsupported_user_edition_exception::de_unsupported_user_edition_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTemplateAliasesError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_next_token_exception::de_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_template_aliases::ListTemplateAliasesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::ListTemplateAliasesError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::list_template_aliases::ListTemplateAliasesError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_template_aliases::ListTemplateAliasesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ThrottlingException" => crate::operation::list_template_aliases::ListTemplateAliasesError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_template_aliases::ListTemplateAliasesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "UnsupportedUserEditionException" => crate::operation::list_template_aliases::ListTemplateAliasesError::UnsupportedUserEditionException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::UnsupportedUserEditionExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_unsupported_user_edition_exception::de_unsupported_user_edition_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_template_aliases::ListTemplateAliasesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::list_template_aliases::ListTemplateAliasesError::generic(generic)
     })
 }
 
@@ -110,18 +117,18 @@ pub fn de_list_template_aliases_http_error(
 pub fn de_list_template_aliases_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListTemplateAliasesOutput,
-    crate::error::ListTemplateAliasesError,
+    crate::operation::list_template_aliases::ListTemplateAliasesOutput,
+    crate::operation::list_template_aliases::ListTemplateAliasesError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_template_aliases_output::Builder::default();
+        let mut output = crate::operation::list_template_aliases::builders::ListTemplateAliasesOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_template_aliases::de_list_template_aliases(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListTemplateAliasesError::unhandled)?;
+        .map_err(crate::operation::list_template_aliases::ListTemplateAliasesError::unhandled)?;
         output = output.set_status(Some(response.status().as_u16() as _));
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
@@ -132,9 +139,9 @@ pub fn de_list_template_aliases_http_response(
 
 pub(crate) fn de_list_template_aliases(
     value: &[u8],
-    mut builder: crate::output::list_template_aliases_output::Builder,
+    mut builder: crate::operation::list_template_aliases::builders::ListTemplateAliasesOutputBuilder,
 ) -> Result<
-    crate::output::list_template_aliases_output::Builder,
+    crate::operation::list_template_aliases::builders::ListTemplateAliasesOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

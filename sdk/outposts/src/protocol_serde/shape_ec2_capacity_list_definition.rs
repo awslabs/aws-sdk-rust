@@ -2,7 +2,7 @@
 pub(crate) fn de_ec2_capacity_list_definition<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Ec2Capacity>>,
+    Option<std::vec::Vec<crate::types::Ec2Capacity>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

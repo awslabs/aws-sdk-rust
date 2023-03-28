@@ -2,7 +2,7 @@
 pub(crate) fn de_starting_event_batch_condition<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::StartingEventBatchCondition>,
+    Option<crate::types::StartingEventBatchCondition>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::starting_event_batch_condition::Builder::default();
+            let mut builder = crate::types::builders::StartingEventBatchConditionBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

@@ -2,7 +2,7 @@
 pub(crate) fn de_mount_points<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::MountPoint>>,
+    Option<std::vec::Vec<crate::types::MountPoint>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

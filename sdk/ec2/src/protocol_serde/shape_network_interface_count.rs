@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_network_interface_count(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::NetworkInterfaceCount,
+    input: &crate::types::NetworkInterfaceCount,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Min");
@@ -25,9 +25,9 @@ pub fn ser_network_interface_count(
 
 pub fn de_network_interface_count(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::NetworkInterfaceCount, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::NetworkInterfaceCount, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::NetworkInterfaceCount::builder();
+    let mut builder = crate::types::NetworkInterfaceCount::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("min") /* Min com.amazonaws.ec2#NetworkInterfaceCount$Min */ =>  {

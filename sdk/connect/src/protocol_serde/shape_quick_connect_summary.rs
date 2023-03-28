@@ -2,7 +2,7 @@
 pub(crate) fn de_quick_connect_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::QuickConnectSummary>,
+    Option<crate::types::QuickConnectSummary>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::quick_connect_summary::Builder::default();
+            let mut builder = crate::types::builders::QuickConnectSummaryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -57,7 +57,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::QuickConnectType::from(u.as_ref())
+                                            crate::types::QuickConnectType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

@@ -2,7 +2,7 @@
 pub(crate) fn de_sql_statement_results<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SqlStatementResult>>,
+    Option<std::vec::Vec<crate::types::SqlStatementResult>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_domain_name_configs<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DomainNameConfig>>,
+    Option<std::vec::Vec<crate::types::DomainNameConfig>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

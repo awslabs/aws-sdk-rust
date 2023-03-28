@@ -2,7 +2,7 @@
 pub fn de_transit_gateway_multicast_domain_association_list(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::TransitGatewayMulticastDomainAssociation>,
+    std::vec::Vec<crate::types::TransitGatewayMulticastDomainAssociation>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

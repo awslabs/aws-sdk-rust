@@ -2,7 +2,7 @@
 pub(crate) fn de_ip_routes_info<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::IpRouteInfo>>,
+    Option<std::vec::Vec<crate::types::IpRouteInfo>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

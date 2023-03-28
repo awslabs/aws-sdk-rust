@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_listener_not_found_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::listener_not_found_exception::Builder,
+    mut builder: crate::types::error::builders::ListenerNotFoundExceptionBuilder,
 ) -> Result<
-    crate::error::listener_not_found_exception::Builder,
+    crate::types::error::builders::ListenerNotFoundExceptionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

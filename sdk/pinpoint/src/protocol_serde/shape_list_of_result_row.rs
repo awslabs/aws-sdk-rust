@@ -2,7 +2,7 @@
 pub(crate) fn de_list_of_result_row<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ResultRow>>,
+    Option<std::vec::Vec<crate::types::ResultRow>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

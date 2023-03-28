@@ -2,7 +2,7 @@
 pub(crate) fn de___map_of_audio_selector_group<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<std::string::String, crate::model::AudioSelectorGroup>>,
+    Option<std::collections::HashMap<std::string::String, crate::types::AudioSelectorGroup>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

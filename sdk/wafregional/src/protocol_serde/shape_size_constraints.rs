@@ -2,7 +2,7 @@
 pub(crate) fn de_size_constraints<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SizeConstraint>>,
+    Option<std::vec::Vec<crate::types::SizeConstraint>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

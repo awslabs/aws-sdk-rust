@@ -2,7 +2,7 @@
 pub(crate) fn de_aggregated_variables_importance_metrics<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::AggregatedVariablesImportanceMetrics>,
+    Option<crate::types::AggregatedVariablesImportanceMetrics>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::aggregated_variables_importance_metrics::Builder::default();
+                crate::types::builders::AggregatedVariablesImportanceMetricsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

@@ -2,7 +2,7 @@
 pub(crate) fn de_get_recommendation_errors<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::GetRecommendationError>>,
+    Option<std::vec::Vec<crate::types::GetRecommendationError>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

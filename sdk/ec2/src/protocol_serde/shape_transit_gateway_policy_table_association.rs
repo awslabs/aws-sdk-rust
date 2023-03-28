@@ -2,11 +2,11 @@
 pub fn de_transit_gateway_policy_table_association(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    crate::model::TransitGatewayPolicyTableAssociation,
+    crate::types::TransitGatewayPolicyTableAssociation,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     #[allow(unused_mut)]
-    let mut builder = crate::model::TransitGatewayPolicyTableAssociation::builder();
+    let mut builder = crate::types::TransitGatewayPolicyTableAssociation::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("transitGatewayPolicyTableId") /* TransitGatewayPolicyTableId com.amazonaws.ec2#TransitGatewayPolicyTableAssociation$TransitGatewayPolicyTableId */ =>  {
@@ -51,8 +51,8 @@ pub fn de_transit_gateway_policy_table_association(
             s if s.matches("resourceType") /* ResourceType com.amazonaws.ec2#TransitGatewayPolicyTableAssociation$ResourceType */ =>  {
                 let var_4 =
                     Some(
-                        Result::<crate::model::TransitGatewayAttachmentResourceType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::TransitGatewayAttachmentResourceType::from(
+                        Result::<crate::types::TransitGatewayAttachmentResourceType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::TransitGatewayAttachmentResourceType::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
@@ -65,8 +65,8 @@ pub fn de_transit_gateway_policy_table_association(
             s if s.matches("state") /* State com.amazonaws.ec2#TransitGatewayPolicyTableAssociation$State */ =>  {
                 let var_5 =
                     Some(
-                        Result::<crate::model::TransitGatewayAssociationState, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::TransitGatewayAssociationState::from(
+                        Result::<crate::types::TransitGatewayAssociationState, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::TransitGatewayAssociationState::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

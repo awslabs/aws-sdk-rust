@@ -2,7 +2,7 @@
 pub(crate) fn de_job_post_launch_actions_launch_status<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::JobPostLaunchActionsLaunchStatus>,
+    Option<crate::types::JobPostLaunchActionsLaunchStatus>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::job_post_launch_actions_launch_status::Builder::default();
+                crate::types::builders::JobPostLaunchActionsLaunchStatusBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -38,7 +38,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::SsmDocumentType::from(u.as_ref())
+                                            crate::types::SsmDocumentType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -60,7 +60,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::PostLaunchActionExecutionStatus::from(
+                                            crate::types::PostLaunchActionExecutionStatus::from(
                                                 u.as_ref(),
                                             )
                                         })

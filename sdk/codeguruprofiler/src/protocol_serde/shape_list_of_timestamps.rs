@@ -2,7 +2,7 @@
 pub(crate) fn de_list_of_timestamps<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::TimestampStructure>>,
+    Option<std::vec::Vec<crate::types::TimestampStructure>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

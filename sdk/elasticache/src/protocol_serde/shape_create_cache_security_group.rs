@@ -3,116 +3,112 @@
 pub fn de_create_cache_security_group_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateCacheSecurityGroupOutput,
-    crate::error::CreateCacheSecurityGroupError,
+    crate::operation::create_cache_security_group::CreateCacheSecurityGroupOutput,
+    crate::operation::create_cache_security_group::CreateCacheSecurityGroupError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::CreateCacheSecurityGroupError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::create_cache_security_group::CreateCacheSecurityGroupError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::error::CreateCacheSecurityGroupError::unhandled(
+        None => return Err(
+            crate::operation::create_cache_security_group::CreateCacheSecurityGroupError::unhandled(
                 generic,
-            ))
-        }
+            ),
+        ),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CacheSecurityGroupAlreadyExists" => {
-            crate::error::CreateCacheSecurityGroupError::CacheSecurityGroupAlreadyExistsFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "CacheSecurityGroupAlreadyExists" => crate::operation::create_cache_security_group::CreateCacheSecurityGroupError::CacheSecurityGroupAlreadyExistsFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::cache_security_group_already_exists_fault::Builder::default();
+                    let mut output = crate::types::error::builders::CacheSecurityGroupAlreadyExistsFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_cache_security_group_already_exists_fault::de_cache_security_group_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheSecurityGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_cache_security_group_already_exists_fault::de_cache_security_group_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_cache_security_group::CreateCacheSecurityGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "QuotaExceeded.CacheSecurityGroup" => {
-            crate::error::CreateCacheSecurityGroupError::CacheSecurityGroupQuotaExceededFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "QuotaExceeded.CacheSecurityGroup" => crate::operation::create_cache_security_group::CreateCacheSecurityGroupError::CacheSecurityGroupQuotaExceededFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::cache_security_group_quota_exceeded_fault::Builder::default();
+                    let mut output = crate::types::error::builders::CacheSecurityGroupQuotaExceededFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_cache_security_group_quota_exceeded_fault::de_cache_security_group_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheSecurityGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_cache_security_group_quota_exceeded_fault::de_cache_security_group_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_cache_security_group::CreateCacheSecurityGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidParameterCombination" => {
-            crate::error::CreateCacheSecurityGroupError::InvalidParameterCombinationException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidParameterCombination" => crate::operation::create_cache_security_group::CreateCacheSecurityGroupError::InvalidParameterCombinationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_parameter_combination_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidParameterCombinationExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_combination_exception::de_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheSecurityGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_combination_exception::de_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_cache_security_group::CreateCacheSecurityGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidParameterValue" => {
-            crate::error::CreateCacheSecurityGroupError::InvalidParameterValueException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidParameterValue" => crate::operation::create_cache_security_group::CreateCacheSecurityGroupError::InvalidParameterValueException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_parameter_value_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheSecurityGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_cache_security_group::CreateCacheSecurityGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "TagQuotaPerResourceExceeded" => {
-            crate::error::CreateCacheSecurityGroupError::TagQuotaPerResourceExceeded({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TagQuotaPerResourceExceeded" => crate::operation::create_cache_security_group::CreateCacheSecurityGroupError::TagQuotaPerResourceExceeded({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::tag_quota_per_resource_exceeded::Builder::default();
+                    let mut output = crate::types::error::builders::TagQuotaPerResourceExceededBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_tag_quota_per_resource_exceeded::de_tag_quota_per_resource_exceeded_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheSecurityGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_tag_quota_per_resource_exceeded::de_tag_quota_per_resource_exceeded_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_cache_security_group::CreateCacheSecurityGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::CreateCacheSecurityGroupError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::create_cache_security_group::CreateCacheSecurityGroupError::generic(generic)
     })
 }
 
@@ -120,14 +116,14 @@ pub fn de_create_cache_security_group_http_error(
 pub fn de_create_cache_security_group_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateCacheSecurityGroupOutput,
-    crate::error::CreateCacheSecurityGroupError,
+    crate::operation::create_cache_security_group::CreateCacheSecurityGroupOutput,
+    crate::operation::create_cache_security_group::CreateCacheSecurityGroupError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::create_cache_security_group_output::Builder::default();
+        let mut output = crate::operation::create_cache_security_group::builders::CreateCacheSecurityGroupOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_create_cache_security_group::de_create_cache_security_group(response.body().as_ref(), output).map_err(crate::error::CreateCacheSecurityGroupError::unhandled)?;
+        output = crate::protocol_serde::shape_create_cache_security_group::de_create_cache_security_group(response.body().as_ref(), output).map_err(crate::operation::create_cache_security_group::CreateCacheSecurityGroupError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -138,9 +134,9 @@ pub fn de_create_cache_security_group_http_response(
 #[allow(unused_mut)]
 pub fn de_create_cache_security_group(
     inp: &[u8],
-    mut builder: crate::output::create_cache_security_group_output::Builder,
+    mut builder: crate::operation::create_cache_security_group::builders::CreateCacheSecurityGroupOutputBuilder,
 ) -> Result<
-    crate::output::create_cache_security_group_output::Builder,
+    crate::operation::create_cache_security_group::builders::CreateCacheSecurityGroupOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

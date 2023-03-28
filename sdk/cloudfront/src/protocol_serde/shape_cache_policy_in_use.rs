@@ -2,8 +2,11 @@
 #[allow(unused_mut)]
 pub fn de_cache_policy_in_use_xml_err(
     inp: &[u8],
-    mut builder: crate::error::cache_policy_in_use::Builder,
-) -> Result<crate::error::cache_policy_in_use::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    mut builder: crate::types::error::builders::CachePolicyInUseBuilder,
+) -> Result<
+    crate::types::error::builders::CachePolicyInUseBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     if inp.is_empty() {
         return Ok(builder);
     }

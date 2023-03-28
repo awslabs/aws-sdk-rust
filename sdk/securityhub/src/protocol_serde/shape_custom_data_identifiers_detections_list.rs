@@ -2,7 +2,7 @@
 pub(crate) fn de_custom_data_identifiers_detections_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CustomDataIdentifiersDetections>>,
+    Option<std::vec::Vec<crate::types::CustomDataIdentifiersDetections>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

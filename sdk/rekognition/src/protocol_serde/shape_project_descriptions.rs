@@ -2,7 +2,7 @@
 pub(crate) fn de_project_descriptions<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ProjectDescription>>,
+    Option<std::vec::Vec<crate::types::ProjectDescription>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

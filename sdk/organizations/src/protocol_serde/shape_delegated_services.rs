@@ -2,7 +2,7 @@
 pub(crate) fn de_delegated_services<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DelegatedService>>,
+    Option<std::vec::Vec<crate::types::DelegatedService>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

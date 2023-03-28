@@ -3,34 +3,34 @@
 pub fn de_create_client_vpn_endpoint_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateClientVpnEndpointOutput,
-    crate::error::CreateClientVpnEndpointError,
+    crate::operation::create_client_vpn_endpoint::CreateClientVpnEndpointOutput,
+    crate::operation::create_client_vpn_endpoint::CreateClientVpnEndpointError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::CreateClientVpnEndpointError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::create_client_vpn_endpoint::CreateClientVpnEndpointError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::CreateClientVpnEndpointError::generic(generic))
+    Err(
+        crate::operation::create_client_vpn_endpoint::CreateClientVpnEndpointError::generic(
+            generic,
+        ),
+    )
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_client_vpn_endpoint_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateClientVpnEndpointOutput,
-    crate::error::CreateClientVpnEndpointError,
+    crate::operation::create_client_vpn_endpoint::CreateClientVpnEndpointOutput,
+    crate::operation::create_client_vpn_endpoint::CreateClientVpnEndpointError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::create_client_vpn_endpoint_output::Builder::default();
+        let mut output = crate::operation::create_client_vpn_endpoint::builders::CreateClientVpnEndpointOutputBuilder::default();
         let _ = response;
-        output =
-            crate::protocol_serde::shape_create_client_vpn_endpoint::de_create_client_vpn_endpoint(
-                response.body().as_ref(),
-                output,
-            )
-            .map_err(crate::error::CreateClientVpnEndpointError::unhandled)?;
+        output = crate::protocol_serde::shape_create_client_vpn_endpoint::de_create_client_vpn_endpoint(response.body().as_ref(), output).map_err(crate::operation::create_client_vpn_endpoint::CreateClientVpnEndpointError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -41,9 +41,9 @@ pub fn de_create_client_vpn_endpoint_http_response(
 #[allow(unused_mut)]
 pub fn de_create_client_vpn_endpoint(
     inp: &[u8],
-    mut builder: crate::output::create_client_vpn_endpoint_output::Builder,
+    mut builder: crate::operation::create_client_vpn_endpoint::builders::CreateClientVpnEndpointOutputBuilder,
 ) -> Result<
-    crate::output::create_client_vpn_endpoint_output::Builder,
+    crate::operation::create_client_vpn_endpoint::builders::CreateClientVpnEndpointOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

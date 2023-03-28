@@ -2,7 +2,7 @@
 pub(crate) fn de_recommendation_disruption_compliance<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::RecommendationDisruptionCompliance>,
+    Option<crate::types::RecommendationDisruptionCompliance>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::recommendation_disruption_compliance::Builder::default();
+                crate::types::builders::RecommendationDisruptionComplianceBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -31,7 +31,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ComplianceStatus::from(u.as_ref())
+                                            crate::types::ComplianceStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

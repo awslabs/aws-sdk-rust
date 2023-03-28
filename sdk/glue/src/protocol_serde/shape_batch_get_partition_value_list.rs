@@ -2,7 +2,7 @@
 pub(crate) fn de_batch_get_partition_value_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::PartitionValueList>>,
+    Option<std::vec::Vec<crate::types::PartitionValueList>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

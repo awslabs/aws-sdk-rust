@@ -2,7 +2,7 @@
 pub(crate) fn de_production_variant_status_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ProductionVariantStatus>>,
+    Option<std::vec::Vec<crate::types::ProductionVariantStatus>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

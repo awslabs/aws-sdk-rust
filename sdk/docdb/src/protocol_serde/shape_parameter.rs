@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_parameter(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::Parameter,
+    input: &crate::types::Parameter,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("ParameterName");
@@ -59,9 +59,9 @@ pub fn ser_parameter(
 
 pub fn de_parameter(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::Parameter, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::Parameter, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::Parameter::builder();
+    let mut builder = crate::types::Parameter::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ParameterName") /* ParameterName com.amazonaws.docdb#Parameter$ParameterName */ =>  {
@@ -186,8 +186,8 @@ pub fn de_parameter(
             s if s.matches("ApplyMethod") /* ApplyMethod com.amazonaws.docdb#Parameter$ApplyMethod */ =>  {
                 let var_29 =
                     Some(
-                        Result::<crate::model::ApplyMethod, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::ApplyMethod::from(
+                        Result::<crate::types::ApplyMethod, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::ApplyMethod::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

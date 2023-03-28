@@ -2,7 +2,7 @@
 pub(crate) fn de_stream_selection<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::StreamSelection>,
+    Option<crate::types::StreamSelection>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::stream_selection::Builder::default();
+            let mut builder = crate::types::builders::StreamSelectionBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -48,7 +48,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::StreamOrder::from(u.as_ref()))
+                                            .map(|u| crate::types::StreamOrder::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -78,7 +78,7 @@ where
 
 pub fn ser_stream_selection(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::StreamSelection,
+    input: &crate::types::StreamSelection,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if input.max_video_bits_per_second != 0 {
         object.key("maxVideoBitsPerSecond").number(

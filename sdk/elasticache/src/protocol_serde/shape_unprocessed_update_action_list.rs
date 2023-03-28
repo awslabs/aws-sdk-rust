@@ -2,7 +2,7 @@
 pub fn de_unprocessed_update_action_list(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::UnprocessedUpdateAction>,
+    std::vec::Vec<crate::types::UnprocessedUpdateAction>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

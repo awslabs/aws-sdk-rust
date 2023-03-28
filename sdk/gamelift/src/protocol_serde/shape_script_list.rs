@@ -2,7 +2,7 @@
 pub(crate) fn de_script_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Script>>,
+    Option<std::vec::Vec<crate::types::Script>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_change_logs<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ChangeLog>>,
+    Option<std::vec::Vec<crate::types::ChangeLog>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

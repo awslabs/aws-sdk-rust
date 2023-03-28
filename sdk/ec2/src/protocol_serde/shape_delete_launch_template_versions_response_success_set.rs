@@ -2,7 +2,7 @@
 pub fn de_delete_launch_template_versions_response_success_set(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::DeleteLaunchTemplateVersionsResponseSuccessItem>,
+    std::vec::Vec<crate::types::DeleteLaunchTemplateVersionsResponseSuccessItem>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

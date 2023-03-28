@@ -3,37 +3,45 @@
 pub fn de_get_access_key_last_used_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetAccessKeyLastUsedOutput,
-    crate::error::GetAccessKeyLastUsedError,
+    crate::operation::get_access_key_last_used::GetAccessKeyLastUsedOutput,
+    crate::operation::get_access_key_last_used::GetAccessKeyLastUsedError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetAccessKeyLastUsedError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::get_access_key_last_used::GetAccessKeyLastUsedError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    let error_code = match generic.code() {
-        Some(code) => code,
-        None => return Err(crate::error::GetAccessKeyLastUsedError::unhandled(generic)),
-    };
+    let error_code =
+        match generic.code() {
+            Some(code) => code,
+            None => return Err(
+                crate::operation::get_access_key_last_used::GetAccessKeyLastUsedError::unhandled(
+                    generic,
+                ),
+            ),
+        };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "NoSuchEntity" => crate::error::GetAccessKeyLastUsedError::NoSuchEntityException({
+        "NoSuchEntity" => crate::operation::get_access_key_last_used::GetAccessKeyLastUsedError::NoSuchEntityException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::no_such_entity_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_no_such_entity_exception::de_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetAccessKeyLastUsedError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::NoSuchEntityExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_no_such_entity_exception::de_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::get_access_key_last_used::GetAccessKeyLastUsedError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::GetAccessKeyLastUsedError::generic(generic),
+        _ => crate::operation::get_access_key_last_used::GetAccessKeyLastUsedError::generic(generic)
     })
 }
 
@@ -41,19 +49,21 @@ pub fn de_get_access_key_last_used_http_error(
 pub fn de_get_access_key_last_used_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetAccessKeyLastUsedOutput,
-    crate::error::GetAccessKeyLastUsedError,
+    crate::operation::get_access_key_last_used::GetAccessKeyLastUsedOutput,
+    crate::operation::get_access_key_last_used::GetAccessKeyLastUsedError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_access_key_last_used_output::Builder::default();
+        let mut output = crate::operation::get_access_key_last_used::builders::GetAccessKeyLastUsedOutputBuilder::default();
         let _ = response;
         output =
             crate::protocol_serde::shape_get_access_key_last_used::de_get_access_key_last_used(
                 response.body().as_ref(),
                 output,
             )
-            .map_err(crate::error::GetAccessKeyLastUsedError::unhandled)?;
+            .map_err(
+                crate::operation::get_access_key_last_used::GetAccessKeyLastUsedError::unhandled,
+            )?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -64,9 +74,9 @@ pub fn de_get_access_key_last_used_http_response(
 #[allow(unused_mut)]
 pub fn de_get_access_key_last_used(
     inp: &[u8],
-    mut builder: crate::output::get_access_key_last_used_output::Builder,
+    mut builder: crate::operation::get_access_key_last_used::builders::GetAccessKeyLastUsedOutputBuilder,
 ) -> Result<
-    crate::output::get_access_key_last_used_output::Builder,
+    crate::operation::get_access_key_last_used::builders::GetAccessKeyLastUsedOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

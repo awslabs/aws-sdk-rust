@@ -2,7 +2,7 @@
 pub(crate) fn de_site_to_site_vpn_attachment<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::SiteToSiteVpnAttachment>,
+    Option<crate::types::SiteToSiteVpnAttachment>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::site_to_site_vpn_attachment::Builder::default();
+            let mut builder = crate::types::builders::SiteToSiteVpnAttachmentBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

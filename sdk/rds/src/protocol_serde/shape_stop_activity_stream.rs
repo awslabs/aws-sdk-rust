@@ -3,105 +3,111 @@
 pub fn de_stop_activity_stream_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::StopActivityStreamOutput,
-    crate::error::StopActivityStreamError,
+    crate::operation::stop_activity_stream::StopActivityStreamOutput,
+    crate::operation::stop_activity_stream::StopActivityStreamError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::StopActivityStreamError::unhandled)?;
+        .map_err(crate::operation::stop_activity_stream::StopActivityStreamError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::StopActivityStreamError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::stop_activity_stream::StopActivityStreamError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBClusterNotFoundFault" => {
-            crate::error::StopActivityStreamError::DbClusterNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "DBClusterNotFoundFault" => crate::operation::stop_activity_stream::StopActivityStreamError::DbClusterNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::db_cluster_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::DbClusterNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_db_cluster_not_found_fault::de_db_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::StopActivityStreamError::unhandled)?;
+                    output = crate::protocol_serde::shape_db_cluster_not_found_fault::de_db_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::stop_activity_stream::StopActivityStreamError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "DBInstanceNotFound" => crate::error::StopActivityStreamError::DbInstanceNotFoundFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::db_instance_not_found_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_db_instance_not_found_fault::de_db_instance_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::StopActivityStreamError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "InvalidDBClusterStateFault" => {
-            crate::error::StopActivityStreamError::InvalidDbClusterStateFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_db_cluster_state_fault::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_db_cluster_state_fault::de_invalid_db_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::StopActivityStreamError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InvalidDBInstanceState" => {
-            crate::error::StopActivityStreamError::InvalidDbInstanceStateFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_db_instance_state_fault::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_db_instance_state_fault::de_invalid_db_instance_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::StopActivityStreamError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ResourceNotFoundFault" => crate::error::StopActivityStreamError::ResourceNotFoundFault({
+        "DBInstanceNotFound" => crate::operation::stop_activity_stream::StopActivityStreamError::DbInstanceNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::resource_not_found_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_resource_not_found_fault::de_resource_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::StopActivityStreamError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::DbInstanceNotFoundFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_db_instance_not_found_fault::de_db_instance_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::stop_activity_stream::StopActivityStreamError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::StopActivityStreamError::generic(generic),
+        "InvalidDBClusterStateFault" => crate::operation::stop_activity_stream::StopActivityStreamError::InvalidDbClusterStateFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidDbClusterStateFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_db_cluster_state_fault::de_invalid_db_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::stop_activity_stream::StopActivityStreamError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidDBInstanceState" => crate::operation::stop_activity_stream::StopActivityStreamError::InvalidDbInstanceStateFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidDbInstanceStateFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_db_instance_state_fault::de_invalid_db_instance_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::stop_activity_stream::StopActivityStreamError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceNotFoundFault" => crate::operation::stop_activity_stream::StopActivityStreamError::ResourceNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ResourceNotFoundFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_not_found_fault::de_resource_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::stop_activity_stream::StopActivityStreamError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::stop_activity_stream::StopActivityStreamError::generic(generic)
     })
 }
 
@@ -109,18 +115,18 @@ pub fn de_stop_activity_stream_http_error(
 pub fn de_stop_activity_stream_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::StopActivityStreamOutput,
-    crate::error::StopActivityStreamError,
+    crate::operation::stop_activity_stream::StopActivityStreamOutput,
+    crate::operation::stop_activity_stream::StopActivityStreamError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::stop_activity_stream_output::Builder::default();
+        let mut output = crate::operation::stop_activity_stream::builders::StopActivityStreamOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_stop_activity_stream::de_stop_activity_stream(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::StopActivityStreamError::unhandled)?;
+        .map_err(crate::operation::stop_activity_stream::StopActivityStreamError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -131,9 +137,9 @@ pub fn de_stop_activity_stream_http_response(
 #[allow(unused_mut)]
 pub fn de_stop_activity_stream(
     inp: &[u8],
-    mut builder: crate::output::stop_activity_stream_output::Builder,
+    mut builder: crate::operation::stop_activity_stream::builders::StopActivityStreamOutputBuilder,
 ) -> Result<
-    crate::output::stop_activity_stream_output::Builder,
+    crate::operation::stop_activity_stream::builders::StopActivityStreamOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
@@ -187,8 +193,8 @@ pub fn de_stop_activity_stream(
             s if s.matches("Status") /* Status com.amazonaws.rds.synthetic#StopActivityStreamOutput$Status */ =>  {
                 let var_3 =
                     Some(
-                        Result::<crate::model::ActivityStreamStatus, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::ActivityStreamStatus::from(
+                        Result::<crate::types::ActivityStreamStatus, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::ActivityStreamStatus::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

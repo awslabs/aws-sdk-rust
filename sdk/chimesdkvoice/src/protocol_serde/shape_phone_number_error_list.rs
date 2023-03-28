@@ -2,7 +2,7 @@
 pub(crate) fn de_phone_number_error_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::PhoneNumberError>>,
+    Option<std::vec::Vec<crate::types::PhoneNumberError>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -3,7 +3,7 @@ pub(crate) fn de_batch_write_item_request_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<
-        std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::WriteRequest>>,
+        std::collections::HashMap<std::string::String, std::vec::Vec<crate::types::WriteRequest>>,
     >,
     aws_smithy_json::deserialize::error::DeserializeError,
 >

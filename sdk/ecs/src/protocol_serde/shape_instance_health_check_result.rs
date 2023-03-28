@@ -2,7 +2,7 @@
 pub(crate) fn de_instance_health_check_result<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::InstanceHealthCheckResult>,
+    Option<crate::types::InstanceHealthCheckResult>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::instance_health_check_result::Builder::default();
+            let mut builder = crate::types::builders::InstanceHealthCheckResultBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::InstanceHealthCheckType::from(u.as_ref())
+                                            crate::types::InstanceHealthCheckType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -43,7 +43,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::InstanceHealthCheckState::from(u.as_ref())
+                                            crate::types::InstanceHealthCheckState::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

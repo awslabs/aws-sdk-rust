@@ -2,7 +2,7 @@
 pub(crate) fn de_instance_storage_configs<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::InstanceStorageConfig>>,
+    Option<std::vec::Vec<crate::types::InstanceStorageConfig>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

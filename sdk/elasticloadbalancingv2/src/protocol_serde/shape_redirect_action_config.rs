@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_redirect_action_config(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::RedirectActionConfig,
+    input: &crate::types::RedirectActionConfig,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Protocol");
@@ -39,9 +39,9 @@ pub fn ser_redirect_action_config(
 
 pub fn de_redirect_action_config(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::RedirectActionConfig, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::RedirectActionConfig, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::RedirectActionConfig::builder();
+    let mut builder = crate::types::RedirectActionConfig::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Protocol") /* Protocol com.amazonaws.elasticloadbalancingv2#RedirectActionConfig$Protocol */ =>  {
@@ -112,8 +112,8 @@ pub fn de_redirect_action_config(
             s if s.matches("StatusCode") /* StatusCode com.amazonaws.elasticloadbalancingv2#RedirectActionConfig$StatusCode */ =>  {
                 let var_18 =
                     Some(
-                        Result::<crate::model::RedirectActionStatusCodeEnum, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::RedirectActionStatusCodeEnum::from(
+                        Result::<crate::types::RedirectActionStatusCodeEnum, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::RedirectActionStatusCodeEnum::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

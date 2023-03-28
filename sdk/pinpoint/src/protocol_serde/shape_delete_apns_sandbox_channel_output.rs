@@ -2,10 +2,10 @@
 pub fn de_apns_sandbox_channel_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::ApnsSandboxChannelResponse>,
-    crate::error::DeleteApnsSandboxChannelError,
+    std::option::Option<crate::types::ApnsSandboxChannelResponse>,
+    crate::operation::delete_apns_sandbox_channel::DeleteApnsSandboxChannelError,
 > {
     (!body.is_empty()).then(||{
-        crate::protocol_serde::shape_apns_sandbox_channel_response::de_apns_sandbox_channel_response_payload(body).map_err(crate::error::DeleteApnsSandboxChannelError::unhandled)
+        crate::protocol_serde::shape_apns_sandbox_channel_response::de_apns_sandbox_channel_response_payload(body).map_err(crate::operation::delete_apns_sandbox_channel::DeleteApnsSandboxChannelError::unhandled)
     }).transpose()
 }

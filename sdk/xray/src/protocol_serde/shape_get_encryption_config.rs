@@ -3,54 +3,62 @@
 pub fn de_get_encryption_config_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetEncryptionConfigOutput,
-    crate::error::GetEncryptionConfigError,
+    crate::operation::get_encryption_config::GetEncryptionConfigOutput,
+    crate::operation::get_encryption_config::GetEncryptionConfigError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetEncryptionConfigError::unhandled)?;
+        .map_err(crate::operation::get_encryption_config::GetEncryptionConfigError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::GetEncryptionConfigError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::get_encryption_config::GetEncryptionConfigError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidRequestException" => {
-            crate::error::GetEncryptionConfigError::InvalidRequestException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidRequestException" => crate::operation::get_encryption_config::GetEncryptionConfigError::InvalidRequestException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_request_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEncryptionConfigError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_encryption_config::GetEncryptionConfigError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ThrottledException" => crate::error::GetEncryptionConfigError::ThrottledException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::throttled_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttled_exception::de_throttled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEncryptionConfigError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::GetEncryptionConfigError::generic(generic),
+        "ThrottledException" => crate::operation::get_encryption_config::GetEncryptionConfigError::ThrottledException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ThrottledExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_throttled_exception::de_throttled_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_encryption_config::GetEncryptionConfigError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::get_encryption_config::GetEncryptionConfigError::generic(generic)
     })
 }
 
@@ -58,18 +66,18 @@ pub fn de_get_encryption_config_http_error(
 pub fn de_get_encryption_config_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetEncryptionConfigOutput,
-    crate::error::GetEncryptionConfigError,
+    crate::operation::get_encryption_config::GetEncryptionConfigOutput,
+    crate::operation::get_encryption_config::GetEncryptionConfigError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_encryption_config_output::Builder::default();
+        let mut output = crate::operation::get_encryption_config::builders::GetEncryptionConfigOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_get_encryption_config::de_get_encryption_config(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::GetEncryptionConfigError::unhandled)?;
+        .map_err(crate::operation::get_encryption_config::GetEncryptionConfigError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -79,9 +87,9 @@ pub fn de_get_encryption_config_http_response(
 
 pub(crate) fn de_get_encryption_config(
     value: &[u8],
-    mut builder: crate::output::get_encryption_config_output::Builder,
+    mut builder: crate::operation::get_encryption_config::builders::GetEncryptionConfigOutputBuilder,
 ) -> Result<
-    crate::output::get_encryption_config_output::Builder,
+    crate::operation::get_encryption_config::builders::GetEncryptionConfigOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

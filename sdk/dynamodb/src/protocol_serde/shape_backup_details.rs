@@ -2,7 +2,7 @@
 pub(crate) fn de_backup_details<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::BackupDetails>,
+    Option<crate::types::BackupDetails>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::backup_details::Builder::default();
+            let mut builder = crate::types::builders::BackupDetailsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -57,7 +57,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::BackupStatus::from(u.as_ref()))
+                                            .map(|u| crate::types::BackupStatus::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -69,7 +69,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::BackupType::from(u.as_ref()))
+                                            .map(|u| crate::types::BackupType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

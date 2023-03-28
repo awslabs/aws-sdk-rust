@@ -2,7 +2,7 @@
 pub fn de_enable_fast_snapshot_restore_error_set(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::EnableFastSnapshotRestoreErrorItem>,
+    std::vec::Vec<crate::types::EnableFastSnapshotRestoreErrorItem>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

@@ -3,108 +3,113 @@
 pub fn de_modify_scheduled_action_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ModifyScheduledActionOutput,
-    crate::error::ModifyScheduledActionError,
+    crate::operation::modify_scheduled_action::ModifyScheduledActionOutput,
+    crate::operation::modify_scheduled_action::ModifyScheduledActionError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ModifyScheduledActionError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::modify_scheduled_action::ModifyScheduledActionError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    let error_code = match generic.code() {
-        Some(code) => code,
-        None => return Err(crate::error::ModifyScheduledActionError::unhandled(generic)),
-    };
+    let error_code =
+        match generic.code() {
+            Some(code) => code,
+            None => return Err(
+                crate::operation::modify_scheduled_action::ModifyScheduledActionError::unhandled(
+                    generic,
+                ),
+            ),
+        };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidScheduledAction" => {
-            crate::error::ModifyScheduledActionError::InvalidScheduledActionFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidScheduledAction" => crate::operation::modify_scheduled_action::ModifyScheduledActionError::InvalidScheduledActionFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_scheduled_action_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidScheduledActionFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_scheduled_action_fault::de_invalid_scheduled_action_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyScheduledActionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_scheduled_action_fault::de_invalid_scheduled_action_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_scheduled_action::ModifyScheduledActionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidSchedule" => crate::error::ModifyScheduledActionError::InvalidScheduleFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::invalid_schedule_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_schedule_fault::de_invalid_schedule_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyScheduledActionError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "ScheduledActionNotFound" => {
-            crate::error::ModifyScheduledActionError::ScheduledActionNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidSchedule" => crate::operation::modify_scheduled_action::ModifyScheduledActionError::InvalidScheduleFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::scheduled_action_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidScheduleFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_scheduled_action_not_found_fault::de_scheduled_action_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyScheduledActionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_schedule_fault::de_invalid_schedule_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_scheduled_action::ModifyScheduledActionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ScheduledActionTypeUnsupported" => {
-            crate::error::ModifyScheduledActionError::ScheduledActionTypeUnsupportedFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ScheduledActionNotFound" => crate::operation::modify_scheduled_action::ModifyScheduledActionError::ScheduledActionNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::scheduled_action_type_unsupported_fault::Builder::default();
+                    let mut output = crate::types::error::builders::ScheduledActionNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_scheduled_action_type_unsupported_fault::de_scheduled_action_type_unsupported_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyScheduledActionError::unhandled)?;
+                    output = crate::protocol_serde::shape_scheduled_action_not_found_fault::de_scheduled_action_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_scheduled_action::ModifyScheduledActionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "UnauthorizedOperation" => {
-            crate::error::ModifyScheduledActionError::UnauthorizedOperation({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ScheduledActionTypeUnsupported" => crate::operation::modify_scheduled_action::ModifyScheduledActionError::ScheduledActionTypeUnsupportedFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::unauthorized_operation::Builder::default();
+                    let mut output = crate::types::error::builders::ScheduledActionTypeUnsupportedFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_unauthorized_operation::de_unauthorized_operation_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyScheduledActionError::unhandled)?;
+                    output = crate::protocol_serde::shape_scheduled_action_type_unsupported_fault::de_scheduled_action_type_unsupported_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_scheduled_action::ModifyScheduledActionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::ModifyScheduledActionError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "UnauthorizedOperation" => crate::operation::modify_scheduled_action::ModifyScheduledActionError::UnauthorizedOperation({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::UnauthorizedOperationBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_unauthorized_operation::de_unauthorized_operation_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_scheduled_action::ModifyScheduledActionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::modify_scheduled_action::ModifyScheduledActionError::generic(generic)
     })
 }
 
@@ -112,18 +117,20 @@ pub fn de_modify_scheduled_action_http_error(
 pub fn de_modify_scheduled_action_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ModifyScheduledActionOutput,
-    crate::error::ModifyScheduledActionError,
+    crate::operation::modify_scheduled_action::ModifyScheduledActionOutput,
+    crate::operation::modify_scheduled_action::ModifyScheduledActionError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::modify_scheduled_action_output::Builder::default();
+        let mut output = crate::operation::modify_scheduled_action::builders::ModifyScheduledActionOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_modify_scheduled_action::de_modify_scheduled_action(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ModifyScheduledActionError::unhandled)?;
+        .map_err(
+            crate::operation::modify_scheduled_action::ModifyScheduledActionError::unhandled,
+        )?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -134,9 +141,9 @@ pub fn de_modify_scheduled_action_http_response(
 #[allow(unused_mut)]
 pub fn de_modify_scheduled_action(
     inp: &[u8],
-    mut builder: crate::output::modify_scheduled_action_output::Builder,
+    mut builder: crate::operation::modify_scheduled_action::builders::ModifyScheduledActionOutputBuilder,
 ) -> Result<
-    crate::output::modify_scheduled_action_output::Builder,
+    crate::operation::modify_scheduled_action::builders::ModifyScheduledActionOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
@@ -226,8 +233,8 @@ pub fn de_modify_scheduled_action(
             s if s.matches("State") /* State com.amazonaws.redshift.synthetic#ModifyScheduledActionOutput$State */ =>  {
                 let var_6 =
                     Some(
-                        Result::<crate::model::ScheduledActionState, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::ScheduledActionState::from(
+                        Result::<crate::types::ScheduledActionState, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::ScheduledActionState::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

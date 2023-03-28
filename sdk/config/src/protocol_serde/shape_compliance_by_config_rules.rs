@@ -2,7 +2,7 @@
 pub(crate) fn de_compliance_by_config_rules<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ComplianceByConfigRule>>,
+    Option<std::vec::Vec<crate::types::ComplianceByConfigRule>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

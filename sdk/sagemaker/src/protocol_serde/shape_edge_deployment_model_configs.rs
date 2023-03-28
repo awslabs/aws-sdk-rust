@@ -2,7 +2,7 @@
 pub(crate) fn de_edge_deployment_model_configs<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::EdgeDeploymentModelConfig>>,
+    Option<std::vec::Vec<crate::types::EdgeDeploymentModelConfig>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

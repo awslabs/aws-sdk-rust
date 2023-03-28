@@ -2,7 +2,7 @@
 pub(crate) fn de_control_insights_metadata<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ControlInsightsMetadataItem>>,
+    Option<std::vec::Vec<crate::types::ControlInsightsMetadataItem>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

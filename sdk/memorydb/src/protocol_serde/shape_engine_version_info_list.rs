@@ -2,7 +2,7 @@
 pub(crate) fn de_engine_version_info_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::EngineVersionInfo>>,
+    Option<std::vec::Vec<crate::types::EngineVersionInfo>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

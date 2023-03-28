@@ -2,7 +2,7 @@
 pub(crate) fn de_protection_groups<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ProtectionGroup>>,
+    Option<std::vec::Vec<crate::types::ProtectionGroup>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

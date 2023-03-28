@@ -2,13 +2,13 @@
 pub fn de_adm_channel_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::AdmChannelResponse>,
-    crate::error::DeleteAdmChannelError,
+    std::option::Option<crate::types::AdmChannelResponse>,
+    crate::operation::delete_adm_channel::DeleteAdmChannelError,
 > {
     (!body.is_empty())
         .then(|| {
             crate::protocol_serde::shape_adm_channel_response::de_adm_channel_response_payload(body)
-                .map_err(crate::error::DeleteAdmChannelError::unhandled)
+                .map_err(crate::operation::delete_adm_channel::DeleteAdmChannelError::unhandled)
         })
         .transpose()
 }

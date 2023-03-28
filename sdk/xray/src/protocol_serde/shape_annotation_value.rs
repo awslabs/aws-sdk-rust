@@ -2,7 +2,7 @@
 pub(crate) fn de_annotation_value<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::AnnotationValue>,
+    Option<crate::types::AnnotationValue>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -28,20 +28,20 @@ where
                         );
                     }
                     variant = match key.to_unescaped()?.as_ref() {
-                        "NumberValue" => Some(crate::model::AnnotationValue::NumberValue(
+                        "NumberValue" => Some(crate::types::AnnotationValue::NumberValue(
                             aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
                             .map(|v| v.to_f64_lossy())
                             .unwrap_or_default(),
                         )),
-                        "BooleanValue" => Some(crate::model::AnnotationValue::BooleanValue(
+                        "BooleanValue" => Some(crate::types::AnnotationValue::BooleanValue(
                             aws_smithy_json::deserialize::token::expect_bool_or_null(
                                 tokens.next(),
                             )?
                             .unwrap_or_default(),
                         )),
-                        "StringValue" => Some(crate::model::AnnotationValue::StringValue(
+                        "StringValue" => Some(crate::types::AnnotationValue::StringValue(
                             aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
@@ -51,7 +51,7 @@ where
                         )),
                         _ => {
                             aws_smithy_json::deserialize::token::skip_value(tokens)?;
-                            Some(crate::model::AnnotationValue::Unknown)
+                            Some(crate::types::AnnotationValue::Unknown)
                         }
                     };
                 }

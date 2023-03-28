@@ -2,7 +2,7 @@
 pub(crate) fn de_candidate_address_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CandidateAddress>>,
+    Option<std::vec::Vec<crate::types::CandidateAddress>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_invalid_authentication_code_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::invalid_authentication_code_exception::Builder,
+    mut builder: crate::types::error::builders::InvalidAuthenticationCodeExceptionBuilder,
 ) -> Result<
-    crate::error::invalid_authentication_code_exception::Builder,
+    crate::types::error::builders::InvalidAuthenticationCodeExceptionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

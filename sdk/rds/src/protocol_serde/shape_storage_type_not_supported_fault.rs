@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_storage_type_not_supported_fault_xml_err(
     inp: &[u8],
-    mut builder: crate::error::storage_type_not_supported_fault::Builder,
+    mut builder: crate::types::error::builders::StorageTypeNotSupportedFaultBuilder,
 ) -> Result<
-    crate::error::storage_type_not_supported_fault::Builder,
+    crate::types::error::builders::StorageTypeNotSupportedFaultBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

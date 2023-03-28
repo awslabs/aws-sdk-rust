@@ -2,7 +2,7 @@
 pub(crate) fn de_highest_severity_threat_details<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::HighestSeverityThreatDetails>,
+    Option<crate::types::HighestSeverityThreatDetails>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::highest_severity_threat_details::Builder::default();
+            let mut builder =
+                crate::types::builders::HighestSeverityThreatDetailsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

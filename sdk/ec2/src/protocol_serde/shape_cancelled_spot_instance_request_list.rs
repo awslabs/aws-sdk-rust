@@ -2,7 +2,7 @@
 pub fn de_cancelled_spot_instance_request_list(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::CancelledSpotInstanceRequest>,
+    std::vec::Vec<crate::types::CancelledSpotInstanceRequest>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

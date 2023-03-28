@@ -2,7 +2,7 @@
 pub(crate) fn de_service_metadata_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ServiceMetadata>>,
+    Option<std::vec::Vec<crate::types::ServiceMetadata>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

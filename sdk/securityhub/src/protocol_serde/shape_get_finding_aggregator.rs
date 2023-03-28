@@ -3,122 +3,130 @@
 pub fn de_get_finding_aggregator_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetFindingAggregatorOutput,
-    crate::error::GetFindingAggregatorError,
+    crate::operation::get_finding_aggregator::GetFindingAggregatorOutput,
+    crate::operation::get_finding_aggregator::GetFindingAggregatorError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetFindingAggregatorError::unhandled)?;
+        .map_err(crate::operation::get_finding_aggregator::GetFindingAggregatorError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::GetFindingAggregatorError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::get_finding_aggregator::GetFindingAggregatorError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => {
-            crate::error::GetFindingAggregatorError::AccessDeniedException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "AccessDeniedException" => crate::operation::get_finding_aggregator::GetFindingAggregatorError::AccessDeniedException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFindingAggregatorError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_finding_aggregator::GetFindingAggregatorError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InternalException" => crate::error::GetFindingAggregatorError::InternalException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_exception::de_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFindingAggregatorError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "InvalidAccessException" => {
-            crate::error::GetFindingAggregatorError::InvalidAccessException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalException" => crate::operation::get_finding_aggregator::GetFindingAggregatorError::InternalException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_access_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InternalExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_access_exception::de_invalid_access_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFindingAggregatorError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_exception::de_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_finding_aggregator::GetFindingAggregatorError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidInputException" => {
-            crate::error::GetFindingAggregatorError::InvalidInputException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidAccessException" => crate::operation::get_finding_aggregator::GetFindingAggregatorError::InvalidAccessException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_input_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidAccessExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_input_exception::de_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFindingAggregatorError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_access_exception::de_invalid_access_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_finding_aggregator::GetFindingAggregatorError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "LimitExceededException" => {
-            crate::error::GetFindingAggregatorError::LimitExceededException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidInputException" => crate::operation::get_finding_aggregator::GetFindingAggregatorError::InvalidInputException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidInputExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFindingAggregatorError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_input_exception::de_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_finding_aggregator::GetFindingAggregatorError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ResourceNotFoundException" => {
-            crate::error::GetFindingAggregatorError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "LimitExceededException" => crate::operation::get_finding_aggregator::GetFindingAggregatorError::LimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFindingAggregatorError::unhandled)?;
+                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_finding_aggregator::GetFindingAggregatorError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::GetFindingAggregatorError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::get_finding_aggregator::GetFindingAggregatorError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_finding_aggregator::GetFindingAggregatorError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::get_finding_aggregator::GetFindingAggregatorError::generic(generic)
     })
 }
 
@@ -126,18 +134,18 @@ pub fn de_get_finding_aggregator_http_error(
 pub fn de_get_finding_aggregator_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetFindingAggregatorOutput,
-    crate::error::GetFindingAggregatorError,
+    crate::operation::get_finding_aggregator::GetFindingAggregatorOutput,
+    crate::operation::get_finding_aggregator::GetFindingAggregatorError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_finding_aggregator_output::Builder::default();
+        let mut output = crate::operation::get_finding_aggregator::builders::GetFindingAggregatorOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_get_finding_aggregator::de_get_finding_aggregator(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::GetFindingAggregatorError::unhandled)?;
+        .map_err(crate::operation::get_finding_aggregator::GetFindingAggregatorError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -147,9 +155,9 @@ pub fn de_get_finding_aggregator_http_response(
 
 pub(crate) fn de_get_finding_aggregator(
     value: &[u8],
-    mut builder: crate::output::get_finding_aggregator_output::Builder,
+    mut builder: crate::operation::get_finding_aggregator::builders::GetFindingAggregatorOutputBuilder,
 ) -> Result<
-    crate::output::get_finding_aggregator_output::Builder,
+    crate::operation::get_finding_aggregator::builders::GetFindingAggregatorOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

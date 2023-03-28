@@ -3,85 +3,94 @@
 pub fn de_delete_login_profile_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteLoginProfileOutput,
-    crate::error::DeleteLoginProfileError,
+    crate::operation::delete_login_profile::DeleteLoginProfileOutput,
+    crate::operation::delete_login_profile::DeleteLoginProfileError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteLoginProfileError::unhandled)?;
+        .map_err(crate::operation::delete_login_profile::DeleteLoginProfileError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DeleteLoginProfileError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::delete_login_profile::DeleteLoginProfileError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "EntityTemporarilyUnmodifiable" => {
-            crate::error::DeleteLoginProfileError::EntityTemporarilyUnmodifiableException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "EntityTemporarilyUnmodifiable" => crate::operation::delete_login_profile::DeleteLoginProfileError::EntityTemporarilyUnmodifiableException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::entity_temporarily_unmodifiable_exception::Builder::default();
+                    let mut output = crate::types::error::builders::EntityTemporarilyUnmodifiableExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_entity_temporarily_unmodifiable_exception::de_entity_temporarily_unmodifiable_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteLoginProfileError::unhandled)?;
+                    output = crate::protocol_serde::shape_entity_temporarily_unmodifiable_exception::de_entity_temporarily_unmodifiable_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_login_profile::DeleteLoginProfileError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "LimitExceeded" => crate::error::DeleteLoginProfileError::LimitExceededException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::limit_exceeded_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteLoginProfileError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "NoSuchEntity" => crate::error::DeleteLoginProfileError::NoSuchEntityException({
+        "LimitExceeded" => crate::operation::delete_login_profile::DeleteLoginProfileError::LimitExceededException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::no_such_entity_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_no_such_entity_exception::de_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteLoginProfileError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_login_profile::DeleteLoginProfileError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "ServiceFailure" => crate::error::DeleteLoginProfileError::ServiceFailureException({
+        "NoSuchEntity" => crate::operation::delete_login_profile::DeleteLoginProfileError::NoSuchEntityException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::service_failure_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteLoginProfileError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::NoSuchEntityExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_no_such_entity_exception::de_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_login_profile::DeleteLoginProfileError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::DeleteLoginProfileError::generic(generic),
+        "ServiceFailure" => crate::operation::delete_login_profile::DeleteLoginProfileError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ServiceFailureExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_login_profile::DeleteLoginProfileError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::delete_login_profile::DeleteLoginProfileError::generic(generic)
     })
 }
 
@@ -89,12 +98,12 @@ pub fn de_delete_login_profile_http_error(
 pub fn de_delete_login_profile_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteLoginProfileOutput,
-    crate::error::DeleteLoginProfileError,
+    crate::operation::delete_login_profile::DeleteLoginProfileOutput,
+    crate::operation::delete_login_profile::DeleteLoginProfileError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_login_profile_output::Builder::default();
+        let mut output = crate::operation::delete_login_profile::builders::DeleteLoginProfileOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

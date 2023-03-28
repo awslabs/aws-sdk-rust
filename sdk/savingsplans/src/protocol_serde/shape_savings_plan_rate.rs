@@ -2,7 +2,7 @@
 pub(crate) fn de_savings_plan_rate<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::SavingsPlanRate>,
+    Option<crate::types::SavingsPlanRate>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::savings_plan_rate::Builder::default();
+            let mut builder = crate::types::builders::SavingsPlanRateBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -39,7 +39,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::CurrencyCode::from(u.as_ref()))
+                                            .map(|u| crate::types::CurrencyCode::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -51,7 +51,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::SavingsPlanRateUnit::from(u.as_ref())
+                                            crate::types::SavingsPlanRateUnit::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -64,7 +64,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::SavingsPlanProductType::from(u.as_ref())
+                                            crate::types::SavingsPlanProductType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -77,7 +77,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::SavingsPlanRateServiceCode::from(
+                                            crate::types::SavingsPlanRateServiceCode::from(
                                                 u.as_ref(),
                                             )
                                         })

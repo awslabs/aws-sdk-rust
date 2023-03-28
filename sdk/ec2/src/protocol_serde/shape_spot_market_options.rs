@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_spot_market_options(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::SpotMarketOptions,
+    input: &crate::types::SpotMarketOptions,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("MaxPrice");

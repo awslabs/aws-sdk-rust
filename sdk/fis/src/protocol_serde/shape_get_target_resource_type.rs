@@ -3,54 +3,62 @@
 pub fn de_get_target_resource_type_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetTargetResourceTypeOutput,
-    crate::error::GetTargetResourceTypeError,
+    crate::operation::get_target_resource_type::GetTargetResourceTypeOutput,
+    crate::operation::get_target_resource_type::GetTargetResourceTypeError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetTargetResourceTypeError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::get_target_resource_type::GetTargetResourceTypeError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    let error_code = match generic.code() {
-        Some(code) => code,
-        None => return Err(crate::error::GetTargetResourceTypeError::unhandled(generic)),
-    };
+    let error_code =
+        match generic.code() {
+            Some(code) => code,
+            None => return Err(
+                crate::operation::get_target_resource_type::GetTargetResourceTypeError::unhandled(
+                    generic,
+                ),
+            ),
+        };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceNotFoundException" => {
-            crate::error::GetTargetResourceTypeError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "ResourceNotFoundException" => crate::operation::get_target_resource_type::GetTargetResourceTypeError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetTargetResourceTypeError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_target_resource_type::GetTargetResourceTypeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ValidationException" => crate::error::GetTargetResourceTypeError::ValidationException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetTargetResourceTypeError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::GetTargetResourceTypeError::generic(generic),
+        "ValidationException" => crate::operation::get_target_resource_type::GetTargetResourceTypeError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_target_resource_type::GetTargetResourceTypeError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::get_target_resource_type::GetTargetResourceTypeError::generic(generic)
     })
 }
 
@@ -58,19 +66,21 @@ pub fn de_get_target_resource_type_http_error(
 pub fn de_get_target_resource_type_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetTargetResourceTypeOutput,
-    crate::error::GetTargetResourceTypeError,
+    crate::operation::get_target_resource_type::GetTargetResourceTypeOutput,
+    crate::operation::get_target_resource_type::GetTargetResourceTypeError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_target_resource_type_output::Builder::default();
+        let mut output = crate::operation::get_target_resource_type::builders::GetTargetResourceTypeOutputBuilder::default();
         let _ = response;
         output =
             crate::protocol_serde::shape_get_target_resource_type::de_get_target_resource_type(
                 response.body().as_ref(),
                 output,
             )
-            .map_err(crate::error::GetTargetResourceTypeError::unhandled)?;
+            .map_err(
+                crate::operation::get_target_resource_type::GetTargetResourceTypeError::unhandled,
+            )?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -80,9 +90,9 @@ pub fn de_get_target_resource_type_http_response(
 
 pub(crate) fn de_get_target_resource_type(
     value: &[u8],
-    mut builder: crate::output::get_target_resource_type_output::Builder,
+    mut builder: crate::operation::get_target_resource_type::builders::GetTargetResourceTypeOutputBuilder,
 ) -> Result<
-    crate::output::get_target_resource_type_output::Builder,
+    crate::operation::get_target_resource_type::builders::GetTargetResourceTypeOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

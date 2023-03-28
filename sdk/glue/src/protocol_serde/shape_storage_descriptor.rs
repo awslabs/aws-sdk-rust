@@ -2,7 +2,7 @@
 pub(crate) fn de_storage_descriptor<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::StorageDescriptor>,
+    Option<crate::types::StorageDescriptor>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::storage_descriptor::Builder::default();
+            let mut builder = crate::types::builders::StorageDescriptorBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -146,7 +146,7 @@ where
 
 pub fn ser_storage_descriptor(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::StorageDescriptor,
+    input: &crate::types::StorageDescriptor,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.columns {
         let mut array_2 = object.key("Columns").start_array();

@@ -2,7 +2,7 @@
 pub(crate) fn de_patch_group_patch_baseline_mapping_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::PatchGroupPatchBaselineMapping>>,
+    Option<std::vec::Vec<crate::types::PatchGroupPatchBaselineMapping>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

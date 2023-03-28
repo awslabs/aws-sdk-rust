@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_message_attribute_value(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::MessageAttributeValue,
+    input: &crate::types::MessageAttributeValue,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("StringValue");
@@ -46,9 +46,9 @@ pub fn ser_message_attribute_value(
 
 pub fn de_message_attribute_value(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::MessageAttributeValue, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::MessageAttributeValue, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::MessageAttributeValue::builder();
+    let mut builder = crate::types::MessageAttributeValue::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("StringValue") /* StringValue com.amazonaws.sqs#MessageAttributeValue$StringValue */ =>  {

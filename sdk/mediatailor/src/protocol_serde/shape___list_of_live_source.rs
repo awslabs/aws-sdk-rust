@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_live_source<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::LiveSource>>,
+    Option<std::vec::Vec<crate::types::LiveSource>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

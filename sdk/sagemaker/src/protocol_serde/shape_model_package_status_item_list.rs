@@ -2,7 +2,7 @@
 pub(crate) fn de_model_package_status_item_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ModelPackageStatusItem>>,
+    Option<std::vec::Vec<crate::types::ModelPackageStatusItem>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

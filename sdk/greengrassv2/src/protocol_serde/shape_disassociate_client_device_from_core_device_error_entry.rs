@@ -2,7 +2,7 @@
 pub(crate) fn de_disassociate_client_device_from_core_device_error_entry<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::DisassociateClientDeviceFromCoreDeviceErrorEntry>,
+    Option<crate::types::DisassociateClientDeviceFromCoreDeviceErrorEntry>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::disassociate_client_device_from_core_device_error_entry::Builder::default();
+            let mut builder = crate::types::builders::DisassociateClientDeviceFromCoreDeviceErrorEntryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

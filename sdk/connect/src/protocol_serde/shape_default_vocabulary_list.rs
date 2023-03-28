@@ -2,7 +2,7 @@
 pub(crate) fn de_default_vocabulary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DefaultVocabulary>>,
+    Option<std::vec::Vec<crate::types::DefaultVocabulary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

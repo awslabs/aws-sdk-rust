@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_parameter_definition<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ParameterDefinition>>,
+    Option<std::vec::Vec<crate::types::ParameterDefinition>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_range(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::Range,
+    input: &crate::types::Range,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("StartTime");
@@ -19,9 +19,9 @@ pub fn ser_range(
 
 pub fn de_range(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::Range, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::Range, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::Range::builder();
+    let mut builder = crate::types::Range::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("StartTime") /* StartTime com.amazonaws.cloudwatch#Range$StartTime */ =>  {

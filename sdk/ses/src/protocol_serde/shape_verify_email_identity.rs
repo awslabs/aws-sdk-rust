@@ -3,27 +3,27 @@
 pub fn de_verify_email_identity_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::VerifyEmailIdentityOutput,
-    crate::error::VerifyEmailIdentityError,
+    crate::operation::verify_email_identity::VerifyEmailIdentityOutput,
+    crate::operation::verify_email_identity::VerifyEmailIdentityError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::VerifyEmailIdentityError::unhandled)?;
+        .map_err(crate::operation::verify_email_identity::VerifyEmailIdentityError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::VerifyEmailIdentityError::generic(generic))
+    Err(crate::operation::verify_email_identity::VerifyEmailIdentityError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_verify_email_identity_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::VerifyEmailIdentityOutput,
-    crate::error::VerifyEmailIdentityError,
+    crate::operation::verify_email_identity::VerifyEmailIdentityOutput,
+    crate::operation::verify_email_identity::VerifyEmailIdentityError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::verify_email_identity_output::Builder::default();
+        let mut output = crate::operation::verify_email_identity::builders::VerifyEmailIdentityOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

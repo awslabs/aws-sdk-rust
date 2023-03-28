@@ -2,7 +2,7 @@
 pub(crate) fn de_configured_table_association_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ConfiguredTableAssociationSummary>,
+    Option<crate::types::ConfiguredTableAssociationSummary>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::configured_table_association_summary::Builder::default();
+                crate::types::builders::ConfiguredTableAssociationSummaryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

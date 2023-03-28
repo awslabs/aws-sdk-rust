@@ -2,7 +2,7 @@
 pub(crate) fn de_load_balancer_tls_certificate_domain_validation_record_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::LoadBalancerTlsCertificateDomainValidationRecord>>,
+    Option<std::vec::Vec<crate::types::LoadBalancerTlsCertificateDomainValidationRecord>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

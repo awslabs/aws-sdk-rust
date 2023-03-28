@@ -2,7 +2,7 @@
 pub(crate) fn de_geo_match_constraints<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::GeoMatchConstraint>>,
+    Option<std::vec::Vec<crate::types::GeoMatchConstraint>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

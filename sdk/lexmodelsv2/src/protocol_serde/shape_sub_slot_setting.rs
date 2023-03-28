@@ -2,7 +2,7 @@
 pub(crate) fn de_sub_slot_setting<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::SubSlotSetting>,
+    Option<crate::types::SubSlotSetting>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::sub_slot_setting::Builder::default();
+            let mut builder = crate::types::builders::SubSlotSettingBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -62,7 +62,7 @@ where
 
 pub fn ser_sub_slot_setting(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::SubSlotSetting,
+    input: &crate::types::SubSlotSetting,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.expression {
         object.key("expression").string(var_1.as_str());

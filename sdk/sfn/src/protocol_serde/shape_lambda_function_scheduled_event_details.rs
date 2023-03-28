@@ -2,7 +2,7 @@
 pub(crate) fn de_lambda_function_scheduled_event_details<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::LambdaFunctionScheduledEventDetails>,
+    Option<crate::types::LambdaFunctionScheduledEventDetails>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::lambda_function_scheduled_event_details::Builder::default();
+                crate::types::builders::LambdaFunctionScheduledEventDetailsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

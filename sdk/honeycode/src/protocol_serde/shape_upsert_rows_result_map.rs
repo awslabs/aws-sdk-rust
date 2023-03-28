@@ -2,7 +2,7 @@
 pub(crate) fn de_upsert_rows_result_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<std::string::String, crate::model::UpsertRowsResult>>,
+    Option<std::collections::HashMap<std::string::String, crate::types::UpsertRowsResult>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

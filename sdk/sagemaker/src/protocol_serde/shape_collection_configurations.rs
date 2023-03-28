@@ -2,7 +2,7 @@
 pub(crate) fn de_collection_configurations<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CollectionConfiguration>>,
+    Option<std::vec::Vec<crate::types::CollectionConfiguration>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_confluence_attachment_field_mappings_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ConfluenceAttachmentToIndexFieldMapping>>,
+    Option<std::vec::Vec<crate::types::ConfluenceAttachmentToIndexFieldMapping>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

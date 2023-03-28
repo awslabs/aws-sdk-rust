@@ -2,7 +2,7 @@
 pub(crate) fn de_custom_vocabulary_export_specification<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::CustomVocabularyExportSpecification>,
+    Option<crate::types::CustomVocabularyExportSpecification>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::custom_vocabulary_export_specification::Builder::default();
+                crate::types::builders::CustomVocabularyExportSpecificationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -76,7 +76,7 @@ where
 
 pub fn ser_custom_vocabulary_export_specification(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::CustomVocabularyExportSpecification,
+    input: &crate::types::CustomVocabularyExportSpecification,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.bot_id {
         object.key("botId").string(var_1.as_str());

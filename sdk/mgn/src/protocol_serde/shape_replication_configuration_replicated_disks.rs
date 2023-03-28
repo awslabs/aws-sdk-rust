@@ -2,7 +2,7 @@
 pub(crate) fn de_replication_configuration_replicated_disks<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ReplicationConfigurationReplicatedDisk>>,
+    Option<std::vec::Vec<crate::types::ReplicationConfigurationReplicatedDisk>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

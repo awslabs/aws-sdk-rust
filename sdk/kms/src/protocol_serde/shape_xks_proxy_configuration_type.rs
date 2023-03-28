@@ -2,7 +2,7 @@
 pub(crate) fn de_xks_proxy_configuration_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::XksProxyConfigurationType>,
+    Option<crate::types::XksProxyConfigurationType>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::xks_proxy_configuration_type::Builder::default();
+            let mut builder = crate::types::builders::XksProxyConfigurationTypeBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::XksProxyConnectivityType::from(u.as_ref())
+                                            crate::types::XksProxyConnectivityType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

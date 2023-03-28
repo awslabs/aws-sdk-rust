@@ -7,7 +7,7 @@ pub(crate) fn de_aws_ecs_task_definition_container_definitions_linux_parameters_
 ) -> Result<
     Option<
         std::vec::Vec<
-            crate::model::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails,
+            crate::types::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails,
         >,
     >,
     aws_smithy_json::deserialize::error::DeserializeError,

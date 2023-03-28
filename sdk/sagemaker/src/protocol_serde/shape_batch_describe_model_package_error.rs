@@ -2,7 +2,7 @@
 pub(crate) fn de_batch_describe_model_package_error<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::BatchDescribeModelPackageError>,
+    Option<crate::types::BatchDescribeModelPackageError>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::batch_describe_model_package_error::Builder::default();
+            let mut builder =
+                crate::types::builders::BatchDescribeModelPackageErrorBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

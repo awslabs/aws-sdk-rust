@@ -2,7 +2,7 @@
 pub(crate) fn de_ip_addresses_response<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::IpAddressResponse>>,
+    Option<std::vec::Vec<crate::types::IpAddressResponse>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

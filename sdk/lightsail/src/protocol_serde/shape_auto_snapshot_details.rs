@@ -2,7 +2,7 @@
 pub(crate) fn de_auto_snapshot_details<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::AutoSnapshotDetails>,
+    Option<crate::types::AutoSnapshotDetails>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::auto_snapshot_details::Builder::default();
+            let mut builder = crate::types::builders::AutoSnapshotDetailsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -47,7 +47,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::AutoSnapshotStatus::from(u.as_ref())
+                                            crate::types::AutoSnapshotStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

@@ -2,7 +2,7 @@
 pub(crate) fn de_repository_trigger_execution_failure_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::RepositoryTriggerExecutionFailure>>,
+    Option<std::vec::Vec<crate::types::RepositoryTriggerExecutionFailure>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

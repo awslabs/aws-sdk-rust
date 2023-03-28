@@ -2,7 +2,7 @@
 pub(crate) fn de_continuous_hyper_parameter_ranges<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ContinuousHyperParameterRange>>,
+    Option<std::vec::Vec<crate::types::ContinuousHyperParameterRange>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

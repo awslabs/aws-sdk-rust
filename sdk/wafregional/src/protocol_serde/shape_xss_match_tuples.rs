@@ -2,7 +2,7 @@
 pub(crate) fn de_xss_match_tuples<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::XssMatchTuple>>,
+    Option<std::vec::Vec<crate::types::XssMatchTuple>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

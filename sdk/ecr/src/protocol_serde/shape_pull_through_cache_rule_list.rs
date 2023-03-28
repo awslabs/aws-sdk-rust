@@ -2,7 +2,7 @@
 pub(crate) fn de_pull_through_cache_rule_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::PullThroughCacheRule>>,
+    Option<std::vec::Vec<crate::types::PullThroughCacheRule>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

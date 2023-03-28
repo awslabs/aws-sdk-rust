@@ -2,7 +2,7 @@
 pub(crate) fn de_application_fleet_association_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ApplicationFleetAssociation>>,
+    Option<std::vec::Vec<crate::types::ApplicationFleetAssociation>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

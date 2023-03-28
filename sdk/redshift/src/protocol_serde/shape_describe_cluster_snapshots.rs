@@ -3,93 +3,95 @@
 pub fn de_describe_cluster_snapshots_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeClusterSnapshotsOutput,
-    crate::error::DescribeClusterSnapshotsError,
+    crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsOutput,
+    crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeClusterSnapshotsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::error::DescribeClusterSnapshotsError::unhandled(
+        None => return Err(
+            crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsError::unhandled(
                 generic,
-            ))
-        }
+            ),
+        ),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ClusterNotFound" => crate::error::DescribeClusterSnapshotsError::ClusterNotFoundFault({
+        "ClusterNotFound" => crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsError::ClusterNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::cluster_not_found_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_cluster_not_found_fault::de_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeClusterSnapshotsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ClusterNotFoundFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_cluster_not_found_fault::de_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "ClusterSnapshotNotFound" => {
-            crate::error::DescribeClusterSnapshotsError::ClusterSnapshotNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "ClusterSnapshotNotFound" => crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsError::ClusterSnapshotNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::cluster_snapshot_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::ClusterSnapshotNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_cluster_snapshot_not_found_fault::de_cluster_snapshot_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeClusterSnapshotsError::unhandled)?;
+                    output = crate::protocol_serde::shape_cluster_snapshot_not_found_fault::de_cluster_snapshot_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidTagFault" => {
-            crate::error::DescribeClusterSnapshotsError::InvalidTagFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidTagFault" => crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsError::InvalidTagFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_tag_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidTagFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_tag_fault::de_invalid_tag_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeClusterSnapshotsError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_tag_fault::de_invalid_tag_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "UnsupportedOperation" => {
-            crate::error::DescribeClusterSnapshotsError::UnsupportedOperationFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "UnsupportedOperation" => crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsError::UnsupportedOperationFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::unsupported_operation_fault::Builder::default();
+                    let mut output = crate::types::error::builders::UnsupportedOperationFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_unsupported_operation_fault::de_unsupported_operation_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeClusterSnapshotsError::unhandled)?;
+                    output = crate::protocol_serde::shape_unsupported_operation_fault::de_unsupported_operation_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DescribeClusterSnapshotsError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsError::generic(generic)
     })
 }
 
@@ -97,19 +99,14 @@ pub fn de_describe_cluster_snapshots_http_error(
 pub fn de_describe_cluster_snapshots_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeClusterSnapshotsOutput,
-    crate::error::DescribeClusterSnapshotsError,
+    crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsOutput,
+    crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_cluster_snapshots_output::Builder::default();
+        let mut output = crate::operation::describe_cluster_snapshots::builders::DescribeClusterSnapshotsOutputBuilder::default();
         let _ = response;
-        output =
-            crate::protocol_serde::shape_describe_cluster_snapshots::de_describe_cluster_snapshots(
-                response.body().as_ref(),
-                output,
-            )
-            .map_err(crate::error::DescribeClusterSnapshotsError::unhandled)?;
+        output = crate::protocol_serde::shape_describe_cluster_snapshots::de_describe_cluster_snapshots(response.body().as_ref(), output).map_err(crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -120,9 +117,9 @@ pub fn de_describe_cluster_snapshots_http_response(
 #[allow(unused_mut)]
 pub fn de_describe_cluster_snapshots(
     inp: &[u8],
-    mut builder: crate::output::describe_cluster_snapshots_output::Builder,
+    mut builder: crate::operation::describe_cluster_snapshots::builders::DescribeClusterSnapshotsOutputBuilder,
 ) -> Result<
-    crate::output::describe_cluster_snapshots_output::Builder,
+    crate::operation::describe_cluster_snapshots::builders::DescribeClusterSnapshotsOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

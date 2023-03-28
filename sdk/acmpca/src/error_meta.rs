@@ -4,43 +4,43 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>The certificate authority certificate you are importing does not comply with conditions specified in the certificate that signed it.</p>
-    CertificateMismatchException(crate::error::CertificateMismatchException),
+    CertificateMismatchException(crate::types::error::CertificateMismatchException),
     /// <p>A previous update to your private CA is still ongoing.</p>
-    ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    ConcurrentModificationException(crate::types::error::ConcurrentModificationException),
     /// <p>One or more of the specified arguments was not valid.</p>
-    InvalidArgsException(crate::error::InvalidArgsException),
+    InvalidArgsException(crate::types::error::InvalidArgsException),
     /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing resource.</p>
-    InvalidArnException(crate::error::InvalidArnException),
+    InvalidArnException(crate::types::error::InvalidArnException),
     /// <p>The token specified in the <code>NextToken</code> argument is not valid. Use the token returned from your previous call to <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a>.</p>
-    InvalidNextTokenException(crate::error::InvalidNextTokenException),
+    InvalidNextTokenException(crate::types::error::InvalidNextTokenException),
     /// <p>The resource policy is invalid or is missing a required statement. For general information about IAM policy and statement structure, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policies-json">Overview of JSON Policies</a>.</p>
-    InvalidPolicyException(crate::error::InvalidPolicyException),
+    InvalidPolicyException(crate::types::error::InvalidPolicyException),
     /// <p>The request action cannot be performed or is prohibited.</p>
-    InvalidRequestException(crate::error::InvalidRequestException),
+    InvalidRequestException(crate::types::error::InvalidRequestException),
     /// <p>The state of the private CA does not allow this action to occur.</p>
-    InvalidStateException(crate::error::InvalidStateException),
+    InvalidStateException(crate::types::error::InvalidStateException),
     /// <p>The tag associated with the CA is not valid. The invalid argument is contained in the message field.</p>
-    InvalidTagException(crate::error::InvalidTagException),
+    InvalidTagException(crate::types::error::InvalidTagException),
     /// <p>An Amazon Web Services Private CA quota has been exceeded. See the exception message returned to determine the quota that was exceeded.</p>
-    LimitExceededException(crate::error::LimitExceededException),
+    LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>The current action was prevented because it would lock the caller out from performing subsequent actions. Verify that the specified parameters would not result in the caller being denied access to the resource. </p>
-    LockoutPreventedException(crate::error::LockoutPreventedException),
+    LockoutPreventedException(crate::types::error::LockoutPreventedException),
     /// <p>The certificate signing request is invalid.</p>
-    MalformedCsrException(crate::error::MalformedCsrException),
+    MalformedCsrException(crate::types::error::MalformedCsrException),
     /// <p>One or more fields in the certificate are invalid.</p>
-    MalformedCertificateException(crate::error::MalformedCertificateException),
+    MalformedCertificateException(crate::types::error::MalformedCertificateException),
     /// <p>The designated permission has already been given to the user.</p>
-    PermissionAlreadyExistsException(crate::error::PermissionAlreadyExistsException),
+    PermissionAlreadyExistsException(crate::types::error::PermissionAlreadyExistsException),
     /// <p>Your request has already been completed.</p>
-    RequestAlreadyProcessedException(crate::error::RequestAlreadyProcessedException),
+    RequestAlreadyProcessedException(crate::types::error::RequestAlreadyProcessedException),
     /// <p>The request has failed for an unspecified reason.</p>
-    RequestFailedException(crate::error::RequestFailedException),
+    RequestFailedException(crate::types::error::RequestFailedException),
     /// <p>Your request is already in progress.</p>
-    RequestInProgressException(crate::error::RequestInProgressException),
+    RequestInProgressException(crate::types::error::RequestInProgressException),
     /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy cannot be found.</p>
-    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>You can associate up to 50 tags with a private CA. Exception information is contained in the exception message field.</p>
-    TooManyTagsException(crate::error::TooManyTagsException),
+    TooManyTagsException(crate::types::error::TooManyTagsException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled),
 }
@@ -70,54 +70,10 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateCertificateAuthorityError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateCertificateAuthorityError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::CreateCertificateAuthorityError> for Error {
-    fn from(err: crate::error::CreateCertificateAuthorityError) -> Self {
-        match err {
-            crate::error::CreateCertificateAuthorityError::InvalidArgsException(inner) => {
-                Error::InvalidArgsException(inner)
-            }
-            crate::error::CreateCertificateAuthorityError::InvalidPolicyException(inner) => {
-                Error::InvalidPolicyException(inner)
-            }
-            crate::error::CreateCertificateAuthorityError::InvalidTagException(inner) => {
-                Error::InvalidTagException(inner)
-            }
-            crate::error::CreateCertificateAuthorityError::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::CreateCertificateAuthorityError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
-            crate::error::CreateCertificateAuthorityAuditReportError,
+            crate::operation::create_certificate_authority::CreateCertificateAuthorityError,
             R,
         >,
     > for Error
@@ -126,7 +82,7 @@ where
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::CreateCertificateAuthorityAuditReportError,
+            crate::operation::create_certificate_authority::CreateCertificateAuthorityError,
             R,
         >,
     ) -> Self {
@@ -145,25 +101,62 @@ where
         }
     }
 }
-impl From<crate::error::CreateCertificateAuthorityAuditReportError> for Error {
-    fn from(err: crate::error::CreateCertificateAuthorityAuditReportError) -> Self {
+impl From<crate::operation::create_certificate_authority::CreateCertificateAuthorityError>
+    for Error
+{
+    fn from(
+        err: crate::operation::create_certificate_authority::CreateCertificateAuthorityError,
+    ) -> Self {
         match err {
-            crate::error::CreateCertificateAuthorityAuditReportError::InvalidArgsException(inner) => Error::InvalidArgsException(inner),
-            crate::error::CreateCertificateAuthorityAuditReportError::InvalidArnException(inner) => Error::InvalidArnException(inner),
-            crate::error::CreateCertificateAuthorityAuditReportError::InvalidStateException(inner) => Error::InvalidStateException(inner),
-            crate::error::CreateCertificateAuthorityAuditReportError::RequestFailedException(inner) => Error::RequestFailedException(inner),
-            crate::error::CreateCertificateAuthorityAuditReportError::RequestInProgressException(inner) => Error::RequestInProgressException(inner),
-            crate::error::CreateCertificateAuthorityAuditReportError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::CreateCertificateAuthorityAuditReportError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::create_certificate_authority::CreateCertificateAuthorityError::InvalidArgsException(inner) => Error::InvalidArgsException(inner),
+            crate::operation::create_certificate_authority::CreateCertificateAuthorityError::InvalidPolicyException(inner) => Error::InvalidPolicyException(inner),
+            crate::operation::create_certificate_authority::CreateCertificateAuthorityError::InvalidTagException(inner) => Error::InvalidTagException(inner),
+            crate::operation::create_certificate_authority::CreateCertificateAuthorityError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_certificate_authority::CreateCertificateAuthorityError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreatePermissionError, R>> for Error
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_certificate_authority_audit_report::CreateCertificateAuthorityAuditReportError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_certificate_authority_audit_report::CreateCertificateAuthorityAuditReportError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::create_certificate_authority_audit_report::CreateCertificateAuthorityAuditReportError> for Error {
+    fn from(err: crate::operation::create_certificate_authority_audit_report::CreateCertificateAuthorityAuditReportError) -> Self {
+        match err {
+            crate::operation::create_certificate_authority_audit_report::CreateCertificateAuthorityAuditReportError::InvalidArgsException(inner) => Error::InvalidArgsException(inner),
+            crate::operation::create_certificate_authority_audit_report::CreateCertificateAuthorityAuditReportError::InvalidArnException(inner) => Error::InvalidArnException(inner),
+            crate::operation::create_certificate_authority_audit_report::CreateCertificateAuthorityAuditReportError::InvalidStateException(inner) => Error::InvalidStateException(inner),
+            crate::operation::create_certificate_authority_audit_report::CreateCertificateAuthorityAuditReportError::RequestFailedException(inner) => Error::RequestFailedException(inner),
+            crate::operation::create_certificate_authority_audit_report::CreateCertificateAuthorityAuditReportError::RequestInProgressException(inner) => Error::RequestInProgressException(inner),
+            crate::operation::create_certificate_authority_audit_report::CreateCertificateAuthorityAuditReportError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_certificate_authority_audit_report::CreateCertificateAuthorityAuditReportError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_permission::CreatePermissionError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreatePermissionError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_permission::CreatePermissionError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -180,38 +173,118 @@ where
         }
     }
 }
-impl From<crate::error::CreatePermissionError> for Error {
-    fn from(err: crate::error::CreatePermissionError) -> Self {
+impl From<crate::operation::create_permission::CreatePermissionError> for Error {
+    fn from(err: crate::operation::create_permission::CreatePermissionError) -> Self {
         match err {
-            crate::error::CreatePermissionError::InvalidArnException(inner) => {
-                Error::InvalidArnException(inner)
-            }
-            crate::error::CreatePermissionError::InvalidStateException(inner) => {
-                Error::InvalidStateException(inner)
-            }
-            crate::error::CreatePermissionError::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::CreatePermissionError::PermissionAlreadyExistsException(inner) => {
-                Error::PermissionAlreadyExistsException(inner)
-            }
-            crate::error::CreatePermissionError::RequestFailedException(inner) => {
-                Error::RequestFailedException(inner)
-            }
-            crate::error::CreatePermissionError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::CreatePermissionError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::create_permission::CreatePermissionError::InvalidArnException(inner) => Error::InvalidArnException(inner),
+            crate::operation::create_permission::CreatePermissionError::InvalidStateException(inner) => Error::InvalidStateException(inner),
+            crate::operation::create_permission::CreatePermissionError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_permission::CreatePermissionError::PermissionAlreadyExistsException(inner) => Error::PermissionAlreadyExistsException(inner),
+            crate::operation::create_permission::CreatePermissionError::RequestFailedException(inner) => Error::RequestFailedException(inner),
+            crate::operation::create_permission::CreatePermissionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_permission::CreatePermissionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteCertificateAuthorityError, R>>
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_certificate_authority::DeleteCertificateAuthorityError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_certificate_authority::DeleteCertificateAuthorityError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_certificate_authority::DeleteCertificateAuthorityError>
+    for Error
+{
+    fn from(
+        err: crate::operation::delete_certificate_authority::DeleteCertificateAuthorityError,
+    ) -> Self {
+        match err {
+            crate::operation::delete_certificate_authority::DeleteCertificateAuthorityError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::delete_certificate_authority::DeleteCertificateAuthorityError::InvalidArnException(inner) => Error::InvalidArnException(inner),
+            crate::operation::delete_certificate_authority::DeleteCertificateAuthorityError::InvalidStateException(inner) => Error::InvalidStateException(inner),
+            crate::operation::delete_certificate_authority::DeleteCertificateAuthorityError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_certificate_authority::DeleteCertificateAuthorityError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_permission::DeletePermissionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_permission::DeletePermissionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_permission::DeletePermissionError> for Error {
+    fn from(err: crate::operation::delete_permission::DeletePermissionError) -> Self {
+        match err {
+            crate::operation::delete_permission::DeletePermissionError::InvalidArnException(inner) => Error::InvalidArnException(inner),
+            crate::operation::delete_permission::DeletePermissionError::InvalidStateException(inner) => Error::InvalidStateException(inner),
+            crate::operation::delete_permission::DeletePermissionError::RequestFailedException(inner) => Error::RequestFailedException(inner),
+            crate::operation::delete_permission::DeletePermissionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_permission::DeletePermissionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::delete_policy::DeletePolicyError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteCertificateAuthorityError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_policy::DeletePolicyError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -228,370 +301,37 @@ where
         }
     }
 }
-impl From<crate::error::DeleteCertificateAuthorityError> for Error {
-    fn from(err: crate::error::DeleteCertificateAuthorityError) -> Self {
+impl From<crate::operation::delete_policy::DeletePolicyError> for Error {
+    fn from(err: crate::operation::delete_policy::DeletePolicyError) -> Self {
         match err {
-            crate::error::DeleteCertificateAuthorityError::ConcurrentModificationException(
+            crate::operation::delete_policy::DeletePolicyError::ConcurrentModificationException(
                 inner,
             ) => Error::ConcurrentModificationException(inner),
-            crate::error::DeleteCertificateAuthorityError::InvalidArnException(inner) => {
+            crate::operation::delete_policy::DeletePolicyError::InvalidArnException(inner) => {
                 Error::InvalidArnException(inner)
             }
-            crate::error::DeleteCertificateAuthorityError::InvalidStateException(inner) => {
+            crate::operation::delete_policy::DeletePolicyError::InvalidStateException(inner) => {
                 Error::InvalidStateException(inner)
             }
-            crate::error::DeleteCertificateAuthorityError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DeleteCertificateAuthorityError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeletePermissionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeletePermissionError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DeletePermissionError> for Error {
-    fn from(err: crate::error::DeletePermissionError) -> Self {
-        match err {
-            crate::error::DeletePermissionError::InvalidArnException(inner) => {
-                Error::InvalidArnException(inner)
-            }
-            crate::error::DeletePermissionError::InvalidStateException(inner) => {
-                Error::InvalidStateException(inner)
-            }
-            crate::error::DeletePermissionError::RequestFailedException(inner) => {
+            crate::operation::delete_policy::DeletePolicyError::LockoutPreventedException(
+                inner,
+            ) => Error::LockoutPreventedException(inner),
+            crate::operation::delete_policy::DeletePolicyError::RequestFailedException(inner) => {
                 Error::RequestFailedException(inner)
             }
-            crate::error::DeletePermissionError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DeletePermissionError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeletePolicyError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeletePolicyError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DeletePolicyError> for Error {
-    fn from(err: crate::error::DeletePolicyError) -> Self {
-        match err {
-            crate::error::DeletePolicyError::ConcurrentModificationException(inner) => {
-                Error::ConcurrentModificationException(inner)
-            }
-            crate::error::DeletePolicyError::InvalidArnException(inner) => {
-                Error::InvalidArnException(inner)
-            }
-            crate::error::DeletePolicyError::InvalidStateException(inner) => {
-                Error::InvalidStateException(inner)
-            }
-            crate::error::DeletePolicyError::LockoutPreventedException(inner) => {
-                Error::LockoutPreventedException(inner)
-            }
-            crate::error::DeletePolicyError::RequestFailedException(inner) => {
-                Error::RequestFailedException(inner)
-            }
-            crate::error::DeletePolicyError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DeletePolicyError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeCertificateAuthorityError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeCertificateAuthorityError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribeCertificateAuthorityError> for Error {
-    fn from(err: crate::error::DescribeCertificateAuthorityError) -> Self {
-        match err {
-            crate::error::DescribeCertificateAuthorityError::InvalidArnException(inner) => {
-                Error::InvalidArnException(inner)
-            }
-            crate::error::DescribeCertificateAuthorityError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DescribeCertificateAuthorityError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::DescribeCertificateAuthorityAuditReportError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DescribeCertificateAuthorityAuditReportError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribeCertificateAuthorityAuditReportError> for Error {
-    fn from(err: crate::error::DescribeCertificateAuthorityAuditReportError) -> Self {
-        match err {
-            crate::error::DescribeCertificateAuthorityAuditReportError::InvalidArgsException(inner) => Error::InvalidArgsException(inner),
-            crate::error::DescribeCertificateAuthorityAuditReportError::InvalidArnException(inner) => Error::InvalidArnException(inner),
-            crate::error::DescribeCertificateAuthorityAuditReportError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DescribeCertificateAuthorityAuditReportError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetCertificateError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetCertificateError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetCertificateError> for Error {
-    fn from(err: crate::error::GetCertificateError) -> Self {
-        match err {
-            crate::error::GetCertificateError::InvalidArnException(inner) => {
-                Error::InvalidArnException(inner)
-            }
-            crate::error::GetCertificateError::InvalidStateException(inner) => {
-                Error::InvalidStateException(inner)
-            }
-            crate::error::GetCertificateError::RequestFailedException(inner) => {
-                Error::RequestFailedException(inner)
-            }
-            crate::error::GetCertificateError::RequestInProgressException(inner) => {
-                Error::RequestInProgressException(inner)
-            }
-            crate::error::GetCertificateError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::GetCertificateError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<crate::error::GetCertificateAuthorityCertificateError, R>,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::GetCertificateAuthorityCertificateError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetCertificateAuthorityCertificateError> for Error {
-    fn from(err: crate::error::GetCertificateAuthorityCertificateError) -> Self {
-        match err {
-            crate::error::GetCertificateAuthorityCertificateError::InvalidArnException(inner) => {
-                Error::InvalidArnException(inner)
-            }
-            crate::error::GetCertificateAuthorityCertificateError::InvalidStateException(inner) => {
-                Error::InvalidStateException(inner)
-            }
-            crate::error::GetCertificateAuthorityCertificateError::ResourceNotFoundException(
+            crate::operation::delete_policy::DeletePolicyError::ResourceNotFoundException(
                 inner,
             ) => Error::ResourceNotFoundException(inner),
-            crate::error::GetCertificateAuthorityCertificateError::Unhandled(inner) => {
+            crate::operation::delete_policy::DeletePolicyError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetCertificateAuthorityCsrError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetCertificateAuthorityCsrError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetCertificateAuthorityCsrError> for Error {
-    fn from(err: crate::error::GetCertificateAuthorityCsrError) -> Self {
-        match err {
-            crate::error::GetCertificateAuthorityCsrError::InvalidArnException(inner) => {
-                Error::InvalidArnException(inner)
-            }
-            crate::error::GetCertificateAuthorityCsrError::InvalidStateException(inner) => {
-                Error::InvalidStateException(inner)
-            }
-            crate::error::GetCertificateAuthorityCsrError::RequestFailedException(inner) => {
-                Error::RequestFailedException(inner)
-            }
-            crate::error::GetCertificateAuthorityCsrError::RequestInProgressException(inner) => {
-                Error::RequestInProgressException(inner)
-            }
-            crate::error::GetCertificateAuthorityCsrError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::GetCertificateAuthorityCsrError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetPolicyError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetPolicyError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetPolicyError> for Error {
-    fn from(err: crate::error::GetPolicyError) -> Self {
-        match err {
-            crate::error::GetPolicyError::InvalidArnException(inner) => {
-                Error::InvalidArnException(inner)
-            }
-            crate::error::GetPolicyError::InvalidStateException(inner) => {
-                Error::InvalidStateException(inner)
-            }
-            crate::error::GetPolicyError::RequestFailedException(inner) => {
-                Error::RequestFailedException(inner)
-            }
-            crate::error::GetPolicyError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::GetPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
-            crate::error::ImportCertificateAuthorityCertificateError,
+            crate::operation::describe_certificate_authority::DescribeCertificateAuthorityError,
             R,
         >,
     > for Error
@@ -600,7 +340,7 @@ where
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::ImportCertificateAuthorityCertificateError,
+            crate::operation::describe_certificate_authority::DescribeCertificateAuthorityError,
             R,
         >,
     ) -> Self {
@@ -619,28 +359,57 @@ where
         }
     }
 }
-impl From<crate::error::ImportCertificateAuthorityCertificateError> for Error {
-    fn from(err: crate::error::ImportCertificateAuthorityCertificateError) -> Self {
+impl From<crate::operation::describe_certificate_authority::DescribeCertificateAuthorityError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_certificate_authority::DescribeCertificateAuthorityError,
+    ) -> Self {
         match err {
-            crate::error::ImportCertificateAuthorityCertificateError::CertificateMismatchException(inner) => Error::CertificateMismatchException(inner),
-            crate::error::ImportCertificateAuthorityCertificateError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
-            crate::error::ImportCertificateAuthorityCertificateError::InvalidArnException(inner) => Error::InvalidArnException(inner),
-            crate::error::ImportCertificateAuthorityCertificateError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::error::ImportCertificateAuthorityCertificateError::InvalidStateException(inner) => Error::InvalidStateException(inner),
-            crate::error::ImportCertificateAuthorityCertificateError::MalformedCertificateException(inner) => Error::MalformedCertificateException(inner),
-            crate::error::ImportCertificateAuthorityCertificateError::RequestFailedException(inner) => Error::RequestFailedException(inner),
-            crate::error::ImportCertificateAuthorityCertificateError::RequestInProgressException(inner) => Error::RequestInProgressException(inner),
-            crate::error::ImportCertificateAuthorityCertificateError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::ImportCertificateAuthorityCertificateError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::describe_certificate_authority::DescribeCertificateAuthorityError::InvalidArnException(inner) => Error::InvalidArnException(inner),
+            crate::operation::describe_certificate_authority::DescribeCertificateAuthorityError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_certificate_authority::DescribeCertificateAuthorityError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::IssueCertificateError, R>> for Error
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::describe_certificate_authority_audit_report::DescribeCertificateAuthorityAuditReportError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::describe_certificate_authority_audit_report::DescribeCertificateAuthorityAuditReportError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::describe_certificate_authority_audit_report::DescribeCertificateAuthorityAuditReportError> for Error {
+    fn from(err: crate::operation::describe_certificate_authority_audit_report::DescribeCertificateAuthorityAuditReportError) -> Self {
+        match err {
+            crate::operation::describe_certificate_authority_audit_report::DescribeCertificateAuthorityAuditReportError::InvalidArgsException(inner) => Error::InvalidArgsException(inner),
+            crate::operation::describe_certificate_authority_audit_report::DescribeCertificateAuthorityAuditReportError::InvalidArnException(inner) => Error::InvalidArnException(inner),
+            crate::operation::describe_certificate_authority_audit_report::DescribeCertificateAuthorityAuditReportError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_certificate_authority_audit_report::DescribeCertificateAuthorityAuditReportError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_certificate::GetCertificateError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::IssueCertificateError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_certificate::GetCertificateError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -657,199 +426,68 @@ where
         }
     }
 }
-impl From<crate::error::IssueCertificateError> for Error {
-    fn from(err: crate::error::IssueCertificateError) -> Self {
+impl From<crate::operation::get_certificate::GetCertificateError> for Error {
+    fn from(err: crate::operation::get_certificate::GetCertificateError) -> Self {
         match err {
-            crate::error::IssueCertificateError::InvalidArgsException(inner) => {
-                Error::InvalidArgsException(inner)
-            }
-            crate::error::IssueCertificateError::InvalidArnException(inner) => {
+            crate::operation::get_certificate::GetCertificateError::InvalidArnException(inner) => {
                 Error::InvalidArnException(inner)
             }
-            crate::error::IssueCertificateError::InvalidStateException(inner) => {
-                Error::InvalidStateException(inner)
-            }
-            crate::error::IssueCertificateError::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::IssueCertificateError::MalformedCsrException(inner) => {
-                Error::MalformedCsrException(inner)
-            }
-            crate::error::IssueCertificateError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::IssueCertificateError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListCertificateAuthoritiesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListCertificateAuthoritiesError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::ListCertificateAuthoritiesError> for Error {
-    fn from(err: crate::error::ListCertificateAuthoritiesError) -> Self {
-        match err {
-            crate::error::ListCertificateAuthoritiesError::InvalidNextTokenException(inner) => {
-                Error::InvalidNextTokenException(inner)
-            }
-            crate::error::ListCertificateAuthoritiesError::Unhandled(inner) => {
+            crate::operation::get_certificate::GetCertificateError::InvalidStateException(
+                inner,
+            ) => Error::InvalidStateException(inner),
+            crate::operation::get_certificate::GetCertificateError::RequestFailedException(
+                inner,
+            ) => Error::RequestFailedException(inner),
+            crate::operation::get_certificate::GetCertificateError::RequestInProgressException(
+                inner,
+            ) => Error::RequestInProgressException(inner),
+            crate::operation::get_certificate::GetCertificateError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_certificate::GetCertificateError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListPermissionsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListPermissionsError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_certificate_authority_certificate::GetCertificateAuthorityCertificateError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_certificate_authority_certificate::GetCertificateAuthorityCertificateError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
-impl From<crate::error::ListPermissionsError> for Error {
-    fn from(err: crate::error::ListPermissionsError) -> Self {
+impl From<crate::operation::get_certificate_authority_certificate::GetCertificateAuthorityCertificateError> for Error {
+    fn from(err: crate::operation::get_certificate_authority_certificate::GetCertificateAuthorityCertificateError) -> Self {
         match err {
-            crate::error::ListPermissionsError::InvalidArnException(inner) => {
-                Error::InvalidArnException(inner)
-            }
-            crate::error::ListPermissionsError::InvalidNextTokenException(inner) => {
-                Error::InvalidNextTokenException(inner)
-            }
-            crate::error::ListPermissionsError::InvalidStateException(inner) => {
-                Error::InvalidStateException(inner)
-            }
-            crate::error::ListPermissionsError::RequestFailedException(inner) => {
-                Error::RequestFailedException(inner)
-            }
-            crate::error::ListPermissionsError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::ListPermissionsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_certificate_authority_certificate::GetCertificateAuthorityCertificateError::InvalidArnException(inner) => Error::InvalidArnException(inner),
+            crate::operation::get_certificate_authority_certificate::GetCertificateAuthorityCertificateError::InvalidStateException(inner) => Error::InvalidStateException(inner),
+            crate::operation::get_certificate_authority_certificate::GetCertificateAuthorityCertificateError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_certificate_authority_certificate::GetCertificateAuthorityCertificateError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListTagsError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::ListTagsError> for Error {
-    fn from(err: crate::error::ListTagsError) -> Self {
-        match err {
-            crate::error::ListTagsError::InvalidArnException(inner) => {
-                Error::InvalidArnException(inner)
-            }
-            crate::error::ListTagsError::InvalidStateException(inner) => {
-                Error::InvalidStateException(inner)
-            }
-            crate::error::ListTagsError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::ListTagsError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutPolicyError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::PutPolicyError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::PutPolicyError> for Error {
-    fn from(err: crate::error::PutPolicyError) -> Self {
-        match err {
-            crate::error::PutPolicyError::ConcurrentModificationException(inner) => {
-                Error::ConcurrentModificationException(inner)
-            }
-            crate::error::PutPolicyError::InvalidArnException(inner) => {
-                Error::InvalidArnException(inner)
-            }
-            crate::error::PutPolicyError::InvalidPolicyException(inner) => {
-                Error::InvalidPolicyException(inner)
-            }
-            crate::error::PutPolicyError::InvalidStateException(inner) => {
-                Error::InvalidStateException(inner)
-            }
-            crate::error::PutPolicyError::LockoutPreventedException(inner) => {
-                Error::LockoutPreventedException(inner)
-            }
-            crate::error::PutPolicyError::RequestFailedException(inner) => {
-                Error::RequestFailedException(inner)
-            }
-            crate::error::PutPolicyError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::PutPolicyError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::RestoreCertificateAuthorityError, R>>
-    for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_certificate_authority_csr::GetCertificateAuthorityCsrError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::RestoreCertificateAuthorityError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_certificate_authority_csr::GetCertificateAuthorityCsrError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -866,30 +504,110 @@ where
         }
     }
 }
-impl From<crate::error::RestoreCertificateAuthorityError> for Error {
-    fn from(err: crate::error::RestoreCertificateAuthorityError) -> Self {
+impl From<crate::operation::get_certificate_authority_csr::GetCertificateAuthorityCsrError>
+    for Error
+{
+    fn from(
+        err: crate::operation::get_certificate_authority_csr::GetCertificateAuthorityCsrError,
+    ) -> Self {
         match err {
-            crate::error::RestoreCertificateAuthorityError::InvalidArnException(inner) => {
+            crate::operation::get_certificate_authority_csr::GetCertificateAuthorityCsrError::InvalidArnException(inner) => Error::InvalidArnException(inner),
+            crate::operation::get_certificate_authority_csr::GetCertificateAuthorityCsrError::InvalidStateException(inner) => Error::InvalidStateException(inner),
+            crate::operation::get_certificate_authority_csr::GetCertificateAuthorityCsrError::RequestFailedException(inner) => Error::RequestFailedException(inner),
+            crate::operation::get_certificate_authority_csr::GetCertificateAuthorityCsrError::RequestInProgressException(inner) => Error::RequestInProgressException(inner),
+            crate::operation::get_certificate_authority_csr::GetCertificateAuthorityCsrError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_certificate_authority_csr::GetCertificateAuthorityCsrError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_policy::GetPolicyError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::get_policy::GetPolicyError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_policy::GetPolicyError> for Error {
+    fn from(err: crate::operation::get_policy::GetPolicyError) -> Self {
+        match err {
+            crate::operation::get_policy::GetPolicyError::InvalidArnException(inner) => {
                 Error::InvalidArnException(inner)
             }
-            crate::error::RestoreCertificateAuthorityError::InvalidStateException(inner) => {
+            crate::operation::get_policy::GetPolicyError::InvalidStateException(inner) => {
                 Error::InvalidStateException(inner)
             }
-            crate::error::RestoreCertificateAuthorityError::ResourceNotFoundException(inner) => {
+            crate::operation::get_policy::GetPolicyError::RequestFailedException(inner) => {
+                Error::RequestFailedException(inner)
+            }
+            crate::operation::get_policy::GetPolicyError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::error::RestoreCertificateAuthorityError::Unhandled(inner) => {
+            crate::operation::get_policy::GetPolicyError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::RevokeCertificateError, R>> for Error
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::import_certificate_authority_certificate::ImportCertificateAuthorityCertificateError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::import_certificate_authority_certificate::ImportCertificateAuthorityCertificateError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::import_certificate_authority_certificate::ImportCertificateAuthorityCertificateError> for Error {
+    fn from(err: crate::operation::import_certificate_authority_certificate::ImportCertificateAuthorityCertificateError) -> Self {
+        match err {
+            crate::operation::import_certificate_authority_certificate::ImportCertificateAuthorityCertificateError::CertificateMismatchException(inner) => Error::CertificateMismatchException(inner),
+            crate::operation::import_certificate_authority_certificate::ImportCertificateAuthorityCertificateError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::import_certificate_authority_certificate::ImportCertificateAuthorityCertificateError::InvalidArnException(inner) => Error::InvalidArnException(inner),
+            crate::operation::import_certificate_authority_certificate::ImportCertificateAuthorityCertificateError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::import_certificate_authority_certificate::ImportCertificateAuthorityCertificateError::InvalidStateException(inner) => Error::InvalidStateException(inner),
+            crate::operation::import_certificate_authority_certificate::ImportCertificateAuthorityCertificateError::MalformedCertificateException(inner) => Error::MalformedCertificateException(inner),
+            crate::operation::import_certificate_authority_certificate::ImportCertificateAuthorityCertificateError::RequestFailedException(inner) => Error::RequestFailedException(inner),
+            crate::operation::import_certificate_authority_certificate::ImportCertificateAuthorityCertificateError::RequestInProgressException(inner) => Error::RequestInProgressException(inner),
+            crate::operation::import_certificate_authority_certificate::ImportCertificateAuthorityCertificateError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::import_certificate_authority_certificate::ImportCertificateAuthorityCertificateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::issue_certificate::IssueCertificateError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::RevokeCertificateError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::issue_certificate::IssueCertificateError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -906,47 +624,77 @@ where
         }
     }
 }
-impl From<crate::error::RevokeCertificateError> for Error {
-    fn from(err: crate::error::RevokeCertificateError) -> Self {
+impl From<crate::operation::issue_certificate::IssueCertificateError> for Error {
+    fn from(err: crate::operation::issue_certificate::IssueCertificateError) -> Self {
         match err {
-            crate::error::RevokeCertificateError::ConcurrentModificationException(inner) => {
-                Error::ConcurrentModificationException(inner)
-            }
-            crate::error::RevokeCertificateError::InvalidArnException(inner) => {
-                Error::InvalidArnException(inner)
-            }
-            crate::error::RevokeCertificateError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::RevokeCertificateError::InvalidStateException(inner) => {
-                Error::InvalidStateException(inner)
-            }
-            crate::error::RevokeCertificateError::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::RevokeCertificateError::RequestAlreadyProcessedException(inner) => {
-                Error::RequestAlreadyProcessedException(inner)
-            }
-            crate::error::RevokeCertificateError::RequestFailedException(inner) => {
-                Error::RequestFailedException(inner)
-            }
-            crate::error::RevokeCertificateError::RequestInProgressException(inner) => {
-                Error::RequestInProgressException(inner)
-            }
-            crate::error::RevokeCertificateError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::RevokeCertificateError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::issue_certificate::IssueCertificateError::InvalidArgsException(inner) => Error::InvalidArgsException(inner),
+            crate::operation::issue_certificate::IssueCertificateError::InvalidArnException(inner) => Error::InvalidArnException(inner),
+            crate::operation::issue_certificate::IssueCertificateError::InvalidStateException(inner) => Error::InvalidStateException(inner),
+            crate::operation::issue_certificate::IssueCertificateError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::issue_certificate::IssueCertificateError::MalformedCsrException(inner) => Error::MalformedCsrException(inner),
+            crate::operation::issue_certificate::IssueCertificateError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::issue_certificate::IssueCertificateError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagCertificateAuthorityError, R>>
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_certificate_authorities::ListCertificateAuthoritiesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_certificate_authorities::ListCertificateAuthoritiesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_certificate_authorities::ListCertificateAuthoritiesError>
     for Error
+{
+    fn from(
+        err: crate::operation::list_certificate_authorities::ListCertificateAuthoritiesError,
+    ) -> Self {
+        match err {
+            crate::operation::list_certificate_authorities::ListCertificateAuthoritiesError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::list_certificate_authorities::ListCertificateAuthoritiesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_permissions::ListPermissionsError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::TagCertificateAuthorityError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_permissions::ListPermissionsError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -963,79 +711,37 @@ where
         }
     }
 }
-impl From<crate::error::TagCertificateAuthorityError> for Error {
-    fn from(err: crate::error::TagCertificateAuthorityError) -> Self {
+impl From<crate::operation::list_permissions::ListPermissionsError> for Error {
+    fn from(err: crate::operation::list_permissions::ListPermissionsError) -> Self {
         match err {
-            crate::error::TagCertificateAuthorityError::InvalidArnException(inner) => {
-                Error::InvalidArnException(inner)
-            }
-            crate::error::TagCertificateAuthorityError::InvalidStateException(inner) => {
-                Error::InvalidStateException(inner)
-            }
-            crate::error::TagCertificateAuthorityError::InvalidTagException(inner) => {
-                Error::InvalidTagException(inner)
-            }
-            crate::error::TagCertificateAuthorityError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::TagCertificateAuthorityError::TooManyTagsException(inner) => {
-                Error::TooManyTagsException(inner)
-            }
-            crate::error::TagCertificateAuthorityError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagCertificateAuthorityError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UntagCertificateAuthorityError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::UntagCertificateAuthorityError> for Error {
-    fn from(err: crate::error::UntagCertificateAuthorityError) -> Self {
-        match err {
-            crate::error::UntagCertificateAuthorityError::InvalidArnException(inner) => {
-                Error::InvalidArnException(inner)
-            }
-            crate::error::UntagCertificateAuthorityError::InvalidStateException(inner) => {
-                Error::InvalidStateException(inner)
-            }
-            crate::error::UntagCertificateAuthorityError::InvalidTagException(inner) => {
-                Error::InvalidTagException(inner)
-            }
-            crate::error::UntagCertificateAuthorityError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::UntagCertificateAuthorityError::Unhandled(inner) => {
+            crate::operation::list_permissions::ListPermissionsError::InvalidArnException(
+                inner,
+            ) => Error::InvalidArnException(inner),
+            crate::operation::list_permissions::ListPermissionsError::InvalidNextTokenException(
+                inner,
+            ) => Error::InvalidNextTokenException(inner),
+            crate::operation::list_permissions::ListPermissionsError::InvalidStateException(
+                inner,
+            ) => Error::InvalidStateException(inner),
+            crate::operation::list_permissions::ListPermissionsError::RequestFailedException(
+                inner,
+            ) => Error::RequestFailedException(inner),
+            crate::operation::list_permissions::ListPermissionsError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_permissions::ListPermissionsError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateCertificateAuthorityError, R>>
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_tags::ListTagsError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateCertificateAuthorityError, R>,
+        err: aws_smithy_http::result::SdkError<crate::operation::list_tags::ListTagsError, R>,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -1052,30 +758,301 @@ where
         }
     }
 }
-impl From<crate::error::UpdateCertificateAuthorityError> for Error {
-    fn from(err: crate::error::UpdateCertificateAuthorityError) -> Self {
+impl From<crate::operation::list_tags::ListTagsError> for Error {
+    fn from(err: crate::operation::list_tags::ListTagsError) -> Self {
         match err {
-            crate::error::UpdateCertificateAuthorityError::ConcurrentModificationException(
+            crate::operation::list_tags::ListTagsError::InvalidArnException(inner) => {
+                Error::InvalidArnException(inner)
+            }
+            crate::operation::list_tags::ListTagsError::InvalidStateException(inner) => {
+                Error::InvalidStateException(inner)
+            }
+            crate::operation::list_tags::ListTagsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_tags::ListTagsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::put_policy::PutPolicyError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::put_policy::PutPolicyError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::put_policy::PutPolicyError> for Error {
+    fn from(err: crate::operation::put_policy::PutPolicyError) -> Self {
+        match err {
+            crate::operation::put_policy::PutPolicyError::ConcurrentModificationException(
                 inner,
             ) => Error::ConcurrentModificationException(inner),
-            crate::error::UpdateCertificateAuthorityError::InvalidArgsException(inner) => {
-                Error::InvalidArgsException(inner)
-            }
-            crate::error::UpdateCertificateAuthorityError::InvalidArnException(inner) => {
+            crate::operation::put_policy::PutPolicyError::InvalidArnException(inner) => {
                 Error::InvalidArnException(inner)
             }
-            crate::error::UpdateCertificateAuthorityError::InvalidPolicyException(inner) => {
+            crate::operation::put_policy::PutPolicyError::InvalidPolicyException(inner) => {
                 Error::InvalidPolicyException(inner)
             }
-            crate::error::UpdateCertificateAuthorityError::InvalidStateException(inner) => {
+            crate::operation::put_policy::PutPolicyError::InvalidStateException(inner) => {
                 Error::InvalidStateException(inner)
             }
-            crate::error::UpdateCertificateAuthorityError::ResourceNotFoundException(inner) => {
+            crate::operation::put_policy::PutPolicyError::LockoutPreventedException(inner) => {
+                Error::LockoutPreventedException(inner)
+            }
+            crate::operation::put_policy::PutPolicyError::RequestFailedException(inner) => {
+                Error::RequestFailedException(inner)
+            }
+            crate::operation::put_policy::PutPolicyError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::error::UpdateCertificateAuthorityError::Unhandled(inner) => {
+            crate::operation::put_policy::PutPolicyError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::restore_certificate_authority::RestoreCertificateAuthorityError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::restore_certificate_authority::RestoreCertificateAuthorityError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::restore_certificate_authority::RestoreCertificateAuthorityError>
+    for Error
+{
+    fn from(
+        err: crate::operation::restore_certificate_authority::RestoreCertificateAuthorityError,
+    ) -> Self {
+        match err {
+            crate::operation::restore_certificate_authority::RestoreCertificateAuthorityError::InvalidArnException(inner) => Error::InvalidArnException(inner),
+            crate::operation::restore_certificate_authority::RestoreCertificateAuthorityError::InvalidStateException(inner) => Error::InvalidStateException(inner),
+            crate::operation::restore_certificate_authority::RestoreCertificateAuthorityError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::restore_certificate_authority::RestoreCertificateAuthorityError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::revoke_certificate::RevokeCertificateError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::revoke_certificate::RevokeCertificateError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::revoke_certificate::RevokeCertificateError> for Error {
+    fn from(err: crate::operation::revoke_certificate::RevokeCertificateError) -> Self {
+        match err {
+            crate::operation::revoke_certificate::RevokeCertificateError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::revoke_certificate::RevokeCertificateError::InvalidArnException(inner) => Error::InvalidArnException(inner),
+            crate::operation::revoke_certificate::RevokeCertificateError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::revoke_certificate::RevokeCertificateError::InvalidStateException(inner) => Error::InvalidStateException(inner),
+            crate::operation::revoke_certificate::RevokeCertificateError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::revoke_certificate::RevokeCertificateError::RequestAlreadyProcessedException(inner) => Error::RequestAlreadyProcessedException(inner),
+            crate::operation::revoke_certificate::RevokeCertificateError::RequestFailedException(inner) => Error::RequestFailedException(inner),
+            crate::operation::revoke_certificate::RevokeCertificateError::RequestInProgressException(inner) => Error::RequestInProgressException(inner),
+            crate::operation::revoke_certificate::RevokeCertificateError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::revoke_certificate::RevokeCertificateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::tag_certificate_authority::TagCertificateAuthorityError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::tag_certificate_authority::TagCertificateAuthorityError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::tag_certificate_authority::TagCertificateAuthorityError> for Error {
+    fn from(
+        err: crate::operation::tag_certificate_authority::TagCertificateAuthorityError,
+    ) -> Self {
+        match err {
+            crate::operation::tag_certificate_authority::TagCertificateAuthorityError::InvalidArnException(inner) => Error::InvalidArnException(inner),
+            crate::operation::tag_certificate_authority::TagCertificateAuthorityError::InvalidStateException(inner) => Error::InvalidStateException(inner),
+            crate::operation::tag_certificate_authority::TagCertificateAuthorityError::InvalidTagException(inner) => Error::InvalidTagException(inner),
+            crate::operation::tag_certificate_authority::TagCertificateAuthorityError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::tag_certificate_authority::TagCertificateAuthorityError::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
+            crate::operation::tag_certificate_authority::TagCertificateAuthorityError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::untag_certificate_authority::UntagCertificateAuthorityError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::untag_certificate_authority::UntagCertificateAuthorityError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::untag_certificate_authority::UntagCertificateAuthorityError> for Error {
+    fn from(
+        err: crate::operation::untag_certificate_authority::UntagCertificateAuthorityError,
+    ) -> Self {
+        match err {
+            crate::operation::untag_certificate_authority::UntagCertificateAuthorityError::InvalidArnException(inner) => Error::InvalidArnException(inner),
+            crate::operation::untag_certificate_authority::UntagCertificateAuthorityError::InvalidStateException(inner) => Error::InvalidStateException(inner),
+            crate::operation::untag_certificate_authority::UntagCertificateAuthorityError::InvalidTagException(inner) => Error::InvalidTagException(inner),
+            crate::operation::untag_certificate_authority::UntagCertificateAuthorityError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::untag_certificate_authority::UntagCertificateAuthorityError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_certificate_authority::UpdateCertificateAuthorityError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_certificate_authority::UpdateCertificateAuthorityError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_certificate_authority::UpdateCertificateAuthorityError>
+    for Error
+{
+    fn from(
+        err: crate::operation::update_certificate_authority::UpdateCertificateAuthorityError,
+    ) -> Self {
+        match err {
+            crate::operation::update_certificate_authority::UpdateCertificateAuthorityError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::update_certificate_authority::UpdateCertificateAuthorityError::InvalidArgsException(inner) => Error::InvalidArgsException(inner),
+            crate::operation::update_certificate_authority::UpdateCertificateAuthorityError::InvalidArnException(inner) => Error::InvalidArnException(inner),
+            crate::operation::update_certificate_authority::UpdateCertificateAuthorityError::InvalidPolicyException(inner) => Error::InvalidPolicyException(inner),
+            crate::operation::update_certificate_authority::UpdateCertificateAuthorityError::InvalidStateException(inner) => Error::InvalidStateException(inner),
+            crate::operation::update_certificate_authority::UpdateCertificateAuthorityError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_certificate_authority::UpdateCertificateAuthorityError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

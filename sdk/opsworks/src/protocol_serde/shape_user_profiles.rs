@@ -2,7 +2,7 @@
 pub(crate) fn de_user_profiles<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::UserProfile>>,
+    Option<std::vec::Vec<crate::types::UserProfile>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

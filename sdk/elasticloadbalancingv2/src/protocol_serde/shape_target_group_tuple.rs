@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_target_group_tuple(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::TargetGroupTuple,
+    input: &crate::types::TargetGroupTuple,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("TargetGroupArn");
@@ -22,9 +22,9 @@ pub fn ser_target_group_tuple(
 
 pub fn de_target_group_tuple(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::TargetGroupTuple, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::TargetGroupTuple, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::TargetGroupTuple::builder();
+    let mut builder = crate::types::TargetGroupTuple::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("TargetGroupArn") /* TargetGroupArn com.amazonaws.elasticloadbalancingv2#TargetGroupTuple$TargetGroupArn */ =>  {

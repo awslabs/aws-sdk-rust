@@ -2,7 +2,7 @@
 pub(crate) fn de_o_auth2_grant_type_supported_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::OAuth2GrantType>>,
+    Option<std::vec::Vec<crate::types::OAuth2GrantType>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -29,7 +29,7 @@ where
                         )?
                         .map(|s| {
                             s.to_unescaped()
-                                .map(|u| crate::model::OAuth2GrantType::from(u.as_ref()))
+                                .map(|u| crate::types::OAuth2GrantType::from(u.as_ref()))
                         })
                         .transpose()?;
                         if let Some(value) = value {

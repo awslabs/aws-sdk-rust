@@ -2,7 +2,7 @@
 pub(crate) fn de_available_numbers_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AvailableNumberSummary>>,
+    Option<std::vec::Vec<crate::types::AvailableNumberSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

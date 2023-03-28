@@ -3,39 +3,46 @@
 pub fn de_describe_db_clusters_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeDbClustersOutput,
-    crate::error::DescribeDBClustersError,
+    crate::operation::describe_db_clusters::DescribeDbClustersOutput,
+    crate::operation::describe_db_clusters::DescribeDBClustersError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeDBClustersError::unhandled)?;
+        .map_err(crate::operation::describe_db_clusters::DescribeDBClustersError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DescribeDBClustersError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::describe_db_clusters::DescribeDBClustersError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "DBClusterNotFoundFault" => {
-            crate::error::DescribeDBClustersError::DbClusterNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            crate::operation::describe_db_clusters::DescribeDBClustersError::DbClusterNotFoundFault(
+                {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::db_cluster_not_found_fault::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_db_cluster_not_found_fault::de_db_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeDBClustersError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::types::error::builders::DbClusterNotFoundFaultBuilder::default();
+                        let _ = response;
+                        output = crate::protocol_serde::shape_db_cluster_not_found_fault::de_db_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::describe_db_clusters::DescribeDBClustersError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
         }
-        _ => crate::error::DescribeDBClustersError::generic(generic),
+        _ => crate::operation::describe_db_clusters::DescribeDBClustersError::generic(generic),
     })
 }
 
@@ -43,18 +50,18 @@ pub fn de_describe_db_clusters_http_error(
 pub fn de_describe_db_clusters_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeDbClustersOutput,
-    crate::error::DescribeDBClustersError,
+    crate::operation::describe_db_clusters::DescribeDbClustersOutput,
+    crate::operation::describe_db_clusters::DescribeDBClustersError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_db_clusters_output::Builder::default();
+        let mut output = crate::operation::describe_db_clusters::builders::DescribeDbClustersOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_describe_db_clusters::de_describe_db_clusters(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DescribeDBClustersError::unhandled)?;
+        .map_err(crate::operation::describe_db_clusters::DescribeDBClustersError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -65,9 +72,9 @@ pub fn de_describe_db_clusters_http_response(
 #[allow(unused_mut)]
 pub fn de_describe_db_clusters(
     inp: &[u8],
-    mut builder: crate::output::describe_db_clusters_output::Builder,
+    mut builder: crate::operation::describe_db_clusters::builders::DescribeDbClustersOutputBuilder,
 ) -> Result<
-    crate::output::describe_db_clusters_output::Builder,
+    crate::operation::describe_db_clusters::builders::DescribeDbClustersOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

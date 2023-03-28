@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_index_field(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::IndexField,
+    input: &crate::types::IndexField,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("IndexFieldName");
@@ -78,9 +78,9 @@ pub fn ser_index_field(
 
 pub fn de_index_field(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::IndexField, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::IndexField, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::IndexField::builder();
+    let mut builder = crate::types::IndexField::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("IndexFieldName") /* IndexFieldName com.amazonaws.cloudsearch#IndexField$IndexFieldName */ =>  {
@@ -99,8 +99,8 @@ pub fn de_index_field(
             s if s.matches("IndexFieldType") /* IndexFieldType com.amazonaws.cloudsearch#IndexField$IndexFieldType */ =>  {
                 let var_28 =
                     Some(
-                        Result::<crate::model::IndexFieldType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::IndexFieldType::from(
+                        Result::<crate::types::IndexFieldType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::IndexFieldType::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

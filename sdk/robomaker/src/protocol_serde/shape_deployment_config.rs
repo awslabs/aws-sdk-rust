@@ -2,7 +2,7 @@
 pub(crate) fn de_deployment_config<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::DeploymentConfig>,
+    Option<crate::types::DeploymentConfig>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::deployment_config::Builder::default();
+            let mut builder = crate::types::builders::DeploymentConfigBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -80,7 +80,7 @@ where
 
 pub fn ser_deployment_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::DeploymentConfig,
+    input: &crate::types::DeploymentConfig,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.concurrent_deployment_percentage {
         object.key("concurrentDeploymentPercentage").number(

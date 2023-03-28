@@ -2,7 +2,7 @@
 pub(crate) fn de_template_sync_config<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::TemplateSyncConfig>,
+    Option<crate::types::TemplateSyncConfig>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::template_sync_config::Builder::default();
+            let mut builder = crate::types::builders::TemplateSyncConfigBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -39,7 +39,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::TemplateType::from(u.as_ref()))
+                                            .map(|u| crate::types::TemplateType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -51,7 +51,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::RepositoryProvider::from(u.as_ref())
+                                            crate::types::RepositoryProvider::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

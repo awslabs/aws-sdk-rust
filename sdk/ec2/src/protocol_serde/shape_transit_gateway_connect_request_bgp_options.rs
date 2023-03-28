@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_transit_gateway_connect_request_bgp_options(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::TransitGatewayConnectRequestBgpOptions,
+    input: &crate::types::TransitGatewayConnectRequestBgpOptions,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("PeerAsn");

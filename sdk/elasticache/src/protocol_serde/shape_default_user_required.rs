@@ -2,8 +2,11 @@
 #[allow(unused_mut)]
 pub fn de_default_user_required_xml_err(
     inp: &[u8],
-    mut builder: crate::error::default_user_required::Builder,
-) -> Result<crate::error::default_user_required::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    mut builder: crate::types::error::builders::DefaultUserRequiredBuilder,
+) -> Result<
+    crate::types::error::builders::DefaultUserRequiredBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     if inp.is_empty() {
         return Ok(builder);
     }

@@ -2,7 +2,7 @@
 pub(crate) fn de_table_inline_visualization_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::TableInlineVisualization>>,
+    Option<std::vec::Vec<crate::types::TableInlineVisualization>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

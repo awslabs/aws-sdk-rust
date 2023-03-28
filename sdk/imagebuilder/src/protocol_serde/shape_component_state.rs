@@ -2,7 +2,7 @@
 pub(crate) fn de_component_state<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ComponentState>,
+    Option<crate::types::ComponentState>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::component_state::Builder::default();
+            let mut builder = crate::types::builders::ComponentStateBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ComponentStatus::from(u.as_ref())
+                                            crate::types::ComponentStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

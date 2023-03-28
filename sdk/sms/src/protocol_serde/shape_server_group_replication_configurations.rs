@@ -2,7 +2,7 @@
 pub(crate) fn de_server_group_replication_configurations<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ServerGroupReplicationConfiguration>>,
+    Option<std::vec::Vec<crate::types::ServerGroupReplicationConfiguration>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

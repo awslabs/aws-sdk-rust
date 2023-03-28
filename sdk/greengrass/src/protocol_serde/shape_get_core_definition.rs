@@ -2,53 +2,64 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_core_definition_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetCoreDefinitionOutput, crate::error::GetCoreDefinitionError>
-{
+) -> std::result::Result<
+    crate::operation::get_core_definition::GetCoreDefinitionOutput,
+    crate::operation::get_core_definition::GetCoreDefinitionError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetCoreDefinitionError::unhandled)?;
+        .map_err(crate::operation::get_core_definition::GetCoreDefinitionError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::GetCoreDefinitionError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::get_core_definition::GetCoreDefinitionError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::GetCoreDefinitionError::BadRequestException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "BadRequestException" => {
+            crate::operation::get_core_definition::GetCoreDefinitionError::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCoreDefinitionError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::GetCoreDefinitionError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::BadRequestExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_core_definition::GetCoreDefinitionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::get_core_definition::GetCoreDefinitionError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_core_definition_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetCoreDefinitionOutput, crate::error::GetCoreDefinitionError>
-{
+) -> std::result::Result<
+    crate::operation::get_core_definition::GetCoreDefinitionOutput,
+    crate::operation::get_core_definition::GetCoreDefinitionError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_core_definition_output::Builder::default();
+        let mut output = crate::operation::get_core_definition::builders::GetCoreDefinitionOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_get_core_definition::de_get_core_definition(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::GetCoreDefinitionError::unhandled)?;
+        .map_err(crate::operation::get_core_definition::GetCoreDefinitionError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -58,9 +69,9 @@ pub fn de_get_core_definition_http_response(
 
 pub(crate) fn de_get_core_definition(
     value: &[u8],
-    mut builder: crate::output::get_core_definition_output::Builder,
+    mut builder: crate::operation::get_core_definition::builders::GetCoreDefinitionOutputBuilder,
 ) -> Result<
-    crate::output::get_core_definition_output::Builder,
+    crate::operation::get_core_definition::builders::GetCoreDefinitionOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

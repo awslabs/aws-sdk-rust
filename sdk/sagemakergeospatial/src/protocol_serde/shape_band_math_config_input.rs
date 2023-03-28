@@ -2,7 +2,7 @@
 pub(crate) fn de_band_math_config_input<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::BandMathConfigInput>,
+    Option<crate::types::BandMathConfigInput>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::band_math_config_input::Builder::default();
+            let mut builder = crate::types::builders::BandMathConfigInputBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -58,7 +58,7 @@ where
 
 pub fn ser_band_math_config_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::BandMathConfigInput,
+    input: &crate::types::BandMathConfigInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.predefined_indices {
         let mut array_2 = object.key("PredefinedIndices").start_array();

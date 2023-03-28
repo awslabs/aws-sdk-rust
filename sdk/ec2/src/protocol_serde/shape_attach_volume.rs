@@ -2,28 +2,37 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_attach_volume_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::AttachVolumeOutput, crate::error::AttachVolumeError> {
+) -> std::result::Result<
+    crate::operation::attach_volume::AttachVolumeOutput,
+    crate::operation::attach_volume::AttachVolumeError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::AttachVolumeError::unhandled)?;
+        .map_err(crate::operation::attach_volume::AttachVolumeError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::AttachVolumeError::generic(generic))
+    Err(crate::operation::attach_volume::AttachVolumeError::generic(
+        generic,
+    ))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_attach_volume_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::AttachVolumeOutput, crate::error::AttachVolumeError> {
+) -> std::result::Result<
+    crate::operation::attach_volume::AttachVolumeOutput,
+    crate::operation::attach_volume::AttachVolumeError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::attach_volume_output::Builder::default();
+        let mut output =
+            crate::operation::attach_volume::builders::AttachVolumeOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_attach_volume::de_attach_volume(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::AttachVolumeError::unhandled)?;
+        .map_err(crate::operation::attach_volume::AttachVolumeError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -34,8 +43,11 @@ pub fn de_attach_volume_http_response(
 #[allow(unused_mut)]
 pub fn de_attach_volume(
     inp: &[u8],
-    mut builder: crate::output::attach_volume_output::Builder,
-) -> Result<crate::output::attach_volume_output::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    mut builder: crate::operation::attach_volume::builders::AttachVolumeOutputBuilder,
+) -> Result<
+    crate::operation::attach_volume::builders::AttachVolumeOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -93,8 +105,8 @@ pub fn de_attach_volume(
             s if s.matches("status") /* State com.amazonaws.ec2.synthetic#AttachVolumeOutput$State */ =>  {
                 let var_4 =
                     Some(
-                        Result::<crate::model::VolumeAttachmentState, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::VolumeAttachmentState::from(
+                        Result::<crate::types::VolumeAttachmentState, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::VolumeAttachmentState::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

@@ -3,41 +3,38 @@
 pub fn de_get_organizations_access_report_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetOrganizationsAccessReportOutput,
-    crate::error::GetOrganizationsAccessReportError,
+    crate::operation::get_organizations_access_report::GetOrganizationsAccessReportOutput,
+    crate::operation::get_organizations_access_report::GetOrganizationsAccessReportError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetOrganizationsAccessReportError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::get_organizations_access_report::GetOrganizationsAccessReportError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::GetOrganizationsAccessReportError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::get_organizations_access_report::GetOrganizationsAccessReportError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "NoSuchEntity" => crate::error::GetOrganizationsAccessReportError::NoSuchEntityException({
+        "NoSuchEntity" => crate::operation::get_organizations_access_report::GetOrganizationsAccessReportError::NoSuchEntityException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::no_such_entity_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_no_such_entity_exception::de_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetOrganizationsAccessReportError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::NoSuchEntityExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_no_such_entity_exception::de_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::get_organizations_access_report::GetOrganizationsAccessReportError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::GetOrganizationsAccessReportError::generic(generic),
+        _ => crate::operation::get_organizations_access_report::GetOrganizationsAccessReportError::generic(generic)
     })
 }
 
@@ -45,14 +42,14 @@ pub fn de_get_organizations_access_report_http_error(
 pub fn de_get_organizations_access_report_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetOrganizationsAccessReportOutput,
-    crate::error::GetOrganizationsAccessReportError,
+    crate::operation::get_organizations_access_report::GetOrganizationsAccessReportOutput,
+    crate::operation::get_organizations_access_report::GetOrganizationsAccessReportError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_organizations_access_report_output::Builder::default();
+        let mut output = crate::operation::get_organizations_access_report::builders::GetOrganizationsAccessReportOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_get_organizations_access_report::de_get_organizations_access_report(response.body().as_ref(), output).map_err(crate::error::GetOrganizationsAccessReportError::unhandled)?;
+        output = crate::protocol_serde::shape_get_organizations_access_report::de_get_organizations_access_report(response.body().as_ref(), output).map_err(crate::operation::get_organizations_access_report::GetOrganizationsAccessReportError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -61,13 +58,7 @@ pub fn de_get_organizations_access_report_http_response(
 }
 
 #[allow(unused_mut)]
-pub fn de_get_organizations_access_report(
-    inp: &[u8],
-    mut builder: crate::output::get_organizations_access_report_output::Builder,
-) -> Result<
-    crate::output::get_organizations_access_report_output::Builder,
-    aws_smithy_xml::decode::XmlDecodeError,
-> {
+pub fn de_get_organizations_access_report(inp: &[u8], mut builder: crate::operation::get_organizations_access_report::builders::GetOrganizationsAccessReportOutputBuilder) -> Result<crate::operation::get_organizations_access_report::builders::GetOrganizationsAccessReportOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -93,8 +84,8 @@ pub fn de_get_organizations_access_report(
             s if s.matches("JobStatus") /* JobStatus com.amazonaws.iam.synthetic#GetOrganizationsAccessReportOutput$JobStatus */ =>  {
                 let var_1 =
                     Some(
-                        Result::<crate::model::JobStatusType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::JobStatusType::from(
+                        Result::<crate::types::JobStatusType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::JobStatusType::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

@@ -2,7 +2,7 @@
 pub(crate) fn de_recovery_point_by_resource_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::RecoveryPointByResource>>,
+    Option<std::vec::Vec<crate::types::RecoveryPointByResource>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

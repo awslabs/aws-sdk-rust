@@ -2,28 +2,35 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_program_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DescribeProgramOutput, crate::error::DescribeProgramError> {
+) -> std::result::Result<
+    crate::operation::describe_program::DescribeProgramOutput,
+    crate::operation::describe_program::DescribeProgramError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeProgramError::unhandled)?;
+        .map_err(crate::operation::describe_program::DescribeProgramError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::DescribeProgramError::generic(generic))
+    Err(crate::operation::describe_program::DescribeProgramError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_program_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DescribeProgramOutput, crate::error::DescribeProgramError> {
+) -> std::result::Result<
+    crate::operation::describe_program::DescribeProgramOutput,
+    crate::operation::describe_program::DescribeProgramError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_program_output::Builder::default();
+        let mut output =
+            crate::operation::describe_program::builders::DescribeProgramOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_describe_program::de_describe_program(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DescribeProgramError::unhandled)?;
+        .map_err(crate::operation::describe_program::DescribeProgramError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -33,9 +40,9 @@ pub fn de_describe_program_http_response(
 
 pub(crate) fn de_describe_program(
     value: &[u8],
-    mut builder: crate::output::describe_program_output::Builder,
+    mut builder: crate::operation::describe_program::builders::DescribeProgramOutputBuilder,
 ) -> Result<
-    crate::output::describe_program_output::Builder,
+    crate::operation::describe_program::builders::DescribeProgramOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

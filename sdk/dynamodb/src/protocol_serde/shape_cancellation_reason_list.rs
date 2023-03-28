@@ -2,7 +2,7 @@
 pub(crate) fn de_cancellation_reason_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CancellationReason>>,
+    Option<std::vec::Vec<crate::types::CancellationReason>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

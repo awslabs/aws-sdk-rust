@@ -2,7 +2,7 @@
 pub(crate) fn de_coverage_normalized_units<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::CoverageNormalizedUnits>,
+    Option<crate::types::CoverageNormalizedUnits>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::coverage_normalized_units::Builder::default();
+            let mut builder = crate::types::builders::CoverageNormalizedUnitsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

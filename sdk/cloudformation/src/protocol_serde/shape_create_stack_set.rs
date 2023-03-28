@@ -2,28 +2,34 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_stack_set_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::CreateStackSetOutput, crate::error::CreateStackSetError> {
+) -> std::result::Result<
+    crate::operation::create_stack_set::CreateStackSetOutput,
+    crate::operation::create_stack_set::CreateStackSetError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::CreateStackSetError::unhandled)?;
+        .map_err(crate::operation::create_stack_set::CreateStackSetError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::CreateStackSetError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::create_stack_set::CreateStackSetError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "CreatedButModifiedException" => {
-            crate::error::CreateStackSetError::CreatedButModifiedException({
+            crate::operation::create_stack_set::CreateStackSetError::CreatedButModifiedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::created_but_modified_exception::Builder::default();
+                        crate::types::error::builders::CreatedButModifiedExceptionBuilder::default(
+                        );
                     let _ = response;
-                    output = crate::protocol_serde::shape_created_but_modified_exception::de_created_but_modified_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStackSetError::unhandled)?;
+                    output = crate::protocol_serde::shape_created_but_modified_exception::de_created_but_modified_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_stack_set::CreateStackSetError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -33,30 +39,33 @@ pub fn de_create_stack_set_http_error(
                 tmp
             })
         }
-        "LimitExceededException" => crate::error::CreateStackSetError::LimitExceededException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "LimitExceededException" => {
+            crate::operation::create_stack_set::CreateStackSetError::LimitExceededException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::limit_exceeded_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStackSetError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::LimitExceededExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_stack_set::CreateStackSetError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "NameAlreadyExistsException" => {
-            crate::error::CreateStackSetError::NameAlreadyExistsException({
+            crate::operation::create_stack_set::CreateStackSetError::NameAlreadyExistsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::name_already_exists_exception::Builder::default();
+                        crate::types::error::builders::NameAlreadyExistsExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_name_already_exists_exception::de_name_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStackSetError::unhandled)?;
+                    output = crate::protocol_serde::shape_name_already_exists_exception::de_name_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_stack_set::CreateStackSetError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -66,23 +75,27 @@ pub fn de_create_stack_set_http_error(
                 tmp
             })
         }
-        _ => crate::error::CreateStackSetError::generic(generic),
+        _ => crate::operation::create_stack_set::CreateStackSetError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_stack_set_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::CreateStackSetOutput, crate::error::CreateStackSetError> {
+) -> std::result::Result<
+    crate::operation::create_stack_set::CreateStackSetOutput,
+    crate::operation::create_stack_set::CreateStackSetError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::create_stack_set_output::Builder::default();
+        let mut output =
+            crate::operation::create_stack_set::builders::CreateStackSetOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_create_stack_set::de_create_stack_set(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::CreateStackSetError::unhandled)?;
+        .map_err(crate::operation::create_stack_set::CreateStackSetError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -93,9 +106,11 @@ pub fn de_create_stack_set_http_response(
 #[allow(unused_mut)]
 pub fn de_create_stack_set(
     inp: &[u8],
-    mut builder: crate::output::create_stack_set_output::Builder,
-) -> Result<crate::output::create_stack_set_output::Builder, aws_smithy_xml::decode::XmlDecodeError>
-{
+    mut builder: crate::operation::create_stack_set::builders::CreateStackSetOutputBuilder,
+) -> Result<
+    crate::operation::create_stack_set::builders::CreateStackSetOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

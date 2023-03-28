@@ -2,7 +2,7 @@
 pub(crate) fn de_transit_gateway_connect_peer_association<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::TransitGatewayConnectPeerAssociation>,
+    Option<crate::types::TransitGatewayConnectPeerAssociation>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::transit_gateway_connect_peer_association::Builder::default();
+                crate::types::builders::TransitGatewayConnectPeerAssociationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -64,7 +64,7 @@ where
                                 builder = builder.set_state(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?.map(|s|
                                         s.to_unescaped().map(|u|
-                                            crate::model::TransitGatewayConnectPeerAssociationState::from(u.as_ref())
+                                            crate::types::TransitGatewayConnectPeerAssociationState::from(u.as_ref())
                                         )
                                     ).transpose()?
                                 );

@@ -2,7 +2,7 @@
 pub(crate) fn de_runtime_version_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::RuntimeVersion>>,
+    Option<std::vec::Vec<crate::types::RuntimeVersion>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

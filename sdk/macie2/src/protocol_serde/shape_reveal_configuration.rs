@@ -2,7 +2,7 @@
 pub(crate) fn de_reveal_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::RevealConfiguration>,
+    Option<crate::types::RevealConfiguration>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::reveal_configuration::Builder::default();
+            let mut builder = crate::types::builders::RevealConfigurationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -39,7 +39,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::RevealStatus::from(u.as_ref()))
+                                            .map(|u| crate::types::RevealStatus::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -69,7 +69,7 @@ where
 
 pub fn ser_reveal_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::RevealConfiguration,
+    input: &crate::types::RevealConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.kms_key_id {
         object.key("kmsKeyId").string(var_1.as_str());

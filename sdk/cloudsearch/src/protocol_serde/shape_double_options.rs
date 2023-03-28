@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_double_options(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::DoubleOptions,
+    input: &crate::types::DoubleOptions,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("DefaultValue");
@@ -42,9 +42,9 @@ pub fn ser_double_options(
 
 pub fn de_double_options(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::DoubleOptions, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::DoubleOptions, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::DoubleOptions::builder();
+    let mut builder = crate::types::DoubleOptions::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("DefaultValue") /* DefaultValue com.amazonaws.cloudsearch#DoubleOptions$DefaultValue */ =>  {

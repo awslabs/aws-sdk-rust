@@ -69,7 +69,10 @@ pub(crate) fn de_alternative_intents_header(
 
 pub fn de_audio_stream_payload(
     body: &mut aws_smithy_http::body::SdkBody,
-) -> std::result::Result<aws_smithy_http::byte_stream::ByteStream, crate::error::PostContentError> {
+) -> std::result::Result<
+    aws_smithy_http::byte_stream::ByteStream,
+    crate::operation::post_content::PostContentError,
+> {
     // replace the body with an empty body
     let body = std::mem::replace(body, aws_smithy_http::body::SdkBody::taken());
     Ok(aws_smithy_http::byte_stream::ByteStream::new(body))
@@ -98,7 +101,7 @@ pub(crate) fn de_content_type_header(
 pub(crate) fn de_dialog_state_header(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
-    std::option::Option<crate::model::DialogState>,
+    std::option::Option<crate::types::DialogState>,
     aws_smithy_http::header::ParseError,
 > {
     let headers = header_map.get_all("x-amz-lex-dialog-state").iter();
@@ -160,7 +163,7 @@ pub(crate) fn de_message_header(
 pub(crate) fn de_message_format_header(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
-    std::option::Option<crate::model::MessageFormatType>,
+    std::option::Option<crate::types::MessageFormatType>,
     aws_smithy_http::header::ParseError,
 > {
     let headers = header_map.get_all("x-amz-lex-message-format").iter();

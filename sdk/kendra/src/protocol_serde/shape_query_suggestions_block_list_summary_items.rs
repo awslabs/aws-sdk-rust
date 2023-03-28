@@ -2,7 +2,7 @@
 pub(crate) fn de_query_suggestions_block_list_summary_items<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::QuerySuggestionsBlockListSummary>>,
+    Option<std::vec::Vec<crate::types::QuerySuggestionsBlockListSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

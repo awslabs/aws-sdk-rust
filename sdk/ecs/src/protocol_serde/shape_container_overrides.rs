@@ -2,7 +2,7 @@
 pub(crate) fn de_container_overrides<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ContainerOverride>>,
+    Option<std::vec::Vec<crate::types::ContainerOverride>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

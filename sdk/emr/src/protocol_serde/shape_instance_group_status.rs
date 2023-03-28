@@ -2,7 +2,7 @@
 pub(crate) fn de_instance_group_status<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::InstanceGroupStatus>,
+    Option<crate::types::InstanceGroupStatus>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::instance_group_status::Builder::default();
+            let mut builder = crate::types::builders::InstanceGroupStatusBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::InstanceGroupState::from(u.as_ref())
+                                            crate::types::InstanceGroupState::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

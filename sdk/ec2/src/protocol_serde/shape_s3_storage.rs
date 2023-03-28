@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_s3_storage(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::S3Storage,
+    input: &crate::types::S3Storage,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("AWSAccessKeyId");
@@ -34,9 +34,9 @@ pub fn ser_s3_storage(
 
 pub fn de_s3_storage(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::S3Storage, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::S3Storage, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::S3Storage::builder();
+    let mut builder = crate::types::S3Storage::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("AWSAccessKeyId") /* AWSAccessKeyId com.amazonaws.ec2#S3Storage$AWSAccessKeyId */ =>  {

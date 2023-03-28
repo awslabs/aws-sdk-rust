@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_target_group(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::TargetGroup,
+    input: &crate::types::TargetGroup,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Arn");
@@ -14,9 +14,9 @@ pub fn ser_target_group(
 
 pub fn de_target_group(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::TargetGroup, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::TargetGroup, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::TargetGroup::builder();
+    let mut builder = crate::types::TargetGroup::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("arn") /* Arn com.amazonaws.ec2#TargetGroup$Arn */ =>  {

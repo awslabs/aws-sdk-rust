@@ -2,7 +2,7 @@
 pub fn de_elastic_inference_accelerator_association_list(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::ElasticInferenceAcceleratorAssociation>,
+    std::vec::Vec<crate::types::ElasticInferenceAcceleratorAssociation>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

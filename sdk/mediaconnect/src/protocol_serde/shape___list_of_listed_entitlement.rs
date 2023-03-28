@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_listed_entitlement<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ListedEntitlement>>,
+    Option<std::vec::Vec<crate::types::ListedEntitlement>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

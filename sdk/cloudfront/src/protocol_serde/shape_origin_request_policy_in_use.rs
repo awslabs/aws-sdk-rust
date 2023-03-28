@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_origin_request_policy_in_use_xml_err(
     inp: &[u8],
-    mut builder: crate::error::origin_request_policy_in_use::Builder,
+    mut builder: crate::types::error::builders::OriginRequestPolicyInUseBuilder,
 ) -> Result<
-    crate::error::origin_request_policy_in_use::Builder,
+    crate::types::error::builders::OriginRequestPolicyInUseBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

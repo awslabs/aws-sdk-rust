@@ -2,66 +2,81 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_cancel_job_run_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::CancelJobRunOutput, crate::error::CancelJobRunError> {
+) -> std::result::Result<
+    crate::operation::cancel_job_run::CancelJobRunOutput,
+    crate::operation::cancel_job_run::CancelJobRunError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::CancelJobRunError::unhandled)?;
+        .map_err(crate::operation::cancel_job_run::CancelJobRunError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::CancelJobRunError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::cancel_job_run::CancelJobRunError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerException" => crate::error::CancelJobRunError::InternalServerException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "InternalServerException" => {
+            crate::operation::cancel_job_run::CancelJobRunError::InternalServerException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CancelJobRunError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ValidationException" => crate::error::CancelJobRunError::ValidationException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InternalServerExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::cancel_job_run::CancelJobRunError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ValidationException" => {
+            crate::operation::cancel_job_run::CancelJobRunError::ValidationException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CancelJobRunError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::CancelJobRunError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::cancel_job_run::CancelJobRunError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::cancel_job_run::CancelJobRunError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_cancel_job_run_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::CancelJobRunOutput, crate::error::CancelJobRunError> {
+) -> std::result::Result<
+    crate::operation::cancel_job_run::CancelJobRunOutput,
+    crate::operation::cancel_job_run::CancelJobRunError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::cancel_job_run_output::Builder::default();
+        let mut output =
+            crate::operation::cancel_job_run::builders::CancelJobRunOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_cancel_job_run::de_cancel_job_run(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::CancelJobRunError::unhandled)?;
+        .map_err(crate::operation::cancel_job_run::CancelJobRunError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -71,9 +86,9 @@ pub fn de_cancel_job_run_http_response(
 
 pub(crate) fn de_cancel_job_run(
     value: &[u8],
-    mut builder: crate::output::cancel_job_run_output::Builder,
+    mut builder: crate::operation::cancel_job_run::builders::CancelJobRunOutputBuilder,
 ) -> Result<
-    crate::output::cancel_job_run_output::Builder,
+    crate::operation::cancel_job_run::builders::CancelJobRunOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

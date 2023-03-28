@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_core<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Core>>,
+    Option<std::vec::Vec<crate::types::Core>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

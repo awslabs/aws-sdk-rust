@@ -2,7 +2,7 @@
 pub(crate) fn de_map_of_activity<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<std::string::String, crate::model::Activity>>,
+    Option<std::collections::HashMap<std::string::String, crate::types::Activity>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

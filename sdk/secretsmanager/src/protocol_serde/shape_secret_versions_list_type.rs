@@ -2,7 +2,7 @@
 pub(crate) fn de_secret_versions_list_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SecretVersionsListEntry>>,
+    Option<std::vec::Vec<crate::types::SecretVersionsListEntry>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

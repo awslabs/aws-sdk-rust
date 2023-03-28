@@ -2,7 +2,7 @@
 pub(crate) fn de_metadata_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<std::string::String, crate::model::MetadataValue>>,
+    Option<std::collections::HashMap<std::string::String, crate::types::MetadataValue>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

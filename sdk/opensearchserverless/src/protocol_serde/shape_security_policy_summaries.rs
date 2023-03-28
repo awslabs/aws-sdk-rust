@@ -2,7 +2,7 @@
 pub(crate) fn de_security_policy_summaries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SecurityPolicySummary>>,
+    Option<std::vec::Vec<crate::types::SecurityPolicySummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_data_set_identifier_declaration_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DataSetIdentifierDeclaration>>,
+    Option<std::vec::Vec<crate::types::DataSetIdentifierDeclaration>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

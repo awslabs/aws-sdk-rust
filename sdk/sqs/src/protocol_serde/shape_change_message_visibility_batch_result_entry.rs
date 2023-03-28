@@ -2,11 +2,11 @@
 pub fn de_change_message_visibility_batch_result_entry(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    crate::model::ChangeMessageVisibilityBatchResultEntry,
+    crate::types::ChangeMessageVisibilityBatchResultEntry,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     #[allow(unused_mut)]
-    let mut builder = crate::model::ChangeMessageVisibilityBatchResultEntry::builder();
+    let mut builder = crate::types::ChangeMessageVisibilityBatchResultEntry::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Id") /* Id com.amazonaws.sqs#ChangeMessageVisibilityBatchResultEntry$Id */ =>  {

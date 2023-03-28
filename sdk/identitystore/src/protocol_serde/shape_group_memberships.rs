@@ -2,7 +2,7 @@
 pub(crate) fn de_group_memberships<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::GroupMembership>>,
+    Option<std::vec::Vec<crate::types::GroupMembership>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

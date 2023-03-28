@@ -2,58 +2,33 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_enable_logging_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::EnableLoggingOutput, crate::error::EnableLoggingError> {
+) -> std::result::Result<
+    crate::operation::enable_logging::EnableLoggingOutput,
+    crate::operation::enable_logging::EnableLoggingError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::EnableLoggingError::unhandled)?;
+        .map_err(crate::operation::enable_logging::EnableLoggingError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::EnableLoggingError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::enable_logging::EnableLoggingError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BucketNotFoundFault" => crate::error::EnableLoggingError::BucketNotFoundFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::bucket_not_found_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_bucket_not_found_fault::de_bucket_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::EnableLoggingError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ClusterNotFound" => crate::error::EnableLoggingError::ClusterNotFoundFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::cluster_not_found_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_cluster_not_found_fault::de_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::EnableLoggingError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InsufficientS3BucketPolicyFault" => {
-            crate::error::EnableLoggingError::InsufficientS3BucketPolicyFault({
+        "BucketNotFoundFault" => {
+            crate::operation::enable_logging::EnableLoggingError::BucketNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::insufficient_s3_bucket_policy_fault::Builder::default();
+                        crate::types::error::builders::BucketNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_insufficient_s3_bucket_policy_fault::de_insufficient_s3_bucket_policy_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::EnableLoggingError::unhandled)?;
+                    output = crate::protocol_serde::shape_bucket_not_found_fault::de_bucket_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::enable_logging::EnableLoggingError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -63,68 +38,116 @@ pub fn de_enable_logging_http_error(
                 tmp
             })
         }
-        "InvalidClusterState" => crate::error::EnableLoggingError::InvalidClusterStateFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "ClusterNotFound" => {
+            crate::operation::enable_logging::EnableLoggingError::ClusterNotFoundFault({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_cluster_state_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_cluster_state_fault::de_invalid_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::EnableLoggingError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InvalidS3BucketNameFault" => crate::error::EnableLoggingError::InvalidS3BucketNameFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ClusterNotFoundFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_cluster_not_found_fault::de_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::enable_logging::EnableLoggingError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InsufficientS3BucketPolicyFault" => {
+            crate::operation::enable_logging::EnableLoggingError::InsufficientS3BucketPolicyFault({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_s3_bucket_name_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_s3_bucket_name_fault::de_invalid_s3_bucket_name_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::EnableLoggingError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InvalidS3KeyPrefixFault" => crate::error::EnableLoggingError::InvalidS3KeyPrefixFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InsufficientS3BucketPolicyFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_insufficient_s3_bucket_policy_fault::de_insufficient_s3_bucket_policy_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::enable_logging::EnableLoggingError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidClusterState" => {
+            crate::operation::enable_logging::EnableLoggingError::InvalidClusterStateFault({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_s3_key_prefix_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_s3_key_prefix_fault::de_invalid_s3_key_prefix_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::EnableLoggingError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::EnableLoggingError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InvalidClusterStateFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_cluster_state_fault::de_invalid_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::enable_logging::EnableLoggingError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidS3BucketNameFault" => {
+            crate::operation::enable_logging::EnableLoggingError::InvalidS3BucketNameFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InvalidS3BucketNameFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_s3_bucket_name_fault::de_invalid_s3_bucket_name_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::enable_logging::EnableLoggingError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidS3KeyPrefixFault" => {
+            crate::operation::enable_logging::EnableLoggingError::InvalidS3KeyPrefixFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InvalidS3KeyPrefixFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_s3_key_prefix_fault::de_invalid_s3_key_prefix_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::enable_logging::EnableLoggingError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::enable_logging::EnableLoggingError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_enable_logging_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::EnableLoggingOutput, crate::error::EnableLoggingError> {
+) -> std::result::Result<
+    crate::operation::enable_logging::EnableLoggingOutput,
+    crate::operation::enable_logging::EnableLoggingError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::enable_logging_output::Builder::default();
+        let mut output =
+            crate::operation::enable_logging::builders::EnableLoggingOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_enable_logging::de_enable_logging(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::EnableLoggingError::unhandled)?;
+        .map_err(crate::operation::enable_logging::EnableLoggingError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -135,8 +158,11 @@ pub fn de_enable_logging_http_response(
 #[allow(unused_mut)]
 pub fn de_enable_logging(
     inp: &[u8],
-    mut builder: crate::output::enable_logging_output::Builder,
-) -> Result<crate::output::enable_logging_output::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    mut builder: crate::operation::enable_logging::builders::EnableLoggingOutputBuilder,
+) -> Result<
+    crate::operation::enable_logging::builders::EnableLoggingOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -244,8 +270,8 @@ pub fn de_enable_logging(
             s if s.matches("LogDestinationType") /* LogDestinationType com.amazonaws.redshift.synthetic#EnableLoggingOutput$LogDestinationType */ =>  {
                 let var_7 =
                     Some(
-                        Result::<crate::model::LogDestinationType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::LogDestinationType::from(
+                        Result::<crate::types::LogDestinationType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::LogDestinationType::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

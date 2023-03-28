@@ -2,7 +2,7 @@
 pub(crate) fn de_providers_list_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ProviderDescription>>,
+    Option<std::vec::Vec<crate::types::ProviderDescription>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

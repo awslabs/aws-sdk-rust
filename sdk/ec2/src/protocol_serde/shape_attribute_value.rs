@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_attribute_value(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::AttributeValue,
+    input: &crate::types::AttributeValue,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Value");
@@ -14,9 +14,9 @@ pub fn ser_attribute_value(
 
 pub fn de_attribute_value(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::AttributeValue, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::AttributeValue, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::AttributeValue::builder();
+    let mut builder = crate::types::AttributeValue::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("value") /* Value com.amazonaws.ec2#AttributeValue$Value */ =>  {

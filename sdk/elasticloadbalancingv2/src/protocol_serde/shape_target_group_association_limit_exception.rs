@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_target_group_association_limit_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::target_group_association_limit_exception::Builder,
+    mut builder: crate::types::error::builders::TargetGroupAssociationLimitExceptionBuilder,
 ) -> Result<
-    crate::error::target_group_association_limit_exception::Builder,
+    crate::types::error::builders::TargetGroupAssociationLimitExceptionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

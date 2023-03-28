@@ -2,7 +2,7 @@
 pub(crate) fn de_third_party_firewall_missing_subnet_violation<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ThirdPartyFirewallMissingSubnetViolation>,
+    Option<crate::types::ThirdPartyFirewallMissingSubnetViolation>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::third_party_firewall_missing_subnet_violation::Builder::default();
+                crate::types::builders::ThirdPartyFirewallMissingSubnetViolationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

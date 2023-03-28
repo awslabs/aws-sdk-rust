@@ -2,7 +2,7 @@
 pub(crate) fn de_protective_equipment_persons<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ProtectiveEquipmentPerson>>,
+    Option<std::vec::Vec<crate::types::ProtectiveEquipmentPerson>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

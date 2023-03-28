@@ -2,7 +2,7 @@
 pub(crate) fn de_notification_summaries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::NotificationSummary>>,
+    Option<std::vec::Vec<crate::types::NotificationSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

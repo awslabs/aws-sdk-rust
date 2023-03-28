@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_availability_zone_not_supported_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::availability_zone_not_supported_exception::Builder,
+    mut builder: crate::types::error::builders::AvailabilityZoneNotSupportedExceptionBuilder,
 ) -> Result<
-    crate::error::availability_zone_not_supported_exception::Builder,
+    crate::types::error::builders::AvailabilityZoneNotSupportedExceptionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

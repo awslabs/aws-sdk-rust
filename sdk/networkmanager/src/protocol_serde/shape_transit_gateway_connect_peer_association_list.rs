@@ -2,7 +2,7 @@
 pub(crate) fn de_transit_gateway_connect_peer_association_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::TransitGatewayConnectPeerAssociation>>,
+    Option<std::vec::Vec<crate::types::TransitGatewayConnectPeerAssociation>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

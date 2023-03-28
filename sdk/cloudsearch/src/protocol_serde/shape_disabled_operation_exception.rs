@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_disabled_operation_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::disabled_operation_exception::Builder,
+    mut builder: crate::types::error::builders::DisabledOperationExceptionBuilder,
 ) -> Result<
-    crate::error::disabled_operation_exception::Builder,
+    crate::types::error::builders::DisabledOperationExceptionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

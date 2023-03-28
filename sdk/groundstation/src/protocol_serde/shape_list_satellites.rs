@@ -2,42 +2,51 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_satellites_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListSatellitesOutput, crate::error::ListSatellitesError> {
+) -> std::result::Result<
+    crate::operation::list_satellites::ListSatellitesOutput,
+    crate::operation::list_satellites::ListSatellitesError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListSatellitesError::unhandled)?;
+        .map_err(crate::operation::list_satellites::ListSatellitesError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListSatellitesError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::list_satellites::ListSatellitesError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DependencyException" => crate::error::ListSatellitesError::DependencyException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::dependency_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_dependency_exception::de_dependency_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSatellitesError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InvalidParameterException" => {
-            crate::error::ListSatellitesError::InvalidParameterException({
+        "DependencyException" => {
+            crate::operation::list_satellites::ListSatellitesError::DependencyException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::DependencyExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSatellitesError::unhandled)?;
+                    output = crate::protocol_serde::shape_dependency_exception::de_dependency_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_satellites::ListSatellitesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidParameterException" => {
+            crate::operation::list_satellites::ListSatellitesError::InvalidParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InvalidParameterExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_satellites::ListSatellitesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -48,13 +57,14 @@ pub fn de_list_satellites_http_error(
             })
         }
         "ResourceNotFoundException" => {
-            crate::error::ListSatellitesError::ResourceNotFoundException({
+            crate::operation::list_satellites::ListSatellitesError::ResourceNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSatellitesError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_satellites::ListSatellitesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -64,23 +74,27 @@ pub fn de_list_satellites_http_error(
                 tmp
             })
         }
-        _ => crate::error::ListSatellitesError::generic(generic),
+        _ => crate::operation::list_satellites::ListSatellitesError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_satellites_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListSatellitesOutput, crate::error::ListSatellitesError> {
+) -> std::result::Result<
+    crate::operation::list_satellites::ListSatellitesOutput,
+    crate::operation::list_satellites::ListSatellitesError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_satellites_output::Builder::default();
+        let mut output =
+            crate::operation::list_satellites::builders::ListSatellitesOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_satellites::de_list_satellites(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListSatellitesError::unhandled)?;
+        .map_err(crate::operation::list_satellites::ListSatellitesError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -90,9 +104,9 @@ pub fn de_list_satellites_http_response(
 
 pub(crate) fn de_list_satellites(
     value: &[u8],
-    mut builder: crate::output::list_satellites_output::Builder,
+    mut builder: crate::operation::list_satellites::builders::ListSatellitesOutputBuilder,
 ) -> Result<
-    crate::output::list_satellites_output::Builder,
+    crate::operation::list_satellites::builders::ListSatellitesOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

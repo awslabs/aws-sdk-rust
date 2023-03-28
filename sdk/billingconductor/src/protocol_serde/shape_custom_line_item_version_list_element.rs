@@ -2,7 +2,7 @@
 pub(crate) fn de_custom_line_item_version_list_element<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::CustomLineItemVersionListElement>,
+    Option<crate::types::CustomLineItemVersionListElement>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::custom_line_item_version_list_element::Builder::default();
+                crate::types::builders::CustomLineItemVersionListElementBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -45,7 +45,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::CurrencyCode::from(u.as_ref()))
+                                            .map(|u| crate::types::CurrencyCode::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

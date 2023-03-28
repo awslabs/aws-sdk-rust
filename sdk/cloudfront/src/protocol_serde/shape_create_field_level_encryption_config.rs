@@ -3,31 +3,28 @@
 pub fn de_create_field_level_encryption_config_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateFieldLevelEncryptionConfigOutput,
-    crate::error::CreateFieldLevelEncryptionConfigError,
+    crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigOutput,
+    crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::CreateFieldLevelEncryptionConfigError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::CreateFieldLevelEncryptionConfigError::unhandled(generic))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "FieldLevelEncryptionConfigAlreadyExists" => crate::error::CreateFieldLevelEncryptionConfigError::FieldLevelEncryptionConfigAlreadyExists({
+        "FieldLevelEncryptionConfigAlreadyExists" => crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigError::FieldLevelEncryptionConfigAlreadyExists({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::field_level_encryption_config_already_exists::Builder::default();
+                    let mut output = crate::types::error::builders::FieldLevelEncryptionConfigAlreadyExistsBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_field_level_encryption_config_already_exists::de_field_level_encryption_config_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateFieldLevelEncryptionConfigError::unhandled)?;
+                    output = crate::protocol_serde::shape_field_level_encryption_config_already_exists::de_field_level_encryption_config_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -37,14 +34,14 @@ pub fn de_create_field_level_encryption_config_http_error(
                                                     }
             tmp
         }),
-        "InconsistentQuantities" => crate::error::CreateFieldLevelEncryptionConfigError::InconsistentQuantities({
+        "InconsistentQuantities" => crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigError::InconsistentQuantities({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::inconsistent_quantities::Builder::default();
+                    let mut output = crate::types::error::builders::InconsistentQuantitiesBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_inconsistent_quantities::de_inconsistent_quantities_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateFieldLevelEncryptionConfigError::unhandled)?;
+                    output = crate::protocol_serde::shape_inconsistent_quantities::de_inconsistent_quantities_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -54,14 +51,14 @@ pub fn de_create_field_level_encryption_config_http_error(
                                                     }
             tmp
         }),
-        "InvalidArgument" => crate::error::CreateFieldLevelEncryptionConfigError::InvalidArgument({
+        "InvalidArgument" => crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigError::InvalidArgument({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_argument::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidArgumentBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_argument::de_invalid_argument_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateFieldLevelEncryptionConfigError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_argument::de_invalid_argument_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -71,14 +68,14 @@ pub fn de_create_field_level_encryption_config_http_error(
                                                     }
             tmp
         }),
-        "NoSuchFieldLevelEncryptionProfile" => crate::error::CreateFieldLevelEncryptionConfigError::NoSuchFieldLevelEncryptionProfile({
+        "NoSuchFieldLevelEncryptionProfile" => crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigError::NoSuchFieldLevelEncryptionProfile({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::no_such_field_level_encryption_profile::Builder::default();
+                    let mut output = crate::types::error::builders::NoSuchFieldLevelEncryptionProfileBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_no_such_field_level_encryption_profile::de_no_such_field_level_encryption_profile_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateFieldLevelEncryptionConfigError::unhandled)?;
+                    output = crate::protocol_serde::shape_no_such_field_level_encryption_profile::de_no_such_field_level_encryption_profile_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -88,14 +85,14 @@ pub fn de_create_field_level_encryption_config_http_error(
                                                     }
             tmp
         }),
-        "QueryArgProfileEmpty" => crate::error::CreateFieldLevelEncryptionConfigError::QueryArgProfileEmpty({
+        "QueryArgProfileEmpty" => crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigError::QueryArgProfileEmpty({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::query_arg_profile_empty::Builder::default();
+                    let mut output = crate::types::error::builders::QueryArgProfileEmptyBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_query_arg_profile_empty::de_query_arg_profile_empty_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateFieldLevelEncryptionConfigError::unhandled)?;
+                    output = crate::protocol_serde::shape_query_arg_profile_empty::de_query_arg_profile_empty_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -105,14 +102,14 @@ pub fn de_create_field_level_encryption_config_http_error(
                                                     }
             tmp
         }),
-        "TooManyFieldLevelEncryptionConfigs" => crate::error::CreateFieldLevelEncryptionConfigError::TooManyFieldLevelEncryptionConfigs({
+        "TooManyFieldLevelEncryptionConfigs" => crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigError::TooManyFieldLevelEncryptionConfigs({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_field_level_encryption_configs::Builder::default();
+                    let mut output = crate::types::error::builders::TooManyFieldLevelEncryptionConfigsBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_field_level_encryption_configs::de_too_many_field_level_encryption_configs_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateFieldLevelEncryptionConfigError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_field_level_encryption_configs::de_too_many_field_level_encryption_configs_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -122,14 +119,14 @@ pub fn de_create_field_level_encryption_config_http_error(
                                                     }
             tmp
         }),
-        "TooManyFieldLevelEncryptionContentTypeProfiles" => crate::error::CreateFieldLevelEncryptionConfigError::TooManyFieldLevelEncryptionContentTypeProfiles({
+        "TooManyFieldLevelEncryptionContentTypeProfiles" => crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigError::TooManyFieldLevelEncryptionContentTypeProfiles({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_field_level_encryption_content_type_profiles::Builder::default();
+                    let mut output = crate::types::error::builders::TooManyFieldLevelEncryptionContentTypeProfilesBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_field_level_encryption_content_type_profiles::de_too_many_field_level_encryption_content_type_profiles_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateFieldLevelEncryptionConfigError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_field_level_encryption_content_type_profiles::de_too_many_field_level_encryption_content_type_profiles_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -139,14 +136,14 @@ pub fn de_create_field_level_encryption_config_http_error(
                                                     }
             tmp
         }),
-        "TooManyFieldLevelEncryptionQueryArgProfiles" => crate::error::CreateFieldLevelEncryptionConfigError::TooManyFieldLevelEncryptionQueryArgProfiles({
+        "TooManyFieldLevelEncryptionQueryArgProfiles" => crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigError::TooManyFieldLevelEncryptionQueryArgProfiles({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_field_level_encryption_query_arg_profiles::Builder::default();
+                    let mut output = crate::types::error::builders::TooManyFieldLevelEncryptionQueryArgProfilesBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_field_level_encryption_query_arg_profiles::de_too_many_field_level_encryption_query_arg_profiles_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateFieldLevelEncryptionConfigError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_field_level_encryption_query_arg_profiles::de_too_many_field_level_encryption_query_arg_profiles_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -156,7 +153,7 @@ pub fn de_create_field_level_encryption_config_http_error(
                                                     }
             tmp
         }),
-        _ => crate::error::CreateFieldLevelEncryptionConfigError::generic(generic)
+        _ => crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigError::generic(generic)
     })
 }
 
@@ -164,24 +161,23 @@ pub fn de_create_field_level_encryption_config_http_error(
 pub fn de_create_field_level_encryption_config_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateFieldLevelEncryptionConfigOutput,
-    crate::error::CreateFieldLevelEncryptionConfigError,
+    crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigOutput,
+    crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::output::create_field_level_encryption_config_output::Builder::default();
+        let mut output = crate::operation::create_field_level_encryption_config::builders::CreateFieldLevelEncryptionConfigOutputBuilder::default();
         let _ = response;
         output = output.set_e_tag(
             crate::protocol_serde::shape_create_field_level_encryption_config_output::de_e_tag_header(response.headers())
-                                    .map_err(|_|crate::error::CreateFieldLevelEncryptionConfigError::unhandled("Failed to parse ETag from header `ETag"))?
+                                    .map_err(|_|crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigError::unhandled("Failed to parse ETag from header `ETag"))?
         );
         output = output.set_field_level_encryption(
             crate::protocol_serde::shape_create_field_level_encryption_config_output::de_field_level_encryption_payload(response.body().as_ref())?
         );
         output = output.set_location(
             crate::protocol_serde::shape_create_field_level_encryption_config_output::de_location_header(response.headers())
-                                    .map_err(|_|crate::error::CreateFieldLevelEncryptionConfigError::unhandled("Failed to parse Location from header `Location"))?
+                                    .map_err(|_|crate::operation::create_field_level_encryption_config::CreateFieldLevelEncryptionConfigError::unhandled("Failed to parse Location from header `Location"))?
         );
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

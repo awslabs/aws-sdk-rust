@@ -2,7 +2,7 @@
 pub(crate) fn de_additional_inference_specifications<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AdditionalInferenceSpecificationDefinition>>,
+    Option<std::vec::Vec<crate::types::AdditionalInferenceSpecificationDefinition>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_domain_controller<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::DomainController>,
+    Option<crate::types::DomainController>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::domain_controller::Builder::default();
+            let mut builder = crate::types::builders::DomainControllerBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -84,7 +84,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::DomainControllerStatus::from(u.as_ref())
+                                            crate::types::DomainControllerStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

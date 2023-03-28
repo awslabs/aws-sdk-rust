@@ -2,7 +2,7 @@
 pub(crate) fn de_question_differences<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::QuestionDifference>>,
+    Option<std::vec::Vec<crate::types::QuestionDifference>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

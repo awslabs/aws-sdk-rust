@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_logger<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Logger>>,
+    Option<std::vec::Vec<crate::types::Logger>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_protected_query_output<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ProtectedQueryOutput>,
+    Option<crate::types::ProtectedQueryOutput>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -29,14 +29,14 @@ where
                     }
                     variant = match key.to_unescaped()?.as_ref() {
                             "s3" => {
-                                Some(crate::model::ProtectedQueryOutput::S3(
+                                Some(crate::types::ProtectedQueryOutput::S3(
                                     crate::protocol_serde::shape_protected_query_s3_output::de_protected_query_s3_output(tokens)?
                                     .ok_or_else(|| aws_smithy_json::deserialize::error::DeserializeError::custom("value for 's3' cannot be null"))?
                                 ))
                             }
                             _ => {
                                                                       aws_smithy_json::deserialize::token::skip_value(tokens)?;
-                                                                      Some(crate::model::ProtectedQueryOutput::Unknown)
+                                                                      Some(crate::types::ProtectedQueryOutput::Unknown)
                                                                     }
                         };
                 }

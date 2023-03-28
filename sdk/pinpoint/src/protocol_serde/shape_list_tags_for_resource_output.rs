@@ -2,13 +2,14 @@
 pub fn de_tags_model_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::TagsModel>,
-    crate::error::ListTagsForResourceError,
+    std::option::Option<crate::types::TagsModel>,
+    crate::operation::list_tags_for_resource::ListTagsForResourceError,
 > {
     (!body.is_empty())
         .then(|| {
-            crate::protocol_serde::shape_tags_model::de_tags_model_payload(body)
-                .map_err(crate::error::ListTagsForResourceError::unhandled)
+            crate::protocol_serde::shape_tags_model::de_tags_model_payload(body).map_err(
+                crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled,
+            )
         })
         .transpose()
 }

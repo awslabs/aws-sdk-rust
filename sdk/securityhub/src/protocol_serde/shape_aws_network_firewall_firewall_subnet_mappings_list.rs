@@ -2,7 +2,7 @@
 pub(crate) fn de_aws_network_firewall_firewall_subnet_mappings_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AwsNetworkFirewallFirewallSubnetMappingsDetails>>,
+    Option<std::vec::Vec<crate::types::AwsNetworkFirewallFirewallSubnetMappingsDetails>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

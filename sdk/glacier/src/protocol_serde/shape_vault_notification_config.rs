@@ -2,7 +2,7 @@
 pub fn de_vault_notification_config_payload(
     input: &[u8],
 ) -> Result<
-    crate::model::VaultNotificationConfig,
+    crate::types::VaultNotificationConfig,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =
@@ -30,7 +30,7 @@ pub fn de_vault_notification_config_payload(
 
 pub fn ser_vault_notification_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::VaultNotificationConfig,
+    input: &crate::types::VaultNotificationConfig,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.sns_topic {
         object.key("SNSTopic").string(var_1.as_str());
@@ -50,7 +50,7 @@ pub fn ser_vault_notification_config(
 pub(crate) fn de_vault_notification_config<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::VaultNotificationConfig>,
+    Option<crate::types::VaultNotificationConfig>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -65,7 +65,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::vault_notification_config::Builder::default();
+            let mut builder = crate::types::builders::VaultNotificationConfigBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

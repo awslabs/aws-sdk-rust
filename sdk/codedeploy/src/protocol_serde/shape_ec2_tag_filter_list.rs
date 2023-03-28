@@ -2,7 +2,7 @@
 pub(crate) fn de_ec2_tag_filter_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Ec2TagFilter>>,
+    Option<std::vec::Vec<crate::types::Ec2TagFilter>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

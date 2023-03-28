@@ -2,27 +2,33 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_dashboards_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListDashboardsOutput, crate::error::ListDashboardsError> {
+) -> std::result::Result<
+    crate::operation::list_dashboards::ListDashboardsOutput,
+    crate::operation::list_dashboards::ListDashboardsError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListDashboardsError::unhandled)?;
+        .map_err(crate::operation::list_dashboards::ListDashboardsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListDashboardsError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::list_dashboards::ListDashboardsError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalFailureException" => {
-            crate::error::ListDashboardsError::InternalFailureException({
+            crate::operation::list_dashboards::ListDashboardsError::InternalFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_failure_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::InternalFailureExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDashboardsError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_dashboards::ListDashboardsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -33,46 +39,14 @@ pub fn de_list_dashboards_http_error(
             })
         }
         "InvalidNextTokenException" => {
-            crate::error::ListDashboardsError::InvalidNextTokenException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_next_token_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_next_token_exception::de_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDashboardsError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ThrottlingException" => crate::error::ListDashboardsError::ThrottlingException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::throttling_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDashboardsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "UnsupportedUserEditionException" => {
-            crate::error::ListDashboardsError::UnsupportedUserEditionException({
+            crate::operation::list_dashboards::ListDashboardsError::InvalidNextTokenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::unsupported_user_edition_exception::Builder::default();
+                        crate::types::error::builders::InvalidNextTokenExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_unsupported_user_edition_exception::de_unsupported_user_edition_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDashboardsError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_next_token_exception::de_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_dashboards::ListDashboardsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -82,23 +56,64 @@ pub fn de_list_dashboards_http_error(
                 tmp
             })
         }
-        _ => crate::error::ListDashboardsError::generic(generic),
+        "ThrottlingException" => {
+            crate::operation::list_dashboards::ListDashboardsError::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_dashboards::ListDashboardsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "UnsupportedUserEditionException" => {
+            crate::operation::list_dashboards::ListDashboardsError::UnsupportedUserEditionException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::UnsupportedUserEditionExceptionBuilder::default();
+                        let _ = response;
+                        output = crate::protocol_serde::shape_unsupported_user_edition_exception::de_unsupported_user_edition_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_dashboards::ListDashboardsError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        _ => crate::operation::list_dashboards::ListDashboardsError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_dashboards_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListDashboardsOutput, crate::error::ListDashboardsError> {
+) -> std::result::Result<
+    crate::operation::list_dashboards::ListDashboardsOutput,
+    crate::operation::list_dashboards::ListDashboardsError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_dashboards_output::Builder::default();
+        let mut output =
+            crate::operation::list_dashboards::builders::ListDashboardsOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_dashboards::de_list_dashboards(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListDashboardsError::unhandled)?;
+        .map_err(crate::operation::list_dashboards::ListDashboardsError::unhandled)?;
         output = output.set_status(Some(response.status().as_u16() as _));
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
@@ -109,9 +124,9 @@ pub fn de_list_dashboards_http_response(
 
 pub(crate) fn de_list_dashboards(
     value: &[u8],
-    mut builder: crate::output::list_dashboards_output::Builder,
+    mut builder: crate::operation::list_dashboards::builders::ListDashboardsOutputBuilder,
 ) -> Result<
-    crate::output::list_dashboards_output::Builder,
+    crate::operation::list_dashboards::builders::ListDashboardsOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

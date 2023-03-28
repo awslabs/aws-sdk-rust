@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_audio_channel_mapping<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AudioChannelMapping>>,
+    Option<std::vec::Vec<crate::types::AudioChannelMapping>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

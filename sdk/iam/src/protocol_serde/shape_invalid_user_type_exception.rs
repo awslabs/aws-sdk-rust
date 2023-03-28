@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_invalid_user_type_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::invalid_user_type_exception::Builder,
+    mut builder: crate::types::error::builders::InvalidUserTypeExceptionBuilder,
 ) -> Result<
-    crate::error::invalid_user_type_exception::Builder,
+    crate::types::error::builders::InvalidUserTypeExceptionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

@@ -2,7 +2,7 @@
 pub(crate) fn de_vector_enrichment_job_export_error_details<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::VectorEnrichmentJobExportErrorDetails>,
+    Option<crate::types::VectorEnrichmentJobExportErrorDetails>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::vector_enrichment_job_export_error_details::Builder::default();
+                crate::types::builders::VectorEnrichmentJobExportErrorDetailsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -31,7 +31,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::VectorEnrichmentJobExportErrorType::from(
+                                            crate::types::VectorEnrichmentJobExportErrorType::from(
                                                 u.as_ref(),
                                             )
                                         })

@@ -3,7 +3,7 @@ pub(crate) fn de_actions_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<
-        std::collections::HashMap<crate::model::ActionPoint, std::vec::Vec<crate::model::Action>>,
+        std::collections::HashMap<crate::types::ActionPoint, std::vec::Vec<crate::types::Action>>,
     >,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
@@ -25,7 +25,7 @@ where
                     Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         let key = key
                             .to_unescaped()
-                            .map(|u| crate::model::ActionPoint::from(u.as_ref()))?;
+                            .map(|u| crate::types::ActionPoint::from(u.as_ref()))?;
                         let value =
                             crate::protocol_serde::shape_action_list::de_action_list(tokens)?;
                         if let Some(value) = value {

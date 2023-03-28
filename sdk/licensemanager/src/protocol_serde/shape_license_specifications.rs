@@ -2,7 +2,7 @@
 pub(crate) fn de_license_specifications<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::LicenseSpecification>>,
+    Option<std::vec::Vec<crate::types::LicenseSpecification>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

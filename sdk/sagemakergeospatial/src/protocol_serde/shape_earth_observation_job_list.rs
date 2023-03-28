@@ -2,7 +2,7 @@
 pub(crate) fn de_earth_observation_job_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ListEarthObservationJobOutputConfig>>,
+    Option<std::vec::Vec<crate::types::ListEarthObservationJobOutputConfig>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

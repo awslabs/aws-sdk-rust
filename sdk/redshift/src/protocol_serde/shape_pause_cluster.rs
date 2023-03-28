@@ -2,66 +2,79 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_pause_cluster_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::PauseClusterOutput, crate::error::PauseClusterError> {
+) -> std::result::Result<
+    crate::operation::pause_cluster::PauseClusterOutput,
+    crate::operation::pause_cluster::PauseClusterError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::PauseClusterError::unhandled)?;
+        .map_err(crate::operation::pause_cluster::PauseClusterError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::PauseClusterError::unhandled(generic)),
+        None => return Err(crate::operation::pause_cluster::PauseClusterError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ClusterNotFound" => crate::error::PauseClusterError::ClusterNotFoundFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "ClusterNotFound" => {
+            crate::operation::pause_cluster::PauseClusterError::ClusterNotFoundFault({
                 #[allow(unused_mut)]
-                let mut output = crate::error::cluster_not_found_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_cluster_not_found_fault::de_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PauseClusterError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InvalidClusterState" => crate::error::PauseClusterError::InvalidClusterStateFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ClusterNotFoundFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_cluster_not_found_fault::de_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::pause_cluster::PauseClusterError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidClusterState" => {
+            crate::operation::pause_cluster::PauseClusterError::InvalidClusterStateFault({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_cluster_state_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_cluster_state_fault::de_invalid_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PauseClusterError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::PauseClusterError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InvalidClusterStateFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_cluster_state_fault::de_invalid_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::pause_cluster::PauseClusterError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::pause_cluster::PauseClusterError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_pause_cluster_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::PauseClusterOutput, crate::error::PauseClusterError> {
+) -> std::result::Result<
+    crate::operation::pause_cluster::PauseClusterOutput,
+    crate::operation::pause_cluster::PauseClusterError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::pause_cluster_output::Builder::default();
+        let mut output =
+            crate::operation::pause_cluster::builders::PauseClusterOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_pause_cluster::de_pause_cluster(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::PauseClusterError::unhandled)?;
+        .map_err(crate::operation::pause_cluster::PauseClusterError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -72,8 +85,11 @@ pub fn de_pause_cluster_http_response(
 #[allow(unused_mut)]
 pub fn de_pause_cluster(
     inp: &[u8],
-    mut builder: crate::output::pause_cluster_output::Builder,
-) -> Result<crate::output::pause_cluster_output::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    mut builder: crate::operation::pause_cluster::builders::PauseClusterOutputBuilder,
+) -> Result<
+    crate::operation::pause_cluster::builders::PauseClusterOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

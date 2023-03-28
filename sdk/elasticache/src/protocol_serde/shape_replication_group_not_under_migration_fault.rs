@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_replication_group_not_under_migration_fault_xml_err(
     inp: &[u8],
-    mut builder: crate::error::replication_group_not_under_migration_fault::Builder,
+    mut builder: crate::types::error::builders::ReplicationGroupNotUnderMigrationFaultBuilder,
 ) -> Result<
-    crate::error::replication_group_not_under_migration_fault::Builder,
+    crate::types::error::builders::ReplicationGroupNotUnderMigrationFaultBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

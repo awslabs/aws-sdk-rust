@@ -2,28 +2,34 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_update_user_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::UpdateUserOutput, crate::error::UpdateUserError> {
+) -> std::result::Result<
+    crate::operation::update_user::UpdateUserOutput,
+    crate::operation::update_user::UpdateUserError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::UpdateUserError::unhandled)?;
+        .map_err(crate::operation::update_user::UpdateUserError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::UpdateUserError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::update_user::UpdateUserError::unhandled(
+                generic,
+            ))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ConcurrentModification" => {
-            crate::error::UpdateUserError::ConcurrentModificationException({
+            crate::operation::update_user::UpdateUserError::ConcurrentModificationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::concurrent_modification_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ConcurrentModificationExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_concurrent_modification_exception::de_concurrent_modification_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateUserError::unhandled)?;
+                    output = crate::protocol_serde::shape_concurrent_modification_exception::de_concurrent_modification_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::update_user::UpdateUserError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -33,30 +39,53 @@ pub fn de_update_user_http_error(
                 tmp
             })
         }
-        "EntityAlreadyExists" => crate::error::UpdateUserError::EntityAlreadyExistsException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "EntityAlreadyExists" => {
+            crate::operation::update_user::UpdateUserError::EntityAlreadyExistsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::entity_already_exists_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_entity_already_exists_exception::de_entity_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateUserError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::EntityAlreadyExistsExceptionBuilder::default(
+                        );
+                    let _ = response;
+                    output = crate::protocol_serde::shape_entity_already_exists_exception::de_entity_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::update_user::UpdateUserError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "EntityTemporarilyUnmodifiable" => {
-            crate::error::UpdateUserError::EntityTemporarilyUnmodifiableException({
+            crate::operation::update_user::UpdateUserError::EntityTemporarilyUnmodifiableException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::EntityTemporarilyUnmodifiableExceptionBuilder::default();
+                        let _ = response;
+                        output = crate::protocol_serde::shape_entity_temporarily_unmodifiable_exception::de_entity_temporarily_unmodifiable_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::update_user::UpdateUserError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        "LimitExceeded" => {
+            crate::operation::update_user::UpdateUserError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::entity_temporarily_unmodifiable_exception::Builder::default();
+                        crate::types::error::builders::LimitExceededExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_entity_temporarily_unmodifiable_exception::de_entity_temporarily_unmodifiable_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateUserError::unhandled)?;
+                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::update_user::UpdateUserError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -66,13 +95,14 @@ pub fn de_update_user_http_error(
                 tmp
             })
         }
-        "LimitExceeded" => crate::error::UpdateUserError::LimitExceededException({
+        "NoSuchEntity" => crate::operation::update_user::UpdateUserError::NoSuchEntityException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                let mut output =
+                    crate::types::error::builders::NoSuchEntityExceptionBuilder::default();
                 let _ = response;
-                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateUserError::unhandled)?;
+                output = crate::protocol_serde::shape_no_such_entity_exception::de_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::update_user::UpdateUserError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -81,47 +111,39 @@ pub fn de_update_user_http_error(
             }
             tmp
         }),
-        "NoSuchEntity" => crate::error::UpdateUserError::NoSuchEntityException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "ServiceFailure" => {
+            crate::operation::update_user::UpdateUserError::ServiceFailureException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::no_such_entity_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_no_such_entity_exception::de_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateUserError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ServiceFailure" => crate::error::UpdateUserError::ServiceFailureException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::service_failure_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateUserError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::UpdateUserError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ServiceFailureExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::update_user::UpdateUserError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::update_user::UpdateUserError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_update_user_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::UpdateUserOutput, crate::error::UpdateUserError> {
+) -> std::result::Result<
+    crate::operation::update_user::UpdateUserOutput,
+    crate::operation::update_user::UpdateUserError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::update_user_output::Builder::default();
+        let mut output =
+            crate::operation::update_user::builders::UpdateUserOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

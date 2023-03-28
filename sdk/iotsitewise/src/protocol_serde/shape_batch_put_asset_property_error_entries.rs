@@ -2,7 +2,7 @@
 pub(crate) fn de_batch_put_asset_property_error_entries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::BatchPutAssetPropertyErrorEntry>>,
+    Option<std::vec::Vec<crate::types::BatchPutAssetPropertyErrorEntry>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_group_identifier_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::GroupIdentifier>>,
+    Option<std::vec::Vec<crate::types::GroupIdentifier>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

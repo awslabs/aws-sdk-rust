@@ -3,33 +3,28 @@
 pub fn de_restore_db_cluster_to_point_in_time_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::RestoreDbClusterToPointInTimeOutput,
-    crate::error::RestoreDBClusterToPointInTimeError,
+    crate::operation::restore_db_cluster_to_point_in_time::RestoreDbClusterToPointInTimeOutput,
+    crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::RestoreDBClusterToPointInTimeError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::RestoreDBClusterToPointInTimeError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBClusterAlreadyExistsFault" => crate::error::RestoreDBClusterToPointInTimeError::DbClusterAlreadyExistsFault({
+        "DBClusterAlreadyExistsFault" => crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError::DbClusterAlreadyExistsFault({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::db_cluster_already_exists_fault::Builder::default();
+                    let mut output = crate::types::error::builders::DbClusterAlreadyExistsFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_db_cluster_already_exists_fault::de_db_cluster_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBClusterToPointInTimeError::unhandled)?;
+                    output = crate::protocol_serde::shape_db_cluster_already_exists_fault::de_db_cluster_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -39,14 +34,14 @@ pub fn de_restore_db_cluster_to_point_in_time_http_error(
                                                     }
             tmp
         }),
-        "DBClusterNotFoundFault" => crate::error::RestoreDBClusterToPointInTimeError::DbClusterNotFoundFault({
+        "DBClusterNotFoundFault" => crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError::DbClusterNotFoundFault({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::db_cluster_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::DbClusterNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_db_cluster_not_found_fault::de_db_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBClusterToPointInTimeError::unhandled)?;
+                    output = crate::protocol_serde::shape_db_cluster_not_found_fault::de_db_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -56,14 +51,14 @@ pub fn de_restore_db_cluster_to_point_in_time_http_error(
                                                     }
             tmp
         }),
-        "DBClusterQuotaExceededFault" => crate::error::RestoreDBClusterToPointInTimeError::DbClusterQuotaExceededFault({
+        "DBClusterQuotaExceededFault" => crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError::DbClusterQuotaExceededFault({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::db_cluster_quota_exceeded_fault::Builder::default();
+                    let mut output = crate::types::error::builders::DbClusterQuotaExceededFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_db_cluster_quota_exceeded_fault::de_db_cluster_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBClusterToPointInTimeError::unhandled)?;
+                    output = crate::protocol_serde::shape_db_cluster_quota_exceeded_fault::de_db_cluster_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -73,14 +68,14 @@ pub fn de_restore_db_cluster_to_point_in_time_http_error(
                                                     }
             tmp
         }),
-        "DBClusterSnapshotNotFoundFault" => crate::error::RestoreDBClusterToPointInTimeError::DbClusterSnapshotNotFoundFault({
+        "DBClusterSnapshotNotFoundFault" => crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError::DbClusterSnapshotNotFoundFault({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::db_cluster_snapshot_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::DbClusterSnapshotNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_db_cluster_snapshot_not_found_fault::de_db_cluster_snapshot_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBClusterToPointInTimeError::unhandled)?;
+                    output = crate::protocol_serde::shape_db_cluster_snapshot_not_found_fault::de_db_cluster_snapshot_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -90,14 +85,14 @@ pub fn de_restore_db_cluster_to_point_in_time_http_error(
                                                     }
             tmp
         }),
-        "DBSubnetGroupNotFoundFault" => crate::error::RestoreDBClusterToPointInTimeError::DbSubnetGroupNotFoundFault({
+        "DBSubnetGroupNotFoundFault" => crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError::DbSubnetGroupNotFoundFault({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::db_subnet_group_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::DbSubnetGroupNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_db_subnet_group_not_found_fault::de_db_subnet_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBClusterToPointInTimeError::unhandled)?;
+                    output = crate::protocol_serde::shape_db_subnet_group_not_found_fault::de_db_subnet_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -107,14 +102,14 @@ pub fn de_restore_db_cluster_to_point_in_time_http_error(
                                                     }
             tmp
         }),
-        "InsufficientDBClusterCapacityFault" => crate::error::RestoreDBClusterToPointInTimeError::InsufficientDbClusterCapacityFault({
+        "InsufficientDBClusterCapacityFault" => crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError::InsufficientDbClusterCapacityFault({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::insufficient_db_cluster_capacity_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InsufficientDbClusterCapacityFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_insufficient_db_cluster_capacity_fault::de_insufficient_db_cluster_capacity_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBClusterToPointInTimeError::unhandled)?;
+                    output = crate::protocol_serde::shape_insufficient_db_cluster_capacity_fault::de_insufficient_db_cluster_capacity_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -124,14 +119,14 @@ pub fn de_restore_db_cluster_to_point_in_time_http_error(
                                                     }
             tmp
         }),
-        "InsufficientStorageClusterCapacity" => crate::error::RestoreDBClusterToPointInTimeError::InsufficientStorageClusterCapacityFault({
+        "InsufficientStorageClusterCapacity" => crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError::InsufficientStorageClusterCapacityFault({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::insufficient_storage_cluster_capacity_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InsufficientStorageClusterCapacityFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_insufficient_storage_cluster_capacity_fault::de_insufficient_storage_cluster_capacity_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBClusterToPointInTimeError::unhandled)?;
+                    output = crate::protocol_serde::shape_insufficient_storage_cluster_capacity_fault::de_insufficient_storage_cluster_capacity_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -141,14 +136,14 @@ pub fn de_restore_db_cluster_to_point_in_time_http_error(
                                                     }
             tmp
         }),
-        "InvalidDBClusterSnapshotStateFault" => crate::error::RestoreDBClusterToPointInTimeError::InvalidDbClusterSnapshotStateFault({
+        "InvalidDBClusterSnapshotStateFault" => crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError::InvalidDbClusterSnapshotStateFault({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_db_cluster_snapshot_state_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidDbClusterSnapshotStateFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_db_cluster_snapshot_state_fault::de_invalid_db_cluster_snapshot_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBClusterToPointInTimeError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_db_cluster_snapshot_state_fault::de_invalid_db_cluster_snapshot_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -158,14 +153,14 @@ pub fn de_restore_db_cluster_to_point_in_time_http_error(
                                                     }
             tmp
         }),
-        "InvalidDBClusterStateFault" => crate::error::RestoreDBClusterToPointInTimeError::InvalidDbClusterStateFault({
+        "InvalidDBClusterStateFault" => crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError::InvalidDbClusterStateFault({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_db_cluster_state_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidDbClusterStateFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_db_cluster_state_fault::de_invalid_db_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBClusterToPointInTimeError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_db_cluster_state_fault::de_invalid_db_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -175,14 +170,14 @@ pub fn de_restore_db_cluster_to_point_in_time_http_error(
                                                     }
             tmp
         }),
-        "InvalidDBSnapshotState" => crate::error::RestoreDBClusterToPointInTimeError::InvalidDbSnapshotStateFault({
+        "InvalidDBSnapshotState" => crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError::InvalidDbSnapshotStateFault({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_db_snapshot_state_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidDbSnapshotStateFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_db_snapshot_state_fault::de_invalid_db_snapshot_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBClusterToPointInTimeError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_db_snapshot_state_fault::de_invalid_db_snapshot_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -192,14 +187,14 @@ pub fn de_restore_db_cluster_to_point_in_time_http_error(
                                                     }
             tmp
         }),
-        "InvalidRestoreFault" => crate::error::RestoreDBClusterToPointInTimeError::InvalidRestoreFault({
+        "InvalidRestoreFault" => crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError::InvalidRestoreFault({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_restore_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidRestoreFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_restore_fault::de_invalid_restore_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBClusterToPointInTimeError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_restore_fault::de_invalid_restore_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -209,14 +204,14 @@ pub fn de_restore_db_cluster_to_point_in_time_http_error(
                                                     }
             tmp
         }),
-        "InvalidSubnet" => crate::error::RestoreDBClusterToPointInTimeError::InvalidSubnet({
+        "InvalidSubnet" => crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError::InvalidSubnet({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_subnet::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidSubnetBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_subnet::de_invalid_subnet_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBClusterToPointInTimeError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_subnet::de_invalid_subnet_xml_err(response.body().as_ref(), output).map_err(crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -226,14 +221,14 @@ pub fn de_restore_db_cluster_to_point_in_time_http_error(
                                                     }
             tmp
         }),
-        "InvalidVPCNetworkStateFault" => crate::error::RestoreDBClusterToPointInTimeError::InvalidVpcNetworkStateFault({
+        "InvalidVPCNetworkStateFault" => crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError::InvalidVpcNetworkStateFault({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_vpc_network_state_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidVpcNetworkStateFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_vpc_network_state_fault::de_invalid_vpc_network_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBClusterToPointInTimeError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_vpc_network_state_fault::de_invalid_vpc_network_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -243,14 +238,14 @@ pub fn de_restore_db_cluster_to_point_in_time_http_error(
                                                     }
             tmp
         }),
-        "KMSKeyNotAccessibleFault" => crate::error::RestoreDBClusterToPointInTimeError::KmsKeyNotAccessibleFault({
+        "KMSKeyNotAccessibleFault" => crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError::KmsKeyNotAccessibleFault({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::kms_key_not_accessible_fault::Builder::default();
+                    let mut output = crate::types::error::builders::KmsKeyNotAccessibleFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_kms_key_not_accessible_fault::de_kms_key_not_accessible_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBClusterToPointInTimeError::unhandled)?;
+                    output = crate::protocol_serde::shape_kms_key_not_accessible_fault::de_kms_key_not_accessible_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -260,14 +255,14 @@ pub fn de_restore_db_cluster_to_point_in_time_http_error(
                                                     }
             tmp
         }),
-        "StorageQuotaExceeded" => crate::error::RestoreDBClusterToPointInTimeError::StorageQuotaExceededFault({
+        "StorageQuotaExceeded" => crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError::StorageQuotaExceededFault({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::storage_quota_exceeded_fault::Builder::default();
+                    let mut output = crate::types::error::builders::StorageQuotaExceededFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_storage_quota_exceeded_fault::de_storage_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBClusterToPointInTimeError::unhandled)?;
+                    output = crate::protocol_serde::shape_storage_quota_exceeded_fault::de_storage_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -277,7 +272,7 @@ pub fn de_restore_db_cluster_to_point_in_time_http_error(
                                                     }
             tmp
         }),
-        _ => crate::error::RestoreDBClusterToPointInTimeError::generic(generic)
+        _ => crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError::generic(generic)
     })
 }
 
@@ -285,15 +280,14 @@ pub fn de_restore_db_cluster_to_point_in_time_http_error(
 pub fn de_restore_db_cluster_to_point_in_time_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::RestoreDbClusterToPointInTimeOutput,
-    crate::error::RestoreDBClusterToPointInTimeError,
+    crate::operation::restore_db_cluster_to_point_in_time::RestoreDbClusterToPointInTimeOutput,
+    crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::output::restore_db_cluster_to_point_in_time_output::Builder::default();
+        let mut output = crate::operation::restore_db_cluster_to_point_in_time::builders::RestoreDbClusterToPointInTimeOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_restore_db_cluster_to_point_in_time::de_restore_db_cluster_to_point_in_time(response.body().as_ref(), output).map_err(crate::error::RestoreDBClusterToPointInTimeError::unhandled)?;
+        output = crate::protocol_serde::shape_restore_db_cluster_to_point_in_time::de_restore_db_cluster_to_point_in_time(response.body().as_ref(), output).map_err(crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -302,13 +296,7 @@ pub fn de_restore_db_cluster_to_point_in_time_http_response(
 }
 
 #[allow(unused_mut)]
-pub fn de_restore_db_cluster_to_point_in_time(
-    inp: &[u8],
-    mut builder: crate::output::restore_db_cluster_to_point_in_time_output::Builder,
-) -> Result<
-    crate::output::restore_db_cluster_to_point_in_time_output::Builder,
-    aws_smithy_xml::decode::XmlDecodeError,
-> {
+pub fn de_restore_db_cluster_to_point_in_time(inp: &[u8], mut builder: crate::operation::restore_db_cluster_to_point_in_time::builders::RestoreDbClusterToPointInTimeOutputBuilder) -> Result<crate::operation::restore_db_cluster_to_point_in_time::builders::RestoreDbClusterToPointInTimeOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

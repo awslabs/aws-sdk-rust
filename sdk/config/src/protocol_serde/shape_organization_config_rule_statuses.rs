@@ -2,7 +2,7 @@
 pub(crate) fn de_organization_config_rule_statuses<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::OrganizationConfigRuleStatus>>,
+    Option<std::vec::Vec<crate::types::OrganizationConfigRuleStatus>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

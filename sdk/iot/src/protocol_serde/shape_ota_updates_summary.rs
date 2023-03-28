@@ -2,7 +2,7 @@
 pub(crate) fn de_ota_updates_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::OtaUpdateSummary>>,
+    Option<std::vec::Vec<crate::types::OtaUpdateSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

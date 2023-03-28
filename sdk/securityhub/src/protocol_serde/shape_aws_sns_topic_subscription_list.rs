@@ -2,7 +2,7 @@
 pub(crate) fn de_aws_sns_topic_subscription_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AwsSnsTopicSubscription>>,
+    Option<std::vec::Vec<crate::types::AwsSnsTopicSubscription>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

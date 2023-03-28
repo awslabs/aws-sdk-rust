@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_registry_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::RegistrySummary>>,
+    Option<std::vec::Vec<crate::types::RegistrySummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

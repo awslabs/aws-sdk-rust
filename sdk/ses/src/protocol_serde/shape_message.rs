@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_message(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::Message,
+    input: &crate::types::Message,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Subject");

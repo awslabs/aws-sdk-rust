@@ -2,20 +2,20 @@
 pub fn de_test_result_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::TestResult>,
-    crate::error::TestFunctionError,
+    std::option::Option<crate::types::TestResult>,
+    crate::operation::test_function::TestFunctionError,
 > {
     (!body.is_empty())
         .then(|| {
             crate::protocol_serde::shape_test_function_output::de_test_result(body)
-                .map_err(crate::error::TestFunctionError::unhandled)
+                .map_err(crate::operation::test_function::TestFunctionError::unhandled)
         })
         .transpose()
 }
 
 pub fn de_test_result(
     inp: &[u8],
-) -> Result<crate::model::TestResult, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::TestResult, aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;

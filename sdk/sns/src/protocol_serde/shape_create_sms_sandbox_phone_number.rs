@@ -3,123 +3,123 @@
 pub fn de_create_sms_sandbox_phone_number_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateSmsSandboxPhoneNumberOutput,
-    crate::error::CreateSMSSandboxPhoneNumberError,
+    crate::operation::create_sms_sandbox_phone_number::CreateSmsSandboxPhoneNumberOutput,
+    crate::operation::create_sms_sandbox_phone_number::CreateSMSSandboxPhoneNumberError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::CreateSMSSandboxPhoneNumberError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::create_sms_sandbox_phone_number::CreateSMSSandboxPhoneNumberError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::CreateSMSSandboxPhoneNumberError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::create_sms_sandbox_phone_number::CreateSMSSandboxPhoneNumberError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AuthorizationError" => {
-            crate::error::CreateSMSSandboxPhoneNumberError::AuthorizationErrorException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "AuthorizationError" => crate::operation::create_sms_sandbox_phone_number::CreateSMSSandboxPhoneNumberError::AuthorizationErrorException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::authorization_error_exception::Builder::default();
+                    let mut output = crate::types::error::builders::AuthorizationErrorExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_authorization_error_exception::de_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateSMSSandboxPhoneNumberError::unhandled)?;
+                    output = crate::protocol_serde::shape_authorization_error_exception::de_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_sms_sandbox_phone_number::CreateSMSSandboxPhoneNumberError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InternalError" => {
-            crate::error::CreateSMSSandboxPhoneNumberError::InternalErrorException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InternalError" => crate::operation::create_sms_sandbox_phone_number::CreateSMSSandboxPhoneNumberError::InternalErrorException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_error_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InternalErrorExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_error_exception::de_internal_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateSMSSandboxPhoneNumberError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_error_exception::de_internal_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_sms_sandbox_phone_number::CreateSMSSandboxPhoneNumberError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidParameter" => {
-            crate::error::CreateSMSSandboxPhoneNumberError::InvalidParameterException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidParameter" => crate::operation::create_sms_sandbox_phone_number::CreateSMSSandboxPhoneNumberError::InvalidParameterException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidParameterExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateSMSSandboxPhoneNumberError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_sms_sandbox_phone_number::CreateSMSSandboxPhoneNumberError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "OptedOut" => crate::error::CreateSMSSandboxPhoneNumberError::OptedOutException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::opted_out_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_opted_out_exception::de_opted_out_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateSMSSandboxPhoneNumberError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "Throttled" => crate::error::CreateSMSSandboxPhoneNumberError::ThrottledException({
+        "OptedOut" => crate::operation::create_sms_sandbox_phone_number::CreateSMSSandboxPhoneNumberError::OptedOutException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::throttled_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttled_exception::de_throttled_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateSMSSandboxPhoneNumberError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::OptedOutExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_opted_out_exception::de_opted_out_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_sms_sandbox_phone_number::CreateSMSSandboxPhoneNumberError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "UserError" => crate::error::CreateSMSSandboxPhoneNumberError::UserErrorException({
+        "Throttled" => crate::operation::create_sms_sandbox_phone_number::CreateSMSSandboxPhoneNumberError::ThrottledException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::user_error_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_user_error_exception::de_user_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateSMSSandboxPhoneNumberError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ThrottledExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_throttled_exception::de_throttled_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_sms_sandbox_phone_number::CreateSMSSandboxPhoneNumberError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::CreateSMSSandboxPhoneNumberError::generic(generic),
+        "UserError" => crate::operation::create_sms_sandbox_phone_number::CreateSMSSandboxPhoneNumberError::UserErrorException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::UserErrorExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_user_error_exception::de_user_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_sms_sandbox_phone_number::CreateSMSSandboxPhoneNumberError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::create_sms_sandbox_phone_number::CreateSMSSandboxPhoneNumberError::generic(generic)
     })
 }
 
@@ -127,12 +127,12 @@ pub fn de_create_sms_sandbox_phone_number_http_error(
 pub fn de_create_sms_sandbox_phone_number_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateSmsSandboxPhoneNumberOutput,
-    crate::error::CreateSMSSandboxPhoneNumberError,
+    crate::operation::create_sms_sandbox_phone_number::CreateSmsSandboxPhoneNumberOutput,
+    crate::operation::create_sms_sandbox_phone_number::CreateSMSSandboxPhoneNumberError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::create_sms_sandbox_phone_number_output::Builder::default();
+        let mut output = crate::operation::create_sms_sandbox_phone_number::builders::CreateSmsSandboxPhoneNumberOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

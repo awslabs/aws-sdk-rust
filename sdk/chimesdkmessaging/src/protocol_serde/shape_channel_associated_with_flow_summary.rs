@@ -2,7 +2,7 @@
 pub(crate) fn de_channel_associated_with_flow_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ChannelAssociatedWithFlowSummary>,
+    Option<crate::types::ChannelAssociatedWithFlowSummary>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::channel_associated_with_flow_summary::Builder::default();
+                crate::types::builders::ChannelAssociatedWithFlowSummaryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -49,7 +49,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::ChannelMode::from(u.as_ref()))
+                                            .map(|u| crate::types::ChannelMode::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -61,7 +61,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::ChannelPrivacy::from(u.as_ref()))
+                                            .map(|u| crate::types::ChannelPrivacy::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

@@ -2,7 +2,7 @@
 pub(crate) fn de_vcenter_based_remote_info_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::VcenterBasedRemoteInfo>>,
+    Option<std::vec::Vec<crate::types::VcenterBasedRemoteInfo>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

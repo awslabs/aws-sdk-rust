@@ -2,7 +2,7 @@
 pub(crate) fn de_unprocessed_prepared_statement_name_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::UnprocessedPreparedStatementName>>,
+    Option<std::vec::Vec<crate::types::UnprocessedPreparedStatementName>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

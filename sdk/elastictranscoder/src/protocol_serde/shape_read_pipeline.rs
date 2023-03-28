@@ -2,43 +2,31 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_read_pipeline_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ReadPipelineOutput, crate::error::ReadPipelineError> {
+) -> std::result::Result<
+    crate::operation::read_pipeline::ReadPipelineOutput,
+    crate::operation::read_pipeline::ReadPipelineError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ReadPipelineError::unhandled)?;
+        .map_err(crate::operation::read_pipeline::ReadPipelineError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ReadPipelineError::unhandled(generic)),
+        None => return Err(crate::operation::read_pipeline::ReadPipelineError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::ReadPipelineError::AccessDeniedException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::access_denied_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ReadPipelineError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "IncompatibleVersionException" => {
-            crate::error::ReadPipelineError::IncompatibleVersionException({
+        "AccessDeniedException" => {
+            crate::operation::read_pipeline::ReadPipelineError::AccessDeniedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::incompatible_version_exception::Builder::default();
+                        crate::types::error::builders::AccessDeniedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_incompatible_version_exception::de_incompatible_version_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ReadPipelineError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::read_pipeline::ReadPipelineError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -48,29 +36,16 @@ pub fn de_read_pipeline_http_error(
                 tmp
             })
         }
-        "InternalServiceException" => crate::error::ReadPipelineError::InternalServiceException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_service_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_service_exception::de_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ReadPipelineError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ResourceNotFoundException" => {
-            crate::error::ReadPipelineError::ResourceNotFoundException({
+        "IncompatibleVersionException" => {
+            crate::operation::read_pipeline::ReadPipelineError::IncompatibleVersionException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::IncompatibleVersionExceptionBuilder::default(
+                        );
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ReadPipelineError::unhandled)?;
+                    output = crate::protocol_serde::shape_incompatible_version_exception::de_incompatible_version_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::read_pipeline::ReadPipelineError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -80,38 +55,81 @@ pub fn de_read_pipeline_http_error(
                 tmp
             })
         }
-        "ValidationException" => crate::error::ReadPipelineError::ValidationException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "InternalServiceException" => {
+            crate::operation::read_pipeline::ReadPipelineError::InternalServiceException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ReadPipelineError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::ReadPipelineError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InternalServiceExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_service_exception::de_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::read_pipeline::ReadPipelineError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::operation::read_pipeline::ReadPipelineError::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::read_pipeline::ReadPipelineError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ValidationException" => {
+            crate::operation::read_pipeline::ReadPipelineError::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::read_pipeline::ReadPipelineError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::read_pipeline::ReadPipelineError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_read_pipeline_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ReadPipelineOutput, crate::error::ReadPipelineError> {
+) -> std::result::Result<
+    crate::operation::read_pipeline::ReadPipelineOutput,
+    crate::operation::read_pipeline::ReadPipelineError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::read_pipeline_output::Builder::default();
+        let mut output =
+            crate::operation::read_pipeline::builders::ReadPipelineOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_read_pipeline::de_read_pipeline(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ReadPipelineError::unhandled)?;
+        .map_err(crate::operation::read_pipeline::ReadPipelineError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -121,9 +139,9 @@ pub fn de_read_pipeline_http_response(
 
 pub(crate) fn de_read_pipeline(
     value: &[u8],
-    mut builder: crate::output::read_pipeline_output::Builder,
+    mut builder: crate::operation::read_pipeline::builders::ReadPipelineOutputBuilder,
 ) -> Result<
-    crate::output::read_pipeline_output::Builder,
+    crate::operation::read_pipeline::builders::ReadPipelineOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

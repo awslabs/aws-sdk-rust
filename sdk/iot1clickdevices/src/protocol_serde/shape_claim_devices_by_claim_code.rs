@@ -3,75 +3,78 @@
 pub fn de_claim_devices_by_claim_code_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ClaimDevicesByClaimCodeOutput,
-    crate::error::ClaimDevicesByClaimCodeError,
+    crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeOutput,
+    crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ClaimDevicesByClaimCodeError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::error::ClaimDevicesByClaimCodeError::unhandled(
+        None => return Err(
+            crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeError::unhandled(
                 generic,
-            ))
-        }
+            ),
+        ),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ForbiddenException" => crate::error::ClaimDevicesByClaimCodeError::ForbiddenException({
+        "ForbiddenException" => crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeError::ForbiddenException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ClaimDevicesByClaimCodeError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ForbiddenExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "InternalFailureException" => {
-            crate::error::ClaimDevicesByClaimCodeError::InternalFailureException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalFailureException" => crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeError::InternalFailureException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_failure_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InternalFailureExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ClaimDevicesByClaimCodeError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidRequestException" => {
-            crate::error::ClaimDevicesByClaimCodeError::InvalidRequestException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidRequestException" => crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeError::InvalidRequestException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_request_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ClaimDevicesByClaimCodeError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::ClaimDevicesByClaimCodeError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeError::generic(generic)
     })
 }
 
@@ -79,14 +82,14 @@ pub fn de_claim_devices_by_claim_code_http_error(
 pub fn de_claim_devices_by_claim_code_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ClaimDevicesByClaimCodeOutput,
-    crate::error::ClaimDevicesByClaimCodeError,
+    crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeOutput,
+    crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::claim_devices_by_claim_code_output::Builder::default();
+        let mut output = crate::operation::claim_devices_by_claim_code::builders::ClaimDevicesByClaimCodeOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_claim_devices_by_claim_code::de_claim_devices_by_claim_code(response.body().as_ref(), output).map_err(crate::error::ClaimDevicesByClaimCodeError::unhandled)?;
+        output = crate::protocol_serde::shape_claim_devices_by_claim_code::de_claim_devices_by_claim_code(response.body().as_ref(), output).map_err(crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -96,9 +99,9 @@ pub fn de_claim_devices_by_claim_code_http_response(
 
 pub(crate) fn de_claim_devices_by_claim_code(
     value: &[u8],
-    mut builder: crate::output::claim_devices_by_claim_code_output::Builder,
+    mut builder: crate::operation::claim_devices_by_claim_code::builders::ClaimDevicesByClaimCodeOutputBuilder,
 ) -> Result<
-    crate::output::claim_devices_by_claim_code_output::Builder,
+    crate::operation::claim_devices_by_claim_code::builders::ClaimDevicesByClaimCodeOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

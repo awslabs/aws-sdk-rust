@@ -2,7 +2,7 @@
 pub(crate) fn de_latest_resource_attribute_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ResourceAttribute>>,
+    Option<std::vec::Vec<crate::types::ResourceAttribute>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

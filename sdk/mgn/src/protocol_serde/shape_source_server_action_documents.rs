@@ -2,7 +2,7 @@
 pub(crate) fn de_source_server_action_documents<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SourceServerActionDocument>>,
+    Option<std::vec::Vec<crate::types::SourceServerActionDocument>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

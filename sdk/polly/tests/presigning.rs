@@ -4,19 +4,21 @@
  */
 
 use aws_sdk_polly as polly;
-use aws_sdk_polly::model::{OutputFormat, VoiceId};
-use polly::presigning::config::PresigningConfig;
+use polly::config::{Config, Credentials, Region};
+use polly::operation::synthesize_speech::SynthesizeSpeechInput;
+use polly::presigning::PresigningConfig;
+use polly::types::{OutputFormat, VoiceId};
 use std::error::Error;
 use std::time::{Duration, SystemTime};
 
 #[tokio::test]
 async fn test_presigning() -> Result<(), Box<dyn Error>> {
-    let config = polly::Config::builder()
-        .credentials_provider(polly::Credentials::for_tests())
-        .region(polly::Region::new("us-east-1"))
+    let config = Config::builder()
+        .credentials_provider(Credentials::for_tests())
+        .region(Region::new("us-east-1"))
         .build();
 
-    let input = polly::input::SynthesizeSpeechInput::builder()
+    let input = SynthesizeSpeechInput::builder()
         .output_format(OutputFormat::Mp3)
         .text("hello, world")
         .voice_id(VoiceId::Joanna)

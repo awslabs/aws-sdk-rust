@@ -2,7 +2,7 @@
 pub(crate) fn de_call_analytics_entity_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CallAnalyticsEntity>>,
+    Option<std::vec::Vec<crate::types::CallAnalyticsEntity>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

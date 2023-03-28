@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_cloud_front_origin_access_identity_in_use_xml_err(
     inp: &[u8],
-    mut builder: crate::error::cloud_front_origin_access_identity_in_use::Builder,
+    mut builder: crate::types::error::builders::CloudFrontOriginAccessIdentityInUseBuilder,
 ) -> Result<
-    crate::error::cloud_front_origin_access_identity_in_use::Builder,
+    crate::types::error::builders::CloudFrontOriginAccessIdentityInUseBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

@@ -2,7 +2,7 @@
 pub(crate) fn de_mobile_device_access_rules_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::MobileDeviceAccessRule>>,
+    Option<std::vec::Vec<crate::types::MobileDeviceAccessRule>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

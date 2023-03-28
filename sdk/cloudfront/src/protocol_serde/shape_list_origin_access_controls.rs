@@ -3,46 +3,44 @@
 pub fn de_list_origin_access_controls_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListOriginAccessControlsOutput,
-    crate::error::ListOriginAccessControlsError,
+    crate::operation::list_origin_access_controls::ListOriginAccessControlsOutput,
+    crate::operation::list_origin_access_controls::ListOriginAccessControlsError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListOriginAccessControlsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::list_origin_access_controls::ListOriginAccessControlsError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::error::ListOriginAccessControlsError::unhandled(
+        None => return Err(
+            crate::operation::list_origin_access_controls::ListOriginAccessControlsError::unhandled(
                 generic,
-            ))
-        }
+            ),
+        ),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidArgument" => crate::error::ListOriginAccessControlsError::InvalidArgument({
+        "InvalidArgument" => crate::operation::list_origin_access_controls::ListOriginAccessControlsError::InvalidArgument({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::invalid_argument::Builder::default();
-                let _ = response;
-                output =
-                    crate::protocol_serde::shape_invalid_argument::de_invalid_argument_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListOriginAccessControlsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidArgumentBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_argument::de_invalid_argument_xml_err(response.body().as_ref(), output).map_err(crate::operation::list_origin_access_controls::ListOriginAccessControlsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::ListOriginAccessControlsError::generic(generic),
+        _ => crate::operation::list_origin_access_controls::ListOriginAccessControlsError::generic(generic)
     })
 }
 
@@ -50,12 +48,12 @@ pub fn de_list_origin_access_controls_http_error(
 pub fn de_list_origin_access_controls_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListOriginAccessControlsOutput,
-    crate::error::ListOriginAccessControlsError,
+    crate::operation::list_origin_access_controls::ListOriginAccessControlsOutput,
+    crate::operation::list_origin_access_controls::ListOriginAccessControlsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_origin_access_controls_output::Builder::default();
+        let mut output = crate::operation::list_origin_access_controls::builders::ListOriginAccessControlsOutputBuilder::default();
         let _ = response;
         output = output.set_origin_access_control_list(
             crate::protocol_serde::shape_list_origin_access_controls_output::de_origin_access_control_list_payload(response.body().as_ref())?

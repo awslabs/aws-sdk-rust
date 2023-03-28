@@ -2,7 +2,7 @@
 pub(crate) fn de_instance_health_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::InstanceHealthSummary>>,
+    Option<std::vec::Vec<crate::types::InstanceHealthSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

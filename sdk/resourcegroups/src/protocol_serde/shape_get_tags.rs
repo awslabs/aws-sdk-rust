@@ -2,26 +2,30 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_tags_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetTagsOutput, crate::error::GetTagsError> {
+) -> std::result::Result<
+    crate::operation::get_tags::GetTagsOutput,
+    crate::operation::get_tags::GetTagsError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetTagsError::unhandled)?;
+        .map_err(crate::operation::get_tags::GetTagsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::GetTagsError::unhandled(generic)),
+        None => return Err(crate::operation::get_tags::GetTagsError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::GetTagsError::BadRequestException({
+        "BadRequestException" => crate::operation::get_tags::GetTagsError::BadRequestException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_exception::Builder::default();
+                let mut output =
+                    crate::types::error::builders::BadRequestExceptionBuilder::default();
                 let _ = response;
-                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetTagsError::unhandled)?;
+                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_tags::GetTagsError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -30,13 +34,14 @@ pub fn de_get_tags_http_error(
             }
             tmp
         }),
-        "ForbiddenException" => crate::error::GetTagsError::ForbiddenException({
+        "ForbiddenException" => crate::operation::get_tags::GetTagsError::ForbiddenException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_exception::Builder::default();
+                let mut output =
+                    crate::types::error::builders::ForbiddenExceptionBuilder::default();
                 let _ = response;
-                output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetTagsError::unhandled)?;
+                output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_tags::GetTagsError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -46,14 +51,15 @@ pub fn de_get_tags_http_error(
             tmp
         }),
         "InternalServerErrorException" => {
-            crate::error::GetTagsError::InternalServerErrorException({
+            crate::operation::get_tags::GetTagsError::InternalServerErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::internal_server_error_exception::Builder::default();
+                        crate::types::error::builders::InternalServerErrorExceptionBuilder::default(
+                        );
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetTagsError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_tags::GetTagsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -63,13 +69,31 @@ pub fn de_get_tags_http_error(
                 tmp
             })
         }
-        "MethodNotAllowedException" => crate::error::GetTagsError::MethodNotAllowedException({
+        "MethodNotAllowedException" => {
+            crate::operation::get_tags::GetTagsError::MethodNotAllowedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::MethodNotAllowedExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_method_not_allowed_exception::de_method_not_allowed_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_tags::GetTagsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "NotFoundException" => crate::operation::get_tags::GetTagsError::NotFoundException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::error::method_not_allowed_exception::Builder::default();
+                let mut output = crate::types::error::builders::NotFoundExceptionBuilder::default();
                 let _ = response;
-                output = crate::protocol_serde::shape_method_not_allowed_exception::de_method_not_allowed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetTagsError::unhandled)?;
+                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_tags::GetTagsError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -78,51 +102,42 @@ pub fn de_get_tags_http_error(
             }
             tmp
         }),
-        "NotFoundException" => crate::error::GetTagsError::NotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "TooManyRequestsException" => {
+            crate::operation::get_tags::GetTagsError::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetTagsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "TooManyRequestsException" => crate::error::GetTagsError::TooManyRequestsException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetTagsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::GetTagsError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_tags::GetTagsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::get_tags::GetTagsError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_tags_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetTagsOutput, crate::error::GetTagsError> {
+) -> std::result::Result<
+    crate::operation::get_tags::GetTagsOutput,
+    crate::operation::get_tags::GetTagsError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_tags_output::Builder::default();
+        let mut output = crate::operation::get_tags::builders::GetTagsOutputBuilder::default();
         let _ = response;
         output =
             crate::protocol_serde::shape_get_tags::de_get_tags(response.body().as_ref(), output)
-                .map_err(crate::error::GetTagsError::unhandled)?;
+                .map_err(crate::operation::get_tags::GetTagsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -132,9 +147,9 @@ pub fn de_get_tags_http_response(
 
 pub(crate) fn de_get_tags(
     value: &[u8],
-    mut builder: crate::output::get_tags_output::Builder,
+    mut builder: crate::operation::get_tags::builders::GetTagsOutputBuilder,
 ) -> Result<
-    crate::output::get_tags_output::Builder,
+    crate::operation::get_tags::builders::GetTagsOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

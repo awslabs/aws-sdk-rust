@@ -2,7 +2,7 @@
 pub(crate) fn de_signal_decoders<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SignalDecoder>>,
+    Option<std::vec::Vec<crate::types::SignalDecoder>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

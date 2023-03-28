@@ -4,23 +4,23 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>You do not have sufficient access to perform this action.</p>
-    AccessDeniedException(crate::error::AccessDeniedException),
+    AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>An internal error has occurred. Try your call again.</p>
-    InternalServerException(crate::error::InternalServerException),
+    InternalServerException(crate::types::error::InternalServerException),
     /// <p>The value supplied for the input parameter is out of range or not valid.</p>
-    InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
     /// <p>The request exceeds a limit of the service.</p>
-    LimitExceededException(crate::error::LimitExceededException),
+    LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID or X.509 certificate.</p>
-    MissingAuthenticationToken(crate::error::MissingAuthenticationToken),
+    MissingAuthenticationToken(crate::types::error::MissingAuthenticationToken),
     /// <p>The account is not opted in to Compute Optimizer.</p>
-    OptInRequiredException(crate::error::OptInRequiredException),
+    OptInRequiredException(crate::types::error::OptInRequiredException),
     /// <p>A resource that is required for the action doesn't exist.</p>
-    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The request has failed due to a temporary failure of the server.</p>
-    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
-    ThrottlingException(crate::error::ThrottlingException),
+    ThrottlingException(crate::types::error::ThrottlingException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled),
 }
@@ -40,356 +40,247 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::DeleteRecommendationPreferencesError, R>>
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_recommendation_preferences::DeleteRecommendationPreferencesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_recommendation_preferences::DeleteRecommendationPreferencesError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::delete_recommendation_preferences::DeleteRecommendationPreferencesError>
     for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DeleteRecommendationPreferencesError,
-            R,
-        >,
+        err: crate::operation::delete_recommendation_preferences::DeleteRecommendationPreferencesError,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
+            crate::operation::delete_recommendation_preferences::DeleteRecommendationPreferencesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_recommendation_preferences::DeleteRecommendationPreferencesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_recommendation_preferences::DeleteRecommendationPreferencesError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::delete_recommendation_preferences::DeleteRecommendationPreferencesError::MissingAuthenticationToken(inner) => Error::MissingAuthenticationToken(inner),
+            crate::operation::delete_recommendation_preferences::DeleteRecommendationPreferencesError::OptInRequiredException(inner) => Error::OptInRequiredException(inner),
+            crate::operation::delete_recommendation_preferences::DeleteRecommendationPreferencesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_recommendation_preferences::DeleteRecommendationPreferencesError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::delete_recommendation_preferences::DeleteRecommendationPreferencesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_recommendation_preferences::DeleteRecommendationPreferencesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl From<crate::error::DeleteRecommendationPreferencesError> for Error {
-    fn from(err: crate::error::DeleteRecommendationPreferencesError) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::describe_recommendation_export_jobs::DescribeRecommendationExportJobsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::describe_recommendation_export_jobs::DescribeRecommendationExportJobsError, R>) -> Self {
         match err {
-            crate::error::DeleteRecommendationPreferencesError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::DeleteRecommendationPreferencesError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::DeleteRecommendationPreferencesError::InvalidParameterValueException(
-                inner,
-            ) => Error::InvalidParameterValueException(inner),
-            crate::error::DeleteRecommendationPreferencesError::MissingAuthenticationToken(
-                inner,
-            ) => Error::MissingAuthenticationToken(inner),
-            crate::error::DeleteRecommendationPreferencesError::OptInRequiredException(inner) => {
-                Error::OptInRequiredException(inner)
-            }
-            crate::error::DeleteRecommendationPreferencesError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::error::DeleteRecommendationPreferencesError::ServiceUnavailableException(
-                inner,
-            ) => Error::ServiceUnavailableException(inner),
-            crate::error::DeleteRecommendationPreferencesError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::DeleteRecommendationPreferencesError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::DescribeRecommendationExportJobsError, R>>
+impl From<crate::operation::describe_recommendation_export_jobs::DescribeRecommendationExportJobsError> for Error {
+    fn from(err: crate::operation::describe_recommendation_export_jobs::DescribeRecommendationExportJobsError) -> Self {
+        match err {
+            crate::operation::describe_recommendation_export_jobs::DescribeRecommendationExportJobsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::describe_recommendation_export_jobs::DescribeRecommendationExportJobsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::describe_recommendation_export_jobs::DescribeRecommendationExportJobsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::describe_recommendation_export_jobs::DescribeRecommendationExportJobsError::MissingAuthenticationToken(inner) => Error::MissingAuthenticationToken(inner),
+            crate::operation::describe_recommendation_export_jobs::DescribeRecommendationExportJobsError::OptInRequiredException(inner) => Error::OptInRequiredException(inner),
+            crate::operation::describe_recommendation_export_jobs::DescribeRecommendationExportJobsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_recommendation_export_jobs::DescribeRecommendationExportJobsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::describe_recommendation_export_jobs::DescribeRecommendationExportJobsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_recommendation_export_jobs::DescribeRecommendationExportJobsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::export_auto_scaling_group_recommendations::ExportAutoScalingGroupRecommendationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::export_auto_scaling_group_recommendations::ExportAutoScalingGroupRecommendationsError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::export_auto_scaling_group_recommendations::ExportAutoScalingGroupRecommendationsError> for Error {
+    fn from(err: crate::operation::export_auto_scaling_group_recommendations::ExportAutoScalingGroupRecommendationsError) -> Self {
+        match err {
+            crate::operation::export_auto_scaling_group_recommendations::ExportAutoScalingGroupRecommendationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::export_auto_scaling_group_recommendations::ExportAutoScalingGroupRecommendationsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::export_auto_scaling_group_recommendations::ExportAutoScalingGroupRecommendationsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::export_auto_scaling_group_recommendations::ExportAutoScalingGroupRecommendationsError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::export_auto_scaling_group_recommendations::ExportAutoScalingGroupRecommendationsError::MissingAuthenticationToken(inner) => Error::MissingAuthenticationToken(inner),
+            crate::operation::export_auto_scaling_group_recommendations::ExportAutoScalingGroupRecommendationsError::OptInRequiredException(inner) => Error::OptInRequiredException(inner),
+            crate::operation::export_auto_scaling_group_recommendations::ExportAutoScalingGroupRecommendationsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::export_auto_scaling_group_recommendations::ExportAutoScalingGroupRecommendationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::export_auto_scaling_group_recommendations::ExportAutoScalingGroupRecommendationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::export_ebs_volume_recommendations::ExportEBSVolumeRecommendationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::export_ebs_volume_recommendations::ExportEBSVolumeRecommendationsError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::export_ebs_volume_recommendations::ExportEBSVolumeRecommendationsError>
     for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DescribeRecommendationExportJobsError,
-            R,
-        >,
+        err: crate::operation::export_ebs_volume_recommendations::ExportEBSVolumeRecommendationsError,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            crate::operation::export_ebs_volume_recommendations::ExportEBSVolumeRecommendationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::export_ebs_volume_recommendations::ExportEBSVolumeRecommendationsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::export_ebs_volume_recommendations::ExportEBSVolumeRecommendationsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::export_ebs_volume_recommendations::ExportEBSVolumeRecommendationsError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::export_ebs_volume_recommendations::ExportEBSVolumeRecommendationsError::MissingAuthenticationToken(inner) => Error::MissingAuthenticationToken(inner),
+            crate::operation::export_ebs_volume_recommendations::ExportEBSVolumeRecommendationsError::OptInRequiredException(inner) => Error::OptInRequiredException(inner),
+            crate::operation::export_ebs_volume_recommendations::ExportEBSVolumeRecommendationsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::export_ebs_volume_recommendations::ExportEBSVolumeRecommendationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::export_ebs_volume_recommendations::ExportEBSVolumeRecommendationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::export_ec2_instance_recommendations::ExportEC2InstanceRecommendationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::export_ec2_instance_recommendations::ExportEC2InstanceRecommendationsError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
-impl From<crate::error::DescribeRecommendationExportJobsError> for Error {
-    fn from(err: crate::error::DescribeRecommendationExportJobsError) -> Self {
+impl From<crate::operation::export_ec2_instance_recommendations::ExportEC2InstanceRecommendationsError> for Error {
+    fn from(err: crate::operation::export_ec2_instance_recommendations::ExportEC2InstanceRecommendationsError) -> Self {
         match err {
-            crate::error::DescribeRecommendationExportJobsError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::DescribeRecommendationExportJobsError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::DescribeRecommendationExportJobsError::InvalidParameterValueException(
-                inner,
-            ) => Error::InvalidParameterValueException(inner),
-            crate::error::DescribeRecommendationExportJobsError::MissingAuthenticationToken(
-                inner,
-            ) => Error::MissingAuthenticationToken(inner),
-            crate::error::DescribeRecommendationExportJobsError::OptInRequiredException(inner) => {
-                Error::OptInRequiredException(inner)
-            }
-            crate::error::DescribeRecommendationExportJobsError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::error::DescribeRecommendationExportJobsError::ServiceUnavailableException(
-                inner,
-            ) => Error::ServiceUnavailableException(inner),
-            crate::error::DescribeRecommendationExportJobsError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::DescribeRecommendationExportJobsError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::export_ec2_instance_recommendations::ExportEC2InstanceRecommendationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::export_ec2_instance_recommendations::ExportEC2InstanceRecommendationsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::export_ec2_instance_recommendations::ExportEC2InstanceRecommendationsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::export_ec2_instance_recommendations::ExportEC2InstanceRecommendationsError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::export_ec2_instance_recommendations::ExportEC2InstanceRecommendationsError::MissingAuthenticationToken(inner) => Error::MissingAuthenticationToken(inner),
+            crate::operation::export_ec2_instance_recommendations::ExportEC2InstanceRecommendationsError::OptInRequiredException(inner) => Error::OptInRequiredException(inner),
+            crate::operation::export_ec2_instance_recommendations::ExportEC2InstanceRecommendationsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::export_ec2_instance_recommendations::ExportEC2InstanceRecommendationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::export_ec2_instance_recommendations::ExportEC2InstanceRecommendationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::ExportAutoScalingGroupRecommendationsError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::ExportAutoScalingGroupRecommendationsError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::export_ecs_service_recommendations::ExportECSServiceRecommendationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::export_ecs_service_recommendations::ExportECSServiceRecommendationsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
-impl From<crate::error::ExportAutoScalingGroupRecommendationsError> for Error {
-    fn from(err: crate::error::ExportAutoScalingGroupRecommendationsError) -> Self {
-        match err {
-            crate::error::ExportAutoScalingGroupRecommendationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ExportAutoScalingGroupRecommendationsError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::ExportAutoScalingGroupRecommendationsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::ExportAutoScalingGroupRecommendationsError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::error::ExportAutoScalingGroupRecommendationsError::MissingAuthenticationToken(inner) => Error::MissingAuthenticationToken(inner),
-            crate::error::ExportAutoScalingGroupRecommendationsError::OptInRequiredException(inner) => Error::OptInRequiredException(inner),
-            crate::error::ExportAutoScalingGroupRecommendationsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::ExportAutoScalingGroupRecommendationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ExportAutoScalingGroupRecommendationsError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::ExportEBSVolumeRecommendationsError, R>>
+impl
+    From<crate::operation::export_ecs_service_recommendations::ExportECSServiceRecommendationsError>
     for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::ExportEBSVolumeRecommendationsError,
-            R,
-        >,
+        err: crate::operation::export_ecs_service_recommendations::ExportECSServiceRecommendationsError,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            crate::operation::export_ecs_service_recommendations::ExportECSServiceRecommendationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::export_ecs_service_recommendations::ExportECSServiceRecommendationsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::export_ecs_service_recommendations::ExportECSServiceRecommendationsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::export_ecs_service_recommendations::ExportECSServiceRecommendationsError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::export_ecs_service_recommendations::ExportECSServiceRecommendationsError::MissingAuthenticationToken(inner) => Error::MissingAuthenticationToken(inner),
+            crate::operation::export_ecs_service_recommendations::ExportECSServiceRecommendationsError::OptInRequiredException(inner) => Error::OptInRequiredException(inner),
+            crate::operation::export_ecs_service_recommendations::ExportECSServiceRecommendationsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::export_ecs_service_recommendations::ExportECSServiceRecommendationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::export_ecs_service_recommendations::ExportECSServiceRecommendationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::export_lambda_function_recommendations::ExportLambdaFunctionRecommendationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::export_lambda_function_recommendations::ExportLambdaFunctionRecommendationsError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
-impl From<crate::error::ExportEBSVolumeRecommendationsError> for Error {
-    fn from(err: crate::error::ExportEBSVolumeRecommendationsError) -> Self {
+impl From<crate::operation::export_lambda_function_recommendations::ExportLambdaFunctionRecommendationsError> for Error {
+    fn from(err: crate::operation::export_lambda_function_recommendations::ExportLambdaFunctionRecommendationsError) -> Self {
         match err {
-            crate::error::ExportEBSVolumeRecommendationsError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::ExportEBSVolumeRecommendationsError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::ExportEBSVolumeRecommendationsError::InvalidParameterValueException(
-                inner,
-            ) => Error::InvalidParameterValueException(inner),
-            crate::error::ExportEBSVolumeRecommendationsError::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::ExportEBSVolumeRecommendationsError::MissingAuthenticationToken(
-                inner,
-            ) => Error::MissingAuthenticationToken(inner),
-            crate::error::ExportEBSVolumeRecommendationsError::OptInRequiredException(inner) => {
-                Error::OptInRequiredException(inner)
-            }
-            crate::error::ExportEBSVolumeRecommendationsError::ServiceUnavailableException(
-                inner,
-            ) => Error::ServiceUnavailableException(inner),
-            crate::error::ExportEBSVolumeRecommendationsError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::ExportEBSVolumeRecommendationsError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::export_lambda_function_recommendations::ExportLambdaFunctionRecommendationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::export_lambda_function_recommendations::ExportLambdaFunctionRecommendationsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::export_lambda_function_recommendations::ExportLambdaFunctionRecommendationsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::export_lambda_function_recommendations::ExportLambdaFunctionRecommendationsError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::export_lambda_function_recommendations::ExportLambdaFunctionRecommendationsError::MissingAuthenticationToken(inner) => Error::MissingAuthenticationToken(inner),
+            crate::operation::export_lambda_function_recommendations::ExportLambdaFunctionRecommendationsError::OptInRequiredException(inner) => Error::OptInRequiredException(inner),
+            crate::operation::export_lambda_function_recommendations::ExportLambdaFunctionRecommendationsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::export_lambda_function_recommendations::ExportLambdaFunctionRecommendationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::export_lambda_function_recommendations::ExportLambdaFunctionRecommendationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::ExportEC2InstanceRecommendationsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::ExportEC2InstanceRecommendationsError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_auto_scaling_group_recommendations::GetAutoScalingGroupRecommendationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_auto_scaling_group_recommendations::GetAutoScalingGroupRecommendationsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
-impl From<crate::error::ExportEC2InstanceRecommendationsError> for Error {
-    fn from(err: crate::error::ExportEC2InstanceRecommendationsError) -> Self {
+impl From<crate::operation::get_auto_scaling_group_recommendations::GetAutoScalingGroupRecommendationsError> for Error {
+    fn from(err: crate::operation::get_auto_scaling_group_recommendations::GetAutoScalingGroupRecommendationsError) -> Self {
         match err {
-            crate::error::ExportEC2InstanceRecommendationsError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::ExportEC2InstanceRecommendationsError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::ExportEC2InstanceRecommendationsError::InvalidParameterValueException(
-                inner,
-            ) => Error::InvalidParameterValueException(inner),
-            crate::error::ExportEC2InstanceRecommendationsError::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::ExportEC2InstanceRecommendationsError::MissingAuthenticationToken(
-                inner,
-            ) => Error::MissingAuthenticationToken(inner),
-            crate::error::ExportEC2InstanceRecommendationsError::OptInRequiredException(inner) => {
-                Error::OptInRequiredException(inner)
-            }
-            crate::error::ExportEC2InstanceRecommendationsError::ServiceUnavailableException(
-                inner,
-            ) => Error::ServiceUnavailableException(inner),
-            crate::error::ExportEC2InstanceRecommendationsError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::ExportEC2InstanceRecommendationsError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::ExportECSServiceRecommendationsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::ExportECSServiceRecommendationsError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::ExportECSServiceRecommendationsError> for Error {
-    fn from(err: crate::error::ExportECSServiceRecommendationsError) -> Self {
-        match err {
-            crate::error::ExportECSServiceRecommendationsError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::ExportECSServiceRecommendationsError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::ExportECSServiceRecommendationsError::InvalidParameterValueException(
-                inner,
-            ) => Error::InvalidParameterValueException(inner),
-            crate::error::ExportECSServiceRecommendationsError::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::ExportECSServiceRecommendationsError::MissingAuthenticationToken(
-                inner,
-            ) => Error::MissingAuthenticationToken(inner),
-            crate::error::ExportECSServiceRecommendationsError::OptInRequiredException(inner) => {
-                Error::OptInRequiredException(inner)
-            }
-            crate::error::ExportECSServiceRecommendationsError::ServiceUnavailableException(
-                inner,
-            ) => Error::ServiceUnavailableException(inner),
-            crate::error::ExportECSServiceRecommendationsError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::ExportECSServiceRecommendationsError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::get_auto_scaling_group_recommendations::GetAutoScalingGroupRecommendationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_auto_scaling_group_recommendations::GetAutoScalingGroupRecommendationsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_auto_scaling_group_recommendations::GetAutoScalingGroupRecommendationsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::get_auto_scaling_group_recommendations::GetAutoScalingGroupRecommendationsError::MissingAuthenticationToken(inner) => Error::MissingAuthenticationToken(inner),
+            crate::operation::get_auto_scaling_group_recommendations::GetAutoScalingGroupRecommendationsError::OptInRequiredException(inner) => Error::OptInRequiredException(inner),
+            crate::operation::get_auto_scaling_group_recommendations::GetAutoScalingGroupRecommendationsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_auto_scaling_group_recommendations::GetAutoScalingGroupRecommendationsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::get_auto_scaling_group_recommendations::GetAutoScalingGroupRecommendationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_auto_scaling_group_recommendations::GetAutoScalingGroupRecommendationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
-            crate::error::ExportLambdaFunctionRecommendationsError,
+            crate::operation::get_ebs_volume_recommendations::GetEBSVolumeRecommendationsError,
             R,
         >,
     > for Error
@@ -398,7 +289,7 @@ where
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::ExportLambdaFunctionRecommendationsError,
+            crate::operation::get_ebs_volume_recommendations::GetEBSVolumeRecommendationsError,
             R,
         >,
     ) -> Self {
@@ -417,180 +308,29 @@ where
         }
     }
 }
-impl From<crate::error::ExportLambdaFunctionRecommendationsError> for Error {
-    fn from(err: crate::error::ExportLambdaFunctionRecommendationsError) -> Self {
-        match err {
-            crate::error::ExportLambdaFunctionRecommendationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ExportLambdaFunctionRecommendationsError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::ExportLambdaFunctionRecommendationsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::ExportLambdaFunctionRecommendationsError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::error::ExportLambdaFunctionRecommendationsError::MissingAuthenticationToken(inner) => Error::MissingAuthenticationToken(inner),
-            crate::error::ExportLambdaFunctionRecommendationsError::OptInRequiredException(inner) => Error::OptInRequiredException(inner),
-            crate::error::ExportLambdaFunctionRecommendationsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::ExportLambdaFunctionRecommendationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::ExportLambdaFunctionRecommendationsError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<crate::error::GetAutoScalingGroupRecommendationsError, R>,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::GetAutoScalingGroupRecommendationsError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetAutoScalingGroupRecommendationsError> for Error {
-    fn from(err: crate::error::GetAutoScalingGroupRecommendationsError) -> Self {
-        match err {
-            crate::error::GetAutoScalingGroupRecommendationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetAutoScalingGroupRecommendationsError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::GetAutoScalingGroupRecommendationsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::GetAutoScalingGroupRecommendationsError::MissingAuthenticationToken(inner) => Error::MissingAuthenticationToken(inner),
-            crate::error::GetAutoScalingGroupRecommendationsError::OptInRequiredException(inner) => Error::OptInRequiredException(inner),
-            crate::error::GetAutoScalingGroupRecommendationsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::GetAutoScalingGroupRecommendationsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::GetAutoScalingGroupRecommendationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::GetAutoScalingGroupRecommendationsError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetEBSVolumeRecommendationsError, R>>
+impl From<crate::operation::get_ebs_volume_recommendations::GetEBSVolumeRecommendationsError>
     for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetEBSVolumeRecommendationsError, R>,
+        err: crate::operation::get_ebs_volume_recommendations::GetEBSVolumeRecommendationsError,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetEBSVolumeRecommendationsError> for Error {
-    fn from(err: crate::error::GetEBSVolumeRecommendationsError) -> Self {
-        match err {
-            crate::error::GetEBSVolumeRecommendationsError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::GetEBSVolumeRecommendationsError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::GetEBSVolumeRecommendationsError::InvalidParameterValueException(
-                inner,
-            ) => Error::InvalidParameterValueException(inner),
-            crate::error::GetEBSVolumeRecommendationsError::MissingAuthenticationToken(inner) => {
-                Error::MissingAuthenticationToken(inner)
-            }
-            crate::error::GetEBSVolumeRecommendationsError::OptInRequiredException(inner) => {
-                Error::OptInRequiredException(inner)
-            }
-            crate::error::GetEBSVolumeRecommendationsError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::GetEBSVolumeRecommendationsError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::GetEBSVolumeRecommendationsError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::GetEBSVolumeRecommendationsError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetEC2InstanceRecommendationsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetEC2InstanceRecommendationsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetEC2InstanceRecommendationsError> for Error {
-    fn from(err: crate::error::GetEC2InstanceRecommendationsError) -> Self {
-        match err {
-            crate::error::GetEC2InstanceRecommendationsError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::GetEC2InstanceRecommendationsError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::GetEC2InstanceRecommendationsError::InvalidParameterValueException(
-                inner,
-            ) => Error::InvalidParameterValueException(inner),
-            crate::error::GetEC2InstanceRecommendationsError::MissingAuthenticationToken(inner) => {
-                Error::MissingAuthenticationToken(inner)
-            }
-            crate::error::GetEC2InstanceRecommendationsError::OptInRequiredException(inner) => {
-                Error::OptInRequiredException(inner)
-            }
-            crate::error::GetEC2InstanceRecommendationsError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::GetEC2InstanceRecommendationsError::ServiceUnavailableException(
-                inner,
-            ) => Error::ServiceUnavailableException(inner),
-            crate::error::GetEC2InstanceRecommendationsError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::GetEC2InstanceRecommendationsError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::get_ebs_volume_recommendations::GetEBSVolumeRecommendationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_ebs_volume_recommendations::GetEBSVolumeRecommendationsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_ebs_volume_recommendations::GetEBSVolumeRecommendationsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::get_ebs_volume_recommendations::GetEBSVolumeRecommendationsError::MissingAuthenticationToken(inner) => Error::MissingAuthenticationToken(inner),
+            crate::operation::get_ebs_volume_recommendations::GetEBSVolumeRecommendationsError::OptInRequiredException(inner) => Error::OptInRequiredException(inner),
+            crate::operation::get_ebs_volume_recommendations::GetEBSVolumeRecommendationsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_ebs_volume_recommendations::GetEBSVolumeRecommendationsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::get_ebs_volume_recommendations::GetEBSVolumeRecommendationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_ebs_volume_recommendations::GetEBSVolumeRecommendationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
-            crate::error::GetEC2RecommendationProjectedMetricsError,
+            crate::operation::get_ec2_instance_recommendations::GetEC2InstanceRecommendationsError,
             R,
         >,
     > for Error
@@ -599,7 +339,7 @@ where
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::GetEC2RecommendationProjectedMetricsError,
+            crate::operation::get_ec2_instance_recommendations::GetEC2InstanceRecommendationsError,
             R,
         >,
     ) -> Self {
@@ -618,25 +358,85 @@ where
         }
     }
 }
-impl From<crate::error::GetEC2RecommendationProjectedMetricsError> for Error {
-    fn from(err: crate::error::GetEC2RecommendationProjectedMetricsError) -> Self {
+impl From<crate::operation::get_ec2_instance_recommendations::GetEC2InstanceRecommendationsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::get_ec2_instance_recommendations::GetEC2InstanceRecommendationsError,
+    ) -> Self {
         match err {
-            crate::error::GetEC2RecommendationProjectedMetricsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetEC2RecommendationProjectedMetricsError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::GetEC2RecommendationProjectedMetricsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::GetEC2RecommendationProjectedMetricsError::MissingAuthenticationToken(inner) => Error::MissingAuthenticationToken(inner),
-            crate::error::GetEC2RecommendationProjectedMetricsError::OptInRequiredException(inner) => Error::OptInRequiredException(inner),
-            crate::error::GetEC2RecommendationProjectedMetricsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::GetEC2RecommendationProjectedMetricsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::GetEC2RecommendationProjectedMetricsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::GetEC2RecommendationProjectedMetricsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_ec2_instance_recommendations::GetEC2InstanceRecommendationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_ec2_instance_recommendations::GetEC2InstanceRecommendationsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_ec2_instance_recommendations::GetEC2InstanceRecommendationsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::get_ec2_instance_recommendations::GetEC2InstanceRecommendationsError::MissingAuthenticationToken(inner) => Error::MissingAuthenticationToken(inner),
+            crate::operation::get_ec2_instance_recommendations::GetEC2InstanceRecommendationsError::OptInRequiredException(inner) => Error::OptInRequiredException(inner),
+            crate::operation::get_ec2_instance_recommendations::GetEC2InstanceRecommendationsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_ec2_instance_recommendations::GetEC2InstanceRecommendationsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::get_ec2_instance_recommendations::GetEC2InstanceRecommendationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_ec2_instance_recommendations::GetEC2InstanceRecommendationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_ec2_recommendation_projected_metrics::GetEC2RecommendationProjectedMetricsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_ec2_recommendation_projected_metrics::GetEC2RecommendationProjectedMetricsError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::get_ec2_recommendation_projected_metrics::GetEC2RecommendationProjectedMetricsError> for Error {
+    fn from(err: crate::operation::get_ec2_recommendation_projected_metrics::GetEC2RecommendationProjectedMetricsError) -> Self {
+        match err {
+            crate::operation::get_ec2_recommendation_projected_metrics::GetEC2RecommendationProjectedMetricsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_ec2_recommendation_projected_metrics::GetEC2RecommendationProjectedMetricsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_ec2_recommendation_projected_metrics::GetEC2RecommendationProjectedMetricsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::get_ec2_recommendation_projected_metrics::GetEC2RecommendationProjectedMetricsError::MissingAuthenticationToken(inner) => Error::MissingAuthenticationToken(inner),
+            crate::operation::get_ec2_recommendation_projected_metrics::GetEC2RecommendationProjectedMetricsError::OptInRequiredException(inner) => Error::OptInRequiredException(inner),
+            crate::operation::get_ec2_recommendation_projected_metrics::GetEC2RecommendationProjectedMetricsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_ec2_recommendation_projected_metrics::GetEC2RecommendationProjectedMetricsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::get_ec2_recommendation_projected_metrics::GetEC2RecommendationProjectedMetricsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_ec2_recommendation_projected_metrics::GetEC2RecommendationProjectedMetricsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_ecs_service_recommendation_projected_metrics::GetECSServiceRecommendationProjectedMetricsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_ecs_service_recommendation_projected_metrics::GetECSServiceRecommendationProjectedMetricsError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::get_ecs_service_recommendation_projected_metrics::GetECSServiceRecommendationProjectedMetricsError> for Error {
+    fn from(err: crate::operation::get_ecs_service_recommendation_projected_metrics::GetECSServiceRecommendationProjectedMetricsError) -> Self {
+        match err {
+            crate::operation::get_ecs_service_recommendation_projected_metrics::GetECSServiceRecommendationProjectedMetricsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_ecs_service_recommendation_projected_metrics::GetECSServiceRecommendationProjectedMetricsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_ecs_service_recommendation_projected_metrics::GetECSServiceRecommendationProjectedMetricsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::get_ecs_service_recommendation_projected_metrics::GetECSServiceRecommendationProjectedMetricsError::MissingAuthenticationToken(inner) => Error::MissingAuthenticationToken(inner),
+            crate::operation::get_ecs_service_recommendation_projected_metrics::GetECSServiceRecommendationProjectedMetricsError::OptInRequiredException(inner) => Error::OptInRequiredException(inner),
+            crate::operation::get_ecs_service_recommendation_projected_metrics::GetECSServiceRecommendationProjectedMetricsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_ecs_service_recommendation_projected_metrics::GetECSServiceRecommendationProjectedMetricsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::get_ecs_service_recommendation_projected_metrics::GetECSServiceRecommendationProjectedMetricsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_ecs_service_recommendation_projected_metrics::GetECSServiceRecommendationProjectedMetricsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
-            crate::error::GetECSServiceRecommendationProjectedMetricsError,
+            crate::operation::get_ecs_service_recommendations::GetECSServiceRecommendationsError,
             R,
         >,
     > for Error
@@ -645,7 +445,7 @@ where
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::GetECSServiceRecommendationProjectedMetricsError,
+            crate::operation::get_ecs_service_recommendations::GetECSServiceRecommendationsError,
             R,
         >,
     ) -> Self {
@@ -664,81 +464,57 @@ where
         }
     }
 }
-impl From<crate::error::GetECSServiceRecommendationProjectedMetricsError> for Error {
-    fn from(err: crate::error::GetECSServiceRecommendationProjectedMetricsError) -> Self {
-        match err {
-            crate::error::GetECSServiceRecommendationProjectedMetricsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetECSServiceRecommendationProjectedMetricsError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::GetECSServiceRecommendationProjectedMetricsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::GetECSServiceRecommendationProjectedMetricsError::MissingAuthenticationToken(inner) => Error::MissingAuthenticationToken(inner),
-            crate::error::GetECSServiceRecommendationProjectedMetricsError::OptInRequiredException(inner) => Error::OptInRequiredException(inner),
-            crate::error::GetECSServiceRecommendationProjectedMetricsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::GetECSServiceRecommendationProjectedMetricsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::GetECSServiceRecommendationProjectedMetricsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::GetECSServiceRecommendationProjectedMetricsError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetECSServiceRecommendationsError, R>>
+impl From<crate::operation::get_ecs_service_recommendations::GetECSServiceRecommendationsError>
     for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetECSServiceRecommendationsError, R>,
+        err: crate::operation::get_ecs_service_recommendations::GetECSServiceRecommendationsError,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
+            crate::operation::get_ecs_service_recommendations::GetECSServiceRecommendationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_ecs_service_recommendations::GetECSServiceRecommendationsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_ecs_service_recommendations::GetECSServiceRecommendationsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::get_ecs_service_recommendations::GetECSServiceRecommendationsError::MissingAuthenticationToken(inner) => Error::MissingAuthenticationToken(inner),
+            crate::operation::get_ecs_service_recommendations::GetECSServiceRecommendationsError::OptInRequiredException(inner) => Error::OptInRequiredException(inner),
+            crate::operation::get_ecs_service_recommendations::GetECSServiceRecommendationsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_ecs_service_recommendations::GetECSServiceRecommendationsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::get_ecs_service_recommendations::GetECSServiceRecommendationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_ecs_service_recommendations::GetECSServiceRecommendationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl From<crate::error::GetECSServiceRecommendationsError> for Error {
-    fn from(err: crate::error::GetECSServiceRecommendationsError) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_effective_recommendation_preferences::GetEffectiveRecommendationPreferencesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_effective_recommendation_preferences::GetEffectiveRecommendationPreferencesError, R>) -> Self {
         match err {
-            crate::error::GetECSServiceRecommendationsError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::GetECSServiceRecommendationsError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::GetECSServiceRecommendationsError::InvalidParameterValueException(
-                inner,
-            ) => Error::InvalidParameterValueException(inner),
-            crate::error::GetECSServiceRecommendationsError::MissingAuthenticationToken(inner) => {
-                Error::MissingAuthenticationToken(inner)
-            }
-            crate::error::GetECSServiceRecommendationsError::OptInRequiredException(inner) => {
-                Error::OptInRequiredException(inner)
-            }
-            crate::error::GetECSServiceRecommendationsError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::GetECSServiceRecommendationsError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::GetECSServiceRecommendationsError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::GetECSServiceRecommendationsError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::get_effective_recommendation_preferences::GetEffectiveRecommendationPreferencesError> for Error {
+    fn from(err: crate::operation::get_effective_recommendation_preferences::GetEffectiveRecommendationPreferencesError) -> Self {
+        match err {
+            crate::operation::get_effective_recommendation_preferences::GetEffectiveRecommendationPreferencesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_effective_recommendation_preferences::GetEffectiveRecommendationPreferencesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_effective_recommendation_preferences::GetEffectiveRecommendationPreferencesError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::get_effective_recommendation_preferences::GetEffectiveRecommendationPreferencesError::MissingAuthenticationToken(inner) => Error::MissingAuthenticationToken(inner),
+            crate::operation::get_effective_recommendation_preferences::GetEffectiveRecommendationPreferencesError::OptInRequiredException(inner) => Error::OptInRequiredException(inner),
+            crate::operation::get_effective_recommendation_preferences::GetEffectiveRecommendationPreferencesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_effective_recommendation_preferences::GetEffectiveRecommendationPreferencesError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::get_effective_recommendation_preferences::GetEffectiveRecommendationPreferencesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_effective_recommendation_preferences::GetEffectiveRecommendationPreferencesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
-            crate::error::GetEffectiveRecommendationPreferencesError,
+            crate::operation::get_enrollment_status::GetEnrollmentStatusError,
             R,
         >,
     > for Error
@@ -747,7 +523,7 @@ where
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::GetEffectiveRecommendationPreferencesError,
+            crate::operation::get_enrollment_status::GetEnrollmentStatusError,
             R,
         >,
     ) -> Self {
@@ -766,72 +542,77 @@ where
         }
     }
 }
-impl From<crate::error::GetEffectiveRecommendationPreferencesError> for Error {
-    fn from(err: crate::error::GetEffectiveRecommendationPreferencesError) -> Self {
+impl From<crate::operation::get_enrollment_status::GetEnrollmentStatusError> for Error {
+    fn from(err: crate::operation::get_enrollment_status::GetEnrollmentStatusError) -> Self {
         match err {
-            crate::error::GetEffectiveRecommendationPreferencesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetEffectiveRecommendationPreferencesError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::GetEffectiveRecommendationPreferencesError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::GetEffectiveRecommendationPreferencesError::MissingAuthenticationToken(inner) => Error::MissingAuthenticationToken(inner),
-            crate::error::GetEffectiveRecommendationPreferencesError::OptInRequiredException(inner) => Error::OptInRequiredException(inner),
-            crate::error::GetEffectiveRecommendationPreferencesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::GetEffectiveRecommendationPreferencesError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::GetEffectiveRecommendationPreferencesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::GetEffectiveRecommendationPreferencesError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_enrollment_status::GetEnrollmentStatusError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_enrollment_status::GetEnrollmentStatusError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_enrollment_status::GetEnrollmentStatusError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::get_enrollment_status::GetEnrollmentStatusError::MissingAuthenticationToken(inner) => Error::MissingAuthenticationToken(inner),
+            crate::operation::get_enrollment_status::GetEnrollmentStatusError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::get_enrollment_status::GetEnrollmentStatusError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_enrollment_status::GetEnrollmentStatusError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetEnrollmentStatusError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetEnrollmentStatusError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_enrollment_statuses_for_organization::GetEnrollmentStatusesForOrganizationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_enrollment_statuses_for_organization::GetEnrollmentStatusesForOrganizationError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
-impl From<crate::error::GetEnrollmentStatusError> for Error {
-    fn from(err: crate::error::GetEnrollmentStatusError) -> Self {
+impl From<crate::operation::get_enrollment_statuses_for_organization::GetEnrollmentStatusesForOrganizationError> for Error {
+    fn from(err: crate::operation::get_enrollment_statuses_for_organization::GetEnrollmentStatusesForOrganizationError) -> Self {
         match err {
-            crate::error::GetEnrollmentStatusError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::GetEnrollmentStatusError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::GetEnrollmentStatusError::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
-            }
-            crate::error::GetEnrollmentStatusError::MissingAuthenticationToken(inner) => {
-                Error::MissingAuthenticationToken(inner)
-            }
-            crate::error::GetEnrollmentStatusError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::GetEnrollmentStatusError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::GetEnrollmentStatusError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_enrollment_statuses_for_organization::GetEnrollmentStatusesForOrganizationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_enrollment_statuses_for_organization::GetEnrollmentStatusesForOrganizationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_enrollment_statuses_for_organization::GetEnrollmentStatusesForOrganizationError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::get_enrollment_statuses_for_organization::GetEnrollmentStatusesForOrganizationError::MissingAuthenticationToken(inner) => Error::MissingAuthenticationToken(inner),
+            crate::operation::get_enrollment_statuses_for_organization::GetEnrollmentStatusesForOrganizationError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::get_enrollment_statuses_for_organization::GetEnrollmentStatusesForOrganizationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_enrollment_statuses_for_organization::GetEnrollmentStatusesForOrganizationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_lambda_function_recommendations::GetLambdaFunctionRecommendationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_lambda_function_recommendations::GetLambdaFunctionRecommendationsError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::get_lambda_function_recommendations::GetLambdaFunctionRecommendationsError> for Error {
+    fn from(err: crate::operation::get_lambda_function_recommendations::GetLambdaFunctionRecommendationsError) -> Self {
+        match err {
+            crate::operation::get_lambda_function_recommendations::GetLambdaFunctionRecommendationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_lambda_function_recommendations::GetLambdaFunctionRecommendationsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_lambda_function_recommendations::GetLambdaFunctionRecommendationsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::get_lambda_function_recommendations::GetLambdaFunctionRecommendationsError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::get_lambda_function_recommendations::GetLambdaFunctionRecommendationsError::MissingAuthenticationToken(inner) => Error::MissingAuthenticationToken(inner),
+            crate::operation::get_lambda_function_recommendations::GetLambdaFunctionRecommendationsError::OptInRequiredException(inner) => Error::OptInRequiredException(inner),
+            crate::operation::get_lambda_function_recommendations::GetLambdaFunctionRecommendationsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::get_lambda_function_recommendations::GetLambdaFunctionRecommendationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_lambda_function_recommendations::GetLambdaFunctionRecommendationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
-            crate::error::GetEnrollmentStatusesForOrganizationError,
+            crate::operation::get_recommendation_preferences::GetRecommendationPreferencesError,
             R,
         >,
     > for Error
@@ -840,7 +621,7 @@ where
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::GetEnrollmentStatusesForOrganizationError,
+            crate::operation::get_recommendation_preferences::GetRecommendationPreferencesError,
             R,
         >,
     ) -> Self {
@@ -859,28 +640,38 @@ where
         }
     }
 }
-impl From<crate::error::GetEnrollmentStatusesForOrganizationError> for Error {
-    fn from(err: crate::error::GetEnrollmentStatusesForOrganizationError) -> Self {
+impl From<crate::operation::get_recommendation_preferences::GetRecommendationPreferencesError>
+    for Error
+{
+    fn from(
+        err: crate::operation::get_recommendation_preferences::GetRecommendationPreferencesError,
+    ) -> Self {
         match err {
-            crate::error::GetEnrollmentStatusesForOrganizationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetEnrollmentStatusesForOrganizationError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::GetEnrollmentStatusesForOrganizationError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
-            crate::error::GetEnrollmentStatusesForOrganizationError::MissingAuthenticationToken(inner) => Error::MissingAuthenticationToken(inner),
-            crate::error::GetEnrollmentStatusesForOrganizationError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::GetEnrollmentStatusesForOrganizationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::GetEnrollmentStatusesForOrganizationError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_recommendation_preferences::GetRecommendationPreferencesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_recommendation_preferences::GetRecommendationPreferencesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_recommendation_preferences::GetRecommendationPreferencesError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::get_recommendation_preferences::GetRecommendationPreferencesError::MissingAuthenticationToken(inner) => Error::MissingAuthenticationToken(inner),
+            crate::operation::get_recommendation_preferences::GetRecommendationPreferencesError::OptInRequiredException(inner) => Error::OptInRequiredException(inner),
+            crate::operation::get_recommendation_preferences::GetRecommendationPreferencesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_recommendation_preferences::GetRecommendationPreferencesError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::get_recommendation_preferences::GetRecommendationPreferencesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_recommendation_preferences::GetRecommendationPreferencesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::GetLambdaFunctionRecommendationsError, R>>
-    for Error
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_recommendation_summaries::GetRecommendationSummariesError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::GetLambdaFunctionRecommendationsError,
+            crate::operation::get_recommendation_summaries::GetRecommendationSummariesError,
             R,
         >,
     ) -> Self {
@@ -899,46 +690,39 @@ where
         }
     }
 }
-impl From<crate::error::GetLambdaFunctionRecommendationsError> for Error {
-    fn from(err: crate::error::GetLambdaFunctionRecommendationsError) -> Self {
+impl From<crate::operation::get_recommendation_summaries::GetRecommendationSummariesError>
+    for Error
+{
+    fn from(
+        err: crate::operation::get_recommendation_summaries::GetRecommendationSummariesError,
+    ) -> Self {
         match err {
-            crate::error::GetLambdaFunctionRecommendationsError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::GetLambdaFunctionRecommendationsError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::GetLambdaFunctionRecommendationsError::InvalidParameterValueException(
-                inner,
-            ) => Error::InvalidParameterValueException(inner),
-            crate::error::GetLambdaFunctionRecommendationsError::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::GetLambdaFunctionRecommendationsError::MissingAuthenticationToken(
-                inner,
-            ) => Error::MissingAuthenticationToken(inner),
-            crate::error::GetLambdaFunctionRecommendationsError::OptInRequiredException(inner) => {
-                Error::OptInRequiredException(inner)
-            }
-            crate::error::GetLambdaFunctionRecommendationsError::ServiceUnavailableException(
-                inner,
-            ) => Error::ServiceUnavailableException(inner),
-            crate::error::GetLambdaFunctionRecommendationsError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::GetLambdaFunctionRecommendationsError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::get_recommendation_summaries::GetRecommendationSummariesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_recommendation_summaries::GetRecommendationSummariesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_recommendation_summaries::GetRecommendationSummariesError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::get_recommendation_summaries::GetRecommendationSummariesError::MissingAuthenticationToken(inner) => Error::MissingAuthenticationToken(inner),
+            crate::operation::get_recommendation_summaries::GetRecommendationSummariesError::OptInRequiredException(inner) => Error::OptInRequiredException(inner),
+            crate::operation::get_recommendation_summaries::GetRecommendationSummariesError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::get_recommendation_summaries::GetRecommendationSummariesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_recommendation_summaries::GetRecommendationSummariesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRecommendationPreferencesError, R>>
-    for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::put_recommendation_preferences::PutRecommendationPreferencesError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetRecommendationPreferencesError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::put_recommendation_preferences::PutRecommendationPreferencesError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -955,46 +739,40 @@ where
         }
     }
 }
-impl From<crate::error::GetRecommendationPreferencesError> for Error {
-    fn from(err: crate::error::GetRecommendationPreferencesError) -> Self {
+impl From<crate::operation::put_recommendation_preferences::PutRecommendationPreferencesError>
+    for Error
+{
+    fn from(
+        err: crate::operation::put_recommendation_preferences::PutRecommendationPreferencesError,
+    ) -> Self {
         match err {
-            crate::error::GetRecommendationPreferencesError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::GetRecommendationPreferencesError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::GetRecommendationPreferencesError::InvalidParameterValueException(
-                inner,
-            ) => Error::InvalidParameterValueException(inner),
-            crate::error::GetRecommendationPreferencesError::MissingAuthenticationToken(inner) => {
-                Error::MissingAuthenticationToken(inner)
-            }
-            crate::error::GetRecommendationPreferencesError::OptInRequiredException(inner) => {
-                Error::OptInRequiredException(inner)
-            }
-            crate::error::GetRecommendationPreferencesError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::GetRecommendationPreferencesError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::GetRecommendationPreferencesError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::GetRecommendationPreferencesError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::put_recommendation_preferences::PutRecommendationPreferencesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::put_recommendation_preferences::PutRecommendationPreferencesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::put_recommendation_preferences::PutRecommendationPreferencesError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::put_recommendation_preferences::PutRecommendationPreferencesError::MissingAuthenticationToken(inner) => Error::MissingAuthenticationToken(inner),
+            crate::operation::put_recommendation_preferences::PutRecommendationPreferencesError::OptInRequiredException(inner) => Error::OptInRequiredException(inner),
+            crate::operation::put_recommendation_preferences::PutRecommendationPreferencesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::put_recommendation_preferences::PutRecommendationPreferencesError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::put_recommendation_preferences::PutRecommendationPreferencesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::put_recommendation_preferences::PutRecommendationPreferencesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRecommendationSummariesError, R>>
-    for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_enrollment_status::UpdateEnrollmentStatusError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetRecommendationSummariesError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_enrollment_status::UpdateEnrollmentStatusError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -1011,137 +789,16 @@ where
         }
     }
 }
-impl From<crate::error::GetRecommendationSummariesError> for Error {
-    fn from(err: crate::error::GetRecommendationSummariesError) -> Self {
+impl From<crate::operation::update_enrollment_status::UpdateEnrollmentStatusError> for Error {
+    fn from(err: crate::operation::update_enrollment_status::UpdateEnrollmentStatusError) -> Self {
         match err {
-            crate::error::GetRecommendationSummariesError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::GetRecommendationSummariesError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::GetRecommendationSummariesError::InvalidParameterValueException(
-                inner,
-            ) => Error::InvalidParameterValueException(inner),
-            crate::error::GetRecommendationSummariesError::MissingAuthenticationToken(inner) => {
-                Error::MissingAuthenticationToken(inner)
-            }
-            crate::error::GetRecommendationSummariesError::OptInRequiredException(inner) => {
-                Error::OptInRequiredException(inner)
-            }
-            crate::error::GetRecommendationSummariesError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::GetRecommendationSummariesError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::GetRecommendationSummariesError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutRecommendationPreferencesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::PutRecommendationPreferencesError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::PutRecommendationPreferencesError> for Error {
-    fn from(err: crate::error::PutRecommendationPreferencesError) -> Self {
-        match err {
-            crate::error::PutRecommendationPreferencesError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::PutRecommendationPreferencesError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::PutRecommendationPreferencesError::InvalidParameterValueException(
-                inner,
-            ) => Error::InvalidParameterValueException(inner),
-            crate::error::PutRecommendationPreferencesError::MissingAuthenticationToken(inner) => {
-                Error::MissingAuthenticationToken(inner)
-            }
-            crate::error::PutRecommendationPreferencesError::OptInRequiredException(inner) => {
-                Error::OptInRequiredException(inner)
-            }
-            crate::error::PutRecommendationPreferencesError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::PutRecommendationPreferencesError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::PutRecommendationPreferencesError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::PutRecommendationPreferencesError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateEnrollmentStatusError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateEnrollmentStatusError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::UpdateEnrollmentStatusError> for Error {
-    fn from(err: crate::error::UpdateEnrollmentStatusError) -> Self {
-        match err {
-            crate::error::UpdateEnrollmentStatusError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::UpdateEnrollmentStatusError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::UpdateEnrollmentStatusError::InvalidParameterValueException(inner) => {
-                Error::InvalidParameterValueException(inner)
-            }
-            crate::error::UpdateEnrollmentStatusError::MissingAuthenticationToken(inner) => {
-                Error::MissingAuthenticationToken(inner)
-            }
-            crate::error::UpdateEnrollmentStatusError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::UpdateEnrollmentStatusError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::UpdateEnrollmentStatusError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::update_enrollment_status::UpdateEnrollmentStatusError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_enrollment_status::UpdateEnrollmentStatusError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_enrollment_status::UpdateEnrollmentStatusError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::update_enrollment_status::UpdateEnrollmentStatusError::MissingAuthenticationToken(inner) => Error::MissingAuthenticationToken(inner),
+            crate::operation::update_enrollment_status::UpdateEnrollmentStatusError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::update_enrollment_status::UpdateEnrollmentStatusError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_enrollment_status::UpdateEnrollmentStatusError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

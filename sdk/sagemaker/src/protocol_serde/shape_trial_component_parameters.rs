@@ -3,7 +3,7 @@ pub(crate) fn de_trial_component_parameters<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<
-        std::collections::HashMap<std::string::String, crate::model::TrialComponentParameterValue>,
+        std::collections::HashMap<std::string::String, crate::types::TrialComponentParameterValue>,
     >,
     aws_smithy_json::deserialize::error::DeserializeError,
 >

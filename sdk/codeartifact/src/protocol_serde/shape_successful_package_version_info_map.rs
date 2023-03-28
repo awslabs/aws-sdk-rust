@@ -3,7 +3,7 @@ pub(crate) fn de_successful_package_version_info_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<
-        std::collections::HashMap<std::string::String, crate::model::SuccessfulPackageVersionInfo>,
+        std::collections::HashMap<std::string::String, crate::types::SuccessfulPackageVersionInfo>,
     >,
     aws_smithy_json::deserialize::error::DeserializeError,
 >

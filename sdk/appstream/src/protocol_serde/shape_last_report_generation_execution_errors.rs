@@ -2,7 +2,7 @@
 pub(crate) fn de_last_report_generation_execution_errors<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::LastReportGenerationExecutionError>>,
+    Option<std::vec::Vec<crate::types::LastReportGenerationExecutionError>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

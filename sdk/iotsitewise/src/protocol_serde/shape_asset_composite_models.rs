@@ -2,7 +2,7 @@
 pub(crate) fn de_asset_composite_models<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AssetCompositeModel>>,
+    Option<std::vec::Vec<crate::types::AssetCompositeModel>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

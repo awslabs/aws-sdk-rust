@@ -2,7 +2,7 @@
 pub(crate) fn de_builds_not_deleted<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::BuildNotDeleted>>,
+    Option<std::vec::Vec<crate::types::BuildNotDeleted>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

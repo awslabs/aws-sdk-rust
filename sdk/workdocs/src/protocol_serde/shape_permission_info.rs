@@ -2,7 +2,7 @@
 pub(crate) fn de_permission_info<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::PermissionInfo>,
+    Option<crate::types::PermissionInfo>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::permission_info::Builder::default();
+            let mut builder = crate::types::builders::PermissionInfoBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::RoleType::from(u.as_ref()))
+                                            .map(|u| crate::types::RoleType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -42,7 +42,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::RolePermissionType::from(u.as_ref())
+                                            crate::types::RolePermissionType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

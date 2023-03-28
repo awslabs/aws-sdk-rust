@@ -2,7 +2,7 @@
 pub(crate) fn de_aws_waf_rule_predicate_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AwsWafRulePredicateListDetails>>,
+    Option<std::vec::Vec<crate::types::AwsWafRulePredicateListDetails>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

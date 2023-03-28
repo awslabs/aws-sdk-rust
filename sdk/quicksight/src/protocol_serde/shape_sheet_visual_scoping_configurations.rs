@@ -2,7 +2,7 @@
 pub(crate) fn de_sheet_visual_scoping_configurations<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SheetVisualScopingConfiguration>>,
+    Option<std::vec::Vec<crate::types::SheetVisualScopingConfiguration>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -3,7 +3,7 @@ pub(crate) fn de_assessment_compliance<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<
-        std::collections::HashMap<crate::model::DisruptionType, crate::model::DisruptionCompliance>,
+        std::collections::HashMap<crate::types::DisruptionType, crate::types::DisruptionCompliance>,
     >,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
@@ -25,7 +25,7 @@ where
                     Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         let key = key
                             .to_unescaped()
-                            .map(|u| crate::model::DisruptionType::from(u.as_ref()))?;
+                            .map(|u| crate::types::DisruptionType::from(u.as_ref()))?;
                         let value =
                             crate::protocol_serde::shape_disruption_compliance::de_disruption_compliance(tokens)?
                         ;

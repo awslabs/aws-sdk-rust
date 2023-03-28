@@ -2,7 +2,7 @@
 pub(crate) fn de_listed_certificate<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ListedCertificate>,
+    Option<crate::types::ListedCertificate>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::listed_certificate::Builder::default();
+            let mut builder = crate::types::builders::ListedCertificateBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -48,7 +48,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::CertificateUsageType::from(u.as_ref())
+                                            crate::types::CertificateUsageType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -61,7 +61,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::CertificateStatusType::from(u.as_ref())
+                                            crate::types::CertificateStatusType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -90,7 +90,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::CertificateType::from(u.as_ref())
+                                            crate::types::CertificateType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

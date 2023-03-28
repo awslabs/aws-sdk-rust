@@ -2,7 +2,7 @@
 pub(crate) fn de_aggregated_value<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::AggregatedValue>,
+    Option<crate::types::AggregatedValue>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::aggregated_value::Builder::default();
+            let mut builder = crate::types::builders::AggregatedValueBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -38,7 +38,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::Quality::from(u.as_ref()))
+                                            .map(|u| crate::types::Quality::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

@@ -2,7 +2,7 @@
 pub(crate) fn de_operating_systems<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::OperatingSystem>>,
+    Option<std::vec::Vec<crate::types::OperatingSystem>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

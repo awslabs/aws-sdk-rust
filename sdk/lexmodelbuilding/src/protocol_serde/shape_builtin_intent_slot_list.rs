@@ -2,7 +2,7 @@
 pub(crate) fn de_builtin_intent_slot_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::BuiltinIntentSlot>>,
+    Option<std::vec::Vec<crate::types::BuiltinIntentSlot>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_batch_list_outgoing_typed_links_response<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::BatchListOutgoingTypedLinksResponse>,
+    Option<crate::types::BatchListOutgoingTypedLinksResponse>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::batch_list_outgoing_typed_links_response::Builder::default();
+                crate::types::builders::BatchListOutgoingTypedLinksResponseBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

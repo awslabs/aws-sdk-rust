@@ -2,7 +2,7 @@
 pub(crate) fn de_data_items<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DataItem>>,
+    Option<std::vec::Vec<crate::types::DataItem>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

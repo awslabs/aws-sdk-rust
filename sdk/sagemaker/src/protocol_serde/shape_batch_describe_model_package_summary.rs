@@ -2,7 +2,7 @@
 pub(crate) fn de_batch_describe_model_package_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::BatchDescribeModelPackageSummary>,
+    Option<crate::types::BatchDescribeModelPackageSummary>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::batch_describe_model_package_summary::Builder::default();
+                crate::types::builders::BatchDescribeModelPackageSummaryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -80,7 +80,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ModelPackageStatus::from(u.as_ref())
+                                            crate::types::ModelPackageStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -93,7 +93,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ModelApprovalStatus::from(u.as_ref())
+                                            crate::types::ModelApprovalStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

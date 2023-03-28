@@ -2,7 +2,7 @@
 pub(crate) fn de_historical_metric_data_collections<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::HistoricalMetricData>>,
+    Option<std::vec::Vec<crate::types::HistoricalMetricData>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

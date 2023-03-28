@@ -2,7 +2,7 @@
 pub(crate) fn de_phases<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Phase>>,
+    Option<std::vec::Vec<crate::types::Phase>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

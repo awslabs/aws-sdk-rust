@@ -2,7 +2,7 @@
 pub(crate) fn de_constraint_details<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ConstraintDetail>>,
+    Option<std::vec::Vec<crate::types::ConstraintDetail>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

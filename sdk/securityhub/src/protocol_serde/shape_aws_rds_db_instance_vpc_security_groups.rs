@@ -2,7 +2,7 @@
 pub(crate) fn de_aws_rds_db_instance_vpc_security_groups<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AwsRdsDbInstanceVpcSecurityGroup>>,
+    Option<std::vec::Vec<crate::types::AwsRdsDbInstanceVpcSecurityGroup>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

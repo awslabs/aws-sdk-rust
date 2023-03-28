@@ -2,7 +2,7 @@
 pub(crate) fn de_simulation_app_endpoint_info<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::SimulationAppEndpointInfo>,
+    Option<crate::types::SimulationAppEndpointInfo>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::simulation_app_endpoint_info::Builder::default();
+            let mut builder = crate::types::builders::SimulationAppEndpointInfoBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

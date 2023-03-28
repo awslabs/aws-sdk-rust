@@ -2,7 +2,7 @@
 pub(crate) fn de_trusted_advisor_check_refresh_status_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::TrustedAdvisorCheckRefreshStatus>>,
+    Option<std::vec::Vec<crate::types::TrustedAdvisorCheckRefreshStatus>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

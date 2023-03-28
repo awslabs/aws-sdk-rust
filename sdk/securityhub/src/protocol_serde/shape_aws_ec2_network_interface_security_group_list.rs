@@ -2,7 +2,7 @@
 pub(crate) fn de_aws_ec2_network_interface_security_group_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AwsEc2NetworkInterfaceSecurityGroup>>,
+    Option<std::vec::Vec<crate::types::AwsEc2NetworkInterfaceSecurityGroup>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

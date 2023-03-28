@@ -2,7 +2,7 @@
 pub(crate) fn de_lifecycle_policy_preview_result_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::LifecyclePolicyPreviewResult>>,
+    Option<std::vec::Vec<crate::types::LifecyclePolicyPreviewResult>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

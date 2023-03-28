@@ -3,96 +3,99 @@
 pub fn de_describe_package_import_job_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribePackageImportJobOutput,
-    crate::error::DescribePackageImportJobError,
+    crate::operation::describe_package_import_job::DescribePackageImportJobOutput,
+    crate::operation::describe_package_import_job::DescribePackageImportJobError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribePackageImportJobError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::describe_package_import_job::DescribePackageImportJobError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::error::DescribePackageImportJobError::unhandled(
+        None => return Err(
+            crate::operation::describe_package_import_job::DescribePackageImportJobError::unhandled(
                 generic,
-            ))
-        }
+            ),
+        ),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => {
-            crate::error::DescribePackageImportJobError::AccessDeniedException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "AccessDeniedException" => crate::operation::describe_package_import_job::DescribePackageImportJobError::AccessDeniedException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribePackageImportJobError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_package_import_job::DescribePackageImportJobError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ConflictException" => crate::error::DescribePackageImportJobError::ConflictException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::conflict_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribePackageImportJobError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "InternalServerException" => {
-            crate::error::DescribePackageImportJobError::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "ConflictException" => crate::operation::describe_package_import_job::DescribePackageImportJobError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribePackageImportJobError::unhandled)?;
+                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_package_import_job::DescribePackageImportJobError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InternalServerException" => crate::operation::describe_package_import_job::DescribePackageImportJobError::InternalServerException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_package_import_job::DescribePackageImportJobError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::protocol_serde::shape_internal_server_exception::de_retry_after_seconds_header(response.headers())
-                                                .map_err(|_|crate::error::DescribePackageImportJobError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::operation::describe_package_import_job::DescribePackageImportJobError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
                     );
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ValidationException" => {
-            crate::error::DescribePackageImportJobError::ValidationException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ValidationException" => crate::operation::describe_package_import_job::DescribePackageImportJobError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::validation_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribePackageImportJobError::unhandled)?;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_package_import_job::DescribePackageImportJobError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DescribePackageImportJobError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::describe_package_import_job::DescribePackageImportJobError::generic(generic)
     })
 }
 
@@ -100,14 +103,14 @@ pub fn de_describe_package_import_job_http_error(
 pub fn de_describe_package_import_job_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribePackageImportJobOutput,
-    crate::error::DescribePackageImportJobError,
+    crate::operation::describe_package_import_job::DescribePackageImportJobOutput,
+    crate::operation::describe_package_import_job::DescribePackageImportJobError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_package_import_job_output::Builder::default();
+        let mut output = crate::operation::describe_package_import_job::builders::DescribePackageImportJobOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_describe_package_import_job::de_describe_package_import_job(response.body().as_ref(), output).map_err(crate::error::DescribePackageImportJobError::unhandled)?;
+        output = crate::protocol_serde::shape_describe_package_import_job::de_describe_package_import_job(response.body().as_ref(), output).map_err(crate::operation::describe_package_import_job::DescribePackageImportJobError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -117,9 +120,9 @@ pub fn de_describe_package_import_job_http_response(
 
 pub(crate) fn de_describe_package_import_job(
     value: &[u8],
-    mut builder: crate::output::describe_package_import_job_output::Builder,
+    mut builder: crate::operation::describe_package_import_job::builders::DescribePackageImportJobOutputBuilder,
 ) -> Result<
-    crate::output::describe_package_import_job_output::Builder,
+    crate::operation::describe_package_import_job::builders::DescribePackageImportJobOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =
@@ -175,7 +178,7 @@ pub(crate) fn de_describe_package_import_job(
                             )?
                             .map(|s| {
                                 s.to_unescaped()
-                                    .map(|u| crate::model::PackageImportJobType::from(u.as_ref()))
+                                    .map(|u| crate::types::PackageImportJobType::from(u.as_ref()))
                             })
                             .transpose()?,
                         );
@@ -205,7 +208,7 @@ pub(crate) fn de_describe_package_import_job(
                             )?
                             .map(|s| {
                                 s.to_unescaped()
-                                    .map(|u| crate::model::PackageImportJobStatus::from(u.as_ref()))
+                                    .map(|u| crate::types::PackageImportJobStatus::from(u.as_ref()))
                             })
                             .transpose()?,
                         );

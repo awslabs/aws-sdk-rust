@@ -3,125 +3,128 @@
 pub fn de_subscribe_to_dataset_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::SubscribeToDatasetOutput,
-    crate::error::SubscribeToDatasetError,
+    crate::operation::subscribe_to_dataset::SubscribeToDatasetOutput,
+    crate::operation::subscribe_to_dataset::SubscribeToDatasetError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::SubscribeToDatasetError::unhandled)?;
+        .map_err(crate::operation::subscribe_to_dataset::SubscribeToDatasetError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::SubscribeToDatasetError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::subscribe_to_dataset::SubscribeToDatasetError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalErrorException" => {
-            crate::error::SubscribeToDatasetError::InternalErrorException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalErrorException" => crate::operation::subscribe_to_dataset::SubscribeToDatasetError::InternalErrorException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_error_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InternalErrorExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_error_exception::de_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SubscribeToDatasetError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_error_exception::de_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::subscribe_to_dataset::SubscribeToDatasetError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidConfigurationException" => {
-            crate::error::SubscribeToDatasetError::InvalidConfigurationException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidConfigurationException" => crate::operation::subscribe_to_dataset::SubscribeToDatasetError::InvalidConfigurationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_configuration_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidConfigurationExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_configuration_exception::de_invalid_configuration_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SubscribeToDatasetError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_configuration_exception::de_invalid_configuration_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::subscribe_to_dataset::SubscribeToDatasetError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidParameterException" => {
-            crate::error::SubscribeToDatasetError::InvalidParameterException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidParameterException" => crate::operation::subscribe_to_dataset::SubscribeToDatasetError::InvalidParameterException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidParameterExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SubscribeToDatasetError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::subscribe_to_dataset::SubscribeToDatasetError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "NotAuthorizedException" => {
-            crate::error::SubscribeToDatasetError::NotAuthorizedException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "NotAuthorizedException" => crate::operation::subscribe_to_dataset::SubscribeToDatasetError::NotAuthorizedException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::not_authorized_exception::Builder::default();
+                    let mut output = crate::types::error::builders::NotAuthorizedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_not_authorized_exception::de_not_authorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SubscribeToDatasetError::unhandled)?;
+                    output = crate::protocol_serde::shape_not_authorized_exception::de_not_authorized_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::subscribe_to_dataset::SubscribeToDatasetError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ResourceNotFoundException" => {
-            crate::error::SubscribeToDatasetError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::subscribe_to_dataset::SubscribeToDatasetError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SubscribeToDatasetError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::subscribe_to_dataset::SubscribeToDatasetError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "TooManyRequestsException" => {
-            crate::error::SubscribeToDatasetError::TooManyRequestsException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TooManyRequestsException" => crate::operation::subscribe_to_dataset::SubscribeToDatasetError::TooManyRequestsException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SubscribeToDatasetError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::subscribe_to_dataset::SubscribeToDatasetError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::SubscribeToDatasetError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::subscribe_to_dataset::SubscribeToDatasetError::generic(generic)
     })
 }
 
@@ -129,12 +132,12 @@ pub fn de_subscribe_to_dataset_http_error(
 pub fn de_subscribe_to_dataset_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::SubscribeToDatasetOutput,
-    crate::error::SubscribeToDatasetError,
+    crate::operation::subscribe_to_dataset::SubscribeToDatasetOutput,
+    crate::operation::subscribe_to_dataset::SubscribeToDatasetError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::subscribe_to_dataset_output::Builder::default();
+        let mut output = crate::operation::subscribe_to_dataset::builders::SubscribeToDatasetOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

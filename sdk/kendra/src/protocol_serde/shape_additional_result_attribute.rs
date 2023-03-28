@@ -2,7 +2,7 @@
 pub(crate) fn de_additional_result_attribute<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::AdditionalResultAttribute>,
+    Option<crate::types::AdditionalResultAttribute>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::additional_result_attribute::Builder::default();
+            let mut builder = crate::types::builders::AdditionalResultAttributeBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -39,7 +39,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::AdditionalResultAttributeValueType::from(
+                                            crate::types::AdditionalResultAttributeValueType::from(
                                                 u.as_ref(),
                                             )
                                         })

@@ -2,7 +2,7 @@
 pub(crate) fn de_related_finding_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::RelatedFinding>>,
+    Option<std::vec::Vec<crate::types::RelatedFinding>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

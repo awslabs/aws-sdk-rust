@@ -2,7 +2,7 @@
 pub(crate) fn de_reserved_nodes_offering_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ReservedNodesOffering>>,
+    Option<std::vec::Vec<crate::types::ReservedNodesOffering>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

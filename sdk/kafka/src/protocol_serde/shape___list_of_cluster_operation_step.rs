@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_cluster_operation_step<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ClusterOperationStep>>,
+    Option<std::vec::Vec<crate::types::ClusterOperationStep>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

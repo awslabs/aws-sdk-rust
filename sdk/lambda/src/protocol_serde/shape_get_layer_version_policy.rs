@@ -3,95 +3,100 @@
 pub fn de_get_layer_version_policy_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetLayerVersionPolicyOutput,
-    crate::error::GetLayerVersionPolicyError,
+    crate::operation::get_layer_version_policy::GetLayerVersionPolicyOutput,
+    crate::operation::get_layer_version_policy::GetLayerVersionPolicyError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetLayerVersionPolicyError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::get_layer_version_policy::GetLayerVersionPolicyError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    let error_code = match generic.code() {
-        Some(code) => code,
-        None => return Err(crate::error::GetLayerVersionPolicyError::unhandled(generic)),
-    };
+    let error_code =
+        match generic.code() {
+            Some(code) => code,
+            None => return Err(
+                crate::operation::get_layer_version_policy::GetLayerVersionPolicyError::unhandled(
+                    generic,
+                ),
+            ),
+        };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => {
-            crate::error::GetLayerVersionPolicyError::InvalidParameterValueException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidParameterValueException" => crate::operation::get_layer_version_policy::GetLayerVersionPolicyError::InvalidParameterValueException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_parameter_value_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLayerVersionPolicyError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_layer_version_policy::GetLayerVersionPolicyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ResourceNotFoundException" => {
-            crate::error::GetLayerVersionPolicyError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::get_layer_version_policy::GetLayerVersionPolicyError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLayerVersionPolicyError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_layer_version_policy::GetLayerVersionPolicyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ServiceException" => {
-            crate::error::GetLayerVersionPolicyError::ServiceException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ServiceException" => crate::operation::get_layer_version_policy::GetLayerVersionPolicyError::ServiceException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::service_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ServiceExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_exception::de_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLayerVersionPolicyError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_exception::de_service_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_layer_version_policy::GetLayerVersionPolicyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "TooManyRequestsException" => {
-            crate::error::GetLayerVersionPolicyError::TooManyRequestsException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TooManyRequestsException" => crate::operation::get_layer_version_policy::GetLayerVersionPolicyError::TooManyRequestsException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLayerVersionPolicyError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_layer_version_policy::GetLayerVersionPolicyError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::protocol_serde::shape_too_many_requests_exception::de_retry_after_seconds_header(response.headers())
-                                                .map_err(|_|crate::error::GetLayerVersionPolicyError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::operation::get_layer_version_policy::GetLayerVersionPolicyError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::GetLayerVersionPolicyError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::get_layer_version_policy::GetLayerVersionPolicyError::generic(generic)
     })
 }
 
@@ -99,19 +104,21 @@ pub fn de_get_layer_version_policy_http_error(
 pub fn de_get_layer_version_policy_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetLayerVersionPolicyOutput,
-    crate::error::GetLayerVersionPolicyError,
+    crate::operation::get_layer_version_policy::GetLayerVersionPolicyOutput,
+    crate::operation::get_layer_version_policy::GetLayerVersionPolicyError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_layer_version_policy_output::Builder::default();
+        let mut output = crate::operation::get_layer_version_policy::builders::GetLayerVersionPolicyOutputBuilder::default();
         let _ = response;
         output =
             crate::protocol_serde::shape_get_layer_version_policy::de_get_layer_version_policy(
                 response.body().as_ref(),
                 output,
             )
-            .map_err(crate::error::GetLayerVersionPolicyError::unhandled)?;
+            .map_err(
+                crate::operation::get_layer_version_policy::GetLayerVersionPolicyError::unhandled,
+            )?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -121,9 +128,9 @@ pub fn de_get_layer_version_policy_http_response(
 
 pub(crate) fn de_get_layer_version_policy(
     value: &[u8],
-    mut builder: crate::output::get_layer_version_policy_output::Builder,
+    mut builder: crate::operation::get_layer_version_policy::builders::GetLayerVersionPolicyOutputBuilder,
 ) -> Result<
-    crate::output::get_layer_version_policy_output::Builder,
+    crate::operation::get_layer_version_policy::builders::GetLayerVersionPolicyOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

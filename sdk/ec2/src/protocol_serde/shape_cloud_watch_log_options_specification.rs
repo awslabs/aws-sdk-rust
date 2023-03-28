@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_cloud_watch_log_options_specification(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::CloudWatchLogOptionsSpecification,
+    input: &crate::types::CloudWatchLogOptionsSpecification,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("LogEnabled");

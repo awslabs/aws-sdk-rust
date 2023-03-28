@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_create_transit_gateway_peering_attachment_request_options(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::CreateTransitGatewayPeeringAttachmentRequestOptions,
+    input: &crate::types::CreateTransitGatewayPeeringAttachmentRequestOptions,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("DynamicRouting");

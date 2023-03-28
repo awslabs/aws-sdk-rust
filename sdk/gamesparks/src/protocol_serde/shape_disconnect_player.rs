@@ -2,43 +2,53 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_disconnect_player_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DisconnectPlayerOutput, crate::error::DisconnectPlayerError>
-{
+) -> std::result::Result<
+    crate::operation::disconnect_player::DisconnectPlayerOutput,
+    crate::operation::disconnect_player::DisconnectPlayerError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DisconnectPlayerError::unhandled)?;
+        .map_err(crate::operation::disconnect_player::DisconnectPlayerError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DisconnectPlayerError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::disconnect_player::DisconnectPlayerError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::DisconnectPlayerError::AccessDeniedException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::access_denied_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisconnectPlayerError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InternalServerException" => {
-            crate::error::DisconnectPlayerError::InternalServerException({
+        "AccessDeniedException" => {
+            crate::operation::disconnect_player::DisconnectPlayerError::AccessDeniedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::AccessDeniedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisconnectPlayerError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::disconnect_player::DisconnectPlayerError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InternalServerException" => {
+            crate::operation::disconnect_player::DisconnectPlayerError::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InternalServerExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::disconnect_player::DisconnectPlayerError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -49,13 +59,14 @@ pub fn de_disconnect_player_http_error(
             })
         }
         "ResourceNotFoundException" => {
-            crate::error::DisconnectPlayerError::ResourceNotFoundException({
+            crate::operation::disconnect_player::DisconnectPlayerError::ResourceNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisconnectPlayerError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::disconnect_player::DisconnectPlayerError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -65,54 +76,63 @@ pub fn de_disconnect_player_http_error(
                 tmp
             })
         }
-        "ThrottlingException" => crate::error::DisconnectPlayerError::ThrottlingException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "ThrottlingException" => {
+            crate::operation::disconnect_player::DisconnectPlayerError::ThrottlingException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::throttling_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisconnectPlayerError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ValidationException" => crate::error::DisconnectPlayerError::ValidationException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::disconnect_player::DisconnectPlayerError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ValidationException" => {
+            crate::operation::disconnect_player::DisconnectPlayerError::ValidationException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisconnectPlayerError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::DisconnectPlayerError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::disconnect_player::DisconnectPlayerError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::disconnect_player::DisconnectPlayerError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_disconnect_player_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DisconnectPlayerOutput, crate::error::DisconnectPlayerError>
-{
+) -> std::result::Result<
+    crate::operation::disconnect_player::DisconnectPlayerOutput,
+    crate::operation::disconnect_player::DisconnectPlayerError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::disconnect_player_output::Builder::default();
+        let mut output =
+            crate::operation::disconnect_player::builders::DisconnectPlayerOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_disconnect_player::de_disconnect_player(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DisconnectPlayerError::unhandled)?;
+        .map_err(crate::operation::disconnect_player::DisconnectPlayerError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -122,9 +142,9 @@ pub fn de_disconnect_player_http_response(
 
 pub(crate) fn de_disconnect_player(
     value: &[u8],
-    mut builder: crate::output::disconnect_player_output::Builder,
+    mut builder: crate::operation::disconnect_player::builders::DisconnectPlayerOutputBuilder,
 ) -> Result<
-    crate::output::disconnect_player_output::Builder,
+    crate::operation::disconnect_player::builders::DisconnectPlayerOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

@@ -3,348 +3,333 @@
 pub fn de_restore_db_instance_from_s3_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::RestoreDbInstanceFromS3Output,
-    crate::error::RestoreDBInstanceFromS3Error,
+    crate::operation::restore_db_instance_from_s3::RestoreDbInstanceFromS3Output,
+    crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::RestoreDBInstanceFromS3Error::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::error::RestoreDBInstanceFromS3Error::unhandled(
+        None => return Err(
+            crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error::unhandled(
                 generic,
-            ))
-        }
+            ),
+        ),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AuthorizationNotFound" => {
-            crate::error::RestoreDBInstanceFromS3Error::AuthorizationNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::authorization_not_found_fault::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_authorization_not_found_fault::de_authorization_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBInstanceFromS3Error::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "BackupPolicyNotFoundFault" => {
-            crate::error::RestoreDBInstanceFromS3Error::BackupPolicyNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::backup_policy_not_found_fault::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_backup_policy_not_found_fault::de_backup_policy_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBInstanceFromS3Error::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "DBInstanceAlreadyExists" => {
-            crate::error::RestoreDBInstanceFromS3Error::DbInstanceAlreadyExistsFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::db_instance_already_exists_fault::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_db_instance_already_exists_fault::de_db_instance_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBInstanceFromS3Error::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "DBParameterGroupNotFound" => {
-            crate::error::RestoreDBInstanceFromS3Error::DbParameterGroupNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::db_parameter_group_not_found_fault::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_db_parameter_group_not_found_fault::de_db_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBInstanceFromS3Error::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "DBSecurityGroupNotFound" => {
-            crate::error::RestoreDBInstanceFromS3Error::DbSecurityGroupNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::db_security_group_not_found_fault::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_db_security_group_not_found_fault::de_db_security_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBInstanceFromS3Error::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "DBSubnetGroupDoesNotCoverEnoughAZs" => {
-            crate::error::RestoreDBInstanceFromS3Error::DbSubnetGroupDoesNotCoverEnoughAZs({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::db_subnet_group_does_not_cover_enough_a_zs::Builder::default(
-                        );
-                    let _ = response;
-                    output = crate::protocol_serde::shape_db_subnet_group_does_not_cover_enough_a_zs::de_db_subnet_group_does_not_cover_enough_a_zs_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBInstanceFromS3Error::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "DBSubnetGroupNotFoundFault" => {
-            crate::error::RestoreDBInstanceFromS3Error::DbSubnetGroupNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::db_subnet_group_not_found_fault::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_db_subnet_group_not_found_fault::de_db_subnet_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBInstanceFromS3Error::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InstanceQuotaExceeded" => {
-            crate::error::RestoreDBInstanceFromS3Error::InstanceQuotaExceededFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::instance_quota_exceeded_fault::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_instance_quota_exceeded_fault::de_instance_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBInstanceFromS3Error::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InsufficientDBInstanceCapacity" => {
-            crate::error::RestoreDBInstanceFromS3Error::InsufficientDbInstanceCapacityFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::insufficient_db_instance_capacity_fault::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_insufficient_db_instance_capacity_fault::de_insufficient_db_instance_capacity_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBInstanceFromS3Error::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InvalidS3BucketFault" => {
-            crate::error::RestoreDBInstanceFromS3Error::InvalidS3BucketFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_s3_bucket_fault::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_s3_bucket_fault::de_invalid_s3_bucket_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBInstanceFromS3Error::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InvalidSubnet" => crate::error::RestoreDBInstanceFromS3Error::InvalidSubnet({
+        "AuthorizationNotFound" => crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error::AuthorizationNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::invalid_subnet::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_subnet::de_invalid_subnet_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::RestoreDBInstanceFromS3Error::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::AuthorizationNotFoundFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_authorization_not_found_fault::de_authorization_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "InvalidVPCNetworkStateFault" => {
-            crate::error::RestoreDBInstanceFromS3Error::InvalidVpcNetworkStateFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "BackupPolicyNotFoundFault" => crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error::BackupPolicyNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_vpc_network_state_fault::Builder::default();
+                    let mut output = crate::types::error::builders::BackupPolicyNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_vpc_network_state_fault::de_invalid_vpc_network_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBInstanceFromS3Error::unhandled)?;
+                    output = crate::protocol_serde::shape_backup_policy_not_found_fault::de_backup_policy_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "KMSKeyNotAccessibleFault" => {
-            crate::error::RestoreDBInstanceFromS3Error::KmsKeyNotAccessibleFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "DBInstanceAlreadyExists" => crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error::DbInstanceAlreadyExistsFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::kms_key_not_accessible_fault::Builder::default();
+                    let mut output = crate::types::error::builders::DbInstanceAlreadyExistsFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_kms_key_not_accessible_fault::de_kms_key_not_accessible_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBInstanceFromS3Error::unhandled)?;
+                    output = crate::protocol_serde::shape_db_instance_already_exists_fault::de_db_instance_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "NetworkTypeNotSupported" => {
-            crate::error::RestoreDBInstanceFromS3Error::NetworkTypeNotSupported({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "DBParameterGroupNotFound" => crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error::DbParameterGroupNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::network_type_not_supported::Builder::default();
+                    let mut output = crate::types::error::builders::DbParameterGroupNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_network_type_not_supported::de_network_type_not_supported_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBInstanceFromS3Error::unhandled)?;
+                    output = crate::protocol_serde::shape_db_parameter_group_not_found_fault::de_db_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "OptionGroupNotFoundFault" => {
-            crate::error::RestoreDBInstanceFromS3Error::OptionGroupNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "DBSecurityGroupNotFound" => crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error::DbSecurityGroupNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::option_group_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::DbSecurityGroupNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_option_group_not_found_fault::de_option_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBInstanceFromS3Error::unhandled)?;
+                    output = crate::protocol_serde::shape_db_security_group_not_found_fault::de_db_security_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ProvisionedIopsNotAvailableInAZFault" => {
-            crate::error::RestoreDBInstanceFromS3Error::ProvisionedIopsNotAvailableInAzFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "DBSubnetGroupDoesNotCoverEnoughAZs" => crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error::DbSubnetGroupDoesNotCoverEnoughAZs({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::provisioned_iops_not_available_in_az_fault::Builder::default(
-                        );
+                    let mut output = crate::types::error::builders::DbSubnetGroupDoesNotCoverEnoughAZsBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_provisioned_iops_not_available_in_az_fault::de_provisioned_iops_not_available_in_az_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBInstanceFromS3Error::unhandled)?;
+                    output = crate::protocol_serde::shape_db_subnet_group_does_not_cover_enough_a_zs::de_db_subnet_group_does_not_cover_enough_a_zs_xml_err(response.body().as_ref(), output).map_err(crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "StorageQuotaExceeded" => {
-            crate::error::RestoreDBInstanceFromS3Error::StorageQuotaExceededFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "DBSubnetGroupNotFoundFault" => crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error::DbSubnetGroupNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::storage_quota_exceeded_fault::Builder::default();
+                    let mut output = crate::types::error::builders::DbSubnetGroupNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_storage_quota_exceeded_fault::de_storage_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBInstanceFromS3Error::unhandled)?;
+                    output = crate::protocol_serde::shape_db_subnet_group_not_found_fault::de_db_subnet_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "StorageTypeNotSupported" => {
-            crate::error::RestoreDBInstanceFromS3Error::StorageTypeNotSupportedFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InstanceQuotaExceeded" => crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error::InstanceQuotaExceededFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::storage_type_not_supported_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InstanceQuotaExceededFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_storage_type_not_supported_fault::de_storage_type_not_supported_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBInstanceFromS3Error::unhandled)?;
+                    output = crate::protocol_serde::shape_instance_quota_exceeded_fault::de_instance_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::RestoreDBInstanceFromS3Error::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InsufficientDBInstanceCapacity" => crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error::InsufficientDbInstanceCapacityFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InsufficientDbInstanceCapacityFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_insufficient_db_instance_capacity_fault::de_insufficient_db_instance_capacity_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidS3BucketFault" => crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error::InvalidS3BucketFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidS3BucketFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_s3_bucket_fault::de_invalid_s3_bucket_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidSubnet" => crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error::InvalidSubnet({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidSubnetBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_subnet::de_invalid_subnet_xml_err(response.body().as_ref(), output).map_err(crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidVPCNetworkStateFault" => crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error::InvalidVpcNetworkStateFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidVpcNetworkStateFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_vpc_network_state_fault::de_invalid_vpc_network_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "KMSKeyNotAccessibleFault" => crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error::KmsKeyNotAccessibleFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::KmsKeyNotAccessibleFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_kms_key_not_accessible_fault::de_kms_key_not_accessible_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "NetworkTypeNotSupported" => crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error::NetworkTypeNotSupported({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::NetworkTypeNotSupportedBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_network_type_not_supported::de_network_type_not_supported_xml_err(response.body().as_ref(), output).map_err(crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "OptionGroupNotFoundFault" => crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error::OptionGroupNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::OptionGroupNotFoundFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_option_group_not_found_fault::de_option_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ProvisionedIopsNotAvailableInAZFault" => crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error::ProvisionedIopsNotAvailableInAzFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ProvisionedIopsNotAvailableInAzFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_provisioned_iops_not_available_in_az_fault::de_provisioned_iops_not_available_in_az_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "StorageQuotaExceeded" => crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error::StorageQuotaExceededFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::StorageQuotaExceededFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_storage_quota_exceeded_fault::de_storage_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "StorageTypeNotSupported" => crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error::StorageTypeNotSupportedFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::StorageTypeNotSupportedFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_storage_type_not_supported_fault::de_storage_type_not_supported_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error::generic(generic)
     })
 }
 
@@ -352,14 +337,14 @@ pub fn de_restore_db_instance_from_s3_http_error(
 pub fn de_restore_db_instance_from_s3_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::RestoreDbInstanceFromS3Output,
-    crate::error::RestoreDBInstanceFromS3Error,
+    crate::operation::restore_db_instance_from_s3::RestoreDbInstanceFromS3Output,
+    crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::restore_db_instance_from_s3_output::Builder::default();
+        let mut output = crate::operation::restore_db_instance_from_s3::builders::RestoreDbInstanceFromS3OutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_restore_db_instance_from_s3::de_restore_db_instance_from_s3(response.body().as_ref(), output).map_err(crate::error::RestoreDBInstanceFromS3Error::unhandled)?;
+        output = crate::protocol_serde::shape_restore_db_instance_from_s3::de_restore_db_instance_from_s3(response.body().as_ref(), output).map_err(crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -370,9 +355,9 @@ pub fn de_restore_db_instance_from_s3_http_response(
 #[allow(unused_mut)]
 pub fn de_restore_db_instance_from_s3(
     inp: &[u8],
-    mut builder: crate::output::restore_db_instance_from_s3_output::Builder,
+    mut builder: crate::operation::restore_db_instance_from_s3::builders::RestoreDbInstanceFromS3OutputBuilder,
 ) -> Result<
-    crate::output::restore_db_instance_from_s3_output::Builder,
+    crate::operation::restore_db_instance_from_s3::builders::RestoreDbInstanceFromS3OutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

@@ -2,7 +2,7 @@
 pub(crate) fn de_work_unit_range_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::WorkUnitRange>>,
+    Option<std::vec::Vec<crate::types::WorkUnitRange>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

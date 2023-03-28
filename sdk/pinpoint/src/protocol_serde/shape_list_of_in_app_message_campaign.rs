@@ -2,7 +2,7 @@
 pub(crate) fn de_list_of_in_app_message_campaign<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::InAppMessageCampaign>>,
+    Option<std::vec::Vec<crate::types::InAppMessageCampaign>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_zonal_statistics_config_input<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ZonalStatisticsConfigInput>,
+    Option<crate::types::ZonalStatisticsConfigInput>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::zonal_statistics_config_input::Builder::default();
+            let mut builder = crate::types::builders::ZonalStatisticsConfigInputBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -67,7 +67,7 @@ where
 
 pub fn ser_zonal_statistics_config_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::ZonalStatisticsConfigInput,
+    input: &crate::types::ZonalStatisticsConfigInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.zone_s3_path {
         object.key("ZoneS3Path").string(var_1.as_str());

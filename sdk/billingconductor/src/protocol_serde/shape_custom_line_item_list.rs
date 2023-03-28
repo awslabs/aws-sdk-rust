@@ -2,7 +2,7 @@
 pub(crate) fn de_custom_line_item_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CustomLineItemListElement>>,
+    Option<std::vec::Vec<crate::types::CustomLineItemListElement>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

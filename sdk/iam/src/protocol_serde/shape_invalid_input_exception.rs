@@ -2,9 +2,11 @@
 #[allow(unused_mut)]
 pub fn de_invalid_input_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::invalid_input_exception::Builder,
-) -> Result<crate::error::invalid_input_exception::Builder, aws_smithy_xml::decode::XmlDecodeError>
-{
+    mut builder: crate::types::error::builders::InvalidInputExceptionBuilder,
+) -> Result<
+    crate::types::error::builders::InvalidInputExceptionBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     if inp.is_empty() {
         return Ok(builder);
     }

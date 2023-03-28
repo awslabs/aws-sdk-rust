@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_elastic_beanstalk_service_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::elastic_beanstalk_service_exception::Builder,
+    mut builder: crate::types::error::builders::ElasticBeanstalkServiceExceptionBuilder,
 ) -> Result<
-    crate::error::elastic_beanstalk_service_exception::Builder,
+    crate::types::error::builders::ElasticBeanstalkServiceExceptionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

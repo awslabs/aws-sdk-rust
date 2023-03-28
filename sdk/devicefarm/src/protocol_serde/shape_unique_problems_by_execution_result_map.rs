@@ -4,8 +4,8 @@ pub(crate) fn de_unique_problems_by_execution_result_map<'a, I>(
 ) -> Result<
     Option<
         std::collections::HashMap<
-            crate::model::ExecutionResult,
-            std::vec::Vec<crate::model::UniqueProblem>,
+            crate::types::ExecutionResult,
+            std::vec::Vec<crate::types::UniqueProblem>,
         >,
     >,
     aws_smithy_json::deserialize::error::DeserializeError,
@@ -28,7 +28,7 @@ where
                     Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         let key = key
                             .to_unescaped()
-                            .map(|u| crate::model::ExecutionResult::from(u.as_ref()))?;
+                            .map(|u| crate::types::ExecutionResult::from(u.as_ref()))?;
                         let value =
                             crate::protocol_serde::shape_unique_problems::de_unique_problems(
                                 tokens,

@@ -3,75 +3,78 @@
 pub fn de_modify_aqua_configuration_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ModifyAquaConfigurationOutput,
-    crate::error::ModifyAquaConfigurationError,
+    crate::operation::modify_aqua_configuration::ModifyAquaConfigurationOutput,
+    crate::operation::modify_aqua_configuration::ModifyAquaConfigurationError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ModifyAquaConfigurationError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::modify_aqua_configuration::ModifyAquaConfigurationError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::error::ModifyAquaConfigurationError::unhandled(
+        None => return Err(
+            crate::operation::modify_aqua_configuration::ModifyAquaConfigurationError::unhandled(
                 generic,
-            ))
-        }
+            ),
+        ),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ClusterNotFound" => crate::error::ModifyAquaConfigurationError::ClusterNotFoundFault({
+        "ClusterNotFound" => crate::operation::modify_aqua_configuration::ModifyAquaConfigurationError::ClusterNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::cluster_not_found_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_cluster_not_found_fault::de_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyAquaConfigurationError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ClusterNotFoundFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_cluster_not_found_fault::de_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_aqua_configuration::ModifyAquaConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "InvalidClusterState" => {
-            crate::error::ModifyAquaConfigurationError::InvalidClusterStateFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidClusterState" => crate::operation::modify_aqua_configuration::ModifyAquaConfigurationError::InvalidClusterStateFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_cluster_state_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidClusterStateFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_cluster_state_fault::de_invalid_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyAquaConfigurationError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_cluster_state_fault::de_invalid_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_aqua_configuration::ModifyAquaConfigurationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "UnsupportedOperation" => {
-            crate::error::ModifyAquaConfigurationError::UnsupportedOperationFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "UnsupportedOperation" => crate::operation::modify_aqua_configuration::ModifyAquaConfigurationError::UnsupportedOperationFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::unsupported_operation_fault::Builder::default();
+                    let mut output = crate::types::error::builders::UnsupportedOperationFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_unsupported_operation_fault::de_unsupported_operation_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyAquaConfigurationError::unhandled)?;
+                    output = crate::protocol_serde::shape_unsupported_operation_fault::de_unsupported_operation_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_aqua_configuration::ModifyAquaConfigurationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::ModifyAquaConfigurationError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::modify_aqua_configuration::ModifyAquaConfigurationError::generic(generic)
     })
 }
 
@@ -79,19 +82,14 @@ pub fn de_modify_aqua_configuration_http_error(
 pub fn de_modify_aqua_configuration_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ModifyAquaConfigurationOutput,
-    crate::error::ModifyAquaConfigurationError,
+    crate::operation::modify_aqua_configuration::ModifyAquaConfigurationOutput,
+    crate::operation::modify_aqua_configuration::ModifyAquaConfigurationError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::modify_aqua_configuration_output::Builder::default();
+        let mut output = crate::operation::modify_aqua_configuration::builders::ModifyAquaConfigurationOutputBuilder::default();
         let _ = response;
-        output =
-            crate::protocol_serde::shape_modify_aqua_configuration::de_modify_aqua_configuration(
-                response.body().as_ref(),
-                output,
-            )
-            .map_err(crate::error::ModifyAquaConfigurationError::unhandled)?;
+        output = crate::protocol_serde::shape_modify_aqua_configuration::de_modify_aqua_configuration(response.body().as_ref(), output).map_err(crate::operation::modify_aqua_configuration::ModifyAquaConfigurationError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -102,9 +100,9 @@ pub fn de_modify_aqua_configuration_http_response(
 #[allow(unused_mut)]
 pub fn de_modify_aqua_configuration(
     inp: &[u8],
-    mut builder: crate::output::modify_aqua_configuration_output::Builder,
+    mut builder: crate::operation::modify_aqua_configuration::builders::ModifyAquaConfigurationOutputBuilder,
 ) -> Result<
-    crate::output::modify_aqua_configuration_output::Builder,
+    crate::operation::modify_aqua_configuration::builders::ModifyAquaConfigurationOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

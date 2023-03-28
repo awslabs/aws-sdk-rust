@@ -2,7 +2,7 @@
 pub(crate) fn de_batch_get_document_status_response_errors<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::BatchGetDocumentStatusResponseError>>,
+    Option<std::vec::Vec<crate::types::BatchGetDocumentStatusResponseError>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_assessment_control_sets<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AssessmentControlSet>>,
+    Option<std::vec::Vec<crate::types::AssessmentControlSet>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

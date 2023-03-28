@@ -2,10 +2,10 @@
 pub fn de_email_template_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::EmailTemplateResponse>,
-    crate::error::GetEmailTemplateError,
+    std::option::Option<crate::types::EmailTemplateResponse>,
+    crate::operation::get_email_template::GetEmailTemplateError,
 > {
     (!body.is_empty()).then(||{
-        crate::protocol_serde::shape_email_template_response::de_email_template_response_payload(body).map_err(crate::error::GetEmailTemplateError::unhandled)
+        crate::protocol_serde::shape_email_template_response::de_email_template_response_payload(body).map_err(crate::operation::get_email_template::GetEmailTemplateError::unhandled)
     }).transpose()
 }

@@ -2,7 +2,7 @@
 pub(crate) fn de_batch_job_definition<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::BatchJobDefinition>,
+    Option<crate::types::BatchJobDefinition>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -29,20 +29,20 @@ where
                     }
                     variant = match key.to_unescaped()?.as_ref() {
                             "fileBatchJobDefinition" => {
-                                Some(crate::model::BatchJobDefinition::FileBatchJobDefinition(
+                                Some(crate::types::BatchJobDefinition::FileBatchJobDefinition(
                                     crate::protocol_serde::shape_file_batch_job_definition::de_file_batch_job_definition(tokens)?
                                     .ok_or_else(|| aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'fileBatchJobDefinition' cannot be null"))?
                                 ))
                             }
                             "scriptBatchJobDefinition" => {
-                                Some(crate::model::BatchJobDefinition::ScriptBatchJobDefinition(
+                                Some(crate::types::BatchJobDefinition::ScriptBatchJobDefinition(
                                     crate::protocol_serde::shape_script_batch_job_definition::de_script_batch_job_definition(tokens)?
                                     .ok_or_else(|| aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'scriptBatchJobDefinition' cannot be null"))?
                                 ))
                             }
                             _ => {
                                                                       aws_smithy_json::deserialize::token::skip_value(tokens)?;
-                                                                      Some(crate::model::BatchJobDefinition::Unknown)
+                                                                      Some(crate::types::BatchJobDefinition::Unknown)
                                                                     }
                         };
                 }

@@ -2,7 +2,7 @@
 pub(crate) fn de_assistant_data<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::AssistantData>,
+    Option<crate::types::AssistantData>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::assistant_data::Builder::default();
+            let mut builder = crate::types::builders::AssistantDataBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -57,7 +57,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::AssistantType::from(u.as_ref()))
+                                            .map(|u| crate::types::AssistantType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -69,7 +69,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::AssistantStatus::from(u.as_ref())
+                                            crate::types::AssistantStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

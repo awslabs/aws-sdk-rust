@@ -2,7 +2,7 @@
 pub(crate) fn de_lo_ra_wan_gateway_metadata_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::LoRaWanGatewayMetadata>>,
+    Option<std::vec::Vec<crate::types::LoRaWanGatewayMetadata>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

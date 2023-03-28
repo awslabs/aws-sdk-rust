@@ -2,7 +2,7 @@
 pub(crate) fn de_resource_profile_artifact<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ResourceProfileArtifact>,
+    Option<crate::types::ResourceProfileArtifact>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::resource_profile_artifact::Builder::default();
+            let mut builder = crate::types::builders::ResourceProfileArtifactBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

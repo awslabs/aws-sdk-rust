@@ -2,7 +2,7 @@
 pub(crate) fn de_aws_backup_backup_plan_advanced_backup_settings_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AwsBackupBackupPlanAdvancedBackupSettingsDetails>>,
+    Option<std::vec::Vec<crate::types::AwsBackupBackupPlanAdvancedBackupSettingsDetails>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -4,8 +4,8 @@ pub(crate) fn de_volume_usage_by_datasource_package<'a, I>(
 ) -> Result<
     Option<
         std::collections::HashMap<
-            crate::model::DatasourcePackage,
-            crate::model::DatasourcePackageUsageInfo,
+            crate::types::DatasourcePackage,
+            crate::types::DatasourcePackageUsageInfo,
         >,
     >,
     aws_smithy_json::deserialize::error::DeserializeError,
@@ -28,7 +28,7 @@ where
                     Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         let key = key
                             .to_unescaped()
-                            .map(|u| crate::model::DatasourcePackage::from(u.as_ref()))?;
+                            .map(|u| crate::types::DatasourcePackage::from(u.as_ref()))?;
                         let value =
                             crate::protocol_serde::shape_datasource_package_usage_info::de_datasource_package_usage_info(tokens)?
                         ;

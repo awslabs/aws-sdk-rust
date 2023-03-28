@@ -2,8 +2,11 @@
 #[allow(unused_mut)]
 pub fn de_public_key_in_use_xml_err(
     inp: &[u8],
-    mut builder: crate::error::public_key_in_use::Builder,
-) -> Result<crate::error::public_key_in_use::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    mut builder: crate::types::error::builders::PublicKeyInUseBuilder,
+) -> Result<
+    crate::types::error::builders::PublicKeyInUseBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     if inp.is_empty() {
         return Ok(builder);
     }

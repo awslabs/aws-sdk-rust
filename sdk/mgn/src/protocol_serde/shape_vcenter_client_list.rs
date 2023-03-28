@@ -2,7 +2,7 @@
 pub(crate) fn de_vcenter_client_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::VcenterClient>>,
+    Option<std::vec::Vec<crate::types::VcenterClient>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

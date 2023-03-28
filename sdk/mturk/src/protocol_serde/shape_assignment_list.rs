@@ -2,7 +2,7 @@
 pub(crate) fn de_assignment_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Assignment>>,
+    Option<std::vec::Vec<crate::types::Assignment>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

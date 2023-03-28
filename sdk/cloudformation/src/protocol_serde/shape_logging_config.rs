@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_logging_config(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::LoggingConfig,
+    input: &crate::types::LoggingConfig,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("LogRoleArn");
@@ -19,9 +19,9 @@ pub fn ser_logging_config(
 
 pub fn de_logging_config(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::LoggingConfig, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::LoggingConfig, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::LoggingConfig::builder();
+    let mut builder = crate::types::LoggingConfig::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("LogRoleArn") /* LogRoleArn com.amazonaws.cloudformation#LoggingConfig$LogRoleArn */ =>  {

@@ -2,7 +2,7 @@
 pub(crate) fn de_monitor_error_details<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::MonitorErrorDetails>,
+    Option<crate::types::MonitorErrorDetails>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::monitor_error_details::Builder::default();
+            let mut builder = crate::types::builders::MonitorErrorDetailsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::MonitorErrorCode::from(u.as_ref())
+                                            crate::types::MonitorErrorCode::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

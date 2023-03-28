@@ -2,7 +2,7 @@
 pub(crate) fn de_encryption_config<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::EncryptionConfig>,
+    Option<crate::types::EncryptionConfig>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::encryption_config::Builder::default();
+            let mut builder = crate::types::builders::EncryptionConfigBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -39,7 +39,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::EncryptionStatus::from(u.as_ref())
+                                            crate::types::EncryptionStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -52,7 +52,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::EncryptionType::from(u.as_ref()))
+                                            .map(|u| crate::types::EncryptionType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

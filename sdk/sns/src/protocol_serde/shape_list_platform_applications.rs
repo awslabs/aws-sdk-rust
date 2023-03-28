@@ -3,76 +3,78 @@
 pub fn de_list_platform_applications_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListPlatformApplicationsOutput,
-    crate::error::ListPlatformApplicationsError,
+    crate::operation::list_platform_applications::ListPlatformApplicationsOutput,
+    crate::operation::list_platform_applications::ListPlatformApplicationsError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListPlatformApplicationsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::list_platform_applications::ListPlatformApplicationsError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::error::ListPlatformApplicationsError::unhandled(
+        None => return Err(
+            crate::operation::list_platform_applications::ListPlatformApplicationsError::unhandled(
                 generic,
-            ))
-        }
+            ),
+        ),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AuthorizationError" => {
-            crate::error::ListPlatformApplicationsError::AuthorizationErrorException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "AuthorizationError" => crate::operation::list_platform_applications::ListPlatformApplicationsError::AuthorizationErrorException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::authorization_error_exception::Builder::default();
+                    let mut output = crate::types::error::builders::AuthorizationErrorExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_authorization_error_exception::de_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListPlatformApplicationsError::unhandled)?;
+                    output = crate::protocol_serde::shape_authorization_error_exception::de_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::list_platform_applications::ListPlatformApplicationsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InternalError" => crate::error::ListPlatformApplicationsError::InternalErrorException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_error_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_error_exception::de_internal_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListPlatformApplicationsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "InvalidParameter" => {
-            crate::error::ListPlatformApplicationsError::InvalidParameterException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalError" => crate::operation::list_platform_applications::ListPlatformApplicationsError::InternalErrorException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InternalErrorExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListPlatformApplicationsError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_error_exception::de_internal_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::list_platform_applications::ListPlatformApplicationsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::ListPlatformApplicationsError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidParameter" => crate::operation::list_platform_applications::ListPlatformApplicationsError::InvalidParameterException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidParameterExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::list_platform_applications::ListPlatformApplicationsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::list_platform_applications::ListPlatformApplicationsError::generic(generic)
     })
 }
 
@@ -80,19 +82,14 @@ pub fn de_list_platform_applications_http_error(
 pub fn de_list_platform_applications_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListPlatformApplicationsOutput,
-    crate::error::ListPlatformApplicationsError,
+    crate::operation::list_platform_applications::ListPlatformApplicationsOutput,
+    crate::operation::list_platform_applications::ListPlatformApplicationsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_platform_applications_output::Builder::default();
+        let mut output = crate::operation::list_platform_applications::builders::ListPlatformApplicationsOutputBuilder::default();
         let _ = response;
-        output =
-            crate::protocol_serde::shape_list_platform_applications::de_list_platform_applications(
-                response.body().as_ref(),
-                output,
-            )
-            .map_err(crate::error::ListPlatformApplicationsError::unhandled)?;
+        output = crate::protocol_serde::shape_list_platform_applications::de_list_platform_applications(response.body().as_ref(), output).map_err(crate::operation::list_platform_applications::ListPlatformApplicationsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -103,9 +100,9 @@ pub fn de_list_platform_applications_http_response(
 #[allow(unused_mut)]
 pub fn de_list_platform_applications(
     inp: &[u8],
-    mut builder: crate::output::list_platform_applications_output::Builder,
+    mut builder: crate::operation::list_platform_applications::builders::ListPlatformApplicationsOutputBuilder,
 ) -> Result<
-    crate::output::list_platform_applications_output::Builder,
+    crate::operation::list_platform_applications::builders::ListPlatformApplicationsOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

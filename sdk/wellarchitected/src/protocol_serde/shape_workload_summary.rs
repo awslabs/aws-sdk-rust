@@ -2,7 +2,7 @@
 pub(crate) fn de_workload_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::WorkloadSummary>,
+    Option<crate::types::WorkloadSummary>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::workload_summary::Builder::default();
+            let mut builder = crate::types::builders::WorkloadSummaryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -86,7 +86,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::WorkloadImprovementStatus::from(
+                                            crate::types::WorkloadImprovementStatus::from(
                                                 u.as_ref(),
                                             )
                                         })

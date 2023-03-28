@@ -2,7 +2,7 @@
 pub(crate) fn de_ldap_server_metadata_output<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::LdapServerMetadataOutput>,
+    Option<crate::types::LdapServerMetadataOutput>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::ldap_server_metadata_output::Builder::default();
+            let mut builder = crate::types::builders::LdapServerMetadataOutputBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

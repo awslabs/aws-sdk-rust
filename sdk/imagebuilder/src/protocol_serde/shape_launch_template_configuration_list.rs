@@ -2,7 +2,7 @@
 pub(crate) fn de_launch_template_configuration_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::LaunchTemplateConfiguration>>,
+    Option<std::vec::Vec<crate::types::LaunchTemplateConfiguration>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

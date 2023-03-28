@@ -3,63 +3,55 @@
 pub fn de_list_distributions_by_web_acl_id_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListDistributionsByWebAclIdOutput,
-    crate::error::ListDistributionsByWebACLIdError,
+    crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebAclIdOutput,
+    crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebACLIdError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListDistributionsByWebACLIdError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebACLIdError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::ListDistributionsByWebACLIdError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebACLIdError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidArgument" => crate::error::ListDistributionsByWebACLIdError::InvalidArgument({
+        "InvalidArgument" => crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebACLIdError::InvalidArgument({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::invalid_argument::Builder::default();
-                let _ = response;
-                output =
-                    crate::protocol_serde::shape_invalid_argument::de_invalid_argument_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListDistributionsByWebACLIdError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InvalidWebACLId" => {
-            crate::error::ListDistributionsByWebACLIdError::InvalidWebAclId({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_web_acl_id::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidArgumentBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_web_acl_id::de_invalid_web_acl_id_xml_err(response.body().as_ref(), output).map_err(crate::error::ListDistributionsByWebACLIdError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_argument::de_invalid_argument_xml_err(response.body().as_ref(), output).map_err(crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebACLIdError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::ListDistributionsByWebACLIdError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidWebACLId" => crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebACLIdError::InvalidWebAclId({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidWebAclIdBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_web_acl_id::de_invalid_web_acl_id_xml_err(response.body().as_ref(), output).map_err(crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebACLIdError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebACLIdError::generic(generic)
     })
 }
 
@@ -67,12 +59,12 @@ pub fn de_list_distributions_by_web_acl_id_http_error(
 pub fn de_list_distributions_by_web_acl_id_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListDistributionsByWebAclIdOutput,
-    crate::error::ListDistributionsByWebACLIdError,
+    crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebAclIdOutput,
+    crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebACLIdError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_distributions_by_web_acl_id_output::Builder::default();
+        let mut output = crate::operation::list_distributions_by_web_acl_id::builders::ListDistributionsByWebAclIdOutputBuilder::default();
         let _ = response;
         output = output.set_distribution_list(
             crate::protocol_serde::shape_list_distributions_by_web_acl_id_output::de_distribution_list_payload(response.body().as_ref())?

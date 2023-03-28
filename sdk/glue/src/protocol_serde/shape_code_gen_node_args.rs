@@ -2,7 +2,7 @@
 pub(crate) fn de_code_gen_node_args<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CodeGenNodeArg>>,
+    Option<std::vec::Vec<crate::types::CodeGenNodeArg>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

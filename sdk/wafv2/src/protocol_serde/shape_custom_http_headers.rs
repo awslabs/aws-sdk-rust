@@ -2,7 +2,7 @@
 pub(crate) fn de_custom_http_headers<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CustomHttpHeader>>,
+    Option<std::vec::Vec<crate::types::CustomHttpHeader>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

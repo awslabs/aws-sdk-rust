@@ -2,7 +2,7 @@
 pub(crate) fn de_savings_plans_purchase_recommendation<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::SavingsPlansPurchaseRecommendation>,
+    Option<crate::types::SavingsPlansPurchaseRecommendation>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::savings_plans_purchase_recommendation::Builder::default();
+                crate::types::builders::SavingsPlansPurchaseRecommendationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -31,7 +31,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::AccountScope::from(u.as_ref()))
+                                            .map(|u| crate::types::AccountScope::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -43,7 +43,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::SupportedSavingsPlansType::from(
+                                            crate::types::SupportedSavingsPlansType::from(
                                                 u.as_ref(),
                                             )
                                         })
@@ -58,7 +58,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::TermInYears::from(u.as_ref()))
+                                            .map(|u| crate::types::TermInYears::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -70,7 +70,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::PaymentOption::from(u.as_ref()))
+                                            .map(|u| crate::types::PaymentOption::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -82,7 +82,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::LookbackPeriodInDays::from(u.as_ref())
+                                            crate::types::LookbackPeriodInDays::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

@@ -2,7 +2,7 @@
 pub(crate) fn de_cloud_watch_logs_log_group<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::CloudWatchLogsLogGroup>,
+    Option<crate::types::CloudWatchLogsLogGroup>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::cloud_watch_logs_log_group::Builder::default();
+            let mut builder = crate::types::builders::CloudWatchLogsLogGroupBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

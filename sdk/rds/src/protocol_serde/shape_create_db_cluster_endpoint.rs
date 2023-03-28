@@ -3,132 +3,129 @@
 pub fn de_create_db_cluster_endpoint_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateDbClusterEndpointOutput,
-    crate::error::CreateDBClusterEndpointError,
+    crate::operation::create_db_cluster_endpoint::CreateDbClusterEndpointOutput,
+    crate::operation::create_db_cluster_endpoint::CreateDBClusterEndpointError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::CreateDBClusterEndpointError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::create_db_cluster_endpoint::CreateDBClusterEndpointError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::error::CreateDBClusterEndpointError::unhandled(
+        None => return Err(
+            crate::operation::create_db_cluster_endpoint::CreateDBClusterEndpointError::unhandled(
                 generic,
-            ))
-        }
+            ),
+        ),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBClusterEndpointAlreadyExistsFault" => {
-            crate::error::CreateDBClusterEndpointError::DbClusterEndpointAlreadyExistsFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "DBClusterEndpointAlreadyExistsFault" => crate::operation::create_db_cluster_endpoint::CreateDBClusterEndpointError::DbClusterEndpointAlreadyExistsFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::db_cluster_endpoint_already_exists_fault::Builder::default();
+                    let mut output = crate::types::error::builders::DbClusterEndpointAlreadyExistsFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_db_cluster_endpoint_already_exists_fault::de_db_cluster_endpoint_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBClusterEndpointError::unhandled)?;
+                    output = crate::protocol_serde::shape_db_cluster_endpoint_already_exists_fault::de_db_cluster_endpoint_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_db_cluster_endpoint::CreateDBClusterEndpointError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "DBClusterEndpointQuotaExceededFault" => {
-            crate::error::CreateDBClusterEndpointError::DbClusterEndpointQuotaExceededFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "DBClusterEndpointQuotaExceededFault" => crate::operation::create_db_cluster_endpoint::CreateDBClusterEndpointError::DbClusterEndpointQuotaExceededFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::db_cluster_endpoint_quota_exceeded_fault::Builder::default();
+                    let mut output = crate::types::error::builders::DbClusterEndpointQuotaExceededFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_db_cluster_endpoint_quota_exceeded_fault::de_db_cluster_endpoint_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBClusterEndpointError::unhandled)?;
+                    output = crate::protocol_serde::shape_db_cluster_endpoint_quota_exceeded_fault::de_db_cluster_endpoint_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_db_cluster_endpoint::CreateDBClusterEndpointError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "DBClusterNotFoundFault" => {
-            crate::error::CreateDBClusterEndpointError::DbClusterNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "DBClusterNotFoundFault" => crate::operation::create_db_cluster_endpoint::CreateDBClusterEndpointError::DbClusterNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::db_cluster_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::DbClusterNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_db_cluster_not_found_fault::de_db_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBClusterEndpointError::unhandled)?;
+                    output = crate::protocol_serde::shape_db_cluster_not_found_fault::de_db_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_db_cluster_endpoint::CreateDBClusterEndpointError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "DBInstanceNotFound" => {
-            crate::error::CreateDBClusterEndpointError::DbInstanceNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "DBInstanceNotFound" => crate::operation::create_db_cluster_endpoint::CreateDBClusterEndpointError::DbInstanceNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::db_instance_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::DbInstanceNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_db_instance_not_found_fault::de_db_instance_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBClusterEndpointError::unhandled)?;
+                    output = crate::protocol_serde::shape_db_instance_not_found_fault::de_db_instance_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_db_cluster_endpoint::CreateDBClusterEndpointError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidDBClusterStateFault" => {
-            crate::error::CreateDBClusterEndpointError::InvalidDbClusterStateFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidDBClusterStateFault" => crate::operation::create_db_cluster_endpoint::CreateDBClusterEndpointError::InvalidDbClusterStateFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_db_cluster_state_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidDbClusterStateFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_db_cluster_state_fault::de_invalid_db_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBClusterEndpointError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_db_cluster_state_fault::de_invalid_db_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_db_cluster_endpoint::CreateDBClusterEndpointError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidDBInstanceState" => {
-            crate::error::CreateDBClusterEndpointError::InvalidDbInstanceStateFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidDBInstanceState" => crate::operation::create_db_cluster_endpoint::CreateDBClusterEndpointError::InvalidDbInstanceStateFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_db_instance_state_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidDbInstanceStateFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_db_instance_state_fault::de_invalid_db_instance_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBClusterEndpointError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_db_instance_state_fault::de_invalid_db_instance_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_db_cluster_endpoint::CreateDBClusterEndpointError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::CreateDBClusterEndpointError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::create_db_cluster_endpoint::CreateDBClusterEndpointError::generic(generic)
     })
 }
 
@@ -136,19 +133,14 @@ pub fn de_create_db_cluster_endpoint_http_error(
 pub fn de_create_db_cluster_endpoint_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateDbClusterEndpointOutput,
-    crate::error::CreateDBClusterEndpointError,
+    crate::operation::create_db_cluster_endpoint::CreateDbClusterEndpointOutput,
+    crate::operation::create_db_cluster_endpoint::CreateDBClusterEndpointError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::create_db_cluster_endpoint_output::Builder::default();
+        let mut output = crate::operation::create_db_cluster_endpoint::builders::CreateDbClusterEndpointOutputBuilder::default();
         let _ = response;
-        output =
-            crate::protocol_serde::shape_create_db_cluster_endpoint::de_create_db_cluster_endpoint(
-                response.body().as_ref(),
-                output,
-            )
-            .map_err(crate::error::CreateDBClusterEndpointError::unhandled)?;
+        output = crate::protocol_serde::shape_create_db_cluster_endpoint::de_create_db_cluster_endpoint(response.body().as_ref(), output).map_err(crate::operation::create_db_cluster_endpoint::CreateDBClusterEndpointError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -159,9 +151,9 @@ pub fn de_create_db_cluster_endpoint_http_response(
 #[allow(unused_mut)]
 pub fn de_create_db_cluster_endpoint(
     inp: &[u8],
-    mut builder: crate::output::create_db_cluster_endpoint_output::Builder,
+    mut builder: crate::operation::create_db_cluster_endpoint::builders::CreateDbClusterEndpointOutputBuilder,
 ) -> Result<
-    crate::output::create_db_cluster_endpoint_output::Builder,
+    crate::operation::create_db_cluster_endpoint::builders::CreateDbClusterEndpointOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

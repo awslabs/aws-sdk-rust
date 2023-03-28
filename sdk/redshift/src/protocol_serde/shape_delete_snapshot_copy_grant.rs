@@ -3,62 +3,61 @@
 pub fn de_delete_snapshot_copy_grant_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteSnapshotCopyGrantOutput,
-    crate::error::DeleteSnapshotCopyGrantError,
+    crate::operation::delete_snapshot_copy_grant::DeleteSnapshotCopyGrantOutput,
+    crate::operation::delete_snapshot_copy_grant::DeleteSnapshotCopyGrantError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteSnapshotCopyGrantError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::delete_snapshot_copy_grant::DeleteSnapshotCopyGrantError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::error::DeleteSnapshotCopyGrantError::unhandled(
+        None => return Err(
+            crate::operation::delete_snapshot_copy_grant::DeleteSnapshotCopyGrantError::unhandled(
                 generic,
-            ))
-        }
+            ),
+        ),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidSnapshotCopyGrantStateFault" => {
-            crate::error::DeleteSnapshotCopyGrantError::InvalidSnapshotCopyGrantStateFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidSnapshotCopyGrantStateFault" => crate::operation::delete_snapshot_copy_grant::DeleteSnapshotCopyGrantError::InvalidSnapshotCopyGrantStateFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_snapshot_copy_grant_state_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidSnapshotCopyGrantStateFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_snapshot_copy_grant_state_fault::de_invalid_snapshot_copy_grant_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteSnapshotCopyGrantError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_snapshot_copy_grant_state_fault::de_invalid_snapshot_copy_grant_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_snapshot_copy_grant::DeleteSnapshotCopyGrantError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "SnapshotCopyGrantNotFoundFault" => {
-            crate::error::DeleteSnapshotCopyGrantError::SnapshotCopyGrantNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "SnapshotCopyGrantNotFoundFault" => crate::operation::delete_snapshot_copy_grant::DeleteSnapshotCopyGrantError::SnapshotCopyGrantNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::snapshot_copy_grant_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::SnapshotCopyGrantNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_snapshot_copy_grant_not_found_fault::de_snapshot_copy_grant_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteSnapshotCopyGrantError::unhandled)?;
+                    output = crate::protocol_serde::shape_snapshot_copy_grant_not_found_fault::de_snapshot_copy_grant_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_snapshot_copy_grant::DeleteSnapshotCopyGrantError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DeleteSnapshotCopyGrantError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::delete_snapshot_copy_grant::DeleteSnapshotCopyGrantError::generic(generic)
     })
 }
 
@@ -66,12 +65,12 @@ pub fn de_delete_snapshot_copy_grant_http_error(
 pub fn de_delete_snapshot_copy_grant_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteSnapshotCopyGrantOutput,
-    crate::error::DeleteSnapshotCopyGrantError,
+    crate::operation::delete_snapshot_copy_grant::DeleteSnapshotCopyGrantOutput,
+    crate::operation::delete_snapshot_copy_grant::DeleteSnapshotCopyGrantError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_snapshot_copy_grant_output::Builder::default();
+        let mut output = crate::operation::delete_snapshot_copy_grant::builders::DeleteSnapshotCopyGrantOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

@@ -2,7 +2,7 @@
 pub(crate) fn de_aws_ec2_instance_network_interfaces_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AwsEc2InstanceNetworkInterfacesDetails>>,
+    Option<std::vec::Vec<crate::types::AwsEc2InstanceNetworkInterfacesDetails>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

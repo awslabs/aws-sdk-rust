@@ -3,105 +3,113 @@
 pub fn de_get_compatible_versions_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetCompatibleVersionsOutput,
-    crate::error::GetCompatibleVersionsError,
+    crate::operation::get_compatible_versions::GetCompatibleVersionsOutput,
+    crate::operation::get_compatible_versions::GetCompatibleVersionsError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetCompatibleVersionsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::get_compatible_versions::GetCompatibleVersionsError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    let error_code = match generic.code() {
-        Some(code) => code,
-        None => return Err(crate::error::GetCompatibleVersionsError::unhandled(generic)),
-    };
+    let error_code =
+        match generic.code() {
+            Some(code) => code,
+            None => return Err(
+                crate::operation::get_compatible_versions::GetCompatibleVersionsError::unhandled(
+                    generic,
+                ),
+            ),
+        };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BaseException" => crate::error::GetCompatibleVersionsError::BaseException({
+        "BaseException" => crate::operation::get_compatible_versions::GetCompatibleVersionsError::BaseException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::base_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_base_exception::de_base_exception_json_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::GetCompatibleVersionsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "DisabledOperationException" => {
-            crate::error::GetCompatibleVersionsError::DisabledOperationException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::disabled_operation_exception::Builder::default();
+                    let mut output = crate::types::error::builders::BaseExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_disabled_operation_exception::de_disabled_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCompatibleVersionsError::unhandled)?;
+                    output = crate::protocol_serde::shape_base_exception::de_base_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_compatible_versions::GetCompatibleVersionsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InternalException" => crate::error::GetCompatibleVersionsError::InternalException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_exception::de_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCompatibleVersionsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "ResourceNotFoundException" => {
-            crate::error::GetCompatibleVersionsError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "DisabledOperationException" => crate::operation::get_compatible_versions::GetCompatibleVersionsError::DisabledOperationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::DisabledOperationExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCompatibleVersionsError::unhandled)?;
+                    output = crate::protocol_serde::shape_disabled_operation_exception::de_disabled_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_compatible_versions::GetCompatibleVersionsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ValidationException" => crate::error::GetCompatibleVersionsError::ValidationException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCompatibleVersionsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::GetCompatibleVersionsError::generic(generic),
+        "InternalException" => crate::operation::get_compatible_versions::GetCompatibleVersionsError::InternalException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InternalExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_exception::de_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_compatible_versions::GetCompatibleVersionsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::get_compatible_versions::GetCompatibleVersionsError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_compatible_versions::GetCompatibleVersionsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ValidationException" => crate::operation::get_compatible_versions::GetCompatibleVersionsError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_compatible_versions::GetCompatibleVersionsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::get_compatible_versions::GetCompatibleVersionsError::generic(generic)
     })
 }
 
@@ -109,18 +117,20 @@ pub fn de_get_compatible_versions_http_error(
 pub fn de_get_compatible_versions_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetCompatibleVersionsOutput,
-    crate::error::GetCompatibleVersionsError,
+    crate::operation::get_compatible_versions::GetCompatibleVersionsOutput,
+    crate::operation::get_compatible_versions::GetCompatibleVersionsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_compatible_versions_output::Builder::default();
+        let mut output = crate::operation::get_compatible_versions::builders::GetCompatibleVersionsOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_get_compatible_versions::de_get_compatible_versions(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::GetCompatibleVersionsError::unhandled)?;
+        .map_err(
+            crate::operation::get_compatible_versions::GetCompatibleVersionsError::unhandled,
+        )?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -130,9 +140,9 @@ pub fn de_get_compatible_versions_http_response(
 
 pub(crate) fn de_get_compatible_versions(
     value: &[u8],
-    mut builder: crate::output::get_compatible_versions_output::Builder,
+    mut builder: crate::operation::get_compatible_versions::builders::GetCompatibleVersionsOutputBuilder,
 ) -> Result<
-    crate::output::get_compatible_versions_output::Builder,
+    crate::operation::get_compatible_versions::builders::GetCompatibleVersionsOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

@@ -2,7 +2,7 @@
 pub(crate) fn de_locale_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Locale>>,
+    Option<std::vec::Vec<crate::types::Locale>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -29,7 +29,7 @@ where
                         )?
                         .map(|s| {
                             s.to_unescaped()
-                                .map(|u| crate::model::Locale::from(u.as_ref()))
+                                .map(|u| crate::types::Locale::from(u.as_ref()))
                         })
                         .transpose()?;
                         if let Some(value) = value {

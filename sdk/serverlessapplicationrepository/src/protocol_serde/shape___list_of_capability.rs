@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_capability<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Capability>>,
+    Option<std::vec::Vec<crate::types::Capability>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -29,7 +29,7 @@ where
                         )?
                         .map(|s| {
                             s.to_unescaped()
-                                .map(|u| crate::model::Capability::from(u.as_ref()))
+                                .map(|u| crate::types::Capability::from(u.as_ref()))
                         })
                         .transpose()?;
                         if let Some(value) = value {

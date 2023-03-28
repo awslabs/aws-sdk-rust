@@ -2,7 +2,7 @@
 pub(crate) fn de_aws_ec2_instance_violation<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::AwsEc2InstanceViolation>,
+    Option<crate::types::AwsEc2InstanceViolation>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::aws_ec2_instance_violation::Builder::default();
+            let mut builder = crate::types::builders::AwsEc2InstanceViolationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

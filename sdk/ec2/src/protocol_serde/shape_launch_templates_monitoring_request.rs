@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_launch_templates_monitoring_request(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::LaunchTemplatesMonitoringRequest,
+    input: &crate::types::LaunchTemplatesMonitoringRequest,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Enabled");

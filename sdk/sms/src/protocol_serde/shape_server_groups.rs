@@ -2,7 +2,7 @@
 pub(crate) fn de_server_groups<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ServerGroup>>,
+    Option<std::vec::Vec<crate::types::ServerGroup>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

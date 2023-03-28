@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_kms_invalid_state_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::kms_invalid_state_exception::Builder,
+    mut builder: crate::types::error::builders::KmsInvalidStateExceptionBuilder,
 ) -> Result<
-    crate::error::kms_invalid_state_exception::Builder,
+    crate::types::error::builders::KmsInvalidStateExceptionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

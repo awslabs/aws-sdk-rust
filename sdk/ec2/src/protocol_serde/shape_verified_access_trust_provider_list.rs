@@ -2,7 +2,7 @@
 pub fn de_verified_access_trust_provider_list(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::VerifiedAccessTrustProvider>,
+    std::vec::Vec<crate::types::VerifiedAccessTrustProvider>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

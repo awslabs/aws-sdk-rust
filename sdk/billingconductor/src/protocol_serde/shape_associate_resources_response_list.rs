@@ -2,7 +2,7 @@
 pub(crate) fn de_associate_resources_response_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AssociateResourceResponseElement>>,
+    Option<std::vec::Vec<crate::types::AssociateResourceResponseElement>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

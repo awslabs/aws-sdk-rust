@@ -2,7 +2,7 @@
 pub(crate) fn de_reference_store_detail_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ReferenceStoreDetail>>,
+    Option<std::vec::Vec<crate::types::ReferenceStoreDetail>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

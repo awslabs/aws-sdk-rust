@@ -2,7 +2,7 @@
 pub(crate) fn de_snomedct_concept_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SnomedctConcept>>,
+    Option<std::vec::Vec<crate::types::SnomedctConcept>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

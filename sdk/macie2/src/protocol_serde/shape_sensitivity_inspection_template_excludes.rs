@@ -2,7 +2,7 @@
 pub(crate) fn de_sensitivity_inspection_template_excludes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::SensitivityInspectionTemplateExcludes>,
+    Option<crate::types::SensitivityInspectionTemplateExcludes>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::sensitivity_inspection_template_excludes::Builder::default();
+                crate::types::builders::SensitivityInspectionTemplateExcludesBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -54,7 +54,7 @@ where
 
 pub fn ser_sensitivity_inspection_template_excludes(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::SensitivityInspectionTemplateExcludes,
+    input: &crate::types::SensitivityInspectionTemplateExcludes,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.managed_data_identifier_ids {
         let mut array_2 = object.key("managedDataIdentifierIds").start_array();

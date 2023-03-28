@@ -2,7 +2,7 @@
 pub(crate) fn de_collaboration_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CollaborationSummary>>,
+    Option<std::vec::Vec<crate::types::CollaborationSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

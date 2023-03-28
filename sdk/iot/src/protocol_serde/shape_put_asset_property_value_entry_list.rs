@@ -2,7 +2,7 @@
 pub(crate) fn de_put_asset_property_value_entry_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::PutAssetPropertyValueEntry>>,
+    Option<std::vec::Vec<crate::types::PutAssetPropertyValueEntry>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_parent_hyper_parameter_tuning_jobs<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ParentHyperParameterTuningJob>>,
+    Option<std::vec::Vec<crate::types::ParentHyperParameterTuningJob>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

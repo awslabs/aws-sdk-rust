@@ -2,18 +2,18 @@
 pub fn de_transit_gateway_multicast_domain_options(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    crate::model::TransitGatewayMulticastDomainOptions,
+    crate::types::TransitGatewayMulticastDomainOptions,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     #[allow(unused_mut)]
-    let mut builder = crate::model::TransitGatewayMulticastDomainOptions::builder();
+    let mut builder = crate::types::TransitGatewayMulticastDomainOptions::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("igmpv2Support") /* Igmpv2Support com.amazonaws.ec2#TransitGatewayMulticastDomainOptions$Igmpv2Support */ =>  {
                 let var_1 =
                     Some(
-                        Result::<crate::model::Igmpv2SupportValue, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::Igmpv2SupportValue::from(
+                        Result::<crate::types::Igmpv2SupportValue, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::Igmpv2SupportValue::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
@@ -26,8 +26,8 @@ pub fn de_transit_gateway_multicast_domain_options(
             s if s.matches("staticSourcesSupport") /* StaticSourcesSupport com.amazonaws.ec2#TransitGatewayMulticastDomainOptions$StaticSourcesSupport */ =>  {
                 let var_2 =
                     Some(
-                        Result::<crate::model::StaticSourcesSupportValue, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::StaticSourcesSupportValue::from(
+                        Result::<crate::types::StaticSourcesSupportValue, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::StaticSourcesSupportValue::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
@@ -40,8 +40,8 @@ pub fn de_transit_gateway_multicast_domain_options(
             s if s.matches("autoAcceptSharedAssociations") /* AutoAcceptSharedAssociations com.amazonaws.ec2#TransitGatewayMulticastDomainOptions$AutoAcceptSharedAssociations */ =>  {
                 let var_3 =
                     Some(
-                        Result::<crate::model::AutoAcceptSharedAssociationsValue, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::AutoAcceptSharedAssociationsValue::from(
+                        Result::<crate::types::AutoAcceptSharedAssociationsValue, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::AutoAcceptSharedAssociationsValue::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

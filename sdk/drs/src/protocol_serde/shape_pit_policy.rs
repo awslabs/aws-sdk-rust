@@ -2,7 +2,7 @@
 pub(crate) fn de_pit_policy<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::PitPolicyRule>>,
+    Option<std::vec::Vec<crate::types::PitPolicyRule>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

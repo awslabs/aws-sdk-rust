@@ -2,7 +2,7 @@
 pub(crate) fn de_ethernet_payload<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::EthernetPayload>,
+    Option<crate::types::EthernetPayload>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::ethernet_payload::Builder::default();
+            let mut builder = crate::types::builders::EthernetPayloadBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::ConnectionType::from(u.as_ref()))
+                                            .map(|u| crate::types::ConnectionType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -65,7 +65,7 @@ where
 
 pub fn ser_ethernet_payload(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::EthernetPayload,
+    input: &crate::types::EthernetPayload,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.connection_type {
         object.key("ConnectionType").string(var_1.as_str());

@@ -2,7 +2,7 @@
 pub(crate) fn de_recommended_intent_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::RecommendedIntentSummary>>,
+    Option<std::vec::Vec<crate::types::RecommendedIntentSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

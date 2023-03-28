@@ -2,43 +2,53 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_table_columns_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListTableColumnsOutput, crate::error::ListTableColumnsError>
-{
+) -> std::result::Result<
+    crate::operation::list_table_columns::ListTableColumnsOutput,
+    crate::operation::list_table_columns::ListTableColumnsError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListTableColumnsError::unhandled)?;
+        .map_err(crate::operation::list_table_columns::ListTableColumnsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListTableColumnsError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::list_table_columns::ListTableColumnsError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::ListTableColumnsError::AccessDeniedException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::access_denied_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTableColumnsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InternalServerException" => {
-            crate::error::ListTableColumnsError::InternalServerException({
+        "AccessDeniedException" => {
+            crate::operation::list_table_columns::ListTableColumnsError::AccessDeniedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::AccessDeniedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTableColumnsError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_table_columns::ListTableColumnsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InternalServerException" => {
+            crate::operation::list_table_columns::ListTableColumnsError::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InternalServerExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_table_columns::ListTableColumnsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -49,13 +59,14 @@ pub fn de_list_table_columns_http_error(
             })
         }
         "RequestTimeoutException" => {
-            crate::error::ListTableColumnsError::RequestTimeoutException({
+            crate::operation::list_table_columns::ListTableColumnsError::RequestTimeoutException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::request_timeout_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::RequestTimeoutExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_request_timeout_exception::de_request_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTableColumnsError::unhandled)?;
+                    output = crate::protocol_serde::shape_request_timeout_exception::de_request_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_table_columns::ListTableColumnsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -66,31 +77,52 @@ pub fn de_list_table_columns_http_error(
             })
         }
         "ResourceNotFoundException" => {
-            crate::error::ListTableColumnsError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            crate::operation::list_table_columns::ListTableColumnsError::ResourceNotFoundException(
+                {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTableColumnsError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                        let _ = response;
+                        output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_table_columns::ListTableColumnsError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
         }
         "ServiceUnavailableException" => {
-            crate::error::ListTableColumnsError::ServiceUnavailableException({
+            crate::operation::list_table_columns::ListTableColumnsError::ServiceUnavailableException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
+                        let _ = response;
+                        output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_table_columns::ListTableColumnsError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        "ThrottlingException" => {
+            crate::operation::list_table_columns::ListTableColumnsError::ThrottlingException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::service_unavailable_exception::Builder::default();
+                        crate::types::error::builders::ThrottlingExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTableColumnsError::unhandled)?;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_table_columns::ListTableColumnsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -100,54 +132,46 @@ pub fn de_list_table_columns_http_error(
                 tmp
             })
         }
-        "ThrottlingException" => crate::error::ListTableColumnsError::ThrottlingException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "ValidationException" => {
+            crate::operation::list_table_columns::ListTableColumnsError::ValidationException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::throttling_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTableColumnsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ValidationException" => crate::error::ListTableColumnsError::ValidationException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTableColumnsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::ListTableColumnsError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_table_columns::ListTableColumnsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::list_table_columns::ListTableColumnsError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_table_columns_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListTableColumnsOutput, crate::error::ListTableColumnsError>
-{
+) -> std::result::Result<
+    crate::operation::list_table_columns::ListTableColumnsOutput,
+    crate::operation::list_table_columns::ListTableColumnsError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_table_columns_output::Builder::default();
+        let mut output =
+            crate::operation::list_table_columns::builders::ListTableColumnsOutputBuilder::default(
+            );
         let _ = response;
         output = crate::protocol_serde::shape_list_table_columns::de_list_table_columns(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListTableColumnsError::unhandled)?;
+        .map_err(crate::operation::list_table_columns::ListTableColumnsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -157,9 +181,9 @@ pub fn de_list_table_columns_http_response(
 
 pub(crate) fn de_list_table_columns(
     value: &[u8],
-    mut builder: crate::output::list_table_columns_output::Builder,
+    mut builder: crate::operation::list_table_columns::builders::ListTableColumnsOutputBuilder,
 ) -> Result<
-    crate::output::list_table_columns_output::Builder,
+    crate::operation::list_table_columns::builders::ListTableColumnsOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

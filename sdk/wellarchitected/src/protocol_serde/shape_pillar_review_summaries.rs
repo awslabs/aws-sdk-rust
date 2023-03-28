@@ -2,7 +2,7 @@
 pub(crate) fn de_pillar_review_summaries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::PillarReviewSummary>>,
+    Option<std::vec::Vec<crate::types::PillarReviewSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

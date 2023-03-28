@@ -12,17 +12,17 @@ pub(crate) fn de_e_tag_header(
 pub fn de_origin_access_control_config_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::OriginAccessControlConfig>,
-    crate::error::GetOriginAccessControlConfigError,
+    std::option::Option<crate::types::OriginAccessControlConfig>,
+    crate::operation::get_origin_access_control_config::GetOriginAccessControlConfigError,
 > {
     (!body.is_empty()).then(||{
-        crate::protocol_serde::shape_get_origin_access_control_config_output::de_origin_access_control_config(body).map_err(crate::error::GetOriginAccessControlConfigError::unhandled)
+        crate::protocol_serde::shape_get_origin_access_control_config_output::de_origin_access_control_config(body).map_err(crate::operation::get_origin_access_control_config::GetOriginAccessControlConfigError::unhandled)
     }).transpose()
 }
 
 pub fn de_origin_access_control_config(
     inp: &[u8],
-) -> Result<crate::model::OriginAccessControlConfig, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::OriginAccessControlConfig, aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;

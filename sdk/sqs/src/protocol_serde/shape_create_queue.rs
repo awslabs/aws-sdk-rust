@@ -2,27 +2,35 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_queue_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::CreateQueueOutput, crate::error::CreateQueueError> {
+) -> std::result::Result<
+    crate::operation::create_queue::CreateQueueOutput,
+    crate::operation::create_queue::CreateQueueError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::CreateQueueError::unhandled)?;
+        .map_err(crate::operation::create_queue::CreateQueueError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::CreateQueueError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::create_queue::CreateQueueError::unhandled(
+                generic,
+            ))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AWS.SimpleQueueService.QueueDeletedRecently" => {
-            crate::error::CreateQueueError::QueueDeletedRecently({
+            crate::operation::create_queue::CreateQueueError::QueueDeletedRecently({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::queue_deleted_recently::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::QueueDeletedRecentlyBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_queue_deleted_recently::de_queue_deleted_recently_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateQueueError::unhandled)?;
+                    output = crate::protocol_serde::shape_queue_deleted_recently::de_queue_deleted_recently_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_queue::CreateQueueError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -33,13 +41,14 @@ pub fn de_create_queue_http_error(
             })
         }
         "QueueAlreadyExists" => {
-            crate::error::CreateQueueError::QueueNameExists({
+            crate::operation::create_queue::CreateQueueError::QueueNameExists({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::queue_name_exists::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::QueueNameExistsBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_queue_name_exists::de_queue_name_exists_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateQueueError::unhandled)?;
+                    output = crate::protocol_serde::shape_queue_name_exists::de_queue_name_exists_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_queue::CreateQueueError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -49,23 +58,27 @@ pub fn de_create_queue_http_error(
                 tmp
             })
         }
-        _ => crate::error::CreateQueueError::generic(generic),
+        _ => crate::operation::create_queue::CreateQueueError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_queue_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::CreateQueueOutput, crate::error::CreateQueueError> {
+) -> std::result::Result<
+    crate::operation::create_queue::CreateQueueOutput,
+    crate::operation::create_queue::CreateQueueError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::create_queue_output::Builder::default();
+        let mut output =
+            crate::operation::create_queue::builders::CreateQueueOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_create_queue::de_create_queue(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::CreateQueueError::unhandled)?;
+        .map_err(crate::operation::create_queue::CreateQueueError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -76,8 +89,11 @@ pub fn de_create_queue_http_response(
 #[allow(unused_mut)]
 pub fn de_create_queue(
     inp: &[u8],
-    mut builder: crate::output::create_queue_output::Builder,
-) -> Result<crate::output::create_queue_output::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    mut builder: crate::operation::create_queue::builders::CreateQueueOutputBuilder,
+) -> Result<
+    crate::operation::create_queue::builders::CreateQueueOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

@@ -2,7 +2,7 @@
 pub(crate) fn de_partitioned_table_objects_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::PartitionObjects>>,
+    Option<std::vec::Vec<crate::types::PartitionObjects>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

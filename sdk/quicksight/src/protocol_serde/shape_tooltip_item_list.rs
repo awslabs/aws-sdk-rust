@@ -2,7 +2,7 @@
 pub(crate) fn de_tooltip_item_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::TooltipItem>>,
+    Option<std::vec::Vec<crate::types::TooltipItem>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

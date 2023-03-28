@@ -2,7 +2,7 @@
 pub(crate) fn de_parameter_policy_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ParameterInlinePolicy>>,
+    Option<std::vec::Vec<crate::types::ParameterInlinePolicy>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

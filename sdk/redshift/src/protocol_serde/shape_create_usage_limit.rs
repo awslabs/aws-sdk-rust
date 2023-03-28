@@ -2,146 +2,167 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_usage_limit_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::CreateUsageLimitOutput, crate::error::CreateUsageLimitError>
-{
+) -> std::result::Result<
+    crate::operation::create_usage_limit::CreateUsageLimitOutput,
+    crate::operation::create_usage_limit::CreateUsageLimitError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::CreateUsageLimitError::unhandled)?;
+        .map_err(crate::operation::create_usage_limit::CreateUsageLimitError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::CreateUsageLimitError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::create_usage_limit::CreateUsageLimitError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ClusterNotFound" => crate::error::CreateUsageLimitError::ClusterNotFoundFault({
+        "ClusterNotFound" => crate::operation::create_usage_limit::CreateUsageLimitError::ClusterNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::cluster_not_found_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_cluster_not_found_fault::de_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUsageLimitError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InvalidClusterState" => crate::error::CreateUsageLimitError::InvalidClusterStateFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::invalid_cluster_state_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_cluster_state_fault::de_invalid_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUsageLimitError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InvalidUsageLimit" => crate::error::CreateUsageLimitError::InvalidUsageLimitFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::invalid_usage_limit_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_usage_limit_fault::de_invalid_usage_limit_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUsageLimitError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "LimitExceededFault" => crate::error::CreateUsageLimitError::LimitExceededFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::limit_exceeded_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_limit_exceeded_fault::de_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUsageLimitError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "TagLimitExceededFault" => crate::error::CreateUsageLimitError::TagLimitExceededFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::tag_limit_exceeded_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_tag_limit_exceeded_fault::de_tag_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUsageLimitError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "UnsupportedOperation" => crate::error::CreateUsageLimitError::UnsupportedOperationFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::unsupported_operation_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_unsupported_operation_fault::de_unsupported_operation_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUsageLimitError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "UsageLimitAlreadyExists" => {
-            crate::error::CreateUsageLimitError::UsageLimitAlreadyExistsFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::usage_limit_already_exists_fault::Builder::default();
+                    let mut output = crate::types::error::builders::ClusterNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_usage_limit_already_exists_fault::de_usage_limit_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUsageLimitError::unhandled)?;
+                    output = crate::protocol_serde::shape_cluster_not_found_fault::de_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_usage_limit::CreateUsageLimitError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::CreateUsageLimitError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidClusterState" => crate::operation::create_usage_limit::CreateUsageLimitError::InvalidClusterStateFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidClusterStateFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_cluster_state_fault::de_invalid_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_usage_limit::CreateUsageLimitError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidUsageLimit" => crate::operation::create_usage_limit::CreateUsageLimitError::InvalidUsageLimitFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidUsageLimitFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_usage_limit_fault::de_invalid_usage_limit_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_usage_limit::CreateUsageLimitError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "LimitExceededFault" => crate::operation::create_usage_limit::CreateUsageLimitError::LimitExceededFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::LimitExceededFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_limit_exceeded_fault::de_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_usage_limit::CreateUsageLimitError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TagLimitExceededFault" => crate::operation::create_usage_limit::CreateUsageLimitError::TagLimitExceededFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::TagLimitExceededFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_tag_limit_exceeded_fault::de_tag_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_usage_limit::CreateUsageLimitError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "UnsupportedOperation" => crate::operation::create_usage_limit::CreateUsageLimitError::UnsupportedOperationFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::UnsupportedOperationFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_unsupported_operation_fault::de_unsupported_operation_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_usage_limit::CreateUsageLimitError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "UsageLimitAlreadyExists" => crate::operation::create_usage_limit::CreateUsageLimitError::UsageLimitAlreadyExistsFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::UsageLimitAlreadyExistsFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_usage_limit_already_exists_fault::de_usage_limit_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_usage_limit::CreateUsageLimitError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::create_usage_limit::CreateUsageLimitError::generic(generic)
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_usage_limit_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::CreateUsageLimitOutput, crate::error::CreateUsageLimitError>
-{
+) -> std::result::Result<
+    crate::operation::create_usage_limit::CreateUsageLimitOutput,
+    crate::operation::create_usage_limit::CreateUsageLimitError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::create_usage_limit_output::Builder::default();
+        let mut output =
+            crate::operation::create_usage_limit::builders::CreateUsageLimitOutputBuilder::default(
+            );
         let _ = response;
         output = crate::protocol_serde::shape_create_usage_limit::de_create_usage_limit(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::CreateUsageLimitError::unhandled)?;
+        .map_err(crate::operation::create_usage_limit::CreateUsageLimitError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -152,9 +173,11 @@ pub fn de_create_usage_limit_http_response(
 #[allow(unused_mut)]
 pub fn de_create_usage_limit(
     inp: &[u8],
-    mut builder: crate::output::create_usage_limit_output::Builder,
-) -> Result<crate::output::create_usage_limit_output::Builder, aws_smithy_xml::decode::XmlDecodeError>
-{
+    mut builder: crate::operation::create_usage_limit::builders::CreateUsageLimitOutputBuilder,
+) -> Result<
+    crate::operation::create_usage_limit::builders::CreateUsageLimitOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -206,8 +229,8 @@ pub fn de_create_usage_limit(
             s if s.matches("FeatureType") /* FeatureType com.amazonaws.redshift.synthetic#CreateUsageLimitOutput$FeatureType */ =>  {
                 let var_3 =
                     Some(
-                        Result::<crate::model::UsageLimitFeatureType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::UsageLimitFeatureType::from(
+                        Result::<crate::types::UsageLimitFeatureType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::UsageLimitFeatureType::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
@@ -220,8 +243,8 @@ pub fn de_create_usage_limit(
             s if s.matches("LimitType") /* LimitType com.amazonaws.redshift.synthetic#CreateUsageLimitOutput$LimitType */ =>  {
                 let var_4 =
                     Some(
-                        Result::<crate::model::UsageLimitLimitType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::UsageLimitLimitType::from(
+                        Result::<crate::types::UsageLimitLimitType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::UsageLimitLimitType::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
@@ -249,8 +272,8 @@ pub fn de_create_usage_limit(
             s if s.matches("Period") /* Period com.amazonaws.redshift.synthetic#CreateUsageLimitOutput$Period */ =>  {
                 let var_6 =
                     Some(
-                        Result::<crate::model::UsageLimitPeriod, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::UsageLimitPeriod::from(
+                        Result::<crate::types::UsageLimitPeriod, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::UsageLimitPeriod::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
@@ -263,8 +286,8 @@ pub fn de_create_usage_limit(
             s if s.matches("BreachAction") /* BreachAction com.amazonaws.redshift.synthetic#CreateUsageLimitOutput$BreachAction */ =>  {
                 let var_7 =
                     Some(
-                        Result::<crate::model::UsageLimitBreachAction, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::UsageLimitBreachAction::from(
+                        Result::<crate::types::UsageLimitBreachAction, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::UsageLimitBreachAction::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

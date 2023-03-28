@@ -2,7 +2,7 @@
 pub(crate) fn de_pull_request_merged_state_changed_event_metadata<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::PullRequestMergedStateChangedEventMetadata>,
+    Option<crate::types::PullRequestMergedStateChangedEventMetadata>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,8 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::pull_request_merged_state_changed_event_metadata::Builder::default();
+                crate::types::builders::PullRequestMergedStateChangedEventMetadataBuilder::default(
+                );
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_ike_versions_request_list_value(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::IkeVersionsRequestListValue,
+    input: &crate::types::IkeVersionsRequestListValue,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Value");

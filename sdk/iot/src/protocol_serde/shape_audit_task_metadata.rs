@@ -2,7 +2,7 @@
 pub(crate) fn de_audit_task_metadata<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::AuditTaskMetadata>,
+    Option<crate::types::AuditTaskMetadata>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::audit_task_metadata::Builder::default();
+            let mut builder = crate::types::builders::AuditTaskMetadataBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -39,7 +39,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::AuditTaskStatus::from(u.as_ref())
+                                            crate::types::AuditTaskStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -52,7 +52,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::AuditTaskType::from(u.as_ref()))
+                                            .map(|u| crate::types::AuditTaskType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

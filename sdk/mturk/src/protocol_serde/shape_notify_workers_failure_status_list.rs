@@ -2,7 +2,7 @@
 pub(crate) fn de_notify_workers_failure_status_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::NotifyWorkersFailureStatus>>,
+    Option<std::vec::Vec<crate::types::NotifyWorkersFailureStatus>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

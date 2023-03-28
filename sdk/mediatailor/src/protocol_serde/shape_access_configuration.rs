@@ -2,7 +2,7 @@
 pub(crate) fn de_access_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::AccessConfiguration>,
+    Option<crate::types::AccessConfiguration>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::access_configuration::Builder::default();
+            let mut builder = crate::types::builders::AccessConfigurationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::AccessType::from(u.as_ref()))
+                                            .map(|u| crate::types::AccessType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -65,7 +65,7 @@ where
 
 pub fn ser_access_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::AccessConfiguration,
+    input: &crate::types::AccessConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.access_type {
         object.key("AccessType").string(var_1.as_str());

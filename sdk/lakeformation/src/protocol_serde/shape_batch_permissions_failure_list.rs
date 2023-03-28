@@ -2,7 +2,7 @@
 pub(crate) fn de_batch_permissions_failure_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::BatchPermissionsFailureEntry>>,
+    Option<std::vec::Vec<crate::types::BatchPermissionsFailureEntry>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

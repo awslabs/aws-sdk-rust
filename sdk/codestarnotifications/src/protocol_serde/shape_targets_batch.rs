@@ -2,7 +2,7 @@
 pub(crate) fn de_targets_batch<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::TargetSummary>>,
+    Option<std::vec::Vec<crate::types::TargetSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

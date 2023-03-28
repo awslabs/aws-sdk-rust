@@ -2,7 +2,7 @@
 pub fn de_stack_set_operation_summaries(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::StackSetOperationSummary>,
+    std::vec::Vec<crate::types::StackSetOperationSummary>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

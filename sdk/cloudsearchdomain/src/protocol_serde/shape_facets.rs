@@ -2,7 +2,7 @@
 pub(crate) fn de_facets<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<std::string::String, crate::model::BucketInfo>>,
+    Option<std::collections::HashMap<std::string::String, crate::types::BucketInfo>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

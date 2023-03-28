@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_teletext_page_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::TeletextPageType>>,
+    Option<std::vec::Vec<crate::types::TeletextPageType>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -29,7 +29,7 @@ where
                         )?
                         .map(|s| {
                             s.to_unescaped()
-                                .map(|u| crate::model::TeletextPageType::from(u.as_ref()))
+                                .map(|u| crate::types::TeletextPageType::from(u.as_ref()))
                         })
                         .transpose()?;
                         if let Some(value) = value {

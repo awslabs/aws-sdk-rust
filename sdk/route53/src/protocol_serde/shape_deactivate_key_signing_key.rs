@@ -3,145 +3,146 @@
 pub fn de_deactivate_key_signing_key_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeactivateKeySigningKeyOutput,
-    crate::error::DeactivateKeySigningKeyError,
+    crate::operation::deactivate_key_signing_key::DeactivateKeySigningKeyOutput,
+    crate::operation::deactivate_key_signing_key::DeactivateKeySigningKeyError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeactivateKeySigningKeyError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::deactivate_key_signing_key::DeactivateKeySigningKeyError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::error::DeactivateKeySigningKeyError::unhandled(
+        None => return Err(
+            crate::operation::deactivate_key_signing_key::DeactivateKeySigningKeyError::unhandled(
                 generic,
-            ))
-        }
+            ),
+        ),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConcurrentModification" => {
-            crate::error::DeactivateKeySigningKeyError::ConcurrentModification({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "ConcurrentModification" => crate::operation::deactivate_key_signing_key::DeactivateKeySigningKeyError::ConcurrentModification({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::concurrent_modification::Builder::default();
+                    let mut output = crate::types::error::builders::ConcurrentModificationBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_concurrent_modification::de_concurrent_modification_xml_err(response.body().as_ref(), output).map_err(crate::error::DeactivateKeySigningKeyError::unhandled)?;
+                    output = crate::protocol_serde::shape_concurrent_modification::de_concurrent_modification_xml_err(response.body().as_ref(), output).map_err(crate::operation::deactivate_key_signing_key::DeactivateKeySigningKeyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidInput" => crate::error::DeactivateKeySigningKeyError::InvalidInput({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::invalid_input::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_input::de_invalid_input_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::DeactivateKeySigningKeyError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "InvalidKeySigningKeyStatus" => {
-            crate::error::DeactivateKeySigningKeyError::InvalidKeySigningKeyStatus({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_key_signing_key_status::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_key_signing_key_status::de_invalid_key_signing_key_status_xml_err(response.body().as_ref(), output).map_err(crate::error::DeactivateKeySigningKeyError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InvalidSigningStatus" => {
-            crate::error::DeactivateKeySigningKeyError::InvalidSigningStatus({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_signing_status::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_signing_status::de_invalid_signing_status_xml_err(response.body().as_ref(), output).map_err(crate::error::DeactivateKeySigningKeyError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "KeySigningKeyInParentDSRecord" => {
-            crate::error::DeactivateKeySigningKeyError::KeySigningKeyInParentDsRecord({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::key_signing_key_in_parent_ds_record::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_key_signing_key_in_parent_ds_record::de_key_signing_key_in_parent_ds_record_xml_err(response.body().as_ref(), output).map_err(crate::error::DeactivateKeySigningKeyError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "KeySigningKeyInUse" => crate::error::DeactivateKeySigningKeyError::KeySigningKeyInUse({
+        "InvalidInput" => crate::operation::deactivate_key_signing_key::DeactivateKeySigningKeyError::InvalidInput({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::key_signing_key_in_use::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_key_signing_key_in_use::de_key_signing_key_in_use_xml_err(response.body().as_ref(), output).map_err(crate::error::DeactivateKeySigningKeyError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidInputBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_input::de_invalid_input_xml_err(response.body().as_ref(), output).map_err(crate::operation::deactivate_key_signing_key::DeactivateKeySigningKeyError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "NoSuchKeySigningKey" => crate::error::DeactivateKeySigningKeyError::NoSuchKeySigningKey({
+        "InvalidKeySigningKeyStatus" => crate::operation::deactivate_key_signing_key::DeactivateKeySigningKeyError::InvalidKeySigningKeyStatus({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::no_such_key_signing_key::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_no_such_key_signing_key::de_no_such_key_signing_key_xml_err(response.body().as_ref(), output).map_err(crate::error::DeactivateKeySigningKeyError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidKeySigningKeyStatusBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_key_signing_key_status::de_invalid_key_signing_key_status_xml_err(response.body().as_ref(), output).map_err(crate::operation::deactivate_key_signing_key::DeactivateKeySigningKeyError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::DeactivateKeySigningKeyError::generic(generic),
+        "InvalidSigningStatus" => crate::operation::deactivate_key_signing_key::DeactivateKeySigningKeyError::InvalidSigningStatus({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidSigningStatusBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_signing_status::de_invalid_signing_status_xml_err(response.body().as_ref(), output).map_err(crate::operation::deactivate_key_signing_key::DeactivateKeySigningKeyError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "KeySigningKeyInParentDSRecord" => crate::operation::deactivate_key_signing_key::DeactivateKeySigningKeyError::KeySigningKeyInParentDsRecord({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::KeySigningKeyInParentDsRecordBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_key_signing_key_in_parent_ds_record::de_key_signing_key_in_parent_ds_record_xml_err(response.body().as_ref(), output).map_err(crate::operation::deactivate_key_signing_key::DeactivateKeySigningKeyError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "KeySigningKeyInUse" => crate::operation::deactivate_key_signing_key::DeactivateKeySigningKeyError::KeySigningKeyInUse({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::KeySigningKeyInUseBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_key_signing_key_in_use::de_key_signing_key_in_use_xml_err(response.body().as_ref(), output).map_err(crate::operation::deactivate_key_signing_key::DeactivateKeySigningKeyError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "NoSuchKeySigningKey" => crate::operation::deactivate_key_signing_key::DeactivateKeySigningKeyError::NoSuchKeySigningKey({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::NoSuchKeySigningKeyBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_no_such_key_signing_key::de_no_such_key_signing_key_xml_err(response.body().as_ref(), output).map_err(crate::operation::deactivate_key_signing_key::DeactivateKeySigningKeyError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::deactivate_key_signing_key::DeactivateKeySigningKeyError::generic(generic)
     })
 }
 
@@ -149,19 +150,14 @@ pub fn de_deactivate_key_signing_key_http_error(
 pub fn de_deactivate_key_signing_key_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeactivateKeySigningKeyOutput,
-    crate::error::DeactivateKeySigningKeyError,
+    crate::operation::deactivate_key_signing_key::DeactivateKeySigningKeyOutput,
+    crate::operation::deactivate_key_signing_key::DeactivateKeySigningKeyError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::deactivate_key_signing_key_output::Builder::default();
+        let mut output = crate::operation::deactivate_key_signing_key::builders::DeactivateKeySigningKeyOutputBuilder::default();
         let _ = response;
-        output =
-            crate::protocol_serde::shape_deactivate_key_signing_key::de_deactivate_key_signing_key(
-                response.body().as_ref(),
-                output,
-            )
-            .map_err(crate::error::DeactivateKeySigningKeyError::unhandled)?;
+        output = crate::protocol_serde::shape_deactivate_key_signing_key::de_deactivate_key_signing_key(response.body().as_ref(), output).map_err(crate::operation::deactivate_key_signing_key::DeactivateKeySigningKeyError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -172,9 +168,9 @@ pub fn de_deactivate_key_signing_key_http_response(
 #[allow(unused_mut)]
 pub fn de_deactivate_key_signing_key(
     inp: &[u8],
-    mut builder: crate::output::deactivate_key_signing_key_output::Builder,
+    mut builder: crate::operation::deactivate_key_signing_key::builders::DeactivateKeySigningKeyOutputBuilder,
 ) -> Result<
-    crate::output::deactivate_key_signing_key_output::Builder,
+    crate::operation::deactivate_key_signing_key::builders::DeactivateKeySigningKeyOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

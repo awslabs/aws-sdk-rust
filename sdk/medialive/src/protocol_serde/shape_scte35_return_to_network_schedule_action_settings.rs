@@ -2,7 +2,7 @@
 pub(crate) fn de_scte35_return_to_network_schedule_action_settings<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::Scte35ReturnToNetworkScheduleActionSettings>,
+    Option<crate::types::Scte35ReturnToNetworkScheduleActionSettings>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,8 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::scte35_return_to_network_schedule_action_settings::Builder::default();
+                crate::types::builders::Scte35ReturnToNetworkScheduleActionSettingsBuilder::default(
+                );
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -58,7 +59,7 @@ where
 
 pub fn ser_scte35_return_to_network_schedule_action_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::Scte35ReturnToNetworkScheduleActionSettings,
+    input: &crate::types::Scte35ReturnToNetworkScheduleActionSettings,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     {
         object.key("spliceEventId").number(

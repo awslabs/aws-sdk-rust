@@ -2,7 +2,7 @@
 pub(crate) fn de_layer_failure_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::LayerFailure>>,
+    Option<std::vec::Vec<crate::types::LayerFailure>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

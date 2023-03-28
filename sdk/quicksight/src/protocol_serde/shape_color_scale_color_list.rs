@@ -2,7 +2,7 @@
 pub(crate) fn de_color_scale_color_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DataColor>>,
+    Option<std::vec::Vec<crate::types::DataColor>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

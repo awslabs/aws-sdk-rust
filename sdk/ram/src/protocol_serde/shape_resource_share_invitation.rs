@@ -2,7 +2,7 @@
 pub(crate) fn de_resource_share_invitation<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ResourceShareInvitation>,
+    Option<crate::types::ResourceShareInvitation>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::resource_share_invitation::Builder::default();
+            let mut builder = crate::types::builders::ResourceShareInvitationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -83,7 +83,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ResourceShareInvitationStatus::from(
+                                            crate::types::ResourceShareInvitationStatus::from(
                                                 u.as_ref(),
                                             )
                                         })

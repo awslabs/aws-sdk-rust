@@ -2,11 +2,11 @@
 pub fn de_instance_event_window_association_target(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    crate::model::InstanceEventWindowAssociationTarget,
+    crate::types::InstanceEventWindowAssociationTarget,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     #[allow(unused_mut)]
-    let mut builder = crate::model::InstanceEventWindowAssociationTarget::builder();
+    let mut builder = crate::types::InstanceEventWindowAssociationTarget::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("instanceIdSet") /* InstanceIds com.amazonaws.ec2#InstanceEventWindowAssociationTarget$InstanceIds */ =>  {

@@ -3,162 +3,159 @@
 pub fn de_describe_analysis_definition_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeAnalysisDefinitionOutput,
-    crate::error::DescribeAnalysisDefinitionError,
+    crate::operation::describe_analysis_definition::DescribeAnalysisDefinitionOutput,
+    crate::operation::describe_analysis_definition::DescribeAnalysisDefinitionError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeAnalysisDefinitionError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::describe_analysis_definition::DescribeAnalysisDefinitionError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::DescribeAnalysisDefinitionError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::describe_analysis_definition::DescribeAnalysisDefinitionError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => {
-            crate::error::DescribeAnalysisDefinitionError::AccessDeniedException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "AccessDeniedException" => crate::operation::describe_analysis_definition::DescribeAnalysisDefinitionError::AccessDeniedException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAnalysisDefinitionError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_analysis_definition::DescribeAnalysisDefinitionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ConflictException" => crate::error::DescribeAnalysisDefinitionError::ConflictException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::conflict_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAnalysisDefinitionError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "InternalFailureException" => {
-            crate::error::DescribeAnalysisDefinitionError::InternalFailureException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "ConflictException" => crate::operation::describe_analysis_definition::DescribeAnalysisDefinitionError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_failure_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAnalysisDefinitionError::unhandled)?;
+                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_analysis_definition::DescribeAnalysisDefinitionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidParameterValueException" => {
-            crate::error::DescribeAnalysisDefinitionError::InvalidParameterValueException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InternalFailureException" => crate::operation::describe_analysis_definition::DescribeAnalysisDefinitionError::InternalFailureException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_parameter_value_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InternalFailureExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAnalysisDefinitionError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_analysis_definition::DescribeAnalysisDefinitionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ResourceExistsException" => {
-            crate::error::DescribeAnalysisDefinitionError::ResourceExistsException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidParameterValueException" => crate::operation::describe_analysis_definition::DescribeAnalysisDefinitionError::InvalidParameterValueException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_exists_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_exists_exception::de_resource_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAnalysisDefinitionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_analysis_definition::DescribeAnalysisDefinitionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ResourceNotFoundException" => {
-            crate::error::DescribeAnalysisDefinitionError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceExistsException" => crate::operation::describe_analysis_definition::DescribeAnalysisDefinitionError::ResourceExistsException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ResourceExistsExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAnalysisDefinitionError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_exists_exception::de_resource_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_analysis_definition::DescribeAnalysisDefinitionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ThrottlingException" => {
-            crate::error::DescribeAnalysisDefinitionError::ThrottlingException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::describe_analysis_definition::DescribeAnalysisDefinitionError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAnalysisDefinitionError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_analysis_definition::DescribeAnalysisDefinitionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "UnsupportedUserEditionException" => {
-            crate::error::DescribeAnalysisDefinitionError::UnsupportedUserEditionException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ThrottlingException" => crate::operation::describe_analysis_definition::DescribeAnalysisDefinitionError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::unsupported_user_edition_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_unsupported_user_edition_exception::de_unsupported_user_edition_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAnalysisDefinitionError::unhandled)?;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_analysis_definition::DescribeAnalysisDefinitionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DescribeAnalysisDefinitionError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "UnsupportedUserEditionException" => crate::operation::describe_analysis_definition::DescribeAnalysisDefinitionError::UnsupportedUserEditionException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::UnsupportedUserEditionExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_unsupported_user_edition_exception::de_unsupported_user_edition_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_analysis_definition::DescribeAnalysisDefinitionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::describe_analysis_definition::DescribeAnalysisDefinitionError::generic(generic)
     })
 }
 
@@ -166,14 +163,14 @@ pub fn de_describe_analysis_definition_http_error(
 pub fn de_describe_analysis_definition_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeAnalysisDefinitionOutput,
-    crate::error::DescribeAnalysisDefinitionError,
+    crate::operation::describe_analysis_definition::DescribeAnalysisDefinitionOutput,
+    crate::operation::describe_analysis_definition::DescribeAnalysisDefinitionError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_analysis_definition_output::Builder::default();
+        let mut output = crate::operation::describe_analysis_definition::builders::DescribeAnalysisDefinitionOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_describe_analysis_definition::de_describe_analysis_definition(response.body().as_ref(), output).map_err(crate::error::DescribeAnalysisDefinitionError::unhandled)?;
+        output = crate::protocol_serde::shape_describe_analysis_definition::de_describe_analysis_definition(response.body().as_ref(), output).map_err(crate::operation::describe_analysis_definition::DescribeAnalysisDefinitionError::unhandled)?;
         output = output.set_status(Some(response.status().as_u16() as _));
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
@@ -182,13 +179,7 @@ pub fn de_describe_analysis_definition_http_response(
     })
 }
 
-pub(crate) fn de_describe_analysis_definition(
-    value: &[u8],
-    mut builder: crate::output::describe_analysis_definition_output::Builder,
-) -> Result<
-    crate::output::describe_analysis_definition_output::Builder,
-    aws_smithy_json::deserialize::error::DeserializeError,
-> {
+pub(crate) fn de_describe_analysis_definition(value: &[u8], mut builder: crate::operation::describe_analysis_definition::builders::DescribeAnalysisDefinitionOutputBuilder) -> Result<crate::operation::describe_analysis_definition::builders::DescribeAnalysisDefinitionOutputBuilder, aws_smithy_json::deserialize::error::DeserializeError>{
     let mut tokens_owned =
         aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
             .peekable();
@@ -243,7 +234,7 @@ pub(crate) fn de_describe_analysis_definition(
                             )?
                             .map(|s| {
                                 s.to_unescaped()
-                                    .map(|u| crate::model::ResourceStatus::from(u.as_ref()))
+                                    .map(|u| crate::types::ResourceStatus::from(u.as_ref()))
                             })
                             .transpose()?,
                         );

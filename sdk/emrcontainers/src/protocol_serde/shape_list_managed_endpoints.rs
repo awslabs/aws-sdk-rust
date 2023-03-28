@@ -3,54 +3,62 @@
 pub fn de_list_managed_endpoints_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListManagedEndpointsOutput,
-    crate::error::ListManagedEndpointsError,
+    crate::operation::list_managed_endpoints::ListManagedEndpointsOutput,
+    crate::operation::list_managed_endpoints::ListManagedEndpointsError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListManagedEndpointsError::unhandled)?;
+        .map_err(crate::operation::list_managed_endpoints::ListManagedEndpointsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListManagedEndpointsError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::list_managed_endpoints::ListManagedEndpointsError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerException" => {
-            crate::error::ListManagedEndpointsError::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalServerException" => crate::operation::list_managed_endpoints::ListManagedEndpointsError::InternalServerException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListManagedEndpointsError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_managed_endpoints::ListManagedEndpointsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ValidationException" => crate::error::ListManagedEndpointsError::ValidationException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListManagedEndpointsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::ListManagedEndpointsError::generic(generic),
+        "ValidationException" => crate::operation::list_managed_endpoints::ListManagedEndpointsError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_managed_endpoints::ListManagedEndpointsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::list_managed_endpoints::ListManagedEndpointsError::generic(generic)
     })
 }
 
@@ -58,18 +66,18 @@ pub fn de_list_managed_endpoints_http_error(
 pub fn de_list_managed_endpoints_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListManagedEndpointsOutput,
-    crate::error::ListManagedEndpointsError,
+    crate::operation::list_managed_endpoints::ListManagedEndpointsOutput,
+    crate::operation::list_managed_endpoints::ListManagedEndpointsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_managed_endpoints_output::Builder::default();
+        let mut output = crate::operation::list_managed_endpoints::builders::ListManagedEndpointsOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_managed_endpoints::de_list_managed_endpoints(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListManagedEndpointsError::unhandled)?;
+        .map_err(crate::operation::list_managed_endpoints::ListManagedEndpointsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -79,9 +87,9 @@ pub fn de_list_managed_endpoints_http_response(
 
 pub(crate) fn de_list_managed_endpoints(
     value: &[u8],
-    mut builder: crate::output::list_managed_endpoints_output::Builder,
+    mut builder: crate::operation::list_managed_endpoints::builders::ListManagedEndpointsOutputBuilder,
 ) -> Result<
-    crate::output::list_managed_endpoints_output::Builder,
+    crate::operation::list_managed_endpoints::builders::ListManagedEndpointsOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

@@ -2,62 +2,96 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_job_template_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeleteJobTemplateOutput, crate::error::DeleteJobTemplateError>
-{
+) -> std::result::Result<
+    crate::operation::delete_job_template::DeleteJobTemplateOutput,
+    crate::operation::delete_job_template::DeleteJobTemplateError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteJobTemplateError::unhandled)?;
+        .map_err(crate::operation::delete_job_template::DeleteJobTemplateError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DeleteJobTemplateError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::delete_job_template::DeleteJobTemplateError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalFailureException" => {
-            crate::error::DeleteJobTemplateError::InternalFailureException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            crate::operation::delete_job_template::DeleteJobTemplateError::InternalFailureException(
+                {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteJobTemplateError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::types::error::builders::InternalFailureExceptionBuilder::default(
+                            );
+                        let _ = response;
+                        output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_job_template::DeleteJobTemplateError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
         }
         "InvalidRequestException" => {
-            crate::error::DeleteJobTemplateError::InvalidRequestException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            crate::operation::delete_job_template::DeleteJobTemplateError::InvalidRequestException(
+                {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_request_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteJobTemplateError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::types::error::builders::InvalidRequestExceptionBuilder::default(
+                            );
+                        let _ = response;
+                        output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_job_template::DeleteJobTemplateError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
         }
         "ResourceNotFoundException" => {
-            crate::error::DeleteJobTemplateError::ResourceNotFoundException({
+            crate::operation::delete_job_template::DeleteJobTemplateError::ResourceNotFoundException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                        let _ = response;
+                        output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_job_template::DeleteJobTemplateError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        "ThrottlingException" => {
+            crate::operation::delete_job_template::DeleteJobTemplateError::ThrottlingException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::ThrottlingExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteJobTemplateError::unhandled)?;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_job_template::DeleteJobTemplateError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -67,33 +101,20 @@ pub fn de_delete_job_template_http_error(
                 tmp
             })
         }
-        "ThrottlingException" => crate::error::DeleteJobTemplateError::ThrottlingException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::throttling_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteJobTemplateError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::DeleteJobTemplateError::generic(generic),
+        _ => crate::operation::delete_job_template::DeleteJobTemplateError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_job_template_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeleteJobTemplateOutput, crate::error::DeleteJobTemplateError>
-{
+) -> std::result::Result<
+    crate::operation::delete_job_template::DeleteJobTemplateOutput,
+    crate::operation::delete_job_template::DeleteJobTemplateError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_job_template_output::Builder::default();
+        let mut output = crate::operation::delete_job_template::builders::DeleteJobTemplateOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

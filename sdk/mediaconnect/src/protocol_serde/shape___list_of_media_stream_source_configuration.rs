@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_media_stream_source_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::MediaStreamSourceConfiguration>>,
+    Option<std::vec::Vec<crate::types::MediaStreamSourceConfiguration>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_opt_out_list_information_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::OptOutListInformation>>,
+    Option<std::vec::Vec<crate::types::OptOutListInformation>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

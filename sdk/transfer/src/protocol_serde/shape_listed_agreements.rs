@@ -2,7 +2,7 @@
 pub(crate) fn de_listed_agreements<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ListedAgreement>>,
+    Option<std::vec::Vec<crate::types::ListedAgreement>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,10 +2,10 @@
 pub fn de_list_recommender_configurations_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::ListRecommenderConfigurationsResponse>,
-    crate::error::GetRecommenderConfigurationsError,
+    std::option::Option<crate::types::ListRecommenderConfigurationsResponse>,
+    crate::operation::get_recommender_configurations::GetRecommenderConfigurationsError,
 > {
     (!body.is_empty()).then(||{
-        crate::protocol_serde::shape_list_recommender_configurations_response::de_list_recommender_configurations_response_payload(body).map_err(crate::error::GetRecommenderConfigurationsError::unhandled)
+        crate::protocol_serde::shape_list_recommender_configurations_response::de_list_recommender_configurations_response_payload(body).map_err(crate::operation::get_recommender_configurations::GetRecommenderConfigurationsError::unhandled)
     }).transpose()
 }

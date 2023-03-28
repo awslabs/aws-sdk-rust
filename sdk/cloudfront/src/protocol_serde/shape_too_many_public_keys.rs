@@ -2,8 +2,11 @@
 #[allow(unused_mut)]
 pub fn de_too_many_public_keys_xml_err(
     inp: &[u8],
-    mut builder: crate::error::too_many_public_keys::Builder,
-) -> Result<crate::error::too_many_public_keys::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    mut builder: crate::types::error::builders::TooManyPublicKeysBuilder,
+) -> Result<
+    crate::types::error::builders::TooManyPublicKeysBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     if inp.is_empty() {
         return Ok(builder);
     }

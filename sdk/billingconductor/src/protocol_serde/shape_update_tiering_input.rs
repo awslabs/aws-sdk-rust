@@ -2,7 +2,7 @@
 pub(crate) fn de_update_tiering_input<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::UpdateTieringInput>,
+    Option<crate::types::UpdateTieringInput>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::update_tiering_input::Builder::default();
+            let mut builder = crate::types::builders::UpdateTieringInputBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -53,7 +53,7 @@ where
 
 pub fn ser_update_tiering_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::UpdateTieringInput,
+    input: &crate::types::UpdateTieringInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.free_tier {
         #[allow(unused_mut)]

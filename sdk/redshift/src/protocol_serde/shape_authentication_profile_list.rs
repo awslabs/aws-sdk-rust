@@ -2,7 +2,7 @@
 pub fn de_authentication_profile_list(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::AuthenticationProfile>,
+    std::vec::Vec<crate::types::AuthenticationProfile>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

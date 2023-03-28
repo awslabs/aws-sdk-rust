@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_dns_options_specification(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::DnsOptionsSpecification,
+    input: &crate::types::DnsOptionsSpecification,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("DnsRecordIpType");

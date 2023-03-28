@@ -2,7 +2,7 @@
 pub(crate) fn de_savings_plans_purchase_recommendation_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::SavingsPlansPurchaseRecommendationSummary>,
+    Option<crate::types::SavingsPlansPurchaseRecommendationSummary>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::savings_plans_purchase_recommendation_summary::Builder::default();
+                crate::types::builders::SavingsPlansPurchaseRecommendationSummaryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

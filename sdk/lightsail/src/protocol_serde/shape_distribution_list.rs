@@ -2,7 +2,7 @@
 pub(crate) fn de_distribution_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::LightsailDistribution>>,
+    Option<std::vec::Vec<crate::types::LightsailDistribution>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

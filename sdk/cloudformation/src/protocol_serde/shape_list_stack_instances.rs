@@ -3,40 +3,43 @@
 pub fn de_list_stack_instances_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListStackInstancesOutput,
-    crate::error::ListStackInstancesError,
+    crate::operation::list_stack_instances::ListStackInstancesOutput,
+    crate::operation::list_stack_instances::ListStackInstancesError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListStackInstancesError::unhandled)?;
+        .map_err(crate::operation::list_stack_instances::ListStackInstancesError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListStackInstancesError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::list_stack_instances::ListStackInstancesError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "StackSetNotFoundException" => {
-            crate::error::ListStackInstancesError::StackSetNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "StackSetNotFoundException" => crate::operation::list_stack_instances::ListStackInstancesError::StackSetNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::stack_set_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::StackSetNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_stack_set_not_found_exception::de_stack_set_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListStackInstancesError::unhandled)?;
+                    output = crate::protocol_serde::shape_stack_set_not_found_exception::de_stack_set_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::list_stack_instances::ListStackInstancesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::ListStackInstancesError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::list_stack_instances::ListStackInstancesError::generic(generic)
     })
 }
 
@@ -44,18 +47,18 @@ pub fn de_list_stack_instances_http_error(
 pub fn de_list_stack_instances_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListStackInstancesOutput,
-    crate::error::ListStackInstancesError,
+    crate::operation::list_stack_instances::ListStackInstancesOutput,
+    crate::operation::list_stack_instances::ListStackInstancesError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_stack_instances_output::Builder::default();
+        let mut output = crate::operation::list_stack_instances::builders::ListStackInstancesOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_stack_instances::de_list_stack_instances(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListStackInstancesError::unhandled)?;
+        .map_err(crate::operation::list_stack_instances::ListStackInstancesError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -66,9 +69,9 @@ pub fn de_list_stack_instances_http_response(
 #[allow(unused_mut)]
 pub fn de_list_stack_instances(
     inp: &[u8],
-    mut builder: crate::output::list_stack_instances_output::Builder,
+    mut builder: crate::operation::list_stack_instances::builders::ListStackInstancesOutputBuilder,
 ) -> Result<
-    crate::output::list_stack_instances_output::Builder,
+    crate::operation::list_stack_instances::builders::ListStackInstancesOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

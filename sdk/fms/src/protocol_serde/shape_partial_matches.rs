@@ -2,7 +2,7 @@
 pub(crate) fn de_partial_matches<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::PartialMatch>>,
+    Option<std::vec::Vec<crate::types::PartialMatch>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

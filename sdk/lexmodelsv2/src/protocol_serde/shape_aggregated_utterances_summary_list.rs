@@ -2,7 +2,7 @@
 pub(crate) fn de_aggregated_utterances_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AggregatedUtterancesSummary>>,
+    Option<std::vec::Vec<crate::types::AggregatedUtterancesSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

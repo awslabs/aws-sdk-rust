@@ -2,7 +2,7 @@
 pub(crate) fn de_tapes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Tape>>,
+    Option<std::vec::Vec<crate::types::Tape>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

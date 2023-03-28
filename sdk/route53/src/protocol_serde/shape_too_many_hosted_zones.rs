@@ -2,8 +2,11 @@
 #[allow(unused_mut)]
 pub fn de_too_many_hosted_zones_xml_err(
     inp: &[u8],
-    mut builder: crate::error::too_many_hosted_zones::Builder,
-) -> Result<crate::error::too_many_hosted_zones::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    mut builder: crate::types::error::builders::TooManyHostedZonesBuilder,
+) -> Result<
+    crate::types::error::builders::TooManyHostedZonesBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     if inp.is_empty() {
         return Ok(builder);
     }

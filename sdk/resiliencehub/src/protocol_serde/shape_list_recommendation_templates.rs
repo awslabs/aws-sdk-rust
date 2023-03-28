@@ -3,94 +3,89 @@
 pub fn de_list_recommendation_templates_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListRecommendationTemplatesOutput,
-    crate::error::ListRecommendationTemplatesError,
+    crate::operation::list_recommendation_templates::ListRecommendationTemplatesOutput,
+    crate::operation::list_recommendation_templates::ListRecommendationTemplatesError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListRecommendationTemplatesError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::list_recommendation_templates::ListRecommendationTemplatesError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::ListRecommendationTemplatesError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::list_recommendation_templates::ListRecommendationTemplatesError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => {
-            crate::error::ListRecommendationTemplatesError::AccessDeniedException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "AccessDeniedException" => crate::operation::list_recommendation_templates::ListRecommendationTemplatesError::AccessDeniedException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRecommendationTemplatesError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_recommendation_templates::ListRecommendationTemplatesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InternalServerException" => {
-            crate::error::ListRecommendationTemplatesError::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InternalServerException" => crate::operation::list_recommendation_templates::ListRecommendationTemplatesError::InternalServerException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRecommendationTemplatesError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_recommendation_templates::ListRecommendationTemplatesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ThrottlingException" => {
-            crate::error::ListRecommendationTemplatesError::ThrottlingException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ThrottlingException" => crate::operation::list_recommendation_templates::ListRecommendationTemplatesError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRecommendationTemplatesError::unhandled)?;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_recommendation_templates::ListRecommendationTemplatesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ValidationException" => {
-            crate::error::ListRecommendationTemplatesError::ValidationException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ValidationException" => crate::operation::list_recommendation_templates::ListRecommendationTemplatesError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::validation_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRecommendationTemplatesError::unhandled)?;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_recommendation_templates::ListRecommendationTemplatesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::ListRecommendationTemplatesError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::list_recommendation_templates::ListRecommendationTemplatesError::generic(generic)
     })
 }
 
@@ -98,14 +93,14 @@ pub fn de_list_recommendation_templates_http_error(
 pub fn de_list_recommendation_templates_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListRecommendationTemplatesOutput,
-    crate::error::ListRecommendationTemplatesError,
+    crate::operation::list_recommendation_templates::ListRecommendationTemplatesOutput,
+    crate::operation::list_recommendation_templates::ListRecommendationTemplatesError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_recommendation_templates_output::Builder::default();
+        let mut output = crate::operation::list_recommendation_templates::builders::ListRecommendationTemplatesOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_list_recommendation_templates::de_list_recommendation_templates(response.body().as_ref(), output).map_err(crate::error::ListRecommendationTemplatesError::unhandled)?;
+        output = crate::protocol_serde::shape_list_recommendation_templates::de_list_recommendation_templates(response.body().as_ref(), output).map_err(crate::operation::list_recommendation_templates::ListRecommendationTemplatesError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -113,13 +108,7 @@ pub fn de_list_recommendation_templates_http_response(
     })
 }
 
-pub(crate) fn de_list_recommendation_templates(
-    value: &[u8],
-    mut builder: crate::output::list_recommendation_templates_output::Builder,
-) -> Result<
-    crate::output::list_recommendation_templates_output::Builder,
-    aws_smithy_json::deserialize::error::DeserializeError,
-> {
+pub(crate) fn de_list_recommendation_templates(value: &[u8], mut builder: crate::operation::list_recommendation_templates::builders::ListRecommendationTemplatesOutputBuilder) -> Result<crate::operation::list_recommendation_templates::builders::ListRecommendationTemplatesOutputBuilder, aws_smithy_json::deserialize::error::DeserializeError>{
     let mut tokens_owned =
         aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
             .peekable();

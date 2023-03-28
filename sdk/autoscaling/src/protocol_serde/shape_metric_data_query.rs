@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_metric_data_query(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::MetricDataQuery,
+    input: &crate::types::MetricDataQuery,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Id");
@@ -34,9 +34,9 @@ pub fn ser_metric_data_query(
 
 pub fn de_metric_data_query(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::MetricDataQuery, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::MetricDataQuery, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::MetricDataQuery::builder();
+    let mut builder = crate::types::MetricDataQuery::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Id") /* Id com.amazonaws.autoscaling#MetricDataQuery$Id */ =>  {

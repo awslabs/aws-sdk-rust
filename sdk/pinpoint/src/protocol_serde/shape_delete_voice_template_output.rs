@@ -2,13 +2,14 @@
 pub fn de_message_body_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::MessageBody>,
-    crate::error::DeleteVoiceTemplateError,
+    std::option::Option<crate::types::MessageBody>,
+    crate::operation::delete_voice_template::DeleteVoiceTemplateError,
 > {
     (!body.is_empty())
         .then(|| {
-            crate::protocol_serde::shape_message_body::de_message_body_payload(body)
-                .map_err(crate::error::DeleteVoiceTemplateError::unhandled)
+            crate::protocol_serde::shape_message_body::de_message_body_payload(body).map_err(
+                crate::operation::delete_voice_template::DeleteVoiceTemplateError::unhandled,
+            )
         })
         .transpose()
 }

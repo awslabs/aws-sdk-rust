@@ -2,27 +2,35 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_hosted_zones_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListHostedZonesOutput, crate::error::ListHostedZonesError> {
+) -> std::result::Result<
+    crate::operation::list_hosted_zones::ListHostedZonesOutput,
+    crate::operation::list_hosted_zones::ListHostedZonesError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListHostedZonesError::unhandled)?;
+        .map_err(crate::operation::list_hosted_zones::ListHostedZonesError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListHostedZonesError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::list_hosted_zones::ListHostedZonesError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "DelegationSetNotReusable" => {
-            crate::error::ListHostedZonesError::DelegationSetNotReusable({
+            crate::operation::list_hosted_zones::ListHostedZonesError::DelegationSetNotReusable({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::delegation_set_not_reusable::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::DelegationSetNotReusableBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_delegation_set_not_reusable::de_delegation_set_not_reusable_xml_err(response.body().as_ref(), output).map_err(crate::error::ListHostedZonesError::unhandled)?;
+                    output = crate::protocol_serde::shape_delegation_set_not_reusable::de_delegation_set_not_reusable_xml_err(response.body().as_ref(), output).map_err(crate::operation::list_hosted_zones::ListHostedZonesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -32,57 +40,68 @@ pub fn de_list_hosted_zones_http_error(
                 tmp
             })
         }
-        "InvalidInput" => crate::error::ListHostedZonesError::InvalidInput({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "InvalidInput" => {
+            crate::operation::list_hosted_zones::ListHostedZonesError::InvalidInput({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_input::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_input::de_invalid_input_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::ListHostedZonesError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "NoSuchDelegationSet" => crate::error::ListHostedZonesError::NoSuchDelegationSet({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidInputBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_input::de_invalid_input_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(
+                        crate::operation::list_hosted_zones::ListHostedZonesError::unhandled,
+                    )?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "NoSuchDelegationSet" => {
+            crate::operation::list_hosted_zones::ListHostedZonesError::NoSuchDelegationSet({
                 #[allow(unused_mut)]
-                let mut output = crate::error::no_such_delegation_set::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_no_such_delegation_set::de_no_such_delegation_set_xml_err(response.body().as_ref(), output).map_err(crate::error::ListHostedZonesError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::ListHostedZonesError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::NoSuchDelegationSetBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_no_such_delegation_set::de_no_such_delegation_set_xml_err(response.body().as_ref(), output).map_err(crate::operation::list_hosted_zones::ListHostedZonesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::list_hosted_zones::ListHostedZonesError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_hosted_zones_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListHostedZonesOutput, crate::error::ListHostedZonesError> {
+) -> std::result::Result<
+    crate::operation::list_hosted_zones::ListHostedZonesOutput,
+    crate::operation::list_hosted_zones::ListHostedZonesError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_hosted_zones_output::Builder::default();
+        let mut output =
+            crate::operation::list_hosted_zones::builders::ListHostedZonesOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_hosted_zones::de_list_hosted_zones(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListHostedZonesError::unhandled)?;
+        .map_err(crate::operation::list_hosted_zones::ListHostedZonesError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -93,9 +112,11 @@ pub fn de_list_hosted_zones_http_response(
 #[allow(unused_mut)]
 pub fn de_list_hosted_zones(
     inp: &[u8],
-    mut builder: crate::output::list_hosted_zones_output::Builder,
-) -> Result<crate::output::list_hosted_zones_output::Builder, aws_smithy_xml::decode::XmlDecodeError>
-{
+    mut builder: crate::operation::list_hosted_zones::builders::ListHostedZonesOutputBuilder,
+) -> Result<
+    crate::operation::list_hosted_zones::builders::ListHostedZonesOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

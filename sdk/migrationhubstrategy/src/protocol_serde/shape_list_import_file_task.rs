@@ -3,84 +3,96 @@
 pub fn de_list_import_file_task_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListImportFileTaskOutput,
-    crate::error::ListImportFileTaskError,
+    crate::operation::list_import_file_task::ListImportFileTaskOutput,
+    crate::operation::list_import_file_task::ListImportFileTaskError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListImportFileTaskError::unhandled)?;
+        .map_err(crate::operation::list_import_file_task::ListImportFileTaskError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListImportFileTaskError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::list_import_file_task::ListImportFileTaskError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::ListImportFileTaskError::AccessDeniedException({
+        "AccessDeniedException" => crate::operation::list_import_file_task::ListImportFileTaskError::AccessDeniedException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::access_denied_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListImportFileTaskError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InternalServerException" => {
-            crate::error::ListImportFileTaskError::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListImportFileTaskError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_import_file_task::ListImportFileTaskError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ThrottlingException" => crate::error::ListImportFileTaskError::ThrottlingException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::throttling_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListImportFileTaskError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "ValidationException" => crate::error::ListImportFileTaskError::ValidationException({
+        "InternalServerException" => crate::operation::list_import_file_task::ListImportFileTaskError::InternalServerException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListImportFileTaskError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_import_file_task::ListImportFileTaskError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::ListImportFileTaskError::generic(generic),
+        "ThrottlingException" => crate::operation::list_import_file_task::ListImportFileTaskError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_import_file_task::ListImportFileTaskError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ValidationException" => crate::operation::list_import_file_task::ListImportFileTaskError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_import_file_task::ListImportFileTaskError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::list_import_file_task::ListImportFileTaskError::generic(generic)
     })
 }
 
@@ -88,18 +100,18 @@ pub fn de_list_import_file_task_http_error(
 pub fn de_list_import_file_task_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListImportFileTaskOutput,
-    crate::error::ListImportFileTaskError,
+    crate::operation::list_import_file_task::ListImportFileTaskOutput,
+    crate::operation::list_import_file_task::ListImportFileTaskError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_import_file_task_output::Builder::default();
+        let mut output = crate::operation::list_import_file_task::builders::ListImportFileTaskOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_import_file_task::de_list_import_file_task(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListImportFileTaskError::unhandled)?;
+        .map_err(crate::operation::list_import_file_task::ListImportFileTaskError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -109,9 +121,9 @@ pub fn de_list_import_file_task_http_response(
 
 pub(crate) fn de_list_import_file_task(
     value: &[u8],
-    mut builder: crate::output::list_import_file_task_output::Builder,
+    mut builder: crate::operation::list_import_file_task::builders::ListImportFileTaskOutputBuilder,
 ) -> Result<
-    crate::output::list_import_file_task_output::Builder,
+    crate::operation::list_import_file_task::builders::ListImportFileTaskOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

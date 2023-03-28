@@ -3,103 +3,113 @@
 pub fn de_get_schema_analysis_rule_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetSchemaAnalysisRuleOutput,
-    crate::error::GetSchemaAnalysisRuleError,
+    crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleOutput,
+    crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetSchemaAnalysisRuleError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    let error_code = match generic.code() {
-        Some(code) => code,
-        None => return Err(crate::error::GetSchemaAnalysisRuleError::unhandled(generic)),
-    };
+    let error_code =
+        match generic.code() {
+            Some(code) => code,
+            None => return Err(
+                crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleError::unhandled(
+                    generic,
+                ),
+            ),
+        };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => {
-            crate::error::GetSchemaAnalysisRuleError::AccessDeniedException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::access_denied_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSchemaAnalysisRuleError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InternalServerException" => {
-            crate::error::GetSchemaAnalysisRuleError::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSchemaAnalysisRuleError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ResourceNotFoundException" => {
-            crate::error::GetSchemaAnalysisRuleError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSchemaAnalysisRuleError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ThrottlingException" => crate::error::GetSchemaAnalysisRuleError::ThrottlingException({
+        "AccessDeniedException" => crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleError::AccessDeniedException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::throttling_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSchemaAnalysisRuleError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "ValidationException" => crate::error::GetSchemaAnalysisRuleError::ValidationException({
+        "InternalServerException" => crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleError::InternalServerException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSchemaAnalysisRuleError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::GetSchemaAnalysisRuleError::generic(generic),
+        "ResourceNotFoundException" => crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ThrottlingException" => crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ValidationException" => crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleError::generic(generic)
     })
 }
 
@@ -107,19 +117,21 @@ pub fn de_get_schema_analysis_rule_http_error(
 pub fn de_get_schema_analysis_rule_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetSchemaAnalysisRuleOutput,
-    crate::error::GetSchemaAnalysisRuleError,
+    crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleOutput,
+    crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_schema_analysis_rule_output::Builder::default();
+        let mut output = crate::operation::get_schema_analysis_rule::builders::GetSchemaAnalysisRuleOutputBuilder::default();
         let _ = response;
         output =
             crate::protocol_serde::shape_get_schema_analysis_rule::de_get_schema_analysis_rule(
                 response.body().as_ref(),
                 output,
             )
-            .map_err(crate::error::GetSchemaAnalysisRuleError::unhandled)?;
+            .map_err(
+                crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleError::unhandled,
+            )?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -129,9 +141,9 @@ pub fn de_get_schema_analysis_rule_http_response(
 
 pub(crate) fn de_get_schema_analysis_rule(
     value: &[u8],
-    mut builder: crate::output::get_schema_analysis_rule_output::Builder,
+    mut builder: crate::operation::get_schema_analysis_rule::builders::GetSchemaAnalysisRuleOutputBuilder,
 ) -> Result<
-    crate::output::get_schema_analysis_rule_output::Builder,
+    crate::operation::get_schema_analysis_rule::builders::GetSchemaAnalysisRuleOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

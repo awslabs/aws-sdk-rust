@@ -2,7 +2,7 @@
 pub(crate) fn de_origination_identity_metadata_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::OriginationIdentityMetadata>>,
+    Option<std::vec::Vec<crate::types::OriginationIdentityMetadata>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

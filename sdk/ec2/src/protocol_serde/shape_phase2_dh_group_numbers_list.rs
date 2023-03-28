@@ -2,7 +2,7 @@
 pub fn de_phase2_dh_group_numbers_list(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::Phase2DhGroupNumbersListValue>,
+    std::vec::Vec<crate::types::Phase2DhGroupNumbersListValue>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

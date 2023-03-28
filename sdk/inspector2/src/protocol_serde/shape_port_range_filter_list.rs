@@ -2,7 +2,7 @@
 pub(crate) fn de_port_range_filter_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::PortRangeFilter>>,
+    Option<std::vec::Vec<crate::types::PortRangeFilter>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -3,108 +3,112 @@
 pub fn de_delete_domain_association_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteDomainAssociationOutput,
-    crate::error::DeleteDomainAssociationError,
+    crate::operation::delete_domain_association::DeleteDomainAssociationOutput,
+    crate::operation::delete_domain_association::DeleteDomainAssociationError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteDomainAssociationError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::delete_domain_association::DeleteDomainAssociationError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::error::DeleteDomainAssociationError::unhandled(
+        None => return Err(
+            crate::operation::delete_domain_association::DeleteDomainAssociationError::unhandled(
                 generic,
-            ))
-        }
+            ),
+        ),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::DeleteDomainAssociationError::BadRequestException({
+        "BadRequestException" => crate::operation::delete_domain_association::DeleteDomainAssociationError::BadRequestException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDomainAssociationError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_domain_association::DeleteDomainAssociationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "DependentServiceFailureException" => {
-            crate::error::DeleteDomainAssociationError::DependentServiceFailureException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::dependent_service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_dependent_service_failure_exception::de_dependent_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDomainAssociationError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InternalFailureException" => {
-            crate::error::DeleteDomainAssociationError::InternalFailureException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::internal_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDomainAssociationError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "NotFoundException" => crate::error::DeleteDomainAssociationError::NotFoundException({
+        "DependentServiceFailureException" => crate::operation::delete_domain_association::DeleteDomainAssociationError::DependentServiceFailureException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDomainAssociationError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::DependentServiceFailureExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_dependent_service_failure_exception::de_dependent_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_domain_association::DeleteDomainAssociationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "UnauthorizedException" => {
-            crate::error::DeleteDomainAssociationError::UnauthorizedException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalFailureException" => crate::operation::delete_domain_association::DeleteDomainAssociationError::InternalFailureException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::unauthorized_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InternalFailureExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDomainAssociationError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_domain_association::DeleteDomainAssociationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DeleteDomainAssociationError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "NotFoundException" => crate::operation::delete_domain_association::DeleteDomainAssociationError::NotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::NotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_domain_association::DeleteDomainAssociationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "UnauthorizedException" => crate::operation::delete_domain_association::DeleteDomainAssociationError::UnauthorizedException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::UnauthorizedExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_domain_association::DeleteDomainAssociationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::delete_domain_association::DeleteDomainAssociationError::generic(generic)
     })
 }
 
@@ -112,19 +116,14 @@ pub fn de_delete_domain_association_http_error(
 pub fn de_delete_domain_association_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteDomainAssociationOutput,
-    crate::error::DeleteDomainAssociationError,
+    crate::operation::delete_domain_association::DeleteDomainAssociationOutput,
+    crate::operation::delete_domain_association::DeleteDomainAssociationError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_domain_association_output::Builder::default();
+        let mut output = crate::operation::delete_domain_association::builders::DeleteDomainAssociationOutputBuilder::default();
         let _ = response;
-        output =
-            crate::protocol_serde::shape_delete_domain_association::de_delete_domain_association(
-                response.body().as_ref(),
-                output,
-            )
-            .map_err(crate::error::DeleteDomainAssociationError::unhandled)?;
+        output = crate::protocol_serde::shape_delete_domain_association::de_delete_domain_association(response.body().as_ref(), output).map_err(crate::operation::delete_domain_association::DeleteDomainAssociationError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -134,9 +133,9 @@ pub fn de_delete_domain_association_http_response(
 
 pub(crate) fn de_delete_domain_association(
     value: &[u8],
-    mut builder: crate::output::delete_domain_association_output::Builder,
+    mut builder: crate::operation::delete_domain_association::builders::DeleteDomainAssociationOutputBuilder,
 ) -> Result<
-    crate::output::delete_domain_association_output::Builder,
+    crate::operation::delete_domain_association::builders::DeleteDomainAssociationOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

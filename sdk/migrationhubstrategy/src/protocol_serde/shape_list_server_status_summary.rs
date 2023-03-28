@@ -2,7 +2,7 @@
 pub(crate) fn de_list_server_status_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ServerStatusSummary>>,
+    Option<std::vec::Vec<crate::types::ServerStatusSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

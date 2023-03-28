@@ -2,7 +2,7 @@
 pub(crate) fn de_package_import_job_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::PackageImportJob>>,
+    Option<std::vec::Vec<crate::types::PackageImportJob>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

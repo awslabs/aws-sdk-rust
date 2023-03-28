@@ -2,7 +2,7 @@
 pub(crate) fn de_reference_item<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ReferenceItem>,
+    Option<crate::types::ReferenceItem>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -28,7 +28,7 @@ where
                         );
                     }
                     variant = match key.to_unescaped()?.as_ref() {
-                        "referenceArn" => Some(crate::model::ReferenceItem::ReferenceArn(
+                        "referenceArn" => Some(crate::types::ReferenceItem::ReferenceArn(
                             aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
@@ -38,7 +38,7 @@ where
                         )),
                         _ => {
                             aws_smithy_json::deserialize::token::skip_value(tokens)?;
-                            Some(crate::model::ReferenceItem::Unknown)
+                            Some(crate::types::ReferenceItem::Unknown)
                         }
                     };
                 }
@@ -65,13 +65,13 @@ where
 
 pub fn ser_reference_item(
     object_4: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::ReferenceItem,
+    input: &crate::types::ReferenceItem,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     match input {
-        crate::model::ReferenceItem::ReferenceArn(inner) => {
+        crate::types::ReferenceItem::ReferenceArn(inner) => {
             object_4.key("referenceArn").string(inner.as_str());
         }
-        crate::model::ReferenceItem::Unknown => {
+        crate::types::ReferenceItem::Unknown => {
             return Err(
                 aws_smithy_http::operation::error::SerializationError::unknown_variant(
                     "ReferenceItem",

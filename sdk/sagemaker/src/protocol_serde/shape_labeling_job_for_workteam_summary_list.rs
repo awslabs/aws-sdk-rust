@@ -2,7 +2,7 @@
 pub(crate) fn de_labeling_job_for_workteam_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::LabelingJobForWorkteamSummary>>,
+    Option<std::vec::Vec<crate::types::LabelingJobForWorkteamSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

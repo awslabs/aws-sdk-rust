@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_caption_language_mapping<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CaptionLanguageMapping>>,
+    Option<std::vec::Vec<crate::types::CaptionLanguageMapping>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

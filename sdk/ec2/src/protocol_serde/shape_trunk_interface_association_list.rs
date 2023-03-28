@@ -2,7 +2,7 @@
 pub fn de_trunk_interface_association_list(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::TrunkInterfaceAssociation>,
+    std::vec::Vec<crate::types::TrunkInterfaceAssociation>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

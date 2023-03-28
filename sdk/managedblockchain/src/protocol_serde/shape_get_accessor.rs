@@ -2,43 +2,35 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_accessor_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetAccessorOutput, crate::error::GetAccessorError> {
+) -> std::result::Result<
+    crate::operation::get_accessor::GetAccessorOutput,
+    crate::operation::get_accessor::GetAccessorError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetAccessorError::unhandled)?;
+        .map_err(crate::operation::get_accessor::GetAccessorError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::GetAccessorError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::get_accessor::GetAccessorError::unhandled(
+                generic,
+            ))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::GetAccessorError::AccessDeniedException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::access_denied_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAccessorError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InternalServiceErrorException" => {
-            crate::error::GetAccessorError::InternalServiceErrorException({
+        "AccessDeniedException" => {
+            crate::operation::get_accessor::GetAccessorError::AccessDeniedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::internal_service_error_exception::Builder::default();
+                        crate::types::error::builders::AccessDeniedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_service_error_exception::de_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAccessorError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_accessor::GetAccessorError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -48,68 +40,98 @@ pub fn de_get_accessor_http_error(
                 tmp
             })
         }
-        "InvalidRequestException" => crate::error::GetAccessorError::InvalidRequestException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "InternalServiceErrorException" => {
+            crate::operation::get_accessor::GetAccessorError::InternalServiceErrorException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_request_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAccessorError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ResourceNotFoundException" => crate::error::GetAccessorError::ResourceNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InternalServiceErrorExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_service_error_exception::de_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_accessor::GetAccessorError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidRequestException" => {
+            crate::operation::get_accessor::GetAccessorError::InvalidRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::resource_not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAccessorError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ThrottlingException" => crate::error::GetAccessorError::ThrottlingException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InvalidRequestExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_accessor::GetAccessorError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::operation::get_accessor::GetAccessorError::ResourceNotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::throttling_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAccessorError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::GetAccessorError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_accessor::GetAccessorError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ThrottlingException" => {
+            crate::operation::get_accessor::GetAccessorError::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_accessor::GetAccessorError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::get_accessor::GetAccessorError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_accessor_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetAccessorOutput, crate::error::GetAccessorError> {
+) -> std::result::Result<
+    crate::operation::get_accessor::GetAccessorOutput,
+    crate::operation::get_accessor::GetAccessorError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_accessor_output::Builder::default();
+        let mut output =
+            crate::operation::get_accessor::builders::GetAccessorOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_get_accessor::de_get_accessor(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::GetAccessorError::unhandled)?;
+        .map_err(crate::operation::get_accessor::GetAccessorError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -119,9 +141,9 @@ pub fn de_get_accessor_http_response(
 
 pub(crate) fn de_get_accessor(
     value: &[u8],
-    mut builder: crate::output::get_accessor_output::Builder,
+    mut builder: crate::operation::get_accessor::builders::GetAccessorOutputBuilder,
 ) -> Result<
-    crate::output::get_accessor_output::Builder,
+    crate::operation::get_accessor::builders::GetAccessorOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

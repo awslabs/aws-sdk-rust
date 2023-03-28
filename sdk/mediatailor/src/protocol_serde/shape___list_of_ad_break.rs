@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_ad_break<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AdBreak>>,
+    Option<std::vec::Vec<crate::types::AdBreak>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

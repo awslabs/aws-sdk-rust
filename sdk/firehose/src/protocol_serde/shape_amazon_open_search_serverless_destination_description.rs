@@ -2,7 +2,7 @@
 pub(crate) fn de_amazon_open_search_serverless_destination_description<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::AmazonOpenSearchServerlessDestinationDescription>,
+    Option<crate::types::AmazonOpenSearchServerlessDestinationDescription>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::amazon_open_search_serverless_destination_description::Builder::default();
+            let mut builder = crate::types::builders::AmazonOpenSearchServerlessDestinationDescriptionBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -64,7 +64,7 @@ where
                                 builder = builder.set_s3_backup_mode(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?.map(|s|
                                         s.to_unescaped().map(|u|
-                                            crate::model::AmazonOpenSearchServerlessS3BackupMode::from(u.as_ref())
+                                            crate::types::AmazonOpenSearchServerlessS3BackupMode::from(u.as_ref())
                                         )
                                     ).transpose()?
                                 );

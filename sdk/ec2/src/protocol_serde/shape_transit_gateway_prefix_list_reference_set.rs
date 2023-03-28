@@ -2,7 +2,7 @@
 pub fn de_transit_gateway_prefix_list_reference_set(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::TransitGatewayPrefixListReference>,
+    std::vec::Vec<crate::types::TransitGatewayPrefixListReference>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

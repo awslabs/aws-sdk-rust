@@ -2,7 +2,7 @@
 pub(crate) fn de_app_blocks<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AppBlock>>,
+    Option<std::vec::Vec<crate::types::AppBlock>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

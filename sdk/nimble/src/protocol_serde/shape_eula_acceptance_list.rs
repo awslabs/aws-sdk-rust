@@ -2,7 +2,7 @@
 pub(crate) fn de_eula_acceptance_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::EulaAcceptance>>,
+    Option<std::vec::Vec<crate::types::EulaAcceptance>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -3,82 +3,96 @@
 pub fn de_create_or_update_tags_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateOrUpdateTagsOutput,
-    crate::error::CreateOrUpdateTagsError,
+    crate::operation::create_or_update_tags::CreateOrUpdateTagsOutput,
+    crate::operation::create_or_update_tags::CreateOrUpdateTagsError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::CreateOrUpdateTagsError::unhandled)?;
+        .map_err(crate::operation::create_or_update_tags::CreateOrUpdateTagsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::CreateOrUpdateTagsError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::create_or_update_tags::CreateOrUpdateTagsError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AlreadyExists" => crate::error::CreateOrUpdateTagsError::AlreadyExistsFault({
+        "AlreadyExists" => crate::operation::create_or_update_tags::CreateOrUpdateTagsError::AlreadyExistsFault({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::already_exists_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_already_exists_fault::de_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateOrUpdateTagsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::AlreadyExistsFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_already_exists_fault::de_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_or_update_tags::CreateOrUpdateTagsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "LimitExceeded" => crate::error::CreateOrUpdateTagsError::LimitExceededFault({
+        "LimitExceeded" => crate::operation::create_or_update_tags::CreateOrUpdateTagsError::LimitExceededFault({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::limit_exceeded_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_limit_exceeded_fault::de_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateOrUpdateTagsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::LimitExceededFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_limit_exceeded_fault::de_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_or_update_tags::CreateOrUpdateTagsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "ResourceContention" => crate::error::CreateOrUpdateTagsError::ResourceContentionFault({
+        "ResourceContention" => crate::operation::create_or_update_tags::CreateOrUpdateTagsError::ResourceContentionFault({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::resource_contention_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_resource_contention_fault::de_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateOrUpdateTagsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ResourceContentionFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_contention_fault::de_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_or_update_tags::CreateOrUpdateTagsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "ResourceInUse" => crate::error::CreateOrUpdateTagsError::ResourceInUseFault({
+        "ResourceInUse" => crate::operation::create_or_update_tags::CreateOrUpdateTagsError::ResourceInUseFault({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::resource_in_use_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_resource_in_use_fault::de_resource_in_use_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateOrUpdateTagsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ResourceInUseFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_in_use_fault::de_resource_in_use_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_or_update_tags::CreateOrUpdateTagsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::CreateOrUpdateTagsError::generic(generic),
+        _ => crate::operation::create_or_update_tags::CreateOrUpdateTagsError::generic(generic)
     })
 }
 
@@ -86,12 +100,12 @@ pub fn de_create_or_update_tags_http_error(
 pub fn de_create_or_update_tags_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateOrUpdateTagsOutput,
-    crate::error::CreateOrUpdateTagsError,
+    crate::operation::create_or_update_tags::CreateOrUpdateTagsOutput,
+    crate::operation::create_or_update_tags::CreateOrUpdateTagsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::create_or_update_tags_output::Builder::default();
+        let mut output = crate::operation::create_or_update_tags::builders::CreateOrUpdateTagsOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

@@ -3,33 +3,33 @@
 pub fn de_describe_nat_gateways_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeNatGatewaysOutput,
-    crate::error::DescribeNatGatewaysError,
+    crate::operation::describe_nat_gateways::DescribeNatGatewaysOutput,
+    crate::operation::describe_nat_gateways::DescribeNatGatewaysError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeNatGatewaysError::unhandled)?;
+        .map_err(crate::operation::describe_nat_gateways::DescribeNatGatewaysError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::DescribeNatGatewaysError::generic(generic))
+    Err(crate::operation::describe_nat_gateways::DescribeNatGatewaysError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_nat_gateways_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeNatGatewaysOutput,
-    crate::error::DescribeNatGatewaysError,
+    crate::operation::describe_nat_gateways::DescribeNatGatewaysOutput,
+    crate::operation::describe_nat_gateways::DescribeNatGatewaysError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_nat_gateways_output::Builder::default();
+        let mut output = crate::operation::describe_nat_gateways::builders::DescribeNatGatewaysOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_describe_nat_gateways::de_describe_nat_gateways(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DescribeNatGatewaysError::unhandled)?;
+        .map_err(crate::operation::describe_nat_gateways::DescribeNatGatewaysError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -40,9 +40,9 @@ pub fn de_describe_nat_gateways_http_response(
 #[allow(unused_mut)]
 pub fn de_describe_nat_gateways(
     inp: &[u8],
-    mut builder: crate::output::describe_nat_gateways_output::Builder,
+    mut builder: crate::operation::describe_nat_gateways::builders::DescribeNatGatewaysOutputBuilder,
 ) -> Result<
-    crate::output::describe_nat_gateways_output::Builder,
+    crate::operation::describe_nat_gateways::builders::DescribeNatGatewaysOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

@@ -3,111 +3,106 @@
 pub fn de_describe_replication_configurations_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeReplicationConfigurationsOutput,
-    crate::error::DescribeReplicationConfigurationsError,
+    crate::operation::describe_replication_configurations::DescribeReplicationConfigurationsOutput,
+    crate::operation::describe_replication_configurations::DescribeReplicationConfigurationsError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeReplicationConfigurationsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::describe_replication_configurations::DescribeReplicationConfigurationsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::DescribeReplicationConfigurationsError::unhandled(generic))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::describe_replication_configurations::DescribeReplicationConfigurationsError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequest" => crate::error::DescribeReplicationConfigurationsError::BadRequest({
+        "BadRequest" => crate::operation::describe_replication_configurations::DescribeReplicationConfigurationsError::BadRequest({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_bad_request::de_bad_request_json_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::DescribeReplicationConfigurationsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::BadRequestBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_bad_request::de_bad_request_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_replication_configurations::DescribeReplicationConfigurationsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "FileSystemNotFound" => {
-            crate::error::DescribeReplicationConfigurationsError::FileSystemNotFound({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "FileSystemNotFound" => crate::operation::describe_replication_configurations::DescribeReplicationConfigurationsError::FileSystemNotFound({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::file_system_not_found::Builder::default();
+                    let mut output = crate::types::error::builders::FileSystemNotFoundBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_file_system_not_found::de_file_system_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeReplicationConfigurationsError::unhandled)?;
+                    output = crate::protocol_serde::shape_file_system_not_found::de_file_system_not_found_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_replication_configurations::DescribeReplicationConfigurationsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InternalServerError" => {
-            crate::error::DescribeReplicationConfigurationsError::InternalServerError({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InternalServerError" => crate::operation::describe_replication_configurations::DescribeReplicationConfigurationsError::InternalServerError({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_error::Builder::default();
+                    let mut output = crate::types::error::builders::InternalServerErrorBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeReplicationConfigurationsError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_replication_configurations::DescribeReplicationConfigurationsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ReplicationNotFound" => {
-            crate::error::DescribeReplicationConfigurationsError::ReplicationNotFound({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ReplicationNotFound" => crate::operation::describe_replication_configurations::DescribeReplicationConfigurationsError::ReplicationNotFound({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::replication_not_found::Builder::default();
+                    let mut output = crate::types::error::builders::ReplicationNotFoundBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_replication_not_found::de_replication_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeReplicationConfigurationsError::unhandled)?;
+                    output = crate::protocol_serde::shape_replication_not_found::de_replication_not_found_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_replication_configurations::DescribeReplicationConfigurationsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ValidationException" => {
-            crate::error::DescribeReplicationConfigurationsError::ValidationException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ValidationException" => crate::operation::describe_replication_configurations::DescribeReplicationConfigurationsError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::validation_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeReplicationConfigurationsError::unhandled)?;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_replication_configurations::DescribeReplicationConfigurationsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DescribeReplicationConfigurationsError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::describe_replication_configurations::DescribeReplicationConfigurationsError::generic(generic)
     })
 }
 
@@ -115,15 +110,14 @@ pub fn de_describe_replication_configurations_http_error(
 pub fn de_describe_replication_configurations_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeReplicationConfigurationsOutput,
-    crate::error::DescribeReplicationConfigurationsError,
+    crate::operation::describe_replication_configurations::DescribeReplicationConfigurationsOutput,
+    crate::operation::describe_replication_configurations::DescribeReplicationConfigurationsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::output::describe_replication_configurations_output::Builder::default();
+        let mut output = crate::operation::describe_replication_configurations::builders::DescribeReplicationConfigurationsOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_describe_replication_configurations::de_describe_replication_configurations(response.body().as_ref(), output).map_err(crate::error::DescribeReplicationConfigurationsError::unhandled)?;
+        output = crate::protocol_serde::shape_describe_replication_configurations::de_describe_replication_configurations(response.body().as_ref(), output).map_err(crate::operation::describe_replication_configurations::DescribeReplicationConfigurationsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -131,13 +125,7 @@ pub fn de_describe_replication_configurations_http_response(
     })
 }
 
-pub(crate) fn de_describe_replication_configurations(
-    value: &[u8],
-    mut builder: crate::output::describe_replication_configurations_output::Builder,
-) -> Result<
-    crate::output::describe_replication_configurations_output::Builder,
-    aws_smithy_json::deserialize::error::DeserializeError,
-> {
+pub(crate) fn de_describe_replication_configurations(value: &[u8], mut builder: crate::operation::describe_replication_configurations::builders::DescribeReplicationConfigurationsOutputBuilder) -> Result<crate::operation::describe_replication_configurations::builders::DescribeReplicationConfigurationsOutputBuilder, aws_smithy_json::deserialize::error::DeserializeError>{
     let mut tokens_owned =
         aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
             .peekable();

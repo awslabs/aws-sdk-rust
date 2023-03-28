@@ -3,80 +3,78 @@
 pub fn de_list_provisioned_capacity_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListProvisionedCapacityOutput,
-    crate::error::ListProvisionedCapacityError,
+    crate::operation::list_provisioned_capacity::ListProvisionedCapacityOutput,
+    crate::operation::list_provisioned_capacity::ListProvisionedCapacityError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListProvisionedCapacityError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::list_provisioned_capacity::ListProvisionedCapacityError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::error::ListProvisionedCapacityError::unhandled(
+        None => return Err(
+            crate::operation::list_provisioned_capacity::ListProvisionedCapacityError::unhandled(
                 generic,
-            ))
-        }
+            ),
+        ),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => {
-            crate::error::ListProvisionedCapacityError::InvalidParameterValueException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidParameterValueException" => crate::operation::list_provisioned_capacity::ListProvisionedCapacityError::InvalidParameterValueException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_parameter_value_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListProvisionedCapacityError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_provisioned_capacity::ListProvisionedCapacityError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "MissingParameterValueException" => {
-            crate::error::ListProvisionedCapacityError::MissingParameterValueException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "MissingParameterValueException" => crate::operation::list_provisioned_capacity::ListProvisionedCapacityError::MissingParameterValueException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::missing_parameter_value_exception::Builder::default();
+                    let mut output = crate::types::error::builders::MissingParameterValueExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_missing_parameter_value_exception::de_missing_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListProvisionedCapacityError::unhandled)?;
+                    output = crate::protocol_serde::shape_missing_parameter_value_exception::de_missing_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_provisioned_capacity::ListProvisionedCapacityError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ServiceUnavailableException" => {
-            crate::error::ListProvisionedCapacityError::ServiceUnavailableException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ServiceUnavailableException" => crate::operation::list_provisioned_capacity::ListProvisionedCapacityError::ServiceUnavailableException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::service_unavailable_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListProvisionedCapacityError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_provisioned_capacity::ListProvisionedCapacityError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::ListProvisionedCapacityError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::list_provisioned_capacity::ListProvisionedCapacityError::generic(generic)
     })
 }
 
@@ -84,19 +82,14 @@ pub fn de_list_provisioned_capacity_http_error(
 pub fn de_list_provisioned_capacity_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListProvisionedCapacityOutput,
-    crate::error::ListProvisionedCapacityError,
+    crate::operation::list_provisioned_capacity::ListProvisionedCapacityOutput,
+    crate::operation::list_provisioned_capacity::ListProvisionedCapacityError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_provisioned_capacity_output::Builder::default();
+        let mut output = crate::operation::list_provisioned_capacity::builders::ListProvisionedCapacityOutputBuilder::default();
         let _ = response;
-        output =
-            crate::protocol_serde::shape_list_provisioned_capacity::de_list_provisioned_capacity(
-                response.body().as_ref(),
-                output,
-            )
-            .map_err(crate::error::ListProvisionedCapacityError::unhandled)?;
+        output = crate::protocol_serde::shape_list_provisioned_capacity::de_list_provisioned_capacity(response.body().as_ref(), output).map_err(crate::operation::list_provisioned_capacity::ListProvisionedCapacityError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -106,9 +99,9 @@ pub fn de_list_provisioned_capacity_http_response(
 
 pub(crate) fn de_list_provisioned_capacity(
     value: &[u8],
-    mut builder: crate::output::list_provisioned_capacity_output::Builder,
+    mut builder: crate::operation::list_provisioned_capacity::builders::ListProvisionedCapacityOutputBuilder,
 ) -> Result<
-    crate::output::list_provisioned_capacity_output::Builder,
+    crate::operation::list_provisioned_capacity::builders::ListProvisionedCapacityOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

@@ -2,13 +2,13 @@
 pub fn de_channels_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::ChannelsResponse>,
-    crate::error::GetChannelsError,
+    std::option::Option<crate::types::ChannelsResponse>,
+    crate::operation::get_channels::GetChannelsError,
 > {
     (!body.is_empty())
         .then(|| {
             crate::protocol_serde::shape_channels_response::de_channels_response_payload(body)
-                .map_err(crate::error::GetChannelsError::unhandled)
+                .map_err(crate::operation::get_channels::GetChannelsError::unhandled)
         })
         .transpose()
 }

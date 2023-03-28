@@ -2,7 +2,7 @@
 pub(crate) fn de_entity_type_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::EntityType>>,
+    Option<std::vec::Vec<crate::types::EntityType>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

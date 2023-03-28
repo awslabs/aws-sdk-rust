@@ -2,7 +2,7 @@
 pub fn de_blue_green_deployment_task_list(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::BlueGreenDeploymentTask>,
+    std::vec::Vec<crate::types::BlueGreenDeploymentTask>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

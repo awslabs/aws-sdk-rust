@@ -3,29 +3,55 @@
 pub fn de_get_service_settings_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetServiceSettingsOutput,
-    crate::error::GetServiceSettingsError,
+    crate::operation::get_service_settings::GetServiceSettingsOutput,
+    crate::operation::get_service_settings::GetServiceSettingsError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetServiceSettingsError::unhandled)?;
+        .map_err(crate::operation::get_service_settings::GetServiceSettingsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::GetServiceSettingsError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::get_service_settings::GetServiceSettingsError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalServerException" => {
-            crate::error::GetServiceSettingsError::InternalServerException({
+            crate::operation::get_service_settings::GetServiceSettingsError::InternalServerException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::types::error::builders::InternalServerExceptionBuilder::default(
+                            );
+                        let _ = response;
+                        output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_service_settings::GetServiceSettingsError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        "ThrottlingException" => {
+            crate::operation::get_service_settings::GetServiceSettingsError::ThrottlingException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::ThrottlingExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetServiceSettingsError::unhandled)?;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_service_settings::GetServiceSettingsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -35,37 +61,25 @@ pub fn de_get_service_settings_http_error(
                 tmp
             })
         }
-        "ThrottlingException" => crate::error::GetServiceSettingsError::ThrottlingException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "ValidationException" => {
+            crate::operation::get_service_settings::GetServiceSettingsError::ValidationException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::throttling_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetServiceSettingsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ValidationException" => crate::error::GetServiceSettingsError::ValidationException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetServiceSettingsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::GetServiceSettingsError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_service_settings::GetServiceSettingsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::get_service_settings::GetServiceSettingsError::generic(generic),
     })
 }
 
@@ -73,18 +87,18 @@ pub fn de_get_service_settings_http_error(
 pub fn de_get_service_settings_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetServiceSettingsOutput,
-    crate::error::GetServiceSettingsError,
+    crate::operation::get_service_settings::GetServiceSettingsOutput,
+    crate::operation::get_service_settings::GetServiceSettingsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_service_settings_output::Builder::default();
+        let mut output = crate::operation::get_service_settings::builders::GetServiceSettingsOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_get_service_settings::de_get_service_settings(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::GetServiceSettingsError::unhandled)?;
+        .map_err(crate::operation::get_service_settings::GetServiceSettingsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -94,9 +108,9 @@ pub fn de_get_service_settings_http_response(
 
 pub(crate) fn de_get_service_settings(
     value: &[u8],
-    mut builder: crate::output::get_service_settings_output::Builder,
+    mut builder: crate::operation::get_service_settings::builders::GetServiceSettingsOutputBuilder,
 ) -> Result<
-    crate::output::get_service_settings_output::Builder,
+    crate::operation::get_service_settings::builders::GetServiceSettingsOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =
@@ -121,7 +135,7 @@ pub(crate) fn de_get_service_settings(
                             )?
                             .map(|s| {
                                 s.to_unescaped().map(|u| {
-                                    crate::model::LinuxSubscriptionsDiscovery::from(u.as_ref())
+                                    crate::types::LinuxSubscriptionsDiscovery::from(u.as_ref())
                                 })
                             })
                             .transpose()?,
@@ -139,7 +153,7 @@ pub(crate) fn de_get_service_settings(
                             )?
                             .map(|s| {
                                 s.to_unescaped()
-                                    .map(|u| crate::model::Status::from(u.as_ref()))
+                                    .map(|u| crate::types::Status::from(u.as_ref()))
                             })
                             .transpose()?,
                         );

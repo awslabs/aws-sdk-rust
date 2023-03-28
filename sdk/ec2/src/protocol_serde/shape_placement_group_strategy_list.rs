@@ -2,7 +2,7 @@
 pub fn de_placement_group_strategy_list(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::PlacementGroupStrategy>,
+    std::vec::Vec<crate::types::PlacementGroupStrategy>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();
@@ -10,8 +10,8 @@ pub fn de_placement_group_strategy_list(
         match tag.start_el() {
             s if s.matches("item") /* member com.amazonaws.ec2#PlacementGroupStrategyList$member */ =>  {
                 out.push(
-                    Result::<crate::model::PlacementGroupStrategy, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                        crate::model::PlacementGroupStrategy::from(
+                    Result::<crate::types::PlacementGroupStrategy, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                        crate::types::PlacementGroupStrategy::from(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                         )
                     )

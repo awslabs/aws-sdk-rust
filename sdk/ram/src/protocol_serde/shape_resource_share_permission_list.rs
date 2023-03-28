@@ -2,7 +2,7 @@
 pub(crate) fn de_resource_share_permission_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ResourceSharePermissionSummary>>,
+    Option<std::vec::Vec<crate::types::ResourceSharePermissionSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

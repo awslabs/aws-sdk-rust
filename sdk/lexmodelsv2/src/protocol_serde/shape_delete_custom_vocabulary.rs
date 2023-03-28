@@ -3,128 +3,134 @@
 pub fn de_delete_custom_vocabulary_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteCustomVocabularyOutput,
-    crate::error::DeleteCustomVocabularyError,
+    crate::operation::delete_custom_vocabulary::DeleteCustomVocabularyOutput,
+    crate::operation::delete_custom_vocabulary::DeleteCustomVocabularyError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteCustomVocabularyError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::delete_custom_vocabulary::DeleteCustomVocabularyError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::DeleteCustomVocabularyError::unhandled(
-                generic,
-            ))
-        }
-    };
+    let error_code =
+        match generic.code() {
+            Some(code) => code,
+            None => return Err(
+                crate::operation::delete_custom_vocabulary::DeleteCustomVocabularyError::unhandled(
+                    generic,
+                ),
+            ),
+        };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConflictException" => crate::error::DeleteCustomVocabularyError::ConflictException({
+        "ConflictException" => crate::operation::delete_custom_vocabulary::DeleteCustomVocabularyError::ConflictException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::conflict_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteCustomVocabularyError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_custom_vocabulary::DeleteCustomVocabularyError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "InternalServerException" => {
-            crate::error::DeleteCustomVocabularyError::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteCustomVocabularyError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "PreconditionFailedException" => {
-            crate::error::DeleteCustomVocabularyError::PreconditionFailedException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::precondition_failed_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_precondition_failed_exception::de_precondition_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteCustomVocabularyError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ServiceQuotaExceededException" => {
-            crate::error::DeleteCustomVocabularyError::ServiceQuotaExceededException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::service_quota_exceeded_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteCustomVocabularyError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ThrottlingException" => crate::error::DeleteCustomVocabularyError::ThrottlingException({
+        "InternalServerException" => crate::operation::delete_custom_vocabulary::DeleteCustomVocabularyError::InternalServerException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::throttling_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteCustomVocabularyError::unhandled)?;
-                output = output.set_retry_after_seconds(
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_custom_vocabulary::DeleteCustomVocabularyError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "PreconditionFailedException" => crate::operation::delete_custom_vocabulary::DeleteCustomVocabularyError::PreconditionFailedException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::PreconditionFailedExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_precondition_failed_exception::de_precondition_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_custom_vocabulary::DeleteCustomVocabularyError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ServiceQuotaExceededException" => crate::operation::delete_custom_vocabulary::DeleteCustomVocabularyError::ServiceQuotaExceededException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_custom_vocabulary::DeleteCustomVocabularyError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ThrottlingException" => crate::operation::delete_custom_vocabulary::DeleteCustomVocabularyError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_custom_vocabulary::DeleteCustomVocabularyError::unhandled)?;
+                    output = output.set_retry_after_seconds(
                         crate::protocol_serde::shape_throttling_exception::de_retry_after_seconds_header(response.headers())
-                                                .map_err(|_|crate::error::DeleteCustomVocabularyError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::operation::delete_custom_vocabulary::DeleteCustomVocabularyError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
-                let output = output.meta(generic);
-                output.build()
-            };
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "ValidationException" => crate::error::DeleteCustomVocabularyError::ValidationException({
+        "ValidationException" => crate::operation::delete_custom_vocabulary::DeleteCustomVocabularyError::ValidationException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteCustomVocabularyError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_custom_vocabulary::DeleteCustomVocabularyError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::DeleteCustomVocabularyError::generic(generic),
+        _ => crate::operation::delete_custom_vocabulary::DeleteCustomVocabularyError::generic(generic)
     })
 }
 
@@ -132,19 +138,21 @@ pub fn de_delete_custom_vocabulary_http_error(
 pub fn de_delete_custom_vocabulary_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteCustomVocabularyOutput,
-    crate::error::DeleteCustomVocabularyError,
+    crate::operation::delete_custom_vocabulary::DeleteCustomVocabularyOutput,
+    crate::operation::delete_custom_vocabulary::DeleteCustomVocabularyError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_custom_vocabulary_output::Builder::default();
+        let mut output = crate::operation::delete_custom_vocabulary::builders::DeleteCustomVocabularyOutputBuilder::default();
         let _ = response;
         output =
             crate::protocol_serde::shape_delete_custom_vocabulary::de_delete_custom_vocabulary(
                 response.body().as_ref(),
                 output,
             )
-            .map_err(crate::error::DeleteCustomVocabularyError::unhandled)?;
+            .map_err(
+                crate::operation::delete_custom_vocabulary::DeleteCustomVocabularyError::unhandled,
+            )?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -154,9 +162,9 @@ pub fn de_delete_custom_vocabulary_http_response(
 
 pub(crate) fn de_delete_custom_vocabulary(
     value: &[u8],
-    mut builder: crate::output::delete_custom_vocabulary_output::Builder,
+    mut builder: crate::operation::delete_custom_vocabulary::builders::DeleteCustomVocabularyOutputBuilder,
 ) -> Result<
-    crate::output::delete_custom_vocabulary_output::Builder,
+    crate::operation::delete_custom_vocabulary::builders::DeleteCustomVocabularyOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =
@@ -194,7 +202,7 @@ pub(crate) fn de_delete_custom_vocabulary(
                             )?
                             .map(|s| {
                                 s.to_unescaped()
-                                    .map(|u| crate::model::CustomVocabularyStatus::from(u.as_ref()))
+                                    .map(|u| crate::types::CustomVocabularyStatus::from(u.as_ref()))
                             })
                             .transpose()?,
                         );

@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_launch_template_iam_instance_profile_specification_request(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::LaunchTemplateIamInstanceProfileSpecificationRequest,
+    input: &crate::types::LaunchTemplateIamInstanceProfileSpecificationRequest,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Arn");

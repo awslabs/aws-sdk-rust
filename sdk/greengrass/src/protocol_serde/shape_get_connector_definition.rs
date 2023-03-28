@@ -3,41 +3,45 @@
 pub fn de_get_connector_definition_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetConnectorDefinitionOutput,
-    crate::error::GetConnectorDefinitionError,
+    crate::operation::get_connector_definition::GetConnectorDefinitionOutput,
+    crate::operation::get_connector_definition::GetConnectorDefinitionError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetConnectorDefinitionError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::get_connector_definition::GetConnectorDefinitionError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::GetConnectorDefinitionError::unhandled(
-                generic,
-            ))
-        }
-    };
+    let error_code =
+        match generic.code() {
+            Some(code) => code,
+            None => return Err(
+                crate::operation::get_connector_definition::GetConnectorDefinitionError::unhandled(
+                    generic,
+                ),
+            ),
+        };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::GetConnectorDefinitionError::BadRequestException({
+        "BadRequestException" => crate::operation::get_connector_definition::GetConnectorDefinitionError::BadRequestException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetConnectorDefinitionError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_connector_definition::GetConnectorDefinitionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::GetConnectorDefinitionError::generic(generic),
+        _ => crate::operation::get_connector_definition::GetConnectorDefinitionError::generic(generic)
     })
 }
 
@@ -45,19 +49,21 @@ pub fn de_get_connector_definition_http_error(
 pub fn de_get_connector_definition_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetConnectorDefinitionOutput,
-    crate::error::GetConnectorDefinitionError,
+    crate::operation::get_connector_definition::GetConnectorDefinitionOutput,
+    crate::operation::get_connector_definition::GetConnectorDefinitionError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_connector_definition_output::Builder::default();
+        let mut output = crate::operation::get_connector_definition::builders::GetConnectorDefinitionOutputBuilder::default();
         let _ = response;
         output =
             crate::protocol_serde::shape_get_connector_definition::de_get_connector_definition(
                 response.body().as_ref(),
                 output,
             )
-            .map_err(crate::error::GetConnectorDefinitionError::unhandled)?;
+            .map_err(
+                crate::operation::get_connector_definition::GetConnectorDefinitionError::unhandled,
+            )?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -67,9 +73,9 @@ pub fn de_get_connector_definition_http_response(
 
 pub(crate) fn de_get_connector_definition(
     value: &[u8],
-    mut builder: crate::output::get_connector_definition_output::Builder,
+    mut builder: crate::operation::get_connector_definition::builders::GetConnectorDefinitionOutputBuilder,
 ) -> Result<
-    crate::output::get_connector_definition_output::Builder,
+    crate::operation::get_connector_definition::builders::GetConnectorDefinitionOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

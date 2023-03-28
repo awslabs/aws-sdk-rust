@@ -3,72 +3,79 @@
 pub fn de_get_v2_logging_options_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetV2LoggingOptionsOutput,
-    crate::error::GetV2LoggingOptionsError,
+    crate::operation::get_v2_logging_options::GetV2LoggingOptionsOutput,
+    crate::operation::get_v2_logging_options::GetV2LoggingOptionsError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetV2LoggingOptionsError::unhandled)?;
+        .map_err(crate::operation::get_v2_logging_options::GetV2LoggingOptionsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::GetV2LoggingOptionsError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::get_v2_logging_options::GetV2LoggingOptionsError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalException" => crate::error::GetV2LoggingOptionsError::InternalException({
+        "InternalException" => crate::operation::get_v2_logging_options::GetV2LoggingOptionsError::InternalException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_exception::de_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetV2LoggingOptionsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InternalExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_exception::de_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_v2_logging_options::GetV2LoggingOptionsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "NotConfiguredException" => {
-            crate::error::GetV2LoggingOptionsError::NotConfiguredException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "NotConfiguredException" => crate::operation::get_v2_logging_options::GetV2LoggingOptionsError::NotConfiguredException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::not_configured_exception::Builder::default();
+                    let mut output = crate::types::error::builders::NotConfiguredExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_not_configured_exception::de_not_configured_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetV2LoggingOptionsError::unhandled)?;
+                    output = crate::protocol_serde::shape_not_configured_exception::de_not_configured_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_v2_logging_options::GetV2LoggingOptionsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ServiceUnavailableException" => {
-            crate::error::GetV2LoggingOptionsError::ServiceUnavailableException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ServiceUnavailableException" => crate::operation::get_v2_logging_options::GetV2LoggingOptionsError::ServiceUnavailableException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::service_unavailable_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetV2LoggingOptionsError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_v2_logging_options::GetV2LoggingOptionsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::GetV2LoggingOptionsError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::get_v2_logging_options::GetV2LoggingOptionsError::generic(generic)
     })
 }
 
@@ -76,18 +83,18 @@ pub fn de_get_v2_logging_options_http_error(
 pub fn de_get_v2_logging_options_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetV2LoggingOptionsOutput,
-    crate::error::GetV2LoggingOptionsError,
+    crate::operation::get_v2_logging_options::GetV2LoggingOptionsOutput,
+    crate::operation::get_v2_logging_options::GetV2LoggingOptionsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_v2_logging_options_output::Builder::default();
+        let mut output = crate::operation::get_v2_logging_options::builders::GetV2LoggingOptionsOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_get_v2_logging_options::de_get_v2_logging_options(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::GetV2LoggingOptionsError::unhandled)?;
+        .map_err(crate::operation::get_v2_logging_options::GetV2LoggingOptionsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -97,9 +104,9 @@ pub fn de_get_v2_logging_options_http_response(
 
 pub(crate) fn de_get_v2_logging_options(
     value: &[u8],
-    mut builder: crate::output::get_v2_logging_options_output::Builder,
+    mut builder: crate::operation::get_v2_logging_options::builders::GetV2LoggingOptionsOutputBuilder,
 ) -> Result<
-    crate::output::get_v2_logging_options_output::Builder,
+    crate::operation::get_v2_logging_options::builders::GetV2LoggingOptionsOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =
@@ -119,7 +126,7 @@ pub(crate) fn de_get_v2_logging_options(
                             )?
                             .map(|s| {
                                 s.to_unescaped()
-                                    .map(|u| crate::model::LogLevel::from(u.as_ref()))
+                                    .map(|u| crate::types::LogLevel::from(u.as_ref()))
                             })
                             .transpose()?,
                         );

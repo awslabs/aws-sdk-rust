@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_create_volume_permission(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::CreateVolumePermission,
+    input: &crate::types::CreateVolumePermission,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Group");
@@ -19,16 +19,16 @@ pub fn ser_create_volume_permission(
 
 pub fn de_create_volume_permission(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::CreateVolumePermission, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::CreateVolumePermission, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::CreateVolumePermission::builder();
+    let mut builder = crate::types::CreateVolumePermission::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("group") /* Group com.amazonaws.ec2#CreateVolumePermission$Group */ =>  {
                 let var_5 =
                     Some(
-                        Result::<crate::model::PermissionGroup, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::PermissionGroup::from(
+                        Result::<crate::types::PermissionGroup, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::PermissionGroup::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

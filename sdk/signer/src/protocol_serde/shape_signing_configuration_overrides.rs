@@ -2,7 +2,7 @@
 pub(crate) fn de_signing_configuration_overrides<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::SigningConfigurationOverrides>,
+    Option<crate::types::SigningConfigurationOverrides>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::signing_configuration_overrides::Builder::default();
+            let mut builder =
+                crate::types::builders::SigningConfigurationOverridesBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +31,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::EncryptionAlgorithm::from(u.as_ref())
+                                            crate::types::EncryptionAlgorithm::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -43,7 +44,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::HashAlgorithm::from(u.as_ref()))
+                                            .map(|u| crate::types::HashAlgorithm::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -73,7 +74,7 @@ where
 
 pub fn ser_signing_configuration_overrides(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::SigningConfigurationOverrides,
+    input: &crate::types::SigningConfigurationOverrides,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.encryption_algorithm {
         object.key("encryptionAlgorithm").string(var_1.as_str());

@@ -2,7 +2,7 @@
 pub(crate) fn de_service_quota_increase_request_in_template_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ServiceQuotaIncreaseRequestInTemplate>>,
+    Option<std::vec::Vec<crate::types::ServiceQuotaIncreaseRequestInTemplate>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

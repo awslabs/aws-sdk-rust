@@ -2,7 +2,7 @@
 pub(crate) fn de_evidence_finder_enablement<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::EvidenceFinderEnablement>,
+    Option<crate::types::EvidenceFinderEnablement>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::evidence_finder_enablement::Builder::default();
+            let mut builder = crate::types::builders::EvidenceFinderEnablementBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -39,7 +39,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::EvidenceFinderEnablementStatus::from(
+                                            crate::types::EvidenceFinderEnablementStatus::from(
                                                 u.as_ref(),
                                             )
                                         })
@@ -54,7 +54,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::EvidenceFinderBackfillStatus::from(
+                                            crate::types::EvidenceFinderBackfillStatus::from(
                                                 u.as_ref(),
                                             )
                                         })

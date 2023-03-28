@@ -2,7 +2,7 @@
 pub(crate) fn de_cloud_formation_healths<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CloudFormationHealth>>,
+    Option<std::vec::Vec<crate::types::CloudFormationHealth>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

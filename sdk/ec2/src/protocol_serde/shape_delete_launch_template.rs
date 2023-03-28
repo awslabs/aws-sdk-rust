@@ -3,33 +3,33 @@
 pub fn de_delete_launch_template_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteLaunchTemplateOutput,
-    crate::error::DeleteLaunchTemplateError,
+    crate::operation::delete_launch_template::DeleteLaunchTemplateOutput,
+    crate::operation::delete_launch_template::DeleteLaunchTemplateError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteLaunchTemplateError::unhandled)?;
+        .map_err(crate::operation::delete_launch_template::DeleteLaunchTemplateError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::DeleteLaunchTemplateError::generic(generic))
+    Err(crate::operation::delete_launch_template::DeleteLaunchTemplateError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_launch_template_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteLaunchTemplateOutput,
-    crate::error::DeleteLaunchTemplateError,
+    crate::operation::delete_launch_template::DeleteLaunchTemplateOutput,
+    crate::operation::delete_launch_template::DeleteLaunchTemplateError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_launch_template_output::Builder::default();
+        let mut output = crate::operation::delete_launch_template::builders::DeleteLaunchTemplateOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_delete_launch_template::de_delete_launch_template(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DeleteLaunchTemplateError::unhandled)?;
+        .map_err(crate::operation::delete_launch_template::DeleteLaunchTemplateError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -40,9 +40,9 @@ pub fn de_delete_launch_template_http_response(
 #[allow(unused_mut)]
 pub fn de_delete_launch_template(
     inp: &[u8],
-    mut builder: crate::output::delete_launch_template_output::Builder,
+    mut builder: crate::operation::delete_launch_template::builders::DeleteLaunchTemplateOutputBuilder,
 ) -> Result<
-    crate::output::delete_launch_template_output::Builder,
+    crate::operation::delete_launch_template::builders::DeleteLaunchTemplateOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

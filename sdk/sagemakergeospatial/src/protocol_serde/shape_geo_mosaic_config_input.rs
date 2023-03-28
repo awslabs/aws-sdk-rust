@@ -2,7 +2,7 @@
 pub(crate) fn de_geo_mosaic_config_input<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::GeoMosaicConfigInput>,
+    Option<crate::types::GeoMosaicConfigInput>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::geo_mosaic_config_input::Builder::default();
+            let mut builder = crate::types::builders::GeoMosaicConfigInputBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::AlgorithmNameGeoMosaic::from(u.as_ref())
+                                            crate::types::AlgorithmNameGeoMosaic::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -66,7 +66,7 @@ where
 
 pub fn ser_geo_mosaic_config_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::GeoMosaicConfigInput,
+    input: &crate::types::GeoMosaicConfigInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.algorithm_name {
         object.key("AlgorithmName").string(var_1.as_str());

@@ -2,135 +2,150 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_input_devices_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListInputDevicesOutput, crate::error::ListInputDevicesError>
-{
+) -> std::result::Result<
+    crate::operation::list_input_devices::ListInputDevicesOutput,
+    crate::operation::list_input_devices::ListInputDevicesError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListInputDevicesError::unhandled)?;
+        .map_err(crate::operation::list_input_devices::ListInputDevicesError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListInputDevicesError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::list_input_devices::ListInputDevicesError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadGatewayException" => crate::error::ListInputDevicesError::BadGatewayException({
+        "BadGatewayException" => crate::operation::list_input_devices::ListInputDevicesError::BadGatewayException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_gateway_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_bad_gateway_exception::de_bad_gateway_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListInputDevicesError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "BadRequestException" => crate::error::ListInputDevicesError::BadRequestException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListInputDevicesError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ForbiddenException" => crate::error::ListInputDevicesError::ForbiddenException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListInputDevicesError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "GatewayTimeoutException" => {
-            crate::error::ListInputDevicesError::GatewayTimeoutException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::gateway_timeout_exception::Builder::default();
+                    let mut output = crate::types::error::builders::BadGatewayExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_gateway_timeout_exception::de_gateway_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListInputDevicesError::unhandled)?;
+                    output = crate::protocol_serde::shape_bad_gateway_exception::de_bad_gateway_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_input_devices::ListInputDevicesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InternalServerErrorException" => {
-            crate::error::ListInputDevicesError::InternalServerErrorException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "BadRequestException" => crate::operation::list_input_devices::ListInputDevicesError::BadRequestException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::internal_server_error_exception::Builder::default();
+                    let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListInputDevicesError::unhandled)?;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_input_devices::ListInputDevicesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "TooManyRequestsException" => {
-            crate::error::ListInputDevicesError::TooManyRequestsException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ForbiddenException" => crate::operation::list_input_devices::ListInputDevicesError::ForbiddenException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ForbiddenExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListInputDevicesError::unhandled)?;
+                    output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_input_devices::ListInputDevicesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::ListInputDevicesError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "GatewayTimeoutException" => crate::operation::list_input_devices::ListInputDevicesError::GatewayTimeoutException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::GatewayTimeoutExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_gateway_timeout_exception::de_gateway_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_input_devices::ListInputDevicesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InternalServerErrorException" => crate::operation::list_input_devices::ListInputDevicesError::InternalServerErrorException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InternalServerErrorExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_input_devices::ListInputDevicesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TooManyRequestsException" => crate::operation::list_input_devices::ListInputDevicesError::TooManyRequestsException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_input_devices::ListInputDevicesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::list_input_devices::ListInputDevicesError::generic(generic)
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_input_devices_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListInputDevicesOutput, crate::error::ListInputDevicesError>
-{
+) -> std::result::Result<
+    crate::operation::list_input_devices::ListInputDevicesOutput,
+    crate::operation::list_input_devices::ListInputDevicesError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_input_devices_output::Builder::default();
+        let mut output =
+            crate::operation::list_input_devices::builders::ListInputDevicesOutputBuilder::default(
+            );
         let _ = response;
         output = crate::protocol_serde::shape_list_input_devices::de_list_input_devices(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListInputDevicesError::unhandled)?;
+        .map_err(crate::operation::list_input_devices::ListInputDevicesError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -140,9 +155,9 @@ pub fn de_list_input_devices_http_response(
 
 pub(crate) fn de_list_input_devices(
     value: &[u8],
-    mut builder: crate::output::list_input_devices_output::Builder,
+    mut builder: crate::operation::list_input_devices::builders::ListInputDevicesOutputBuilder,
 ) -> Result<
-    crate::output::list_input_devices_output::Builder,
+    crate::operation::list_input_devices::builders::ListInputDevicesOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

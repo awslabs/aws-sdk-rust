@@ -2,7 +2,7 @@
 pub(crate) fn de_provisioned_product_plans<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ProvisionedProductPlanSummary>>,
+    Option<std::vec::Vec<crate::types::ProvisionedProductPlanSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

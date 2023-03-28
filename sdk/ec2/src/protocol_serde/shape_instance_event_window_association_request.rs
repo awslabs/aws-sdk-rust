@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_instance_event_window_association_request(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::InstanceEventWindowAssociationRequest,
+    input: &crate::types::InstanceEventWindowAssociationRequest,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("InstanceId");

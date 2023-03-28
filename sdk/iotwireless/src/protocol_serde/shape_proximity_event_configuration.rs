@@ -2,7 +2,7 @@
 pub(crate) fn de_proximity_event_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ProximityEventConfiguration>,
+    Option<crate::types::ProximityEventConfiguration>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::proximity_event_configuration::Builder::default();
+            let mut builder = crate::types::builders::ProximityEventConfigurationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -35,7 +35,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::EventNotificationTopicStatus::from(
+                                            crate::types::EventNotificationTopicStatus::from(
                                                 u.as_ref(),
                                             )
                                         })
@@ -68,7 +68,7 @@ where
 
 pub fn ser_proximity_event_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::ProximityEventConfiguration,
+    input: &crate::types::ProximityEventConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.sidewalk {
         #[allow(unused_mut)]

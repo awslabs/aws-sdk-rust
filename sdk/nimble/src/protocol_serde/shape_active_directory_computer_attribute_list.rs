@@ -2,7 +2,7 @@
 pub(crate) fn de_active_directory_computer_attribute_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ActiveDirectoryComputerAttribute>>,
+    Option<std::vec::Vec<crate::types::ActiveDirectoryComputerAttribute>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

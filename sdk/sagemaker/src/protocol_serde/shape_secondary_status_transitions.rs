@@ -2,7 +2,7 @@
 pub(crate) fn de_secondary_status_transitions<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SecondaryStatusTransition>>,
+    Option<std::vec::Vec<crate::types::SecondaryStatusTransition>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

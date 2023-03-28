@@ -2,7 +2,7 @@
 pub(crate) fn de_pause_state_schedule_action_settings<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::PauseStateScheduleActionSettings>,
+    Option<crate::types::PauseStateScheduleActionSettings>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::pause_state_schedule_action_settings::Builder::default();
+                crate::types::builders::PauseStateScheduleActionSettingsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -54,7 +54,7 @@ where
 
 pub fn ser_pause_state_schedule_action_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::PauseStateScheduleActionSettings,
+    input: &crate::types::PauseStateScheduleActionSettings,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.pipelines {
         let mut array_2 = object.key("pipelines").start_array();

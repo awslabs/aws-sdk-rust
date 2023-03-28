@@ -2,7 +2,7 @@
 pub fn de_terminate_connection_status_set(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::TerminateConnectionStatus>,
+    std::vec::Vec<crate::types::TerminateConnectionStatus>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

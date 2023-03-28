@@ -2,7 +2,7 @@
 pub(crate) fn de_external_ids<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ExternalId>>,
+    Option<std::vec::Vec<crate::types::ExternalId>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

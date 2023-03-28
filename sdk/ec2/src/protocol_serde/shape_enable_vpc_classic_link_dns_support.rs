@@ -3,32 +3,28 @@
 pub fn de_enable_vpc_classic_link_dns_support_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::EnableVpcClassicLinkDnsSupportOutput,
-    crate::error::EnableVpcClassicLinkDnsSupportError,
+    crate::operation::enable_vpc_classic_link_dns_support::EnableVpcClassicLinkDnsSupportOutput,
+    crate::operation::enable_vpc_classic_link_dns_support::EnableVpcClassicLinkDnsSupportError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::EnableVpcClassicLinkDnsSupportError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::enable_vpc_classic_link_dns_support::EnableVpcClassicLinkDnsSupportError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::EnableVpcClassicLinkDnsSupportError::generic(
-        generic,
-    ))
+    Err(crate::operation::enable_vpc_classic_link_dns_support::EnableVpcClassicLinkDnsSupportError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_enable_vpc_classic_link_dns_support_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::EnableVpcClassicLinkDnsSupportOutput,
-    crate::error::EnableVpcClassicLinkDnsSupportError,
+    crate::operation::enable_vpc_classic_link_dns_support::EnableVpcClassicLinkDnsSupportOutput,
+    crate::operation::enable_vpc_classic_link_dns_support::EnableVpcClassicLinkDnsSupportError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::output::enable_vpc_classic_link_dns_support_output::Builder::default();
+        let mut output = crate::operation::enable_vpc_classic_link_dns_support::builders::EnableVpcClassicLinkDnsSupportOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_enable_vpc_classic_link_dns_support::de_enable_vpc_classic_link_dns_support(response.body().as_ref(), output).map_err(crate::error::EnableVpcClassicLinkDnsSupportError::unhandled)?;
+        output = crate::protocol_serde::shape_enable_vpc_classic_link_dns_support::de_enable_vpc_classic_link_dns_support(response.body().as_ref(), output).map_err(crate::operation::enable_vpc_classic_link_dns_support::EnableVpcClassicLinkDnsSupportError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -37,13 +33,7 @@ pub fn de_enable_vpc_classic_link_dns_support_http_response(
 }
 
 #[allow(unused_mut)]
-pub fn de_enable_vpc_classic_link_dns_support(
-    inp: &[u8],
-    mut builder: crate::output::enable_vpc_classic_link_dns_support_output::Builder,
-) -> Result<
-    crate::output::enable_vpc_classic_link_dns_support_output::Builder,
-    aws_smithy_xml::decode::XmlDecodeError,
-> {
+pub fn de_enable_vpc_classic_link_dns_support(inp: &[u8], mut builder: crate::operation::enable_vpc_classic_link_dns_support::builders::EnableVpcClassicLinkDnsSupportOutputBuilder) -> Result<crate::operation::enable_vpc_classic_link_dns_support::builders::EnableVpcClassicLinkDnsSupportOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

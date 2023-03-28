@@ -2,7 +2,7 @@
 pub(crate) fn de_auto_scaling_target_tracking_scaling_policy_configuration_description<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::AutoScalingTargetTrackingScalingPolicyConfigurationDescription>,
+    Option<crate::types::AutoScalingTargetTrackingScalingPolicyConfigurationDescription>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::auto_scaling_target_tracking_scaling_policy_configuration_description::Builder::default();
+            let mut builder = crate::types::builders::AutoScalingTargetTrackingScalingPolicyConfigurationDescriptionBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

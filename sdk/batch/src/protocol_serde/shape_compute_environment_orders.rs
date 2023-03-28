@@ -2,7 +2,7 @@
 pub(crate) fn de_compute_environment_orders<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ComputeEnvironmentOrder>>,
+    Option<std::vec::Vec<crate::types::ComputeEnvironmentOrder>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

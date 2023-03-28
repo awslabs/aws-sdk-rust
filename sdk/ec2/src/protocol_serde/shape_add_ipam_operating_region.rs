@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_add_ipam_operating_region(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::AddIpamOperatingRegion,
+    input: &crate::types::AddIpamOperatingRegion,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("RegionName");

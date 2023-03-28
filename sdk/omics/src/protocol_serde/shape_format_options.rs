@@ -2,7 +2,7 @@
 pub(crate) fn de_format_options<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::FormatOptions>,
+    Option<crate::types::FormatOptions>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -28,7 +28,7 @@ where
                         );
                     }
                     variant = match key.to_unescaped()?.as_ref() {
-                        "tsvOptions" => Some(crate::model::FormatOptions::TsvOptions(
+                        "tsvOptions" => Some(crate::types::FormatOptions::TsvOptions(
                             crate::protocol_serde::shape_tsv_options::de_tsv_options(tokens)?
                                 .ok_or_else(|| {
                                     aws_smithy_json::deserialize::error::DeserializeError::custom(
@@ -36,7 +36,7 @@ where
                                     )
                                 })?,
                         )),
-                        "vcfOptions" => Some(crate::model::FormatOptions::VcfOptions(
+                        "vcfOptions" => Some(crate::types::FormatOptions::VcfOptions(
                             crate::protocol_serde::shape_vcf_options::de_vcf_options(tokens)?
                                 .ok_or_else(|| {
                                     aws_smithy_json::deserialize::error::DeserializeError::custom(
@@ -46,7 +46,7 @@ where
                         )),
                         _ => {
                             aws_smithy_json::deserialize::token::skip_value(tokens)?;
-                            Some(crate::model::FormatOptions::Unknown)
+                            Some(crate::types::FormatOptions::Unknown)
                         }
                     };
                 }
@@ -73,22 +73,22 @@ where
 
 pub fn ser_format_options(
     object_3: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::FormatOptions,
+    input: &crate::types::FormatOptions,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     match input {
-        crate::model::FormatOptions::TsvOptions(inner) => {
+        crate::types::FormatOptions::TsvOptions(inner) => {
             #[allow(unused_mut)]
             let mut object_1 = object_3.key("tsvOptions").start_object();
             crate::protocol_serde::shape_tsv_options::ser_tsv_options(&mut object_1, inner)?;
             object_1.finish();
         }
-        crate::model::FormatOptions::VcfOptions(inner) => {
+        crate::types::FormatOptions::VcfOptions(inner) => {
             #[allow(unused_mut)]
             let mut object_2 = object_3.key("vcfOptions").start_object();
             crate::protocol_serde::shape_vcf_options::ser_vcf_options(&mut object_2, inner)?;
             object_2.finish();
         }
-        crate::model::FormatOptions::Unknown => {
+        crate::types::FormatOptions::Unknown => {
             return Err(
                 aws_smithy_http::operation::error::SerializationError::unknown_variant(
                     "FormatOptions",

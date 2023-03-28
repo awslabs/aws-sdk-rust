@@ -2,7 +2,7 @@
 pub(crate) fn de_compilation_job_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::CompilationJobSummary>,
+    Option<crate::types::CompilationJobSummary>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::compilation_job_summary::Builder::default();
+            let mut builder = crate::types::builders::CompilationJobSummaryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -72,7 +72,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::TargetDevice::from(u.as_ref()))
+                                            .map(|u| crate::types::TargetDevice::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -84,7 +84,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::TargetPlatformOs::from(u.as_ref())
+                                            crate::types::TargetPlatformOs::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -97,7 +97,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::TargetPlatformArch::from(u.as_ref())
+                                            crate::types::TargetPlatformArch::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -110,7 +110,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::TargetPlatformAccelerator::from(
+                                            crate::types::TargetPlatformAccelerator::from(
                                                 u.as_ref(),
                                             )
                                         })
@@ -133,7 +133,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::CompilationJobStatus::from(u.as_ref())
+                                            crate::types::CompilationJobStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

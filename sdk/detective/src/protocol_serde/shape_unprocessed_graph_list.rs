@@ -2,7 +2,7 @@
 pub(crate) fn de_unprocessed_graph_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::UnprocessedGraph>>,
+    Option<std::vec::Vec<crate::types::UnprocessedGraph>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

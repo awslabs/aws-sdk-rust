@@ -2,7 +2,7 @@
 pub(crate) fn de_normalized_value<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::NormalizedValue>,
+    Option<crate::types::NormalizedValue>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::normalized_value::Builder::default();
+            let mut builder = crate::types::builders::NormalizedValueBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -39,7 +39,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::ValueType::from(u.as_ref()))
+                                            .map(|u| crate::types::ValueType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

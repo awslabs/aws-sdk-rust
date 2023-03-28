@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_vpc_association_authorization_not_found_xml_err(
     inp: &[u8],
-    mut builder: crate::error::vpc_association_authorization_not_found::Builder,
+    mut builder: crate::types::error::builders::VpcAssociationAuthorizationNotFoundBuilder,
 ) -> Result<
-    crate::error::vpc_association_authorization_not_found::Builder,
+    crate::types::error::builders::VpcAssociationAuthorizationNotFoundBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

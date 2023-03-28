@@ -2,20 +2,20 @@
 pub fn de_function_list_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::FunctionList>,
-    crate::error::ListFunctionsError,
+    std::option::Option<crate::types::FunctionList>,
+    crate::operation::list_functions::ListFunctionsError,
 > {
     (!body.is_empty())
         .then(|| {
             crate::protocol_serde::shape_list_functions_output::de_function_list(body)
-                .map_err(crate::error::ListFunctionsError::unhandled)
+                .map_err(crate::operation::list_functions::ListFunctionsError::unhandled)
         })
         .transpose()
 }
 
 pub fn de_function_list(
     inp: &[u8],
-) -> Result<crate::model::FunctionList, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::FunctionList, aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;

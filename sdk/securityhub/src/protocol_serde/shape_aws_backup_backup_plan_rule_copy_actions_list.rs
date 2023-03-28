@@ -2,7 +2,7 @@
 pub(crate) fn de_aws_backup_backup_plan_rule_copy_actions_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AwsBackupBackupPlanRuleCopyActionsDetails>>,
+    Option<std::vec::Vec<crate::types::AwsBackupBackupPlanRuleCopyActionsDetails>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

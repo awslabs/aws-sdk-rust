@@ -2,7 +2,7 @@
 pub(crate) fn de_template_version_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::TemplateVersionSummary>>,
+    Option<std::vec::Vec<crate::types::TemplateVersionSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

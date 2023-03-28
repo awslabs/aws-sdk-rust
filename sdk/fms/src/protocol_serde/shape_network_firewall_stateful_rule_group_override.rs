@@ -2,7 +2,7 @@
 pub(crate) fn de_network_firewall_stateful_rule_group_override<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::NetworkFirewallStatefulRuleGroupOverride>,
+    Option<crate::types::NetworkFirewallStatefulRuleGroupOverride>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::network_firewall_stateful_rule_group_override::Builder::default();
+                crate::types::builders::NetworkFirewallStatefulRuleGroupOverrideBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -31,7 +31,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::NetworkFirewallOverrideAction::from(
+                                            crate::types::NetworkFirewallOverrideAction::from(
                                                 u.as_ref(),
                                             )
                                         })

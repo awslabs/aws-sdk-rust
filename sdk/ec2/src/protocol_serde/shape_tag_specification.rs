@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_tag_specification(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::TagSpecification,
+    input: &crate::types::TagSpecification,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("ResourceType");
@@ -25,16 +25,16 @@ pub fn ser_tag_specification(
 
 pub fn de_tag_specification(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::TagSpecification, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::TagSpecification, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::TagSpecification::builder();
+    let mut builder = crate::types::TagSpecification::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("resourceType") /* ResourceType com.amazonaws.ec2#TagSpecification$ResourceType */ =>  {
                 let var_8 =
                     Some(
-                        Result::<crate::model::ResourceType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::ResourceType::from(
+                        Result::<crate::types::ResourceType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::ResourceType::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

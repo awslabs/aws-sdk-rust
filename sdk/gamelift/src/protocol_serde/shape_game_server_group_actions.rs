@@ -2,7 +2,7 @@
 pub(crate) fn de_game_server_group_actions<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::GameServerGroupAction>>,
+    Option<std::vec::Vec<crate::types::GameServerGroupAction>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -29,7 +29,7 @@ where
                         )?
                         .map(|s| {
                             s.to_unescaped()
-                                .map(|u| crate::model::GameServerGroupAction::from(u.as_ref()))
+                                .map(|u| crate::types::GameServerGroupAction::from(u.as_ref()))
                         })
                         .transpose()?;
                         if let Some(value) = value {

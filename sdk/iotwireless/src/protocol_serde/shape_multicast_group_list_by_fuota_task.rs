@@ -2,7 +2,7 @@
 pub(crate) fn de_multicast_group_list_by_fuota_task<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::MulticastGroupByFuotaTask>>,
+    Option<std::vec::Vec<crate::types::MulticastGroupByFuotaTask>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

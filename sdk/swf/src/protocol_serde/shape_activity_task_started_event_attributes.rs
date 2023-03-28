@@ -2,7 +2,7 @@
 pub(crate) fn de_activity_task_started_event_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ActivityTaskStartedEventAttributes>,
+    Option<crate::types::ActivityTaskStartedEventAttributes>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::activity_task_started_event_attributes::Builder::default();
+                crate::types::builders::ActivityTaskStartedEventAttributesBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

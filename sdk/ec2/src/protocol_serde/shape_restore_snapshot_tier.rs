@@ -3,33 +3,33 @@
 pub fn de_restore_snapshot_tier_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::RestoreSnapshotTierOutput,
-    crate::error::RestoreSnapshotTierError,
+    crate::operation::restore_snapshot_tier::RestoreSnapshotTierOutput,
+    crate::operation::restore_snapshot_tier::RestoreSnapshotTierError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::RestoreSnapshotTierError::unhandled)?;
+        .map_err(crate::operation::restore_snapshot_tier::RestoreSnapshotTierError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::RestoreSnapshotTierError::generic(generic))
+    Err(crate::operation::restore_snapshot_tier::RestoreSnapshotTierError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_restore_snapshot_tier_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::RestoreSnapshotTierOutput,
-    crate::error::RestoreSnapshotTierError,
+    crate::operation::restore_snapshot_tier::RestoreSnapshotTierOutput,
+    crate::operation::restore_snapshot_tier::RestoreSnapshotTierError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::restore_snapshot_tier_output::Builder::default();
+        let mut output = crate::operation::restore_snapshot_tier::builders::RestoreSnapshotTierOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_restore_snapshot_tier::de_restore_snapshot_tier(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::RestoreSnapshotTierError::unhandled)?;
+        .map_err(crate::operation::restore_snapshot_tier::RestoreSnapshotTierError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -40,9 +40,9 @@ pub fn de_restore_snapshot_tier_http_response(
 #[allow(unused_mut)]
 pub fn de_restore_snapshot_tier(
     inp: &[u8],
-    mut builder: crate::output::restore_snapshot_tier_output::Builder,
+    mut builder: crate::operation::restore_snapshot_tier::builders::RestoreSnapshotTierOutputBuilder,
 ) -> Result<
-    crate::output::restore_snapshot_tier_output::Builder,
+    crate::operation::restore_snapshot_tier::builders::RestoreSnapshotTierOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

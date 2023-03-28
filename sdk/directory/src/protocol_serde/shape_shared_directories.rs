@@ -2,7 +2,7 @@
 pub(crate) fn de_shared_directories<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SharedDirectory>>,
+    Option<std::vec::Vec<crate::types::SharedDirectory>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

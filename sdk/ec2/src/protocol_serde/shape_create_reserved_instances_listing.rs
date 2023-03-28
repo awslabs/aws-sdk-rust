@@ -3,32 +3,28 @@
 pub fn de_create_reserved_instances_listing_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateReservedInstancesListingOutput,
-    crate::error::CreateReservedInstancesListingError,
+    crate::operation::create_reserved_instances_listing::CreateReservedInstancesListingOutput,
+    crate::operation::create_reserved_instances_listing::CreateReservedInstancesListingError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::CreateReservedInstancesListingError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::create_reserved_instances_listing::CreateReservedInstancesListingError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::CreateReservedInstancesListingError::generic(
-        generic,
-    ))
+    Err(crate::operation::create_reserved_instances_listing::CreateReservedInstancesListingError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_reserved_instances_listing_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateReservedInstancesListingOutput,
-    crate::error::CreateReservedInstancesListingError,
+    crate::operation::create_reserved_instances_listing::CreateReservedInstancesListingOutput,
+    crate::operation::create_reserved_instances_listing::CreateReservedInstancesListingError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::output::create_reserved_instances_listing_output::Builder::default();
+        let mut output = crate::operation::create_reserved_instances_listing::builders::CreateReservedInstancesListingOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_create_reserved_instances_listing::de_create_reserved_instances_listing(response.body().as_ref(), output).map_err(crate::error::CreateReservedInstancesListingError::unhandled)?;
+        output = crate::protocol_serde::shape_create_reserved_instances_listing::de_create_reserved_instances_listing(response.body().as_ref(), output).map_err(crate::operation::create_reserved_instances_listing::CreateReservedInstancesListingError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -37,13 +33,7 @@ pub fn de_create_reserved_instances_listing_http_response(
 }
 
 #[allow(unused_mut)]
-pub fn de_create_reserved_instances_listing(
-    inp: &[u8],
-    mut builder: crate::output::create_reserved_instances_listing_output::Builder,
-) -> Result<
-    crate::output::create_reserved_instances_listing_output::Builder,
-    aws_smithy_xml::decode::XmlDecodeError,
-> {
+pub fn de_create_reserved_instances_listing(inp: &[u8], mut builder: crate::operation::create_reserved_instances_listing::builders::CreateReservedInstancesListingOutputBuilder) -> Result<crate::operation::create_reserved_instances_listing::builders::CreateReservedInstancesListingOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

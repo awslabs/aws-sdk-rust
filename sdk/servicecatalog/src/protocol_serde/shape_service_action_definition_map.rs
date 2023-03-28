@@ -3,7 +3,7 @@ pub(crate) fn de_service_action_definition_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<
-        std::collections::HashMap<crate::model::ServiceActionDefinitionKey, std::string::String>,
+        std::collections::HashMap<crate::types::ServiceActionDefinitionKey, std::string::String>,
     >,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
@@ -25,7 +25,7 @@ where
                     Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         let key = key
                             .to_unescaped()
-                            .map(|u| crate::model::ServiceActionDefinitionKey::from(u.as_ref()))?;
+                            .map(|u| crate::types::ServiceActionDefinitionKey::from(u.as_ref()))?;
                         let value = aws_smithy_json::deserialize::token::expect_string_or_null(
                             tokens.next(),
                         )?

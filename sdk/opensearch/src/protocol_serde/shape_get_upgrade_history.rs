@@ -2,121 +2,131 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_upgrade_history_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetUpgradeHistoryOutput, crate::error::GetUpgradeHistoryError>
-{
+) -> std::result::Result<
+    crate::operation::get_upgrade_history::GetUpgradeHistoryOutput,
+    crate::operation::get_upgrade_history::GetUpgradeHistoryError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetUpgradeHistoryError::unhandled)?;
+        .map_err(crate::operation::get_upgrade_history::GetUpgradeHistoryError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::GetUpgradeHistoryError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::get_upgrade_history::GetUpgradeHistoryError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BaseException" => crate::error::GetUpgradeHistoryError::BaseException({
+        "BaseException" => crate::operation::get_upgrade_history::GetUpgradeHistoryError::BaseException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::base_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_base_exception::de_base_exception_json_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::GetUpgradeHistoryError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "DisabledOperationException" => {
-            crate::error::GetUpgradeHistoryError::DisabledOperationException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::disabled_operation_exception::Builder::default();
+                    let mut output = crate::types::error::builders::BaseExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_disabled_operation_exception::de_disabled_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetUpgradeHistoryError::unhandled)?;
+                    output = crate::protocol_serde::shape_base_exception::de_base_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_upgrade_history::GetUpgradeHistoryError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InternalException" => crate::error::GetUpgradeHistoryError::InternalException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_exception::de_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetUpgradeHistoryError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "ResourceNotFoundException" => {
-            crate::error::GetUpgradeHistoryError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "DisabledOperationException" => crate::operation::get_upgrade_history::GetUpgradeHistoryError::DisabledOperationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::DisabledOperationExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetUpgradeHistoryError::unhandled)?;
+                    output = crate::protocol_serde::shape_disabled_operation_exception::de_disabled_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_upgrade_history::GetUpgradeHistoryError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ValidationException" => crate::error::GetUpgradeHistoryError::ValidationException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetUpgradeHistoryError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::GetUpgradeHistoryError::generic(generic),
+        "InternalException" => crate::operation::get_upgrade_history::GetUpgradeHistoryError::InternalException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InternalExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_exception::de_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_upgrade_history::GetUpgradeHistoryError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::get_upgrade_history::GetUpgradeHistoryError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_upgrade_history::GetUpgradeHistoryError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ValidationException" => crate::operation::get_upgrade_history::GetUpgradeHistoryError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_upgrade_history::GetUpgradeHistoryError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::get_upgrade_history::GetUpgradeHistoryError::generic(generic)
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_upgrade_history_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetUpgradeHistoryOutput, crate::error::GetUpgradeHistoryError>
-{
+) -> std::result::Result<
+    crate::operation::get_upgrade_history::GetUpgradeHistoryOutput,
+    crate::operation::get_upgrade_history::GetUpgradeHistoryError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_upgrade_history_output::Builder::default();
+        let mut output = crate::operation::get_upgrade_history::builders::GetUpgradeHistoryOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_get_upgrade_history::de_get_upgrade_history(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::GetUpgradeHistoryError::unhandled)?;
+        .map_err(crate::operation::get_upgrade_history::GetUpgradeHistoryError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -126,9 +136,9 @@ pub fn de_get_upgrade_history_http_response(
 
 pub(crate) fn de_get_upgrade_history(
     value: &[u8],
-    mut builder: crate::output::get_upgrade_history_output::Builder,
+    mut builder: crate::operation::get_upgrade_history::builders::GetUpgradeHistoryOutputBuilder,
 ) -> Result<
-    crate::output::get_upgrade_history_output::Builder,
+    crate::operation::get_upgrade_history::builders::GetUpgradeHistoryOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

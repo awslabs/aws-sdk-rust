@@ -2,7 +2,7 @@
 pub(crate) fn de_dev_environment_repository_summaries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DevEnvironmentRepositorySummary>>,
+    Option<std::vec::Vec<crate::types::DevEnvironmentRepositorySummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

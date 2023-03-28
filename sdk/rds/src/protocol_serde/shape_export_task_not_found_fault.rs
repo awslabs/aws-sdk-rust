@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_export_task_not_found_fault_xml_err(
     inp: &[u8],
-    mut builder: crate::error::export_task_not_found_fault::Builder,
+    mut builder: crate::types::error::builders::ExportTaskNotFoundFaultBuilder,
 ) -> Result<
-    crate::error::export_task_not_found_fault::Builder,
+    crate::types::error::builders::ExportTaskNotFoundFaultBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

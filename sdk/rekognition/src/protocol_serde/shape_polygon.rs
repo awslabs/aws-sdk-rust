@@ -2,7 +2,7 @@
 pub(crate) fn de_polygon<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Point>>,
+    Option<std::vec::Vec<crate::types::Point>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

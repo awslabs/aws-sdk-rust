@@ -2,7 +2,7 @@
 pub(crate) fn de_label_detections<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::LabelDetection>>,
+    Option<std::vec::Vec<crate::types::LabelDetection>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

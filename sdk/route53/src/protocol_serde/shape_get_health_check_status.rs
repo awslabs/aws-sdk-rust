@@ -3,56 +3,65 @@
 pub fn de_get_health_check_status_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetHealthCheckStatusOutput,
-    crate::error::GetHealthCheckStatusError,
+    crate::operation::get_health_check_status::GetHealthCheckStatusOutput,
+    crate::operation::get_health_check_status::GetHealthCheckStatusError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetHealthCheckStatusError::unhandled)?;
+        .map_err(crate::operation::get_health_check_status::GetHealthCheckStatusError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::GetHealthCheckStatusError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::get_health_check_status::GetHealthCheckStatusError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidInput" => crate::error::GetHealthCheckStatusError::InvalidInput({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "InvalidInput" => {
+            crate::operation::get_health_check_status::GetHealthCheckStatusError::InvalidInput({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_input::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_input::de_invalid_input_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::GetHealthCheckStatusError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "NoSuchHealthCheck" => crate::error::GetHealthCheckStatusError::NoSuchHealthCheck({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::no_such_health_check::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_no_such_health_check::de_no_such_health_check_xml_err(response.body().as_ref(), output).map_err(crate::error::GetHealthCheckStatusError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::GetHealthCheckStatusError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidInputBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_input::de_invalid_input_xml_err(response.body().as_ref(), output).map_err(crate::operation::get_health_check_status::GetHealthCheckStatusError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "NoSuchHealthCheck" => {
+            crate::operation::get_health_check_status::GetHealthCheckStatusError::NoSuchHealthCheck(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::types::error::builders::NoSuchHealthCheckBuilder::default();
+                        let _ = response;
+                        output = crate::protocol_serde::shape_no_such_health_check::de_no_such_health_check_xml_err(response.body().as_ref(), output).map_err(crate::operation::get_health_check_status::GetHealthCheckStatusError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        _ => crate::operation::get_health_check_status::GetHealthCheckStatusError::generic(generic),
     })
 }
 
@@ -60,18 +69,18 @@ pub fn de_get_health_check_status_http_error(
 pub fn de_get_health_check_status_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetHealthCheckStatusOutput,
-    crate::error::GetHealthCheckStatusError,
+    crate::operation::get_health_check_status::GetHealthCheckStatusOutput,
+    crate::operation::get_health_check_status::GetHealthCheckStatusError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_health_check_status_output::Builder::default();
+        let mut output = crate::operation::get_health_check_status::builders::GetHealthCheckStatusOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_get_health_check_status::de_get_health_check_status(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::GetHealthCheckStatusError::unhandled)?;
+        .map_err(crate::operation::get_health_check_status::GetHealthCheckStatusError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -82,9 +91,9 @@ pub fn de_get_health_check_status_http_response(
 #[allow(unused_mut)]
 pub fn de_get_health_check_status(
     inp: &[u8],
-    mut builder: crate::output::get_health_check_status_output::Builder,
+    mut builder: crate::operation::get_health_check_status::builders::GetHealthCheckStatusOutputBuilder,
 ) -> Result<
-    crate::output::get_health_check_status_output::Builder,
+    crate::operation::get_health_check_status::builders::GetHealthCheckStatusOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

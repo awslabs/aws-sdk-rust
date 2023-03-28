@@ -2,7 +2,7 @@
 pub(crate) fn de_edge_preset_deployment_output<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::EdgePresetDeploymentOutput>,
+    Option<crate::types::EdgePresetDeploymentOutput>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::edge_preset_deployment_output::Builder::default();
+            let mut builder = crate::types::builders::EdgePresetDeploymentOutputBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::EdgePresetDeploymentType::from(u.as_ref())
+                                            crate::types::EdgePresetDeploymentType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -52,7 +52,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::EdgePresetDeploymentStatus::from(
+                                            crate::types::EdgePresetDeploymentStatus::from(
                                                 u.as_ref(),
                                             )
                                         })

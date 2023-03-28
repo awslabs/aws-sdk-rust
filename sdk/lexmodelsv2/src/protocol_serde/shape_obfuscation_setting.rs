@@ -2,7 +2,7 @@
 pub(crate) fn de_obfuscation_setting<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ObfuscationSetting>,
+    Option<crate::types::ObfuscationSetting>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::obfuscation_setting::Builder::default();
+            let mut builder = crate::types::builders::ObfuscationSettingBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ObfuscationSettingType::from(u.as_ref())
+                                            crate::types::ObfuscationSettingType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -61,7 +61,7 @@ where
 
 pub fn ser_obfuscation_setting(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::ObfuscationSetting,
+    input: &crate::types::ObfuscationSetting,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.obfuscation_setting_type {
         object.key("obfuscationSettingType").string(var_1.as_str());

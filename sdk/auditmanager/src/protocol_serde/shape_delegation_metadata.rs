@@ -2,7 +2,7 @@
 pub(crate) fn de_delegation_metadata<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::DelegationMetadata>,
+    Option<crate::types::DelegationMetadata>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::delegation_metadata::Builder::default();
+            let mut builder = crate::types::builders::DelegationMetadataBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -57,7 +57,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::DelegationStatus::from(u.as_ref())
+                                            crate::types::DelegationStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

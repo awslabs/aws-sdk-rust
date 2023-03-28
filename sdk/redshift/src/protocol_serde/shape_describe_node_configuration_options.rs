@@ -3,112 +3,106 @@
 pub fn de_describe_node_configuration_options_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeNodeConfigurationOptionsOutput,
-    crate::error::DescribeNodeConfigurationOptionsError,
+    crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptionsOutput,
+    crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptionsError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeNodeConfigurationOptionsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptionsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::DescribeNodeConfigurationOptionsError::unhandled(generic))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptionsError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessToSnapshotDenied" => {
-            crate::error::DescribeNodeConfigurationOptionsError::AccessToSnapshotDeniedFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "AccessToSnapshotDenied" => crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptionsError::AccessToSnapshotDeniedFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::access_to_snapshot_denied_fault::Builder::default();
+                    let mut output = crate::types::error::builders::AccessToSnapshotDeniedFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_access_to_snapshot_denied_fault::de_access_to_snapshot_denied_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeNodeConfigurationOptionsError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_to_snapshot_denied_fault::de_access_to_snapshot_denied_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptionsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ClusterNotFound" => {
-            crate::error::DescribeNodeConfigurationOptionsError::ClusterNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ClusterNotFound" => crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptionsError::ClusterNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::cluster_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::ClusterNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_cluster_not_found_fault::de_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeNodeConfigurationOptionsError::unhandled)?;
+                    output = crate::protocol_serde::shape_cluster_not_found_fault::de_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptionsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ClusterSnapshotNotFound" => {
-            crate::error::DescribeNodeConfigurationOptionsError::ClusterSnapshotNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ClusterSnapshotNotFound" => crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptionsError::ClusterSnapshotNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::cluster_snapshot_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::ClusterSnapshotNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_cluster_snapshot_not_found_fault::de_cluster_snapshot_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeNodeConfigurationOptionsError::unhandled)?;
+                    output = crate::protocol_serde::shape_cluster_snapshot_not_found_fault::de_cluster_snapshot_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptionsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidClusterSnapshotState" => {
-            crate::error::DescribeNodeConfigurationOptionsError::InvalidClusterSnapshotStateFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidClusterSnapshotState" => crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptionsError::InvalidClusterSnapshotStateFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_cluster_snapshot_state_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidClusterSnapshotStateFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_cluster_snapshot_state_fault::de_invalid_cluster_snapshot_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeNodeConfigurationOptionsError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_cluster_snapshot_state_fault::de_invalid_cluster_snapshot_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptionsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "UnsupportedOperation" => {
-            crate::error::DescribeNodeConfigurationOptionsError::UnsupportedOperationFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "UnsupportedOperation" => crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptionsError::UnsupportedOperationFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::unsupported_operation_fault::Builder::default();
+                    let mut output = crate::types::error::builders::UnsupportedOperationFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_unsupported_operation_fault::de_unsupported_operation_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeNodeConfigurationOptionsError::unhandled)?;
+                    output = crate::protocol_serde::shape_unsupported_operation_fault::de_unsupported_operation_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptionsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DescribeNodeConfigurationOptionsError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptionsError::generic(generic)
     })
 }
 
@@ -116,15 +110,14 @@ pub fn de_describe_node_configuration_options_http_error(
 pub fn de_describe_node_configuration_options_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeNodeConfigurationOptionsOutput,
-    crate::error::DescribeNodeConfigurationOptionsError,
+    crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptionsOutput,
+    crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptionsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::output::describe_node_configuration_options_output::Builder::default();
+        let mut output = crate::operation::describe_node_configuration_options::builders::DescribeNodeConfigurationOptionsOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_describe_node_configuration_options::de_describe_node_configuration_options(response.body().as_ref(), output).map_err(crate::error::DescribeNodeConfigurationOptionsError::unhandled)?;
+        output = crate::protocol_serde::shape_describe_node_configuration_options::de_describe_node_configuration_options(response.body().as_ref(), output).map_err(crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptionsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -133,13 +126,7 @@ pub fn de_describe_node_configuration_options_http_response(
 }
 
 #[allow(unused_mut)]
-pub fn de_describe_node_configuration_options(
-    inp: &[u8],
-    mut builder: crate::output::describe_node_configuration_options_output::Builder,
-) -> Result<
-    crate::output::describe_node_configuration_options_output::Builder,
-    aws_smithy_xml::decode::XmlDecodeError,
-> {
+pub fn de_describe_node_configuration_options(inp: &[u8], mut builder: crate::operation::describe_node_configuration_options::builders::DescribeNodeConfigurationOptionsOutputBuilder) -> Result<crate::operation::describe_node_configuration_options::builders::DescribeNodeConfigurationOptionsOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

@@ -2,7 +2,7 @@
 pub(crate) fn de_lo_ra_wan_multicast_get<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::LoRaWanMulticastGet>,
+    Option<crate::types::LoRaWanMulticastGet>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::lo_ra_wan_multicast_get::Builder::default();
+            let mut builder = crate::types::builders::LoRaWanMulticastGetBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::SupportedRfRegion::from(u.as_ref())
+                                            crate::types::SupportedRfRegion::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -43,7 +43,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::DlClass::from(u.as_ref()))
+                                            .map(|u| crate::types::DlClass::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

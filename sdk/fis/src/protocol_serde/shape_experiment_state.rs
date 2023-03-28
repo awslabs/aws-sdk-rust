@@ -2,7 +2,7 @@
 pub(crate) fn de_experiment_state<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ExperimentState>,
+    Option<crate::types::ExperimentState>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::experiment_state::Builder::default();
+            let mut builder = crate::types::builders::ExperimentStateBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ExperimentStatus::from(u.as_ref())
+                                            crate::types::ExperimentStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

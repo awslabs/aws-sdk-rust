@@ -2,7 +2,7 @@
 pub(crate) fn de_property_validation_exception_property<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::PropertyValidationExceptionProperty>,
+    Option<crate::types::PropertyValidationExceptionProperty>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::property_validation_exception_property::Builder::default();
+                crate::types::builders::PropertyValidationExceptionPropertyBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -40,7 +40,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::PropertyValidationExceptionReason::from(
+                                            crate::types::PropertyValidationExceptionReason::from(
                                                 u.as_ref(),
                                             )
                                         })

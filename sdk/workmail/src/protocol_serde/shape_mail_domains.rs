@@ -2,7 +2,7 @@
 pub(crate) fn de_mail_domains<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::MailDomainSummary>>,
+    Option<std::vec::Vec<crate::types::MailDomainSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

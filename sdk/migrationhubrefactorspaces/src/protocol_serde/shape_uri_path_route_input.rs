@@ -2,7 +2,7 @@
 pub(crate) fn de_uri_path_route_input<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::UriPathRouteInput>,
+    Option<crate::types::UriPathRouteInput>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::uri_path_route_input::Builder::default();
+            let mut builder = crate::types::builders::UriPathRouteInputBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -39,7 +39,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::RouteActivationState::from(u.as_ref())
+                                            crate::types::RouteActivationState::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -84,7 +84,7 @@ where
 
 pub fn ser_uri_path_route_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::UriPathRouteInput,
+    input: &crate::types::UriPathRouteInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.source_path {
         object.key("SourcePath").string(var_1.as_str());

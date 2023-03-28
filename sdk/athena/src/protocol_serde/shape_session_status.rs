@@ -2,7 +2,7 @@
 pub(crate) fn de_session_status<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::SessionStatus>,
+    Option<crate::types::SessionStatus>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::session_status::Builder::default();
+            let mut builder = crate::types::builders::SessionStatusBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -62,7 +62,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::SessionState::from(u.as_ref()))
+                                            .map(|u| crate::types::SessionState::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

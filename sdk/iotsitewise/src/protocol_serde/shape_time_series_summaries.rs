@@ -2,7 +2,7 @@
 pub(crate) fn de_time_series_summaries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::TimeSeriesSummary>>,
+    Option<std::vec::Vec<crate::types::TimeSeriesSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

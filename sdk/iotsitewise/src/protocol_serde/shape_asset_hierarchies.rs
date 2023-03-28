@@ -2,7 +2,7 @@
 pub(crate) fn de_asset_hierarchies<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AssetHierarchy>>,
+    Option<std::vec::Vec<crate::types::AssetHierarchy>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

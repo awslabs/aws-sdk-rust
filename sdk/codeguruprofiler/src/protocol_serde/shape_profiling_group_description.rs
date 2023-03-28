@@ -2,7 +2,7 @@
 pub fn de_profiling_group_description_payload(
     input: &[u8],
 ) -> Result<
-    crate::model::ProfilingGroupDescription,
+    crate::types::ProfilingGroupDescription,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =
@@ -31,7 +31,7 @@ pub fn de_profiling_group_description_payload(
 pub(crate) fn de_profiling_group_description<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ProfilingGroupDescription>,
+    Option<crate::types::ProfilingGroupDescription>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -46,7 +46,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::profiling_group_description::Builder::default();
+            let mut builder = crate::types::builders::ProfilingGroupDescriptionBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -103,7 +103,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ComputePlatform::from(u.as_ref())
+                                            crate::types::ComputePlatform::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

@@ -2,7 +2,7 @@
 pub(crate) fn de_load_balancer_configuration_options<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<crate::model::LoadBalancerAttributeName, std::string::String>>,
+    Option<std::collections::HashMap<crate::types::LoadBalancerAttributeName, std::string::String>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -23,7 +23,7 @@ where
                     Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         let key = key
                             .to_unescaped()
-                            .map(|u| crate::model::LoadBalancerAttributeName::from(u.as_ref()))?;
+                            .map(|u| crate::types::LoadBalancerAttributeName::from(u.as_ref()))?;
                         let value = aws_smithy_json::deserialize::token::expect_string_or_null(
                             tokens.next(),
                         )?

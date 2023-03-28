@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_db_cluster_quota_exceeded_fault_xml_err(
     inp: &[u8],
-    mut builder: crate::error::db_cluster_quota_exceeded_fault::Builder,
+    mut builder: crate::types::error::builders::DbClusterQuotaExceededFaultBuilder,
 ) -> Result<
-    crate::error::db_cluster_quota_exceeded_fault::Builder,
+    crate::types::error::builders::DbClusterQuotaExceededFaultBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

@@ -2,7 +2,7 @@
 pub(crate) fn de_savings_plan_rate_property<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::SavingsPlanRateProperty>,
+    Option<crate::types::SavingsPlanRateProperty>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::savings_plan_rate_property::Builder::default();
+            let mut builder = crate::types::builders::SavingsPlanRatePropertyBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::SavingsPlanRatePropertyKey::from(
+                                            crate::types::SavingsPlanRatePropertyKey::from(
                                                 u.as_ref(),
                                             )
                                         })

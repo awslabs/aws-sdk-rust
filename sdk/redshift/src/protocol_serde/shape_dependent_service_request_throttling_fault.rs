@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_dependent_service_request_throttling_fault_xml_err(
     inp: &[u8],
-    mut builder: crate::error::dependent_service_request_throttling_fault::Builder,
+    mut builder: crate::types::error::builders::DependentServiceRequestThrottlingFaultBuilder,
 ) -> Result<
-    crate::error::dependent_service_request_throttling_fault::Builder,
+    crate::types::error::builders::DependentServiceRequestThrottlingFaultBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

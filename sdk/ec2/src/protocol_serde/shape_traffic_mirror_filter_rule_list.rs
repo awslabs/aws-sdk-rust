@@ -2,7 +2,7 @@
 pub fn de_traffic_mirror_filter_rule_list(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::TrafficMirrorFilterRule>,
+    std::vec::Vec<crate::types::TrafficMirrorFilterRule>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

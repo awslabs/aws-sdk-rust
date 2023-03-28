@@ -22,20 +22,20 @@ pub(crate) fn de_location_header(
 pub fn de_public_key_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::PublicKey>,
-    crate::error::CreatePublicKeyError,
+    std::option::Option<crate::types::PublicKey>,
+    crate::operation::create_public_key::CreatePublicKeyError,
 > {
     (!body.is_empty())
         .then(|| {
             crate::protocol_serde::shape_create_public_key_output::de_public_key(body)
-                .map_err(crate::error::CreatePublicKeyError::unhandled)
+                .map_err(crate::operation::create_public_key::CreatePublicKeyError::unhandled)
         })
         .transpose()
 }
 
 pub fn de_public_key(
     inp: &[u8],
-) -> Result<crate::model::PublicKey, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::PublicKey, aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;

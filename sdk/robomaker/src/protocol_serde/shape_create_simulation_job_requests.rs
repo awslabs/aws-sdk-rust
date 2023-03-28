@@ -2,7 +2,7 @@
 pub(crate) fn de_create_simulation_job_requests<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SimulationJobRequest>>,
+    Option<std::vec::Vec<crate::types::SimulationJobRequest>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

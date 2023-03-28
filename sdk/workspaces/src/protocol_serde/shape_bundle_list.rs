@@ -2,7 +2,7 @@
 pub(crate) fn de_bundle_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::WorkspaceBundle>>,
+    Option<std::vec::Vec<crate::types::WorkspaceBundle>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

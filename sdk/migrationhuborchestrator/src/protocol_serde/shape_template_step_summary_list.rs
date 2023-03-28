@@ -2,7 +2,7 @@
 pub(crate) fn de_template_step_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::TemplateStepSummary>>,
+    Option<std::vec::Vec<crate::types::TemplateStepSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

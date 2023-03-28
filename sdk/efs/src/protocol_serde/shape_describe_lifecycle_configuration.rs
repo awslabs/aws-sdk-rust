@@ -3,75 +3,72 @@
 pub fn de_describe_lifecycle_configuration_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeLifecycleConfigurationOutput,
-    crate::error::DescribeLifecycleConfigurationError,
+    crate::operation::describe_lifecycle_configuration::DescribeLifecycleConfigurationOutput,
+    crate::operation::describe_lifecycle_configuration::DescribeLifecycleConfigurationError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeLifecycleConfigurationError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::describe_lifecycle_configuration::DescribeLifecycleConfigurationError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => return Err(crate::error::DescribeLifecycleConfigurationError::unhandled(generic)),
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::describe_lifecycle_configuration::DescribeLifecycleConfigurationError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequest" => crate::error::DescribeLifecycleConfigurationError::BadRequest({
+        "BadRequest" => crate::operation::describe_lifecycle_configuration::DescribeLifecycleConfigurationError::BadRequest({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_bad_request::de_bad_request_json_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::DescribeLifecycleConfigurationError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::BadRequestBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_bad_request::de_bad_request_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_lifecycle_configuration::DescribeLifecycleConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "FileSystemNotFound" => {
-            crate::error::DescribeLifecycleConfigurationError::FileSystemNotFound({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "FileSystemNotFound" => crate::operation::describe_lifecycle_configuration::DescribeLifecycleConfigurationError::FileSystemNotFound({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::file_system_not_found::Builder::default();
+                    let mut output = crate::types::error::builders::FileSystemNotFoundBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_file_system_not_found::de_file_system_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeLifecycleConfigurationError::unhandled)?;
+                    output = crate::protocol_serde::shape_file_system_not_found::de_file_system_not_found_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_lifecycle_configuration::DescribeLifecycleConfigurationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InternalServerError" => {
-            crate::error::DescribeLifecycleConfigurationError::InternalServerError({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InternalServerError" => crate::operation::describe_lifecycle_configuration::DescribeLifecycleConfigurationError::InternalServerError({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_error::Builder::default();
+                    let mut output = crate::types::error::builders::InternalServerErrorBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeLifecycleConfigurationError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_lifecycle_configuration::DescribeLifecycleConfigurationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DescribeLifecycleConfigurationError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::describe_lifecycle_configuration::DescribeLifecycleConfigurationError::generic(generic)
     })
 }
 
@@ -79,14 +76,14 @@ pub fn de_describe_lifecycle_configuration_http_error(
 pub fn de_describe_lifecycle_configuration_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeLifecycleConfigurationOutput,
-    crate::error::DescribeLifecycleConfigurationError,
+    crate::operation::describe_lifecycle_configuration::DescribeLifecycleConfigurationOutput,
+    crate::operation::describe_lifecycle_configuration::DescribeLifecycleConfigurationError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_lifecycle_configuration_output::Builder::default();
+        let mut output = crate::operation::describe_lifecycle_configuration::builders::DescribeLifecycleConfigurationOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_describe_lifecycle_configuration::de_describe_lifecycle_configuration(response.body().as_ref(), output).map_err(crate::error::DescribeLifecycleConfigurationError::unhandled)?;
+        output = crate::protocol_serde::shape_describe_lifecycle_configuration::de_describe_lifecycle_configuration(response.body().as_ref(), output).map_err(crate::operation::describe_lifecycle_configuration::DescribeLifecycleConfigurationError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -94,13 +91,7 @@ pub fn de_describe_lifecycle_configuration_http_response(
     })
 }
 
-pub(crate) fn de_describe_lifecycle_configuration(
-    value: &[u8],
-    mut builder: crate::output::describe_lifecycle_configuration_output::Builder,
-) -> Result<
-    crate::output::describe_lifecycle_configuration_output::Builder,
-    aws_smithy_json::deserialize::error::DeserializeError,
-> {
+pub(crate) fn de_describe_lifecycle_configuration(value: &[u8], mut builder: crate::operation::describe_lifecycle_configuration::builders::DescribeLifecycleConfigurationOutputBuilder) -> Result<crate::operation::describe_lifecycle_configuration::builders::DescribeLifecycleConfigurationOutputBuilder, aws_smithy_json::deserialize::error::DeserializeError>{
     let mut tokens_owned =
         aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
             .peekable();

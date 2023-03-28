@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_health_check_version_mismatch_xml_err(
     inp: &[u8],
-    mut builder: crate::error::health_check_version_mismatch::Builder,
+    mut builder: crate::types::error::builders::HealthCheckVersionMismatchBuilder,
 ) -> Result<
-    crate::error::health_check_version_mismatch::Builder,
+    crate::types::error::builders::HealthCheckVersionMismatchBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

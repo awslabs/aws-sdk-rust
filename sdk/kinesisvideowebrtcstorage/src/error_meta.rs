@@ -4,13 +4,13 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>You do not have required permissions to perform this operation.</p>
-    AccessDeniedException(crate::error::AccessDeniedException),
+    AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p> Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client calls. Try making the call later. </p>
-    ClientLimitExceededException(crate::error::ClientLimitExceededException),
+    ClientLimitExceededException(crate::types::error::ClientLimitExceededException),
     /// <p>The value for this input parameter is invalid.</p>
-    InvalidArgumentException(crate::error::InvalidArgumentException),
+    InvalidArgumentException(crate::types::error::InvalidArgumentException),
     /// <p>The specified resource is not found.</p>
-    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled),
 }
@@ -25,12 +25,21 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::JoinStorageSessionError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::join_storage_session::JoinStorageSessionError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::JoinStorageSessionError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::join_storage_session::JoinStorageSessionError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -47,22 +56,14 @@ where
         }
     }
 }
-impl From<crate::error::JoinStorageSessionError> for Error {
-    fn from(err: crate::error::JoinStorageSessionError) -> Self {
+impl From<crate::operation::join_storage_session::JoinStorageSessionError> for Error {
+    fn from(err: crate::operation::join_storage_session::JoinStorageSessionError) -> Self {
         match err {
-            crate::error::JoinStorageSessionError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::JoinStorageSessionError::ClientLimitExceededException(inner) => {
-                Error::ClientLimitExceededException(inner)
-            }
-            crate::error::JoinStorageSessionError::InvalidArgumentException(inner) => {
-                Error::InvalidArgumentException(inner)
-            }
-            crate::error::JoinStorageSessionError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::JoinStorageSessionError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::join_storage_session::JoinStorageSessionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::join_storage_session::JoinStorageSessionError::ClientLimitExceededException(inner) => Error::ClientLimitExceededException(inner),
+            crate::operation::join_storage_session::JoinStorageSessionError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::join_storage_session::JoinStorageSessionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::join_storage_session::JoinStorageSessionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

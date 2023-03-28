@@ -2,7 +2,7 @@
 pub(crate) fn de_map_of_attribute_dimension<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<std::string::String, crate::model::AttributeDimension>>,
+    Option<std::collections::HashMap<std::string::String, crate::types::AttributeDimension>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

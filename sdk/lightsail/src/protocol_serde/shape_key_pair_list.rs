@@ -2,7 +2,7 @@
 pub(crate) fn de_key_pair_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::KeyPair>>,
+    Option<std::vec::Vec<crate::types::KeyPair>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

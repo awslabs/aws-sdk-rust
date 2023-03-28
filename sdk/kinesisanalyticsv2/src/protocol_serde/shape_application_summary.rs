@@ -2,7 +2,7 @@
 pub(crate) fn de_application_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ApplicationSummary>,
+    Option<crate::types::ApplicationSummary>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::application_summary::Builder::default();
+            let mut builder = crate::types::builders::ApplicationSummaryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -48,7 +48,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ApplicationStatus::from(u.as_ref())
+                                            crate::types::ApplicationStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -70,7 +70,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::RuntimeEnvironment::from(u.as_ref())
+                                            crate::types::RuntimeEnvironment::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -83,7 +83,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ApplicationMode::from(u.as_ref())
+                                            crate::types::ApplicationMode::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

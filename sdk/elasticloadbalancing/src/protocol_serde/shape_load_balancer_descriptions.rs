@@ -2,7 +2,7 @@
 pub fn de_load_balancer_descriptions(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::LoadBalancerDescription>,
+    std::vec::Vec<crate::types::LoadBalancerDescription>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

@@ -2,7 +2,7 @@
 pub(crate) fn de_link_association_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::LinkAssociation>>,
+    Option<std::vec::Vec<crate::types::LinkAssociation>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

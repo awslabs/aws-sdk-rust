@@ -2,7 +2,7 @@
 pub(crate) fn de_system_template_summaries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SystemTemplateSummary>>,
+    Option<std::vec::Vec<crate::types::SystemTemplateSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

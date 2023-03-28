@@ -2,7 +2,7 @@
 pub(crate) fn de_aggregated_source_status<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::AggregatedSourceStatus>,
+    Option<crate::types::AggregatedSourceStatus>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::aggregated_source_status::Builder::default();
+            let mut builder = crate::types::builders::AggregatedSourceStatusBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -39,7 +39,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::AggregatedSourceType::from(u.as_ref())
+                                            crate::types::AggregatedSourceType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -61,7 +61,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::AggregatedSourceStatusType::from(
+                                            crate::types::AggregatedSourceStatusType::from(
                                                 u.as_ref(),
                                             )
                                         })

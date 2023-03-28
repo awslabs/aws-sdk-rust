@@ -2,7 +2,7 @@
 pub(crate) fn de_list_of_data_set_entry<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DataSetEntry>>,
+    Option<std::vec::Vec<crate::types::DataSetEntry>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

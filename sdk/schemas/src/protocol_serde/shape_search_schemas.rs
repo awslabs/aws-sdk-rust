@@ -2,58 +2,70 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_search_schemas_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::SearchSchemasOutput, crate::error::SearchSchemasError> {
+) -> std::result::Result<
+    crate::operation::search_schemas::SearchSchemasOutput,
+    crate::operation::search_schemas::SearchSchemasError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::SearchSchemasError::unhandled)?;
+        .map_err(crate::operation::search_schemas::SearchSchemasError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::SearchSchemasError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::search_schemas::SearchSchemasError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::SearchSchemasError::BadRequestException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SearchSchemasError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ForbiddenException" => crate::error::SearchSchemasError::ForbiddenException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SearchSchemasError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InternalServerErrorException" => {
-            crate::error::SearchSchemasError::InternalServerErrorException({
+        "BadRequestException" => {
+            crate::operation::search_schemas::SearchSchemasError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::internal_server_error_exception::Builder::default();
+                        crate::types::error::builders::BadRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SearchSchemasError::unhandled)?;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::search_schemas::SearchSchemasError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ForbiddenException" => {
+            crate::operation::search_schemas::SearchSchemasError::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ForbiddenExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::search_schemas::SearchSchemasError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InternalServerErrorException" => {
+            crate::operation::search_schemas::SearchSchemasError::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InternalServerErrorExceptionBuilder::default(
+                        );
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::search_schemas::SearchSchemasError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -64,14 +76,15 @@ pub fn de_search_schemas_http_error(
             })
         }
         "ServiceUnavailableException" => {
-            crate::error::SearchSchemasError::ServiceUnavailableException({
+            crate::operation::search_schemas::SearchSchemasError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::service_unavailable_exception::Builder::default();
+                        crate::types::error::builders::ServiceUnavailableExceptionBuilder::default(
+                        );
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SearchSchemasError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::search_schemas::SearchSchemasError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -81,38 +94,45 @@ pub fn de_search_schemas_http_error(
                 tmp
             })
         }
-        "UnauthorizedException" => crate::error::SearchSchemasError::UnauthorizedException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "UnauthorizedException" => {
+            crate::operation::search_schemas::SearchSchemasError::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SearchSchemasError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::SearchSchemasError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::UnauthorizedExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::search_schemas::SearchSchemasError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::search_schemas::SearchSchemasError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_search_schemas_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::SearchSchemasOutput, crate::error::SearchSchemasError> {
+) -> std::result::Result<
+    crate::operation::search_schemas::SearchSchemasOutput,
+    crate::operation::search_schemas::SearchSchemasError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::search_schemas_output::Builder::default();
+        let mut output =
+            crate::operation::search_schemas::builders::SearchSchemasOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_search_schemas::de_search_schemas(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::SearchSchemasError::unhandled)?;
+        .map_err(crate::operation::search_schemas::SearchSchemasError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -122,9 +142,9 @@ pub fn de_search_schemas_http_response(
 
 pub(crate) fn de_search_schemas(
     value: &[u8],
-    mut builder: crate::output::search_schemas_output::Builder,
+    mut builder: crate::operation::search_schemas::builders::SearchSchemasOutputBuilder,
 ) -> Result<
-    crate::output::search_schemas_output::Builder,
+    crate::operation::search_schemas::builders::SearchSchemasOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

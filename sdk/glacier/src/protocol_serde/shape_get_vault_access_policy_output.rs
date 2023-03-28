@@ -2,13 +2,15 @@
 pub fn de_policy_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::VaultAccessPolicy>,
-    crate::error::GetVaultAccessPolicyError,
+    std::option::Option<crate::types::VaultAccessPolicy>,
+    crate::operation::get_vault_access_policy::GetVaultAccessPolicyError,
 > {
     (!body.is_empty())
         .then(|| {
             crate::protocol_serde::shape_vault_access_policy::de_vault_access_policy_payload(body)
-                .map_err(crate::error::GetVaultAccessPolicyError::unhandled)
+                .map_err(
+                    crate::operation::get_vault_access_policy::GetVaultAccessPolicyError::unhandled,
+                )
         })
         .transpose()
 }

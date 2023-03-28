@@ -5,7 +5,7 @@ pub(crate) fn de_slot_hints_intent_map<'a, I>(
     Option<
         std::collections::HashMap<
             std::string::String,
-            std::collections::HashMap<std::string::String, crate::model::RuntimeHintDetails>,
+            std::collections::HashMap<std::string::String, crate::types::RuntimeHintDetails>,
         >,
     >,
     aws_smithy_json::deserialize::error::DeserializeError,

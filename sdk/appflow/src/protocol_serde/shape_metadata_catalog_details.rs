@@ -2,7 +2,7 @@
 pub(crate) fn de_metadata_catalog_details<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::MetadataCatalogDetail>>,
+    Option<std::vec::Vec<crate::types::MetadataCatalogDetail>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

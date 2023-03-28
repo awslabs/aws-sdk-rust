@@ -2,7 +2,7 @@
 pub(crate) fn de_resource_request_status_summaries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ProgressEvent>>,
+    Option<std::vec::Vec<crate::types::ProgressEvent>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

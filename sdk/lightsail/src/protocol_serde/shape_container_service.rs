@@ -2,7 +2,7 @@
 pub(crate) fn de_container_service<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ContainerService>,
+    Option<crate::types::ContainerService>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::container_service::Builder::default();
+            let mut builder = crate::types::builders::ContainerServiceBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -61,7 +61,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::ResourceType::from(u.as_ref()))
+                                            .map(|u| crate::types::ResourceType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -78,7 +78,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ContainerServicePowerName::from(
+                                            crate::types::ContainerServicePowerName::from(
                                                 u.as_ref(),
                                             )
                                         })
@@ -102,7 +102,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ContainerServiceState::from(u.as_ref())
+                                            crate::types::ContainerServiceState::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_predictive_scaling_customized_capacity_metric(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::PredictiveScalingCustomizedCapacityMetric,
+    input: &crate::types::PredictiveScalingCustomizedCapacityMetric,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("MetricDataQueries");
@@ -21,11 +21,11 @@ pub fn ser_predictive_scaling_customized_capacity_metric(
 pub fn de_predictive_scaling_customized_capacity_metric(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    crate::model::PredictiveScalingCustomizedCapacityMetric,
+    crate::types::PredictiveScalingCustomizedCapacityMetric,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     #[allow(unused_mut)]
-    let mut builder = crate::model::PredictiveScalingCustomizedCapacityMetric::builder();
+    let mut builder = crate::types::PredictiveScalingCustomizedCapacityMetric::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("MetricDataQueries") /* MetricDataQueries com.amazonaws.autoscaling#PredictiveScalingCustomizedCapacityMetric$MetricDataQueries */ =>  {

@@ -2,7 +2,7 @@
 pub(crate) fn de_pipeline_object_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::PipelineObject>>,
+    Option<std::vec::Vec<crate::types::PipelineObject>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_column_statistics_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ColumnStatistics>>,
+    Option<std::vec::Vec<crate::types::ColumnStatistics>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_rule_groups_namespace_status<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::RuleGroupsNamespaceStatus>,
+    Option<crate::types::RuleGroupsNamespaceStatus>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::rule_groups_namespace_status::Builder::default();
+            let mut builder = crate::types::builders::RuleGroupsNamespaceStatusBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::RuleGroupsNamespaceStatusCode::from(
+                                            crate::types::RuleGroupsNamespaceStatusCode::from(
                                                 u.as_ref(),
                                             )
                                         })

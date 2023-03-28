@@ -2,28 +2,52 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_invoke_async_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::InvokeAsyncOutput, crate::error::InvokeAsyncError> {
+) -> std::result::Result<
+    crate::operation::invoke_async::InvokeAsyncOutput,
+    crate::operation::invoke_async::InvokeAsyncError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::InvokeAsyncError::unhandled)?;
+        .map_err(crate::operation::invoke_async::InvokeAsyncError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::InvokeAsyncError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::invoke_async::InvokeAsyncError::unhandled(
+                generic,
+            ))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidRequestContentException" => {
-            crate::error::InvokeAsyncError::InvalidRequestContentException({
+            crate::operation::invoke_async::InvokeAsyncError::InvalidRequestContentException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidRequestContentExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_request_content_exception::de_invalid_request_content_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::invoke_async::InvokeAsyncError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidRuntimeException" => {
+            crate::operation::invoke_async::InvokeAsyncError::InvalidRuntimeException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::invalid_request_content_exception::Builder::default();
+                        crate::types::error::builders::InvalidRuntimeExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_request_content_exception::de_invalid_request_content_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeAsyncError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_runtime_exception::de_invalid_runtime_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::invoke_async::InvokeAsyncError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -33,59 +57,15 @@ pub fn de_invoke_async_http_error(
                 tmp
             })
         }
-        "InvalidRuntimeException" => crate::error::InvokeAsyncError::InvalidRuntimeException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::invalid_runtime_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_runtime_exception::de_invalid_runtime_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeAsyncError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ResourceConflictException" => crate::error::InvokeAsyncError::ResourceConflictException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::resource_conflict_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_resource_conflict_exception::de_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeAsyncError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ResourceNotFoundException" => crate::error::InvokeAsyncError::ResourceNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::resource_not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeAsyncError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ServiceException" => {
-            crate::error::InvokeAsyncError::ServiceException({
+        "ResourceConflictException" => {
+            crate::operation::invoke_async::InvokeAsyncError::ResourceConflictException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::service_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::ResourceConflictExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_exception::de_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeAsyncError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_conflict_exception::de_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::invoke_async::InvokeAsyncError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -95,17 +75,57 @@ pub fn de_invoke_async_http_error(
                 tmp
             })
         }
-        _ => crate::error::InvokeAsyncError::generic(generic),
+        "ResourceNotFoundException" => {
+            crate::operation::invoke_async::InvokeAsyncError::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::invoke_async::InvokeAsyncError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ServiceException" => {
+            crate::operation::invoke_async::InvokeAsyncError::ServiceException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ServiceExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_service_exception::de_service_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::invoke_async::InvokeAsyncError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::invoke_async::InvokeAsyncError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_invoke_async_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::InvokeAsyncOutput, crate::error::InvokeAsyncError> {
+) -> std::result::Result<
+    crate::operation::invoke_async::InvokeAsyncOutput,
+    crate::operation::invoke_async::InvokeAsyncError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::invoke_async_output::Builder::default();
+        let mut output =
+            crate::operation::invoke_async::builders::InvokeAsyncOutputBuilder::default();
         let _ = response;
         output = output.set_status(Some(response.status().as_u16() as _));
         output._set_request_id(

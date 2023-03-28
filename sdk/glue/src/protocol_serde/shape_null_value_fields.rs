@@ -2,7 +2,7 @@
 pub(crate) fn de_null_value_fields<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::NullValueField>>,
+    Option<std::vec::Vec<crate::types::NullValueField>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

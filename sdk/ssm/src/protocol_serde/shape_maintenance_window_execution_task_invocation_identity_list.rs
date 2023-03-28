@@ -2,7 +2,7 @@
 pub(crate) fn de_maintenance_window_execution_task_invocation_identity_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::MaintenanceWindowExecutionTaskInvocationIdentity>>,
+    Option<std::vec::Vec<crate::types::MaintenanceWindowExecutionTaskInvocationIdentity>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

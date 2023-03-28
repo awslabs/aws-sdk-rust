@@ -2,7 +2,7 @@
 pub(crate) fn de_geo_match_set_summaries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::GeoMatchSetSummary>>,
+    Option<std::vec::Vec<crate::types::GeoMatchSetSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

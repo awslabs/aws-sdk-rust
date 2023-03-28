@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_disk_image(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::DiskImage,
+    input: &crate::types::DiskImage,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Description");

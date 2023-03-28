@@ -2,7 +2,7 @@
 pub(crate) fn de_renewal_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::RenewalSummary>,
+    Option<crate::types::RenewalSummary>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::renewal_summary::Builder::default();
+            let mut builder = crate::types::builders::RenewalSummaryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -35,7 +35,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::RenewalStatus::from(u.as_ref()))
+                                            .map(|u| crate::types::RenewalStatus::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

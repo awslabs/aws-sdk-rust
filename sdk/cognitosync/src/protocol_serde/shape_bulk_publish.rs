@@ -2,126 +2,155 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_bulk_publish_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::BulkPublishOutput, crate::error::BulkPublishError> {
+) -> std::result::Result<
+    crate::operation::bulk_publish::BulkPublishOutput,
+    crate::operation::bulk_publish::BulkPublishError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::BulkPublishError::unhandled)?;
+        .map_err(crate::operation::bulk_publish::BulkPublishError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::BulkPublishError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::bulk_publish::BulkPublishError::unhandled(
+                generic,
+            ))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AlreadyStreamedException" => crate::error::BulkPublishError::AlreadyStreamedException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "AlreadyStreamedException" => {
+            crate::operation::bulk_publish::BulkPublishError::AlreadyStreamedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::already_streamed_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_already_streamed_exception::de_already_streamed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BulkPublishError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "DuplicateRequestException" => crate::error::BulkPublishError::DuplicateRequestException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::AlreadyStreamedExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_already_streamed_exception::de_already_streamed_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::bulk_publish::BulkPublishError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "DuplicateRequestException" => {
+            crate::operation::bulk_publish::BulkPublishError::DuplicateRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::duplicate_request_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_duplicate_request_exception::de_duplicate_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BulkPublishError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InternalErrorException" => crate::error::BulkPublishError::InternalErrorException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::DuplicateRequestExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_duplicate_request_exception::de_duplicate_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::bulk_publish::BulkPublishError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InternalErrorException" => {
+            crate::operation::bulk_publish::BulkPublishError::InternalErrorException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_error_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_error_exception::de_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BulkPublishError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InvalidParameterException" => crate::error::BulkPublishError::InvalidParameterException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InternalErrorExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_error_exception::de_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::bulk_publish::BulkPublishError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidParameterException" => {
+            crate::operation::bulk_publish::BulkPublishError::InvalidParameterException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_parameter_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BulkPublishError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "NotAuthorizedException" => crate::error::BulkPublishError::NotAuthorizedException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InvalidParameterExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::bulk_publish::BulkPublishError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "NotAuthorizedException" => {
+            crate::operation::bulk_publish::BulkPublishError::NotAuthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_authorized_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_not_authorized_exception::de_not_authorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BulkPublishError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ResourceNotFoundException" => crate::error::BulkPublishError::ResourceNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::NotAuthorizedExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_not_authorized_exception::de_not_authorized_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::bulk_publish::BulkPublishError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::operation::bulk_publish::BulkPublishError::ResourceNotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::resource_not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BulkPublishError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::BulkPublishError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::bulk_publish::BulkPublishError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::bulk_publish::BulkPublishError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_bulk_publish_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::BulkPublishOutput, crate::error::BulkPublishError> {
+) -> std::result::Result<
+    crate::operation::bulk_publish::BulkPublishOutput,
+    crate::operation::bulk_publish::BulkPublishError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::bulk_publish_output::Builder::default();
+        let mut output =
+            crate::operation::bulk_publish::builders::BulkPublishOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_bulk_publish::de_bulk_publish(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::BulkPublishError::unhandled)?;
+        .map_err(crate::operation::bulk_publish::BulkPublishError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -131,9 +160,9 @@ pub fn de_bulk_publish_http_response(
 
 pub(crate) fn de_bulk_publish(
     value: &[u8],
-    mut builder: crate::output::bulk_publish_output::Builder,
+    mut builder: crate::operation::bulk_publish::builders::BulkPublishOutputBuilder,
 ) -> Result<
-    crate::output::bulk_publish_output::Builder,
+    crate::operation::bulk_publish::builders::BulkPublishOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

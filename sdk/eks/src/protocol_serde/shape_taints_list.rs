@@ -2,7 +2,7 @@
 pub(crate) fn de_taints_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Taint>>,
+    Option<std::vec::Vec<crate::types::Taint>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

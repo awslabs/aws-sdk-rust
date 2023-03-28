@@ -3,58 +3,55 @@
 pub fn de_get_context_keys_for_principal_policy_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetContextKeysForPrincipalPolicyOutput,
-    crate::error::GetContextKeysForPrincipalPolicyError,
+    crate::operation::get_context_keys_for_principal_policy::GetContextKeysForPrincipalPolicyOutput,
+    crate::operation::get_context_keys_for_principal_policy::GetContextKeysForPrincipalPolicyError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetContextKeysForPrincipalPolicyError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::get_context_keys_for_principal_policy::GetContextKeysForPrincipalPolicyError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::GetContextKeysForPrincipalPolicyError::unhandled(generic))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::get_context_keys_for_principal_policy::GetContextKeysForPrincipalPolicyError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidInput" => {
-            crate::error::GetContextKeysForPrincipalPolicyError::InvalidInputException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidInput" => crate::operation::get_context_keys_for_principal_policy::GetContextKeysForPrincipalPolicyError::InvalidInputException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_input_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidInputExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_input_exception::de_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetContextKeysForPrincipalPolicyError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_input_exception::de_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::get_context_keys_for_principal_policy::GetContextKeysForPrincipalPolicyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "NoSuchEntity" => {
-            crate::error::GetContextKeysForPrincipalPolicyError::NoSuchEntityException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "NoSuchEntity" => crate::operation::get_context_keys_for_principal_policy::GetContextKeysForPrincipalPolicyError::NoSuchEntityException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::no_such_entity_exception::Builder::default();
+                    let mut output = crate::types::error::builders::NoSuchEntityExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_no_such_entity_exception::de_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetContextKeysForPrincipalPolicyError::unhandled)?;
+                    output = crate::protocol_serde::shape_no_such_entity_exception::de_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::get_context_keys_for_principal_policy::GetContextKeysForPrincipalPolicyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::GetContextKeysForPrincipalPolicyError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::get_context_keys_for_principal_policy::GetContextKeysForPrincipalPolicyError::generic(generic)
     })
 }
 
@@ -62,15 +59,14 @@ pub fn de_get_context_keys_for_principal_policy_http_error(
 pub fn de_get_context_keys_for_principal_policy_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetContextKeysForPrincipalPolicyOutput,
-    crate::error::GetContextKeysForPrincipalPolicyError,
+    crate::operation::get_context_keys_for_principal_policy::GetContextKeysForPrincipalPolicyOutput,
+    crate::operation::get_context_keys_for_principal_policy::GetContextKeysForPrincipalPolicyError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::output::get_context_keys_for_principal_policy_output::Builder::default();
+        let mut output = crate::operation::get_context_keys_for_principal_policy::builders::GetContextKeysForPrincipalPolicyOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_get_context_keys_for_principal_policy::de_get_context_keys_for_principal_policy(response.body().as_ref(), output).map_err(crate::error::GetContextKeysForPrincipalPolicyError::unhandled)?;
+        output = crate::protocol_serde::shape_get_context_keys_for_principal_policy::de_get_context_keys_for_principal_policy(response.body().as_ref(), output).map_err(crate::operation::get_context_keys_for_principal_policy::GetContextKeysForPrincipalPolicyError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -79,13 +75,7 @@ pub fn de_get_context_keys_for_principal_policy_http_response(
 }
 
 #[allow(unused_mut)]
-pub fn de_get_context_keys_for_principal_policy(
-    inp: &[u8],
-    mut builder: crate::output::get_context_keys_for_principal_policy_output::Builder,
-) -> Result<
-    crate::output::get_context_keys_for_principal_policy_output::Builder,
-    aws_smithy_xml::decode::XmlDecodeError,
-> {
+pub fn de_get_context_keys_for_principal_policy(inp: &[u8], mut builder: crate::operation::get_context_keys_for_principal_policy::builders::GetContextKeysForPrincipalPolicyOutputBuilder) -> Result<crate::operation::get_context_keys_for_principal_policy::builders::GetContextKeysForPrincipalPolicyOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

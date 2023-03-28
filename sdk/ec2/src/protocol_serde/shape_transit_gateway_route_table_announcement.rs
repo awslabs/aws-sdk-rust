@@ -2,11 +2,11 @@
 pub fn de_transit_gateway_route_table_announcement(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    crate::model::TransitGatewayRouteTableAnnouncement,
+    crate::types::TransitGatewayRouteTableAnnouncement,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     #[allow(unused_mut)]
-    let mut builder = crate::model::TransitGatewayRouteTableAnnouncement::builder();
+    let mut builder = crate::types::TransitGatewayRouteTableAnnouncement::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("transitGatewayRouteTableAnnouncementId") /* TransitGatewayRouteTableAnnouncementId com.amazonaws.ec2#TransitGatewayRouteTableAnnouncement$TransitGatewayRouteTableAnnouncementId */ =>  {
@@ -90,8 +90,8 @@ pub fn de_transit_gateway_route_table_announcement(
             s if s.matches("announcementDirection") /* AnnouncementDirection com.amazonaws.ec2#TransitGatewayRouteTableAnnouncement$AnnouncementDirection */ =>  {
                 let var_7 =
                     Some(
-                        Result::<crate::model::TransitGatewayRouteTableAnnouncementDirection, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::TransitGatewayRouteTableAnnouncementDirection::from(
+                        Result::<crate::types::TransitGatewayRouteTableAnnouncementDirection, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::TransitGatewayRouteTableAnnouncementDirection::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
@@ -117,8 +117,8 @@ pub fn de_transit_gateway_route_table_announcement(
             s if s.matches("state") /* State com.amazonaws.ec2#TransitGatewayRouteTableAnnouncement$State */ =>  {
                 let var_9 =
                     Some(
-                        Result::<crate::model::TransitGatewayRouteTableAnnouncementState, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::TransitGatewayRouteTableAnnouncementState::from(
+                        Result::<crate::types::TransitGatewayRouteTableAnnouncementState, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::TransitGatewayRouteTableAnnouncementState::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

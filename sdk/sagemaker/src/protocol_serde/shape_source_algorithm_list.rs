@@ -2,7 +2,7 @@
 pub(crate) fn de_source_algorithm_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SourceAlgorithm>>,
+    Option<std::vec::Vec<crate::types::SourceAlgorithm>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

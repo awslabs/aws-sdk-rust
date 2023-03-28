@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_unsupported_protocol_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::unsupported_protocol_exception::Builder,
+    mut builder: crate::types::error::builders::UnsupportedProtocolExceptionBuilder,
 ) -> Result<
-    crate::error::unsupported_protocol_exception::Builder,
+    crate::types::error::builders::UnsupportedProtocolExceptionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

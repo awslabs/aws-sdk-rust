@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_public_zone_vpc_association_xml_err(
     inp: &[u8],
-    mut builder: crate::error::public_zone_vpc_association::Builder,
+    mut builder: crate::types::error::builders::PublicZoneVpcAssociationBuilder,
 ) -> Result<
-    crate::error::public_zone_vpc_association::Builder,
+    crate::types::error::builders::PublicZoneVpcAssociationBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

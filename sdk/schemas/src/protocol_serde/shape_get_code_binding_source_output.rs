@@ -3,7 +3,7 @@ pub fn de_body_payload(
     body: &[u8],
 ) -> std::result::Result<
     std::option::Option<aws_smithy_types::Blob>,
-    crate::error::GetCodeBindingSourceError,
+    crate::operation::get_code_binding_source::GetCodeBindingSourceError,
 > {
     (!body.is_empty())
         .then(|| Ok(aws_smithy_types::Blob::new(body)))

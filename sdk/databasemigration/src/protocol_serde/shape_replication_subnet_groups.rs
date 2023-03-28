@@ -2,7 +2,7 @@
 pub(crate) fn de_replication_subnet_groups<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ReplicationSubnetGroup>>,
+    Option<std::vec::Vec<crate::types::ReplicationSubnetGroup>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

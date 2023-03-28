@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_fleet_spot_maintenance_strategies_request(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::FleetSpotMaintenanceStrategiesRequest,
+    input: &crate::types::FleetSpotMaintenanceStrategiesRequest,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("CapacityRebalance");

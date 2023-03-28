@@ -3,108 +3,108 @@
 pub fn de_get_cloud_formation_template_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetCloudFormationTemplateOutput,
-    crate::error::GetCloudFormationTemplateError,
+    crate::operation::get_cloud_formation_template::GetCloudFormationTemplateOutput,
+    crate::operation::get_cloud_formation_template::GetCloudFormationTemplateError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetCloudFormationTemplateError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::get_cloud_formation_template::GetCloudFormationTemplateError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::GetCloudFormationTemplateError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::get_cloud_formation_template::GetCloudFormationTemplateError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => {
-            crate::error::GetCloudFormationTemplateError::BadRequestException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "BadRequestException" => crate::operation::get_cloud_formation_template::GetCloudFormationTemplateError::BadRequestException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::bad_request_exception::Builder::default();
+                    let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCloudFormationTemplateError::unhandled)?;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_cloud_formation_template::GetCloudFormationTemplateError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ForbiddenException" => crate::error::GetCloudFormationTemplateError::ForbiddenException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCloudFormationTemplateError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "InternalServerErrorException" => {
-            crate::error::GetCloudFormationTemplateError::InternalServerErrorException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "ForbiddenException" => crate::operation::get_cloud_formation_template::GetCloudFormationTemplateError::ForbiddenException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::internal_server_error_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ForbiddenExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCloudFormationTemplateError::unhandled)?;
+                    output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_cloud_formation_template::GetCloudFormationTemplateError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "NotFoundException" => crate::error::GetCloudFormationTemplateError::NotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCloudFormationTemplateError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "TooManyRequestsException" => {
-            crate::error::GetCloudFormationTemplateError::TooManyRequestsException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalServerErrorException" => crate::operation::get_cloud_formation_template::GetCloudFormationTemplateError::InternalServerErrorException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InternalServerErrorExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCloudFormationTemplateError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_cloud_formation_template::GetCloudFormationTemplateError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::GetCloudFormationTemplateError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "NotFoundException" => crate::operation::get_cloud_formation_template::GetCloudFormationTemplateError::NotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::NotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_cloud_formation_template::GetCloudFormationTemplateError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TooManyRequestsException" => crate::operation::get_cloud_formation_template::GetCloudFormationTemplateError::TooManyRequestsException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_cloud_formation_template::GetCloudFormationTemplateError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::get_cloud_formation_template::GetCloudFormationTemplateError::generic(generic)
     })
 }
 
@@ -112,14 +112,14 @@ pub fn de_get_cloud_formation_template_http_error(
 pub fn de_get_cloud_formation_template_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetCloudFormationTemplateOutput,
-    crate::error::GetCloudFormationTemplateError,
+    crate::operation::get_cloud_formation_template::GetCloudFormationTemplateOutput,
+    crate::operation::get_cloud_formation_template::GetCloudFormationTemplateError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_cloud_formation_template_output::Builder::default();
+        let mut output = crate::operation::get_cloud_formation_template::builders::GetCloudFormationTemplateOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_get_cloud_formation_template::de_get_cloud_formation_template(response.body().as_ref(), output).map_err(crate::error::GetCloudFormationTemplateError::unhandled)?;
+        output = crate::protocol_serde::shape_get_cloud_formation_template::de_get_cloud_formation_template(response.body().as_ref(), output).map_err(crate::operation::get_cloud_formation_template::GetCloudFormationTemplateError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -127,13 +127,7 @@ pub fn de_get_cloud_formation_template_http_response(
     })
 }
 
-pub(crate) fn de_get_cloud_formation_template(
-    value: &[u8],
-    mut builder: crate::output::get_cloud_formation_template_output::Builder,
-) -> Result<
-    crate::output::get_cloud_formation_template_output::Builder,
-    aws_smithy_json::deserialize::error::DeserializeError,
-> {
+pub(crate) fn de_get_cloud_formation_template(value: &[u8], mut builder: crate::operation::get_cloud_formation_template::builders::GetCloudFormationTemplateOutputBuilder) -> Result<crate::operation::get_cloud_formation_template::builders::GetCloudFormationTemplateOutputBuilder, aws_smithy_json::deserialize::error::DeserializeError>{
     let mut tokens_owned =
         aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
             .peekable();
@@ -187,7 +181,7 @@ pub(crate) fn de_get_cloud_formation_template(
                             )?
                             .map(|s| {
                                 s.to_unescaped()
-                                    .map(|u| crate::model::Status::from(u.as_ref()))
+                                    .map(|u| crate::types::Status::from(u.as_ref()))
                             })
                             .transpose()?,
                         );

@@ -2,62 +2,35 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_device_job_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DescribeDeviceJobOutput, crate::error::DescribeDeviceJobError>
-{
+) -> std::result::Result<
+    crate::operation::describe_device_job::DescribeDeviceJobOutput,
+    crate::operation::describe_device_job::DescribeDeviceJobError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeDeviceJobError::unhandled)?;
+        .map_err(crate::operation::describe_device_job::DescribeDeviceJobError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DescribeDeviceJobError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::describe_device_job::DescribeDeviceJobError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::DescribeDeviceJobError::AccessDeniedException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::access_denied_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDeviceJobError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ConflictException" => crate::error::DescribeDeviceJobError::ConflictException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::conflict_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDeviceJobError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InternalServerException" => {
-            crate::error::DescribeDeviceJobError::InternalServerException({
+        "AccessDeniedException" => {
+            crate::operation::describe_device_job::DescribeDeviceJobError::AccessDeniedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::AccessDeniedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDeviceJobError::unhandled)?;
-                    output = output.set_retry_after_seconds(
-                        crate::protocol_serde::shape_internal_server_exception::de_retry_after_seconds_header(response.headers())
-                                                .map_err(|_|crate::error::DescribeDeviceJobError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
-                    );
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_device_job::DescribeDeviceJobError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -66,15 +39,78 @@ pub fn de_describe_device_job_http_error(
                 }
                 tmp
             })
+        }
+        "ConflictException" => {
+            crate::operation::describe_device_job::DescribeDeviceJobError::ConflictException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ConflictExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_device_job::DescribeDeviceJobError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InternalServerException" => {
+            crate::operation::describe_device_job::DescribeDeviceJobError::InternalServerException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::types::error::builders::InternalServerExceptionBuilder::default(
+                            );
+                        let _ = response;
+                        output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_device_job::DescribeDeviceJobError::unhandled)?;
+                        output = output.set_retry_after_seconds(
+                        crate::protocol_serde::shape_internal_server_exception::de_retry_after_seconds_header(response.headers())
+                                                .map_err(|_|crate::operation::describe_device_job::DescribeDeviceJobError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
+                    );
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
         }
         "ResourceNotFoundException" => {
-            crate::error::DescribeDeviceJobError::ResourceNotFoundException({
+            crate::operation::describe_device_job::DescribeDeviceJobError::ResourceNotFoundException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                        let _ = response;
+                        output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_device_job::DescribeDeviceJobError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        "ValidationException" => {
+            crate::operation::describe_device_job::DescribeDeviceJobError::ValidationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::ValidationExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDeviceJobError::unhandled)?;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_device_job::DescribeDeviceJobError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -84,39 +120,26 @@ pub fn de_describe_device_job_http_error(
                 tmp
             })
         }
-        "ValidationException" => crate::error::DescribeDeviceJobError::ValidationException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDeviceJobError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::DescribeDeviceJobError::generic(generic),
+        _ => crate::operation::describe_device_job::DescribeDeviceJobError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_device_job_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DescribeDeviceJobOutput, crate::error::DescribeDeviceJobError>
-{
+) -> std::result::Result<
+    crate::operation::describe_device_job::DescribeDeviceJobOutput,
+    crate::operation::describe_device_job::DescribeDeviceJobError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_device_job_output::Builder::default();
+        let mut output = crate::operation::describe_device_job::builders::DescribeDeviceJobOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_describe_device_job::de_describe_device_job(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DescribeDeviceJobError::unhandled)?;
+        .map_err(crate::operation::describe_device_job::DescribeDeviceJobError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -126,9 +149,9 @@ pub fn de_describe_device_job_http_response(
 
 pub(crate) fn de_describe_device_job(
     value: &[u8],
-    mut builder: crate::output::describe_device_job_output::Builder,
+    mut builder: crate::operation::describe_device_job::builders::DescribeDeviceJobOutputBuilder,
 ) -> Result<
-    crate::output::describe_device_job_output::Builder,
+    crate::operation::describe_device_job::builders::DescribeDeviceJobOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =
@@ -183,7 +206,7 @@ pub(crate) fn de_describe_device_job(
                             )?
                             .map(|s| {
                                 s.to_unescaped()
-                                    .map(|u| crate::model::DeviceType::from(u.as_ref()))
+                                    .map(|u| crate::types::DeviceType::from(u.as_ref()))
                             })
                             .transpose()?,
                         );
@@ -213,7 +236,7 @@ pub(crate) fn de_describe_device_job(
                             )?
                             .map(|s| {
                                 s.to_unescaped()
-                                    .map(|u| crate::model::JobType::from(u.as_ref()))
+                                    .map(|u| crate::types::JobType::from(u.as_ref()))
                             })
                             .transpose()?,
                         );
@@ -225,7 +248,7 @@ pub(crate) fn de_describe_device_job(
                             )?
                             .map(|s| {
                                 s.to_unescaped()
-                                    .map(|u| crate::model::UpdateProgress::from(u.as_ref()))
+                                    .map(|u| crate::types::UpdateProgress::from(u.as_ref()))
                             })
                             .transpose()?,
                         );

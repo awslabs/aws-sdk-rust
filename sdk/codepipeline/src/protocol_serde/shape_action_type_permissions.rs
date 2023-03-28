@@ -2,7 +2,7 @@
 pub(crate) fn de_action_type_permissions<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ActionTypePermissions>,
+    Option<crate::types::ActionTypePermissions>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::action_type_permissions::Builder::default();
+            let mut builder = crate::types::builders::ActionTypePermissionsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -53,7 +53,7 @@ where
 
 pub fn ser_action_type_permissions(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::ActionTypePermissions,
+    input: &crate::types::ActionTypePermissions,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.allowed_accounts {
         let mut array_2 = object.key("allowedAccounts").start_array();

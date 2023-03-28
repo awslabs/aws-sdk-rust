@@ -2,7 +2,7 @@
 pub(crate) fn de_base_configuration_items<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::BaseConfigurationItem>>,
+    Option<std::vec::Vec<crate::types::BaseConfigurationItem>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

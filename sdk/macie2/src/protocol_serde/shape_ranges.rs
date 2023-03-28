@@ -2,7 +2,7 @@
 pub(crate) fn de_ranges<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Range>>,
+    Option<std::vec::Vec<crate::types::Range>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_filled_map_conditional_formatting_option_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::FilledMapConditionalFormattingOption>>,
+    Option<std::vec::Vec<crate::types::FilledMapConditionalFormattingOption>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

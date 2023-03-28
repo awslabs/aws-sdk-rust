@@ -2,7 +2,7 @@
 pub(crate) fn de_conference_preference<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ConferencePreference>,
+    Option<crate::types::ConferencePreference>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::conference_preference::Builder::default();
+            let mut builder = crate::types::builders::ConferencePreferenceBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -57,7 +57,7 @@ where
 
 pub fn ser_conference_preference(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::ConferencePreference,
+    input: &crate::types::ConferencePreference,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.default_conference_provider_arn {
         object

@@ -2,7 +2,7 @@
 pub(crate) fn de_third_party_firewall_missing_expected_route_table_violation<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ThirdPartyFirewallMissingExpectedRouteTableViolation>,
+    Option<crate::types::ThirdPartyFirewallMissingExpectedRouteTableViolation>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::third_party_firewall_missing_expected_route_table_violation::Builder::default();
+            let mut builder = crate::types::builders::ThirdPartyFirewallMissingExpectedRouteTableViolationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

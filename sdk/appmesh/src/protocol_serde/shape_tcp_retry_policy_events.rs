@@ -2,7 +2,7 @@
 pub(crate) fn de_tcp_retry_policy_events<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::TcpRetryPolicyEvent>>,
+    Option<std::vec::Vec<crate::types::TcpRetryPolicyEvent>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -29,7 +29,7 @@ where
                         )?
                         .map(|s| {
                             s.to_unescaped()
-                                .map(|u| crate::model::TcpRetryPolicyEvent::from(u.as_ref()))
+                                .map(|u| crate::types::TcpRetryPolicyEvent::from(u.as_ref()))
                         })
                         .transpose()?;
                         if let Some(value) = value {

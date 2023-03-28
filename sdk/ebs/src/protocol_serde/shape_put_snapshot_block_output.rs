@@ -12,7 +12,7 @@ pub(crate) fn de_checksum_header(
 pub(crate) fn de_checksum_algorithm_header(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
-    std::option::Option<crate::model::ChecksumAlgorithm>,
+    std::option::Option<crate::types::ChecksumAlgorithm>,
     aws_smithy_http::header::ParseError,
 > {
     let headers = header_map.get_all("x-amz-Checksum-Algorithm").iter();

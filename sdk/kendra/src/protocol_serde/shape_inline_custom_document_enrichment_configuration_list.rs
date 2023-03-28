@@ -2,7 +2,7 @@
 pub(crate) fn de_inline_custom_document_enrichment_configuration_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::InlineCustomDocumentEnrichmentConfiguration>>,
+    Option<std::vec::Vec<crate::types::InlineCustomDocumentEnrichmentConfiguration>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

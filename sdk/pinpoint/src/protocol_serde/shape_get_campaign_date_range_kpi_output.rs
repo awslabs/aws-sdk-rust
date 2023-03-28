@@ -2,10 +2,10 @@
 pub fn de_campaign_date_range_kpi_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::CampaignDateRangeKpiResponse>,
-    crate::error::GetCampaignDateRangeKpiError,
+    std::option::Option<crate::types::CampaignDateRangeKpiResponse>,
+    crate::operation::get_campaign_date_range_kpi::GetCampaignDateRangeKpiError,
 > {
     (!body.is_empty()).then(||{
-        crate::protocol_serde::shape_campaign_date_range_kpi_response::de_campaign_date_range_kpi_response_payload(body).map_err(crate::error::GetCampaignDateRangeKpiError::unhandled)
+        crate::protocol_serde::shape_campaign_date_range_kpi_response::de_campaign_date_range_kpi_response_payload(body).map_err(crate::operation::get_campaign_date_range_kpi::GetCampaignDateRangeKpiError::unhandled)
     }).transpose()
 }

@@ -2,7 +2,7 @@
 pub(crate) fn de_parameter_metadata_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ParameterMetadata>>,
+    Option<std::vec::Vec<crate::types::ParameterMetadata>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

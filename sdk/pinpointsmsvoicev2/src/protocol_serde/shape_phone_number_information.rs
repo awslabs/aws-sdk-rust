@@ -2,7 +2,7 @@
 pub(crate) fn de_phone_number_information<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::PhoneNumberInformation>,
+    Option<crate::types::PhoneNumberInformation>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::phone_number_information::Builder::default();
+            let mut builder = crate::types::builders::PhoneNumberInformationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -57,7 +57,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::NumberStatus::from(u.as_ref()))
+                                            .map(|u| crate::types::NumberStatus::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -78,7 +78,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::MessageType::from(u.as_ref()))
+                                            .map(|u| crate::types::MessageType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -95,7 +95,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::NumberType::from(u.as_ref()))
+                                            .map(|u| crate::types::NumberType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

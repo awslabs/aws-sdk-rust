@@ -2,7 +2,7 @@
 pub(crate) fn de_observability_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ObservabilityConfiguration>,
+    Option<crate::types::ObservabilityConfiguration>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::observability_configuration::Builder::default();
+            let mut builder = crate::types::builders::ObservabilityConfigurationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -69,7 +69,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ObservabilityConfigurationStatus::from(
+                                            crate::types::ObservabilityConfigurationStatus::from(
                                                 u.as_ref(),
                                             )
                                         })

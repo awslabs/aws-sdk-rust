@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_service_linked_role_failure_xml_err(
     inp: &[u8],
-    mut builder: crate::error::service_linked_role_failure::Builder,
+    mut builder: crate::types::error::builders::ServiceLinkedRoleFailureBuilder,
 ) -> Result<
-    crate::error::service_linked_role_failure::Builder,
+    crate::types::error::builders::ServiceLinkedRoleFailureBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

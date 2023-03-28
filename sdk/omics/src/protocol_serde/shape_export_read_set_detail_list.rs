@@ -2,7 +2,7 @@
 pub(crate) fn de_export_read_set_detail_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ExportReadSetDetail>>,
+    Option<std::vec::Vec<crate::types::ExportReadSetDetail>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

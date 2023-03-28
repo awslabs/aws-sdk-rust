@@ -2,7 +2,7 @@
 pub(crate) fn de_connection_alias_association_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ConnectionAliasAssociation>>,
+    Option<std::vec::Vec<crate::types::ConnectionAliasAssociation>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

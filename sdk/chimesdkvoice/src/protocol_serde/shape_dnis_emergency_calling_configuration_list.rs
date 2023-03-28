@@ -2,7 +2,7 @@
 pub(crate) fn de_dnis_emergency_calling_configuration_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DnisEmergencyCallingConfiguration>>,
+    Option<std::vec::Vec<crate::types::DnisEmergencyCallingConfiguration>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -3,33 +3,33 @@
 pub fn de_create_transit_gateway_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateTransitGatewayOutput,
-    crate::error::CreateTransitGatewayError,
+    crate::operation::create_transit_gateway::CreateTransitGatewayOutput,
+    crate::operation::create_transit_gateway::CreateTransitGatewayError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::CreateTransitGatewayError::unhandled)?;
+        .map_err(crate::operation::create_transit_gateway::CreateTransitGatewayError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::CreateTransitGatewayError::generic(generic))
+    Err(crate::operation::create_transit_gateway::CreateTransitGatewayError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_transit_gateway_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateTransitGatewayOutput,
-    crate::error::CreateTransitGatewayError,
+    crate::operation::create_transit_gateway::CreateTransitGatewayOutput,
+    crate::operation::create_transit_gateway::CreateTransitGatewayError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::create_transit_gateway_output::Builder::default();
+        let mut output = crate::operation::create_transit_gateway::builders::CreateTransitGatewayOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_create_transit_gateway::de_create_transit_gateway(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::CreateTransitGatewayError::unhandled)?;
+        .map_err(crate::operation::create_transit_gateway::CreateTransitGatewayError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -40,9 +40,9 @@ pub fn de_create_transit_gateway_http_response(
 #[allow(unused_mut)]
 pub fn de_create_transit_gateway(
     inp: &[u8],
-    mut builder: crate::output::create_transit_gateway_output::Builder,
+    mut builder: crate::operation::create_transit_gateway::builders::CreateTransitGatewayOutputBuilder,
 ) -> Result<
-    crate::output::create_transit_gateway_output::Builder,
+    crate::operation::create_transit_gateway::builders::CreateTransitGatewayOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

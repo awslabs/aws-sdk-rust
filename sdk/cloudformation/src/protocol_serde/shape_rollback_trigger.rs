@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_rollback_trigger(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::RollbackTrigger,
+    input: &crate::types::RollbackTrigger,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Arn");
@@ -19,9 +19,9 @@ pub fn ser_rollback_trigger(
 
 pub fn de_rollback_trigger(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::RollbackTrigger, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::RollbackTrigger, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::RollbackTrigger::builder();
+    let mut builder = crate::types::RollbackTrigger::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Arn") /* Arn com.amazonaws.cloudformation#RollbackTrigger$Arn */ =>  {

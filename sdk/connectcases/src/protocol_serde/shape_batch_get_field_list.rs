@@ -2,7 +2,7 @@
 pub(crate) fn de_batch_get_field_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::GetFieldResponse>>,
+    Option<std::vec::Vec<crate::types::GetFieldResponse>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

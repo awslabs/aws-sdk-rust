@@ -2,7 +2,7 @@
 pub(crate) fn de_revision_location_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::RevisionLocation>>,
+    Option<std::vec::Vec<crate::types::RevisionLocation>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

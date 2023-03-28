@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_distribution_already_exists_xml_err(
     inp: &[u8],
-    mut builder: crate::error::distribution_already_exists::Builder,
+    mut builder: crate::types::error::builders::DistributionAlreadyExistsBuilder,
 ) -> Result<
-    crate::error::distribution_already_exists::Builder,
+    crate::types::error::builders::DistributionAlreadyExistsBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

@@ -2,7 +2,7 @@
 pub(crate) fn de_kpi_conditional_formatting_option_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::KpiConditionalFormattingOption>>,
+    Option<std::vec::Vec<crate::types::KpiConditionalFormattingOption>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

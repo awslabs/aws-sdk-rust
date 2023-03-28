@@ -2,10 +2,10 @@
 pub fn de_template_versions_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::TemplateVersionsResponse>,
-    crate::error::ListTemplateVersionsError,
+    std::option::Option<crate::types::TemplateVersionsResponse>,
+    crate::operation::list_template_versions::ListTemplateVersionsError,
 > {
     (!body.is_empty()).then(||{
-        crate::protocol_serde::shape_template_versions_response::de_template_versions_response_payload(body).map_err(crate::error::ListTemplateVersionsError::unhandled)
+        crate::protocol_serde::shape_template_versions_response::de_template_versions_response_payload(body).map_err(crate::operation::list_template_versions::ListTemplateVersionsError::unhandled)
     }).transpose()
 }

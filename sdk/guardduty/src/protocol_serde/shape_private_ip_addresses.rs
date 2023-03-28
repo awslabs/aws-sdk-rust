@@ -2,7 +2,7 @@
 pub(crate) fn de_private_ip_addresses<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::PrivateIpAddressDetails>>,
+    Option<std::vec::Vec<crate::types::PrivateIpAddressDetails>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

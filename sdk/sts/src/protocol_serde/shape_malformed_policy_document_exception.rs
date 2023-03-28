@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_malformed_policy_document_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::malformed_policy_document_exception::Builder,
+    mut builder: crate::types::error::builders::MalformedPolicyDocumentExceptionBuilder,
 ) -> Result<
-    crate::error::malformed_policy_document_exception::Builder,
+    crate::types::error::builders::MalformedPolicyDocumentExceptionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

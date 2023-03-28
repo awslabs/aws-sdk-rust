@@ -2,78 +2,40 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_key_group_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::CreateKeyGroupOutput, crate::error::CreateKeyGroupError> {
+) -> std::result::Result<
+    crate::operation::create_key_group::CreateKeyGroupOutput,
+    crate::operation::create_key_group::CreateKeyGroupError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::CreateKeyGroupError::unhandled)?;
+        .map_err(crate::operation::create_key_group::CreateKeyGroupError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::CreateKeyGroupError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::create_key_group::CreateKeyGroupError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidArgument" => crate::error::CreateKeyGroupError::InvalidArgument({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::invalid_argument::Builder::default();
-                let _ = response;
-                output =
-                    crate::protocol_serde::shape_invalid_argument::de_invalid_argument_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateKeyGroupError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "KeyGroupAlreadyExists" => crate::error::CreateKeyGroupError::KeyGroupAlreadyExists({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::key_group_already_exists::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_key_group_already_exists::de_key_group_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateKeyGroupError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "TooManyKeyGroups" => crate::error::CreateKeyGroupError::TooManyKeyGroups({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::too_many_key_groups::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_too_many_key_groups::de_too_many_key_groups_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateKeyGroupError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "TooManyPublicKeysInKeyGroup" => {
-            crate::error::CreateKeyGroupError::TooManyPublicKeysInKeyGroup({
+        "InvalidArgument" => {
+            crate::operation::create_key_group::CreateKeyGroupError::InvalidArgument({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::too_many_public_keys_in_key_group::Builder::default();
+                        crate::types::error::builders::InvalidArgumentBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_public_keys_in_key_group::de_too_many_public_keys_in_key_group_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateKeyGroupError::unhandled)?;
+                    output =
+                        crate::protocol_serde::shape_invalid_argument::de_invalid_argument_xml_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(
+                            crate::operation::create_key_group::CreateKeyGroupError::unhandled,
+                        )?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -83,24 +45,83 @@ pub fn de_create_key_group_http_error(
                 tmp
             })
         }
-        _ => crate::error::CreateKeyGroupError::generic(generic),
+        "KeyGroupAlreadyExists" => {
+            crate::operation::create_key_group::CreateKeyGroupError::KeyGroupAlreadyExists({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::KeyGroupAlreadyExistsBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_key_group_already_exists::de_key_group_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_key_group::CreateKeyGroupError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "TooManyKeyGroups" => {
+            crate::operation::create_key_group::CreateKeyGroupError::TooManyKeyGroups({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::TooManyKeyGroupsBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_too_many_key_groups::de_too_many_key_groups_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_key_group::CreateKeyGroupError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "TooManyPublicKeysInKeyGroup" => {
+            crate::operation::create_key_group::CreateKeyGroupError::TooManyPublicKeysInKeyGroup({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::TooManyPublicKeysInKeyGroupBuilder::default(
+                        );
+                    let _ = response;
+                    output = crate::protocol_serde::shape_too_many_public_keys_in_key_group::de_too_many_public_keys_in_key_group_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_key_group::CreateKeyGroupError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::create_key_group::CreateKeyGroupError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_key_group_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::CreateKeyGroupOutput, crate::error::CreateKeyGroupError> {
+) -> std::result::Result<
+    crate::operation::create_key_group::CreateKeyGroupOutput,
+    crate::operation::create_key_group::CreateKeyGroupError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::create_key_group_output::Builder::default();
+        let mut output =
+            crate::operation::create_key_group::builders::CreateKeyGroupOutputBuilder::default();
         let _ = response;
         output = output.set_e_tag(
             crate::protocol_serde::shape_create_key_group_output::de_e_tag_header(
                 response.headers(),
             )
             .map_err(|_| {
-                crate::error::CreateKeyGroupError::unhandled(
+                crate::operation::create_key_group::CreateKeyGroupError::unhandled(
                     "Failed to parse ETag from header `ETag",
                 )
             })?,
@@ -115,7 +136,7 @@ pub fn de_create_key_group_http_response(
                 response.headers(),
             )
             .map_err(|_| {
-                crate::error::CreateKeyGroupError::unhandled(
+                crate::operation::create_key_group::CreateKeyGroupError::unhandled(
                     "Failed to parse Location from header `Location",
                 )
             })?,

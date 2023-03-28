@@ -3,58 +3,62 @@
 pub fn de_get_integration_response_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetIntegrationResponseOutput,
-    crate::error::GetIntegrationResponseError,
+    crate::operation::get_integration_response::GetIntegrationResponseOutput,
+    crate::operation::get_integration_response::GetIntegrationResponseError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetIntegrationResponseError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::get_integration_response::GetIntegrationResponseError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::GetIntegrationResponseError::unhandled(
-                generic,
-            ))
-        }
-    };
+    let error_code =
+        match generic.code() {
+            Some(code) => code,
+            None => return Err(
+                crate::operation::get_integration_response::GetIntegrationResponseError::unhandled(
+                    generic,
+                ),
+            ),
+        };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "NotFoundException" => crate::error::GetIntegrationResponseError::NotFoundException({
+        "NotFoundException" => crate::operation::get_integration_response::GetIntegrationResponseError::NotFoundException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetIntegrationResponseError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "TooManyRequestsException" => {
-            crate::error::GetIntegrationResponseError::TooManyRequestsException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    let mut output = crate::types::error::builders::NotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetIntegrationResponseError::unhandled)?;
+                    output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_integration_response::GetIntegrationResponseError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::GetIntegrationResponseError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TooManyRequestsException" => crate::operation::get_integration_response::GetIntegrationResponseError::TooManyRequestsException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_integration_response::GetIntegrationResponseError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::get_integration_response::GetIntegrationResponseError::generic(generic)
     })
 }
 
@@ -62,19 +66,21 @@ pub fn de_get_integration_response_http_error(
 pub fn de_get_integration_response_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetIntegrationResponseOutput,
-    crate::error::GetIntegrationResponseError,
+    crate::operation::get_integration_response::GetIntegrationResponseOutput,
+    crate::operation::get_integration_response::GetIntegrationResponseError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_integration_response_output::Builder::default();
+        let mut output = crate::operation::get_integration_response::builders::GetIntegrationResponseOutputBuilder::default();
         let _ = response;
         output =
             crate::protocol_serde::shape_get_integration_response::de_get_integration_response(
                 response.body().as_ref(),
                 output,
             )
-            .map_err(crate::error::GetIntegrationResponseError::unhandled)?;
+            .map_err(
+                crate::operation::get_integration_response::GetIntegrationResponseError::unhandled,
+            )?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -84,9 +90,9 @@ pub fn de_get_integration_response_http_response(
 
 pub(crate) fn de_get_integration_response(
     value: &[u8],
-    mut builder: crate::output::get_integration_response_output::Builder,
+    mut builder: crate::operation::get_integration_response::builders::GetIntegrationResponseOutputBuilder,
 ) -> Result<
-    crate::output::get_integration_response_output::Builder,
+    crate::operation::get_integration_response::builders::GetIntegrationResponseOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =
@@ -106,7 +112,7 @@ pub(crate) fn de_get_integration_response(
                             )?
                             .map(|s| {
                                 s.to_unescaped().map(|u| {
-                                    crate::model::ContentHandlingStrategy::from(u.as_ref())
+                                    crate::types::ContentHandlingStrategy::from(u.as_ref())
                                 })
                             })
                             .transpose()?,

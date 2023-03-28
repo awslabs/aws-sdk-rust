@@ -3,60 +3,57 @@
 pub fn de_associate_data_share_consumer_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::AssociateDataShareConsumerOutput,
-    crate::error::AssociateDataShareConsumerError,
+    crate::operation::associate_data_share_consumer::AssociateDataShareConsumerOutput,
+    crate::operation::associate_data_share_consumer::AssociateDataShareConsumerError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::AssociateDataShareConsumerError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::associate_data_share_consumer::AssociateDataShareConsumerError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::AssociateDataShareConsumerError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::associate_data_share_consumer::AssociateDataShareConsumerError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidDataShareFault" => {
-            crate::error::AssociateDataShareConsumerError::InvalidDataShareFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidDataShareFault" => crate::operation::associate_data_share_consumer::AssociateDataShareConsumerError::InvalidDataShareFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_data_share_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidDataShareFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_data_share_fault::de_invalid_data_share_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AssociateDataShareConsumerError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_data_share_fault::de_invalid_data_share_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::associate_data_share_consumer::AssociateDataShareConsumerError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidNamespaceFault" => {
-            crate::error::AssociateDataShareConsumerError::InvalidNamespaceFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidNamespaceFault" => crate::operation::associate_data_share_consumer::AssociateDataShareConsumerError::InvalidNamespaceFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_namespace_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidNamespaceFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_namespace_fault::de_invalid_namespace_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AssociateDataShareConsumerError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_namespace_fault::de_invalid_namespace_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::associate_data_share_consumer::AssociateDataShareConsumerError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::AssociateDataShareConsumerError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::associate_data_share_consumer::AssociateDataShareConsumerError::generic(generic)
     })
 }
 
@@ -64,14 +61,14 @@ pub fn de_associate_data_share_consumer_http_error(
 pub fn de_associate_data_share_consumer_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::AssociateDataShareConsumerOutput,
-    crate::error::AssociateDataShareConsumerError,
+    crate::operation::associate_data_share_consumer::AssociateDataShareConsumerOutput,
+    crate::operation::associate_data_share_consumer::AssociateDataShareConsumerError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::associate_data_share_consumer_output::Builder::default();
+        let mut output = crate::operation::associate_data_share_consumer::builders::AssociateDataShareConsumerOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_associate_data_share_consumer::de_associate_data_share_consumer(response.body().as_ref(), output).map_err(crate::error::AssociateDataShareConsumerError::unhandled)?;
+        output = crate::protocol_serde::shape_associate_data_share_consumer::de_associate_data_share_consumer(response.body().as_ref(), output).map_err(crate::operation::associate_data_share_consumer::AssociateDataShareConsumerError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -80,13 +77,7 @@ pub fn de_associate_data_share_consumer_http_response(
 }
 
 #[allow(unused_mut)]
-pub fn de_associate_data_share_consumer(
-    inp: &[u8],
-    mut builder: crate::output::associate_data_share_consumer_output::Builder,
-) -> Result<
-    crate::output::associate_data_share_consumer_output::Builder,
-    aws_smithy_xml::decode::XmlDecodeError,
-> {
+pub fn de_associate_data_share_consumer(inp: &[u8], mut builder: crate::operation::associate_data_share_consumer::builders::AssociateDataShareConsumerOutputBuilder) -> Result<crate::operation::associate_data_share_consumer::builders::AssociateDataShareConsumerOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

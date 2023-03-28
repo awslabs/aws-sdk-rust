@@ -2,8 +2,11 @@
 #[allow(unused_mut)]
 pub fn de_invalid_location_code_xml_err(
     inp: &[u8],
-    mut builder: crate::error::invalid_location_code::Builder,
-) -> Result<crate::error::invalid_location_code::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    mut builder: crate::types::error::builders::InvalidLocationCodeBuilder,
+) -> Result<
+    crate::types::error::builders::InvalidLocationCodeBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     if inp.is_empty() {
         return Ok(builder);
     }

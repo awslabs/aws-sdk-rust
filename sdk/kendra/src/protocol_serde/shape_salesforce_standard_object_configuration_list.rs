@@ -2,7 +2,7 @@
 pub(crate) fn de_salesforce_standard_object_configuration_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SalesforceStandardObjectConfiguration>>,
+    Option<std::vec::Vec<crate::types::SalesforceStandardObjectConfiguration>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

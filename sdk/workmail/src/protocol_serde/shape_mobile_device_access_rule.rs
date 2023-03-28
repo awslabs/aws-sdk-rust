@@ -2,7 +2,7 @@
 pub(crate) fn de_mobile_device_access_rule<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::MobileDeviceAccessRule>,
+    Option<crate::types::MobileDeviceAccessRule>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::mobile_device_access_rule::Builder::default();
+            let mut builder = crate::types::builders::MobileDeviceAccessRuleBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -57,7 +57,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::MobileDeviceAccessRuleEffect::from(
+                                            crate::types::MobileDeviceAccessRuleEffect::from(
                                                 u.as_ref(),
                                             )
                                         })

@@ -2,7 +2,7 @@
 pub(crate) fn de_protected_resources_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ProtectedResource>>,
+    Option<std::vec::Vec<crate::types::ProtectedResource>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

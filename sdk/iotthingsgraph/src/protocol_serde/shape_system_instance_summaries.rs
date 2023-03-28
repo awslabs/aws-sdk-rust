@@ -2,7 +2,7 @@
 pub(crate) fn de_system_instance_summaries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SystemInstanceSummary>>,
+    Option<std::vec::Vec<crate::types::SystemInstanceSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_list_workflows_item<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ListWorkflowsItem>,
+    Option<crate::types::ListWorkflowsItem>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::list_workflows_item::Builder::default();
+            let mut builder = crate::types::builders::ListWorkflowsItemBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::WorkflowType::from(u.as_ref()))
+                                            .map(|u| crate::types::WorkflowType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -51,7 +51,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::Status::from(u.as_ref()))
+                                            .map(|u| crate::types::Status::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

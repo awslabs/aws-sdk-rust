@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_bucket_metadata<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::BucketMetadata>>,
+    Option<std::vec::Vec<crate::types::BucketMetadata>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

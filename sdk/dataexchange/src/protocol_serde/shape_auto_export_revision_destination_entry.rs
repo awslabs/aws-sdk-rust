@@ -2,7 +2,7 @@
 pub(crate) fn de_auto_export_revision_destination_entry<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::AutoExportRevisionDestinationEntry>,
+    Option<crate::types::AutoExportRevisionDestinationEntry>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::auto_export_revision_destination_entry::Builder::default();
+                crate::types::builders::AutoExportRevisionDestinationEntryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -67,7 +67,7 @@ where
 
 pub fn ser_auto_export_revision_destination_entry(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::AutoExportRevisionDestinationEntry,
+    input: &crate::types::AutoExportRevisionDestinationEntry,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.bucket {
         object.key("Bucket").string(var_1.as_str());

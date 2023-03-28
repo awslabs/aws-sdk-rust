@@ -3,97 +3,91 @@
 pub fn de_describe_protected_resource_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeProtectedResourceOutput,
-    crate::error::DescribeProtectedResourceError,
+    crate::operation::describe_protected_resource::DescribeProtectedResourceOutput,
+    crate::operation::describe_protected_resource::DescribeProtectedResourceError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeProtectedResourceError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::describe_protected_resource::DescribeProtectedResourceError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::DescribeProtectedResourceError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::describe_protected_resource::DescribeProtectedResourceError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => {
-            crate::error::DescribeProtectedResourceError::InvalidParameterValueException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidParameterValueException" => crate::operation::describe_protected_resource::DescribeProtectedResourceError::InvalidParameterValueException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_parameter_value_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeProtectedResourceError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_protected_resource::DescribeProtectedResourceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "MissingParameterValueException" => {
-            crate::error::DescribeProtectedResourceError::MissingParameterValueException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "MissingParameterValueException" => crate::operation::describe_protected_resource::DescribeProtectedResourceError::MissingParameterValueException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::missing_parameter_value_exception::Builder::default();
+                    let mut output = crate::types::error::builders::MissingParameterValueExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_missing_parameter_value_exception::de_missing_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeProtectedResourceError::unhandled)?;
+                    output = crate::protocol_serde::shape_missing_parameter_value_exception::de_missing_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_protected_resource::DescribeProtectedResourceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ResourceNotFoundException" => {
-            crate::error::DescribeProtectedResourceError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::describe_protected_resource::DescribeProtectedResourceError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeProtectedResourceError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_protected_resource::DescribeProtectedResourceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ServiceUnavailableException" => {
-            crate::error::DescribeProtectedResourceError::ServiceUnavailableException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ServiceUnavailableException" => crate::operation::describe_protected_resource::DescribeProtectedResourceError::ServiceUnavailableException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::service_unavailable_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeProtectedResourceError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_protected_resource::DescribeProtectedResourceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DescribeProtectedResourceError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::describe_protected_resource::DescribeProtectedResourceError::generic(generic)
     })
 }
 
@@ -101,14 +95,14 @@ pub fn de_describe_protected_resource_http_error(
 pub fn de_describe_protected_resource_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeProtectedResourceOutput,
-    crate::error::DescribeProtectedResourceError,
+    crate::operation::describe_protected_resource::DescribeProtectedResourceOutput,
+    crate::operation::describe_protected_resource::DescribeProtectedResourceError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_protected_resource_output::Builder::default();
+        let mut output = crate::operation::describe_protected_resource::builders::DescribeProtectedResourceOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_describe_protected_resource::de_describe_protected_resource(response.body().as_ref(), output).map_err(crate::error::DescribeProtectedResourceError::unhandled)?;
+        output = crate::protocol_serde::shape_describe_protected_resource::de_describe_protected_resource(response.body().as_ref(), output).map_err(crate::operation::describe_protected_resource::DescribeProtectedResourceError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -118,9 +112,9 @@ pub fn de_describe_protected_resource_http_response(
 
 pub(crate) fn de_describe_protected_resource(
     value: &[u8],
-    mut builder: crate::output::describe_protected_resource_output::Builder,
+    mut builder: crate::operation::describe_protected_resource::builders::DescribeProtectedResourceOutputBuilder,
 ) -> Result<
-    crate::output::describe_protected_resource_output::Builder,
+    crate::operation::describe_protected_resource::builders::DescribeProtectedResourceOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

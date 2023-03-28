@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_application_policy_statement<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ApplicationPolicyStatement>>,
+    Option<std::vec::Vec<crate::types::ApplicationPolicyStatement>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_multiplex_media_connect_output_destination_settings<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::MultiplexMediaConnectOutputDestinationSettings>,
+    Option<crate::types::MultiplexMediaConnectOutputDestinationSettings>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,9 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder =
-                crate::model::multiplex_media_connect_output_destination_settings::Builder::default(
-                );
+            let mut builder = crate::types::builders::MultiplexMediaConnectOutputDestinationSettingsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

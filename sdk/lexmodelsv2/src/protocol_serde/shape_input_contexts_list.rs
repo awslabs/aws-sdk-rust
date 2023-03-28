@@ -2,7 +2,7 @@
 pub(crate) fn de_input_contexts_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::InputContext>>,
+    Option<std::vec::Vec<crate::types::InputContext>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

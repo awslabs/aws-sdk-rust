@@ -2,7 +2,7 @@
 pub(crate) fn de_recommendation_related_anomalies<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::RecommendationRelatedAnomaly>>,
+    Option<std::vec::Vec<crate::types::RecommendationRelatedAnomaly>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

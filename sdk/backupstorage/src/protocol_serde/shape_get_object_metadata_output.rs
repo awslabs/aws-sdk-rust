@@ -3,7 +3,7 @@ pub fn de_metadata_blob_payload(
     body: &mut aws_smithy_http::body::SdkBody,
 ) -> std::result::Result<
     aws_smithy_http::byte_stream::ByteStream,
-    crate::error::GetObjectMetadataError,
+    crate::operation::get_object_metadata::GetObjectMetadataError,
 > {
     // replace the body with an empty body
     let body = std::mem::replace(body, aws_smithy_http::body::SdkBody::taken());
@@ -23,7 +23,7 @@ pub(crate) fn de_metadata_blob_checksum_header(
 pub(crate) fn de_metadata_blob_checksum_algorithm_header(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
-    std::option::Option<crate::model::DataChecksumAlgorithm>,
+    std::option::Option<crate::types::DataChecksumAlgorithm>,
     aws_smithy_http::header::ParseError,
 > {
     let headers = header_map.get_all("x-amz-checksum-algorithm").iter();

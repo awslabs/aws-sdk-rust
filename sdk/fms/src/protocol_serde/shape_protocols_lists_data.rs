@@ -2,7 +2,7 @@
 pub(crate) fn de_protocols_lists_data<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ProtocolsListDataSummary>>,
+    Option<std::vec::Vec<crate::types::ProtocolsListDataSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_asset_shallow<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AssetShallow>>,
+    Option<std::vec::Vec<crate::types::AssetShallow>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

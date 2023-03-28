@@ -4,9 +4,9 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>Information about any problems encountered while processing an upload request.</p>
-    DocumentServiceException(crate::error::DocumentServiceException),
+    DocumentServiceException(crate::types::error::DocumentServiceException),
     /// <p>Information about any problems encountered while processing a search request.</p>
-    SearchException(crate::error::SearchException),
+    SearchException(crate::types::error::SearchException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled),
 }
@@ -19,11 +19,13 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::SearchError, R>> for Error
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::search::SearchError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::SearchError, R>) -> Self {
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::search::SearchError, R>,
+    ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
@@ -39,19 +41,24 @@ where
         }
     }
 }
-impl From<crate::error::SearchError> for Error {
-    fn from(err: crate::error::SearchError) -> Self {
+impl From<crate::operation::search::SearchError> for Error {
+    fn from(err: crate::operation::search::SearchError) -> Self {
         match err {
-            crate::error::SearchError::SearchException(inner) => Error::SearchException(inner),
-            crate::error::SearchError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::search::SearchError::SearchException(inner) => {
+                Error::SearchException(inner)
+            }
+            crate::operation::search::SearchError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::SuggestError, R>> for Error
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::suggest::SuggestError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::SuggestError, R>) -> Self {
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::suggest::SuggestError, R>,
+    ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
@@ -67,19 +74,32 @@ where
         }
     }
 }
-impl From<crate::error::SuggestError> for Error {
-    fn from(err: crate::error::SuggestError) -> Self {
+impl From<crate::operation::suggest::SuggestError> for Error {
+    fn from(err: crate::operation::suggest::SuggestError) -> Self {
         match err {
-            crate::error::SuggestError::SearchException(inner) => Error::SearchException(inner),
-            crate::error::SuggestError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::suggest::SuggestError::SearchException(inner) => {
+                Error::SearchException(inner)
+            }
+            crate::operation::suggest::SuggestError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UploadDocumentsError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::upload_documents::UploadDocumentsError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UploadDocumentsError, R>) -> Self {
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::upload_documents::UploadDocumentsError,
+            R,
+        >,
+    ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
@@ -95,13 +115,15 @@ where
         }
     }
 }
-impl From<crate::error::UploadDocumentsError> for Error {
-    fn from(err: crate::error::UploadDocumentsError) -> Self {
+impl From<crate::operation::upload_documents::UploadDocumentsError> for Error {
+    fn from(err: crate::operation::upload_documents::UploadDocumentsError) -> Self {
         match err {
-            crate::error::UploadDocumentsError::DocumentServiceException(inner) => {
-                Error::DocumentServiceException(inner)
+            crate::operation::upload_documents::UploadDocumentsError::DocumentServiceException(
+                inner,
+            ) => Error::DocumentServiceException(inner),
+            crate::operation::upload_documents::UploadDocumentsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
-            crate::error::UploadDocumentsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

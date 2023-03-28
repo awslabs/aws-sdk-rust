@@ -2,7 +2,7 @@
 pub(crate) fn de_list_strategy_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::StrategySummary>>,
+    Option<std::vec::Vec<crate::types::StrategySummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

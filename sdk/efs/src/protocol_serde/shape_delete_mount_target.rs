@@ -2,96 +2,117 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_mount_target_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeleteMountTargetOutput, crate::error::DeleteMountTargetError>
-{
+) -> std::result::Result<
+    crate::operation::delete_mount_target::DeleteMountTargetOutput,
+    crate::operation::delete_mount_target::DeleteMountTargetError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteMountTargetError::unhandled)?;
+        .map_err(crate::operation::delete_mount_target::DeleteMountTargetError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DeleteMountTargetError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::delete_mount_target::DeleteMountTargetError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequest" => crate::error::DeleteMountTargetError::BadRequest({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "BadRequest" => {
+            crate::operation::delete_mount_target::DeleteMountTargetError::BadRequest({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_bad_request::de_bad_request_json_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::DeleteMountTargetError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "DependencyTimeout" => crate::error::DeleteMountTargetError::DependencyTimeout({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::BadRequestBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_bad_request::de_bad_request_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(
+                        crate::operation::delete_mount_target::DeleteMountTargetError::unhandled,
+                    )?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "DependencyTimeout" => {
+            crate::operation::delete_mount_target::DeleteMountTargetError::DependencyTimeout({
                 #[allow(unused_mut)]
-                let mut output = crate::error::dependency_timeout::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_dependency_timeout::de_dependency_timeout_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteMountTargetError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InternalServerError" => crate::error::DeleteMountTargetError::InternalServerError({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::DependencyTimeoutBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_dependency_timeout::de_dependency_timeout_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_mount_target::DeleteMountTargetError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InternalServerError" => {
+            crate::operation::delete_mount_target::DeleteMountTargetError::InternalServerError({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_error::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteMountTargetError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "MountTargetNotFound" => crate::error::DeleteMountTargetError::MountTargetNotFound({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InternalServerErrorBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_mount_target::DeleteMountTargetError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "MountTargetNotFound" => {
+            crate::operation::delete_mount_target::DeleteMountTargetError::MountTargetNotFound({
                 #[allow(unused_mut)]
-                let mut output = crate::error::mount_target_not_found::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_mount_target_not_found::de_mount_target_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteMountTargetError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::DeleteMountTargetError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::MountTargetNotFoundBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_mount_target_not_found::de_mount_target_not_found_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_mount_target::DeleteMountTargetError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::delete_mount_target::DeleteMountTargetError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_mount_target_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeleteMountTargetOutput, crate::error::DeleteMountTargetError>
-{
+) -> std::result::Result<
+    crate::operation::delete_mount_target::DeleteMountTargetOutput,
+    crate::operation::delete_mount_target::DeleteMountTargetError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_mount_target_output::Builder::default();
+        let mut output = crate::operation::delete_mount_target::builders::DeleteMountTargetOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

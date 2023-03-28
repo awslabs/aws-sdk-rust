@@ -2,7 +2,7 @@
 pub(crate) fn de_bulk_deployments<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::BulkDeployment>>,
+    Option<std::vec::Vec<crate::types::BulkDeployment>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

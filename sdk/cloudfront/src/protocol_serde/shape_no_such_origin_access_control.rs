@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_no_such_origin_access_control_xml_err(
     inp: &[u8],
-    mut builder: crate::error::no_such_origin_access_control::Builder,
+    mut builder: crate::types::error::builders::NoSuchOriginAccessControlBuilder,
 ) -> Result<
-    crate::error::no_such_origin_access_control::Builder,
+    crate::types::error::builders::NoSuchOriginAccessControlBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

@@ -2,7 +2,7 @@
 pub(crate) fn de_scheduling_policy_listing_detail_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SchedulingPolicyListingDetail>>,
+    Option<std::vec::Vec<crate::types::SchedulingPolicyListingDetail>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

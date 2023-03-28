@@ -2,7 +2,7 @@
 pub(crate) fn de_s3_content_base_location_description<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::S3ContentBaseLocationDescription>,
+    Option<crate::types::S3ContentBaseLocationDescription>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::s3_content_base_location_description::Builder::default();
+                crate::types::builders::S3ContentBaseLocationDescriptionBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

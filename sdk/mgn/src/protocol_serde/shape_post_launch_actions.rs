@@ -2,7 +2,7 @@
 pub(crate) fn de_post_launch_actions<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::PostLaunchActions>,
+    Option<crate::types::PostLaunchActions>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::post_launch_actions::Builder::default();
+            let mut builder = crate::types::builders::PostLaunchActionsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::PostLaunchActionsDeploymentType::from(
+                                            crate::types::PostLaunchActionsDeploymentType::from(
                                                 u.as_ref(),
                                             )
                                         })
@@ -97,7 +97,7 @@ where
 
 pub fn ser_post_launch_actions(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::PostLaunchActions,
+    input: &crate::types::PostLaunchActions,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.deployment {
         object.key("deployment").string(var_1.as_str());

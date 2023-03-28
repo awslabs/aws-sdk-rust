@@ -2,7 +2,7 @@
 pub(crate) fn de_firewalls<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::FirewallMetadata>>,
+    Option<std::vec::Vec<crate::types::FirewallMetadata>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

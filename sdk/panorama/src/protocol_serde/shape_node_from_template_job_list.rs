@@ -2,7 +2,7 @@
 pub(crate) fn de_node_from_template_job_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::NodeFromTemplateJob>>,
+    Option<std::vec::Vec<crate::types::NodeFromTemplateJob>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

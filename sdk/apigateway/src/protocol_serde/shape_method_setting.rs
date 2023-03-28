@@ -2,7 +2,7 @@
 pub(crate) fn de_method_setting<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::MethodSetting>,
+    Option<crate::types::MethodSetting>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::method_setting::Builder::default();
+            let mut builder = crate::types::builders::MethodSettingBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -97,7 +97,7 @@ where
                                 builder = builder.set_unauthorized_cache_control_header_strategy(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?.map(|s|
                                         s.to_unescaped().map(|u|
-                                            crate::model::UnauthorizedCacheControlHeaderStrategy::from(u.as_ref())
+                                            crate::types::UnauthorizedCacheControlHeaderStrategy::from(u.as_ref())
                                         )
                                     ).transpose()?
                                 );

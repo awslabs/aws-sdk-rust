@@ -2,49 +2,34 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_stop_campaign_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::StopCampaignOutput, crate::error::StopCampaignError> {
+) -> std::result::Result<
+    crate::operation::stop_campaign::StopCampaignOutput,
+    crate::operation::stop_campaign::StopCampaignError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::StopCampaignError::unhandled)?;
+        .map_err(crate::operation::stop_campaign::StopCampaignError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::StopCampaignError::unhandled(generic)),
+        None => return Err(crate::operation::stop_campaign::StopCampaignError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::StopCampaignError::AccessDeniedException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::access_denied_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopCampaignError::unhandled)?;
-                output = output.set_x_amz_error_type(
-                        crate::protocol_serde::shape_access_denied_exception::de_x_amz_error_type_header(response.headers())
-                                                .map_err(|_|crate::error::StopCampaignError::unhandled("Failed to parse xAmzErrorType from header `x-amzn-ErrorType"))?
-                    );
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ConflictException" => {
-            crate::error::StopCampaignError::ConflictException({
+        "AccessDeniedException" => {
+            crate::operation::stop_campaign::StopCampaignError::AccessDeniedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::conflict_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::AccessDeniedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopCampaignError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::stop_campaign::StopCampaignError::unhandled)?;
                     output = output.set_x_amz_error_type(
-                        crate::protocol_serde::shape_conflict_exception::de_x_amz_error_type_header(response.headers())
-                                                .map_err(|_|crate::error::StopCampaignError::unhandled("Failed to parse xAmzErrorType from header `x-amzn-ErrorType"))?
+                        crate::protocol_serde::shape_access_denied_exception::de_x_amz_error_type_header(response.headers())
+                                                .map_err(|_|crate::operation::stop_campaign::StopCampaignError::unhandled("Failed to parse xAmzErrorType from header `x-amzn-ErrorType"))?
                     );
                     let output = output.meta(generic);
                     output.build()
@@ -55,37 +40,61 @@ pub fn de_stop_campaign_http_error(
                 tmp
             })
         }
-        "InternalServerException" => crate::error::StopCampaignError::InternalServerException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopCampaignError::unhandled)?;
-                output = output.set_x_amz_error_type(
-                        crate::protocol_serde::shape_internal_server_exception::de_x_amz_error_type_header(response.headers())
-                                                .map_err(|_|crate::error::StopCampaignError::unhandled("Failed to parse xAmzErrorType from header `x-amzn-ErrorType"))?
-                    );
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InvalidCampaignStateException" => {
-            crate::error::StopCampaignError::InvalidCampaignStateException({
+        "ConflictException" => {
+            crate::operation::stop_campaign::StopCampaignError::ConflictException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::invalid_campaign_state_exception::Builder::default();
+                        crate::types::error::builders::ConflictExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_campaign_state_exception::de_invalid_campaign_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopCampaignError::unhandled)?;
+                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::stop_campaign::StopCampaignError::unhandled)?;
+                    output = output.set_x_amz_error_type(
+                        crate::protocol_serde::shape_conflict_exception::de_x_amz_error_type_header(response.headers())
+                                                .map_err(|_|crate::operation::stop_campaign::StopCampaignError::unhandled("Failed to parse xAmzErrorType from header `x-amzn-ErrorType"))?
+                    );
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InternalServerException" => {
+            crate::operation::stop_campaign::StopCampaignError::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InternalServerExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::stop_campaign::StopCampaignError::unhandled)?;
+                    output = output.set_x_amz_error_type(
+                        crate::protocol_serde::shape_internal_server_exception::de_x_amz_error_type_header(response.headers())
+                                                .map_err(|_|crate::operation::stop_campaign::StopCampaignError::unhandled("Failed to parse xAmzErrorType from header `x-amzn-ErrorType"))?
+                    );
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidCampaignStateException" => {
+            crate::operation::stop_campaign::StopCampaignError::InvalidCampaignStateException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidCampaignStateExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_campaign_state_exception::de_invalid_campaign_state_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::stop_campaign::StopCampaignError::unhandled)?;
                     output = output.set_x_amz_error_type(
                         crate::protocol_serde::shape_invalid_campaign_state_exception::de_x_amz_error_type_header(response.headers())
-                                                .map_err(|_|crate::error::StopCampaignError::unhandled("Failed to parse xAmzErrorType from header `x-amzn-ErrorType"))?
+                                                .map_err(|_|crate::operation::stop_campaign::StopCampaignError::unhandled("Failed to parse xAmzErrorType from header `x-amzn-ErrorType"))?
                     );
                     let output = output.meta(generic);
                     output.build()
@@ -97,16 +106,17 @@ pub fn de_stop_campaign_http_error(
             })
         }
         "ResourceNotFoundException" => {
-            crate::error::StopCampaignError::ResourceNotFoundException({
+            crate::operation::stop_campaign::StopCampaignError::ResourceNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopCampaignError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::stop_campaign::StopCampaignError::unhandled)?;
                     output = output.set_x_amz_error_type(
                         crate::protocol_serde::shape_resource_not_found_exception::de_x_amz_error_type_header(response.headers())
-                                                .map_err(|_|crate::error::StopCampaignError::unhandled("Failed to parse xAmzErrorType from header `x-amzn-ErrorType"))?
+                                                .map_err(|_|crate::operation::stop_campaign::StopCampaignError::unhandled("Failed to parse xAmzErrorType from header `x-amzn-ErrorType"))?
                     );
                     let output = output.meta(generic);
                     output.build()
@@ -118,16 +128,17 @@ pub fn de_stop_campaign_http_error(
             })
         }
         "ThrottlingException" => {
-            crate::error::StopCampaignError::ThrottlingException({
+            crate::operation::stop_campaign::StopCampaignError::ThrottlingException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::ThrottlingExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopCampaignError::unhandled)?;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::stop_campaign::StopCampaignError::unhandled)?;
                     output = output.set_x_amz_error_type(
                         crate::protocol_serde::shape_throttling_exception::de_x_amz_error_type_header(response.headers())
-                                                .map_err(|_|crate::error::StopCampaignError::unhandled("Failed to parse xAmzErrorType from header `x-amzn-ErrorType"))?
+                                                .map_err(|_|crate::operation::stop_campaign::StopCampaignError::unhandled("Failed to parse xAmzErrorType from header `x-amzn-ErrorType"))?
                     );
                     let output = output.meta(generic);
                     output.build()
@@ -139,16 +150,17 @@ pub fn de_stop_campaign_http_error(
             })
         }
         "ValidationException" => {
-            crate::error::StopCampaignError::ValidationException({
+            crate::operation::stop_campaign::StopCampaignError::ValidationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::validation_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::ValidationExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopCampaignError::unhandled)?;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::stop_campaign::StopCampaignError::unhandled)?;
                     output = output.set_x_amz_error_type(
                         crate::protocol_serde::shape_validation_exception::de_x_amz_error_type_header(response.headers())
-                                                .map_err(|_|crate::error::StopCampaignError::unhandled("Failed to parse xAmzErrorType from header `x-amzn-ErrorType"))?
+                                                .map_err(|_|crate::operation::stop_campaign::StopCampaignError::unhandled("Failed to parse xAmzErrorType from header `x-amzn-ErrorType"))?
                     );
                     let output = output.meta(generic);
                     output.build()
@@ -159,17 +171,21 @@ pub fn de_stop_campaign_http_error(
                 tmp
             })
         }
-        _ => crate::error::StopCampaignError::generic(generic),
+        _ => crate::operation::stop_campaign::StopCampaignError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_stop_campaign_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::StopCampaignOutput, crate::error::StopCampaignError> {
+) -> std::result::Result<
+    crate::operation::stop_campaign::StopCampaignOutput,
+    crate::operation::stop_campaign::StopCampaignError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::stop_campaign_output::Builder::default();
+        let mut output =
+            crate::operation::stop_campaign::builders::StopCampaignOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

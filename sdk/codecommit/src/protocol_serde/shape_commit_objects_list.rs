@@ -2,7 +2,7 @@
 pub(crate) fn de_commit_objects_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Commit>>,
+    Option<std::vec::Vec<crate::types::Commit>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

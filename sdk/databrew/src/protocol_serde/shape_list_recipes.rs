@@ -2,51 +2,65 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_recipes_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListRecipesOutput, crate::error::ListRecipesError> {
+) -> std::result::Result<
+    crate::operation::list_recipes::ListRecipesOutput,
+    crate::operation::list_recipes::ListRecipesError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListRecipesError::unhandled)?;
+        .map_err(crate::operation::list_recipes::ListRecipesError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListRecipesError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::list_recipes::ListRecipesError::unhandled(
+                generic,
+            ))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ValidationException" => crate::error::ListRecipesError::ValidationException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "ValidationException" => {
+            crate::operation::list_recipes::ListRecipesError::ValidationException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRecipesError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::ListRecipesError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_recipes::ListRecipesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::list_recipes::ListRecipesError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_recipes_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListRecipesOutput, crate::error::ListRecipesError> {
+) -> std::result::Result<
+    crate::operation::list_recipes::ListRecipesOutput,
+    crate::operation::list_recipes::ListRecipesError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_recipes_output::Builder::default();
+        let mut output =
+            crate::operation::list_recipes::builders::ListRecipesOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_recipes::de_list_recipes(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListRecipesError::unhandled)?;
+        .map_err(crate::operation::list_recipes::ListRecipesError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -56,9 +70,9 @@ pub fn de_list_recipes_http_response(
 
 pub(crate) fn de_list_recipes(
     value: &[u8],
-    mut builder: crate::output::list_recipes_output::Builder,
+    mut builder: crate::operation::list_recipes::builders::ListRecipesOutputBuilder,
 ) -> Result<
-    crate::output::list_recipes_output::Builder,
+    crate::operation::list_recipes::builders::ListRecipesOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

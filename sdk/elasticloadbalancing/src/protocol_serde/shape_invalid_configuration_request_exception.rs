@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_invalid_configuration_request_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::invalid_configuration_request_exception::Builder,
+    mut builder: crate::types::error::builders::InvalidConfigurationRequestExceptionBuilder,
 ) -> Result<
-    crate::error::invalid_configuration_request_exception::Builder,
+    crate::types::error::builders::InvalidConfigurationRequestExceptionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

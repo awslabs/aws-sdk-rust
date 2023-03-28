@@ -2,42 +2,35 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_send_message_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::SendMessageOutput, crate::error::SendMessageError> {
+) -> std::result::Result<
+    crate::operation::send_message::SendMessageOutput,
+    crate::operation::send_message::SendMessageError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::SendMessageError::unhandled)?;
+        .map_err(crate::operation::send_message::SendMessageError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::SendMessageError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::send_message::SendMessageError::unhandled(
+                generic,
+            ))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidMessageContents" => crate::error::SendMessageError::InvalidMessageContents({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::invalid_message_contents::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_message_contents::de_invalid_message_contents_xml_err(response.body().as_ref(), output).map_err(crate::error::SendMessageError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "AWS.SimpleQueueService.UnsupportedOperation" => {
-            crate::error::SendMessageError::UnsupportedOperation({
+        "InvalidMessageContents" => {
+            crate::operation::send_message::SendMessageError::InvalidMessageContents({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::unsupported_operation::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::InvalidMessageContentsBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_unsupported_operation::de_unsupported_operation_xml_err(response.body().as_ref(), output).map_err(crate::error::SendMessageError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_message_contents::de_invalid_message_contents_xml_err(response.body().as_ref(), output).map_err(crate::operation::send_message::SendMessageError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -47,23 +40,45 @@ pub fn de_send_message_http_error(
                 tmp
             })
         }
-        _ => crate::error::SendMessageError::generic(generic),
+        "AWS.SimpleQueueService.UnsupportedOperation" => {
+            crate::operation::send_message::SendMessageError::UnsupportedOperation({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::UnsupportedOperationBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_unsupported_operation::de_unsupported_operation_xml_err(response.body().as_ref(), output).map_err(crate::operation::send_message::SendMessageError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::send_message::SendMessageError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_send_message_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::SendMessageOutput, crate::error::SendMessageError> {
+) -> std::result::Result<
+    crate::operation::send_message::SendMessageOutput,
+    crate::operation::send_message::SendMessageError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::send_message_output::Builder::default();
+        let mut output =
+            crate::operation::send_message::builders::SendMessageOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_send_message::de_send_message(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::SendMessageError::unhandled)?;
+        .map_err(crate::operation::send_message::SendMessageError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -74,8 +89,11 @@ pub fn de_send_message_http_response(
 #[allow(unused_mut)]
 pub fn de_send_message(
     inp: &[u8],
-    mut builder: crate::output::send_message_output::Builder,
-) -> Result<crate::output::send_message_output::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    mut builder: crate::operation::send_message::builders::SendMessageOutputBuilder,
+) -> Result<
+    crate::operation::send_message::builders::SendMessageOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

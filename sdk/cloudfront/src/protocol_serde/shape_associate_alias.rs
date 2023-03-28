@@ -2,30 +2,35 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_associate_alias_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::AssociateAliasOutput, crate::error::AssociateAliasError> {
+) -> std::result::Result<
+    crate::operation::associate_alias::AssociateAliasOutput,
+    crate::operation::associate_alias::AssociateAliasError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::AssociateAliasError::unhandled)?;
+        .map_err(crate::operation::associate_alias::AssociateAliasError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::AssociateAliasError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::associate_alias::AssociateAliasError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDenied" => crate::error::AssociateAliasError::AccessDenied({
+        "AccessDenied" => crate::operation::associate_alias::AssociateAliasError::AccessDenied({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::error::access_denied::Builder::default();
+                let mut output = crate::types::error::builders::AccessDeniedBuilder::default();
                 let _ = response;
                 output = crate::protocol_serde::shape_access_denied::de_access_denied_xml_err(
                     response.body().as_ref(),
                     output,
                 )
-                .map_err(crate::error::AssociateAliasError::unhandled)?;
+                .map_err(crate::operation::associate_alias::AssociateAliasError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -34,17 +39,17 @@ pub fn de_associate_alias_http_error(
             }
             tmp
         }),
-        "IllegalUpdate" => crate::error::AssociateAliasError::IllegalUpdate({
+        "IllegalUpdate" => crate::operation::associate_alias::AssociateAliasError::IllegalUpdate({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::error::illegal_update::Builder::default();
+                let mut output = crate::types::error::builders::IllegalUpdateBuilder::default();
                 let _ = response;
                 output = crate::protocol_serde::shape_illegal_update::de_illegal_update_xml_err(
                     response.body().as_ref(),
                     output,
                 )
-                .map_err(crate::error::AssociateAliasError::unhandled)?;
+                .map_err(crate::operation::associate_alias::AssociateAliasError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -53,50 +58,22 @@ pub fn de_associate_alias_http_error(
             }
             tmp
         }),
-        "InvalidArgument" => crate::error::AssociateAliasError::InvalidArgument({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::invalid_argument::Builder::default();
-                let _ = response;
-                output =
-                    crate::protocol_serde::shape_invalid_argument::de_invalid_argument_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::AssociateAliasError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "NoSuchDistribution" => crate::error::AssociateAliasError::NoSuchDistribution({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::no_such_distribution::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_no_such_distribution::de_no_such_distribution_xml_err(response.body().as_ref(), output).map_err(crate::error::AssociateAliasError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "TooManyDistributionCNAMEs" => {
-            crate::error::AssociateAliasError::TooManyDistributionCnamEs({
+        "InvalidArgument" => {
+            crate::operation::associate_alias::AssociateAliasError::InvalidArgument({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::too_many_distribution_cnam_es::Builder::default();
+                        crate::types::error::builders::InvalidArgumentBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_distribution_cnam_es::de_too_many_distribution_cnam_es_xml_err(response.body().as_ref(), output).map_err(crate::error::AssociateAliasError::unhandled)?;
+                    output =
+                        crate::protocol_serde::shape_invalid_argument::de_invalid_argument_xml_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(
+                            crate::operation::associate_alias::AssociateAliasError::unhandled,
+                        )?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -106,17 +83,57 @@ pub fn de_associate_alias_http_error(
                 tmp
             })
         }
-        _ => crate::error::AssociateAliasError::generic(generic),
+        "NoSuchDistribution" => {
+            crate::operation::associate_alias::AssociateAliasError::NoSuchDistribution({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::NoSuchDistributionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_no_such_distribution::de_no_such_distribution_xml_err(response.body().as_ref(), output).map_err(crate::operation::associate_alias::AssociateAliasError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "TooManyDistributionCNAMEs" => {
+            crate::operation::associate_alias::AssociateAliasError::TooManyDistributionCnamEs({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::TooManyDistributionCnamEsBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_too_many_distribution_cnam_es::de_too_many_distribution_cnam_es_xml_err(response.body().as_ref(), output).map_err(crate::operation::associate_alias::AssociateAliasError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::associate_alias::AssociateAliasError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_associate_alias_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::AssociateAliasOutput, crate::error::AssociateAliasError> {
+) -> std::result::Result<
+    crate::operation::associate_alias::AssociateAliasOutput,
+    crate::operation::associate_alias::AssociateAliasError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::associate_alias_output::Builder::default();
+        let mut output =
+            crate::operation::associate_alias::builders::AssociateAliasOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

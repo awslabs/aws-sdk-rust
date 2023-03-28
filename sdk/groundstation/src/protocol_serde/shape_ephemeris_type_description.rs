@@ -2,7 +2,7 @@
 pub(crate) fn de_ephemeris_type_description<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::EphemerisTypeDescription>,
+    Option<crate::types::EphemerisTypeDescription>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -29,20 +29,20 @@ where
                     }
                     variant = match key.to_unescaped()?.as_ref() {
                             "tle" => {
-                                Some(crate::model::EphemerisTypeDescription::Tle(
+                                Some(crate::types::EphemerisTypeDescription::Tle(
                                     crate::protocol_serde::shape_ephemeris_description::de_ephemeris_description(tokens)?
                                     .ok_or_else(|| aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'tle' cannot be null"))?
                                 ))
                             }
                             "oem" => {
-                                Some(crate::model::EphemerisTypeDescription::Oem(
+                                Some(crate::types::EphemerisTypeDescription::Oem(
                                     crate::protocol_serde::shape_ephemeris_description::de_ephemeris_description(tokens)?
                                     .ok_or_else(|| aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'oem' cannot be null"))?
                                 ))
                             }
                             _ => {
                                                                       aws_smithy_json::deserialize::token::skip_value(tokens)?;
-                                                                      Some(crate::model::EphemerisTypeDescription::Unknown)
+                                                                      Some(crate::types::EphemerisTypeDescription::Unknown)
                                                                     }
                         };
                 }

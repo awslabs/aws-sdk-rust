@@ -3,107 +3,106 @@
 pub fn de_get_architecture_recommendations_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetArchitectureRecommendationsOutput,
-    crate::error::GetArchitectureRecommendationsError,
+    crate::operation::get_architecture_recommendations::GetArchitectureRecommendationsOutput,
+    crate::operation::get_architecture_recommendations::GetArchitectureRecommendationsError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetArchitectureRecommendationsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::get_architecture_recommendations::GetArchitectureRecommendationsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => return Err(crate::error::GetArchitectureRecommendationsError::unhandled(generic)),
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::get_architecture_recommendations::GetArchitectureRecommendationsError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => {
-            crate::error::GetArchitectureRecommendationsError::AccessDeniedException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "AccessDeniedException" => crate::operation::get_architecture_recommendations::GetArchitectureRecommendationsError::AccessDeniedException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetArchitectureRecommendationsError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_architecture_recommendations::GetArchitectureRecommendationsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InternalServerException" => {
-            crate::error::GetArchitectureRecommendationsError::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InternalServerException" => crate::operation::get_architecture_recommendations::GetArchitectureRecommendationsError::InternalServerException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetArchitectureRecommendationsError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_architecture_recommendations::GetArchitectureRecommendationsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ResourceNotFoundException" => {
-            crate::error::GetArchitectureRecommendationsError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::get_architecture_recommendations::GetArchitectureRecommendationsError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetArchitectureRecommendationsError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_architecture_recommendations::GetArchitectureRecommendationsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ThrottlingException" => {
-            crate::error::GetArchitectureRecommendationsError::ThrottlingException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ThrottlingException" => crate::operation::get_architecture_recommendations::GetArchitectureRecommendationsError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetArchitectureRecommendationsError::unhandled)?;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_architecture_recommendations::GetArchitectureRecommendationsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ValidationException" => {
-            crate::error::GetArchitectureRecommendationsError::ValidationException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ValidationException" => crate::operation::get_architecture_recommendations::GetArchitectureRecommendationsError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::validation_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetArchitectureRecommendationsError::unhandled)?;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_architecture_recommendations::GetArchitectureRecommendationsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::GetArchitectureRecommendationsError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::get_architecture_recommendations::GetArchitectureRecommendationsError::generic(generic)
     })
 }
 
@@ -111,14 +110,14 @@ pub fn de_get_architecture_recommendations_http_error(
 pub fn de_get_architecture_recommendations_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetArchitectureRecommendationsOutput,
-    crate::error::GetArchitectureRecommendationsError,
+    crate::operation::get_architecture_recommendations::GetArchitectureRecommendationsOutput,
+    crate::operation::get_architecture_recommendations::GetArchitectureRecommendationsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_architecture_recommendations_output::Builder::default();
+        let mut output = crate::operation::get_architecture_recommendations::builders::GetArchitectureRecommendationsOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_get_architecture_recommendations::de_get_architecture_recommendations(response.body().as_ref(), output).map_err(crate::error::GetArchitectureRecommendationsError::unhandled)?;
+        output = crate::protocol_serde::shape_get_architecture_recommendations::de_get_architecture_recommendations(response.body().as_ref(), output).map_err(crate::operation::get_architecture_recommendations::GetArchitectureRecommendationsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -126,13 +125,7 @@ pub fn de_get_architecture_recommendations_http_response(
     })
 }
 
-pub(crate) fn de_get_architecture_recommendations(
-    value: &[u8],
-    mut builder: crate::output::get_architecture_recommendations_output::Builder,
-) -> Result<
-    crate::output::get_architecture_recommendations_output::Builder,
-    aws_smithy_json::deserialize::error::DeserializeError,
-> {
+pub(crate) fn de_get_architecture_recommendations(value: &[u8], mut builder: crate::operation::get_architecture_recommendations::builders::GetArchitectureRecommendationsOutputBuilder) -> Result<crate::operation::get_architecture_recommendations::builders::GetArchitectureRecommendationsOutputBuilder, aws_smithy_json::deserialize::error::DeserializeError>{
     let mut tokens_owned =
         aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
             .peekable();

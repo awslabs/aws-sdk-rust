@@ -2,58 +2,70 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_bot_alias_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeleteBotAliasOutput, crate::error::DeleteBotAliasError> {
+) -> std::result::Result<
+    crate::operation::delete_bot_alias::DeleteBotAliasOutput,
+    crate::operation::delete_bot_alias::DeleteBotAliasError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteBotAliasError::unhandled)?;
+        .map_err(crate::operation::delete_bot_alias::DeleteBotAliasError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DeleteBotAliasError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::delete_bot_alias::DeleteBotAliasError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConflictException" => crate::error::DeleteBotAliasError::ConflictException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::conflict_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteBotAliasError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InternalServerException" => crate::error::DeleteBotAliasError::InternalServerException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteBotAliasError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "PreconditionFailedException" => {
-            crate::error::DeleteBotAliasError::PreconditionFailedException({
+        "ConflictException" => {
+            crate::operation::delete_bot_alias::DeleteBotAliasError::ConflictException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::precondition_failed_exception::Builder::default();
+                        crate::types::error::builders::ConflictExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_precondition_failed_exception::de_precondition_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteBotAliasError::unhandled)?;
+                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_bot_alias::DeleteBotAliasError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InternalServerException" => {
+            crate::operation::delete_bot_alias::DeleteBotAliasError::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InternalServerExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_bot_alias::DeleteBotAliasError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "PreconditionFailedException" => {
+            crate::operation::delete_bot_alias::DeleteBotAliasError::PreconditionFailedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::PreconditionFailedExceptionBuilder::default(
+                        );
+                    let _ = response;
+                    output = crate::protocol_serde::shape_precondition_failed_exception::de_precondition_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_bot_alias::DeleteBotAliasError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -64,14 +76,37 @@ pub fn de_delete_bot_alias_http_error(
             })
         }
         "ServiceQuotaExceededException" => {
-            crate::error::DeleteBotAliasError::ServiceQuotaExceededException({
+            crate::operation::delete_bot_alias::DeleteBotAliasError::ServiceQuotaExceededException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::default();
+                        let _ = response;
+                        output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_bot_alias::DeleteBotAliasError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        "ThrottlingException" => {
+            crate::operation::delete_bot_alias::DeleteBotAliasError::ThrottlingException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::service_quota_exceeded_exception::Builder::default();
+                        crate::types::error::builders::ThrottlingExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteBotAliasError::unhandled)?;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_bot_alias::DeleteBotAliasError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::protocol_serde::shape_throttling_exception::de_retry_after_seconds_header(response.headers())
+                                                .map_err(|_|crate::operation::delete_bot_alias::DeleteBotAliasError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                    );
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -81,57 +116,45 @@ pub fn de_delete_bot_alias_http_error(
                 tmp
             })
         }
-        "ThrottlingException" => crate::error::DeleteBotAliasError::ThrottlingException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "ValidationException" => {
+            crate::operation::delete_bot_alias::DeleteBotAliasError::ValidationException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::throttling_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteBotAliasError::unhandled)?;
-                output = output.set_retry_after_seconds(
-                        crate::protocol_serde::shape_throttling_exception::de_retry_after_seconds_header(response.headers())
-                                                .map_err(|_|crate::error::DeleteBotAliasError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
-                    );
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ValidationException" => crate::error::DeleteBotAliasError::ValidationException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteBotAliasError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::DeleteBotAliasError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_bot_alias::DeleteBotAliasError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::delete_bot_alias::DeleteBotAliasError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_bot_alias_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeleteBotAliasOutput, crate::error::DeleteBotAliasError> {
+) -> std::result::Result<
+    crate::operation::delete_bot_alias::DeleteBotAliasOutput,
+    crate::operation::delete_bot_alias::DeleteBotAliasError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_bot_alias_output::Builder::default();
+        let mut output =
+            crate::operation::delete_bot_alias::builders::DeleteBotAliasOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_delete_bot_alias::de_delete_bot_alias(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DeleteBotAliasError::unhandled)?;
+        .map_err(crate::operation::delete_bot_alias::DeleteBotAliasError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -141,9 +164,9 @@ pub fn de_delete_bot_alias_http_response(
 
 pub(crate) fn de_delete_bot_alias(
     value: &[u8],
-    mut builder: crate::output::delete_bot_alias_output::Builder,
+    mut builder: crate::operation::delete_bot_alias::builders::DeleteBotAliasOutputBuilder,
 ) -> Result<
-    crate::output::delete_bot_alias_output::Builder,
+    crate::operation::delete_bot_alias::builders::DeleteBotAliasOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =
@@ -172,7 +195,7 @@ pub(crate) fn de_delete_bot_alias(
                             )?
                             .map(|s| {
                                 s.to_unescaped()
-                                    .map(|u| crate::model::BotAliasStatus::from(u.as_ref()))
+                                    .map(|u| crate::types::BotAliasStatus::from(u.as_ref()))
                             })
                             .transpose()?,
                         );

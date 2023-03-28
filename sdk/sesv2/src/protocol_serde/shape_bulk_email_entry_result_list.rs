@@ -2,7 +2,7 @@
 pub(crate) fn de_bulk_email_entry_result_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::BulkEmailEntryResult>>,
+    Option<std::vec::Vec<crate::types::BulkEmailEntryResult>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

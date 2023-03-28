@@ -2,7 +2,7 @@
 pub(crate) fn de_player_latency_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::PlayerLatency>>,
+    Option<std::vec::Vec<crate::types::PlayerLatency>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

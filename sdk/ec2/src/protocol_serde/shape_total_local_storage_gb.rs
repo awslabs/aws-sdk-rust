@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_total_local_storage_gb(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::TotalLocalStorageGb,
+    input: &crate::types::TotalLocalStorageGb,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Min");
@@ -25,9 +25,9 @@ pub fn ser_total_local_storage_gb(
 
 pub fn de_total_local_storage_gb(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::TotalLocalStorageGb, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::TotalLocalStorageGb, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::TotalLocalStorageGb::builder();
+    let mut builder = crate::types::TotalLocalStorageGb::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("min") /* Min com.amazonaws.ec2#TotalLocalStorageGB$Min */ =>  {

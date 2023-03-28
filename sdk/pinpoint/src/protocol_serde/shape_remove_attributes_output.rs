@@ -2,13 +2,13 @@
 pub fn de_attributes_resource_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::AttributesResource>,
-    crate::error::RemoveAttributesError,
+    std::option::Option<crate::types::AttributesResource>,
+    crate::operation::remove_attributes::RemoveAttributesError,
 > {
     (!body.is_empty())
         .then(|| {
             crate::protocol_serde::shape_attributes_resource::de_attributes_resource_payload(body)
-                .map_err(crate::error::RemoveAttributesError::unhandled)
+                .map_err(crate::operation::remove_attributes::RemoveAttributesError::unhandled)
         })
         .transpose()
 }

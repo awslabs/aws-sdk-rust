@@ -2,7 +2,7 @@
 pub(crate) fn de_predictor_monitor_evaluations<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::PredictorMonitorEvaluation>>,
+    Option<std::vec::Vec<crate::types::PredictorMonitorEvaluation>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

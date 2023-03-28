@@ -2,7 +2,7 @@
 pub(crate) fn de_inter_metric_impact_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::InterMetricImpactDetails>>,
+    Option<std::vec::Vec<crate::types::InterMetricImpactDetails>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

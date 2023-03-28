@@ -2,7 +2,7 @@
 pub(crate) fn de_semtech_gnss_detail<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::SemtechGnssDetail>,
+    Option<crate::types::SemtechGnssDetail>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::semtech_gnss_detail::Builder::default();
+            let mut builder = crate::types::builders::SemtechGnssDetailBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::PositionSolverProvider::from(u.as_ref())
+                                            crate::types::PositionSolverProvider::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -43,7 +43,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::PositionSolverType::from(u.as_ref())
+                                            crate::types::PositionSolverType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -56,7 +56,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::PositionConfigurationStatus::from(
+                                            crate::types::PositionConfigurationStatus::from(
                                                 u.as_ref(),
                                             )
                                         })
@@ -71,7 +71,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::PositionConfigurationFec::from(u.as_ref())
+                                            crate::types::PositionConfigurationFec::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

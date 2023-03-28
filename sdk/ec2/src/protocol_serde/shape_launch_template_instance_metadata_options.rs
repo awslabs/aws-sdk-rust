@@ -2,18 +2,18 @@
 pub fn de_launch_template_instance_metadata_options(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    crate::model::LaunchTemplateInstanceMetadataOptions,
+    crate::types::LaunchTemplateInstanceMetadataOptions,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     #[allow(unused_mut)]
-    let mut builder = crate::model::LaunchTemplateInstanceMetadataOptions::builder();
+    let mut builder = crate::types::LaunchTemplateInstanceMetadataOptions::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("state") /* State com.amazonaws.ec2#LaunchTemplateInstanceMetadataOptions$State */ =>  {
                 let var_1 =
                     Some(
-                        Result::<crate::model::LaunchTemplateInstanceMetadataOptionsState, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::LaunchTemplateInstanceMetadataOptionsState::from(
+                        Result::<crate::types::LaunchTemplateInstanceMetadataOptionsState, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::LaunchTemplateInstanceMetadataOptionsState::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
@@ -26,8 +26,8 @@ pub fn de_launch_template_instance_metadata_options(
             s if s.matches("httpTokens") /* HttpTokens com.amazonaws.ec2#LaunchTemplateInstanceMetadataOptions$HttpTokens */ =>  {
                 let var_2 =
                     Some(
-                        Result::<crate::model::LaunchTemplateHttpTokensState, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::LaunchTemplateHttpTokensState::from(
+                        Result::<crate::types::LaunchTemplateHttpTokensState, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::LaunchTemplateHttpTokensState::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
@@ -55,8 +55,8 @@ pub fn de_launch_template_instance_metadata_options(
             s if s.matches("httpEndpoint") /* HttpEndpoint com.amazonaws.ec2#LaunchTemplateInstanceMetadataOptions$HttpEndpoint */ =>  {
                 let var_4 =
                     Some(
-                        Result::<crate::model::LaunchTemplateInstanceMetadataEndpointState, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::LaunchTemplateInstanceMetadataEndpointState::from(
+                        Result::<crate::types::LaunchTemplateInstanceMetadataEndpointState, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::LaunchTemplateInstanceMetadataEndpointState::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
@@ -69,8 +69,8 @@ pub fn de_launch_template_instance_metadata_options(
             s if s.matches("httpProtocolIpv6") /* HttpProtocolIpv6 com.amazonaws.ec2#LaunchTemplateInstanceMetadataOptions$HttpProtocolIpv6 */ =>  {
                 let var_5 =
                     Some(
-                        Result::<crate::model::LaunchTemplateInstanceMetadataProtocolIpv6, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::LaunchTemplateInstanceMetadataProtocolIpv6::from(
+                        Result::<crate::types::LaunchTemplateInstanceMetadataProtocolIpv6, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::LaunchTemplateInstanceMetadataProtocolIpv6::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
@@ -83,8 +83,8 @@ pub fn de_launch_template_instance_metadata_options(
             s if s.matches("instanceMetadataTags") /* InstanceMetadataTags com.amazonaws.ec2#LaunchTemplateInstanceMetadataOptions$InstanceMetadataTags */ =>  {
                 let var_6 =
                     Some(
-                        Result::<crate::model::LaunchTemplateInstanceMetadataTagsState, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::LaunchTemplateInstanceMetadataTagsState::from(
+                        Result::<crate::types::LaunchTemplateInstanceMetadataTagsState, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::LaunchTemplateInstanceMetadataTagsState::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

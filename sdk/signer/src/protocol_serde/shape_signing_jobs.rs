@@ -2,7 +2,7 @@
 pub(crate) fn de_signing_jobs<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SigningJob>>,
+    Option<std::vec::Vec<crate::types::SigningJob>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

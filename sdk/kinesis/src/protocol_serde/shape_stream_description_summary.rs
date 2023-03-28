@@ -2,7 +2,7 @@
 pub(crate) fn de_stream_description_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::StreamDescriptionSummary>,
+    Option<crate::types::StreamDescriptionSummary>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::stream_description_summary::Builder::default();
+            let mut builder = crate::types::builders::StreamDescriptionSummaryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -48,7 +48,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::StreamStatus::from(u.as_ref()))
+                                            .map(|u| crate::types::StreamStatus::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -87,7 +87,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::EncryptionType::from(u.as_ref()))
+                                            .map(|u| crate::types::EncryptionType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

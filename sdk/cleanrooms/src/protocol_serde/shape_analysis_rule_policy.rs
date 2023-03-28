@@ -2,7 +2,7 @@
 pub(crate) fn de_analysis_rule_policy<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::AnalysisRulePolicy>,
+    Option<crate::types::AnalysisRulePolicy>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -29,14 +29,14 @@ where
                     }
                     variant = match key.to_unescaped()?.as_ref() {
                             "v1" => {
-                                Some(crate::model::AnalysisRulePolicy::V1(
+                                Some(crate::types::AnalysisRulePolicy::V1(
                                     crate::protocol_serde::shape_analysis_rule_policy_v1::de_analysis_rule_policy_v1(tokens)?
                                     .ok_or_else(|| aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'v1' cannot be null"))?
                                 ))
                             }
                             _ => {
                                                                       aws_smithy_json::deserialize::token::skip_value(tokens)?;
-                                                                      Some(crate::model::AnalysisRulePolicy::Unknown)
+                                                                      Some(crate::types::AnalysisRulePolicy::Unknown)
                                                                     }
                         };
                 }

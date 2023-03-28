@@ -2,7 +2,7 @@
 pub(crate) fn de_suite_definition_information<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::SuiteDefinitionInformation>,
+    Option<crate::types::SuiteDefinitionInformation>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::suite_definition_information::Builder::default();
+            let mut builder = crate::types::builders::SuiteDefinitionInformationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -67,7 +67,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::Protocol::from(u.as_ref()))
+                                            .map(|u| crate::types::Protocol::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

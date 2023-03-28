@@ -4,15 +4,15 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>You do not have sufficient access to perform this action.</p>
-    AccessDeniedException(crate::error::AccessDeniedException),
+    AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>Request processing failed due to an error or failure with the service.</p>
-    InternalServiceException(crate::error::InternalServiceException),
+    InternalServiceException(crate::types::error::InternalServiceException),
     /// <p>The request is not valid.</p>
-    InvalidRequestException(crate::error::InvalidRequestException),
+    InvalidRequestException(crate::types::error::InvalidRequestException),
     /// <p>The specified resource was not found.</p>
-    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The throttling limit has been exceeded.</p>
-    ThrottlingException(crate::error::ThrottlingException),
+    ThrottlingException(crate::types::error::ThrottlingException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled),
 }
@@ -28,58 +28,28 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::ListRealtimeContactAnalysisSegmentsError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::ListRealtimeContactAnalysisSegmentsError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_realtime_contact_analysis_segments::ListRealtimeContactAnalysisSegmentsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_realtime_contact_analysis_segments::ListRealtimeContactAnalysisSegmentsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
-impl From<crate::error::ListRealtimeContactAnalysisSegmentsError> for Error {
-    fn from(err: crate::error::ListRealtimeContactAnalysisSegmentsError) -> Self {
+impl From<crate::operation::list_realtime_contact_analysis_segments::ListRealtimeContactAnalysisSegmentsError> for Error {
+    fn from(err: crate::operation::list_realtime_contact_analysis_segments::ListRealtimeContactAnalysisSegmentsError) -> Self {
         match err {
-            crate::error::ListRealtimeContactAnalysisSegmentsError::AccessDeniedException(
-                inner,
-            ) => Error::AccessDeniedException(inner),
-            crate::error::ListRealtimeContactAnalysisSegmentsError::InternalServiceException(
-                inner,
-            ) => Error::InternalServiceException(inner),
-            crate::error::ListRealtimeContactAnalysisSegmentsError::InvalidRequestException(
-                inner,
-            ) => Error::InvalidRequestException(inner),
-            crate::error::ListRealtimeContactAnalysisSegmentsError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::error::ListRealtimeContactAnalysisSegmentsError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::ListRealtimeContactAnalysisSegmentsError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::list_realtime_contact_analysis_segments::ListRealtimeContactAnalysisSegmentsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_realtime_contact_analysis_segments::ListRealtimeContactAnalysisSegmentsError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::list_realtime_contact_analysis_segments::ListRealtimeContactAnalysisSegmentsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::list_realtime_contact_analysis_segments::ListRealtimeContactAnalysisSegmentsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_realtime_contact_analysis_segments::ListRealtimeContactAnalysisSegmentsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_realtime_contact_analysis_segments::ListRealtimeContactAnalysisSegmentsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

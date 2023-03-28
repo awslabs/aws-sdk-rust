@@ -2,7 +2,7 @@
 pub(crate) fn de_earth_observation_job_error_details<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::EarthObservationJobErrorDetails>,
+    Option<crate::types::EarthObservationJobErrorDetails>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::earth_observation_job_error_details::Builder::default();
+            let mut builder =
+                crate::types::builders::EarthObservationJobErrorDetailsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +31,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::EarthObservationJobErrorType::from(
+                                            crate::types::EarthObservationJobErrorType::from(
                                                 u.as_ref(),
                                             )
                                         })

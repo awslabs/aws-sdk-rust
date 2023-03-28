@@ -2,7 +2,7 @@
 pub(crate) fn de_global_secondary_indexes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::GlobalSecondaryIndexInfo>>,
+    Option<std::vec::Vec<crate::types::GlobalSecondaryIndexInfo>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

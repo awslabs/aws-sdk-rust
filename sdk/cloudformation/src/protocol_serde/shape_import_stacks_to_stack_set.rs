@@ -3,148 +3,146 @@
 pub fn de_import_stacks_to_stack_set_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ImportStacksToStackSetOutput,
-    crate::error::ImportStacksToStackSetError,
+    crate::operation::import_stacks_to_stack_set::ImportStacksToStackSetOutput,
+    crate::operation::import_stacks_to_stack_set::ImportStacksToStackSetError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ImportStacksToStackSetError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::import_stacks_to_stack_set::ImportStacksToStackSetError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::error::ImportStacksToStackSetError::unhandled(
+        None => return Err(
+            crate::operation::import_stacks_to_stack_set::ImportStacksToStackSetError::unhandled(
                 generic,
-            ))
-        }
+            ),
+        ),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidOperationException" => {
-            crate::error::ImportStacksToStackSetError::InvalidOperationException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidOperationException" => crate::operation::import_stacks_to_stack_set::ImportStacksToStackSetError::InvalidOperationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_operation_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidOperationExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_operation_exception::de_invalid_operation_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ImportStacksToStackSetError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_operation_exception::de_invalid_operation_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::import_stacks_to_stack_set::ImportStacksToStackSetError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "LimitExceededException" => {
-            crate::error::ImportStacksToStackSetError::LimitExceededException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "LimitExceededException" => crate::operation::import_stacks_to_stack_set::ImportStacksToStackSetError::LimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ImportStacksToStackSetError::unhandled)?;
+                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::import_stacks_to_stack_set::ImportStacksToStackSetError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "OperationIdAlreadyExistsException" => {
-            crate::error::ImportStacksToStackSetError::OperationIdAlreadyExistsException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "OperationIdAlreadyExistsException" => crate::operation::import_stacks_to_stack_set::ImportStacksToStackSetError::OperationIdAlreadyExistsException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::operation_id_already_exists_exception::Builder::default();
+                    let mut output = crate::types::error::builders::OperationIdAlreadyExistsExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_operation_id_already_exists_exception::de_operation_id_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ImportStacksToStackSetError::unhandled)?;
+                    output = crate::protocol_serde::shape_operation_id_already_exists_exception::de_operation_id_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::import_stacks_to_stack_set::ImportStacksToStackSetError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "OperationInProgressException" => {
-            crate::error::ImportStacksToStackSetError::OperationInProgressException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "OperationInProgressException" => crate::operation::import_stacks_to_stack_set::ImportStacksToStackSetError::OperationInProgressException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::operation_in_progress_exception::Builder::default();
+                    let mut output = crate::types::error::builders::OperationInProgressExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_operation_in_progress_exception::de_operation_in_progress_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ImportStacksToStackSetError::unhandled)?;
+                    output = crate::protocol_serde::shape_operation_in_progress_exception::de_operation_in_progress_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::import_stacks_to_stack_set::ImportStacksToStackSetError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "StackNotFoundException" => {
-            crate::error::ImportStacksToStackSetError::StackNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "StackNotFoundException" => crate::operation::import_stacks_to_stack_set::ImportStacksToStackSetError::StackNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::stack_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::StackNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_stack_not_found_exception::de_stack_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ImportStacksToStackSetError::unhandled)?;
+                    output = crate::protocol_serde::shape_stack_not_found_exception::de_stack_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::import_stacks_to_stack_set::ImportStacksToStackSetError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "StackSetNotFoundException" => {
-            crate::error::ImportStacksToStackSetError::StackSetNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "StackSetNotFoundException" => crate::operation::import_stacks_to_stack_set::ImportStacksToStackSetError::StackSetNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::stack_set_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::StackSetNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_stack_set_not_found_exception::de_stack_set_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ImportStacksToStackSetError::unhandled)?;
+                    output = crate::protocol_serde::shape_stack_set_not_found_exception::de_stack_set_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::import_stacks_to_stack_set::ImportStacksToStackSetError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "StaleRequestException" => {
-            crate::error::ImportStacksToStackSetError::StaleRequestException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "StaleRequestException" => crate::operation::import_stacks_to_stack_set::ImportStacksToStackSetError::StaleRequestException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::stale_request_exception::Builder::default();
+                    let mut output = crate::types::error::builders::StaleRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_stale_request_exception::de_stale_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ImportStacksToStackSetError::unhandled)?;
+                    output = crate::protocol_serde::shape_stale_request_exception::de_stale_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::import_stacks_to_stack_set::ImportStacksToStackSetError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::ImportStacksToStackSetError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::import_stacks_to_stack_set::ImportStacksToStackSetError::generic(generic)
     })
 }
 
@@ -152,19 +150,14 @@ pub fn de_import_stacks_to_stack_set_http_error(
 pub fn de_import_stacks_to_stack_set_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ImportStacksToStackSetOutput,
-    crate::error::ImportStacksToStackSetError,
+    crate::operation::import_stacks_to_stack_set::ImportStacksToStackSetOutput,
+    crate::operation::import_stacks_to_stack_set::ImportStacksToStackSetError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::import_stacks_to_stack_set_output::Builder::default();
+        let mut output = crate::operation::import_stacks_to_stack_set::builders::ImportStacksToStackSetOutputBuilder::default();
         let _ = response;
-        output =
-            crate::protocol_serde::shape_import_stacks_to_stack_set::de_import_stacks_to_stack_set(
-                response.body().as_ref(),
-                output,
-            )
-            .map_err(crate::error::ImportStacksToStackSetError::unhandled)?;
+        output = crate::protocol_serde::shape_import_stacks_to_stack_set::de_import_stacks_to_stack_set(response.body().as_ref(), output).map_err(crate::operation::import_stacks_to_stack_set::ImportStacksToStackSetError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -175,9 +168,9 @@ pub fn de_import_stacks_to_stack_set_http_response(
 #[allow(unused_mut)]
 pub fn de_import_stacks_to_stack_set(
     inp: &[u8],
-    mut builder: crate::output::import_stacks_to_stack_set_output::Builder,
+    mut builder: crate::operation::import_stacks_to_stack_set::builders::ImportStacksToStackSetOutputBuilder,
 ) -> Result<
-    crate::output::import_stacks_to_stack_set_output::Builder,
+    crate::operation::import_stacks_to_stack_set::builders::ImportStacksToStackSetOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

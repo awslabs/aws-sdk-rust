@@ -2,7 +2,7 @@
 pub(crate) fn de_aws_ecs_cluster_default_capacity_provider_strategy_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AwsEcsClusterDefaultCapacityProviderStrategyDetails>>,
+    Option<std::vec::Vec<crate::types::AwsEcsClusterDefaultCapacityProviderStrategyDetails>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

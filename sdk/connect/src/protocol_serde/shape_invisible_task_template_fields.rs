@@ -2,7 +2,7 @@
 pub(crate) fn de_invisible_task_template_fields<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::InvisibleFieldInfo>>,
+    Option<std::vec::Vec<crate::types::InvisibleFieldInfo>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

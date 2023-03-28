@@ -2,7 +2,7 @@
 pub(crate) fn de_resource_pending_maintenance_actions<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ResourcePendingMaintenanceActions>,
+    Option<crate::types::ResourcePendingMaintenanceActions>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::resource_pending_maintenance_actions::Builder::default();
+                crate::types::builders::ResourcePendingMaintenanceActionsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

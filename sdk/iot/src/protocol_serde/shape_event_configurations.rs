@@ -2,7 +2,7 @@
 pub(crate) fn de_event_configurations<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<crate::model::EventType, crate::model::Configuration>>,
+    Option<std::collections::HashMap<crate::types::EventType, crate::types::Configuration>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -23,7 +23,7 @@ where
                     Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         let key = key
                             .to_unescaped()
-                            .map(|u| crate::model::EventType::from(u.as_ref()))?;
+                            .map(|u| crate::types::EventType::from(u.as_ref()))?;
                         let value =
                             crate::protocol_serde::shape_configuration::de_configuration(tokens)?;
                         if let Some(value) = value {

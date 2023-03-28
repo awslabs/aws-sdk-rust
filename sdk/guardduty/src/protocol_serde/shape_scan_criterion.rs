@@ -2,7 +2,7 @@
 pub(crate) fn de_scan_criterion<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<crate::model::ScanCriterionKey, crate::model::ScanCondition>>,
+    Option<std::collections::HashMap<crate::types::ScanCriterionKey, crate::types::ScanCondition>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -23,7 +23,7 @@ where
                     Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         let key = key
                             .to_unescaped()
-                            .map(|u| crate::model::ScanCriterionKey::from(u.as_ref()))?;
+                            .map(|u| crate::types::ScanCriterionKey::from(u.as_ref()))?;
                         let value =
                             crate::protocol_serde::shape_scan_condition::de_scan_condition(tokens)?;
                         if let Some(value) = value {

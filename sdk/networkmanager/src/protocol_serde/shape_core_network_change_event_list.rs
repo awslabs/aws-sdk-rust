@@ -2,7 +2,7 @@
 pub(crate) fn de_core_network_change_event_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CoreNetworkChangeEvent>>,
+    Option<std::vec::Vec<crate::types::CoreNetworkChangeEvent>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

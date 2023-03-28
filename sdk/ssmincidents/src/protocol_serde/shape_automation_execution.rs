@@ -2,7 +2,7 @@
 pub(crate) fn de_automation_execution<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::AutomationExecution>,
+    Option<crate::types::AutomationExecution>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -29,7 +29,7 @@ where
                     }
                     variant = match key.to_unescaped()?.as_ref() {
                         "ssmExecutionArn" => {
-                            Some(crate::model::AutomationExecution::SsmExecutionArn(
+                            Some(crate::types::AutomationExecution::SsmExecutionArn(
                                 aws_smithy_json::deserialize::token::expect_string_or_null(
                                     tokens.next(),
                                 )?
@@ -40,7 +40,7 @@ where
                         }
                         _ => {
                             aws_smithy_json::deserialize::token::skip_value(tokens)?;
-                            Some(crate::model::AutomationExecution::Unknown)
+                            Some(crate::types::AutomationExecution::Unknown)
                         }
                     };
                 }

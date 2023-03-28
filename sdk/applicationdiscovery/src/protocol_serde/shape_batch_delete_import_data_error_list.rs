@@ -2,7 +2,7 @@
 pub(crate) fn de_batch_delete_import_data_error_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::BatchDeleteImportDataError>>,
+    Option<std::vec::Vec<crate::types::BatchDeleteImportDataError>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

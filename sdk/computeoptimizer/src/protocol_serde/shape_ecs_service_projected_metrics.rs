@@ -2,7 +2,7 @@
 pub(crate) fn de_ecs_service_projected_metrics<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::EcsServiceProjectedMetric>>,
+    Option<std::vec::Vec<crate::types::EcsServiceProjectedMetric>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_room_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::RoomSummary>>,
+    Option<std::vec::Vec<crate::types::RoomSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

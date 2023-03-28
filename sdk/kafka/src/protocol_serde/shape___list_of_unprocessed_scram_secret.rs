@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_unprocessed_scram_secret<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::UnprocessedScramSecret>>,
+    Option<std::vec::Vec<crate::types::UnprocessedScramSecret>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

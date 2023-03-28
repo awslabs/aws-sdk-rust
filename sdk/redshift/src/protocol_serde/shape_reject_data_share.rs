@@ -2,51 +2,65 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_reject_data_share_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::RejectDataShareOutput, crate::error::RejectDataShareError> {
+) -> std::result::Result<
+    crate::operation::reject_data_share::RejectDataShareOutput,
+    crate::operation::reject_data_share::RejectDataShareError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::RejectDataShareError::unhandled)?;
+        .map_err(crate::operation::reject_data_share::RejectDataShareError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::RejectDataShareError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::reject_data_share::RejectDataShareError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidDataShareFault" => crate::error::RejectDataShareError::InvalidDataShareFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "InvalidDataShareFault" => {
+            crate::operation::reject_data_share::RejectDataShareError::InvalidDataShareFault({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_data_share_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_data_share_fault::de_invalid_data_share_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RejectDataShareError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::RejectDataShareError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InvalidDataShareFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_data_share_fault::de_invalid_data_share_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::reject_data_share::RejectDataShareError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::reject_data_share::RejectDataShareError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_reject_data_share_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::RejectDataShareOutput, crate::error::RejectDataShareError> {
+) -> std::result::Result<
+    crate::operation::reject_data_share::RejectDataShareOutput,
+    crate::operation::reject_data_share::RejectDataShareError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::reject_data_share_output::Builder::default();
+        let mut output =
+            crate::operation::reject_data_share::builders::RejectDataShareOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_reject_data_share::de_reject_data_share(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::RejectDataShareError::unhandled)?;
+        .map_err(crate::operation::reject_data_share::RejectDataShareError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -57,9 +71,11 @@ pub fn de_reject_data_share_http_response(
 #[allow(unused_mut)]
 pub fn de_reject_data_share(
     inp: &[u8],
-    mut builder: crate::output::reject_data_share_output::Builder,
-) -> Result<crate::output::reject_data_share_output::Builder, aws_smithy_xml::decode::XmlDecodeError>
-{
+    mut builder: crate::operation::reject_data_share::builders::RejectDataShareOutputBuilder,
+) -> Result<
+    crate::operation::reject_data_share::builders::RejectDataShareOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

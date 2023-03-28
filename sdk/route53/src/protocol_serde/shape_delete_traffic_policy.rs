@@ -3,88 +3,96 @@
 pub fn de_delete_traffic_policy_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteTrafficPolicyOutput,
-    crate::error::DeleteTrafficPolicyError,
+    crate::operation::delete_traffic_policy::DeleteTrafficPolicyOutput,
+    crate::operation::delete_traffic_policy::DeleteTrafficPolicyError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteTrafficPolicyError::unhandled)?;
+        .map_err(crate::operation::delete_traffic_policy::DeleteTrafficPolicyError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DeleteTrafficPolicyError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::delete_traffic_policy::DeleteTrafficPolicyError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConcurrentModification" => {
-            crate::error::DeleteTrafficPolicyError::ConcurrentModification({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "ConcurrentModification" => crate::operation::delete_traffic_policy::DeleteTrafficPolicyError::ConcurrentModification({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::concurrent_modification::Builder::default();
+                    let mut output = crate::types::error::builders::ConcurrentModificationBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_concurrent_modification::de_concurrent_modification_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteTrafficPolicyError::unhandled)?;
+                    output = crate::protocol_serde::shape_concurrent_modification::de_concurrent_modification_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_traffic_policy::DeleteTrafficPolicyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidInput" => crate::error::DeleteTrafficPolicyError::InvalidInput({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::invalid_input::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_input::de_invalid_input_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::DeleteTrafficPolicyError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "NoSuchTrafficPolicy" => crate::error::DeleteTrafficPolicyError::NoSuchTrafficPolicy({
+        "InvalidInput" => crate::operation::delete_traffic_policy::DeleteTrafficPolicyError::InvalidInput({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::no_such_traffic_policy::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_no_such_traffic_policy::de_no_such_traffic_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteTrafficPolicyError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidInputBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_input::de_invalid_input_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_traffic_policy::DeleteTrafficPolicyError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "TrafficPolicyInUse" => crate::error::DeleteTrafficPolicyError::TrafficPolicyInUse({
+        "NoSuchTrafficPolicy" => crate::operation::delete_traffic_policy::DeleteTrafficPolicyError::NoSuchTrafficPolicy({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::traffic_policy_in_use::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_traffic_policy_in_use::de_traffic_policy_in_use_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteTrafficPolicyError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::NoSuchTrafficPolicyBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_no_such_traffic_policy::de_no_such_traffic_policy_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_traffic_policy::DeleteTrafficPolicyError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::DeleteTrafficPolicyError::generic(generic),
+        "TrafficPolicyInUse" => crate::operation::delete_traffic_policy::DeleteTrafficPolicyError::TrafficPolicyInUse({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::TrafficPolicyInUseBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_traffic_policy_in_use::de_traffic_policy_in_use_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_traffic_policy::DeleteTrafficPolicyError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::delete_traffic_policy::DeleteTrafficPolicyError::generic(generic)
     })
 }
 
@@ -92,12 +100,12 @@ pub fn de_delete_traffic_policy_http_error(
 pub fn de_delete_traffic_policy_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteTrafficPolicyOutput,
-    crate::error::DeleteTrafficPolicyError,
+    crate::operation::delete_traffic_policy::DeleteTrafficPolicyOutput,
+    crate::operation::delete_traffic_policy::DeleteTrafficPolicyError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_traffic_policy_output::Builder::default();
+        let mut output = crate::operation::delete_traffic_policy::builders::DeleteTrafficPolicyOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

@@ -2,7 +2,7 @@
 pub(crate) fn de_cross_region_copy_rules<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CrossRegionCopyRule>>,
+    Option<std::vec::Vec<crate::types::CrossRegionCopyRule>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

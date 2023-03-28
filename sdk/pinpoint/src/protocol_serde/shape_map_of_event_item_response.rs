@@ -2,7 +2,7 @@
 pub(crate) fn de_map_of_event_item_response<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<std::string::String, crate::model::EventItemResponse>>,
+    Option<std::collections::HashMap<std::string::String, crate::types::EventItemResponse>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_matched_category_details<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<std::string::String, crate::model::PointsOfInterest>>,
+    Option<std::collections::HashMap<std::string::String, crate::types::PointsOfInterest>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

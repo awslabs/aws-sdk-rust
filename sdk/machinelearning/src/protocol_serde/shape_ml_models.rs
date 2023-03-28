@@ -2,7 +2,7 @@
 pub(crate) fn de_ml_models<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::MlModel>>,
+    Option<std::vec::Vec<crate::types::MlModel>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

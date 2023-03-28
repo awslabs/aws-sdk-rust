@@ -2,57 +2,31 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_sync_resource_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::SyncResourceOutput, crate::error::SyncResourceError> {
+) -> std::result::Result<
+    crate::operation::sync_resource::SyncResourceOutput,
+    crate::operation::sync_resource::SyncResourceError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::SyncResourceError::unhandled)?;
+        .map_err(crate::operation::sync_resource::SyncResourceError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::SyncResourceError::unhandled(generic)),
+        None => return Err(crate::operation::sync_resource::SyncResourceError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConflictException" => crate::error::SyncResourceError::ConflictException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::conflict_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SyncResourceError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InternalServerException" => crate::error::SyncResourceError::InternalServerException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SyncResourceError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ResourceNotFoundException" => {
-            crate::error::SyncResourceError::ResourceNotFoundException({
+        "ConflictException" => {
+            crate::operation::sync_resource::SyncResourceError::ConflictException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::ConflictExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SyncResourceError::unhandled)?;
+                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::sync_resource::SyncResourceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -62,23 +36,63 @@ pub fn de_sync_resource_http_error(
                 tmp
             })
         }
-        _ => crate::error::SyncResourceError::generic(generic),
+        "InternalServerException" => {
+            crate::operation::sync_resource::SyncResourceError::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InternalServerExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::sync_resource::SyncResourceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::operation::sync_resource::SyncResourceError::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::sync_resource::SyncResourceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::sync_resource::SyncResourceError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_sync_resource_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::SyncResourceOutput, crate::error::SyncResourceError> {
+) -> std::result::Result<
+    crate::operation::sync_resource::SyncResourceOutput,
+    crate::operation::sync_resource::SyncResourceError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::sync_resource_output::Builder::default();
+        let mut output =
+            crate::operation::sync_resource::builders::SyncResourceOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_sync_resource::de_sync_resource(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::SyncResourceError::unhandled)?;
+        .map_err(crate::operation::sync_resource::SyncResourceError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -88,9 +102,9 @@ pub fn de_sync_resource_http_response(
 
 pub(crate) fn de_sync_resource(
     value: &[u8],
-    mut builder: crate::output::sync_resource_output::Builder,
+    mut builder: crate::operation::sync_resource::builders::SyncResourceOutputBuilder,
 ) -> Result<
-    crate::output::sync_resource_output::Builder,
+    crate::operation::sync_resource::builders::SyncResourceOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =
@@ -110,7 +124,7 @@ pub(crate) fn de_sync_resource(
                             )?
                             .map(|s| {
                                 s.to_unescaped()
-                                    .map(|u| crate::model::SyncAction::from(u.as_ref()))
+                                    .map(|u| crate::types::SyncAction::from(u.as_ref()))
                             })
                             .transpose()?,
                         );

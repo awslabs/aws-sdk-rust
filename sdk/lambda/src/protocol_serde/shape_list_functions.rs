@@ -2,28 +2,32 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_functions_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListFunctionsOutput, crate::error::ListFunctionsError> {
+) -> std::result::Result<
+    crate::operation::list_functions::ListFunctionsOutput,
+    crate::operation::list_functions::ListFunctionsError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListFunctionsError::unhandled)?;
+        .map_err(crate::operation::list_functions::ListFunctionsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListFunctionsError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::list_functions::ListFunctionsError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidParameterValueException" => {
-            crate::error::ListFunctionsError::InvalidParameterValueException({
+            crate::operation::list_functions::ListFunctionsError::InvalidParameterValueException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_parameter_value_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListFunctionsError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_functions::ListFunctionsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -34,13 +38,14 @@ pub fn de_list_functions_http_error(
             })
         }
         "ServiceException" => {
-            crate::error::ListFunctionsError::ServiceException({
+            crate::operation::list_functions::ListFunctionsError::ServiceException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::service_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::ServiceExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_exception::de_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListFunctionsError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_exception::de_service_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_functions::ListFunctionsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -50,42 +55,49 @@ pub fn de_list_functions_http_error(
                 tmp
             })
         }
-        "TooManyRequestsException" => crate::error::ListFunctionsError::TooManyRequestsException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "TooManyRequestsException" => {
+            crate::operation::list_functions::ListFunctionsError::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListFunctionsError::unhandled)?;
-                output = output.set_retry_after_seconds(
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_functions::ListFunctionsError::unhandled)?;
+                    output = output.set_retry_after_seconds(
                         crate::protocol_serde::shape_too_many_requests_exception::de_retry_after_seconds_header(response.headers())
-                                                .map_err(|_|crate::error::ListFunctionsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::operation::list_functions::ListFunctionsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::ListFunctionsError::generic(generic),
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::list_functions::ListFunctionsError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_functions_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListFunctionsOutput, crate::error::ListFunctionsError> {
+) -> std::result::Result<
+    crate::operation::list_functions::ListFunctionsOutput,
+    crate::operation::list_functions::ListFunctionsError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_functions_output::Builder::default();
+        let mut output =
+            crate::operation::list_functions::builders::ListFunctionsOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_functions::de_list_functions(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListFunctionsError::unhandled)?;
+        .map_err(crate::operation::list_functions::ListFunctionsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -95,9 +107,9 @@ pub fn de_list_functions_http_response(
 
 pub(crate) fn de_list_functions(
     value: &[u8],
-    mut builder: crate::output::list_functions_output::Builder,
+    mut builder: crate::operation::list_functions::builders::ListFunctionsOutputBuilder,
 ) -> Result<
-    crate::output::list_functions_output::Builder,
+    crate::operation::list_functions::builders::ListFunctionsOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

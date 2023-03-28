@@ -2,7 +2,7 @@
 pub(crate) fn de_caption_formats<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CaptionFormat>>,
+    Option<std::vec::Vec<crate::types::CaptionFormat>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_no_such_public_access_block_configuration_xml_err(
     inp: &[u8],
-    mut builder: crate::error::no_such_public_access_block_configuration::Builder,
+    mut builder: crate::types::error::builders::NoSuchPublicAccessBlockConfigurationBuilder,
 ) -> Result<
-    crate::error::no_such_public_access_block_configuration::Builder,
+    crate::types::error::builders::NoSuchPublicAccessBlockConfigurationBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

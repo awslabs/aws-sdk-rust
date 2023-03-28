@@ -2,7 +2,7 @@
 pub(crate) fn de_stateless_rule_group_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::StatelessRuleGroup>>,
+    Option<std::vec::Vec<crate::types::StatelessRuleGroup>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

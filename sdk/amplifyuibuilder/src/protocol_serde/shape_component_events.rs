@@ -2,7 +2,7 @@
 pub(crate) fn de_component_events<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<std::string::String, crate::model::ComponentEvent>>,
+    Option<std::collections::HashMap<std::string::String, crate::types::ComponentEvent>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

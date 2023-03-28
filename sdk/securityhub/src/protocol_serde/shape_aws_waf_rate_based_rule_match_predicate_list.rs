@@ -2,7 +2,7 @@
 pub(crate) fn de_aws_waf_rate_based_rule_match_predicate_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AwsWafRateBasedRuleMatchPredicate>>,
+    Option<std::vec::Vec<crate::types::AwsWafRateBasedRuleMatchPredicate>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

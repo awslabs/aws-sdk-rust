@@ -2,7 +2,7 @@
 pub(crate) fn de_dedicated_ip_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DedicatedIp>>,
+    Option<std::vec::Vec<crate::types::DedicatedIp>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

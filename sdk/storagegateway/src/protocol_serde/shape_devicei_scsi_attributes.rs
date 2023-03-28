@@ -2,7 +2,7 @@
 pub(crate) fn de_devicei_scsi_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::DeviceiScsiAttributes>,
+    Option<crate::types::DeviceiScsiAttributes>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::devicei_scsi_attributes::Builder::default();
+            let mut builder = crate::types::builders::DeviceiScsiAttributesBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

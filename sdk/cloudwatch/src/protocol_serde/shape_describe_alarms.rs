@@ -2,27 +2,33 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_alarms_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DescribeAlarmsOutput, crate::error::DescribeAlarmsError> {
+) -> std::result::Result<
+    crate::operation::describe_alarms::DescribeAlarmsOutput,
+    crate::operation::describe_alarms::DescribeAlarmsError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeAlarmsError::unhandled)?;
+        .map_err(crate::operation::describe_alarms::DescribeAlarmsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DescribeAlarmsError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::describe_alarms::DescribeAlarmsError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidNextToken" => {
-            crate::error::DescribeAlarmsError::InvalidNextToken({
+            crate::operation::describe_alarms::DescribeAlarmsError::InvalidNextToken({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_next_token::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::InvalidNextTokenBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_next_token::de_invalid_next_token_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeAlarmsError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_next_token::de_invalid_next_token_xml_err(response.body().as_ref(), output).map_err(crate::operation::describe_alarms::DescribeAlarmsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -32,23 +38,27 @@ pub fn de_describe_alarms_http_error(
                 tmp
             })
         }
-        _ => crate::error::DescribeAlarmsError::generic(generic),
+        _ => crate::operation::describe_alarms::DescribeAlarmsError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_alarms_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DescribeAlarmsOutput, crate::error::DescribeAlarmsError> {
+) -> std::result::Result<
+    crate::operation::describe_alarms::DescribeAlarmsOutput,
+    crate::operation::describe_alarms::DescribeAlarmsError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_alarms_output::Builder::default();
+        let mut output =
+            crate::operation::describe_alarms::builders::DescribeAlarmsOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_describe_alarms::de_describe_alarms(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DescribeAlarmsError::unhandled)?;
+        .map_err(crate::operation::describe_alarms::DescribeAlarmsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -59,9 +69,11 @@ pub fn de_describe_alarms_http_response(
 #[allow(unused_mut)]
 pub fn de_describe_alarms(
     inp: &[u8],
-    mut builder: crate::output::describe_alarms_output::Builder,
-) -> Result<crate::output::describe_alarms_output::Builder, aws_smithy_xml::decode::XmlDecodeError>
-{
+    mut builder: crate::operation::describe_alarms::builders::DescribeAlarmsOutputBuilder,
+) -> Result<
+    crate::operation::describe_alarms::builders::DescribeAlarmsOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

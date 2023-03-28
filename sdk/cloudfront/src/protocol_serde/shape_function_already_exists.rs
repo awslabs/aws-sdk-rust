@@ -2,9 +2,11 @@
 #[allow(unused_mut)]
 pub fn de_function_already_exists_xml_err(
     inp: &[u8],
-    mut builder: crate::error::function_already_exists::Builder,
-) -> Result<crate::error::function_already_exists::Builder, aws_smithy_xml::decode::XmlDecodeError>
-{
+    mut builder: crate::types::error::builders::FunctionAlreadyExistsBuilder,
+) -> Result<
+    crate::types::error::builders::FunctionAlreadyExistsBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     if inp.is_empty() {
         return Ok(builder);
     }

@@ -2,7 +2,7 @@
 pub fn de_classic_link_dns_support_list(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::ClassicLinkDnsSupport>,
+    std::vec::Vec<crate::types::ClassicLinkDnsSupport>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

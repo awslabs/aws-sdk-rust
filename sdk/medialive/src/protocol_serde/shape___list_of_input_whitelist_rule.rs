@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_input_whitelist_rule<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::InputWhitelistRule>>,
+    Option<std::vec::Vec<crate::types::InputWhitelistRule>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

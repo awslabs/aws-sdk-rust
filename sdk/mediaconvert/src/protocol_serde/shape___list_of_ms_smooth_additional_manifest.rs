@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_ms_smooth_additional_manifest<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::MsSmoothAdditionalManifest>>,
+    Option<std::vec::Vec<crate::types::MsSmoothAdditionalManifest>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

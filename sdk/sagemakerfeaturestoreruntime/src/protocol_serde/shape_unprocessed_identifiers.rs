@@ -2,7 +2,7 @@
 pub(crate) fn de_unprocessed_identifiers<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::BatchGetRecordIdentifier>>,
+    Option<std::vec::Vec<crate::types::BatchGetRecordIdentifier>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

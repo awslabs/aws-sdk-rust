@@ -2,7 +2,7 @@
 pub(crate) fn de_provisioning_artifact_views<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ProvisioningArtifactView>>,
+    Option<std::vec::Vec<crate::types::ProvisioningArtifactView>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

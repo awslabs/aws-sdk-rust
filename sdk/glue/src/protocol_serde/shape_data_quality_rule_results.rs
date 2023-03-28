@@ -2,7 +2,7 @@
 pub(crate) fn de_data_quality_rule_results<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DataQualityRuleResult>>,
+    Option<std::vec::Vec<crate::types::DataQualityRuleResult>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

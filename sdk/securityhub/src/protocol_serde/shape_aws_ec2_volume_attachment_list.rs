@@ -2,7 +2,7 @@
 pub(crate) fn de_aws_ec2_volume_attachment_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AwsEc2VolumeAttachment>>,
+    Option<std::vec::Vec<crate::types::AwsEc2VolumeAttachment>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

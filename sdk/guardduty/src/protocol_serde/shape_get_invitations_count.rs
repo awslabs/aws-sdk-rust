@@ -3,55 +3,62 @@
 pub fn de_get_invitations_count_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetInvitationsCountOutput,
-    crate::error::GetInvitationsCountError,
+    crate::operation::get_invitations_count::GetInvitationsCountOutput,
+    crate::operation::get_invitations_count::GetInvitationsCountError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetInvitationsCountError::unhandled)?;
+        .map_err(crate::operation::get_invitations_count::GetInvitationsCountError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::GetInvitationsCountError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::get_invitations_count::GetInvitationsCountError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::GetInvitationsCountError::BadRequestException({
+        "BadRequestException" => crate::operation::get_invitations_count::GetInvitationsCountError::BadRequestException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetInvitationsCountError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InternalServerErrorException" => {
-            crate::error::GetInvitationsCountError::InternalServerErrorException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::internal_server_error_exception::Builder::default();
+                    let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetInvitationsCountError::unhandled)?;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_invitations_count::GetInvitationsCountError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::GetInvitationsCountError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InternalServerErrorException" => crate::operation::get_invitations_count::GetInvitationsCountError::InternalServerErrorException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InternalServerErrorExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_invitations_count::GetInvitationsCountError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::get_invitations_count::GetInvitationsCountError::generic(generic)
     })
 }
 
@@ -59,18 +66,18 @@ pub fn de_get_invitations_count_http_error(
 pub fn de_get_invitations_count_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetInvitationsCountOutput,
-    crate::error::GetInvitationsCountError,
+    crate::operation::get_invitations_count::GetInvitationsCountOutput,
+    crate::operation::get_invitations_count::GetInvitationsCountError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_invitations_count_output::Builder::default();
+        let mut output = crate::operation::get_invitations_count::builders::GetInvitationsCountOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_get_invitations_count::de_get_invitations_count(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::GetInvitationsCountError::unhandled)?;
+        .map_err(crate::operation::get_invitations_count::GetInvitationsCountError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -80,9 +87,9 @@ pub fn de_get_invitations_count_http_response(
 
 pub(crate) fn de_get_invitations_count(
     value: &[u8],
-    mut builder: crate::output::get_invitations_count_output::Builder,
+    mut builder: crate::operation::get_invitations_count::builders::GetInvitationsCountOutputBuilder,
 ) -> Result<
-    crate::output::get_invitations_count_output::Builder,
+    crate::operation::get_invitations_count::builders::GetInvitationsCountOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

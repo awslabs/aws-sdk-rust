@@ -3,27 +3,27 @@
 pub fn de_delete_identity_policy_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteIdentityPolicyOutput,
-    crate::error::DeleteIdentityPolicyError,
+    crate::operation::delete_identity_policy::DeleteIdentityPolicyOutput,
+    crate::operation::delete_identity_policy::DeleteIdentityPolicyError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteIdentityPolicyError::unhandled)?;
+        .map_err(crate::operation::delete_identity_policy::DeleteIdentityPolicyError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::DeleteIdentityPolicyError::generic(generic))
+    Err(crate::operation::delete_identity_policy::DeleteIdentityPolicyError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_identity_policy_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteIdentityPolicyOutput,
-    crate::error::DeleteIdentityPolicyError,
+    crate::operation::delete_identity_policy::DeleteIdentityPolicyOutput,
+    crate::operation::delete_identity_policy::DeleteIdentityPolicyError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_identity_policy_output::Builder::default();
+        let mut output = crate::operation::delete_identity_policy::builders::DeleteIdentityPolicyOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

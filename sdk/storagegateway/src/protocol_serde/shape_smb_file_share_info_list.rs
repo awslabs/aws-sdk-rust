@@ -2,7 +2,7 @@
 pub(crate) fn de_smb_file_share_info_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SmbFileShareInfo>>,
+    Option<std::vec::Vec<crate::types::SmbFileShareInfo>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

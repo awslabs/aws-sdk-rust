@@ -2,7 +2,7 @@
 pub fn de_policy_granting_service_access_list_type(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::PolicyGrantingServiceAccess>,
+    std::vec::Vec<crate::types::PolicyGrantingServiceAccess>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

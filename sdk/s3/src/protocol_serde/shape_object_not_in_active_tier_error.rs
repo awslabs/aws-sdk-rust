@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_object_not_in_active_tier_error_xml_err(
     inp: &[u8],
-    mut builder: crate::error::object_not_in_active_tier_error::Builder,
+    mut builder: crate::types::error::builders::ObjectNotInActiveTierErrorBuilder,
 ) -> Result<
-    crate::error::object_not_in_active_tier_error::Builder,
+    crate::types::error::builders::ObjectNotInActiveTierErrorBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

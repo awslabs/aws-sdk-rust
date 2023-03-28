@@ -2,7 +2,7 @@
 pub(crate) fn de_zonal_shift_summaries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ZonalShiftSummary>>,
+    Option<std::vec::Vec<crate::types::ZonalShiftSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

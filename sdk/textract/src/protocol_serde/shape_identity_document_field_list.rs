@@ -2,7 +2,7 @@
 pub(crate) fn de_identity_document_field_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::IdentityDocumentField>>,
+    Option<std::vec::Vec<crate::types::IdentityDocumentField>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

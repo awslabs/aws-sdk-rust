@@ -2,7 +2,7 @@
 pub(crate) fn de_map_of_endpoint_message_result<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<std::string::String, crate::model::EndpointMessageResult>>,
+    Option<std::collections::HashMap<std::string::String, crate::types::EndpointMessageResult>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

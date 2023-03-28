@@ -2,7 +2,7 @@
 pub fn de_availability_zone_message_list(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::AvailabilityZoneMessage>,
+    std::vec::Vec<crate::types::AvailabilityZoneMessage>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

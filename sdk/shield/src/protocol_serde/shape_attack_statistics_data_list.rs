@@ -2,7 +2,7 @@
 pub(crate) fn de_attack_statistics_data_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AttackStatisticsDataItem>>,
+    Option<std::vec::Vec<crate::types::AttackStatisticsDataItem>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

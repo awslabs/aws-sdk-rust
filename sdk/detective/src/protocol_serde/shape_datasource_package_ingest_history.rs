@@ -4,10 +4,10 @@ pub(crate) fn de_datasource_package_ingest_history<'a, I>(
 ) -> Result<
     Option<
         std::collections::HashMap<
-            crate::model::DatasourcePackage,
+            crate::types::DatasourcePackage,
             std::collections::HashMap<
-                crate::model::DatasourcePackageIngestState,
-                crate::model::TimestampForCollection,
+                crate::types::DatasourcePackageIngestState,
+                crate::types::TimestampForCollection,
             >,
         >,
     >,
@@ -31,7 +31,7 @@ where
                     Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         let key = key
                             .to_unescaped()
-                            .map(|u| crate::model::DatasourcePackage::from(u.as_ref()))?;
+                            .map(|u| crate::types::DatasourcePackage::from(u.as_ref()))?;
                         let value =
                             crate::protocol_serde::shape_last_ingest_state_change_dates::de_last_ingest_state_change_dates(tokens)?
                         ;

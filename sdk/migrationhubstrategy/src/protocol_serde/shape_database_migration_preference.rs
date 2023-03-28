@@ -2,7 +2,7 @@
 pub(crate) fn de_database_migration_preference<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::DatabaseMigrationPreference>,
+    Option<crate::types::DatabaseMigrationPreference>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -29,26 +29,26 @@ where
                     }
                     variant = match key.to_unescaped()?.as_ref() {
                             "heterogeneous" => {
-                                Some(crate::model::DatabaseMigrationPreference::Heterogeneous(
+                                Some(crate::types::DatabaseMigrationPreference::Heterogeneous(
                                     crate::protocol_serde::shape_heterogeneous::de_heterogeneous(tokens)?
                                     .ok_or_else(|| aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'heterogeneous' cannot be null"))?
                                 ))
                             }
                             "homogeneous" => {
-                                Some(crate::model::DatabaseMigrationPreference::Homogeneous(
+                                Some(crate::types::DatabaseMigrationPreference::Homogeneous(
                                     crate::protocol_serde::shape_homogeneous::de_homogeneous(tokens)?
                                     .ok_or_else(|| aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'homogeneous' cannot be null"))?
                                 ))
                             }
                             "noPreference" => {
-                                Some(crate::model::DatabaseMigrationPreference::NoPreference(
+                                Some(crate::types::DatabaseMigrationPreference::NoPreference(
                                     crate::protocol_serde::shape_no_database_migration_preference::de_no_database_migration_preference(tokens)?
                                     .ok_or_else(|| aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'noPreference' cannot be null"))?
                                 ))
                             }
                             _ => {
                                                                       aws_smithy_json::deserialize::token::skip_value(tokens)?;
-                                                                      Some(crate::model::DatabaseMigrationPreference::Unknown)
+                                                                      Some(crate::types::DatabaseMigrationPreference::Unknown)
                                                                     }
                         };
                 }
@@ -75,28 +75,28 @@ where
 
 pub fn ser_database_migration_preference(
     object_3: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::DatabaseMigrationPreference,
+    input: &crate::types::DatabaseMigrationPreference,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     match input {
-        crate::model::DatabaseMigrationPreference::Heterogeneous(inner) => {
+        crate::types::DatabaseMigrationPreference::Heterogeneous(inner) => {
             #[allow(unused_mut)]
             let mut object_1 = object_3.key("heterogeneous").start_object();
             crate::protocol_serde::shape_heterogeneous::ser_heterogeneous(&mut object_1, inner)?;
             object_1.finish();
         }
-        crate::model::DatabaseMigrationPreference::Homogeneous(inner) => {
+        crate::types::DatabaseMigrationPreference::Homogeneous(inner) => {
             #[allow(unused_mut)]
             let mut object_2 = object_3.key("homogeneous").start_object();
             crate::protocol_serde::shape_homogeneous::ser_homogeneous(&mut object_2, inner)?;
             object_2.finish();
         }
-        crate::model::DatabaseMigrationPreference::NoPreference(inner) => {
+        crate::types::DatabaseMigrationPreference::NoPreference(inner) => {
             #[allow(unused_mut)]
             let mut object_3 = object_3.key("noPreference").start_object();
             crate::protocol_serde::shape_no_database_migration_preference::ser_no_database_migration_preference(&mut object_3, inner)?;
             object_3.finish();
         }
-        crate::model::DatabaseMigrationPreference::Unknown => {
+        crate::types::DatabaseMigrationPreference::Unknown => {
             return Err(
                 aws_smithy_http::operation::error::SerializationError::unknown_variant(
                     "DatabaseMigrationPreference",

@@ -3,31 +3,32 @@
 pub fn de_modify_availability_zone_group_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ModifyAvailabilityZoneGroupOutput,
-    crate::error::ModifyAvailabilityZoneGroupError,
+    crate::operation::modify_availability_zone_group::ModifyAvailabilityZoneGroupOutput,
+    crate::operation::modify_availability_zone_group::ModifyAvailabilityZoneGroupError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ModifyAvailabilityZoneGroupError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::modify_availability_zone_group::ModifyAvailabilityZoneGroupError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::ModifyAvailabilityZoneGroupError::generic(
-        generic,
-    ))
+    Err(
+        crate::operation::modify_availability_zone_group::ModifyAvailabilityZoneGroupError::generic(
+            generic,
+        ),
+    )
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_modify_availability_zone_group_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ModifyAvailabilityZoneGroupOutput,
-    crate::error::ModifyAvailabilityZoneGroupError,
+    crate::operation::modify_availability_zone_group::ModifyAvailabilityZoneGroupOutput,
+    crate::operation::modify_availability_zone_group::ModifyAvailabilityZoneGroupError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::modify_availability_zone_group_output::Builder::default();
+        let mut output = crate::operation::modify_availability_zone_group::builders::ModifyAvailabilityZoneGroupOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_modify_availability_zone_group::de_modify_availability_zone_group(response.body().as_ref(), output).map_err(crate::error::ModifyAvailabilityZoneGroupError::unhandled)?;
+        output = crate::protocol_serde::shape_modify_availability_zone_group::de_modify_availability_zone_group(response.body().as_ref(), output).map_err(crate::operation::modify_availability_zone_group::ModifyAvailabilityZoneGroupError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -36,13 +37,7 @@ pub fn de_modify_availability_zone_group_http_response(
 }
 
 #[allow(unused_mut)]
-pub fn de_modify_availability_zone_group(
-    inp: &[u8],
-    mut builder: crate::output::modify_availability_zone_group_output::Builder,
-) -> Result<
-    crate::output::modify_availability_zone_group_output::Builder,
-    aws_smithy_xml::decode::XmlDecodeError,
-> {
+pub fn de_modify_availability_zone_group(inp: &[u8], mut builder: crate::operation::modify_availability_zone_group::builders::ModifyAvailabilityZoneGroupOutputBuilder) -> Result<crate::operation::modify_availability_zone_group::builders::ModifyAvailabilityZoneGroupOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

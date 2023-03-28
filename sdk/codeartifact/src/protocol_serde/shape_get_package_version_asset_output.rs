@@ -3,7 +3,7 @@ pub fn de_asset_payload(
     body: &mut aws_smithy_http::body::SdkBody,
 ) -> std::result::Result<
     aws_smithy_http::byte_stream::ByteStream,
-    crate::error::GetPackageVersionAssetError,
+    crate::operation::get_package_version_asset::GetPackageVersionAssetError,
 > {
     // replace the body with an empty body
     let body = std::mem::replace(body, aws_smithy_http::body::SdkBody::taken());

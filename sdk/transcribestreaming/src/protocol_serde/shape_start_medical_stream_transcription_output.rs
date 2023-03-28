@@ -2,7 +2,7 @@
 pub(crate) fn de_content_identification_type_header(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
-    std::option::Option<crate::model::MedicalContentIdentificationType>,
+    std::option::Option<crate::types::MedicalContentIdentificationType>,
     aws_smithy_http::header::ParseError,
 > {
     let headers = header_map
@@ -32,7 +32,7 @@ pub(crate) fn de_enable_channel_identification_header(
 pub(crate) fn de_language_code_header(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
-    std::option::Option<crate::model::LanguageCode>,
+    std::option::Option<crate::types::LanguageCode>,
     aws_smithy_http::header::ParseError,
 > {
     let headers = header_map.get_all("x-amzn-transcribe-language-code").iter();
@@ -42,7 +42,7 @@ pub(crate) fn de_language_code_header(
 pub(crate) fn de_media_encoding_header(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
-    std::option::Option<crate::model::MediaEncoding>,
+    std::option::Option<crate::types::MediaEncoding>,
     aws_smithy_http::header::ParseError,
 > {
     let headers = header_map
@@ -126,7 +126,7 @@ pub(crate) fn de_show_speaker_label_header(
 pub(crate) fn de_specialty_header(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
-    std::option::Option<crate::model::Specialty>,
+    std::option::Option<crate::types::Specialty>,
     aws_smithy_http::header::ParseError,
 > {
     let headers = header_map.get_all("x-amzn-transcribe-specialty").iter();
@@ -137,10 +137,10 @@ pub fn de_transcript_result_stream_payload(
     body: &mut aws_smithy_http::body::SdkBody,
 ) -> std::result::Result<
     aws_smithy_http::event_stream::Receiver<
-        crate::model::MedicalTranscriptResultStream,
-        crate::error::MedicalTranscriptResultStreamError,
+        crate::types::MedicalTranscriptResultStream,
+        crate::types::error::MedicalTranscriptResultStreamError,
     >,
-    crate::error::StartMedicalStreamTranscriptionError,
+    crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError,
 > {
     let unmarshaller = crate::event_stream_serde::MedicalTranscriptResultStreamUnmarshaller::new();
     let body = std::mem::replace(body, aws_smithy_http::body::SdkBody::taken());
@@ -152,7 +152,7 @@ pub fn de_transcript_result_stream_payload(
 
 pub(crate) fn de_type_header(
     header_map: &http::HeaderMap,
-) -> std::result::Result<std::option::Option<crate::model::Type>, aws_smithy_http::header::ParseError>
+) -> std::result::Result<std::option::Option<crate::types::Type>, aws_smithy_http::header::ParseError>
 {
     let headers = header_map.get_all("x-amzn-transcribe-type").iter();
     aws_smithy_http::header::one_or_none(headers)

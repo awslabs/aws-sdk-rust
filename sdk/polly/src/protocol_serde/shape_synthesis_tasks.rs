@@ -2,7 +2,7 @@
 pub(crate) fn de_synthesis_tasks<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SynthesisTask>>,
+    Option<std::vec::Vec<crate::types::SynthesisTask>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

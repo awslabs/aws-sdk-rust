@@ -3,34 +3,37 @@
 pub fn de_disable_vpc_classic_link_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DisableVpcClassicLinkOutput,
-    crate::error::DisableVpcClassicLinkError,
+    crate::operation::disable_vpc_classic_link::DisableVpcClassicLinkOutput,
+    crate::operation::disable_vpc_classic_link::DisableVpcClassicLinkError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DisableVpcClassicLinkError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::disable_vpc_classic_link::DisableVpcClassicLinkError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::DisableVpcClassicLinkError::generic(generic))
+    Err(crate::operation::disable_vpc_classic_link::DisableVpcClassicLinkError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_disable_vpc_classic_link_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DisableVpcClassicLinkOutput,
-    crate::error::DisableVpcClassicLinkError,
+    crate::operation::disable_vpc_classic_link::DisableVpcClassicLinkOutput,
+    crate::operation::disable_vpc_classic_link::DisableVpcClassicLinkError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::disable_vpc_classic_link_output::Builder::default();
+        let mut output = crate::operation::disable_vpc_classic_link::builders::DisableVpcClassicLinkOutputBuilder::default();
         let _ = response;
         output =
             crate::protocol_serde::shape_disable_vpc_classic_link::de_disable_vpc_classic_link(
                 response.body().as_ref(),
                 output,
             )
-            .map_err(crate::error::DisableVpcClassicLinkError::unhandled)?;
+            .map_err(
+                crate::operation::disable_vpc_classic_link::DisableVpcClassicLinkError::unhandled,
+            )?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -41,9 +44,9 @@ pub fn de_disable_vpc_classic_link_http_response(
 #[allow(unused_mut)]
 pub fn de_disable_vpc_classic_link(
     inp: &[u8],
-    mut builder: crate::output::disable_vpc_classic_link_output::Builder,
+    mut builder: crate::operation::disable_vpc_classic_link::builders::DisableVpcClassicLinkOutputBuilder,
 ) -> Result<
-    crate::output::disable_vpc_classic_link_output::Builder,
+    crate::operation::disable_vpc_classic_link::builders::DisableVpcClassicLinkOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

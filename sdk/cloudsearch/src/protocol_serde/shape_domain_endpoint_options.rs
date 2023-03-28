@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_domain_endpoint_options(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::DomainEndpointOptions,
+    input: &crate::types::DomainEndpointOptions,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("EnforceHTTPS");
@@ -19,9 +19,9 @@ pub fn ser_domain_endpoint_options(
 
 pub fn de_domain_endpoint_options(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::DomainEndpointOptions, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::DomainEndpointOptions, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::DomainEndpointOptions::builder();
+    let mut builder = crate::types::DomainEndpointOptions::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("EnforceHTTPS") /* EnforceHTTPS com.amazonaws.cloudsearch#DomainEndpointOptions$EnforceHTTPS */ =>  {
@@ -42,8 +42,8 @@ pub fn de_domain_endpoint_options(
             s if s.matches("TLSSecurityPolicy") /* TLSSecurityPolicy com.amazonaws.cloudsearch#DomainEndpointOptions$TLSSecurityPolicy */ =>  {
                 let var_6 =
                     Some(
-                        Result::<crate::model::TlsSecurityPolicy, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::TlsSecurityPolicy::from(
+                        Result::<crate::types::TlsSecurityPolicy, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::TlsSecurityPolicy::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

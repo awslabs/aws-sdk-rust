@@ -2,7 +2,7 @@
 pub fn de_target_reservation_value_set(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::TargetReservationValue>,
+    std::vec::Vec<crate::types::TargetReservationValue>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

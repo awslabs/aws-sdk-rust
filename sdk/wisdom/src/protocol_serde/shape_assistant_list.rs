@@ -2,7 +2,7 @@
 pub(crate) fn de_assistant_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AssistantSummary>>,
+    Option<std::vec::Vec<crate::types::AssistantSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

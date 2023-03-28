@@ -2,7 +2,7 @@
 pub(crate) fn de_update_provisioning_parameters<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::UpdateProvisioningParameter>>,
+    Option<std::vec::Vec<crate::types::UpdateProvisioningParameter>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

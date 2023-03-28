@@ -2,7 +2,7 @@
 pub(crate) fn de_configuration_event_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ConfigurationEvent>>,
+    Option<std::vec::Vec<crate::types::ConfigurationEvent>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

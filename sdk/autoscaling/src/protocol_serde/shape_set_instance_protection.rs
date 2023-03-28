@@ -3,54 +3,62 @@
 pub fn de_set_instance_protection_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::SetInstanceProtectionOutput,
-    crate::error::SetInstanceProtectionError,
+    crate::operation::set_instance_protection::SetInstanceProtectionOutput,
+    crate::operation::set_instance_protection::SetInstanceProtectionError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::SetInstanceProtectionError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::set_instance_protection::SetInstanceProtectionError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    let error_code = match generic.code() {
-        Some(code) => code,
-        None => return Err(crate::error::SetInstanceProtectionError::unhandled(generic)),
-    };
+    let error_code =
+        match generic.code() {
+            Some(code) => code,
+            None => return Err(
+                crate::operation::set_instance_protection::SetInstanceProtectionError::unhandled(
+                    generic,
+                ),
+            ),
+        };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceeded" => crate::error::SetInstanceProtectionError::LimitExceededFault({
+        "LimitExceeded" => crate::operation::set_instance_protection::SetInstanceProtectionError::LimitExceededFault({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::limit_exceeded_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_limit_exceeded_fault::de_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::SetInstanceProtectionError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ResourceContention" => {
-            crate::error::SetInstanceProtectionError::ResourceContentionFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_contention_fault::Builder::default();
+                    let mut output = crate::types::error::builders::LimitExceededFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_contention_fault::de_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::SetInstanceProtectionError::unhandled)?;
+                    output = crate::protocol_serde::shape_limit_exceeded_fault::de_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::set_instance_protection::SetInstanceProtectionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::SetInstanceProtectionError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceContention" => crate::operation::set_instance_protection::SetInstanceProtectionError::ResourceContentionFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ResourceContentionFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_contention_fault::de_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::set_instance_protection::SetInstanceProtectionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::set_instance_protection::SetInstanceProtectionError::generic(generic)
     })
 }
 
@@ -58,12 +66,12 @@ pub fn de_set_instance_protection_http_error(
 pub fn de_set_instance_protection_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::SetInstanceProtectionOutput,
-    crate::error::SetInstanceProtectionError,
+    crate::operation::set_instance_protection::SetInstanceProtectionOutput,
+    crate::operation::set_instance_protection::SetInstanceProtectionError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::set_instance_protection_output::Builder::default();
+        let mut output = crate::operation::set_instance_protection::builders::SetInstanceProtectionOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

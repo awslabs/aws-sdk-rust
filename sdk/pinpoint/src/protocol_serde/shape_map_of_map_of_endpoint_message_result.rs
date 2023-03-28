@@ -5,7 +5,7 @@ pub(crate) fn de_map_of_map_of_endpoint_message_result<'a, I>(
     Option<
         std::collections::HashMap<
             std::string::String,
-            std::collections::HashMap<std::string::String, crate::model::EndpointMessageResult>,
+            std::collections::HashMap<std::string::String, crate::types::EndpointMessageResult>,
         >,
     >,
     aws_smithy_json::deserialize::error::DeserializeError,

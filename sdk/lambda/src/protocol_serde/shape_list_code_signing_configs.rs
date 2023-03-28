@@ -3,61 +3,62 @@
 pub fn de_list_code_signing_configs_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListCodeSigningConfigsOutput,
-    crate::error::ListCodeSigningConfigsError,
+    crate::operation::list_code_signing_configs::ListCodeSigningConfigsOutput,
+    crate::operation::list_code_signing_configs::ListCodeSigningConfigsError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListCodeSigningConfigsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::list_code_signing_configs::ListCodeSigningConfigsError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::ListCodeSigningConfigsError::unhandled(
-                generic,
-            ))
-        }
-    };
+    let error_code =
+        match generic.code() {
+            Some(code) => code,
+            None => return Err(
+                crate::operation::list_code_signing_configs::ListCodeSigningConfigsError::unhandled(
+                    generic,
+                ),
+            ),
+        };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => {
-            crate::error::ListCodeSigningConfigsError::InvalidParameterValueException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidParameterValueException" => crate::operation::list_code_signing_configs::ListCodeSigningConfigsError::InvalidParameterValueException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_parameter_value_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListCodeSigningConfigsError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_code_signing_configs::ListCodeSigningConfigsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ServiceException" => {
-            crate::error::ListCodeSigningConfigsError::ServiceException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ServiceException" => crate::operation::list_code_signing_configs::ListCodeSigningConfigsError::ServiceException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::service_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ServiceExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_exception::de_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListCodeSigningConfigsError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_exception::de_service_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_code_signing_configs::ListCodeSigningConfigsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::ListCodeSigningConfigsError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::list_code_signing_configs::ListCodeSigningConfigsError::generic(generic)
     })
 }
 
@@ -65,19 +66,21 @@ pub fn de_list_code_signing_configs_http_error(
 pub fn de_list_code_signing_configs_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListCodeSigningConfigsOutput,
-    crate::error::ListCodeSigningConfigsError,
+    crate::operation::list_code_signing_configs::ListCodeSigningConfigsOutput,
+    crate::operation::list_code_signing_configs::ListCodeSigningConfigsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_code_signing_configs_output::Builder::default();
+        let mut output = crate::operation::list_code_signing_configs::builders::ListCodeSigningConfigsOutputBuilder::default();
         let _ = response;
         output =
             crate::protocol_serde::shape_list_code_signing_configs::de_list_code_signing_configs(
                 response.body().as_ref(),
                 output,
             )
-            .map_err(crate::error::ListCodeSigningConfigsError::unhandled)?;
+            .map_err(
+                crate::operation::list_code_signing_configs::ListCodeSigningConfigsError::unhandled,
+            )?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -87,9 +90,9 @@ pub fn de_list_code_signing_configs_http_response(
 
 pub(crate) fn de_list_code_signing_configs(
     value: &[u8],
-    mut builder: crate::output::list_code_signing_configs_output::Builder,
+    mut builder: crate::operation::list_code_signing_configs::builders::ListCodeSigningConfigsOutputBuilder,
 ) -> Result<
-    crate::output::list_code_signing_configs_output::Builder,
+    crate::operation::list_code_signing_configs::builders::ListCodeSigningConfigsOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

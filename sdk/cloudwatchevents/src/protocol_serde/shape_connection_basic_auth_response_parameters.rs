@@ -2,7 +2,7 @@
 pub(crate) fn de_connection_basic_auth_response_parameters<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ConnectionBasicAuthResponseParameters>,
+    Option<crate::types::ConnectionBasicAuthResponseParameters>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::connection_basic_auth_response_parameters::Builder::default();
+                crate::types::builders::ConnectionBasicAuthResponseParametersBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

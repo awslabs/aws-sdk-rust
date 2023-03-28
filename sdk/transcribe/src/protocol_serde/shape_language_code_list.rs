@@ -2,7 +2,7 @@
 pub(crate) fn de_language_code_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::LanguageCodeItem>>,
+    Option<std::vec::Vec<crate::types::LanguageCodeItem>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

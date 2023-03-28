@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_spot_fleet_request_config_data(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::SpotFleetRequestConfigData,
+    input: &crate::types::SpotFleetRequestConfigData,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("AllocationStrategy");
@@ -180,16 +180,16 @@ pub fn ser_spot_fleet_request_config_data(
 
 pub fn de_spot_fleet_request_config_data(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::SpotFleetRequestConfigData, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::SpotFleetRequestConfigData, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::SpotFleetRequestConfigData::builder();
+    let mut builder = crate::types::SpotFleetRequestConfigData::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("allocationStrategy") /* AllocationStrategy com.amazonaws.ec2#SpotFleetRequestConfigData$AllocationStrategy */ =>  {
                 let var_62 =
                     Some(
-                        Result::<crate::model::AllocationStrategy, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::AllocationStrategy::from(
+                        Result::<crate::types::AllocationStrategy, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::AllocationStrategy::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
@@ -202,8 +202,8 @@ pub fn de_spot_fleet_request_config_data(
             s if s.matches("onDemandAllocationStrategy") /* OnDemandAllocationStrategy com.amazonaws.ec2#SpotFleetRequestConfigData$OnDemandAllocationStrategy */ =>  {
                 let var_63 =
                     Some(
-                        Result::<crate::model::OnDemandAllocationStrategy, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::OnDemandAllocationStrategy::from(
+                        Result::<crate::types::OnDemandAllocationStrategy, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::OnDemandAllocationStrategy::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
@@ -239,8 +239,8 @@ pub fn de_spot_fleet_request_config_data(
             s if s.matches("excessCapacityTerminationPolicy") /* ExcessCapacityTerminationPolicy com.amazonaws.ec2#SpotFleetRequestConfigData$ExcessCapacityTerminationPolicy */ =>  {
                 let var_66 =
                     Some(
-                        Result::<crate::model::ExcessCapacityTerminationPolicy, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::ExcessCapacityTerminationPolicy::from(
+                        Result::<crate::types::ExcessCapacityTerminationPolicy, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::ExcessCapacityTerminationPolicy::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
@@ -400,8 +400,8 @@ pub fn de_spot_fleet_request_config_data(
             s if s.matches("type") /* Type com.amazonaws.ec2#SpotFleetRequestConfigData$Type */ =>  {
                 let var_78 =
                     Some(
-                        Result::<crate::model::FleetType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::FleetType::from(
+                        Result::<crate::types::FleetType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::FleetType::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
@@ -457,8 +457,8 @@ pub fn de_spot_fleet_request_config_data(
             s if s.matches("instanceInterruptionBehavior") /* InstanceInterruptionBehavior com.amazonaws.ec2#SpotFleetRequestConfigData$InstanceInterruptionBehavior */ =>  {
                 let var_82 =
                     Some(
-                        Result::<crate::model::InstanceInterruptionBehavior, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::InstanceInterruptionBehavior::from(
+                        Result::<crate::types::InstanceInterruptionBehavior, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::InstanceInterruptionBehavior::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
@@ -509,8 +509,8 @@ pub fn de_spot_fleet_request_config_data(
             s if s.matches("targetCapacityUnitType") /* TargetCapacityUnitType com.amazonaws.ec2#SpotFleetRequestConfigData$TargetCapacityUnitType */ =>  {
                 let var_86 =
                     Some(
-                        Result::<crate::model::TargetCapacityUnitType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::TargetCapacityUnitType::from(
+                        Result::<crate::types::TargetCapacityUnitType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::TargetCapacityUnitType::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

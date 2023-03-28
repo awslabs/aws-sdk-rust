@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_invalid_s3_bucket_name_fault_xml_err(
     inp: &[u8],
-    mut builder: crate::error::invalid_s3_bucket_name_fault::Builder,
+    mut builder: crate::types::error::builders::InvalidS3BucketNameFaultBuilder,
 ) -> Result<
-    crate::error::invalid_s3_bucket_name_fault::Builder,
+    crate::types::error::builders::InvalidS3BucketNameFaultBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

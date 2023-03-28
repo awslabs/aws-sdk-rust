@@ -2,7 +2,7 @@
 pub(crate) fn de_image_pipeline_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ImagePipeline>>,
+    Option<std::vec::Vec<crate::types::ImagePipeline>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_principal_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Principal>>,
+    Option<std::vec::Vec<crate::types::Principal>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

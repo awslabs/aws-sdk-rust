@@ -3,110 +3,113 @@
 pub fn de_delete_stack_instances_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteStackInstancesOutput,
-    crate::error::DeleteStackInstancesError,
+    crate::operation::delete_stack_instances::DeleteStackInstancesOutput,
+    crate::operation::delete_stack_instances::DeleteStackInstancesError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteStackInstancesError::unhandled)?;
+        .map_err(crate::operation::delete_stack_instances::DeleteStackInstancesError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DeleteStackInstancesError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::delete_stack_instances::DeleteStackInstancesError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidOperationException" => {
-            crate::error::DeleteStackInstancesError::InvalidOperationException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidOperationException" => crate::operation::delete_stack_instances::DeleteStackInstancesError::InvalidOperationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_operation_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidOperationExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_operation_exception::de_invalid_operation_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteStackInstancesError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_operation_exception::de_invalid_operation_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_stack_instances::DeleteStackInstancesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "OperationIdAlreadyExistsException" => {
-            crate::error::DeleteStackInstancesError::OperationIdAlreadyExistsException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "OperationIdAlreadyExistsException" => crate::operation::delete_stack_instances::DeleteStackInstancesError::OperationIdAlreadyExistsException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::operation_id_already_exists_exception::Builder::default();
+                    let mut output = crate::types::error::builders::OperationIdAlreadyExistsExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_operation_id_already_exists_exception::de_operation_id_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteStackInstancesError::unhandled)?;
+                    output = crate::protocol_serde::shape_operation_id_already_exists_exception::de_operation_id_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_stack_instances::DeleteStackInstancesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "OperationInProgressException" => {
-            crate::error::DeleteStackInstancesError::OperationInProgressException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "OperationInProgressException" => crate::operation::delete_stack_instances::DeleteStackInstancesError::OperationInProgressException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::operation_in_progress_exception::Builder::default();
+                    let mut output = crate::types::error::builders::OperationInProgressExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_operation_in_progress_exception::de_operation_in_progress_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteStackInstancesError::unhandled)?;
+                    output = crate::protocol_serde::shape_operation_in_progress_exception::de_operation_in_progress_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_stack_instances::DeleteStackInstancesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "StackSetNotFoundException" => {
-            crate::error::DeleteStackInstancesError::StackSetNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "StackSetNotFoundException" => crate::operation::delete_stack_instances::DeleteStackInstancesError::StackSetNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::stack_set_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::StackSetNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_stack_set_not_found_exception::de_stack_set_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteStackInstancesError::unhandled)?;
+                    output = crate::protocol_serde::shape_stack_set_not_found_exception::de_stack_set_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_stack_instances::DeleteStackInstancesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "StaleRequestException" => {
-            crate::error::DeleteStackInstancesError::StaleRequestException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "StaleRequestException" => crate::operation::delete_stack_instances::DeleteStackInstancesError::StaleRequestException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::stale_request_exception::Builder::default();
+                    let mut output = crate::types::error::builders::StaleRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_stale_request_exception::de_stale_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteStackInstancesError::unhandled)?;
+                    output = crate::protocol_serde::shape_stale_request_exception::de_stale_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_stack_instances::DeleteStackInstancesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DeleteStackInstancesError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::delete_stack_instances::DeleteStackInstancesError::generic(generic)
     })
 }
 
@@ -114,18 +117,18 @@ pub fn de_delete_stack_instances_http_error(
 pub fn de_delete_stack_instances_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteStackInstancesOutput,
-    crate::error::DeleteStackInstancesError,
+    crate::operation::delete_stack_instances::DeleteStackInstancesOutput,
+    crate::operation::delete_stack_instances::DeleteStackInstancesError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_stack_instances_output::Builder::default();
+        let mut output = crate::operation::delete_stack_instances::builders::DeleteStackInstancesOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_delete_stack_instances::de_delete_stack_instances(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DeleteStackInstancesError::unhandled)?;
+        .map_err(crate::operation::delete_stack_instances::DeleteStackInstancesError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -136,9 +139,9 @@ pub fn de_delete_stack_instances_http_response(
 #[allow(unused_mut)]
 pub fn de_delete_stack_instances(
     inp: &[u8],
-    mut builder: crate::output::delete_stack_instances_output::Builder,
+    mut builder: crate::operation::delete_stack_instances::builders::DeleteStackInstancesOutputBuilder,
 ) -> Result<
-    crate::output::delete_stack_instances_output::Builder,
+    crate::operation::delete_stack_instances::builders::DeleteStackInstancesOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

@@ -2,28 +2,34 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_asset_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeleteAssetOutput, crate::error::DeleteAssetError> {
+) -> std::result::Result<
+    crate::operation::delete_asset::DeleteAssetOutput,
+    crate::operation::delete_asset::DeleteAssetError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteAssetError::unhandled)?;
+        .map_err(crate::operation::delete_asset::DeleteAssetError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DeleteAssetError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::delete_asset::DeleteAssetError::unhandled(
+                generic,
+            ))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ConflictingOperationException" => {
-            crate::error::DeleteAssetError::ConflictingOperationException({
+            crate::operation::delete_asset::DeleteAssetError::ConflictingOperationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::conflicting_operation_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ConflictingOperationExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_conflicting_operation_exception::de_conflicting_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAssetError::unhandled)?;
+                    output = crate::protocol_serde::shape_conflicting_operation_exception::de_conflicting_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_asset::DeleteAssetError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -33,83 +39,99 @@ pub fn de_delete_asset_http_error(
                 tmp
             })
         }
-        "InternalFailureException" => crate::error::DeleteAssetError::InternalFailureException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "InternalFailureException" => {
+            crate::operation::delete_asset::DeleteAssetError::InternalFailureException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_failure_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAssetError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InvalidRequestException" => crate::error::DeleteAssetError::InvalidRequestException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InternalFailureExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_asset::DeleteAssetError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidRequestException" => {
+            crate::operation::delete_asset::DeleteAssetError::InvalidRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_request_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAssetError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ResourceNotFoundException" => crate::error::DeleteAssetError::ResourceNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InvalidRequestExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_asset::DeleteAssetError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::operation::delete_asset::DeleteAssetError::ResourceNotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::resource_not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAssetError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ThrottlingException" => crate::error::DeleteAssetError::ThrottlingException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_asset::DeleteAssetError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ThrottlingException" => {
+            crate::operation::delete_asset::DeleteAssetError::ThrottlingException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::throttling_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAssetError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::DeleteAssetError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_asset::DeleteAssetError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::delete_asset::DeleteAssetError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_asset_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeleteAssetOutput, crate::error::DeleteAssetError> {
+) -> std::result::Result<
+    crate::operation::delete_asset::DeleteAssetOutput,
+    crate::operation::delete_asset::DeleteAssetError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_asset_output::Builder::default();
+        let mut output =
+            crate::operation::delete_asset::builders::DeleteAssetOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_delete_asset::de_delete_asset(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DeleteAssetError::unhandled)?;
+        .map_err(crate::operation::delete_asset::DeleteAssetError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -119,9 +141,9 @@ pub fn de_delete_asset_http_response(
 
 pub(crate) fn de_delete_asset(
     value: &[u8],
-    mut builder: crate::output::delete_asset_output::Builder,
+    mut builder: crate::operation::delete_asset::builders::DeleteAssetOutputBuilder,
 ) -> Result<
-    crate::output::delete_asset_output::Builder,
+    crate::operation::delete_asset::builders::DeleteAssetOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

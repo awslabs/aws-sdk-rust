@@ -3,93 +3,96 @@
 pub fn de_failover_global_cluster_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::FailoverGlobalClusterOutput,
-    crate::error::FailoverGlobalClusterError,
+    crate::operation::failover_global_cluster::FailoverGlobalClusterOutput,
+    crate::operation::failover_global_cluster::FailoverGlobalClusterError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::FailoverGlobalClusterError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::failover_global_cluster::FailoverGlobalClusterError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    let error_code = match generic.code() {
-        Some(code) => code,
-        None => return Err(crate::error::FailoverGlobalClusterError::unhandled(generic)),
-    };
+    let error_code =
+        match generic.code() {
+            Some(code) => code,
+            None => return Err(
+                crate::operation::failover_global_cluster::FailoverGlobalClusterError::unhandled(
+                    generic,
+                ),
+            ),
+        };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBClusterNotFoundFault" => {
-            crate::error::FailoverGlobalClusterError::DbClusterNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "DBClusterNotFoundFault" => crate::operation::failover_global_cluster::FailoverGlobalClusterError::DbClusterNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::db_cluster_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::DbClusterNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_db_cluster_not_found_fault::de_db_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::FailoverGlobalClusterError::unhandled)?;
+                    output = crate::protocol_serde::shape_db_cluster_not_found_fault::de_db_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::failover_global_cluster::FailoverGlobalClusterError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "GlobalClusterNotFoundFault" => {
-            crate::error::FailoverGlobalClusterError::GlobalClusterNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "GlobalClusterNotFoundFault" => crate::operation::failover_global_cluster::FailoverGlobalClusterError::GlobalClusterNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::global_cluster_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::GlobalClusterNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_global_cluster_not_found_fault::de_global_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::FailoverGlobalClusterError::unhandled)?;
+                    output = crate::protocol_serde::shape_global_cluster_not_found_fault::de_global_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::failover_global_cluster::FailoverGlobalClusterError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidDBClusterStateFault" => {
-            crate::error::FailoverGlobalClusterError::InvalidDbClusterStateFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidDBClusterStateFault" => crate::operation::failover_global_cluster::FailoverGlobalClusterError::InvalidDbClusterStateFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_db_cluster_state_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidDbClusterStateFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_db_cluster_state_fault::de_invalid_db_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::FailoverGlobalClusterError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_db_cluster_state_fault::de_invalid_db_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::failover_global_cluster::FailoverGlobalClusterError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidGlobalClusterStateFault" => {
-            crate::error::FailoverGlobalClusterError::InvalidGlobalClusterStateFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidGlobalClusterStateFault" => crate::operation::failover_global_cluster::FailoverGlobalClusterError::InvalidGlobalClusterStateFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_global_cluster_state_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidGlobalClusterStateFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_global_cluster_state_fault::de_invalid_global_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::FailoverGlobalClusterError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_global_cluster_state_fault::de_invalid_global_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::failover_global_cluster::FailoverGlobalClusterError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::FailoverGlobalClusterError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::failover_global_cluster::FailoverGlobalClusterError::generic(generic)
     })
 }
 
@@ -97,18 +100,20 @@ pub fn de_failover_global_cluster_http_error(
 pub fn de_failover_global_cluster_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::FailoverGlobalClusterOutput,
-    crate::error::FailoverGlobalClusterError,
+    crate::operation::failover_global_cluster::FailoverGlobalClusterOutput,
+    crate::operation::failover_global_cluster::FailoverGlobalClusterError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::failover_global_cluster_output::Builder::default();
+        let mut output = crate::operation::failover_global_cluster::builders::FailoverGlobalClusterOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_failover_global_cluster::de_failover_global_cluster(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::FailoverGlobalClusterError::unhandled)?;
+        .map_err(
+            crate::operation::failover_global_cluster::FailoverGlobalClusterError::unhandled,
+        )?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -119,9 +124,9 @@ pub fn de_failover_global_cluster_http_response(
 #[allow(unused_mut)]
 pub fn de_failover_global_cluster(
     inp: &[u8],
-    mut builder: crate::output::failover_global_cluster_output::Builder,
+    mut builder: crate::operation::failover_global_cluster::builders::FailoverGlobalClusterOutputBuilder,
 ) -> Result<
-    crate::output::failover_global_cluster_output::Builder,
+    crate::operation::failover_global_cluster::builders::FailoverGlobalClusterOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

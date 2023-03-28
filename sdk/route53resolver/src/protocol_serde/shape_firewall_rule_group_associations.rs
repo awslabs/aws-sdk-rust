@@ -2,7 +2,7 @@
 pub(crate) fn de_firewall_rule_group_associations<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::FirewallRuleGroupAssociation>>,
+    Option<std::vec::Vec<crate::types::FirewallRuleGroupAssociation>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

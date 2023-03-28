@@ -2,7 +2,7 @@
 pub(crate) fn de_static_image_deactivate_schedule_action_settings<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::StaticImageDeactivateScheduleActionSettings>,
+    Option<crate::types::StaticImageDeactivateScheduleActionSettings>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,8 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::static_image_deactivate_schedule_action_settings::Builder::default();
+                crate::types::builders::StaticImageDeactivateScheduleActionSettingsBuilder::default(
+                );
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -67,7 +68,7 @@ where
 
 pub fn ser_static_image_deactivate_schedule_action_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::StaticImageDeactivateScheduleActionSettings,
+    input: &crate::types::StaticImageDeactivateScheduleActionSettings,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if input.fade_out != 0 {
         object.key("fadeOut").number(

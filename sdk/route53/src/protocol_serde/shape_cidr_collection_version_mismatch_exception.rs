@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_cidr_collection_version_mismatch_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::cidr_collection_version_mismatch_exception::Builder,
+    mut builder: crate::types::error::builders::CidrCollectionVersionMismatchExceptionBuilder,
 ) -> Result<
-    crate::error::cidr_collection_version_mismatch_exception::Builder,
+    crate::types::error::builders::CidrCollectionVersionMismatchExceptionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

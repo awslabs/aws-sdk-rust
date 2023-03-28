@@ -2,7 +2,7 @@
 pub(crate) fn de_output_location<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::OutputLocation>,
+    Option<crate::types::OutputLocation>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::output_location::Builder::default();
+            let mut builder = crate::types::builders::OutputLocationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -55,7 +55,7 @@ where
 
 pub fn ser_output_location(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::OutputLocation,
+    input: &crate::types::OutputLocation,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.s3 {
         #[allow(unused_mut)]

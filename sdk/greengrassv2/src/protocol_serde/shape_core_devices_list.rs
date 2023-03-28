@@ -2,7 +2,7 @@
 pub(crate) fn de_core_devices_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CoreDevice>>,
+    Option<std::vec::Vec<crate::types::CoreDevice>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

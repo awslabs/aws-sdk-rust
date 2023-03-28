@@ -2,7 +2,7 @@
 pub fn de_replace_root_volume_tasks(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::ReplaceRootVolumeTask>,
+    std::vec::Vec<crate::types::ReplaceRootVolumeTask>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

@@ -2,7 +2,7 @@
 pub(crate) fn de_studio_lifecycle_config_details<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::StudioLifecycleConfigDetails>,
+    Option<crate::types::StudioLifecycleConfigDetails>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::studio_lifecycle_config_details::Builder::default();
+            let mut builder =
+                crate::types::builders::StudioLifecycleConfigDetailsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -64,7 +65,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::StudioLifecycleConfigAppType::from(
+                                            crate::types::StudioLifecycleConfigAppType::from(
                                                 u.as_ref(),
                                             )
                                         })

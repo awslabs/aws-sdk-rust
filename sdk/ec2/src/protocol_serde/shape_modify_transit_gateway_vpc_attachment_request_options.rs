@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_modify_transit_gateway_vpc_attachment_request_options(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::ModifyTransitGatewayVpcAttachmentRequestOptions,
+    input: &crate::types::ModifyTransitGatewayVpcAttachmentRequestOptions,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("DnsSupport");

@@ -2,7 +2,7 @@
 pub(crate) fn de_launch_profile<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::LaunchProfile>,
+    Option<crate::types::LaunchProfile>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::launch_profile::Builder::default();
+            let mut builder = crate::types::builders::LaunchProfileBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -93,7 +93,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::LaunchProfileState::from(u.as_ref())
+                                            crate::types::LaunchProfileState::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -106,7 +106,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::LaunchProfileStatusCode::from(u.as_ref())
+                                            crate::types::LaunchProfileStatusCode::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

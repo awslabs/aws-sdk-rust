@@ -2,7 +2,7 @@
 pub(crate) fn de_secondary_indexes_capacity_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<std::string::String, crate::model::Capacity>>,
+    Option<std::collections::HashMap<std::string::String, crate::types::Capacity>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

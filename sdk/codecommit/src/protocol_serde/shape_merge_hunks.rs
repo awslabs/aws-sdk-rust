@@ -2,7 +2,7 @@
 pub(crate) fn de_merge_hunks<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::MergeHunk>>,
+    Option<std::vec::Vec<crate::types::MergeHunk>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

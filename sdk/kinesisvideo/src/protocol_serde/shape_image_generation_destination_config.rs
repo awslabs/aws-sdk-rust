@@ -2,7 +2,7 @@
 pub(crate) fn de_image_generation_destination_config<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ImageGenerationDestinationConfig>,
+    Option<crate::types::ImageGenerationDestinationConfig>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::image_generation_destination_config::Builder::default();
+            let mut builder =
+                crate::types::builders::ImageGenerationDestinationConfigBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -66,7 +67,7 @@ where
 
 pub fn ser_image_generation_destination_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::ImageGenerationDestinationConfig,
+    input: &crate::types::ImageGenerationDestinationConfig,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.uri {
         object.key("Uri").string(var_1.as_str());

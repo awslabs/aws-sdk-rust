@@ -2,7 +2,7 @@
 pub(crate) fn de_vector_enrichment_job_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ListVectorEnrichmentJobOutputConfig>>,
+    Option<std::vec::Vec<crate::types::ListVectorEnrichmentJobOutputConfig>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

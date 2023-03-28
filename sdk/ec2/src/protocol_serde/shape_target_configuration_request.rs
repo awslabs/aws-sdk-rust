@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_target_configuration_request(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::TargetConfigurationRequest,
+    input: &crate::types::TargetConfigurationRequest,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("InstanceCount");

@@ -2,28 +2,35 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_account_status_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetAccountStatusOutput, crate::error::GetAccountStatusError>
-{
+) -> std::result::Result<
+    crate::operation::get_account_status::GetAccountStatusOutput,
+    crate::operation::get_account_status::GetAccountStatusError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetAccountStatusError::unhandled)?;
+        .map_err(crate::operation::get_account_status::GetAccountStatusError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::GetAccountStatusError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::get_account_status::GetAccountStatusError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalServerException" => {
-            crate::error::GetAccountStatusError::InternalServerException({
+            crate::operation::get_account_status::GetAccountStatusError::InternalServerException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::InternalServerExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAccountStatusError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_account_status::GetAccountStatusError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -33,24 +40,28 @@ pub fn de_get_account_status_http_error(
                 tmp
             })
         }
-        _ => crate::error::GetAccountStatusError::generic(generic),
+        _ => crate::operation::get_account_status::GetAccountStatusError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_account_status_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetAccountStatusOutput, crate::error::GetAccountStatusError>
-{
+) -> std::result::Result<
+    crate::operation::get_account_status::GetAccountStatusOutput,
+    crate::operation::get_account_status::GetAccountStatusError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_account_status_output::Builder::default();
+        let mut output =
+            crate::operation::get_account_status::builders::GetAccountStatusOutputBuilder::default(
+            );
         let _ = response;
         output = crate::protocol_serde::shape_get_account_status::de_get_account_status(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::GetAccountStatusError::unhandled)?;
+        .map_err(crate::operation::get_account_status::GetAccountStatusError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -60,9 +71,9 @@ pub fn de_get_account_status_http_response(
 
 pub(crate) fn de_get_account_status(
     value: &[u8],
-    mut builder: crate::output::get_account_status_output::Builder,
+    mut builder: crate::operation::get_account_status::builders::GetAccountStatusOutputBuilder,
 ) -> Result<
-    crate::output::get_account_status_output::Builder,
+    crate::operation::get_account_status::builders::GetAccountStatusOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =
@@ -82,7 +93,7 @@ pub(crate) fn de_get_account_status(
                             )?
                             .map(|s| {
                                 s.to_unescaped()
-                                    .map(|u| crate::model::AccountStatus::from(u.as_ref()))
+                                    .map(|u| crate::types::AccountStatus::from(u.as_ref()))
                             })
                             .transpose()?,
                         );

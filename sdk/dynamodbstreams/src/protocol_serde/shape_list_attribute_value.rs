@@ -2,7 +2,7 @@
 pub(crate) fn de_list_attribute_value<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AttributeValue>>,
+    Option<std::vec::Vec<crate::types::AttributeValue>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

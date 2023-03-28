@@ -2,7 +2,7 @@
 pub(crate) fn de_executors_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ExecutorsSummary>>,
+    Option<std::vec::Vec<crate::types::ExecutorsSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

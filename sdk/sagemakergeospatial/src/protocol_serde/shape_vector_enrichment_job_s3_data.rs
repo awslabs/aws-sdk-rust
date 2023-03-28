@@ -2,7 +2,7 @@
 pub(crate) fn de_vector_enrichment_job_s3_data<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::VectorEnrichmentJobS3Data>,
+    Option<crate::types::VectorEnrichmentJobS3Data>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::vector_enrichment_job_s3_data::Builder::default();
+            let mut builder = crate::types::builders::VectorEnrichmentJobS3DataBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -66,7 +66,7 @@ where
 
 pub fn ser_vector_enrichment_job_s3_data(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::VectorEnrichmentJobS3Data,
+    input: &crate::types::VectorEnrichmentJobS3Data,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.s3_uri {
         object.key("S3Uri").string(var_1.as_str());

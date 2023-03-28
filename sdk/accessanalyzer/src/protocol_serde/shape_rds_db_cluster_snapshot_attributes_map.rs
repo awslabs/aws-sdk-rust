@@ -5,7 +5,7 @@ pub(crate) fn de_rds_db_cluster_snapshot_attributes_map<'a, I>(
     Option<
         std::collections::HashMap<
             std::string::String,
-            crate::model::RdsDbClusterSnapshotAttributeValue,
+            crate::types::RdsDbClusterSnapshotAttributeValue,
         >,
     >,
     aws_smithy_json::deserialize::error::DeserializeError,

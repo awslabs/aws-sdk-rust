@@ -2,7 +2,7 @@
 pub(crate) fn de_media_source_config<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::MediaSourceConfig>,
+    Option<crate::types::MediaSourceConfig>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::media_source_config::Builder::default();
+            let mut builder = crate::types::builders::MediaSourceConfigBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -39,7 +39,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::MediaUriType::from(u.as_ref()))
+                                            .map(|u| crate::types::MediaUriType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -69,7 +69,7 @@ where
 
 pub fn ser_media_source_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::MediaSourceConfig,
+    input: &crate::types::MediaSourceConfig,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.media_uri_secret_arn {
         object.key("MediaUriSecretArn").string(var_1.as_str());

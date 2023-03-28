@@ -2,7 +2,7 @@
 pub(crate) fn de_stateless_custom_publish_metric_action_dimensions_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::StatelessCustomPublishMetricActionDimension>>,
+    Option<std::vec::Vec<crate::types::StatelessCustomPublishMetricActionDimension>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

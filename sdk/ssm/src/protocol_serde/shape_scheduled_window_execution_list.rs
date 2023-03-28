@@ -2,7 +2,7 @@
 pub(crate) fn de_scheduled_window_execution_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ScheduledWindowExecution>>,
+    Option<std::vec::Vec<crate::types::ScheduledWindowExecution>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

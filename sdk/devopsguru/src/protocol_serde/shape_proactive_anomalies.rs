@@ -2,7 +2,7 @@
 pub(crate) fn de_proactive_anomalies<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ProactiveAnomalySummary>>,
+    Option<std::vec::Vec<crate::types::ProactiveAnomalySummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

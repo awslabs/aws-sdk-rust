@@ -2,7 +2,7 @@
 pub(crate) fn de_sheet_text_box_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SheetTextBox>>,
+    Option<std::vec::Vec<crate::types::SheetTextBox>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

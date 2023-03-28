@@ -2,15 +2,15 @@
 pub fn de_voice_channel_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::VoiceChannelResponse>,
-    crate::error::DeleteVoiceChannelError,
+    std::option::Option<crate::types::VoiceChannelResponse>,
+    crate::operation::delete_voice_channel::DeleteVoiceChannelError,
 > {
     (!body.is_empty())
         .then(|| {
             crate::protocol_serde::shape_voice_channel_response::de_voice_channel_response_payload(
                 body,
             )
-            .map_err(crate::error::DeleteVoiceChannelError::unhandled)
+            .map_err(crate::operation::delete_voice_channel::DeleteVoiceChannelError::unhandled)
         })
         .transpose()
 }

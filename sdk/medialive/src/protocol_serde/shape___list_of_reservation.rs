@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_reservation<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Reservation>>,
+    Option<std::vec::Vec<crate::types::Reservation>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

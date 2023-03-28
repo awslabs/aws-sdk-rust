@@ -2,7 +2,7 @@
 pub(crate) fn de_zeppelin_monitoring_configuration_description<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ZeppelinMonitoringConfigurationDescription>,
+    Option<crate::types::ZeppelinMonitoringConfigurationDescription>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,8 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::zeppelin_monitoring_configuration_description::Builder::default();
+                crate::types::builders::ZeppelinMonitoringConfigurationDescriptionBuilder::default(
+                );
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -31,7 +32,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::LogLevel::from(u.as_ref()))
+                                            .map(|u| crate::types::LogLevel::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

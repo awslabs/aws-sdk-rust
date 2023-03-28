@@ -2,7 +2,7 @@
 pub(crate) fn de_stream_info_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::StreamInfo>>,
+    Option<std::vec::Vec<crate::types::StreamInfo>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_configuration_tag<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ConfigurationTag>,
+    Option<crate::types::ConfigurationTag>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::configuration_tag::Builder::default();
+            let mut builder = crate::types::builders::ConfigurationTagBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ConfigurationItemType::from(u.as_ref())
+                                            crate::types::ConfigurationItemType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

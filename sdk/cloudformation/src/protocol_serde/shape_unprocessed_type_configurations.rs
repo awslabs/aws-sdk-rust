@@ -2,7 +2,7 @@
 pub fn de_unprocessed_type_configurations(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::TypeConfigurationIdentifier>,
+    std::vec::Vec<crate::types::TypeConfigurationIdentifier>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

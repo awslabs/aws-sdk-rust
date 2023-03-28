@@ -2,7 +2,7 @@
 pub(crate) fn de_extracted_characters_list_item<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ExtractedCharactersListItem>,
+    Option<crate::types::ExtractedCharactersListItem>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::extracted_characters_list_item::Builder::default();
+            let mut builder = crate::types::builders::ExtractedCharactersListItemBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

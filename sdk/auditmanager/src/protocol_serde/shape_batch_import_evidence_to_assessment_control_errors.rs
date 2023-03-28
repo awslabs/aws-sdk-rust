@@ -2,7 +2,7 @@
 pub(crate) fn de_batch_import_evidence_to_assessment_control_errors<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::BatchImportEvidenceToAssessmentControlError>>,
+    Option<std::vec::Vec<crate::types::BatchImportEvidenceToAssessmentControlError>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

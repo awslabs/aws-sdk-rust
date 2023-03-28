@@ -2,7 +2,7 @@
 pub(crate) fn de_get_resource_policies_response_entry<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::GetResourcePoliciesResponseEntry>,
+    Option<crate::types::GetResourcePoliciesResponseEntry>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::get_resource_policies_response_entry::Builder::default();
+                crate::types::builders::GetResourcePoliciesResponseEntryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

@@ -2,7 +2,7 @@
 pub(crate) fn de_active_contexts_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ActiveContext>>,
+    Option<std::vec::Vec<crate::types::ActiveContext>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

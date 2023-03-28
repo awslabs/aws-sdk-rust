@@ -2,107 +2,116 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_db_snapshot_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::CreateDbSnapshotOutput, crate::error::CreateDBSnapshotError>
-{
+) -> std::result::Result<
+    crate::operation::create_db_snapshot::CreateDbSnapshotOutput,
+    crate::operation::create_db_snapshot::CreateDBSnapshotError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::CreateDBSnapshotError::unhandled)?;
+        .map_err(crate::operation::create_db_snapshot::CreateDBSnapshotError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::CreateDBSnapshotError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::create_db_snapshot::CreateDBSnapshotError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBInstanceNotFound" => crate::error::CreateDBSnapshotError::DbInstanceNotFoundFault({
+        "DBInstanceNotFound" => crate::operation::create_db_snapshot::CreateDBSnapshotError::DbInstanceNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::db_instance_not_found_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_db_instance_not_found_fault::de_db_instance_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBSnapshotError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::DbInstanceNotFoundFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_db_instance_not_found_fault::de_db_instance_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_db_snapshot::CreateDBSnapshotError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "DBSnapshotAlreadyExists" => {
-            crate::error::CreateDBSnapshotError::DbSnapshotAlreadyExistsFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "DBSnapshotAlreadyExists" => crate::operation::create_db_snapshot::CreateDBSnapshotError::DbSnapshotAlreadyExistsFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::db_snapshot_already_exists_fault::Builder::default();
+                    let mut output = crate::types::error::builders::DbSnapshotAlreadyExistsFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_db_snapshot_already_exists_fault::de_db_snapshot_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBSnapshotError::unhandled)?;
+                    output = crate::protocol_serde::shape_db_snapshot_already_exists_fault::de_db_snapshot_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_db_snapshot::CreateDBSnapshotError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidDBInstanceState" => {
-            crate::error::CreateDBSnapshotError::InvalidDbInstanceStateFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidDBInstanceState" => crate::operation::create_db_snapshot::CreateDBSnapshotError::InvalidDbInstanceStateFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_db_instance_state_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidDbInstanceStateFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_db_instance_state_fault::de_invalid_db_instance_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBSnapshotError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_db_instance_state_fault::de_invalid_db_instance_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_db_snapshot::CreateDBSnapshotError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "SnapshotQuotaExceeded" => {
-            crate::error::CreateDBSnapshotError::SnapshotQuotaExceededFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "SnapshotQuotaExceeded" => crate::operation::create_db_snapshot::CreateDBSnapshotError::SnapshotQuotaExceededFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::snapshot_quota_exceeded_fault::Builder::default();
+                    let mut output = crate::types::error::builders::SnapshotQuotaExceededFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_snapshot_quota_exceeded_fault::de_snapshot_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBSnapshotError::unhandled)?;
+                    output = crate::protocol_serde::shape_snapshot_quota_exceeded_fault::de_snapshot_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_db_snapshot::CreateDBSnapshotError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::CreateDBSnapshotError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::create_db_snapshot::CreateDBSnapshotError::generic(generic)
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_db_snapshot_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::CreateDbSnapshotOutput, crate::error::CreateDBSnapshotError>
-{
+) -> std::result::Result<
+    crate::operation::create_db_snapshot::CreateDbSnapshotOutput,
+    crate::operation::create_db_snapshot::CreateDBSnapshotError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::create_db_snapshot_output::Builder::default();
+        let mut output =
+            crate::operation::create_db_snapshot::builders::CreateDbSnapshotOutputBuilder::default(
+            );
         let _ = response;
         output = crate::protocol_serde::shape_create_db_snapshot::de_create_db_snapshot(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::CreateDBSnapshotError::unhandled)?;
+        .map_err(crate::operation::create_db_snapshot::CreateDBSnapshotError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -113,9 +122,11 @@ pub fn de_create_db_snapshot_http_response(
 #[allow(unused_mut)]
 pub fn de_create_db_snapshot(
     inp: &[u8],
-    mut builder: crate::output::create_db_snapshot_output::Builder,
-) -> Result<crate::output::create_db_snapshot_output::Builder, aws_smithy_xml::decode::XmlDecodeError>
-{
+    mut builder: crate::operation::create_db_snapshot::builders::CreateDbSnapshotOutputBuilder,
+) -> Result<
+    crate::operation::create_db_snapshot::builders::CreateDbSnapshotOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

@@ -2,10 +2,10 @@
 pub fn de_profiling_group_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::ProfilingGroupDescription>,
-    crate::error::UpdateProfilingGroupError,
+    std::option::Option<crate::types::ProfilingGroupDescription>,
+    crate::operation::update_profiling_group::UpdateProfilingGroupError,
 > {
     (!body.is_empty()).then(||{
-        crate::protocol_serde::shape_profiling_group_description::de_profiling_group_description_payload(body).map_err(crate::error::UpdateProfilingGroupError::unhandled)
+        crate::protocol_serde::shape_profiling_group_description::de_profiling_group_description_payload(body).map_err(crate::operation::update_profiling_group::UpdateProfilingGroupError::unhandled)
     }).transpose()
 }

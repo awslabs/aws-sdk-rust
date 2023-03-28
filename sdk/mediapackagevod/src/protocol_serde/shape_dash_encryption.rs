@@ -2,7 +2,7 @@
 pub(crate) fn de_dash_encryption<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::DashEncryption>,
+    Option<crate::types::DashEncryption>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::dash_encryption::Builder::default();
+            let mut builder = crate::types::builders::DashEncryptionBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -53,7 +53,7 @@ where
 
 pub fn ser_dash_encryption(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::DashEncryption,
+    input: &crate::types::DashEncryption,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.speke_key_provider {
         #[allow(unused_mut)]

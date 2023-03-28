@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_query_string_key_value_pair(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::QueryStringKeyValuePair,
+    input: &crate::types::QueryStringKeyValuePair,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Key");
@@ -19,9 +19,9 @@ pub fn ser_query_string_key_value_pair(
 
 pub fn de_query_string_key_value_pair(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::QueryStringKeyValuePair, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::QueryStringKeyValuePair, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::QueryStringKeyValuePair::builder();
+    let mut builder = crate::types::QueryStringKeyValuePair::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Key") /* Key com.amazonaws.elasticloadbalancingv2#QueryStringKeyValuePair$Key */ =>  {

@@ -2,7 +2,7 @@
 pub(crate) fn de_mongo_db_target_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::MongoDbTarget>>,
+    Option<std::vec::Vec<crate::types::MongoDbTarget>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

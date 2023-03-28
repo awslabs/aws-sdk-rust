@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_spot_maintenance_strategies(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::SpotMaintenanceStrategies,
+    input: &crate::types::SpotMaintenanceStrategies,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("CapacityRebalance");
@@ -16,9 +16,9 @@ pub fn ser_spot_maintenance_strategies(
 
 pub fn de_spot_maintenance_strategies(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::SpotMaintenanceStrategies, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::SpotMaintenanceStrategies, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::SpotMaintenanceStrategies::builder();
+    let mut builder = crate::types::SpotMaintenanceStrategies::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("capacityRebalance") /* CapacityRebalance com.amazonaws.ec2#SpotMaintenanceStrategies$CapacityRebalance */ =>  {

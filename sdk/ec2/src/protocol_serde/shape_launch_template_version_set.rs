@@ -2,7 +2,7 @@
 pub fn de_launch_template_version_set(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::LaunchTemplateVersion>,
+    std::vec::Vec<crate::types::LaunchTemplateVersion>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

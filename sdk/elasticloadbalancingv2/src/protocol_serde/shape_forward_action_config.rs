@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_forward_action_config(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::ForwardActionConfig,
+    input: &crate::types::ForwardActionConfig,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("TargetGroups");
@@ -27,9 +27,9 @@ pub fn ser_forward_action_config(
 
 pub fn de_forward_action_config(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::ForwardActionConfig, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::ForwardActionConfig, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::ForwardActionConfig::builder();
+    let mut builder = crate::types::ForwardActionConfig::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("TargetGroups") /* TargetGroups com.amazonaws.elasticloadbalancingv2#ForwardActionConfig$TargetGroups */ =>  {

@@ -2,7 +2,7 @@
 pub(crate) fn de_custom_response_bodies<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<std::string::String, crate::model::CustomResponseBody>>,
+    Option<std::collections::HashMap<std::string::String, crate::types::CustomResponseBody>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

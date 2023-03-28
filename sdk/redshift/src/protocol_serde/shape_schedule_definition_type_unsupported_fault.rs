@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_schedule_definition_type_unsupported_fault_xml_err(
     inp: &[u8],
-    mut builder: crate::error::schedule_definition_type_unsupported_fault::Builder,
+    mut builder: crate::types::error::builders::ScheduleDefinitionTypeUnsupportedFaultBuilder,
 ) -> Result<
-    crate::error::schedule_definition_type_unsupported_fault::Builder,
+    crate::types::error::builders::ScheduleDefinitionTypeUnsupportedFaultBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

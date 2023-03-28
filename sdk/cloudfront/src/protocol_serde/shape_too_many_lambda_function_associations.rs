@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_too_many_lambda_function_associations_xml_err(
     inp: &[u8],
-    mut builder: crate::error::too_many_lambda_function_associations::Builder,
+    mut builder: crate::types::error::builders::TooManyLambdaFunctionAssociationsBuilder,
 ) -> Result<
-    crate::error::too_many_lambda_function_associations::Builder,
+    crate::types::error::builders::TooManyLambdaFunctionAssociationsBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

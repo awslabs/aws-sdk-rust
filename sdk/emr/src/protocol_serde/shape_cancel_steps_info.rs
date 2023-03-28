@@ -2,7 +2,7 @@
 pub(crate) fn de_cancel_steps_info<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::CancelStepsInfo>,
+    Option<crate::types::CancelStepsInfo>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::cancel_steps_info::Builder::default();
+            let mut builder = crate::types::builders::CancelStepsInfoBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -39,7 +39,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::CancelStepsRequestStatus::from(u.as_ref())
+                                            crate::types::CancelStepsRequestStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

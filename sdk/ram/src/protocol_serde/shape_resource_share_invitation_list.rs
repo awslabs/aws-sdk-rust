@@ -2,7 +2,7 @@
 pub(crate) fn de_resource_share_invitation_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ResourceShareInvitation>>,
+    Option<std::vec::Vec<crate::types::ResourceShareInvitation>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

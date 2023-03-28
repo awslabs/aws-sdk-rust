@@ -2,7 +2,7 @@
 pub(crate) fn de_sender_id_information_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SenderIdInformation>>,
+    Option<std::vec::Vec<crate::types::SenderIdInformation>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

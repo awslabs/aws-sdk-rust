@@ -2,7 +2,7 @@
 pub(crate) fn de_assistant_association_output_data<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::AssistantAssociationOutputData>,
+    Option<crate::types::AssistantAssociationOutputData>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -29,14 +29,14 @@ where
                     }
                     variant = match key.to_unescaped()?.as_ref() {
                             "knowledgeBaseAssociation" => {
-                                Some(crate::model::AssistantAssociationOutputData::KnowledgeBaseAssociation(
+                                Some(crate::types::AssistantAssociationOutputData::KnowledgeBaseAssociation(
                                     crate::protocol_serde::shape_knowledge_base_association_data::de_knowledge_base_association_data(tokens)?
                                     .ok_or_else(|| aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'knowledgeBaseAssociation' cannot be null"))?
                                 ))
                             }
                             _ => {
                                                                       aws_smithy_json::deserialize::token::skip_value(tokens)?;
-                                                                      Some(crate::model::AssistantAssociationOutputData::Unknown)
+                                                                      Some(crate::types::AssistantAssociationOutputData::Unknown)
                                                                     }
                         };
                 }

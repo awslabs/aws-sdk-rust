@@ -2,53 +2,66 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_publisher_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DescribePublisherOutput, crate::error::DescribePublisherError>
-{
+) -> std::result::Result<
+    crate::operation::describe_publisher::DescribePublisherOutput,
+    crate::operation::describe_publisher::DescribePublisherError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribePublisherError::unhandled)?;
+        .map_err(crate::operation::describe_publisher::DescribePublisherError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DescribePublisherError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::describe_publisher::DescribePublisherError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CFNRegistryException" => crate::error::DescribePublisherError::CfnRegistryException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "CFNRegistryException" => {
+            crate::operation::describe_publisher::DescribePublisherError::CfnRegistryException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::cfn_registry_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_cfn_registry_exception::de_cfn_registry_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribePublisherError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::DescribePublisherError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::CfnRegistryExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_cfn_registry_exception::de_cfn_registry_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::describe_publisher::DescribePublisherError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::describe_publisher::DescribePublisherError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_publisher_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DescribePublisherOutput, crate::error::DescribePublisherError>
-{
+) -> std::result::Result<
+    crate::operation::describe_publisher::DescribePublisherOutput,
+    crate::operation::describe_publisher::DescribePublisherError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_publisher_output::Builder::default();
+        let mut output =
+            crate::operation::describe_publisher::builders::DescribePublisherOutputBuilder::default(
+            );
         let _ = response;
         output = crate::protocol_serde::shape_describe_publisher::de_describe_publisher(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DescribePublisherError::unhandled)?;
+        .map_err(crate::operation::describe_publisher::DescribePublisherError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -59,9 +72,11 @@ pub fn de_describe_publisher_http_response(
 #[allow(unused_mut)]
 pub fn de_describe_publisher(
     inp: &[u8],
-    mut builder: crate::output::describe_publisher_output::Builder,
-) -> Result<crate::output::describe_publisher_output::Builder, aws_smithy_xml::decode::XmlDecodeError>
-{
+    mut builder: crate::operation::describe_publisher::builders::DescribePublisherOutputBuilder,
+) -> Result<
+    crate::operation::describe_publisher::builders::DescribePublisherOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -100,8 +115,8 @@ pub fn de_describe_publisher(
             s if s.matches("PublisherStatus") /* PublisherStatus com.amazonaws.cloudformation.synthetic#DescribePublisherOutput$PublisherStatus */ =>  {
                 let var_2 =
                     Some(
-                        Result::<crate::model::PublisherStatus, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::PublisherStatus::from(
+                        Result::<crate::types::PublisherStatus, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::PublisherStatus::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
@@ -114,8 +129,8 @@ pub fn de_describe_publisher(
             s if s.matches("IdentityProvider") /* IdentityProvider com.amazonaws.cloudformation.synthetic#DescribePublisherOutput$IdentityProvider */ =>  {
                 let var_3 =
                     Some(
-                        Result::<crate::model::IdentityProvider, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::IdentityProvider::from(
+                        Result::<crate::types::IdentityProvider, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::IdentityProvider::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

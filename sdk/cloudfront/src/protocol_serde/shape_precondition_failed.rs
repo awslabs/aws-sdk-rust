@@ -2,8 +2,11 @@
 #[allow(unused_mut)]
 pub fn de_precondition_failed_xml_err(
     inp: &[u8],
-    mut builder: crate::error::precondition_failed::Builder,
-) -> Result<crate::error::precondition_failed::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    mut builder: crate::types::error::builders::PreconditionFailedBuilder,
+) -> Result<
+    crate::types::error::builders::PreconditionFailedBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     if inp.is_empty() {
         return Ok(builder);
     }

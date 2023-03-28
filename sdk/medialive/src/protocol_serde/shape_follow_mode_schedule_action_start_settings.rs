@@ -2,7 +2,7 @@
 pub(crate) fn de_follow_mode_schedule_action_start_settings<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::FollowModeScheduleActionStartSettings>,
+    Option<crate::types::FollowModeScheduleActionStartSettings>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::follow_mode_schedule_action_start_settings::Builder::default();
+                crate::types::builders::FollowModeScheduleActionStartSettingsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -31,7 +31,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::FollowPoint::from(u.as_ref()))
+                                            .map(|u| crate::types::FollowPoint::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -70,7 +70,7 @@ where
 
 pub fn ser_follow_mode_schedule_action_start_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::FollowModeScheduleActionStartSettings,
+    input: &crate::types::FollowModeScheduleActionStartSettings,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.follow_point {
         object.key("followPoint").string(var_1.as_str());

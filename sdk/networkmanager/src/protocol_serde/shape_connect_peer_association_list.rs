@@ -2,7 +2,7 @@
 pub(crate) fn de_connect_peer_association_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ConnectPeerAssociation>>,
+    Option<std::vec::Vec<crate::types::ConnectPeerAssociation>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

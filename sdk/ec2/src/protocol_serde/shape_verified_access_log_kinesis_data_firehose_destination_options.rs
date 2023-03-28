@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_verified_access_log_kinesis_data_firehose_destination_options(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::VerifiedAccessLogKinesisDataFirehoseDestinationOptions,
+    input: &crate::types::VerifiedAccessLogKinesisDataFirehoseDestinationOptions,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Enabled");

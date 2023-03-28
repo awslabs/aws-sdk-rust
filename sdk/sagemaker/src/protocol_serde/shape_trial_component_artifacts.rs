@@ -2,7 +2,7 @@
 pub(crate) fn de_trial_component_artifacts<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<std::string::String, crate::model::TrialComponentArtifact>>,
+    Option<std::collections::HashMap<std::string::String, crate::types::TrialComponentArtifact>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

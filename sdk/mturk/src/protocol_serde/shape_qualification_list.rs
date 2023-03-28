@@ -2,7 +2,7 @@
 pub(crate) fn de_qualification_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Qualification>>,
+    Option<std::vec::Vec<crate::types::Qualification>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

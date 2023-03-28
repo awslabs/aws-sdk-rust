@@ -2,7 +2,7 @@
 pub(crate) fn de_route_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::RouteRef>>,
+    Option<std::vec::Vec<crate::types::RouteRef>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

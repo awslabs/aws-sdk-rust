@@ -2,7 +2,7 @@
 pub(crate) fn de_signal_external_workflow_execution_initiated_event_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::SignalExternalWorkflowExecutionInitiatedEventAttributes>,
+    Option<crate::types::SignalExternalWorkflowExecutionInitiatedEventAttributes>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::signal_external_workflow_execution_initiated_event_attributes::Builder::default();
+            let mut builder = crate::types::builders::SignalExternalWorkflowExecutionInitiatedEventAttributesBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

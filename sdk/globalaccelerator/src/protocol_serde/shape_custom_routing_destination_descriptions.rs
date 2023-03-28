@@ -2,7 +2,7 @@
 pub(crate) fn de_custom_routing_destination_descriptions<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CustomRoutingDestinationDescription>>,
+    Option<std::vec::Vec<crate::types::CustomRoutingDestinationDescription>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_live_pre_roll_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::LivePreRollConfiguration>,
+    Option<crate::types::LivePreRollConfiguration>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::live_pre_roll_configuration::Builder::default();
+            let mut builder = crate::types::builders::LivePreRollConfigurationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -66,7 +66,7 @@ where
 
 pub fn ser_live_pre_roll_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::LivePreRollConfiguration,
+    input: &crate::types::LivePreRollConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.ad_decision_server_url {
         object.key("AdDecisionServerUrl").string(var_1.as_str());

@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use aws_sdk_dynamodb::{config, Credentials, Region};
+use aws_sdk_dynamodb::config::{self, Credentials, Region};
 use aws_types::SdkConfig;
 use http::Uri;
 

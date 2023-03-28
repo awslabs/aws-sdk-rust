@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_authorization_quota_exceeded_fault_xml_err(
     inp: &[u8],
-    mut builder: crate::error::authorization_quota_exceeded_fault::Builder,
+    mut builder: crate::types::error::builders::AuthorizationQuotaExceededFaultBuilder,
 ) -> Result<
-    crate::error::authorization_quota_exceeded_fault::Builder,
+    crate::types::error::builders::AuthorizationQuotaExceededFaultBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

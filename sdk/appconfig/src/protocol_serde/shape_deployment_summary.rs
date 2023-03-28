@@ -2,7 +2,7 @@
 pub(crate) fn de_deployment_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::DeploymentSummary>,
+    Option<crate::types::DeploymentSummary>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::deployment_summary::Builder::default();
+            let mut builder = crate::types::builders::DeploymentSummaryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -66,7 +66,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::GrowthType::from(u.as_ref()))
+                                            .map(|u| crate::types::GrowthType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -95,7 +95,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::DeploymentState::from(u.as_ref())
+                                            crate::types::DeploymentState::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

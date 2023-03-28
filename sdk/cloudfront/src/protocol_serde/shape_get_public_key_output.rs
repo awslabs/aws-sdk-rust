@@ -12,20 +12,20 @@ pub(crate) fn de_e_tag_header(
 pub fn de_public_key_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::PublicKey>,
-    crate::error::GetPublicKeyError,
+    std::option::Option<crate::types::PublicKey>,
+    crate::operation::get_public_key::GetPublicKeyError,
 > {
     (!body.is_empty())
         .then(|| {
             crate::protocol_serde::shape_get_public_key_output::de_public_key(body)
-                .map_err(crate::error::GetPublicKeyError::unhandled)
+                .map_err(crate::operation::get_public_key::GetPublicKeyError::unhandled)
         })
         .transpose()
 }
 
 pub fn de_public_key(
     inp: &[u8],
-) -> Result<crate::model::PublicKey, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::PublicKey, aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;

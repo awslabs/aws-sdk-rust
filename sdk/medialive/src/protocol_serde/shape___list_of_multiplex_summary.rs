@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_multiplex_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::MultiplexSummary>>,
+    Option<std::vec::Vec<crate::types::MultiplexSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

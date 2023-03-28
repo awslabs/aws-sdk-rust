@@ -2,7 +2,7 @@
 pub(crate) fn de_text_detection_results<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::TextDetectionResult>>,
+    Option<std::vec::Vec<crate::types::TextDetectionResult>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

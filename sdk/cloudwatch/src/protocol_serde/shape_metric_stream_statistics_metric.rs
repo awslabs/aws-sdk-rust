@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_metric_stream_statistics_metric(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::MetricStreamStatisticsMetric,
+    input: &crate::types::MetricStreamStatisticsMetric,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Namespace");
@@ -19,9 +19,9 @@ pub fn ser_metric_stream_statistics_metric(
 
 pub fn de_metric_stream_statistics_metric(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::MetricStreamStatisticsMetric, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::MetricStreamStatisticsMetric, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::MetricStreamStatisticsMetric::builder();
+    let mut builder = crate::types::MetricStreamStatisticsMetric::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Namespace") /* Namespace com.amazonaws.cloudwatch#MetricStreamStatisticsMetric$Namespace */ =>  {

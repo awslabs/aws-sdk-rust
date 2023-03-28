@@ -2,7 +2,7 @@
 pub(crate) fn de_replication_instance_task_logs_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ReplicationInstanceTaskLog>>,
+    Option<std::vec::Vec<crate::types::ReplicationInstanceTaskLog>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

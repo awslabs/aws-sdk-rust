@@ -2,7 +2,7 @@
 pub(crate) fn de_channel_membership_preferences<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ChannelMembershipPreferences>,
+    Option<crate::types::ChannelMembershipPreferences>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::channel_membership_preferences::Builder::default();
+            let mut builder =
+                crate::types::builders::ChannelMembershipPreferencesBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -53,7 +54,7 @@ where
 
 pub fn ser_channel_membership_preferences(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::ChannelMembershipPreferences,
+    input: &crate::types::ChannelMembershipPreferences,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.push_notifications {
         #[allow(unused_mut)]

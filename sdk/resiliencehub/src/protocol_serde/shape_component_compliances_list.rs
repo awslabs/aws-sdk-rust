@@ -2,7 +2,7 @@
 pub(crate) fn de_component_compliances_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AppComponentCompliance>>,
+    Option<std::vec::Vec<crate::types::AppComponentCompliance>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

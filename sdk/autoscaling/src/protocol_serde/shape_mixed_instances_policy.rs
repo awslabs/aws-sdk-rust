@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_mixed_instances_policy(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::MixedInstancesPolicy,
+    input: &crate::types::MixedInstancesPolicy,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("LaunchTemplate");
@@ -21,9 +21,9 @@ pub fn ser_mixed_instances_policy(
 
 pub fn de_mixed_instances_policy(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::MixedInstancesPolicy, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::MixedInstancesPolicy, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::MixedInstancesPolicy::builder();
+    let mut builder = crate::types::MixedInstancesPolicy::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("LaunchTemplate") /* LaunchTemplate com.amazonaws.autoscaling#MixedInstancesPolicy$LaunchTemplate */ =>  {

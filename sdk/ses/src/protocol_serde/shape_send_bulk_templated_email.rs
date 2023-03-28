@@ -3,138 +3,130 @@
 pub fn de_send_bulk_templated_email_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::SendBulkTemplatedEmailOutput,
-    crate::error::SendBulkTemplatedEmailError,
+    crate::operation::send_bulk_templated_email::SendBulkTemplatedEmailOutput,
+    crate::operation::send_bulk_templated_email::SendBulkTemplatedEmailError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::SendBulkTemplatedEmailError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::send_bulk_templated_email::SendBulkTemplatedEmailError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::SendBulkTemplatedEmailError::unhandled(
-                generic,
-            ))
-        }
-    };
+    let error_code =
+        match generic.code() {
+            Some(code) => code,
+            None => return Err(
+                crate::operation::send_bulk_templated_email::SendBulkTemplatedEmailError::unhandled(
+                    generic,
+                ),
+            ),
+        };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccountSendingPausedException" => {
-            crate::error::SendBulkTemplatedEmailError::AccountSendingPausedException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::account_sending_paused_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_account_sending_paused_exception::de_account_sending_paused_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SendBulkTemplatedEmailError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ConfigurationSetDoesNotExist" => {
-            crate::error::SendBulkTemplatedEmailError::ConfigurationSetDoesNotExistException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::configuration_set_does_not_exist_exception::Builder::default(
-                        );
-                    let _ = response;
-                    output = crate::protocol_serde::shape_configuration_set_does_not_exist_exception::de_configuration_set_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SendBulkTemplatedEmailError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ConfigurationSetSendingPausedException" => {
-            crate::error::SendBulkTemplatedEmailError::ConfigurationSetSendingPausedException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::configuration_set_sending_paused_exception::Builder::default(
-                        );
-                    let _ = response;
-                    output = crate::protocol_serde::shape_configuration_set_sending_paused_exception::de_configuration_set_sending_paused_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SendBulkTemplatedEmailError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "MailFromDomainNotVerifiedException" => {
-            crate::error::SendBulkTemplatedEmailError::MailFromDomainNotVerifiedException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::mail_from_domain_not_verified_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_mail_from_domain_not_verified_exception::de_mail_from_domain_not_verified_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SendBulkTemplatedEmailError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "MessageRejected" => crate::error::SendBulkTemplatedEmailError::MessageRejected({
+        "AccountSendingPausedException" => crate::operation::send_bulk_templated_email::SendBulkTemplatedEmailError::AccountSendingPausedException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::message_rejected::Builder::default();
-                let _ = response;
-                output =
-                    crate::protocol_serde::shape_message_rejected::de_message_rejected_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::SendBulkTemplatedEmailError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::AccountSendingPausedExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_account_sending_paused_exception::de_account_sending_paused_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::send_bulk_templated_email::SendBulkTemplatedEmailError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "TemplateDoesNotExist" => {
-            crate::error::SendBulkTemplatedEmailError::TemplateDoesNotExistException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "ConfigurationSetDoesNotExist" => crate::operation::send_bulk_templated_email::SendBulkTemplatedEmailError::ConfigurationSetDoesNotExistException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::template_does_not_exist_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ConfigurationSetDoesNotExistExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_template_does_not_exist_exception::de_template_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SendBulkTemplatedEmailError::unhandled)?;
+                    output = crate::protocol_serde::shape_configuration_set_does_not_exist_exception::de_configuration_set_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::send_bulk_templated_email::SendBulkTemplatedEmailError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::SendBulkTemplatedEmailError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ConfigurationSetSendingPausedException" => crate::operation::send_bulk_templated_email::SendBulkTemplatedEmailError::ConfigurationSetSendingPausedException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ConfigurationSetSendingPausedExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_configuration_set_sending_paused_exception::de_configuration_set_sending_paused_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::send_bulk_templated_email::SendBulkTemplatedEmailError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "MailFromDomainNotVerifiedException" => crate::operation::send_bulk_templated_email::SendBulkTemplatedEmailError::MailFromDomainNotVerifiedException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::MailFromDomainNotVerifiedExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_mail_from_domain_not_verified_exception::de_mail_from_domain_not_verified_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::send_bulk_templated_email::SendBulkTemplatedEmailError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "MessageRejected" => crate::operation::send_bulk_templated_email::SendBulkTemplatedEmailError::MessageRejected({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::MessageRejectedBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_message_rejected::de_message_rejected_xml_err(response.body().as_ref(), output).map_err(crate::operation::send_bulk_templated_email::SendBulkTemplatedEmailError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TemplateDoesNotExist" => crate::operation::send_bulk_templated_email::SendBulkTemplatedEmailError::TemplateDoesNotExistException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::TemplateDoesNotExistExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_template_does_not_exist_exception::de_template_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::send_bulk_templated_email::SendBulkTemplatedEmailError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::send_bulk_templated_email::SendBulkTemplatedEmailError::generic(generic)
     })
 }
 
@@ -142,19 +134,21 @@ pub fn de_send_bulk_templated_email_http_error(
 pub fn de_send_bulk_templated_email_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::SendBulkTemplatedEmailOutput,
-    crate::error::SendBulkTemplatedEmailError,
+    crate::operation::send_bulk_templated_email::SendBulkTemplatedEmailOutput,
+    crate::operation::send_bulk_templated_email::SendBulkTemplatedEmailError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::send_bulk_templated_email_output::Builder::default();
+        let mut output = crate::operation::send_bulk_templated_email::builders::SendBulkTemplatedEmailOutputBuilder::default();
         let _ = response;
         output =
             crate::protocol_serde::shape_send_bulk_templated_email::de_send_bulk_templated_email(
                 response.body().as_ref(),
                 output,
             )
-            .map_err(crate::error::SendBulkTemplatedEmailError::unhandled)?;
+            .map_err(
+                crate::operation::send_bulk_templated_email::SendBulkTemplatedEmailError::unhandled,
+            )?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -165,9 +159,9 @@ pub fn de_send_bulk_templated_email_http_response(
 #[allow(unused_mut)]
 pub fn de_send_bulk_templated_email(
     inp: &[u8],
-    mut builder: crate::output::send_bulk_templated_email_output::Builder,
+    mut builder: crate::operation::send_bulk_templated_email::builders::SendBulkTemplatedEmailOutputBuilder,
 ) -> Result<
-    crate::output::send_bulk_templated_email_output::Builder,
+    crate::operation::send_bulk_templated_email::builders::SendBulkTemplatedEmailOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

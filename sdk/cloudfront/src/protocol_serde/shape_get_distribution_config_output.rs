@@ -2,15 +2,17 @@
 pub fn de_distribution_config_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::DistributionConfig>,
-    crate::error::GetDistributionConfigError,
+    std::option::Option<crate::types::DistributionConfig>,
+    crate::operation::get_distribution_config::GetDistributionConfigError,
 > {
     (!body.is_empty())
         .then(|| {
             crate::protocol_serde::shape_get_distribution_config_output::de_distribution_config(
                 body,
             )
-            .map_err(crate::error::GetDistributionConfigError::unhandled)
+            .map_err(
+                crate::operation::get_distribution_config::GetDistributionConfigError::unhandled,
+            )
         })
         .transpose()
 }
@@ -27,7 +29,7 @@ pub(crate) fn de_e_tag_header(
 
 pub fn de_distribution_config(
     inp: &[u8],
-) -> Result<crate::model::DistributionConfig, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::DistributionConfig, aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;

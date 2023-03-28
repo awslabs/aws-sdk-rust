@@ -2,7 +2,7 @@
 pub(crate) fn de_aws_ec2_security_group_prefix_list_id_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AwsEc2SecurityGroupPrefixListId>>,
+    Option<std::vec::Vec<crate::types::AwsEc2SecurityGroupPrefixListId>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

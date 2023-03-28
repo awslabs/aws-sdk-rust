@@ -2,42 +2,31 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_export_themes_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ExportThemesOutput, crate::error::ExportThemesError> {
+) -> std::result::Result<
+    crate::operation::export_themes::ExportThemesOutput,
+    crate::operation::export_themes::ExportThemesError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ExportThemesError::unhandled)?;
+        .map_err(crate::operation::export_themes::ExportThemesError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ExportThemesError::unhandled(generic)),
+        None => return Err(crate::operation::export_themes::ExportThemesError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerException" => crate::error::ExportThemesError::InternalServerException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportThemesError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InvalidParameterException" => {
-            crate::error::ExportThemesError::InvalidParameterException({
+        "InternalServerException" => {
+            crate::operation::export_themes::ExportThemesError::InternalServerException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::InternalServerExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportThemesError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::export_themes::ExportThemesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -47,23 +36,45 @@ pub fn de_export_themes_http_error(
                 tmp
             })
         }
-        _ => crate::error::ExportThemesError::generic(generic),
+        "InvalidParameterException" => {
+            crate::operation::export_themes::ExportThemesError::InvalidParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InvalidParameterExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::export_themes::ExportThemesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::export_themes::ExportThemesError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_export_themes_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ExportThemesOutput, crate::error::ExportThemesError> {
+) -> std::result::Result<
+    crate::operation::export_themes::ExportThemesOutput,
+    crate::operation::export_themes::ExportThemesError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::export_themes_output::Builder::default();
+        let mut output =
+            crate::operation::export_themes::builders::ExportThemesOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_export_themes::de_export_themes(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ExportThemesError::unhandled)?;
+        .map_err(crate::operation::export_themes::ExportThemesError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -73,9 +84,9 @@ pub fn de_export_themes_http_response(
 
 pub(crate) fn de_export_themes(
     value: &[u8],
-    mut builder: crate::output::export_themes_output::Builder,
+    mut builder: crate::operation::export_themes::builders::ExportThemesOutputBuilder,
 ) -> Result<
-    crate::output::export_themes_output::Builder,
+    crate::operation::export_themes::builders::ExportThemesOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

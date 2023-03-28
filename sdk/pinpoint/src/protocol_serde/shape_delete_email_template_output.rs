@@ -2,13 +2,14 @@
 pub fn de_message_body_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::MessageBody>,
-    crate::error::DeleteEmailTemplateError,
+    std::option::Option<crate::types::MessageBody>,
+    crate::operation::delete_email_template::DeleteEmailTemplateError,
 > {
     (!body.is_empty())
         .then(|| {
-            crate::protocol_serde::shape_message_body::de_message_body_payload(body)
-                .map_err(crate::error::DeleteEmailTemplateError::unhandled)
+            crate::protocol_serde::shape_message_body::de_message_body_payload(body).map_err(
+                crate::operation::delete_email_template::DeleteEmailTemplateError::unhandled,
+            )
         })
         .transpose()
 }

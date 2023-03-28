@@ -2,9 +2,11 @@
 #[allow(unused_mut)]
 pub fn de_realtime_log_config_in_use_xml_err(
     inp: &[u8],
-    mut builder: crate::error::realtime_log_config_in_use::Builder,
-) -> Result<crate::error::realtime_log_config_in_use::Builder, aws_smithy_xml::decode::XmlDecodeError>
-{
+    mut builder: crate::types::error::builders::RealtimeLogConfigInUseBuilder,
+) -> Result<
+    crate::types::error::builders::RealtimeLogConfigInUseBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     if inp.is_empty() {
         return Ok(builder);
     }

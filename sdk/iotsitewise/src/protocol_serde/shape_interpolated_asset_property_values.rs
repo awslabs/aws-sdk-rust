@@ -2,7 +2,7 @@
 pub(crate) fn de_interpolated_asset_property_values<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::InterpolatedAssetPropertyValue>>,
+    Option<std::vec::Vec<crate::types::InterpolatedAssetPropertyValue>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub fn de_phase1_integrity_algorithms_list(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::Phase1IntegrityAlgorithmsListValue>,
+    std::vec::Vec<crate::types::Phase1IntegrityAlgorithmsListValue>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

@@ -2,27 +2,35 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_purge_queue_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::PurgeQueueOutput, crate::error::PurgeQueueError> {
+) -> std::result::Result<
+    crate::operation::purge_queue::PurgeQueueOutput,
+    crate::operation::purge_queue::PurgeQueueError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::PurgeQueueError::unhandled)?;
+        .map_err(crate::operation::purge_queue::PurgeQueueError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::PurgeQueueError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::purge_queue::PurgeQueueError::unhandled(
+                generic,
+            ))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AWS.SimpleQueueService.PurgeQueueInProgress" => {
-            crate::error::PurgeQueueError::PurgeQueueInProgress({
+            crate::operation::purge_queue::PurgeQueueError::PurgeQueueInProgress({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::purge_queue_in_progress::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::PurgeQueueInProgressBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_purge_queue_in_progress::de_purge_queue_in_progress_xml_err(response.body().as_ref(), output).map_err(crate::error::PurgeQueueError::unhandled)?;
+                    output = crate::protocol_serde::shape_purge_queue_in_progress::de_purge_queue_in_progress_xml_err(response.body().as_ref(), output).map_err(crate::operation::purge_queue::PurgeQueueError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -33,13 +41,14 @@ pub fn de_purge_queue_http_error(
             })
         }
         "AWS.SimpleQueueService.NonExistentQueue" => {
-            crate::error::PurgeQueueError::QueueDoesNotExist({
+            crate::operation::purge_queue::PurgeQueueError::QueueDoesNotExist({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::queue_does_not_exist::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::QueueDoesNotExistBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_queue_does_not_exist::de_queue_does_not_exist_xml_err(response.body().as_ref(), output).map_err(crate::error::PurgeQueueError::unhandled)?;
+                    output = crate::protocol_serde::shape_queue_does_not_exist::de_queue_does_not_exist_xml_err(response.body().as_ref(), output).map_err(crate::operation::purge_queue::PurgeQueueError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -49,17 +58,21 @@ pub fn de_purge_queue_http_error(
                 tmp
             })
         }
-        _ => crate::error::PurgeQueueError::generic(generic),
+        _ => crate::operation::purge_queue::PurgeQueueError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_purge_queue_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::PurgeQueueOutput, crate::error::PurgeQueueError> {
+) -> std::result::Result<
+    crate::operation::purge_queue::PurgeQueueOutput,
+    crate::operation::purge_queue::PurgeQueueError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::purge_queue_output::Builder::default();
+        let mut output =
+            crate::operation::purge_queue::builders::PurgeQueueOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

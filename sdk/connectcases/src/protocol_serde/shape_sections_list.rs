@@ -2,7 +2,7 @@
 pub(crate) fn de_sections_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Section>>,
+    Option<std::vec::Vec<crate::types::Section>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub fn de_launch_template_tag_specification_list(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::LaunchTemplateTagSpecification>,
+    std::vec::Vec<crate::types::LaunchTemplateTagSpecification>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

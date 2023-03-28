@@ -2,7 +2,7 @@
 pub(crate) fn de_document_metadata_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DocumentMetadata>>,
+    Option<std::vec::Vec<crate::types::DocumentMetadata>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

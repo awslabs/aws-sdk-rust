@@ -2,7 +2,7 @@
 pub(crate) fn de_pending_maintenance_action_details<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::PendingMaintenanceAction>>,
+    Option<std::vec::Vec<crate::types::PendingMaintenanceAction>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

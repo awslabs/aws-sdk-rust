@@ -3,56 +3,61 @@
 pub fn de_generate_credential_report_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GenerateCredentialReportOutput,
-    crate::error::GenerateCredentialReportError,
+    crate::operation::generate_credential_report::GenerateCredentialReportOutput,
+    crate::operation::generate_credential_report::GenerateCredentialReportError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GenerateCredentialReportError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::generate_credential_report::GenerateCredentialReportError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::error::GenerateCredentialReportError::unhandled(
+        None => return Err(
+            crate::operation::generate_credential_report::GenerateCredentialReportError::unhandled(
                 generic,
-            ))
-        }
+            ),
+        ),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceeded" => crate::error::GenerateCredentialReportError::LimitExceededException({
+        "LimitExceeded" => crate::operation::generate_credential_report::GenerateCredentialReportError::LimitExceededException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::limit_exceeded_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GenerateCredentialReportError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::generate_credential_report::GenerateCredentialReportError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "ServiceFailure" => crate::error::GenerateCredentialReportError::ServiceFailureException({
+        "ServiceFailure" => crate::operation::generate_credential_report::GenerateCredentialReportError::ServiceFailureException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::service_failure_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GenerateCredentialReportError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ServiceFailureExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::generate_credential_report::GenerateCredentialReportError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::GenerateCredentialReportError::generic(generic),
+        _ => crate::operation::generate_credential_report::GenerateCredentialReportError::generic(generic)
     })
 }
 
@@ -60,19 +65,14 @@ pub fn de_generate_credential_report_http_error(
 pub fn de_generate_credential_report_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GenerateCredentialReportOutput,
-    crate::error::GenerateCredentialReportError,
+    crate::operation::generate_credential_report::GenerateCredentialReportOutput,
+    crate::operation::generate_credential_report::GenerateCredentialReportError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::generate_credential_report_output::Builder::default();
+        let mut output = crate::operation::generate_credential_report::builders::GenerateCredentialReportOutputBuilder::default();
         let _ = response;
-        output =
-            crate::protocol_serde::shape_generate_credential_report::de_generate_credential_report(
-                response.body().as_ref(),
-                output,
-            )
-            .map_err(crate::error::GenerateCredentialReportError::unhandled)?;
+        output = crate::protocol_serde::shape_generate_credential_report::de_generate_credential_report(response.body().as_ref(), output).map_err(crate::operation::generate_credential_report::GenerateCredentialReportError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -83,9 +83,9 @@ pub fn de_generate_credential_report_http_response(
 #[allow(unused_mut)]
 pub fn de_generate_credential_report(
     inp: &[u8],
-    mut builder: crate::output::generate_credential_report_output::Builder,
+    mut builder: crate::operation::generate_credential_report::builders::GenerateCredentialReportOutputBuilder,
 ) -> Result<
-    crate::output::generate_credential_report_output::Builder,
+    crate::operation::generate_credential_report::builders::GenerateCredentialReportOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
@@ -113,8 +113,8 @@ pub fn de_generate_credential_report(
             s if s.matches("State") /* State com.amazonaws.iam.synthetic#GenerateCredentialReportOutput$State */ =>  {
                 let var_1 =
                     Some(
-                        Result::<crate::model::ReportStateType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::ReportStateType::from(
+                        Result::<crate::types::ReportStateType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::ReportStateType::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

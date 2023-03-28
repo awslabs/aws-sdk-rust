@@ -5,7 +5,7 @@
 
 use tokio_stream::StreamExt;
 
-use aws_sdk_ec2::{model::InstanceType, Client, Config, Credentials, Region};
+use aws_sdk_ec2::{config::Credentials, config::Region, types::InstanceType, Client, Config};
 use aws_smithy_client::http_connector::HttpConnector;
 use aws_smithy_client::test_connection::TestConnection;
 

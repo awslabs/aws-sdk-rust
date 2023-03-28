@@ -2,7 +2,7 @@
 pub(crate) fn de_domain_information_container<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::DomainInformationContainer>,
+    Option<crate::types::DomainInformationContainer>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::domain_information_container::Builder::default();
+            let mut builder = crate::types::builders::DomainInformationContainerBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -53,7 +53,7 @@ where
 
 pub fn ser_domain_information_container(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::DomainInformationContainer,
+    input: &crate::types::DomainInformationContainer,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.aws_domain_information {
         #[allow(unused_mut)]

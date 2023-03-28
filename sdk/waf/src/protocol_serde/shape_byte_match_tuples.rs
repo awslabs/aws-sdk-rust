@@ -2,7 +2,7 @@
 pub(crate) fn de_byte_match_tuples<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ByteMatchTuple>>,
+    Option<std::vec::Vec<crate::types::ByteMatchTuple>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

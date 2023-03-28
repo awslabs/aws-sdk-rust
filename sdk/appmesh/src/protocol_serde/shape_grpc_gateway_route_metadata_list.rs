@@ -2,7 +2,7 @@
 pub(crate) fn de_grpc_gateway_route_metadata_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::GrpcGatewayRouteMetadata>>,
+    Option<std::vec::Vec<crate::types::GrpcGatewayRouteMetadata>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

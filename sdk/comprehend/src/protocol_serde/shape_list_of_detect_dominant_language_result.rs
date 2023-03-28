@@ -2,7 +2,7 @@
 pub(crate) fn de_list_of_detect_dominant_language_result<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::BatchDetectDominantLanguageItemResult>>,
+    Option<std::vec::Vec<crate::types::BatchDetectDominantLanguageItemResult>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

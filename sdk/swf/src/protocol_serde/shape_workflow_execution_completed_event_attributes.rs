@@ -2,7 +2,7 @@
 pub(crate) fn de_workflow_execution_completed_event_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::WorkflowExecutionCompletedEventAttributes>,
+    Option<crate::types::WorkflowExecutionCompletedEventAttributes>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::workflow_execution_completed_event_attributes::Builder::default();
+                crate::types::builders::WorkflowExecutionCompletedEventAttributesBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

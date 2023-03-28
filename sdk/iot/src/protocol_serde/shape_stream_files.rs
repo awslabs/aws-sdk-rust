@@ -2,7 +2,7 @@
 pub(crate) fn de_stream_files<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::StreamFile>>,
+    Option<std::vec::Vec<crate::types::StreamFile>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

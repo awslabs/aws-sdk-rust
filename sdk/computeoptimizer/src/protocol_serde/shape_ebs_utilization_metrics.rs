@@ -2,7 +2,7 @@
 pub(crate) fn de_ebs_utilization_metrics<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::EbsUtilizationMetric>>,
+    Option<std::vec::Vec<crate::types::EbsUtilizationMetric>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

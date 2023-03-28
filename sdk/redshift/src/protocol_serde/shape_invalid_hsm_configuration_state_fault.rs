@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_invalid_hsm_configuration_state_fault_xml_err(
     inp: &[u8],
-    mut builder: crate::error::invalid_hsm_configuration_state_fault::Builder,
+    mut builder: crate::types::error::builders::InvalidHsmConfigurationStateFaultBuilder,
 ) -> Result<
-    crate::error::invalid_hsm_configuration_state_fault::Builder,
+    crate::types::error::builders::InvalidHsmConfigurationStateFaultBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

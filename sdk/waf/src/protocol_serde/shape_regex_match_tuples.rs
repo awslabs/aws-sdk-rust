@@ -2,7 +2,7 @@
 pub(crate) fn de_regex_match_tuples<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::RegexMatchTuple>>,
+    Option<std::vec::Vec<crate::types::RegexMatchTuple>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

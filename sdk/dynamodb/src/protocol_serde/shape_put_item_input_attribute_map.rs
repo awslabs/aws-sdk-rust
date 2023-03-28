@@ -2,7 +2,7 @@
 pub(crate) fn de_put_item_input_attribute_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<std::string::String, crate::model::AttributeValue>>,
+    Option<std::collections::HashMap<std::string::String, crate::types::AttributeValue>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

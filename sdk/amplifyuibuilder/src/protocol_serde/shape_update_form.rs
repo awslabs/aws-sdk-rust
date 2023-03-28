@@ -2,75 +2,95 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_update_form_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::UpdateFormOutput, crate::error::UpdateFormError> {
+) -> std::result::Result<
+    crate::operation::update_form::UpdateFormOutput,
+    crate::operation::update_form::UpdateFormError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::UpdateFormError::unhandled)?;
+        .map_err(crate::operation::update_form::UpdateFormError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::UpdateFormError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::update_form::UpdateFormError::unhandled(
+                generic,
+            ))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerException" => crate::error::UpdateFormError::InternalServerException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "InternalServerException" => {
+            crate::operation::update_form::UpdateFormError::InternalServerException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFormError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InvalidParameterException" => crate::error::UpdateFormError::InvalidParameterException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InternalServerExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_form::UpdateFormError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidParameterException" => {
+            crate::operation::update_form::UpdateFormError::InvalidParameterException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_parameter_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFormError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ResourceConflictException" => crate::error::UpdateFormError::ResourceConflictException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InvalidParameterExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_form::UpdateFormError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ResourceConflictException" => {
+            crate::operation::update_form::UpdateFormError::ResourceConflictException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::resource_conflict_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_resource_conflict_exception::de_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFormError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::UpdateFormError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ResourceConflictExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_conflict_exception::de_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_form::UpdateFormError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::update_form::UpdateFormError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_update_form_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::UpdateFormOutput, crate::error::UpdateFormError> {
+) -> std::result::Result<
+    crate::operation::update_form::UpdateFormOutput,
+    crate::operation::update_form::UpdateFormError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::update_form_output::Builder::default();
+        let mut output =
+            crate::operation::update_form::builders::UpdateFormOutputBuilder::default();
         let _ = response;
         output = output.set_entity(
             crate::protocol_serde::shape_update_form_output::de_entity_payload(

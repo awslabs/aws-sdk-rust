@@ -2,7 +2,7 @@
 pub(crate) fn de_batch_describe_merge_conflicts_error<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::BatchDescribeMergeConflictsError>,
+    Option<crate::types::BatchDescribeMergeConflictsError>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::batch_describe_merge_conflicts_error::Builder::default();
+                crate::types::builders::BatchDescribeMergeConflictsErrorBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

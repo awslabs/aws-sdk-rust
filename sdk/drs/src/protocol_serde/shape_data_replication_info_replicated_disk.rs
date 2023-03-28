@@ -2,7 +2,7 @@
 pub(crate) fn de_data_replication_info_replicated_disk<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::DataReplicationInfoReplicatedDisk>,
+    Option<crate::types::DataReplicationInfoReplicatedDisk>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::data_replication_info_replicated_disk::Builder::default();
+                crate::types::builders::DataReplicationInfoReplicatedDiskBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

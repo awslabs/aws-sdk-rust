@@ -2,43 +2,35 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_change_set_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DescribeChangeSetOutput, crate::error::DescribeChangeSetError>
-{
+) -> std::result::Result<
+    crate::operation::describe_change_set::DescribeChangeSetOutput,
+    crate::operation::describe_change_set::DescribeChangeSetError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeChangeSetError::unhandled)?;
+        .map_err(crate::operation::describe_change_set::DescribeChangeSetError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DescribeChangeSetError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::describe_change_set::DescribeChangeSetError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::DescribeChangeSetError::AccessDeniedException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::access_denied_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeChangeSetError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InternalServiceException" => {
-            crate::error::DescribeChangeSetError::InternalServiceException({
+        "AccessDeniedException" => {
+            crate::operation::describe_change_set::DescribeChangeSetError::AccessDeniedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_service_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::AccessDeniedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_service_exception::de_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeChangeSetError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_change_set::DescribeChangeSetError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -47,15 +39,56 @@ pub fn de_describe_change_set_http_error(
                 }
                 tmp
             })
+        }
+        "InternalServiceException" => {
+            crate::operation::describe_change_set::DescribeChangeSetError::InternalServiceException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::types::error::builders::InternalServiceExceptionBuilder::default(
+                            );
+                        let _ = response;
+                        output = crate::protocol_serde::shape_internal_service_exception::de_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_change_set::DescribeChangeSetError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
         }
         "ResourceNotFoundException" => {
-            crate::error::DescribeChangeSetError::ResourceNotFoundException({
+            crate::operation::describe_change_set::DescribeChangeSetError::ResourceNotFoundException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                        let _ = response;
+                        output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_change_set::DescribeChangeSetError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        "ThrottlingException" => {
+            crate::operation::describe_change_set::DescribeChangeSetError::ThrottlingException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::ThrottlingExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeChangeSetError::unhandled)?;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_change_set::DescribeChangeSetError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -65,54 +98,44 @@ pub fn de_describe_change_set_http_error(
                 tmp
             })
         }
-        "ThrottlingException" => crate::error::DescribeChangeSetError::ThrottlingException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "ValidationException" => {
+            crate::operation::describe_change_set::DescribeChangeSetError::ValidationException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::throttling_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeChangeSetError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ValidationException" => crate::error::DescribeChangeSetError::ValidationException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeChangeSetError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::DescribeChangeSetError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_change_set::DescribeChangeSetError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::describe_change_set::DescribeChangeSetError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_change_set_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DescribeChangeSetOutput, crate::error::DescribeChangeSetError>
-{
+) -> std::result::Result<
+    crate::operation::describe_change_set::DescribeChangeSetOutput,
+    crate::operation::describe_change_set::DescribeChangeSetError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_change_set_output::Builder::default();
+        let mut output = crate::operation::describe_change_set::builders::DescribeChangeSetOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_describe_change_set::de_describe_change_set(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DescribeChangeSetError::unhandled)?;
+        .map_err(crate::operation::describe_change_set::DescribeChangeSetError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -122,9 +145,9 @@ pub fn de_describe_change_set_http_response(
 
 pub(crate) fn de_describe_change_set(
     value: &[u8],
-    mut builder: crate::output::describe_change_set_output::Builder,
+    mut builder: crate::operation::describe_change_set::builders::DescribeChangeSetOutputBuilder,
 ) -> Result<
-    crate::output::describe_change_set_output::Builder,
+    crate::operation::describe_change_set::builders::DescribeChangeSetOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =
@@ -185,7 +208,7 @@ pub(crate) fn de_describe_change_set(
                             )?
                             .map(|s| {
                                 s.to_unescaped()
-                                    .map(|u| crate::model::FailureCode::from(u.as_ref()))
+                                    .map(|u| crate::types::FailureCode::from(u.as_ref()))
                             })
                             .transpose()?,
                         );
@@ -215,7 +238,7 @@ pub(crate) fn de_describe_change_set(
                             )?
                             .map(|s| {
                                 s.to_unescaped()
-                                    .map(|u| crate::model::ChangeStatus::from(u.as_ref()))
+                                    .map(|u| crate::types::ChangeStatus::from(u.as_ref()))
                             })
                             .transpose()?,
                         );

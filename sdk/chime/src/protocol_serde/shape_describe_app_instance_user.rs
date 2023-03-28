@@ -3,126 +3,129 @@
 pub fn de_describe_app_instance_user_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeAppInstanceUserOutput,
-    crate::error::DescribeAppInstanceUserError,
+    crate::operation::describe_app_instance_user::DescribeAppInstanceUserOutput,
+    crate::operation::describe_app_instance_user::DescribeAppInstanceUserError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeAppInstanceUserError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::describe_app_instance_user::DescribeAppInstanceUserError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::error::DescribeAppInstanceUserError::unhandled(
+        None => return Err(
+            crate::operation::describe_app_instance_user::DescribeAppInstanceUserError::unhandled(
                 generic,
-            ))
-        }
+            ),
+        ),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::DescribeAppInstanceUserError::BadRequestException({
+        "BadRequestException" => crate::operation::describe_app_instance_user::DescribeAppInstanceUserError::BadRequestException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAppInstanceUserError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_app_instance_user::DescribeAppInstanceUserError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "ForbiddenException" => crate::error::DescribeAppInstanceUserError::ForbiddenException({
+        "ForbiddenException" => crate::operation::describe_app_instance_user::DescribeAppInstanceUserError::ForbiddenException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAppInstanceUserError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ForbiddenExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_app_instance_user::DescribeAppInstanceUserError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "ServiceFailureException" => {
-            crate::error::DescribeAppInstanceUserError::ServiceFailureException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "ServiceFailureException" => crate::operation::describe_app_instance_user::DescribeAppInstanceUserError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ServiceFailureExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAppInstanceUserError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_app_instance_user::DescribeAppInstanceUserError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ServiceUnavailableException" => {
-            crate::error::DescribeAppInstanceUserError::ServiceUnavailableException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ServiceUnavailableException" => crate::operation::describe_app_instance_user::DescribeAppInstanceUserError::ServiceUnavailableException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::service_unavailable_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAppInstanceUserError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_app_instance_user::DescribeAppInstanceUserError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ThrottledClientException" => {
-            crate::error::DescribeAppInstanceUserError::ThrottledClientException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ThrottledClientException" => crate::operation::describe_app_instance_user::DescribeAppInstanceUserError::ThrottledClientException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::throttled_client_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ThrottledClientExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_throttled_client_exception::de_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAppInstanceUserError::unhandled)?;
+                    output = crate::protocol_serde::shape_throttled_client_exception::de_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_app_instance_user::DescribeAppInstanceUserError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "UnauthorizedClientException" => {
-            crate::error::DescribeAppInstanceUserError::UnauthorizedClientException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "UnauthorizedClientException" => crate::operation::describe_app_instance_user::DescribeAppInstanceUserError::UnauthorizedClientException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::unauthorized_client_exception::Builder::default();
+                    let mut output = crate::types::error::builders::UnauthorizedClientExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_unauthorized_client_exception::de_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAppInstanceUserError::unhandled)?;
+                    output = crate::protocol_serde::shape_unauthorized_client_exception::de_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_app_instance_user::DescribeAppInstanceUserError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DescribeAppInstanceUserError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::describe_app_instance_user::DescribeAppInstanceUserError::generic(generic)
     })
 }
 
@@ -130,19 +133,14 @@ pub fn de_describe_app_instance_user_http_error(
 pub fn de_describe_app_instance_user_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeAppInstanceUserOutput,
-    crate::error::DescribeAppInstanceUserError,
+    crate::operation::describe_app_instance_user::DescribeAppInstanceUserOutput,
+    crate::operation::describe_app_instance_user::DescribeAppInstanceUserError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_app_instance_user_output::Builder::default();
+        let mut output = crate::operation::describe_app_instance_user::builders::DescribeAppInstanceUserOutputBuilder::default();
         let _ = response;
-        output =
-            crate::protocol_serde::shape_describe_app_instance_user::de_describe_app_instance_user(
-                response.body().as_ref(),
-                output,
-            )
-            .map_err(crate::error::DescribeAppInstanceUserError::unhandled)?;
+        output = crate::protocol_serde::shape_describe_app_instance_user::de_describe_app_instance_user(response.body().as_ref(), output).map_err(crate::operation::describe_app_instance_user::DescribeAppInstanceUserError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -152,9 +150,9 @@ pub fn de_describe_app_instance_user_http_response(
 
 pub(crate) fn de_describe_app_instance_user(
     value: &[u8],
-    mut builder: crate::output::describe_app_instance_user_output::Builder,
+    mut builder: crate::operation::describe_app_instance_user::builders::DescribeAppInstanceUserOutputBuilder,
 ) -> Result<
-    crate::output::describe_app_instance_user_output::Builder,
+    crate::operation::describe_app_instance_user::builders::DescribeAppInstanceUserOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

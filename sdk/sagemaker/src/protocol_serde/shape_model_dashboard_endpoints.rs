@@ -2,7 +2,7 @@
 pub(crate) fn de_model_dashboard_endpoints<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ModelDashboardEndpoint>>,
+    Option<std::vec::Vec<crate::types::ModelDashboardEndpoint>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

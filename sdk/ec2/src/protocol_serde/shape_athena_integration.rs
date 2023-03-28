@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_athena_integration(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::AthenaIntegration,
+    input: &crate::types::AthenaIntegration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("IntegrationResultS3DestinationArn");

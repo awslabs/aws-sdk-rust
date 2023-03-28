@@ -2,7 +2,7 @@
 pub fn de_db_cluster_option_group_memberships(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::DbClusterOptionGroupStatus>,
+    std::vec::Vec<crate::types::DbClusterOptionGroupStatus>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

@@ -2,7 +2,7 @@
 pub(crate) fn de_workspaces_ip_groups_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::WorkspacesIpGroup>>,
+    Option<std::vec::Vec<crate::types::WorkspacesIpGroup>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

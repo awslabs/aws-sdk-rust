@@ -2,9 +2,11 @@
 #[allow(unused_mut)]
 pub fn de_invalid_protocol_settings_xml_err(
     inp: &[u8],
-    mut builder: crate::error::invalid_protocol_settings::Builder,
-) -> Result<crate::error::invalid_protocol_settings::Builder, aws_smithy_xml::decode::XmlDecodeError>
-{
+    mut builder: crate::types::error::builders::InvalidProtocolSettingsBuilder,
+) -> Result<
+    crate::types::error::builders::InvalidProtocolSettingsBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     if inp.is_empty() {
         return Ok(builder);
     }

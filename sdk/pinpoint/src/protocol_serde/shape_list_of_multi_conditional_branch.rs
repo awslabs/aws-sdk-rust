@@ -2,7 +2,7 @@
 pub(crate) fn de_list_of_multi_conditional_branch<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::MultiConditionalBranch>>,
+    Option<std::vec::Vec<crate::types::MultiConditionalBranch>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

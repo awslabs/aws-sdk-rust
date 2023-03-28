@@ -2,7 +2,7 @@
 pub(crate) fn de_account_customization<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::AccountCustomization>,
+    Option<crate::types::AccountCustomization>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::account_customization::Builder::default();
+            let mut builder = crate::types::builders::AccountCustomizationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -66,7 +66,7 @@ where
 
 pub fn ser_account_customization(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::AccountCustomization,
+    input: &crate::types::AccountCustomization,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.default_theme {
         object.key("DefaultTheme").string(var_1.as_str());

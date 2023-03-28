@@ -2,7 +2,7 @@
 pub(crate) fn de_salesforce_chatter_feed_include_filter_types<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SalesforceChatterFeedIncludeFilterType>>,
+    Option<std::vec::Vec<crate::types::SalesforceChatterFeedIncludeFilterType>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -29,7 +29,7 @@ where
                         )?
                         .map(|s| {
                             s.to_unescaped().map(|u| {
-                                crate::model::SalesforceChatterFeedIncludeFilterType::from(
+                                crate::types::SalesforceChatterFeedIncludeFilterType::from(
                                     u.as_ref(),
                                 )
                             })

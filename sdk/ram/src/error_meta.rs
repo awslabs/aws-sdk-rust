@@ -4,55 +4,57 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>The client token input parameter was matched one used with a previous call to the operation, but at least one of the other input parameters is different from the previous call.</p>
-    IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
+    IdempotentParameterMismatchException(crate::types::error::IdempotentParameterMismatchException),
     /// <p>The client token is not valid.</p>
-    InvalidClientTokenException(crate::error::InvalidClientTokenException),
+    InvalidClientTokenException(crate::types::error::InvalidClientTokenException),
     /// <p>The specified value for <code>MaxResults</code> is not valid.</p>
-    InvalidMaxResultsException(crate::error::InvalidMaxResultsException),
+    InvalidMaxResultsException(crate::types::error::InvalidMaxResultsException),
     /// <p>The specified value for <code>NextToken</code> is not valid.</p>
-    InvalidNextTokenException(crate::error::InvalidNextTokenException),
+    InvalidNextTokenException(crate::types::error::InvalidNextTokenException),
     /// <p>A parameter is not valid.</p>
-    InvalidParameterException(crate::error::InvalidParameterException),
+    InvalidParameterException(crate::types::error::InvalidParameterException),
     /// <p>The specified resource type is not valid.</p>
-    InvalidResourceTypeException(crate::error::InvalidResourceTypeException),
+    InvalidResourceTypeException(crate::types::error::InvalidResourceTypeException),
     /// <p>The requested state transition is not valid.</p>
-    InvalidStateTransitionException(crate::error::InvalidStateTransitionException),
+    InvalidStateTransitionException(crate::types::error::InvalidStateTransitionException),
     /// <p>The format of an Amazon Resource Name (ARN) is not valid.</p>
-    MalformedArnException(crate::error::MalformedArnException),
+    MalformedArnException(crate::types::error::MalformedArnException),
     /// <p>A required input parameter is missing.</p>
-    MissingRequiredParameterException(crate::error::MissingRequiredParameterException),
+    MissingRequiredParameterException(crate::types::error::MissingRequiredParameterException),
     /// <p>The requested operation is not permitted.</p>
-    OperationNotPermittedException(crate::error::OperationNotPermittedException),
+    OperationNotPermittedException(crate::types::error::OperationNotPermittedException),
     /// <p>The specified Amazon Resource Name (ARN) was not found.</p>
-    ResourceArnNotFoundException(crate::error::ResourceArnNotFoundException),
+    ResourceArnNotFoundException(crate::types::error::ResourceArnNotFoundException),
     /// <p>The specified invitation was already accepted.</p>
     ResourceShareInvitationAlreadyAcceptedException(
-        crate::error::ResourceShareInvitationAlreadyAcceptedException,
+        crate::types::error::ResourceShareInvitationAlreadyAcceptedException,
     ),
     /// <p>The specified invitation was already rejected.</p>
     ResourceShareInvitationAlreadyRejectedException(
-        crate::error::ResourceShareInvitationAlreadyRejectedException,
+        crate::types::error::ResourceShareInvitationAlreadyRejectedException,
     ),
     /// <p>The specified Amazon Resource Name (ARN) for an invitation was not found.</p>
     ResourceShareInvitationArnNotFoundException(
-        crate::error::ResourceShareInvitationArnNotFoundException,
+        crate::types::error::ResourceShareInvitationArnNotFoundException,
     ),
     /// <p>The specified invitation is expired.</p>
-    ResourceShareInvitationExpiredException(crate::error::ResourceShareInvitationExpiredException),
+    ResourceShareInvitationExpiredException(
+        crate::types::error::ResourceShareInvitationExpiredException,
+    ),
     /// <p>This request would exceed the limit for resource shares for your account.</p>
-    ResourceShareLimitExceededException(crate::error::ResourceShareLimitExceededException),
+    ResourceShareLimitExceededException(crate::types::error::ResourceShareLimitExceededException),
     /// <p>The service could not respond to the request due to an internal problem.</p>
-    ServerInternalException(crate::error::ServerInternalException),
+    ServerInternalException(crate::types::error::ServerInternalException),
     /// <p>The service is not available.</p>
-    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
     /// <p>This request would exceed the limit for tags for your account.</p>
-    TagLimitExceededException(crate::error::TagLimitExceededException),
+    TagLimitExceededException(crate::types::error::TagLimitExceededException),
     /// <p>The specified tag key is a reserved word and can't be used.</p>
-    TagPolicyViolationException(crate::error::TagPolicyViolationException),
+    TagPolicyViolationException(crate::types::error::TagPolicyViolationException),
     /// <p>You exceeded the rate at which you are allowed to perform this operation. Please try again later.</p>
-    ThrottlingException(crate::error::ThrottlingException),
+    ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>A specified resource was not found.</p>
-    UnknownResourceException(crate::error::UnknownResourceException),
+    UnknownResourceException(crate::types::error::UnknownResourceException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled),
 }
@@ -85,118 +87,19 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AcceptResourceShareInvitationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::AcceptResourceShareInvitationError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::AcceptResourceShareInvitationError> for Error {
-    fn from(err: crate::error::AcceptResourceShareInvitationError) -> Self {
-        match err {
-            crate::error::AcceptResourceShareInvitationError::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
-            crate::error::AcceptResourceShareInvitationError::InvalidClientTokenException(inner) => Error::InvalidClientTokenException(inner),
-            crate::error::AcceptResourceShareInvitationError::MalformedArnException(inner) => Error::MalformedArnException(inner),
-            crate::error::AcceptResourceShareInvitationError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
-            crate::error::AcceptResourceShareInvitationError::ResourceShareInvitationAlreadyAcceptedException(inner) => Error::ResourceShareInvitationAlreadyAcceptedException(inner),
-            crate::error::AcceptResourceShareInvitationError::ResourceShareInvitationAlreadyRejectedException(inner) => Error::ResourceShareInvitationAlreadyRejectedException(inner),
-            crate::error::AcceptResourceShareInvitationError::ResourceShareInvitationArnNotFoundException(inner) => Error::ResourceShareInvitationArnNotFoundException(inner),
-            crate::error::AcceptResourceShareInvitationError::ResourceShareInvitationExpiredException(inner) => Error::ResourceShareInvitationExpiredException(inner),
-            crate::error::AcceptResourceShareInvitationError::ServerInternalException(inner) => Error::ServerInternalException(inner),
-            crate::error::AcceptResourceShareInvitationError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::AcceptResourceShareInvitationError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AssociateResourceShareError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::AssociateResourceShareError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::AssociateResourceShareError> for Error {
-    fn from(err: crate::error::AssociateResourceShareError) -> Self {
-        match err {
-            crate::error::AssociateResourceShareError::IdempotentParameterMismatchException(
-                inner,
-            ) => Error::IdempotentParameterMismatchException(inner),
-            crate::error::AssociateResourceShareError::InvalidClientTokenException(inner) => {
-                Error::InvalidClientTokenException(inner)
-            }
-            crate::error::AssociateResourceShareError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::AssociateResourceShareError::InvalidStateTransitionException(inner) => {
-                Error::InvalidStateTransitionException(inner)
-            }
-            crate::error::AssociateResourceShareError::MalformedArnException(inner) => {
-                Error::MalformedArnException(inner)
-            }
-            crate::error::AssociateResourceShareError::OperationNotPermittedException(inner) => {
-                Error::OperationNotPermittedException(inner)
-            }
-            crate::error::AssociateResourceShareError::ResourceShareLimitExceededException(
-                inner,
-            ) => Error::ResourceShareLimitExceededException(inner),
-            crate::error::AssociateResourceShareError::ServerInternalException(inner) => {
-                Error::ServerInternalException(inner)
-            }
-            crate::error::AssociateResourceShareError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::AssociateResourceShareError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::AssociateResourceShareError::UnknownResourceException(inner) => {
-                Error::UnknownResourceException(inner)
-            }
-            crate::error::AssociateResourceShareError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
 impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::AssociateResourceSharePermissionError, R>>
-    for Error
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::accept_resource_share_invitation::AcceptResourceShareInvitationError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::AssociateResourceSharePermissionError,
+            crate::operation::accept_resource_share_invitation::AcceptResourceShareInvitationError,
             R,
         >,
     ) -> Self {
@@ -215,271 +118,715 @@ where
         }
     }
 }
-impl From<crate::error::AssociateResourceSharePermissionError> for Error {
-    fn from(err: crate::error::AssociateResourceSharePermissionError) -> Self {
+impl From<crate::operation::accept_resource_share_invitation::AcceptResourceShareInvitationError>
+    for Error
+{
+    fn from(
+        err: crate::operation::accept_resource_share_invitation::AcceptResourceShareInvitationError,
+    ) -> Self {
         match err {
-            crate::error::AssociateResourceSharePermissionError::InvalidClientTokenException(
+            crate::operation::accept_resource_share_invitation::AcceptResourceShareInvitationError::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
+            crate::operation::accept_resource_share_invitation::AcceptResourceShareInvitationError::InvalidClientTokenException(inner) => Error::InvalidClientTokenException(inner),
+            crate::operation::accept_resource_share_invitation::AcceptResourceShareInvitationError::MalformedArnException(inner) => Error::MalformedArnException(inner),
+            crate::operation::accept_resource_share_invitation::AcceptResourceShareInvitationError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::accept_resource_share_invitation::AcceptResourceShareInvitationError::ResourceShareInvitationAlreadyAcceptedException(inner) => Error::ResourceShareInvitationAlreadyAcceptedException(inner),
+            crate::operation::accept_resource_share_invitation::AcceptResourceShareInvitationError::ResourceShareInvitationAlreadyRejectedException(inner) => Error::ResourceShareInvitationAlreadyRejectedException(inner),
+            crate::operation::accept_resource_share_invitation::AcceptResourceShareInvitationError::ResourceShareInvitationArnNotFoundException(inner) => Error::ResourceShareInvitationArnNotFoundException(inner),
+            crate::operation::accept_resource_share_invitation::AcceptResourceShareInvitationError::ResourceShareInvitationExpiredException(inner) => Error::ResourceShareInvitationExpiredException(inner),
+            crate::operation::accept_resource_share_invitation::AcceptResourceShareInvitationError::ServerInternalException(inner) => Error::ServerInternalException(inner),
+            crate::operation::accept_resource_share_invitation::AcceptResourceShareInvitationError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::accept_resource_share_invitation::AcceptResourceShareInvitationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::associate_resource_share::AssociateResourceShareError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::associate_resource_share::AssociateResourceShareError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::associate_resource_share::AssociateResourceShareError> for Error {
+    fn from(err: crate::operation::associate_resource_share::AssociateResourceShareError) -> Self {
+        match err {
+            crate::operation::associate_resource_share::AssociateResourceShareError::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
+            crate::operation::associate_resource_share::AssociateResourceShareError::InvalidClientTokenException(inner) => Error::InvalidClientTokenException(inner),
+            crate::operation::associate_resource_share::AssociateResourceShareError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::associate_resource_share::AssociateResourceShareError::InvalidStateTransitionException(inner) => Error::InvalidStateTransitionException(inner),
+            crate::operation::associate_resource_share::AssociateResourceShareError::MalformedArnException(inner) => Error::MalformedArnException(inner),
+            crate::operation::associate_resource_share::AssociateResourceShareError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::associate_resource_share::AssociateResourceShareError::ResourceShareLimitExceededException(inner) => Error::ResourceShareLimitExceededException(inner),
+            crate::operation::associate_resource_share::AssociateResourceShareError::ServerInternalException(inner) => Error::ServerInternalException(inner),
+            crate::operation::associate_resource_share::AssociateResourceShareError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::associate_resource_share::AssociateResourceShareError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::associate_resource_share::AssociateResourceShareError::UnknownResourceException(inner) => Error::UnknownResourceException(inner),
+            crate::operation::associate_resource_share::AssociateResourceShareError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::associate_resource_share_permission::AssociateResourceSharePermissionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::associate_resource_share_permission::AssociateResourceSharePermissionError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::associate_resource_share_permission::AssociateResourceSharePermissionError> for Error {
+    fn from(err: crate::operation::associate_resource_share_permission::AssociateResourceSharePermissionError) -> Self {
+        match err {
+            crate::operation::associate_resource_share_permission::AssociateResourceSharePermissionError::InvalidClientTokenException(inner) => Error::InvalidClientTokenException(inner),
+            crate::operation::associate_resource_share_permission::AssociateResourceSharePermissionError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::associate_resource_share_permission::AssociateResourceSharePermissionError::MalformedArnException(inner) => Error::MalformedArnException(inner),
+            crate::operation::associate_resource_share_permission::AssociateResourceSharePermissionError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::associate_resource_share_permission::AssociateResourceSharePermissionError::ServerInternalException(inner) => Error::ServerInternalException(inner),
+            crate::operation::associate_resource_share_permission::AssociateResourceSharePermissionError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::associate_resource_share_permission::AssociateResourceSharePermissionError::UnknownResourceException(inner) => Error::UnknownResourceException(inner),
+            crate::operation::associate_resource_share_permission::AssociateResourceSharePermissionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_resource_share::CreateResourceShareError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_resource_share::CreateResourceShareError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_resource_share::CreateResourceShareError> for Error {
+    fn from(err: crate::operation::create_resource_share::CreateResourceShareError) -> Self {
+        match err {
+            crate::operation::create_resource_share::CreateResourceShareError::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
+            crate::operation::create_resource_share::CreateResourceShareError::InvalidClientTokenException(inner) => Error::InvalidClientTokenException(inner),
+            crate::operation::create_resource_share::CreateResourceShareError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::create_resource_share::CreateResourceShareError::InvalidStateTransitionException(inner) => Error::InvalidStateTransitionException(inner),
+            crate::operation::create_resource_share::CreateResourceShareError::MalformedArnException(inner) => Error::MalformedArnException(inner),
+            crate::operation::create_resource_share::CreateResourceShareError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::create_resource_share::CreateResourceShareError::ResourceShareLimitExceededException(inner) => Error::ResourceShareLimitExceededException(inner),
+            crate::operation::create_resource_share::CreateResourceShareError::ServerInternalException(inner) => Error::ServerInternalException(inner),
+            crate::operation::create_resource_share::CreateResourceShareError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::create_resource_share::CreateResourceShareError::TagPolicyViolationException(inner) => Error::TagPolicyViolationException(inner),
+            crate::operation::create_resource_share::CreateResourceShareError::UnknownResourceException(inner) => Error::UnknownResourceException(inner),
+            crate::operation::create_resource_share::CreateResourceShareError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_resource_share::DeleteResourceShareError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_resource_share::DeleteResourceShareError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_resource_share::DeleteResourceShareError> for Error {
+    fn from(err: crate::operation::delete_resource_share::DeleteResourceShareError) -> Self {
+        match err {
+            crate::operation::delete_resource_share::DeleteResourceShareError::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
+            crate::operation::delete_resource_share::DeleteResourceShareError::InvalidClientTokenException(inner) => Error::InvalidClientTokenException(inner),
+            crate::operation::delete_resource_share::DeleteResourceShareError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::delete_resource_share::DeleteResourceShareError::InvalidStateTransitionException(inner) => Error::InvalidStateTransitionException(inner),
+            crate::operation::delete_resource_share::DeleteResourceShareError::MalformedArnException(inner) => Error::MalformedArnException(inner),
+            crate::operation::delete_resource_share::DeleteResourceShareError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::delete_resource_share::DeleteResourceShareError::ServerInternalException(inner) => Error::ServerInternalException(inner),
+            crate::operation::delete_resource_share::DeleteResourceShareError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::delete_resource_share::DeleteResourceShareError::UnknownResourceException(inner) => Error::UnknownResourceException(inner),
+            crate::operation::delete_resource_share::DeleteResourceShareError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_resource_share::DisassociateResourceShareError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_resource_share::DisassociateResourceShareError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::disassociate_resource_share::DisassociateResourceShareError> for Error {
+    fn from(
+        err: crate::operation::disassociate_resource_share::DisassociateResourceShareError,
+    ) -> Self {
+        match err {
+            crate::operation::disassociate_resource_share::DisassociateResourceShareError::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
+            crate::operation::disassociate_resource_share::DisassociateResourceShareError::InvalidClientTokenException(inner) => Error::InvalidClientTokenException(inner),
+            crate::operation::disassociate_resource_share::DisassociateResourceShareError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::disassociate_resource_share::DisassociateResourceShareError::InvalidStateTransitionException(inner) => Error::InvalidStateTransitionException(inner),
+            crate::operation::disassociate_resource_share::DisassociateResourceShareError::MalformedArnException(inner) => Error::MalformedArnException(inner),
+            crate::operation::disassociate_resource_share::DisassociateResourceShareError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::disassociate_resource_share::DisassociateResourceShareError::ResourceShareLimitExceededException(inner) => Error::ResourceShareLimitExceededException(inner),
+            crate::operation::disassociate_resource_share::DisassociateResourceShareError::ServerInternalException(inner) => Error::ServerInternalException(inner),
+            crate::operation::disassociate_resource_share::DisassociateResourceShareError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::disassociate_resource_share::DisassociateResourceShareError::UnknownResourceException(inner) => Error::UnknownResourceException(inner),
+            crate::operation::disassociate_resource_share::DisassociateResourceShareError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::disassociate_resource_share_permission::DisassociateResourceSharePermissionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::disassociate_resource_share_permission::DisassociateResourceSharePermissionError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::disassociate_resource_share_permission::DisassociateResourceSharePermissionError> for Error {
+    fn from(err: crate::operation::disassociate_resource_share_permission::DisassociateResourceSharePermissionError) -> Self {
+        match err {
+            crate::operation::disassociate_resource_share_permission::DisassociateResourceSharePermissionError::InvalidClientTokenException(inner) => Error::InvalidClientTokenException(inner),
+            crate::operation::disassociate_resource_share_permission::DisassociateResourceSharePermissionError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::disassociate_resource_share_permission::DisassociateResourceSharePermissionError::InvalidStateTransitionException(inner) => Error::InvalidStateTransitionException(inner),
+            crate::operation::disassociate_resource_share_permission::DisassociateResourceSharePermissionError::MalformedArnException(inner) => Error::MalformedArnException(inner),
+            crate::operation::disassociate_resource_share_permission::DisassociateResourceSharePermissionError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::disassociate_resource_share_permission::DisassociateResourceSharePermissionError::ServerInternalException(inner) => Error::ServerInternalException(inner),
+            crate::operation::disassociate_resource_share_permission::DisassociateResourceSharePermissionError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::disassociate_resource_share_permission::DisassociateResourceSharePermissionError::UnknownResourceException(inner) => Error::UnknownResourceException(inner),
+            crate::operation::disassociate_resource_share_permission::DisassociateResourceSharePermissionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganizationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganizationError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganizationError> for Error {
+    fn from(err: crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganizationError) -> Self {
+        match err {
+            crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganizationError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganizationError::ServerInternalException(inner) => Error::ServerInternalException(inner),
+            crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganizationError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganizationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::get_permission::GetPermissionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_permission::GetPermissionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_permission::GetPermissionError> for Error {
+    fn from(err: crate::operation::get_permission::GetPermissionError) -> Self {
+        match err {
+            crate::operation::get_permission::GetPermissionError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_permission::GetPermissionError::MalformedArnException(inner) => Error::MalformedArnException(inner),
+            crate::operation::get_permission::GetPermissionError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::get_permission::GetPermissionError::ServerInternalException(inner) => Error::ServerInternalException(inner),
+            crate::operation::get_permission::GetPermissionError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::get_permission::GetPermissionError::UnknownResourceException(inner) => Error::UnknownResourceException(inner),
+            crate::operation::get_permission::GetPermissionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_resource_policies::GetResourcePoliciesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_resource_policies::GetResourcePoliciesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_resource_policies::GetResourcePoliciesError> for Error {
+    fn from(err: crate::operation::get_resource_policies::GetResourcePoliciesError) -> Self {
+        match err {
+            crate::operation::get_resource_policies::GetResourcePoliciesError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::get_resource_policies::GetResourcePoliciesError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_resource_policies::GetResourcePoliciesError::MalformedArnException(inner) => Error::MalformedArnException(inner),
+            crate::operation::get_resource_policies::GetResourcePoliciesError::ResourceArnNotFoundException(inner) => Error::ResourceArnNotFoundException(inner),
+            crate::operation::get_resource_policies::GetResourcePoliciesError::ServerInternalException(inner) => Error::ServerInternalException(inner),
+            crate::operation::get_resource_policies::GetResourcePoliciesError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::get_resource_policies::GetResourcePoliciesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_resource_share_associations::GetResourceShareAssociationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_resource_share_associations::GetResourceShareAssociationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_resource_share_associations::GetResourceShareAssociationsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::get_resource_share_associations::GetResourceShareAssociationsError,
+    ) -> Self {
+        match err {
+            crate::operation::get_resource_share_associations::GetResourceShareAssociationsError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::get_resource_share_associations::GetResourceShareAssociationsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_resource_share_associations::GetResourceShareAssociationsError::MalformedArnException(inner) => Error::MalformedArnException(inner),
+            crate::operation::get_resource_share_associations::GetResourceShareAssociationsError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::get_resource_share_associations::GetResourceShareAssociationsError::ServerInternalException(inner) => Error::ServerInternalException(inner),
+            crate::operation::get_resource_share_associations::GetResourceShareAssociationsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::get_resource_share_associations::GetResourceShareAssociationsError::UnknownResourceException(inner) => Error::UnknownResourceException(inner),
+            crate::operation::get_resource_share_associations::GetResourceShareAssociationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_resource_share_invitations::GetResourceShareInvitationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_resource_share_invitations::GetResourceShareInvitationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_resource_share_invitations::GetResourceShareInvitationsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::get_resource_share_invitations::GetResourceShareInvitationsError,
+    ) -> Self {
+        match err {
+            crate::operation::get_resource_share_invitations::GetResourceShareInvitationsError::InvalidMaxResultsException(inner) => Error::InvalidMaxResultsException(inner),
+            crate::operation::get_resource_share_invitations::GetResourceShareInvitationsError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::get_resource_share_invitations::GetResourceShareInvitationsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_resource_share_invitations::GetResourceShareInvitationsError::MalformedArnException(inner) => Error::MalformedArnException(inner),
+            crate::operation::get_resource_share_invitations::GetResourceShareInvitationsError::ResourceShareInvitationArnNotFoundException(inner) => Error::ResourceShareInvitationArnNotFoundException(inner),
+            crate::operation::get_resource_share_invitations::GetResourceShareInvitationsError::ServerInternalException(inner) => Error::ServerInternalException(inner),
+            crate::operation::get_resource_share_invitations::GetResourceShareInvitationsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::get_resource_share_invitations::GetResourceShareInvitationsError::UnknownResourceException(inner) => Error::UnknownResourceException(inner),
+            crate::operation::get_resource_share_invitations::GetResourceShareInvitationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_resource_shares::GetResourceSharesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_resource_shares::GetResourceSharesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_resource_shares::GetResourceSharesError> for Error {
+    fn from(err: crate::operation::get_resource_shares::GetResourceSharesError) -> Self {
+        match err {
+            crate::operation::get_resource_shares::GetResourceSharesError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::get_resource_shares::GetResourceSharesError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_resource_shares::GetResourceSharesError::MalformedArnException(inner) => Error::MalformedArnException(inner),
+            crate::operation::get_resource_shares::GetResourceSharesError::ServerInternalException(inner) => Error::ServerInternalException(inner),
+            crate::operation::get_resource_shares::GetResourceSharesError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::get_resource_shares::GetResourceSharesError::UnknownResourceException(inner) => Error::UnknownResourceException(inner),
+            crate::operation::get_resource_shares::GetResourceSharesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_pending_invitation_resources::ListPendingInvitationResourcesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_pending_invitation_resources::ListPendingInvitationResourcesError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::list_pending_invitation_resources::ListPendingInvitationResourcesError>
+    for Error
+{
+    fn from(
+        err: crate::operation::list_pending_invitation_resources::ListPendingInvitationResourcesError,
+    ) -> Self {
+        match err {
+            crate::operation::list_pending_invitation_resources::ListPendingInvitationResourcesError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::list_pending_invitation_resources::ListPendingInvitationResourcesError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_pending_invitation_resources::ListPendingInvitationResourcesError::MalformedArnException(inner) => Error::MalformedArnException(inner),
+            crate::operation::list_pending_invitation_resources::ListPendingInvitationResourcesError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
+            crate::operation::list_pending_invitation_resources::ListPendingInvitationResourcesError::ResourceShareInvitationAlreadyRejectedException(inner) => Error::ResourceShareInvitationAlreadyRejectedException(inner),
+            crate::operation::list_pending_invitation_resources::ListPendingInvitationResourcesError::ResourceShareInvitationArnNotFoundException(inner) => Error::ResourceShareInvitationArnNotFoundException(inner),
+            crate::operation::list_pending_invitation_resources::ListPendingInvitationResourcesError::ResourceShareInvitationExpiredException(inner) => Error::ResourceShareInvitationExpiredException(inner),
+            crate::operation::list_pending_invitation_resources::ListPendingInvitationResourcesError::ServerInternalException(inner) => Error::ServerInternalException(inner),
+            crate::operation::list_pending_invitation_resources::ListPendingInvitationResourcesError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::list_pending_invitation_resources::ListPendingInvitationResourcesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_permissions::ListPermissionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_permissions::ListPermissionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_permissions::ListPermissionsError> for Error {
+    fn from(err: crate::operation::list_permissions::ListPermissionsError) -> Self {
+        match err {
+            crate::operation::list_permissions::ListPermissionsError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::list_permissions::ListPermissionsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_permissions::ListPermissionsError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::list_permissions::ListPermissionsError::ServerInternalException(inner) => Error::ServerInternalException(inner),
+            crate::operation::list_permissions::ListPermissionsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::list_permissions::ListPermissionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_permission_versions::ListPermissionVersionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_permission_versions::ListPermissionVersionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_permission_versions::ListPermissionVersionsError> for Error {
+    fn from(err: crate::operation::list_permission_versions::ListPermissionVersionsError) -> Self {
+        match err {
+            crate::operation::list_permission_versions::ListPermissionVersionsError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::list_permission_versions::ListPermissionVersionsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_permission_versions::ListPermissionVersionsError::MalformedArnException(inner) => Error::MalformedArnException(inner),
+            crate::operation::list_permission_versions::ListPermissionVersionsError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::list_permission_versions::ListPermissionVersionsError::ServerInternalException(inner) => Error::ServerInternalException(inner),
+            crate::operation::list_permission_versions::ListPermissionVersionsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::list_permission_versions::ListPermissionVersionsError::UnknownResourceException(inner) => Error::UnknownResourceException(inner),
+            crate::operation::list_permission_versions::ListPermissionVersionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_principals::ListPrincipalsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_principals::ListPrincipalsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_principals::ListPrincipalsError> for Error {
+    fn from(err: crate::operation::list_principals::ListPrincipalsError) -> Self {
+        match err {
+            crate::operation::list_principals::ListPrincipalsError::InvalidNextTokenException(
                 inner,
-            ) => Error::InvalidClientTokenException(inner),
-            crate::error::AssociateResourceSharePermissionError::InvalidParameterException(
+            ) => Error::InvalidNextTokenException(inner),
+            crate::operation::list_principals::ListPrincipalsError::InvalidParameterException(
                 inner,
             ) => Error::InvalidParameterException(inner),
-            crate::error::AssociateResourceSharePermissionError::MalformedArnException(inner) => {
-                Error::MalformedArnException(inner)
-            }
-            crate::error::AssociateResourceSharePermissionError::OperationNotPermittedException(
+            crate::operation::list_principals::ListPrincipalsError::MalformedArnException(
                 inner,
-            ) => Error::OperationNotPermittedException(inner),
-            crate::error::AssociateResourceSharePermissionError::ServerInternalException(inner) => {
-                Error::ServerInternalException(inner)
-            }
-            crate::error::AssociateResourceSharePermissionError::ServiceUnavailableException(
+            ) => Error::MalformedArnException(inner),
+            crate::operation::list_principals::ListPrincipalsError::ServerInternalException(
+                inner,
+            ) => Error::ServerInternalException(inner),
+            crate::operation::list_principals::ListPrincipalsError::ServiceUnavailableException(
                 inner,
             ) => Error::ServiceUnavailableException(inner),
-            crate::error::AssociateResourceSharePermissionError::UnknownResourceException(
+            crate::operation::list_principals::ListPrincipalsError::UnknownResourceException(
                 inner,
             ) => Error::UnknownResourceException(inner),
-            crate::error::AssociateResourceSharePermissionError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateResourceShareError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateResourceShareError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::CreateResourceShareError> for Error {
-    fn from(err: crate::error::CreateResourceShareError) -> Self {
-        match err {
-            crate::error::CreateResourceShareError::IdempotentParameterMismatchException(inner) => {
-                Error::IdempotentParameterMismatchException(inner)
-            }
-            crate::error::CreateResourceShareError::InvalidClientTokenException(inner) => {
-                Error::InvalidClientTokenException(inner)
-            }
-            crate::error::CreateResourceShareError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::CreateResourceShareError::InvalidStateTransitionException(inner) => {
-                Error::InvalidStateTransitionException(inner)
-            }
-            crate::error::CreateResourceShareError::MalformedArnException(inner) => {
-                Error::MalformedArnException(inner)
-            }
-            crate::error::CreateResourceShareError::OperationNotPermittedException(inner) => {
-                Error::OperationNotPermittedException(inner)
-            }
-            crate::error::CreateResourceShareError::ResourceShareLimitExceededException(inner) => {
-                Error::ResourceShareLimitExceededException(inner)
-            }
-            crate::error::CreateResourceShareError::ServerInternalException(inner) => {
-                Error::ServerInternalException(inner)
-            }
-            crate::error::CreateResourceShareError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::CreateResourceShareError::TagPolicyViolationException(inner) => {
-                Error::TagPolicyViolationException(inner)
-            }
-            crate::error::CreateResourceShareError::UnknownResourceException(inner) => {
-                Error::UnknownResourceException(inner)
-            }
-            crate::error::CreateResourceShareError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteResourceShareError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteResourceShareError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DeleteResourceShareError> for Error {
-    fn from(err: crate::error::DeleteResourceShareError) -> Self {
-        match err {
-            crate::error::DeleteResourceShareError::IdempotentParameterMismatchException(inner) => {
-                Error::IdempotentParameterMismatchException(inner)
-            }
-            crate::error::DeleteResourceShareError::InvalidClientTokenException(inner) => {
-                Error::InvalidClientTokenException(inner)
-            }
-            crate::error::DeleteResourceShareError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::DeleteResourceShareError::InvalidStateTransitionException(inner) => {
-                Error::InvalidStateTransitionException(inner)
-            }
-            crate::error::DeleteResourceShareError::MalformedArnException(inner) => {
-                Error::MalformedArnException(inner)
-            }
-            crate::error::DeleteResourceShareError::OperationNotPermittedException(inner) => {
-                Error::OperationNotPermittedException(inner)
-            }
-            crate::error::DeleteResourceShareError::ServerInternalException(inner) => {
-                Error::ServerInternalException(inner)
-            }
-            crate::error::DeleteResourceShareError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::DeleteResourceShareError::UnknownResourceException(inner) => {
-                Error::UnknownResourceException(inner)
-            }
-            crate::error::DeleteResourceShareError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DisassociateResourceShareError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DisassociateResourceShareError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DisassociateResourceShareError> for Error {
-    fn from(err: crate::error::DisassociateResourceShareError) -> Self {
-        match err {
-            crate::error::DisassociateResourceShareError::IdempotentParameterMismatchException(
-                inner,
-            ) => Error::IdempotentParameterMismatchException(inner),
-            crate::error::DisassociateResourceShareError::InvalidClientTokenException(inner) => {
-                Error::InvalidClientTokenException(inner)
-            }
-            crate::error::DisassociateResourceShareError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::DisassociateResourceShareError::InvalidStateTransitionException(
-                inner,
-            ) => Error::InvalidStateTransitionException(inner),
-            crate::error::DisassociateResourceShareError::MalformedArnException(inner) => {
-                Error::MalformedArnException(inner)
-            }
-            crate::error::DisassociateResourceShareError::OperationNotPermittedException(inner) => {
-                Error::OperationNotPermittedException(inner)
-            }
-            crate::error::DisassociateResourceShareError::ResourceShareLimitExceededException(
-                inner,
-            ) => Error::ResourceShareLimitExceededException(inner),
-            crate::error::DisassociateResourceShareError::ServerInternalException(inner) => {
-                Error::ServerInternalException(inner)
-            }
-            crate::error::DisassociateResourceShareError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::DisassociateResourceShareError::UnknownResourceException(inner) => {
-                Error::UnknownResourceException(inner)
-            }
-            crate::error::DisassociateResourceShareError::Unhandled(inner) => {
+            crate::operation::list_principals::ListPrincipalsError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
         }
     }
 }
 impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::DisassociateResourceSharePermissionError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DisassociateResourceSharePermissionError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DisassociateResourceSharePermissionError> for Error {
-    fn from(err: crate::error::DisassociateResourceSharePermissionError) -> Self {
-        match err {
-            crate::error::DisassociateResourceSharePermissionError::InvalidClientTokenException(inner) => Error::InvalidClientTokenException(inner),
-            crate::error::DisassociateResourceSharePermissionError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::DisassociateResourceSharePermissionError::InvalidStateTransitionException(inner) => Error::InvalidStateTransitionException(inner),
-            crate::error::DisassociateResourceSharePermissionError::MalformedArnException(inner) => Error::MalformedArnException(inner),
-            crate::error::DisassociateResourceSharePermissionError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
-            crate::error::DisassociateResourceSharePermissionError::ServerInternalException(inner) => Error::ServerInternalException(inner),
-            crate::error::DisassociateResourceSharePermissionError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::DisassociateResourceSharePermissionError::UnknownResourceException(inner) => Error::UnknownResourceException(inner),
-            crate::error::DisassociateResourceSharePermissionError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::EnableSharingWithAwsOrganizationError, R>>
+    From<aws_smithy_http::result::SdkError<crate::operation::list_resources::ListResourcesError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::EnableSharingWithAwsOrganizationError,
+            crate::operation::list_resources::ListResourcesError,
             R,
         >,
     ) -> Self {
@@ -498,581 +845,40 @@ where
         }
     }
 }
-impl From<crate::error::EnableSharingWithAwsOrganizationError> for Error {
-    fn from(err: crate::error::EnableSharingWithAwsOrganizationError) -> Self {
+impl From<crate::operation::list_resources::ListResourcesError> for Error {
+    fn from(err: crate::operation::list_resources::ListResourcesError) -> Self {
         match err {
-            crate::error::EnableSharingWithAwsOrganizationError::OperationNotPermittedException(
+            crate::operation::list_resources::ListResourcesError::InvalidNextTokenException(
                 inner,
-            ) => Error::OperationNotPermittedException(inner),
-            crate::error::EnableSharingWithAwsOrganizationError::ServerInternalException(inner) => {
-                Error::ServerInternalException(inner)
+            ) => Error::InvalidNextTokenException(inner),
+            crate::operation::list_resources::ListResourcesError::InvalidParameterException(
+                inner,
+            ) => Error::InvalidParameterException(inner),
+            crate::operation::list_resources::ListResourcesError::InvalidResourceTypeException(
+                inner,
+            ) => Error::InvalidResourceTypeException(inner),
+            crate::operation::list_resources::ListResourcesError::MalformedArnException(inner) => {
+                Error::MalformedArnException(inner)
             }
-            crate::error::EnableSharingWithAwsOrganizationError::ServiceUnavailableException(
+            crate::operation::list_resources::ListResourcesError::ServerInternalException(
+                inner,
+            ) => Error::ServerInternalException(inner),
+            crate::operation::list_resources::ListResourcesError::ServiceUnavailableException(
                 inner,
             ) => Error::ServiceUnavailableException(inner),
-            crate::error::EnableSharingWithAwsOrganizationError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetPermissionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetPermissionError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetPermissionError> for Error {
-    fn from(err: crate::error::GetPermissionError) -> Self {
-        match err {
-            crate::error::GetPermissionError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::GetPermissionError::MalformedArnException(inner) => {
-                Error::MalformedArnException(inner)
-            }
-            crate::error::GetPermissionError::OperationNotPermittedException(inner) => {
-                Error::OperationNotPermittedException(inner)
-            }
-            crate::error::GetPermissionError::ServerInternalException(inner) => {
-                Error::ServerInternalException(inner)
-            }
-            crate::error::GetPermissionError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::GetPermissionError::UnknownResourceException(inner) => {
-                Error::UnknownResourceException(inner)
-            }
-            crate::error::GetPermissionError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetResourcePoliciesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetResourcePoliciesError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetResourcePoliciesError> for Error {
-    fn from(err: crate::error::GetResourcePoliciesError) -> Self {
-        match err {
-            crate::error::GetResourcePoliciesError::InvalidNextTokenException(inner) => {
-                Error::InvalidNextTokenException(inner)
-            }
-            crate::error::GetResourcePoliciesError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::GetResourcePoliciesError::MalformedArnException(inner) => {
-                Error::MalformedArnException(inner)
-            }
-            crate::error::GetResourcePoliciesError::ResourceArnNotFoundException(inner) => {
-                Error::ResourceArnNotFoundException(inner)
-            }
-            crate::error::GetResourcePoliciesError::ServerInternalException(inner) => {
-                Error::ServerInternalException(inner)
-            }
-            crate::error::GetResourcePoliciesError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::GetResourcePoliciesError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetResourceShareAssociationsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetResourceShareAssociationsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetResourceShareAssociationsError> for Error {
-    fn from(err: crate::error::GetResourceShareAssociationsError) -> Self {
-        match err {
-            crate::error::GetResourceShareAssociationsError::InvalidNextTokenException(inner) => {
-                Error::InvalidNextTokenException(inner)
-            }
-            crate::error::GetResourceShareAssociationsError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::GetResourceShareAssociationsError::MalformedArnException(inner) => {
-                Error::MalformedArnException(inner)
-            }
-            crate::error::GetResourceShareAssociationsError::OperationNotPermittedException(
+            crate::operation::list_resources::ListResourcesError::UnknownResourceException(
                 inner,
-            ) => Error::OperationNotPermittedException(inner),
-            crate::error::GetResourceShareAssociationsError::ServerInternalException(inner) => {
-                Error::ServerInternalException(inner)
-            }
-            crate::error::GetResourceShareAssociationsError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::GetResourceShareAssociationsError::UnknownResourceException(inner) => {
-                Error::UnknownResourceException(inner)
-            }
-            crate::error::GetResourceShareAssociationsError::Unhandled(inner) => {
+            ) => Error::UnknownResourceException(inner),
+            crate::operation::list_resources::ListResourcesError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetResourceShareInvitationsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetResourceShareInvitationsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetResourceShareInvitationsError> for Error {
-    fn from(err: crate::error::GetResourceShareInvitationsError) -> Self {
-        match err {
-            crate::error::GetResourceShareInvitationsError::InvalidMaxResultsException(inner) => Error::InvalidMaxResultsException(inner),
-            crate::error::GetResourceShareInvitationsError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-            crate::error::GetResourceShareInvitationsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::GetResourceShareInvitationsError::MalformedArnException(inner) => Error::MalformedArnException(inner),
-            crate::error::GetResourceShareInvitationsError::ResourceShareInvitationArnNotFoundException(inner) => Error::ResourceShareInvitationArnNotFoundException(inner),
-            crate::error::GetResourceShareInvitationsError::ServerInternalException(inner) => Error::ServerInternalException(inner),
-            crate::error::GetResourceShareInvitationsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::GetResourceShareInvitationsError::UnknownResourceException(inner) => Error::UnknownResourceException(inner),
-            crate::error::GetResourceShareInvitationsError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetResourceSharesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetResourceSharesError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetResourceSharesError> for Error {
-    fn from(err: crate::error::GetResourceSharesError) -> Self {
-        match err {
-            crate::error::GetResourceSharesError::InvalidNextTokenException(inner) => {
-                Error::InvalidNextTokenException(inner)
-            }
-            crate::error::GetResourceSharesError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::GetResourceSharesError::MalformedArnException(inner) => {
-                Error::MalformedArnException(inner)
-            }
-            crate::error::GetResourceSharesError::ServerInternalException(inner) => {
-                Error::ServerInternalException(inner)
-            }
-            crate::error::GetResourceSharesError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::GetResourceSharesError::UnknownResourceException(inner) => {
-                Error::UnknownResourceException(inner)
-            }
-            crate::error::GetResourceSharesError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::ListPendingInvitationResourcesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::ListPendingInvitationResourcesError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::ListPendingInvitationResourcesError> for Error {
-    fn from(err: crate::error::ListPendingInvitationResourcesError) -> Self {
-        match err {
-            crate::error::ListPendingInvitationResourcesError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-            crate::error::ListPendingInvitationResourcesError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::ListPendingInvitationResourcesError::MalformedArnException(inner) => Error::MalformedArnException(inner),
-            crate::error::ListPendingInvitationResourcesError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
-            crate::error::ListPendingInvitationResourcesError::ResourceShareInvitationAlreadyRejectedException(inner) => Error::ResourceShareInvitationAlreadyRejectedException(inner),
-            crate::error::ListPendingInvitationResourcesError::ResourceShareInvitationArnNotFoundException(inner) => Error::ResourceShareInvitationArnNotFoundException(inner),
-            crate::error::ListPendingInvitationResourcesError::ResourceShareInvitationExpiredException(inner) => Error::ResourceShareInvitationExpiredException(inner),
-            crate::error::ListPendingInvitationResourcesError::ServerInternalException(inner) => Error::ServerInternalException(inner),
-            crate::error::ListPendingInvitationResourcesError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::ListPendingInvitationResourcesError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListPermissionsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListPermissionsError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::ListPermissionsError> for Error {
-    fn from(err: crate::error::ListPermissionsError) -> Self {
-        match err {
-            crate::error::ListPermissionsError::InvalidNextTokenException(inner) => {
-                Error::InvalidNextTokenException(inner)
-            }
-            crate::error::ListPermissionsError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::ListPermissionsError::OperationNotPermittedException(inner) => {
-                Error::OperationNotPermittedException(inner)
-            }
-            crate::error::ListPermissionsError::ServerInternalException(inner) => {
-                Error::ServerInternalException(inner)
-            }
-            crate::error::ListPermissionsError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::ListPermissionsError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListPermissionVersionsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListPermissionVersionsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::ListPermissionVersionsError> for Error {
-    fn from(err: crate::error::ListPermissionVersionsError) -> Self {
-        match err {
-            crate::error::ListPermissionVersionsError::InvalidNextTokenException(inner) => {
-                Error::InvalidNextTokenException(inner)
-            }
-            crate::error::ListPermissionVersionsError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::ListPermissionVersionsError::MalformedArnException(inner) => {
-                Error::MalformedArnException(inner)
-            }
-            crate::error::ListPermissionVersionsError::OperationNotPermittedException(inner) => {
-                Error::OperationNotPermittedException(inner)
-            }
-            crate::error::ListPermissionVersionsError::ServerInternalException(inner) => {
-                Error::ServerInternalException(inner)
-            }
-            crate::error::ListPermissionVersionsError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::ListPermissionVersionsError::UnknownResourceException(inner) => {
-                Error::UnknownResourceException(inner)
-            }
-            crate::error::ListPermissionVersionsError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListPrincipalsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListPrincipalsError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::ListPrincipalsError> for Error {
-    fn from(err: crate::error::ListPrincipalsError) -> Self {
-        match err {
-            crate::error::ListPrincipalsError::InvalidNextTokenException(inner) => {
-                Error::InvalidNextTokenException(inner)
-            }
-            crate::error::ListPrincipalsError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::ListPrincipalsError::MalformedArnException(inner) => {
-                Error::MalformedArnException(inner)
-            }
-            crate::error::ListPrincipalsError::ServerInternalException(inner) => {
-                Error::ServerInternalException(inner)
-            }
-            crate::error::ListPrincipalsError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::ListPrincipalsError::UnknownResourceException(inner) => {
-                Error::UnknownResourceException(inner)
-            }
-            crate::error::ListPrincipalsError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListResourcesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListResourcesError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::ListResourcesError> for Error {
-    fn from(err: crate::error::ListResourcesError) -> Self {
-        match err {
-            crate::error::ListResourcesError::InvalidNextTokenException(inner) => {
-                Error::InvalidNextTokenException(inner)
-            }
-            crate::error::ListResourcesError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::ListResourcesError::InvalidResourceTypeException(inner) => {
-                Error::InvalidResourceTypeException(inner)
-            }
-            crate::error::ListResourcesError::MalformedArnException(inner) => {
-                Error::MalformedArnException(inner)
-            }
-            crate::error::ListResourcesError::ServerInternalException(inner) => {
-                Error::ServerInternalException(inner)
-            }
-            crate::error::ListResourcesError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::ListResourcesError::UnknownResourceException(inner) => {
-                Error::UnknownResourceException(inner)
-            }
-            crate::error::ListResourcesError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListResourceSharePermissionsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListResourceSharePermissionsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::ListResourceSharePermissionsError> for Error {
-    fn from(err: crate::error::ListResourceSharePermissionsError) -> Self {
-        match err {
-            crate::error::ListResourceSharePermissionsError::InvalidNextTokenException(inner) => {
-                Error::InvalidNextTokenException(inner)
-            }
-            crate::error::ListResourceSharePermissionsError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::ListResourceSharePermissionsError::MalformedArnException(inner) => {
-                Error::MalformedArnException(inner)
-            }
-            crate::error::ListResourceSharePermissionsError::OperationNotPermittedException(
-                inner,
-            ) => Error::OperationNotPermittedException(inner),
-            crate::error::ListResourceSharePermissionsError::ServerInternalException(inner) => {
-                Error::ServerInternalException(inner)
-            }
-            crate::error::ListResourceSharePermissionsError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::ListResourceSharePermissionsError::UnknownResourceException(inner) => {
-                Error::UnknownResourceException(inner)
-            }
-            crate::error::ListResourceSharePermissionsError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListResourceTypesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListResourceTypesError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::ListResourceTypesError> for Error {
-    fn from(err: crate::error::ListResourceTypesError) -> Self {
-        match err {
-            crate::error::ListResourceTypesError::InvalidNextTokenException(inner) => {
-                Error::InvalidNextTokenException(inner)
-            }
-            crate::error::ListResourceTypesError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::ListResourceTypesError::ServerInternalException(inner) => {
-                Error::ServerInternalException(inner)
-            }
-            crate::error::ListResourceTypesError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::ListResourceTypesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
-            crate::error::PromoteResourceShareCreatedFromPolicyError,
+            crate::operation::list_resource_share_permissions::ListResourceSharePermissionsError,
             R,
         >,
     > for Error
@@ -1081,7 +887,7 @@ where
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::PromoteResourceShareCreatedFromPolicyError,
+            crate::operation::list_resource_share_permissions::ListResourceSharePermissionsError,
             R,
         >,
     ) -> Self {
@@ -1100,28 +906,153 @@ where
         }
     }
 }
-impl From<crate::error::PromoteResourceShareCreatedFromPolicyError> for Error {
-    fn from(err: crate::error::PromoteResourceShareCreatedFromPolicyError) -> Self {
+impl From<crate::operation::list_resource_share_permissions::ListResourceSharePermissionsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::list_resource_share_permissions::ListResourceSharePermissionsError,
+    ) -> Self {
         match err {
-            crate::error::PromoteResourceShareCreatedFromPolicyError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::error::PromoteResourceShareCreatedFromPolicyError::MalformedArnException(inner) => Error::MalformedArnException(inner),
-            crate::error::PromoteResourceShareCreatedFromPolicyError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
-            crate::error::PromoteResourceShareCreatedFromPolicyError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
-            crate::error::PromoteResourceShareCreatedFromPolicyError::ResourceShareLimitExceededException(inner) => Error::ResourceShareLimitExceededException(inner),
-            crate::error::PromoteResourceShareCreatedFromPolicyError::ServerInternalException(inner) => Error::ServerInternalException(inner),
-            crate::error::PromoteResourceShareCreatedFromPolicyError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::PromoteResourceShareCreatedFromPolicyError::UnknownResourceException(inner) => Error::UnknownResourceException(inner),
-            crate::error::PromoteResourceShareCreatedFromPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_resource_share_permissions::ListResourceSharePermissionsError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::list_resource_share_permissions::ListResourceSharePermissionsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_resource_share_permissions::ListResourceSharePermissionsError::MalformedArnException(inner) => Error::MalformedArnException(inner),
+            crate::operation::list_resource_share_permissions::ListResourceSharePermissionsError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::list_resource_share_permissions::ListResourceSharePermissionsError::ServerInternalException(inner) => Error::ServerInternalException(inner),
+            crate::operation::list_resource_share_permissions::ListResourceSharePermissionsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::list_resource_share_permissions::ListResourceSharePermissionsError::UnknownResourceException(inner) => Error::UnknownResourceException(inner),
+            crate::operation::list_resource_share_permissions::ListResourceSharePermissionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::RejectResourceShareInvitationError, R>>
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_resource_types::ListResourceTypesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_resource_types::ListResourceTypesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_resource_types::ListResourceTypesError> for Error {
+    fn from(err: crate::operation::list_resource_types::ListResourceTypesError) -> Self {
+        match err {
+            crate::operation::list_resource_types::ListResourceTypesError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::list_resource_types::ListResourceTypesError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_resource_types::ListResourceTypesError::ServerInternalException(inner) => Error::ServerInternalException(inner),
+            crate::operation::list_resource_types::ListResourceTypesError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::list_resource_types::ListResourceTypesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyError> for Error {
+    fn from(err: crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyError) -> Self {
+        match err {
+            crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyError::MalformedArnException(inner) => Error::MalformedArnException(inner),
+            crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
+            crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyError::ResourceShareLimitExceededException(inner) => Error::ResourceShareLimitExceededException(inner),
+            crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyError::ServerInternalException(inner) => Error::ServerInternalException(inner),
+            crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyError::UnknownResourceException(inner) => Error::UnknownResourceException(inner),
+            crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::reject_resource_share_invitation::RejectResourceShareInvitationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::reject_resource_share_invitation::RejectResourceShareInvitationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::reject_resource_share_invitation::RejectResourceShareInvitationError>
+    for Error
+{
+    fn from(
+        err: crate::operation::reject_resource_share_invitation::RejectResourceShareInvitationError,
+    ) -> Self {
+        match err {
+            crate::operation::reject_resource_share_invitation::RejectResourceShareInvitationError::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
+            crate::operation::reject_resource_share_invitation::RejectResourceShareInvitationError::InvalidClientTokenException(inner) => Error::InvalidClientTokenException(inner),
+            crate::operation::reject_resource_share_invitation::RejectResourceShareInvitationError::MalformedArnException(inner) => Error::MalformedArnException(inner),
+            crate::operation::reject_resource_share_invitation::RejectResourceShareInvitationError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::reject_resource_share_invitation::RejectResourceShareInvitationError::ResourceShareInvitationAlreadyAcceptedException(inner) => Error::ResourceShareInvitationAlreadyAcceptedException(inner),
+            crate::operation::reject_resource_share_invitation::RejectResourceShareInvitationError::ResourceShareInvitationAlreadyRejectedException(inner) => Error::ResourceShareInvitationAlreadyRejectedException(inner),
+            crate::operation::reject_resource_share_invitation::RejectResourceShareInvitationError::ResourceShareInvitationArnNotFoundException(inner) => Error::ResourceShareInvitationArnNotFoundException(inner),
+            crate::operation::reject_resource_share_invitation::RejectResourceShareInvitationError::ResourceShareInvitationExpiredException(inner) => Error::ResourceShareInvitationExpiredException(inner),
+            crate::operation::reject_resource_share_invitation::RejectResourceShareInvitationError::ServerInternalException(inner) => Error::ServerInternalException(inner),
+            crate::operation::reject_resource_share_invitation::RejectResourceShareInvitationError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::reject_resource_share_invitation::RejectResourceShareInvitationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::RejectResourceShareInvitationError, R>,
+        err: aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -1138,116 +1069,50 @@ where
         }
     }
 }
-impl From<crate::error::RejectResourceShareInvitationError> for Error {
-    fn from(err: crate::error::RejectResourceShareInvitationError) -> Self {
+impl From<crate::operation::tag_resource::TagResourceError> for Error {
+    fn from(err: crate::operation::tag_resource::TagResourceError) -> Self {
         match err {
-            crate::error::RejectResourceShareInvitationError::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
-            crate::error::RejectResourceShareInvitationError::InvalidClientTokenException(inner) => Error::InvalidClientTokenException(inner),
-            crate::error::RejectResourceShareInvitationError::MalformedArnException(inner) => Error::MalformedArnException(inner),
-            crate::error::RejectResourceShareInvitationError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
-            crate::error::RejectResourceShareInvitationError::ResourceShareInvitationAlreadyAcceptedException(inner) => Error::ResourceShareInvitationAlreadyAcceptedException(inner),
-            crate::error::RejectResourceShareInvitationError::ResourceShareInvitationAlreadyRejectedException(inner) => Error::ResourceShareInvitationAlreadyRejectedException(inner),
-            crate::error::RejectResourceShareInvitationError::ResourceShareInvitationArnNotFoundException(inner) => Error::ResourceShareInvitationArnNotFoundException(inner),
-            crate::error::RejectResourceShareInvitationError::ResourceShareInvitationExpiredException(inner) => Error::ResourceShareInvitationExpiredException(inner),
-            crate::error::RejectResourceShareInvitationError::ServerInternalException(inner) => Error::ServerInternalException(inner),
-            crate::error::RejectResourceShareInvitationError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::error::RejectResourceShareInvitationError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::TagResourceError> for Error {
-    fn from(err: crate::error::TagResourceError) -> Self {
-        match err {
-            crate::error::TagResourceError::InvalidParameterException(inner) => {
+            crate::operation::tag_resource::TagResourceError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
             }
-            crate::error::TagResourceError::MalformedArnException(inner) => {
+            crate::operation::tag_resource::TagResourceError::MalformedArnException(inner) => {
                 Error::MalformedArnException(inner)
             }
-            crate::error::TagResourceError::ResourceArnNotFoundException(inner) => {
-                Error::ResourceArnNotFoundException(inner)
-            }
-            crate::error::TagResourceError::ServerInternalException(inner) => {
+            crate::operation::tag_resource::TagResourceError::ResourceArnNotFoundException(
+                inner,
+            ) => Error::ResourceArnNotFoundException(inner),
+            crate::operation::tag_resource::TagResourceError::ServerInternalException(inner) => {
                 Error::ServerInternalException(inner)
             }
-            crate::error::TagResourceError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::TagResourceError::TagLimitExceededException(inner) => {
+            crate::operation::tag_resource::TagResourceError::ServiceUnavailableException(
+                inner,
+            ) => Error::ServiceUnavailableException(inner),
+            crate::operation::tag_resource::TagResourceError::TagLimitExceededException(inner) => {
                 Error::TagLimitExceededException(inner)
             }
-            crate::error::TagResourceError::TagPolicyViolationException(inner) => {
-                Error::TagPolicyViolationException(inner)
-            }
-            crate::error::TagResourceError::UnknownResourceException(inner) => {
+            crate::operation::tag_resource::TagResourceError::TagPolicyViolationException(
+                inner,
+            ) => Error::TagPolicyViolationException(inner),
+            crate::operation::tag_resource::TagResourceError::UnknownResourceException(inner) => {
                 Error::UnknownResourceException(inner)
             }
-            crate::error::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::tag_resource::TagResourceError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::UntagResourceError> for Error {
-    fn from(err: crate::error::UntagResourceError) -> Self {
-        match err {
-            crate::error::UntagResourceError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::UntagResourceError::ServerInternalException(inner) => {
-                Error::ServerInternalException(inner)
-            }
-            crate::error::UntagResourceError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateResourceShareError, R>> for Error
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateResourceShareError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::untag_resource::UntagResourceError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -1264,37 +1129,68 @@ where
         }
     }
 }
-impl From<crate::error::UpdateResourceShareError> for Error {
-    fn from(err: crate::error::UpdateResourceShareError) -> Self {
+impl From<crate::operation::untag_resource::UntagResourceError> for Error {
+    fn from(err: crate::operation::untag_resource::UntagResourceError) -> Self {
         match err {
-            crate::error::UpdateResourceShareError::IdempotentParameterMismatchException(inner) => {
-                Error::IdempotentParameterMismatchException(inner)
+            crate::operation::untag_resource::UntagResourceError::InvalidParameterException(
+                inner,
+            ) => Error::InvalidParameterException(inner),
+            crate::operation::untag_resource::UntagResourceError::ServerInternalException(
+                inner,
+            ) => Error::ServerInternalException(inner),
+            crate::operation::untag_resource::UntagResourceError::ServiceUnavailableException(
+                inner,
+            ) => Error::ServiceUnavailableException(inner),
+            crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
-            crate::error::UpdateResourceShareError::InvalidClientTokenException(inner) => {
-                Error::InvalidClientTokenException(inner)
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_resource_share::UpdateResourceShareError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_resource_share::UpdateResourceShareError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
-            crate::error::UpdateResourceShareError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::error::UpdateResourceShareError::MalformedArnException(inner) => {
-                Error::MalformedArnException(inner)
-            }
-            crate::error::UpdateResourceShareError::MissingRequiredParameterException(inner) => {
-                Error::MissingRequiredParameterException(inner)
-            }
-            crate::error::UpdateResourceShareError::OperationNotPermittedException(inner) => {
-                Error::OperationNotPermittedException(inner)
-            }
-            crate::error::UpdateResourceShareError::ServerInternalException(inner) => {
-                Error::ServerInternalException(inner)
-            }
-            crate::error::UpdateResourceShareError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::UpdateResourceShareError::UnknownResourceException(inner) => {
-                Error::UnknownResourceException(inner)
-            }
-            crate::error::UpdateResourceShareError::Unhandled(inner) => Error::Unhandled(inner),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_resource_share::UpdateResourceShareError> for Error {
+    fn from(err: crate::operation::update_resource_share::UpdateResourceShareError) -> Self {
+        match err {
+            crate::operation::update_resource_share::UpdateResourceShareError::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
+            crate::operation::update_resource_share::UpdateResourceShareError::InvalidClientTokenException(inner) => Error::InvalidClientTokenException(inner),
+            crate::operation::update_resource_share::UpdateResourceShareError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::update_resource_share::UpdateResourceShareError::MalformedArnException(inner) => Error::MalformedArnException(inner),
+            crate::operation::update_resource_share::UpdateResourceShareError::MissingRequiredParameterException(inner) => Error::MissingRequiredParameterException(inner),
+            crate::operation::update_resource_share::UpdateResourceShareError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
+            crate::operation::update_resource_share::UpdateResourceShareError::ServerInternalException(inner) => Error::ServerInternalException(inner),
+            crate::operation::update_resource_share::UpdateResourceShareError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::update_resource_share::UpdateResourceShareError::UnknownResourceException(inner) => Error::UnknownResourceException(inner),
+            crate::operation::update_resource_share::UpdateResourceShareError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

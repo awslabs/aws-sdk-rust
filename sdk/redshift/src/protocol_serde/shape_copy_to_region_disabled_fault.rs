@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_copy_to_region_disabled_fault_xml_err(
     inp: &[u8],
-    mut builder: crate::error::copy_to_region_disabled_fault::Builder,
+    mut builder: crate::types::error::builders::CopyToRegionDisabledFaultBuilder,
 ) -> Result<
-    crate::error::copy_to_region_disabled_fault::Builder,
+    crate::types::error::builders::CopyToRegionDisabledFaultBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

@@ -2,7 +2,7 @@
 pub(crate) fn de_batch_get_custom_data_identifier_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::BatchGetCustomDataIdentifierSummary>,
+    Option<crate::types::BatchGetCustomDataIdentifierSummary>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::batch_get_custom_data_identifier_summary::Builder::default();
+                crate::types::builders::BatchGetCustomDataIdentifierSummaryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

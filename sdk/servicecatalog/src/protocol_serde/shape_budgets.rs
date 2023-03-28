@@ -2,7 +2,7 @@
 pub(crate) fn de_budgets<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::BudgetDetail>>,
+    Option<std::vec::Vec<crate::types::BudgetDetail>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_glue_schemas<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::GlueSchema>>,
+    Option<std::vec::Vec<crate::types::GlueSchema>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_dynamic_ssm_parameters<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<std::string::String, crate::model::DynamicSsmParameterValue>>,
+    Option<std::collections::HashMap<std::string::String, crate::types::DynamicSsmParameterValue>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

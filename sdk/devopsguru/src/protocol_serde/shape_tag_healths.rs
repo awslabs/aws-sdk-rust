@@ -2,7 +2,7 @@
 pub(crate) fn de_tag_healths<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::TagHealth>>,
+    Option<std::vec::Vec<crate::types::TagHealth>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

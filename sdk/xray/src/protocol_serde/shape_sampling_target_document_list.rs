@@ -2,7 +2,7 @@
 pub(crate) fn de_sampling_target_document_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SamplingTargetDocument>>,
+    Option<std::vec::Vec<crate::types::SamplingTargetDocument>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

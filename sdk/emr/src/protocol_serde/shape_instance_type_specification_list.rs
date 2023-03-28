@@ -2,7 +2,7 @@
 pub(crate) fn de_instance_type_specification_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::InstanceTypeSpecification>>,
+    Option<std::vec::Vec<crate::types::InstanceTypeSpecification>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

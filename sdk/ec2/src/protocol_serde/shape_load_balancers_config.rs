@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_load_balancers_config(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::LoadBalancersConfig,
+    input: &crate::types::LoadBalancersConfig,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("ClassicLoadBalancersConfig");
@@ -21,9 +21,9 @@ pub fn ser_load_balancers_config(
 
 pub fn de_load_balancers_config(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::LoadBalancersConfig, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::LoadBalancersConfig, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::LoadBalancersConfig::builder();
+    let mut builder = crate::types::LoadBalancersConfig::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("classicLoadBalancersConfig") /* ClassicLoadBalancersConfig com.amazonaws.ec2#LoadBalancersConfig$ClassicLoadBalancersConfig */ =>  {

@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_custom_data_identifier_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CustomDataIdentifierSummary>>,
+    Option<std::vec::Vec<crate::types::CustomDataIdentifierSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

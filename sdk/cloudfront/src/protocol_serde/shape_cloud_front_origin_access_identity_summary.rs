@@ -2,11 +2,11 @@
 pub fn de_cloud_front_origin_access_identity_summary(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    crate::model::CloudFrontOriginAccessIdentitySummary,
+    crate::types::CloudFrontOriginAccessIdentitySummary,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     #[allow(unused_mut)]
-    let mut builder = crate::model::CloudFrontOriginAccessIdentitySummary::builder();
+    let mut builder = crate::types::CloudFrontOriginAccessIdentitySummary::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Id") /* Id com.amazonaws.cloudfront#CloudFrontOriginAccessIdentitySummary$Id */ =>  {

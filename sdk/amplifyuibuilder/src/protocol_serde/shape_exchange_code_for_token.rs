@@ -3,39 +3,45 @@
 pub fn de_exchange_code_for_token_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ExchangeCodeForTokenOutput,
-    crate::error::ExchangeCodeForTokenError,
+    crate::operation::exchange_code_for_token::ExchangeCodeForTokenOutput,
+    crate::operation::exchange_code_for_token::ExchangeCodeForTokenError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ExchangeCodeForTokenError::unhandled)?;
+        .map_err(crate::operation::exchange_code_for_token::ExchangeCodeForTokenError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ExchangeCodeForTokenError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::exchange_code_for_token::ExchangeCodeForTokenError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterException" => {
-            crate::error::ExchangeCodeForTokenError::InvalidParameterException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidParameterException" => crate::operation::exchange_code_for_token::ExchangeCodeForTokenError::InvalidParameterException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidParameterExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExchangeCodeForTokenError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::exchange_code_for_token::ExchangeCodeForTokenError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::ExchangeCodeForTokenError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::exchange_code_for_token::ExchangeCodeForTokenError::generic(generic)
     })
 }
 
@@ -43,18 +49,18 @@ pub fn de_exchange_code_for_token_http_error(
 pub fn de_exchange_code_for_token_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ExchangeCodeForTokenOutput,
-    crate::error::ExchangeCodeForTokenError,
+    crate::operation::exchange_code_for_token::ExchangeCodeForTokenOutput,
+    crate::operation::exchange_code_for_token::ExchangeCodeForTokenError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::exchange_code_for_token_output::Builder::default();
+        let mut output = crate::operation::exchange_code_for_token::builders::ExchangeCodeForTokenOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_exchange_code_for_token::de_exchange_code_for_token(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ExchangeCodeForTokenError::unhandled)?;
+        .map_err(crate::operation::exchange_code_for_token::ExchangeCodeForTokenError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -64,9 +70,9 @@ pub fn de_exchange_code_for_token_http_response(
 
 pub(crate) fn de_exchange_code_for_token(
     value: &[u8],
-    mut builder: crate::output::exchange_code_for_token_output::Builder,
+    mut builder: crate::operation::exchange_code_for_token::builders::ExchangeCodeForTokenOutputBuilder,
 ) -> Result<
-    crate::output::exchange_code_for_token_output::Builder,
+    crate::operation::exchange_code_for_token::builders::ExchangeCodeForTokenOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

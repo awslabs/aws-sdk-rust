@@ -2,7 +2,7 @@
 pub(crate) fn de_meeting_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Meeting>>,
+    Option<std::vec::Vec<crate::types::Meeting>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

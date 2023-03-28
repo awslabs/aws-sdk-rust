@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_tracking_options(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::TrackingOptions,
+    input: &crate::types::TrackingOptions,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("CustomRedirectDomain");
@@ -14,9 +14,9 @@ pub fn ser_tracking_options(
 
 pub fn de_tracking_options(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::TrackingOptions, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::TrackingOptions, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::TrackingOptions::builder();
+    let mut builder = crate::types::TrackingOptions::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("CustomRedirectDomain") /* CustomRedirectDomain com.amazonaws.ses#TrackingOptions$CustomRedirectDomain */ =>  {

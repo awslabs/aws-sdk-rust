@@ -2,7 +2,7 @@
 pub(crate) fn de_invalid_configuration_detail_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::InvalidConfigurationDetail>>,
+    Option<std::vec::Vec<crate::types::InvalidConfigurationDetail>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

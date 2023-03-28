@@ -2,7 +2,7 @@
 pub(crate) fn de_attachment_information_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AttachmentInformation>>,
+    Option<std::vec::Vec<crate::types::AttachmentInformation>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,66 +2,82 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_forms_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListFormsOutput, crate::error::ListFormsError> {
+) -> std::result::Result<
+    crate::operation::list_forms::ListFormsOutput,
+    crate::operation::list_forms::ListFormsError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListFormsError::unhandled)?;
+        .map_err(crate::operation::list_forms::ListFormsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListFormsError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::list_forms::ListFormsError::unhandled(
+                generic,
+            ))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerException" => crate::error::ListFormsError::InternalServerException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "InternalServerException" => {
+            crate::operation::list_forms::ListFormsError::InternalServerException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListFormsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InvalidParameterException" => crate::error::ListFormsError::InvalidParameterException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InternalServerExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_forms::ListFormsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidParameterException" => {
+            crate::operation::list_forms::ListFormsError::InvalidParameterException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_parameter_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListFormsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::ListFormsError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InvalidParameterExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_forms::ListFormsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::list_forms::ListFormsError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_forms_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListFormsOutput, crate::error::ListFormsError> {
+) -> std::result::Result<
+    crate::operation::list_forms::ListFormsOutput,
+    crate::operation::list_forms::ListFormsError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_forms_output::Builder::default();
+        let mut output = crate::operation::list_forms::builders::ListFormsOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_forms::de_list_forms(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListFormsError::unhandled)?;
+        .map_err(crate::operation::list_forms::ListFormsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -71,9 +87,9 @@ pub fn de_list_forms_http_response(
 
 pub(crate) fn de_list_forms(
     value: &[u8],
-    mut builder: crate::output::list_forms_output::Builder,
+    mut builder: crate::operation::list_forms::builders::ListFormsOutputBuilder,
 ) -> Result<
-    crate::output::list_forms_output::Builder,
+    crate::operation::list_forms::builders::ListFormsOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

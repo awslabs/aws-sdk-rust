@@ -2,7 +2,7 @@
 pub(crate) fn de_network_reachability_details<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::NetworkReachabilityDetails>,
+    Option<crate::types::NetworkReachabilityDetails>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::network_reachability_details::Builder::default();
+            let mut builder = crate::types::builders::NetworkReachabilityDetailsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -35,7 +35,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::NetworkProtocol::from(u.as_ref())
+                                            crate::types::NetworkProtocol::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

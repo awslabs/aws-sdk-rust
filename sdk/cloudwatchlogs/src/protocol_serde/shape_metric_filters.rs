@@ -2,7 +2,7 @@
 pub(crate) fn de_metric_filters<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::MetricFilter>>,
+    Option<std::vec::Vec<crate::types::MetricFilter>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

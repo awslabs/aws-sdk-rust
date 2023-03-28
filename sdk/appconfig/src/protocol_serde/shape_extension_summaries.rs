@@ -2,7 +2,7 @@
 pub(crate) fn de_extension_summaries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ExtensionSummary>>,
+    Option<std::vec::Vec<crate::types::ExtensionSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

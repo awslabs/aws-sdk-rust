@@ -2,7 +2,7 @@
 pub(crate) fn de_audit_details<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<std::string::String, crate::model::AuditCheckDetails>>,
+    Option<std::collections::HashMap<std::string::String, crate::types::AuditCheckDetails>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_task_template_default_field_value_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::TaskTemplateDefaultFieldValue>>,
+    Option<std::vec::Vec<crate::types::TaskTemplateDefaultFieldValue>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,28 +2,35 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_import_snapshot_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ImportSnapshotOutput, crate::error::ImportSnapshotError> {
+) -> std::result::Result<
+    crate::operation::import_snapshot::ImportSnapshotOutput,
+    crate::operation::import_snapshot::ImportSnapshotError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ImportSnapshotError::unhandled)?;
+        .map_err(crate::operation::import_snapshot::ImportSnapshotError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::ImportSnapshotError::generic(generic))
+    Err(crate::operation::import_snapshot::ImportSnapshotError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_import_snapshot_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ImportSnapshotOutput, crate::error::ImportSnapshotError> {
+) -> std::result::Result<
+    crate::operation::import_snapshot::ImportSnapshotOutput,
+    crate::operation::import_snapshot::ImportSnapshotError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::import_snapshot_output::Builder::default();
+        let mut output =
+            crate::operation::import_snapshot::builders::ImportSnapshotOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_import_snapshot::de_import_snapshot(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ImportSnapshotError::unhandled)?;
+        .map_err(crate::operation::import_snapshot::ImportSnapshotError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -34,9 +41,11 @@ pub fn de_import_snapshot_http_response(
 #[allow(unused_mut)]
 pub fn de_import_snapshot(
     inp: &[u8],
-    mut builder: crate::output::import_snapshot_output::Builder,
-) -> Result<crate::output::import_snapshot_output::Builder, aws_smithy_xml::decode::XmlDecodeError>
-{
+    mut builder: crate::operation::import_snapshot::builders::ImportSnapshotOutputBuilder,
+) -> Result<
+    crate::operation::import_snapshot::builders::ImportSnapshotOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

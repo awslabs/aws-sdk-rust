@@ -2,11 +2,11 @@
 pub fn de_multi_region_access_point_regional_response(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    crate::model::MultiRegionAccessPointRegionalResponse,
+    crate::types::MultiRegionAccessPointRegionalResponse,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     #[allow(unused_mut)]
-    let mut builder = crate::model::MultiRegionAccessPointRegionalResponse::builder();
+    let mut builder = crate::types::MultiRegionAccessPointRegionalResponse::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Name") /* Name com.amazonaws.s3control#MultiRegionAccessPointRegionalResponse$Name */ =>  {

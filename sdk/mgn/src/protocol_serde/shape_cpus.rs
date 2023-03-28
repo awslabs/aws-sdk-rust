@@ -2,7 +2,7 @@
 pub(crate) fn de_cpus<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Cpu>>,
+    Option<std::vec::Vec<crate::types::Cpu>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

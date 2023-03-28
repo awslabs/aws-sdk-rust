@@ -2,7 +2,7 @@
 pub(crate) fn de_firewall_subnet_is_out_of_scope_violation<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::FirewallSubnetIsOutOfScopeViolation>,
+    Option<crate::types::FirewallSubnetIsOutOfScopeViolation>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::firewall_subnet_is_out_of_scope_violation::Builder::default();
+                crate::types::builders::FirewallSubnetIsOutOfScopeViolationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

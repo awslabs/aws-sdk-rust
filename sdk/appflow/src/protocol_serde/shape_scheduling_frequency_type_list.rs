@@ -2,7 +2,7 @@
 pub(crate) fn de_scheduling_frequency_type_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ScheduleFrequencyType>>,
+    Option<std::vec::Vec<crate::types::ScheduleFrequencyType>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -29,7 +29,7 @@ where
                         )?
                         .map(|s| {
                             s.to_unescaped()
-                                .map(|u| crate::model::ScheduleFrequencyType::from(u.as_ref()))
+                                .map(|u| crate::types::ScheduleFrequencyType::from(u.as_ref()))
                         })
                         .transpose()?;
                         if let Some(value) = value {

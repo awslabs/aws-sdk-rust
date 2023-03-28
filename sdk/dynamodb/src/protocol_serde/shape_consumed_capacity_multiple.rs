@@ -2,7 +2,7 @@
 pub(crate) fn de_consumed_capacity_multiple<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ConsumedCapacity>>,
+    Option<std::vec::Vec<crate::types::ConsumedCapacity>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

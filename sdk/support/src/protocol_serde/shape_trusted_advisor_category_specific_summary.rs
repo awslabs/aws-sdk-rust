@@ -2,7 +2,7 @@
 pub(crate) fn de_trusted_advisor_category_specific_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::TrustedAdvisorCategorySpecificSummary>,
+    Option<crate::types::TrustedAdvisorCategorySpecificSummary>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::trusted_advisor_category_specific_summary::Builder::default();
+                crate::types::builders::TrustedAdvisorCategorySpecificSummaryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

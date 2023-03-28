@@ -2,7 +2,7 @@
 pub(crate) fn de_domain_package_details<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::DomainPackageDetails>,
+    Option<crate::types::DomainPackageDetails>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::domain_package_details::Builder::default();
+            let mut builder = crate::types::builders::DomainPackageDetailsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -48,7 +48,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::PackageType::from(u.as_ref()))
+                                            .map(|u| crate::types::PackageType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -77,7 +77,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::DomainPackageStatus::from(u.as_ref())
+                                            crate::types::DomainPackageStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

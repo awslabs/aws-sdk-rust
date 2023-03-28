@@ -2,7 +2,7 @@
 pub fn de_node_group_member_update_status_list(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::NodeGroupMemberUpdateStatus>,
+    std::vec::Vec<crate::types::NodeGroupMemberUpdateStatus>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

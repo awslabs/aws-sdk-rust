@@ -2,7 +2,7 @@
 pub(crate) fn de_aws_iam_role_policy_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AwsIamRolePolicy>>,
+    Option<std::vec::Vec<crate::types::AwsIamRolePolicy>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

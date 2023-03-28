@@ -2,7 +2,7 @@
 pub(crate) fn de_index_configuration_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::IndexConfigurationSummary>>,
+    Option<std::vec::Vec<crate::types::IndexConfigurationSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

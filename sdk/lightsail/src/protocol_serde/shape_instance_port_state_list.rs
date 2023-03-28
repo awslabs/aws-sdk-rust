@@ -2,7 +2,7 @@
 pub(crate) fn de_instance_port_state_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::InstancePortState>>,
+    Option<std::vec::Vec<crate::types::InstancePortState>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

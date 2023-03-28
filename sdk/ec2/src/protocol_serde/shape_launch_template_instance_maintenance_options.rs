@@ -2,18 +2,18 @@
 pub fn de_launch_template_instance_maintenance_options(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    crate::model::LaunchTemplateInstanceMaintenanceOptions,
+    crate::types::LaunchTemplateInstanceMaintenanceOptions,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     #[allow(unused_mut)]
-    let mut builder = crate::model::LaunchTemplateInstanceMaintenanceOptions::builder();
+    let mut builder = crate::types::LaunchTemplateInstanceMaintenanceOptions::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("autoRecovery") /* AutoRecovery com.amazonaws.ec2#LaunchTemplateInstanceMaintenanceOptions$AutoRecovery */ =>  {
                 let var_1 =
                     Some(
-                        Result::<crate::model::LaunchTemplateAutoRecoveryState, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::LaunchTemplateAutoRecoveryState::from(
+                        Result::<crate::types::LaunchTemplateAutoRecoveryState, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::LaunchTemplateAutoRecoveryState::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

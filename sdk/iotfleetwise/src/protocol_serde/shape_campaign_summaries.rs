@@ -2,7 +2,7 @@
 pub(crate) fn de_campaign_summaries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CampaignSummary>>,
+    Option<std::vec::Vec<crate::types::CampaignSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

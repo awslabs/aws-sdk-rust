@@ -2,7 +2,7 @@
 pub(crate) fn de_list_resources_associated_to_custom_line_item_response_element<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ListResourcesAssociatedToCustomLineItemResponseElement>,
+    Option<crate::types::ListResourcesAssociatedToCustomLineItemResponseElement>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::list_resources_associated_to_custom_line_item_response_element::Builder::default();
+            let mut builder = crate::types::builders::ListResourcesAssociatedToCustomLineItemResponseElementBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -39,7 +39,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::CustomLineItemRelationship::from(
+                                            crate::types::CustomLineItemRelationship::from(
                                                 u.as_ref(),
                                             )
                                         })

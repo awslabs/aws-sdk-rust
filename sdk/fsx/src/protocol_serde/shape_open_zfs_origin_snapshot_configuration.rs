@@ -2,7 +2,7 @@
 pub(crate) fn de_open_zfs_origin_snapshot_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::OpenZfsOriginSnapshotConfiguration>,
+    Option<crate::types::OpenZfsOriginSnapshotConfiguration>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::open_zfs_origin_snapshot_configuration::Builder::default();
+                crate::types::builders::OpenZfsOriginSnapshotConfigurationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -40,7 +40,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::OpenZfsCopyStrategy::from(u.as_ref())
+                                            crate::types::OpenZfsCopyStrategy::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

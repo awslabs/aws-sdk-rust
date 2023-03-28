@@ -3,103 +3,111 @@
 pub fn de_create_login_profile_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateLoginProfileOutput,
-    crate::error::CreateLoginProfileError,
+    crate::operation::create_login_profile::CreateLoginProfileOutput,
+    crate::operation::create_login_profile::CreateLoginProfileError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::CreateLoginProfileError::unhandled)?;
+        .map_err(crate::operation::create_login_profile::CreateLoginProfileError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::CreateLoginProfileError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::create_login_profile::CreateLoginProfileError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "EntityAlreadyExists" => {
-            crate::error::CreateLoginProfileError::EntityAlreadyExistsException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "EntityAlreadyExists" => crate::operation::create_login_profile::CreateLoginProfileError::EntityAlreadyExistsException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::entity_already_exists_exception::Builder::default();
+                    let mut output = crate::types::error::builders::EntityAlreadyExistsExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_entity_already_exists_exception::de_entity_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoginProfileError::unhandled)?;
+                    output = crate::protocol_serde::shape_entity_already_exists_exception::de_entity_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_login_profile::CreateLoginProfileError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "LimitExceeded" => crate::error::CreateLoginProfileError::LimitExceededException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::limit_exceeded_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoginProfileError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "NoSuchEntity" => crate::error::CreateLoginProfileError::NoSuchEntityException({
+        "LimitExceeded" => crate::operation::create_login_profile::CreateLoginProfileError::LimitExceededException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::no_such_entity_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_no_such_entity_exception::de_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoginProfileError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "PasswordPolicyViolation" => {
-            crate::error::CreateLoginProfileError::PasswordPolicyViolationException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::password_policy_violation_exception::Builder::default();
+                    let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_password_policy_violation_exception::de_password_policy_violation_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoginProfileError::unhandled)?;
+                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_login_profile::CreateLoginProfileError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ServiceFailure" => crate::error::CreateLoginProfileError::ServiceFailureException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::service_failure_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoginProfileError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::CreateLoginProfileError::generic(generic),
+        "NoSuchEntity" => crate::operation::create_login_profile::CreateLoginProfileError::NoSuchEntityException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::NoSuchEntityExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_no_such_entity_exception::de_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_login_profile::CreateLoginProfileError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "PasswordPolicyViolation" => crate::operation::create_login_profile::CreateLoginProfileError::PasswordPolicyViolationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::PasswordPolicyViolationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_password_policy_violation_exception::de_password_policy_violation_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_login_profile::CreateLoginProfileError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ServiceFailure" => crate::operation::create_login_profile::CreateLoginProfileError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ServiceFailureExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_login_profile::CreateLoginProfileError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::create_login_profile::CreateLoginProfileError::generic(generic)
     })
 }
 
@@ -107,18 +115,18 @@ pub fn de_create_login_profile_http_error(
 pub fn de_create_login_profile_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateLoginProfileOutput,
-    crate::error::CreateLoginProfileError,
+    crate::operation::create_login_profile::CreateLoginProfileOutput,
+    crate::operation::create_login_profile::CreateLoginProfileError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::create_login_profile_output::Builder::default();
+        let mut output = crate::operation::create_login_profile::builders::CreateLoginProfileOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_create_login_profile::de_create_login_profile(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::CreateLoginProfileError::unhandled)?;
+        .map_err(crate::operation::create_login_profile::CreateLoginProfileError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -129,9 +137,9 @@ pub fn de_create_login_profile_http_response(
 #[allow(unused_mut)]
 pub fn de_create_login_profile(
     inp: &[u8],
-    mut builder: crate::output::create_login_profile_output::Builder,
+    mut builder: crate::operation::create_login_profile::builders::CreateLoginProfileOutputBuilder,
 ) -> Result<
-    crate::output::create_login_profile_output::Builder,
+    crate::operation::create_login_profile::builders::CreateLoginProfileOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

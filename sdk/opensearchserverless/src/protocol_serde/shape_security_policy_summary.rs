@@ -2,7 +2,7 @@
 pub(crate) fn de_security_policy_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::SecurityPolicySummary>,
+    Option<crate::types::SecurityPolicySummary>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::security_policy_summary::Builder::default();
+            let mut builder = crate::types::builders::SecurityPolicySummaryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::SecurityPolicyType::from(u.as_ref())
+                                            crate::types::SecurityPolicyType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

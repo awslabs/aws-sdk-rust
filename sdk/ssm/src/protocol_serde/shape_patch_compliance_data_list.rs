@@ -2,7 +2,7 @@
 pub(crate) fn de_patch_compliance_data_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::PatchComplianceData>>,
+    Option<std::vec::Vec<crate::types::PatchComplianceData>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

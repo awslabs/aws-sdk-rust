@@ -2,7 +2,7 @@
 pub(crate) fn de_sensor_statistics_summaries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SensorStatisticsSummary>>,
+    Option<std::vec::Vec<crate::types::SensorStatisticsSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

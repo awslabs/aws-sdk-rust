@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_stack_set_operation_preferences(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::StackSetOperationPreferences,
+    input: &crate::types::StackSetOperationPreferences,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("RegionConcurrencyType");
@@ -57,16 +57,16 @@ pub fn ser_stack_set_operation_preferences(
 
 pub fn de_stack_set_operation_preferences(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::StackSetOperationPreferences, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::StackSetOperationPreferences, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::StackSetOperationPreferences::builder();
+    let mut builder = crate::types::StackSetOperationPreferences::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("RegionConcurrencyType") /* RegionConcurrencyType com.amazonaws.cloudformation#StackSetOperationPreferences$RegionConcurrencyType */ =>  {
                 let var_16 =
                     Some(
-                        Result::<crate::model::RegionConcurrencyType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::RegionConcurrencyType::from(
+                        Result::<crate::types::RegionConcurrencyType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::RegionConcurrencyType::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

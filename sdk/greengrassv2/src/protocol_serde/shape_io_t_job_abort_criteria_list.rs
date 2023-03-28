@@ -2,7 +2,7 @@
 pub(crate) fn de_io_t_job_abort_criteria_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::IoTJobAbortCriteria>>,
+    Option<std::vec::Vec<crate::types::IoTJobAbortCriteria>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

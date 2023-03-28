@@ -2,7 +2,7 @@
 pub(crate) fn de_stack_config_input<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::StackConfigInput>,
+    Option<crate::types::StackConfigInput>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::stack_config_input::Builder::default();
+            let mut builder = crate::types::builders::StackConfigInputBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -58,7 +58,7 @@ where
 
 pub fn ser_stack_config_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::StackConfigInput,
+    input: &crate::types::StackConfigInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.output_resolution {
         #[allow(unused_mut)]

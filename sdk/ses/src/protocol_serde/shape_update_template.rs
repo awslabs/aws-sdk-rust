@@ -2,43 +2,33 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_update_template_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::UpdateTemplateOutput, crate::error::UpdateTemplateError> {
+) -> std::result::Result<
+    crate::operation::update_template::UpdateTemplateOutput,
+    crate::operation::update_template::UpdateTemplateError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::UpdateTemplateError::unhandled)?;
+        .map_err(crate::operation::update_template::UpdateTemplateError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::UpdateTemplateError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::update_template::UpdateTemplateError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidTemplate" => crate::error::UpdateTemplateError::InvalidTemplateException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::invalid_template_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_template_exception::de_invalid_template_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateTemplateError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "TemplateDoesNotExist" => {
-            crate::error::UpdateTemplateError::TemplateDoesNotExistException({
+        "InvalidTemplate" => {
+            crate::operation::update_template::UpdateTemplateError::InvalidTemplateException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::template_does_not_exist_exception::Builder::default();
+                        crate::types::error::builders::InvalidTemplateExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_template_does_not_exist_exception::de_template_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateTemplateError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_template_exception::de_invalid_template_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::update_template::UpdateTemplateError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -48,17 +38,38 @@ pub fn de_update_template_http_error(
                 tmp
             })
         }
-        _ => crate::error::UpdateTemplateError::generic(generic),
+        "TemplateDoesNotExist" => {
+            crate::operation::update_template::UpdateTemplateError::TemplateDoesNotExistException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::TemplateDoesNotExistExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_template_does_not_exist_exception::de_template_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::update_template::UpdateTemplateError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::update_template::UpdateTemplateError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_update_template_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::UpdateTemplateOutput, crate::error::UpdateTemplateError> {
+) -> std::result::Result<
+    crate::operation::update_template::UpdateTemplateOutput,
+    crate::operation::update_template::UpdateTemplateError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::update_template_output::Builder::default();
+        let mut output =
+            crate::operation::update_template::builders::UpdateTemplateOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

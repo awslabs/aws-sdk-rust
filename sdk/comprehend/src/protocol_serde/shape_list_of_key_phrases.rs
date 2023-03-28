@@ -2,7 +2,7 @@
 pub(crate) fn de_list_of_key_phrases<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::KeyPhrase>>,
+    Option<std::vec::Vec<crate::types::KeyPhrase>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

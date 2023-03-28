@@ -2,7 +2,7 @@
 pub(crate) fn de_ec2_ami_resource_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Ec2AmiResource>>,
+    Option<std::vec::Vec<crate::types::Ec2AmiResource>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

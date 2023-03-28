@@ -2,27 +2,33 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_recipe_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DescribeRecipeOutput, crate::error::DescribeRecipeError> {
+) -> std::result::Result<
+    crate::operation::describe_recipe::DescribeRecipeOutput,
+    crate::operation::describe_recipe::DescribeRecipeError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeRecipeError::unhandled)?;
+        .map_err(crate::operation::describe_recipe::DescribeRecipeError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DescribeRecipeError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::describe_recipe::DescribeRecipeError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ResourceNotFoundException" => {
-            crate::error::DescribeRecipeError::ResourceNotFoundException({
+            crate::operation::describe_recipe::DescribeRecipeError::ResourceNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeRecipeError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_recipe::DescribeRecipeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -32,38 +38,45 @@ pub fn de_describe_recipe_http_error(
                 tmp
             })
         }
-        "ValidationException" => crate::error::DescribeRecipeError::ValidationException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "ValidationException" => {
+            crate::operation::describe_recipe::DescribeRecipeError::ValidationException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeRecipeError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::DescribeRecipeError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_recipe::DescribeRecipeError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::describe_recipe::DescribeRecipeError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_recipe_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DescribeRecipeOutput, crate::error::DescribeRecipeError> {
+) -> std::result::Result<
+    crate::operation::describe_recipe::DescribeRecipeOutput,
+    crate::operation::describe_recipe::DescribeRecipeError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_recipe_output::Builder::default();
+        let mut output =
+            crate::operation::describe_recipe::builders::DescribeRecipeOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_describe_recipe::de_describe_recipe(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DescribeRecipeError::unhandled)?;
+        .map_err(crate::operation::describe_recipe::DescribeRecipeError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -73,9 +86,9 @@ pub fn de_describe_recipe_http_response(
 
 pub(crate) fn de_describe_recipe(
     value: &[u8],
-    mut builder: crate::output::describe_recipe_output::Builder,
+    mut builder: crate::operation::describe_recipe::builders::DescribeRecipeOutputBuilder,
 ) -> Result<
-    crate::output::describe_recipe_output::Builder,
+    crate::operation::describe_recipe::builders::DescribeRecipeOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

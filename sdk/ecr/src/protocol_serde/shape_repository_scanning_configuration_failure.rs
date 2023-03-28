@@ -2,7 +2,7 @@
 pub(crate) fn de_repository_scanning_configuration_failure<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::RepositoryScanningConfigurationFailure>,
+    Option<crate::types::RepositoryScanningConfigurationFailure>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::repository_scanning_configuration_failure::Builder::default();
+                crate::types::builders::RepositoryScanningConfigurationFailureBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -40,7 +40,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ScanningConfigurationFailureCode::from(
+                                            crate::types::ScanningConfigurationFailureCode::from(
                                                 u.as_ref(),
                                             )
                                         })

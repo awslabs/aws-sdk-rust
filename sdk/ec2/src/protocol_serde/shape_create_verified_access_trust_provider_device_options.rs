@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_create_verified_access_trust_provider_device_options(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::CreateVerifiedAccessTrustProviderDeviceOptions,
+    input: &crate::types::CreateVerifiedAccessTrustProviderDeviceOptions,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("TenantId");

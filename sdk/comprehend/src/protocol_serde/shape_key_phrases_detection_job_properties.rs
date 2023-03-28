@@ -2,7 +2,7 @@
 pub(crate) fn de_key_phrases_detection_job_properties<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::KeyPhrasesDetectionJobProperties>,
+    Option<crate::types::KeyPhrasesDetectionJobProperties>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::key_phrases_detection_job_properties::Builder::default();
+                crate::types::builders::KeyPhrasesDetectionJobPropertiesBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -58,7 +58,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::JobStatus::from(u.as_ref()))
+                                            .map(|u| crate::types::JobStatus::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -105,7 +105,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::LanguageCode::from(u.as_ref()))
+                                            .map(|u| crate::types::LanguageCode::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

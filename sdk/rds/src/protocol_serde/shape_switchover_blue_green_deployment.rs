@@ -3,63 +3,55 @@
 pub fn de_switchover_blue_green_deployment_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::SwitchoverBlueGreenDeploymentOutput,
-    crate::error::SwitchoverBlueGreenDeploymentError,
+    crate::operation::switchover_blue_green_deployment::SwitchoverBlueGreenDeploymentOutput,
+    crate::operation::switchover_blue_green_deployment::SwitchoverBlueGreenDeploymentError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::SwitchoverBlueGreenDeploymentError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::switchover_blue_green_deployment::SwitchoverBlueGreenDeploymentError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::SwitchoverBlueGreenDeploymentError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::switchover_blue_green_deployment::SwitchoverBlueGreenDeploymentError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BlueGreenDeploymentNotFoundFault" => {
-            crate::error::SwitchoverBlueGreenDeploymentError::BlueGreenDeploymentNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "BlueGreenDeploymentNotFoundFault" => crate::operation::switchover_blue_green_deployment::SwitchoverBlueGreenDeploymentError::BlueGreenDeploymentNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::blue_green_deployment_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::BlueGreenDeploymentNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_blue_green_deployment_not_found_fault::de_blue_green_deployment_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::SwitchoverBlueGreenDeploymentError::unhandled)?;
+                    output = crate::protocol_serde::shape_blue_green_deployment_not_found_fault::de_blue_green_deployment_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::switchover_blue_green_deployment::SwitchoverBlueGreenDeploymentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidBlueGreenDeploymentStateFault" => {
-            crate::error::SwitchoverBlueGreenDeploymentError::InvalidBlueGreenDeploymentStateFault(
-                {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidBlueGreenDeploymentStateFault" => crate::operation::switchover_blue_green_deployment::SwitchoverBlueGreenDeploymentError::InvalidBlueGreenDeploymentStateFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_blue_green_deployment_state_fault::Builder::default();
-                        let _ = response;
-                        output = crate::protocol_serde::shape_invalid_blue_green_deployment_state_fault::de_invalid_blue_green_deployment_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::SwitchoverBlueGreenDeploymentError::unhandled)?;
-                        let output = output.meta(generic);
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            )
-        }
-        _ => crate::error::SwitchoverBlueGreenDeploymentError::generic(generic),
+                    let mut output = crate::types::error::builders::InvalidBlueGreenDeploymentStateFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_blue_green_deployment_state_fault::de_invalid_blue_green_deployment_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::switchover_blue_green_deployment::SwitchoverBlueGreenDeploymentError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::switchover_blue_green_deployment::SwitchoverBlueGreenDeploymentError::generic(generic)
     })
 }
 
@@ -67,14 +59,14 @@ pub fn de_switchover_blue_green_deployment_http_error(
 pub fn de_switchover_blue_green_deployment_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::SwitchoverBlueGreenDeploymentOutput,
-    crate::error::SwitchoverBlueGreenDeploymentError,
+    crate::operation::switchover_blue_green_deployment::SwitchoverBlueGreenDeploymentOutput,
+    crate::operation::switchover_blue_green_deployment::SwitchoverBlueGreenDeploymentError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::switchover_blue_green_deployment_output::Builder::default();
+        let mut output = crate::operation::switchover_blue_green_deployment::builders::SwitchoverBlueGreenDeploymentOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_switchover_blue_green_deployment::de_switchover_blue_green_deployment(response.body().as_ref(), output).map_err(crate::error::SwitchoverBlueGreenDeploymentError::unhandled)?;
+        output = crate::protocol_serde::shape_switchover_blue_green_deployment::de_switchover_blue_green_deployment(response.body().as_ref(), output).map_err(crate::operation::switchover_blue_green_deployment::SwitchoverBlueGreenDeploymentError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -83,13 +75,7 @@ pub fn de_switchover_blue_green_deployment_http_response(
 }
 
 #[allow(unused_mut)]
-pub fn de_switchover_blue_green_deployment(
-    inp: &[u8],
-    mut builder: crate::output::switchover_blue_green_deployment_output::Builder,
-) -> Result<
-    crate::output::switchover_blue_green_deployment_output::Builder,
-    aws_smithy_xml::decode::XmlDecodeError,
-> {
+pub fn de_switchover_blue_green_deployment(inp: &[u8], mut builder: crate::operation::switchover_blue_green_deployment::builders::SwitchoverBlueGreenDeploymentOutputBuilder) -> Result<crate::operation::switchover_blue_green_deployment::builders::SwitchoverBlueGreenDeploymentOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

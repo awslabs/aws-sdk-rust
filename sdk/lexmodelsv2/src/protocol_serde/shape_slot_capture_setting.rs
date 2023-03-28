@@ -2,7 +2,7 @@
 pub(crate) fn de_slot_capture_setting<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::SlotCaptureSetting>,
+    Option<crate::types::SlotCaptureSetting>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::slot_capture_setting::Builder::default();
+            let mut builder = crate::types::builders::SlotCaptureSettingBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -92,7 +92,7 @@ where
 
 pub fn ser_slot_capture_setting(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::SlotCaptureSetting,
+    input: &crate::types::SlotCaptureSetting,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.capture_response {
         #[allow(unused_mut)]

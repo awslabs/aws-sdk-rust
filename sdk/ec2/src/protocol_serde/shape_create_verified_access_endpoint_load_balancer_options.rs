@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_create_verified_access_endpoint_load_balancer_options(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::CreateVerifiedAccessEndpointLoadBalancerOptions,
+    input: &crate::types::CreateVerifiedAccessEndpointLoadBalancerOptions,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Protocol");

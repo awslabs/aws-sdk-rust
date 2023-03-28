@@ -3,67 +3,79 @@
 pub fn de_list_saml_provider_tags_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListSamlProviderTagsOutput,
-    crate::error::ListSAMLProviderTagsError,
+    crate::operation::list_saml_provider_tags::ListSamlProviderTagsOutput,
+    crate::operation::list_saml_provider_tags::ListSAMLProviderTagsError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListSAMLProviderTagsError::unhandled)?;
+        .map_err(crate::operation::list_saml_provider_tags::ListSAMLProviderTagsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListSAMLProviderTagsError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::list_saml_provider_tags::ListSAMLProviderTagsError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidInput" => crate::error::ListSAMLProviderTagsError::InvalidInputException({
+        "InvalidInput" => crate::operation::list_saml_provider_tags::ListSAMLProviderTagsError::InvalidInputException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::invalid_input_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_input_exception::de_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListSAMLProviderTagsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidInputExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_input_exception::de_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::list_saml_provider_tags::ListSAMLProviderTagsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "NoSuchEntity" => crate::error::ListSAMLProviderTagsError::NoSuchEntityException({
+        "NoSuchEntity" => crate::operation::list_saml_provider_tags::ListSAMLProviderTagsError::NoSuchEntityException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::no_such_entity_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_no_such_entity_exception::de_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListSAMLProviderTagsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::NoSuchEntityExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_no_such_entity_exception::de_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::list_saml_provider_tags::ListSAMLProviderTagsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "ServiceFailure" => crate::error::ListSAMLProviderTagsError::ServiceFailureException({
+        "ServiceFailure" => crate::operation::list_saml_provider_tags::ListSAMLProviderTagsError::ServiceFailureException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::service_failure_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListSAMLProviderTagsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ServiceFailureExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::list_saml_provider_tags::ListSAMLProviderTagsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::ListSAMLProviderTagsError::generic(generic),
+        _ => crate::operation::list_saml_provider_tags::ListSAMLProviderTagsError::generic(generic)
     })
 }
 
@@ -71,18 +83,18 @@ pub fn de_list_saml_provider_tags_http_error(
 pub fn de_list_saml_provider_tags_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListSamlProviderTagsOutput,
-    crate::error::ListSAMLProviderTagsError,
+    crate::operation::list_saml_provider_tags::ListSamlProviderTagsOutput,
+    crate::operation::list_saml_provider_tags::ListSAMLProviderTagsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_saml_provider_tags_output::Builder::default();
+        let mut output = crate::operation::list_saml_provider_tags::builders::ListSamlProviderTagsOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_saml_provider_tags::de_list_saml_provider_tags(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListSAMLProviderTagsError::unhandled)?;
+        .map_err(crate::operation::list_saml_provider_tags::ListSAMLProviderTagsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -93,9 +105,9 @@ pub fn de_list_saml_provider_tags_http_response(
 #[allow(unused_mut)]
 pub fn de_list_saml_provider_tags(
     inp: &[u8],
-    mut builder: crate::output::list_saml_provider_tags_output::Builder,
+    mut builder: crate::operation::list_saml_provider_tags::builders::ListSamlProviderTagsOutputBuilder,
 ) -> Result<
-    crate::output::list_saml_provider_tags_output::Builder,
+    crate::operation::list_saml_provider_tags::builders::ListSamlProviderTagsOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

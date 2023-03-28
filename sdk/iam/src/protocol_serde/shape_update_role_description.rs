@@ -3,70 +3,79 @@
 pub fn de_update_role_description_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::UpdateRoleDescriptionOutput,
-    crate::error::UpdateRoleDescriptionError,
+    crate::operation::update_role_description::UpdateRoleDescriptionOutput,
+    crate::operation::update_role_description::UpdateRoleDescriptionError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::UpdateRoleDescriptionError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::update_role_description::UpdateRoleDescriptionError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    let error_code = match generic.code() {
-        Some(code) => code,
-        None => return Err(crate::error::UpdateRoleDescriptionError::unhandled(generic)),
-    };
+    let error_code =
+        match generic.code() {
+            Some(code) => code,
+            None => return Err(
+                crate::operation::update_role_description::UpdateRoleDescriptionError::unhandled(
+                    generic,
+                ),
+            ),
+        };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "NoSuchEntity" => crate::error::UpdateRoleDescriptionError::NoSuchEntityException({
+        "NoSuchEntity" => crate::operation::update_role_description::UpdateRoleDescriptionError::NoSuchEntityException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::no_such_entity_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_no_such_entity_exception::de_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateRoleDescriptionError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ServiceFailure" => crate::error::UpdateRoleDescriptionError::ServiceFailureException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::service_failure_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateRoleDescriptionError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "UnmodifiableEntity" => {
-            crate::error::UpdateRoleDescriptionError::UnmodifiableEntityException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::unmodifiable_entity_exception::Builder::default();
+                    let mut output = crate::types::error::builders::NoSuchEntityExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_unmodifiable_entity_exception::de_unmodifiable_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateRoleDescriptionError::unhandled)?;
+                    output = crate::protocol_serde::shape_no_such_entity_exception::de_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::update_role_description::UpdateRoleDescriptionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::UpdateRoleDescriptionError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ServiceFailure" => crate::operation::update_role_description::UpdateRoleDescriptionError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ServiceFailureExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::update_role_description::UpdateRoleDescriptionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "UnmodifiableEntity" => crate::operation::update_role_description::UpdateRoleDescriptionError::UnmodifiableEntityException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::UnmodifiableEntityExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_unmodifiable_entity_exception::de_unmodifiable_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::update_role_description::UpdateRoleDescriptionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::update_role_description::UpdateRoleDescriptionError::generic(generic)
     })
 }
 
@@ -74,18 +83,20 @@ pub fn de_update_role_description_http_error(
 pub fn de_update_role_description_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::UpdateRoleDescriptionOutput,
-    crate::error::UpdateRoleDescriptionError,
+    crate::operation::update_role_description::UpdateRoleDescriptionOutput,
+    crate::operation::update_role_description::UpdateRoleDescriptionError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::update_role_description_output::Builder::default();
+        let mut output = crate::operation::update_role_description::builders::UpdateRoleDescriptionOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_update_role_description::de_update_role_description(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::UpdateRoleDescriptionError::unhandled)?;
+        .map_err(
+            crate::operation::update_role_description::UpdateRoleDescriptionError::unhandled,
+        )?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -96,9 +107,9 @@ pub fn de_update_role_description_http_response(
 #[allow(unused_mut)]
 pub fn de_update_role_description(
     inp: &[u8],
-    mut builder: crate::output::update_role_description_output::Builder,
+    mut builder: crate::operation::update_role_description::builders::UpdateRoleDescriptionOutputBuilder,
 ) -> Result<
-    crate::output::update_role_description_output::Builder,
+    crate::operation::update_role_description::builders::UpdateRoleDescriptionOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

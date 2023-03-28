@@ -2,8 +2,11 @@
 #[allow(unused_mut)]
 pub fn de_resize_not_found_fault_xml_err(
     inp: &[u8],
-    mut builder: crate::error::resize_not_found_fault::Builder,
-) -> Result<crate::error::resize_not_found_fault::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    mut builder: crate::types::error::builders::ResizeNotFoundFaultBuilder,
+) -> Result<
+    crate::types::error::builders::ResizeNotFoundFaultBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     if inp.is_empty() {
         return Ok(builder);
     }

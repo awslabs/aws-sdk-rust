@@ -2,7 +2,7 @@
 pub(crate) fn de_environment_account_connection_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::EnvironmentAccountConnectionSummary>,
+    Option<crate::types::EnvironmentAccountConnectionSummary>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::environment_account_connection_summary::Builder::default();
+                crate::types::builders::EnvironmentAccountConnectionSummaryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -101,7 +101,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::EnvironmentAccountConnectionStatus::from(
+                                            crate::types::EnvironmentAccountConnectionStatus::from(
                                                 u.as_ref(),
                                             )
                                         })

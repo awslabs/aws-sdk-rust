@@ -2,7 +2,7 @@
 pub(crate) fn de_custom_verification_email_template_metadata<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::CustomVerificationEmailTemplateMetadata>,
+    Option<crate::types::CustomVerificationEmailTemplateMetadata>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::custom_verification_email_template_metadata::Builder::default();
+                crate::types::builders::CustomVerificationEmailTemplateMetadataBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

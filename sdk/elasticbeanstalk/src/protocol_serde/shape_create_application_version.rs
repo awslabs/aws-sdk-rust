@@ -3,118 +3,112 @@
 pub fn de_create_application_version_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateApplicationVersionOutput,
-    crate::error::CreateApplicationVersionError,
+    crate::operation::create_application_version::CreateApplicationVersionOutput,
+    crate::operation::create_application_version::CreateApplicationVersionError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::CreateApplicationVersionError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::create_application_version::CreateApplicationVersionError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::error::CreateApplicationVersionError::unhandled(
+        None => return Err(
+            crate::operation::create_application_version::CreateApplicationVersionError::unhandled(
                 generic,
-            ))
-        }
+            ),
+        ),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CodeBuildNotInServiceRegionException" => {
-            crate::error::CreateApplicationVersionError::CodeBuildNotInServiceRegionException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "CodeBuildNotInServiceRegionException" => crate::operation::create_application_version::CreateApplicationVersionError::CodeBuildNotInServiceRegionException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::code_build_not_in_service_region_exception::Builder::default(
-                        );
+                    let mut output = crate::types::error::builders::CodeBuildNotInServiceRegionExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_code_build_not_in_service_region_exception::de_code_build_not_in_service_region_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateApplicationVersionError::unhandled)?;
+                    output = crate::protocol_serde::shape_code_build_not_in_service_region_exception::de_code_build_not_in_service_region_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_application_version::CreateApplicationVersionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InsufficientPrivilegesException" => {
-            crate::error::CreateApplicationVersionError::InsufficientPrivilegesException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InsufficientPrivilegesException" => crate::operation::create_application_version::CreateApplicationVersionError::InsufficientPrivilegesException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::insufficient_privileges_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InsufficientPrivilegesExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_insufficient_privileges_exception::de_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateApplicationVersionError::unhandled)?;
+                    output = crate::protocol_serde::shape_insufficient_privileges_exception::de_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_application_version::CreateApplicationVersionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "S3LocationNotInServiceRegionException" => {
-            crate::error::CreateApplicationVersionError::S3LocationNotInServiceRegionException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "S3LocationNotInServiceRegionException" => crate::operation::create_application_version::CreateApplicationVersionError::S3LocationNotInServiceRegionException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::s3_location_not_in_service_region_exception::Builder::default(
-                        );
+                    let mut output = crate::types::error::builders::S3LocationNotInServiceRegionExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_s3_location_not_in_service_region_exception::de_s3_location_not_in_service_region_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateApplicationVersionError::unhandled)?;
+                    output = crate::protocol_serde::shape_s3_location_not_in_service_region_exception::de_s3_location_not_in_service_region_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_application_version::CreateApplicationVersionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "TooManyApplicationsException" => {
-            crate::error::CreateApplicationVersionError::TooManyApplicationsException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TooManyApplicationsException" => crate::operation::create_application_version::CreateApplicationVersionError::TooManyApplicationsException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::too_many_applications_exception::Builder::default();
+                    let mut output = crate::types::error::builders::TooManyApplicationsExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_applications_exception::de_too_many_applications_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateApplicationVersionError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_applications_exception::de_too_many_applications_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_application_version::CreateApplicationVersionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "TooManyApplicationVersionsException" => {
-            crate::error::CreateApplicationVersionError::TooManyApplicationVersionsException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TooManyApplicationVersionsException" => crate::operation::create_application_version::CreateApplicationVersionError::TooManyApplicationVersionsException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::too_many_application_versions_exception::Builder::default();
+                    let mut output = crate::types::error::builders::TooManyApplicationVersionsExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_application_versions_exception::de_too_many_application_versions_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateApplicationVersionError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_application_versions_exception::de_too_many_application_versions_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_application_version::CreateApplicationVersionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::CreateApplicationVersionError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::create_application_version::CreateApplicationVersionError::generic(generic)
     })
 }
 
@@ -122,19 +116,14 @@ pub fn de_create_application_version_http_error(
 pub fn de_create_application_version_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateApplicationVersionOutput,
-    crate::error::CreateApplicationVersionError,
+    crate::operation::create_application_version::CreateApplicationVersionOutput,
+    crate::operation::create_application_version::CreateApplicationVersionError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::create_application_version_output::Builder::default();
+        let mut output = crate::operation::create_application_version::builders::CreateApplicationVersionOutputBuilder::default();
         let _ = response;
-        output =
-            crate::protocol_serde::shape_create_application_version::de_create_application_version(
-                response.body().as_ref(),
-                output,
-            )
-            .map_err(crate::error::CreateApplicationVersionError::unhandled)?;
+        output = crate::protocol_serde::shape_create_application_version::de_create_application_version(response.body().as_ref(), output).map_err(crate::operation::create_application_version::CreateApplicationVersionError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -145,9 +134,9 @@ pub fn de_create_application_version_http_response(
 #[allow(unused_mut)]
 pub fn de_create_application_version(
     inp: &[u8],
-    mut builder: crate::output::create_application_version_output::Builder,
+    mut builder: crate::operation::create_application_version::builders::CreateApplicationVersionOutputBuilder,
 ) -> Result<
-    crate::output::create_application_version_output::Builder,
+    crate::operation::create_application_version::builders::CreateApplicationVersionOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

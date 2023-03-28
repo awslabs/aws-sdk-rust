@@ -2,7 +2,7 @@
 pub(crate) fn de_notification_destinations_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::NotificationDestinationType>>,
+    Option<std::vec::Vec<crate::types::NotificationDestinationType>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -29,7 +29,7 @@ where
                         )?
                         .map(|s| {
                             s.to_unescaped().map(|u| {
-                                crate::model::NotificationDestinationType::from(u.as_ref())
+                                crate::types::NotificationDestinationType::from(u.as_ref())
                             })
                         })
                         .transpose()?;

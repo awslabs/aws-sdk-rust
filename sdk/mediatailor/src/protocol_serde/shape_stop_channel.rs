@@ -2,22 +2,31 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_stop_channel_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::StopChannelOutput, crate::error::StopChannelError> {
+) -> std::result::Result<
+    crate::operation::stop_channel::StopChannelOutput,
+    crate::operation::stop_channel::StopChannelError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::StopChannelError::unhandled)?;
+        .map_err(crate::operation::stop_channel::StopChannelError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::StopChannelError::generic(generic))
+    Err(crate::operation::stop_channel::StopChannelError::generic(
+        generic,
+    ))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_stop_channel_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::StopChannelOutput, crate::error::StopChannelError> {
+) -> std::result::Result<
+    crate::operation::stop_channel::StopChannelOutput,
+    crate::operation::stop_channel::StopChannelError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::stop_channel_output::Builder::default();
+        let mut output =
+            crate::operation::stop_channel::builders::StopChannelOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

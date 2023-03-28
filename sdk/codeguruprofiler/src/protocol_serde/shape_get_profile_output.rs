@@ -21,8 +21,10 @@ pub(crate) fn de_content_type_header(
 
 pub fn de_profile_payload(
     body: &[u8],
-) -> std::result::Result<std::option::Option<aws_smithy_types::Blob>, crate::error::GetProfileError>
-{
+) -> std::result::Result<
+    std::option::Option<aws_smithy_types::Blob>,
+    crate::operation::get_profile::GetProfileError,
+> {
     (!body.is_empty())
         .then(|| Ok(aws_smithy_types::Blob::new(body)))
         .transpose()

@@ -2,7 +2,7 @@
 pub(crate) fn de_batch_segment_jobs<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::BatchSegmentJobSummary>>,
+    Option<std::vec::Vec<crate::types::BatchSegmentJobSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

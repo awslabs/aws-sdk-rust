@@ -2,7 +2,7 @@
 pub(crate) fn de_dkim_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::DkimAttributes>,
+    Option<crate::types::DkimAttributes>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::dkim_attributes::Builder::default();
+            let mut builder = crate::types::builders::DkimAttributesBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -37,7 +37,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::DkimStatus::from(u.as_ref()))
+                                            .map(|u| crate::types::DkimStatus::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -56,7 +56,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::DkimSigningAttributesOrigin::from(
+                                            crate::types::DkimSigningAttributesOrigin::from(
                                                 u.as_ref(),
                                             )
                                         })
@@ -71,7 +71,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::DkimSigningKeyLength::from(u.as_ref())
+                                            crate::types::DkimSigningKeyLength::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -84,7 +84,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::DkimSigningKeyLength::from(u.as_ref())
+                                            crate::types::DkimSigningKeyLength::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

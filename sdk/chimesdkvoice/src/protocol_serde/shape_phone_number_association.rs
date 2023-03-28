@@ -2,7 +2,7 @@
 pub(crate) fn de_phone_number_association<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::PhoneNumberAssociation>,
+    Option<crate::types::PhoneNumberAssociation>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::phone_number_association::Builder::default();
+            let mut builder = crate::types::builders::PhoneNumberAssociationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -39,7 +39,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::PhoneNumberAssociationName::from(
+                                            crate::types::PhoneNumberAssociationName::from(
                                                 u.as_ref(),
                                             )
                                         })

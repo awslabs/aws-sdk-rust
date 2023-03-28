@@ -2,7 +2,7 @@
 pub(crate) fn de_mapped_resource_configuration_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::MappedResourceConfigurationListItem>>,
+    Option<std::vec::Vec<crate::types::MappedResourceConfigurationListItem>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

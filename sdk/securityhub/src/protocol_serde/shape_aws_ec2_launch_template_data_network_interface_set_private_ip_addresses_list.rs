@@ -7,7 +7,7 @@ pub(crate) fn de_aws_ec2_launch_template_data_network_interface_set_private_ip_a
 ) -> Result<
     Option<
         std::vec::Vec<
-            crate::model::AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails,
+            crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails,
         >,
     >,
     aws_smithy_json::deserialize::error::DeserializeError,

@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_message<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Message>>,
+    Option<std::vec::Vec<crate::types::Message>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

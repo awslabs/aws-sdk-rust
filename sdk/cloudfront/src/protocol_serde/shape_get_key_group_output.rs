@@ -11,19 +11,21 @@ pub(crate) fn de_e_tag_header(
 
 pub fn de_key_group_payload(
     body: &[u8],
-) -> std::result::Result<std::option::Option<crate::model::KeyGroup>, crate::error::GetKeyGroupError>
-{
+) -> std::result::Result<
+    std::option::Option<crate::types::KeyGroup>,
+    crate::operation::get_key_group::GetKeyGroupError,
+> {
     (!body.is_empty())
         .then(|| {
             crate::protocol_serde::shape_get_key_group_output::de_key_group(body)
-                .map_err(crate::error::GetKeyGroupError::unhandled)
+                .map_err(crate::operation::get_key_group::GetKeyGroupError::unhandled)
         })
         .transpose()
 }
 
 pub fn de_key_group(
     inp: &[u8],
-) -> Result<crate::model::KeyGroup, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::KeyGroup, aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;

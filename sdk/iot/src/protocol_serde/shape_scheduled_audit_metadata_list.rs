@@ -2,7 +2,7 @@
 pub(crate) fn de_scheduled_audit_metadata_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ScheduledAuditMetadata>>,
+    Option<std::vec::Vec<crate::types::ScheduledAuditMetadata>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

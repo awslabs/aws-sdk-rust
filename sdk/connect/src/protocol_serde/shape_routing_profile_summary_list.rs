@@ -2,7 +2,7 @@
 pub(crate) fn de_routing_profile_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::RoutingProfileSummary>>,
+    Option<std::vec::Vec<crate::types::RoutingProfileSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_platform_command<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::PlatformCommand>,
+    Option<crate::types::PlatformCommand>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::platform_command::Builder::default();
+            let mut builder = crate::types::builders::PlatformCommandBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -66,7 +66,7 @@ where
 
 pub fn ser_platform_command(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::PlatformCommand,
+    input: &crate::types::PlatformCommand,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.linux {
         object.key("linux").string(var_1.as_str());

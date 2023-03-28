@@ -2,7 +2,7 @@
 pub(crate) fn de_inference_recommendations_job_steps<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::InferenceRecommendationsJobStep>>,
+    Option<std::vec::Vec<crate::types::InferenceRecommendationsJobStep>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_conflict_exception_error_argument<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ConflictExceptionErrorArgument>,
+    Option<crate::types::ConflictExceptionErrorArgument>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::conflict_exception_error_argument::Builder::default();
+            let mut builder =
+                crate::types::builders::ConflictExceptionErrorArgumentBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

@@ -2,7 +2,7 @@
 pub(crate) fn de_pivot_field_sort_options_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::PivotFieldSortOptions>>,
+    Option<std::vec::Vec<crate::types::PivotFieldSortOptions>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

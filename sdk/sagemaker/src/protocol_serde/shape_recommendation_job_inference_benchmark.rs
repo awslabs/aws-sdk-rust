@@ -2,7 +2,7 @@
 pub(crate) fn de_recommendation_job_inference_benchmark<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::RecommendationJobInferenceBenchmark>,
+    Option<crate::types::RecommendationJobInferenceBenchmark>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::recommendation_job_inference_benchmark::Builder::default();
+                crate::types::builders::RecommendationJobInferenceBenchmarkBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

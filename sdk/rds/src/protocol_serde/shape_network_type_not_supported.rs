@@ -2,9 +2,11 @@
 #[allow(unused_mut)]
 pub fn de_network_type_not_supported_xml_err(
     inp: &[u8],
-    mut builder: crate::error::network_type_not_supported::Builder,
-) -> Result<crate::error::network_type_not_supported::Builder, aws_smithy_xml::decode::XmlDecodeError>
-{
+    mut builder: crate::types::error::builders::NetworkTypeNotSupportedBuilder,
+) -> Result<
+    crate::types::error::builders::NetworkTypeNotSupportedBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     if inp.is_empty() {
         return Ok(builder);
     }

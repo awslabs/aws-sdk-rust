@@ -2,43 +2,52 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_pipeline_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeletePipelineOutput, crate::error::DeletePipelineError> {
+) -> std::result::Result<
+    crate::operation::delete_pipeline::DeletePipelineOutput,
+    crate::operation::delete_pipeline::DeletePipelineError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeletePipelineError::unhandled)?;
+        .map_err(crate::operation::delete_pipeline::DeletePipelineError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DeletePipelineError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::delete_pipeline::DeletePipelineError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::DeletePipelineError::AccessDeniedException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::access_denied_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeletePipelineError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "IncompatibleVersionException" => {
-            crate::error::DeletePipelineError::IncompatibleVersionException({
+        "AccessDeniedException" => {
+            crate::operation::delete_pipeline::DeletePipelineError::AccessDeniedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::incompatible_version_exception::Builder::default();
+                        crate::types::error::builders::AccessDeniedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_incompatible_version_exception::de_incompatible_version_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeletePipelineError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_pipeline::DeletePipelineError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "IncompatibleVersionException" => {
+            crate::operation::delete_pipeline::DeletePipelineError::IncompatibleVersionException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::IncompatibleVersionExceptionBuilder::default(
+                        );
+                    let _ = response;
+                    output = crate::protocol_serde::shape_incompatible_version_exception::de_incompatible_version_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_pipeline::DeletePipelineError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -49,13 +58,14 @@ pub fn de_delete_pipeline_http_error(
             })
         }
         "InternalServiceException" => {
-            crate::error::DeletePipelineError::InternalServiceException({
+            crate::operation::delete_pipeline::DeletePipelineError::InternalServiceException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_service_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::InternalServiceExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_service_exception::de_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeletePipelineError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_service_exception::de_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_pipeline::DeletePipelineError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -65,29 +75,33 @@ pub fn de_delete_pipeline_http_error(
                 tmp
             })
         }
-        "ResourceInUseException" => crate::error::DeletePipelineError::ResourceInUseException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "ResourceInUseException" => {
+            crate::operation::delete_pipeline::DeletePipelineError::ResourceInUseException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::resource_in_use_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_resource_in_use_exception::de_resource_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeletePipelineError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ResourceInUseExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_in_use_exception::de_resource_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_pipeline::DeletePipelineError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "ResourceNotFoundException" => {
-            crate::error::DeletePipelineError::ResourceNotFoundException({
+            crate::operation::delete_pipeline::DeletePipelineError::ResourceNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeletePipelineError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_pipeline::DeletePipelineError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -97,32 +111,39 @@ pub fn de_delete_pipeline_http_error(
                 tmp
             })
         }
-        "ValidationException" => crate::error::DeletePipelineError::ValidationException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "ValidationException" => {
+            crate::operation::delete_pipeline::DeletePipelineError::ValidationException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeletePipelineError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::DeletePipelineError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_pipeline::DeletePipelineError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::delete_pipeline::DeletePipelineError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_pipeline_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeletePipelineOutput, crate::error::DeletePipelineError> {
+) -> std::result::Result<
+    crate::operation::delete_pipeline::DeletePipelineOutput,
+    crate::operation::delete_pipeline::DeletePipelineError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_pipeline_output::Builder::default();
+        let mut output =
+            crate::operation::delete_pipeline::builders::DeletePipelineOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

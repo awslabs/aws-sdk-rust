@@ -2,7 +2,7 @@
 pub(crate) fn de_stack_instances<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::StackInstance>>,
+    Option<std::vec::Vec<crate::types::StackInstance>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

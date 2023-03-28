@@ -2,7 +2,7 @@
 pub(crate) fn de_filter_operator_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Operator>>,
+    Option<std::vec::Vec<crate::types::Operator>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -29,7 +29,7 @@ where
                         )?
                         .map(|s| {
                             s.to_unescaped()
-                                .map(|u| crate::model::Operator::from(u.as_ref()))
+                                .map(|u| crate::types::Operator::from(u.as_ref()))
                         })
                         .transpose()?;
                         if let Some(value) = value {

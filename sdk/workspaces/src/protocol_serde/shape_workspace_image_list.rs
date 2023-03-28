@@ -2,7 +2,7 @@
 pub(crate) fn de_workspace_image_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::WorkspaceImage>>,
+    Option<std::vec::Vec<crate::types::WorkspaceImage>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

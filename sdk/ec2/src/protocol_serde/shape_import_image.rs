@@ -2,28 +2,37 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_import_image_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ImportImageOutput, crate::error::ImportImageError> {
+) -> std::result::Result<
+    crate::operation::import_image::ImportImageOutput,
+    crate::operation::import_image::ImportImageError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ImportImageError::unhandled)?;
+        .map_err(crate::operation::import_image::ImportImageError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::ImportImageError::generic(generic))
+    Err(crate::operation::import_image::ImportImageError::generic(
+        generic,
+    ))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_import_image_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ImportImageOutput, crate::error::ImportImageError> {
+) -> std::result::Result<
+    crate::operation::import_image::ImportImageOutput,
+    crate::operation::import_image::ImportImageError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::import_image_output::Builder::default();
+        let mut output =
+            crate::operation::import_image::builders::ImportImageOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_import_image::de_import_image(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ImportImageError::unhandled)?;
+        .map_err(crate::operation::import_image::ImportImageError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -34,8 +43,11 @@ pub fn de_import_image_http_response(
 #[allow(unused_mut)]
 pub fn de_import_image(
     inp: &[u8],
-    mut builder: crate::output::import_image_output::Builder,
-) -> Result<crate::output::import_image_output::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    mut builder: crate::operation::import_image::builders::ImportImageOutputBuilder,
+) -> Result<
+    crate::operation::import_image::builders::ImportImageOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

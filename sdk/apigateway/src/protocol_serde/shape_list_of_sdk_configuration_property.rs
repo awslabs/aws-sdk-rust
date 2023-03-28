@@ -2,7 +2,7 @@
 pub(crate) fn de_list_of_sdk_configuration_property<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SdkConfigurationProperty>>,
+    Option<std::vec::Vec<crate::types::SdkConfigurationProperty>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

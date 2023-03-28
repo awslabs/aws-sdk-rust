@@ -2,7 +2,7 @@
 pub(crate) fn de_branches<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Branch>>,
+    Option<std::vec::Vec<crate::types::Branch>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

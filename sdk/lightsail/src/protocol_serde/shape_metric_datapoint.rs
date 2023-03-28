@@ -2,7 +2,7 @@
 pub(crate) fn de_metric_datapoint<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::MetricDatapoint>,
+    Option<crate::types::MetricDatapoint>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::metric_datapoint::Builder::default();
+            let mut builder = crate::types::builders::MetricDatapointBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -78,7 +78,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::MetricUnit::from(u.as_ref()))
+                                            .map(|u| crate::types::MetricUnit::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

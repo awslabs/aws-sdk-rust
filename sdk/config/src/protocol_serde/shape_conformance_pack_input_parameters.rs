@@ -2,7 +2,7 @@
 pub(crate) fn de_conformance_pack_input_parameters<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ConformancePackInputParameter>>,
+    Option<std::vec::Vec<crate::types::ConformancePackInputParameter>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

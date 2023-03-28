@@ -5,7 +5,7 @@ pub(crate) fn de_item_collection_metrics_per_table<'a, I>(
     Option<
         std::collections::HashMap<
             std::string::String,
-            std::vec::Vec<crate::model::ItemCollectionMetrics>,
+            std::vec::Vec<crate::types::ItemCollectionMetrics>,
         >,
     >,
     aws_smithy_json::deserialize::error::DeserializeError,

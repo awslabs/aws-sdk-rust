@@ -3,34 +3,37 @@
 pub fn de_describe_vpn_connections_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeVpnConnectionsOutput,
-    crate::error::DescribeVpnConnectionsError,
+    crate::operation::describe_vpn_connections::DescribeVpnConnectionsOutput,
+    crate::operation::describe_vpn_connections::DescribeVpnConnectionsError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeVpnConnectionsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::describe_vpn_connections::DescribeVpnConnectionsError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::DescribeVpnConnectionsError::generic(generic))
+    Err(crate::operation::describe_vpn_connections::DescribeVpnConnectionsError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_vpn_connections_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeVpnConnectionsOutput,
-    crate::error::DescribeVpnConnectionsError,
+    crate::operation::describe_vpn_connections::DescribeVpnConnectionsOutput,
+    crate::operation::describe_vpn_connections::DescribeVpnConnectionsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_vpn_connections_output::Builder::default();
+        let mut output = crate::operation::describe_vpn_connections::builders::DescribeVpnConnectionsOutputBuilder::default();
         let _ = response;
         output =
             crate::protocol_serde::shape_describe_vpn_connections::de_describe_vpn_connections(
                 response.body().as_ref(),
                 output,
             )
-            .map_err(crate::error::DescribeVpnConnectionsError::unhandled)?;
+            .map_err(
+                crate::operation::describe_vpn_connections::DescribeVpnConnectionsError::unhandled,
+            )?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -41,9 +44,9 @@ pub fn de_describe_vpn_connections_http_response(
 #[allow(unused_mut)]
 pub fn de_describe_vpn_connections(
     inp: &[u8],
-    mut builder: crate::output::describe_vpn_connections_output::Builder,
+    mut builder: crate::operation::describe_vpn_connections::builders::DescribeVpnConnectionsOutputBuilder,
 ) -> Result<
-    crate::output::describe_vpn_connections_output::Builder,
+    crate::operation::describe_vpn_connections::builders::DescribeVpnConnectionsOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

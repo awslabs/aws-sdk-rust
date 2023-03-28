@@ -2,66 +2,83 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_export_forms_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ExportFormsOutput, crate::error::ExportFormsError> {
+) -> std::result::Result<
+    crate::operation::export_forms::ExportFormsOutput,
+    crate::operation::export_forms::ExportFormsError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ExportFormsError::unhandled)?;
+        .map_err(crate::operation::export_forms::ExportFormsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ExportFormsError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::export_forms::ExportFormsError::unhandled(
+                generic,
+            ))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerException" => crate::error::ExportFormsError::InternalServerException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "InternalServerException" => {
+            crate::operation::export_forms::ExportFormsError::InternalServerException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportFormsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InvalidParameterException" => crate::error::ExportFormsError::InvalidParameterException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InternalServerExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::export_forms::ExportFormsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidParameterException" => {
+            crate::operation::export_forms::ExportFormsError::InvalidParameterException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_parameter_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportFormsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::ExportFormsError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InvalidParameterExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::export_forms::ExportFormsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::export_forms::ExportFormsError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_export_forms_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ExportFormsOutput, crate::error::ExportFormsError> {
+) -> std::result::Result<
+    crate::operation::export_forms::ExportFormsOutput,
+    crate::operation::export_forms::ExportFormsError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::export_forms_output::Builder::default();
+        let mut output =
+            crate::operation::export_forms::builders::ExportFormsOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_export_forms::de_export_forms(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ExportFormsError::unhandled)?;
+        .map_err(crate::operation::export_forms::ExportFormsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -71,9 +88,9 @@ pub fn de_export_forms_http_response(
 
 pub(crate) fn de_export_forms(
     value: &[u8],
-    mut builder: crate::output::export_forms_output::Builder,
+    mut builder: crate::operation::export_forms::builders::ExportFormsOutputBuilder,
 ) -> Result<
-    crate::output::export_forms_output::Builder,
+    crate::operation::export_forms::builders::ExportFormsOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

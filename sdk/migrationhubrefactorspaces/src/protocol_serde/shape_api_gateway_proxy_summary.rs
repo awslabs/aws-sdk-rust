@@ -2,7 +2,7 @@
 pub(crate) fn de_api_gateway_proxy_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ApiGatewayProxySummary>,
+    Option<crate::types::ApiGatewayProxySummary>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::api_gateway_proxy_summary::Builder::default();
+            let mut builder = crate::types::builders::ApiGatewayProxySummaryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -75,7 +75,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ApiGatewayEndpointType::from(u.as_ref())
+                                            crate::types::ApiGatewayEndpointType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

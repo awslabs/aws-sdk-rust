@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_insufficient_privileges_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::insufficient_privileges_exception::Builder,
+    mut builder: crate::types::error::builders::InsufficientPrivilegesExceptionBuilder,
 ) -> Result<
-    crate::error::insufficient_privileges_exception::Builder,
+    crate::types::error::builders::InsufficientPrivilegesExceptionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

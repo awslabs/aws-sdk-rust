@@ -2,27 +2,31 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_ledger_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeleteLedgerOutput, crate::error::DeleteLedgerError> {
+) -> std::result::Result<
+    crate::operation::delete_ledger::DeleteLedgerOutput,
+    crate::operation::delete_ledger::DeleteLedgerError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteLedgerError::unhandled)?;
+        .map_err(crate::operation::delete_ledger::DeleteLedgerError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DeleteLedgerError::unhandled(generic)),
+        None => return Err(crate::operation::delete_ledger::DeleteLedgerError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidParameterException" => {
-            crate::error::DeleteLedgerError::InvalidParameterException({
+            crate::operation::delete_ledger::DeleteLedgerError::InvalidParameterException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::InvalidParameterExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteLedgerError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_ledger::DeleteLedgerError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -32,29 +36,33 @@ pub fn de_delete_ledger_http_error(
                 tmp
             })
         }
-        "ResourceInUseException" => crate::error::DeleteLedgerError::ResourceInUseException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::resource_in_use_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_resource_in_use_exception::de_resource_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteLedgerError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ResourceNotFoundException" => {
-            crate::error::DeleteLedgerError::ResourceNotFoundException({
+        "ResourceInUseException" => {
+            crate::operation::delete_ledger::DeleteLedgerError::ResourceInUseException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::ResourceInUseExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteLedgerError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_in_use_exception::de_resource_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_ledger::DeleteLedgerError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::operation::delete_ledger::DeleteLedgerError::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_ledger::DeleteLedgerError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -65,34 +73,39 @@ pub fn de_delete_ledger_http_error(
             })
         }
         "ResourcePreconditionNotMetException" => {
-            crate::error::DeleteLedgerError::ResourcePreconditionNotMetException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            crate::operation::delete_ledger::DeleteLedgerError::ResourcePreconditionNotMetException(
+                {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::resource_precondition_not_met_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_precondition_not_met_exception::de_resource_precondition_not_met_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteLedgerError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ResourcePreconditionNotMetExceptionBuilder::default();
+                        let _ = response;
+                        output = crate::protocol_serde::shape_resource_precondition_not_met_exception::de_resource_precondition_not_met_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_ledger::DeleteLedgerError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
         }
-        _ => crate::error::DeleteLedgerError::generic(generic),
+        _ => crate::operation::delete_ledger::DeleteLedgerError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_ledger_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeleteLedgerOutput, crate::error::DeleteLedgerError> {
+) -> std::result::Result<
+    crate::operation::delete_ledger::DeleteLedgerOutput,
+    crate::operation::delete_ledger::DeleteLedgerError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_ledger_output::Builder::default();
+        let mut output =
+            crate::operation::delete_ledger::builders::DeleteLedgerOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

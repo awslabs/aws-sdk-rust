@@ -3,29 +3,33 @@
 pub fn de_create_distribution_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateDistributionOutput,
-    crate::error::CreateDistributionError,
+    crate::operation::create_distribution::CreateDistributionOutput,
+    crate::operation::create_distribution::CreateDistributionError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::CreateDistributionError::unhandled)?;
+        .map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::CreateDistributionError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::create_distribution::CreateDistributionError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDenied" => crate::error::CreateDistributionError::AccessDenied({
+        "AccessDenied" => crate::operation::create_distribution::CreateDistributionError::AccessDenied({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::access_denied::Builder::default();
+                    let mut output = crate::types::error::builders::AccessDeniedBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_access_denied::de_access_denied_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied::de_access_denied_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -35,14 +39,14 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        "CNAMEAlreadyExists" => crate::error::CreateDistributionError::CnameAlreadyExists({
+        "CNAMEAlreadyExists" => crate::operation::create_distribution::CreateDistributionError::CnameAlreadyExists({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::cname_already_exists::Builder::default();
+                    let mut output = crate::types::error::builders::CnameAlreadyExistsBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_cname_already_exists::de_cname_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_cname_already_exists::de_cname_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -52,14 +56,14 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        "ContinuousDeploymentPolicyInUse" => crate::error::CreateDistributionError::ContinuousDeploymentPolicyInUse({
+        "ContinuousDeploymentPolicyInUse" => crate::operation::create_distribution::CreateDistributionError::ContinuousDeploymentPolicyInUse({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::continuous_deployment_policy_in_use::Builder::default();
+                    let mut output = crate::types::error::builders::ContinuousDeploymentPolicyInUseBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_continuous_deployment_policy_in_use::de_continuous_deployment_policy_in_use_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_continuous_deployment_policy_in_use::de_continuous_deployment_policy_in_use_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -69,14 +73,14 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        "DistributionAlreadyExists" => crate::error::CreateDistributionError::DistributionAlreadyExists({
+        "DistributionAlreadyExists" => crate::operation::create_distribution::CreateDistributionError::DistributionAlreadyExists({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::distribution_already_exists::Builder::default();
+                    let mut output = crate::types::error::builders::DistributionAlreadyExistsBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_distribution_already_exists::de_distribution_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_distribution_already_exists::de_distribution_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -86,14 +90,14 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        "IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior" => crate::error::CreateDistributionError::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior({
+        "IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior" => crate::operation::create_distribution::CreateDistributionError::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::illegal_field_level_encryption_config_association_with_cache_behavior::Builder::default();
+                    let mut output = crate::types::error::builders::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehaviorBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_illegal_field_level_encryption_config_association_with_cache_behavior::de_illegal_field_level_encryption_config_association_with_cache_behavior_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_illegal_field_level_encryption_config_association_with_cache_behavior::de_illegal_field_level_encryption_config_association_with_cache_behavior_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -103,14 +107,14 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        "IllegalOriginAccessConfiguration" => crate::error::CreateDistributionError::IllegalOriginAccessConfiguration({
+        "IllegalOriginAccessConfiguration" => crate::operation::create_distribution::CreateDistributionError::IllegalOriginAccessConfiguration({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::illegal_origin_access_configuration::Builder::default();
+                    let mut output = crate::types::error::builders::IllegalOriginAccessConfigurationBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_illegal_origin_access_configuration::de_illegal_origin_access_configuration_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_illegal_origin_access_configuration::de_illegal_origin_access_configuration_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -120,14 +124,14 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        "InconsistentQuantities" => crate::error::CreateDistributionError::InconsistentQuantities({
+        "InconsistentQuantities" => crate::operation::create_distribution::CreateDistributionError::InconsistentQuantities({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::inconsistent_quantities::Builder::default();
+                    let mut output = crate::types::error::builders::InconsistentQuantitiesBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_inconsistent_quantities::de_inconsistent_quantities_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_inconsistent_quantities::de_inconsistent_quantities_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -137,14 +141,14 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        "InvalidArgument" => crate::error::CreateDistributionError::InvalidArgument({
+        "InvalidArgument" => crate::operation::create_distribution::CreateDistributionError::InvalidArgument({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_argument::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidArgumentBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_argument::de_invalid_argument_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_argument::de_invalid_argument_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -154,14 +158,14 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        "InvalidDefaultRootObject" => crate::error::CreateDistributionError::InvalidDefaultRootObject({
+        "InvalidDefaultRootObject" => crate::operation::create_distribution::CreateDistributionError::InvalidDefaultRootObject({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_default_root_object::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidDefaultRootObjectBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_default_root_object::de_invalid_default_root_object_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_default_root_object::de_invalid_default_root_object_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -171,14 +175,14 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        "InvalidDomainNameForOriginAccessControl" => crate::error::CreateDistributionError::InvalidDomainNameForOriginAccessControl({
+        "InvalidDomainNameForOriginAccessControl" => crate::operation::create_distribution::CreateDistributionError::InvalidDomainNameForOriginAccessControl({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_domain_name_for_origin_access_control::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidDomainNameForOriginAccessControlBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_domain_name_for_origin_access_control::de_invalid_domain_name_for_origin_access_control_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_domain_name_for_origin_access_control::de_invalid_domain_name_for_origin_access_control_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -188,14 +192,14 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        "InvalidErrorCode" => crate::error::CreateDistributionError::InvalidErrorCode({
+        "InvalidErrorCode" => crate::operation::create_distribution::CreateDistributionError::InvalidErrorCode({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_error_code::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidErrorCodeBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_error_code::de_invalid_error_code_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_error_code::de_invalid_error_code_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -205,14 +209,14 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        "InvalidForwardCookies" => crate::error::CreateDistributionError::InvalidForwardCookies({
+        "InvalidForwardCookies" => crate::operation::create_distribution::CreateDistributionError::InvalidForwardCookies({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_forward_cookies::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidForwardCookiesBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_forward_cookies::de_invalid_forward_cookies_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_forward_cookies::de_invalid_forward_cookies_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -222,14 +226,14 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        "InvalidFunctionAssociation" => crate::error::CreateDistributionError::InvalidFunctionAssociation({
+        "InvalidFunctionAssociation" => crate::operation::create_distribution::CreateDistributionError::InvalidFunctionAssociation({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_function_association::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidFunctionAssociationBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_function_association::de_invalid_function_association_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_function_association::de_invalid_function_association_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -239,14 +243,14 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        "InvalidGeoRestrictionParameter" => crate::error::CreateDistributionError::InvalidGeoRestrictionParameter({
+        "InvalidGeoRestrictionParameter" => crate::operation::create_distribution::CreateDistributionError::InvalidGeoRestrictionParameter({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_geo_restriction_parameter::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidGeoRestrictionParameterBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_geo_restriction_parameter::de_invalid_geo_restriction_parameter_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_geo_restriction_parameter::de_invalid_geo_restriction_parameter_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -256,14 +260,14 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        "InvalidHeadersForS3Origin" => crate::error::CreateDistributionError::InvalidHeadersForS3Origin({
+        "InvalidHeadersForS3Origin" => crate::operation::create_distribution::CreateDistributionError::InvalidHeadersForS3Origin({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_headers_for_s3_origin::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidHeadersForS3OriginBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_headers_for_s3_origin::de_invalid_headers_for_s3_origin_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_headers_for_s3_origin::de_invalid_headers_for_s3_origin_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -273,14 +277,14 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        "InvalidLambdaFunctionAssociation" => crate::error::CreateDistributionError::InvalidLambdaFunctionAssociation({
+        "InvalidLambdaFunctionAssociation" => crate::operation::create_distribution::CreateDistributionError::InvalidLambdaFunctionAssociation({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_lambda_function_association::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidLambdaFunctionAssociationBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_lambda_function_association::de_invalid_lambda_function_association_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_lambda_function_association::de_invalid_lambda_function_association_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -290,14 +294,14 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        "InvalidLocationCode" => crate::error::CreateDistributionError::InvalidLocationCode({
+        "InvalidLocationCode" => crate::operation::create_distribution::CreateDistributionError::InvalidLocationCode({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_location_code::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidLocationCodeBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_location_code::de_invalid_location_code_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_location_code::de_invalid_location_code_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -307,14 +311,14 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        "InvalidMinimumProtocolVersion" => crate::error::CreateDistributionError::InvalidMinimumProtocolVersion({
+        "InvalidMinimumProtocolVersion" => crate::operation::create_distribution::CreateDistributionError::InvalidMinimumProtocolVersion({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_minimum_protocol_version::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidMinimumProtocolVersionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_minimum_protocol_version::de_invalid_minimum_protocol_version_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_minimum_protocol_version::de_invalid_minimum_protocol_version_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -324,14 +328,14 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        "InvalidOrigin" => crate::error::CreateDistributionError::InvalidOrigin({
+        "InvalidOrigin" => crate::operation::create_distribution::CreateDistributionError::InvalidOrigin({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_origin::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidOriginBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_origin::de_invalid_origin_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_origin::de_invalid_origin_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -341,14 +345,14 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        "InvalidOriginAccessControl" => crate::error::CreateDistributionError::InvalidOriginAccessControl({
+        "InvalidOriginAccessControl" => crate::operation::create_distribution::CreateDistributionError::InvalidOriginAccessControl({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_origin_access_control::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidOriginAccessControlBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_origin_access_control::de_invalid_origin_access_control_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_origin_access_control::de_invalid_origin_access_control_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -358,14 +362,14 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        "InvalidOriginAccessIdentity" => crate::error::CreateDistributionError::InvalidOriginAccessIdentity({
+        "InvalidOriginAccessIdentity" => crate::operation::create_distribution::CreateDistributionError::InvalidOriginAccessIdentity({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_origin_access_identity::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidOriginAccessIdentityBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_origin_access_identity::de_invalid_origin_access_identity_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_origin_access_identity::de_invalid_origin_access_identity_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -375,14 +379,14 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        "InvalidOriginKeepaliveTimeout" => crate::error::CreateDistributionError::InvalidOriginKeepaliveTimeout({
+        "InvalidOriginKeepaliveTimeout" => crate::operation::create_distribution::CreateDistributionError::InvalidOriginKeepaliveTimeout({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_origin_keepalive_timeout::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidOriginKeepaliveTimeoutBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_origin_keepalive_timeout::de_invalid_origin_keepalive_timeout_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_origin_keepalive_timeout::de_invalid_origin_keepalive_timeout_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -392,14 +396,14 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        "InvalidOriginReadTimeout" => crate::error::CreateDistributionError::InvalidOriginReadTimeout({
+        "InvalidOriginReadTimeout" => crate::operation::create_distribution::CreateDistributionError::InvalidOriginReadTimeout({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_origin_read_timeout::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidOriginReadTimeoutBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_origin_read_timeout::de_invalid_origin_read_timeout_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_origin_read_timeout::de_invalid_origin_read_timeout_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -409,14 +413,14 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        "InvalidProtocolSettings" => crate::error::CreateDistributionError::InvalidProtocolSettings({
+        "InvalidProtocolSettings" => crate::operation::create_distribution::CreateDistributionError::InvalidProtocolSettings({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_protocol_settings::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidProtocolSettingsBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_protocol_settings::de_invalid_protocol_settings_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_protocol_settings::de_invalid_protocol_settings_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -426,14 +430,14 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        "InvalidQueryStringParameters" => crate::error::CreateDistributionError::InvalidQueryStringParameters({
+        "InvalidQueryStringParameters" => crate::operation::create_distribution::CreateDistributionError::InvalidQueryStringParameters({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_query_string_parameters::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidQueryStringParametersBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_query_string_parameters::de_invalid_query_string_parameters_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_query_string_parameters::de_invalid_query_string_parameters_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -443,14 +447,14 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        "InvalidRelativePath" => crate::error::CreateDistributionError::InvalidRelativePath({
+        "InvalidRelativePath" => crate::operation::create_distribution::CreateDistributionError::InvalidRelativePath({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_relative_path::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidRelativePathBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_relative_path::de_invalid_relative_path_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_relative_path::de_invalid_relative_path_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -460,14 +464,14 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        "InvalidRequiredProtocol" => crate::error::CreateDistributionError::InvalidRequiredProtocol({
+        "InvalidRequiredProtocol" => crate::operation::create_distribution::CreateDistributionError::InvalidRequiredProtocol({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_required_protocol::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidRequiredProtocolBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_required_protocol::de_invalid_required_protocol_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_required_protocol::de_invalid_required_protocol_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -477,14 +481,14 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        "InvalidResponseCode" => crate::error::CreateDistributionError::InvalidResponseCode({
+        "InvalidResponseCode" => crate::operation::create_distribution::CreateDistributionError::InvalidResponseCode({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_response_code::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidResponseCodeBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_response_code::de_invalid_response_code_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_response_code::de_invalid_response_code_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -494,14 +498,14 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        "InvalidTTLOrder" => crate::error::CreateDistributionError::InvalidTtlOrder({
+        "InvalidTTLOrder" => crate::operation::create_distribution::CreateDistributionError::InvalidTtlOrder({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_ttl_order::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidTtlOrderBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_ttl_order::de_invalid_ttl_order_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_ttl_order::de_invalid_ttl_order_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -511,14 +515,14 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        "InvalidViewerCertificate" => crate::error::CreateDistributionError::InvalidViewerCertificate({
+        "InvalidViewerCertificate" => crate::operation::create_distribution::CreateDistributionError::InvalidViewerCertificate({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_viewer_certificate::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidViewerCertificateBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_viewer_certificate::de_invalid_viewer_certificate_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_viewer_certificate::de_invalid_viewer_certificate_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -528,14 +532,14 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        "InvalidWebACLId" => crate::error::CreateDistributionError::InvalidWebAclId({
+        "InvalidWebACLId" => crate::operation::create_distribution::CreateDistributionError::InvalidWebAclId({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_web_acl_id::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidWebAclIdBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_web_acl_id::de_invalid_web_acl_id_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_web_acl_id::de_invalid_web_acl_id_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -545,14 +549,14 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        "MissingBody" => crate::error::CreateDistributionError::MissingBody({
+        "MissingBody" => crate::operation::create_distribution::CreateDistributionError::MissingBody({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::missing_body::Builder::default();
+                    let mut output = crate::types::error::builders::MissingBodyBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_missing_body::de_missing_body_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_missing_body::de_missing_body_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -562,14 +566,14 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        "NoSuchCachePolicy" => crate::error::CreateDistributionError::NoSuchCachePolicy({
+        "NoSuchCachePolicy" => crate::operation::create_distribution::CreateDistributionError::NoSuchCachePolicy({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::no_such_cache_policy::Builder::default();
+                    let mut output = crate::types::error::builders::NoSuchCachePolicyBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_no_such_cache_policy::de_no_such_cache_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_no_such_cache_policy::de_no_such_cache_policy_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -579,14 +583,14 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        "NoSuchContinuousDeploymentPolicy" => crate::error::CreateDistributionError::NoSuchContinuousDeploymentPolicy({
+        "NoSuchContinuousDeploymentPolicy" => crate::operation::create_distribution::CreateDistributionError::NoSuchContinuousDeploymentPolicy({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::no_such_continuous_deployment_policy::Builder::default();
+                    let mut output = crate::types::error::builders::NoSuchContinuousDeploymentPolicyBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_no_such_continuous_deployment_policy::de_no_such_continuous_deployment_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_no_such_continuous_deployment_policy::de_no_such_continuous_deployment_policy_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -596,14 +600,14 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        "NoSuchFieldLevelEncryptionConfig" => crate::error::CreateDistributionError::NoSuchFieldLevelEncryptionConfig({
+        "NoSuchFieldLevelEncryptionConfig" => crate::operation::create_distribution::CreateDistributionError::NoSuchFieldLevelEncryptionConfig({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::no_such_field_level_encryption_config::Builder::default();
+                    let mut output = crate::types::error::builders::NoSuchFieldLevelEncryptionConfigBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_no_such_field_level_encryption_config::de_no_such_field_level_encryption_config_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_no_such_field_level_encryption_config::de_no_such_field_level_encryption_config_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -613,14 +617,14 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        "NoSuchOrigin" => crate::error::CreateDistributionError::NoSuchOrigin({
+        "NoSuchOrigin" => crate::operation::create_distribution::CreateDistributionError::NoSuchOrigin({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::no_such_origin::Builder::default();
+                    let mut output = crate::types::error::builders::NoSuchOriginBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_no_such_origin::de_no_such_origin_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_no_such_origin::de_no_such_origin_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -630,14 +634,14 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        "NoSuchOriginRequestPolicy" => crate::error::CreateDistributionError::NoSuchOriginRequestPolicy({
+        "NoSuchOriginRequestPolicy" => crate::operation::create_distribution::CreateDistributionError::NoSuchOriginRequestPolicy({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::no_such_origin_request_policy::Builder::default();
+                    let mut output = crate::types::error::builders::NoSuchOriginRequestPolicyBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_no_such_origin_request_policy::de_no_such_origin_request_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_no_such_origin_request_policy::de_no_such_origin_request_policy_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -647,14 +651,14 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        "NoSuchRealtimeLogConfig" => crate::error::CreateDistributionError::NoSuchRealtimeLogConfig({
+        "NoSuchRealtimeLogConfig" => crate::operation::create_distribution::CreateDistributionError::NoSuchRealtimeLogConfig({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::no_such_realtime_log_config::Builder::default();
+                    let mut output = crate::types::error::builders::NoSuchRealtimeLogConfigBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_no_such_realtime_log_config::de_no_such_realtime_log_config_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_no_such_realtime_log_config::de_no_such_realtime_log_config_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -664,14 +668,14 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        "NoSuchResponseHeadersPolicy" => crate::error::CreateDistributionError::NoSuchResponseHeadersPolicy({
+        "NoSuchResponseHeadersPolicy" => crate::operation::create_distribution::CreateDistributionError::NoSuchResponseHeadersPolicy({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::no_such_response_headers_policy::Builder::default();
+                    let mut output = crate::types::error::builders::NoSuchResponseHeadersPolicyBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_no_such_response_headers_policy::de_no_such_response_headers_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_no_such_response_headers_policy::de_no_such_response_headers_policy_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -681,14 +685,14 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        "RealtimeLogConfigOwnerMismatch" => crate::error::CreateDistributionError::RealtimeLogConfigOwnerMismatch({
+        "RealtimeLogConfigOwnerMismatch" => crate::operation::create_distribution::CreateDistributionError::RealtimeLogConfigOwnerMismatch({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::realtime_log_config_owner_mismatch::Builder::default();
+                    let mut output = crate::types::error::builders::RealtimeLogConfigOwnerMismatchBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_realtime_log_config_owner_mismatch::de_realtime_log_config_owner_mismatch_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_realtime_log_config_owner_mismatch::de_realtime_log_config_owner_mismatch_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -698,14 +702,14 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        "TooManyCacheBehaviors" => crate::error::CreateDistributionError::TooManyCacheBehaviors({
+        "TooManyCacheBehaviors" => crate::operation::create_distribution::CreateDistributionError::TooManyCacheBehaviors({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_cache_behaviors::Builder::default();
+                    let mut output = crate::types::error::builders::TooManyCacheBehaviorsBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_cache_behaviors::de_too_many_cache_behaviors_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_cache_behaviors::de_too_many_cache_behaviors_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -715,14 +719,14 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        "TooManyCertificates" => crate::error::CreateDistributionError::TooManyCertificates({
+        "TooManyCertificates" => crate::operation::create_distribution::CreateDistributionError::TooManyCertificates({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_certificates::Builder::default();
+                    let mut output = crate::types::error::builders::TooManyCertificatesBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_certificates::de_too_many_certificates_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_certificates::de_too_many_certificates_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -732,14 +736,14 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        "TooManyCookieNamesInWhiteList" => crate::error::CreateDistributionError::TooManyCookieNamesInWhiteList({
+        "TooManyCookieNamesInWhiteList" => crate::operation::create_distribution::CreateDistributionError::TooManyCookieNamesInWhiteList({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_cookie_names_in_white_list::Builder::default();
+                    let mut output = crate::types::error::builders::TooManyCookieNamesInWhiteListBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_cookie_names_in_white_list::de_too_many_cookie_names_in_white_list_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_cookie_names_in_white_list::de_too_many_cookie_names_in_white_list_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -749,14 +753,14 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        "TooManyDistributionCNAMEs" => crate::error::CreateDistributionError::TooManyDistributionCnamEs({
+        "TooManyDistributionCNAMEs" => crate::operation::create_distribution::CreateDistributionError::TooManyDistributionCnamEs({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_distribution_cnam_es::Builder::default();
+                    let mut output = crate::types::error::builders::TooManyDistributionCnamEsBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_distribution_cnam_es::de_too_many_distribution_cnam_es_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_distribution_cnam_es::de_too_many_distribution_cnam_es_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -766,14 +770,14 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        "TooManyDistributions" => crate::error::CreateDistributionError::TooManyDistributions({
+        "TooManyDistributions" => crate::operation::create_distribution::CreateDistributionError::TooManyDistributions({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_distributions::Builder::default();
+                    let mut output = crate::types::error::builders::TooManyDistributionsBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_distributions::de_too_many_distributions_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_distributions::de_too_many_distributions_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -783,14 +787,14 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        "TooManyDistributionsAssociatedToCachePolicy" => crate::error::CreateDistributionError::TooManyDistributionsAssociatedToCachePolicy({
+        "TooManyDistributionsAssociatedToCachePolicy" => crate::operation::create_distribution::CreateDistributionError::TooManyDistributionsAssociatedToCachePolicy({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_distributions_associated_to_cache_policy::Builder::default();
+                    let mut output = crate::types::error::builders::TooManyDistributionsAssociatedToCachePolicyBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_distributions_associated_to_cache_policy::de_too_many_distributions_associated_to_cache_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_distributions_associated_to_cache_policy::de_too_many_distributions_associated_to_cache_policy_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -800,14 +804,14 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        "TooManyDistributionsAssociatedToFieldLevelEncryptionConfig" => crate::error::CreateDistributionError::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig({
+        "TooManyDistributionsAssociatedToFieldLevelEncryptionConfig" => crate::operation::create_distribution::CreateDistributionError::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_distributions_associated_to_field_level_encryption_config::Builder::default();
+                    let mut output = crate::types::error::builders::TooManyDistributionsAssociatedToFieldLevelEncryptionConfigBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_distributions_associated_to_field_level_encryption_config::de_too_many_distributions_associated_to_field_level_encryption_config_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_distributions_associated_to_field_level_encryption_config::de_too_many_distributions_associated_to_field_level_encryption_config_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -817,14 +821,14 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        "TooManyDistributionsAssociatedToKeyGroup" => crate::error::CreateDistributionError::TooManyDistributionsAssociatedToKeyGroup({
+        "TooManyDistributionsAssociatedToKeyGroup" => crate::operation::create_distribution::CreateDistributionError::TooManyDistributionsAssociatedToKeyGroup({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_distributions_associated_to_key_group::Builder::default();
+                    let mut output = crate::types::error::builders::TooManyDistributionsAssociatedToKeyGroupBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_distributions_associated_to_key_group::de_too_many_distributions_associated_to_key_group_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_distributions_associated_to_key_group::de_too_many_distributions_associated_to_key_group_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -834,14 +838,14 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        "TooManyDistributionsAssociatedToOriginAccessControl" => crate::error::CreateDistributionError::TooManyDistributionsAssociatedToOriginAccessControl({
+        "TooManyDistributionsAssociatedToOriginAccessControl" => crate::operation::create_distribution::CreateDistributionError::TooManyDistributionsAssociatedToOriginAccessControl({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_distributions_associated_to_origin_access_control::Builder::default();
+                    let mut output = crate::types::error::builders::TooManyDistributionsAssociatedToOriginAccessControlBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_distributions_associated_to_origin_access_control::de_too_many_distributions_associated_to_origin_access_control_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_distributions_associated_to_origin_access_control::de_too_many_distributions_associated_to_origin_access_control_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -851,14 +855,14 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        "TooManyDistributionsAssociatedToOriginRequestPolicy" => crate::error::CreateDistributionError::TooManyDistributionsAssociatedToOriginRequestPolicy({
+        "TooManyDistributionsAssociatedToOriginRequestPolicy" => crate::operation::create_distribution::CreateDistributionError::TooManyDistributionsAssociatedToOriginRequestPolicy({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_distributions_associated_to_origin_request_policy::Builder::default();
+                    let mut output = crate::types::error::builders::TooManyDistributionsAssociatedToOriginRequestPolicyBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_distributions_associated_to_origin_request_policy::de_too_many_distributions_associated_to_origin_request_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_distributions_associated_to_origin_request_policy::de_too_many_distributions_associated_to_origin_request_policy_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -868,14 +872,14 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        "TooManyDistributionsAssociatedToResponseHeadersPolicy" => crate::error::CreateDistributionError::TooManyDistributionsAssociatedToResponseHeadersPolicy({
+        "TooManyDistributionsAssociatedToResponseHeadersPolicy" => crate::operation::create_distribution::CreateDistributionError::TooManyDistributionsAssociatedToResponseHeadersPolicy({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_distributions_associated_to_response_headers_policy::Builder::default();
+                    let mut output = crate::types::error::builders::TooManyDistributionsAssociatedToResponseHeadersPolicyBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_distributions_associated_to_response_headers_policy::de_too_many_distributions_associated_to_response_headers_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_distributions_associated_to_response_headers_policy::de_too_many_distributions_associated_to_response_headers_policy_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -885,14 +889,14 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        "TooManyDistributionsWithFunctionAssociations" => crate::error::CreateDistributionError::TooManyDistributionsWithFunctionAssociations({
+        "TooManyDistributionsWithFunctionAssociations" => crate::operation::create_distribution::CreateDistributionError::TooManyDistributionsWithFunctionAssociations({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_distributions_with_function_associations::Builder::default();
+                    let mut output = crate::types::error::builders::TooManyDistributionsWithFunctionAssociationsBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_distributions_with_function_associations::de_too_many_distributions_with_function_associations_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_distributions_with_function_associations::de_too_many_distributions_with_function_associations_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -902,14 +906,14 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        "TooManyDistributionsWithLambdaAssociations" => crate::error::CreateDistributionError::TooManyDistributionsWithLambdaAssociations({
+        "TooManyDistributionsWithLambdaAssociations" => crate::operation::create_distribution::CreateDistributionError::TooManyDistributionsWithLambdaAssociations({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_distributions_with_lambda_associations::Builder::default();
+                    let mut output = crate::types::error::builders::TooManyDistributionsWithLambdaAssociationsBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_distributions_with_lambda_associations::de_too_many_distributions_with_lambda_associations_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_distributions_with_lambda_associations::de_too_many_distributions_with_lambda_associations_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -919,14 +923,14 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        "TooManyDistributionsWithSingleFunctionARN" => crate::error::CreateDistributionError::TooManyDistributionsWithSingleFunctionArn({
+        "TooManyDistributionsWithSingleFunctionARN" => crate::operation::create_distribution::CreateDistributionError::TooManyDistributionsWithSingleFunctionArn({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_distributions_with_single_function_arn::Builder::default();
+                    let mut output = crate::types::error::builders::TooManyDistributionsWithSingleFunctionArnBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_distributions_with_single_function_arn::de_too_many_distributions_with_single_function_arn_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_distributions_with_single_function_arn::de_too_many_distributions_with_single_function_arn_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -936,14 +940,14 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        "TooManyFunctionAssociations" => crate::error::CreateDistributionError::TooManyFunctionAssociations({
+        "TooManyFunctionAssociations" => crate::operation::create_distribution::CreateDistributionError::TooManyFunctionAssociations({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_function_associations::Builder::default();
+                    let mut output = crate::types::error::builders::TooManyFunctionAssociationsBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_function_associations::de_too_many_function_associations_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_function_associations::de_too_many_function_associations_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -953,14 +957,14 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        "TooManyHeadersInForwardedValues" => crate::error::CreateDistributionError::TooManyHeadersInForwardedValues({
+        "TooManyHeadersInForwardedValues" => crate::operation::create_distribution::CreateDistributionError::TooManyHeadersInForwardedValues({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_headers_in_forwarded_values::Builder::default();
+                    let mut output = crate::types::error::builders::TooManyHeadersInForwardedValuesBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_headers_in_forwarded_values::de_too_many_headers_in_forwarded_values_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_headers_in_forwarded_values::de_too_many_headers_in_forwarded_values_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -970,14 +974,14 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        "TooManyKeyGroupsAssociatedToDistribution" => crate::error::CreateDistributionError::TooManyKeyGroupsAssociatedToDistribution({
+        "TooManyKeyGroupsAssociatedToDistribution" => crate::operation::create_distribution::CreateDistributionError::TooManyKeyGroupsAssociatedToDistribution({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_key_groups_associated_to_distribution::Builder::default();
+                    let mut output = crate::types::error::builders::TooManyKeyGroupsAssociatedToDistributionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_key_groups_associated_to_distribution::de_too_many_key_groups_associated_to_distribution_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_key_groups_associated_to_distribution::de_too_many_key_groups_associated_to_distribution_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -987,14 +991,14 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        "TooManyLambdaFunctionAssociations" => crate::error::CreateDistributionError::TooManyLambdaFunctionAssociations({
+        "TooManyLambdaFunctionAssociations" => crate::operation::create_distribution::CreateDistributionError::TooManyLambdaFunctionAssociations({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_lambda_function_associations::Builder::default();
+                    let mut output = crate::types::error::builders::TooManyLambdaFunctionAssociationsBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_lambda_function_associations::de_too_many_lambda_function_associations_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_lambda_function_associations::de_too_many_lambda_function_associations_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -1004,14 +1008,14 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        "TooManyOriginCustomHeaders" => crate::error::CreateDistributionError::TooManyOriginCustomHeaders({
+        "TooManyOriginCustomHeaders" => crate::operation::create_distribution::CreateDistributionError::TooManyOriginCustomHeaders({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_origin_custom_headers::Builder::default();
+                    let mut output = crate::types::error::builders::TooManyOriginCustomHeadersBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_origin_custom_headers::de_too_many_origin_custom_headers_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_origin_custom_headers::de_too_many_origin_custom_headers_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -1021,14 +1025,14 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        "TooManyOriginGroupsPerDistribution" => crate::error::CreateDistributionError::TooManyOriginGroupsPerDistribution({
+        "TooManyOriginGroupsPerDistribution" => crate::operation::create_distribution::CreateDistributionError::TooManyOriginGroupsPerDistribution({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_origin_groups_per_distribution::Builder::default();
+                    let mut output = crate::types::error::builders::TooManyOriginGroupsPerDistributionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_origin_groups_per_distribution::de_too_many_origin_groups_per_distribution_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_origin_groups_per_distribution::de_too_many_origin_groups_per_distribution_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -1038,14 +1042,14 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        "TooManyOrigins" => crate::error::CreateDistributionError::TooManyOrigins({
+        "TooManyOrigins" => crate::operation::create_distribution::CreateDistributionError::TooManyOrigins({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_origins::Builder::default();
+                    let mut output = crate::types::error::builders::TooManyOriginsBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_origins::de_too_many_origins_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_origins::de_too_many_origins_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -1055,14 +1059,14 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        "TooManyQueryStringParameters" => crate::error::CreateDistributionError::TooManyQueryStringParameters({
+        "TooManyQueryStringParameters" => crate::operation::create_distribution::CreateDistributionError::TooManyQueryStringParameters({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_query_string_parameters::Builder::default();
+                    let mut output = crate::types::error::builders::TooManyQueryStringParametersBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_query_string_parameters::de_too_many_query_string_parameters_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_query_string_parameters::de_too_many_query_string_parameters_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -1072,14 +1076,14 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        "TooManyTrustedSigners" => crate::error::CreateDistributionError::TooManyTrustedSigners({
+        "TooManyTrustedSigners" => crate::operation::create_distribution::CreateDistributionError::TooManyTrustedSigners({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_trusted_signers::Builder::default();
+                    let mut output = crate::types::error::builders::TooManyTrustedSignersBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_trusted_signers::de_too_many_trusted_signers_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_trusted_signers::de_too_many_trusted_signers_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -1089,14 +1093,14 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        "TrustedKeyGroupDoesNotExist" => crate::error::CreateDistributionError::TrustedKeyGroupDoesNotExist({
+        "TrustedKeyGroupDoesNotExist" => crate::operation::create_distribution::CreateDistributionError::TrustedKeyGroupDoesNotExist({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::trusted_key_group_does_not_exist::Builder::default();
+                    let mut output = crate::types::error::builders::TrustedKeyGroupDoesNotExistBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_trusted_key_group_does_not_exist::de_trusted_key_group_does_not_exist_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_trusted_key_group_does_not_exist::de_trusted_key_group_does_not_exist_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -1106,14 +1110,14 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        "TrustedSignerDoesNotExist" => crate::error::CreateDistributionError::TrustedSignerDoesNotExist({
+        "TrustedSignerDoesNotExist" => crate::operation::create_distribution::CreateDistributionError::TrustedSignerDoesNotExist({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::trusted_signer_does_not_exist::Builder::default();
+                    let mut output = crate::types::error::builders::TrustedSignerDoesNotExistBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_trusted_signer_does_not_exist::de_trusted_signer_does_not_exist_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_trusted_signer_does_not_exist::de_trusted_signer_does_not_exist_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_distribution::CreateDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -1123,7 +1127,7 @@ pub fn de_create_distribution_http_error(
                                                     }
             tmp
         }),
-        _ => crate::error::CreateDistributionError::generic(generic)
+        _ => crate::operation::create_distribution::CreateDistributionError::generic(generic)
     })
 }
 
@@ -1131,12 +1135,12 @@ pub fn de_create_distribution_http_error(
 pub fn de_create_distribution_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateDistributionOutput,
-    crate::error::CreateDistributionError,
+    crate::operation::create_distribution::CreateDistributionOutput,
+    crate::operation::create_distribution::CreateDistributionError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::create_distribution_output::Builder::default();
+        let mut output = crate::operation::create_distribution::builders::CreateDistributionOutputBuilder::default();
         let _ = response;
         output = output.set_distribution(
             crate::protocol_serde::shape_create_distribution_output::de_distribution_payload(
@@ -1148,7 +1152,7 @@ pub fn de_create_distribution_http_response(
                 response.headers(),
             )
             .map_err(|_| {
-                crate::error::CreateDistributionError::unhandled(
+                crate::operation::create_distribution::CreateDistributionError::unhandled(
                     "Failed to parse ETag from header `ETag",
                 )
             })?,
@@ -1158,7 +1162,7 @@ pub fn de_create_distribution_http_response(
                 response.headers(),
             )
             .map_err(|_| {
-                crate::error::CreateDistributionError::unhandled(
+                crate::operation::create_distribution::CreateDistributionError::unhandled(
                     "Failed to parse Location from header `Location",
                 )
             })?,

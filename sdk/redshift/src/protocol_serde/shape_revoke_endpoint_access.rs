@@ -3,141 +3,147 @@
 pub fn de_revoke_endpoint_access_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::RevokeEndpointAccessOutput,
-    crate::error::RevokeEndpointAccessError,
+    crate::operation::revoke_endpoint_access::RevokeEndpointAccessOutput,
+    crate::operation::revoke_endpoint_access::RevokeEndpointAccessError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::RevokeEndpointAccessError::unhandled)?;
+        .map_err(crate::operation::revoke_endpoint_access::RevokeEndpointAccessError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::RevokeEndpointAccessError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::revoke_endpoint_access::RevokeEndpointAccessError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ClusterNotFound" => crate::error::RevokeEndpointAccessError::ClusterNotFoundFault({
+        "ClusterNotFound" => crate::operation::revoke_endpoint_access::RevokeEndpointAccessError::ClusterNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::cluster_not_found_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_cluster_not_found_fault::de_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RevokeEndpointAccessError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ClusterNotFoundFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_cluster_not_found_fault::de_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::revoke_endpoint_access::RevokeEndpointAccessError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "EndpointAuthorizationNotFound" => {
-            crate::error::RevokeEndpointAccessError::EndpointAuthorizationNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "EndpointAuthorizationNotFound" => crate::operation::revoke_endpoint_access::RevokeEndpointAccessError::EndpointAuthorizationNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::endpoint_authorization_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::EndpointAuthorizationNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_endpoint_authorization_not_found_fault::de_endpoint_authorization_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RevokeEndpointAccessError::unhandled)?;
+                    output = crate::protocol_serde::shape_endpoint_authorization_not_found_fault::de_endpoint_authorization_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::revoke_endpoint_access::RevokeEndpointAccessError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "EndpointNotFound" => crate::error::RevokeEndpointAccessError::EndpointNotFoundFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::endpoint_not_found_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_endpoint_not_found_fault::de_endpoint_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RevokeEndpointAccessError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "InvalidAuthorizationState" => {
-            crate::error::RevokeEndpointAccessError::InvalidAuthorizationStateFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "EndpointNotFound" => crate::operation::revoke_endpoint_access::RevokeEndpointAccessError::EndpointNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_authorization_state_fault::Builder::default();
+                    let mut output = crate::types::error::builders::EndpointNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_authorization_state_fault::de_invalid_authorization_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RevokeEndpointAccessError::unhandled)?;
+                    output = crate::protocol_serde::shape_endpoint_not_found_fault::de_endpoint_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::revoke_endpoint_access::RevokeEndpointAccessError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidClusterSecurityGroupState" => {
-            crate::error::RevokeEndpointAccessError::InvalidClusterSecurityGroupStateFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidAuthorizationState" => crate::operation::revoke_endpoint_access::RevokeEndpointAccessError::InvalidAuthorizationStateFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_cluster_security_group_state_fault::Builder::default(
-                        );
+                    let mut output = crate::types::error::builders::InvalidAuthorizationStateFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_cluster_security_group_state_fault::de_invalid_cluster_security_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RevokeEndpointAccessError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_authorization_state_fault::de_invalid_authorization_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::revoke_endpoint_access::RevokeEndpointAccessError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidClusterState" => {
-            crate::error::RevokeEndpointAccessError::InvalidClusterStateFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidClusterSecurityGroupState" => crate::operation::revoke_endpoint_access::RevokeEndpointAccessError::InvalidClusterSecurityGroupStateFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_cluster_state_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidClusterSecurityGroupStateFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_cluster_state_fault::de_invalid_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RevokeEndpointAccessError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_cluster_security_group_state_fault::de_invalid_cluster_security_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::revoke_endpoint_access::RevokeEndpointAccessError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidEndpointState" => {
-            crate::error::RevokeEndpointAccessError::InvalidEndpointStateFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidClusterState" => crate::operation::revoke_endpoint_access::RevokeEndpointAccessError::InvalidClusterStateFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_endpoint_state_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidClusterStateFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_endpoint_state_fault::de_invalid_endpoint_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RevokeEndpointAccessError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_cluster_state_fault::de_invalid_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::revoke_endpoint_access::RevokeEndpointAccessError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::RevokeEndpointAccessError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidEndpointState" => crate::operation::revoke_endpoint_access::RevokeEndpointAccessError::InvalidEndpointStateFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidEndpointStateFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_endpoint_state_fault::de_invalid_endpoint_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::revoke_endpoint_access::RevokeEndpointAccessError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::revoke_endpoint_access::RevokeEndpointAccessError::generic(generic)
     })
 }
 
@@ -145,18 +151,18 @@ pub fn de_revoke_endpoint_access_http_error(
 pub fn de_revoke_endpoint_access_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::RevokeEndpointAccessOutput,
-    crate::error::RevokeEndpointAccessError,
+    crate::operation::revoke_endpoint_access::RevokeEndpointAccessOutput,
+    crate::operation::revoke_endpoint_access::RevokeEndpointAccessError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::revoke_endpoint_access_output::Builder::default();
+        let mut output = crate::operation::revoke_endpoint_access::builders::RevokeEndpointAccessOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_revoke_endpoint_access::de_revoke_endpoint_access(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::RevokeEndpointAccessError::unhandled)?;
+        .map_err(crate::operation::revoke_endpoint_access::RevokeEndpointAccessError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -167,9 +173,9 @@ pub fn de_revoke_endpoint_access_http_response(
 #[allow(unused_mut)]
 pub fn de_revoke_endpoint_access(
     inp: &[u8],
-    mut builder: crate::output::revoke_endpoint_access_output::Builder,
+    mut builder: crate::operation::revoke_endpoint_access::builders::RevokeEndpointAccessOutputBuilder,
 ) -> Result<
-    crate::output::revoke_endpoint_access_output::Builder,
+    crate::operation::revoke_endpoint_access::builders::RevokeEndpointAccessOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
@@ -263,8 +269,8 @@ pub fn de_revoke_endpoint_access(
             s if s.matches("Status") /* Status com.amazonaws.redshift.synthetic#RevokeEndpointAccessOutput$Status */ =>  {
                 let var_6 =
                     Some(
-                        Result::<crate::model::AuthorizationStatus, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::AuthorizationStatus::from(
+                        Result::<crate::types::AuthorizationStatus, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::AuthorizationStatus::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

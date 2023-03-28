@@ -2,7 +2,7 @@
 pub(crate) fn de_import_assets_from_lake_formation_tag_policy_response_details<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ImportAssetsFromLakeFormationTagPolicyResponseDetails>,
+    Option<crate::types::ImportAssetsFromLakeFormationTagPolicyResponseDetails>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::import_assets_from_lake_formation_tag_policy_response_details::Builder::default();
+            let mut builder = crate::types::builders::ImportAssetsFromLakeFormationTagPolicyResponseDetailsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

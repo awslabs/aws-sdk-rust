@@ -2,7 +2,7 @@
 pub(crate) fn de_aws_redshift_cluster_cluster_security_groups<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AwsRedshiftClusterClusterSecurityGroup>>,
+    Option<std::vec::Vec<crate::types::AwsRedshiftClusterClusterSecurityGroup>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

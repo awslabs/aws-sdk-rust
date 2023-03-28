@@ -2,58 +2,70 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_schema_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DescribeSchemaOutput, crate::error::DescribeSchemaError> {
+) -> std::result::Result<
+    crate::operation::describe_schema::DescribeSchemaOutput,
+    crate::operation::describe_schema::DescribeSchemaError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeSchemaError::unhandled)?;
+        .map_err(crate::operation::describe_schema::DescribeSchemaError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DescribeSchemaError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::describe_schema::DescribeSchemaError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::DescribeSchemaError::BadRequestException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "BadRequestException" => {
+            crate::operation::describe_schema::DescribeSchemaError::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeSchemaError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ForbiddenException" => crate::error::DescribeSchemaError::ForbiddenException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::BadRequestExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_schema::DescribeSchemaError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ForbiddenException" => {
+            crate::operation::describe_schema::DescribeSchemaError::ForbiddenException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeSchemaError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ForbiddenExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_schema::DescribeSchemaError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "InternalServerErrorException" => {
-            crate::error::DescribeSchemaError::InternalServerErrorException({
+            crate::operation::describe_schema::DescribeSchemaError::InternalServerErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::internal_server_error_exception::Builder::default();
+                        crate::types::error::builders::InternalServerErrorExceptionBuilder::default(
+                        );
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeSchemaError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_schema::DescribeSchemaError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -63,30 +75,34 @@ pub fn de_describe_schema_http_error(
                 tmp
             })
         }
-        "NotFoundException" => crate::error::DescribeSchemaError::NotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "NotFoundException" => {
+            crate::operation::describe_schema::DescribeSchemaError::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeSchemaError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::NotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_schema::DescribeSchemaError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "ServiceUnavailableException" => {
-            crate::error::DescribeSchemaError::ServiceUnavailableException({
+            crate::operation::describe_schema::DescribeSchemaError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::service_unavailable_exception::Builder::default();
+                        crate::types::error::builders::ServiceUnavailableExceptionBuilder::default(
+                        );
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeSchemaError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_schema::DescribeSchemaError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -96,38 +112,45 @@ pub fn de_describe_schema_http_error(
                 tmp
             })
         }
-        "UnauthorizedException" => crate::error::DescribeSchemaError::UnauthorizedException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "UnauthorizedException" => {
+            crate::operation::describe_schema::DescribeSchemaError::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeSchemaError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::DescribeSchemaError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::UnauthorizedExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_schema::DescribeSchemaError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::describe_schema::DescribeSchemaError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_schema_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DescribeSchemaOutput, crate::error::DescribeSchemaError> {
+) -> std::result::Result<
+    crate::operation::describe_schema::DescribeSchemaOutput,
+    crate::operation::describe_schema::DescribeSchemaError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_schema_output::Builder::default();
+        let mut output =
+            crate::operation::describe_schema::builders::DescribeSchemaOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_describe_schema::de_describe_schema(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DescribeSchemaError::unhandled)?;
+        .map_err(crate::operation::describe_schema::DescribeSchemaError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -137,9 +160,9 @@ pub fn de_describe_schema_http_response(
 
 pub(crate) fn de_describe_schema(
     value: &[u8],
-    mut builder: crate::output::describe_schema_output::Builder,
+    mut builder: crate::operation::describe_schema::builders::DescribeSchemaOutputBuilder,
 ) -> Result<
-    crate::output::describe_schema_output::Builder,
+    crate::operation::describe_schema::builders::DescribeSchemaOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

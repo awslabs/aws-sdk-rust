@@ -3,111 +3,108 @@
 pub fn de_list_instance_storage_configs_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListInstanceStorageConfigsOutput,
-    crate::error::ListInstanceStorageConfigsError,
+    crate::operation::list_instance_storage_configs::ListInstanceStorageConfigsOutput,
+    crate::operation::list_instance_storage_configs::ListInstanceStorageConfigsError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListInstanceStorageConfigsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::list_instance_storage_configs::ListInstanceStorageConfigsError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::ListInstanceStorageConfigsError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::list_instance_storage_configs::ListInstanceStorageConfigsError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServiceException" => {
-            crate::error::ListInstanceStorageConfigsError::InternalServiceException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalServiceException" => crate::operation::list_instance_storage_configs::ListInstanceStorageConfigsError::InternalServiceException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_service_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InternalServiceExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_service_exception::de_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListInstanceStorageConfigsError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_service_exception::de_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_instance_storage_configs::ListInstanceStorageConfigsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidParameterException" => {
-            crate::error::ListInstanceStorageConfigsError::InvalidParameterException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidParameterException" => crate::operation::list_instance_storage_configs::ListInstanceStorageConfigsError::InvalidParameterException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidParameterExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListInstanceStorageConfigsError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_instance_storage_configs::ListInstanceStorageConfigsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidRequestException" => {
-            crate::error::ListInstanceStorageConfigsError::InvalidRequestException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidRequestException" => crate::operation::list_instance_storage_configs::ListInstanceStorageConfigsError::InvalidRequestException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_request_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListInstanceStorageConfigsError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_instance_storage_configs::ListInstanceStorageConfigsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ResourceNotFoundException" => {
-            crate::error::ListInstanceStorageConfigsError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::list_instance_storage_configs::ListInstanceStorageConfigsError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListInstanceStorageConfigsError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_instance_storage_configs::ListInstanceStorageConfigsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ThrottlingException" => {
-            crate::error::ListInstanceStorageConfigsError::ThrottlingException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ThrottlingException" => crate::operation::list_instance_storage_configs::ListInstanceStorageConfigsError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListInstanceStorageConfigsError::unhandled)?;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_instance_storage_configs::ListInstanceStorageConfigsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::ListInstanceStorageConfigsError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::list_instance_storage_configs::ListInstanceStorageConfigsError::generic(generic)
     })
 }
 
@@ -115,14 +112,14 @@ pub fn de_list_instance_storage_configs_http_error(
 pub fn de_list_instance_storage_configs_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListInstanceStorageConfigsOutput,
-    crate::error::ListInstanceStorageConfigsError,
+    crate::operation::list_instance_storage_configs::ListInstanceStorageConfigsOutput,
+    crate::operation::list_instance_storage_configs::ListInstanceStorageConfigsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_instance_storage_configs_output::Builder::default();
+        let mut output = crate::operation::list_instance_storage_configs::builders::ListInstanceStorageConfigsOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_list_instance_storage_configs::de_list_instance_storage_configs(response.body().as_ref(), output).map_err(crate::error::ListInstanceStorageConfigsError::unhandled)?;
+        output = crate::protocol_serde::shape_list_instance_storage_configs::de_list_instance_storage_configs(response.body().as_ref(), output).map_err(crate::operation::list_instance_storage_configs::ListInstanceStorageConfigsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -130,13 +127,7 @@ pub fn de_list_instance_storage_configs_http_response(
     })
 }
 
-pub(crate) fn de_list_instance_storage_configs(
-    value: &[u8],
-    mut builder: crate::output::list_instance_storage_configs_output::Builder,
-) -> Result<
-    crate::output::list_instance_storage_configs_output::Builder,
-    aws_smithy_json::deserialize::error::DeserializeError,
-> {
+pub(crate) fn de_list_instance_storage_configs(value: &[u8], mut builder: crate::operation::list_instance_storage_configs::builders::ListInstanceStorageConfigsOutputBuilder) -> Result<crate::operation::list_instance_storage_configs::builders::ListInstanceStorageConfigsOutputBuilder, aws_smithy_json::deserialize::error::DeserializeError>{
     let mut tokens_owned =
         aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
             .peekable();

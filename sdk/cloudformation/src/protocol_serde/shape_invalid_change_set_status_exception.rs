@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_invalid_change_set_status_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::invalid_change_set_status_exception::Builder,
+    mut builder: crate::types::error::builders::InvalidChangeSetStatusExceptionBuilder,
 ) -> Result<
-    crate::error::invalid_change_set_status_exception::Builder,
+    crate::types::error::builders::InvalidChangeSetStatusExceptionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

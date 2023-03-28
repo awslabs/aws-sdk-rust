@@ -2,7 +2,7 @@
 pub(crate) fn de_configured_table_analysis_rule_type_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ConfiguredTableAnalysisRuleType>>,
+    Option<std::vec::Vec<crate::types::ConfiguredTableAnalysisRuleType>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -29,7 +29,7 @@ where
                         )?
                         .map(|s| {
                             s.to_unescaped().map(|u| {
-                                crate::model::ConfiguredTableAnalysisRuleType::from(u.as_ref())
+                                crate::types::ConfiguredTableAnalysisRuleType::from(u.as_ref())
                             })
                         })
                         .transpose()?;

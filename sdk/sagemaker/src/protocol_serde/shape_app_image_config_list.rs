@@ -2,7 +2,7 @@
 pub(crate) fn de_app_image_config_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AppImageConfigDetails>>,
+    Option<std::vec::Vec<crate::types::AppImageConfigDetails>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

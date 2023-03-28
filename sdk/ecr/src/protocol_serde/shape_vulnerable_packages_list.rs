@@ -2,7 +2,7 @@
 pub(crate) fn de_vulnerable_packages_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::VulnerablePackage>>,
+    Option<std::vec::Vec<crate::types::VulnerablePackage>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

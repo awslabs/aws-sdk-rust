@@ -2,7 +2,7 @@
 pub fn de_predictive_scaling_metric_specifications(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::PredictiveScalingMetricSpecification>,
+    std::vec::Vec<crate::types::PredictiveScalingMetricSpecification>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_vpc_interface<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::VpcInterface>>,
+    Option<std::vec::Vec<crate::types::VpcInterface>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

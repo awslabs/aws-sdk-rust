@@ -2,7 +2,7 @@
 pub(crate) fn de_connect_client_add_in_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ConnectClientAddIn>>,
+    Option<std::vec::Vec<crate::types::ConnectClientAddIn>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

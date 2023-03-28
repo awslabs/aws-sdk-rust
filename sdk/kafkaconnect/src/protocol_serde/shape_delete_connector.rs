@@ -2,58 +2,35 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_connector_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeleteConnectorOutput, crate::error::DeleteConnectorError> {
+) -> std::result::Result<
+    crate::operation::delete_connector::DeleteConnectorOutput,
+    crate::operation::delete_connector::DeleteConnectorError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteConnectorError::unhandled)?;
+        .map_err(crate::operation::delete_connector::DeleteConnectorError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DeleteConnectorError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::delete_connector::DeleteConnectorError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::DeleteConnectorError::BadRequestException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteConnectorError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ForbiddenException" => crate::error::DeleteConnectorError::ForbiddenException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteConnectorError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InternalServerErrorException" => {
-            crate::error::DeleteConnectorError::InternalServerErrorException({
+        "BadRequestException" => {
+            crate::operation::delete_connector::DeleteConnectorError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::internal_server_error_exception::Builder::default();
+                        crate::types::error::builders::BadRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteConnectorError::unhandled)?;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_connector::DeleteConnectorError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -63,30 +40,71 @@ pub fn de_delete_connector_http_error(
                 tmp
             })
         }
-        "NotFoundException" => crate::error::DeleteConnectorError::NotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteConnectorError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ServiceUnavailableException" => {
-            crate::error::DeleteConnectorError::ServiceUnavailableException({
+        "ForbiddenException" => {
+            crate::operation::delete_connector::DeleteConnectorError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::service_unavailable_exception::Builder::default();
+                        crate::types::error::builders::ForbiddenExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteConnectorError::unhandled)?;
+                    output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_connector::DeleteConnectorError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InternalServerErrorException" => {
+            crate::operation::delete_connector::DeleteConnectorError::InternalServerErrorException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InternalServerErrorExceptionBuilder::default();
+                        let _ = response;
+                        output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_connector::DeleteConnectorError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        "NotFoundException" => {
+            crate::operation::delete_connector::DeleteConnectorError::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::NotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_connector::DeleteConnectorError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::operation::delete_connector::DeleteConnectorError::ServiceUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ServiceUnavailableExceptionBuilder::default(
+                        );
+                    let _ = response;
+                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_connector::DeleteConnectorError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -97,13 +115,14 @@ pub fn de_delete_connector_http_error(
             })
         }
         "TooManyRequestsException" => {
-            crate::error::DeleteConnectorError::TooManyRequestsException({
+            crate::operation::delete_connector::DeleteConnectorError::TooManyRequestsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteConnectorError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_connector::DeleteConnectorError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -113,38 +132,45 @@ pub fn de_delete_connector_http_error(
                 tmp
             })
         }
-        "UnauthorizedException" => crate::error::DeleteConnectorError::UnauthorizedException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "UnauthorizedException" => {
+            crate::operation::delete_connector::DeleteConnectorError::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteConnectorError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::DeleteConnectorError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::UnauthorizedExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_connector::DeleteConnectorError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::delete_connector::DeleteConnectorError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_connector_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeleteConnectorOutput, crate::error::DeleteConnectorError> {
+) -> std::result::Result<
+    crate::operation::delete_connector::DeleteConnectorOutput,
+    crate::operation::delete_connector::DeleteConnectorError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_connector_output::Builder::default();
+        let mut output =
+            crate::operation::delete_connector::builders::DeleteConnectorOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_delete_connector::de_delete_connector(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DeleteConnectorError::unhandled)?;
+        .map_err(crate::operation::delete_connector::DeleteConnectorError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -154,9 +180,9 @@ pub fn de_delete_connector_http_response(
 
 pub(crate) fn de_delete_connector(
     value: &[u8],
-    mut builder: crate::output::delete_connector_output::Builder,
+    mut builder: crate::operation::delete_connector::builders::DeleteConnectorOutputBuilder,
 ) -> Result<
-    crate::output::delete_connector_output::Builder,
+    crate::operation::delete_connector::builders::DeleteConnectorOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =
@@ -185,7 +211,7 @@ pub(crate) fn de_delete_connector(
                             )?
                             .map(|s| {
                                 s.to_unescaped()
-                                    .map(|u| crate::model::ConnectorState::from(u.as_ref()))
+                                    .map(|u| crate::types::ConnectorState::from(u.as_ref()))
                             })
                             .transpose()?,
                         );

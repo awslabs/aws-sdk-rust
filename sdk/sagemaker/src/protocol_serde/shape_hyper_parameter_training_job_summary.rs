@@ -2,7 +2,7 @@
 pub(crate) fn de_hyper_parameter_training_job_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::HyperParameterTrainingJobSummary>,
+    Option<crate::types::HyperParameterTrainingJobSummary>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::hyper_parameter_training_job_summary::Builder::default();
+                crate::types::builders::HyperParameterTrainingJobSummaryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -91,7 +91,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::TrainingJobStatus::from(u.as_ref())
+                                            crate::types::TrainingJobStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -123,7 +123,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ObjectiveStatus::from(u.as_ref())
+                                            crate::types::ObjectiveStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

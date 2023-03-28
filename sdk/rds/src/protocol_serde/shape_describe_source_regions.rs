@@ -3,33 +3,36 @@
 pub fn de_describe_source_regions_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeSourceRegionsOutput,
-    crate::error::DescribeSourceRegionsError,
+    crate::operation::describe_source_regions::DescribeSourceRegionsOutput,
+    crate::operation::describe_source_regions::DescribeSourceRegionsError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeSourceRegionsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::describe_source_regions::DescribeSourceRegionsError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::DescribeSourceRegionsError::generic(generic))
+    Err(crate::operation::describe_source_regions::DescribeSourceRegionsError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_source_regions_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeSourceRegionsOutput,
-    crate::error::DescribeSourceRegionsError,
+    crate::operation::describe_source_regions::DescribeSourceRegionsOutput,
+    crate::operation::describe_source_regions::DescribeSourceRegionsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_source_regions_output::Builder::default();
+        let mut output = crate::operation::describe_source_regions::builders::DescribeSourceRegionsOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_describe_source_regions::de_describe_source_regions(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DescribeSourceRegionsError::unhandled)?;
+        .map_err(
+            crate::operation::describe_source_regions::DescribeSourceRegionsError::unhandled,
+        )?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -40,9 +43,9 @@ pub fn de_describe_source_regions_http_response(
 #[allow(unused_mut)]
 pub fn de_describe_source_regions(
     inp: &[u8],
-    mut builder: crate::output::describe_source_regions_output::Builder,
+    mut builder: crate::operation::describe_source_regions::builders::DescribeSourceRegionsOutputBuilder,
 ) -> Result<
-    crate::output::describe_source_regions_output::Builder,
+    crate::operation::describe_source_regions::builders::DescribeSourceRegionsOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

@@ -2,7 +2,7 @@
 pub(crate) fn de_list_of_additional_constraints_element<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AdditionalConstraintsElement>>,
+    Option<std::vec::Vec<crate::types::AdditionalConstraintsElement>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -29,7 +29,7 @@ where
                         )?
                         .map(|s| {
                             s.to_unescaped().map(|u| {
-                                crate::model::AdditionalConstraintsElement::from(u.as_ref())
+                                crate::types::AdditionalConstraintsElement::from(u.as_ref())
                             })
                         })
                         .transpose()?;

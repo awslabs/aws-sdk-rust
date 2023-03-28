@@ -2,7 +2,7 @@
 pub(crate) fn de_output_serialization<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::OutputSerialization>,
+    Option<crate::types::OutputSerialization>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::output_serialization::Builder::default();
+            let mut builder = crate::types::builders::OutputSerializationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -53,7 +53,7 @@ where
 
 pub fn ser_output_serialization(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::OutputSerialization,
+    input: &crate::types::OutputSerialization,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.csv {
         #[allow(unused_mut)]

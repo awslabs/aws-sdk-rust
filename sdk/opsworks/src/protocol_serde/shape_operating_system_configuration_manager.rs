@@ -2,7 +2,7 @@
 pub(crate) fn de_operating_system_configuration_manager<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::OperatingSystemConfigurationManager>,
+    Option<crate::types::OperatingSystemConfigurationManager>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::operating_system_configuration_manager::Builder::default();
+                crate::types::builders::OperatingSystemConfigurationManagerBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

@@ -2,7 +2,7 @@
 pub(crate) fn de_instance_recommendation_finding_reason_codes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::InstanceRecommendationFindingReasonCode>>,
+    Option<std::vec::Vec<crate::types::InstanceRecommendationFindingReasonCode>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -29,7 +29,7 @@ where
                         )?
                         .map(|s| {
                             s.to_unescaped().map(|u| {
-                                crate::model::InstanceRecommendationFindingReasonCode::from(
+                                crate::types::InstanceRecommendationFindingReasonCode::from(
                                     u.as_ref(),
                                 )
                             })

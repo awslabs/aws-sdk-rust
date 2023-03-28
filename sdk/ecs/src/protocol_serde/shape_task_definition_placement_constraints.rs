@@ -2,7 +2,7 @@
 pub(crate) fn de_task_definition_placement_constraints<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::TaskDefinitionPlacementConstraint>>,
+    Option<std::vec::Vec<crate::types::TaskDefinitionPlacementConstraint>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

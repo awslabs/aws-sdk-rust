@@ -2,7 +2,7 @@
 pub(crate) fn de_certificate_authority<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::CertificateAuthority>,
+    Option<crate::types::CertificateAuthority>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::certificate_authority::Builder::default();
+            let mut builder = crate::types::builders::CertificateAuthorityBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -64,7 +64,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::CertificateAuthorityType::from(u.as_ref())
+                                            crate::types::CertificateAuthorityType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -86,7 +86,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::CertificateAuthorityStatus::from(
+                                            crate::types::CertificateAuthorityStatus::from(
                                                 u.as_ref(),
                                             )
                                         })
@@ -117,7 +117,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::FailureReason::from(u.as_ref()))
+                                            .map(|u| crate::types::FailureReason::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -147,7 +147,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::KeyStorageSecurityStandard::from(
+                                            crate::types::KeyStorageSecurityStandard::from(
                                                 u.as_ref(),
                                             )
                                         })
@@ -162,7 +162,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::CertificateAuthorityUsageMode::from(
+                                            crate::types::CertificateAuthorityUsageMode::from(
                                                 u.as_ref(),
                                             )
                                         })

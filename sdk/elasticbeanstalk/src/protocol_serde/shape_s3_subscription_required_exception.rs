@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_s3_subscription_required_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::s3_subscription_required_exception::Builder,
+    mut builder: crate::types::error::builders::S3SubscriptionRequiredExceptionBuilder,
 ) -> Result<
-    crate::error::s3_subscription_required_exception::Builder,
+    crate::types::error::builders::S3SubscriptionRequiredExceptionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

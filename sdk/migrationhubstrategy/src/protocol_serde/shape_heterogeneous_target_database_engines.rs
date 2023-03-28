@@ -2,7 +2,7 @@
 pub(crate) fn de_heterogeneous_target_database_engines<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::HeterogeneousTargetDatabaseEngine>>,
+    Option<std::vec::Vec<crate::types::HeterogeneousTargetDatabaseEngine>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -29,7 +29,7 @@ where
                         )?
                         .map(|s| {
                             s.to_unescaped().map(|u| {
-                                crate::model::HeterogeneousTargetDatabaseEngine::from(u.as_ref())
+                                crate::types::HeterogeneousTargetDatabaseEngine::from(u.as_ref())
                             })
                         })
                         .transpose()?;

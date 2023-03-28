@@ -2,7 +2,7 @@
 pub(crate) fn de_port_overrides<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::PortOverride>>,
+    Option<std::vec::Vec<crate::types::PortOverride>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

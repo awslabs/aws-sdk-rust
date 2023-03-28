@@ -2,7 +2,7 @@
 pub fn de_failed_scheduled_update_group_action_requests(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::FailedScheduledUpdateGroupActionRequest>,
+    std::vec::Vec<crate::types::FailedScheduledUpdateGroupActionRequest>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

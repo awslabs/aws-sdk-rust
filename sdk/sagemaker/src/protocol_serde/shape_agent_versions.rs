@@ -2,7 +2,7 @@
 pub(crate) fn de_agent_versions<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AgentVersion>>,
+    Option<std::vec::Vec<crate::types::AgentVersion>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

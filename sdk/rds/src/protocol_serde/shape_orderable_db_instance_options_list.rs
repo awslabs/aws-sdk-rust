@@ -2,7 +2,7 @@
 pub fn de_orderable_db_instance_options_list(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::OrderableDbInstanceOption>,
+    std::vec::Vec<crate::types::OrderableDbInstanceOption>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

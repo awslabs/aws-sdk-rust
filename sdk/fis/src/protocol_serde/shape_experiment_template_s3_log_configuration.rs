@@ -2,7 +2,7 @@
 pub(crate) fn de_experiment_template_s3_log_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ExperimentTemplateS3LogConfiguration>,
+    Option<crate::types::ExperimentTemplateS3LogConfiguration>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::experiment_template_s3_log_configuration::Builder::default();
+                crate::types::builders::ExperimentTemplateS3LogConfigurationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

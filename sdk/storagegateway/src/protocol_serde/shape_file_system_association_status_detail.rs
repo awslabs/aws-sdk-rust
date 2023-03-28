@@ -2,7 +2,7 @@
 pub(crate) fn de_file_system_association_status_detail<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::FileSystemAssociationStatusDetail>,
+    Option<crate::types::FileSystemAssociationStatusDetail>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::file_system_association_status_detail::Builder::default();
+                crate::types::builders::FileSystemAssociationStatusDetailBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

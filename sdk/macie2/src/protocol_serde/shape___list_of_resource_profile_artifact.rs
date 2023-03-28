@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_resource_profile_artifact<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ResourceProfileArtifact>>,
+    Option<std::vec::Vec<crate::types::ResourceProfileArtifact>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

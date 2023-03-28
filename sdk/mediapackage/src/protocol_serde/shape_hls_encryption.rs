@@ -2,7 +2,7 @@
 pub(crate) fn de_hls_encryption<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::HlsEncryption>,
+    Option<crate::types::HlsEncryption>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::hls_encryption::Builder::default();
+            let mut builder = crate::types::builders::HlsEncryptionBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -39,7 +39,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::EncryptionMethod::from(u.as_ref())
+                                            crate::types::EncryptionMethod::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -91,7 +91,7 @@ where
 
 pub fn ser_hls_encryption(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::HlsEncryption,
+    input: &crate::types::HlsEncryption,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.constant_initialization_vector {
         object

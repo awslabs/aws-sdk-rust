@@ -2,7 +2,7 @@
 pub(crate) fn de_redacted_fields<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::FieldToMatch>>,
+    Option<std::vec::Vec<crate::types::FieldToMatch>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

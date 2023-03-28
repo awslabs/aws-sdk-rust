@@ -12,17 +12,17 @@ pub(crate) fn de_e_tag_header(
 pub fn de_streaming_distribution_config_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::StreamingDistributionConfig>,
-    crate::error::GetStreamingDistributionConfigError,
+    std::option::Option<crate::types::StreamingDistributionConfig>,
+    crate::operation::get_streaming_distribution_config::GetStreamingDistributionConfigError,
 > {
     (!body.is_empty()).then(||{
-        crate::protocol_serde::shape_get_streaming_distribution_config_output::de_streaming_distribution_config(body).map_err(crate::error::GetStreamingDistributionConfigError::unhandled)
+        crate::protocol_serde::shape_get_streaming_distribution_config_output::de_streaming_distribution_config(body).map_err(crate::operation::get_streaming_distribution_config::GetStreamingDistributionConfigError::unhandled)
     }).transpose()
 }
 
 pub fn de_streaming_distribution_config(
     inp: &[u8],
-) -> Result<crate::model::StreamingDistributionConfig, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::StreamingDistributionConfig, aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;

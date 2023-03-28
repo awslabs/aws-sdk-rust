@@ -2,7 +2,7 @@
 pub(crate) fn de_matchmaking_configuration_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::MatchmakingConfiguration>>,
+    Option<std::vec::Vec<crate::types::MatchmakingConfiguration>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

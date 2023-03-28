@@ -2,20 +2,20 @@
 pub fn de_function_summary_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::FunctionSummary>,
-    crate::error::PublishFunctionError,
+    std::option::Option<crate::types::FunctionSummary>,
+    crate::operation::publish_function::PublishFunctionError,
 > {
     (!body.is_empty())
         .then(|| {
             crate::protocol_serde::shape_publish_function_output::de_function_summary(body)
-                .map_err(crate::error::PublishFunctionError::unhandled)
+                .map_err(crate::operation::publish_function::PublishFunctionError::unhandled)
         })
         .transpose()
 }
 
 pub fn de_function_summary(
     inp: &[u8],
-) -> Result<crate::model::FunctionSummary, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::FunctionSummary, aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;

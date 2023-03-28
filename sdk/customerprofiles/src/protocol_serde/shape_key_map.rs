@@ -3,7 +3,7 @@ pub(crate) fn de_key_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<
-        std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::ObjectTypeKey>>,
+        std::collections::HashMap<std::string::String, std::vec::Vec<crate::types::ObjectTypeKey>>,
     >,
     aws_smithy_json::deserialize::error::DeserializeError,
 >

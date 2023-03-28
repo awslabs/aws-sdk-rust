@@ -3,86 +3,94 @@
 pub fn de_describe_simulation_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeSimulationOutput,
-    crate::error::DescribeSimulationError,
+    crate::operation::describe_simulation::DescribeSimulationOutput,
+    crate::operation::describe_simulation::DescribeSimulationError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeSimulationError::unhandled)?;
+        .map_err(crate::operation::describe_simulation::DescribeSimulationError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DescribeSimulationError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::describe_simulation::DescribeSimulationError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::DescribeSimulationError::AccessDeniedException({
+        "AccessDeniedException" => crate::operation::describe_simulation::DescribeSimulationError::AccessDeniedException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::access_denied_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeSimulationError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InternalServerException" => {
-            crate::error::DescribeSimulationError::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeSimulationError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_simulation::DescribeSimulationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ResourceNotFoundException" => {
-            crate::error::DescribeSimulationError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeSimulationError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ValidationException" => crate::error::DescribeSimulationError::ValidationException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeSimulationError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::DescribeSimulationError::generic(generic),
+        "InternalServerException" => crate::operation::describe_simulation::DescribeSimulationError::InternalServerException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_simulation::DescribeSimulationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::describe_simulation::DescribeSimulationError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_simulation::DescribeSimulationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ValidationException" => crate::operation::describe_simulation::DescribeSimulationError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_simulation::DescribeSimulationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::describe_simulation::DescribeSimulationError::generic(generic)
     })
 }
 
@@ -90,18 +98,18 @@ pub fn de_describe_simulation_http_error(
 pub fn de_describe_simulation_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeSimulationOutput,
-    crate::error::DescribeSimulationError,
+    crate::operation::describe_simulation::DescribeSimulationOutput,
+    crate::operation::describe_simulation::DescribeSimulationError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_simulation_output::Builder::default();
+        let mut output = crate::operation::describe_simulation::builders::DescribeSimulationOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_describe_simulation::de_describe_simulation(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DescribeSimulationError::unhandled)?;
+        .map_err(crate::operation::describe_simulation::DescribeSimulationError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -111,9 +119,9 @@ pub fn de_describe_simulation_http_response(
 
 pub(crate) fn de_describe_simulation(
     value: &[u8],
-    mut builder: crate::output::describe_simulation_output::Builder,
+    mut builder: crate::operation::describe_simulation::builders::DescribeSimulationOutputBuilder,
 ) -> Result<
-    crate::output::describe_simulation_output::Builder,
+    crate::operation::describe_simulation::builders::DescribeSimulationOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =
@@ -219,7 +227,7 @@ pub(crate) fn de_describe_simulation(
                             )?
                             .map(|s| {
                                 s.to_unescaped()
-                                    .map(|u| crate::model::SimulationStatus::from(u.as_ref()))
+                                    .map(|u| crate::types::SimulationStatus::from(u.as_ref()))
                             })
                             .transpose()?,
                         );
@@ -231,7 +239,7 @@ pub(crate) fn de_describe_simulation(
                             )?
                             .map(|s| {
                                 s.to_unescaped()
-                                    .map(|u| crate::model::SimulationTargetStatus::from(u.as_ref()))
+                                    .map(|u| crate::types::SimulationTargetStatus::from(u.as_ref()))
                             })
                             .transpose()?,
                         );

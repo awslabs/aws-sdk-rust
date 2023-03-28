@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_directory_service_authentication_request(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::DirectoryServiceAuthenticationRequest,
+    input: &crate::types::DirectoryServiceAuthenticationRequest,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("DirectoryId");

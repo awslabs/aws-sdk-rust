@@ -2,22 +2,29 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_signal_resource_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::SignalResourceOutput, crate::error::SignalResourceError> {
+) -> std::result::Result<
+    crate::operation::signal_resource::SignalResourceOutput,
+    crate::operation::signal_resource::SignalResourceError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::SignalResourceError::unhandled)?;
+        .map_err(crate::operation::signal_resource::SignalResourceError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::SignalResourceError::generic(generic))
+    Err(crate::operation::signal_resource::SignalResourceError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_signal_resource_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::SignalResourceOutput, crate::error::SignalResourceError> {
+) -> std::result::Result<
+    crate::operation::signal_resource::SignalResourceOutput,
+    crate::operation::signal_resource::SignalResourceError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::signal_resource_output::Builder::default();
+        let mut output =
+            crate::operation::signal_resource::builders::SignalResourceOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

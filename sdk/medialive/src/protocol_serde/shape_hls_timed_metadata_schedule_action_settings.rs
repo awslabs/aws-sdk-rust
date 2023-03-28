@@ -2,7 +2,7 @@
 pub(crate) fn de_hls_timed_metadata_schedule_action_settings<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::HlsTimedMetadataScheduleActionSettings>,
+    Option<crate::types::HlsTimedMetadataScheduleActionSettings>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::hls_timed_metadata_schedule_action_settings::Builder::default();
+                crate::types::builders::HlsTimedMetadataScheduleActionSettingsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -58,7 +58,7 @@ where
 
 pub fn ser_hls_timed_metadata_schedule_action_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::HlsTimedMetadataScheduleActionSettings,
+    input: &crate::types::HlsTimedMetadataScheduleActionSettings,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.id3 {
         object.key("id3").string(var_1.as_str());

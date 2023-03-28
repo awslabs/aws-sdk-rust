@@ -3,31 +3,34 @@
 pub fn de_delete_traffic_mirror_session_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteTrafficMirrorSessionOutput,
-    crate::error::DeleteTrafficMirrorSessionError,
+    crate::operation::delete_traffic_mirror_session::DeleteTrafficMirrorSessionOutput,
+    crate::operation::delete_traffic_mirror_session::DeleteTrafficMirrorSessionError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteTrafficMirrorSessionError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::delete_traffic_mirror_session::DeleteTrafficMirrorSessionError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::DeleteTrafficMirrorSessionError::generic(
-        generic,
-    ))
+    Err(
+        crate::operation::delete_traffic_mirror_session::DeleteTrafficMirrorSessionError::generic(
+            generic,
+        ),
+    )
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_traffic_mirror_session_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteTrafficMirrorSessionOutput,
-    crate::error::DeleteTrafficMirrorSessionError,
+    crate::operation::delete_traffic_mirror_session::DeleteTrafficMirrorSessionOutput,
+    crate::operation::delete_traffic_mirror_session::DeleteTrafficMirrorSessionError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_traffic_mirror_session_output::Builder::default();
+        let mut output = crate::operation::delete_traffic_mirror_session::builders::DeleteTrafficMirrorSessionOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_delete_traffic_mirror_session::de_delete_traffic_mirror_session(response.body().as_ref(), output).map_err(crate::error::DeleteTrafficMirrorSessionError::unhandled)?;
+        output = crate::protocol_serde::shape_delete_traffic_mirror_session::de_delete_traffic_mirror_session(response.body().as_ref(), output).map_err(crate::operation::delete_traffic_mirror_session::DeleteTrafficMirrorSessionError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -36,13 +39,7 @@ pub fn de_delete_traffic_mirror_session_http_response(
 }
 
 #[allow(unused_mut)]
-pub fn de_delete_traffic_mirror_session(
-    inp: &[u8],
-    mut builder: crate::output::delete_traffic_mirror_session_output::Builder,
-) -> Result<
-    crate::output::delete_traffic_mirror_session_output::Builder,
-    aws_smithy_xml::decode::XmlDecodeError,
-> {
+pub fn de_delete_traffic_mirror_session(inp: &[u8], mut builder: crate::operation::delete_traffic_mirror_session::builders::DeleteTrafficMirrorSessionOutputBuilder) -> Result<crate::operation::delete_traffic_mirror_session::builders::DeleteTrafficMirrorSessionOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_schedule_ad_break<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ScheduleAdBreak>>,
+    Option<std::vec::Vec<crate::types::ScheduleAdBreak>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_member_abilities<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::MemberAbility>>,
+    Option<std::vec::Vec<crate::types::MemberAbility>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -29,7 +29,7 @@ where
                         )?
                         .map(|s| {
                             s.to_unescaped()
-                                .map(|u| crate::model::MemberAbility::from(u.as_ref()))
+                                .map(|u| crate::types::MemberAbility::from(u.as_ref()))
                         })
                         .transpose()?;
                         if let Some(value) = value {

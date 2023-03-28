@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_expression(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::Expression,
+    input: &crate::types::Expression,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("ExpressionName");
@@ -19,9 +19,9 @@ pub fn ser_expression(
 
 pub fn de_expression(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::Expression, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::Expression, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::Expression::builder();
+    let mut builder = crate::types::Expression::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ExpressionName") /* ExpressionName com.amazonaws.cloudsearch#Expression$ExpressionName */ =>  {

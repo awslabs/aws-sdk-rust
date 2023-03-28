@@ -3,54 +3,62 @@
 pub fn de_set_type_configuration_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::SetTypeConfigurationOutput,
-    crate::error::SetTypeConfigurationError,
+    crate::operation::set_type_configuration::SetTypeConfigurationOutput,
+    crate::operation::set_type_configuration::SetTypeConfigurationError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::SetTypeConfigurationError::unhandled)?;
+        .map_err(crate::operation::set_type_configuration::SetTypeConfigurationError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::SetTypeConfigurationError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::set_type_configuration::SetTypeConfigurationError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CFNRegistryException" => crate::error::SetTypeConfigurationError::CfnRegistryException({
+        "CFNRegistryException" => crate::operation::set_type_configuration::SetTypeConfigurationError::CfnRegistryException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::cfn_registry_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_cfn_registry_exception::de_cfn_registry_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetTypeConfigurationError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "TypeNotFoundException" => {
-            crate::error::SetTypeConfigurationError::TypeNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::type_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::CfnRegistryExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_type_not_found_exception::de_type_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetTypeConfigurationError::unhandled)?;
+                    output = crate::protocol_serde::shape_cfn_registry_exception::de_cfn_registry_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::set_type_configuration::SetTypeConfigurationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::SetTypeConfigurationError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TypeNotFoundException" => crate::operation::set_type_configuration::SetTypeConfigurationError::TypeNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::TypeNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_type_not_found_exception::de_type_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::set_type_configuration::SetTypeConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::set_type_configuration::SetTypeConfigurationError::generic(generic)
     })
 }
 
@@ -58,18 +66,18 @@ pub fn de_set_type_configuration_http_error(
 pub fn de_set_type_configuration_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::SetTypeConfigurationOutput,
-    crate::error::SetTypeConfigurationError,
+    crate::operation::set_type_configuration::SetTypeConfigurationOutput,
+    crate::operation::set_type_configuration::SetTypeConfigurationError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::set_type_configuration_output::Builder::default();
+        let mut output = crate::operation::set_type_configuration::builders::SetTypeConfigurationOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_set_type_configuration::de_set_type_configuration(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::SetTypeConfigurationError::unhandled)?;
+        .map_err(crate::operation::set_type_configuration::SetTypeConfigurationError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -80,9 +88,9 @@ pub fn de_set_type_configuration_http_response(
 #[allow(unused_mut)]
 pub fn de_set_type_configuration(
     inp: &[u8],
-    mut builder: crate::output::set_type_configuration_output::Builder,
+    mut builder: crate::operation::set_type_configuration::builders::SetTypeConfigurationOutputBuilder,
 ) -> Result<
-    crate::output::set_type_configuration_output::Builder,
+    crate::operation::set_type_configuration::builders::SetTypeConfigurationOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

@@ -2,7 +2,7 @@
 pub(crate) fn de_resource_counts<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ResourceCount>>,
+    Option<std::vec::Vec<crate::types::ResourceCount>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

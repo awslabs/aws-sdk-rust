@@ -2,15 +2,15 @@
 pub fn de_applications_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::ApplicationsResponse>,
-    crate::error::GetAppsError,
+    std::option::Option<crate::types::ApplicationsResponse>,
+    crate::operation::get_apps::GetAppsError,
 > {
     (!body.is_empty())
         .then(|| {
             crate::protocol_serde::shape_applications_response::de_applications_response_payload(
                 body,
             )
-            .map_err(crate::error::GetAppsError::unhandled)
+            .map_err(crate::operation::get_apps::GetAppsError::unhandled)
         })
         .transpose()
 }

@@ -2,7 +2,7 @@
 pub(crate) fn de_describe_affected_entities_for_organization_failed_set<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::OrganizationAffectedEntitiesErrorItem>>,
+    Option<std::vec::Vec<crate::types::OrganizationAffectedEntitiesErrorItem>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

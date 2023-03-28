@@ -2,7 +2,7 @@
 pub(crate) fn de_export_snapshot_record_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ExportSnapshotRecord>>,
+    Option<std::vec::Vec<crate::types::ExportSnapshotRecord>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

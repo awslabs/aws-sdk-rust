@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_block_device_mapping(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::BlockDeviceMapping,
+    input: &crate::types::BlockDeviceMapping,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("VirtualName");
@@ -29,9 +29,9 @@ pub fn ser_block_device_mapping(
 
 pub fn de_block_device_mapping(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::BlockDeviceMapping, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::BlockDeviceMapping, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::BlockDeviceMapping::builder();
+    let mut builder = crate::types::BlockDeviceMapping::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("VirtualName") /* VirtualName com.amazonaws.autoscaling#BlockDeviceMapping$VirtualName */ =>  {

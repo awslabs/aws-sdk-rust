@@ -2,7 +2,7 @@
 pub(crate) fn de_connect_peer_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ConnectPeerConfiguration>,
+    Option<crate::types::ConnectPeerConfiguration>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::connect_peer_configuration::Builder::default();
+            let mut builder = crate::types::builders::ConnectPeerConfigurationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -53,7 +53,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::TunnelProtocol::from(u.as_ref()))
+                                            .map(|u| crate::types::TunnelProtocol::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

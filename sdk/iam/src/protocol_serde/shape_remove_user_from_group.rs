@@ -3,67 +3,79 @@
 pub fn de_remove_user_from_group_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::RemoveUserFromGroupOutput,
-    crate::error::RemoveUserFromGroupError,
+    crate::operation::remove_user_from_group::RemoveUserFromGroupOutput,
+    crate::operation::remove_user_from_group::RemoveUserFromGroupError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::RemoveUserFromGroupError::unhandled)?;
+        .map_err(crate::operation::remove_user_from_group::RemoveUserFromGroupError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::RemoveUserFromGroupError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::remove_user_from_group::RemoveUserFromGroupError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceeded" => crate::error::RemoveUserFromGroupError::LimitExceededException({
+        "LimitExceeded" => crate::operation::remove_user_from_group::RemoveUserFromGroupError::LimitExceededException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::limit_exceeded_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveUserFromGroupError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::remove_user_from_group::RemoveUserFromGroupError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "NoSuchEntity" => crate::error::RemoveUserFromGroupError::NoSuchEntityException({
+        "NoSuchEntity" => crate::operation::remove_user_from_group::RemoveUserFromGroupError::NoSuchEntityException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::no_such_entity_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_no_such_entity_exception::de_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveUserFromGroupError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::NoSuchEntityExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_no_such_entity_exception::de_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::remove_user_from_group::RemoveUserFromGroupError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "ServiceFailure" => crate::error::RemoveUserFromGroupError::ServiceFailureException({
+        "ServiceFailure" => crate::operation::remove_user_from_group::RemoveUserFromGroupError::ServiceFailureException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::service_failure_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveUserFromGroupError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ServiceFailureExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::remove_user_from_group::RemoveUserFromGroupError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::RemoveUserFromGroupError::generic(generic),
+        _ => crate::operation::remove_user_from_group::RemoveUserFromGroupError::generic(generic)
     })
 }
 
@@ -71,12 +83,12 @@ pub fn de_remove_user_from_group_http_error(
 pub fn de_remove_user_from_group_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::RemoveUserFromGroupOutput,
-    crate::error::RemoveUserFromGroupError,
+    crate::operation::remove_user_from_group::RemoveUserFromGroupOutput,
+    crate::operation::remove_user_from_group::RemoveUserFromGroupError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::remove_user_from_group_output::Builder::default();
+        let mut output = crate::operation::remove_user_from_group::builders::RemoveUserFromGroupOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

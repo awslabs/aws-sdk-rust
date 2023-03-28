@@ -3,33 +3,36 @@
 pub fn de_list_logger_definitions_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListLoggerDefinitionsOutput,
-    crate::error::ListLoggerDefinitionsError,
+    crate::operation::list_logger_definitions::ListLoggerDefinitionsOutput,
+    crate::operation::list_logger_definitions::ListLoggerDefinitionsError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListLoggerDefinitionsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::list_logger_definitions::ListLoggerDefinitionsError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::ListLoggerDefinitionsError::generic(generic))
+    Err(crate::operation::list_logger_definitions::ListLoggerDefinitionsError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_logger_definitions_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListLoggerDefinitionsOutput,
-    crate::error::ListLoggerDefinitionsError,
+    crate::operation::list_logger_definitions::ListLoggerDefinitionsOutput,
+    crate::operation::list_logger_definitions::ListLoggerDefinitionsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_logger_definitions_output::Builder::default();
+        let mut output = crate::operation::list_logger_definitions::builders::ListLoggerDefinitionsOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_logger_definitions::de_list_logger_definitions(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListLoggerDefinitionsError::unhandled)?;
+        .map_err(
+            crate::operation::list_logger_definitions::ListLoggerDefinitionsError::unhandled,
+        )?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -39,9 +42,9 @@ pub fn de_list_logger_definitions_http_response(
 
 pub(crate) fn de_list_logger_definitions(
     value: &[u8],
-    mut builder: crate::output::list_logger_definitions_output::Builder,
+    mut builder: crate::operation::list_logger_definitions::builders::ListLoggerDefinitionsOutputBuilder,
 ) -> Result<
-    crate::output::list_logger_definitions_output::Builder,
+    crate::operation::list_logger_definitions::builders::ListLoggerDefinitionsOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

@@ -2,7 +2,7 @@
 pub(crate) fn de_replica_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Replica>>,
+    Option<std::vec::Vec<crate::types::Replica>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

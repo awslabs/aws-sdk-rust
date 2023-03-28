@@ -3,36 +3,34 @@
 pub fn de_describe_customer_gateways_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeCustomerGatewaysOutput,
-    crate::error::DescribeCustomerGatewaysError,
+    crate::operation::describe_customer_gateways::DescribeCustomerGatewaysOutput,
+    crate::operation::describe_customer_gateways::DescribeCustomerGatewaysError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeCustomerGatewaysError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::describe_customer_gateways::DescribeCustomerGatewaysError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::DescribeCustomerGatewaysError::generic(
-        generic,
-    ))
+    Err(
+        crate::operation::describe_customer_gateways::DescribeCustomerGatewaysError::generic(
+            generic,
+        ),
+    )
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_customer_gateways_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeCustomerGatewaysOutput,
-    crate::error::DescribeCustomerGatewaysError,
+    crate::operation::describe_customer_gateways::DescribeCustomerGatewaysOutput,
+    crate::operation::describe_customer_gateways::DescribeCustomerGatewaysError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_customer_gateways_output::Builder::default();
+        let mut output = crate::operation::describe_customer_gateways::builders::DescribeCustomerGatewaysOutputBuilder::default();
         let _ = response;
-        output =
-            crate::protocol_serde::shape_describe_customer_gateways::de_describe_customer_gateways(
-                response.body().as_ref(),
-                output,
-            )
-            .map_err(crate::error::DescribeCustomerGatewaysError::unhandled)?;
+        output = crate::protocol_serde::shape_describe_customer_gateways::de_describe_customer_gateways(response.body().as_ref(), output).map_err(crate::operation::describe_customer_gateways::DescribeCustomerGatewaysError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -43,9 +41,9 @@ pub fn de_describe_customer_gateways_http_response(
 #[allow(unused_mut)]
 pub fn de_describe_customer_gateways(
     inp: &[u8],
-    mut builder: crate::output::describe_customer_gateways_output::Builder,
+    mut builder: crate::operation::describe_customer_gateways::builders::DescribeCustomerGatewaysOutputBuilder,
 ) -> Result<
-    crate::output::describe_customer_gateways_output::Builder,
+    crate::operation::describe_customer_gateways::builders::DescribeCustomerGatewaysOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

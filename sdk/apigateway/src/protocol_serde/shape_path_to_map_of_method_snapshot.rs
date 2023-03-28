@@ -5,7 +5,7 @@ pub(crate) fn de_path_to_map_of_method_snapshot<'a, I>(
     Option<
         std::collections::HashMap<
             std::string::String,
-            std::collections::HashMap<std::string::String, crate::model::MethodSnapshot>,
+            std::collections::HashMap<std::string::String, crate::types::MethodSnapshot>,
         >,
     >,
     aws_smithy_json::deserialize::error::DeserializeError,

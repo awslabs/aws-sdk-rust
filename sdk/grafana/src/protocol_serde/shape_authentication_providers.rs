@@ -2,7 +2,7 @@
 pub(crate) fn de_authentication_providers<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AuthenticationProviderTypes>>,
+    Option<std::vec::Vec<crate::types::AuthenticationProviderTypes>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -29,7 +29,7 @@ where
                         )?
                         .map(|s| {
                             s.to_unescaped().map(|u| {
-                                crate::model::AuthenticationProviderTypes::from(u.as_ref())
+                                crate::types::AuthenticationProviderTypes::from(u.as_ref())
                             })
                         })
                         .transpose()?;

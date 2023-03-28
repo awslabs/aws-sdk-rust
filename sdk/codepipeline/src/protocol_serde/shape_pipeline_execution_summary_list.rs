@@ -2,7 +2,7 @@
 pub(crate) fn de_pipeline_execution_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::PipelineExecutionSummary>>,
+    Option<std::vec::Vec<crate::types::PipelineExecutionSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

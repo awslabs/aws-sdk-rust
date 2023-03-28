@@ -2,7 +2,7 @@
 pub(crate) fn de_experiment_summaries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ExperimentSummary>>,
+    Option<std::vec::Vec<crate::types::ExperimentSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

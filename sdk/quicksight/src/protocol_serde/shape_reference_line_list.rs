@@ -2,7 +2,7 @@
 pub(crate) fn de_reference_line_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ReferenceLine>>,
+    Option<std::vec::Vec<crate::types::ReferenceLine>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

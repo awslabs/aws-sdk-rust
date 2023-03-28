@@ -2,7 +2,7 @@
 pub(crate) fn de_log_groups<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::LogGroup>>,
+    Option<std::vec::Vec<crate::types::LogGroup>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

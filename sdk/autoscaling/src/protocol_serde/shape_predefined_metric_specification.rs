@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_predefined_metric_specification(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::PredefinedMetricSpecification,
+    input: &crate::types::PredefinedMetricSpecification,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("PredefinedMetricType");
@@ -19,16 +19,16 @@ pub fn ser_predefined_metric_specification(
 
 pub fn de_predefined_metric_specification(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::PredefinedMetricSpecification, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::PredefinedMetricSpecification, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::PredefinedMetricSpecification::builder();
+    let mut builder = crate::types::PredefinedMetricSpecification::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("PredefinedMetricType") /* PredefinedMetricType com.amazonaws.autoscaling#PredefinedMetricSpecification$PredefinedMetricType */ =>  {
                 let var_5 =
                     Some(
-                        Result::<crate::model::MetricType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::MetricType::from(
+                        Result::<crate::types::MetricType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::MetricType::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

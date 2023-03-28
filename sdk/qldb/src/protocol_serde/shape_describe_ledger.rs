@@ -2,27 +2,33 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_ledger_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DescribeLedgerOutput, crate::error::DescribeLedgerError> {
+) -> std::result::Result<
+    crate::operation::describe_ledger::DescribeLedgerOutput,
+    crate::operation::describe_ledger::DescribeLedgerError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeLedgerError::unhandled)?;
+        .map_err(crate::operation::describe_ledger::DescribeLedgerError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DescribeLedgerError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::describe_ledger::DescribeLedgerError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidParameterException" => {
-            crate::error::DescribeLedgerError::InvalidParameterException({
+            crate::operation::describe_ledger::DescribeLedgerError::InvalidParameterException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::InvalidParameterExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeLedgerError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_ledger::DescribeLedgerError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -33,13 +39,14 @@ pub fn de_describe_ledger_http_error(
             })
         }
         "ResourceNotFoundException" => {
-            crate::error::DescribeLedgerError::ResourceNotFoundException({
+            crate::operation::describe_ledger::DescribeLedgerError::ResourceNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeLedgerError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_ledger::DescribeLedgerError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -49,23 +56,27 @@ pub fn de_describe_ledger_http_error(
                 tmp
             })
         }
-        _ => crate::error::DescribeLedgerError::generic(generic),
+        _ => crate::operation::describe_ledger::DescribeLedgerError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_ledger_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DescribeLedgerOutput, crate::error::DescribeLedgerError> {
+) -> std::result::Result<
+    crate::operation::describe_ledger::DescribeLedgerOutput,
+    crate::operation::describe_ledger::DescribeLedgerError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_ledger_output::Builder::default();
+        let mut output =
+            crate::operation::describe_ledger::builders::DescribeLedgerOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_describe_ledger::de_describe_ledger(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DescribeLedgerError::unhandled)?;
+        .map_err(crate::operation::describe_ledger::DescribeLedgerError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -75,9 +86,9 @@ pub fn de_describe_ledger_http_response(
 
 pub(crate) fn de_describe_ledger(
     value: &[u8],
-    mut builder: crate::output::describe_ledger_output::Builder,
+    mut builder: crate::operation::describe_ledger::builders::DescribeLedgerOutputBuilder,
 ) -> Result<
-    crate::output::describe_ledger_output::Builder,
+    crate::operation::describe_ledger::builders::DescribeLedgerOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =
@@ -135,7 +146,7 @@ pub(crate) fn de_describe_ledger(
                             )?
                             .map(|s| {
                                 s.to_unescaped()
-                                    .map(|u| crate::model::PermissionsMode::from(u.as_ref()))
+                                    .map(|u| crate::types::PermissionsMode::from(u.as_ref()))
                             })
                             .transpose()?,
                         );
@@ -147,7 +158,7 @@ pub(crate) fn de_describe_ledger(
                             )?
                             .map(|s| {
                                 s.to_unescaped()
-                                    .map(|u| crate::model::LedgerState::from(u.as_ref()))
+                                    .map(|u| crate::types::LedgerState::from(u.as_ref()))
                             })
                             .transpose()?,
                         );

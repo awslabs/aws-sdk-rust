@@ -2,7 +2,7 @@
 pub(crate) fn de_response_partition_key_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ResponsePartitionKey>>,
+    Option<std::vec::Vec<crate::types::ResponsePartitionKey>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

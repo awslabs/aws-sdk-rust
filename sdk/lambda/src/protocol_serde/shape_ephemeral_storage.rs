@@ -2,7 +2,7 @@
 pub(crate) fn de_ephemeral_storage<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::EphemeralStorage>,
+    Option<crate::types::EphemeralStorage>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::ephemeral_storage::Builder::default();
+            let mut builder = crate::types::builders::EphemeralStorageBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -57,7 +57,7 @@ where
 
 pub fn ser_ephemeral_storage(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::EphemeralStorage,
+    input: &crate::types::EphemeralStorage,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.size {
         object.key("Size").number(

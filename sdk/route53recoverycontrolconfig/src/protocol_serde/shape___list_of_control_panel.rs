@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_control_panel<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ControlPanel>>,
+    Option<std::vec::Vec<crate::types::ControlPanel>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

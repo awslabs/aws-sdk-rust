@@ -2,7 +2,7 @@
 pub(crate) fn de_open_zfs_client_configurations<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::OpenZfsClientConfiguration>>,
+    Option<std::vec::Vec<crate::types::OpenZfsClientConfiguration>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

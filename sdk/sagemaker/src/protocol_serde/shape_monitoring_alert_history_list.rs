@@ -2,7 +2,7 @@
 pub(crate) fn de_monitoring_alert_history_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::MonitoringAlertHistorySummary>>,
+    Option<std::vec::Vec<crate::types::MonitoringAlertHistorySummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

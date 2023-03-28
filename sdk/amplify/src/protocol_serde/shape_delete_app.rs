@@ -2,43 +2,35 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_app_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeleteAppOutput, crate::error::DeleteAppError> {
+) -> std::result::Result<
+    crate::operation::delete_app::DeleteAppOutput,
+    crate::operation::delete_app::DeleteAppError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteAppError::unhandled)?;
+        .map_err(crate::operation::delete_app::DeleteAppError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DeleteAppError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::delete_app::DeleteAppError::unhandled(
+                generic,
+            ))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::DeleteAppError::BadRequestException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "DependentServiceFailureException" => {
-            crate::error::DeleteAppError::DependentServiceFailureException({
+        "BadRequestException" => {
+            crate::operation::delete_app::DeleteAppError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::dependent_service_failure_exception::Builder::default();
+                        crate::types::error::builders::BadRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_dependent_service_failure_exception::de_dependent_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppError::unhandled)?;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_app::DeleteAppError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -48,13 +40,48 @@ pub fn de_delete_app_http_error(
                 tmp
             })
         }
-        "InternalFailureException" => crate::error::DeleteAppError::InternalFailureException({
+        "DependentServiceFailureException" => {
+            crate::operation::delete_app::DeleteAppError::DependentServiceFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::DependentServiceFailureExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_dependent_service_failure_exception::de_dependent_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_app::DeleteAppError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InternalFailureException" => {
+            crate::operation::delete_app::DeleteAppError::InternalFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InternalFailureExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_app::DeleteAppError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "NotFoundException" => crate::operation::delete_app::DeleteAppError::NotFoundException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_failure_exception::Builder::default();
+                let mut output = crate::types::error::builders::NotFoundExceptionBuilder::default();
                 let _ = response;
-                output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppError::unhandled)?;
+                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_app::DeleteAppError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -63,53 +90,44 @@ pub fn de_delete_app_http_error(
             }
             tmp
         }),
-        "NotFoundException" => crate::error::DeleteAppError::NotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "UnauthorizedException" => {
+            crate::operation::delete_app::DeleteAppError::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "UnauthorizedException" => crate::error::DeleteAppError::UnauthorizedException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::DeleteAppError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::UnauthorizedExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_app::DeleteAppError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::delete_app::DeleteAppError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_app_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeleteAppOutput, crate::error::DeleteAppError> {
+) -> std::result::Result<
+    crate::operation::delete_app::DeleteAppOutput,
+    crate::operation::delete_app::DeleteAppError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_app_output::Builder::default();
+        let mut output = crate::operation::delete_app::builders::DeleteAppOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_delete_app::de_delete_app(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DeleteAppError::unhandled)?;
+        .map_err(crate::operation::delete_app::DeleteAppError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -119,9 +137,9 @@ pub fn de_delete_app_http_response(
 
 pub(crate) fn de_delete_app(
     value: &[u8],
-    mut builder: crate::output::delete_app_output::Builder,
+    mut builder: crate::operation::delete_app::builders::DeleteAppOutputBuilder,
 ) -> Result<
-    crate::output::delete_app_output::Builder,
+    crate::operation::delete_app::builders::DeleteAppOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

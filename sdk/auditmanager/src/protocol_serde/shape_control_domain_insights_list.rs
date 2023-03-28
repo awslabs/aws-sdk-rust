@@ -2,7 +2,7 @@
 pub(crate) fn de_control_domain_insights_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ControlDomainInsights>>,
+    Option<std::vec::Vec<crate::types::ControlDomainInsights>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_package_objects<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::PackageObject>>,
+    Option<std::vec::Vec<crate::types::PackageObject>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,28 +2,33 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_object_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DescribeObjectOutput, crate::error::DescribeObjectError> {
+) -> std::result::Result<
+    crate::operation::describe_object::DescribeObjectOutput,
+    crate::operation::describe_object::DescribeObjectError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeObjectError::unhandled)?;
+        .map_err(crate::operation::describe_object::DescribeObjectError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DescribeObjectError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::describe_object::DescribeObjectError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ContainerNotFoundException" => {
-            crate::error::DescribeObjectError::ContainerNotFoundException({
+            crate::operation::describe_object::DescribeObjectError::ContainerNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::container_not_found_exception::Builder::default();
+                        crate::types::error::builders::ContainerNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_container_not_found_exception::de_container_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeObjectError::unhandled)?;
+                    output = crate::protocol_serde::shape_container_not_found_exception::de_container_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_object::DescribeObjectError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -33,54 +38,64 @@ pub fn de_describe_object_http_error(
                 tmp
             })
         }
-        "InternalServerError" => crate::error::DescribeObjectError::InternalServerError({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "InternalServerError" => {
+            crate::operation::describe_object::DescribeObjectError::InternalServerError({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_error::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeObjectError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ObjectNotFoundException" => crate::error::DescribeObjectError::ObjectNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InternalServerErrorBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_object::DescribeObjectError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ObjectNotFoundException" => {
+            crate::operation::describe_object::DescribeObjectError::ObjectNotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::object_not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_object_not_found_exception::de_object_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeObjectError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::DescribeObjectError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ObjectNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_object_not_found_exception::de_object_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_object::DescribeObjectError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::describe_object::DescribeObjectError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_object_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DescribeObjectOutput, crate::error::DescribeObjectError> {
+) -> std::result::Result<
+    crate::operation::describe_object::DescribeObjectOutput,
+    crate::operation::describe_object::DescribeObjectError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_object_output::Builder::default();
+        let mut output =
+            crate::operation::describe_object::builders::DescribeObjectOutputBuilder::default();
         let _ = response;
         output = output.set_cache_control(
             crate::protocol_serde::shape_describe_object_output::de_cache_control_header(
                 response.headers(),
             )
             .map_err(|_| {
-                crate::error::DescribeObjectError::unhandled(
+                crate::operation::describe_object::DescribeObjectError::unhandled(
                     "Failed to parse CacheControl from header `Cache-Control",
                 )
             })?,
@@ -90,7 +105,7 @@ pub fn de_describe_object_http_response(
                 response.headers(),
             )
             .map_err(|_| {
-                crate::error::DescribeObjectError::unhandled(
+                crate::operation::describe_object::DescribeObjectError::unhandled(
                     "Failed to parse ContentLength from header `Content-Length",
                 )
             })?,
@@ -100,7 +115,7 @@ pub fn de_describe_object_http_response(
                 response.headers(),
             )
             .map_err(|_| {
-                crate::error::DescribeObjectError::unhandled(
+                crate::operation::describe_object::DescribeObjectError::unhandled(
                     "Failed to parse ContentType from header `Content-Type",
                 )
             })?,
@@ -110,7 +125,7 @@ pub fn de_describe_object_http_response(
                 response.headers(),
             )
             .map_err(|_| {
-                crate::error::DescribeObjectError::unhandled(
+                crate::operation::describe_object::DescribeObjectError::unhandled(
                     "Failed to parse ETag from header `ETag",
                 )
             })?,
@@ -120,7 +135,7 @@ pub fn de_describe_object_http_response(
                 response.headers(),
             )
             .map_err(|_| {
-                crate::error::DescribeObjectError::unhandled(
+                crate::operation::describe_object::DescribeObjectError::unhandled(
                     "Failed to parse LastModified from header `Last-Modified",
                 )
             })?,

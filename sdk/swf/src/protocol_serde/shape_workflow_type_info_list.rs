@@ -2,7 +2,7 @@
 pub(crate) fn de_workflow_type_info_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::WorkflowTypeInfo>>,
+    Option<std::vec::Vec<crate::types::WorkflowTypeInfo>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_batch_associate_approval_rule_template_with_repositories_errors_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::BatchAssociateApprovalRuleTemplateWithRepositoriesError>>,
+    Option<std::vec::Vec<crate::types::BatchAssociateApprovalRuleTemplateWithRepositoriesError>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

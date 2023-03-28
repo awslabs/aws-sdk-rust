@@ -2,7 +2,7 @@
 pub(crate) fn de_region_description<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::RegionDescription>,
+    Option<crate::types::RegionDescription>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::region_description::Builder::default();
+            let mut builder = crate::types::builders::RegionDescriptionBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -48,7 +48,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::RegionType::from(u.as_ref()))
+                                            .map(|u| crate::types::RegionType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -60,7 +60,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::DirectoryStage::from(u.as_ref()))
+                                            .map(|u| crate::types::DirectoryStage::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

@@ -2,7 +2,7 @@
 pub(crate) fn de_query_definition_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::QueryDefinition>>,
+    Option<std::vec::Vec<crate::types::QueryDefinition>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

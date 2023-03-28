@@ -2,62 +2,35 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_core_network_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeleteCoreNetworkOutput, crate::error::DeleteCoreNetworkError>
-{
+) -> std::result::Result<
+    crate::operation::delete_core_network::DeleteCoreNetworkOutput,
+    crate::operation::delete_core_network::DeleteCoreNetworkError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteCoreNetworkError::unhandled)?;
+        .map_err(crate::operation::delete_core_network::DeleteCoreNetworkError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DeleteCoreNetworkError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::delete_core_network::DeleteCoreNetworkError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::DeleteCoreNetworkError::AccessDeniedException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::access_denied_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteCoreNetworkError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ConflictException" => crate::error::DeleteCoreNetworkError::ConflictException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::conflict_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteCoreNetworkError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InternalServerException" => {
-            crate::error::DeleteCoreNetworkError::InternalServerException({
+        "AccessDeniedException" => {
+            crate::operation::delete_core_network::DeleteCoreNetworkError::AccessDeniedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::AccessDeniedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteCoreNetworkError::unhandled)?;
-                    output = output.set_retry_after_seconds(
-                        crate::protocol_serde::shape_internal_server_exception::de_retry_after_seconds_header(response.headers())
-                                                .map_err(|_|crate::error::DeleteCoreNetworkError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
-                    );
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_core_network::DeleteCoreNetworkError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -66,15 +39,82 @@ pub fn de_delete_core_network_http_error(
                 }
                 tmp
             })
+        }
+        "ConflictException" => {
+            crate::operation::delete_core_network::DeleteCoreNetworkError::ConflictException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ConflictExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_core_network::DeleteCoreNetworkError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InternalServerException" => {
+            crate::operation::delete_core_network::DeleteCoreNetworkError::InternalServerException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::types::error::builders::InternalServerExceptionBuilder::default(
+                            );
+                        let _ = response;
+                        output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_core_network::DeleteCoreNetworkError::unhandled)?;
+                        output = output.set_retry_after_seconds(
+                        crate::protocol_serde::shape_internal_server_exception::de_retry_after_seconds_header(response.headers())
+                                                .map_err(|_|crate::operation::delete_core_network::DeleteCoreNetworkError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
+                    );
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
         }
         "ResourceNotFoundException" => {
-            crate::error::DeleteCoreNetworkError::ResourceNotFoundException({
+            crate::operation::delete_core_network::DeleteCoreNetworkError::ResourceNotFoundException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                        let _ = response;
+                        output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_core_network::DeleteCoreNetworkError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        "ThrottlingException" => {
+            crate::operation::delete_core_network::DeleteCoreNetworkError::ThrottlingException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::ThrottlingExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteCoreNetworkError::unhandled)?;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_core_network::DeleteCoreNetworkError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::protocol_serde::shape_throttling_exception::de_retry_after_seconds_header(response.headers())
+                                                .map_err(|_|crate::operation::delete_core_network::DeleteCoreNetworkError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
+                    );
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -84,58 +124,44 @@ pub fn de_delete_core_network_http_error(
                 tmp
             })
         }
-        "ThrottlingException" => crate::error::DeleteCoreNetworkError::ThrottlingException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "ValidationException" => {
+            crate::operation::delete_core_network::DeleteCoreNetworkError::ValidationException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::throttling_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteCoreNetworkError::unhandled)?;
-                output = output.set_retry_after_seconds(
-                        crate::protocol_serde::shape_throttling_exception::de_retry_after_seconds_header(response.headers())
-                                                .map_err(|_|crate::error::DeleteCoreNetworkError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
-                    );
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ValidationException" => crate::error::DeleteCoreNetworkError::ValidationException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteCoreNetworkError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::DeleteCoreNetworkError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_core_network::DeleteCoreNetworkError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::delete_core_network::DeleteCoreNetworkError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_core_network_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeleteCoreNetworkOutput, crate::error::DeleteCoreNetworkError>
-{
+) -> std::result::Result<
+    crate::operation::delete_core_network::DeleteCoreNetworkOutput,
+    crate::operation::delete_core_network::DeleteCoreNetworkError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_core_network_output::Builder::default();
+        let mut output = crate::operation::delete_core_network::builders::DeleteCoreNetworkOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_delete_core_network::de_delete_core_network(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DeleteCoreNetworkError::unhandled)?;
+        .map_err(crate::operation::delete_core_network::DeleteCoreNetworkError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -145,9 +171,9 @@ pub fn de_delete_core_network_http_response(
 
 pub(crate) fn de_delete_core_network(
     value: &[u8],
-    mut builder: crate::output::delete_core_network_output::Builder,
+    mut builder: crate::operation::delete_core_network::builders::DeleteCoreNetworkOutputBuilder,
 ) -> Result<
-    crate::output::delete_core_network_output::Builder,
+    crate::operation::delete_core_network::builders::DeleteCoreNetworkOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

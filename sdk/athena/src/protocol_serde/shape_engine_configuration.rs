@@ -2,7 +2,7 @@
 pub(crate) fn de_engine_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::EngineConfiguration>,
+    Option<crate::types::EngineConfiguration>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::engine_configuration::Builder::default();
+            let mut builder = crate::types::builders::EngineConfigurationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -82,7 +82,7 @@ where
 
 pub fn ser_engine_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::EngineConfiguration,
+    input: &crate::types::EngineConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if input.coordinator_dpu_size != 0 {
         object.key("CoordinatorDpuSize").number(

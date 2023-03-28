@@ -2,7 +2,7 @@
 pub fn de_egress_only_internet_gateway_list(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::EgressOnlyInternetGateway>,
+    std::vec::Vec<crate::types::EgressOnlyInternetGateway>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

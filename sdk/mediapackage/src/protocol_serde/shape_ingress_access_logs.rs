@@ -2,7 +2,7 @@
 pub(crate) fn de_ingress_access_logs<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::IngressAccessLogs>,
+    Option<crate::types::IngressAccessLogs>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::ingress_access_logs::Builder::default();
+            let mut builder = crate::types::builders::IngressAccessLogsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -57,7 +57,7 @@ where
 
 pub fn ser_ingress_access_logs(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::IngressAccessLogs,
+    input: &crate::types::IngressAccessLogs,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.log_group_name {
         object.key("logGroupName").string(var_1.as_str());

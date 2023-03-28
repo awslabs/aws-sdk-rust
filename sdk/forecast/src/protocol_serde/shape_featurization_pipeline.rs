@@ -2,7 +2,7 @@
 pub(crate) fn de_featurization_pipeline<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::FeaturizationMethod>>,
+    Option<std::vec::Vec<crate::types::FeaturizationMethod>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

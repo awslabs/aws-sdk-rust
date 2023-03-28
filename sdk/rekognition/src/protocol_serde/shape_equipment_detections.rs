@@ -2,7 +2,7 @@
 pub(crate) fn de_equipment_detections<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::EquipmentDetection>>,
+    Option<std::vec::Vec<crate::types::EquipmentDetection>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

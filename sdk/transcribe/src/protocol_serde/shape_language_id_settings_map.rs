@@ -2,7 +2,7 @@
 pub(crate) fn de_language_id_settings_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<crate::model::LanguageCode, crate::model::LanguageIdSettings>>,
+    Option<std::collections::HashMap<crate::types::LanguageCode, crate::types::LanguageIdSettings>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -23,7 +23,7 @@ where
                     Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         let key = key
                             .to_unescaped()
-                            .map(|u| crate::model::LanguageCode::from(u.as_ref()))?;
+                            .map(|u| crate::types::LanguageCode::from(u.as_ref()))?;
                         let value =
                             crate::protocol_serde::shape_language_id_settings::de_language_id_settings(tokens)?
                         ;

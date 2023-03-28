@@ -2,7 +2,7 @@
 pub(crate) fn de_continuous_export_descriptions<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ContinuousExportDescription>>,
+    Option<std::vec::Vec<crate::types::ContinuousExportDescription>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

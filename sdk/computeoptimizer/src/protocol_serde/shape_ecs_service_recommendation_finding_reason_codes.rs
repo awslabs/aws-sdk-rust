@@ -2,7 +2,7 @@
 pub(crate) fn de_ecs_service_recommendation_finding_reason_codes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::EcsServiceRecommendationFindingReasonCode>>,
+    Option<std::vec::Vec<crate::types::EcsServiceRecommendationFindingReasonCode>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -29,7 +29,7 @@ where
                         )?
                         .map(|s| {
                             s.to_unescaped().map(|u| {
-                                crate::model::EcsServiceRecommendationFindingReasonCode::from(
+                                crate::types::EcsServiceRecommendationFindingReasonCode::from(
                                     u.as_ref(),
                                 )
                             })

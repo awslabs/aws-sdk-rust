@@ -5,7 +5,7 @@ pub(crate) fn de_unprocessed_end_time_map<'a, I>(
     Option<
         std::collections::HashMap<
             std::string::String,
-            std::vec::Vec<crate::model::TimestampStructure>,
+            std::vec::Vec<crate::types::TimestampStructure>,
         >,
     >,
     aws_smithy_json::deserialize::error::DeserializeError,

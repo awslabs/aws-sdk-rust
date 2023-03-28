@@ -2,7 +2,7 @@
 pub(crate) fn de_registry_alias_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::RegistryAlias>>,
+    Option<std::vec::Vec<crate::types::RegistryAlias>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

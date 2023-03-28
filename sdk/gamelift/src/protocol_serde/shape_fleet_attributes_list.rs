@@ -2,7 +2,7 @@
 pub(crate) fn de_fleet_attributes_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::FleetAttributes>>,
+    Option<std::vec::Vec<crate::types::FleetAttributes>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

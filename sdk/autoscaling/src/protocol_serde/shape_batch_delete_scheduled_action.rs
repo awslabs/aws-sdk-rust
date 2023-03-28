@@ -3,43 +3,40 @@
 pub fn de_batch_delete_scheduled_action_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::BatchDeleteScheduledActionOutput,
-    crate::error::BatchDeleteScheduledActionError,
+    crate::operation::batch_delete_scheduled_action::BatchDeleteScheduledActionOutput,
+    crate::operation::batch_delete_scheduled_action::BatchDeleteScheduledActionError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::BatchDeleteScheduledActionError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::batch_delete_scheduled_action::BatchDeleteScheduledActionError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::BatchDeleteScheduledActionError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::batch_delete_scheduled_action::BatchDeleteScheduledActionError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceContention" => {
-            crate::error::BatchDeleteScheduledActionError::ResourceContentionFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "ResourceContention" => crate::operation::batch_delete_scheduled_action::BatchDeleteScheduledActionError::ResourceContentionFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_contention_fault::Builder::default();
+                    let mut output = crate::types::error::builders::ResourceContentionFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_contention_fault::de_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::BatchDeleteScheduledActionError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_contention_fault::de_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::batch_delete_scheduled_action::BatchDeleteScheduledActionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::BatchDeleteScheduledActionError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::batch_delete_scheduled_action::BatchDeleteScheduledActionError::generic(generic)
     })
 }
 
@@ -47,14 +44,14 @@ pub fn de_batch_delete_scheduled_action_http_error(
 pub fn de_batch_delete_scheduled_action_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::BatchDeleteScheduledActionOutput,
-    crate::error::BatchDeleteScheduledActionError,
+    crate::operation::batch_delete_scheduled_action::BatchDeleteScheduledActionOutput,
+    crate::operation::batch_delete_scheduled_action::BatchDeleteScheduledActionError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::batch_delete_scheduled_action_output::Builder::default();
+        let mut output = crate::operation::batch_delete_scheduled_action::builders::BatchDeleteScheduledActionOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_batch_delete_scheduled_action::de_batch_delete_scheduled_action(response.body().as_ref(), output).map_err(crate::error::BatchDeleteScheduledActionError::unhandled)?;
+        output = crate::protocol_serde::shape_batch_delete_scheduled_action::de_batch_delete_scheduled_action(response.body().as_ref(), output).map_err(crate::operation::batch_delete_scheduled_action::BatchDeleteScheduledActionError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -63,13 +60,7 @@ pub fn de_batch_delete_scheduled_action_http_response(
 }
 
 #[allow(unused_mut)]
-pub fn de_batch_delete_scheduled_action(
-    inp: &[u8],
-    mut builder: crate::output::batch_delete_scheduled_action_output::Builder,
-) -> Result<
-    crate::output::batch_delete_scheduled_action_output::Builder,
-    aws_smithy_xml::decode::XmlDecodeError,
-> {
+pub fn de_batch_delete_scheduled_action(inp: &[u8], mut builder: crate::operation::batch_delete_scheduled_action::builders::BatchDeleteScheduledActionOutputBuilder) -> Result<crate::operation::batch_delete_scheduled_action::builders::BatchDeleteScheduledActionOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

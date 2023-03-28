@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_too_many_field_level_encryption_field_patterns_xml_err(
     inp: &[u8],
-    mut builder: crate::error::too_many_field_level_encryption_field_patterns::Builder,
+    mut builder: crate::types::error::builders::TooManyFieldLevelEncryptionFieldPatternsBuilder,
 ) -> Result<
-    crate::error::too_many_field_level_encryption_field_patterns::Builder,
+    crate::types::error::builders::TooManyFieldLevelEncryptionFieldPatternsBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

@@ -2,26 +2,106 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_topic_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeleteTopicOutput, crate::error::DeleteTopicError> {
+) -> std::result::Result<
+    crate::operation::delete_topic::DeleteTopicOutput,
+    crate::operation::delete_topic::DeleteTopicError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteTopicError::unhandled)?;
+        .map_err(crate::operation::delete_topic::DeleteTopicError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DeleteTopicError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::delete_topic::DeleteTopicError::unhandled(
+                generic,
+            ))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AuthorizationError" => crate::error::DeleteTopicError::AuthorizationErrorException({
+        "AuthorizationError" => {
+            crate::operation::delete_topic::DeleteTopicError::AuthorizationErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::AuthorizationErrorExceptionBuilder::default(
+                        );
+                    let _ = response;
+                    output = crate::protocol_serde::shape_authorization_error_exception::de_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_topic::DeleteTopicError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ConcurrentAccess" => {
+            crate::operation::delete_topic::DeleteTopicError::ConcurrentAccessException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ConcurrentAccessExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_concurrent_access_exception::de_concurrent_access_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_topic::DeleteTopicError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InternalError" => {
+            crate::operation::delete_topic::DeleteTopicError::InternalErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InternalErrorExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_error_exception::de_internal_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_topic::DeleteTopicError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidParameter" => {
+            crate::operation::delete_topic::DeleteTopicError::InvalidParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InvalidParameterExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_topic::DeleteTopicError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "NotFound" => crate::operation::delete_topic::DeleteTopicError::NotFoundException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::error::authorization_error_exception::Builder::default();
+                let mut output = crate::types::error::builders::NotFoundExceptionBuilder::default();
                 let _ = response;
-                output = crate::protocol_serde::shape_authorization_error_exception::de_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteTopicError::unhandled)?;
+                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_topic::DeleteTopicError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -30,13 +110,13 @@ pub fn de_delete_topic_http_error(
             }
             tmp
         }),
-        "ConcurrentAccess" => crate::error::DeleteTopicError::ConcurrentAccessException({
+        "StaleTag" => crate::operation::delete_topic::DeleteTopicError::StaleTagException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::error::concurrent_access_exception::Builder::default();
+                let mut output = crate::types::error::builders::StaleTagExceptionBuilder::default();
                 let _ = response;
-                output = crate::protocol_serde::shape_concurrent_access_exception::de_concurrent_access_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteTopicError::unhandled)?;
+                output = crate::protocol_serde::shape_stale_tag_exception::de_stale_tag_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_topic::DeleteTopicError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -45,13 +125,14 @@ pub fn de_delete_topic_http_error(
             }
             tmp
         }),
-        "InternalError" => crate::error::DeleteTopicError::InternalErrorException({
+        "TagPolicy" => crate::operation::delete_topic::DeleteTopicError::TagPolicyException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_error_exception::Builder::default();
+                let mut output =
+                    crate::types::error::builders::TagPolicyExceptionBuilder::default();
                 let _ = response;
-                output = crate::protocol_serde::shape_internal_error_exception::de_internal_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteTopicError::unhandled)?;
+                output = crate::protocol_serde::shape_tag_policy_exception::de_tag_policy_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_topic::DeleteTopicError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -60,77 +141,21 @@ pub fn de_delete_topic_http_error(
             }
             tmp
         }),
-        "InvalidParameter" => crate::error::DeleteTopicError::InvalidParameterException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::invalid_parameter_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteTopicError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "NotFound" => crate::error::DeleteTopicError::NotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteTopicError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "StaleTag" => crate::error::DeleteTopicError::StaleTagException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::stale_tag_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_stale_tag_exception::de_stale_tag_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteTopicError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "TagPolicy" => crate::error::DeleteTopicError::TagPolicyException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::tag_policy_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_tag_policy_exception::de_tag_policy_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteTopicError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::DeleteTopicError::generic(generic),
+        _ => crate::operation::delete_topic::DeleteTopicError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_topic_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeleteTopicOutput, crate::error::DeleteTopicError> {
+) -> std::result::Result<
+    crate::operation::delete_topic::DeleteTopicOutput,
+    crate::operation::delete_topic::DeleteTopicError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_topic_output::Builder::default();
+        let mut output =
+            crate::operation::delete_topic::builders::DeleteTopicOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

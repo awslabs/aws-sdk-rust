@@ -2,7 +2,7 @@
 pub(crate) fn de_aws_elb_lb_cookie_stickiness_policies<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AwsElbLbCookieStickinessPolicy>>,
+    Option<std::vec::Vec<crate::types::AwsElbLbCookieStickinessPolicy>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

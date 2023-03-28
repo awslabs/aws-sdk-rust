@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_target_description(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::TargetDescription,
+    input: &crate::types::TargetDescription,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Id");
@@ -27,9 +27,9 @@ pub fn ser_target_description(
 
 pub fn de_target_description(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::TargetDescription, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::TargetDescription, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::TargetDescription::builder();
+    let mut builder = crate::types::TargetDescription::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Id") /* Id com.amazonaws.elasticloadbalancingv2#TargetDescription$Id */ =>  {

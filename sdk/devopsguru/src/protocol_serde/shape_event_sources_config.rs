@@ -2,7 +2,7 @@
 pub(crate) fn de_event_sources_config<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::EventSourcesConfig>,
+    Option<crate::types::EventSourcesConfig>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::event_sources_config::Builder::default();
+            let mut builder = crate::types::builders::EventSourcesConfigBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -53,7 +53,7 @@ where
 
 pub fn ser_event_sources_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::EventSourcesConfig,
+    input: &crate::types::EventSourcesConfig,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.amazon_code_guru_profiler {
         #[allow(unused_mut)]

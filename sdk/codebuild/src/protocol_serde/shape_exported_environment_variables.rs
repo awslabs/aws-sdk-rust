@@ -2,7 +2,7 @@
 pub(crate) fn de_exported_environment_variables<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ExportedEnvironmentVariable>>,
+    Option<std::vec::Vec<crate::types::ExportedEnvironmentVariable>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

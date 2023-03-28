@@ -2,7 +2,7 @@
 pub(crate) fn de_endpoint_config_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::EndpointConfigSummary>>,
+    Option<std::vec::Vec<crate::types::EndpointConfigSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

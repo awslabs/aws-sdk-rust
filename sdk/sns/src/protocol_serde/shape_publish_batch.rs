@@ -2,349 +2,383 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_publish_batch_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::PublishBatchOutput, crate::error::PublishBatchError> {
+) -> std::result::Result<
+    crate::operation::publish_batch::PublishBatchOutput,
+    crate::operation::publish_batch::PublishBatchError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::PublishBatchError::unhandled)?;
+        .map_err(crate::operation::publish_batch::PublishBatchError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::PublishBatchError::unhandled(generic)),
+        None => return Err(crate::operation::publish_batch::PublishBatchError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AuthorizationError" => crate::error::PublishBatchError::AuthorizationErrorException({
+        "AuthorizationError" => crate::operation::publish_batch::PublishBatchError::AuthorizationErrorException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::authorization_error_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_authorization_error_exception::de_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PublishBatchError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "BatchEntryIdsNotDistinct" => {
-            crate::error::PublishBatchError::BatchEntryIdsNotDistinctException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::batch_entry_ids_not_distinct_exception::Builder::default();
+                    let mut output = crate::types::error::builders::AuthorizationErrorExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_batch_entry_ids_not_distinct_exception::de_batch_entry_ids_not_distinct_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PublishBatchError::unhandled)?;
+                    output = crate::protocol_serde::shape_authorization_error_exception::de_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::publish_batch::PublishBatchError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "BatchRequestTooLong" => crate::error::PublishBatchError::BatchRequestTooLongException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::batch_request_too_long_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_batch_request_too_long_exception::de_batch_request_too_long_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PublishBatchError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "EmptyBatchRequest" => crate::error::PublishBatchError::EmptyBatchRequestException({
+        "BatchEntryIdsNotDistinct" => crate::operation::publish_batch::PublishBatchError::BatchEntryIdsNotDistinctException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::empty_batch_request_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_empty_batch_request_exception::de_empty_batch_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PublishBatchError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "EndpointDisabled" => crate::error::PublishBatchError::EndpointDisabledException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::endpoint_disabled_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_endpoint_disabled_exception::de_endpoint_disabled_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PublishBatchError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InternalError" => crate::error::PublishBatchError::InternalErrorException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_error_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_error_exception::de_internal_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PublishBatchError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InvalidBatchEntryId" => crate::error::PublishBatchError::InvalidBatchEntryIdException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::invalid_batch_entry_id_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_batch_entry_id_exception::de_invalid_batch_entry_id_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PublishBatchError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InvalidParameter" => crate::error::PublishBatchError::InvalidParameterException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::invalid_parameter_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PublishBatchError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ParameterValueInvalid" => {
-            crate::error::PublishBatchError::InvalidParameterValueException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_parameter_value_exception::Builder::default();
+                    let mut output = crate::types::error::builders::BatchEntryIdsNotDistinctExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PublishBatchError::unhandled)?;
+                    output = crate::protocol_serde::shape_batch_entry_ids_not_distinct_exception::de_batch_entry_ids_not_distinct_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::publish_batch::PublishBatchError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidSecurity" => crate::error::PublishBatchError::InvalidSecurityException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::invalid_security_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_security_exception::de_invalid_security_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PublishBatchError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "KMSAccessDenied" => crate::error::PublishBatchError::KmsAccessDeniedException({
+        "BatchRequestTooLong" => crate::operation::publish_batch::PublishBatchError::BatchRequestTooLongException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::kms_access_denied_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_kms_access_denied_exception::de_kms_access_denied_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PublishBatchError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "KMSDisabled" => crate::error::PublishBatchError::KmsDisabledException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::kms_disabled_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_kms_disabled_exception::de_kms_disabled_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PublishBatchError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "KMSInvalidState" => crate::error::PublishBatchError::KmsInvalidStateException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::kms_invalid_state_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_kms_invalid_state_exception::de_kms_invalid_state_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PublishBatchError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "KMSNotFound" => crate::error::PublishBatchError::KmsNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::kms_not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_kms_not_found_exception::de_kms_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PublishBatchError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "KMSOptInRequired" => crate::error::PublishBatchError::KmsOptInRequired({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::kms_opt_in_required::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_kms_opt_in_required::de_kms_opt_in_required_xml_err(response.body().as_ref(), output).map_err(crate::error::PublishBatchError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "KMSThrottling" => crate::error::PublishBatchError::KmsThrottlingException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::kms_throttling_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_kms_throttling_exception::de_kms_throttling_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PublishBatchError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "NotFound" => crate::error::PublishBatchError::NotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PublishBatchError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "PlatformApplicationDisabled" => {
-            crate::error::PublishBatchError::PlatformApplicationDisabledException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::platform_application_disabled_exception::Builder::default();
+                    let mut output = crate::types::error::builders::BatchRequestTooLongExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_platform_application_disabled_exception::de_platform_application_disabled_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PublishBatchError::unhandled)?;
+                    output = crate::protocol_serde::shape_batch_request_too_long_exception::de_batch_request_too_long_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::publish_batch::PublishBatchError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "TooManyEntriesInBatchRequest" => {
-            crate::error::PublishBatchError::TooManyEntriesInBatchRequestException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::too_many_entries_in_batch_request_exception::Builder::default(
-                        );
-                    let _ = response;
-                    output = crate::protocol_serde::shape_too_many_entries_in_batch_request_exception::de_too_many_entries_in_batch_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PublishBatchError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ValidationException" => crate::error::PublishBatchError::ValidationException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PublishBatchError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::PublishBatchError::generic(generic),
+        "EmptyBatchRequest" => crate::operation::publish_batch::PublishBatchError::EmptyBatchRequestException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::EmptyBatchRequestExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_empty_batch_request_exception::de_empty_batch_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::publish_batch::PublishBatchError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "EndpointDisabled" => crate::operation::publish_batch::PublishBatchError::EndpointDisabledException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::EndpointDisabledExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_endpoint_disabled_exception::de_endpoint_disabled_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::publish_batch::PublishBatchError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InternalError" => crate::operation::publish_batch::PublishBatchError::InternalErrorException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InternalErrorExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_error_exception::de_internal_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::publish_batch::PublishBatchError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidBatchEntryId" => crate::operation::publish_batch::PublishBatchError::InvalidBatchEntryIdException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidBatchEntryIdExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_batch_entry_id_exception::de_invalid_batch_entry_id_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::publish_batch::PublishBatchError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidParameter" => crate::operation::publish_batch::PublishBatchError::InvalidParameterException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidParameterExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::publish_batch::PublishBatchError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ParameterValueInvalid" => crate::operation::publish_batch::PublishBatchError::InvalidParameterValueException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::publish_batch::PublishBatchError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidSecurity" => crate::operation::publish_batch::PublishBatchError::InvalidSecurityException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidSecurityExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_security_exception::de_invalid_security_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::publish_batch::PublishBatchError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "KMSAccessDenied" => crate::operation::publish_batch::PublishBatchError::KmsAccessDeniedException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::KmsAccessDeniedExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_kms_access_denied_exception::de_kms_access_denied_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::publish_batch::PublishBatchError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "KMSDisabled" => crate::operation::publish_batch::PublishBatchError::KmsDisabledException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::KmsDisabledExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_kms_disabled_exception::de_kms_disabled_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::publish_batch::PublishBatchError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "KMSInvalidState" => crate::operation::publish_batch::PublishBatchError::KmsInvalidStateException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::KmsInvalidStateExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_kms_invalid_state_exception::de_kms_invalid_state_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::publish_batch::PublishBatchError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "KMSNotFound" => crate::operation::publish_batch::PublishBatchError::KmsNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::KmsNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_kms_not_found_exception::de_kms_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::publish_batch::PublishBatchError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "KMSOptInRequired" => crate::operation::publish_batch::PublishBatchError::KmsOptInRequired({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::KmsOptInRequiredBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_kms_opt_in_required::de_kms_opt_in_required_xml_err(response.body().as_ref(), output).map_err(crate::operation::publish_batch::PublishBatchError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "KMSThrottling" => crate::operation::publish_batch::PublishBatchError::KmsThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::KmsThrottlingExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_kms_throttling_exception::de_kms_throttling_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::publish_batch::PublishBatchError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "NotFound" => crate::operation::publish_batch::PublishBatchError::NotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::NotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::publish_batch::PublishBatchError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "PlatformApplicationDisabled" => crate::operation::publish_batch::PublishBatchError::PlatformApplicationDisabledException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::PlatformApplicationDisabledExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_platform_application_disabled_exception::de_platform_application_disabled_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::publish_batch::PublishBatchError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TooManyEntriesInBatchRequest" => crate::operation::publish_batch::PublishBatchError::TooManyEntriesInBatchRequestException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::TooManyEntriesInBatchRequestExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_too_many_entries_in_batch_request_exception::de_too_many_entries_in_batch_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::publish_batch::PublishBatchError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ValidationException" => crate::operation::publish_batch::PublishBatchError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::publish_batch::PublishBatchError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::publish_batch::PublishBatchError::generic(generic)
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_publish_batch_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::PublishBatchOutput, crate::error::PublishBatchError> {
+) -> std::result::Result<
+    crate::operation::publish_batch::PublishBatchOutput,
+    crate::operation::publish_batch::PublishBatchError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::publish_batch_output::Builder::default();
+        let mut output =
+            crate::operation::publish_batch::builders::PublishBatchOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_publish_batch::de_publish_batch(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::PublishBatchError::unhandled)?;
+        .map_err(crate::operation::publish_batch::PublishBatchError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -355,8 +389,11 @@ pub fn de_publish_batch_http_response(
 #[allow(unused_mut)]
 pub fn de_publish_batch(
     inp: &[u8],
-    mut builder: crate::output::publish_batch_output::Builder,
-) -> Result<crate::output::publish_batch_output::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    mut builder: crate::operation::publish_batch::builders::PublishBatchOutputBuilder,
+) -> Result<
+    crate::operation::publish_batch::builders::PublishBatchOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

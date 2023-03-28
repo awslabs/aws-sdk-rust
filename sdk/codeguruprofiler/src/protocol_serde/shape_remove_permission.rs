@@ -2,43 +2,53 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_remove_permission_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::RemovePermissionOutput, crate::error::RemovePermissionError>
-{
+) -> std::result::Result<
+    crate::operation::remove_permission::RemovePermissionOutput,
+    crate::operation::remove_permission::RemovePermissionError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::RemovePermissionError::unhandled)?;
+        .map_err(crate::operation::remove_permission::RemovePermissionError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::RemovePermissionError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::remove_permission::RemovePermissionError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConflictException" => crate::error::RemovePermissionError::ConflictException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::conflict_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemovePermissionError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InternalServerException" => {
-            crate::error::RemovePermissionError::InternalServerException({
+        "ConflictException" => {
+            crate::operation::remove_permission::RemovePermissionError::ConflictException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::ConflictExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemovePermissionError::unhandled)?;
+                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::remove_permission::RemovePermissionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InternalServerException" => {
+            crate::operation::remove_permission::RemovePermissionError::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InternalServerExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::remove_permission::RemovePermissionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -49,13 +59,14 @@ pub fn de_remove_permission_http_error(
             })
         }
         "ResourceNotFoundException" => {
-            crate::error::RemovePermissionError::ResourceNotFoundException({
+            crate::operation::remove_permission::RemovePermissionError::ResourceNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemovePermissionError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::remove_permission::RemovePermissionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -65,54 +76,63 @@ pub fn de_remove_permission_http_error(
                 tmp
             })
         }
-        "ThrottlingException" => crate::error::RemovePermissionError::ThrottlingException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "ThrottlingException" => {
+            crate::operation::remove_permission::RemovePermissionError::ThrottlingException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::throttling_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemovePermissionError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ValidationException" => crate::error::RemovePermissionError::ValidationException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::remove_permission::RemovePermissionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ValidationException" => {
+            crate::operation::remove_permission::RemovePermissionError::ValidationException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemovePermissionError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::RemovePermissionError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::remove_permission::RemovePermissionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::remove_permission::RemovePermissionError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_remove_permission_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::RemovePermissionOutput, crate::error::RemovePermissionError>
-{
+) -> std::result::Result<
+    crate::operation::remove_permission::RemovePermissionOutput,
+    crate::operation::remove_permission::RemovePermissionError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::remove_permission_output::Builder::default();
+        let mut output =
+            crate::operation::remove_permission::builders::RemovePermissionOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_remove_permission::de_remove_permission(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::RemovePermissionError::unhandled)?;
+        .map_err(crate::operation::remove_permission::RemovePermissionError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -122,9 +142,9 @@ pub fn de_remove_permission_http_response(
 
 pub(crate) fn de_remove_permission(
     value: &[u8],
-    mut builder: crate::output::remove_permission_output::Builder,
+    mut builder: crate::operation::remove_permission::builders::RemovePermissionOutputBuilder,
 ) -> Result<
-    crate::output::remove_permission_output::Builder,
+    crate::operation::remove_permission::builders::RemovePermissionOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

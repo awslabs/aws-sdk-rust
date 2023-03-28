@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_analysis_options(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::AnalysisOptions,
+    input: &crate::types::AnalysisOptions,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Synonyms");
@@ -34,9 +34,9 @@ pub fn ser_analysis_options(
 
 pub fn de_analysis_options(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::AnalysisOptions, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::AnalysisOptions, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::AnalysisOptions::builder();
+    let mut builder = crate::types::AnalysisOptions::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Synonyms") /* Synonyms com.amazonaws.cloudsearch#AnalysisOptions$Synonyms */ =>  {
@@ -94,8 +94,8 @@ pub fn de_analysis_options(
             s if s.matches("AlgorithmicStemming") /* AlgorithmicStemming com.amazonaws.cloudsearch#AnalysisOptions$AlgorithmicStemming */ =>  {
                 let var_15 =
                     Some(
-                        Result::<crate::model::AlgorithmicStemming, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::AlgorithmicStemming::from(
+                        Result::<crate::types::AlgorithmicStemming, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::AlgorithmicStemming::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

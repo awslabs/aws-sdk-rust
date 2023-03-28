@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_response_headers_policy_in_use_xml_err(
     inp: &[u8],
-    mut builder: crate::error::response_headers_policy_in_use::Builder,
+    mut builder: crate::types::error::builders::ResponseHeadersPolicyInUseBuilder,
 ) -> Result<
-    crate::error::response_headers_policy_in_use::Builder,
+    crate::types::error::builders::ResponseHeadersPolicyInUseBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

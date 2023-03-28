@@ -2,7 +2,7 @@
 pub(crate) fn de_session_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Session>>,
+    Option<std::vec::Vec<crate::types::Session>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

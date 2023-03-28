@@ -2,7 +2,7 @@
 pub(crate) fn de_identity_provider<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::IdentityProvider>,
+    Option<crate::types::IdentityProvider>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::identity_provider::Builder::default();
+            let mut builder = crate::types::builders::IdentityProviderBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -48,7 +48,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::IdentityProviderType::from(u.as_ref())
+                                            crate::types::IdentityProviderType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

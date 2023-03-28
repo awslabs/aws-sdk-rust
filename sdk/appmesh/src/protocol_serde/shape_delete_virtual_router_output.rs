@@ -2,13 +2,15 @@
 pub fn de_virtual_router_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::VirtualRouterData>,
-    crate::error::DeleteVirtualRouterError,
+    std::option::Option<crate::types::VirtualRouterData>,
+    crate::operation::delete_virtual_router::DeleteVirtualRouterError,
 > {
     (!body.is_empty())
         .then(|| {
             crate::protocol_serde::shape_virtual_router_data::de_virtual_router_data_payload(body)
-                .map_err(crate::error::DeleteVirtualRouterError::unhandled)
+                .map_err(
+                    crate::operation::delete_virtual_router::DeleteVirtualRouterError::unhandled,
+                )
         })
         .transpose()
 }

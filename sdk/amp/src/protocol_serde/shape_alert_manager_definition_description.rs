@@ -2,7 +2,7 @@
 pub(crate) fn de_alert_manager_definition_description<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::AlertManagerDefinitionDescription>,
+    Option<crate::types::AlertManagerDefinitionDescription>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::alert_manager_definition_description::Builder::default();
+                crate::types::builders::AlertManagerDefinitionDescriptionBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

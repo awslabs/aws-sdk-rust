@@ -2,7 +2,7 @@
 pub(crate) fn de_lambda_function_memory_projected_metric<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::LambdaFunctionMemoryProjectedMetric>,
+    Option<crate::types::LambdaFunctionMemoryProjectedMetric>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::lambda_function_memory_projected_metric::Builder::default();
+                crate::types::builders::LambdaFunctionMemoryProjectedMetricBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -31,7 +31,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::LambdaFunctionMemoryMetricName::from(
+                                            crate::types::LambdaFunctionMemoryMetricName::from(
                                                 u.as_ref(),
                                             )
                                         })
@@ -46,7 +46,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::LambdaFunctionMemoryMetricStatistic::from(
+                                            crate::types::LambdaFunctionMemoryMetricStatistic::from(
                                                 u.as_ref(),
                                             )
                                         })

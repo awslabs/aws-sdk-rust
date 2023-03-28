@@ -3,7 +3,7 @@ pub(crate) fn de_import_column_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<
-        std::collections::HashMap<std::string::String, crate::model::SourceDataColumnProperties>,
+        std::collections::HashMap<std::string::String, crate::types::SourceDataColumnProperties>,
     >,
     aws_smithy_json::deserialize::error::DeserializeError,
 >

@@ -4,19 +4,19 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>The number of active statements exceeds the limit.</p>
-    ActiveStatementsExceededException(crate::error::ActiveStatementsExceededException),
+    ActiveStatementsExceededException(crate::types::error::ActiveStatementsExceededException),
     /// <p>An SQL statement encountered an environmental error while running.</p>
-    BatchExecuteStatementException(crate::error::BatchExecuteStatementException),
+    BatchExecuteStatementException(crate::types::error::BatchExecuteStatementException),
     /// <p>Connection to a database failed.</p>
-    DatabaseConnectionException(crate::error::DatabaseConnectionException),
+    DatabaseConnectionException(crate::types::error::DatabaseConnectionException),
     /// <p>The SQL statement encountered an environmental error while running.</p>
-    ExecuteStatementException(crate::error::ExecuteStatementException),
+    ExecuteStatementException(crate::types::error::ExecuteStatementException),
     /// <p>The Amazon Redshift Data API operation failed due to invalid input. </p>
-    InternalServerException(crate::error::InternalServerException),
+    InternalServerException(crate::types::error::InternalServerException),
     /// <p>The Amazon Redshift Data API operation failed due to a missing resource. </p>
-    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The Amazon Redshift Data API operation failed due to invalid input. </p>
-    ValidationException(crate::error::ValidationException),
+    ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled),
 }
@@ -34,13 +34,141 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::BatchExecuteStatementError, R>>
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::batch_execute_statement::BatchExecuteStatementError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::batch_execute_statement::BatchExecuteStatementError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::batch_execute_statement::BatchExecuteStatementError> for Error {
+    fn from(err: crate::operation::batch_execute_statement::BatchExecuteStatementError) -> Self {
+        match err {
+            crate::operation::batch_execute_statement::BatchExecuteStatementError::ActiveStatementsExceededException(inner) => Error::ActiveStatementsExceededException(inner),
+            crate::operation::batch_execute_statement::BatchExecuteStatementError::BatchExecuteStatementException(inner) => Error::BatchExecuteStatementException(inner),
+            crate::operation::batch_execute_statement::BatchExecuteStatementError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::batch_execute_statement::BatchExecuteStatementError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::cancel_statement::CancelStatementError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::cancel_statement::CancelStatementError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::cancel_statement::CancelStatementError> for Error {
+    fn from(err: crate::operation::cancel_statement::CancelStatementError) -> Self {
+        match err {
+            crate::operation::cancel_statement::CancelStatementError::DatabaseConnectionException(inner) => Error::DatabaseConnectionException(inner),
+            crate::operation::cancel_statement::CancelStatementError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::cancel_statement::CancelStatementError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::cancel_statement::CancelStatementError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::cancel_statement::CancelStatementError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_statement::DescribeStatementError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_statement::DescribeStatementError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_statement::DescribeStatementError> for Error {
+    fn from(err: crate::operation::describe_statement::DescribeStatementError) -> Self {
+        match err {
+            crate::operation::describe_statement::DescribeStatementError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::describe_statement::DescribeStatementError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_statement::DescribeStatementError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::describe_statement::DescribeStatementError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::describe_table::DescribeTableError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::BatchExecuteStatementError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_table::DescribeTableError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -57,67 +185,39 @@ where
         }
     }
 }
-impl From<crate::error::BatchExecuteStatementError> for Error {
-    fn from(err: crate::error::BatchExecuteStatementError) -> Self {
+impl From<crate::operation::describe_table::DescribeTableError> for Error {
+    fn from(err: crate::operation::describe_table::DescribeTableError) -> Self {
         match err {
-            crate::error::BatchExecuteStatementError::ActiveStatementsExceededException(inner) => {
-                Error::ActiveStatementsExceededException(inner)
-            }
-            crate::error::BatchExecuteStatementError::BatchExecuteStatementException(inner) => {
-                Error::BatchExecuteStatementException(inner)
-            }
-            crate::error::BatchExecuteStatementError::ValidationException(inner) => {
+            crate::operation::describe_table::DescribeTableError::DatabaseConnectionException(
+                inner,
+            ) => Error::DatabaseConnectionException(inner),
+            crate::operation::describe_table::DescribeTableError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::describe_table::DescribeTableError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
-            crate::error::BatchExecuteStatementError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::describe_table::DescribeTableError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CancelStatementError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CancelStatementError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::CancelStatementError> for Error {
-    fn from(err: crate::error::CancelStatementError) -> Self {
-        match err {
-            crate::error::CancelStatementError::DatabaseConnectionException(inner) => {
-                Error::DatabaseConnectionException(inner)
-            }
-            crate::error::CancelStatementError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::CancelStatementError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::CancelStatementError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::CancelStatementError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeStatementError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::execute_statement::ExecuteStatementError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeStatementError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::execute_statement::ExecuteStatementError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -134,64 +234,31 @@ where
         }
     }
 }
-impl From<crate::error::DescribeStatementError> for Error {
-    fn from(err: crate::error::DescribeStatementError) -> Self {
+impl From<crate::operation::execute_statement::ExecuteStatementError> for Error {
+    fn from(err: crate::operation::execute_statement::ExecuteStatementError) -> Self {
         match err {
-            crate::error::DescribeStatementError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::DescribeStatementError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DescribeStatementError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::DescribeStatementError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::execute_statement::ExecuteStatementError::ActiveStatementsExceededException(inner) => Error::ActiveStatementsExceededException(inner),
+            crate::operation::execute_statement::ExecuteStatementError::ExecuteStatementException(inner) => Error::ExecuteStatementException(inner),
+            crate::operation::execute_statement::ExecuteStatementError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::execute_statement::ExecuteStatementError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeTableError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeTableError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribeTableError> for Error {
-    fn from(err: crate::error::DescribeTableError) -> Self {
-        match err {
-            crate::error::DescribeTableError::DatabaseConnectionException(inner) => {
-                Error::DatabaseConnectionException(inner)
-            }
-            crate::error::DescribeTableError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::DescribeTableError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::DescribeTableError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ExecuteStatementError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_statement_result::GetStatementResultError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ExecuteStatementError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_statement_result::GetStatementResultError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -208,28 +275,27 @@ where
         }
     }
 }
-impl From<crate::error::ExecuteStatementError> for Error {
-    fn from(err: crate::error::ExecuteStatementError) -> Self {
+impl From<crate::operation::get_statement_result::GetStatementResultError> for Error {
+    fn from(err: crate::operation::get_statement_result::GetStatementResultError) -> Self {
         match err {
-            crate::error::ExecuteStatementError::ActiveStatementsExceededException(inner) => {
-                Error::ActiveStatementsExceededException(inner)
-            }
-            crate::error::ExecuteStatementError::ExecuteStatementException(inner) => {
-                Error::ExecuteStatementException(inner)
-            }
-            crate::error::ExecuteStatementError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::ExecuteStatementError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_statement_result::GetStatementResultError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_statement_result::GetStatementResultError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_statement_result::GetStatementResultError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_statement_result::GetStatementResultError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetStatementResultError, R>> for Error
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::list_databases::ListDatabasesError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetStatementResultError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_databases::ListDatabasesError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -246,27 +312,32 @@ where
         }
     }
 }
-impl From<crate::error::GetStatementResultError> for Error {
-    fn from(err: crate::error::GetStatementResultError) -> Self {
+impl From<crate::operation::list_databases::ListDatabasesError> for Error {
+    fn from(err: crate::operation::list_databases::ListDatabasesError) -> Self {
         match err {
-            crate::error::GetStatementResultError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::GetStatementResultError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::GetStatementResultError::ValidationException(inner) => {
+            crate::operation::list_databases::ListDatabasesError::DatabaseConnectionException(
+                inner,
+            ) => Error::DatabaseConnectionException(inner),
+            crate::operation::list_databases::ListDatabasesError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::list_databases::ListDatabasesError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
-            crate::error::GetStatementResultError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_databases::ListDatabasesError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListDatabasesError, R>> for Error
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_schemas::ListSchemasError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListDatabasesError, R>) -> Self {
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::list_schemas::ListSchemasError, R>,
+    ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
@@ -282,124 +353,108 @@ where
         }
     }
 }
-impl From<crate::error::ListDatabasesError> for Error {
-    fn from(err: crate::error::ListDatabasesError) -> Self {
+impl From<crate::operation::list_schemas::ListSchemasError> for Error {
+    fn from(err: crate::operation::list_schemas::ListSchemasError) -> Self {
         match err {
-            crate::error::ListDatabasesError::DatabaseConnectionException(inner) => {
+            crate::operation::list_schemas::ListSchemasError::DatabaseConnectionException(
+                inner,
+            ) => Error::DatabaseConnectionException(inner),
+            crate::operation::list_schemas::ListSchemasError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_schemas::ListSchemasError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_schemas::ListSchemasError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_statements::ListStatementsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_statements::ListStatementsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_statements::ListStatementsError> for Error {
+    fn from(err: crate::operation::list_statements::ListStatementsError) -> Self {
+        match err {
+            crate::operation::list_statements::ListStatementsError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::list_statements::ListStatementsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_statements::ListStatementsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_tables::ListTablesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::list_tables::ListTablesError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_tables::ListTablesError> for Error {
+    fn from(err: crate::operation::list_tables::ListTablesError) -> Self {
+        match err {
+            crate::operation::list_tables::ListTablesError::DatabaseConnectionException(inner) => {
                 Error::DatabaseConnectionException(inner)
             }
-            crate::error::ListDatabasesError::InternalServerException(inner) => {
+            crate::operation::list_tables::ListTablesError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
-            crate::error::ListDatabasesError::ValidationException(inner) => {
+            crate::operation::list_tables::ListTablesError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
-            crate::error::ListDatabasesError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListSchemasError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListSchemasError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
+            crate::operation::list_tables::ListTablesError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::ListSchemasError> for Error {
-    fn from(err: crate::error::ListSchemasError) -> Self {
-        match err {
-            crate::error::ListSchemasError::DatabaseConnectionException(inner) => {
-                Error::DatabaseConnectionException(inner)
-            }
-            crate::error::ListSchemasError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::ListSchemasError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::ListSchemasError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListStatementsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListStatementsError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::ListStatementsError> for Error {
-    fn from(err: crate::error::ListStatementsError) -> Self {
-        match err {
-            crate::error::ListStatementsError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::ListStatementsError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::ListStatementsError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTablesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListTablesError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::ListTablesError> for Error {
-    fn from(err: crate::error::ListTablesError) -> Self {
-        match err {
-            crate::error::ListTablesError::DatabaseConnectionException(inner) => {
-                Error::DatabaseConnectionException(inner)
-            }
-            crate::error::ListTablesError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::ListTablesError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::ListTablesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

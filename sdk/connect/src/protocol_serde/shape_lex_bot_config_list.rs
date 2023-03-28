@@ -2,7 +2,7 @@
 pub(crate) fn de_lex_bot_config_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::LexBotConfig>>,
+    Option<std::vec::Vec<crate::types::LexBotConfig>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

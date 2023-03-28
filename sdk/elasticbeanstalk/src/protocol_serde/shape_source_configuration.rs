@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_source_configuration(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::SourceConfiguration,
+    input: &crate::types::SourceConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("ApplicationName");

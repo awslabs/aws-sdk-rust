@@ -2,7 +2,7 @@
 pub(crate) fn de_list_phone_numbers_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ListPhoneNumbersSummary>,
+    Option<crate::types::ListPhoneNumbersSummary>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::list_phone_numbers_summary::Builder::default();
+            let mut builder = crate::types::builders::ListPhoneNumbersSummaryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -57,7 +57,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::PhoneNumberCountryCode::from(u.as_ref())
+                                            crate::types::PhoneNumberCountryCode::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -70,7 +70,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::PhoneNumberType::from(u.as_ref())
+                                            crate::types::PhoneNumberType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

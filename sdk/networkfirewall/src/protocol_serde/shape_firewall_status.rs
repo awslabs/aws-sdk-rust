@@ -2,7 +2,7 @@
 pub(crate) fn de_firewall_status<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::FirewallStatus>,
+    Option<crate::types::FirewallStatus>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::firewall_status::Builder::default();
+            let mut builder = crate::types::builders::FirewallStatusBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::FirewallStatusValue::from(u.as_ref())
+                                            crate::types::FirewallStatusValue::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -43,7 +43,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ConfigurationSyncState::from(u.as_ref())
+                                            crate::types::ConfigurationSyncState::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

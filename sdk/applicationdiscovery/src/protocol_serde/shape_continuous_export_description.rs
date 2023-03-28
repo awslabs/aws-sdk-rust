@@ -2,7 +2,7 @@
 pub(crate) fn de_continuous_export_description<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ContinuousExportDescription>,
+    Option<crate::types::ContinuousExportDescription>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::continuous_export_description::Builder::default();
+            let mut builder = crate::types::builders::ContinuousExportDescriptionBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -39,7 +39,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ContinuousExportStatus::from(u.as_ref())
+                                            crate::types::ContinuousExportStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -86,7 +86,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::DataSource::from(u.as_ref()))
+                                            .map(|u| crate::types::DataSource::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

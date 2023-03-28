@@ -2,7 +2,7 @@
 pub(crate) fn de_baseline_metrics<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::BaselineMetric>>,
+    Option<std::vec::Vec<crate::types::BaselineMetric>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

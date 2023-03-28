@@ -2,7 +2,7 @@
 pub(crate) fn de_monitoring_execution_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::MonitoringExecutionSummary>>,
+    Option<std::vec::Vec<crate::types::MonitoringExecutionSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

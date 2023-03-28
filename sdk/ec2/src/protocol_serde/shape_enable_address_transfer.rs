@@ -3,33 +3,36 @@
 pub fn de_enable_address_transfer_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::EnableAddressTransferOutput,
-    crate::error::EnableAddressTransferError,
+    crate::operation::enable_address_transfer::EnableAddressTransferOutput,
+    crate::operation::enable_address_transfer::EnableAddressTransferError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::EnableAddressTransferError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::enable_address_transfer::EnableAddressTransferError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::EnableAddressTransferError::generic(generic))
+    Err(crate::operation::enable_address_transfer::EnableAddressTransferError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_enable_address_transfer_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::EnableAddressTransferOutput,
-    crate::error::EnableAddressTransferError,
+    crate::operation::enable_address_transfer::EnableAddressTransferOutput,
+    crate::operation::enable_address_transfer::EnableAddressTransferError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::enable_address_transfer_output::Builder::default();
+        let mut output = crate::operation::enable_address_transfer::builders::EnableAddressTransferOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_enable_address_transfer::de_enable_address_transfer(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::EnableAddressTransferError::unhandled)?;
+        .map_err(
+            crate::operation::enable_address_transfer::EnableAddressTransferError::unhandled,
+        )?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -40,9 +43,9 @@ pub fn de_enable_address_transfer_http_response(
 #[allow(unused_mut)]
 pub fn de_enable_address_transfer(
     inp: &[u8],
-    mut builder: crate::output::enable_address_transfer_output::Builder,
+    mut builder: crate::operation::enable_address_transfer::builders::EnableAddressTransferOutputBuilder,
 ) -> Result<
-    crate::output::enable_address_transfer_output::Builder,
+    crate::operation::enable_address_transfer::builders::EnableAddressTransferOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

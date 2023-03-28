@@ -2,7 +2,7 @@
 pub(crate) fn de_service_name_and_resource_type_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ServiceNameAndResourceType>>,
+    Option<std::vec::Vec<crate::types::ServiceNameAndResourceType>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

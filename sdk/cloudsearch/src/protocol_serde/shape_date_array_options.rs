@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_date_array_options(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::DateArrayOptions,
+    input: &crate::types::DateArrayOptions,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("DefaultValue");
@@ -34,9 +34,9 @@ pub fn ser_date_array_options(
 
 pub fn de_date_array_options(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::DateArrayOptions, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::DateArrayOptions, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::DateArrayOptions::builder();
+    let mut builder = crate::types::DateArrayOptions::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("DefaultValue") /* DefaultValue com.amazonaws.cloudsearch#DateArrayOptions$DefaultValue */ =>  {

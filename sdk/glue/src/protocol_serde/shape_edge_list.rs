@@ -2,7 +2,7 @@
 pub(crate) fn de_edge_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Edge>>,
+    Option<std::vec::Vec<crate::types::Edge>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

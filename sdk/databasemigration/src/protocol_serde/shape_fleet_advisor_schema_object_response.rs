@@ -2,7 +2,7 @@
 pub(crate) fn de_fleet_advisor_schema_object_response<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::FleetAdvisorSchemaObjectResponse>,
+    Option<crate::types::FleetAdvisorSchemaObjectResponse>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::fleet_advisor_schema_object_response::Builder::default();
+                crate::types::builders::FleetAdvisorSchemaObjectResponseBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

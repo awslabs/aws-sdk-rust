@@ -2,30 +2,34 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_disable_fast_launch_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DisableFastLaunchOutput, crate::error::DisableFastLaunchError>
-{
+) -> std::result::Result<
+    crate::operation::disable_fast_launch::DisableFastLaunchOutput,
+    crate::operation::disable_fast_launch::DisableFastLaunchError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DisableFastLaunchError::unhandled)?;
+        .map_err(crate::operation::disable_fast_launch::DisableFastLaunchError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::DisableFastLaunchError::generic(generic))
+    Err(crate::operation::disable_fast_launch::DisableFastLaunchError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_disable_fast_launch_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DisableFastLaunchOutput, crate::error::DisableFastLaunchError>
-{
+) -> std::result::Result<
+    crate::operation::disable_fast_launch::DisableFastLaunchOutput,
+    crate::operation::disable_fast_launch::DisableFastLaunchError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::disable_fast_launch_output::Builder::default();
+        let mut output = crate::operation::disable_fast_launch::builders::DisableFastLaunchOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_disable_fast_launch::de_disable_fast_launch(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DisableFastLaunchError::unhandled)?;
+        .map_err(crate::operation::disable_fast_launch::DisableFastLaunchError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -36,9 +40,9 @@ pub fn de_disable_fast_launch_http_response(
 #[allow(unused_mut)]
 pub fn de_disable_fast_launch(
     inp: &[u8],
-    mut builder: crate::output::disable_fast_launch_output::Builder,
+    mut builder: crate::operation::disable_fast_launch::builders::DisableFastLaunchOutputBuilder,
 ) -> Result<
-    crate::output::disable_fast_launch_output::Builder,
+    crate::operation::disable_fast_launch::builders::DisableFastLaunchOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
@@ -71,8 +75,8 @@ pub fn de_disable_fast_launch(
             s if s.matches("resourceType") /* ResourceType com.amazonaws.ec2.synthetic#DisableFastLaunchOutput$ResourceType */ =>  {
                 let var_2 =
                     Some(
-                        Result::<crate::model::FastLaunchResourceType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::FastLaunchResourceType::from(
+                        Result::<crate::types::FastLaunchResourceType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::FastLaunchResourceType::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
@@ -133,8 +137,8 @@ pub fn de_disable_fast_launch(
             s if s.matches("state") /* State com.amazonaws.ec2.synthetic#DisableFastLaunchOutput$State */ =>  {
                 let var_7 =
                     Some(
-                        Result::<crate::model::FastLaunchStateCode, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::FastLaunchStateCode::from(
+                        Result::<crate::types::FastLaunchStateCode, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::FastLaunchStateCode::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

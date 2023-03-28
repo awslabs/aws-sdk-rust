@@ -3,33 +3,33 @@
 pub fn de_estimate_template_cost_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::EstimateTemplateCostOutput,
-    crate::error::EstimateTemplateCostError,
+    crate::operation::estimate_template_cost::EstimateTemplateCostOutput,
+    crate::operation::estimate_template_cost::EstimateTemplateCostError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::EstimateTemplateCostError::unhandled)?;
+        .map_err(crate::operation::estimate_template_cost::EstimateTemplateCostError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::EstimateTemplateCostError::generic(generic))
+    Err(crate::operation::estimate_template_cost::EstimateTemplateCostError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_estimate_template_cost_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::EstimateTemplateCostOutput,
-    crate::error::EstimateTemplateCostError,
+    crate::operation::estimate_template_cost::EstimateTemplateCostOutput,
+    crate::operation::estimate_template_cost::EstimateTemplateCostError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::estimate_template_cost_output::Builder::default();
+        let mut output = crate::operation::estimate_template_cost::builders::EstimateTemplateCostOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_estimate_template_cost::de_estimate_template_cost(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::EstimateTemplateCostError::unhandled)?;
+        .map_err(crate::operation::estimate_template_cost::EstimateTemplateCostError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -40,9 +40,9 @@ pub fn de_estimate_template_cost_http_response(
 #[allow(unused_mut)]
 pub fn de_estimate_template_cost(
     inp: &[u8],
-    mut builder: crate::output::estimate_template_cost_output::Builder,
+    mut builder: crate::operation::estimate_template_cost::builders::EstimateTemplateCostOutputBuilder,
 ) -> Result<
-    crate::output::estimate_template_cost_output::Builder,
+    crate::operation::estimate_template_cost::builders::EstimateTemplateCostOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

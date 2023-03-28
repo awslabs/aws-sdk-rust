@@ -2,7 +2,7 @@
 pub(crate) fn de_storage_type_limit_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::StorageTypeLimit>>,
+    Option<std::vec::Vec<crate::types::StorageTypeLimit>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

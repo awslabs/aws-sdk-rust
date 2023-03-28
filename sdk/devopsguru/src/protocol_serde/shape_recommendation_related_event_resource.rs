@@ -2,7 +2,7 @@
 pub(crate) fn de_recommendation_related_event_resource<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::RecommendationRelatedEventResource>,
+    Option<crate::types::RecommendationRelatedEventResource>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::recommendation_related_event_resource::Builder::default();
+                crate::types::builders::RecommendationRelatedEventResourceBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

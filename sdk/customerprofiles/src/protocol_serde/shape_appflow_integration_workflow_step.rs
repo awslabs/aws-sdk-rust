@@ -2,7 +2,7 @@
 pub(crate) fn de_appflow_integration_workflow_step<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::AppflowIntegrationWorkflowStep>,
+    Option<crate::types::AppflowIntegrationWorkflowStep>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::appflow_integration_workflow_step::Builder::default();
+            let mut builder =
+                crate::types::builders::AppflowIntegrationWorkflowStepBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -39,7 +40,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::Status::from(u.as_ref()))
+                                            .map(|u| crate::types::Status::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

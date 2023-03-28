@@ -18,7 +18,7 @@ pub(crate) fn de_delete_marker_header(
 pub(crate) fn de_request_charged_header(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
-    std::option::Option<crate::model::RequestCharged>,
+    std::option::Option<crate::types::RequestCharged>,
     aws_smithy_http::header::ParseError,
 > {
     let headers = header_map.get_all("x-amz-request-charged").iter();

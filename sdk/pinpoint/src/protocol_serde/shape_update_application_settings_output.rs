@@ -2,10 +2,10 @@
 pub fn de_application_settings_resource_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::ApplicationSettingsResource>,
-    crate::error::UpdateApplicationSettingsError,
+    std::option::Option<crate::types::ApplicationSettingsResource>,
+    crate::operation::update_application_settings::UpdateApplicationSettingsError,
 > {
     (!body.is_empty()).then(||{
-        crate::protocol_serde::shape_application_settings_resource::de_application_settings_resource_payload(body).map_err(crate::error::UpdateApplicationSettingsError::unhandled)
+        crate::protocol_serde::shape_application_settings_resource::de_application_settings_resource_payload(body).map_err(crate::operation::update_application_settings::UpdateApplicationSettingsError::unhandled)
     }).transpose()
 }

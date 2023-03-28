@@ -3,86 +3,96 @@
 pub fn de_get_latest_assessment_id_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetLatestAssessmentIdOutput,
-    crate::error::GetLatestAssessmentIdError,
+    crate::operation::get_latest_assessment_id::GetLatestAssessmentIdOutput,
+    crate::operation::get_latest_assessment_id::GetLatestAssessmentIdError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetLatestAssessmentIdError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::get_latest_assessment_id::GetLatestAssessmentIdError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    let error_code = match generic.code() {
-        Some(code) => code,
-        None => return Err(crate::error::GetLatestAssessmentIdError::unhandled(generic)),
-    };
+    let error_code =
+        match generic.code() {
+            Some(code) => code,
+            None => return Err(
+                crate::operation::get_latest_assessment_id::GetLatestAssessmentIdError::unhandled(
+                    generic,
+                ),
+            ),
+        };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => {
-            crate::error::GetLatestAssessmentIdError::AccessDeniedException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "AccessDeniedException" => crate::operation::get_latest_assessment_id::GetLatestAssessmentIdError::AccessDeniedException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLatestAssessmentIdError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_latest_assessment_id::GetLatestAssessmentIdError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "DependencyException" => crate::error::GetLatestAssessmentIdError::DependencyException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::dependency_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_dependency_exception::de_dependency_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLatestAssessmentIdError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "InternalServerException" => {
-            crate::error::GetLatestAssessmentIdError::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "DependencyException" => crate::operation::get_latest_assessment_id::GetLatestAssessmentIdError::DependencyException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let mut output = crate::types::error::builders::DependencyExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLatestAssessmentIdError::unhandled)?;
+                    output = crate::protocol_serde::shape_dependency_exception::de_dependency_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_latest_assessment_id::GetLatestAssessmentIdError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ValidationException" => crate::error::GetLatestAssessmentIdError::ValidationException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLatestAssessmentIdError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::GetLatestAssessmentIdError::generic(generic),
+        "InternalServerException" => crate::operation::get_latest_assessment_id::GetLatestAssessmentIdError::InternalServerException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_latest_assessment_id::GetLatestAssessmentIdError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ValidationException" => crate::operation::get_latest_assessment_id::GetLatestAssessmentIdError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_latest_assessment_id::GetLatestAssessmentIdError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::get_latest_assessment_id::GetLatestAssessmentIdError::generic(generic)
     })
 }
 
@@ -90,19 +100,21 @@ pub fn de_get_latest_assessment_id_http_error(
 pub fn de_get_latest_assessment_id_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetLatestAssessmentIdOutput,
-    crate::error::GetLatestAssessmentIdError,
+    crate::operation::get_latest_assessment_id::GetLatestAssessmentIdOutput,
+    crate::operation::get_latest_assessment_id::GetLatestAssessmentIdError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_latest_assessment_id_output::Builder::default();
+        let mut output = crate::operation::get_latest_assessment_id::builders::GetLatestAssessmentIdOutputBuilder::default();
         let _ = response;
         output =
             crate::protocol_serde::shape_get_latest_assessment_id::de_get_latest_assessment_id(
                 response.body().as_ref(),
                 output,
             )
-            .map_err(crate::error::GetLatestAssessmentIdError::unhandled)?;
+            .map_err(
+                crate::operation::get_latest_assessment_id::GetLatestAssessmentIdError::unhandled,
+            )?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -112,9 +124,9 @@ pub fn de_get_latest_assessment_id_http_response(
 
 pub(crate) fn de_get_latest_assessment_id(
     value: &[u8],
-    mut builder: crate::output::get_latest_assessment_id_output::Builder,
+    mut builder: crate::operation::get_latest_assessment_id::builders::GetLatestAssessmentIdOutputBuilder,
 ) -> Result<
-    crate::output::get_latest_assessment_id_output::Builder,
+    crate::operation::get_latest_assessment_id::builders::GetLatestAssessmentIdOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

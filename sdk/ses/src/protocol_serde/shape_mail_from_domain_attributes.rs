@@ -2,7 +2,7 @@
 pub fn de_mail_from_domain_attributes(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::collections::HashMap<std::string::String, crate::model::IdentityMailFromDomainAttributes>,
+    std::collections::HashMap<std::string::String, crate::types::IdentityMailFromDomainAttributes>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::collections::HashMap::new();
@@ -21,11 +21,11 @@ pub fn de_mail_from_domain_attributes_entry(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
     out: &mut std::collections::HashMap<
         std::string::String,
-        crate::model::IdentityMailFromDomainAttributes,
+        crate::types::IdentityMailFromDomainAttributes,
     >,
 ) -> Result<(), aws_smithy_xml::decode::XmlDecodeError> {
     let mut k: Option<std::string::String> = None;
-    let mut v: Option<crate::model::IdentityMailFromDomainAttributes> = None;
+    let mut v: Option<crate::types::IdentityMailFromDomainAttributes> = None;
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("key") /* key com.amazonaws.ses#MailFromDomainAttributes$key */ =>  {

@@ -2,7 +2,7 @@
 pub(crate) fn de_batch_get_asset_property_aggregates_error_info<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::BatchGetAssetPropertyAggregatesErrorInfo>,
+    Option<crate::types::BatchGetAssetPropertyAggregatesErrorInfo>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::batch_get_asset_property_aggregates_error_info::Builder::default();
+                crate::types::builders::BatchGetAssetPropertyAggregatesErrorInfoBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -28,7 +28,7 @@ where
                                 builder = builder.set_error_code(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?.map(|s|
                                         s.to_unescaped().map(|u|
-                                            crate::model::BatchGetAssetPropertyAggregatesErrorCode::from(u.as_ref())
+                                            crate::types::BatchGetAssetPropertyAggregatesErrorCode::from(u.as_ref())
                                         )
                                     ).transpose()?
                                 );

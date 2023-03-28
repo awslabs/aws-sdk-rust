@@ -3,44 +3,40 @@
 pub fn de_decode_authorization_message_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DecodeAuthorizationMessageOutput,
-    crate::error::DecodeAuthorizationMessageError,
+    crate::operation::decode_authorization_message::DecodeAuthorizationMessageOutput,
+    crate::operation::decode_authorization_message::DecodeAuthorizationMessageError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DecodeAuthorizationMessageError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::decode_authorization_message::DecodeAuthorizationMessageError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::DecodeAuthorizationMessageError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::decode_authorization_message::DecodeAuthorizationMessageError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidAuthorizationMessageException" => {
-            crate::error::DecodeAuthorizationMessageError::InvalidAuthorizationMessageException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidAuthorizationMessageException" => crate::operation::decode_authorization_message::DecodeAuthorizationMessageError::InvalidAuthorizationMessageException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_authorization_message_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidAuthorizationMessageExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_authorization_message_exception::de_invalid_authorization_message_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DecodeAuthorizationMessageError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_authorization_message_exception::de_invalid_authorization_message_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::decode_authorization_message::DecodeAuthorizationMessageError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DecodeAuthorizationMessageError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::decode_authorization_message::DecodeAuthorizationMessageError::generic(generic)
     })
 }
 
@@ -48,14 +44,14 @@ pub fn de_decode_authorization_message_http_error(
 pub fn de_decode_authorization_message_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DecodeAuthorizationMessageOutput,
-    crate::error::DecodeAuthorizationMessageError,
+    crate::operation::decode_authorization_message::DecodeAuthorizationMessageOutput,
+    crate::operation::decode_authorization_message::DecodeAuthorizationMessageError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::decode_authorization_message_output::Builder::default();
+        let mut output = crate::operation::decode_authorization_message::builders::DecodeAuthorizationMessageOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_decode_authorization_message::de_decode_authorization_message(response.body().as_ref(), output).map_err(crate::error::DecodeAuthorizationMessageError::unhandled)?;
+        output = crate::protocol_serde::shape_decode_authorization_message::de_decode_authorization_message(response.body().as_ref(), output).map_err(crate::operation::decode_authorization_message::DecodeAuthorizationMessageError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -64,13 +60,7 @@ pub fn de_decode_authorization_message_http_response(
 }
 
 #[allow(unused_mut)]
-pub fn de_decode_authorization_message(
-    inp: &[u8],
-    mut builder: crate::output::decode_authorization_message_output::Builder,
-) -> Result<
-    crate::output::decode_authorization_message_output::Builder,
-    aws_smithy_xml::decode::XmlDecodeError,
-> {
+pub fn de_decode_authorization_message(inp: &[u8], mut builder: crate::operation::decode_authorization_message::builders::DecodeAuthorizationMessageOutputBuilder) -> Result<crate::operation::decode_authorization_message::builders::DecodeAuthorizationMessageOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

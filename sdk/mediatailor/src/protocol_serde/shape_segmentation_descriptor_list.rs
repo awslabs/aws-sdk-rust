@@ -2,7 +2,7 @@
 pub(crate) fn de_segmentation_descriptor_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SegmentationDescriptor>>,
+    Option<std::vec::Vec<crate::types::SegmentationDescriptor>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_model_package_validation_profiles<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ModelPackageValidationProfile>>,
+    Option<std::vec::Vec<crate::types::ModelPackageValidationProfile>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

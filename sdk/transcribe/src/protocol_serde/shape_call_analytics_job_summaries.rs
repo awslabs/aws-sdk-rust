@@ -2,7 +2,7 @@
 pub(crate) fn de_call_analytics_job_summaries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CallAnalyticsJobSummary>>,
+    Option<std::vec::Vec<crate::types::CallAnalyticsJobSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

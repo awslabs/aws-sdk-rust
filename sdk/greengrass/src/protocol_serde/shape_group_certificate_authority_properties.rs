@@ -2,7 +2,7 @@
 pub(crate) fn de_group_certificate_authority_properties<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::GroupCertificateAuthorityProperties>,
+    Option<crate::types::GroupCertificateAuthorityProperties>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::group_certificate_authority_properties::Builder::default();
+                crate::types::builders::GroupCertificateAuthorityPropertiesBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

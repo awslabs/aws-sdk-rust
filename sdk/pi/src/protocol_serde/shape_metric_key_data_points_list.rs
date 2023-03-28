@@ -2,7 +2,7 @@
 pub(crate) fn de_metric_key_data_points_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::MetricKeyDataPoints>>,
+    Option<std::vec::Vec<crate::types::MetricKeyDataPoints>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_reserved_instance_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ReservedInstance>>,
+    Option<std::vec::Vec<crate::types::ReservedInstance>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

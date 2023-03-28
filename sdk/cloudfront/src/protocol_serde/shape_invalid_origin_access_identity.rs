@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_invalid_origin_access_identity_xml_err(
     inp: &[u8],
-    mut builder: crate::error::invalid_origin_access_identity::Builder,
+    mut builder: crate::types::error::builders::InvalidOriginAccessIdentityBuilder,
 ) -> Result<
-    crate::error::invalid_origin_access_identity::Builder,
+    crate::types::error::builders::InvalidOriginAccessIdentityBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

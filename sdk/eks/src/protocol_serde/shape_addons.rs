@@ -2,7 +2,7 @@
 pub(crate) fn de_addons<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AddonInfo>>,
+    Option<std::vec::Vec<crate::types::AddonInfo>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

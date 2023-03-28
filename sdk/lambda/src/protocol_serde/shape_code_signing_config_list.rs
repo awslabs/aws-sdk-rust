@@ -2,7 +2,7 @@
 pub(crate) fn de_code_signing_config_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CodeSigningConfig>>,
+    Option<std::vec::Vec<crate::types::CodeSigningConfig>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

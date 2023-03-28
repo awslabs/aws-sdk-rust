@@ -2,7 +2,7 @@
 pub(crate) fn de_aws_waf_regional_web_acl_rules_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AwsWafRegionalWebAclRulesListDetails>>,
+    Option<std::vec::Vec<crate::types::AwsWafRegionalWebAclRulesListDetails>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

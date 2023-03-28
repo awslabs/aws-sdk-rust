@@ -2,7 +2,7 @@
 pub(crate) fn de_configuration_recorder_status_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ConfigurationRecorderStatus>>,
+    Option<std::vec::Vec<crate::types::ConfigurationRecorderStatus>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

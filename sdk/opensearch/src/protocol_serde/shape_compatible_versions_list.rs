@@ -2,7 +2,7 @@
 pub(crate) fn de_compatible_versions_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CompatibleVersionsMap>>,
+    Option<std::vec::Vec<crate::types::CompatibleVersionsMap>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

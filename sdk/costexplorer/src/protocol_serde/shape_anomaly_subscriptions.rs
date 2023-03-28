@@ -2,7 +2,7 @@
 pub(crate) fn de_anomaly_subscriptions<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AnomalySubscription>>,
+    Option<std::vec::Vec<crate::types::AnomalySubscription>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

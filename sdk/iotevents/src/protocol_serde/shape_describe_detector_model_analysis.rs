@@ -3,112 +3,106 @@
 pub fn de_describe_detector_model_analysis_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeDetectorModelAnalysisOutput,
-    crate::error::DescribeDetectorModelAnalysisError,
+    crate::operation::describe_detector_model_analysis::DescribeDetectorModelAnalysisOutput,
+    crate::operation::describe_detector_model_analysis::DescribeDetectorModelAnalysisError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeDetectorModelAnalysisError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::describe_detector_model_analysis::DescribeDetectorModelAnalysisError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::DescribeDetectorModelAnalysisError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::describe_detector_model_analysis::DescribeDetectorModelAnalysisError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalFailureException" => {
-            crate::error::DescribeDetectorModelAnalysisError::InternalFailureException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalFailureException" => crate::operation::describe_detector_model_analysis::DescribeDetectorModelAnalysisError::InternalFailureException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_failure_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InternalFailureExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDetectorModelAnalysisError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_detector_model_analysis::DescribeDetectorModelAnalysisError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidRequestException" => {
-            crate::error::DescribeDetectorModelAnalysisError::InvalidRequestException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidRequestException" => crate::operation::describe_detector_model_analysis::DescribeDetectorModelAnalysisError::InvalidRequestException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_request_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDetectorModelAnalysisError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_detector_model_analysis::DescribeDetectorModelAnalysisError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ResourceNotFoundException" => {
-            crate::error::DescribeDetectorModelAnalysisError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::describe_detector_model_analysis::DescribeDetectorModelAnalysisError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDetectorModelAnalysisError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_detector_model_analysis::DescribeDetectorModelAnalysisError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ServiceUnavailableException" => {
-            crate::error::DescribeDetectorModelAnalysisError::ServiceUnavailableException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ServiceUnavailableException" => crate::operation::describe_detector_model_analysis::DescribeDetectorModelAnalysisError::ServiceUnavailableException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::service_unavailable_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDetectorModelAnalysisError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_detector_model_analysis::DescribeDetectorModelAnalysisError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ThrottlingException" => {
-            crate::error::DescribeDetectorModelAnalysisError::ThrottlingException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ThrottlingException" => crate::operation::describe_detector_model_analysis::DescribeDetectorModelAnalysisError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDetectorModelAnalysisError::unhandled)?;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_detector_model_analysis::DescribeDetectorModelAnalysisError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DescribeDetectorModelAnalysisError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::describe_detector_model_analysis::DescribeDetectorModelAnalysisError::generic(generic)
     })
 }
 
@@ -116,14 +110,14 @@ pub fn de_describe_detector_model_analysis_http_error(
 pub fn de_describe_detector_model_analysis_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeDetectorModelAnalysisOutput,
-    crate::error::DescribeDetectorModelAnalysisError,
+    crate::operation::describe_detector_model_analysis::DescribeDetectorModelAnalysisOutput,
+    crate::operation::describe_detector_model_analysis::DescribeDetectorModelAnalysisError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_detector_model_analysis_output::Builder::default();
+        let mut output = crate::operation::describe_detector_model_analysis::builders::DescribeDetectorModelAnalysisOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_describe_detector_model_analysis::de_describe_detector_model_analysis(response.body().as_ref(), output).map_err(crate::error::DescribeDetectorModelAnalysisError::unhandled)?;
+        output = crate::protocol_serde::shape_describe_detector_model_analysis::de_describe_detector_model_analysis(response.body().as_ref(), output).map_err(crate::operation::describe_detector_model_analysis::DescribeDetectorModelAnalysisError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -131,13 +125,7 @@ pub fn de_describe_detector_model_analysis_http_response(
     })
 }
 
-pub(crate) fn de_describe_detector_model_analysis(
-    value: &[u8],
-    mut builder: crate::output::describe_detector_model_analysis_output::Builder,
-) -> Result<
-    crate::output::describe_detector_model_analysis_output::Builder,
-    aws_smithy_json::deserialize::error::DeserializeError,
-> {
+pub(crate) fn de_describe_detector_model_analysis(value: &[u8], mut builder: crate::operation::describe_detector_model_analysis::builders::DescribeDetectorModelAnalysisOutputBuilder) -> Result<crate::operation::describe_detector_model_analysis::builders::DescribeDetectorModelAnalysisOutputBuilder, aws_smithy_json::deserialize::error::DeserializeError>{
     let mut tokens_owned =
         aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
             .peekable();
@@ -155,7 +143,7 @@ pub(crate) fn de_describe_detector_model_analysis(
                             )?
                             .map(|s| {
                                 s.to_unescaped()
-                                    .map(|u| crate::model::AnalysisStatus::from(u.as_ref()))
+                                    .map(|u| crate::types::AnalysisStatus::from(u.as_ref()))
                             })
                             .transpose()?,
                         );

@@ -2,7 +2,7 @@
 pub(crate) fn de_read_set_batch_error_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ReadSetBatchError>>,
+    Option<std::vec::Vec<crate::types::ReadSetBatchError>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_rescore_execution_plan_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::RescoreExecutionPlanSummary>>,
+    Option<std::vec::Vec<crate::types::RescoreExecutionPlanSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

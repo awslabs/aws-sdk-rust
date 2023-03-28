@@ -2,352 +2,368 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_modify_cluster_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ModifyClusterOutput, crate::error::ModifyClusterError> {
+) -> std::result::Result<
+    crate::operation::modify_cluster::ModifyClusterOutput,
+    crate::operation::modify_cluster::ModifyClusterError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ModifyClusterError::unhandled)?;
+        .map_err(crate::operation::modify_cluster::ModifyClusterError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ModifyClusterError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::modify_cluster::ModifyClusterError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ClusterAlreadyExists" => crate::error::ModifyClusterError::ClusterAlreadyExistsFault({
+        "ClusterAlreadyExists" => crate::operation::modify_cluster::ModifyClusterError::ClusterAlreadyExistsFault({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::cluster_already_exists_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_cluster_already_exists_fault::de_cluster_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyClusterError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ClusterAlreadyExistsFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_cluster_already_exists_fault::de_cluster_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_cluster::ModifyClusterError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "ClusterNotFound" => crate::error::ModifyClusterError::ClusterNotFoundFault({
+        "ClusterNotFound" => crate::operation::modify_cluster::ModifyClusterError::ClusterNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::cluster_not_found_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_cluster_not_found_fault::de_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyClusterError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ClusterNotFoundFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_cluster_not_found_fault::de_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_cluster::ModifyClusterError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "ClusterParameterGroupNotFound" => {
-            crate::error::ModifyClusterError::ClusterParameterGroupNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::cluster_parameter_group_not_found_fault::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_cluster_parameter_group_not_found_fault::de_cluster_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyClusterError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ClusterSecurityGroupNotFound" => {
-            crate::error::ModifyClusterError::ClusterSecurityGroupNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::cluster_security_group_not_found_fault::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_cluster_security_group_not_found_fault::de_cluster_security_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyClusterError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "DependentServiceRequestThrottlingFault" => {
-            crate::error::ModifyClusterError::DependentServiceRequestThrottlingFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::dependent_service_request_throttling_fault::Builder::default(
-                        );
-                    let _ = response;
-                    output = crate::protocol_serde::shape_dependent_service_request_throttling_fault::de_dependent_service_request_throttling_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyClusterError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "HsmClientCertificateNotFoundFault" => {
-            crate::error::ModifyClusterError::HsmClientCertificateNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::hsm_client_certificate_not_found_fault::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_hsm_client_certificate_not_found_fault::de_hsm_client_certificate_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyClusterError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "HsmConfigurationNotFoundFault" => {
-            crate::error::ModifyClusterError::HsmConfigurationNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::hsm_configuration_not_found_fault::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_hsm_configuration_not_found_fault::de_hsm_configuration_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyClusterError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InsufficientClusterCapacity" => {
-            crate::error::ModifyClusterError::InsufficientClusterCapacityFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::insufficient_cluster_capacity_fault::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_insufficient_cluster_capacity_fault::de_insufficient_cluster_capacity_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyClusterError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InvalidClusterSecurityGroupState" => {
-            crate::error::ModifyClusterError::InvalidClusterSecurityGroupStateFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_cluster_security_group_state_fault::Builder::default(
-                        );
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_cluster_security_group_state_fault::de_invalid_cluster_security_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyClusterError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InvalidClusterState" => crate::error::ModifyClusterError::InvalidClusterStateFault({
+        "ClusterParameterGroupNotFound" => crate::operation::modify_cluster::ModifyClusterError::ClusterParameterGroupNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::invalid_cluster_state_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_cluster_state_fault::de_invalid_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyClusterError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ClusterParameterGroupNotFoundFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_cluster_parameter_group_not_found_fault::de_cluster_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_cluster::ModifyClusterError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "InvalidClusterTrack" => crate::error::ModifyClusterError::InvalidClusterTrackFault({
+        "ClusterSecurityGroupNotFound" => crate::operation::modify_cluster::ModifyClusterError::ClusterSecurityGroupNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::invalid_cluster_track_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_cluster_track_fault::de_invalid_cluster_track_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyClusterError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InvalidElasticIpFault" => crate::error::ModifyClusterError::InvalidElasticIpFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::invalid_elastic_ip_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_elastic_ip_fault::de_invalid_elastic_ip_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyClusterError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InvalidRetentionPeriodFault" => {
-            crate::error::ModifyClusterError::InvalidRetentionPeriodFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_retention_period_fault::Builder::default();
+                    let mut output = crate::types::error::builders::ClusterSecurityGroupNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_retention_period_fault::de_invalid_retention_period_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyClusterError::unhandled)?;
+                    output = crate::protocol_serde::shape_cluster_security_group_not_found_fault::de_cluster_security_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_cluster::ModifyClusterError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "LimitExceededFault" => crate::error::ModifyClusterError::LimitExceededFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::limit_exceeded_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_limit_exceeded_fault::de_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyClusterError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "NumberOfNodesPerClusterLimitExceeded" => {
-            crate::error::ModifyClusterError::NumberOfNodesPerClusterLimitExceededFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "DependentServiceRequestThrottlingFault" => crate::operation::modify_cluster::ModifyClusterError::DependentServiceRequestThrottlingFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::number_of_nodes_per_cluster_limit_exceeded_fault::Builder::default();
+                    let mut output = crate::types::error::builders::DependentServiceRequestThrottlingFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_number_of_nodes_per_cluster_limit_exceeded_fault::de_number_of_nodes_per_cluster_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyClusterError::unhandled)?;
+                    output = crate::protocol_serde::shape_dependent_service_request_throttling_fault::de_dependent_service_request_throttling_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_cluster::ModifyClusterError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "NumberOfNodesQuotaExceeded" => {
-            crate::error::ModifyClusterError::NumberOfNodesQuotaExceededFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "HsmClientCertificateNotFoundFault" => crate::operation::modify_cluster::ModifyClusterError::HsmClientCertificateNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::number_of_nodes_quota_exceeded_fault::Builder::default();
+                    let mut output = crate::types::error::builders::HsmClientCertificateNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_number_of_nodes_quota_exceeded_fault::de_number_of_nodes_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyClusterError::unhandled)?;
+                    output = crate::protocol_serde::shape_hsm_client_certificate_not_found_fault::de_hsm_client_certificate_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_cluster::ModifyClusterError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "TableLimitExceeded" => crate::error::ModifyClusterError::TableLimitExceededFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::table_limit_exceeded_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_table_limit_exceeded_fault::de_table_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyClusterError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "UnauthorizedOperation" => crate::error::ModifyClusterError::UnauthorizedOperation({
+        "HsmConfigurationNotFoundFault" => crate::operation::modify_cluster::ModifyClusterError::HsmConfigurationNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_operation::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_unauthorized_operation::de_unauthorized_operation_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyClusterError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::HsmConfigurationNotFoundFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_hsm_configuration_not_found_fault::de_hsm_configuration_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_cluster::ModifyClusterError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "UnsupportedOptionFault" => crate::error::ModifyClusterError::UnsupportedOptionFault({
+        "InsufficientClusterCapacity" => crate::operation::modify_cluster::ModifyClusterError::InsufficientClusterCapacityFault({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::unsupported_option_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_unsupported_option_fault::de_unsupported_option_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyClusterError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InsufficientClusterCapacityFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_insufficient_cluster_capacity_fault::de_insufficient_cluster_capacity_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_cluster::ModifyClusterError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::ModifyClusterError::generic(generic),
+        "InvalidClusterSecurityGroupState" => crate::operation::modify_cluster::ModifyClusterError::InvalidClusterSecurityGroupStateFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidClusterSecurityGroupStateFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_cluster_security_group_state_fault::de_invalid_cluster_security_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_cluster::ModifyClusterError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidClusterState" => crate::operation::modify_cluster::ModifyClusterError::InvalidClusterStateFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidClusterStateFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_cluster_state_fault::de_invalid_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_cluster::ModifyClusterError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidClusterTrack" => crate::operation::modify_cluster::ModifyClusterError::InvalidClusterTrackFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidClusterTrackFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_cluster_track_fault::de_invalid_cluster_track_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_cluster::ModifyClusterError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidElasticIpFault" => crate::operation::modify_cluster::ModifyClusterError::InvalidElasticIpFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidElasticIpFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_elastic_ip_fault::de_invalid_elastic_ip_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_cluster::ModifyClusterError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidRetentionPeriodFault" => crate::operation::modify_cluster::ModifyClusterError::InvalidRetentionPeriodFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidRetentionPeriodFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_retention_period_fault::de_invalid_retention_period_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_cluster::ModifyClusterError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "LimitExceededFault" => crate::operation::modify_cluster::ModifyClusterError::LimitExceededFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::LimitExceededFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_limit_exceeded_fault::de_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_cluster::ModifyClusterError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "NumberOfNodesPerClusterLimitExceeded" => crate::operation::modify_cluster::ModifyClusterError::NumberOfNodesPerClusterLimitExceededFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::NumberOfNodesPerClusterLimitExceededFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_number_of_nodes_per_cluster_limit_exceeded_fault::de_number_of_nodes_per_cluster_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_cluster::ModifyClusterError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "NumberOfNodesQuotaExceeded" => crate::operation::modify_cluster::ModifyClusterError::NumberOfNodesQuotaExceededFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::NumberOfNodesQuotaExceededFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_number_of_nodes_quota_exceeded_fault::de_number_of_nodes_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_cluster::ModifyClusterError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TableLimitExceeded" => crate::operation::modify_cluster::ModifyClusterError::TableLimitExceededFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::TableLimitExceededFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_table_limit_exceeded_fault::de_table_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_cluster::ModifyClusterError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "UnauthorizedOperation" => crate::operation::modify_cluster::ModifyClusterError::UnauthorizedOperation({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::UnauthorizedOperationBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_unauthorized_operation::de_unauthorized_operation_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_cluster::ModifyClusterError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "UnsupportedOptionFault" => crate::operation::modify_cluster::ModifyClusterError::UnsupportedOptionFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::UnsupportedOptionFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_unsupported_option_fault::de_unsupported_option_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_cluster::ModifyClusterError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::modify_cluster::ModifyClusterError::generic(generic)
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_modify_cluster_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ModifyClusterOutput, crate::error::ModifyClusterError> {
+) -> std::result::Result<
+    crate::operation::modify_cluster::ModifyClusterOutput,
+    crate::operation::modify_cluster::ModifyClusterError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::modify_cluster_output::Builder::default();
+        let mut output =
+            crate::operation::modify_cluster::builders::ModifyClusterOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_modify_cluster::de_modify_cluster(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ModifyClusterError::unhandled)?;
+        .map_err(crate::operation::modify_cluster::ModifyClusterError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -358,8 +374,11 @@ pub fn de_modify_cluster_http_response(
 #[allow(unused_mut)]
 pub fn de_modify_cluster(
     inp: &[u8],
-    mut builder: crate::output::modify_cluster_output::Builder,
-) -> Result<crate::output::modify_cluster_output::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    mut builder: crate::operation::modify_cluster::builders::ModifyClusterOutputBuilder,
+) -> Result<
+    crate::operation::modify_cluster::builders::ModifyClusterOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

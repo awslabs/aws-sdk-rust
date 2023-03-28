@@ -2,7 +2,7 @@
 pub(crate) fn de_outbound_connections<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::OutboundConnection>>,
+    Option<std::vec::Vec<crate::types::OutboundConnection>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

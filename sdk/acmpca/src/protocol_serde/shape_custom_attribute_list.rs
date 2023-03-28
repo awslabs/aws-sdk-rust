@@ -2,7 +2,7 @@
 pub(crate) fn de_custom_attribute_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CustomAttribute>>,
+    Option<std::vec::Vec<crate::types::CustomAttribute>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

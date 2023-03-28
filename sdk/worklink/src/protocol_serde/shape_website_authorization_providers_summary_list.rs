@@ -2,7 +2,7 @@
 pub(crate) fn de_website_authorization_providers_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::WebsiteAuthorizationProviderSummary>>,
+    Option<std::vec::Vec<crate::types::WebsiteAuthorizationProviderSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

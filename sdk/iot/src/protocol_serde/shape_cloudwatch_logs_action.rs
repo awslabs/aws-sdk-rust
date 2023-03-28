@@ -2,7 +2,7 @@
 pub(crate) fn de_cloudwatch_logs_action<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::CloudwatchLogsAction>,
+    Option<crate::types::CloudwatchLogsAction>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::cloudwatch_logs_action::Builder::default();
+            let mut builder = crate::types::builders::CloudwatchLogsActionBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -66,7 +66,7 @@ where
 
 pub fn ser_cloudwatch_logs_action(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::CloudwatchLogsAction,
+    input: &crate::types::CloudwatchLogsAction,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.role_arn {
         object.key("roleArn").string(var_1.as_str());

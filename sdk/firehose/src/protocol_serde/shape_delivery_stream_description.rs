@@ -2,7 +2,7 @@
 pub(crate) fn de_delivery_stream_description<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::DeliveryStreamDescription>,
+    Option<crate::types::DeliveryStreamDescription>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::delivery_stream_description::Builder::default();
+            let mut builder = crate::types::builders::DeliveryStreamDescriptionBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -48,7 +48,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::DeliveryStreamStatus::from(u.as_ref())
+                                            crate::types::DeliveryStreamStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -71,7 +71,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::DeliveryStreamType::from(u.as_ref())
+                                            crate::types::DeliveryStreamType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

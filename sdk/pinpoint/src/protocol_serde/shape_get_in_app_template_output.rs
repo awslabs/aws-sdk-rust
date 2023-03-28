@@ -2,10 +2,10 @@
 pub fn de_in_app_template_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::InAppTemplateResponse>,
-    crate::error::GetInAppTemplateError,
+    std::option::Option<crate::types::InAppTemplateResponse>,
+    crate::operation::get_in_app_template::GetInAppTemplateError,
 > {
     (!body.is_empty()).then(||{
-        crate::protocol_serde::shape_in_app_template_response::de_in_app_template_response_payload(body).map_err(crate::error::GetInAppTemplateError::unhandled)
+        crate::protocol_serde::shape_in_app_template_response::de_in_app_template_response_payload(body).map_err(crate::operation::get_in_app_template::GetInAppTemplateError::unhandled)
     }).transpose()
 }

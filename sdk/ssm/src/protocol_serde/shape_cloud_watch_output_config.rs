@@ -2,7 +2,7 @@
 pub(crate) fn de_cloud_watch_output_config<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::CloudWatchOutputConfig>,
+    Option<crate::types::CloudWatchOutputConfig>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::cloud_watch_output_config::Builder::default();
+            let mut builder = crate::types::builders::CloudWatchOutputConfigBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -64,7 +64,7 @@ where
 
 pub fn ser_cloud_watch_output_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::CloudWatchOutputConfig,
+    input: &crate::types::CloudWatchOutputConfig,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.cloud_watch_log_group_name {
         object.key("CloudWatchLogGroupName").string(var_1.as_str());

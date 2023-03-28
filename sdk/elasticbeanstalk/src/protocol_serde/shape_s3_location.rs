@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_s3_location(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::S3Location,
+    input: &crate::types::S3Location,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("S3Bucket");
@@ -19,9 +19,9 @@ pub fn ser_s3_location(
 
 pub fn de_s3_location(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::S3Location, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::S3Location, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::S3Location::builder();
+    let mut builder = crate::types::S3Location::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("S3Bucket") /* S3Bucket com.amazonaws.elasticbeanstalk#S3Location$S3Bucket */ =>  {

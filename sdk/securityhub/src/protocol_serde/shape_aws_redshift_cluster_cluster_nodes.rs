@@ -2,7 +2,7 @@
 pub(crate) fn de_aws_redshift_cluster_cluster_nodes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AwsRedshiftClusterClusterNode>>,
+    Option<std::vec::Vec<crate::types::AwsRedshiftClusterClusterNode>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

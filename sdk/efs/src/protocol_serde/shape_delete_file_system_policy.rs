@@ -3,93 +3,96 @@
 pub fn de_delete_file_system_policy_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteFileSystemPolicyOutput,
-    crate::error::DeleteFileSystemPolicyError,
+    crate::operation::delete_file_system_policy::DeleteFileSystemPolicyOutput,
+    crate::operation::delete_file_system_policy::DeleteFileSystemPolicyError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteFileSystemPolicyError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::delete_file_system_policy::DeleteFileSystemPolicyError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::DeleteFileSystemPolicyError::unhandled(
-                generic,
-            ))
-        }
-    };
+    let error_code =
+        match generic.code() {
+            Some(code) => code,
+            None => return Err(
+                crate::operation::delete_file_system_policy::DeleteFileSystemPolicyError::unhandled(
+                    generic,
+                ),
+            ),
+        };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequest" => crate::error::DeleteFileSystemPolicyError::BadRequest({
+        "BadRequest" => crate::operation::delete_file_system_policy::DeleteFileSystemPolicyError::BadRequest({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_bad_request::de_bad_request_json_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::DeleteFileSystemPolicyError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "FileSystemNotFound" => crate::error::DeleteFileSystemPolicyError::FileSystemNotFound({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::file_system_not_found::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_file_system_not_found::de_file_system_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFileSystemPolicyError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "IncorrectFileSystemLifeCycleState" => {
-            crate::error::DeleteFileSystemPolicyError::IncorrectFileSystemLifeCycleState({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::incorrect_file_system_life_cycle_state::Builder::default();
+                    let mut output = crate::types::error::builders::BadRequestBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_incorrect_file_system_life_cycle_state::de_incorrect_file_system_life_cycle_state_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFileSystemPolicyError::unhandled)?;
+                    output = crate::protocol_serde::shape_bad_request::de_bad_request_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_file_system_policy::DeleteFileSystemPolicyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InternalServerError" => crate::error::DeleteFileSystemPolicyError::InternalServerError({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_error::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFileSystemPolicyError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::DeleteFileSystemPolicyError::generic(generic),
+        "FileSystemNotFound" => crate::operation::delete_file_system_policy::DeleteFileSystemPolicyError::FileSystemNotFound({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::FileSystemNotFoundBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_file_system_not_found::de_file_system_not_found_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_file_system_policy::DeleteFileSystemPolicyError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "IncorrectFileSystemLifeCycleState" => crate::operation::delete_file_system_policy::DeleteFileSystemPolicyError::IncorrectFileSystemLifeCycleState({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::IncorrectFileSystemLifeCycleStateBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_incorrect_file_system_life_cycle_state::de_incorrect_file_system_life_cycle_state_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_file_system_policy::DeleteFileSystemPolicyError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InternalServerError" => crate::operation::delete_file_system_policy::DeleteFileSystemPolicyError::InternalServerError({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InternalServerErrorBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_file_system_policy::DeleteFileSystemPolicyError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::delete_file_system_policy::DeleteFileSystemPolicyError::generic(generic)
     })
 }
 
@@ -97,12 +100,12 @@ pub fn de_delete_file_system_policy_http_error(
 pub fn de_delete_file_system_policy_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteFileSystemPolicyOutput,
-    crate::error::DeleteFileSystemPolicyError,
+    crate::operation::delete_file_system_policy::DeleteFileSystemPolicyOutput,
+    crate::operation::delete_file_system_policy::DeleteFileSystemPolicyError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_file_system_policy_output::Builder::default();
+        let mut output = crate::operation::delete_file_system_policy::builders::DeleteFileSystemPolicyOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

@@ -2,7 +2,7 @@
 pub(crate) fn de_retention_period<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::RetentionPeriod>,
+    Option<crate::types::RetentionPeriod>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::retention_period::Builder::default();
+            let mut builder = crate::types::builders::RetentionPeriodBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -39,7 +39,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::RetentionPeriodUnit::from(u.as_ref())
+                                            crate::types::RetentionPeriodUnit::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -70,7 +70,7 @@ where
 
 pub fn ser_retention_period(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::RetentionPeriod,
+    input: &crate::types::RetentionPeriod,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.retention_period_value {
         object.key("RetentionPeriodValue").number(

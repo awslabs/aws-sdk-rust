@@ -2,7 +2,7 @@
 pub(crate) fn de_tag_cost_estimation_resource_collection_filters<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::TagCostEstimationResourceCollectionFilter>>,
+    Option<std::vec::Vec<crate::types::TagCostEstimationResourceCollectionFilter>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

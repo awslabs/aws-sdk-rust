@@ -2,7 +2,7 @@
 pub fn de_fleet_launch_template_config_list(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::FleetLaunchTemplateConfig>,
+    std::vec::Vec<crate::types::FleetLaunchTemplateConfig>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

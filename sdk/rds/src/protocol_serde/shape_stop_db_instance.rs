@@ -2,43 +2,52 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_stop_db_instance_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::StopDbInstanceOutput, crate::error::StopDBInstanceError> {
+) -> std::result::Result<
+    crate::operation::stop_db_instance::StopDbInstanceOutput,
+    crate::operation::stop_db_instance::StopDBInstanceError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::StopDBInstanceError::unhandled)?;
+        .map_err(crate::operation::stop_db_instance::StopDBInstanceError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::StopDBInstanceError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::stop_db_instance::StopDBInstanceError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBInstanceNotFound" => crate::error::StopDBInstanceError::DbInstanceNotFoundFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::db_instance_not_found_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_db_instance_not_found_fault::de_db_instance_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::StopDBInstanceError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "DBSnapshotAlreadyExists" => {
-            crate::error::StopDBInstanceError::DbSnapshotAlreadyExistsFault({
+        "DBInstanceNotFound" => {
+            crate::operation::stop_db_instance::StopDBInstanceError::DbInstanceNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::db_snapshot_already_exists_fault::Builder::default();
+                        crate::types::error::builders::DbInstanceNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_db_snapshot_already_exists_fault::de_db_snapshot_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::StopDBInstanceError::unhandled)?;
+                    output = crate::protocol_serde::shape_db_instance_not_found_fault::de_db_instance_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::stop_db_instance::StopDBInstanceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "DBSnapshotAlreadyExists" => {
+            crate::operation::stop_db_instance::StopDBInstanceError::DbSnapshotAlreadyExistsFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::DbSnapshotAlreadyExistsFaultBuilder::default(
+                        );
+                    let _ = response;
+                    output = crate::protocol_serde::shape_db_snapshot_already_exists_fault::de_db_snapshot_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::stop_db_instance::StopDBInstanceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -49,14 +58,14 @@ pub fn de_stop_db_instance_http_error(
             })
         }
         "InvalidDBClusterStateFault" => {
-            crate::error::StopDBInstanceError::InvalidDbClusterStateFault({
+            crate::operation::stop_db_instance::StopDBInstanceError::InvalidDbClusterStateFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::invalid_db_cluster_state_fault::Builder::default();
+                        crate::types::error::builders::InvalidDbClusterStateFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_db_cluster_state_fault::de_invalid_db_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::StopDBInstanceError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_db_cluster_state_fault::de_invalid_db_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::stop_db_instance::StopDBInstanceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -67,14 +76,15 @@ pub fn de_stop_db_instance_http_error(
             })
         }
         "InvalidDBInstanceState" => {
-            crate::error::StopDBInstanceError::InvalidDbInstanceStateFault({
+            crate::operation::stop_db_instance::StopDBInstanceError::InvalidDbInstanceStateFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::invalid_db_instance_state_fault::Builder::default();
+                        crate::types::error::builders::InvalidDbInstanceStateFaultBuilder::default(
+                        );
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_db_instance_state_fault::de_invalid_db_instance_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::StopDBInstanceError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_db_instance_state_fault::de_invalid_db_instance_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::stop_db_instance::StopDBInstanceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -84,38 +94,45 @@ pub fn de_stop_db_instance_http_error(
                 tmp
             })
         }
-        "SnapshotQuotaExceeded" => crate::error::StopDBInstanceError::SnapshotQuotaExceededFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "SnapshotQuotaExceeded" => {
+            crate::operation::stop_db_instance::StopDBInstanceError::SnapshotQuotaExceededFault({
                 #[allow(unused_mut)]
-                let mut output = crate::error::snapshot_quota_exceeded_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_snapshot_quota_exceeded_fault::de_snapshot_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::StopDBInstanceError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::StopDBInstanceError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::SnapshotQuotaExceededFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_snapshot_quota_exceeded_fault::de_snapshot_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::stop_db_instance::StopDBInstanceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::stop_db_instance::StopDBInstanceError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_stop_db_instance_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::StopDbInstanceOutput, crate::error::StopDBInstanceError> {
+) -> std::result::Result<
+    crate::operation::stop_db_instance::StopDbInstanceOutput,
+    crate::operation::stop_db_instance::StopDBInstanceError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::stop_db_instance_output::Builder::default();
+        let mut output =
+            crate::operation::stop_db_instance::builders::StopDbInstanceOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_stop_db_instance::de_stop_db_instance(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::StopDBInstanceError::unhandled)?;
+        .map_err(crate::operation::stop_db_instance::StopDBInstanceError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -126,9 +143,11 @@ pub fn de_stop_db_instance_http_response(
 #[allow(unused_mut)]
 pub fn de_stop_db_instance(
     inp: &[u8],
-    mut builder: crate::output::stop_db_instance_output::Builder,
-) -> Result<crate::output::stop_db_instance_output::Builder, aws_smithy_xml::decode::XmlDecodeError>
-{
+    mut builder: crate::operation::stop_db_instance::builders::StopDbInstanceOutputBuilder,
+) -> Result<
+    crate::operation::stop_db_instance::builders::StopDbInstanceOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

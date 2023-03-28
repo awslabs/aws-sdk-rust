@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_key_signing_key_in_parent_ds_record_xml_err(
     inp: &[u8],
-    mut builder: crate::error::key_signing_key_in_parent_ds_record::Builder,
+    mut builder: crate::types::error::builders::KeySigningKeyInParentDsRecordBuilder,
 ) -> Result<
-    crate::error::key_signing_key_in_parent_ds_record::Builder,
+    crate::types::error::builders::KeySigningKeyInParentDsRecordBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

@@ -2,7 +2,7 @@
 pub(crate) fn de_monitoring_schedule_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::MonitoringScheduleSummary>,
+    Option<crate::types::MonitoringScheduleSummary>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::monitoring_schedule_summary::Builder::default();
+            let mut builder = crate::types::builders::MonitoringScheduleSummaryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -64,7 +64,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::ScheduleStatus::from(u.as_ref()))
+                                            .map(|u| crate::types::ScheduleStatus::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -94,7 +94,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::MonitoringType::from(u.as_ref()))
+                                            .map(|u| crate::types::MonitoringType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

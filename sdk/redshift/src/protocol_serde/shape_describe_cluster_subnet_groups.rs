@@ -3,61 +3,55 @@
 pub fn de_describe_cluster_subnet_groups_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeClusterSubnetGroupsOutput,
-    crate::error::DescribeClusterSubnetGroupsError,
+    crate::operation::describe_cluster_subnet_groups::DescribeClusterSubnetGroupsOutput,
+    crate::operation::describe_cluster_subnet_groups::DescribeClusterSubnetGroupsError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeClusterSubnetGroupsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::describe_cluster_subnet_groups::DescribeClusterSubnetGroupsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::DescribeClusterSubnetGroupsError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::describe_cluster_subnet_groups::DescribeClusterSubnetGroupsError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ClusterSubnetGroupNotFoundFault" => {
-            crate::error::DescribeClusterSubnetGroupsError::ClusterSubnetGroupNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "ClusterSubnetGroupNotFoundFault" => crate::operation::describe_cluster_subnet_groups::DescribeClusterSubnetGroupsError::ClusterSubnetGroupNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::cluster_subnet_group_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::ClusterSubnetGroupNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_cluster_subnet_group_not_found_fault::de_cluster_subnet_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeClusterSubnetGroupsError::unhandled)?;
+                    output = crate::protocol_serde::shape_cluster_subnet_group_not_found_fault::de_cluster_subnet_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::describe_cluster_subnet_groups::DescribeClusterSubnetGroupsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidTagFault" => {
-            crate::error::DescribeClusterSubnetGroupsError::InvalidTagFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidTagFault" => crate::operation::describe_cluster_subnet_groups::DescribeClusterSubnetGroupsError::InvalidTagFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_tag_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidTagFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_tag_fault::de_invalid_tag_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeClusterSubnetGroupsError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_tag_fault::de_invalid_tag_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::describe_cluster_subnet_groups::DescribeClusterSubnetGroupsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DescribeClusterSubnetGroupsError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::describe_cluster_subnet_groups::DescribeClusterSubnetGroupsError::generic(generic)
     })
 }
 
@@ -65,14 +59,14 @@ pub fn de_describe_cluster_subnet_groups_http_error(
 pub fn de_describe_cluster_subnet_groups_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeClusterSubnetGroupsOutput,
-    crate::error::DescribeClusterSubnetGroupsError,
+    crate::operation::describe_cluster_subnet_groups::DescribeClusterSubnetGroupsOutput,
+    crate::operation::describe_cluster_subnet_groups::DescribeClusterSubnetGroupsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_cluster_subnet_groups_output::Builder::default();
+        let mut output = crate::operation::describe_cluster_subnet_groups::builders::DescribeClusterSubnetGroupsOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_describe_cluster_subnet_groups::de_describe_cluster_subnet_groups(response.body().as_ref(), output).map_err(crate::error::DescribeClusterSubnetGroupsError::unhandled)?;
+        output = crate::protocol_serde::shape_describe_cluster_subnet_groups::de_describe_cluster_subnet_groups(response.body().as_ref(), output).map_err(crate::operation::describe_cluster_subnet_groups::DescribeClusterSubnetGroupsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -81,13 +75,7 @@ pub fn de_describe_cluster_subnet_groups_http_response(
 }
 
 #[allow(unused_mut)]
-pub fn de_describe_cluster_subnet_groups(
-    inp: &[u8],
-    mut builder: crate::output::describe_cluster_subnet_groups_output::Builder,
-) -> Result<
-    crate::output::describe_cluster_subnet_groups_output::Builder,
-    aws_smithy_xml::decode::XmlDecodeError,
-> {
+pub fn de_describe_cluster_subnet_groups(inp: &[u8], mut builder: crate::operation::describe_cluster_subnet_groups::builders::DescribeClusterSubnetGroupsOutputBuilder) -> Result<crate::operation::describe_cluster_subnet_groups::builders::DescribeClusterSubnetGroupsOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

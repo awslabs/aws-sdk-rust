@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_metric_stream_statistics_configuration(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::MetricStreamStatisticsConfiguration,
+    input: &crate::types::MetricStreamStatisticsConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("IncludeMetrics");
@@ -31,10 +31,10 @@ pub fn ser_metric_stream_statistics_configuration(
 
 pub fn de_metric_stream_statistics_configuration(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::MetricStreamStatisticsConfiguration, aws_smithy_xml::decode::XmlDecodeError>
+) -> Result<crate::types::MetricStreamStatisticsConfiguration, aws_smithy_xml::decode::XmlDecodeError>
 {
     #[allow(unused_mut)]
-    let mut builder = crate::model::MetricStreamStatisticsConfiguration::builder();
+    let mut builder = crate::types::MetricStreamStatisticsConfiguration::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("IncludeMetrics") /* IncludeMetrics com.amazonaws.cloudwatch#MetricStreamStatisticsConfiguration$IncludeMetrics */ =>  {

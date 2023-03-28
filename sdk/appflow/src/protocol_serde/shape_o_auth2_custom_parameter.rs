@@ -2,7 +2,7 @@
 pub(crate) fn de_o_auth2_custom_parameter<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::OAuth2CustomParameter>,
+    Option<crate::types::OAuth2CustomParameter>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::o_auth2_custom_parameter::Builder::default();
+            let mut builder = crate::types::builders::OAuth2CustomParameterBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -76,7 +76,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::OAuth2CustomPropType::from(u.as_ref())
+                                            crate::types::OAuth2CustomPropType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

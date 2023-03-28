@@ -3,31 +3,34 @@
 pub fn de_search_transit_gateway_routes_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::SearchTransitGatewayRoutesOutput,
-    crate::error::SearchTransitGatewayRoutesError,
+    crate::operation::search_transit_gateway_routes::SearchTransitGatewayRoutesOutput,
+    crate::operation::search_transit_gateway_routes::SearchTransitGatewayRoutesError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::SearchTransitGatewayRoutesError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::search_transit_gateway_routes::SearchTransitGatewayRoutesError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::SearchTransitGatewayRoutesError::generic(
-        generic,
-    ))
+    Err(
+        crate::operation::search_transit_gateway_routes::SearchTransitGatewayRoutesError::generic(
+            generic,
+        ),
+    )
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_search_transit_gateway_routes_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::SearchTransitGatewayRoutesOutput,
-    crate::error::SearchTransitGatewayRoutesError,
+    crate::operation::search_transit_gateway_routes::SearchTransitGatewayRoutesOutput,
+    crate::operation::search_transit_gateway_routes::SearchTransitGatewayRoutesError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::search_transit_gateway_routes_output::Builder::default();
+        let mut output = crate::operation::search_transit_gateway_routes::builders::SearchTransitGatewayRoutesOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_search_transit_gateway_routes::de_search_transit_gateway_routes(response.body().as_ref(), output).map_err(crate::error::SearchTransitGatewayRoutesError::unhandled)?;
+        output = crate::protocol_serde::shape_search_transit_gateway_routes::de_search_transit_gateway_routes(response.body().as_ref(), output).map_err(crate::operation::search_transit_gateway_routes::SearchTransitGatewayRoutesError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -36,13 +39,7 @@ pub fn de_search_transit_gateway_routes_http_response(
 }
 
 #[allow(unused_mut)]
-pub fn de_search_transit_gateway_routes(
-    inp: &[u8],
-    mut builder: crate::output::search_transit_gateway_routes_output::Builder,
-) -> Result<
-    crate::output::search_transit_gateway_routes_output::Builder,
-    aws_smithy_xml::decode::XmlDecodeError,
-> {
+pub fn de_search_transit_gateway_routes(inp: &[u8], mut builder: crate::operation::search_transit_gateway_routes::builders::SearchTransitGatewayRoutesOutputBuilder) -> Result<crate::operation::search_transit_gateway_routes::builders::SearchTransitGatewayRoutesOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

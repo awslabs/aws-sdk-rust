@@ -2,7 +2,7 @@
 pub(crate) fn de_listed_host_keys<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ListedHostKey>>,
+    Option<std::vec::Vec<crate::types::ListedHostKey>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

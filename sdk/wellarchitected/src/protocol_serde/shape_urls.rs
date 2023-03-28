@@ -2,7 +2,7 @@
 pub(crate) fn de_urls<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ChoiceContent>>,
+    Option<std::vec::Vec<crate::types::ChoiceContent>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

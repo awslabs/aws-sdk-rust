@@ -2,42 +2,31 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_assistant_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetAssistantOutput, crate::error::GetAssistantError> {
+) -> std::result::Result<
+    crate::operation::get_assistant::GetAssistantOutput,
+    crate::operation::get_assistant::GetAssistantError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetAssistantError::unhandled)?;
+        .map_err(crate::operation::get_assistant::GetAssistantError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::GetAssistantError::unhandled(generic)),
+        None => return Err(crate::operation::get_assistant::GetAssistantError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::GetAssistantError::AccessDeniedException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::access_denied_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAssistantError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ResourceNotFoundException" => {
-            crate::error::GetAssistantError::ResourceNotFoundException({
+        "AccessDeniedException" => {
+            crate::operation::get_assistant::GetAssistantError::AccessDeniedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::AccessDeniedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAssistantError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_assistant::GetAssistantError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -47,38 +36,63 @@ pub fn de_get_assistant_http_error(
                 tmp
             })
         }
-        "ValidationException" => crate::error::GetAssistantError::ValidationException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "ResourceNotFoundException" => {
+            crate::operation::get_assistant::GetAssistantError::ResourceNotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAssistantError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::GetAssistantError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_assistant::GetAssistantError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ValidationException" => {
+            crate::operation::get_assistant::GetAssistantError::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_assistant::GetAssistantError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::get_assistant::GetAssistantError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_assistant_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetAssistantOutput, crate::error::GetAssistantError> {
+) -> std::result::Result<
+    crate::operation::get_assistant::GetAssistantOutput,
+    crate::operation::get_assistant::GetAssistantError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_assistant_output::Builder::default();
+        let mut output =
+            crate::operation::get_assistant::builders::GetAssistantOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_get_assistant::de_get_assistant(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::GetAssistantError::unhandled)?;
+        .map_err(crate::operation::get_assistant::GetAssistantError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -88,9 +102,9 @@ pub fn de_get_assistant_http_response(
 
 pub(crate) fn de_get_assistant(
     value: &[u8],
-    mut builder: crate::output::get_assistant_output::Builder,
+    mut builder: crate::operation::get_assistant::builders::GetAssistantOutputBuilder,
 ) -> Result<
-    crate::output::get_assistant_output::Builder,
+    crate::operation::get_assistant::builders::GetAssistantOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

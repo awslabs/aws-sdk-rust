@@ -3,78 +3,72 @@
 pub fn de_describe_broker_instance_options_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeBrokerInstanceOptionsOutput,
-    crate::error::DescribeBrokerInstanceOptionsError,
+    crate::operation::describe_broker_instance_options::DescribeBrokerInstanceOptionsOutput,
+    crate::operation::describe_broker_instance_options::DescribeBrokerInstanceOptionsError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeBrokerInstanceOptionsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::describe_broker_instance_options::DescribeBrokerInstanceOptionsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::DescribeBrokerInstanceOptionsError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::describe_broker_instance_options::DescribeBrokerInstanceOptionsError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => {
-            crate::error::DescribeBrokerInstanceOptionsError::BadRequestException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "BadRequestException" => crate::operation::describe_broker_instance_options::DescribeBrokerInstanceOptionsError::BadRequestException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::bad_request_exception::Builder::default();
+                    let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeBrokerInstanceOptionsError::unhandled)?;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_broker_instance_options::DescribeBrokerInstanceOptionsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ForbiddenException" => {
-            crate::error::DescribeBrokerInstanceOptionsError::ForbiddenException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ForbiddenException" => crate::operation::describe_broker_instance_options::DescribeBrokerInstanceOptionsError::ForbiddenException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::forbidden_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ForbiddenExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeBrokerInstanceOptionsError::unhandled)?;
+                    output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_broker_instance_options::DescribeBrokerInstanceOptionsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InternalServerErrorException" => {
-            crate::error::DescribeBrokerInstanceOptionsError::InternalServerErrorException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InternalServerErrorException" => crate::operation::describe_broker_instance_options::DescribeBrokerInstanceOptionsError::InternalServerErrorException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::internal_server_error_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InternalServerErrorExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeBrokerInstanceOptionsError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_broker_instance_options::DescribeBrokerInstanceOptionsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DescribeBrokerInstanceOptionsError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::describe_broker_instance_options::DescribeBrokerInstanceOptionsError::generic(generic)
     })
 }
 
@@ -82,14 +76,14 @@ pub fn de_describe_broker_instance_options_http_error(
 pub fn de_describe_broker_instance_options_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeBrokerInstanceOptionsOutput,
-    crate::error::DescribeBrokerInstanceOptionsError,
+    crate::operation::describe_broker_instance_options::DescribeBrokerInstanceOptionsOutput,
+    crate::operation::describe_broker_instance_options::DescribeBrokerInstanceOptionsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_broker_instance_options_output::Builder::default();
+        let mut output = crate::operation::describe_broker_instance_options::builders::DescribeBrokerInstanceOptionsOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_describe_broker_instance_options::de_describe_broker_instance_options(response.body().as_ref(), output).map_err(crate::error::DescribeBrokerInstanceOptionsError::unhandled)?;
+        output = crate::protocol_serde::shape_describe_broker_instance_options::de_describe_broker_instance_options(response.body().as_ref(), output).map_err(crate::operation::describe_broker_instance_options::DescribeBrokerInstanceOptionsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -97,13 +91,7 @@ pub fn de_describe_broker_instance_options_http_response(
     })
 }
 
-pub(crate) fn de_describe_broker_instance_options(
-    value: &[u8],
-    mut builder: crate::output::describe_broker_instance_options_output::Builder,
-) -> Result<
-    crate::output::describe_broker_instance_options_output::Builder,
-    aws_smithy_json::deserialize::error::DeserializeError,
-> {
+pub(crate) fn de_describe_broker_instance_options(value: &[u8], mut builder: crate::operation::describe_broker_instance_options::builders::DescribeBrokerInstanceOptionsOutputBuilder) -> Result<crate::operation::describe_broker_instance_options::builders::DescribeBrokerInstanceOptionsOutputBuilder, aws_smithy_json::deserialize::error::DeserializeError>{
     let mut tokens_owned =
         aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
             .peekable();

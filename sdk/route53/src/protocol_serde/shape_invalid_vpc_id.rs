@@ -2,8 +2,11 @@
 #[allow(unused_mut)]
 pub fn de_invalid_vpc_id_xml_err(
     inp: &[u8],
-    mut builder: crate::error::invalid_vpc_id::Builder,
-) -> Result<crate::error::invalid_vpc_id::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    mut builder: crate::types::error::builders::InvalidVpcIdBuilder,
+) -> Result<
+    crate::types::error::builders::InvalidVpcIdBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     if inp.is_empty() {
         return Ok(builder);
     }

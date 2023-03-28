@@ -2,7 +2,7 @@
 pub(crate) fn de_managed_agents<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ManagedAgent>>,
+    Option<std::vec::Vec<crate::types::ManagedAgent>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

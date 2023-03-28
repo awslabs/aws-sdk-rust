@@ -2,7 +2,7 @@
 pub(crate) fn de_simulation_application_summaries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SimulationApplicationSummary>>,
+    Option<std::vec::Vec<crate::types::SimulationApplicationSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

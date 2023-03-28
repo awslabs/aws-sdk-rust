@@ -2,7 +2,7 @@
 pub(crate) fn de_ec2_instance_limit_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Ec2InstanceLimit>>,
+    Option<std::vec::Vec<crate::types::Ec2InstanceLimit>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

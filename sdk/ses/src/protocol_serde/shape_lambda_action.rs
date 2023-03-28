@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_lambda_action(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::LambdaAction,
+    input: &crate::types::LambdaAction,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("TopicArn");
@@ -24,9 +24,9 @@ pub fn ser_lambda_action(
 
 pub fn de_lambda_action(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::LambdaAction, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::LambdaAction, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::LambdaAction::builder();
+    let mut builder = crate::types::LambdaAction::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("TopicArn") /* TopicArn com.amazonaws.ses#LambdaAction$TopicArn */ =>  {
@@ -58,8 +58,8 @@ pub fn de_lambda_action(
             s if s.matches("InvocationType") /* InvocationType com.amazonaws.ses#LambdaAction$InvocationType */ =>  {
                 let var_9 =
                     Some(
-                        Result::<crate::model::InvocationType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::InvocationType::from(
+                        Result::<crate::types::InvocationType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::InvocationType::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

@@ -2,7 +2,7 @@
 pub(crate) fn de_virtual_router_listeners<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::VirtualRouterListener>>,
+    Option<std::vec::Vec<crate::types::VirtualRouterListener>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

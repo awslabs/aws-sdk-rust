@@ -3,60 +3,55 @@
 pub fn de_batch_describe_type_configurations_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::BatchDescribeTypeConfigurationsOutput,
-    crate::error::BatchDescribeTypeConfigurationsError,
+    crate::operation::batch_describe_type_configurations::BatchDescribeTypeConfigurationsOutput,
+    crate::operation::batch_describe_type_configurations::BatchDescribeTypeConfigurationsError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::BatchDescribeTypeConfigurationsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::batch_describe_type_configurations::BatchDescribeTypeConfigurationsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => return Err(crate::error::BatchDescribeTypeConfigurationsError::unhandled(generic)),
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::batch_describe_type_configurations::BatchDescribeTypeConfigurationsError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CFNRegistryException" => {
-            crate::error::BatchDescribeTypeConfigurationsError::CfnRegistryException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "CFNRegistryException" => crate::operation::batch_describe_type_configurations::BatchDescribeTypeConfigurationsError::CfnRegistryException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::cfn_registry_exception::Builder::default();
+                    let mut output = crate::types::error::builders::CfnRegistryExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_cfn_registry_exception::de_cfn_registry_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::BatchDescribeTypeConfigurationsError::unhandled)?;
+                    output = crate::protocol_serde::shape_cfn_registry_exception::de_cfn_registry_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::batch_describe_type_configurations::BatchDescribeTypeConfigurationsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "TypeConfigurationNotFoundException" => {
-            crate::error::BatchDescribeTypeConfigurationsError::TypeConfigurationNotFoundException(
-                {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TypeConfigurationNotFoundException" => crate::operation::batch_describe_type_configurations::BatchDescribeTypeConfigurationsError::TypeConfigurationNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::type_configuration_not_found_exception::Builder::default(
-                            );
-                        let _ = response;
-                        output = crate::protocol_serde::shape_type_configuration_not_found_exception::de_type_configuration_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::BatchDescribeTypeConfigurationsError::unhandled)?;
-                        let output = output.meta(generic);
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            )
-        }
-        _ => crate::error::BatchDescribeTypeConfigurationsError::generic(generic),
+                    let mut output = crate::types::error::builders::TypeConfigurationNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_type_configuration_not_found_exception::de_type_configuration_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::batch_describe_type_configurations::BatchDescribeTypeConfigurationsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::batch_describe_type_configurations::BatchDescribeTypeConfigurationsError::generic(generic)
     })
 }
 
@@ -64,15 +59,14 @@ pub fn de_batch_describe_type_configurations_http_error(
 pub fn de_batch_describe_type_configurations_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::BatchDescribeTypeConfigurationsOutput,
-    crate::error::BatchDescribeTypeConfigurationsError,
+    crate::operation::batch_describe_type_configurations::BatchDescribeTypeConfigurationsOutput,
+    crate::operation::batch_describe_type_configurations::BatchDescribeTypeConfigurationsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::output::batch_describe_type_configurations_output::Builder::default();
+        let mut output = crate::operation::batch_describe_type_configurations::builders::BatchDescribeTypeConfigurationsOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_batch_describe_type_configurations::de_batch_describe_type_configurations(response.body().as_ref(), output).map_err(crate::error::BatchDescribeTypeConfigurationsError::unhandled)?;
+        output = crate::protocol_serde::shape_batch_describe_type_configurations::de_batch_describe_type_configurations(response.body().as_ref(), output).map_err(crate::operation::batch_describe_type_configurations::BatchDescribeTypeConfigurationsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -81,13 +75,7 @@ pub fn de_batch_describe_type_configurations_http_response(
 }
 
 #[allow(unused_mut)]
-pub fn de_batch_describe_type_configurations(
-    inp: &[u8],
-    mut builder: crate::output::batch_describe_type_configurations_output::Builder,
-) -> Result<
-    crate::output::batch_describe_type_configurations_output::Builder,
-    aws_smithy_xml::decode::XmlDecodeError,
-> {
+pub fn de_batch_describe_type_configurations(inp: &[u8], mut builder: crate::operation::batch_describe_type_configurations::builders::BatchDescribeTypeConfigurationsOutputBuilder) -> Result<crate::operation::batch_describe_type_configurations::builders::BatchDescribeTypeConfigurationsOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

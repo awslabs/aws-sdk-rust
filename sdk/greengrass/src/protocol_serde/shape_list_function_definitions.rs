@@ -3,34 +3,30 @@
 pub fn de_list_function_definitions_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListFunctionDefinitionsOutput,
-    crate::error::ListFunctionDefinitionsError,
+    crate::operation::list_function_definitions::ListFunctionDefinitionsOutput,
+    crate::operation::list_function_definitions::ListFunctionDefinitionsError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListFunctionDefinitionsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::list_function_definitions::ListFunctionDefinitionsError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::ListFunctionDefinitionsError::generic(generic))
+    Err(crate::operation::list_function_definitions::ListFunctionDefinitionsError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_function_definitions_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListFunctionDefinitionsOutput,
-    crate::error::ListFunctionDefinitionsError,
+    crate::operation::list_function_definitions::ListFunctionDefinitionsOutput,
+    crate::operation::list_function_definitions::ListFunctionDefinitionsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_function_definitions_output::Builder::default();
+        let mut output = crate::operation::list_function_definitions::builders::ListFunctionDefinitionsOutputBuilder::default();
         let _ = response;
-        output =
-            crate::protocol_serde::shape_list_function_definitions::de_list_function_definitions(
-                response.body().as_ref(),
-                output,
-            )
-            .map_err(crate::error::ListFunctionDefinitionsError::unhandled)?;
+        output = crate::protocol_serde::shape_list_function_definitions::de_list_function_definitions(response.body().as_ref(), output).map_err(crate::operation::list_function_definitions::ListFunctionDefinitionsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -40,9 +36,9 @@ pub fn de_list_function_definitions_http_response(
 
 pub(crate) fn de_list_function_definitions(
     value: &[u8],
-    mut builder: crate::output::list_function_definitions_output::Builder,
+    mut builder: crate::operation::list_function_definitions::builders::ListFunctionDefinitionsOutputBuilder,
 ) -> Result<
-    crate::output::list_function_definitions_output::Builder,
+    crate::operation::list_function_definitions::builders::ListFunctionDefinitionsOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

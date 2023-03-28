@@ -2,7 +2,7 @@
 pub(crate) fn de_history_event_execution_data_details<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::HistoryEventExecutionDataDetails>,
+    Option<crate::types::HistoryEventExecutionDataDetails>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::history_event_execution_data_details::Builder::default();
+                crate::types::builders::HistoryEventExecutionDataDetailsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

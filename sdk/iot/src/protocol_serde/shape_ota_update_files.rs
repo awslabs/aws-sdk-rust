@@ -2,7 +2,7 @@
 pub(crate) fn de_ota_update_files<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::OtaUpdateFile>>,
+    Option<std::vec::Vec<crate::types::OtaUpdateFile>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_custom_routing_accelerator<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::CustomRoutingAccelerator>,
+    Option<crate::types::CustomRoutingAccelerator>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::custom_routing_accelerator::Builder::default();
+            let mut builder = crate::types::builders::CustomRoutingAcceleratorBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -48,7 +48,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::IpAddressType::from(u.as_ref()))
+                                            .map(|u| crate::types::IpAddressType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -81,7 +81,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::CustomRoutingAcceleratorStatus::from(
+                                            crate::types::CustomRoutingAcceleratorStatus::from(
                                                 u.as_ref(),
                                             )
                                         })

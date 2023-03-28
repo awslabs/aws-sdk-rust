@@ -2,7 +2,7 @@
 pub(crate) fn de_custom_verification_email_templates_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CustomVerificationEmailTemplateMetadata>>,
+    Option<std::vec::Vec<crate::types::CustomVerificationEmailTemplateMetadata>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

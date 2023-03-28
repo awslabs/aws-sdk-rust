@@ -2,7 +2,7 @@
 pub(crate) fn de_model_dashboard_monitoring_schedules<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ModelDashboardMonitoringSchedule>>,
+    Option<std::vec::Vec<crate::types::ModelDashboardMonitoringSchedule>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

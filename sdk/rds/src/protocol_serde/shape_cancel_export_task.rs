@@ -2,44 +2,35 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_cancel_export_task_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::CancelExportTaskOutput, crate::error::CancelExportTaskError>
-{
+) -> std::result::Result<
+    crate::operation::cancel_export_task::CancelExportTaskOutput,
+    crate::operation::cancel_export_task::CancelExportTaskError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::CancelExportTaskError::unhandled)?;
+        .map_err(crate::operation::cancel_export_task::CancelExportTaskError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::CancelExportTaskError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::cancel_export_task::CancelExportTaskError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ExportTaskNotFound" => crate::error::CancelExportTaskError::ExportTaskNotFoundFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::export_task_not_found_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_export_task_not_found_fault::de_export_task_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CancelExportTaskError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InvalidExportTaskStateFault" => {
-            crate::error::CancelExportTaskError::InvalidExportTaskStateFault({
+        "ExportTaskNotFound" => {
+            crate::operation::cancel_export_task::CancelExportTaskError::ExportTaskNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::invalid_export_task_state_fault::Builder::default();
+                        crate::types::error::builders::ExportTaskNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_export_task_state_fault::de_invalid_export_task_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CancelExportTaskError::unhandled)?;
+                    output = crate::protocol_serde::shape_export_task_not_found_fault::de_export_task_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::cancel_export_task::CancelExportTaskError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -49,24 +40,47 @@ pub fn de_cancel_export_task_http_error(
                 tmp
             })
         }
-        _ => crate::error::CancelExportTaskError::generic(generic),
+        "InvalidExportTaskStateFault" => {
+            crate::operation::cancel_export_task::CancelExportTaskError::InvalidExportTaskStateFault(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidExportTaskStateFaultBuilder::default();
+                        let _ = response;
+                        output = crate::protocol_serde::shape_invalid_export_task_state_fault::de_invalid_export_task_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::cancel_export_task::CancelExportTaskError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        _ => crate::operation::cancel_export_task::CancelExportTaskError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_cancel_export_task_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::CancelExportTaskOutput, crate::error::CancelExportTaskError>
-{
+) -> std::result::Result<
+    crate::operation::cancel_export_task::CancelExportTaskOutput,
+    crate::operation::cancel_export_task::CancelExportTaskError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::cancel_export_task_output::Builder::default();
+        let mut output =
+            crate::operation::cancel_export_task::builders::CancelExportTaskOutputBuilder::default(
+            );
         let _ = response;
         output = crate::protocol_serde::shape_cancel_export_task::de_cancel_export_task(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::CancelExportTaskError::unhandled)?;
+        .map_err(crate::operation::cancel_export_task::CancelExportTaskError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -77,9 +91,11 @@ pub fn de_cancel_export_task_http_response(
 #[allow(unused_mut)]
 pub fn de_cancel_export_task(
     inp: &[u8],
-    mut builder: crate::output::cancel_export_task_output::Builder,
-) -> Result<crate::output::cancel_export_task_output::Builder, aws_smithy_xml::decode::XmlDecodeError>
-{
+    mut builder: crate::operation::cancel_export_task::builders::CancelExportTaskOutputBuilder,
+) -> Result<
+    crate::operation::cancel_export_task::builders::CancelExportTaskOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -304,8 +320,8 @@ pub fn de_cancel_export_task(
             s if s.matches("SourceType") /* SourceType com.amazonaws.rds.synthetic#CancelExportTaskOutput$SourceType */ =>  {
                 let var_16 =
                     Some(
-                        Result::<crate::model::ExportSourceType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::ExportSourceType::from(
+                        Result::<crate::types::ExportSourceType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::ExportSourceType::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

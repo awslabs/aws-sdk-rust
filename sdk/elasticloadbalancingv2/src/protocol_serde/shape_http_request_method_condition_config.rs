@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_http_request_method_condition_config(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::HttpRequestMethodConditionConfig,
+    input: &crate::types::HttpRequestMethodConditionConfig,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Values");
@@ -20,10 +20,10 @@ pub fn ser_http_request_method_condition_config(
 
 pub fn de_http_request_method_condition_config(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::HttpRequestMethodConditionConfig, aws_smithy_xml::decode::XmlDecodeError>
+) -> Result<crate::types::HttpRequestMethodConditionConfig, aws_smithy_xml::decode::XmlDecodeError>
 {
     #[allow(unused_mut)]
-    let mut builder = crate::model::HttpRequestMethodConditionConfig::builder();
+    let mut builder = crate::types::HttpRequestMethodConditionConfig::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Values") /* Values com.amazonaws.elasticloadbalancingv2#HttpRequestMethodConditionConfig$Values */ =>  {

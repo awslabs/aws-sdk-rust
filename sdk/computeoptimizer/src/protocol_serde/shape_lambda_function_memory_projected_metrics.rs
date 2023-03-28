@@ -2,7 +2,7 @@
 pub(crate) fn de_lambda_function_memory_projected_metrics<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::LambdaFunctionMemoryProjectedMetric>>,
+    Option<std::vec::Vec<crate::types::LambdaFunctionMemoryProjectedMetric>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

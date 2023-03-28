@@ -2,7 +2,7 @@
 pub(crate) fn de_equipment_detection<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::EquipmentDetection>,
+    Option<crate::types::EquipmentDetection>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::equipment_detection::Builder::default();
+            let mut builder = crate::types::builders::EquipmentDetectionBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -45,7 +45,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ProtectiveEquipmentType::from(u.as_ref())
+                                            crate::types::ProtectiveEquipmentType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

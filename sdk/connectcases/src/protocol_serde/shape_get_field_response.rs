@@ -2,7 +2,7 @@
 pub(crate) fn de_get_field_response<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::GetFieldResponse>,
+    Option<crate::types::GetFieldResponse>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::get_field_response::Builder::default();
+            let mut builder = crate::types::builders::GetFieldResponseBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -66,7 +66,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::FieldType::from(u.as_ref()))
+                                            .map(|u| crate::types::FieldType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -78,7 +78,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::FieldNamespace::from(u.as_ref()))
+                                            .map(|u| crate::types::FieldNamespace::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

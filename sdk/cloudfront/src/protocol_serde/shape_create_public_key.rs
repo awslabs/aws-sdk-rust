@@ -2,87 +2,109 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_public_key_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::CreatePublicKeyOutput, crate::error::CreatePublicKeyError> {
+) -> std::result::Result<
+    crate::operation::create_public_key::CreatePublicKeyOutput,
+    crate::operation::create_public_key::CreatePublicKeyError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::CreatePublicKeyError::unhandled)?;
+        .map_err(crate::operation::create_public_key::CreatePublicKeyError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::CreatePublicKeyError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::create_public_key::CreatePublicKeyError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidArgument" => crate::error::CreatePublicKeyError::InvalidArgument({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "InvalidArgument" => {
+            crate::operation::create_public_key::CreatePublicKeyError::InvalidArgument({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_argument::Builder::default();
-                let _ = response;
-                output =
-                    crate::protocol_serde::shape_invalid_argument::de_invalid_argument_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreatePublicKeyError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "PublicKeyAlreadyExists" => crate::error::CreatePublicKeyError::PublicKeyAlreadyExists({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InvalidArgumentBuilder::default();
+                    let _ = response;
+                    output =
+                        crate::protocol_serde::shape_invalid_argument::de_invalid_argument_xml_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(
+                            crate::operation::create_public_key::CreatePublicKeyError::unhandled,
+                        )?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "PublicKeyAlreadyExists" => {
+            crate::operation::create_public_key::CreatePublicKeyError::PublicKeyAlreadyExists({
                 #[allow(unused_mut)]
-                let mut output = crate::error::public_key_already_exists::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_public_key_already_exists::de_public_key_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::error::CreatePublicKeyError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "TooManyPublicKeys" => crate::error::CreatePublicKeyError::TooManyPublicKeys({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::PublicKeyAlreadyExistsBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_public_key_already_exists::de_public_key_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_public_key::CreatePublicKeyError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "TooManyPublicKeys" => {
+            crate::operation::create_public_key::CreatePublicKeyError::TooManyPublicKeys({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_public_keys::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_too_many_public_keys::de_too_many_public_keys_xml_err(response.body().as_ref(), output).map_err(crate::error::CreatePublicKeyError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::CreatePublicKeyError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::TooManyPublicKeysBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_too_many_public_keys::de_too_many_public_keys_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_public_key::CreatePublicKeyError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::create_public_key::CreatePublicKeyError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_public_key_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::CreatePublicKeyOutput, crate::error::CreatePublicKeyError> {
+) -> std::result::Result<
+    crate::operation::create_public_key::CreatePublicKeyOutput,
+    crate::operation::create_public_key::CreatePublicKeyError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::create_public_key_output::Builder::default();
+        let mut output =
+            crate::operation::create_public_key::builders::CreatePublicKeyOutputBuilder::default();
         let _ = response;
         output = output.set_e_tag(
             crate::protocol_serde::shape_create_public_key_output::de_e_tag_header(
                 response.headers(),
             )
             .map_err(|_| {
-                crate::error::CreatePublicKeyError::unhandled(
+                crate::operation::create_public_key::CreatePublicKeyError::unhandled(
                     "Failed to parse ETag from header `ETag",
                 )
             })?,
@@ -92,7 +114,7 @@ pub fn de_create_public_key_http_response(
                 response.headers(),
             )
             .map_err(|_| {
-                crate::error::CreatePublicKeyError::unhandled(
+                crate::operation::create_public_key::CreatePublicKeyError::unhandled(
                     "Failed to parse Location from header `Location",
                 )
             })?,

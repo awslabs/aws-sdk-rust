@@ -2,7 +2,7 @@
 pub(crate) fn de_license_configuration_associations<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::LicenseConfigurationAssociation>>,
+    Option<std::vec::Vec<crate::types::LicenseConfigurationAssociation>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

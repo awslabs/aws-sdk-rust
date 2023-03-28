@@ -2,89 +2,99 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_listeners_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DescribeListenersOutput, crate::error::DescribeListenersError>
-{
+) -> std::result::Result<
+    crate::operation::describe_listeners::DescribeListenersOutput,
+    crate::operation::describe_listeners::DescribeListenersError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeListenersError::unhandled)?;
+        .map_err(crate::operation::describe_listeners::DescribeListenersError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DescribeListenersError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::describe_listeners::DescribeListenersError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ListenerNotFound" => crate::error::DescribeListenersError::ListenerNotFoundException({
+        "ListenerNotFound" => crate::operation::describe_listeners::DescribeListenersError::ListenerNotFoundException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::listener_not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_listener_not_found_exception::de_listener_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeListenersError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ListenerNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_listener_not_found_exception::de_listener_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::describe_listeners::DescribeListenersError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "LoadBalancerNotFound" => {
-            crate::error::DescribeListenersError::LoadBalancerNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "LoadBalancerNotFound" => crate::operation::describe_listeners::DescribeListenersError::LoadBalancerNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::load_balancer_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::LoadBalancerNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_load_balancer_not_found_exception::de_load_balancer_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeListenersError::unhandled)?;
+                    output = crate::protocol_serde::shape_load_balancer_not_found_exception::de_load_balancer_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::describe_listeners::DescribeListenersError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "UnsupportedProtocol" => {
-            crate::error::DescribeListenersError::UnsupportedProtocolException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "UnsupportedProtocol" => crate::operation::describe_listeners::DescribeListenersError::UnsupportedProtocolException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::unsupported_protocol_exception::Builder::default();
+                    let mut output = crate::types::error::builders::UnsupportedProtocolExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_unsupported_protocol_exception::de_unsupported_protocol_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeListenersError::unhandled)?;
+                    output = crate::protocol_serde::shape_unsupported_protocol_exception::de_unsupported_protocol_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::describe_listeners::DescribeListenersError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DescribeListenersError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::describe_listeners::DescribeListenersError::generic(generic)
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_listeners_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DescribeListenersOutput, crate::error::DescribeListenersError>
-{
+) -> std::result::Result<
+    crate::operation::describe_listeners::DescribeListenersOutput,
+    crate::operation::describe_listeners::DescribeListenersError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_listeners_output::Builder::default();
+        let mut output =
+            crate::operation::describe_listeners::builders::DescribeListenersOutputBuilder::default(
+            );
         let _ = response;
         output = crate::protocol_serde::shape_describe_listeners::de_describe_listeners(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DescribeListenersError::unhandled)?;
+        .map_err(crate::operation::describe_listeners::DescribeListenersError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -95,9 +105,11 @@ pub fn de_describe_listeners_http_response(
 #[allow(unused_mut)]
 pub fn de_describe_listeners(
     inp: &[u8],
-    mut builder: crate::output::describe_listeners_output::Builder,
-) -> Result<crate::output::describe_listeners_output::Builder, aws_smithy_xml::decode::XmlDecodeError>
-{
+    mut builder: crate::operation::describe_listeners::builders::DescribeListenersOutputBuilder,
+) -> Result<
+    crate::operation::describe_listeners::builders::DescribeListenersOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

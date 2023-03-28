@@ -3,78 +3,35 @@
 pub fn de_describe_backup_policy_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeBackupPolicyOutput,
-    crate::error::DescribeBackupPolicyError,
+    crate::operation::describe_backup_policy::DescribeBackupPolicyOutput,
+    crate::operation::describe_backup_policy::DescribeBackupPolicyError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeBackupPolicyError::unhandled)?;
+        .map_err(crate::operation::describe_backup_policy::DescribeBackupPolicyError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DescribeBackupPolicyError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::describe_backup_policy::DescribeBackupPolicyError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequest" => crate::error::DescribeBackupPolicyError::BadRequest({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_bad_request::de_bad_request_json_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::DescribeBackupPolicyError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "FileSystemNotFound" => crate::error::DescribeBackupPolicyError::FileSystemNotFound({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::file_system_not_found::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_file_system_not_found::de_file_system_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeBackupPolicyError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InternalServerError" => crate::error::DescribeBackupPolicyError::InternalServerError({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_error::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeBackupPolicyError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "PolicyNotFound" => {
-            crate::error::DescribeBackupPolicyError::PolicyNotFound({
+        "BadRequest" => {
+            crate::operation::describe_backup_policy::DescribeBackupPolicyError::BadRequest({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::policy_not_found::Builder::default();
+                    let mut output = crate::types::error::builders::BadRequestBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_policy_not_found::de_policy_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeBackupPolicyError::unhandled)?;
+                    output = crate::protocol_serde::shape_bad_request::de_bad_request_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_backup_policy::DescribeBackupPolicyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -84,22 +41,85 @@ pub fn de_describe_backup_policy_http_error(
                 tmp
             })
         }
-        "ValidationException" => crate::error::DescribeBackupPolicyError::ValidationException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "FileSystemNotFound" => {
+            crate::operation::describe_backup_policy::DescribeBackupPolicyError::FileSystemNotFound(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::types::error::builders::FileSystemNotFoundBuilder::default();
+                        let _ = response;
+                        output = crate::protocol_serde::shape_file_system_not_found::de_file_system_not_found_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_backup_policy::DescribeBackupPolicyError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        "InternalServerError" => {
+            crate::operation::describe_backup_policy::DescribeBackupPolicyError::InternalServerError(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::types::error::builders::InternalServerErrorBuilder::default();
+                        let _ = response;
+                        output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_backup_policy::DescribeBackupPolicyError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        "PolicyNotFound" => {
+            crate::operation::describe_backup_policy::DescribeBackupPolicyError::PolicyNotFound({
                 #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeBackupPolicyError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::DescribeBackupPolicyError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::PolicyNotFoundBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_policy_not_found::de_policy_not_found_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_backup_policy::DescribeBackupPolicyError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ValidationException" => {
+            crate::operation::describe_backup_policy::DescribeBackupPolicyError::ValidationException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::types::error::builders::ValidationExceptionBuilder::default();
+                        let _ = response;
+                        output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_backup_policy::DescribeBackupPolicyError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        _ => crate::operation::describe_backup_policy::DescribeBackupPolicyError::generic(generic),
     })
 }
 
@@ -107,18 +127,18 @@ pub fn de_describe_backup_policy_http_error(
 pub fn de_describe_backup_policy_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeBackupPolicyOutput,
-    crate::error::DescribeBackupPolicyError,
+    crate::operation::describe_backup_policy::DescribeBackupPolicyOutput,
+    crate::operation::describe_backup_policy::DescribeBackupPolicyError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_backup_policy_output::Builder::default();
+        let mut output = crate::operation::describe_backup_policy::builders::DescribeBackupPolicyOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_describe_backup_policy::de_describe_backup_policy(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DescribeBackupPolicyError::unhandled)?;
+        .map_err(crate::operation::describe_backup_policy::DescribeBackupPolicyError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -128,9 +148,9 @@ pub fn de_describe_backup_policy_http_response(
 
 pub(crate) fn de_describe_backup_policy(
     value: &[u8],
-    mut builder: crate::output::describe_backup_policy_output::Builder,
+    mut builder: crate::operation::describe_backup_policy::builders::DescribeBackupPolicyOutputBuilder,
 ) -> Result<
-    crate::output::describe_backup_policy_output::Builder,
+    crate::operation::describe_backup_policy::builders::DescribeBackupPolicyOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

@@ -2,27 +2,51 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_rule_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeleteRuleOutput, crate::error::DeleteRuleError> {
+) -> std::result::Result<
+    crate::operation::delete_rule::DeleteRuleOutput,
+    crate::operation::delete_rule::DeleteRuleError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteRuleError::unhandled)?;
+        .map_err(crate::operation::delete_rule::DeleteRuleError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DeleteRuleError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::delete_rule::DeleteRuleError::unhandled(
+                generic,
+            ))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "OperationNotPermitted" => crate::error::DeleteRuleError::OperationNotPermittedException({
+        "OperationNotPermitted" => {
+            crate::operation::delete_rule::DeleteRuleError::OperationNotPermittedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::OperationNotPermittedExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_operation_not_permitted_exception::de_operation_not_permitted_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_rule::DeleteRuleError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "RuleNotFound" => crate::operation::delete_rule::DeleteRuleError::RuleNotFoundException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output =
-                    crate::error::operation_not_permitted_exception::Builder::default();
+                    crate::types::error::builders::RuleNotFoundExceptionBuilder::default();
                 let _ = response;
-                output = crate::protocol_serde::shape_operation_not_permitted_exception::de_operation_not_permitted_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteRuleError::unhandled)?;
+                output = crate::protocol_serde::shape_rule_not_found_exception::de_rule_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_rule::DeleteRuleError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -31,32 +55,21 @@ pub fn de_delete_rule_http_error(
             }
             tmp
         }),
-        "RuleNotFound" => crate::error::DeleteRuleError::RuleNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::rule_not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_rule_not_found_exception::de_rule_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteRuleError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::DeleteRuleError::generic(generic),
+        _ => crate::operation::delete_rule::DeleteRuleError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_rule_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeleteRuleOutput, crate::error::DeleteRuleError> {
+) -> std::result::Result<
+    crate::operation::delete_rule::DeleteRuleOutput,
+    crate::operation::delete_rule::DeleteRuleError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_rule_output::Builder::default();
+        let mut output =
+            crate::operation::delete_rule::builders::DeleteRuleOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

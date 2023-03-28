@@ -3,33 +3,33 @@
 pub fn de_create_default_subnet_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateDefaultSubnetOutput,
-    crate::error::CreateDefaultSubnetError,
+    crate::operation::create_default_subnet::CreateDefaultSubnetOutput,
+    crate::operation::create_default_subnet::CreateDefaultSubnetError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::CreateDefaultSubnetError::unhandled)?;
+        .map_err(crate::operation::create_default_subnet::CreateDefaultSubnetError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::CreateDefaultSubnetError::generic(generic))
+    Err(crate::operation::create_default_subnet::CreateDefaultSubnetError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_default_subnet_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateDefaultSubnetOutput,
-    crate::error::CreateDefaultSubnetError,
+    crate::operation::create_default_subnet::CreateDefaultSubnetOutput,
+    crate::operation::create_default_subnet::CreateDefaultSubnetError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::create_default_subnet_output::Builder::default();
+        let mut output = crate::operation::create_default_subnet::builders::CreateDefaultSubnetOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_create_default_subnet::de_create_default_subnet(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::CreateDefaultSubnetError::unhandled)?;
+        .map_err(crate::operation::create_default_subnet::CreateDefaultSubnetError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -40,9 +40,9 @@ pub fn de_create_default_subnet_http_response(
 #[allow(unused_mut)]
 pub fn de_create_default_subnet(
     inp: &[u8],
-    mut builder: crate::output::create_default_subnet_output::Builder,
+    mut builder: crate::operation::create_default_subnet::builders::CreateDefaultSubnetOutputBuilder,
 ) -> Result<
-    crate::output::create_default_subnet_output::Builder,
+    crate::operation::create_default_subnet::builders::CreateDefaultSubnetOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

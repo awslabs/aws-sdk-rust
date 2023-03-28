@@ -2,7 +2,7 @@
 pub(crate) fn de_recommendation_related_anomaly_resource<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::RecommendationRelatedAnomalyResource>,
+    Option<crate::types::RecommendationRelatedAnomalyResource>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::recommendation_related_anomaly_resource::Builder::default();
+                crate::types::builders::RecommendationRelatedAnomalyResourceBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

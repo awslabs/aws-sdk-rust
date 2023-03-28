@@ -2,7 +2,7 @@
 pub(crate) fn de_lo_ra_wan_connection_status_resource_type_event_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::LoRaWanConnectionStatusResourceTypeEventConfiguration>,
+    Option<crate::types::LoRaWanConnectionStatusResourceTypeEventConfiguration>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::lo_ra_wan_connection_status_resource_type_event_configuration::Builder::default();
+            let mut builder = crate::types::builders::LoRaWanConnectionStatusResourceTypeEventConfigurationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::EventNotificationTopicStatus::from(
+                                            crate::types::EventNotificationTopicStatus::from(
                                                 u.as_ref(),
                                             )
                                         })
@@ -63,7 +63,7 @@ where
 
 pub fn ser_lo_ra_wan_connection_status_resource_type_event_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::LoRaWanConnectionStatusResourceTypeEventConfiguration,
+    input: &crate::types::LoRaWanConnectionStatusResourceTypeEventConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.wireless_gateway_event_topic {
         object

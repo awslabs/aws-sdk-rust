@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_deployment_targets(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::DeploymentTargets,
+    input: &crate::types::DeploymentTargets,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Accounts");
@@ -41,9 +41,9 @@ pub fn ser_deployment_targets(
 
 pub fn de_deployment_targets(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::DeploymentTargets, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::DeploymentTargets, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::DeploymentTargets::builder();
+    let mut builder = crate::types::DeploymentTargets::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Accounts") /* Accounts com.amazonaws.cloudformation#DeploymentTargets$Accounts */ =>  {
@@ -82,8 +82,8 @@ pub fn de_deployment_targets(
             s if s.matches("AccountFilterType") /* AccountFilterType com.amazonaws.cloudformation#DeploymentTargets$AccountFilterType */ =>  {
                 let var_18 =
                     Some(
-                        Result::<crate::model::AccountFilterType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::AccountFilterType::from(
+                        Result::<crate::types::AccountFilterType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::AccountFilterType::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

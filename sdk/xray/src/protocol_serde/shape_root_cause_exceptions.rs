@@ -2,7 +2,7 @@
 pub(crate) fn de_root_cause_exceptions<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::RootCauseException>>,
+    Option<std::vec::Vec<crate::types::RootCauseException>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

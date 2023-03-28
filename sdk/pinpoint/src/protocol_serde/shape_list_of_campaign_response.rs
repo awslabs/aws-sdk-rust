@@ -2,7 +2,7 @@
 pub(crate) fn de_list_of_campaign_response<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CampaignResponse>>,
+    Option<std::vec::Vec<crate::types::CampaignResponse>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

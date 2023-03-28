@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_source_build_information(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::SourceBuildInformation,
+    input: &crate::types::SourceBuildInformation,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("SourceType");
@@ -24,16 +24,16 @@ pub fn ser_source_build_information(
 
 pub fn de_source_build_information(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::SourceBuildInformation, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::SourceBuildInformation, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::SourceBuildInformation::builder();
+    let mut builder = crate::types::SourceBuildInformation::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("SourceType") /* SourceType com.amazonaws.elasticbeanstalk#SourceBuildInformation$SourceType */ =>  {
                 let var_7 =
                     Some(
-                        Result::<crate::model::SourceType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::SourceType::from(
+                        Result::<crate::types::SourceType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::SourceType::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
@@ -46,8 +46,8 @@ pub fn de_source_build_information(
             s if s.matches("SourceRepository") /* SourceRepository com.amazonaws.elasticbeanstalk#SourceBuildInformation$SourceRepository */ =>  {
                 let var_8 =
                     Some(
-                        Result::<crate::model::SourceRepository, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::SourceRepository::from(
+                        Result::<crate::types::SourceRepository, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::SourceRepository::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

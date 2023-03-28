@@ -2,7 +2,7 @@
 pub(crate) fn de_instance_patch_states_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::InstancePatchState>>,
+    Option<std::vec::Vec<crate::types::InstancePatchState>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

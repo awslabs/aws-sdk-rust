@@ -2,7 +2,7 @@
 pub(crate) fn de_search_for_text_result_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SearchForTextResult>>,
+    Option<std::vec::Vec<crate::types::SearchForTextResult>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

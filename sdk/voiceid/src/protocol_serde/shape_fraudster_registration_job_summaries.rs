@@ -2,7 +2,7 @@
 pub(crate) fn de_fraudster_registration_job_summaries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::FraudsterRegistrationJobSummary>>,
+    Option<std::vec::Vec<crate::types::FraudsterRegistrationJobSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

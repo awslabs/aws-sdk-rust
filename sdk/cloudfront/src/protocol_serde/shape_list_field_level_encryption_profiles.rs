@@ -3,46 +3,38 @@
 pub fn de_list_field_level_encryption_profiles_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListFieldLevelEncryptionProfilesOutput,
-    crate::error::ListFieldLevelEncryptionProfilesError,
+    crate::operation::list_field_level_encryption_profiles::ListFieldLevelEncryptionProfilesOutput,
+    crate::operation::list_field_level_encryption_profiles::ListFieldLevelEncryptionProfilesError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListFieldLevelEncryptionProfilesError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::list_field_level_encryption_profiles::ListFieldLevelEncryptionProfilesError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::ListFieldLevelEncryptionProfilesError::unhandled(generic))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::list_field_level_encryption_profiles::ListFieldLevelEncryptionProfilesError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidArgument" => {
-            crate::error::ListFieldLevelEncryptionProfilesError::InvalidArgument({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidArgument" => crate::operation::list_field_level_encryption_profiles::ListFieldLevelEncryptionProfilesError::InvalidArgument({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_argument::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidArgumentBuilder::default();
                     let _ = response;
-                    output =
-                        crate::protocol_serde::shape_invalid_argument::de_invalid_argument_xml_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::ListFieldLevelEncryptionProfilesError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_argument::de_invalid_argument_xml_err(response.body().as_ref(), output).map_err(crate::operation::list_field_level_encryption_profiles::ListFieldLevelEncryptionProfilesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::ListFieldLevelEncryptionProfilesError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::list_field_level_encryption_profiles::ListFieldLevelEncryptionProfilesError::generic(generic)
     })
 }
 
@@ -50,13 +42,12 @@ pub fn de_list_field_level_encryption_profiles_http_error(
 pub fn de_list_field_level_encryption_profiles_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListFieldLevelEncryptionProfilesOutput,
-    crate::error::ListFieldLevelEncryptionProfilesError,
+    crate::operation::list_field_level_encryption_profiles::ListFieldLevelEncryptionProfilesOutput,
+    crate::operation::list_field_level_encryption_profiles::ListFieldLevelEncryptionProfilesError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::output::list_field_level_encryption_profiles_output::Builder::default();
+        let mut output = crate::operation::list_field_level_encryption_profiles::builders::ListFieldLevelEncryptionProfilesOutputBuilder::default();
         let _ = response;
         output = output.set_field_level_encryption_profile_list(
             crate::protocol_serde::shape_list_field_level_encryption_profiles_output::de_field_level_encryption_profile_list_payload(response.body().as_ref())?

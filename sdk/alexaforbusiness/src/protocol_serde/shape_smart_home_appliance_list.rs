@@ -2,7 +2,7 @@
 pub(crate) fn de_smart_home_appliance_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SmartHomeAppliance>>,
+    Option<std::vec::Vec<crate::types::SmartHomeAppliance>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

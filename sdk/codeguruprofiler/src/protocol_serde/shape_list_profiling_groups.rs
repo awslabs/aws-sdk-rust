@@ -3,54 +3,62 @@
 pub fn de_list_profiling_groups_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListProfilingGroupsOutput,
-    crate::error::ListProfilingGroupsError,
+    crate::operation::list_profiling_groups::ListProfilingGroupsOutput,
+    crate::operation::list_profiling_groups::ListProfilingGroupsError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListProfilingGroupsError::unhandled)?;
+        .map_err(crate::operation::list_profiling_groups::ListProfilingGroupsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListProfilingGroupsError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::list_profiling_groups::ListProfilingGroupsError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerException" => {
-            crate::error::ListProfilingGroupsError::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalServerException" => crate::operation::list_profiling_groups::ListProfilingGroupsError::InternalServerException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListProfilingGroupsError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_profiling_groups::ListProfilingGroupsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ThrottlingException" => crate::error::ListProfilingGroupsError::ThrottlingException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::throttling_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListProfilingGroupsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::ListProfilingGroupsError::generic(generic),
+        "ThrottlingException" => crate::operation::list_profiling_groups::ListProfilingGroupsError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_profiling_groups::ListProfilingGroupsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::list_profiling_groups::ListProfilingGroupsError::generic(generic)
     })
 }
 
@@ -58,18 +66,18 @@ pub fn de_list_profiling_groups_http_error(
 pub fn de_list_profiling_groups_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListProfilingGroupsOutput,
-    crate::error::ListProfilingGroupsError,
+    crate::operation::list_profiling_groups::ListProfilingGroupsOutput,
+    crate::operation::list_profiling_groups::ListProfilingGroupsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_profiling_groups_output::Builder::default();
+        let mut output = crate::operation::list_profiling_groups::builders::ListProfilingGroupsOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_profiling_groups::de_list_profiling_groups(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListProfilingGroupsError::unhandled)?;
+        .map_err(crate::operation::list_profiling_groups::ListProfilingGroupsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -79,9 +87,9 @@ pub fn de_list_profiling_groups_http_response(
 
 pub(crate) fn de_list_profiling_groups(
     value: &[u8],
-    mut builder: crate::output::list_profiling_groups_output::Builder,
+    mut builder: crate::operation::list_profiling_groups::builders::ListProfilingGroupsOutputBuilder,
 ) -> Result<
-    crate::output::list_profiling_groups_output::Builder,
+    crate::operation::list_profiling_groups::builders::ListProfilingGroupsOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

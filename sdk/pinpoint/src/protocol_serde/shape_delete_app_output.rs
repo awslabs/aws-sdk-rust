@@ -2,13 +2,13 @@
 pub fn de_application_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::ApplicationResponse>,
-    crate::error::DeleteAppError,
+    std::option::Option<crate::types::ApplicationResponse>,
+    crate::operation::delete_app::DeleteAppError,
 > {
     (!body.is_empty())
         .then(|| {
             crate::protocol_serde::shape_application_response::de_application_response_payload(body)
-                .map_err(crate::error::DeleteAppError::unhandled)
+                .map_err(crate::operation::delete_app::DeleteAppError::unhandled)
         })
         .transpose()
 }

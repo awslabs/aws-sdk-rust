@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_receipt_action(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::ReceiptAction,
+    input: &crate::types::ReceiptAction,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("S3Action");
@@ -44,9 +44,9 @@ pub fn ser_receipt_action(
 
 pub fn de_receipt_action(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::ReceiptAction, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::ReceiptAction, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::ReceiptAction::builder();
+    let mut builder = crate::types::ReceiptAction::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("S3Action") /* S3Action com.amazonaws.ses#ReceiptAction$S3Action */ =>  {

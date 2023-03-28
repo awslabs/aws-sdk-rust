@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_cloud_watch_logs_destination_details(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::CloudWatchLogsDestinationDetails,
+    input: &crate::types::CloudWatchLogsDestinationDetails,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("LogGroup");
@@ -14,10 +14,10 @@ pub fn ser_cloud_watch_logs_destination_details(
 
 pub fn de_cloud_watch_logs_destination_details(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::CloudWatchLogsDestinationDetails, aws_smithy_xml::decode::XmlDecodeError>
+) -> Result<crate::types::CloudWatchLogsDestinationDetails, aws_smithy_xml::decode::XmlDecodeError>
 {
     #[allow(unused_mut)]
-    let mut builder = crate::model::CloudWatchLogsDestinationDetails::builder();
+    let mut builder = crate::types::CloudWatchLogsDestinationDetails::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("LogGroup") /* LogGroup com.amazonaws.elasticache#CloudWatchLogsDestinationDetails$LogGroup */ =>  {

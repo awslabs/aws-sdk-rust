@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_cluster_subnet_group_not_found_fault_xml_err(
     inp: &[u8],
-    mut builder: crate::error::cluster_subnet_group_not_found_fault::Builder,
+    mut builder: crate::types::error::builders::ClusterSubnetGroupNotFoundFaultBuilder,
 ) -> Result<
-    crate::error::cluster_subnet_group_not_found_fault::Builder,
+    crate::types::error::builders::ClusterSubnetGroupNotFoundFaultBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

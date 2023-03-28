@@ -3,31 +3,32 @@
 pub fn de_list_subscription_definitions_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListSubscriptionDefinitionsOutput,
-    crate::error::ListSubscriptionDefinitionsError,
+    crate::operation::list_subscription_definitions::ListSubscriptionDefinitionsOutput,
+    crate::operation::list_subscription_definitions::ListSubscriptionDefinitionsError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListSubscriptionDefinitionsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::list_subscription_definitions::ListSubscriptionDefinitionsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::ListSubscriptionDefinitionsError::generic(
-        generic,
-    ))
+    Err(
+        crate::operation::list_subscription_definitions::ListSubscriptionDefinitionsError::generic(
+            generic,
+        ),
+    )
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_subscription_definitions_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListSubscriptionDefinitionsOutput,
-    crate::error::ListSubscriptionDefinitionsError,
+    crate::operation::list_subscription_definitions::ListSubscriptionDefinitionsOutput,
+    crate::operation::list_subscription_definitions::ListSubscriptionDefinitionsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_subscription_definitions_output::Builder::default();
+        let mut output = crate::operation::list_subscription_definitions::builders::ListSubscriptionDefinitionsOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_list_subscription_definitions::de_list_subscription_definitions(response.body().as_ref(), output).map_err(crate::error::ListSubscriptionDefinitionsError::unhandled)?;
+        output = crate::protocol_serde::shape_list_subscription_definitions::de_list_subscription_definitions(response.body().as_ref(), output).map_err(crate::operation::list_subscription_definitions::ListSubscriptionDefinitionsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -35,13 +36,7 @@ pub fn de_list_subscription_definitions_http_response(
     })
 }
 
-pub(crate) fn de_list_subscription_definitions(
-    value: &[u8],
-    mut builder: crate::output::list_subscription_definitions_output::Builder,
-) -> Result<
-    crate::output::list_subscription_definitions_output::Builder,
-    aws_smithy_json::deserialize::error::DeserializeError,
-> {
+pub(crate) fn de_list_subscription_definitions(value: &[u8], mut builder: crate::operation::list_subscription_definitions::builders::ListSubscriptionDefinitionsOutputBuilder) -> Result<crate::operation::list_subscription_definitions::builders::ListSubscriptionDefinitionsOutputBuilder, aws_smithy_json::deserialize::error::DeserializeError>{
     let mut tokens_owned =
         aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
             .peekable();

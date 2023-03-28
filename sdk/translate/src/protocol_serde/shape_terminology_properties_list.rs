@@ -2,7 +2,7 @@
 pub(crate) fn de_terminology_properties_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::TerminologyProperties>>,
+    Option<std::vec::Vec<crate::types::TerminologyProperties>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

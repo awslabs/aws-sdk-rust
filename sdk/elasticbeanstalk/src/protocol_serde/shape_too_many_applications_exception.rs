@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_too_many_applications_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::too_many_applications_exception::Builder,
+    mut builder: crate::types::error::builders::TooManyApplicationsExceptionBuilder,
 ) -> Result<
-    crate::error::too_many_applications_exception::Builder,
+    crate::types::error::builders::TooManyApplicationsExceptionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

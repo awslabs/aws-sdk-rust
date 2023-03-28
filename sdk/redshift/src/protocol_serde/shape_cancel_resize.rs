@@ -2,96 +2,115 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_cancel_resize_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::CancelResizeOutput, crate::error::CancelResizeError> {
+) -> std::result::Result<
+    crate::operation::cancel_resize::CancelResizeOutput,
+    crate::operation::cancel_resize::CancelResizeError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::CancelResizeError::unhandled)?;
+        .map_err(crate::operation::cancel_resize::CancelResizeError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::CancelResizeError::unhandled(generic)),
+        None => return Err(crate::operation::cancel_resize::CancelResizeError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ClusterNotFound" => crate::error::CancelResizeError::ClusterNotFoundFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "ClusterNotFound" => {
+            crate::operation::cancel_resize::CancelResizeError::ClusterNotFoundFault({
                 #[allow(unused_mut)]
-                let mut output = crate::error::cluster_not_found_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_cluster_not_found_fault::de_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CancelResizeError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InvalidClusterState" => crate::error::CancelResizeError::InvalidClusterStateFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ClusterNotFoundFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_cluster_not_found_fault::de_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::cancel_resize::CancelResizeError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidClusterState" => {
+            crate::operation::cancel_resize::CancelResizeError::InvalidClusterStateFault({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_cluster_state_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_cluster_state_fault::de_invalid_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CancelResizeError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ResizeNotFound" => crate::error::CancelResizeError::ResizeNotFoundFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InvalidClusterStateFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_cluster_state_fault::de_invalid_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::cancel_resize::CancelResizeError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ResizeNotFound" => {
+            crate::operation::cancel_resize::CancelResizeError::ResizeNotFoundFault({
                 #[allow(unused_mut)]
-                let mut output = crate::error::resize_not_found_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_resize_not_found_fault::de_resize_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CancelResizeError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "UnsupportedOperation" => crate::error::CancelResizeError::UnsupportedOperationFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ResizeNotFoundFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resize_not_found_fault::de_resize_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::cancel_resize::CancelResizeError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "UnsupportedOperation" => {
+            crate::operation::cancel_resize::CancelResizeError::UnsupportedOperationFault({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unsupported_operation_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_unsupported_operation_fault::de_unsupported_operation_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CancelResizeError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::CancelResizeError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::UnsupportedOperationFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_unsupported_operation_fault::de_unsupported_operation_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::cancel_resize::CancelResizeError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::cancel_resize::CancelResizeError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_cancel_resize_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::CancelResizeOutput, crate::error::CancelResizeError> {
+) -> std::result::Result<
+    crate::operation::cancel_resize::CancelResizeOutput,
+    crate::operation::cancel_resize::CancelResizeError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::cancel_resize_output::Builder::default();
+        let mut output =
+            crate::operation::cancel_resize::builders::CancelResizeOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_cancel_resize::de_cancel_resize(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::CancelResizeError::unhandled)?;
+        .map_err(crate::operation::cancel_resize::CancelResizeError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -102,8 +121,11 @@ pub fn de_cancel_resize_http_response(
 #[allow(unused_mut)]
 pub fn de_cancel_resize(
     inp: &[u8],
-    mut builder: crate::output::cancel_resize_output::Builder,
-) -> Result<crate::output::cancel_resize_output::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    mut builder: crate::operation::cancel_resize::builders::CancelResizeOutputBuilder,
+) -> Result<
+    crate::operation::cancel_resize::builders::CancelResizeOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

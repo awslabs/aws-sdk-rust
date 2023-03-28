@@ -3,33 +3,28 @@
 pub fn de_batch_modify_cluster_snapshots_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::BatchModifyClusterSnapshotsOutput,
-    crate::error::BatchModifyClusterSnapshotsError,
+    crate::operation::batch_modify_cluster_snapshots::BatchModifyClusterSnapshotsOutput,
+    crate::operation::batch_modify_cluster_snapshots::BatchModifyClusterSnapshotsError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::BatchModifyClusterSnapshotsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::batch_modify_cluster_snapshots::BatchModifyClusterSnapshotsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::BatchModifyClusterSnapshotsError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::batch_modify_cluster_snapshots::BatchModifyClusterSnapshotsError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BatchModifyClusterSnapshotsLimitExceededFault" => crate::error::BatchModifyClusterSnapshotsError::BatchModifyClusterSnapshotsLimitExceededFault({
+        "BatchModifyClusterSnapshotsLimitExceededFault" => crate::operation::batch_modify_cluster_snapshots::BatchModifyClusterSnapshotsError::BatchModifyClusterSnapshotsLimitExceededFault({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::batch_modify_cluster_snapshots_limit_exceeded_fault::Builder::default();
+                    let mut output = crate::types::error::builders::BatchModifyClusterSnapshotsLimitExceededFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_batch_modify_cluster_snapshots_limit_exceeded_fault::de_batch_modify_cluster_snapshots_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::BatchModifyClusterSnapshotsError::unhandled)?;
+                    output = crate::protocol_serde::shape_batch_modify_cluster_snapshots_limit_exceeded_fault::de_batch_modify_cluster_snapshots_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::batch_modify_cluster_snapshots::BatchModifyClusterSnapshotsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -39,14 +34,14 @@ pub fn de_batch_modify_cluster_snapshots_http_error(
                                                     }
             tmp
         }),
-        "InvalidRetentionPeriodFault" => crate::error::BatchModifyClusterSnapshotsError::InvalidRetentionPeriodFault({
+        "InvalidRetentionPeriodFault" => crate::operation::batch_modify_cluster_snapshots::BatchModifyClusterSnapshotsError::InvalidRetentionPeriodFault({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_retention_period_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidRetentionPeriodFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_retention_period_fault::de_invalid_retention_period_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::BatchModifyClusterSnapshotsError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_retention_period_fault::de_invalid_retention_period_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::batch_modify_cluster_snapshots::BatchModifyClusterSnapshotsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -56,7 +51,7 @@ pub fn de_batch_modify_cluster_snapshots_http_error(
                                                     }
             tmp
         }),
-        _ => crate::error::BatchModifyClusterSnapshotsError::generic(generic)
+        _ => crate::operation::batch_modify_cluster_snapshots::BatchModifyClusterSnapshotsError::generic(generic)
     })
 }
 
@@ -64,14 +59,14 @@ pub fn de_batch_modify_cluster_snapshots_http_error(
 pub fn de_batch_modify_cluster_snapshots_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::BatchModifyClusterSnapshotsOutput,
-    crate::error::BatchModifyClusterSnapshotsError,
+    crate::operation::batch_modify_cluster_snapshots::BatchModifyClusterSnapshotsOutput,
+    crate::operation::batch_modify_cluster_snapshots::BatchModifyClusterSnapshotsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::batch_modify_cluster_snapshots_output::Builder::default();
+        let mut output = crate::operation::batch_modify_cluster_snapshots::builders::BatchModifyClusterSnapshotsOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_batch_modify_cluster_snapshots::de_batch_modify_cluster_snapshots(response.body().as_ref(), output).map_err(crate::error::BatchModifyClusterSnapshotsError::unhandled)?;
+        output = crate::protocol_serde::shape_batch_modify_cluster_snapshots::de_batch_modify_cluster_snapshots(response.body().as_ref(), output).map_err(crate::operation::batch_modify_cluster_snapshots::BatchModifyClusterSnapshotsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -80,13 +75,7 @@ pub fn de_batch_modify_cluster_snapshots_http_response(
 }
 
 #[allow(unused_mut)]
-pub fn de_batch_modify_cluster_snapshots(
-    inp: &[u8],
-    mut builder: crate::output::batch_modify_cluster_snapshots_output::Builder,
-) -> Result<
-    crate::output::batch_modify_cluster_snapshots_output::Builder,
-    aws_smithy_xml::decode::XmlDecodeError,
-> {
+pub fn de_batch_modify_cluster_snapshots(inp: &[u8], mut builder: crate::operation::batch_modify_cluster_snapshots::builders::BatchModifyClusterSnapshotsOutputBuilder) -> Result<crate::operation::batch_modify_cluster_snapshots::builders::BatchModifyClusterSnapshotsOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

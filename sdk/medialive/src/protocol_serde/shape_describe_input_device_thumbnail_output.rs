@@ -3,7 +3,7 @@ pub fn de_body_payload(
     body: &mut aws_smithy_http::body::SdkBody,
 ) -> std::result::Result<
     aws_smithy_http::byte_stream::ByteStream,
-    crate::error::DescribeInputDeviceThumbnailError,
+    crate::operation::describe_input_device_thumbnail::DescribeInputDeviceThumbnailError,
 > {
     // replace the body with an empty body
     let body = std::mem::replace(body, aws_smithy_http::body::SdkBody::taken());
@@ -29,7 +29,7 @@ pub(crate) fn de_content_length_header(
 pub(crate) fn de_content_type_header(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
-    std::option::Option<crate::model::ContentType>,
+    std::option::Option<crate::types::ContentType>,
     aws_smithy_http::header::ParseError,
 > {
     let headers = header_map.get_all("Content-Type").iter();

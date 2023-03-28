@@ -2,7 +2,7 @@
 pub(crate) fn de_parameter_history<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ParameterHistory>,
+    Option<crate::types::ParameterHistory>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::parameter_history::Builder::default();
+            let mut builder = crate::types::builders::ParameterHistoryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -39,7 +39,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::ParameterType::from(u.as_ref()))
+                                            .map(|u| crate::types::ParameterType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -118,7 +118,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::ParameterTier::from(u.as_ref()))
+                                            .map(|u| crate::types::ParameterTier::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

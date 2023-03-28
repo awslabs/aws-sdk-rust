@@ -2,7 +2,7 @@
 pub(crate) fn de_step_input_parameters<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<std::string::String, crate::model::StepInput>>,
+    Option<std::collections::HashMap<std::string::String, crate::types::StepInput>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

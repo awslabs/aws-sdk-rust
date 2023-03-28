@@ -2,7 +2,7 @@
 pub fn de_reserved_node_exchange_status_list(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::ReservedNodeExchangeStatus>,
+    std::vec::Vec<crate::types::ReservedNodeExchangeStatus>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

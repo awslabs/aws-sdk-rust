@@ -2,30 +2,35 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_test_dns_answer_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::TestDnsAnswerOutput, crate::error::TestDNSAnswerError> {
+) -> std::result::Result<
+    crate::operation::test_dns_answer::TestDnsAnswerOutput,
+    crate::operation::test_dns_answer::TestDNSAnswerError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::TestDNSAnswerError::unhandled)?;
+        .map_err(crate::operation::test_dns_answer::TestDNSAnswerError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::TestDNSAnswerError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::test_dns_answer::TestDNSAnswerError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidInput" => crate::error::TestDNSAnswerError::InvalidInput({
+        "InvalidInput" => crate::operation::test_dns_answer::TestDNSAnswerError::InvalidInput({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_input::Builder::default();
+                let mut output = crate::types::error::builders::InvalidInputBuilder::default();
                 let _ = response;
                 output = crate::protocol_serde::shape_invalid_input::de_invalid_input_xml_err(
                     response.body().as_ref(),
                     output,
                 )
-                .map_err(crate::error::TestDNSAnswerError::unhandled)?;
+                .map_err(crate::operation::test_dns_answer::TestDNSAnswerError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -34,38 +39,45 @@ pub fn de_test_dns_answer_http_error(
             }
             tmp
         }),
-        "NoSuchHostedZone" => crate::error::TestDNSAnswerError::NoSuchHostedZone({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "NoSuchHostedZone" => {
+            crate::operation::test_dns_answer::TestDNSAnswerError::NoSuchHostedZone({
                 #[allow(unused_mut)]
-                let mut output = crate::error::no_such_hosted_zone::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_no_such_hosted_zone::de_no_such_hosted_zone_xml_err(response.body().as_ref(), output).map_err(crate::error::TestDNSAnswerError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::TestDNSAnswerError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::NoSuchHostedZoneBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_no_such_hosted_zone::de_no_such_hosted_zone_xml_err(response.body().as_ref(), output).map_err(crate::operation::test_dns_answer::TestDNSAnswerError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::test_dns_answer::TestDNSAnswerError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_test_dns_answer_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::TestDnsAnswerOutput, crate::error::TestDNSAnswerError> {
+) -> std::result::Result<
+    crate::operation::test_dns_answer::TestDnsAnswerOutput,
+    crate::operation::test_dns_answer::TestDNSAnswerError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::test_dns_answer_output::Builder::default();
+        let mut output =
+            crate::operation::test_dns_answer::builders::TestDnsAnswerOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_test_dns_answer::de_test_dns_answer(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::TestDNSAnswerError::unhandled)?;
+        .map_err(crate::operation::test_dns_answer::TestDNSAnswerError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -76,9 +88,11 @@ pub fn de_test_dns_answer_http_response(
 #[allow(unused_mut)]
 pub fn de_test_dns_answer(
     inp: &[u8],
-    mut builder: crate::output::test_dns_answer_output::Builder,
-) -> Result<crate::output::test_dns_answer_output::Builder, aws_smithy_xml::decode::XmlDecodeError>
-{
+    mut builder: crate::operation::test_dns_answer::builders::TestDnsAnswerOutputBuilder,
+) -> Result<
+    crate::operation::test_dns_answer::builders::TestDnsAnswerOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -133,8 +147,8 @@ pub fn de_test_dns_answer(
             s if s.matches("RecordType") /* RecordType com.amazonaws.route53.synthetic#TestDNSAnswerOutput$RecordType */ =>  {
                 let var_4 =
                     Some(
-                        Result::<crate::model::RrType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::RrType::from(
+                        Result::<crate::types::RrType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::RrType::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

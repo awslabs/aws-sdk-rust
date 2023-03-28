@@ -2,7 +2,7 @@
 pub(crate) fn de_receipts<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Receipt>>,
+    Option<std::vec::Vec<crate::types::Receipt>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

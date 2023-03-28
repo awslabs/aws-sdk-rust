@@ -2,7 +2,7 @@
 pub(crate) fn de_device_filters<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DeviceFilter>>,
+    Option<std::vec::Vec<crate::types::DeviceFilter>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_ec2_replace_route_table_association_action<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::Ec2ReplaceRouteTableAssociationAction>,
+    Option<crate::types::Ec2ReplaceRouteTableAssociationAction>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::ec2_replace_route_table_association_action::Builder::default();
+                crate::types::builders::Ec2ReplaceRouteTableAssociationActionBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

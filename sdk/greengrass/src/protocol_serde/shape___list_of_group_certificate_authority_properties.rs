@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_group_certificate_authority_properties<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::GroupCertificateAuthorityProperties>>,
+    Option<std::vec::Vec<crate::types::GroupCertificateAuthorityProperties>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

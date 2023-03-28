@@ -2,7 +2,7 @@
 pub(crate) fn de_slot_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SlotSummary>>,
+    Option<std::vec::Vec<crate::types::SlotSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

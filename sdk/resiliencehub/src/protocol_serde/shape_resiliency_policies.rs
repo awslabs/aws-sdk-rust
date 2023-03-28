@@ -2,7 +2,7 @@
 pub(crate) fn de_resiliency_policies<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ResiliencyPolicy>>,
+    Option<std::vec::Vec<crate::types::ResiliencyPolicy>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

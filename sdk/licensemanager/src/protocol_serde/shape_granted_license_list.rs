@@ -2,7 +2,7 @@
 pub(crate) fn de_granted_license_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::GrantedLicense>>,
+    Option<std::vec::Vec<crate::types::GrantedLicense>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

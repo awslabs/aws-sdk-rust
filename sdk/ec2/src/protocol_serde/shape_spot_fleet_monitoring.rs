@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_spot_fleet_monitoring(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::SpotFleetMonitoring,
+    input: &crate::types::SpotFleetMonitoring,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Enabled");
@@ -14,9 +14,9 @@ pub fn ser_spot_fleet_monitoring(
 
 pub fn de_spot_fleet_monitoring(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::SpotFleetMonitoring, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::SpotFleetMonitoring, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::SpotFleetMonitoring::builder();
+    let mut builder = crate::types::SpotFleetMonitoring::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("enabled") /* Enabled com.amazonaws.ec2#SpotFleetMonitoring$Enabled */ =>  {

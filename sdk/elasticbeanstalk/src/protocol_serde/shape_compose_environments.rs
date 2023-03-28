@@ -3,58 +3,62 @@
 pub fn de_compose_environments_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ComposeEnvironmentsOutput,
-    crate::error::ComposeEnvironmentsError,
+    crate::operation::compose_environments::ComposeEnvironmentsOutput,
+    crate::operation::compose_environments::ComposeEnvironmentsError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ComposeEnvironmentsError::unhandled)?;
+        .map_err(crate::operation::compose_environments::ComposeEnvironmentsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ComposeEnvironmentsError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::compose_environments::ComposeEnvironmentsError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InsufficientPrivilegesException" => {
-            crate::error::ComposeEnvironmentsError::InsufficientPrivilegesException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InsufficientPrivilegesException" => crate::operation::compose_environments::ComposeEnvironmentsError::InsufficientPrivilegesException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::insufficient_privileges_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InsufficientPrivilegesExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_insufficient_privileges_exception::de_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ComposeEnvironmentsError::unhandled)?;
+                    output = crate::protocol_serde::shape_insufficient_privileges_exception::de_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::compose_environments::ComposeEnvironmentsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "TooManyEnvironmentsException" => {
-            crate::error::ComposeEnvironmentsError::TooManyEnvironmentsException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TooManyEnvironmentsException" => crate::operation::compose_environments::ComposeEnvironmentsError::TooManyEnvironmentsException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::too_many_environments_exception::Builder::default();
+                    let mut output = crate::types::error::builders::TooManyEnvironmentsExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_environments_exception::de_too_many_environments_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ComposeEnvironmentsError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_environments_exception::de_too_many_environments_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::compose_environments::ComposeEnvironmentsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::ComposeEnvironmentsError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::compose_environments::ComposeEnvironmentsError::generic(generic)
     })
 }
 
@@ -62,18 +66,18 @@ pub fn de_compose_environments_http_error(
 pub fn de_compose_environments_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ComposeEnvironmentsOutput,
-    crate::error::ComposeEnvironmentsError,
+    crate::operation::compose_environments::ComposeEnvironmentsOutput,
+    crate::operation::compose_environments::ComposeEnvironmentsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::compose_environments_output::Builder::default();
+        let mut output = crate::operation::compose_environments::builders::ComposeEnvironmentsOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_compose_environments::de_compose_environments(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ComposeEnvironmentsError::unhandled)?;
+        .map_err(crate::operation::compose_environments::ComposeEnvironmentsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -84,9 +88,9 @@ pub fn de_compose_environments_http_response(
 #[allow(unused_mut)]
 pub fn de_compose_environments(
     inp: &[u8],
-    mut builder: crate::output::compose_environments_output::Builder,
+    mut builder: crate::operation::compose_environments::builders::ComposeEnvironmentsOutputBuilder,
 ) -> Result<
-    crate::output::compose_environments_output::Builder,
+    crate::operation::compose_environments::builders::ComposeEnvironmentsOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

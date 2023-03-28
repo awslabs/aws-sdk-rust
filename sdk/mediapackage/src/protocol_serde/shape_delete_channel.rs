@@ -2,43 +2,52 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_channel_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeleteChannelOutput, crate::error::DeleteChannelError> {
+) -> std::result::Result<
+    crate::operation::delete_channel::DeleteChannelOutput,
+    crate::operation::delete_channel::DeleteChannelError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteChannelError::unhandled)?;
+        .map_err(crate::operation::delete_channel::DeleteChannelError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DeleteChannelError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::delete_channel::DeleteChannelError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ForbiddenException" => crate::error::DeleteChannelError::ForbiddenException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "ForbiddenException" => {
+            crate::operation::delete_channel::DeleteChannelError::ForbiddenException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteChannelError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ForbiddenExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_channel::DeleteChannelError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "InternalServerErrorException" => {
-            crate::error::DeleteChannelError::InternalServerErrorException({
+            crate::operation::delete_channel::DeleteChannelError::InternalServerErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::internal_server_error_exception::Builder::default();
+                        crate::types::error::builders::InternalServerErrorExceptionBuilder::default(
+                        );
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteChannelError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_channel::DeleteChannelError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -48,30 +57,34 @@ pub fn de_delete_channel_http_error(
                 tmp
             })
         }
-        "NotFoundException" => crate::error::DeleteChannelError::NotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "NotFoundException" => {
+            crate::operation::delete_channel::DeleteChannelError::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteChannelError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::NotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_channel::DeleteChannelError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "ServiceUnavailableException" => {
-            crate::error::DeleteChannelError::ServiceUnavailableException({
+            crate::operation::delete_channel::DeleteChannelError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::service_unavailable_exception::Builder::default();
+                        crate::types::error::builders::ServiceUnavailableExceptionBuilder::default(
+                        );
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteChannelError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_channel::DeleteChannelError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -81,30 +94,34 @@ pub fn de_delete_channel_http_error(
                 tmp
             })
         }
-        "TooManyRequestsException" => crate::error::DeleteChannelError::TooManyRequestsException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "TooManyRequestsException" => {
+            crate::operation::delete_channel::DeleteChannelError::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteChannelError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_channel::DeleteChannelError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "UnprocessableEntityException" => {
-            crate::error::DeleteChannelError::UnprocessableEntityException({
+            crate::operation::delete_channel::DeleteChannelError::UnprocessableEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::unprocessable_entity_exception::Builder::default();
+                        crate::types::error::builders::UnprocessableEntityExceptionBuilder::default(
+                        );
                     let _ = response;
-                    output = crate::protocol_serde::shape_unprocessable_entity_exception::de_unprocessable_entity_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteChannelError::unhandled)?;
+                    output = crate::protocol_serde::shape_unprocessable_entity_exception::de_unprocessable_entity_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_channel::DeleteChannelError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -114,17 +131,21 @@ pub fn de_delete_channel_http_error(
                 tmp
             })
         }
-        _ => crate::error::DeleteChannelError::generic(generic),
+        _ => crate::operation::delete_channel::DeleteChannelError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_channel_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeleteChannelOutput, crate::error::DeleteChannelError> {
+) -> std::result::Result<
+    crate::operation::delete_channel::DeleteChannelOutput,
+    crate::operation::delete_channel::DeleteChannelError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_channel_output::Builder::default();
+        let mut output =
+            crate::operation::delete_channel::builders::DeleteChannelOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

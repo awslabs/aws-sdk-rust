@@ -2,30 +2,35 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_domain_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DescribeDomainOutput, crate::error::DescribeDomainError> {
+) -> std::result::Result<
+    crate::operation::describe_domain::DescribeDomainOutput,
+    crate::operation::describe_domain::DescribeDomainError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeDomainError::unhandled)?;
+        .map_err(crate::operation::describe_domain::DescribeDomainError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DescribeDomainError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::describe_domain::DescribeDomainError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BaseException" => crate::error::DescribeDomainError::BaseException({
+        "BaseException" => crate::operation::describe_domain::DescribeDomainError::BaseException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::error::base_exception::Builder::default();
+                let mut output = crate::types::error::builders::BaseExceptionBuilder::default();
                 let _ = response;
                 output = crate::protocol_serde::shape_base_exception::de_base_exception_json_err(
                     response.body().as_ref(),
                     output,
                 )
-                .map_err(crate::error::DescribeDomainError::unhandled)?;
+                .map_err(crate::operation::describe_domain::DescribeDomainError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -34,29 +39,15 @@ pub fn de_describe_domain_http_error(
             }
             tmp
         }),
-        "InternalException" => crate::error::DescribeDomainError::InternalException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_exception::de_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDomainError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ResourceNotFoundException" => {
-            crate::error::DescribeDomainError::ResourceNotFoundException({
+        "InternalException" => {
+            crate::operation::describe_domain::DescribeDomainError::InternalException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::InternalExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDomainError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_exception::de_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_domain::DescribeDomainError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -66,38 +57,63 @@ pub fn de_describe_domain_http_error(
                 tmp
             })
         }
-        "ValidationException" => crate::error::DescribeDomainError::ValidationException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "ResourceNotFoundException" => {
+            crate::operation::describe_domain::DescribeDomainError::ResourceNotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDomainError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::DescribeDomainError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_domain::DescribeDomainError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ValidationException" => {
+            crate::operation::describe_domain::DescribeDomainError::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_domain::DescribeDomainError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::describe_domain::DescribeDomainError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_domain_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DescribeDomainOutput, crate::error::DescribeDomainError> {
+) -> std::result::Result<
+    crate::operation::describe_domain::DescribeDomainOutput,
+    crate::operation::describe_domain::DescribeDomainError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_domain_output::Builder::default();
+        let mut output =
+            crate::operation::describe_domain::builders::DescribeDomainOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_describe_domain::de_describe_domain(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DescribeDomainError::unhandled)?;
+        .map_err(crate::operation::describe_domain::DescribeDomainError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -107,9 +123,9 @@ pub fn de_describe_domain_http_response(
 
 pub(crate) fn de_describe_domain(
     value: &[u8],
-    mut builder: crate::output::describe_domain_output::Builder,
+    mut builder: crate::operation::describe_domain::builders::DescribeDomainOutputBuilder,
 ) -> Result<
-    crate::output::describe_domain_output::Builder,
+    crate::operation::describe_domain::builders::DescribeDomainOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_metric_stat(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::MetricStat,
+    input: &crate::types::MetricStat,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Metric");
@@ -32,9 +32,9 @@ pub fn ser_metric_stat(
 
 pub fn de_metric_stat(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::MetricStat, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::MetricStat, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::MetricStat::builder();
+    let mut builder = crate::types::MetricStat::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Metric") /* Metric com.amazonaws.cloudwatch#MetricStat$Metric */ =>  {
@@ -78,8 +78,8 @@ pub fn de_metric_stat(
             s if s.matches("Unit") /* Unit com.amazonaws.cloudwatch#MetricStat$Unit */ =>  {
                 let var_12 =
                     Some(
-                        Result::<crate::model::StandardUnit, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::StandardUnit::from(
+                        Result::<crate::types::StandardUnit, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::StandardUnit::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

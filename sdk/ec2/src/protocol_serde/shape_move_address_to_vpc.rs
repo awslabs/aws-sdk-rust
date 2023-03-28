@@ -2,30 +2,36 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_move_address_to_vpc_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::MoveAddressToVpcOutput, crate::error::MoveAddressToVpcError>
-{
+) -> std::result::Result<
+    crate::operation::move_address_to_vpc::MoveAddressToVpcOutput,
+    crate::operation::move_address_to_vpc::MoveAddressToVpcError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::MoveAddressToVpcError::unhandled)?;
+        .map_err(crate::operation::move_address_to_vpc::MoveAddressToVpcError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::MoveAddressToVpcError::generic(generic))
+    Err(crate::operation::move_address_to_vpc::MoveAddressToVpcError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_move_address_to_vpc_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::MoveAddressToVpcOutput, crate::error::MoveAddressToVpcError>
-{
+) -> std::result::Result<
+    crate::operation::move_address_to_vpc::MoveAddressToVpcOutput,
+    crate::operation::move_address_to_vpc::MoveAddressToVpcError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::move_address_to_vpc_output::Builder::default();
+        let mut output =
+            crate::operation::move_address_to_vpc::builders::MoveAddressToVpcOutputBuilder::default(
+            );
         let _ = response;
         output = crate::protocol_serde::shape_move_address_to_vpc::de_move_address_to_vpc(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::MoveAddressToVpcError::unhandled)?;
+        .map_err(crate::operation::move_address_to_vpc::MoveAddressToVpcError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -36,9 +42,9 @@ pub fn de_move_address_to_vpc_http_response(
 #[allow(unused_mut)]
 pub fn de_move_address_to_vpc(
     inp: &[u8],
-    mut builder: crate::output::move_address_to_vpc_output::Builder,
+    mut builder: crate::operation::move_address_to_vpc::builders::MoveAddressToVpcOutputBuilder,
 ) -> Result<
-    crate::output::move_address_to_vpc_output::Builder,
+    crate::operation::move_address_to_vpc::builders::MoveAddressToVpcOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
@@ -71,8 +77,8 @@ pub fn de_move_address_to_vpc(
             s if s.matches("status") /* Status com.amazonaws.ec2.synthetic#MoveAddressToVpcOutput$Status */ =>  {
                 let var_2 =
                     Some(
-                        Result::<crate::model::Status, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::Status::from(
+                        Result::<crate::types::Status, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::Status::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

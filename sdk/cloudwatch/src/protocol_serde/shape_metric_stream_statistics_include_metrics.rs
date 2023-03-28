@@ -2,7 +2,7 @@
 pub fn de_metric_stream_statistics_include_metrics(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::MetricStreamStatisticsMetric>,
+    std::vec::Vec<crate::types::MetricStreamStatisticsMetric>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

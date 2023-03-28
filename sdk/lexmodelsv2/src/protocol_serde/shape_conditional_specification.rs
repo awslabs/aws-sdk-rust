@@ -2,7 +2,7 @@
 pub(crate) fn de_conditional_specification<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ConditionalSpecification>,
+    Option<crate::types::ConditionalSpecification>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::conditional_specification::Builder::default();
+            let mut builder = crate::types::builders::ConditionalSpecificationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -65,7 +65,7 @@ where
 
 pub fn ser_conditional_specification(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::ConditionalSpecification,
+    input: &crate::types::ConditionalSpecification,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.active {
         object.key("active").boolean(*var_1);

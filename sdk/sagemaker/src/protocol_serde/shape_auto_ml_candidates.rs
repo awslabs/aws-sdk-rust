@@ -2,7 +2,7 @@
 pub(crate) fn de_auto_ml_candidates<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AutoMlCandidate>>,
+    Option<std::vec::Vec<crate::types::AutoMlCandidate>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

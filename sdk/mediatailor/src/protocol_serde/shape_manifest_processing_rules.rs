@@ -2,7 +2,7 @@
 pub(crate) fn de_manifest_processing_rules<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ManifestProcessingRules>,
+    Option<crate::types::ManifestProcessingRules>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::manifest_processing_rules::Builder::default();
+            let mut builder = crate::types::builders::ManifestProcessingRulesBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -53,7 +53,7 @@ where
 
 pub fn ser_manifest_processing_rules(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::ManifestProcessingRules,
+    input: &crate::types::ManifestProcessingRules,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.ad_marker_passthrough {
         #[allow(unused_mut)]

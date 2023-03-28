@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_delete_message_batch_request_entry(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::DeleteMessageBatchRequestEntry,
+    input: &crate::types::DeleteMessageBatchRequestEntry,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Id");

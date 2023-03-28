@@ -2,7 +2,7 @@
 pub(crate) fn de_batch_get_commits_errors_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::BatchGetCommitsError>>,
+    Option<std::vec::Vec<crate::types::BatchGetCommitsError>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

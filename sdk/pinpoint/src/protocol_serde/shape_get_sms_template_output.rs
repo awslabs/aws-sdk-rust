@@ -2,15 +2,15 @@
 pub fn de_sms_template_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::SmsTemplateResponse>,
-    crate::error::GetSmsTemplateError,
+    std::option::Option<crate::types::SmsTemplateResponse>,
+    crate::operation::get_sms_template::GetSmsTemplateError,
 > {
     (!body.is_empty())
         .then(|| {
             crate::protocol_serde::shape_sms_template_response::de_sms_template_response_payload(
                 body,
             )
-            .map_err(crate::error::GetSmsTemplateError::unhandled)
+            .map_err(crate::operation::get_sms_template::GetSmsTemplateError::unhandled)
         })
         .transpose()
 }

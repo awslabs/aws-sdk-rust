@@ -2,7 +2,7 @@
 pub(crate) fn de_report_group_trend_raw_data_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ReportWithRawData>>,
+    Option<std::vec::Vec<crate::types::ReportWithRawData>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

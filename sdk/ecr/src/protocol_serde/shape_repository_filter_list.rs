@@ -2,7 +2,7 @@
 pub(crate) fn de_repository_filter_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::RepositoryFilter>>,
+    Option<std::vec::Vec<crate::types::RepositoryFilter>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

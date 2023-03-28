@@ -2,7 +2,7 @@
 pub(crate) fn de_rx_norm_concept_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::RxNormConcept>>,
+    Option<std::vec::Vec<crate::types::RxNormConcept>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

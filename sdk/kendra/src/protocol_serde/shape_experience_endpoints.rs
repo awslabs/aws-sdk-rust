@@ -2,7 +2,7 @@
 pub(crate) fn de_experience_endpoints<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ExperienceEndpoint>>,
+    Option<std::vec::Vec<crate::types::ExperienceEndpoint>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_entity_recognizer_properties_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::EntityRecognizerProperties>>,
+    Option<std::vec::Vec<crate::types::EntityRecognizerProperties>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

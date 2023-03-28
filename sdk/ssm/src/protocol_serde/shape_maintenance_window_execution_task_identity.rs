@@ -2,7 +2,7 @@
 pub(crate) fn de_maintenance_window_execution_task_identity<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::MaintenanceWindowExecutionTaskIdentity>,
+    Option<crate::types::MaintenanceWindowExecutionTaskIdentity>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::maintenance_window_execution_task_identity::Builder::default();
+                crate::types::builders::MaintenanceWindowExecutionTaskIdentityBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -49,7 +49,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::MaintenanceWindowExecutionStatus::from(
+                                            crate::types::MaintenanceWindowExecutionStatus::from(
                                                 u.as_ref(),
                                             )
                                         })
@@ -98,7 +98,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::MaintenanceWindowTaskType::from(
+                                            crate::types::MaintenanceWindowTaskType::from(
                                                 u.as_ref(),
                                             )
                                         })

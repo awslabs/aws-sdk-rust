@@ -2,7 +2,7 @@
 pub(crate) fn de_model_variant_config_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ModelVariantConfigSummary>>,
+    Option<std::vec::Vec<crate::types::ModelVariantConfigSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_metric_set_data_quality_metric_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::MetricSetDataQualityMetric>>,
+    Option<std::vec::Vec<crate::types::MetricSetDataQualityMetric>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_auto_scaling_group_recommendation_option<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::AutoScalingGroupRecommendationOption>,
+    Option<crate::types::AutoScalingGroupRecommendationOption>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::auto_scaling_group_recommendation_option::Builder::default();
+                crate::types::builders::AutoScalingGroupRecommendationOptionBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -63,7 +63,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::MigrationEffort::from(u.as_ref())
+                                            crate::types::MigrationEffort::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

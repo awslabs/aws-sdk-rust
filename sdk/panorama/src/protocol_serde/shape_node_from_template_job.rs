@@ -2,7 +2,7 @@
 pub(crate) fn de_node_from_template_job<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::NodeFromTemplateJob>,
+    Option<crate::types::NodeFromTemplateJob>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::node_from_template_job::Builder::default();
+            let mut builder = crate::types::builders::NodeFromTemplateJobBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -39,7 +39,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::TemplateType::from(u.as_ref()))
+                                            .map(|u| crate::types::TemplateType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -51,7 +51,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::NodeFromTemplateJobStatus::from(
+                                            crate::types::NodeFromTemplateJobStatus::from(
                                                 u.as_ref(),
                                             )
                                         })

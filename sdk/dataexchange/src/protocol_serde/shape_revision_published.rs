@@ -2,7 +2,7 @@
 pub(crate) fn de_revision_published<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::RevisionPublished>,
+    Option<crate::types::RevisionPublished>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::revision_published::Builder::default();
+            let mut builder = crate::types::builders::RevisionPublishedBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -57,7 +57,7 @@ where
 
 pub fn ser_revision_published(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::RevisionPublished,
+    input: &crate::types::RevisionPublished,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.data_set_id {
         object.key("DataSetId").string(var_1.as_str());

@@ -2,7 +2,7 @@
 pub(crate) fn de_outpost_list_definition<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Outpost>>,
+    Option<std::vec::Vec<crate::types::Outpost>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

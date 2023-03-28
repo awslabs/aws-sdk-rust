@@ -3,60 +3,55 @@
 pub fn de_describe_event_configurations_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeEventConfigurationsOutput,
-    crate::error::DescribeEventConfigurationsError,
+    crate::operation::describe_event_configurations::DescribeEventConfigurationsOutput,
+    crate::operation::describe_event_configurations::DescribeEventConfigurationsError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeEventConfigurationsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::describe_event_configurations::DescribeEventConfigurationsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::DescribeEventConfigurationsError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::describe_event_configurations::DescribeEventConfigurationsError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalFailureException" => {
-            crate::error::DescribeEventConfigurationsError::InternalFailureException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalFailureException" => crate::operation::describe_event_configurations::DescribeEventConfigurationsError::InternalFailureException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_failure_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InternalFailureExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeEventConfigurationsError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_event_configurations::DescribeEventConfigurationsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ThrottlingException" => {
-            crate::error::DescribeEventConfigurationsError::ThrottlingException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ThrottlingException" => crate::operation::describe_event_configurations::DescribeEventConfigurationsError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeEventConfigurationsError::unhandled)?;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_event_configurations::DescribeEventConfigurationsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DescribeEventConfigurationsError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::describe_event_configurations::DescribeEventConfigurationsError::generic(generic)
     })
 }
 
@@ -64,14 +59,14 @@ pub fn de_describe_event_configurations_http_error(
 pub fn de_describe_event_configurations_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeEventConfigurationsOutput,
-    crate::error::DescribeEventConfigurationsError,
+    crate::operation::describe_event_configurations::DescribeEventConfigurationsOutput,
+    crate::operation::describe_event_configurations::DescribeEventConfigurationsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_event_configurations_output::Builder::default();
+        let mut output = crate::operation::describe_event_configurations::builders::DescribeEventConfigurationsOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_describe_event_configurations::de_describe_event_configurations(response.body().as_ref(), output).map_err(crate::error::DescribeEventConfigurationsError::unhandled)?;
+        output = crate::protocol_serde::shape_describe_event_configurations::de_describe_event_configurations(response.body().as_ref(), output).map_err(crate::operation::describe_event_configurations::DescribeEventConfigurationsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -79,13 +74,7 @@ pub fn de_describe_event_configurations_http_response(
     })
 }
 
-pub(crate) fn de_describe_event_configurations(
-    value: &[u8],
-    mut builder: crate::output::describe_event_configurations_output::Builder,
-) -> Result<
-    crate::output::describe_event_configurations_output::Builder,
-    aws_smithy_json::deserialize::error::DeserializeError,
-> {
+pub(crate) fn de_describe_event_configurations(value: &[u8], mut builder: crate::operation::describe_event_configurations::builders::DescribeEventConfigurationsOutputBuilder) -> Result<crate::operation::describe_event_configurations::builders::DescribeEventConfigurationsOutputBuilder, aws_smithy_json::deserialize::error::DeserializeError>{
     let mut tokens_owned =
         aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
             .peekable();

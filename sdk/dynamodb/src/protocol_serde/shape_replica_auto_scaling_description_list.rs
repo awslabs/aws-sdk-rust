@@ -2,7 +2,7 @@
 pub(crate) fn de_replica_auto_scaling_description_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ReplicaAutoScalingDescription>>,
+    Option<std::vec::Vec<crate::types::ReplicaAutoScalingDescription>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

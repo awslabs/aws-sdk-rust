@@ -2,7 +2,7 @@
 pub(crate) fn de_role_mapping_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<std::string::String, crate::model::RoleMapping>>,
+    Option<std::collections::HashMap<std::string::String, crate::types::RoleMapping>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

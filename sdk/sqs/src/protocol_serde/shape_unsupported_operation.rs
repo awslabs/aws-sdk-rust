@@ -2,8 +2,11 @@
 #[allow(unused_mut)]
 pub fn de_unsupported_operation_xml_err(
     inp: &[u8],
-    mut builder: crate::error::unsupported_operation::Builder,
-) -> Result<crate::error::unsupported_operation::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    mut builder: crate::types::error::builders::UnsupportedOperationBuilder,
+) -> Result<
+    crate::types::error::builders::UnsupportedOperationBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     if inp.is_empty() {
         return Ok(builder);
     }

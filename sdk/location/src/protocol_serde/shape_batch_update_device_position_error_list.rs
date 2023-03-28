@@ -2,7 +2,7 @@
 pub(crate) fn de_batch_update_device_position_error_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::BatchUpdateDevicePositionError>>,
+    Option<std::vec::Vec<crate::types::BatchUpdateDevicePositionError>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

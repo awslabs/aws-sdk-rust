@@ -2,30 +2,34 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_vod_source_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DescribeVodSourceOutput, crate::error::DescribeVodSourceError>
-{
+) -> std::result::Result<
+    crate::operation::describe_vod_source::DescribeVodSourceOutput,
+    crate::operation::describe_vod_source::DescribeVodSourceError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeVodSourceError::unhandled)?;
+        .map_err(crate::operation::describe_vod_source::DescribeVodSourceError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::DescribeVodSourceError::generic(generic))
+    Err(crate::operation::describe_vod_source::DescribeVodSourceError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_vod_source_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DescribeVodSourceOutput, crate::error::DescribeVodSourceError>
-{
+) -> std::result::Result<
+    crate::operation::describe_vod_source::DescribeVodSourceOutput,
+    crate::operation::describe_vod_source::DescribeVodSourceError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_vod_source_output::Builder::default();
+        let mut output = crate::operation::describe_vod_source::builders::DescribeVodSourceOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_describe_vod_source::de_describe_vod_source(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DescribeVodSourceError::unhandled)?;
+        .map_err(crate::operation::describe_vod_source::DescribeVodSourceError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -35,9 +39,9 @@ pub fn de_describe_vod_source_http_response(
 
 pub(crate) fn de_describe_vod_source(
     value: &[u8],
-    mut builder: crate::output::describe_vod_source_output::Builder,
+    mut builder: crate::operation::describe_vod_source::builders::DescribeVodSourceOutputBuilder,
 ) -> Result<
-    crate::output::describe_vod_source_output::Builder,
+    crate::operation::describe_vod_source::builders::DescribeVodSourceOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

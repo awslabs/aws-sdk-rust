@@ -2,7 +2,7 @@
 pub(crate) fn de_last_report_generation_execution_error<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::LastReportGenerationExecutionError>,
+    Option<crate::types::LastReportGenerationExecutionError>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::last_report_generation_execution_error::Builder::default();
+                crate::types::builders::LastReportGenerationExecutionErrorBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -31,7 +31,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::UsageReportExecutionErrorCode::from(
+                                            crate::types::UsageReportExecutionErrorCode::from(
                                                 u.as_ref(),
                                             )
                                         })

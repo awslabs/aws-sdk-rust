@@ -2,7 +2,7 @@
 pub(crate) fn de_content_identification_type_header(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
-    std::option::Option<crate::model::ContentIdentificationType>,
+    std::option::Option<crate::types::ContentIdentificationType>,
     aws_smithy_http::header::ParseError,
 > {
     let headers = header_map
@@ -14,7 +14,7 @@ pub(crate) fn de_content_identification_type_header(
 pub(crate) fn de_content_redaction_type_header(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
-    std::option::Option<crate::model::ContentRedactionType>,
+    std::option::Option<crate::types::ContentRedactionType>,
     aws_smithy_http::header::ParseError,
 > {
     let headers = header_map
@@ -80,7 +80,7 @@ pub(crate) fn de_identify_language_header(
 pub(crate) fn de_language_code_header(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
-    std::option::Option<crate::model::LanguageCode>,
+    std::option::Option<crate::types::LanguageCode>,
     aws_smithy_http::header::ParseError,
 > {
     let headers = header_map.get_all("x-amzn-transcribe-language-code").iter();
@@ -114,7 +114,7 @@ pub(crate) fn de_language_options_header(
 pub(crate) fn de_media_encoding_header(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
-    std::option::Option<crate::model::MediaEncoding>,
+    std::option::Option<crate::types::MediaEncoding>,
     aws_smithy_http::header::ParseError,
 > {
     let headers = header_map
@@ -160,7 +160,7 @@ pub(crate) fn de_number_of_channels_header(
 pub(crate) fn de_partial_results_stability_header(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
-    std::option::Option<crate::model::PartialResultsStability>,
+    std::option::Option<crate::types::PartialResultsStability>,
     aws_smithy_http::header::ParseError,
 > {
     let headers = header_map
@@ -184,7 +184,7 @@ pub(crate) fn de_pii_entity_types_header(
 pub(crate) fn de_preferred_language_header(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
-    std::option::Option<crate::model::LanguageCode>,
+    std::option::Option<crate::types::LanguageCode>,
     aws_smithy_http::header::ParseError,
 > {
     let headers = header_map
@@ -235,10 +235,10 @@ pub fn de_transcript_result_stream_payload(
     body: &mut aws_smithy_http::body::SdkBody,
 ) -> std::result::Result<
     aws_smithy_http::event_stream::Receiver<
-        crate::model::TranscriptResultStream,
-        crate::error::TranscriptResultStreamError,
+        crate::types::TranscriptResultStream,
+        crate::types::error::TranscriptResultStreamError,
     >,
-    crate::error::StartStreamTranscriptionError,
+    crate::operation::start_stream_transcription::StartStreamTranscriptionError,
 > {
     let unmarshaller = crate::event_stream_serde::TranscriptResultStreamUnmarshaller::new();
     let body = std::mem::replace(body, aws_smithy_http::body::SdkBody::taken());
@@ -251,7 +251,7 @@ pub fn de_transcript_result_stream_payload(
 pub(crate) fn de_vocabulary_filter_method_header(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<
-    std::option::Option<crate::model::VocabularyFilterMethod>,
+    std::option::Option<crate::types::VocabularyFilterMethod>,
     aws_smithy_http::header::ParseError,
 > {
     let headers = header_map

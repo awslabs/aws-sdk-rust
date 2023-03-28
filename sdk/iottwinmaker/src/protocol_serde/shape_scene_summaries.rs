@@ -2,7 +2,7 @@
 pub(crate) fn de_scene_summaries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SceneSummary>>,
+    Option<std::vec::Vec<crate::types::SceneSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

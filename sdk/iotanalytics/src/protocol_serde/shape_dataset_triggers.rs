@@ -2,7 +2,7 @@
 pub(crate) fn de_dataset_triggers<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DatasetTrigger>>,
+    Option<std::vec::Vec<crate::types::DatasetTrigger>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

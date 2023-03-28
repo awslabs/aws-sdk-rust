@@ -2,172 +2,176 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_cache_policy_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::CreateCachePolicyOutput, crate::error::CreateCachePolicyError>
-{
+) -> std::result::Result<
+    crate::operation::create_cache_policy::CreateCachePolicyOutput,
+    crate::operation::create_cache_policy::CreateCachePolicyError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::CreateCachePolicyError::unhandled)?;
+        .map_err(crate::operation::create_cache_policy::CreateCachePolicyError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::CreateCachePolicyError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::create_cache_policy::CreateCachePolicyError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDenied" => crate::error::CreateCachePolicyError::AccessDenied({
+        "AccessDenied" => crate::operation::create_cache_policy::CreateCachePolicyError::AccessDenied({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::access_denied::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_access_denied::de_access_denied_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::CreateCachePolicyError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "CachePolicyAlreadyExists" => {
-            crate::error::CreateCachePolicyError::CachePolicyAlreadyExists({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::cache_policy_already_exists::Builder::default();
+                    let mut output = crate::types::error::builders::AccessDeniedBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_cache_policy_already_exists::de_cache_policy_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCachePolicyError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied::de_access_denied_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_cache_policy::CreateCachePolicyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InconsistentQuantities" => crate::error::CreateCachePolicyError::InconsistentQuantities({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::inconsistent_quantities::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_inconsistent_quantities::de_inconsistent_quantities_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCachePolicyError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "InvalidArgument" => crate::error::CreateCachePolicyError::InvalidArgument({
+        "CachePolicyAlreadyExists" => crate::operation::create_cache_policy::CreateCachePolicyError::CachePolicyAlreadyExists({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::invalid_argument::Builder::default();
-                let _ = response;
-                output =
-                    crate::protocol_serde::shape_invalid_argument::de_invalid_argument_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateCachePolicyError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::CachePolicyAlreadyExistsBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_cache_policy_already_exists::de_cache_policy_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_cache_policy::CreateCachePolicyError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "TooManyCachePolicies" => crate::error::CreateCachePolicyError::TooManyCachePolicies({
+        "InconsistentQuantities" => crate::operation::create_cache_policy::CreateCachePolicyError::InconsistentQuantities({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::too_many_cache_policies::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_too_many_cache_policies::de_too_many_cache_policies_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCachePolicyError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InconsistentQuantitiesBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_inconsistent_quantities::de_inconsistent_quantities_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_cache_policy::CreateCachePolicyError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "TooManyCookiesInCachePolicy" => {
-            crate::error::CreateCachePolicyError::TooManyCookiesInCachePolicy({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidArgument" => crate::operation::create_cache_policy::CreateCachePolicyError::InvalidArgument({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::too_many_cookies_in_cache_policy::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidArgumentBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_cookies_in_cache_policy::de_too_many_cookies_in_cache_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCachePolicyError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_argument::de_invalid_argument_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_cache_policy::CreateCachePolicyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "TooManyHeadersInCachePolicy" => {
-            crate::error::CreateCachePolicyError::TooManyHeadersInCachePolicy({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TooManyCachePolicies" => crate::operation::create_cache_policy::CreateCachePolicyError::TooManyCachePolicies({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::too_many_headers_in_cache_policy::Builder::default();
+                    let mut output = crate::types::error::builders::TooManyCachePoliciesBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_headers_in_cache_policy::de_too_many_headers_in_cache_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCachePolicyError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_cache_policies::de_too_many_cache_policies_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_cache_policy::CreateCachePolicyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "TooManyQueryStringsInCachePolicy" => {
-            crate::error::CreateCachePolicyError::TooManyQueryStringsInCachePolicy({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TooManyCookiesInCachePolicy" => crate::operation::create_cache_policy::CreateCachePolicyError::TooManyCookiesInCachePolicy({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::too_many_query_strings_in_cache_policy::Builder::default();
+                    let mut output = crate::types::error::builders::TooManyCookiesInCachePolicyBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_query_strings_in_cache_policy::de_too_many_query_strings_in_cache_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCachePolicyError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_cookies_in_cache_policy::de_too_many_cookies_in_cache_policy_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_cache_policy::CreateCachePolicyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::CreateCachePolicyError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TooManyHeadersInCachePolicy" => crate::operation::create_cache_policy::CreateCachePolicyError::TooManyHeadersInCachePolicy({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::TooManyHeadersInCachePolicyBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_too_many_headers_in_cache_policy::de_too_many_headers_in_cache_policy_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_cache_policy::CreateCachePolicyError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TooManyQueryStringsInCachePolicy" => crate::operation::create_cache_policy::CreateCachePolicyError::TooManyQueryStringsInCachePolicy({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::TooManyQueryStringsInCachePolicyBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_too_many_query_strings_in_cache_policy::de_too_many_query_strings_in_cache_policy_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_cache_policy::CreateCachePolicyError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::create_cache_policy::CreateCachePolicyError::generic(generic)
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_cache_policy_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::CreateCachePolicyOutput, crate::error::CreateCachePolicyError>
-{
+) -> std::result::Result<
+    crate::operation::create_cache_policy::CreateCachePolicyOutput,
+    crate::operation::create_cache_policy::CreateCachePolicyError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::create_cache_policy_output::Builder::default();
+        let mut output = crate::operation::create_cache_policy::builders::CreateCachePolicyOutputBuilder::default();
         let _ = response;
         output = output.set_cache_policy(
             crate::protocol_serde::shape_create_cache_policy_output::de_cache_policy_payload(
@@ -179,7 +183,7 @@ pub fn de_create_cache_policy_http_response(
                 response.headers(),
             )
             .map_err(|_| {
-                crate::error::CreateCachePolicyError::unhandled(
+                crate::operation::create_cache_policy::CreateCachePolicyError::unhandled(
                     "Failed to parse ETag from header `ETag",
                 )
             })?,
@@ -189,7 +193,7 @@ pub fn de_create_cache_policy_http_response(
                 response.headers(),
             )
             .map_err(|_| {
-                crate::error::CreateCachePolicyError::unhandled(
+                crate::operation::create_cache_policy::CreateCachePolicyError::unhandled(
                     "Failed to parse Location from header `Location",
                 )
             })?,

@@ -2,7 +2,7 @@
 pub(crate) fn de_domain_isp_placements<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DomainIspPlacement>>,
+    Option<std::vec::Vec<crate::types::DomainIspPlacement>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

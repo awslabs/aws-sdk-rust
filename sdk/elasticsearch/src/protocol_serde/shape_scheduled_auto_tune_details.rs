@@ -2,7 +2,7 @@
 pub(crate) fn de_scheduled_auto_tune_details<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ScheduledAutoTuneDetails>,
+    Option<crate::types::ScheduledAutoTuneDetails>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::scheduled_auto_tune_details::Builder::default();
+            let mut builder = crate::types::builders::ScheduledAutoTuneDetailsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -38,7 +38,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ScheduledAutoTuneActionType::from(
+                                            crate::types::ScheduledAutoTuneActionType::from(
                                                 u.as_ref(),
                                             )
                                         })
@@ -62,7 +62,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ScheduledAutoTuneSeverityType::from(
+                                            crate::types::ScheduledAutoTuneSeverityType::from(
                                                 u.as_ref(),
                                             )
                                         })

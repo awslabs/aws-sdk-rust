@@ -3,54 +3,62 @@
 pub fn de_set_type_default_version_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::SetTypeDefaultVersionOutput,
-    crate::error::SetTypeDefaultVersionError,
+    crate::operation::set_type_default_version::SetTypeDefaultVersionOutput,
+    crate::operation::set_type_default_version::SetTypeDefaultVersionError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::SetTypeDefaultVersionError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::set_type_default_version::SetTypeDefaultVersionError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    let error_code = match generic.code() {
-        Some(code) => code,
-        None => return Err(crate::error::SetTypeDefaultVersionError::unhandled(generic)),
-    };
+    let error_code =
+        match generic.code() {
+            Some(code) => code,
+            None => return Err(
+                crate::operation::set_type_default_version::SetTypeDefaultVersionError::unhandled(
+                    generic,
+                ),
+            ),
+        };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CFNRegistryException" => crate::error::SetTypeDefaultVersionError::CfnRegistryException({
+        "CFNRegistryException" => crate::operation::set_type_default_version::SetTypeDefaultVersionError::CfnRegistryException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::cfn_registry_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_cfn_registry_exception::de_cfn_registry_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetTypeDefaultVersionError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "TypeNotFoundException" => {
-            crate::error::SetTypeDefaultVersionError::TypeNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::type_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::CfnRegistryExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_type_not_found_exception::de_type_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetTypeDefaultVersionError::unhandled)?;
+                    output = crate::protocol_serde::shape_cfn_registry_exception::de_cfn_registry_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::set_type_default_version::SetTypeDefaultVersionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::SetTypeDefaultVersionError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TypeNotFoundException" => crate::operation::set_type_default_version::SetTypeDefaultVersionError::TypeNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::TypeNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_type_not_found_exception::de_type_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::set_type_default_version::SetTypeDefaultVersionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::set_type_default_version::SetTypeDefaultVersionError::generic(generic)
     })
 }
 
@@ -58,12 +66,12 @@ pub fn de_set_type_default_version_http_error(
 pub fn de_set_type_default_version_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::SetTypeDefaultVersionOutput,
-    crate::error::SetTypeDefaultVersionError,
+    crate::operation::set_type_default_version::SetTypeDefaultVersionOutput,
+    crate::operation::set_type_default_version::SetTypeDefaultVersionError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::set_type_default_version_output::Builder::default();
+        let mut output = crate::operation::set_type_default_version::builders::SetTypeDefaultVersionOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

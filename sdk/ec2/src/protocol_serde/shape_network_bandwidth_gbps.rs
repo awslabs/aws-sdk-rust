@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_network_bandwidth_gbps(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::NetworkBandwidthGbps,
+    input: &crate::types::NetworkBandwidthGbps,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Min");
@@ -25,9 +25,9 @@ pub fn ser_network_bandwidth_gbps(
 
 pub fn de_network_bandwidth_gbps(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::NetworkBandwidthGbps, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::NetworkBandwidthGbps, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::NetworkBandwidthGbps::builder();
+    let mut builder = crate::types::NetworkBandwidthGbps::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("min") /* Min com.amazonaws.ec2#NetworkBandwidthGbps$Min */ =>  {

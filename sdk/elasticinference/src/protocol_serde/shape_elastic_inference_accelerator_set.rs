@@ -2,7 +2,7 @@
 pub(crate) fn de_elastic_inference_accelerator_set<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ElasticInferenceAccelerator>>,
+    Option<std::vec::Vec<crate::types::ElasticInferenceAccelerator>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

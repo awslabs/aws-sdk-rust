@@ -2,7 +2,7 @@
 pub(crate) fn de_network_firewall_missing_expected_routes_violation<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::NetworkFirewallMissingExpectedRoutesViolation>,
+    Option<crate::types::NetworkFirewallMissingExpectedRoutesViolation>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,9 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder =
-                crate::model::network_firewall_missing_expected_routes_violation::Builder::default(
-                );
+            let mut builder = crate::types::builders::NetworkFirewallMissingExpectedRoutesViolationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

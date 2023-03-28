@@ -2,58 +2,66 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_user_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DescribeUserOutput, crate::error::DescribeUserError> {
+) -> std::result::Result<
+    crate::operation::describe_user::DescribeUserOutput,
+    crate::operation::describe_user::DescribeUserError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeUserError::unhandled)?;
+        .map_err(crate::operation::describe_user::DescribeUserError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DescribeUserError::unhandled(generic)),
+        None => return Err(crate::operation::describe_user::DescribeUserError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::DescribeUserError::AccessDeniedException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::access_denied_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeUserError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InternalFailureException" => crate::error::DescribeUserError::InternalFailureException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_failure_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeUserError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InvalidParameterValueException" => {
-            crate::error::DescribeUserError::InvalidParameterValueException({
+        "AccessDeniedException" => {
+            crate::operation::describe_user::DescribeUserError::AccessDeniedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::invalid_parameter_value_exception::Builder::default();
+                        crate::types::error::builders::AccessDeniedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeUserError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_user::DescribeUserError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InternalFailureException" => {
+            crate::operation::describe_user::DescribeUserError::InternalFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InternalFailureExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_user::DescribeUserError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidParameterValueException" => {
+            crate::operation::describe_user::DescribeUserError::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_user::DescribeUserError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -64,14 +72,15 @@ pub fn de_describe_user_http_error(
             })
         }
         "PreconditionNotMetException" => {
-            crate::error::DescribeUserError::PreconditionNotMetException({
+            crate::operation::describe_user::DescribeUserError::PreconditionNotMetException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::precondition_not_met_exception::Builder::default();
+                        crate::types::error::builders::PreconditionNotMetExceptionBuilder::default(
+                        );
                     let _ = response;
-                    output = crate::protocol_serde::shape_precondition_not_met_exception::de_precondition_not_met_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeUserError::unhandled)?;
+                    output = crate::protocol_serde::shape_precondition_not_met_exception::de_precondition_not_met_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_user::DescribeUserError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -82,13 +91,14 @@ pub fn de_describe_user_http_error(
             })
         }
         "ResourceNotFoundException" => {
-            crate::error::DescribeUserError::ResourceNotFoundException({
+            crate::operation::describe_user::DescribeUserError::ResourceNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeUserError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_user::DescribeUserError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -99,14 +109,15 @@ pub fn de_describe_user_http_error(
             })
         }
         "ResourceUnavailableException" => {
-            crate::error::DescribeUserError::ResourceUnavailableException({
+            crate::operation::describe_user::DescribeUserError::ResourceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::resource_unavailable_exception::Builder::default();
+                        crate::types::error::builders::ResourceUnavailableExceptionBuilder::default(
+                        );
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_unavailable_exception::de_resource_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeUserError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_unavailable_exception::de_resource_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_user::DescribeUserError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -116,38 +127,45 @@ pub fn de_describe_user_http_error(
                 tmp
             })
         }
-        "ThrottlingException" => crate::error::DescribeUserError::ThrottlingException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "ThrottlingException" => {
+            crate::operation::describe_user::DescribeUserError::ThrottlingException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::throttling_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeUserError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::DescribeUserError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_user::DescribeUserError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::describe_user::DescribeUserError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_user_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DescribeUserOutput, crate::error::DescribeUserError> {
+) -> std::result::Result<
+    crate::operation::describe_user::DescribeUserOutput,
+    crate::operation::describe_user::DescribeUserError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_user_output::Builder::default();
+        let mut output =
+            crate::operation::describe_user::builders::DescribeUserOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_describe_user::de_describe_user(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DescribeUserError::unhandled)?;
+        .map_err(crate::operation::describe_user::DescribeUserError::unhandled)?;
         output = output.set_status(Some(response.status().as_u16() as _));
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
@@ -158,9 +176,9 @@ pub fn de_describe_user_http_response(
 
 pub(crate) fn de_describe_user(
     value: &[u8],
-    mut builder: crate::output::describe_user_output::Builder,
+    mut builder: crate::operation::describe_user::builders::DescribeUserOutputBuilder,
 ) -> Result<
-    crate::output::describe_user_output::Builder,
+    crate::operation::describe_user::builders::DescribeUserOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

@@ -2,13 +2,17 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_snapshot_block_http_response(
     op_response: &mut aws_smithy_http::operation::Response,
-) -> std::result::Result<crate::output::GetSnapshotBlockOutput, crate::error::GetSnapshotBlockError>
-{
+) -> std::result::Result<
+    crate::operation::get_snapshot_block::GetSnapshotBlockOutput,
+    crate::operation::get_snapshot_block::GetSnapshotBlockError,
+> {
     #[allow(unused_variables)]
     let (response, properties) = op_response.parts_mut();
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_snapshot_block_output::Builder::default();
+        let mut output =
+            crate::operation::get_snapshot_block::builders::GetSnapshotBlockOutputBuilder::default(
+            );
         let _ = response;
         output = output.set_block_data(Some(
             crate::protocol_serde::shape_get_snapshot_block_output::de_block_data_payload(
@@ -20,7 +24,7 @@ pub fn de_get_snapshot_block_http_response(
                 response.headers(),
             )
             .map_err(|_| {
-                crate::error::GetSnapshotBlockError::unhandled(
+                crate::operation::get_snapshot_block::GetSnapshotBlockError::unhandled(
                     "Failed to parse Checksum from header `x-amz-Checksum",
                 )
             })?,
@@ -30,7 +34,7 @@ pub fn de_get_snapshot_block_http_response(
                 response.headers(),
             )
             .map_err(|_| {
-                crate::error::GetSnapshotBlockError::unhandled(
+                crate::operation::get_snapshot_block::GetSnapshotBlockError::unhandled(
                     "Failed to parse ChecksumAlgorithm from header `x-amz-Checksum-Algorithm",
                 )
             })?,
@@ -40,7 +44,7 @@ pub fn de_get_snapshot_block_http_response(
                 response.headers(),
             )
             .map_err(|_| {
-                crate::error::GetSnapshotBlockError::unhandled(
+                crate::operation::get_snapshot_block::GetSnapshotBlockError::unhandled(
                     "Failed to parse DataLength from header `x-amz-Data-Length",
                 )
             })?,
@@ -55,119 +59,128 @@ pub fn de_get_snapshot_block_http_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_snapshot_block_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetSnapshotBlockOutput, crate::error::GetSnapshotBlockError>
-{
+) -> std::result::Result<
+    crate::operation::get_snapshot_block::GetSnapshotBlockOutput,
+    crate::operation::get_snapshot_block::GetSnapshotBlockError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetSnapshotBlockError::unhandled)?;
+        .map_err(crate::operation::get_snapshot_block::GetSnapshotBlockError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::GetSnapshotBlockError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::get_snapshot_block::GetSnapshotBlockError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::GetSnapshotBlockError::AccessDeniedException({
+        "AccessDeniedException" => crate::operation::get_snapshot_block::GetSnapshotBlockError::AccessDeniedException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::access_denied_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSnapshotBlockError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_snapshot_block::GetSnapshotBlockError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "InternalServerException" => {
-            crate::error::GetSnapshotBlockError::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSnapshotBlockError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "RequestThrottledException" => {
-            crate::error::GetSnapshotBlockError::RequestThrottledException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::request_throttled_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_request_throttled_exception::de_request_throttled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSnapshotBlockError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ResourceNotFoundException" => {
-            crate::error::GetSnapshotBlockError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSnapshotBlockError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ServiceQuotaExceededException" => {
-            crate::error::GetSnapshotBlockError::ServiceQuotaExceededException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::service_quota_exceeded_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSnapshotBlockError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ValidationException" => crate::error::GetSnapshotBlockError::ValidationException({
+        "InternalServerException" => crate::operation::get_snapshot_block::GetSnapshotBlockError::InternalServerException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSnapshotBlockError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_snapshot_block::GetSnapshotBlockError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::GetSnapshotBlockError::generic(generic),
+        "RequestThrottledException" => crate::operation::get_snapshot_block::GetSnapshotBlockError::RequestThrottledException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::RequestThrottledExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_request_throttled_exception::de_request_throttled_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_snapshot_block::GetSnapshotBlockError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::get_snapshot_block::GetSnapshotBlockError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_snapshot_block::GetSnapshotBlockError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ServiceQuotaExceededException" => crate::operation::get_snapshot_block::GetSnapshotBlockError::ServiceQuotaExceededException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_snapshot_block::GetSnapshotBlockError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ValidationException" => crate::operation::get_snapshot_block::GetSnapshotBlockError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_snapshot_block::GetSnapshotBlockError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::get_snapshot_block::GetSnapshotBlockError::generic(generic)
     })
 }

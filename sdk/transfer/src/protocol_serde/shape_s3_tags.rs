@@ -2,7 +2,7 @@
 pub(crate) fn de_s3_tags<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::S3Tag>>,
+    Option<std::vec::Vec<crate::types::S3Tag>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

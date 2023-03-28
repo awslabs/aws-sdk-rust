@@ -2,30 +2,35 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_cache_policy_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetCachePolicyOutput, crate::error::GetCachePolicyError> {
+) -> std::result::Result<
+    crate::operation::get_cache_policy::GetCachePolicyOutput,
+    crate::operation::get_cache_policy::GetCachePolicyError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetCachePolicyError::unhandled)?;
+        .map_err(crate::operation::get_cache_policy::GetCachePolicyError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::GetCachePolicyError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::get_cache_policy::GetCachePolicyError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDenied" => crate::error::GetCachePolicyError::AccessDenied({
+        "AccessDenied" => crate::operation::get_cache_policy::GetCachePolicyError::AccessDenied({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::error::access_denied::Builder::default();
+                let mut output = crate::types::error::builders::AccessDeniedBuilder::default();
                 let _ = response;
                 output = crate::protocol_serde::shape_access_denied::de_access_denied_xml_err(
                     response.body().as_ref(),
                     output,
                 )
-                .map_err(crate::error::GetCachePolicyError::unhandled)?;
+                .map_err(crate::operation::get_cache_policy::GetCachePolicyError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -34,32 +39,39 @@ pub fn de_get_cache_policy_http_error(
             }
             tmp
         }),
-        "NoSuchCachePolicy" => crate::error::GetCachePolicyError::NoSuchCachePolicy({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "NoSuchCachePolicy" => {
+            crate::operation::get_cache_policy::GetCachePolicyError::NoSuchCachePolicy({
                 #[allow(unused_mut)]
-                let mut output = crate::error::no_such_cache_policy::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_no_such_cache_policy::de_no_such_cache_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::GetCachePolicyError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::GetCachePolicyError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::NoSuchCachePolicyBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_no_such_cache_policy::de_no_such_cache_policy_xml_err(response.body().as_ref(), output).map_err(crate::operation::get_cache_policy::GetCachePolicyError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::get_cache_policy::GetCachePolicyError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_cache_policy_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetCachePolicyOutput, crate::error::GetCachePolicyError> {
+) -> std::result::Result<
+    crate::operation::get_cache_policy::GetCachePolicyOutput,
+    crate::operation::get_cache_policy::GetCachePolicyError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_cache_policy_output::Builder::default();
+        let mut output =
+            crate::operation::get_cache_policy::builders::GetCachePolicyOutputBuilder::default();
         let _ = response;
         output = output.set_cache_policy(
             crate::protocol_serde::shape_get_cache_policy_output::de_cache_policy_payload(
@@ -71,7 +83,7 @@ pub fn de_get_cache_policy_http_response(
                 response.headers(),
             )
             .map_err(|_| {
-                crate::error::GetCachePolicyError::unhandled(
+                crate::operation::get_cache_policy::GetCachePolicyError::unhandled(
                     "Failed to parse ETag from header `ETag",
                 )
             })?,

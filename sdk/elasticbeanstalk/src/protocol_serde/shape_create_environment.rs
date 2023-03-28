@@ -2,74 +2,82 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_environment_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::CreateEnvironmentOutput, crate::error::CreateEnvironmentError>
-{
+) -> std::result::Result<
+    crate::operation::create_environment::CreateEnvironmentOutput,
+    crate::operation::create_environment::CreateEnvironmentError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::CreateEnvironmentError::unhandled)?;
+        .map_err(crate::operation::create_environment::CreateEnvironmentError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::CreateEnvironmentError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::create_environment::CreateEnvironmentError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InsufficientPrivilegesException" => {
-            crate::error::CreateEnvironmentError::InsufficientPrivilegesException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InsufficientPrivilegesException" => crate::operation::create_environment::CreateEnvironmentError::InsufficientPrivilegesException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::insufficient_privileges_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InsufficientPrivilegesExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_insufficient_privileges_exception::de_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateEnvironmentError::unhandled)?;
+                    output = crate::protocol_serde::shape_insufficient_privileges_exception::de_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_environment::CreateEnvironmentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "TooManyEnvironmentsException" => {
-            crate::error::CreateEnvironmentError::TooManyEnvironmentsException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TooManyEnvironmentsException" => crate::operation::create_environment::CreateEnvironmentError::TooManyEnvironmentsException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::too_many_environments_exception::Builder::default();
+                    let mut output = crate::types::error::builders::TooManyEnvironmentsExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_environments_exception::de_too_many_environments_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateEnvironmentError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_environments_exception::de_too_many_environments_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_environment::CreateEnvironmentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::CreateEnvironmentError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::create_environment::CreateEnvironmentError::generic(generic)
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_environment_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::CreateEnvironmentOutput, crate::error::CreateEnvironmentError>
-{
+) -> std::result::Result<
+    crate::operation::create_environment::CreateEnvironmentOutput,
+    crate::operation::create_environment::CreateEnvironmentError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::create_environment_output::Builder::default();
+        let mut output =
+            crate::operation::create_environment::builders::CreateEnvironmentOutputBuilder::default(
+            );
         let _ = response;
         output = crate::protocol_serde::shape_create_environment::de_create_environment(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::CreateEnvironmentError::unhandled)?;
+        .map_err(crate::operation::create_environment::CreateEnvironmentError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -80,9 +88,11 @@ pub fn de_create_environment_http_response(
 #[allow(unused_mut)]
 pub fn de_create_environment(
     inp: &[u8],
-    mut builder: crate::output::create_environment_output::Builder,
-) -> Result<crate::output::create_environment_output::Builder, aws_smithy_xml::decode::XmlDecodeError>
-{
+    mut builder: crate::operation::create_environment::builders::CreateEnvironmentOutputBuilder,
+) -> Result<
+    crate::operation::create_environment::builders::CreateEnvironmentOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -266,8 +276,8 @@ pub fn de_create_environment(
             s if s.matches("Status") /* Status com.amazonaws.elasticbeanstalk.synthetic#CreateEnvironmentOutput$Status */ =>  {
                 let var_13 =
                     Some(
-                        Result::<crate::model::EnvironmentStatus, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::EnvironmentStatus::from(
+                        Result::<crate::types::EnvironmentStatus, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::EnvironmentStatus::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
@@ -295,8 +305,8 @@ pub fn de_create_environment(
             s if s.matches("Health") /* Health com.amazonaws.elasticbeanstalk.synthetic#CreateEnvironmentOutput$Health */ =>  {
                 let var_15 =
                     Some(
-                        Result::<crate::model::EnvironmentHealth, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::EnvironmentHealth::from(
+                        Result::<crate::types::EnvironmentHealth, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::EnvironmentHealth::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
@@ -309,8 +319,8 @@ pub fn de_create_environment(
             s if s.matches("HealthStatus") /* HealthStatus com.amazonaws.elasticbeanstalk.synthetic#CreateEnvironmentOutput$HealthStatus */ =>  {
                 let var_16 =
                     Some(
-                        Result::<crate::model::EnvironmentHealthStatus, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::EnvironmentHealthStatus::from(
+                        Result::<crate::types::EnvironmentHealthStatus, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::EnvironmentHealthStatus::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

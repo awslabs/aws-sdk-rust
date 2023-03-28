@@ -2,7 +2,7 @@
 pub(crate) fn de_sensitivity_inspection_templates_entry<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::SensitivityInspectionTemplatesEntry>,
+    Option<crate::types::SensitivityInspectionTemplatesEntry>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::sensitivity_inspection_templates_entry::Builder::default();
+                crate::types::builders::SensitivityInspectionTemplatesEntryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

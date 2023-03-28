@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_active_instance_refresh_not_found_fault_xml_err(
     inp: &[u8],
-    mut builder: crate::error::active_instance_refresh_not_found_fault::Builder,
+    mut builder: crate::types::error::builders::ActiveInstanceRefreshNotFoundFaultBuilder,
 ) -> Result<
-    crate::error::active_instance_refresh_not_found_fault::Builder,
+    crate::types::error::builders::ActiveInstanceRefreshNotFoundFaultBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

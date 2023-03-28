@@ -2,7 +2,7 @@
 pub fn de_application_settings_resource_payload(
     input: &[u8],
 ) -> Result<
-    crate::model::ApplicationSettingsResource,
+    crate::types::ApplicationSettingsResource,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =
@@ -25,7 +25,7 @@ pub fn de_application_settings_resource_payload(
 pub(crate) fn de_application_settings_resource<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ApplicationSettingsResource>,
+    Option<crate::types::ApplicationSettingsResource>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -40,7 +40,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::application_settings_resource::Builder::default();
+            let mut builder = crate::types::builders::ApplicationSettingsResourceBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

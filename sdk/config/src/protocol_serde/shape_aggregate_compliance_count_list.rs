@@ -2,7 +2,7 @@
 pub(crate) fn de_aggregate_compliance_count_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AggregateComplianceCount>>,
+    Option<std::vec::Vec<crate::types::AggregateComplianceCount>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

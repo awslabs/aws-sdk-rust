@@ -2,7 +2,7 @@
 pub(crate) fn de_predictor_executions<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::PredictorExecution>>,
+    Option<std::vec::Vec<crate::types::PredictorExecution>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

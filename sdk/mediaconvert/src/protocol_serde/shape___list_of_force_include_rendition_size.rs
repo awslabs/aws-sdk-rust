@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_force_include_rendition_size<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ForceIncludeRenditionSize>>,
+    Option<std::vec::Vec<crate::types::ForceIncludeRenditionSize>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

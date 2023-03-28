@@ -2,7 +2,7 @@
 pub(crate) fn de_protected_tasks<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ProtectedTask>>,
+    Option<std::vec::Vec<crate::types::ProtectedTask>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

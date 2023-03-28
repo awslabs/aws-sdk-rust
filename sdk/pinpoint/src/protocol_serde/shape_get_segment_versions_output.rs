@@ -2,13 +2,13 @@
 pub fn de_segments_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::SegmentsResponse>,
-    crate::error::GetSegmentVersionsError,
+    std::option::Option<crate::types::SegmentsResponse>,
+    crate::operation::get_segment_versions::GetSegmentVersionsError,
 > {
     (!body.is_empty())
         .then(|| {
             crate::protocol_serde::shape_segments_response::de_segments_response_payload(body)
-                .map_err(crate::error::GetSegmentVersionsError::unhandled)
+                .map_err(crate::operation::get_segment_versions::GetSegmentVersionsError::unhandled)
         })
         .transpose()
 }

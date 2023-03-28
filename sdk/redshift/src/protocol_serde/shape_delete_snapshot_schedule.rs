@@ -3,61 +3,62 @@
 pub fn de_delete_snapshot_schedule_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteSnapshotScheduleOutput,
-    crate::error::DeleteSnapshotScheduleError,
+    crate::operation::delete_snapshot_schedule::DeleteSnapshotScheduleOutput,
+    crate::operation::delete_snapshot_schedule::DeleteSnapshotScheduleError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteSnapshotScheduleError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::delete_snapshot_schedule::DeleteSnapshotScheduleError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::DeleteSnapshotScheduleError::unhandled(
-                generic,
-            ))
-        }
-    };
+    let error_code =
+        match generic.code() {
+            Some(code) => code,
+            None => return Err(
+                crate::operation::delete_snapshot_schedule::DeleteSnapshotScheduleError::unhandled(
+                    generic,
+                ),
+            ),
+        };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidClusterSnapshotScheduleState" => {
-            crate::error::DeleteSnapshotScheduleError::InvalidClusterSnapshotScheduleStateFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidClusterSnapshotScheduleState" => crate::operation::delete_snapshot_schedule::DeleteSnapshotScheduleError::InvalidClusterSnapshotScheduleStateFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_cluster_snapshot_schedule_state_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidClusterSnapshotScheduleStateFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_cluster_snapshot_schedule_state_fault::de_invalid_cluster_snapshot_schedule_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteSnapshotScheduleError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_cluster_snapshot_schedule_state_fault::de_invalid_cluster_snapshot_schedule_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_snapshot_schedule::DeleteSnapshotScheduleError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "SnapshotScheduleNotFound" => {
-            crate::error::DeleteSnapshotScheduleError::SnapshotScheduleNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "SnapshotScheduleNotFound" => crate::operation::delete_snapshot_schedule::DeleteSnapshotScheduleError::SnapshotScheduleNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::snapshot_schedule_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::SnapshotScheduleNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_snapshot_schedule_not_found_fault::de_snapshot_schedule_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteSnapshotScheduleError::unhandled)?;
+                    output = crate::protocol_serde::shape_snapshot_schedule_not_found_fault::de_snapshot_schedule_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_snapshot_schedule::DeleteSnapshotScheduleError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DeleteSnapshotScheduleError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::delete_snapshot_schedule::DeleteSnapshotScheduleError::generic(generic)
     })
 }
 
@@ -65,12 +66,12 @@ pub fn de_delete_snapshot_schedule_http_error(
 pub fn de_delete_snapshot_schedule_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteSnapshotScheduleOutput,
-    crate::error::DeleteSnapshotScheduleError,
+    crate::operation::delete_snapshot_schedule::DeleteSnapshotScheduleOutput,
+    crate::operation::delete_snapshot_schedule::DeleteSnapshotScheduleError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_snapshot_schedule_output::Builder::default();
+        let mut output = crate::operation::delete_snapshot_schedule::builders::DeleteSnapshotScheduleOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

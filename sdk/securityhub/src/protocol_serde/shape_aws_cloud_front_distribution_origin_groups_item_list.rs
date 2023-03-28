@@ -2,7 +2,7 @@
 pub(crate) fn de_aws_cloud_front_distribution_origin_groups_item_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AwsCloudFrontDistributionOriginGroup>>,
+    Option<std::vec::Vec<crate::types::AwsCloudFrontDistributionOriginGroup>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

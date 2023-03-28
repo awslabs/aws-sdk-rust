@@ -2,7 +2,7 @@
 pub(crate) fn de_elasticsearch_destination_description<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ElasticsearchDestinationDescription>,
+    Option<crate::types::ElasticsearchDestinationDescription>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::elasticsearch_destination_description::Builder::default();
+                crate::types::builders::ElasticsearchDestinationDescriptionBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -76,7 +76,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ElasticsearchIndexRotationPeriod::from(
+                                            crate::types::ElasticsearchIndexRotationPeriod::from(
                                                 u.as_ref(),
                                             )
                                         })
@@ -101,7 +101,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ElasticsearchS3BackupMode::from(
+                                            crate::types::ElasticsearchS3BackupMode::from(
                                                 u.as_ref(),
                                             )
                                         })

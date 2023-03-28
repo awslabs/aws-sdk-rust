@@ -2,7 +2,7 @@
 pub(crate) fn de_list_earth_observation_job_output_config<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ListEarthObservationJobOutputConfig>,
+    Option<crate::types::ListEarthObservationJobOutputConfig>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::list_earth_observation_job_output_config::Builder::default();
+                crate::types::builders::ListEarthObservationJobOutputConfigBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -66,7 +66,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::EarthObservationJobStatus::from(
+                                            crate::types::EarthObservationJobStatus::from(
                                                 u.as_ref(),
                                             )
                                         })

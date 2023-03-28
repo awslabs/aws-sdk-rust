@@ -2,7 +2,7 @@
 pub(crate) fn de_identity_pools_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::IdentityPoolShortDescription>>,
+    Option<std::vec::Vec<crate::types::IdentityPoolShortDescription>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

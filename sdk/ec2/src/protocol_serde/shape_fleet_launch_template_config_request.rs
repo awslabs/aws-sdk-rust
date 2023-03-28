@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_fleet_launch_template_config_request(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::FleetLaunchTemplateConfigRequest,
+    input: &crate::types::FleetLaunchTemplateConfigRequest,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("LaunchTemplateSpecification");

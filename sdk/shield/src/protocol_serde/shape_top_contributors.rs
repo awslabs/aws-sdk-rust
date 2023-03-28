@@ -2,7 +2,7 @@
 pub(crate) fn de_top_contributors<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Contributor>>,
+    Option<std::vec::Vec<crate::types::Contributor>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

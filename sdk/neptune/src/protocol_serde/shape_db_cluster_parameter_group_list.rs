@@ -2,7 +2,7 @@
 pub fn de_db_cluster_parameter_group_list(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::DbClusterParameterGroup>,
+    std::vec::Vec<crate::types::DbClusterParameterGroup>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

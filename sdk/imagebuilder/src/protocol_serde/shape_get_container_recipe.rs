@@ -3,124 +3,128 @@
 pub fn de_get_container_recipe_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetContainerRecipeOutput,
-    crate::error::GetContainerRecipeError,
+    crate::operation::get_container_recipe::GetContainerRecipeOutput,
+    crate::operation::get_container_recipe::GetContainerRecipeError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetContainerRecipeError::unhandled)?;
+        .map_err(crate::operation::get_container_recipe::GetContainerRecipeError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::GetContainerRecipeError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::get_container_recipe::GetContainerRecipeError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CallRateLimitExceededException" => {
-            crate::error::GetContainerRecipeError::CallRateLimitExceededException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::call_rate_limit_exceeded_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_call_rate_limit_exceeded_exception::de_call_rate_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetContainerRecipeError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ClientException" => {
-            crate::error::GetContainerRecipeError::ClientException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::client_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_client_exception::de_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetContainerRecipeError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ForbiddenException" => crate::error::GetContainerRecipeError::ForbiddenException({
+        "CallRateLimitExceededException" => crate::operation::get_container_recipe::GetContainerRecipeError::CallRateLimitExceededException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetContainerRecipeError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::CallRateLimitExceededExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_call_rate_limit_exceeded_exception::de_call_rate_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_container_recipe::GetContainerRecipeError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "InvalidRequestException" => {
-            crate::error::GetContainerRecipeError::InvalidRequestException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "ClientException" => crate::operation::get_container_recipe::GetContainerRecipeError::ClientException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_request_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ClientExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetContainerRecipeError::unhandled)?;
+                    output = crate::protocol_serde::shape_client_exception::de_client_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_container_recipe::GetContainerRecipeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ServiceException" => {
-            crate::error::GetContainerRecipeError::ServiceException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ForbiddenException" => crate::operation::get_container_recipe::GetContainerRecipeError::ForbiddenException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::service_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ForbiddenExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_exception::de_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetContainerRecipeError::unhandled)?;
+                    output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_container_recipe::GetContainerRecipeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ServiceUnavailableException" => {
-            crate::error::GetContainerRecipeError::ServiceUnavailableException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidRequestException" => crate::operation::get_container_recipe::GetContainerRecipeError::InvalidRequestException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::service_unavailable_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetContainerRecipeError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_container_recipe::GetContainerRecipeError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::GetContainerRecipeError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ServiceException" => crate::operation::get_container_recipe::GetContainerRecipeError::ServiceException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ServiceExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_service_exception::de_service_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_container_recipe::GetContainerRecipeError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ServiceUnavailableException" => crate::operation::get_container_recipe::GetContainerRecipeError::ServiceUnavailableException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_container_recipe::GetContainerRecipeError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::get_container_recipe::GetContainerRecipeError::generic(generic)
     })
 }
 
@@ -128,18 +132,18 @@ pub fn de_get_container_recipe_http_error(
 pub fn de_get_container_recipe_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetContainerRecipeOutput,
-    crate::error::GetContainerRecipeError,
+    crate::operation::get_container_recipe::GetContainerRecipeOutput,
+    crate::operation::get_container_recipe::GetContainerRecipeError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_container_recipe_output::Builder::default();
+        let mut output = crate::operation::get_container_recipe::builders::GetContainerRecipeOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_get_container_recipe::de_get_container_recipe(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::GetContainerRecipeError::unhandled)?;
+        .map_err(crate::operation::get_container_recipe::GetContainerRecipeError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -149,9 +153,9 @@ pub fn de_get_container_recipe_http_response(
 
 pub(crate) fn de_get_container_recipe(
     value: &[u8],
-    mut builder: crate::output::get_container_recipe_output::Builder,
+    mut builder: crate::operation::get_container_recipe::builders::GetContainerRecipeOutputBuilder,
 ) -> Result<
-    crate::output::get_container_recipe_output::Builder,
+    crate::operation::get_container_recipe::builders::GetContainerRecipeOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

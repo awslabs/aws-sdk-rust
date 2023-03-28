@@ -2,7 +2,7 @@
 pub(crate) fn de_flink_application_configuration_description<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::FlinkApplicationConfigurationDescription>,
+    Option<crate::types::FlinkApplicationConfigurationDescription>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::flink_application_configuration_description::Builder::default();
+                crate::types::builders::FlinkApplicationConfigurationDescriptionBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

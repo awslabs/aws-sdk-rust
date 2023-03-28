@@ -2,7 +2,7 @@
 pub(crate) fn de_user_error_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::UserError>>,
+    Option<std::vec::Vec<crate::types::UserError>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

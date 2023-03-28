@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_client_login_banner_options(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::ClientLoginBannerOptions,
+    input: &crate::types::ClientLoginBannerOptions,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Enabled");

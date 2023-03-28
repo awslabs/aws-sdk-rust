@@ -3,31 +3,28 @@
 pub fn de_authorize_security_group_egress_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::AuthorizeSecurityGroupEgressOutput,
-    crate::error::AuthorizeSecurityGroupEgressError,
+    crate::operation::authorize_security_group_egress::AuthorizeSecurityGroupEgressOutput,
+    crate::operation::authorize_security_group_egress::AuthorizeSecurityGroupEgressError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::AuthorizeSecurityGroupEgressError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::authorize_security_group_egress::AuthorizeSecurityGroupEgressError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::AuthorizeSecurityGroupEgressError::generic(
-        generic,
-    ))
+    Err(crate::operation::authorize_security_group_egress::AuthorizeSecurityGroupEgressError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_authorize_security_group_egress_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::AuthorizeSecurityGroupEgressOutput,
-    crate::error::AuthorizeSecurityGroupEgressError,
+    crate::operation::authorize_security_group_egress::AuthorizeSecurityGroupEgressOutput,
+    crate::operation::authorize_security_group_egress::AuthorizeSecurityGroupEgressError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::authorize_security_group_egress_output::Builder::default();
+        let mut output = crate::operation::authorize_security_group_egress::builders::AuthorizeSecurityGroupEgressOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_authorize_security_group_egress::de_authorize_security_group_egress(response.body().as_ref(), output).map_err(crate::error::AuthorizeSecurityGroupEgressError::unhandled)?;
+        output = crate::protocol_serde::shape_authorize_security_group_egress::de_authorize_security_group_egress(response.body().as_ref(), output).map_err(crate::operation::authorize_security_group_egress::AuthorizeSecurityGroupEgressError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -36,13 +33,7 @@ pub fn de_authorize_security_group_egress_http_response(
 }
 
 #[allow(unused_mut)]
-pub fn de_authorize_security_group_egress(
-    inp: &[u8],
-    mut builder: crate::output::authorize_security_group_egress_output::Builder,
-) -> Result<
-    crate::output::authorize_security_group_egress_output::Builder,
-    aws_smithy_xml::decode::XmlDecodeError,
-> {
+pub fn de_authorize_security_group_egress(inp: &[u8], mut builder: crate::operation::authorize_security_group_egress::builders::AuthorizeSecurityGroupEgressOutputBuilder) -> Result<crate::operation::authorize_security_group_egress::builders::AuthorizeSecurityGroupEgressOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

@@ -2,7 +2,7 @@
 pub(crate) fn de_replication_run_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ReplicationRun>>,
+    Option<std::vec::Vec<crate::types::ReplicationRun>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

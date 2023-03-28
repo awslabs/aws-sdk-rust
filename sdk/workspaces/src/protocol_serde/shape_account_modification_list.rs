@@ -2,7 +2,7 @@
 pub(crate) fn de_account_modification_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AccountModification>>,
+    Option<std::vec::Vec<crate::types::AccountModification>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

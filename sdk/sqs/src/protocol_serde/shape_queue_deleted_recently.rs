@@ -2,8 +2,11 @@
 #[allow(unused_mut)]
 pub fn de_queue_deleted_recently_xml_err(
     inp: &[u8],
-    mut builder: crate::error::queue_deleted_recently::Builder,
-) -> Result<crate::error::queue_deleted_recently::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    mut builder: crate::types::error::builders::QueueDeletedRecentlyBuilder,
+) -> Result<
+    crate::types::error::builders::QueueDeletedRecentlyBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     if inp.is_empty() {
         return Ok(builder);
     }

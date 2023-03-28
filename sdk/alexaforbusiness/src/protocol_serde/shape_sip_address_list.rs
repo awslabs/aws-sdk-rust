@@ -2,7 +2,7 @@
 pub(crate) fn de_sip_address_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SipAddress>>,
+    Option<std::vec::Vec<crate::types::SipAddress>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

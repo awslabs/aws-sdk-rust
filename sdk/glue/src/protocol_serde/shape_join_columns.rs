@@ -2,7 +2,7 @@
 pub(crate) fn de_join_columns<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::JoinColumn>>,
+    Option<std::vec::Vec<crate::types::JoinColumn>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

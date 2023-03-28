@@ -2,7 +2,7 @@
 pub(crate) fn de_file_system_config_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::FileSystemConfig>>,
+    Option<std::vec::Vec<crate::types::FileSystemConfig>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

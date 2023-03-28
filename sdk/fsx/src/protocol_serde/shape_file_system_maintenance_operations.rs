@@ -2,7 +2,7 @@
 pub(crate) fn de_file_system_maintenance_operations<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::FileSystemMaintenanceOperation>>,
+    Option<std::vec::Vec<crate::types::FileSystemMaintenanceOperation>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -29,7 +29,7 @@ where
                         )?
                         .map(|s| {
                             s.to_unescaped().map(|u| {
-                                crate::model::FileSystemMaintenanceOperation::from(u.as_ref())
+                                crate::types::FileSystemMaintenanceOperation::from(u.as_ref())
                             })
                         })
                         .transpose()?;

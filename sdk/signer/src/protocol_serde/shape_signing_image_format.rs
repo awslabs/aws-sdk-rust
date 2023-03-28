@@ -2,7 +2,7 @@
 pub(crate) fn de_signing_image_format<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::SigningImageFormat>,
+    Option<crate::types::SigningImageFormat>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::signing_image_format::Builder::default();
+            let mut builder = crate::types::builders::SigningImageFormatBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -37,7 +37,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::ImageFormat::from(u.as_ref()))
+                                            .map(|u| crate::types::ImageFormat::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

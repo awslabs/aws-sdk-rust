@@ -2,7 +2,7 @@
 pub(crate) fn de_sql_aliases<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SqlAlias>>,
+    Option<std::vec::Vec<crate::types::SqlAlias>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

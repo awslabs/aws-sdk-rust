@@ -2,7 +2,7 @@
 pub(crate) fn de_parti_ql_batch_response<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::BatchStatementResponse>>,
+    Option<std::vec::Vec<crate::types::BatchStatementResponse>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

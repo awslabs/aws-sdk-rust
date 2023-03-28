@@ -2,7 +2,7 @@
 pub(crate) fn de_aws_ec2_vpn_connection_options_tunnel_options_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AwsEc2VpnConnectionOptionsTunnelOptionsDetails>>,
+    Option<std::vec::Vec<crate::types::AwsEc2VpnConnectionOptionsTunnelOptionsDetails>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

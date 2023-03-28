@@ -2,7 +2,7 @@
 pub(crate) fn de_certificate_authorities<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CertificateAuthority>>,
+    Option<std::vec::Vec<crate::types::CertificateAuthority>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

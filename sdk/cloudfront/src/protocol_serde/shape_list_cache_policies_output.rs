@@ -2,20 +2,20 @@
 pub fn de_cache_policy_list_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::CachePolicyList>,
-    crate::error::ListCachePoliciesError,
+    std::option::Option<crate::types::CachePolicyList>,
+    crate::operation::list_cache_policies::ListCachePoliciesError,
 > {
     (!body.is_empty())
         .then(|| {
             crate::protocol_serde::shape_list_cache_policies_output::de_cache_policy_list(body)
-                .map_err(crate::error::ListCachePoliciesError::unhandled)
+                .map_err(crate::operation::list_cache_policies::ListCachePoliciesError::unhandled)
         })
         .transpose()
 }
 
 pub fn de_cache_policy_list(
     inp: &[u8],
-) -> Result<crate::model::CachePolicyList, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::CachePolicyList, aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;

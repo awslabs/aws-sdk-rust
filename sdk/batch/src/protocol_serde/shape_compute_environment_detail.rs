@@ -2,7 +2,7 @@
 pub(crate) fn de_compute_environment_detail<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ComputeEnvironmentDetail>,
+    Option<crate::types::ComputeEnvironmentDetail>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::compute_environment_detail::Builder::default();
+            let mut builder = crate::types::builders::ComputeEnvironmentDetailBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -71,7 +71,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::CeType::from(u.as_ref()))
+                                            .map(|u| crate::types::CeType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -83,7 +83,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::CeState::from(u.as_ref()))
+                                            .map(|u| crate::types::CeState::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -95,7 +95,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::CeStatus::from(u.as_ref()))
+                                            .map(|u| crate::types::CeStatus::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -142,7 +142,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::OrchestrationType::from(u.as_ref())
+                                            crate::types::OrchestrationType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

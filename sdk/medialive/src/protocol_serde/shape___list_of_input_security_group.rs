@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_input_security_group<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::InputSecurityGroup>>,
+    Option<std::vec::Vec<crate::types::InputSecurityGroup>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

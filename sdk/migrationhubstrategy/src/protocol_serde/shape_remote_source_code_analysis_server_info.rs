@@ -2,7 +2,7 @@
 pub(crate) fn de_remote_source_code_analysis_server_info<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::RemoteSourceCodeAnalysisServerInfo>,
+    Option<crate::types::RemoteSourceCodeAnalysisServerInfo>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::remote_source_code_analysis_server_info::Builder::default();
+                crate::types::builders::RemoteSourceCodeAnalysisServerInfoBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

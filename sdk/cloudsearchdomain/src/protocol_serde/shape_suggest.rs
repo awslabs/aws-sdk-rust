@@ -2,27 +2,31 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_suggest_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::SuggestOutput, crate::error::SuggestError> {
+) -> std::result::Result<
+    crate::operation::suggest::SuggestOutput,
+    crate::operation::suggest::SuggestError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::SuggestError::unhandled)?;
+        .map_err(crate::operation::suggest::SuggestError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::SuggestError::unhandled(generic)),
+        None => return Err(crate::operation::suggest::SuggestError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "SearchException" => {
-            crate::error::SuggestError::SearchException({
+            crate::operation::suggest::SuggestError::SearchException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::search_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::SearchExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_search_exception::de_search_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SuggestError::unhandled)?;
+                    output = crate::protocol_serde::shape_search_exception::de_search_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::suggest::SuggestError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -32,20 +36,23 @@ pub fn de_suggest_http_error(
                 tmp
             })
         }
-        _ => crate::error::SuggestError::generic(generic),
+        _ => crate::operation::suggest::SuggestError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_suggest_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::SuggestOutput, crate::error::SuggestError> {
+) -> std::result::Result<
+    crate::operation::suggest::SuggestOutput,
+    crate::operation::suggest::SuggestError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::suggest_output::Builder::default();
+        let mut output = crate::operation::suggest::builders::SuggestOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_suggest::de_suggest(response.body().as_ref(), output)
-            .map_err(crate::error::SuggestError::unhandled)?;
+            .map_err(crate::operation::suggest::SuggestError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -55,9 +62,9 @@ pub fn de_suggest_http_response(
 
 pub(crate) fn de_suggest(
     value: &[u8],
-    mut builder: crate::output::suggest_output::Builder,
+    mut builder: crate::operation::suggest::builders::SuggestOutputBuilder,
 ) -> Result<
-    crate::output::suggest_output::Builder,
+    crate::operation::suggest::builders::SuggestOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

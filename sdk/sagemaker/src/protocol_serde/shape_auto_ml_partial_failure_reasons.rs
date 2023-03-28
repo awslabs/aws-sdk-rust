@@ -2,7 +2,7 @@
 pub(crate) fn de_auto_ml_partial_failure_reasons<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AutoMlPartialFailureReason>>,
+    Option<std::vec::Vec<crate::types::AutoMlPartialFailureReason>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_ingestions<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Ingestion>>,
+    Option<std::vec::Vec<crate::types::Ingestion>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

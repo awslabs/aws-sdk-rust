@@ -2,7 +2,7 @@
 pub(crate) fn de_route_analysis_completion<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::RouteAnalysisCompletion>,
+    Option<crate::types::RouteAnalysisCompletion>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::route_analysis_completion::Builder::default();
+            let mut builder = crate::types::builders::RouteAnalysisCompletionBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::RouteAnalysisCompletionResultCode::from(
+                                            crate::types::RouteAnalysisCompletionResultCode::from(
                                                 u.as_ref(),
                                             )
                                         })
@@ -45,7 +45,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::RouteAnalysisCompletionReasonCode::from(
+                                            crate::types::RouteAnalysisCompletionReasonCode::from(
                                                 u.as_ref(),
                                             )
                                         })

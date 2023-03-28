@@ -2,43 +2,35 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_contact_lists_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListContactListsOutput, crate::error::ListContactListsError>
-{
+) -> std::result::Result<
+    crate::operation::list_contact_lists::ListContactListsOutput,
+    crate::operation::list_contact_lists::ListContactListsError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListContactListsError::unhandled)?;
+        .map_err(crate::operation::list_contact_lists::ListContactListsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListContactListsError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::list_contact_lists::ListContactListsError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::ListContactListsError::BadRequestException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListContactListsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "TooManyRequestsException" => {
-            crate::error::ListContactListsError::TooManyRequestsException({
+        "BadRequestException" => {
+            crate::operation::list_contact_lists::ListContactListsError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::BadRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListContactListsError::unhandled)?;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_contact_lists::ListContactListsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -48,24 +40,46 @@ pub fn de_list_contact_lists_http_error(
                 tmp
             })
         }
-        _ => crate::error::ListContactListsError::generic(generic),
+        "TooManyRequestsException" => {
+            crate::operation::list_contact_lists::ListContactListsError::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_contact_lists::ListContactListsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::list_contact_lists::ListContactListsError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_contact_lists_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListContactListsOutput, crate::error::ListContactListsError>
-{
+) -> std::result::Result<
+    crate::operation::list_contact_lists::ListContactListsOutput,
+    crate::operation::list_contact_lists::ListContactListsError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_contact_lists_output::Builder::default();
+        let mut output =
+            crate::operation::list_contact_lists::builders::ListContactListsOutputBuilder::default(
+            );
         let _ = response;
         output = crate::protocol_serde::shape_list_contact_lists::de_list_contact_lists(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListContactListsError::unhandled)?;
+        .map_err(crate::operation::list_contact_lists::ListContactListsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -75,9 +89,9 @@ pub fn de_list_contact_lists_http_response(
 
 pub(crate) fn de_list_contact_lists(
     value: &[u8],
-    mut builder: crate::output::list_contact_lists_output::Builder,
+    mut builder: crate::operation::list_contact_lists::builders::ListContactListsOutputBuilder,
 ) -> Result<
-    crate::output::list_contact_lists_output::Builder,
+    crate::operation::list_contact_lists::builders::ListContactListsOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

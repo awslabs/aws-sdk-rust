@@ -2,7 +2,7 @@
 pub(crate) fn de_configured_table_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ConfiguredTableSummary>>,
+    Option<std::vec::Vec<crate::types::ConfiguredTableSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

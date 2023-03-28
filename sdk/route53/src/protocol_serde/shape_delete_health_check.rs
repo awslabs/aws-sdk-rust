@@ -2,81 +2,99 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_health_check_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeleteHealthCheckOutput, crate::error::DeleteHealthCheckError>
-{
+) -> std::result::Result<
+    crate::operation::delete_health_check::DeleteHealthCheckOutput,
+    crate::operation::delete_health_check::DeleteHealthCheckError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteHealthCheckError::unhandled)?;
+        .map_err(crate::operation::delete_health_check::DeleteHealthCheckError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DeleteHealthCheckError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::delete_health_check::DeleteHealthCheckError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "HealthCheckInUse" => crate::error::DeleteHealthCheckError::HealthCheckInUse({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "HealthCheckInUse" => {
+            crate::operation::delete_health_check::DeleteHealthCheckError::HealthCheckInUse({
                 #[allow(unused_mut)]
-                let mut output = crate::error::health_check_in_use::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_health_check_in_use::de_health_check_in_use_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteHealthCheckError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InvalidInput" => crate::error::DeleteHealthCheckError::InvalidInput({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::HealthCheckInUseBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_health_check_in_use::de_health_check_in_use_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_health_check::DeleteHealthCheckError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidInput" => {
+            crate::operation::delete_health_check::DeleteHealthCheckError::InvalidInput({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_input::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_input::de_invalid_input_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::DeleteHealthCheckError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "NoSuchHealthCheck" => crate::error::DeleteHealthCheckError::NoSuchHealthCheck({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidInputBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_input::de_invalid_input_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(
+                        crate::operation::delete_health_check::DeleteHealthCheckError::unhandled,
+                    )?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "NoSuchHealthCheck" => {
+            crate::operation::delete_health_check::DeleteHealthCheckError::NoSuchHealthCheck({
                 #[allow(unused_mut)]
-                let mut output = crate::error::no_such_health_check::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_no_such_health_check::de_no_such_health_check_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteHealthCheckError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::DeleteHealthCheckError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::NoSuchHealthCheckBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_no_such_health_check::de_no_such_health_check_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_health_check::DeleteHealthCheckError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::delete_health_check::DeleteHealthCheckError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_health_check_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeleteHealthCheckOutput, crate::error::DeleteHealthCheckError>
-{
+) -> std::result::Result<
+    crate::operation::delete_health_check::DeleteHealthCheckOutput,
+    crate::operation::delete_health_check::DeleteHealthCheckError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_health_check_output::Builder::default();
+        let mut output = crate::operation::delete_health_check::builders::DeleteHealthCheckOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

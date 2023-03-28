@@ -2,81 +2,99 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_import_job_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetImportJobOutput, crate::error::GetImportJobError> {
+) -> std::result::Result<
+    crate::operation::get_import_job::GetImportJobOutput,
+    crate::operation::get_import_job::GetImportJobError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetImportJobError::unhandled)?;
+        .map_err(crate::operation::get_import_job::GetImportJobError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::GetImportJobError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::get_import_job::GetImportJobError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::GetImportJobError::BadRequestException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "BadRequestException" => {
+            crate::operation::get_import_job::GetImportJobError::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetImportJobError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "NotFoundException" => crate::error::GetImportJobError::NotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::BadRequestExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_import_job::GetImportJobError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "NotFoundException" => {
+            crate::operation::get_import_job::GetImportJobError::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetImportJobError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "TooManyRequestsException" => crate::error::GetImportJobError::TooManyRequestsException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::NotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_import_job::GetImportJobError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "TooManyRequestsException" => {
+            crate::operation::get_import_job::GetImportJobError::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetImportJobError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::GetImportJobError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_import_job::GetImportJobError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::get_import_job::GetImportJobError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_import_job_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetImportJobOutput, crate::error::GetImportJobError> {
+) -> std::result::Result<
+    crate::operation::get_import_job::GetImportJobOutput,
+    crate::operation::get_import_job::GetImportJobError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_import_job_output::Builder::default();
+        let mut output =
+            crate::operation::get_import_job::builders::GetImportJobOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_get_import_job::de_get_import_job(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::GetImportJobError::unhandled)?;
+        .map_err(crate::operation::get_import_job::GetImportJobError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -86,9 +104,9 @@ pub fn de_get_import_job_http_response(
 
 pub(crate) fn de_get_import_job(
     value: &[u8],
-    mut builder: crate::output::get_import_job_output::Builder,
+    mut builder: crate::operation::get_import_job::builders::GetImportJobOutputBuilder,
 ) -> Result<
-    crate::output::get_import_job_output::Builder,
+    crate::operation::get_import_job::builders::GetImportJobOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =
@@ -161,7 +179,7 @@ pub(crate) fn de_get_import_job(
                             )?
                             .map(|s| {
                                 s.to_unescaped()
-                                    .map(|u| crate::model::JobStatus::from(u.as_ref()))
+                                    .map(|u| crate::types::JobStatus::from(u.as_ref()))
                             })
                             .transpose()?,
                         );

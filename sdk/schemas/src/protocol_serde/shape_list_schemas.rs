@@ -2,58 +2,72 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_schemas_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListSchemasOutput, crate::error::ListSchemasError> {
+) -> std::result::Result<
+    crate::operation::list_schemas::ListSchemasOutput,
+    crate::operation::list_schemas::ListSchemasError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListSchemasError::unhandled)?;
+        .map_err(crate::operation::list_schemas::ListSchemasError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListSchemasError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::list_schemas::ListSchemasError::unhandled(
+                generic,
+            ))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::ListSchemasError::BadRequestException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSchemasError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ForbiddenException" => crate::error::ListSchemasError::ForbiddenException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSchemasError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InternalServerErrorException" => {
-            crate::error::ListSchemasError::InternalServerErrorException({
+        "BadRequestException" => {
+            crate::operation::list_schemas::ListSchemasError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::internal_server_error_exception::Builder::default();
+                        crate::types::error::builders::BadRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSchemasError::unhandled)?;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_schemas::ListSchemasError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ForbiddenException" => {
+            crate::operation::list_schemas::ListSchemasError::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ForbiddenExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_schemas::ListSchemasError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InternalServerErrorException" => {
+            crate::operation::list_schemas::ListSchemasError::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InternalServerErrorExceptionBuilder::default(
+                        );
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_schemas::ListSchemasError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -64,14 +78,15 @@ pub fn de_list_schemas_http_error(
             })
         }
         "ServiceUnavailableException" => {
-            crate::error::ListSchemasError::ServiceUnavailableException({
+            crate::operation::list_schemas::ListSchemasError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::service_unavailable_exception::Builder::default();
+                        crate::types::error::builders::ServiceUnavailableExceptionBuilder::default(
+                        );
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSchemasError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_schemas::ListSchemasError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -81,38 +96,45 @@ pub fn de_list_schemas_http_error(
                 tmp
             })
         }
-        "UnauthorizedException" => crate::error::ListSchemasError::UnauthorizedException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "UnauthorizedException" => {
+            crate::operation::list_schemas::ListSchemasError::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSchemasError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::ListSchemasError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::UnauthorizedExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_schemas::ListSchemasError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::list_schemas::ListSchemasError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_schemas_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListSchemasOutput, crate::error::ListSchemasError> {
+) -> std::result::Result<
+    crate::operation::list_schemas::ListSchemasOutput,
+    crate::operation::list_schemas::ListSchemasError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_schemas_output::Builder::default();
+        let mut output =
+            crate::operation::list_schemas::builders::ListSchemasOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_schemas::de_list_schemas(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListSchemasError::unhandled)?;
+        .map_err(crate::operation::list_schemas::ListSchemasError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -122,9 +144,9 @@ pub fn de_list_schemas_http_response(
 
 pub(crate) fn de_list_schemas(
     value: &[u8],
-    mut builder: crate::output::list_schemas_output::Builder,
+    mut builder: crate::operation::list_schemas::builders::ListSchemasOutputBuilder,
 ) -> Result<
-    crate::output::list_schemas_output::Builder,
+    crate::operation::list_schemas::builders::ListSchemasOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

@@ -2,8 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_over_limit_xml_err(
     inp: &[u8],
-    mut builder: crate::error::over_limit::Builder,
-) -> Result<crate::error::over_limit::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    mut builder: crate::types::error::builders::OverLimitBuilder,
+) -> Result<crate::types::error::builders::OverLimitBuilder, aws_smithy_xml::decode::XmlDecodeError>
+{
     if inp.is_empty() {
         return Ok(builder);
     }

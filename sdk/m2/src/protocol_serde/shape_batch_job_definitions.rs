@@ -2,7 +2,7 @@
 pub(crate) fn de_batch_job_definitions<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::BatchJobDefinition>>,
+    Option<std::vec::Vec<crate::types::BatchJobDefinition>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

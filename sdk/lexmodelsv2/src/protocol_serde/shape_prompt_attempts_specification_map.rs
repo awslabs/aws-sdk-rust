@@ -4,8 +4,8 @@ pub(crate) fn de_prompt_attempts_specification_map<'a, I>(
 ) -> Result<
     Option<
         std::collections::HashMap<
-            crate::model::PromptAttempt,
-            crate::model::PromptAttemptSpecification,
+            crate::types::PromptAttempt,
+            crate::types::PromptAttemptSpecification,
         >,
     >,
     aws_smithy_json::deserialize::error::DeserializeError,
@@ -28,7 +28,7 @@ where
                     Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         let key = key
                             .to_unescaped()
-                            .map(|u| crate::model::PromptAttempt::from(u.as_ref()))?;
+                            .map(|u| crate::types::PromptAttempt::from(u.as_ref()))?;
                         let value =
                             crate::protocol_serde::shape_prompt_attempt_specification::de_prompt_attempt_specification(tokens)?
                         ;

@@ -2,7 +2,7 @@
 pub(crate) fn de_filter_values<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::FilterValue>>,
+    Option<std::vec::Vec<crate::types::FilterValue>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

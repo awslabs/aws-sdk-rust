@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_bucket_already_owned_by_you_xml_err(
     inp: &[u8],
-    mut builder: crate::error::bucket_already_owned_by_you::Builder,
+    mut builder: crate::types::error::builders::BucketAlreadyOwnedByYouBuilder,
 ) -> Result<
-    crate::error::bucket_already_owned_by_you::Builder,
+    crate::types::error::builders::BucketAlreadyOwnedByYouBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

@@ -2,43 +2,35 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_mission_profile_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetMissionProfileOutput, crate::error::GetMissionProfileError>
-{
+) -> std::result::Result<
+    crate::operation::get_mission_profile::GetMissionProfileOutput,
+    crate::operation::get_mission_profile::GetMissionProfileError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetMissionProfileError::unhandled)?;
+        .map_err(crate::operation::get_mission_profile::GetMissionProfileError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::GetMissionProfileError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::get_mission_profile::GetMissionProfileError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DependencyException" => crate::error::GetMissionProfileError::DependencyException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::dependency_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_dependency_exception::de_dependency_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetMissionProfileError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InvalidParameterException" => {
-            crate::error::GetMissionProfileError::InvalidParameterException({
+        "DependencyException" => {
+            crate::operation::get_mission_profile::GetMissionProfileError::DependencyException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::DependencyExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetMissionProfileError::unhandled)?;
+                    output = crate::protocol_serde::shape_dependency_exception::de_dependency_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_mission_profile::GetMissionProfileError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -47,42 +39,65 @@ pub fn de_get_mission_profile_http_error(
                 }
                 tmp
             })
+        }
+        "InvalidParameterException" => {
+            crate::operation::get_mission_profile::GetMissionProfileError::InvalidParameterException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidParameterExceptionBuilder::default();
+                        let _ = response;
+                        output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_mission_profile::GetMissionProfileError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
         }
         "ResourceNotFoundException" => {
-            crate::error::GetMissionProfileError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            crate::operation::get_mission_profile::GetMissionProfileError::ResourceNotFoundException(
+                {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetMissionProfileError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                        let _ = response;
+                        output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_mission_profile::GetMissionProfileError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
         }
-        _ => crate::error::GetMissionProfileError::generic(generic),
+        _ => crate::operation::get_mission_profile::GetMissionProfileError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_mission_profile_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetMissionProfileOutput, crate::error::GetMissionProfileError>
-{
+) -> std::result::Result<
+    crate::operation::get_mission_profile::GetMissionProfileOutput,
+    crate::operation::get_mission_profile::GetMissionProfileError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_mission_profile_output::Builder::default();
+        let mut output = crate::operation::get_mission_profile::builders::GetMissionProfileOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_get_mission_profile::de_get_mission_profile(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::GetMissionProfileError::unhandled)?;
+        .map_err(crate::operation::get_mission_profile::GetMissionProfileError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -92,9 +107,9 @@ pub fn de_get_mission_profile_http_response(
 
 pub(crate) fn de_get_mission_profile(
     value: &[u8],
-    mut builder: crate::output::get_mission_profile_output::Builder,
+    mut builder: crate::operation::get_mission_profile::builders::GetMissionProfileOutputBuilder,
 ) -> Result<
-    crate::output::get_mission_profile_output::Builder,
+    crate::operation::get_mission_profile::builders::GetMissionProfileOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

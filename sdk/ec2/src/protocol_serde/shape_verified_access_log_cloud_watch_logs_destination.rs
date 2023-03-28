@@ -2,11 +2,11 @@
 pub fn de_verified_access_log_cloud_watch_logs_destination(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    crate::model::VerifiedAccessLogCloudWatchLogsDestination,
+    crate::types::VerifiedAccessLogCloudWatchLogsDestination,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     #[allow(unused_mut)]
-    let mut builder = crate::model::VerifiedAccessLogCloudWatchLogsDestination::builder();
+    let mut builder = crate::types::VerifiedAccessLogCloudWatchLogsDestination::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("enabled") /* Enabled com.amazonaws.ec2#VerifiedAccessLogCloudWatchLogsDestination$Enabled */ =>  {

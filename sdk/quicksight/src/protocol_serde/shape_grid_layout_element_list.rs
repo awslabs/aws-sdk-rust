@@ -2,7 +2,7 @@
 pub(crate) fn de_grid_layout_element_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::GridLayoutElement>>,
+    Option<std::vec::Vec<crate::types::GridLayoutElement>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

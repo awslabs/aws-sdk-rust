@@ -2,7 +2,7 @@
 pub(crate) fn de_language_options<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::LanguageCode>>,
+    Option<std::vec::Vec<crate::types::LanguageCode>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -29,7 +29,7 @@ where
                         )?
                         .map(|s| {
                             s.to_unescaped()
-                                .map(|u| crate::model::LanguageCode::from(u.as_ref()))
+                                .map(|u| crate::types::LanguageCode::from(u.as_ref()))
                         })
                         .transpose()?;
                         if let Some(value) = value {

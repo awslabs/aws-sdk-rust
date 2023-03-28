@@ -2,7 +2,7 @@
 pub(crate) fn de_aggregate_column_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AggregateColumn>>,
+    Option<std::vec::Vec<crate::types::AggregateColumn>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

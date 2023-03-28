@@ -2,7 +2,7 @@
 pub(crate) fn de_account_modification<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::AccountModification>,
+    Option<crate::types::AccountModification>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::account_modification::Builder::default();
+            let mut builder = crate::types::builders::AccountModificationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -27,7 +27,7 @@ where
                                 builder = builder.set_modification_state(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?.map(|s|
                                         s.to_unescaped().map(|u|
-                                            crate::model::DedicatedTenancyModificationStateEnum::from(u.as_ref())
+                                            crate::types::DedicatedTenancyModificationStateEnum::from(u.as_ref())
                                         )
                                     ).transpose()?
                                 );
@@ -39,7 +39,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::DedicatedTenancySupportResultEnum::from(
+                                            crate::types::DedicatedTenancySupportResultEnum::from(
                                                 u.as_ref(),
                                             )
                                         })

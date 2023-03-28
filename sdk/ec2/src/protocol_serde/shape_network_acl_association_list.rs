@@ -2,7 +2,7 @@
 pub fn de_network_acl_association_list(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::NetworkAclAssociation>,
+    std::vec::Vec<crate::types::NetworkAclAssociation>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

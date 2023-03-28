@@ -2,7 +2,7 @@
 pub(crate) fn de_maintenance_window_automation_parameters<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::MaintenanceWindowAutomationParameters>,
+    Option<crate::types::MaintenanceWindowAutomationParameters>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::maintenance_window_automation_parameters::Builder::default();
+                crate::types::builders::MaintenanceWindowAutomationParametersBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -63,7 +63,7 @@ where
 
 pub fn ser_maintenance_window_automation_parameters(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::MaintenanceWindowAutomationParameters,
+    input: &crate::types::MaintenanceWindowAutomationParameters,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.document_version {
         object.key("DocumentVersion").string(var_1.as_str());

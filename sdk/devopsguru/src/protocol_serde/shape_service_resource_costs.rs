@@ -2,7 +2,7 @@
 pub(crate) fn de_service_resource_costs<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ServiceResourceCost>>,
+    Option<std::vec::Vec<crate::types::ServiceResourceCost>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

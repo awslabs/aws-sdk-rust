@@ -2,7 +2,7 @@
 pub(crate) fn de_cloud_formation_stack_record_source_info<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::CloudFormationStackRecordSourceInfo>,
+    Option<crate::types::CloudFormationStackRecordSourceInfo>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::cloud_formation_stack_record_source_info::Builder::default();
+                crate::types::builders::CloudFormationStackRecordSourceInfoBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -31,7 +31,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::CloudFormationStackRecordSourceType::from(
+                                            crate::types::CloudFormationStackRecordSourceType::from(
                                                 u.as_ref(),
                                             )
                                         })

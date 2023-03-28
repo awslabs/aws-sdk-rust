@@ -2,7 +2,7 @@
 pub fn de_create_volume_permission_list(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::CreateVolumePermission>,
+    std::vec::Vec<crate::types::CreateVolumePermission>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

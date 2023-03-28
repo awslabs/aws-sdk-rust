@@ -2,7 +2,7 @@
 pub(crate) fn de_auto_termination_policy<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::AutoTerminationPolicy>,
+    Option<crate::types::AutoTerminationPolicy>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::auto_termination_policy::Builder::default();
+            let mut builder = crate::types::builders::AutoTerminationPolicyBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -57,7 +57,7 @@ where
 
 pub fn ser_auto_termination_policy(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::AutoTerminationPolicy,
+    input: &crate::types::AutoTerminationPolicy,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if input.idle_timeout != 0 {
         object.key("IdleTimeout").number(

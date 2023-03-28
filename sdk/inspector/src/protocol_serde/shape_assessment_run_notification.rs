@@ -2,7 +2,7 @@
 pub(crate) fn de_assessment_run_notification<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::AssessmentRunNotification>,
+    Option<crate::types::AssessmentRunNotification>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::assessment_run_notification::Builder::default();
+            let mut builder = crate::types::builders::AssessmentRunNotificationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -38,7 +38,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::InspectorEvent::from(u.as_ref()))
+                                            .map(|u| crate::types::InspectorEvent::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -72,7 +72,7 @@ where
                                 builder = builder.set_sns_publish_status_code(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?.map(|s|
                                         s.to_unescaped().map(|u|
-                                            crate::model::AssessmentRunNotificationSnsStatusCode::from(u.as_ref())
+                                            crate::types::AssessmentRunNotificationSnsStatusCode::from(u.as_ref())
                                         )
                                     ).transpose()?
                                 );

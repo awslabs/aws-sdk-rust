@@ -2,7 +2,7 @@
 pub(crate) fn de_failed_remediation_exception_batches<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::FailedRemediationExceptionBatch>>,
+    Option<std::vec::Vec<crate::types::FailedRemediationExceptionBatch>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

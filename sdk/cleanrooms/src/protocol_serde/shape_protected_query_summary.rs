@@ -2,7 +2,7 @@
 pub(crate) fn de_protected_query_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ProtectedQuerySummary>,
+    Option<crate::types::ProtectedQuerySummary>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::protected_query_summary::Builder::default();
+            let mut builder = crate::types::builders::ProtectedQuerySummaryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -65,7 +65,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ProtectedQueryStatus::from(u.as_ref())
+                                            crate::types::ProtectedQueryStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

@@ -2,7 +2,7 @@
 pub(crate) fn de_document_source_url_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<crate::model::DocumentSourceType, std::string::String>>,
+    Option<std::collections::HashMap<crate::types::DocumentSourceType, std::string::String>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -23,7 +23,7 @@ where
                     Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         let key = key
                             .to_unescaped()
-                            .map(|u| crate::model::DocumentSourceType::from(u.as_ref()))?;
+                            .map(|u| crate::types::DocumentSourceType::from(u.as_ref()))?;
                         let value = aws_smithy_json::deserialize::token::expect_string_or_null(
                             tokens.next(),
                         )?

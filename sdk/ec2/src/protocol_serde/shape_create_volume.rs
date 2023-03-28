@@ -2,28 +2,37 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_volume_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::CreateVolumeOutput, crate::error::CreateVolumeError> {
+) -> std::result::Result<
+    crate::operation::create_volume::CreateVolumeOutput,
+    crate::operation::create_volume::CreateVolumeError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::CreateVolumeError::unhandled)?;
+        .map_err(crate::operation::create_volume::CreateVolumeError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::CreateVolumeError::generic(generic))
+    Err(crate::operation::create_volume::CreateVolumeError::generic(
+        generic,
+    ))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_volume_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::CreateVolumeOutput, crate::error::CreateVolumeError> {
+) -> std::result::Result<
+    crate::operation::create_volume::CreateVolumeOutput,
+    crate::operation::create_volume::CreateVolumeError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::create_volume_output::Builder::default();
+        let mut output =
+            crate::operation::create_volume::builders::CreateVolumeOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_create_volume::de_create_volume(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::CreateVolumeError::unhandled)?;
+        .map_err(crate::operation::create_volume::CreateVolumeError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -34,8 +43,11 @@ pub fn de_create_volume_http_response(
 #[allow(unused_mut)]
 pub fn de_create_volume(
     inp: &[u8],
-    mut builder: crate::output::create_volume_output::Builder,
-) -> Result<crate::output::create_volume_output::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    mut builder: crate::operation::create_volume::builders::CreateVolumeOutputBuilder,
+) -> Result<
+    crate::operation::create_volume::builders::CreateVolumeOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -159,8 +171,8 @@ pub fn de_create_volume(
             s if s.matches("status") /* State com.amazonaws.ec2.synthetic#CreateVolumeOutput$State */ =>  {
                 let var_9 =
                     Some(
-                        Result::<crate::model::VolumeState, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::VolumeState::from(
+                        Result::<crate::types::VolumeState, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::VolumeState::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
@@ -211,8 +223,8 @@ pub fn de_create_volume(
             s if s.matches("volumeType") /* VolumeType com.amazonaws.ec2.synthetic#CreateVolumeOutput$VolumeType */ =>  {
                 let var_13 =
                     Some(
-                        Result::<crate::model::VolumeType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::VolumeType::from(
+                        Result::<crate::types::VolumeType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::VolumeType::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

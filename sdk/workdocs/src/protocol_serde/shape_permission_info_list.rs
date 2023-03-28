@@ -2,7 +2,7 @@
 pub(crate) fn de_permission_info_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::PermissionInfo>>,
+    Option<std::vec::Vec<crate::types::PermissionInfo>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

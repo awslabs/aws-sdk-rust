@@ -2,7 +2,7 @@
 pub(crate) fn de_list_of_backend_job_resp_obj<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::BackendJobRespObj>>,
+    Option<std::vec::Vec<crate::types::BackendJobRespObj>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

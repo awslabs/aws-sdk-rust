@@ -2,7 +2,7 @@
 pub(crate) fn de_list_custom_line_item_flat_charge_details<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ListCustomLineItemFlatChargeDetails>,
+    Option<crate::types::ListCustomLineItemFlatChargeDetails>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::list_custom_line_item_flat_charge_details::Builder::default();
+                crate::types::builders::ListCustomLineItemFlatChargeDetailsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

@@ -2,7 +2,7 @@
 pub(crate) fn de_on_upload_workflow_details<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::WorkflowDetail>>,
+    Option<std::vec::Vec<crate::types::WorkflowDetail>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_rule_action_overrides<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::RuleActionOverride>>,
+    Option<std::vec::Vec<crate::types::RuleActionOverride>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

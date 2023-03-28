@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_export_to_s3_task_specification(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::ExportToS3TaskSpecification,
+    input: &crate::types::ExportToS3TaskSpecification,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("ContainerFormat");

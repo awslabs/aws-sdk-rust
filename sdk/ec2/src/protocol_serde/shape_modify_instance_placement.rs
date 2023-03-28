@@ -3,34 +3,30 @@
 pub fn de_modify_instance_placement_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ModifyInstancePlacementOutput,
-    crate::error::ModifyInstancePlacementError,
+    crate::operation::modify_instance_placement::ModifyInstancePlacementOutput,
+    crate::operation::modify_instance_placement::ModifyInstancePlacementError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ModifyInstancePlacementError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::modify_instance_placement::ModifyInstancePlacementError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::ModifyInstancePlacementError::generic(generic))
+    Err(crate::operation::modify_instance_placement::ModifyInstancePlacementError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_modify_instance_placement_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ModifyInstancePlacementOutput,
-    crate::error::ModifyInstancePlacementError,
+    crate::operation::modify_instance_placement::ModifyInstancePlacementOutput,
+    crate::operation::modify_instance_placement::ModifyInstancePlacementError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::modify_instance_placement_output::Builder::default();
+        let mut output = crate::operation::modify_instance_placement::builders::ModifyInstancePlacementOutputBuilder::default();
         let _ = response;
-        output =
-            crate::protocol_serde::shape_modify_instance_placement::de_modify_instance_placement(
-                response.body().as_ref(),
-                output,
-            )
-            .map_err(crate::error::ModifyInstancePlacementError::unhandled)?;
+        output = crate::protocol_serde::shape_modify_instance_placement::de_modify_instance_placement(response.body().as_ref(), output).map_err(crate::operation::modify_instance_placement::ModifyInstancePlacementError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -41,9 +37,9 @@ pub fn de_modify_instance_placement_http_response(
 #[allow(unused_mut)]
 pub fn de_modify_instance_placement(
     inp: &[u8],
-    mut builder: crate::output::modify_instance_placement_output::Builder,
+    mut builder: crate::operation::modify_instance_placement::builders::ModifyInstancePlacementOutputBuilder,
 ) -> Result<
-    crate::output::modify_instance_placement_output::Builder,
+    crate::operation::modify_instance_placement::builders::ModifyInstancePlacementOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

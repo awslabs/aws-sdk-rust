@@ -2,7 +2,7 @@
 pub(crate) fn de_regions_description<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::RegionDescription>>,
+    Option<std::vec::Vec<crate::types::RegionDescription>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

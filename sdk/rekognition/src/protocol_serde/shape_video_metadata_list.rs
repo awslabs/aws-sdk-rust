@@ -2,7 +2,7 @@
 pub(crate) fn de_video_metadata_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::VideoMetadata>>,
+    Option<std::vec::Vec<crate::types::VideoMetadata>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

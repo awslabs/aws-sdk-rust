@@ -2,7 +2,7 @@
 pub(crate) fn de_cancel_workflow_execution_failed_event_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::CancelWorkflowExecutionFailedEventAttributes>,
+    Option<crate::types::CancelWorkflowExecutionFailedEventAttributes>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,8 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder =
-                crate::model::cancel_workflow_execution_failed_event_attributes::Builder::default();
+            let mut builder = crate::types::builders::CancelWorkflowExecutionFailedEventAttributesBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -31,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::CancelWorkflowExecutionFailedCause::from(
+                                            crate::types::CancelWorkflowExecutionFailedCause::from(
                                                 u.as_ref(),
                                             )
                                         })

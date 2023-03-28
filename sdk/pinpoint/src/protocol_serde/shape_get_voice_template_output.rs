@@ -2,10 +2,10 @@
 pub fn de_voice_template_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::VoiceTemplateResponse>,
-    crate::error::GetVoiceTemplateError,
+    std::option::Option<crate::types::VoiceTemplateResponse>,
+    crate::operation::get_voice_template::GetVoiceTemplateError,
 > {
     (!body.is_empty()).then(||{
-        crate::protocol_serde::shape_voice_template_response::de_voice_template_response_payload(body).map_err(crate::error::GetVoiceTemplateError::unhandled)
+        crate::protocol_serde::shape_voice_template_response::de_voice_template_response_payload(body).map_err(crate::operation::get_voice_template::GetVoiceTemplateError::unhandled)
     }).transpose()
 }

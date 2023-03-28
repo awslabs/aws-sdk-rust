@@ -2,7 +2,7 @@
 pub(crate) fn de_iam_policy_assignment_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::IamPolicyAssignmentSummary>>,
+    Option<std::vec::Vec<crate::types::IamPolicyAssignmentSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

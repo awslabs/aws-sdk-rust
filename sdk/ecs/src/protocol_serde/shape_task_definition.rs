@@ -2,7 +2,7 @@
 pub(crate) fn de_task_definition<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::TaskDefinition>,
+    Option<crate::types::TaskDefinition>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::task_definition::Builder::default();
+            let mut builder = crate::types::builders::TaskDefinitionBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -71,7 +71,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::NetworkMode::from(u.as_ref()))
+                                            .map(|u| crate::types::NetworkMode::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -99,7 +99,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::TaskDefinitionStatus::from(u.as_ref())
+                                            crate::types::TaskDefinitionStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -160,7 +160,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::PidMode::from(u.as_ref()))
+                                            .map(|u| crate::types::PidMode::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -172,7 +172,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::IpcMode::from(u.as_ref()))
+                                            .map(|u| crate::types::IpcMode::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

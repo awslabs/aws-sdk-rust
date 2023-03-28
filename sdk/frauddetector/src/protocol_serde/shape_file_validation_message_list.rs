@@ -2,7 +2,7 @@
 pub(crate) fn de_file_validation_message_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::FileValidationMessage>>,
+    Option<std::vec::Vec<crate::types::FileValidationMessage>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

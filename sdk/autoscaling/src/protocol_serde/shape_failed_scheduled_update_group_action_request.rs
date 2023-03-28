@@ -2,11 +2,11 @@
 pub fn de_failed_scheduled_update_group_action_request(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    crate::model::FailedScheduledUpdateGroupActionRequest,
+    crate::types::FailedScheduledUpdateGroupActionRequest,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     #[allow(unused_mut)]
-    let mut builder = crate::model::FailedScheduledUpdateGroupActionRequest::builder();
+    let mut builder = crate::types::FailedScheduledUpdateGroupActionRequest::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ScheduledActionName") /* ScheduledActionName com.amazonaws.autoscaling#FailedScheduledUpdateGroupActionRequest$ScheduledActionName */ =>  {

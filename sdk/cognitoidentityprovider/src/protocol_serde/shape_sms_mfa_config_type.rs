@@ -2,7 +2,7 @@
 pub(crate) fn de_sms_mfa_config_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::SmsMfaConfigType>,
+    Option<crate::types::SmsMfaConfigType>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::sms_mfa_config_type::Builder::default();
+            let mut builder = crate::types::builders::SmsMfaConfigTypeBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -62,7 +62,7 @@ where
 
 pub fn ser_sms_mfa_config_type(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::SmsMfaConfigType,
+    input: &crate::types::SmsMfaConfigType,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.sms_authentication_message {
         object

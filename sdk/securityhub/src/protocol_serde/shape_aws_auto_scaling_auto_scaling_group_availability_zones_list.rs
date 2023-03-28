@@ -2,7 +2,7 @@
 pub(crate) fn de_aws_auto_scaling_auto_scaling_group_availability_zones_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails>>,
+    Option<std::vec::Vec<crate::types::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

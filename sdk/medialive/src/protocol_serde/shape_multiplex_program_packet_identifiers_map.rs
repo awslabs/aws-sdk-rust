@@ -2,7 +2,7 @@
 pub(crate) fn de_multiplex_program_packet_identifiers_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::MultiplexProgramPacketIdentifiersMap>,
+    Option<crate::types::MultiplexProgramPacketIdentifiersMap>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::multiplex_program_packet_identifiers_map::Builder::default();
+                crate::types::builders::MultiplexProgramPacketIdentifiersMapBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

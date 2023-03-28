@@ -2,7 +2,7 @@
 pub(crate) fn de_kinesis_streams_input_description<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::KinesisStreamsInputDescription>,
+    Option<crate::types::KinesisStreamsInputDescription>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::kinesis_streams_input_description::Builder::default();
+            let mut builder =
+                crate::types::builders::KinesisStreamsInputDescriptionBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

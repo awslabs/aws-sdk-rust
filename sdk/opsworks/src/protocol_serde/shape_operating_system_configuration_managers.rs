@@ -2,7 +2,7 @@
 pub(crate) fn de_operating_system_configuration_managers<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::OperatingSystemConfigurationManager>>,
+    Option<std::vec::Vec<crate::types::OperatingSystemConfigurationManager>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

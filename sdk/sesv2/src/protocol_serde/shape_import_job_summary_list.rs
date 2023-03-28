@@ -2,7 +2,7 @@
 pub(crate) fn de_import_job_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ImportJobSummary>>,
+    Option<std::vec::Vec<crate::types::ImportJobSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

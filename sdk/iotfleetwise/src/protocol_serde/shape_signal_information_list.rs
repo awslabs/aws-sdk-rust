@@ -2,7 +2,7 @@
 pub(crate) fn de_signal_information_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SignalInformation>>,
+    Option<std::vec::Vec<crate::types::SignalInformation>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

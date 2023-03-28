@@ -2,10 +2,10 @@
 pub fn de_send_users_message_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::SendUsersMessageResponse>,
-    crate::error::SendUsersMessagesError,
+    std::option::Option<crate::types::SendUsersMessageResponse>,
+    crate::operation::send_users_messages::SendUsersMessagesError,
 > {
     (!body.is_empty()).then(||{
-        crate::protocol_serde::shape_send_users_message_response::de_send_users_message_response_payload(body).map_err(crate::error::SendUsersMessagesError::unhandled)
+        crate::protocol_serde::shape_send_users_message_response::de_send_users_message_response_payload(body).map_err(crate::operation::send_users_messages::SendUsersMessagesError::unhandled)
     }).transpose()
 }

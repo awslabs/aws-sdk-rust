@@ -2,7 +2,7 @@
 pub(crate) fn de_column_lf_tags_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ColumnLfTag>>,
+    Option<std::vec::Vec<crate::types::ColumnLfTag>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

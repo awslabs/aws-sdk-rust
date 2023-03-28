@@ -2,7 +2,7 @@
 pub(crate) fn de_suppressed_destination_summaries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SuppressedDestinationSummary>>,
+    Option<std::vec::Vec<crate::types::SuppressedDestinationSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

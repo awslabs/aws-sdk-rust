@@ -2,7 +2,7 @@
 pub(crate) fn de_opted_out_number_information_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::OptedOutNumberInformation>>,
+    Option<std::vec::Vec<crate::types::OptedOutNumberInformation>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

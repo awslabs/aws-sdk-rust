@@ -2,7 +2,7 @@
 pub(crate) fn de_resolver_query_log_config_association<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ResolverQueryLogConfigAssociation>,
+    Option<crate::types::ResolverQueryLogConfigAssociation>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::resolver_query_log_config_association::Builder::default();
+                crate::types::builders::ResolverQueryLogConfigAssociationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -55,7 +55,7 @@ where
                                 builder = builder.set_status(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?.map(|s|
                                         s.to_unescaped().map(|u|
-                                            crate::model::ResolverQueryLogConfigAssociationStatus::from(u.as_ref())
+                                            crate::types::ResolverQueryLogConfigAssociationStatus::from(u.as_ref())
                                         )
                                     ).transpose()?
                                 );
@@ -64,7 +64,7 @@ where
                                 builder = builder.set_error(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?.map(|s|
                                         s.to_unescaped().map(|u|
-                                            crate::model::ResolverQueryLogConfigAssociationError::from(u.as_ref())
+                                            crate::types::ResolverQueryLogConfigAssociationError::from(u.as_ref())
                                         )
                                     ).transpose()?
                                 );

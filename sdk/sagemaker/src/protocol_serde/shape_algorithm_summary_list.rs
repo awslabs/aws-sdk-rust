@@ -2,7 +2,7 @@
 pub(crate) fn de_algorithm_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AlgorithmSummary>>,
+    Option<std::vec::Vec<crate::types::AlgorithmSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

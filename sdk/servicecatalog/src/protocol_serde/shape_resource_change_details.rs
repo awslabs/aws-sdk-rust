@@ -2,7 +2,7 @@
 pub(crate) fn de_resource_change_details<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ResourceChangeDetail>>,
+    Option<std::vec::Vec<crate::types::ResourceChangeDetail>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

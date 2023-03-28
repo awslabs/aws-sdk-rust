@@ -2,7 +2,7 @@
 pub(crate) fn de_legal_holds_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::LegalHold>>,
+    Option<std::vec::Vec<crate::types::LegalHold>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

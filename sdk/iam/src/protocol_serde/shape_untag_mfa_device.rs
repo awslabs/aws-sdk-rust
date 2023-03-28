@@ -2,28 +2,52 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_untag_mfa_device_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::UntagMfaDeviceOutput, crate::error::UntagMFADeviceError> {
+) -> std::result::Result<
+    crate::operation::untag_mfa_device::UntagMfaDeviceOutput,
+    crate::operation::untag_mfa_device::UntagMFADeviceError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::UntagMFADeviceError::unhandled)?;
+        .map_err(crate::operation::untag_mfa_device::UntagMFADeviceError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::UntagMFADeviceError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::untag_mfa_device::UntagMFADeviceError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ConcurrentModification" => {
-            crate::error::UntagMFADeviceError::ConcurrentModificationException({
+            crate::operation::untag_mfa_device::UntagMFADeviceError::ConcurrentModificationException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ConcurrentModificationExceptionBuilder::default();
+                        let _ = response;
+                        output = crate::protocol_serde::shape_concurrent_modification_exception::de_concurrent_modification_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::untag_mfa_device::UntagMFADeviceError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        "InvalidInput" => {
+            crate::operation::untag_mfa_device::UntagMFADeviceError::InvalidInputException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::concurrent_modification_exception::Builder::default();
+                        crate::types::error::builders::InvalidInputExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_concurrent_modification_exception::de_concurrent_modification_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UntagMFADeviceError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_input_exception::de_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::untag_mfa_device::UntagMFADeviceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -33,62 +57,57 @@ pub fn de_untag_mfa_device_http_error(
                 tmp
             })
         }
-        "InvalidInput" => crate::error::UntagMFADeviceError::InvalidInputException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "NoSuchEntity" => {
+            crate::operation::untag_mfa_device::UntagMFADeviceError::NoSuchEntityException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_input_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_input_exception::de_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UntagMFADeviceError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "NoSuchEntity" => crate::error::UntagMFADeviceError::NoSuchEntityException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::NoSuchEntityExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_no_such_entity_exception::de_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::untag_mfa_device::UntagMFADeviceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ServiceFailure" => {
+            crate::operation::untag_mfa_device::UntagMFADeviceError::ServiceFailureException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::no_such_entity_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_no_such_entity_exception::de_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UntagMFADeviceError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ServiceFailure" => crate::error::UntagMFADeviceError::ServiceFailureException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::service_failure_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UntagMFADeviceError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::UntagMFADeviceError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ServiceFailureExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::untag_mfa_device::UntagMFADeviceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::untag_mfa_device::UntagMFADeviceError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_untag_mfa_device_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::UntagMfaDeviceOutput, crate::error::UntagMFADeviceError> {
+) -> std::result::Result<
+    crate::operation::untag_mfa_device::UntagMfaDeviceOutput,
+    crate::operation::untag_mfa_device::UntagMFADeviceError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::untag_mfa_device_output::Builder::default();
+        let mut output =
+            crate::operation::untag_mfa_device::builders::UntagMfaDeviceOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

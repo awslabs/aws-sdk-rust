@@ -2,7 +2,7 @@
 pub(crate) fn de_pivot_table_data_path_option_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::PivotTableDataPathOption>>,
+    Option<std::vec::Vec<crate::types::PivotTableDataPathOption>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_thesaurus_summary_items<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ThesaurusSummary>>,
+    Option<std::vec::Vec<crate::types::ThesaurusSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_pivot_table_field_subtotal_options_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::PivotTableFieldSubtotalOptions>>,
+    Option<std::vec::Vec<crate::types::PivotTableFieldSubtotalOptions>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

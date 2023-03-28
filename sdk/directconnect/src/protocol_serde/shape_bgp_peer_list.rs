@@ -2,7 +2,7 @@
 pub(crate) fn de_bgp_peer_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::BgpPeer>>,
+    Option<std::vec::Vec<crate::types::BgpPeer>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

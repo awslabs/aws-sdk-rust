@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_storage(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::Storage,
+    input: &crate::types::Storage,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("S3");
@@ -14,9 +14,9 @@ pub fn ser_storage(
 
 pub fn de_storage(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::Storage, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::Storage, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::Storage::builder();
+    let mut builder = crate::types::Storage::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("S3") /* S3 com.amazonaws.ec2#Storage$S3 */ =>  {

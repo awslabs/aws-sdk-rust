@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_created_but_modified_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::created_but_modified_exception::Builder,
+    mut builder: crate::types::error::builders::CreatedButModifiedExceptionBuilder,
 ) -> Result<
-    crate::error::created_but_modified_exception::Builder,
+    crate::types::error::builders::CreatedButModifiedExceptionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

@@ -2,7 +2,7 @@
 pub(crate) fn de_fraud_detection_result<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::FraudDetectionResult>,
+    Option<crate::types::FraudDetectionResult>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::fraud_detection_result::Builder::default();
+            let mut builder = crate::types::builders::FraudDetectionResultBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -60,7 +60,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::FraudDetectionDecision::from(u.as_ref())
+                                            crate::types::FraudDetectionDecision::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

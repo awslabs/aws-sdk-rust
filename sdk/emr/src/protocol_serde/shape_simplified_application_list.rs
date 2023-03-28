@@ -2,7 +2,7 @@
 pub(crate) fn de_simplified_application_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SimplifiedApplication>>,
+    Option<std::vec::Vec<crate::types::SimplifiedApplication>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

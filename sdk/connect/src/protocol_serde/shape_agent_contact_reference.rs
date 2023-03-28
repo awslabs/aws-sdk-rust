@@ -2,7 +2,7 @@
 pub(crate) fn de_agent_contact_reference<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::AgentContactReference>,
+    Option<crate::types::AgentContactReference>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::agent_contact_reference::Builder::default();
+            let mut builder = crate::types::builders::AgentContactReferenceBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -39,7 +39,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::Channel::from(u.as_ref()))
+                                            .map(|u| crate::types::Channel::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -51,7 +51,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ContactInitiationMethod::from(u.as_ref())
+                                            crate::types::ContactInitiationMethod::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -64,7 +64,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::ContactState::from(u.as_ref()))
+                                            .map(|u| crate::types::ContactState::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

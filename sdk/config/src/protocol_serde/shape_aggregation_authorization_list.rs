@@ -2,7 +2,7 @@
 pub(crate) fn de_aggregation_authorization_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AggregationAuthorization>>,
+    Option<std::vec::Vec<crate::types::AggregationAuthorization>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

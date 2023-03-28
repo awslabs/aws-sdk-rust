@@ -2,7 +2,7 @@
 pub(crate) fn de_scaling_config<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ScalingConfig>,
+    Option<crate::types::ScalingConfig>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::scaling_config::Builder::default();
+            let mut builder = crate::types::builders::ScalingConfigBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -57,7 +57,7 @@ where
 
 pub fn ser_scaling_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::ScalingConfig,
+    input: &crate::types::ScalingConfig,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.maximum_concurrency {
         object.key("MaximumConcurrency").number(

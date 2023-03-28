@@ -2,7 +2,7 @@
 pub(crate) fn de_sentiment_detection_job_properties_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SentimentDetectionJobProperties>>,
+    Option<std::vec::Vec<crate::types::SentimentDetectionJobProperties>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

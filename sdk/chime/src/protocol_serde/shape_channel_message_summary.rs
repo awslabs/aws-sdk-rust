@@ -2,7 +2,7 @@
 pub(crate) fn de_channel_message_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ChannelMessageSummary>,
+    Option<crate::types::ChannelMessageSummary>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::channel_message_summary::Builder::default();
+            let mut builder = crate::types::builders::ChannelMessageSummaryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -57,7 +57,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ChannelMessageType::from(u.as_ref())
+                                            crate::types::ChannelMessageType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

@@ -2,7 +2,7 @@
 pub(crate) fn de_field_statistics<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<std::string::String, crate::model::Statistics>>,
+    Option<std::collections::HashMap<std::string::String, crate::types::Statistics>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

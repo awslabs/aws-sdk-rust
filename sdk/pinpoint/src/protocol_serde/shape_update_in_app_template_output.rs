@@ -2,13 +2,14 @@
 pub fn de_message_body_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::MessageBody>,
-    crate::error::UpdateInAppTemplateError,
+    std::option::Option<crate::types::MessageBody>,
+    crate::operation::update_in_app_template::UpdateInAppTemplateError,
 > {
     (!body.is_empty())
         .then(|| {
-            crate::protocol_serde::shape_message_body::de_message_body_payload(body)
-                .map_err(crate::error::UpdateInAppTemplateError::unhandled)
+            crate::protocol_serde::shape_message_body::de_message_body_payload(body).map_err(
+                crate::operation::update_in_app_template::UpdateInAppTemplateError::unhandled,
+            )
         })
         .transpose()
 }

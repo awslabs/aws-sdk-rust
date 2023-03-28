@@ -5,7 +5,7 @@ pub(crate) fn de_annotations<'a, I>(
     Option<
         std::collections::HashMap<
             std::string::String,
-            std::vec::Vec<crate::model::ValueWithServiceIds>,
+            std::vec::Vec<crate::types::ValueWithServiceIds>,
         >,
     >,
     aws_smithy_json::deserialize::error::DeserializeError,

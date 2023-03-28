@@ -2,7 +2,7 @@
 pub(crate) fn de_log_anomaly_showcases<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::LogAnomalyShowcase>>,
+    Option<std::vec::Vec<crate::types::LogAnomalyShowcase>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

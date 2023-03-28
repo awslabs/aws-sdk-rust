@@ -2,11 +2,11 @@
 pub fn de_continuous_deployment_policy_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::ContinuousDeploymentPolicy>,
-    crate::error::CreateContinuousDeploymentPolicyError,
+    std::option::Option<crate::types::ContinuousDeploymentPolicy>,
+    crate::operation::create_continuous_deployment_policy::CreateContinuousDeploymentPolicyError,
 > {
     (!body.is_empty()).then(||{
-        crate::protocol_serde::shape_create_continuous_deployment_policy_output::de_continuous_deployment_policy(body).map_err(crate::error::CreateContinuousDeploymentPolicyError::unhandled)
+        crate::protocol_serde::shape_create_continuous_deployment_policy_output::de_continuous_deployment_policy(body).map_err(crate::operation::create_continuous_deployment_policy::CreateContinuousDeploymentPolicyError::unhandled)
     }).transpose()
 }
 
@@ -32,7 +32,7 @@ pub(crate) fn de_location_header(
 
 pub fn de_continuous_deployment_policy(
     inp: &[u8],
-) -> Result<crate::model::ContinuousDeploymentPolicy, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::ContinuousDeploymentPolicy, aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;

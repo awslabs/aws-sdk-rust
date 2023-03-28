@@ -2,7 +2,7 @@
 pub(crate) fn de_roots<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Root>>,
+    Option<std::vec::Vec<crate::types::Root>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

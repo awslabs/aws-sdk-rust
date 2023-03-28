@@ -2,75 +2,93 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_template_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::CreateTemplateOutput, crate::error::CreateTemplateError> {
+) -> std::result::Result<
+    crate::operation::create_template::CreateTemplateOutput,
+    crate::operation::create_template::CreateTemplateError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::CreateTemplateError::unhandled)?;
+        .map_err(crate::operation::create_template::CreateTemplateError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::CreateTemplateError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::create_template::CreateTemplateError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AlreadyExists" => crate::error::CreateTemplateError::AlreadyExistsException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "AlreadyExists" => {
+            crate::operation::create_template::CreateTemplateError::AlreadyExistsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::already_exists_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_already_exists_exception::de_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateTemplateError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InvalidTemplate" => crate::error::CreateTemplateError::InvalidTemplateException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::AlreadyExistsExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_already_exists_exception::de_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_template::CreateTemplateError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidTemplate" => {
+            crate::operation::create_template::CreateTemplateError::InvalidTemplateException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_template_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_template_exception::de_invalid_template_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateTemplateError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "LimitExceeded" => crate::error::CreateTemplateError::LimitExceededException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InvalidTemplateExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_template_exception::de_invalid_template_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_template::CreateTemplateError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "LimitExceeded" => {
+            crate::operation::create_template::CreateTemplateError::LimitExceededException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::limit_exceeded_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateTemplateError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::CreateTemplateError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::LimitExceededExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_template::CreateTemplateError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::create_template::CreateTemplateError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_template_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::CreateTemplateOutput, crate::error::CreateTemplateError> {
+) -> std::result::Result<
+    crate::operation::create_template::CreateTemplateOutput,
+    crate::operation::create_template::CreateTemplateError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::create_template_output::Builder::default();
+        let mut output =
+            crate::operation::create_template::builders::CreateTemplateOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

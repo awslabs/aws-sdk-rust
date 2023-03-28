@@ -2,7 +2,7 @@
 pub(crate) fn de_finding_source_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::FindingSource>>,
+    Option<std::vec::Vec<crate::types::FindingSource>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

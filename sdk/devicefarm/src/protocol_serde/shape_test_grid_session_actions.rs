@@ -2,7 +2,7 @@
 pub(crate) fn de_test_grid_session_actions<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::TestGridSessionAction>>,
+    Option<std::vec::Vec<crate::types::TestGridSessionAction>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -4,40 +4,40 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>Exception thrown when the customer does not have a valid subscription for the product.</p>
-    CustomerNotEntitledException(crate::error::CustomerNotEntitledException),
+    CustomerNotEntitledException(crate::types::error::CustomerNotEntitledException),
     /// <p>The API is disabled in the Region.</p>
-    DisabledApiException(crate::error::DisabledApiException),
+    DisabledApiException(crate::types::error::DisabledApiException),
     /// <p>A metering record has already been emitted by the same EC2 instance, ECS task, or EKS pod for the given {<code>usageDimension</code>, <code>timestamp</code>} with a different <code>usageQuantity</code>.</p>
-    DuplicateRequestException(crate::error::DuplicateRequestException),
+    DuplicateRequestException(crate::types::error::DuplicateRequestException),
     /// <p>The submitted registration token has expired. This can happen if the buyer's browser takes too long to redirect to your page, the buyer has resubmitted the registration token, or your application has held on to the registration token for too long. Your SaaS registration website should redeem this token as soon as it is submitted by the buyer's browser.</p>
-    ExpiredTokenException(crate::error::ExpiredTokenException),
+    ExpiredTokenException(crate::types::error::ExpiredTokenException),
     /// <p>An internal error has occurred. Retry your request. If the problem persists, post a message with details on the AWS forums.</p>
-    InternalServiceErrorException(crate::error::InternalServiceErrorException),
+    InternalServiceErrorException(crate::types::error::InternalServiceErrorException),
     /// <p>You have metered usage for a <code>CustomerIdentifier</code> that does not exist.</p>
-    InvalidCustomerIdentifierException(crate::error::InvalidCustomerIdentifierException),
+    InvalidCustomerIdentifierException(crate::types::error::InvalidCustomerIdentifierException),
     /// <p>The endpoint being called is in a AWS Region different from your EC2 instance, ECS task, or EKS pod. The Region of the Metering Service endpoint and the AWS Region of the resource must match.</p>
-    InvalidEndpointRegionException(crate::error::InvalidEndpointRegionException),
+    InvalidEndpointRegionException(crate::types::error::InvalidEndpointRegionException),
     /// <p>The product code passed does not match the product code used for publishing the product.</p>
-    InvalidProductCodeException(crate::error::InvalidProductCodeException),
+    InvalidProductCodeException(crate::types::error::InvalidProductCodeException),
     /// <p>Public Key version is invalid.</p>
-    InvalidPublicKeyVersionException(crate::error::InvalidPublicKeyVersionException),
+    InvalidPublicKeyVersionException(crate::types::error::InvalidPublicKeyVersionException),
     /// <p> <code>RegisterUsage</code> must be called in the same AWS Region the ECS task was launched in. This prevents a container from hardcoding a Region (e.g. withRegion(“us-east-1”) when calling <code>RegisterUsage</code>.</p>
-    InvalidRegionException(crate::error::InvalidRegionException),
+    InvalidRegionException(crate::types::error::InvalidRegionException),
     /// <p>The tag is invalid, or the number of tags is greater than 5.</p>
-    InvalidTagException(crate::error::InvalidTagException),
+    InvalidTagException(crate::types::error::InvalidTagException),
     /// <p>Registration token is invalid.</p>
-    InvalidTokenException(crate::error::InvalidTokenException),
+    InvalidTokenException(crate::types::error::InvalidTokenException),
     /// <p>The usage allocation objects are invalid, or the number of allocations is greater than 500 for a single usage record.</p>
-    InvalidUsageAllocationsException(crate::error::InvalidUsageAllocationsException),
+    InvalidUsageAllocationsException(crate::types::error::InvalidUsageAllocationsException),
     /// <p>The usage dimension does not match one of the <code>UsageDimensions</code> associated with products.</p>
-    InvalidUsageDimensionException(crate::error::InvalidUsageDimensionException),
+    InvalidUsageDimensionException(crate::types::error::InvalidUsageDimensionException),
     /// <p>AWS Marketplace does not support metering usage from the underlying platform. Currently, Amazon ECS, Amazon EKS, and AWS Fargate are supported.</p>
-    PlatformNotSupportedException(crate::error::PlatformNotSupportedException),
+    PlatformNotSupportedException(crate::types::error::PlatformNotSupportedException),
     /// <p>The calls to the API are throttled.</p>
-    ThrottlingException(crate::error::ThrottlingException),
+    ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>The <code>timestamp</code> value passed in the <code>UsageRecord</code> is out of allowed range.</p>
     /// <p>For <code>BatchMeterUsage</code>, if any of the records are outside of the allowed range, the entire batch is not processed. You must remove invalid records and try again.</p>
-    TimestampOutOfBoundsException(crate::error::TimestampOutOfBoundsException),
+    TimestampOutOfBoundsException(crate::types::error::TimestampOutOfBoundsException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled),
 }
@@ -65,11 +65,22 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::BatchMeterUsageError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::batch_meter_usage::BatchMeterUsageError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::BatchMeterUsageError, R>) -> Self {
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::batch_meter_usage::BatchMeterUsageError,
+            R,
+        >,
+    ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
@@ -85,45 +96,30 @@ where
         }
     }
 }
-impl From<crate::error::BatchMeterUsageError> for Error {
-    fn from(err: crate::error::BatchMeterUsageError) -> Self {
+impl From<crate::operation::batch_meter_usage::BatchMeterUsageError> for Error {
+    fn from(err: crate::operation::batch_meter_usage::BatchMeterUsageError) -> Self {
         match err {
-            crate::error::BatchMeterUsageError::DisabledApiException(inner) => {
-                Error::DisabledApiException(inner)
-            }
-            crate::error::BatchMeterUsageError::InternalServiceErrorException(inner) => {
-                Error::InternalServiceErrorException(inner)
-            }
-            crate::error::BatchMeterUsageError::InvalidCustomerIdentifierException(inner) => {
-                Error::InvalidCustomerIdentifierException(inner)
-            }
-            crate::error::BatchMeterUsageError::InvalidProductCodeException(inner) => {
-                Error::InvalidProductCodeException(inner)
-            }
-            crate::error::BatchMeterUsageError::InvalidTagException(inner) => {
-                Error::InvalidTagException(inner)
-            }
-            crate::error::BatchMeterUsageError::InvalidUsageAllocationsException(inner) => {
-                Error::InvalidUsageAllocationsException(inner)
-            }
-            crate::error::BatchMeterUsageError::InvalidUsageDimensionException(inner) => {
-                Error::InvalidUsageDimensionException(inner)
-            }
-            crate::error::BatchMeterUsageError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::BatchMeterUsageError::TimestampOutOfBoundsException(inner) => {
-                Error::TimestampOutOfBoundsException(inner)
-            }
-            crate::error::BatchMeterUsageError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::batch_meter_usage::BatchMeterUsageError::DisabledApiException(inner) => Error::DisabledApiException(inner),
+            crate::operation::batch_meter_usage::BatchMeterUsageError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::batch_meter_usage::BatchMeterUsageError::InvalidCustomerIdentifierException(inner) => Error::InvalidCustomerIdentifierException(inner),
+            crate::operation::batch_meter_usage::BatchMeterUsageError::InvalidProductCodeException(inner) => Error::InvalidProductCodeException(inner),
+            crate::operation::batch_meter_usage::BatchMeterUsageError::InvalidTagException(inner) => Error::InvalidTagException(inner),
+            crate::operation::batch_meter_usage::BatchMeterUsageError::InvalidUsageAllocationsException(inner) => Error::InvalidUsageAllocationsException(inner),
+            crate::operation::batch_meter_usage::BatchMeterUsageError::InvalidUsageDimensionException(inner) => Error::InvalidUsageDimensionException(inner),
+            crate::operation::batch_meter_usage::BatchMeterUsageError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::batch_meter_usage::BatchMeterUsageError::TimestampOutOfBoundsException(inner) => Error::TimestampOutOfBoundsException(inner),
+            crate::operation::batch_meter_usage::BatchMeterUsageError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::MeterUsageError, R>> for Error
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::meter_usage::MeterUsageError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::MeterUsageError, R>) -> Self {
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::meter_usage::MeterUsageError, R>,
+    ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
@@ -139,48 +135,57 @@ where
         }
     }
 }
-impl From<crate::error::MeterUsageError> for Error {
-    fn from(err: crate::error::MeterUsageError) -> Self {
+impl From<crate::operation::meter_usage::MeterUsageError> for Error {
+    fn from(err: crate::operation::meter_usage::MeterUsageError) -> Self {
         match err {
-            crate::error::MeterUsageError::CustomerNotEntitledException(inner) => {
+            crate::operation::meter_usage::MeterUsageError::CustomerNotEntitledException(inner) => {
                 Error::CustomerNotEntitledException(inner)
             }
-            crate::error::MeterUsageError::DuplicateRequestException(inner) => {
+            crate::operation::meter_usage::MeterUsageError::DuplicateRequestException(inner) => {
                 Error::DuplicateRequestException(inner)
             }
-            crate::error::MeterUsageError::InternalServiceErrorException(inner) => {
-                Error::InternalServiceErrorException(inner)
-            }
-            crate::error::MeterUsageError::InvalidEndpointRegionException(inner) => {
-                Error::InvalidEndpointRegionException(inner)
-            }
-            crate::error::MeterUsageError::InvalidProductCodeException(inner) => {
+            crate::operation::meter_usage::MeterUsageError::InternalServiceErrorException(
+                inner,
+            ) => Error::InternalServiceErrorException(inner),
+            crate::operation::meter_usage::MeterUsageError::InvalidEndpointRegionException(
+                inner,
+            ) => Error::InvalidEndpointRegionException(inner),
+            crate::operation::meter_usage::MeterUsageError::InvalidProductCodeException(inner) => {
                 Error::InvalidProductCodeException(inner)
             }
-            crate::error::MeterUsageError::InvalidTagException(inner) => {
+            crate::operation::meter_usage::MeterUsageError::InvalidTagException(inner) => {
                 Error::InvalidTagException(inner)
             }
-            crate::error::MeterUsageError::InvalidUsageAllocationsException(inner) => {
-                Error::InvalidUsageAllocationsException(inner)
-            }
-            crate::error::MeterUsageError::InvalidUsageDimensionException(inner) => {
-                Error::InvalidUsageDimensionException(inner)
-            }
-            crate::error::MeterUsageError::ThrottlingException(inner) => {
+            crate::operation::meter_usage::MeterUsageError::InvalidUsageAllocationsException(
+                inner,
+            ) => Error::InvalidUsageAllocationsException(inner),
+            crate::operation::meter_usage::MeterUsageError::InvalidUsageDimensionException(
+                inner,
+            ) => Error::InvalidUsageDimensionException(inner),
+            crate::operation::meter_usage::MeterUsageError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
             }
-            crate::error::MeterUsageError::TimestampOutOfBoundsException(inner) => {
-                Error::TimestampOutOfBoundsException(inner)
+            crate::operation::meter_usage::MeterUsageError::TimestampOutOfBoundsException(
+                inner,
+            ) => Error::TimestampOutOfBoundsException(inner),
+            crate::operation::meter_usage::MeterUsageError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
-            crate::error::MeterUsageError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::RegisterUsageError, R>> for Error
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::register_usage::RegisterUsageError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::RegisterUsageError, R>) -> Self {
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::register_usage::RegisterUsageError,
+            R,
+        >,
+    ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
@@ -196,42 +201,37 @@ where
         }
     }
 }
-impl From<crate::error::RegisterUsageError> for Error {
-    fn from(err: crate::error::RegisterUsageError) -> Self {
+impl From<crate::operation::register_usage::RegisterUsageError> for Error {
+    fn from(err: crate::operation::register_usage::RegisterUsageError) -> Self {
         match err {
-            crate::error::RegisterUsageError::CustomerNotEntitledException(inner) => {
-                Error::CustomerNotEntitledException(inner)
-            }
-            crate::error::RegisterUsageError::DisabledApiException(inner) => {
-                Error::DisabledApiException(inner)
-            }
-            crate::error::RegisterUsageError::InternalServiceErrorException(inner) => {
-                Error::InternalServiceErrorException(inner)
-            }
-            crate::error::RegisterUsageError::InvalidProductCodeException(inner) => {
-                Error::InvalidProductCodeException(inner)
-            }
-            crate::error::RegisterUsageError::InvalidPublicKeyVersionException(inner) => {
-                Error::InvalidPublicKeyVersionException(inner)
-            }
-            crate::error::RegisterUsageError::InvalidRegionException(inner) => {
-                Error::InvalidRegionException(inner)
-            }
-            crate::error::RegisterUsageError::PlatformNotSupportedException(inner) => {
-                Error::PlatformNotSupportedException(inner)
-            }
-            crate::error::RegisterUsageError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::RegisterUsageError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::register_usage::RegisterUsageError::CustomerNotEntitledException(inner) => Error::CustomerNotEntitledException(inner),
+            crate::operation::register_usage::RegisterUsageError::DisabledApiException(inner) => Error::DisabledApiException(inner),
+            crate::operation::register_usage::RegisterUsageError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::register_usage::RegisterUsageError::InvalidProductCodeException(inner) => Error::InvalidProductCodeException(inner),
+            crate::operation::register_usage::RegisterUsageError::InvalidPublicKeyVersionException(inner) => Error::InvalidPublicKeyVersionException(inner),
+            crate::operation::register_usage::RegisterUsageError::InvalidRegionException(inner) => Error::InvalidRegionException(inner),
+            crate::operation::register_usage::RegisterUsageError::PlatformNotSupportedException(inner) => Error::PlatformNotSupportedException(inner),
+            crate::operation::register_usage::RegisterUsageError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::register_usage::RegisterUsageError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ResolveCustomerError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::resolve_customer::ResolveCustomerError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ResolveCustomerError, R>) -> Self {
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::resolve_customer::ResolveCustomerError,
+            R,
+        >,
+    ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
@@ -247,25 +247,15 @@ where
         }
     }
 }
-impl From<crate::error::ResolveCustomerError> for Error {
-    fn from(err: crate::error::ResolveCustomerError) -> Self {
+impl From<crate::operation::resolve_customer::ResolveCustomerError> for Error {
+    fn from(err: crate::operation::resolve_customer::ResolveCustomerError) -> Self {
         match err {
-            crate::error::ResolveCustomerError::DisabledApiException(inner) => {
-                Error::DisabledApiException(inner)
-            }
-            crate::error::ResolveCustomerError::ExpiredTokenException(inner) => {
-                Error::ExpiredTokenException(inner)
-            }
-            crate::error::ResolveCustomerError::InternalServiceErrorException(inner) => {
-                Error::InternalServiceErrorException(inner)
-            }
-            crate::error::ResolveCustomerError::InvalidTokenException(inner) => {
-                Error::InvalidTokenException(inner)
-            }
-            crate::error::ResolveCustomerError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::ResolveCustomerError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::resolve_customer::ResolveCustomerError::DisabledApiException(inner) => Error::DisabledApiException(inner),
+            crate::operation::resolve_customer::ResolveCustomerError::ExpiredTokenException(inner) => Error::ExpiredTokenException(inner),
+            crate::operation::resolve_customer::ResolveCustomerError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::resolve_customer::ResolveCustomerError::InvalidTokenException(inner) => Error::InvalidTokenException(inner),
+            crate::operation::resolve_customer::ResolveCustomerError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::resolve_customer::ResolveCustomerError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

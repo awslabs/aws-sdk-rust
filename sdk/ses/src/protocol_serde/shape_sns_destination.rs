@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_sns_destination(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::SnsDestination,
+    input: &crate::types::SnsDestination,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("TopicARN");
@@ -14,9 +14,9 @@ pub fn ser_sns_destination(
 
 pub fn de_sns_destination(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::SnsDestination, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::SnsDestination, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::SnsDestination::builder();
+    let mut builder = crate::types::SnsDestination::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("TopicARN") /* TopicARN com.amazonaws.ses#SNSDestination$TopicARN */ =>  {

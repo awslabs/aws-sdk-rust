@@ -2,7 +2,7 @@
 pub(crate) fn de_confluence_blog_field_mappings_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ConfluenceBlogToIndexFieldMapping>>,
+    Option<std::vec::Vec<crate::types::ConfluenceBlogToIndexFieldMapping>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

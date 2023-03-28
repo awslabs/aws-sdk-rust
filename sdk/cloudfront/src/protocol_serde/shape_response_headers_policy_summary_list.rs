@@ -2,7 +2,7 @@
 pub fn de_response_headers_policy_summary_list(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::ResponseHeadersPolicySummary>,
+    std::vec::Vec<crate::types::ResponseHeadersPolicySummary>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

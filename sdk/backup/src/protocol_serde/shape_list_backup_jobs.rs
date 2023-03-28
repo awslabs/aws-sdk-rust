@@ -2,46 +2,53 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_backup_jobs_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListBackupJobsOutput, crate::error::ListBackupJobsError> {
+) -> std::result::Result<
+    crate::operation::list_backup_jobs::ListBackupJobsOutput,
+    crate::operation::list_backup_jobs::ListBackupJobsError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListBackupJobsError::unhandled)?;
+        .map_err(crate::operation::list_backup_jobs::ListBackupJobsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListBackupJobsError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::list_backup_jobs::ListBackupJobsError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidParameterValueException" => {
-            crate::error::ListBackupJobsError::InvalidParameterValueException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            crate::operation::list_backup_jobs::ListBackupJobsError::InvalidParameterValueException(
+                {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_parameter_value_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListBackupJobsError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
+                        let _ = response;
+                        output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_backup_jobs::ListBackupJobsError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
         }
         "ServiceUnavailableException" => {
-            crate::error::ListBackupJobsError::ServiceUnavailableException({
+            crate::operation::list_backup_jobs::ListBackupJobsError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::service_unavailable_exception::Builder::default();
+                        crate::types::error::builders::ServiceUnavailableExceptionBuilder::default(
+                        );
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListBackupJobsError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_backup_jobs::ListBackupJobsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -51,23 +58,27 @@ pub fn de_list_backup_jobs_http_error(
                 tmp
             })
         }
-        _ => crate::error::ListBackupJobsError::generic(generic),
+        _ => crate::operation::list_backup_jobs::ListBackupJobsError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_backup_jobs_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListBackupJobsOutput, crate::error::ListBackupJobsError> {
+) -> std::result::Result<
+    crate::operation::list_backup_jobs::ListBackupJobsOutput,
+    crate::operation::list_backup_jobs::ListBackupJobsError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_backup_jobs_output::Builder::default();
+        let mut output =
+            crate::operation::list_backup_jobs::builders::ListBackupJobsOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_backup_jobs::de_list_backup_jobs(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListBackupJobsError::unhandled)?;
+        .map_err(crate::operation::list_backup_jobs::ListBackupJobsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -77,9 +88,9 @@ pub fn de_list_backup_jobs_http_response(
 
 pub(crate) fn de_list_backup_jobs(
     value: &[u8],
-    mut builder: crate::output::list_backup_jobs_output::Builder,
+    mut builder: crate::operation::list_backup_jobs::builders::ListBackupJobsOutputBuilder,
 ) -> Result<
-    crate::output::list_backup_jobs_output::Builder,
+    crate::operation::list_backup_jobs::builders::ListBackupJobsOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

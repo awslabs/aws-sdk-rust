@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_policy_descriptor_type(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::PolicyDescriptorType,
+    input: &crate::types::PolicyDescriptorType,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("arn");

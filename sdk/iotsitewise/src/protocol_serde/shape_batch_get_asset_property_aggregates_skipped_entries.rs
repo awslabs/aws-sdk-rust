@@ -2,7 +2,7 @@
 pub(crate) fn de_batch_get_asset_property_aggregates_skipped_entries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::BatchGetAssetPropertyAggregatesSkippedEntry>>,
+    Option<std::vec::Vec<crate::types::BatchGetAssetPropertyAggregatesSkippedEntry>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

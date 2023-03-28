@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_invalid_vpc_network_state_fault_xml_err(
     inp: &[u8],
-    mut builder: crate::error::invalid_vpc_network_state_fault::Builder,
+    mut builder: crate::types::error::builders::InvalidVpcNetworkStateFaultBuilder,
 ) -> Result<
-    crate::error::invalid_vpc_network_state_fault::Builder,
+    crate::types::error::builders::InvalidVpcNetworkStateFaultBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

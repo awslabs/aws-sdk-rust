@@ -2,7 +2,7 @@
 pub(crate) fn de_skill_group_data_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SkillGroupData>>,
+    Option<std::vec::Vec<crate::types::SkillGroupData>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

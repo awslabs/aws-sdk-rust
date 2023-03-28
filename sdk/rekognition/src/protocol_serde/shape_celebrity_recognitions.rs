@@ -2,7 +2,7 @@
 pub(crate) fn de_celebrity_recognitions<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CelebrityRecognition>>,
+    Option<std::vec::Vec<crate::types::CelebrityRecognition>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

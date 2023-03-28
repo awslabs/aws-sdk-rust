@@ -2,7 +2,7 @@
 pub(crate) fn de_mission_profile_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::MissionProfileListItem>>,
+    Option<std::vec::Vec<crate::types::MissionProfileListItem>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

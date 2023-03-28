@@ -2,7 +2,7 @@
 pub(crate) fn de_decision_task_scheduled_event_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::DecisionTaskScheduledEventAttributes>,
+    Option<crate::types::DecisionTaskScheduledEventAttributes>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::decision_task_scheduled_event_attributes::Builder::default();
+                crate::types::builders::DecisionTaskScheduledEventAttributesBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

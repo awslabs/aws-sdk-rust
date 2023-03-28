@@ -2,7 +2,7 @@
 pub(crate) fn de_remove_action_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::RemoveAction>>,
+    Option<std::vec::Vec<crate::types::RemoveAction>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

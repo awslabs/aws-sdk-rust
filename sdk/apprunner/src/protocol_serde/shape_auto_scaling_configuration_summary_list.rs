@@ -2,7 +2,7 @@
 pub(crate) fn de_auto_scaling_configuration_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AutoScalingConfigurationSummary>>,
+    Option<std::vec::Vec<crate::types::AutoScalingConfigurationSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

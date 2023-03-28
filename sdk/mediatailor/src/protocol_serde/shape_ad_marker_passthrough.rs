@@ -2,7 +2,7 @@
 pub(crate) fn de_ad_marker_passthrough<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::AdMarkerPassthrough>,
+    Option<crate::types::AdMarkerPassthrough>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::ad_marker_passthrough::Builder::default();
+            let mut builder = crate::types::builders::AdMarkerPassthroughBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -55,7 +55,7 @@ where
 
 pub fn ser_ad_marker_passthrough(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::AdMarkerPassthrough,
+    input: &crate::types::AdMarkerPassthrough,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if input.enabled {
         object.key("Enabled").boolean(input.enabled);

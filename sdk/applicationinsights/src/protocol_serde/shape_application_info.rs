@@ -2,7 +2,7 @@
 pub(crate) fn de_application_info<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ApplicationInfo>,
+    Option<crate::types::ApplicationInfo>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::application_info::Builder::default();
+            let mut builder = crate::types::builders::ApplicationInfoBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -87,7 +87,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::DiscoveryType::from(u.as_ref()))
+                                            .map(|u| crate::types::DiscoveryType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

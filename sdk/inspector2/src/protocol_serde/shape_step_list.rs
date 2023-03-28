@@ -2,7 +2,7 @@
 pub(crate) fn de_step_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Step>>,
+    Option<std::vec::Vec<crate::types::Step>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

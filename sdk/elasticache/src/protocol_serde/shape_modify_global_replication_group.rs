@@ -3,81 +3,72 @@
 pub fn de_modify_global_replication_group_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ModifyGlobalReplicationGroupOutput,
-    crate::error::ModifyGlobalReplicationGroupError,
+    crate::operation::modify_global_replication_group::ModifyGlobalReplicationGroupOutput,
+    crate::operation::modify_global_replication_group::ModifyGlobalReplicationGroupError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ModifyGlobalReplicationGroupError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::modify_global_replication_group::ModifyGlobalReplicationGroupError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::ModifyGlobalReplicationGroupError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::modify_global_replication_group::ModifyGlobalReplicationGroupError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "GlobalReplicationGroupNotFoundFault" => {
-            crate::error::ModifyGlobalReplicationGroupError::GlobalReplicationGroupNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "GlobalReplicationGroupNotFoundFault" => crate::operation::modify_global_replication_group::ModifyGlobalReplicationGroupError::GlobalReplicationGroupNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::global_replication_group_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::GlobalReplicationGroupNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_global_replication_group_not_found_fault::de_global_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyGlobalReplicationGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_global_replication_group_not_found_fault::de_global_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_global_replication_group::ModifyGlobalReplicationGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidGlobalReplicationGroupState" => {
-            crate::error::ModifyGlobalReplicationGroupError::InvalidGlobalReplicationGroupStateFault(
-                {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidGlobalReplicationGroupState" => crate::operation::modify_global_replication_group::ModifyGlobalReplicationGroupError::InvalidGlobalReplicationGroupStateFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_global_replication_group_state_fault::Builder::default();
-                        let _ = response;
-                        output = crate::protocol_serde::shape_invalid_global_replication_group_state_fault::de_invalid_global_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyGlobalReplicationGroupError::unhandled)?;
-                        let output = output.meta(generic);
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            )
-        }
-        "InvalidParameterValue" => {
-            crate::error::ModifyGlobalReplicationGroupError::InvalidParameterValueException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_parameter_value_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidGlobalReplicationGroupStateFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyGlobalReplicationGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_global_replication_group_state_fault::de_invalid_global_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_global_replication_group::ModifyGlobalReplicationGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::ModifyGlobalReplicationGroupError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidParameterValue" => crate::operation::modify_global_replication_group::ModifyGlobalReplicationGroupError::InvalidParameterValueException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_global_replication_group::ModifyGlobalReplicationGroupError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::modify_global_replication_group::ModifyGlobalReplicationGroupError::generic(generic)
     })
 }
 
@@ -85,14 +76,14 @@ pub fn de_modify_global_replication_group_http_error(
 pub fn de_modify_global_replication_group_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ModifyGlobalReplicationGroupOutput,
-    crate::error::ModifyGlobalReplicationGroupError,
+    crate::operation::modify_global_replication_group::ModifyGlobalReplicationGroupOutput,
+    crate::operation::modify_global_replication_group::ModifyGlobalReplicationGroupError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::modify_global_replication_group_output::Builder::default();
+        let mut output = crate::operation::modify_global_replication_group::builders::ModifyGlobalReplicationGroupOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_modify_global_replication_group::de_modify_global_replication_group(response.body().as_ref(), output).map_err(crate::error::ModifyGlobalReplicationGroupError::unhandled)?;
+        output = crate::protocol_serde::shape_modify_global_replication_group::de_modify_global_replication_group(response.body().as_ref(), output).map_err(crate::operation::modify_global_replication_group::ModifyGlobalReplicationGroupError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -101,13 +92,7 @@ pub fn de_modify_global_replication_group_http_response(
 }
 
 #[allow(unused_mut)]
-pub fn de_modify_global_replication_group(
-    inp: &[u8],
-    mut builder: crate::output::modify_global_replication_group_output::Builder,
-) -> Result<
-    crate::output::modify_global_replication_group_output::Builder,
-    aws_smithy_xml::decode::XmlDecodeError,
-> {
+pub fn de_modify_global_replication_group(inp: &[u8], mut builder: crate::operation::modify_global_replication_group::builders::ModifyGlobalReplicationGroupOutputBuilder) -> Result<crate::operation::modify_global_replication_group::builders::ModifyGlobalReplicationGroupOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

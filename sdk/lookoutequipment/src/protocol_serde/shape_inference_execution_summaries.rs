@@ -2,7 +2,7 @@
 pub(crate) fn de_inference_execution_summaries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::InferenceExecutionSummary>>,
+    Option<std::vec::Vec<crate::types::InferenceExecutionSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

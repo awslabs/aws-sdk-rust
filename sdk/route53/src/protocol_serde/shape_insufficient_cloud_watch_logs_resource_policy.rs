@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_insufficient_cloud_watch_logs_resource_policy_xml_err(
     inp: &[u8],
-    mut builder: crate::error::insufficient_cloud_watch_logs_resource_policy::Builder,
+    mut builder: crate::types::error::builders::InsufficientCloudWatchLogsResourcePolicyBuilder,
 ) -> Result<
-    crate::error::insufficient_cloud_watch_logs_resource_policy::Builder,
+    crate::types::error::builders::InsufficientCloudWatchLogsResourcePolicyBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

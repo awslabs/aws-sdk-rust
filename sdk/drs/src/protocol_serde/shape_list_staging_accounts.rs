@@ -3,110 +3,121 @@
 pub fn de_list_staging_accounts_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListStagingAccountsOutput,
-    crate::error::ListStagingAccountsError,
+    crate::operation::list_staging_accounts::ListStagingAccountsOutput,
+    crate::operation::list_staging_accounts::ListStagingAccountsError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListStagingAccountsError::unhandled)?;
+        .map_err(crate::operation::list_staging_accounts::ListStagingAccountsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListStagingAccountsError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::list_staging_accounts::ListStagingAccountsError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::ListStagingAccountsError::AccessDeniedException({
+        "AccessDeniedException" => crate::operation::list_staging_accounts::ListStagingAccountsError::AccessDeniedException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::access_denied_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListStagingAccountsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_staging_accounts::ListStagingAccountsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "InternalServerException" => {
-            crate::error::ListStagingAccountsError::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalServerException" => crate::operation::list_staging_accounts::ListStagingAccountsError::InternalServerException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListStagingAccountsError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_staging_accounts::ListStagingAccountsError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::protocol_serde::shape_internal_server_exception::de_retry_after_seconds_header(response.headers())
-                                                .map_err(|_|crate::error::ListStagingAccountsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::operation::list_staging_accounts::ListStagingAccountsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ThrottlingException" => crate::error::ListStagingAccountsError::ThrottlingException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::throttling_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListStagingAccountsError::unhandled)?;
-                output = output.set_retry_after_seconds(
-                        crate::protocol_serde::shape_throttling_exception::de_retry_after_seconds_header(response.headers())
-                                                .map_err(|_|crate::error::ListStagingAccountsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
-                    );
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "UninitializedAccountException" => {
-            crate::error::ListStagingAccountsError::UninitializedAccountException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "ThrottlingException" => crate::operation::list_staging_accounts::ListStagingAccountsError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::uninitialized_account_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_uninitialized_account_exception::de_uninitialized_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListStagingAccountsError::unhandled)?;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_staging_accounts::ListStagingAccountsError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::protocol_serde::shape_throttling_exception::de_retry_after_seconds_header(response.headers())
+                                                .map_err(|_|crate::operation::list_staging_accounts::ListStagingAccountsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                    );
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ValidationException" => crate::error::ListStagingAccountsError::ValidationException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListStagingAccountsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::ListStagingAccountsError::generic(generic),
+        "UninitializedAccountException" => crate::operation::list_staging_accounts::ListStagingAccountsError::UninitializedAccountException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::UninitializedAccountExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_uninitialized_account_exception::de_uninitialized_account_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_staging_accounts::ListStagingAccountsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ValidationException" => crate::operation::list_staging_accounts::ListStagingAccountsError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_staging_accounts::ListStagingAccountsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::list_staging_accounts::ListStagingAccountsError::generic(generic)
     })
 }
 
@@ -114,18 +125,18 @@ pub fn de_list_staging_accounts_http_error(
 pub fn de_list_staging_accounts_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListStagingAccountsOutput,
-    crate::error::ListStagingAccountsError,
+    crate::operation::list_staging_accounts::ListStagingAccountsOutput,
+    crate::operation::list_staging_accounts::ListStagingAccountsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_staging_accounts_output::Builder::default();
+        let mut output = crate::operation::list_staging_accounts::builders::ListStagingAccountsOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_staging_accounts::de_list_staging_accounts(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListStagingAccountsError::unhandled)?;
+        .map_err(crate::operation::list_staging_accounts::ListStagingAccountsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -135,9 +146,9 @@ pub fn de_list_staging_accounts_http_response(
 
 pub(crate) fn de_list_staging_accounts(
     value: &[u8],
-    mut builder: crate::output::list_staging_accounts_output::Builder,
+    mut builder: crate::operation::list_staging_accounts::builders::ListStagingAccountsOutputBuilder,
 ) -> Result<
-    crate::output::list_staging_accounts_output::Builder,
+    crate::operation::list_staging_accounts::builders::ListStagingAccountsOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

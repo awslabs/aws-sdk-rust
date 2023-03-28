@@ -2,7 +2,7 @@
 pub(crate) fn de_dimension_values_with_attributes_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DimensionValuesWithAttributes>>,
+    Option<std::vec::Vec<crate::types::DimensionValuesWithAttributes>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

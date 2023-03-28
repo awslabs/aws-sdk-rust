@@ -2,7 +2,7 @@
 pub(crate) fn de_fuota_task_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::FuotaTask>>,
+    Option<std::vec::Vec<crate::types::FuotaTask>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

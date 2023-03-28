@@ -3,80 +3,72 @@
 pub fn de_list_recovery_points_by_legal_hold_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListRecoveryPointsByLegalHoldOutput,
-    crate::error::ListRecoveryPointsByLegalHoldError,
+    crate::operation::list_recovery_points_by_legal_hold::ListRecoveryPointsByLegalHoldOutput,
+    crate::operation::list_recovery_points_by_legal_hold::ListRecoveryPointsByLegalHoldError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListRecoveryPointsByLegalHoldError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::list_recovery_points_by_legal_hold::ListRecoveryPointsByLegalHoldError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::ListRecoveryPointsByLegalHoldError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::list_recovery_points_by_legal_hold::ListRecoveryPointsByLegalHoldError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => {
-            crate::error::ListRecoveryPointsByLegalHoldError::InvalidParameterValueException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidParameterValueException" => crate::operation::list_recovery_points_by_legal_hold::ListRecoveryPointsByLegalHoldError::InvalidParameterValueException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_parameter_value_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRecoveryPointsByLegalHoldError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_recovery_points_by_legal_hold::ListRecoveryPointsByLegalHoldError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "MissingParameterValueException" => {
-            crate::error::ListRecoveryPointsByLegalHoldError::MissingParameterValueException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "MissingParameterValueException" => crate::operation::list_recovery_points_by_legal_hold::ListRecoveryPointsByLegalHoldError::MissingParameterValueException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::missing_parameter_value_exception::Builder::default();
+                    let mut output = crate::types::error::builders::MissingParameterValueExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_missing_parameter_value_exception::de_missing_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRecoveryPointsByLegalHoldError::unhandled)?;
+                    output = crate::protocol_serde::shape_missing_parameter_value_exception::de_missing_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_recovery_points_by_legal_hold::ListRecoveryPointsByLegalHoldError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ServiceUnavailableException" => {
-            crate::error::ListRecoveryPointsByLegalHoldError::ServiceUnavailableException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ServiceUnavailableException" => crate::operation::list_recovery_points_by_legal_hold::ListRecoveryPointsByLegalHoldError::ServiceUnavailableException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::service_unavailable_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRecoveryPointsByLegalHoldError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_recovery_points_by_legal_hold::ListRecoveryPointsByLegalHoldError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::ListRecoveryPointsByLegalHoldError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::list_recovery_points_by_legal_hold::ListRecoveryPointsByLegalHoldError::generic(generic)
     })
 }
 
@@ -84,15 +76,14 @@ pub fn de_list_recovery_points_by_legal_hold_http_error(
 pub fn de_list_recovery_points_by_legal_hold_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListRecoveryPointsByLegalHoldOutput,
-    crate::error::ListRecoveryPointsByLegalHoldError,
+    crate::operation::list_recovery_points_by_legal_hold::ListRecoveryPointsByLegalHoldOutput,
+    crate::operation::list_recovery_points_by_legal_hold::ListRecoveryPointsByLegalHoldError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::output::list_recovery_points_by_legal_hold_output::Builder::default();
+        let mut output = crate::operation::list_recovery_points_by_legal_hold::builders::ListRecoveryPointsByLegalHoldOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_list_recovery_points_by_legal_hold::de_list_recovery_points_by_legal_hold(response.body().as_ref(), output).map_err(crate::error::ListRecoveryPointsByLegalHoldError::unhandled)?;
+        output = crate::protocol_serde::shape_list_recovery_points_by_legal_hold::de_list_recovery_points_by_legal_hold(response.body().as_ref(), output).map_err(crate::operation::list_recovery_points_by_legal_hold::ListRecoveryPointsByLegalHoldError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -100,13 +91,7 @@ pub fn de_list_recovery_points_by_legal_hold_http_response(
     })
 }
 
-pub(crate) fn de_list_recovery_points_by_legal_hold(
-    value: &[u8],
-    mut builder: crate::output::list_recovery_points_by_legal_hold_output::Builder,
-) -> Result<
-    crate::output::list_recovery_points_by_legal_hold_output::Builder,
-    aws_smithy_json::deserialize::error::DeserializeError,
-> {
+pub(crate) fn de_list_recovery_points_by_legal_hold(value: &[u8], mut builder: crate::operation::list_recovery_points_by_legal_hold::builders::ListRecoveryPointsByLegalHoldOutputBuilder) -> Result<crate::operation::list_recovery_points_by_legal_hold::builders::ListRecoveryPointsByLegalHoldOutputBuilder, aws_smithy_json::deserialize::error::DeserializeError>{
     let mut tokens_owned =
         aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
             .peekable();

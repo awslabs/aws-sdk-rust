@@ -2,7 +2,7 @@
 pub(crate) fn de_training_job_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::TrainingJobSummary>,
+    Option<crate::types::TrainingJobSummary>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::training_job_summary::Builder::default();
+            let mut builder = crate::types::builders::TrainingJobSummaryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -72,7 +72,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::TrainingJobStatus::from(u.as_ref())
+                                            crate::types::TrainingJobStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

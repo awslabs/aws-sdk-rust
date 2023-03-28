@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_unmodifiable_entity_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::unmodifiable_entity_exception::Builder,
+    mut builder: crate::types::error::builders::UnmodifiableEntityExceptionBuilder,
 ) -> Result<
-    crate::error::unmodifiable_entity_exception::Builder,
+    crate::types::error::builders::UnmodifiableEntityExceptionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

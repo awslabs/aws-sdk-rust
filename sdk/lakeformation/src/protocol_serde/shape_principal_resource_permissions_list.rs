@@ -2,7 +2,7 @@
 pub(crate) fn de_principal_resource_permissions_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::PrincipalResourcePermissions>>,
+    Option<std::vec::Vec<crate::types::PrincipalResourcePermissions>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

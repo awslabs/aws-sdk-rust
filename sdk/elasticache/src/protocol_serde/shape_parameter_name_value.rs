@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_parameter_name_value(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::ParameterNameValue,
+    input: &crate::types::ParameterNameValue,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("ParameterName");

@@ -2,7 +2,7 @@
 pub(crate) fn de_grpc_retry_policy_events<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::GrpcRetryPolicyEvent>>,
+    Option<std::vec::Vec<crate::types::GrpcRetryPolicyEvent>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -29,7 +29,7 @@ where
                         )?
                         .map(|s| {
                             s.to_unescaped()
-                                .map(|u| crate::model::GrpcRetryPolicyEvent::from(u.as_ref()))
+                                .map(|u| crate::types::GrpcRetryPolicyEvent::from(u.as_ref()))
                         })
                         .transpose()?;
                         if let Some(value) = value {

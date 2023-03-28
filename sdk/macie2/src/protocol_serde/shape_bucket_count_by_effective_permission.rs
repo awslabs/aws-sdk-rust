@@ -2,7 +2,7 @@
 pub(crate) fn de_bucket_count_by_effective_permission<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::BucketCountByEffectivePermission>,
+    Option<crate::types::BucketCountByEffectivePermission>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::bucket_count_by_effective_permission::Builder::default();
+                crate::types::builders::BucketCountByEffectivePermissionBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

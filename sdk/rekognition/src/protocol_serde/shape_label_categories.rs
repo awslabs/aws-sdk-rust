@@ -2,7 +2,7 @@
 pub(crate) fn de_label_categories<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::LabelCategory>>,
+    Option<std::vec::Vec<crate::types::LabelCategory>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

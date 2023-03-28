@@ -2,7 +2,7 @@
 pub(crate) fn de_http_authorization<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::HttpAuthorization>,
+    Option<crate::types::HttpAuthorization>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::http_authorization::Builder::default();
+            let mut builder = crate::types::builders::HttpAuthorizationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -53,7 +53,7 @@ where
 
 pub fn ser_http_authorization(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::HttpAuthorization,
+    input: &crate::types::HttpAuthorization,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.sigv4 {
         #[allow(unused_mut)]

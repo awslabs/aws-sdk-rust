@@ -3,27 +3,27 @@
 pub fn de_enable_alarm_actions_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::EnableAlarmActionsOutput,
-    crate::error::EnableAlarmActionsError,
+    crate::operation::enable_alarm_actions::EnableAlarmActionsOutput,
+    crate::operation::enable_alarm_actions::EnableAlarmActionsError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::EnableAlarmActionsError::unhandled)?;
+        .map_err(crate::operation::enable_alarm_actions::EnableAlarmActionsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::EnableAlarmActionsError::generic(generic))
+    Err(crate::operation::enable_alarm_actions::EnableAlarmActionsError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_enable_alarm_actions_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::EnableAlarmActionsOutput,
-    crate::error::EnableAlarmActionsError,
+    crate::operation::enable_alarm_actions::EnableAlarmActionsOutput,
+    crate::operation::enable_alarm_actions::EnableAlarmActionsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::enable_alarm_actions_output::Builder::default();
+        let mut output = crate::operation::enable_alarm_actions::builders::EnableAlarmActionsOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

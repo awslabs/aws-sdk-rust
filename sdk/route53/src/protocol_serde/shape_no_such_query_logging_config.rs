@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_no_such_query_logging_config_xml_err(
     inp: &[u8],
-    mut builder: crate::error::no_such_query_logging_config::Builder,
+    mut builder: crate::types::error::builders::NoSuchQueryLoggingConfigBuilder,
 ) -> Result<
-    crate::error::no_such_query_logging_config::Builder,
+    crate::types::error::builders::NoSuchQueryLoggingConfigBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

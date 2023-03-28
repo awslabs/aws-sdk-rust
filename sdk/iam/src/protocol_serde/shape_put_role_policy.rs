@@ -2,43 +2,33 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_put_role_policy_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::PutRolePolicyOutput, crate::error::PutRolePolicyError> {
+) -> std::result::Result<
+    crate::operation::put_role_policy::PutRolePolicyOutput,
+    crate::operation::put_role_policy::PutRolePolicyError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::PutRolePolicyError::unhandled)?;
+        .map_err(crate::operation::put_role_policy::PutRolePolicyError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::PutRolePolicyError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::put_role_policy::PutRolePolicyError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceeded" => crate::error::PutRolePolicyError::LimitExceededException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::limit_exceeded_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutRolePolicyError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "MalformedPolicyDocument" => {
-            crate::error::PutRolePolicyError::MalformedPolicyDocumentException({
+        "LimitExceeded" => {
+            crate::operation::put_role_policy::PutRolePolicyError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::malformed_policy_document_exception::Builder::default();
+                        crate::types::error::builders::LimitExceededExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_malformed_policy_document_exception::de_malformed_policy_document_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutRolePolicyError::unhandled)?;
+                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::put_role_policy::PutRolePolicyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -48,62 +38,95 @@ pub fn de_put_role_policy_http_error(
                 tmp
             })
         }
-        "NoSuchEntity" => crate::error::PutRolePolicyError::NoSuchEntityException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "MalformedPolicyDocument" => {
+            crate::operation::put_role_policy::PutRolePolicyError::MalformedPolicyDocumentException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::MalformedPolicyDocumentExceptionBuilder::default();
+                        let _ = response;
+                        output = crate::protocol_serde::shape_malformed_policy_document_exception::de_malformed_policy_document_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::put_role_policy::PutRolePolicyError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        "NoSuchEntity" => {
+            crate::operation::put_role_policy::PutRolePolicyError::NoSuchEntityException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::no_such_entity_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_no_such_entity_exception::de_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutRolePolicyError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ServiceFailure" => crate::error::PutRolePolicyError::ServiceFailureException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::NoSuchEntityExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_no_such_entity_exception::de_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::put_role_policy::PutRolePolicyError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ServiceFailure" => {
+            crate::operation::put_role_policy::PutRolePolicyError::ServiceFailureException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::service_failure_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutRolePolicyError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "UnmodifiableEntity" => crate::error::PutRolePolicyError::UnmodifiableEntityException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ServiceFailureExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::put_role_policy::PutRolePolicyError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "UnmodifiableEntity" => {
+            crate::operation::put_role_policy::PutRolePolicyError::UnmodifiableEntityException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unmodifiable_entity_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_unmodifiable_entity_exception::de_unmodifiable_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutRolePolicyError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::PutRolePolicyError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::UnmodifiableEntityExceptionBuilder::default(
+                        );
+                    let _ = response;
+                    output = crate::protocol_serde::shape_unmodifiable_entity_exception::de_unmodifiable_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::put_role_policy::PutRolePolicyError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::put_role_policy::PutRolePolicyError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_put_role_policy_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::PutRolePolicyOutput, crate::error::PutRolePolicyError> {
+) -> std::result::Result<
+    crate::operation::put_role_policy::PutRolePolicyOutput,
+    crate::operation::put_role_policy::PutRolePolicyError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::put_role_policy_output::Builder::default();
+        let mut output =
+            crate::operation::put_role_policy::builders::PutRolePolicyOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

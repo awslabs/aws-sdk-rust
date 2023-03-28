@@ -2,7 +2,7 @@
 pub(crate) fn de_s3_encryption_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::S3Encryption>>,
+    Option<std::vec::Vec<crate::types::S3Encryption>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

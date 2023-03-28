@@ -2,7 +2,7 @@
 pub(crate) fn de_batch_update_partition_failure_entry<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::BatchUpdatePartitionFailureEntry>,
+    Option<crate::types::BatchUpdatePartitionFailureEntry>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::batch_update_partition_failure_entry::Builder::default();
+                crate::types::builders::BatchUpdatePartitionFailureEntryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

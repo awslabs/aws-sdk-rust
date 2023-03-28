@@ -2,7 +2,7 @@
 pub(crate) fn de_data_catalog_encryption_settings<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::DataCatalogEncryptionSettings>,
+    Option<crate::types::DataCatalogEncryptionSettings>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::data_catalog_encryption_settings::Builder::default();
+            let mut builder =
+                crate::types::builders::DataCatalogEncryptionSettingsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -58,7 +59,7 @@ where
 
 pub fn ser_data_catalog_encryption_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::DataCatalogEncryptionSettings,
+    input: &crate::types::DataCatalogEncryptionSettings,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.encryption_at_rest {
         #[allow(unused_mut)]

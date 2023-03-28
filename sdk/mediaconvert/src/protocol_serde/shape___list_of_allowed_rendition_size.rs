@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_allowed_rendition_size<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AllowedRenditionSize>>,
+    Option<std::vec::Vec<crate::types::AllowedRenditionSize>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,17 +2,17 @@
 pub fn de_origin_access_control_list_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::OriginAccessControlList>,
-    crate::error::ListOriginAccessControlsError,
+    std::option::Option<crate::types::OriginAccessControlList>,
+    crate::operation::list_origin_access_controls::ListOriginAccessControlsError,
 > {
     (!body.is_empty()).then(||{
-        crate::protocol_serde::shape_list_origin_access_controls_output::de_origin_access_control_list(body).map_err(crate::error::ListOriginAccessControlsError::unhandled)
+        crate::protocol_serde::shape_list_origin_access_controls_output::de_origin_access_control_list(body).map_err(crate::operation::list_origin_access_controls::ListOriginAccessControlsError::unhandled)
     }).transpose()
 }
 
 pub fn de_origin_access_control_list(
     inp: &[u8],
-) -> Result<crate::model::OriginAccessControlList, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::OriginAccessControlList, aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;

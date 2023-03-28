@@ -2,8 +2,11 @@
 #[allow(unused_mut)]
 pub fn de_stale_tag_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::stale_tag_exception::Builder,
-) -> Result<crate::error::stale_tag_exception::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    mut builder: crate::types::error::builders::StaleTagExceptionBuilder,
+) -> Result<
+    crate::types::error::builders::StaleTagExceptionBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     if inp.is_empty() {
         return Ok(builder);
     }

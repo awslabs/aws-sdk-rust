@@ -5,7 +5,7 @@ pub(crate) fn de_connector_entity_map<'a, I>(
     Option<
         std::collections::HashMap<
             std::string::String,
-            std::vec::Vec<crate::model::ConnectorEntity>,
+            std::vec::Vec<crate::types::ConnectorEntity>,
         >,
     >,
     aws_smithy_json::deserialize::error::DeserializeError,

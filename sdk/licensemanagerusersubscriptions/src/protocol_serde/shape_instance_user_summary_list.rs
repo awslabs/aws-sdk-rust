@@ -2,7 +2,7 @@
 pub(crate) fn de_instance_user_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::InstanceUserSummary>>,
+    Option<std::vec::Vec<crate::types::InstanceUserSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

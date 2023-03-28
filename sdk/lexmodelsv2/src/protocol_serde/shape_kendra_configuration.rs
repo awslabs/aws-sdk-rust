@@ -2,7 +2,7 @@
 pub(crate) fn de_kendra_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::KendraConfiguration>,
+    Option<crate::types::KendraConfiguration>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::kendra_configuration::Builder::default();
+            let mut builder = crate::types::builders::KendraConfigurationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -73,7 +73,7 @@ where
 
 pub fn ser_kendra_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::KendraConfiguration,
+    input: &crate::types::KendraConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.kendra_index {
         object.key("kendraIndex").string(var_1.as_str());

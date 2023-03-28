@@ -2,7 +2,7 @@
 pub(crate) fn de_fleet_capacity_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::FleetCapacity>>,
+    Option<std::vec::Vec<crate::types::FleetCapacity>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

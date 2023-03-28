@@ -2,7 +2,7 @@
 pub(crate) fn de_relational_database_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::RelationalDatabase>>,
+    Option<std::vec::Vec<crate::types::RelationalDatabase>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_canaries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Canary>>,
+    Option<std::vec::Vec<crate::types::Canary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

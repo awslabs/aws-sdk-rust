@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_delivery_options(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::DeliveryOptions,
+    input: &crate::types::DeliveryOptions,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("TlsPolicy");
@@ -14,16 +14,16 @@ pub fn ser_delivery_options(
 
 pub fn de_delivery_options(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::DeliveryOptions, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::DeliveryOptions, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::DeliveryOptions::builder();
+    let mut builder = crate::types::DeliveryOptions::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("TlsPolicy") /* TlsPolicy com.amazonaws.ses#DeliveryOptions$TlsPolicy */ =>  {
                 let var_3 =
                     Some(
-                        Result::<crate::model::TlsPolicy, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::TlsPolicy::from(
+                        Result::<crate::types::TlsPolicy, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::TlsPolicy::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

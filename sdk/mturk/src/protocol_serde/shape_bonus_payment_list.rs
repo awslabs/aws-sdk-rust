@@ -2,7 +2,7 @@
 pub(crate) fn de_bonus_payment_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::BonusPayment>>,
+    Option<std::vec::Vec<crate::types::BonusPayment>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

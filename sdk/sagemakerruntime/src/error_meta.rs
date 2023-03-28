@@ -4,17 +4,17 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>Your request caused an exception with an internal dependency. Contact customer support. </p>
-    InternalDependencyException(crate::error::InternalDependencyException),
+    InternalDependencyException(crate::types::error::InternalDependencyException),
     /// <p> An internal failure occurred. </p>
-    InternalFailure(crate::error::InternalFailure),
+    InternalFailure(crate::types::error::InternalFailure),
     /// <p> Model (owned by the customer in the container) returned 4xx or 5xx error code. </p>
-    ModelError(crate::error::ModelError),
+    ModelError(crate::types::error::ModelError),
     /// <p>Either a serverless endpoint variant's resources are still being provisioned, or a multi-model endpoint is still downloading or loading the target model. Wait and try your request again.</p>
-    ModelNotReadyException(crate::error::ModelNotReadyException),
+    ModelNotReadyException(crate::types::error::ModelNotReadyException),
     /// <p> The service is unavailable. Try your call again. </p>
-    ServiceUnavailable(crate::error::ServiceUnavailable),
+    ServiceUnavailable(crate::types::error::ServiceUnavailable),
     /// <p> Inspect your request and try again. </p>
-    ValidationError(crate::error::ValidationError),
+    ValidationError(crate::types::error::ValidationError),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled),
 }
@@ -31,55 +31,21 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::InvokeEndpointError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::InvokeEndpointError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::InvokeEndpointError> for Error {
-    fn from(err: crate::error::InvokeEndpointError) -> Self {
-        match err {
-            crate::error::InvokeEndpointError::InternalDependencyException(inner) => {
-                Error::InternalDependencyException(inner)
-            }
-            crate::error::InvokeEndpointError::InternalFailure(inner) => {
-                Error::InternalFailure(inner)
-            }
-            crate::error::InvokeEndpointError::ModelError(inner) => Error::ModelError(inner),
-            crate::error::InvokeEndpointError::ModelNotReadyException(inner) => {
-                Error::ModelNotReadyException(inner)
-            }
-            crate::error::InvokeEndpointError::ServiceUnavailable(inner) => {
-                Error::ServiceUnavailable(inner)
-            }
-            crate::error::InvokeEndpointError::ValidationError(inner) => {
-                Error::ValidationError(inner)
-            }
-            crate::error::InvokeEndpointError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::InvokeEndpointAsyncError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::invoke_endpoint::InvokeEndpointError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::InvokeEndpointAsyncError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::invoke_endpoint::InvokeEndpointError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -96,19 +62,71 @@ where
         }
     }
 }
-impl From<crate::error::InvokeEndpointAsyncError> for Error {
-    fn from(err: crate::error::InvokeEndpointAsyncError) -> Self {
+impl From<crate::operation::invoke_endpoint::InvokeEndpointError> for Error {
+    fn from(err: crate::operation::invoke_endpoint::InvokeEndpointError) -> Self {
         match err {
-            crate::error::InvokeEndpointAsyncError::InternalFailure(inner) => {
+            crate::operation::invoke_endpoint::InvokeEndpointError::InternalDependencyException(
+                inner,
+            ) => Error::InternalDependencyException(inner),
+            crate::operation::invoke_endpoint::InvokeEndpointError::InternalFailure(inner) => {
                 Error::InternalFailure(inner)
             }
-            crate::error::InvokeEndpointAsyncError::ServiceUnavailable(inner) => {
+            crate::operation::invoke_endpoint::InvokeEndpointError::ModelError(inner) => {
+                Error::ModelError(inner)
+            }
+            crate::operation::invoke_endpoint::InvokeEndpointError::ModelNotReadyException(
+                inner,
+            ) => Error::ModelNotReadyException(inner),
+            crate::operation::invoke_endpoint::InvokeEndpointError::ServiceUnavailable(inner) => {
                 Error::ServiceUnavailable(inner)
             }
-            crate::error::InvokeEndpointAsyncError::ValidationError(inner) => {
+            crate::operation::invoke_endpoint::InvokeEndpointError::ValidationError(inner) => {
                 Error::ValidationError(inner)
             }
-            crate::error::InvokeEndpointAsyncError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::invoke_endpoint::InvokeEndpointError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError> for Error {
+    fn from(err: crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError) -> Self {
+        match err {
+            crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError::InternalFailure(inner) => Error::InternalFailure(inner),
+            crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError::ServiceUnavailable(inner) => Error::ServiceUnavailable(inner),
+            crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError::ValidationError(inner) => Error::ValidationError(inner),
+            crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

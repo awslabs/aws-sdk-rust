@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_invalid_query_string_parameters_xml_err(
     inp: &[u8],
-    mut builder: crate::error::invalid_query_string_parameters::Builder,
+    mut builder: crate::types::error::builders::InvalidQueryStringParametersBuilder,
 ) -> Result<
-    crate::error::invalid_query_string_parameters::Builder,
+    crate::types::error::builders::InvalidQueryStringParametersBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

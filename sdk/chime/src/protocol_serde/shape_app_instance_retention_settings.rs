@@ -2,7 +2,7 @@
 pub(crate) fn de_app_instance_retention_settings<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::AppInstanceRetentionSettings>,
+    Option<crate::types::AppInstanceRetentionSettings>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::app_instance_retention_settings::Builder::default();
+            let mut builder =
+                crate::types::builders::AppInstanceRetentionSettingsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -53,7 +54,7 @@ where
 
 pub fn ser_app_instance_retention_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::AppInstanceRetentionSettings,
+    input: &crate::types::AppInstanceRetentionSettings,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.channel_retention_settings {
         #[allow(unused_mut)]

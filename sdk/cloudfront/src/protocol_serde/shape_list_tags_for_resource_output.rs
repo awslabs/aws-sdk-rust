@@ -2,18 +2,19 @@
 pub fn de_tags_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::Tags>,
-    crate::error::ListTagsForResourceError,
+    std::option::Option<crate::types::Tags>,
+    crate::operation::list_tags_for_resource::ListTagsForResourceError,
 > {
     (!body.is_empty())
         .then(|| {
-            crate::protocol_serde::shape_list_tags_for_resource_output::de_tags(body)
-                .map_err(crate::error::ListTagsForResourceError::unhandled)
+            crate::protocol_serde::shape_list_tags_for_resource_output::de_tags(body).map_err(
+                crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled,
+            )
         })
         .transpose()
 }
 
-pub fn de_tags(inp: &[u8]) -> Result<crate::model::Tags, aws_smithy_xml::decode::XmlDecodeError> {
+pub fn de_tags(inp: &[u8]) -> Result<crate::types::Tags, aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;

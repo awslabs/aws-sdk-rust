@@ -2,7 +2,7 @@
 pub(crate) fn de_pending_create_standby_workspaces_request<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::PendingCreateStandbyWorkspacesRequest>,
+    Option<crate::types::PendingCreateStandbyWorkspacesRequest>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::pending_create_standby_workspaces_request::Builder::default();
+                crate::types::builders::PendingCreateStandbyWorkspacesRequestBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -49,7 +49,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::WorkspaceState::from(u.as_ref()))
+                                            .map(|u| crate::types::WorkspaceState::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

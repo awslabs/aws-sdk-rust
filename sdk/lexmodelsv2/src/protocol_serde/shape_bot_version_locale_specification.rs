@@ -2,7 +2,7 @@
 pub(crate) fn de_bot_version_locale_specification<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<std::string::String, crate::model::BotVersionLocaleDetails>>,
+    Option<std::collections::HashMap<std::string::String, crate::types::BotVersionLocaleDetails>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

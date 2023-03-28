@@ -2,7 +2,7 @@
 pub(crate) fn de_automatic_tape_creation_policy_infos<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AutomaticTapeCreationPolicyInfo>>,
+    Option<std::vec::Vec<crate::types::AutomaticTapeCreationPolicyInfo>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

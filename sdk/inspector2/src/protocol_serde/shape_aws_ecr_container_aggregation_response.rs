@@ -2,7 +2,7 @@
 pub(crate) fn de_aws_ecr_container_aggregation_response<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::AwsEcrContainerAggregationResponse>,
+    Option<crate::types::AwsEcrContainerAggregationResponse>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::aws_ecr_container_aggregation_response::Builder::default();
+                crate::types::builders::AwsEcrContainerAggregationResponseBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

@@ -2,7 +2,7 @@
 pub(crate) fn de_inference_scheduler_summaries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::InferenceSchedulerSummary>>,
+    Option<std::vec::Vec<crate::types::InferenceSchedulerSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,28 +2,35 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_policy_version_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetPolicyVersionOutput, crate::error::GetPolicyVersionError>
-{
+) -> std::result::Result<
+    crate::operation::get_policy_version::GetPolicyVersionOutput,
+    crate::operation::get_policy_version::GetPolicyVersionError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetPolicyVersionError::unhandled)?;
+        .map_err(crate::operation::get_policy_version::GetPolicyVersionError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::GetPolicyVersionError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::get_policy_version::GetPolicyVersionError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalFailureException" => {
-            crate::error::GetPolicyVersionError::InternalFailureException({
+            crate::operation::get_policy_version::GetPolicyVersionError::InternalFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_failure_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::InternalFailureExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPolicyVersionError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_policy_version::GetPolicyVersionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -34,13 +41,14 @@ pub fn de_get_policy_version_http_error(
             })
         }
         "InvalidRequestException" => {
-            crate::error::GetPolicyVersionError::InvalidRequestException({
+            crate::operation::get_policy_version::GetPolicyVersionError::InvalidRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_request_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::InvalidRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPolicyVersionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_policy_version::GetPolicyVersionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -51,31 +59,52 @@ pub fn de_get_policy_version_http_error(
             })
         }
         "ResourceNotFoundException" => {
-            crate::error::GetPolicyVersionError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            crate::operation::get_policy_version::GetPolicyVersionError::ResourceNotFoundException(
+                {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPolicyVersionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                        let _ = response;
+                        output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_policy_version::GetPolicyVersionError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
         }
         "ServiceUnavailableException" => {
-            crate::error::GetPolicyVersionError::ServiceUnavailableException({
+            crate::operation::get_policy_version::GetPolicyVersionError::ServiceUnavailableException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
+                        let _ = response;
+                        output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_policy_version::GetPolicyVersionError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        "ThrottlingException" => {
+            crate::operation::get_policy_version::GetPolicyVersionError::ThrottlingException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::service_unavailable_exception::Builder::default();
+                        crate::types::error::builders::ThrottlingExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPolicyVersionError::unhandled)?;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_policy_version::GetPolicyVersionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -85,54 +114,46 @@ pub fn de_get_policy_version_http_error(
                 tmp
             })
         }
-        "ThrottlingException" => crate::error::GetPolicyVersionError::ThrottlingException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "UnauthorizedException" => {
+            crate::operation::get_policy_version::GetPolicyVersionError::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::throttling_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPolicyVersionError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "UnauthorizedException" => crate::error::GetPolicyVersionError::UnauthorizedException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPolicyVersionError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::GetPolicyVersionError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::UnauthorizedExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_policy_version::GetPolicyVersionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::get_policy_version::GetPolicyVersionError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_policy_version_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetPolicyVersionOutput, crate::error::GetPolicyVersionError>
-{
+) -> std::result::Result<
+    crate::operation::get_policy_version::GetPolicyVersionOutput,
+    crate::operation::get_policy_version::GetPolicyVersionError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_policy_version_output::Builder::default();
+        let mut output =
+            crate::operation::get_policy_version::builders::GetPolicyVersionOutputBuilder::default(
+            );
         let _ = response;
         output = crate::protocol_serde::shape_get_policy_version::de_get_policy_version(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::GetPolicyVersionError::unhandled)?;
+        .map_err(crate::operation::get_policy_version::GetPolicyVersionError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -142,9 +163,9 @@ pub fn de_get_policy_version_http_response(
 
 pub(crate) fn de_get_policy_version(
     value: &[u8],
-    mut builder: crate::output::get_policy_version_output::Builder,
+    mut builder: crate::operation::get_policy_version::builders::GetPolicyVersionOutputBuilder,
 ) -> Result<
-    crate::output::get_policy_version_output::Builder,
+    crate::operation::get_policy_version::builders::GetPolicyVersionOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

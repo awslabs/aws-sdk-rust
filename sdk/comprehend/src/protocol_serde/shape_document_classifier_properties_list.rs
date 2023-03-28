@@ -2,7 +2,7 @@
 pub(crate) fn de_document_classifier_properties_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DocumentClassifierProperties>>,
+    Option<std::vec::Vec<crate::types::DocumentClassifierProperties>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

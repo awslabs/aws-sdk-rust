@@ -2,7 +2,7 @@
 pub(crate) fn de_validation_result<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ValidationResult>,
+    Option<crate::types::ValidationResult>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::validation_result::Builder::default();
+            let mut builder = crate::types::builders::ValidationResultBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::LaunchProfileValidationType::from(
+                                            crate::types::LaunchProfileValidationType::from(
                                                 u.as_ref(),
                                             )
                                         })
@@ -45,7 +45,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::LaunchProfileValidationState::from(
+                                            crate::types::LaunchProfileValidationState::from(
                                                 u.as_ref(),
                                             )
                                         })
@@ -60,7 +60,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::LaunchProfileValidationStatusCode::from(
+                                            crate::types::LaunchProfileValidationStatusCode::from(
                                                 u.as_ref(),
                                             )
                                         })

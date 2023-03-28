@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_matcher(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::Matcher,
+    input: &crate::types::Matcher,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("HttpCode");
@@ -19,9 +19,9 @@ pub fn ser_matcher(
 
 pub fn de_matcher(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::Matcher, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::Matcher, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::Matcher::builder();
+    let mut builder = crate::types::Matcher::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("HttpCode") /* HttpCode com.amazonaws.elasticloadbalancingv2#Matcher$HttpCode */ =>  {

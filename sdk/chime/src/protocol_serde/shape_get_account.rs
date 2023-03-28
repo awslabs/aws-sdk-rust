@@ -2,26 +2,69 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_account_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetAccountOutput, crate::error::GetAccountError> {
+) -> std::result::Result<
+    crate::operation::get_account::GetAccountOutput,
+    crate::operation::get_account::GetAccountError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetAccountError::unhandled)?;
+        .map_err(crate::operation::get_account::GetAccountError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::GetAccountError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::get_account::GetAccountError::unhandled(
+                generic,
+            ))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::GetAccountError::BadRequestException({
+        "BadRequestException" => {
+            crate::operation::get_account::GetAccountError::BadRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::BadRequestExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_account::GetAccountError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ForbiddenException" => {
+            crate::operation::get_account::GetAccountError::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ForbiddenExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_account::GetAccountError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "NotFoundException" => crate::operation::get_account::GetAccountError::NotFoundException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_exception::Builder::default();
+                let mut output = crate::types::error::builders::NotFoundExceptionBuilder::default();
                 let _ = response;
-                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAccountError::unhandled)?;
+                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_account::GetAccountError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -30,60 +73,34 @@ pub fn de_get_account_http_error(
             }
             tmp
         }),
-        "ForbiddenException" => crate::error::GetAccountError::ForbiddenException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "ServiceFailureException" => {
+            crate::operation::get_account::GetAccountError::ServiceFailureException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAccountError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "NotFoundException" => crate::error::GetAccountError::NotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAccountError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ServiceFailureException" => crate::error::GetAccountError::ServiceFailureException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::service_failure_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAccountError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ServiceFailureExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_account::GetAccountError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "ServiceUnavailableException" => {
-            crate::error::GetAccountError::ServiceUnavailableException({
+            crate::operation::get_account::GetAccountError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::service_unavailable_exception::Builder::default();
+                        crate::types::error::builders::ServiceUnavailableExceptionBuilder::default(
+                        );
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAccountError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_account::GetAccountError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -93,30 +110,34 @@ pub fn de_get_account_http_error(
                 tmp
             })
         }
-        "ThrottledClientException" => crate::error::GetAccountError::ThrottledClientException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "ThrottledClientException" => {
+            crate::operation::get_account::GetAccountError::ThrottledClientException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::throttled_client_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttled_client_exception::de_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAccountError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ThrottledClientExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_throttled_client_exception::de_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_account::GetAccountError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "UnauthorizedClientException" => {
-            crate::error::GetAccountError::UnauthorizedClientException({
+            crate::operation::get_account::GetAccountError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::unauthorized_client_exception::Builder::default();
+                        crate::types::error::builders::UnauthorizedClientExceptionBuilder::default(
+                        );
                     let _ = response;
-                    output = crate::protocol_serde::shape_unauthorized_client_exception::de_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAccountError::unhandled)?;
+                    output = crate::protocol_serde::shape_unauthorized_client_exception::de_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_account::GetAccountError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -126,23 +147,27 @@ pub fn de_get_account_http_error(
                 tmp
             })
         }
-        _ => crate::error::GetAccountError::generic(generic),
+        _ => crate::operation::get_account::GetAccountError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_account_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetAccountOutput, crate::error::GetAccountError> {
+) -> std::result::Result<
+    crate::operation::get_account::GetAccountOutput,
+    crate::operation::get_account::GetAccountError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_account_output::Builder::default();
+        let mut output =
+            crate::operation::get_account::builders::GetAccountOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_get_account::de_get_account(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::GetAccountError::unhandled)?;
+        .map_err(crate::operation::get_account::GetAccountError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -152,9 +177,9 @@ pub fn de_get_account_http_response(
 
 pub(crate) fn de_get_account(
     value: &[u8],
-    mut builder: crate::output::get_account_output::Builder,
+    mut builder: crate::operation::get_account::builders::GetAccountOutputBuilder,
 ) -> Result<
-    crate::output::get_account_output::Builder,
+    crate::operation::get_account::builders::GetAccountOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

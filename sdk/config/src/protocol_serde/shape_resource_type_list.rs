@@ -2,7 +2,7 @@
 pub(crate) fn de_resource_type_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ResourceType>>,
+    Option<std::vec::Vec<crate::types::ResourceType>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -29,7 +29,7 @@ where
                         )?
                         .map(|s| {
                             s.to_unescaped()
-                                .map(|u| crate::model::ResourceType::from(u.as_ref()))
+                                .map(|u| crate::types::ResourceType::from(u.as_ref()))
                         })
                         .transpose()?;
                         if let Some(value) = value {

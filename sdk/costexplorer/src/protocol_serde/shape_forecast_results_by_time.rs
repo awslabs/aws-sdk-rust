@@ -2,7 +2,7 @@
 pub(crate) fn de_forecast_results_by_time<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ForecastResult>>,
+    Option<std::vec::Vec<crate::types::ForecastResult>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

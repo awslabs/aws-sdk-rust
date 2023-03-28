@@ -2,7 +2,7 @@
 pub(crate) fn de_replication_configuration_templates<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ReplicationConfigurationTemplate>>,
+    Option<std::vec::Vec<crate::types::ReplicationConfigurationTemplate>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

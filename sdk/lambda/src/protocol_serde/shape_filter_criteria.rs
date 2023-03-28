@@ -2,7 +2,7 @@
 pub(crate) fn de_filter_criteria<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::FilterCriteria>,
+    Option<crate::types::FilterCriteria>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::filter_criteria::Builder::default();
+            let mut builder = crate::types::builders::FilterCriteriaBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -55,7 +55,7 @@ where
 
 pub fn ser_filter_criteria(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::FilterCriteria,
+    input: &crate::types::FilterCriteria,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.filters {
         let mut array_2 = object.key("Filters").start_array();

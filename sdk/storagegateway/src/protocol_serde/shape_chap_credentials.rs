@@ -2,7 +2,7 @@
 pub(crate) fn de_chap_credentials<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ChapInfo>>,
+    Option<std::vec::Vec<crate::types::ChapInfo>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

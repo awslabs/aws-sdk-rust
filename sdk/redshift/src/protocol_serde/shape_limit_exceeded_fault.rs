@@ -2,8 +2,11 @@
 #[allow(unused_mut)]
 pub fn de_limit_exceeded_fault_xml_err(
     inp: &[u8],
-    mut builder: crate::error::limit_exceeded_fault::Builder,
-) -> Result<crate::error::limit_exceeded_fault::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    mut builder: crate::types::error::builders::LimitExceededFaultBuilder,
+) -> Result<
+    crate::types::error::builders::LimitExceededFaultBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     if inp.is_empty() {
         return Ok(builder);
     }

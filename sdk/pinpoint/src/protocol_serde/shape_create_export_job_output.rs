@@ -2,13 +2,13 @@
 pub fn de_export_job_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::ExportJobResponse>,
-    crate::error::CreateExportJobError,
+    std::option::Option<crate::types::ExportJobResponse>,
+    crate::operation::create_export_job::CreateExportJobError,
 > {
     (!body.is_empty())
         .then(|| {
             crate::protocol_serde::shape_export_job_response::de_export_job_response_payload(body)
-                .map_err(crate::error::CreateExportJobError::unhandled)
+                .map_err(crate::operation::create_export_job::CreateExportJobError::unhandled)
         })
         .transpose()
 }

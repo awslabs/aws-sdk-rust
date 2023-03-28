@@ -2,7 +2,7 @@
 pub(crate) fn de_port_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<std::string::String, crate::model::ContainerServiceProtocol>>,
+    Option<std::collections::HashMap<std::string::String, crate::types::ContainerServiceProtocol>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -27,7 +27,7 @@ where
                         )?
                         .map(|s| {
                             s.to_unescaped()
-                                .map(|u| crate::model::ContainerServiceProtocol::from(u.as_ref()))
+                                .map(|u| crate::types::ContainerServiceProtocol::from(u.as_ref()))
                         })
                         .transpose()?;
                         if let Some(value) = value {

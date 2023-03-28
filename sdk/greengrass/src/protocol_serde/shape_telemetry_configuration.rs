@@ -2,7 +2,7 @@
 pub(crate) fn de_telemetry_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::TelemetryConfiguration>,
+    Option<crate::types::TelemetryConfiguration>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::telemetry_configuration::Builder::default();
+            let mut builder = crate::types::builders::TelemetryConfigurationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ConfigurationSyncStatus::from(u.as_ref())
+                                            crate::types::ConfigurationSyncStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -43,7 +43,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::Telemetry::from(u.as_ref()))
+                                            .map(|u| crate::types::Telemetry::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

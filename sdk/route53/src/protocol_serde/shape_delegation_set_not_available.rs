@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_delegation_set_not_available_xml_err(
     inp: &[u8],
-    mut builder: crate::error::delegation_set_not_available::Builder,
+    mut builder: crate::types::error::builders::DelegationSetNotAvailableBuilder,
 ) -> Result<
-    crate::error::delegation_set_not_available::Builder,
+    crate::types::error::builders::DelegationSetNotAvailableBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

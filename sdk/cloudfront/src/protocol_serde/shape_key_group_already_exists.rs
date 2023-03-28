@@ -2,9 +2,11 @@
 #[allow(unused_mut)]
 pub fn de_key_group_already_exists_xml_err(
     inp: &[u8],
-    mut builder: crate::error::key_group_already_exists::Builder,
-) -> Result<crate::error::key_group_already_exists::Builder, aws_smithy_xml::decode::XmlDecodeError>
-{
+    mut builder: crate::types::error::builders::KeyGroupAlreadyExistsBuilder,
+) -> Result<
+    crate::types::error::builders::KeyGroupAlreadyExistsBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     if inp.is_empty() {
         return Ok(builder);
     }

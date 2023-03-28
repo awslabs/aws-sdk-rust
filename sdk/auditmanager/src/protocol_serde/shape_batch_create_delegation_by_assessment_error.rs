@@ -2,7 +2,7 @@
 pub(crate) fn de_batch_create_delegation_by_assessment_error<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::BatchCreateDelegationByAssessmentError>,
+    Option<crate::types::BatchCreateDelegationByAssessmentError>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::batch_create_delegation_by_assessment_error::Builder::default();
+                crate::types::builders::BatchCreateDelegationByAssessmentErrorBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

@@ -3,121 +3,130 @@
 pub fn de_confirm_subscription_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ConfirmSubscriptionOutput,
-    crate::error::ConfirmSubscriptionError,
+    crate::operation::confirm_subscription::ConfirmSubscriptionOutput,
+    crate::operation::confirm_subscription::ConfirmSubscriptionError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ConfirmSubscriptionError::unhandled)?;
+        .map_err(crate::operation::confirm_subscription::ConfirmSubscriptionError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ConfirmSubscriptionError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::confirm_subscription::ConfirmSubscriptionError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AuthorizationError" => {
-            crate::error::ConfirmSubscriptionError::AuthorizationErrorException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "AuthorizationError" => crate::operation::confirm_subscription::ConfirmSubscriptionError::AuthorizationErrorException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::authorization_error_exception::Builder::default();
+                    let mut output = crate::types::error::builders::AuthorizationErrorExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_authorization_error_exception::de_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ConfirmSubscriptionError::unhandled)?;
+                    output = crate::protocol_serde::shape_authorization_error_exception::de_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::confirm_subscription::ConfirmSubscriptionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "FilterPolicyLimitExceeded" => {
-            crate::error::ConfirmSubscriptionError::FilterPolicyLimitExceededException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "FilterPolicyLimitExceeded" => crate::operation::confirm_subscription::ConfirmSubscriptionError::FilterPolicyLimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::filter_policy_limit_exceeded_exception::Builder::default();
+                    let mut output = crate::types::error::builders::FilterPolicyLimitExceededExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_filter_policy_limit_exceeded_exception::de_filter_policy_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ConfirmSubscriptionError::unhandled)?;
+                    output = crate::protocol_serde::shape_filter_policy_limit_exceeded_exception::de_filter_policy_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::confirm_subscription::ConfirmSubscriptionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InternalError" => crate::error::ConfirmSubscriptionError::InternalErrorException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_error_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_error_exception::de_internal_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ConfirmSubscriptionError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "InvalidParameter" => crate::error::ConfirmSubscriptionError::InvalidParameterException({
+        "InternalError" => crate::operation::confirm_subscription::ConfirmSubscriptionError::InternalErrorException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::invalid_parameter_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ConfirmSubscriptionError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "NotFound" => crate::error::ConfirmSubscriptionError::NotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ConfirmSubscriptionError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "SubscriptionLimitExceeded" => {
-            crate::error::ConfirmSubscriptionError::SubscriptionLimitExceededException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::subscription_limit_exceeded_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InternalErrorExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_subscription_limit_exceeded_exception::de_subscription_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ConfirmSubscriptionError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_error_exception::de_internal_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::confirm_subscription::ConfirmSubscriptionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::ConfirmSubscriptionError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidParameter" => crate::operation::confirm_subscription::ConfirmSubscriptionError::InvalidParameterException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidParameterExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::confirm_subscription::ConfirmSubscriptionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "NotFound" => crate::operation::confirm_subscription::ConfirmSubscriptionError::NotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::NotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::confirm_subscription::ConfirmSubscriptionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "SubscriptionLimitExceeded" => crate::operation::confirm_subscription::ConfirmSubscriptionError::SubscriptionLimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::SubscriptionLimitExceededExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_subscription_limit_exceeded_exception::de_subscription_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::confirm_subscription::ConfirmSubscriptionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::confirm_subscription::ConfirmSubscriptionError::generic(generic)
     })
 }
 
@@ -125,18 +134,18 @@ pub fn de_confirm_subscription_http_error(
 pub fn de_confirm_subscription_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ConfirmSubscriptionOutput,
-    crate::error::ConfirmSubscriptionError,
+    crate::operation::confirm_subscription::ConfirmSubscriptionOutput,
+    crate::operation::confirm_subscription::ConfirmSubscriptionError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::confirm_subscription_output::Builder::default();
+        let mut output = crate::operation::confirm_subscription::builders::ConfirmSubscriptionOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_confirm_subscription::de_confirm_subscription(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ConfirmSubscriptionError::unhandled)?;
+        .map_err(crate::operation::confirm_subscription::ConfirmSubscriptionError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -147,9 +156,9 @@ pub fn de_confirm_subscription_http_response(
 #[allow(unused_mut)]
 pub fn de_confirm_subscription(
     inp: &[u8],
-    mut builder: crate::output::confirm_subscription_output::Builder,
+    mut builder: crate::operation::confirm_subscription::builders::ConfirmSubscriptionOutputBuilder,
 ) -> Result<
-    crate::output::confirm_subscription_output::Builder,
+    crate::operation::confirm_subscription::builders::ConfirmSubscriptionOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

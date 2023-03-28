@@ -2,11 +2,11 @@
 pub fn de_batch_describe_type_configurations_error(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    crate::model::BatchDescribeTypeConfigurationsError,
+    crate::types::BatchDescribeTypeConfigurationsError,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     #[allow(unused_mut)]
-    let mut builder = crate::model::BatchDescribeTypeConfigurationsError::builder();
+    let mut builder = crate::types::BatchDescribeTypeConfigurationsError::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ErrorCode") /* ErrorCode com.amazonaws.cloudformation#BatchDescribeTypeConfigurationsError$ErrorCode */ =>  {

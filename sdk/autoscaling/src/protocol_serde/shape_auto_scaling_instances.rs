@@ -2,7 +2,7 @@
 pub fn de_auto_scaling_instances(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::AutoScalingInstanceDetails>,
+    std::vec::Vec<crate::types::AutoScalingInstanceDetails>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

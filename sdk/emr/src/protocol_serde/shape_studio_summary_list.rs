@@ -2,7 +2,7 @@
 pub(crate) fn de_studio_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::StudioSummary>>,
+    Option<std::vec::Vec<crate::types::StudioSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

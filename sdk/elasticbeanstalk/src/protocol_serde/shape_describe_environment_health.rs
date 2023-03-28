@@ -3,61 +3,57 @@
 pub fn de_describe_environment_health_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeEnvironmentHealthOutput,
-    crate::error::DescribeEnvironmentHealthError,
+    crate::operation::describe_environment_health::DescribeEnvironmentHealthOutput,
+    crate::operation::describe_environment_health::DescribeEnvironmentHealthError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeEnvironmentHealthError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::describe_environment_health::DescribeEnvironmentHealthError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::DescribeEnvironmentHealthError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::describe_environment_health::DescribeEnvironmentHealthError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ElasticBeanstalkServiceException" => {
-            crate::error::DescribeEnvironmentHealthError::ElasticBeanstalkServiceException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "ElasticBeanstalkServiceException" => crate::operation::describe_environment_health::DescribeEnvironmentHealthError::ElasticBeanstalkServiceException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::elastic_beanstalk_service_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ElasticBeanstalkServiceExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_elastic_beanstalk_service_exception::de_elastic_beanstalk_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeEnvironmentHealthError::unhandled)?;
+                    output = crate::protocol_serde::shape_elastic_beanstalk_service_exception::de_elastic_beanstalk_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::describe_environment_health::DescribeEnvironmentHealthError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidRequestException" => {
-            crate::error::DescribeEnvironmentHealthError::InvalidRequestException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidRequestException" => crate::operation::describe_environment_health::DescribeEnvironmentHealthError::InvalidRequestException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_request_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeEnvironmentHealthError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::describe_environment_health::DescribeEnvironmentHealthError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DescribeEnvironmentHealthError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::describe_environment_health::DescribeEnvironmentHealthError::generic(generic)
     })
 }
 
@@ -65,14 +61,14 @@ pub fn de_describe_environment_health_http_error(
 pub fn de_describe_environment_health_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeEnvironmentHealthOutput,
-    crate::error::DescribeEnvironmentHealthError,
+    crate::operation::describe_environment_health::DescribeEnvironmentHealthOutput,
+    crate::operation::describe_environment_health::DescribeEnvironmentHealthError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_environment_health_output::Builder::default();
+        let mut output = crate::operation::describe_environment_health::builders::DescribeEnvironmentHealthOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_describe_environment_health::de_describe_environment_health(response.body().as_ref(), output).map_err(crate::error::DescribeEnvironmentHealthError::unhandled)?;
+        output = crate::protocol_serde::shape_describe_environment_health::de_describe_environment_health(response.body().as_ref(), output).map_err(crate::operation::describe_environment_health::DescribeEnvironmentHealthError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -83,9 +79,9 @@ pub fn de_describe_environment_health_http_response(
 #[allow(unused_mut)]
 pub fn de_describe_environment_health(
     inp: &[u8],
-    mut builder: crate::output::describe_environment_health_output::Builder,
+    mut builder: crate::operation::describe_environment_health::builders::DescribeEnvironmentHealthOutputBuilder,
 ) -> Result<
-    crate::output::describe_environment_health_output::Builder,
+    crate::operation::describe_environment_health::builders::DescribeEnvironmentHealthOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
@@ -139,8 +135,8 @@ pub fn de_describe_environment_health(
             s if s.matches("Status") /* Status com.amazonaws.elasticbeanstalk.synthetic#DescribeEnvironmentHealthOutput$Status */ =>  {
                 let var_3 =
                     Some(
-                        Result::<crate::model::EnvironmentHealth, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::EnvironmentHealth::from(
+                        Result::<crate::types::EnvironmentHealth, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::EnvironmentHealth::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

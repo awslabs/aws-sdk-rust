@@ -2,7 +2,7 @@
 pub(crate) fn de_cancel_timer_failed_event_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::CancelTimerFailedEventAttributes>,
+    Option<crate::types::CancelTimerFailedEventAttributes>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::cancel_timer_failed_event_attributes::Builder::default();
+                crate::types::builders::CancelTimerFailedEventAttributesBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -40,7 +40,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::CancelTimerFailedCause::from(u.as_ref())
+                                            crate::types::CancelTimerFailedCause::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

@@ -3,178 +3,181 @@
 pub fn de_delete_resource_share_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteResourceShareOutput,
-    crate::error::DeleteResourceShareError,
+    crate::operation::delete_resource_share::DeleteResourceShareOutput,
+    crate::operation::delete_resource_share::DeleteResourceShareError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteResourceShareError::unhandled)?;
+        .map_err(crate::operation::delete_resource_share::DeleteResourceShareError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DeleteResourceShareError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::delete_resource_share::DeleteResourceShareError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "IdempotentParameterMismatchException" => {
-            crate::error::DeleteResourceShareError::IdempotentParameterMismatchException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::idempotent_parameter_mismatch_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_idempotent_parameter_mismatch_exception::de_idempotent_parameter_mismatch_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteResourceShareError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InvalidClientTokenException" => {
-            crate::error::DeleteResourceShareError::InvalidClientTokenException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_client_token_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_client_token_exception::de_invalid_client_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteResourceShareError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InvalidParameterException" => {
-            crate::error::DeleteResourceShareError::InvalidParameterException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteResourceShareError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InvalidStateTransitionException" => {
-            crate::error::DeleteResourceShareError::InvalidStateTransitionException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_state_transition_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_state_transition_exception::de_invalid_state_transition_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteResourceShareError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "MalformedArnException" => crate::error::DeleteResourceShareError::MalformedArnException({
+        "IdempotentParameterMismatchException" => crate::operation::delete_resource_share::DeleteResourceShareError::IdempotentParameterMismatchException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::malformed_arn_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_malformed_arn_exception::de_malformed_arn_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteResourceShareError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::IdempotentParameterMismatchExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_idempotent_parameter_mismatch_exception::de_idempotent_parameter_mismatch_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_resource_share::DeleteResourceShareError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "OperationNotPermittedException" => {
-            crate::error::DeleteResourceShareError::OperationNotPermittedException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidClientTokenException" => crate::operation::delete_resource_share::DeleteResourceShareError::InvalidClientTokenException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::operation_not_permitted_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidClientTokenExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_operation_not_permitted_exception::de_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteResourceShareError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_client_token_exception::de_invalid_client_token_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_resource_share::DeleteResourceShareError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ServerInternalException" => {
-            crate::error::DeleteResourceShareError::ServerInternalException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidParameterException" => crate::operation::delete_resource_share::DeleteResourceShareError::InvalidParameterException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::server_internal_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidParameterExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_server_internal_exception::de_server_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteResourceShareError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_resource_share::DeleteResourceShareError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ServiceUnavailableException" => {
-            crate::error::DeleteResourceShareError::ServiceUnavailableException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidStateTransitionException" => crate::operation::delete_resource_share::DeleteResourceShareError::InvalidStateTransitionException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::service_unavailable_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidStateTransitionExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteResourceShareError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_state_transition_exception::de_invalid_state_transition_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_resource_share::DeleteResourceShareError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "UnknownResourceException" => {
-            crate::error::DeleteResourceShareError::UnknownResourceException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "MalformedArnException" => crate::operation::delete_resource_share::DeleteResourceShareError::MalformedArnException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::unknown_resource_exception::Builder::default();
+                    let mut output = crate::types::error::builders::MalformedArnExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_unknown_resource_exception::de_unknown_resource_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteResourceShareError::unhandled)?;
+                    output = crate::protocol_serde::shape_malformed_arn_exception::de_malformed_arn_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_resource_share::DeleteResourceShareError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DeleteResourceShareError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "OperationNotPermittedException" => crate::operation::delete_resource_share::DeleteResourceShareError::OperationNotPermittedException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::OperationNotPermittedExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_operation_not_permitted_exception::de_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_resource_share::DeleteResourceShareError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ServerInternalException" => crate::operation::delete_resource_share::DeleteResourceShareError::ServerInternalException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ServerInternalExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_server_internal_exception::de_server_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_resource_share::DeleteResourceShareError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ServiceUnavailableException" => crate::operation::delete_resource_share::DeleteResourceShareError::ServiceUnavailableException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_resource_share::DeleteResourceShareError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "UnknownResourceException" => crate::operation::delete_resource_share::DeleteResourceShareError::UnknownResourceException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::UnknownResourceExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_unknown_resource_exception::de_unknown_resource_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_resource_share::DeleteResourceShareError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::delete_resource_share::DeleteResourceShareError::generic(generic)
     })
 }
 
@@ -182,18 +185,18 @@ pub fn de_delete_resource_share_http_error(
 pub fn de_delete_resource_share_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteResourceShareOutput,
-    crate::error::DeleteResourceShareError,
+    crate::operation::delete_resource_share::DeleteResourceShareOutput,
+    crate::operation::delete_resource_share::DeleteResourceShareError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_resource_share_output::Builder::default();
+        let mut output = crate::operation::delete_resource_share::builders::DeleteResourceShareOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_delete_resource_share::de_delete_resource_share(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DeleteResourceShareError::unhandled)?;
+        .map_err(crate::operation::delete_resource_share::DeleteResourceShareError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -203,9 +206,9 @@ pub fn de_delete_resource_share_http_response(
 
 pub(crate) fn de_delete_resource_share(
     value: &[u8],
-    mut builder: crate::output::delete_resource_share_output::Builder,
+    mut builder: crate::operation::delete_resource_share::builders::DeleteResourceShareOutputBuilder,
 ) -> Result<
-    crate::output::delete_resource_share_output::Builder,
+    crate::operation::delete_resource_share::builders::DeleteResourceShareOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

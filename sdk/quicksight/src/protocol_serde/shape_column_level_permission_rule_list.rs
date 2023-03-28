@@ -2,7 +2,7 @@
 pub(crate) fn de_column_level_permission_rule_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ColumnLevelPermissionRule>>,
+    Option<std::vec::Vec<crate::types::ColumnLevelPermissionRule>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

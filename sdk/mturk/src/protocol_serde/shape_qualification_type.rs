@@ -2,7 +2,7 @@
 pub(crate) fn de_qualification_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::QualificationType>,
+    Option<crate::types::QualificationType>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::qualification_type::Builder::default();
+            let mut builder = crate::types::builders::QualificationTypeBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -74,7 +74,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::QualificationTypeStatus::from(u.as_ref())
+                                            crate::types::QualificationTypeStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

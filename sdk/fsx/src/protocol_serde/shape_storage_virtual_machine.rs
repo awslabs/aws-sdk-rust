@@ -2,7 +2,7 @@
 pub(crate) fn de_storage_virtual_machine<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::StorageVirtualMachine>,
+    Option<crate::types::StorageVirtualMachine>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::storage_virtual_machine::Builder::default();
+            let mut builder = crate::types::builders::StorageVirtualMachineBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -59,7 +59,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::StorageVirtualMachineLifecycle::from(
+                                            crate::types::StorageVirtualMachineLifecycle::from(
                                                 u.as_ref(),
                                             )
                                         })
@@ -101,7 +101,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::StorageVirtualMachineSubtype::from(
+                                            crate::types::StorageVirtualMachineSubtype::from(
                                                 u.as_ref(),
                                             )
                                         })
@@ -131,7 +131,7 @@ where
                                 builder = builder.set_root_volume_security_style(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?.map(|s|
                                         s.to_unescaped().map(|u|
-                                            crate::model::StorageVirtualMachineRootVolumeSecurityStyle::from(u.as_ref())
+                                            crate::types::StorageVirtualMachineRootVolumeSecurityStyle::from(u.as_ref())
                                         )
                                     ).transpose()?
                                 );

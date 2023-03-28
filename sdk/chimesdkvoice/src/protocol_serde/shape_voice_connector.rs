@@ -2,7 +2,7 @@
 pub(crate) fn de_voice_connector<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::VoiceConnector>,
+    Option<crate::types::VoiceConnector>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::voice_connector::Builder::default();
+            let mut builder = crate::types::builders::VoiceConnectorBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -39,7 +39,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::VoiceConnectorAwsRegion::from(u.as_ref())
+                                            crate::types::VoiceConnectorAwsRegion::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

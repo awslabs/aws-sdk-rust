@@ -3,59 +3,62 @@
 pub fn de_describe_instance_health_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeInstanceHealthOutput,
-    crate::error::DescribeInstanceHealthError,
+    crate::operation::describe_instance_health::DescribeInstanceHealthOutput,
+    crate::operation::describe_instance_health::DescribeInstanceHealthError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeInstanceHealthError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::describe_instance_health::DescribeInstanceHealthError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::DescribeInstanceHealthError::unhandled(
-                generic,
-            ))
-        }
-    };
+    let error_code =
+        match generic.code() {
+            Some(code) => code,
+            None => return Err(
+                crate::operation::describe_instance_health::DescribeInstanceHealthError::unhandled(
+                    generic,
+                ),
+            ),
+        };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LoadBalancerNotFound" => {
-            crate::error::DescribeInstanceHealthError::AccessPointNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "LoadBalancerNotFound" => crate::operation::describe_instance_health::DescribeInstanceHealthError::AccessPointNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::access_point_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::AccessPointNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_access_point_not_found_exception::de_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeInstanceHealthError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_point_not_found_exception::de_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::describe_instance_health::DescribeInstanceHealthError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidInstance" => crate::error::DescribeInstanceHealthError::InvalidEndPointException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::invalid_end_point_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_end_point_exception::de_invalid_end_point_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeInstanceHealthError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::DescribeInstanceHealthError::generic(generic),
+        "InvalidInstance" => crate::operation::describe_instance_health::DescribeInstanceHealthError::InvalidEndPointException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidEndPointExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_end_point_exception::de_invalid_end_point_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::describe_instance_health::DescribeInstanceHealthError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::describe_instance_health::DescribeInstanceHealthError::generic(generic)
     })
 }
 
@@ -63,19 +66,21 @@ pub fn de_describe_instance_health_http_error(
 pub fn de_describe_instance_health_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeInstanceHealthOutput,
-    crate::error::DescribeInstanceHealthError,
+    crate::operation::describe_instance_health::DescribeInstanceHealthOutput,
+    crate::operation::describe_instance_health::DescribeInstanceHealthError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_instance_health_output::Builder::default();
+        let mut output = crate::operation::describe_instance_health::builders::DescribeInstanceHealthOutputBuilder::default();
         let _ = response;
         output =
             crate::protocol_serde::shape_describe_instance_health::de_describe_instance_health(
                 response.body().as_ref(),
                 output,
             )
-            .map_err(crate::error::DescribeInstanceHealthError::unhandled)?;
+            .map_err(
+                crate::operation::describe_instance_health::DescribeInstanceHealthError::unhandled,
+            )?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -86,9 +91,9 @@ pub fn de_describe_instance_health_http_response(
 #[allow(unused_mut)]
 pub fn de_describe_instance_health(
     inp: &[u8],
-    mut builder: crate::output::describe_instance_health_output::Builder,
+    mut builder: crate::operation::describe_instance_health::builders::DescribeInstanceHealthOutputBuilder,
 ) -> Result<
-    crate::output::describe_instance_health_output::Builder,
+    crate::operation::describe_instance_health::builders::DescribeInstanceHealthOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

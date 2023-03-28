@@ -2,30 +2,37 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_invalidation_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetInvalidationOutput, crate::error::GetInvalidationError> {
+) -> std::result::Result<
+    crate::operation::get_invalidation::GetInvalidationOutput,
+    crate::operation::get_invalidation::GetInvalidationError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetInvalidationError::unhandled)?;
+        .map_err(crate::operation::get_invalidation::GetInvalidationError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::GetInvalidationError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::get_invalidation::GetInvalidationError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDenied" => crate::error::GetInvalidationError::AccessDenied({
+        "AccessDenied" => crate::operation::get_invalidation::GetInvalidationError::AccessDenied({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::error::access_denied::Builder::default();
+                let mut output = crate::types::error::builders::AccessDeniedBuilder::default();
                 let _ = response;
                 output = crate::protocol_serde::shape_access_denied::de_access_denied_xml_err(
                     response.body().as_ref(),
                     output,
                 )
-                .map_err(crate::error::GetInvalidationError::unhandled)?;
+                .map_err(crate::operation::get_invalidation::GetInvalidationError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -34,47 +41,57 @@ pub fn de_get_invalidation_http_error(
             }
             tmp
         }),
-        "NoSuchDistribution" => crate::error::GetInvalidationError::NoSuchDistribution({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "NoSuchDistribution" => {
+            crate::operation::get_invalidation::GetInvalidationError::NoSuchDistribution({
                 #[allow(unused_mut)]
-                let mut output = crate::error::no_such_distribution::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_no_such_distribution::de_no_such_distribution_xml_err(response.body().as_ref(), output).map_err(crate::error::GetInvalidationError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "NoSuchInvalidation" => crate::error::GetInvalidationError::NoSuchInvalidation({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::NoSuchDistributionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_no_such_distribution::de_no_such_distribution_xml_err(response.body().as_ref(), output).map_err(crate::operation::get_invalidation::GetInvalidationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "NoSuchInvalidation" => {
+            crate::operation::get_invalidation::GetInvalidationError::NoSuchInvalidation({
                 #[allow(unused_mut)]
-                let mut output = crate::error::no_such_invalidation::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_no_such_invalidation::de_no_such_invalidation_xml_err(response.body().as_ref(), output).map_err(crate::error::GetInvalidationError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::GetInvalidationError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::NoSuchInvalidationBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_no_such_invalidation::de_no_such_invalidation_xml_err(response.body().as_ref(), output).map_err(crate::operation::get_invalidation::GetInvalidationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::get_invalidation::GetInvalidationError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_invalidation_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetInvalidationOutput, crate::error::GetInvalidationError> {
+) -> std::result::Result<
+    crate::operation::get_invalidation::GetInvalidationOutput,
+    crate::operation::get_invalidation::GetInvalidationError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_invalidation_output::Builder::default();
+        let mut output =
+            crate::operation::get_invalidation::builders::GetInvalidationOutputBuilder::default();
         let _ = response;
         output = output.set_invalidation(
             crate::protocol_serde::shape_get_invalidation_output::de_invalidation_payload(

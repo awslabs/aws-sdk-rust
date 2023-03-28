@@ -2,7 +2,7 @@
 pub(crate) fn de_contact_references<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<std::string::String, crate::model::Reference>>,
+    Option<std::collections::HashMap<std::string::String, crate::types::Reference>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

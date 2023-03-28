@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_invalid_s3_configuration_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::invalid_s3_configuration_exception::Builder,
+    mut builder: crate::types::error::builders::InvalidS3ConfigurationExceptionBuilder,
 ) -> Result<
-    crate::error::invalid_s3_configuration_exception::Builder,
+    crate::types::error::builders::InvalidS3ConfigurationExceptionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

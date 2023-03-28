@@ -2,7 +2,7 @@
 pub(crate) fn de_list_of_aggregated_log_odds_metrics<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AggregatedLogOddsMetric>>,
+    Option<std::vec::Vec<crate::types::AggregatedLogOddsMetric>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

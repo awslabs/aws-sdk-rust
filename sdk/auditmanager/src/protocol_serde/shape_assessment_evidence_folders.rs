@@ -2,7 +2,7 @@
 pub(crate) fn de_assessment_evidence_folders<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AssessmentEvidenceFolder>>,
+    Option<std::vec::Vec<crate::types::AssessmentEvidenceFolder>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

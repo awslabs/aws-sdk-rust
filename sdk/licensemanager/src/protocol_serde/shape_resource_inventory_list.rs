@@ -2,7 +2,7 @@
 pub(crate) fn de_resource_inventory_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ResourceInventory>>,
+    Option<std::vec::Vec<crate::types::ResourceInventory>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

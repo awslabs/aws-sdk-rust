@@ -2,7 +2,7 @@
 pub(crate) fn de_hub_content_info_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::HubContentInfo>>,
+    Option<std::vec::Vec<crate::types::HubContentInfo>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

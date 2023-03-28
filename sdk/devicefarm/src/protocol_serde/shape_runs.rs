@@ -2,7 +2,7 @@
 pub(crate) fn de_runs<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Run>>,
+    Option<std::vec::Vec<crate::types::Run>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

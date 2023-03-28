@@ -4,8 +4,8 @@ pub(crate) fn de_last_ingest_state_change_dates<'a, I>(
 ) -> Result<
     Option<
         std::collections::HashMap<
-            crate::model::DatasourcePackageIngestState,
-            crate::model::TimestampForCollection,
+            crate::types::DatasourcePackageIngestState,
+            crate::types::TimestampForCollection,
         >,
     >,
     aws_smithy_json::deserialize::error::DeserializeError,
@@ -27,7 +27,7 @@ where
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         let key = key.to_unescaped().map(|u| {
-                            crate::model::DatasourcePackageIngestState::from(u.as_ref())
+                            crate::types::DatasourcePackageIngestState::from(u.as_ref())
                         })?;
                         let value =
                             crate::protocol_serde::shape_timestamp_for_collection::de_timestamp_for_collection(tokens)?

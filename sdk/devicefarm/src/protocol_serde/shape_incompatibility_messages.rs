@@ -2,7 +2,7 @@
 pub(crate) fn de_incompatibility_messages<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::IncompatibilityMessage>>,
+    Option<std::vec::Vec<crate::types::IncompatibilityMessage>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_collection_details<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CollectionDetail>>,
+    Option<std::vec::Vec<crate::types::CollectionDetail>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

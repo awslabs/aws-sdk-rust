@@ -2,57 +2,35 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_dedicated_ips_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetDedicatedIpsOutput, crate::error::GetDedicatedIpsError> {
+) -> std::result::Result<
+    crate::operation::get_dedicated_ips::GetDedicatedIpsOutput,
+    crate::operation::get_dedicated_ips::GetDedicatedIpsError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetDedicatedIpsError::unhandled)?;
+        .map_err(crate::operation::get_dedicated_ips::GetDedicatedIpsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::GetDedicatedIpsError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::get_dedicated_ips::GetDedicatedIpsError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::GetDedicatedIpsError::BadRequestException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDedicatedIpsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "NotFoundException" => crate::error::GetDedicatedIpsError::NotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDedicatedIpsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "TooManyRequestsException" => {
-            crate::error::GetDedicatedIpsError::TooManyRequestsException({
+        "BadRequestException" => {
+            crate::operation::get_dedicated_ips::GetDedicatedIpsError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::BadRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDedicatedIpsError::unhandled)?;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_dedicated_ips::GetDedicatedIpsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -62,23 +40,63 @@ pub fn de_get_dedicated_ips_http_error(
                 tmp
             })
         }
-        _ => crate::error::GetDedicatedIpsError::generic(generic),
+        "NotFoundException" => {
+            crate::operation::get_dedicated_ips::GetDedicatedIpsError::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::NotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_dedicated_ips::GetDedicatedIpsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "TooManyRequestsException" => {
+            crate::operation::get_dedicated_ips::GetDedicatedIpsError::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_dedicated_ips::GetDedicatedIpsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::get_dedicated_ips::GetDedicatedIpsError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_dedicated_ips_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetDedicatedIpsOutput, crate::error::GetDedicatedIpsError> {
+) -> std::result::Result<
+    crate::operation::get_dedicated_ips::GetDedicatedIpsOutput,
+    crate::operation::get_dedicated_ips::GetDedicatedIpsError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_dedicated_ips_output::Builder::default();
+        let mut output =
+            crate::operation::get_dedicated_ips::builders::GetDedicatedIpsOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_get_dedicated_ips::de_get_dedicated_ips(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::GetDedicatedIpsError::unhandled)?;
+        .map_err(crate::operation::get_dedicated_ips::GetDedicatedIpsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -88,9 +106,9 @@ pub fn de_get_dedicated_ips_http_response(
 
 pub(crate) fn de_get_dedicated_ips(
     value: &[u8],
-    mut builder: crate::output::get_dedicated_ips_output::Builder,
+    mut builder: crate::operation::get_dedicated_ips::builders::GetDedicatedIpsOutputBuilder,
 ) -> Result<
-    crate::output::get_dedicated_ips_output::Builder,
+    crate::operation::get_dedicated_ips::builders::GetDedicatedIpsOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

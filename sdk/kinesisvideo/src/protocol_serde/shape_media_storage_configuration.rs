@@ -2,7 +2,7 @@
 pub(crate) fn de_media_storage_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::MediaStorageConfiguration>,
+    Option<crate::types::MediaStorageConfiguration>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::media_storage_configuration::Builder::default();
+            let mut builder = crate::types::builders::MediaStorageConfigurationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -39,7 +39,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::MediaStorageConfigurationStatus::from(
+                                            crate::types::MediaStorageConfigurationStatus::from(
                                                 u.as_ref(),
                                             )
                                         })
@@ -72,7 +72,7 @@ where
 
 pub fn ser_media_storage_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::MediaStorageConfiguration,
+    input: &crate::types::MediaStorageConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.stream_arn {
         object.key("StreamARN").string(var_1.as_str());

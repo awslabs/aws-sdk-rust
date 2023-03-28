@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_receipt_filter(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::ReceiptFilter,
+    input: &crate::types::ReceiptFilter,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Name");
@@ -19,9 +19,9 @@ pub fn ser_receipt_filter(
 
 pub fn de_receipt_filter(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::ReceiptFilter, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::ReceiptFilter, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::ReceiptFilter::builder();
+    let mut builder = crate::types::ReceiptFilter::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Name") /* Name com.amazonaws.ses#ReceiptFilter$Name */ =>  {

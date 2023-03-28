@@ -2,7 +2,7 @@
 pub(crate) fn de_reactions_for_comment_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ReactionForComment>>,
+    Option<std::vec::Vec<crate::types::ReactionForComment>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

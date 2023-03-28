@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_compatible_kafka_version<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CompatibleKafkaVersion>>,
+    Option<std::vec::Vec<crate::types::CompatibleKafkaVersion>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

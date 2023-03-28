@@ -2,106 +2,114 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_metric_streams_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListMetricStreamsOutput, crate::error::ListMetricStreamsError>
-{
+) -> std::result::Result<
+    crate::operation::list_metric_streams::ListMetricStreamsOutput,
+    crate::operation::list_metric_streams::ListMetricStreamsError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListMetricStreamsError::unhandled)?;
+        .map_err(crate::operation::list_metric_streams::ListMetricStreamsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListMetricStreamsError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::list_metric_streams::ListMetricStreamsError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServiceError" => crate::error::ListMetricStreamsError::InternalServiceFault({
+        "InternalServiceError" => crate::operation::list_metric_streams::ListMetricStreamsError::InternalServiceFault({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_service_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_service_fault::de_internal_service_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ListMetricStreamsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InternalServiceFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_service_fault::de_internal_service_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::list_metric_streams::ListMetricStreamsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "InvalidNextToken" => {
-            crate::error::ListMetricStreamsError::InvalidNextToken({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidNextToken" => crate::operation::list_metric_streams::ListMetricStreamsError::InvalidNextToken({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_next_token::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidNextTokenBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_next_token::de_invalid_next_token_xml_err(response.body().as_ref(), output).map_err(crate::error::ListMetricStreamsError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_next_token::de_invalid_next_token_xml_err(response.body().as_ref(), output).map_err(crate::operation::list_metric_streams::ListMetricStreamsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidParameterValue" => {
-            crate::error::ListMetricStreamsError::InvalidParameterValueException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidParameterValue" => crate::operation::list_metric_streams::ListMetricStreamsError::InvalidParameterValueException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_parameter_value_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListMetricStreamsError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::list_metric_streams::ListMetricStreamsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "MissingParameter" => {
-            crate::error::ListMetricStreamsError::MissingRequiredParameterException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "MissingParameter" => crate::operation::list_metric_streams::ListMetricStreamsError::MissingRequiredParameterException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::missing_required_parameter_exception::Builder::default();
+                    let mut output = crate::types::error::builders::MissingRequiredParameterExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_missing_required_parameter_exception::de_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListMetricStreamsError::unhandled)?;
+                    output = crate::protocol_serde::shape_missing_required_parameter_exception::de_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::list_metric_streams::ListMetricStreamsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::ListMetricStreamsError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::list_metric_streams::ListMetricStreamsError::generic(generic)
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_metric_streams_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListMetricStreamsOutput, crate::error::ListMetricStreamsError>
-{
+) -> std::result::Result<
+    crate::operation::list_metric_streams::ListMetricStreamsOutput,
+    crate::operation::list_metric_streams::ListMetricStreamsError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_metric_streams_output::Builder::default();
+        let mut output = crate::operation::list_metric_streams::builders::ListMetricStreamsOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_metric_streams::de_list_metric_streams(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListMetricStreamsError::unhandled)?;
+        .map_err(crate::operation::list_metric_streams::ListMetricStreamsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -112,9 +120,9 @@ pub fn de_list_metric_streams_http_response(
 #[allow(unused_mut)]
 pub fn de_list_metric_streams(
     inp: &[u8],
-    mut builder: crate::output::list_metric_streams_output::Builder,
+    mut builder: crate::operation::list_metric_streams::builders::ListMetricStreamsOutputBuilder,
 ) -> Result<
-    crate::output::list_metric_streams_output::Builder,
+    crate::operation::list_metric_streams::builders::ListMetricStreamsOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

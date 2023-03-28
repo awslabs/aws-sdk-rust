@@ -2,7 +2,7 @@
 pub(crate) fn de_pipeline_stage_declaration_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::StageDeclaration>>,
+    Option<std::vec::Vec<crate::types::StageDeclaration>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

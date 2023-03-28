@@ -2,7 +2,7 @@
 pub(crate) fn de_transform_job_summaries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::TransformJobSummary>>,
+    Option<std::vec::Vec<crate::types::TransformJobSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

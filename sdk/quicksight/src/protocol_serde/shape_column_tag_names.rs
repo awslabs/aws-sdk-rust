@@ -2,7 +2,7 @@
 pub(crate) fn de_column_tag_names<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ColumnTagName>>,
+    Option<std::vec::Vec<crate::types::ColumnTagName>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -29,7 +29,7 @@ where
                         )?
                         .map(|s| {
                             s.to_unescaped()
-                                .map(|u| crate::model::ColumnTagName::from(u.as_ref()))
+                                .map(|u| crate::types::ColumnTagName::from(u.as_ref()))
                         })
                         .transpose()?;
                         if let Some(value) = value {

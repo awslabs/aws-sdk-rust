@@ -2,7 +2,7 @@
 pub(crate) fn de_aggregate_compliance_by_conformance_pack<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::AggregateComplianceByConformancePack>,
+    Option<crate::types::AggregateComplianceByConformancePack>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::aggregate_compliance_by_conformance_pack::Builder::default();
+                crate::types::builders::AggregateComplianceByConformancePackBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

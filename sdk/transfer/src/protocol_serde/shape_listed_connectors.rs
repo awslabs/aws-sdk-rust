@@ -2,7 +2,7 @@
 pub(crate) fn de_listed_connectors<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ListedConnector>>,
+    Option<std::vec::Vec<crate::types::ListedConnector>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

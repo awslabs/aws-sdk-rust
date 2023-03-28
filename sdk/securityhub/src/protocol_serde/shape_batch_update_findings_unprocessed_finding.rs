@@ -2,7 +2,7 @@
 pub(crate) fn de_batch_update_findings_unprocessed_finding<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::BatchUpdateFindingsUnprocessedFinding>,
+    Option<crate::types::BatchUpdateFindingsUnprocessedFinding>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::batch_update_findings_unprocessed_finding::Builder::default();
+                crate::types::builders::BatchUpdateFindingsUnprocessedFindingBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

@@ -2,7 +2,7 @@
 pub(crate) fn de_metric_monitor_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::MetricMonitor>>,
+    Option<std::vec::Vec<crate::types::MetricMonitor>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

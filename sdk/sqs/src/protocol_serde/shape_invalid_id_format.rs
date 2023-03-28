@@ -2,8 +2,11 @@
 #[allow(unused_mut)]
 pub fn de_invalid_id_format_xml_err(
     inp: &[u8],
-    mut builder: crate::error::invalid_id_format::Builder,
-) -> Result<crate::error::invalid_id_format::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    mut builder: crate::types::error::builders::InvalidIdFormatBuilder,
+) -> Result<
+    crate::types::error::builders::InvalidIdFormatBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     if inp.is_empty() {
         return Ok(builder);
     }

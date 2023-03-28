@@ -2,42 +2,53 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_cancel_change_set_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::CancelChangeSetOutput, crate::error::CancelChangeSetError> {
+) -> std::result::Result<
+    crate::operation::cancel_change_set::CancelChangeSetOutput,
+    crate::operation::cancel_change_set::CancelChangeSetError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::CancelChangeSetError::unhandled)?;
+        .map_err(crate::operation::cancel_change_set::CancelChangeSetError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::CancelChangeSetError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::cancel_change_set::CancelChangeSetError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::CancelChangeSetError::AccessDeniedException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "AccessDeniedException" => {
+            crate::operation::cancel_change_set::CancelChangeSetError::AccessDeniedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::access_denied_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CancelChangeSetError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::AccessDeniedExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::cancel_change_set::CancelChangeSetError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "InternalServiceException" => {
-            crate::error::CancelChangeSetError::InternalServiceException({
+            crate::operation::cancel_change_set::CancelChangeSetError::InternalServiceException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_service_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::InternalServiceExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_service_exception::de_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CancelChangeSetError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_service_exception::de_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::cancel_change_set::CancelChangeSetError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -47,29 +58,33 @@ pub fn de_cancel_change_set_http_error(
                 tmp
             })
         }
-        "ResourceInUseException" => crate::error::CancelChangeSetError::ResourceInUseException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "ResourceInUseException" => {
+            crate::operation::cancel_change_set::CancelChangeSetError::ResourceInUseException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::resource_in_use_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_resource_in_use_exception::de_resource_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CancelChangeSetError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ResourceInUseExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_in_use_exception::de_resource_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::cancel_change_set::CancelChangeSetError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "ResourceNotFoundException" => {
-            crate::error::CancelChangeSetError::ResourceNotFoundException({
+            crate::operation::cancel_change_set::CancelChangeSetError::ResourceNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CancelChangeSetError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::cancel_change_set::CancelChangeSetError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -79,53 +94,63 @@ pub fn de_cancel_change_set_http_error(
                 tmp
             })
         }
-        "ThrottlingException" => crate::error::CancelChangeSetError::ThrottlingException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "ThrottlingException" => {
+            crate::operation::cancel_change_set::CancelChangeSetError::ThrottlingException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::throttling_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CancelChangeSetError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ValidationException" => crate::error::CancelChangeSetError::ValidationException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::cancel_change_set::CancelChangeSetError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ValidationException" => {
+            crate::operation::cancel_change_set::CancelChangeSetError::ValidationException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CancelChangeSetError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::CancelChangeSetError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::cancel_change_set::CancelChangeSetError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::cancel_change_set::CancelChangeSetError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_cancel_change_set_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::CancelChangeSetOutput, crate::error::CancelChangeSetError> {
+) -> std::result::Result<
+    crate::operation::cancel_change_set::CancelChangeSetOutput,
+    crate::operation::cancel_change_set::CancelChangeSetError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::cancel_change_set_output::Builder::default();
+        let mut output =
+            crate::operation::cancel_change_set::builders::CancelChangeSetOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_cancel_change_set::de_cancel_change_set(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::CancelChangeSetError::unhandled)?;
+        .map_err(crate::operation::cancel_change_set::CancelChangeSetError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -135,9 +160,9 @@ pub fn de_cancel_change_set_http_response(
 
 pub(crate) fn de_cancel_change_set(
     value: &[u8],
-    mut builder: crate::output::cancel_change_set_output::Builder,
+    mut builder: crate::operation::cancel_change_set::builders::CancelChangeSetOutputBuilder,
 ) -> Result<
-    crate::output::cancel_change_set_output::Builder,
+    crate::operation::cancel_change_set::builders::CancelChangeSetOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

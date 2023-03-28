@@ -2,11 +2,11 @@
 pub fn de_local_gateway_route_table_vpc_association(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    crate::model::LocalGatewayRouteTableVpcAssociation,
+    crate::types::LocalGatewayRouteTableVpcAssociation,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     #[allow(unused_mut)]
-    let mut builder = crate::model::LocalGatewayRouteTableVpcAssociation::builder();
+    let mut builder = crate::types::LocalGatewayRouteTableVpcAssociation::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("localGatewayRouteTableVpcAssociationId") /* LocalGatewayRouteTableVpcAssociationId com.amazonaws.ec2#LocalGatewayRouteTableVpcAssociation$LocalGatewayRouteTableVpcAssociationId */ =>  {

@@ -3,32 +3,28 @@
 pub fn de_disable_ebs_encryption_by_default_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DisableEbsEncryptionByDefaultOutput,
-    crate::error::DisableEbsEncryptionByDefaultError,
+    crate::operation::disable_ebs_encryption_by_default::DisableEbsEncryptionByDefaultOutput,
+    crate::operation::disable_ebs_encryption_by_default::DisableEbsEncryptionByDefaultError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DisableEbsEncryptionByDefaultError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::disable_ebs_encryption_by_default::DisableEbsEncryptionByDefaultError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::DisableEbsEncryptionByDefaultError::generic(
-        generic,
-    ))
+    Err(crate::operation::disable_ebs_encryption_by_default::DisableEbsEncryptionByDefaultError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_disable_ebs_encryption_by_default_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DisableEbsEncryptionByDefaultOutput,
-    crate::error::DisableEbsEncryptionByDefaultError,
+    crate::operation::disable_ebs_encryption_by_default::DisableEbsEncryptionByDefaultOutput,
+    crate::operation::disable_ebs_encryption_by_default::DisableEbsEncryptionByDefaultError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::output::disable_ebs_encryption_by_default_output::Builder::default();
+        let mut output = crate::operation::disable_ebs_encryption_by_default::builders::DisableEbsEncryptionByDefaultOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_disable_ebs_encryption_by_default::de_disable_ebs_encryption_by_default(response.body().as_ref(), output).map_err(crate::error::DisableEbsEncryptionByDefaultError::unhandled)?;
+        output = crate::protocol_serde::shape_disable_ebs_encryption_by_default::de_disable_ebs_encryption_by_default(response.body().as_ref(), output).map_err(crate::operation::disable_ebs_encryption_by_default::DisableEbsEncryptionByDefaultError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -37,13 +33,7 @@ pub fn de_disable_ebs_encryption_by_default_http_response(
 }
 
 #[allow(unused_mut)]
-pub fn de_disable_ebs_encryption_by_default(
-    inp: &[u8],
-    mut builder: crate::output::disable_ebs_encryption_by_default_output::Builder,
-) -> Result<
-    crate::output::disable_ebs_encryption_by_default_output::Builder,
-    aws_smithy_xml::decode::XmlDecodeError,
-> {
+pub fn de_disable_ebs_encryption_by_default(inp: &[u8], mut builder: crate::operation::disable_ebs_encryption_by_default::builders::DisableEbsEncryptionByDefaultOutputBuilder) -> Result<crate::operation::disable_ebs_encryption_by_default::builders::DisableEbsEncryptionByDefaultOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

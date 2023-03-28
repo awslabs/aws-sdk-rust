@@ -3,43 +3,38 @@
 pub fn de_list_dead_letter_source_queues_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListDeadLetterSourceQueuesOutput,
-    crate::error::ListDeadLetterSourceQueuesError,
+    crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesOutput,
+    crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListDeadLetterSourceQueuesError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::ListDeadLetterSourceQueuesError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AWS.SimpleQueueService.NonExistentQueue" => {
-            crate::error::ListDeadLetterSourceQueuesError::QueueDoesNotExist({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "AWS.SimpleQueueService.NonExistentQueue" => crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesError::QueueDoesNotExist({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::queue_does_not_exist::Builder::default();
+                    let mut output = crate::types::error::builders::QueueDoesNotExistBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_queue_does_not_exist::de_queue_does_not_exist_xml_err(response.body().as_ref(), output).map_err(crate::error::ListDeadLetterSourceQueuesError::unhandled)?;
+                    output = crate::protocol_serde::shape_queue_does_not_exist::de_queue_does_not_exist_xml_err(response.body().as_ref(), output).map_err(crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::ListDeadLetterSourceQueuesError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesError::generic(generic)
     })
 }
 
@@ -47,14 +42,14 @@ pub fn de_list_dead_letter_source_queues_http_error(
 pub fn de_list_dead_letter_source_queues_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListDeadLetterSourceQueuesOutput,
-    crate::error::ListDeadLetterSourceQueuesError,
+    crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesOutput,
+    crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_dead_letter_source_queues_output::Builder::default();
+        let mut output = crate::operation::list_dead_letter_source_queues::builders::ListDeadLetterSourceQueuesOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_list_dead_letter_source_queues::de_list_dead_letter_source_queues(response.body().as_ref(), output).map_err(crate::error::ListDeadLetterSourceQueuesError::unhandled)?;
+        output = crate::protocol_serde::shape_list_dead_letter_source_queues::de_list_dead_letter_source_queues(response.body().as_ref(), output).map_err(crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -63,13 +58,7 @@ pub fn de_list_dead_letter_source_queues_http_response(
 }
 
 #[allow(unused_mut)]
-pub fn de_list_dead_letter_source_queues(
-    inp: &[u8],
-    mut builder: crate::output::list_dead_letter_source_queues_output::Builder,
-) -> Result<
-    crate::output::list_dead_letter_source_queues_output::Builder,
-    aws_smithy_xml::decode::XmlDecodeError,
-> {
+pub fn de_list_dead_letter_source_queues(inp: &[u8], mut builder: crate::operation::list_dead_letter_source_queues::builders::ListDeadLetterSourceQueuesOutputBuilder) -> Result<crate::operation::list_dead_letter_source_queues::builders::ListDeadLetterSourceQueuesOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

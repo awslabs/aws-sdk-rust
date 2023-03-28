@@ -2,42 +2,53 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_namespace_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeleteNamespaceOutput, crate::error::DeleteNamespaceError> {
+) -> std::result::Result<
+    crate::operation::delete_namespace::DeleteNamespaceOutput,
+    crate::operation::delete_namespace::DeleteNamespaceError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteNamespaceError::unhandled)?;
+        .map_err(crate::operation::delete_namespace::DeleteNamespaceError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DeleteNamespaceError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::delete_namespace::DeleteNamespaceError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::DeleteNamespaceError::AccessDeniedException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::access_denied_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteNamespaceError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InternalFailureException" => {
-            crate::error::DeleteNamespaceError::InternalFailureException({
+        "AccessDeniedException" => {
+            crate::operation::delete_namespace::DeleteNamespaceError::AccessDeniedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_failure_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::AccessDeniedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteNamespaceError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_namespace::DeleteNamespaceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InternalFailureException" => {
+            crate::operation::delete_namespace::DeleteNamespaceError::InternalFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InternalFailureExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_namespace::DeleteNamespaceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -48,32 +59,34 @@ pub fn de_delete_namespace_http_error(
             })
         }
         "InvalidParameterValueException" => {
-            crate::error::DeleteNamespaceError::InvalidParameterValueException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            crate::operation::delete_namespace::DeleteNamespaceError::InvalidParameterValueException(
+                {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_parameter_value_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteNamespaceError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
+                        let _ = response;
+                        output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_namespace::DeleteNamespaceError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
         }
         "PreconditionNotMetException" => {
-            crate::error::DeleteNamespaceError::PreconditionNotMetException({
+            crate::operation::delete_namespace::DeleteNamespaceError::PreconditionNotMetException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::precondition_not_met_exception::Builder::default();
+                        crate::types::error::builders::PreconditionNotMetExceptionBuilder::default(
+                        );
                     let _ = response;
-                    output = crate::protocol_serde::shape_precondition_not_met_exception::de_precondition_not_met_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteNamespaceError::unhandled)?;
+                    output = crate::protocol_serde::shape_precondition_not_met_exception::de_precondition_not_met_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_namespace::DeleteNamespaceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -84,13 +97,14 @@ pub fn de_delete_namespace_http_error(
             })
         }
         "ResourceNotFoundException" => {
-            crate::error::DeleteNamespaceError::ResourceNotFoundException({
+            crate::operation::delete_namespace::DeleteNamespaceError::ResourceNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteNamespaceError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_namespace::DeleteNamespaceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -101,14 +115,33 @@ pub fn de_delete_namespace_http_error(
             })
         }
         "ResourceUnavailableException" => {
-            crate::error::DeleteNamespaceError::ResourceUnavailableException({
+            crate::operation::delete_namespace::DeleteNamespaceError::ResourceUnavailableException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ResourceUnavailableExceptionBuilder::default();
+                        let _ = response;
+                        output = crate::protocol_serde::shape_resource_unavailable_exception::de_resource_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_namespace::DeleteNamespaceError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        "ThrottlingException" => {
+            crate::operation::delete_namespace::DeleteNamespaceError::ThrottlingException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::resource_unavailable_exception::Builder::default();
+                        crate::types::error::builders::ThrottlingExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_unavailable_exception::de_resource_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteNamespaceError::unhandled)?;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_namespace::DeleteNamespaceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -118,38 +151,27 @@ pub fn de_delete_namespace_http_error(
                 tmp
             })
         }
-        "ThrottlingException" => crate::error::DeleteNamespaceError::ThrottlingException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::throttling_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteNamespaceError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::DeleteNamespaceError::generic(generic),
+        _ => crate::operation::delete_namespace::DeleteNamespaceError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_namespace_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeleteNamespaceOutput, crate::error::DeleteNamespaceError> {
+) -> std::result::Result<
+    crate::operation::delete_namespace::DeleteNamespaceOutput,
+    crate::operation::delete_namespace::DeleteNamespaceError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_namespace_output::Builder::default();
+        let mut output =
+            crate::operation::delete_namespace::builders::DeleteNamespaceOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_delete_namespace::de_delete_namespace(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DeleteNamespaceError::unhandled)?;
+        .map_err(crate::operation::delete_namespace::DeleteNamespaceError::unhandled)?;
         output = output.set_status(Some(response.status().as_u16() as _));
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
@@ -160,9 +182,9 @@ pub fn de_delete_namespace_http_response(
 
 pub(crate) fn de_delete_namespace(
     value: &[u8],
-    mut builder: crate::output::delete_namespace_output::Builder,
+    mut builder: crate::operation::delete_namespace::builders::DeleteNamespaceOutputBuilder,
 ) -> Result<
-    crate::output::delete_namespace_output::Builder,
+    crate::operation::delete_namespace::builders::DeleteNamespaceOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

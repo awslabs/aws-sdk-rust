@@ -2,7 +2,7 @@
 pub(crate) fn de_map_of_integration_response<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<std::string::String, crate::model::IntegrationResponse>>,
+    Option<std::collections::HashMap<std::string::String, crate::types::IntegrationResponse>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

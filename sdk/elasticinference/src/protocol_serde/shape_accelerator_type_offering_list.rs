@@ -2,7 +2,7 @@
 pub(crate) fn de_accelerator_type_offering_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AcceleratorTypeOffering>>,
+    Option<std::vec::Vec<crate::types::AcceleratorTypeOffering>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

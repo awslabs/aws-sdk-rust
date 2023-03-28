@@ -2,7 +2,7 @@
 pub fn de_inventory_optional_fields(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::InventoryOptionalField>,
+    std::vec::Vec<crate::types::InventoryOptionalField>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();
@@ -10,8 +10,8 @@ pub fn de_inventory_optional_fields(
         match tag.start_el() {
             s if s.matches("Field") /* member com.amazonaws.s3#InventoryOptionalFields$member */ =>  {
                 out.push(
-                    Result::<crate::model::InventoryOptionalField, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                        crate::model::InventoryOptionalField::from(
+                    Result::<crate::types::InventoryOptionalField, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                        crate::types::InventoryOptionalField::from(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                         )
                     )

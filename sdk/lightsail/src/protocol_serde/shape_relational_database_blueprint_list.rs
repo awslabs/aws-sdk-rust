@@ -2,7 +2,7 @@
 pub(crate) fn de_relational_database_blueprint_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::RelationalDatabaseBlueprint>>,
+    Option<std::vec::Vec<crate::types::RelationalDatabaseBlueprint>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_launch_template_specification(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::LaunchTemplateSpecification,
+    input: &crate::types::LaunchTemplateSpecification,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("LaunchTemplateId");
@@ -24,9 +24,9 @@ pub fn ser_launch_template_specification(
 
 pub fn de_launch_template_specification(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::LaunchTemplateSpecification, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::LaunchTemplateSpecification, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::LaunchTemplateSpecification::builder();
+    let mut builder = crate::types::LaunchTemplateSpecification::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("LaunchTemplateId") /* LaunchTemplateId com.amazonaws.autoscaling#LaunchTemplateSpecification$LaunchTemplateId */ =>  {

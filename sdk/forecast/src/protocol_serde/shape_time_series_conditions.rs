@@ -2,7 +2,7 @@
 pub(crate) fn de_time_series_conditions<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::TimeSeriesCondition>>,
+    Option<std::vec::Vec<crate::types::TimeSeriesCondition>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

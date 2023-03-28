@@ -2,66 +2,81 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_user_policy_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetUserPolicyOutput, crate::error::GetUserPolicyError> {
+) -> std::result::Result<
+    crate::operation::get_user_policy::GetUserPolicyOutput,
+    crate::operation::get_user_policy::GetUserPolicyError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetUserPolicyError::unhandled)?;
+        .map_err(crate::operation::get_user_policy::GetUserPolicyError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::GetUserPolicyError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::get_user_policy::GetUserPolicyError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "NoSuchEntity" => crate::error::GetUserPolicyError::NoSuchEntityException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "NoSuchEntity" => {
+            crate::operation::get_user_policy::GetUserPolicyError::NoSuchEntityException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::no_such_entity_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_no_such_entity_exception::de_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetUserPolicyError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ServiceFailure" => crate::error::GetUserPolicyError::ServiceFailureException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::NoSuchEntityExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_no_such_entity_exception::de_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::get_user_policy::GetUserPolicyError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ServiceFailure" => {
+            crate::operation::get_user_policy::GetUserPolicyError::ServiceFailureException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::service_failure_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetUserPolicyError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::GetUserPolicyError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ServiceFailureExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::get_user_policy::GetUserPolicyError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::get_user_policy::GetUserPolicyError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_user_policy_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetUserPolicyOutput, crate::error::GetUserPolicyError> {
+) -> std::result::Result<
+    crate::operation::get_user_policy::GetUserPolicyOutput,
+    crate::operation::get_user_policy::GetUserPolicyError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_user_policy_output::Builder::default();
+        let mut output =
+            crate::operation::get_user_policy::builders::GetUserPolicyOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_get_user_policy::de_get_user_policy(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::GetUserPolicyError::unhandled)?;
+        .map_err(crate::operation::get_user_policy::GetUserPolicyError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -72,9 +87,11 @@ pub fn de_get_user_policy_http_response(
 #[allow(unused_mut)]
 pub fn de_get_user_policy(
     inp: &[u8],
-    mut builder: crate::output::get_user_policy_output::Builder,
-) -> Result<crate::output::get_user_policy_output::Builder, aws_smithy_xml::decode::XmlDecodeError>
-{
+    mut builder: crate::operation::get_user_policy::builders::GetUserPolicyOutputBuilder,
+) -> Result<
+    crate::operation::get_user_policy::builders::GetUserPolicyOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

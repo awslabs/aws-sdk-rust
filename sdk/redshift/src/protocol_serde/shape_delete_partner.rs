@@ -2,84 +2,96 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_partner_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeletePartnerOutput, crate::error::DeletePartnerError> {
+) -> std::result::Result<
+    crate::operation::delete_partner::DeletePartnerOutput,
+    crate::operation::delete_partner::DeletePartnerError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeletePartnerError::unhandled)?;
+        .map_err(crate::operation::delete_partner::DeletePartnerError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DeletePartnerError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::delete_partner::DeletePartnerError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ClusterNotFound" => crate::error::DeletePartnerError::ClusterNotFoundFault({
+        "ClusterNotFound" => crate::operation::delete_partner::DeletePartnerError::ClusterNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::cluster_not_found_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_cluster_not_found_fault::de_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeletePartnerError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "PartnerNotFound" => crate::error::DeletePartnerError::PartnerNotFoundFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::partner_not_found_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_partner_not_found_fault::de_partner_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeletePartnerError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "UnauthorizedPartnerIntegration" => {
-            crate::error::DeletePartnerError::UnauthorizedPartnerIntegrationFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::unauthorized_partner_integration_fault::Builder::default();
+                    let mut output = crate::types::error::builders::ClusterNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_unauthorized_partner_integration_fault::de_unauthorized_partner_integration_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeletePartnerError::unhandled)?;
+                    output = crate::protocol_serde::shape_cluster_not_found_fault::de_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_partner::DeletePartnerError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DeletePartnerError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "PartnerNotFound" => crate::operation::delete_partner::DeletePartnerError::PartnerNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::PartnerNotFoundFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_partner_not_found_fault::de_partner_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_partner::DeletePartnerError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "UnauthorizedPartnerIntegration" => crate::operation::delete_partner::DeletePartnerError::UnauthorizedPartnerIntegrationFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::UnauthorizedPartnerIntegrationFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_unauthorized_partner_integration_fault::de_unauthorized_partner_integration_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_partner::DeletePartnerError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::delete_partner::DeletePartnerError::generic(generic)
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_partner_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeletePartnerOutput, crate::error::DeletePartnerError> {
+) -> std::result::Result<
+    crate::operation::delete_partner::DeletePartnerOutput,
+    crate::operation::delete_partner::DeletePartnerError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_partner_output::Builder::default();
+        let mut output =
+            crate::operation::delete_partner::builders::DeletePartnerOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_delete_partner::de_delete_partner(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DeletePartnerError::unhandled)?;
+        .map_err(crate::operation::delete_partner::DeletePartnerError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -90,8 +102,11 @@ pub fn de_delete_partner_http_response(
 #[allow(unused_mut)]
 pub fn de_delete_partner(
     inp: &[u8],
-    mut builder: crate::output::delete_partner_output::Builder,
-) -> Result<crate::output::delete_partner_output::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    mut builder: crate::operation::delete_partner::builders::DeletePartnerOutputBuilder,
+) -> Result<
+    crate::operation::delete_partner::builders::DeletePartnerOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

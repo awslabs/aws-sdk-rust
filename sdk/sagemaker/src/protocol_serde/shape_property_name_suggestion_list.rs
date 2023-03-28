@@ -2,7 +2,7 @@
 pub(crate) fn de_property_name_suggestion_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::PropertyNameSuggestion>>,
+    Option<std::vec::Vec<crate::types::PropertyNameSuggestion>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

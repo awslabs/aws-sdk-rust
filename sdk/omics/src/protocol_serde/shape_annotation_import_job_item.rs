@@ -2,7 +2,7 @@
 pub(crate) fn de_annotation_import_job_item<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::AnnotationImportJobItem>,
+    Option<crate::types::AnnotationImportJobItem>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::annotation_import_job_item::Builder::default();
+            let mut builder = crate::types::builders::AnnotationImportJobItemBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -57,7 +57,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::JobStatus::from(u.as_ref()))
+                                            .map(|u| crate::types::JobStatus::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

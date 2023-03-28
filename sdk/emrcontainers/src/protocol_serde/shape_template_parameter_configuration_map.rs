@@ -5,7 +5,7 @@ pub(crate) fn de_template_parameter_configuration_map<'a, I>(
     Option<
         std::collections::HashMap<
             std::string::String,
-            crate::model::TemplateParameterConfiguration,
+            crate::types::TemplateParameterConfiguration,
         >,
     >,
     aws_smithy_json::deserialize::error::DeserializeError,

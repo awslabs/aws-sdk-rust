@@ -3,146 +3,140 @@
 pub fn de_delete_infrastructure_configuration_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteInfrastructureConfigurationOutput,
-    crate::error::DeleteInfrastructureConfigurationError,
+    crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationOutput,
+    crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteInfrastructureConfigurationError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::DeleteInfrastructureConfigurationError::unhandled(generic))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CallRateLimitExceededException" => {
-            crate::error::DeleteInfrastructureConfigurationError::CallRateLimitExceededException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "CallRateLimitExceededException" => crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationError::CallRateLimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::call_rate_limit_exceeded_exception::Builder::default();
+                    let mut output = crate::types::error::builders::CallRateLimitExceededExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_call_rate_limit_exceeded_exception::de_call_rate_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteInfrastructureConfigurationError::unhandled)?;
+                    output = crate::protocol_serde::shape_call_rate_limit_exceeded_exception::de_call_rate_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ClientException" => {
-            crate::error::DeleteInfrastructureConfigurationError::ClientException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ClientException" => crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationError::ClientException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::client_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ClientExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_client_exception::de_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteInfrastructureConfigurationError::unhandled)?;
+                    output = crate::protocol_serde::shape_client_exception::de_client_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ForbiddenException" => {
-            crate::error::DeleteInfrastructureConfigurationError::ForbiddenException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ForbiddenException" => crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationError::ForbiddenException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::forbidden_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ForbiddenExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteInfrastructureConfigurationError::unhandled)?;
+                    output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidRequestException" => {
-            crate::error::DeleteInfrastructureConfigurationError::InvalidRequestException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidRequestException" => crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationError::InvalidRequestException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_request_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteInfrastructureConfigurationError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ResourceDependencyException" => {
-            crate::error::DeleteInfrastructureConfigurationError::ResourceDependencyException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceDependencyException" => crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationError::ResourceDependencyException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::resource_dependency_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ResourceDependencyExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_dependency_exception::de_resource_dependency_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteInfrastructureConfigurationError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_dependency_exception::de_resource_dependency_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ServiceException" => {
-            crate::error::DeleteInfrastructureConfigurationError::ServiceException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ServiceException" => crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationError::ServiceException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::service_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ServiceExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_exception::de_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteInfrastructureConfigurationError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_exception::de_service_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ServiceUnavailableException" => {
-            crate::error::DeleteInfrastructureConfigurationError::ServiceUnavailableException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ServiceUnavailableException" => crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationError::ServiceUnavailableException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::service_unavailable_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteInfrastructureConfigurationError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DeleteInfrastructureConfigurationError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationError::generic(generic)
     })
 }
 
@@ -150,15 +144,14 @@ pub fn de_delete_infrastructure_configuration_http_error(
 pub fn de_delete_infrastructure_configuration_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteInfrastructureConfigurationOutput,
-    crate::error::DeleteInfrastructureConfigurationError,
+    crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationOutput,
+    crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::output::delete_infrastructure_configuration_output::Builder::default();
+        let mut output = crate::operation::delete_infrastructure_configuration::builders::DeleteInfrastructureConfigurationOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_delete_infrastructure_configuration::de_delete_infrastructure_configuration(response.body().as_ref(), output).map_err(crate::error::DeleteInfrastructureConfigurationError::unhandled)?;
+        output = crate::protocol_serde::shape_delete_infrastructure_configuration::de_delete_infrastructure_configuration(response.body().as_ref(), output).map_err(crate::operation::delete_infrastructure_configuration::DeleteInfrastructureConfigurationError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -166,13 +159,7 @@ pub fn de_delete_infrastructure_configuration_http_response(
     })
 }
 
-pub(crate) fn de_delete_infrastructure_configuration(
-    value: &[u8],
-    mut builder: crate::output::delete_infrastructure_configuration_output::Builder,
-) -> Result<
-    crate::output::delete_infrastructure_configuration_output::Builder,
-    aws_smithy_json::deserialize::error::DeserializeError,
-> {
+pub(crate) fn de_delete_infrastructure_configuration(value: &[u8], mut builder: crate::operation::delete_infrastructure_configuration::builders::DeleteInfrastructureConfigurationOutputBuilder) -> Result<crate::operation::delete_infrastructure_configuration::builders::DeleteInfrastructureConfigurationOutputBuilder, aws_smithy_json::deserialize::error::DeserializeError>{
     let mut tokens_owned =
         aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
             .peekable();

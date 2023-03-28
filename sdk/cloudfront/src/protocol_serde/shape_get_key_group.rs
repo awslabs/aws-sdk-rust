@@ -2,31 +2,34 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_key_group_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetKeyGroupOutput, crate::error::GetKeyGroupError> {
+) -> std::result::Result<
+    crate::operation::get_key_group::GetKeyGroupOutput,
+    crate::operation::get_key_group::GetKeyGroupError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetKeyGroupError::unhandled)?;
+        .map_err(crate::operation::get_key_group::GetKeyGroupError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::GetKeyGroupError::unhandled(generic)),
+        None => return Err(crate::operation::get_key_group::GetKeyGroupError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "NoSuchResource" => crate::error::GetKeyGroupError::NoSuchResource({
+        "NoSuchResource" => crate::operation::get_key_group::GetKeyGroupError::NoSuchResource({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::error::no_such_resource::Builder::default();
+                let mut output = crate::types::error::builders::NoSuchResourceBuilder::default();
                 let _ = response;
                 output =
                     crate::protocol_serde::shape_no_such_resource::de_no_such_resource_xml_err(
                         response.body().as_ref(),
                         output,
                     )
-                    .map_err(crate::error::GetKeyGroupError::unhandled)?;
+                    .map_err(crate::operation::get_key_group::GetKeyGroupError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -35,22 +38,26 @@ pub fn de_get_key_group_http_error(
             }
             tmp
         }),
-        _ => crate::error::GetKeyGroupError::generic(generic),
+        _ => crate::operation::get_key_group::GetKeyGroupError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_key_group_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetKeyGroupOutput, crate::error::GetKeyGroupError> {
+) -> std::result::Result<
+    crate::operation::get_key_group::GetKeyGroupOutput,
+    crate::operation::get_key_group::GetKeyGroupError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_key_group_output::Builder::default();
+        let mut output =
+            crate::operation::get_key_group::builders::GetKeyGroupOutputBuilder::default();
         let _ = response;
         output = output.set_e_tag(
             crate::protocol_serde::shape_get_key_group_output::de_e_tag_header(response.headers())
                 .map_err(|_| {
-                    crate::error::GetKeyGroupError::unhandled(
+                    crate::operation::get_key_group::GetKeyGroupError::unhandled(
                         "Failed to parse ETag from header `ETag",
                     )
                 })?,

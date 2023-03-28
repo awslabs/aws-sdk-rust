@@ -2,7 +2,7 @@
 pub(crate) fn de_prioritize_business_goals<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::PrioritizeBusinessGoals>,
+    Option<crate::types::PrioritizeBusinessGoals>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::prioritize_business_goals::Builder::default();
+            let mut builder = crate::types::builders::PrioritizeBusinessGoalsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -55,7 +55,7 @@ where
 
 pub fn ser_prioritize_business_goals(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::PrioritizeBusinessGoals,
+    input: &crate::types::PrioritizeBusinessGoals,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.business_goals {
         #[allow(unused_mut)]

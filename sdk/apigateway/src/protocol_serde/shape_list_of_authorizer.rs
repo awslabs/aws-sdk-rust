@@ -2,7 +2,7 @@
 pub(crate) fn de_list_of_authorizer<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Authorizer>>,
+    Option<std::vec::Vec<crate::types::Authorizer>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

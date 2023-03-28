@@ -2,7 +2,7 @@
 pub fn de_iam_instance_profile_association_set(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::IamInstanceProfileAssociation>,
+    std::vec::Vec<crate::types::IamInstanceProfileAssociation>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

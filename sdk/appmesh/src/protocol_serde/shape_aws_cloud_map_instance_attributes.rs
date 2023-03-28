@@ -2,7 +2,7 @@
 pub(crate) fn de_aws_cloud_map_instance_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AwsCloudMapInstanceAttribute>>,
+    Option<std::vec::Vec<crate::types::AwsCloudMapInstanceAttribute>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

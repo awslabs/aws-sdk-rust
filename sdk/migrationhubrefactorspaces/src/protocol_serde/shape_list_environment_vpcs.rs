@@ -3,105 +3,117 @@
 pub fn de_list_environment_vpcs_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListEnvironmentVpcsOutput,
-    crate::error::ListEnvironmentVpcsError,
+    crate::operation::list_environment_vpcs::ListEnvironmentVpcsOutput,
+    crate::operation::list_environment_vpcs::ListEnvironmentVpcsError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListEnvironmentVpcsError::unhandled)?;
+        .map_err(crate::operation::list_environment_vpcs::ListEnvironmentVpcsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListEnvironmentVpcsError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::list_environment_vpcs::ListEnvironmentVpcsError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::ListEnvironmentVpcsError::AccessDeniedException({
+        "AccessDeniedException" => crate::operation::list_environment_vpcs::ListEnvironmentVpcsError::AccessDeniedException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::access_denied_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListEnvironmentVpcsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_environment_vpcs::ListEnvironmentVpcsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "InternalServerException" => {
-            crate::error::ListEnvironmentVpcsError::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListEnvironmentVpcsError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ResourceNotFoundException" => {
-            crate::error::ListEnvironmentVpcsError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListEnvironmentVpcsError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ThrottlingException" => crate::error::ListEnvironmentVpcsError::ThrottlingException({
+        "InternalServerException" => crate::operation::list_environment_vpcs::ListEnvironmentVpcsError::InternalServerException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::throttling_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListEnvironmentVpcsError::unhandled)?;
-                output = output.set_retry_after_seconds(
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_environment_vpcs::ListEnvironmentVpcsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::list_environment_vpcs::ListEnvironmentVpcsError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_environment_vpcs::ListEnvironmentVpcsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ThrottlingException" => crate::operation::list_environment_vpcs::ListEnvironmentVpcsError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_environment_vpcs::ListEnvironmentVpcsError::unhandled)?;
+                    output = output.set_retry_after_seconds(
                         crate::protocol_serde::shape_throttling_exception::de_retry_after_seconds_header(response.headers())
-                                                .map_err(|_|crate::error::ListEnvironmentVpcsError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::operation::list_environment_vpcs::ListEnvironmentVpcsError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
                     );
-                let output = output.meta(generic);
-                output.build()
-            };
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "ValidationException" => crate::error::ListEnvironmentVpcsError::ValidationException({
+        "ValidationException" => crate::operation::list_environment_vpcs::ListEnvironmentVpcsError::ValidationException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListEnvironmentVpcsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_environment_vpcs::ListEnvironmentVpcsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::ListEnvironmentVpcsError::generic(generic),
+        _ => crate::operation::list_environment_vpcs::ListEnvironmentVpcsError::generic(generic)
     })
 }
 
@@ -109,18 +121,18 @@ pub fn de_list_environment_vpcs_http_error(
 pub fn de_list_environment_vpcs_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListEnvironmentVpcsOutput,
-    crate::error::ListEnvironmentVpcsError,
+    crate::operation::list_environment_vpcs::ListEnvironmentVpcsOutput,
+    crate::operation::list_environment_vpcs::ListEnvironmentVpcsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_environment_vpcs_output::Builder::default();
+        let mut output = crate::operation::list_environment_vpcs::builders::ListEnvironmentVpcsOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_environment_vpcs::de_list_environment_vpcs(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListEnvironmentVpcsError::unhandled)?;
+        .map_err(crate::operation::list_environment_vpcs::ListEnvironmentVpcsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -130,9 +142,9 @@ pub fn de_list_environment_vpcs_http_response(
 
 pub(crate) fn de_list_environment_vpcs(
     value: &[u8],
-    mut builder: crate::output::list_environment_vpcs_output::Builder,
+    mut builder: crate::operation::list_environment_vpcs::builders::ListEnvironmentVpcsOutputBuilder,
 ) -> Result<
-    crate::output::list_environment_vpcs_output::Builder,
+    crate::operation::list_environment_vpcs::builders::ListEnvironmentVpcsOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

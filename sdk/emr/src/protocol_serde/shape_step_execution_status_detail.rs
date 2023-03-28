@@ -2,7 +2,7 @@
 pub(crate) fn de_step_execution_status_detail<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::StepExecutionStatusDetail>,
+    Option<crate::types::StepExecutionStatusDetail>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::step_execution_status_detail::Builder::default();
+            let mut builder = crate::types::builders::StepExecutionStatusDetailBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::StepExecutionState::from(u.as_ref())
+                                            crate::types::StepExecutionState::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

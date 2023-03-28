@@ -2,13 +2,15 @@
 pub fn de_gateway_route_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::GatewayRouteData>,
-    crate::error::DescribeGatewayRouteError,
+    std::option::Option<crate::types::GatewayRouteData>,
+    crate::operation::describe_gateway_route::DescribeGatewayRouteError,
 > {
     (!body.is_empty())
         .then(|| {
             crate::protocol_serde::shape_gateway_route_data::de_gateway_route_data_payload(body)
-                .map_err(crate::error::DescribeGatewayRouteError::unhandled)
+                .map_err(
+                    crate::operation::describe_gateway_route::DescribeGatewayRouteError::unhandled,
+                )
         })
         .transpose()
 }

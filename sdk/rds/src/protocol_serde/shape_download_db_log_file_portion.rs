@@ -3,60 +3,57 @@
 pub fn de_download_db_log_file_portion_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DownloadDbLogFilePortionOutput,
-    crate::error::DownloadDBLogFilePortionError,
+    crate::operation::download_db_log_file_portion::DownloadDbLogFilePortionOutput,
+    crate::operation::download_db_log_file_portion::DownloadDBLogFilePortionError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DownloadDBLogFilePortionError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::download_db_log_file_portion::DownloadDBLogFilePortionError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::DownloadDBLogFilePortionError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::download_db_log_file_portion::DownloadDBLogFilePortionError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBInstanceNotFound" => {
-            crate::error::DownloadDBLogFilePortionError::DbInstanceNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "DBInstanceNotFound" => crate::operation::download_db_log_file_portion::DownloadDBLogFilePortionError::DbInstanceNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::db_instance_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::DbInstanceNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_db_instance_not_found_fault::de_db_instance_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DownloadDBLogFilePortionError::unhandled)?;
+                    output = crate::protocol_serde::shape_db_instance_not_found_fault::de_db_instance_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::download_db_log_file_portion::DownloadDBLogFilePortionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "DBLogFileNotFoundFault" => {
-            crate::error::DownloadDBLogFilePortionError::DbLogFileNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "DBLogFileNotFoundFault" => crate::operation::download_db_log_file_portion::DownloadDBLogFilePortionError::DbLogFileNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::db_log_file_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::DbLogFileNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_db_log_file_not_found_fault::de_db_log_file_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DownloadDBLogFilePortionError::unhandled)?;
+                    output = crate::protocol_serde::shape_db_log_file_not_found_fault::de_db_log_file_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::download_db_log_file_portion::DownloadDBLogFilePortionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DownloadDBLogFilePortionError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::download_db_log_file_portion::DownloadDBLogFilePortionError::generic(generic)
     })
 }
 
@@ -64,14 +61,14 @@ pub fn de_download_db_log_file_portion_http_error(
 pub fn de_download_db_log_file_portion_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DownloadDbLogFilePortionOutput,
-    crate::error::DownloadDBLogFilePortionError,
+    crate::operation::download_db_log_file_portion::DownloadDbLogFilePortionOutput,
+    crate::operation::download_db_log_file_portion::DownloadDBLogFilePortionError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::download_db_log_file_portion_output::Builder::default();
+        let mut output = crate::operation::download_db_log_file_portion::builders::DownloadDbLogFilePortionOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_download_db_log_file_portion::de_download_db_log_file_portion(response.body().as_ref(), output).map_err(crate::error::DownloadDBLogFilePortionError::unhandled)?;
+        output = crate::protocol_serde::shape_download_db_log_file_portion::de_download_db_log_file_portion(response.body().as_ref(), output).map_err(crate::operation::download_db_log_file_portion::DownloadDBLogFilePortionError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -82,9 +79,9 @@ pub fn de_download_db_log_file_portion_http_response(
 #[allow(unused_mut)]
 pub fn de_download_db_log_file_portion(
     inp: &[u8],
-    mut builder: crate::output::download_db_log_file_portion_output::Builder,
+    mut builder: crate::operation::download_db_log_file_portion::builders::DownloadDbLogFilePortionOutputBuilder,
 ) -> Result<
-    crate::output::download_db_log_file_portion_output::Builder,
+    crate::operation::download_db_log_file_portion::builders::DownloadDbLogFilePortionOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

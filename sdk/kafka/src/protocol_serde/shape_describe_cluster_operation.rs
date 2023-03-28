@@ -3,108 +3,112 @@
 pub fn de_describe_cluster_operation_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeClusterOperationOutput,
-    crate::error::DescribeClusterOperationError,
+    crate::operation::describe_cluster_operation::DescribeClusterOperationOutput,
+    crate::operation::describe_cluster_operation::DescribeClusterOperationError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeClusterOperationError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::describe_cluster_operation::DescribeClusterOperationError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::error::DescribeClusterOperationError::unhandled(
+        None => return Err(
+            crate::operation::describe_cluster_operation::DescribeClusterOperationError::unhandled(
                 generic,
-            ))
-        }
+            ),
+        ),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => {
-            crate::error::DescribeClusterOperationError::BadRequestException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "BadRequestException" => crate::operation::describe_cluster_operation::DescribeClusterOperationError::BadRequestException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::bad_request_exception::Builder::default();
+                    let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeClusterOperationError::unhandled)?;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_cluster_operation::DescribeClusterOperationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ForbiddenException" => crate::error::DescribeClusterOperationError::ForbiddenException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeClusterOperationError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "InternalServerErrorException" => {
-            crate::error::DescribeClusterOperationError::InternalServerErrorException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "ForbiddenException" => crate::operation::describe_cluster_operation::DescribeClusterOperationError::ForbiddenException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::internal_server_error_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ForbiddenExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeClusterOperationError::unhandled)?;
+                    output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_cluster_operation::DescribeClusterOperationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "NotFoundException" => crate::error::DescribeClusterOperationError::NotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeClusterOperationError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "UnauthorizedException" => {
-            crate::error::DescribeClusterOperationError::UnauthorizedException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalServerErrorException" => crate::operation::describe_cluster_operation::DescribeClusterOperationError::InternalServerErrorException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::unauthorized_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InternalServerErrorExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeClusterOperationError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_cluster_operation::DescribeClusterOperationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DescribeClusterOperationError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "NotFoundException" => crate::operation::describe_cluster_operation::DescribeClusterOperationError::NotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::NotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_cluster_operation::DescribeClusterOperationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "UnauthorizedException" => crate::operation::describe_cluster_operation::DescribeClusterOperationError::UnauthorizedException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::UnauthorizedExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_cluster_operation::DescribeClusterOperationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::describe_cluster_operation::DescribeClusterOperationError::generic(generic)
     })
 }
 
@@ -112,19 +116,14 @@ pub fn de_describe_cluster_operation_http_error(
 pub fn de_describe_cluster_operation_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeClusterOperationOutput,
-    crate::error::DescribeClusterOperationError,
+    crate::operation::describe_cluster_operation::DescribeClusterOperationOutput,
+    crate::operation::describe_cluster_operation::DescribeClusterOperationError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_cluster_operation_output::Builder::default();
+        let mut output = crate::operation::describe_cluster_operation::builders::DescribeClusterOperationOutputBuilder::default();
         let _ = response;
-        output =
-            crate::protocol_serde::shape_describe_cluster_operation::de_describe_cluster_operation(
-                response.body().as_ref(),
-                output,
-            )
-            .map_err(crate::error::DescribeClusterOperationError::unhandled)?;
+        output = crate::protocol_serde::shape_describe_cluster_operation::de_describe_cluster_operation(response.body().as_ref(), output).map_err(crate::operation::describe_cluster_operation::DescribeClusterOperationError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -134,9 +133,9 @@ pub fn de_describe_cluster_operation_http_response(
 
 pub(crate) fn de_describe_cluster_operation(
     value: &[u8],
-    mut builder: crate::output::describe_cluster_operation_output::Builder,
+    mut builder: crate::operation::describe_cluster_operation::builders::DescribeClusterOperationOutputBuilder,
 ) -> Result<
-    crate::output::describe_cluster_operation_output::Builder,
+    crate::operation::describe_cluster_operation::builders::DescribeClusterOperationOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

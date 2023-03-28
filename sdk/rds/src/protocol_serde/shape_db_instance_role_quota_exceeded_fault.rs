@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_db_instance_role_quota_exceeded_fault_xml_err(
     inp: &[u8],
-    mut builder: crate::error::db_instance_role_quota_exceeded_fault::Builder,
+    mut builder: crate::types::error::builders::DbInstanceRoleQuotaExceededFaultBuilder,
 ) -> Result<
-    crate::error::db_instance_role_quota_exceeded_fault::Builder,
+    crate::types::error::builders::DbInstanceRoleQuotaExceededFaultBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

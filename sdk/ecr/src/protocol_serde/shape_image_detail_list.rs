@@ -2,7 +2,7 @@
 pub(crate) fn de_image_detail_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ImageDetail>>,
+    Option<std::vec::Vec<crate::types::ImageDetail>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_aws_accounts<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AwsAccount>>,
+    Option<std::vec::Vec<crate::types::AwsAccount>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

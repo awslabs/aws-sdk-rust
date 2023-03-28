@@ -2,7 +2,7 @@
 pub(crate) fn de_map_of_method_snapshot<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<std::string::String, crate::model::MethodSnapshot>>,
+    Option<std::collections::HashMap<std::string::String, crate::types::MethodSnapshot>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

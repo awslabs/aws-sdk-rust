@@ -2,7 +2,7 @@
 pub(crate) fn de_container_service_log_event_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ContainerServiceLogEvent>>,
+    Option<std::vec::Vec<crate::types::ContainerServiceLogEvent>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_call_analytics_item<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::CallAnalyticsItem>,
+    Option<crate::types::CallAnalyticsItem>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::call_analytics_item::Builder::default();
+            let mut builder = crate::types::builders::CallAnalyticsItemBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -48,7 +48,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::ItemType::from(u.as_ref()))
+                                            .map(|u| crate::types::ItemType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

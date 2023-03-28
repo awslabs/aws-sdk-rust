@@ -2,7 +2,7 @@
 pub fn de_successful_queued_purchase_deletion_set(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::SuccessfulQueuedPurchaseDeletion>,
+    std::vec::Vec<crate::types::SuccessfulQueuedPurchaseDeletion>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

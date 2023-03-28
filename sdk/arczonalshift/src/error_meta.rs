@@ -4,17 +4,17 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>You do not have sufficient access to perform this action.</p>
-    AccessDeniedException(crate::error::AccessDeniedException),
+    AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>The request could not be processed because of conflict in the current state of the resource.</p>
-    ConflictException(crate::error::ConflictException),
+    ConflictException(crate::types::error::ConflictException),
     /// <p>There was an internal server error.</p>
-    InternalServerException(crate::error::InternalServerException),
+    InternalServerException(crate::types::error::InternalServerException),
     /// <p>The input requested a resource that was not found.</p>
-    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
-    ThrottlingException(crate::error::ThrottlingException),
+    ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
-    ValidationException(crate::error::ValidationException),
+    ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled),
 }
@@ -31,12 +31,21 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CancelZonalShiftError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::cancel_zonal_shift::CancelZonalShiftError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CancelZonalShiftError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::cancel_zonal_shift::CancelZonalShiftError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -53,37 +62,34 @@ where
         }
     }
 }
-impl From<crate::error::CancelZonalShiftError> for Error {
-    fn from(err: crate::error::CancelZonalShiftError) -> Self {
+impl From<crate::operation::cancel_zonal_shift::CancelZonalShiftError> for Error {
+    fn from(err: crate::operation::cancel_zonal_shift::CancelZonalShiftError) -> Self {
         match err {
-            crate::error::CancelZonalShiftError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::CancelZonalShiftError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::CancelZonalShiftError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::CancelZonalShiftError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::CancelZonalShiftError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::CancelZonalShiftError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::CancelZonalShiftError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::cancel_zonal_shift::CancelZonalShiftError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::cancel_zonal_shift::CancelZonalShiftError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::cancel_zonal_shift::CancelZonalShiftError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::cancel_zonal_shift::CancelZonalShiftError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::cancel_zonal_shift::CancelZonalShiftError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::cancel_zonal_shift::CancelZonalShiftError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::cancel_zonal_shift::CancelZonalShiftError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetManagedResourceError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_managed_resource::GetManagedResourceError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetManagedResourceError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_managed_resource::GetManagedResourceError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -100,35 +106,33 @@ where
         }
     }
 }
-impl From<crate::error::GetManagedResourceError> for Error {
-    fn from(err: crate::error::GetManagedResourceError) -> Self {
+impl From<crate::operation::get_managed_resource::GetManagedResourceError> for Error {
+    fn from(err: crate::operation::get_managed_resource::GetManagedResourceError) -> Self {
         match err {
-            crate::error::GetManagedResourceError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::GetManagedResourceError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::GetManagedResourceError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::GetManagedResourceError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::GetManagedResourceError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::GetManagedResourceError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_managed_resource::GetManagedResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_managed_resource::GetManagedResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_managed_resource::GetManagedResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_managed_resource::GetManagedResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_managed_resource::GetManagedResourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_managed_resource::GetManagedResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListManagedResourcesError, R>>
-    for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_managed_resources::ListManagedResourcesError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListManagedResourcesError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_managed_resources::ListManagedResourcesError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -145,115 +149,32 @@ where
         }
     }
 }
-impl From<crate::error::ListManagedResourcesError> for Error {
-    fn from(err: crate::error::ListManagedResourcesError) -> Self {
+impl From<crate::operation::list_managed_resources::ListManagedResourcesError> for Error {
+    fn from(err: crate::operation::list_managed_resources::ListManagedResourcesError) -> Self {
         match err {
-            crate::error::ListManagedResourcesError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::ListManagedResourcesError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::ListManagedResourcesError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::ListManagedResourcesError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::ListManagedResourcesError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_managed_resources::ListManagedResourcesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_managed_resources::ListManagedResourcesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_managed_resources::ListManagedResourcesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_managed_resources::ListManagedResourcesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_managed_resources::ListManagedResourcesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListZonalShiftsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListZonalShiftsError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::ListZonalShiftsError> for Error {
-    fn from(err: crate::error::ListZonalShiftsError) -> Self {
-        match err {
-            crate::error::ListZonalShiftsError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::ListZonalShiftsError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::ListZonalShiftsError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::ListZonalShiftsError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::ListZonalShiftsError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartZonalShiftError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::StartZonalShiftError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::StartZonalShiftError> for Error {
-    fn from(err: crate::error::StartZonalShiftError) -> Self {
-        match err {
-            crate::error::StartZonalShiftError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::StartZonalShiftError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::StartZonalShiftError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::StartZonalShiftError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::StartZonalShiftError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::StartZonalShiftError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::StartZonalShiftError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateZonalShiftError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_zonal_shifts::ListZonalShiftsError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateZonalShiftError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_zonal_shifts::ListZonalShiftsError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -270,28 +191,112 @@ where
         }
     }
 }
-impl From<crate::error::UpdateZonalShiftError> for Error {
-    fn from(err: crate::error::UpdateZonalShiftError) -> Self {
+impl From<crate::operation::list_zonal_shifts::ListZonalShiftsError> for Error {
+    fn from(err: crate::operation::list_zonal_shifts::ListZonalShiftsError) -> Self {
         match err {
-            crate::error::UpdateZonalShiftError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
+            crate::operation::list_zonal_shifts::ListZonalShiftsError::AccessDeniedException(
+                inner,
+            ) => Error::AccessDeniedException(inner),
+            crate::operation::list_zonal_shifts::ListZonalShiftsError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::list_zonal_shifts::ListZonalShiftsError::ThrottlingException(
+                inner,
+            ) => Error::ThrottlingException(inner),
+            crate::operation::list_zonal_shifts::ListZonalShiftsError::ValidationException(
+                inner,
+            ) => Error::ValidationException(inner),
+            crate::operation::list_zonal_shifts::ListZonalShiftsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
-            crate::error::UpdateZonalShiftError::ConflictException(inner) => {
-                Error::ConflictException(inner)
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::start_zonal_shift::StartZonalShiftError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::start_zonal_shift::StartZonalShiftError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
-            crate::error::UpdateZonalShiftError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::start_zonal_shift::StartZonalShiftError> for Error {
+    fn from(err: crate::operation::start_zonal_shift::StartZonalShiftError) -> Self {
+        match err {
+            crate::operation::start_zonal_shift::StartZonalShiftError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::start_zonal_shift::StartZonalShiftError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_zonal_shift::StartZonalShiftError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_zonal_shift::StartZonalShiftError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_zonal_shift::StartZonalShiftError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_zonal_shift::StartZonalShiftError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::start_zonal_shift::StartZonalShiftError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_zonal_shift::UpdateZonalShiftError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_zonal_shift::UpdateZonalShiftError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
-            crate::error::UpdateZonalShiftError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::UpdateZonalShiftError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::UpdateZonalShiftError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::UpdateZonalShiftError::Unhandled(inner) => Error::Unhandled(inner),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_zonal_shift::UpdateZonalShiftError> for Error {
+    fn from(err: crate::operation::update_zonal_shift::UpdateZonalShiftError) -> Self {
+        match err {
+            crate::operation::update_zonal_shift::UpdateZonalShiftError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_zonal_shift::UpdateZonalShiftError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_zonal_shift::UpdateZonalShiftError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_zonal_shift::UpdateZonalShiftError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_zonal_shift::UpdateZonalShiftError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_zonal_shift::UpdateZonalShiftError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_zonal_shift::UpdateZonalShiftError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

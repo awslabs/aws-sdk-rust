@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_no_such_field_level_encryption_config_xml_err(
     inp: &[u8],
-    mut builder: crate::error::no_such_field_level_encryption_config::Builder,
+    mut builder: crate::types::error::builders::NoSuchFieldLevelEncryptionConfigBuilder,
 ) -> Result<
-    crate::error::no_such_field_level_encryption_config::Builder,
+    crate::types::error::builders::NoSuchFieldLevelEncryptionConfigBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

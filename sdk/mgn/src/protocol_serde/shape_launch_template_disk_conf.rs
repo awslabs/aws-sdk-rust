@@ -2,7 +2,7 @@
 pub(crate) fn de_launch_template_disk_conf<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::LaunchTemplateDiskConf>,
+    Option<crate::types::LaunchTemplateDiskConf>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::launch_template_disk_conf::Builder::default();
+            let mut builder = crate::types::builders::LaunchTemplateDiskConfBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::VolumeType::from(u.as_ref()))
+                                            .map(|u| crate::types::VolumeType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -78,7 +78,7 @@ where
 
 pub fn ser_launch_template_disk_conf(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::LaunchTemplateDiskConf,
+    input: &crate::types::LaunchTemplateDiskConf,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.volume_type {
         object.key("volumeType").string(var_1.as_str());

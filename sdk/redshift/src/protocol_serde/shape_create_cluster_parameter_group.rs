@@ -3,98 +3,89 @@
 pub fn de_create_cluster_parameter_group_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateClusterParameterGroupOutput,
-    crate::error::CreateClusterParameterGroupError,
+    crate::operation::create_cluster_parameter_group::CreateClusterParameterGroupOutput,
+    crate::operation::create_cluster_parameter_group::CreateClusterParameterGroupError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::CreateClusterParameterGroupError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::create_cluster_parameter_group::CreateClusterParameterGroupError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::CreateClusterParameterGroupError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::create_cluster_parameter_group::CreateClusterParameterGroupError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ClusterParameterGroupAlreadyExists" => {
-            crate::error::CreateClusterParameterGroupError::ClusterParameterGroupAlreadyExistsFault(
-                {
+        "ClusterParameterGroupAlreadyExists" => crate::operation::create_cluster_parameter_group::CreateClusterParameterGroupError::ClusterParameterGroupAlreadyExistsFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                    let mut output = crate::error::cluster_parameter_group_already_exists_fault::Builder::default();
-                        let _ = response;
-                        output = crate::protocol_serde::shape_cluster_parameter_group_already_exists_fault::de_cluster_parameter_group_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterParameterGroupError::unhandled)?;
-                        let output = output.meta(generic);
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            )
-        }
-        "ClusterParameterGroupQuotaExceeded" => {
-            crate::error::CreateClusterParameterGroupError::ClusterParameterGroupQuotaExceededFault(
-                {
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                    let mut output = crate::error::cluster_parameter_group_quota_exceeded_fault::Builder::default();
-                        let _ = response;
-                        output = crate::protocol_serde::shape_cluster_parameter_group_quota_exceeded_fault::de_cluster_parameter_group_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterParameterGroupError::unhandled)?;
-                        let output = output.meta(generic);
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            )
-        }
-        "InvalidTagFault" => {
-            crate::error::CreateClusterParameterGroupError::InvalidTagFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_tag_fault::Builder::default();
+                    let mut output = crate::types::error::builders::ClusterParameterGroupAlreadyExistsFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_tag_fault::de_invalid_tag_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterParameterGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_cluster_parameter_group_already_exists_fault::de_cluster_parameter_group_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_cluster_parameter_group::CreateClusterParameterGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "TagLimitExceededFault" => {
-            crate::error::CreateClusterParameterGroupError::TagLimitExceededFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ClusterParameterGroupQuotaExceeded" => crate::operation::create_cluster_parameter_group::CreateClusterParameterGroupError::ClusterParameterGroupQuotaExceededFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::tag_limit_exceeded_fault::Builder::default();
+                    let mut output = crate::types::error::builders::ClusterParameterGroupQuotaExceededFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_tag_limit_exceeded_fault::de_tag_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateClusterParameterGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_cluster_parameter_group_quota_exceeded_fault::de_cluster_parameter_group_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_cluster_parameter_group::CreateClusterParameterGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::CreateClusterParameterGroupError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidTagFault" => crate::operation::create_cluster_parameter_group::CreateClusterParameterGroupError::InvalidTagFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidTagFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_tag_fault::de_invalid_tag_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_cluster_parameter_group::CreateClusterParameterGroupError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TagLimitExceededFault" => crate::operation::create_cluster_parameter_group::CreateClusterParameterGroupError::TagLimitExceededFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::TagLimitExceededFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_tag_limit_exceeded_fault::de_tag_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_cluster_parameter_group::CreateClusterParameterGroupError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::create_cluster_parameter_group::CreateClusterParameterGroupError::generic(generic)
     })
 }
 
@@ -102,14 +93,14 @@ pub fn de_create_cluster_parameter_group_http_error(
 pub fn de_create_cluster_parameter_group_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateClusterParameterGroupOutput,
-    crate::error::CreateClusterParameterGroupError,
+    crate::operation::create_cluster_parameter_group::CreateClusterParameterGroupOutput,
+    crate::operation::create_cluster_parameter_group::CreateClusterParameterGroupError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::create_cluster_parameter_group_output::Builder::default();
+        let mut output = crate::operation::create_cluster_parameter_group::builders::CreateClusterParameterGroupOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_create_cluster_parameter_group::de_create_cluster_parameter_group(response.body().as_ref(), output).map_err(crate::error::CreateClusterParameterGroupError::unhandled)?;
+        output = crate::protocol_serde::shape_create_cluster_parameter_group::de_create_cluster_parameter_group(response.body().as_ref(), output).map_err(crate::operation::create_cluster_parameter_group::CreateClusterParameterGroupError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -118,13 +109,7 @@ pub fn de_create_cluster_parameter_group_http_response(
 }
 
 #[allow(unused_mut)]
-pub fn de_create_cluster_parameter_group(
-    inp: &[u8],
-    mut builder: crate::output::create_cluster_parameter_group_output::Builder,
-) -> Result<
-    crate::output::create_cluster_parameter_group_output::Builder,
-    aws_smithy_xml::decode::XmlDecodeError,
-> {
+pub fn de_create_cluster_parameter_group(inp: &[u8], mut builder: crate::operation::create_cluster_parameter_group::builders::CreateClusterParameterGroupOutputBuilder) -> Result<crate::operation::create_cluster_parameter_group::builders::CreateClusterParameterGroupOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

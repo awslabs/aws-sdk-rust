@@ -2,7 +2,7 @@
 pub(crate) fn de_ofi_metric_data_points_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::OfiMetricDataPoint>>,
+    Option<std::vec::Vec<crate::types::OfiMetricDataPoint>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

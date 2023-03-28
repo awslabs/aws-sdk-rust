@@ -2,7 +2,7 @@
 pub(crate) fn de_text_translation_job_properties<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::TextTranslationJobProperties>,
+    Option<crate::types::TextTranslationJobProperties>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::text_translation_job_properties::Builder::default();
+            let mut builder =
+                crate::types::builders::TextTranslationJobPropertiesBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -48,7 +49,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::JobStatus::from(u.as_ref()))
+                                            .map(|u| crate::types::JobStatus::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

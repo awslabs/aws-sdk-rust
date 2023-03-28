@@ -2,7 +2,7 @@
 pub(crate) fn de_edge_packaging_job_summaries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::EdgePackagingJobSummary>>,
+    Option<std::vec::Vec<crate::types::EdgePackagingJobSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

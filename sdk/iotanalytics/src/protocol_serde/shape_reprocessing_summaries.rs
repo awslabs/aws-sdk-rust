@@ -2,7 +2,7 @@
 pub(crate) fn de_reprocessing_summaries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ReprocessingSummary>>,
+    Option<std::vec::Vec<crate::types::ReprocessingSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

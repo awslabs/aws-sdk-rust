@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_invalid_blue_green_deployment_state_fault_xml_err(
     inp: &[u8],
-    mut builder: crate::error::invalid_blue_green_deployment_state_fault::Builder,
+    mut builder: crate::types::error::builders::InvalidBlueGreenDeploymentStateFaultBuilder,
 ) -> Result<
-    crate::error::invalid_blue_green_deployment_state_fault::Builder,
+    crate::types::error::builders::InvalidBlueGreenDeploymentStateFaultBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

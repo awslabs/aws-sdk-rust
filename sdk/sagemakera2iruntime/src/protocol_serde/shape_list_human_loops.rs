@@ -2,42 +2,33 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_human_loops_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListHumanLoopsOutput, crate::error::ListHumanLoopsError> {
+) -> std::result::Result<
+    crate::operation::list_human_loops::ListHumanLoopsOutput,
+    crate::operation::list_human_loops::ListHumanLoopsError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListHumanLoopsError::unhandled)?;
+        .map_err(crate::operation::list_human_loops::ListHumanLoopsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListHumanLoopsError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::list_human_loops::ListHumanLoopsError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerException" => crate::error::ListHumanLoopsError::InternalServerException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListHumanLoopsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ResourceNotFoundException" => {
-            crate::error::ListHumanLoopsError::ResourceNotFoundException({
+        "InternalServerException" => {
+            crate::operation::list_human_loops::ListHumanLoopsError::InternalServerException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::InternalServerExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListHumanLoopsError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_human_loops::ListHumanLoopsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -47,53 +38,81 @@ pub fn de_list_human_loops_http_error(
                 tmp
             })
         }
-        "ThrottlingException" => crate::error::ListHumanLoopsError::ThrottlingException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "ResourceNotFoundException" => {
+            crate::operation::list_human_loops::ListHumanLoopsError::ResourceNotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::throttling_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListHumanLoopsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ValidationException" => crate::error::ListHumanLoopsError::ValidationException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_human_loops::ListHumanLoopsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ThrottlingException" => {
+            crate::operation::list_human_loops::ListHumanLoopsError::ThrottlingException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListHumanLoopsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::ListHumanLoopsError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_human_loops::ListHumanLoopsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ValidationException" => {
+            crate::operation::list_human_loops::ListHumanLoopsError::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_human_loops::ListHumanLoopsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::list_human_loops::ListHumanLoopsError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_human_loops_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListHumanLoopsOutput, crate::error::ListHumanLoopsError> {
+) -> std::result::Result<
+    crate::operation::list_human_loops::ListHumanLoopsOutput,
+    crate::operation::list_human_loops::ListHumanLoopsError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_human_loops_output::Builder::default();
+        let mut output =
+            crate::operation::list_human_loops::builders::ListHumanLoopsOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_human_loops::de_list_human_loops(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListHumanLoopsError::unhandled)?;
+        .map_err(crate::operation::list_human_loops::ListHumanLoopsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -103,9 +122,9 @@ pub fn de_list_human_loops_http_response(
 
 pub(crate) fn de_list_human_loops(
     value: &[u8],
-    mut builder: crate::output::list_human_loops_output::Builder,
+    mut builder: crate::operation::list_human_loops::builders::ListHumanLoopsOutputBuilder,
 ) -> Result<
-    crate::output::list_human_loops_output::Builder,
+    crate::operation::list_human_loops::builders::ListHumanLoopsOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

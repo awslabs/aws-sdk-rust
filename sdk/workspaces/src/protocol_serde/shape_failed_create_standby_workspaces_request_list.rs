@@ -2,7 +2,7 @@
 pub(crate) fn de_failed_create_standby_workspaces_request_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::FailedCreateStandbyWorkspacesRequest>>,
+    Option<std::vec::Vec<crate::types::FailedCreateStandbyWorkspacesRequest>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

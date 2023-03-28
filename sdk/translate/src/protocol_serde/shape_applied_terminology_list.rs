@@ -2,7 +2,7 @@
 pub(crate) fn de_applied_terminology_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AppliedTerminology>>,
+    Option<std::vec::Vec<crate::types::AppliedTerminology>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

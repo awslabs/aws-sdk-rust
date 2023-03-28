@@ -2,7 +2,7 @@
 pub(crate) fn de_cloud_watch_metrics_dimensions<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CloudWatchMetricsDimension>>,
+    Option<std::vec::Vec<crate::types::CloudWatchMetricsDimension>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

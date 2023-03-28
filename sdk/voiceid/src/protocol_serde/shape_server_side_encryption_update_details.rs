@@ -2,7 +2,7 @@
 pub(crate) fn de_server_side_encryption_update_details<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ServerSideEncryptionUpdateDetails>,
+    Option<crate::types::ServerSideEncryptionUpdateDetails>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::server_side_encryption_update_details::Builder::default();
+                crate::types::builders::ServerSideEncryptionUpdateDetailsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -40,7 +40,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ServerSideEncryptionUpdateStatus::from(
+                                            crate::types::ServerSideEncryptionUpdateStatus::from(
                                                 u.as_ref(),
                                             )
                                         })

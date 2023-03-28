@@ -2,7 +2,7 @@
 pub(crate) fn de_identity_resolution_jobs_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::IdentityResolutionJob>>,
+    Option<std::vec::Vec<crate::types::IdentityResolutionJob>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

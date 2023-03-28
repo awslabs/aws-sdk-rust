@@ -2,7 +2,7 @@
 pub(crate) fn de_users_list_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::UserType>>,
+    Option<std::vec::Vec<crate::types::UserType>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

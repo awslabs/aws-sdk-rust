@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_audio_description<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AudioDescription>>,
+    Option<std::vec::Vec<crate::types::AudioDescription>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

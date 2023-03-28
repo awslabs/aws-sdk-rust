@@ -2,7 +2,7 @@
 pub(crate) fn de_incident_record_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::IncidentRecordSummary>>,
+    Option<std::vec::Vec<crate::types::IncidentRecordSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

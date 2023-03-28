@@ -2,7 +2,7 @@
 pub(crate) fn de_files_metadata<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::FileMetadata>>,
+    Option<std::vec::Vec<crate::types::FileMetadata>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

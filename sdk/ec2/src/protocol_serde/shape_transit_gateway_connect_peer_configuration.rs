@@ -2,11 +2,11 @@
 pub fn de_transit_gateway_connect_peer_configuration(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    crate::model::TransitGatewayConnectPeerConfiguration,
+    crate::types::TransitGatewayConnectPeerConfiguration,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     #[allow(unused_mut)]
-    let mut builder = crate::model::TransitGatewayConnectPeerConfiguration::builder();
+    let mut builder = crate::types::TransitGatewayConnectPeerConfiguration::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("transitGatewayAddress") /* TransitGatewayAddress com.amazonaws.ec2#TransitGatewayConnectPeerConfiguration$TransitGatewayAddress */ =>  {
@@ -48,8 +48,8 @@ pub fn de_transit_gateway_connect_peer_configuration(
             s if s.matches("protocol") /* Protocol com.amazonaws.ec2#TransitGatewayConnectPeerConfiguration$Protocol */ =>  {
                 let var_4 =
                     Some(
-                        Result::<crate::model::ProtocolValue, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::ProtocolValue::from(
+                        Result::<crate::types::ProtocolValue, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::ProtocolValue::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

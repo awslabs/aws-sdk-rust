@@ -2,28 +2,34 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_initiate_job_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::InitiateJobOutput, crate::error::InitiateJobError> {
+) -> std::result::Result<
+    crate::operation::initiate_job::InitiateJobOutput,
+    crate::operation::initiate_job::InitiateJobError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::InitiateJobError::unhandled)?;
+        .map_err(crate::operation::initiate_job::InitiateJobError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::InitiateJobError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::initiate_job::InitiateJobError::unhandled(
+                generic,
+            ))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InsufficientCapacityException" => {
-            crate::error::InitiateJobError::InsufficientCapacityException({
+            crate::operation::initiate_job::InitiateJobError::InsufficientCapacityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::insufficient_capacity_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InsufficientCapacityExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_insufficient_capacity_exception::de_insufficient_capacity_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InitiateJobError::unhandled)?;
+                    output = crate::protocol_serde::shape_insufficient_capacity_exception::de_insufficient_capacity_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::initiate_job::InitiateJobError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -34,14 +40,13 @@ pub fn de_initiate_job_http_error(
             })
         }
         "InvalidParameterValueException" => {
-            crate::error::InitiateJobError::InvalidParameterValueException({
+            crate::operation::initiate_job::InitiateJobError::InvalidParameterValueException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_parameter_value_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InitiateJobError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::initiate_job::InitiateJobError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -52,14 +57,13 @@ pub fn de_initiate_job_http_error(
             })
         }
         "MissingParameterValueException" => {
-            crate::error::InitiateJobError::MissingParameterValueException({
+            crate::operation::initiate_job::InitiateJobError::MissingParameterValueException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::missing_parameter_value_exception::Builder::default();
+                    let mut output = crate::types::error::builders::MissingParameterValueExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_missing_parameter_value_exception::de_missing_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InitiateJobError::unhandled)?;
+                    output = crate::protocol_serde::shape_missing_parameter_value_exception::de_missing_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::initiate_job::InitiateJobError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -69,45 +73,52 @@ pub fn de_initiate_job_http_error(
                 tmp
             })
         }
-        "PolicyEnforcedException" => crate::error::InitiateJobError::PolicyEnforcedException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "PolicyEnforcedException" => {
+            crate::operation::initiate_job::InitiateJobError::PolicyEnforcedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::policy_enforced_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_policy_enforced_exception::de_policy_enforced_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InitiateJobError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ResourceNotFoundException" => crate::error::InitiateJobError::ResourceNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::PolicyEnforcedExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_policy_enforced_exception::de_policy_enforced_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::initiate_job::InitiateJobError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::operation::initiate_job::InitiateJobError::ResourceNotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::resource_not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InitiateJobError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::initiate_job::InitiateJobError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "ServiceUnavailableException" => {
-            crate::error::InitiateJobError::ServiceUnavailableException({
+            crate::operation::initiate_job::InitiateJobError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::service_unavailable_exception::Builder::default();
+                        crate::types::error::builders::ServiceUnavailableExceptionBuilder::default(
+                        );
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InitiateJobError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::initiate_job::InitiateJobError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -117,22 +128,26 @@ pub fn de_initiate_job_http_error(
                 tmp
             })
         }
-        _ => crate::error::InitiateJobError::generic(generic),
+        _ => crate::operation::initiate_job::InitiateJobError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_initiate_job_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::InitiateJobOutput, crate::error::InitiateJobError> {
+) -> std::result::Result<
+    crate::operation::initiate_job::InitiateJobOutput,
+    crate::operation::initiate_job::InitiateJobError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::initiate_job_output::Builder::default();
+        let mut output =
+            crate::operation::initiate_job::builders::InitiateJobOutputBuilder::default();
         let _ = response;
         output = output.set_job_id(
             crate::protocol_serde::shape_initiate_job_output::de_job_id_header(response.headers())
                 .map_err(|_| {
-                    crate::error::InitiateJobError::unhandled(
+                    crate::operation::initiate_job::InitiateJobError::unhandled(
                         "Failed to parse jobId from header `x-amz-job-id",
                     )
                 })?,
@@ -142,7 +157,7 @@ pub fn de_initiate_job_http_response(
                 response.headers(),
             )
             .map_err(|_| {
-                crate::error::InitiateJobError::unhandled(
+                crate::operation::initiate_job::InitiateJobError::unhandled(
                     "Failed to parse jobOutputPath from header `x-amz-job-output-path",
                 )
             })?,
@@ -152,7 +167,7 @@ pub fn de_initiate_job_http_response(
                 response.headers(),
             )
             .map_err(|_| {
-                crate::error::InitiateJobError::unhandled(
+                crate::operation::initiate_job::InitiateJobError::unhandled(
                     "Failed to parse location from header `Location",
                 )
             })?,

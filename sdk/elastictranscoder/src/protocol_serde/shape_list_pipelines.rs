@@ -2,43 +2,33 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_pipelines_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListPipelinesOutput, crate::error::ListPipelinesError> {
+) -> std::result::Result<
+    crate::operation::list_pipelines::ListPipelinesOutput,
+    crate::operation::list_pipelines::ListPipelinesError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListPipelinesError::unhandled)?;
+        .map_err(crate::operation::list_pipelines::ListPipelinesError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListPipelinesError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::list_pipelines::ListPipelinesError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::ListPipelinesError::AccessDeniedException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::access_denied_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListPipelinesError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "IncompatibleVersionException" => {
-            crate::error::ListPipelinesError::IncompatibleVersionException({
+        "AccessDeniedException" => {
+            crate::operation::list_pipelines::ListPipelinesError::AccessDeniedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::incompatible_version_exception::Builder::default();
+                        crate::types::error::builders::AccessDeniedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_incompatible_version_exception::de_incompatible_version_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListPipelinesError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_pipelines::ListPipelinesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -48,53 +38,82 @@ pub fn de_list_pipelines_http_error(
                 tmp
             })
         }
-        "InternalServiceException" => crate::error::ListPipelinesError::InternalServiceException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "IncompatibleVersionException" => {
+            crate::operation::list_pipelines::ListPipelinesError::IncompatibleVersionException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_service_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_service_exception::de_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListPipelinesError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ValidationException" => crate::error::ListPipelinesError::ValidationException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::IncompatibleVersionExceptionBuilder::default(
+                        );
+                    let _ = response;
+                    output = crate::protocol_serde::shape_incompatible_version_exception::de_incompatible_version_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_pipelines::ListPipelinesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InternalServiceException" => {
+            crate::operation::list_pipelines::ListPipelinesError::InternalServiceException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListPipelinesError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::ListPipelinesError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InternalServiceExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_service_exception::de_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_pipelines::ListPipelinesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ValidationException" => {
+            crate::operation::list_pipelines::ListPipelinesError::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_pipelines::ListPipelinesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::list_pipelines::ListPipelinesError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_pipelines_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListPipelinesOutput, crate::error::ListPipelinesError> {
+) -> std::result::Result<
+    crate::operation::list_pipelines::ListPipelinesOutput,
+    crate::operation::list_pipelines::ListPipelinesError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_pipelines_output::Builder::default();
+        let mut output =
+            crate::operation::list_pipelines::builders::ListPipelinesOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_pipelines::de_list_pipelines(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListPipelinesError::unhandled)?;
+        .map_err(crate::operation::list_pipelines::ListPipelinesError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -104,9 +123,9 @@ pub fn de_list_pipelines_http_response(
 
 pub(crate) fn de_list_pipelines(
     value: &[u8],
-    mut builder: crate::output::list_pipelines_output::Builder,
+    mut builder: crate::operation::list_pipelines::builders::ListPipelinesOutputBuilder,
 ) -> Result<
-    crate::output::list_pipelines_output::Builder,
+    crate::operation::list_pipelines::builders::ListPipelinesOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

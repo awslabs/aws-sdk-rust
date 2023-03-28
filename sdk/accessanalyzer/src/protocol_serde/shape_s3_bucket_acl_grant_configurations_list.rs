@@ -2,7 +2,7 @@
 pub(crate) fn de_s3_bucket_acl_grant_configurations_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::S3BucketAclGrantConfiguration>>,
+    Option<std::vec::Vec<crate::types::S3BucketAclGrantConfiguration>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

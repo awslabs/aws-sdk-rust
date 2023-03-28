@@ -2,7 +2,7 @@
 pub(crate) fn de_organization_conformance_pack_detailed_status<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::OrganizationConformancePackDetailedStatus>,
+    Option<crate::types::OrganizationConformancePackDetailedStatus>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::organization_conformance_pack_detailed_status::Builder::default();
+                crate::types::builders::OrganizationConformancePackDetailedStatusBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -49,7 +49,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::OrganizationResourceDetailedStatus::from(
+                                            crate::types::OrganizationResourceDetailedStatus::from(
                                                 u.as_ref(),
                                             )
                                         })

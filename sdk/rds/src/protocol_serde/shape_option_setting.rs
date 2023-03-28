@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_option_setting(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::OptionSetting,
+    input: &crate::types::OptionSetting,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Name");
@@ -54,9 +54,9 @@ pub fn ser_option_setting(
 
 pub fn de_option_setting(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::OptionSetting, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::OptionSetting, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::OptionSetting::builder();
+    let mut builder = crate::types::OptionSetting::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Name") /* Name com.amazonaws.rds#OptionSetting$Name */ =>  {

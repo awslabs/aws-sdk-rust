@@ -2,7 +2,7 @@
 pub(crate) fn de_resource_policy_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ResourcePolicy>>,
+    Option<std::vec::Vec<crate::types::ResourcePolicy>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

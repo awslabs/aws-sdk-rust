@@ -2,7 +2,7 @@
 pub(crate) fn de_world_generation_job_summaries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::WorldGenerationJobSummary>>,
+    Option<std::vec::Vec<crate::types::WorldGenerationJobSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

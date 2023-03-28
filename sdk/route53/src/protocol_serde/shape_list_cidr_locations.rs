@@ -2,75 +2,80 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_cidr_locations_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListCidrLocationsOutput, crate::error::ListCidrLocationsError>
-{
+) -> std::result::Result<
+    crate::operation::list_cidr_locations::ListCidrLocationsOutput,
+    crate::operation::list_cidr_locations::ListCidrLocationsError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListCidrLocationsError::unhandled)?;
+        .map_err(crate::operation::list_cidr_locations::ListCidrLocationsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListCidrLocationsError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::list_cidr_locations::ListCidrLocationsError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidInput" => crate::error::ListCidrLocationsError::InvalidInput({
+        "InvalidInput" => crate::operation::list_cidr_locations::ListCidrLocationsError::InvalidInput({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::invalid_input::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_input::de_invalid_input_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::ListCidrLocationsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "NoSuchCidrCollectionException" => {
-            crate::error::ListCidrLocationsError::NoSuchCidrCollectionException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::no_such_cidr_collection_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidInputBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_no_such_cidr_collection_exception::de_no_such_cidr_collection_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListCidrLocationsError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_input::de_invalid_input_xml_err(response.body().as_ref(), output).map_err(crate::operation::list_cidr_locations::ListCidrLocationsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::ListCidrLocationsError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "NoSuchCidrCollectionException" => crate::operation::list_cidr_locations::ListCidrLocationsError::NoSuchCidrCollectionException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::NoSuchCidrCollectionExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_no_such_cidr_collection_exception::de_no_such_cidr_collection_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::list_cidr_locations::ListCidrLocationsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::list_cidr_locations::ListCidrLocationsError::generic(generic)
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_cidr_locations_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListCidrLocationsOutput, crate::error::ListCidrLocationsError>
-{
+) -> std::result::Result<
+    crate::operation::list_cidr_locations::ListCidrLocationsOutput,
+    crate::operation::list_cidr_locations::ListCidrLocationsError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_cidr_locations_output::Builder::default();
+        let mut output = crate::operation::list_cidr_locations::builders::ListCidrLocationsOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_cidr_locations::de_list_cidr_locations(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListCidrLocationsError::unhandled)?;
+        .map_err(crate::operation::list_cidr_locations::ListCidrLocationsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -81,9 +86,9 @@ pub fn de_list_cidr_locations_http_response(
 #[allow(unused_mut)]
 pub fn de_list_cidr_locations(
     inp: &[u8],
-    mut builder: crate::output::list_cidr_locations_output::Builder,
+    mut builder: crate::operation::list_cidr_locations::builders::ListCidrLocationsOutputBuilder,
 ) -> Result<
-    crate::output::list_cidr_locations_output::Builder,
+    crate::operation::list_cidr_locations::builders::ListCidrLocationsOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

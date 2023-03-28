@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_serverless_v2_scaling_configuration(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::ServerlessV2ScalingConfiguration,
+    input: &crate::types::ServerlessV2ScalingConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("MinCapacity");

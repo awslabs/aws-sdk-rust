@@ -2,13 +2,15 @@
 pub fn de_virtual_node_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::VirtualNodeData>,
-    crate::error::DescribeVirtualNodeError,
+    std::option::Option<crate::types::VirtualNodeData>,
+    crate::operation::describe_virtual_node::DescribeVirtualNodeError,
 > {
     (!body.is_empty())
         .then(|| {
             crate::protocol_serde::shape_virtual_node_data::de_virtual_node_data_payload(body)
-                .map_err(crate::error::DescribeVirtualNodeError::unhandled)
+                .map_err(
+                    crate::operation::describe_virtual_node::DescribeVirtualNodeError::unhandled,
+                )
         })
         .transpose()
 }

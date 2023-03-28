@@ -2,7 +2,7 @@
 pub(crate) fn de_operation_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::OperationSummary>>,
+    Option<std::vec::Vec<crate::types::OperationSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

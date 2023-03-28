@@ -2,7 +2,7 @@
 pub(crate) fn de_destination_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::DestinationConfiguration>,
+    Option<crate::types::DestinationConfiguration>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -29,26 +29,26 @@ where
                     }
                     variant = match key.to_unescaped()?.as_ref() {
                             "s3" => {
-                                Some(crate::model::DestinationConfiguration::S3(
+                                Some(crate::types::DestinationConfiguration::S3(
                                     crate::protocol_serde::shape_s3_destination_configuration::de_s3_destination_configuration(tokens)?
                                     .ok_or_else(|| aws_smithy_json::deserialize::error::DeserializeError::custom("value for 's3' cannot be null"))?
                                 ))
                             }
                             "cloudWatchLogs" => {
-                                Some(crate::model::DestinationConfiguration::CloudWatchLogs(
+                                Some(crate::types::DestinationConfiguration::CloudWatchLogs(
                                     crate::protocol_serde::shape_cloud_watch_logs_destination_configuration::de_cloud_watch_logs_destination_configuration(tokens)?
                                     .ok_or_else(|| aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'cloudWatchLogs' cannot be null"))?
                                 ))
                             }
                             "firehose" => {
-                                Some(crate::model::DestinationConfiguration::Firehose(
+                                Some(crate::types::DestinationConfiguration::Firehose(
                                     crate::protocol_serde::shape_firehose_destination_configuration::de_firehose_destination_configuration(tokens)?
                                     .ok_or_else(|| aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'firehose' cannot be null"))?
                                 ))
                             }
                             _ => {
                                                                       aws_smithy_json::deserialize::token::skip_value(tokens)?;
-                                                                      Some(crate::model::DestinationConfiguration::Unknown)
+                                                                      Some(crate::types::DestinationConfiguration::Unknown)
                                                                     }
                         };
                 }
@@ -75,28 +75,28 @@ where
 
 pub fn ser_destination_configuration(
     object_2: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::DestinationConfiguration,
+    input: &crate::types::DestinationConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     match input {
-        crate::model::DestinationConfiguration::S3(inner) => {
+        crate::types::DestinationConfiguration::S3(inner) => {
             #[allow(unused_mut)]
             let mut object_1 = object_2.key("s3").start_object();
             crate::protocol_serde::shape_s3_destination_configuration::ser_s3_destination_configuration(&mut object_1, inner)?;
             object_1.finish();
         }
-        crate::model::DestinationConfiguration::CloudWatchLogs(inner) => {
+        crate::types::DestinationConfiguration::CloudWatchLogs(inner) => {
             #[allow(unused_mut)]
             let mut object_2 = object_2.key("cloudWatchLogs").start_object();
             crate::protocol_serde::shape_cloud_watch_logs_destination_configuration::ser_cloud_watch_logs_destination_configuration(&mut object_2, inner)?;
             object_2.finish();
         }
-        crate::model::DestinationConfiguration::Firehose(inner) => {
+        crate::types::DestinationConfiguration::Firehose(inner) => {
             #[allow(unused_mut)]
             let mut object_3 = object_2.key("firehose").start_object();
             crate::protocol_serde::shape_firehose_destination_configuration::ser_firehose_destination_configuration(&mut object_3, inner)?;
             object_3.finish();
         }
-        crate::model::DestinationConfiguration::Unknown => {
+        crate::types::DestinationConfiguration::Unknown => {
             return Err(
                 aws_smithy_http::operation::error::SerializationError::unknown_variant(
                     "DestinationConfiguration",

@@ -2,7 +2,7 @@
 pub(crate) fn de_validation_warnings<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ValidationWarning>>,
+    Option<std::vec::Vec<crate::types::ValidationWarning>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

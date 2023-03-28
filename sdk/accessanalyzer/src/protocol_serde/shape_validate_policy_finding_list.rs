@@ -2,7 +2,7 @@
 pub(crate) fn de_validate_policy_finding_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ValidatePolicyFinding>>,
+    Option<std::vec::Vec<crate::types::ValidatePolicyFinding>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

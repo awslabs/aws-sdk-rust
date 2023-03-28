@@ -2,7 +2,7 @@
 pub(crate) fn de_crawler_history_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CrawlerHistory>>,
+    Option<std::vec::Vec<crate::types::CrawlerHistory>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

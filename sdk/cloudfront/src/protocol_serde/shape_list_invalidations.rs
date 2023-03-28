@@ -2,86 +2,108 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_invalidations_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListInvalidationsOutput, crate::error::ListInvalidationsError>
-{
+) -> std::result::Result<
+    crate::operation::list_invalidations::ListInvalidationsOutput,
+    crate::operation::list_invalidations::ListInvalidationsError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListInvalidationsError::unhandled)?;
+        .map_err(crate::operation::list_invalidations::ListInvalidationsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListInvalidationsError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::list_invalidations::ListInvalidationsError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDenied" => crate::error::ListInvalidationsError::AccessDenied({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "AccessDenied" => {
+            crate::operation::list_invalidations::ListInvalidationsError::AccessDenied({
                 #[allow(unused_mut)]
-                let mut output = crate::error::access_denied::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_access_denied::de_access_denied_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::ListInvalidationsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InvalidArgument" => crate::error::ListInvalidationsError::InvalidArgument({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::invalid_argument::Builder::default();
-                let _ = response;
-                output =
-                    crate::protocol_serde::shape_invalid_argument::de_invalid_argument_xml_err(
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::AccessDeniedBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_access_denied::de_access_denied_xml_err(
                         response.body().as_ref(),
                         output,
                     )
-                    .map_err(crate::error::ListInvalidationsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "NoSuchDistribution" => crate::error::ListInvalidationsError::NoSuchDistribution({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                    .map_err(
+                        crate::operation::list_invalidations::ListInvalidationsError::unhandled,
+                    )?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidArgument" => {
+            crate::operation::list_invalidations::ListInvalidationsError::InvalidArgument({
                 #[allow(unused_mut)]
-                let mut output = crate::error::no_such_distribution::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_no_such_distribution::de_no_such_distribution_xml_err(response.body().as_ref(), output).map_err(crate::error::ListInvalidationsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::ListInvalidationsError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InvalidArgumentBuilder::default();
+                    let _ = response;
+                    output =
+                        crate::protocol_serde::shape_invalid_argument::de_invalid_argument_xml_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(
+                            crate::operation::list_invalidations::ListInvalidationsError::unhandled,
+                        )?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "NoSuchDistribution" => {
+            crate::operation::list_invalidations::ListInvalidationsError::NoSuchDistribution({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::NoSuchDistributionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_no_such_distribution::de_no_such_distribution_xml_err(response.body().as_ref(), output).map_err(crate::operation::list_invalidations::ListInvalidationsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::list_invalidations::ListInvalidationsError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_invalidations_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListInvalidationsOutput, crate::error::ListInvalidationsError>
-{
+) -> std::result::Result<
+    crate::operation::list_invalidations::ListInvalidationsOutput,
+    crate::operation::list_invalidations::ListInvalidationsError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_invalidations_output::Builder::default();
+        let mut output =
+            crate::operation::list_invalidations::builders::ListInvalidationsOutputBuilder::default(
+            );
         let _ = response;
         output = output.set_invalidation_list(
             crate::protocol_serde::shape_list_invalidations_output::de_invalidation_list_payload(

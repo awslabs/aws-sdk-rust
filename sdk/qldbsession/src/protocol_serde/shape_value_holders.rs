@@ -2,7 +2,7 @@
 pub(crate) fn de_value_holders<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ValueHolder>>,
+    Option<std::vec::Vec<crate::types::ValueHolder>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

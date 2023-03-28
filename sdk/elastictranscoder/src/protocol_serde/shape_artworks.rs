@@ -2,7 +2,7 @@
 pub(crate) fn de_artworks<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Artwork>>,
+    Option<std::vec::Vec<crate::types::Artwork>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

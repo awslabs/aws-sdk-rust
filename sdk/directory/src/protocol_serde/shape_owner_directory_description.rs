@@ -2,7 +2,7 @@
 pub(crate) fn de_owner_directory_description<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::OwnerDirectoryDescription>,
+    Option<crate::types::OwnerDirectoryDescription>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::owner_directory_description::Builder::default();
+            let mut builder = crate::types::builders::OwnerDirectoryDescriptionBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -65,7 +65,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::RadiusStatus::from(u.as_ref()))
+                                            .map(|u| crate::types::RadiusStatus::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

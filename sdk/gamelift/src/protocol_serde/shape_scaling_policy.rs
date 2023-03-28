@@ -2,7 +2,7 @@
 pub(crate) fn de_scaling_policy<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ScalingPolicy>,
+    Option<crate::types::ScalingPolicy>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::scaling_policy::Builder::default();
+            let mut builder = crate::types::builders::ScalingPolicyBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -57,7 +57,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ScalingStatusType::from(u.as_ref())
+                                            crate::types::ScalingStatusType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -79,7 +79,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ScalingAdjustmentType::from(u.as_ref())
+                                            crate::types::ScalingAdjustmentType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -92,7 +92,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ComparisonOperatorType::from(u.as_ref())
+                                            crate::types::ComparisonOperatorType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -122,7 +122,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::MetricName::from(u.as_ref()))
+                                            .map(|u| crate::types::MetricName::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -134,7 +134,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::PolicyType::from(u.as_ref()))
+                                            .map(|u| crate::types::PolicyType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -151,7 +151,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::LocationUpdateStatus::from(u.as_ref())
+                                            crate::types::LocationUpdateStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

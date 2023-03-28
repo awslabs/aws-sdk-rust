@@ -3,7 +3,7 @@ pub(crate) fn de_audit_mitigation_actions_task_statistics<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<
-        std::collections::HashMap<std::string::String, crate::model::TaskStatisticsForAuditCheck>,
+        std::collections::HashMap<std::string::String, crate::types::TaskStatisticsForAuditCheck>,
     >,
     aws_smithy_json::deserialize::error::DeserializeError,
 >

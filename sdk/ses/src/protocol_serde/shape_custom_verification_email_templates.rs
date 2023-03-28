@@ -2,7 +2,7 @@
 pub fn de_custom_verification_email_templates(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::CustomVerificationEmailTemplate>,
+    std::vec::Vec<crate::types::CustomVerificationEmailTemplate>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

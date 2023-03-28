@@ -2,7 +2,7 @@
 pub(crate) fn de_email_configurations<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::EmailConfiguration>>,
+    Option<std::vec::Vec<crate::types::EmailConfiguration>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

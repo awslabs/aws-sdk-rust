@@ -4,17 +4,17 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>Concurrent updates caused an exception, for example, if you request an update to a scaling plan that already has a pending update.</p>
-    ConcurrentUpdateException(crate::error::ConcurrentUpdateException),
+    ConcurrentUpdateException(crate::types::error::ConcurrentUpdateException),
     /// <p>The service encountered an internal error.</p>
-    InternalServiceException(crate::error::InternalServiceException),
+    InternalServiceException(crate::types::error::InternalServiceException),
     /// <p>The token provided is not valid.</p>
-    InvalidNextTokenException(crate::error::InvalidNextTokenException),
+    InvalidNextTokenException(crate::types::error::InvalidNextTokenException),
     /// <p>Your account exceeded a limit. This exception is thrown when a per-account resource limit is exceeded.</p>
-    LimitExceededException(crate::error::LimitExceededException),
+    LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>The specified object could not be found.</p>
-    ObjectNotFoundException(crate::error::ObjectNotFoundException),
+    ObjectNotFoundException(crate::types::error::ObjectNotFoundException),
     /// <p>An exception was thrown for a validation issue. Review the parameters provided.</p>
-    ValidationException(crate::error::ValidationException),
+    ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled),
 }
@@ -31,184 +31,19 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateScalingPlanError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateScalingPlanError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::CreateScalingPlanError> for Error {
-    fn from(err: crate::error::CreateScalingPlanError) -> Self {
-        match err {
-            crate::error::CreateScalingPlanError::ConcurrentUpdateException(inner) => {
-                Error::ConcurrentUpdateException(inner)
-            }
-            crate::error::CreateScalingPlanError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::CreateScalingPlanError::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::CreateScalingPlanError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::CreateScalingPlanError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteScalingPlanError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteScalingPlanError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DeleteScalingPlanError> for Error {
-    fn from(err: crate::error::DeleteScalingPlanError) -> Self {
-        match err {
-            crate::error::DeleteScalingPlanError::ConcurrentUpdateException(inner) => {
-                Error::ConcurrentUpdateException(inner)
-            }
-            crate::error::DeleteScalingPlanError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DeleteScalingPlanError::ObjectNotFoundException(inner) => {
-                Error::ObjectNotFoundException(inner)
-            }
-            crate::error::DeleteScalingPlanError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::DeleteScalingPlanError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeScalingPlanResourcesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeScalingPlanResourcesError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribeScalingPlanResourcesError> for Error {
-    fn from(err: crate::error::DescribeScalingPlanResourcesError) -> Self {
-        match err {
-            crate::error::DescribeScalingPlanResourcesError::ConcurrentUpdateException(inner) => {
-                Error::ConcurrentUpdateException(inner)
-            }
-            crate::error::DescribeScalingPlanResourcesError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DescribeScalingPlanResourcesError::InvalidNextTokenException(inner) => {
-                Error::InvalidNextTokenException(inner)
-            }
-            crate::error::DescribeScalingPlanResourcesError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::DescribeScalingPlanResourcesError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeScalingPlansError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeScalingPlansError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribeScalingPlansError> for Error {
-    fn from(err: crate::error::DescribeScalingPlansError) -> Self {
-        match err {
-            crate::error::DescribeScalingPlansError::ConcurrentUpdateException(inner) => {
-                Error::ConcurrentUpdateException(inner)
-            }
-            crate::error::DescribeScalingPlansError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::DescribeScalingPlansError::InvalidNextTokenException(inner) => {
-                Error::InvalidNextTokenException(inner)
-            }
-            crate::error::DescribeScalingPlansError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::DescribeScalingPlansError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
 impl<R>
     From<
-        aws_smithy_http::result::SdkError<crate::error::GetScalingPlanResourceForecastDataError, R>,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_scaling_plan::CreateScalingPlanError,
+            R,
+        >,
     > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::GetScalingPlanResourceForecastDataError,
+            crate::operation::create_scaling_plan::CreateScalingPlanError,
             R,
         >,
     ) -> Self {
@@ -227,27 +62,32 @@ where
         }
     }
 }
-impl From<crate::error::GetScalingPlanResourceForecastDataError> for Error {
-    fn from(err: crate::error::GetScalingPlanResourceForecastDataError) -> Self {
+impl From<crate::operation::create_scaling_plan::CreateScalingPlanError> for Error {
+    fn from(err: crate::operation::create_scaling_plan::CreateScalingPlanError) -> Self {
         match err {
-            crate::error::GetScalingPlanResourceForecastDataError::InternalServiceException(
-                inner,
-            ) => Error::InternalServiceException(inner),
-            crate::error::GetScalingPlanResourceForecastDataError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::GetScalingPlanResourceForecastDataError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::create_scaling_plan::CreateScalingPlanError::ConcurrentUpdateException(inner) => Error::ConcurrentUpdateException(inner),
+            crate::operation::create_scaling_plan::CreateScalingPlanError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::create_scaling_plan::CreateScalingPlanError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_scaling_plan::CreateScalingPlanError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_scaling_plan::CreateScalingPlanError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateScalingPlanError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_scaling_plan::DeleteScalingPlanError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateScalingPlanError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_scaling_plan::DeleteScalingPlanError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -264,22 +104,166 @@ where
         }
     }
 }
-impl From<crate::error::UpdateScalingPlanError> for Error {
-    fn from(err: crate::error::UpdateScalingPlanError) -> Self {
+impl From<crate::operation::delete_scaling_plan::DeleteScalingPlanError> for Error {
+    fn from(err: crate::operation::delete_scaling_plan::DeleteScalingPlanError) -> Self {
         match err {
-            crate::error::UpdateScalingPlanError::ConcurrentUpdateException(inner) => {
-                Error::ConcurrentUpdateException(inner)
+            crate::operation::delete_scaling_plan::DeleteScalingPlanError::ConcurrentUpdateException(inner) => Error::ConcurrentUpdateException(inner),
+            crate::operation::delete_scaling_plan::DeleteScalingPlanError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::delete_scaling_plan::DeleteScalingPlanError::ObjectNotFoundException(inner) => Error::ObjectNotFoundException(inner),
+            crate::operation::delete_scaling_plan::DeleteScalingPlanError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_scaling_plan::DeleteScalingPlanError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_scaling_plan_resources::DescribeScalingPlanResourcesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_scaling_plan_resources::DescribeScalingPlanResourcesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
-            crate::error::UpdateScalingPlanError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_scaling_plan_resources::DescribeScalingPlanResourcesError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_scaling_plan_resources::DescribeScalingPlanResourcesError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_scaling_plan_resources::DescribeScalingPlanResourcesError::ConcurrentUpdateException(inner) => Error::ConcurrentUpdateException(inner),
+            crate::operation::describe_scaling_plan_resources::DescribeScalingPlanResourcesError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::describe_scaling_plan_resources::DescribeScalingPlanResourcesError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::describe_scaling_plan_resources::DescribeScalingPlanResourcesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::describe_scaling_plan_resources::DescribeScalingPlanResourcesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_scaling_plans::DescribeScalingPlansError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_scaling_plans::DescribeScalingPlansError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
-            crate::error::UpdateScalingPlanError::ObjectNotFoundException(inner) => {
-                Error::ObjectNotFoundException(inner)
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_scaling_plans::DescribeScalingPlansError> for Error {
+    fn from(err: crate::operation::describe_scaling_plans::DescribeScalingPlansError) -> Self {
+        match err {
+            crate::operation::describe_scaling_plans::DescribeScalingPlansError::ConcurrentUpdateException(inner) => Error::ConcurrentUpdateException(inner),
+            crate::operation::describe_scaling_plans::DescribeScalingPlansError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::describe_scaling_plans::DescribeScalingPlansError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::describe_scaling_plans::DescribeScalingPlansError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::describe_scaling_plans::DescribeScalingPlansError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_scaling_plan_resource_forecast_data::GetScalingPlanResourceForecastDataError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_scaling_plan_resource_forecast_data::GetScalingPlanResourceForecastDataError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::get_scaling_plan_resource_forecast_data::GetScalingPlanResourceForecastDataError> for Error {
+    fn from(err: crate::operation::get_scaling_plan_resource_forecast_data::GetScalingPlanResourceForecastDataError) -> Self {
+        match err {
+            crate::operation::get_scaling_plan_resource_forecast_data::GetScalingPlanResourceForecastDataError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::get_scaling_plan_resource_forecast_data::GetScalingPlanResourceForecastDataError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_scaling_plan_resource_forecast_data::GetScalingPlanResourceForecastDataError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_scaling_plan::UpdateScalingPlanError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_scaling_plan::UpdateScalingPlanError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
-            crate::error::UpdateScalingPlanError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::UpdateScalingPlanError::Unhandled(inner) => Error::Unhandled(inner),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_scaling_plan::UpdateScalingPlanError> for Error {
+    fn from(err: crate::operation::update_scaling_plan::UpdateScalingPlanError) -> Self {
+        match err {
+            crate::operation::update_scaling_plan::UpdateScalingPlanError::ConcurrentUpdateException(inner) => Error::ConcurrentUpdateException(inner),
+            crate::operation::update_scaling_plan::UpdateScalingPlanError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::update_scaling_plan::UpdateScalingPlanError::ObjectNotFoundException(inner) => Error::ObjectNotFoundException(inner),
+            crate::operation::update_scaling_plan::UpdateScalingPlanError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_scaling_plan::UpdateScalingPlanError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

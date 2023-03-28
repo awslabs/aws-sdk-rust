@@ -2,7 +2,7 @@
 pub fn de_platform_programming_languages(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::PlatformProgrammingLanguage>,
+    std::vec::Vec<crate::types::PlatformProgrammingLanguage>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

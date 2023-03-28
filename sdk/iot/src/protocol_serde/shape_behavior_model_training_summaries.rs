@@ -2,7 +2,7 @@
 pub(crate) fn de_behavior_model_training_summaries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::BehaviorModelTrainingSummary>>,
+    Option<std::vec::Vec<crate::types::BehaviorModelTrainingSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

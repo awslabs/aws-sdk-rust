@@ -2,7 +2,7 @@
 pub(crate) fn de_batch_delete_document_response_failed_documents<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::BatchDeleteDocumentResponseFailedDocument>>,
+    Option<std::vec::Vec<crate::types::BatchDeleteDocumentResponseFailedDocument>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

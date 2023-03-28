@@ -2,30 +2,37 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_change_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetChangeOutput, crate::error::GetChangeError> {
+) -> std::result::Result<
+    crate::operation::get_change::GetChangeOutput,
+    crate::operation::get_change::GetChangeError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetChangeError::unhandled)?;
+        .map_err(crate::operation::get_change::GetChangeError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::GetChangeError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::get_change::GetChangeError::unhandled(
+                generic,
+            ))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidInput" => crate::error::GetChangeError::InvalidInput({
+        "InvalidInput" => crate::operation::get_change::GetChangeError::InvalidInput({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_input::Builder::default();
+                let mut output = crate::types::error::builders::InvalidInputBuilder::default();
                 let _ = response;
                 output = crate::protocol_serde::shape_invalid_input::de_invalid_input_xml_err(
                     response.body().as_ref(),
                     output,
                 )
-                .map_err(crate::error::GetChangeError::unhandled)?;
+                .map_err(crate::operation::get_change::GetChangeError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -34,17 +41,17 @@ pub fn de_get_change_http_error(
             }
             tmp
         }),
-        "NoSuchChange" => crate::error::GetChangeError::NoSuchChange({
+        "NoSuchChange" => crate::operation::get_change::GetChangeError::NoSuchChange({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::error::no_such_change::Builder::default();
+                let mut output = crate::types::error::builders::NoSuchChangeBuilder::default();
                 let _ = response;
                 output = crate::protocol_serde::shape_no_such_change::de_no_such_change_xml_err(
                     response.body().as_ref(),
                     output,
                 )
-                .map_err(crate::error::GetChangeError::unhandled)?;
+                .map_err(crate::operation::get_change::GetChangeError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -53,23 +60,26 @@ pub fn de_get_change_http_error(
             }
             tmp
         }),
-        _ => crate::error::GetChangeError::generic(generic),
+        _ => crate::operation::get_change::GetChangeError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_change_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetChangeOutput, crate::error::GetChangeError> {
+) -> std::result::Result<
+    crate::operation::get_change::GetChangeOutput,
+    crate::operation::get_change::GetChangeError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_change_output::Builder::default();
+        let mut output = crate::operation::get_change::builders::GetChangeOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_get_change::de_get_change(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::GetChangeError::unhandled)?;
+        .map_err(crate::operation::get_change::GetChangeError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -80,8 +90,11 @@ pub fn de_get_change_http_response(
 #[allow(unused_mut)]
 pub fn de_get_change(
     inp: &[u8],
-    mut builder: crate::output::get_change_output::Builder,
-) -> Result<crate::output::get_change_output::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    mut builder: crate::operation::get_change::builders::GetChangeOutputBuilder,
+) -> Result<
+    crate::operation::get_change::builders::GetChangeOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

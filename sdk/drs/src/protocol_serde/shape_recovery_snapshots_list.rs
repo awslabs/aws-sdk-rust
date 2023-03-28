@@ -2,7 +2,7 @@
 pub(crate) fn de_recovery_snapshots_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::RecoverySnapshot>>,
+    Option<std::vec::Vec<crate::types::RecoverySnapshot>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

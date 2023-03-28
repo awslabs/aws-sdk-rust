@@ -2,58 +2,33 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_topic_rules_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListTopicRulesOutput, crate::error::ListTopicRulesError> {
+) -> std::result::Result<
+    crate::operation::list_topic_rules::ListTopicRulesOutput,
+    crate::operation::list_topic_rules::ListTopicRulesError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListTopicRulesError::unhandled)?;
+        .map_err(crate::operation::list_topic_rules::ListTopicRulesError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListTopicRulesError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::list_topic_rules::ListTopicRulesError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalException" => crate::error::ListTopicRulesError::InternalException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_exception::de_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTopicRulesError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InvalidRequestException" => crate::error::ListTopicRulesError::InvalidRequestException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::invalid_request_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTopicRulesError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ServiceUnavailableException" => {
-            crate::error::ListTopicRulesError::ServiceUnavailableException({
+        "InternalException" => {
+            crate::operation::list_topic_rules::ListTopicRulesError::InternalException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::service_unavailable_exception::Builder::default();
+                        crate::types::error::builders::InternalExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTopicRulesError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_exception::de_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_topic_rules::ListTopicRulesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -63,23 +38,64 @@ pub fn de_list_topic_rules_http_error(
                 tmp
             })
         }
-        _ => crate::error::ListTopicRulesError::generic(generic),
+        "InvalidRequestException" => {
+            crate::operation::list_topic_rules::ListTopicRulesError::InvalidRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InvalidRequestExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_topic_rules::ListTopicRulesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::operation::list_topic_rules::ListTopicRulesError::ServiceUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ServiceUnavailableExceptionBuilder::default(
+                        );
+                    let _ = response;
+                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_topic_rules::ListTopicRulesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::list_topic_rules::ListTopicRulesError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_topic_rules_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListTopicRulesOutput, crate::error::ListTopicRulesError> {
+) -> std::result::Result<
+    crate::operation::list_topic_rules::ListTopicRulesOutput,
+    crate::operation::list_topic_rules::ListTopicRulesError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_topic_rules_output::Builder::default();
+        let mut output =
+            crate::operation::list_topic_rules::builders::ListTopicRulesOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_topic_rules::de_list_topic_rules(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListTopicRulesError::unhandled)?;
+        .map_err(crate::operation::list_topic_rules::ListTopicRulesError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -89,9 +105,9 @@ pub fn de_list_topic_rules_http_response(
 
 pub(crate) fn de_list_topic_rules(
     value: &[u8],
-    mut builder: crate::output::list_topic_rules_output::Builder,
+    mut builder: crate::operation::list_topic_rules::builders::ListTopicRulesOutputBuilder,
 ) -> Result<
-    crate::output::list_topic_rules_output::Builder,
+    crate::operation::list_topic_rules::builders::ListTopicRulesOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

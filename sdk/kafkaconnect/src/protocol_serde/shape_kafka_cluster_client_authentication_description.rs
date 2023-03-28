@@ -2,7 +2,7 @@
 pub(crate) fn de_kafka_cluster_client_authentication_description<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::KafkaClusterClientAuthenticationDescription>,
+    Option<crate::types::KafkaClusterClientAuthenticationDescription>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,8 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::kafka_cluster_client_authentication_description::Builder::default();
+                crate::types::builders::KafkaClusterClientAuthenticationDescriptionBuilder::default(
+                );
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -28,7 +29,7 @@ where
                                 builder = builder.set_authentication_type(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?.map(|s|
                                         s.to_unescaped().map(|u|
-                                            crate::model::KafkaClusterClientAuthenticationType::from(u.as_ref())
+                                            crate::types::KafkaClusterClientAuthenticationType::from(u.as_ref())
                                         )
                                     ).transpose()?
                                 );

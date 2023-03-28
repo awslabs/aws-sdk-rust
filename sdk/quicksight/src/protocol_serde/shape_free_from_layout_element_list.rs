@@ -2,7 +2,7 @@
 pub(crate) fn de_free_from_layout_element_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::FreeFormLayoutElement>>,
+    Option<std::vec::Vec<crate::types::FreeFormLayoutElement>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

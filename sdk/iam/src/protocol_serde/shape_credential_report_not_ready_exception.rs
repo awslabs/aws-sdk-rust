@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_credential_report_not_ready_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::credential_report_not_ready_exception::Builder,
+    mut builder: crate::types::error::builders::CredentialReportNotReadyExceptionBuilder,
 ) -> Result<
-    crate::error::credential_report_not_ready_exception::Builder,
+    crate::types::error::builders::CredentialReportNotReadyExceptionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

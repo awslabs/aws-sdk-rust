@@ -2,7 +2,7 @@
 pub(crate) fn de_service_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ServiceSummary>,
+    Option<crate::types::ServiceSummary>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::service_summary::Builder::default();
+            let mut builder = crate::types::builders::ServiceSummaryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -111,7 +111,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ServiceEndpointType::from(u.as_ref())
+                                            crate::types::ServiceEndpointType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -134,7 +134,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::ServiceState::from(u.as_ref()))
+                                            .map(|u| crate::types::ServiceState::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

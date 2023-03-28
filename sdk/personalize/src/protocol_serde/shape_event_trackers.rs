@@ -2,7 +2,7 @@
 pub(crate) fn de_event_trackers<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::EventTrackerSummary>>,
+    Option<std::vec::Vec<crate::types::EventTrackerSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

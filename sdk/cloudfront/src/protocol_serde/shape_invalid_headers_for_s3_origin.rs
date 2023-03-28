@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_invalid_headers_for_s3_origin_xml_err(
     inp: &[u8],
-    mut builder: crate::error::invalid_headers_for_s3_origin::Builder,
+    mut builder: crate::types::error::builders::InvalidHeadersForS3OriginBuilder,
 ) -> Result<
-    crate::error::invalid_headers_for_s3_origin::Builder,
+    crate::types::error::builders::InvalidHeadersForS3OriginBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

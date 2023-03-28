@@ -2,7 +2,7 @@
 pub(crate) fn de_aws_dynamo_db_table_local_secondary_index_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AwsDynamoDbTableLocalSecondaryIndex>>,
+    Option<std::vec::Vec<crate::types::AwsDynamoDbTableLocalSecondaryIndex>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

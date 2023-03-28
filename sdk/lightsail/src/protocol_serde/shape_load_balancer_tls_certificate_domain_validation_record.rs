@@ -2,7 +2,7 @@
 pub(crate) fn de_load_balancer_tls_certificate_domain_validation_record<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::LoadBalancerTlsCertificateDomainValidationRecord>,
+    Option<crate::types::LoadBalancerTlsCertificateDomainValidationRecord>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::load_balancer_tls_certificate_domain_validation_record::Builder::default();
+            let mut builder = crate::types::builders::LoadBalancerTlsCertificateDomainValidationRecordBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -54,7 +54,7 @@ where
                                 builder = builder.set_validation_status(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?.map(|s|
                                         s.to_unescaped().map(|u|
-                                            crate::model::LoadBalancerTlsCertificateDomainStatus::from(u.as_ref())
+                                            crate::types::LoadBalancerTlsCertificateDomainStatus::from(u.as_ref())
                                         )
                                     ).transpose()?
                                 );

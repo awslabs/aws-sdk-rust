@@ -2,7 +2,7 @@
 pub(crate) fn de_recommendation_related_events<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::RecommendationRelatedEvent>>,
+    Option<std::vec::Vec<crate::types::RecommendationRelatedEvent>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

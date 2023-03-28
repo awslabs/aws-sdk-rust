@@ -2,7 +2,7 @@
 pub(crate) fn de_slot_priorities_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SlotPriority>>,
+    Option<std::vec::Vec<crate::types::SlotPriority>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

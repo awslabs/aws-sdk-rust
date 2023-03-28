@@ -2,7 +2,7 @@
 pub(crate) fn de_crl_details<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CrlDetail>>,
+    Option<std::vec::Vec<crate::types::CrlDetail>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

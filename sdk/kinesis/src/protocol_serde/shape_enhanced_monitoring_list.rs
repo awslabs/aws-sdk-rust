@@ -2,7 +2,7 @@
 pub(crate) fn de_enhanced_monitoring_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::EnhancedMetrics>>,
+    Option<std::vec::Vec<crate::types::EnhancedMetrics>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

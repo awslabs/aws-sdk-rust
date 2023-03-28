@@ -2,7 +2,7 @@
 pub(crate) fn de_byoip_cidrs<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ByoipCidr>>,
+    Option<std::vec::Vec<crate::types::ByoipCidr>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

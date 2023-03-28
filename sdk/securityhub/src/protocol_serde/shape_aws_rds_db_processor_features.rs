@@ -2,7 +2,7 @@
 pub(crate) fn de_aws_rds_db_processor_features<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AwsRdsDbProcessorFeature>>,
+    Option<std::vec::Vec<crate::types::AwsRdsDbProcessorFeature>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

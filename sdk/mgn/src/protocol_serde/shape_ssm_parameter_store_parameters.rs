@@ -2,7 +2,7 @@
 pub(crate) fn de_ssm_parameter_store_parameters<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SsmParameterStoreParameter>>,
+    Option<std::vec::Vec<crate::types::SsmParameterStoreParameter>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

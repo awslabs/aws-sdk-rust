@@ -3,33 +3,33 @@
 pub fn de_modify_vpn_connection_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ModifyVpnConnectionOutput,
-    crate::error::ModifyVpnConnectionError,
+    crate::operation::modify_vpn_connection::ModifyVpnConnectionOutput,
+    crate::operation::modify_vpn_connection::ModifyVpnConnectionError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ModifyVpnConnectionError::unhandled)?;
+        .map_err(crate::operation::modify_vpn_connection::ModifyVpnConnectionError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::ModifyVpnConnectionError::generic(generic))
+    Err(crate::operation::modify_vpn_connection::ModifyVpnConnectionError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_modify_vpn_connection_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ModifyVpnConnectionOutput,
-    crate::error::ModifyVpnConnectionError,
+    crate::operation::modify_vpn_connection::ModifyVpnConnectionOutput,
+    crate::operation::modify_vpn_connection::ModifyVpnConnectionError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::modify_vpn_connection_output::Builder::default();
+        let mut output = crate::operation::modify_vpn_connection::builders::ModifyVpnConnectionOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_modify_vpn_connection::de_modify_vpn_connection(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ModifyVpnConnectionError::unhandled)?;
+        .map_err(crate::operation::modify_vpn_connection::ModifyVpnConnectionError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -40,9 +40,9 @@ pub fn de_modify_vpn_connection_http_response(
 #[allow(unused_mut)]
 pub fn de_modify_vpn_connection(
     inp: &[u8],
-    mut builder: crate::output::modify_vpn_connection_output::Builder,
+    mut builder: crate::operation::modify_vpn_connection::builders::ModifyVpnConnectionOutputBuilder,
 ) -> Result<
-    crate::output::modify_vpn_connection_output::Builder,
+    crate::operation::modify_vpn_connection::builders::ModifyVpnConnectionOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

@@ -2,7 +2,7 @@
 pub(crate) fn de_batch_describe_merge_conflicts_errors<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::BatchDescribeMergeConflictsError>>,
+    Option<std::vec::Vec<crate::types::BatchDescribeMergeConflictsError>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

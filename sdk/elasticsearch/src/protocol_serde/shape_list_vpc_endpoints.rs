@@ -2,47 +2,41 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_vpc_endpoints_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListVpcEndpointsOutput, crate::error::ListVpcEndpointsError>
-{
+) -> std::result::Result<
+    crate::operation::list_vpc_endpoints::ListVpcEndpointsOutput,
+    crate::operation::list_vpc_endpoints::ListVpcEndpointsError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListVpcEndpointsError::unhandled)?;
+        .map_err(crate::operation::list_vpc_endpoints::ListVpcEndpointsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListVpcEndpointsError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::list_vpc_endpoints::ListVpcEndpointsError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BaseException" => crate::error::ListVpcEndpointsError::BaseException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::base_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_base_exception::de_base_exception_json_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::ListVpcEndpointsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "DisabledOperationException" => {
-            crate::error::ListVpcEndpointsError::DisabledOperationException({
+        "BaseException" => {
+            crate::operation::list_vpc_endpoints::ListVpcEndpointsError::BaseException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::disabled_operation_exception::Builder::default();
+                    let mut output = crate::types::error::builders::BaseExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_disabled_operation_exception::de_disabled_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListVpcEndpointsError::unhandled)?;
+                    output =
+                        crate::protocol_serde::shape_base_exception::de_base_exception_json_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(
+                            crate::operation::list_vpc_endpoints::ListVpcEndpointsError::unhandled,
+                        )?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -52,39 +46,65 @@ pub fn de_list_vpc_endpoints_http_error(
                 tmp
             })
         }
-        "InternalException" => crate::error::ListVpcEndpointsError::InternalException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "DisabledOperationException" => {
+            crate::operation::list_vpc_endpoints::ListVpcEndpointsError::DisabledOperationException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::DisabledOperationExceptionBuilder::default();
+                        let _ = response;
+                        output = crate::protocol_serde::shape_disabled_operation_exception::de_disabled_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_vpc_endpoints::ListVpcEndpointsError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        "InternalException" => {
+            crate::operation::list_vpc_endpoints::ListVpcEndpointsError::InternalException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_exception::de_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListVpcEndpointsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::ListVpcEndpointsError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InternalExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_exception::de_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_vpc_endpoints::ListVpcEndpointsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::list_vpc_endpoints::ListVpcEndpointsError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_vpc_endpoints_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListVpcEndpointsOutput, crate::error::ListVpcEndpointsError>
-{
+) -> std::result::Result<
+    crate::operation::list_vpc_endpoints::ListVpcEndpointsOutput,
+    crate::operation::list_vpc_endpoints::ListVpcEndpointsError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_vpc_endpoints_output::Builder::default();
+        let mut output =
+            crate::operation::list_vpc_endpoints::builders::ListVpcEndpointsOutputBuilder::default(
+            );
         let _ = response;
         output = crate::protocol_serde::shape_list_vpc_endpoints::de_list_vpc_endpoints(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListVpcEndpointsError::unhandled)?;
+        .map_err(crate::operation::list_vpc_endpoints::ListVpcEndpointsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -94,9 +114,9 @@ pub fn de_list_vpc_endpoints_http_response(
 
 pub(crate) fn de_list_vpc_endpoints(
     value: &[u8],
-    mut builder: crate::output::list_vpc_endpoints_output::Builder,
+    mut builder: crate::operation::list_vpc_endpoints::builders::ListVpcEndpointsOutputBuilder,
 ) -> Result<
-    crate::output::list_vpc_endpoints_output::Builder,
+    crate::operation::list_vpc_endpoints::builders::ListVpcEndpointsOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

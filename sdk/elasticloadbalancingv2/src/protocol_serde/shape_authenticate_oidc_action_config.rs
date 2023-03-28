@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_authenticate_oidc_action_config(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::AuthenticateOidcActionConfig,
+    input: &crate::types::AuthenticateOidcActionConfig,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Issuer");
@@ -80,9 +80,9 @@ pub fn ser_authenticate_oidc_action_config(
 
 pub fn de_authenticate_oidc_action_config(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::AuthenticateOidcActionConfig, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::AuthenticateOidcActionConfig, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::AuthenticateOidcActionConfig::builder();
+    let mut builder = crate::types::AuthenticateOidcActionConfig::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Issuer") /* Issuer com.amazonaws.elasticloadbalancingv2#AuthenticateOidcActionConfig$Issuer */ =>  {
@@ -217,8 +217,8 @@ pub fn de_authenticate_oidc_action_config(
             s if s.matches("OnUnauthenticatedRequest") /* OnUnauthenticatedRequest com.amazonaws.elasticloadbalancingv2#AuthenticateOidcActionConfig$OnUnauthenticatedRequest */ =>  {
                 let var_39 =
                     Some(
-                        Result::<crate::model::AuthenticateOidcActionConditionalBehaviorEnum, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::AuthenticateOidcActionConditionalBehaviorEnum::from(
+                        Result::<crate::types::AuthenticateOidcActionConditionalBehaviorEnum, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::AuthenticateOidcActionConditionalBehaviorEnum::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

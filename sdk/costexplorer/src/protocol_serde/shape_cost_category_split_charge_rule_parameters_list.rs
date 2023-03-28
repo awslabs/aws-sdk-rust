@@ -2,7 +2,7 @@
 pub(crate) fn de_cost_category_split_charge_rule_parameters_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CostCategorySplitChargeRuleParameter>>,
+    Option<std::vec::Vec<crate::types::CostCategorySplitChargeRuleParameter>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

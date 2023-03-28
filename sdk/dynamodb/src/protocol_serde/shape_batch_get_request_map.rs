@@ -2,7 +2,7 @@
 pub(crate) fn de_batch_get_request_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<std::string::String, crate::model::KeysAndAttributes>>,
+    Option<std::collections::HashMap<std::string::String, crate::types::KeysAndAttributes>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

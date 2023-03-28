@@ -2,7 +2,7 @@
 pub(crate) fn de_event_source_mapping_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::EventSourceMappingConfiguration>,
+    Option<crate::types::EventSourceMappingConfiguration>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::event_source_mapping_configuration::Builder::default();
+            let mut builder =
+                crate::types::builders::EventSourceMappingConfigurationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -39,7 +40,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::EventSourcePosition::from(u.as_ref())
+                                            crate::types::EventSourcePosition::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

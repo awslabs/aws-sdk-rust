@@ -2,7 +2,7 @@
 pub fn de_local_gateway_virtual_interface_set(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::LocalGatewayVirtualInterface>,
+    std::vec::Vec<crate::types::LocalGatewayVirtualInterface>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

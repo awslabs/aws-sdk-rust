@@ -2,7 +2,7 @@
 pub(crate) fn de_aws_ec2_security_group_ip_permission_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AwsEc2SecurityGroupIpPermission>>,
+    Option<std::vec::Vec<crate::types::AwsEc2SecurityGroupIpPermission>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

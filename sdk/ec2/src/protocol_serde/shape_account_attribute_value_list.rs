@@ -2,7 +2,7 @@
 pub fn de_account_attribute_value_list(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::AccountAttributeValue>,
+    std::vec::Vec<crate::types::AccountAttributeValue>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

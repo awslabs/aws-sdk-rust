@@ -2,7 +2,7 @@
 pub(crate) fn de_fulfillment_update_response_specification<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::FulfillmentUpdateResponseSpecification>,
+    Option<crate::types::FulfillmentUpdateResponseSpecification>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::fulfillment_update_response_specification::Builder::default();
+                crate::types::builders::FulfillmentUpdateResponseSpecificationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -70,7 +70,7 @@ where
 
 pub fn ser_fulfillment_update_response_specification(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::FulfillmentUpdateResponseSpecification,
+    input: &crate::types::FulfillmentUpdateResponseSpecification,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.frequency_in_seconds {
         object.key("frequencyInSeconds").number(

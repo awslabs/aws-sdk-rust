@@ -2,7 +2,7 @@
 pub(crate) fn de_http_gateway_route_headers<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::HttpGatewayRouteHeader>>,
+    Option<std::vec::Vec<crate::types::HttpGatewayRouteHeader>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

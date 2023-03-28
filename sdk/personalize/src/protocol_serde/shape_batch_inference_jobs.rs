@@ -2,7 +2,7 @@
 pub(crate) fn de_batch_inference_jobs<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::BatchInferenceJobSummary>>,
+    Option<std::vec::Vec<crate::types::BatchInferenceJobSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_dnssec_key_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DnssecKey>>,
+    Option<std::vec::Vec<crate::types::DnssecKey>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

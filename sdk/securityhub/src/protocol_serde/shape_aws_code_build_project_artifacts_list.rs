@@ -2,7 +2,7 @@
 pub(crate) fn de_aws_code_build_project_artifacts_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AwsCodeBuildProjectArtifactsDetails>>,
+    Option<std::vec::Vec<crate::types::AwsCodeBuildProjectArtifactsDetails>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

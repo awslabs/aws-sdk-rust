@@ -2,7 +2,7 @@
 pub(crate) fn de_categorical_parameter_ranges<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CategoricalParameterRange>>,
+    Option<std::vec::Vec<crate::types::CategoricalParameterRange>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

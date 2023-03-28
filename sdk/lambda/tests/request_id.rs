@@ -3,9 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use aws_sdk_lambda::error::ListFunctionsError;
-use aws_sdk_lambda::operation::ListFunctions;
-use aws_sdk_lambda::types::RequestId;
+use aws_sdk_lambda::operation::list_functions::{ListFunctions, ListFunctionsError};
+use aws_sdk_lambda::operation::RequestId;
 use aws_smithy_http::response::ParseHttpResponse;
 use bytes::Bytes;
 

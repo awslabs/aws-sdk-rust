@@ -2,7 +2,7 @@
 pub(crate) fn de_job_events<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::JobEventDetails>>,
+    Option<std::vec::Vec<crate::types::JobEventDetails>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

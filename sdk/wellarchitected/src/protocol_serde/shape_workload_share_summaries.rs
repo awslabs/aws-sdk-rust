@@ -2,7 +2,7 @@
 pub(crate) fn de_workload_share_summaries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::WorkloadShareSummary>>,
+    Option<std::vec::Vec<crate::types::WorkloadShareSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

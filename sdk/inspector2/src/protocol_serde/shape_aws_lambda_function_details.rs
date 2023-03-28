@@ -2,7 +2,7 @@
 pub(crate) fn de_aws_lambda_function_details<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::AwsLambdaFunctionDetails>,
+    Option<crate::types::AwsLambdaFunctionDetails>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::aws_lambda_function_details::Builder::default();
+            let mut builder = crate::types::builders::AwsLambdaFunctionDetailsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -39,7 +39,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::Runtime::from(u.as_ref()))
+                                            .map(|u| crate::types::Runtime::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -88,7 +88,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::PackageType::from(u.as_ref()))
+                                            .map(|u| crate::types::PackageType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

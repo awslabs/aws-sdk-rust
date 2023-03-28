@@ -2,11 +2,11 @@
 pub fn de_launch_template_elastic_inference_accelerator_response(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    crate::model::LaunchTemplateElasticInferenceAcceleratorResponse,
+    crate::types::LaunchTemplateElasticInferenceAcceleratorResponse,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     #[allow(unused_mut)]
-    let mut builder = crate::model::LaunchTemplateElasticInferenceAcceleratorResponse::builder();
+    let mut builder = crate::types::LaunchTemplateElasticInferenceAcceleratorResponse::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("type") /* Type com.amazonaws.ec2#LaunchTemplateElasticInferenceAcceleratorResponse$Type */ =>  {

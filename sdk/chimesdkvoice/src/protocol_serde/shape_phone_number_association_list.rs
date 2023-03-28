@@ -2,7 +2,7 @@
 pub(crate) fn de_phone_number_association_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::PhoneNumberAssociation>>,
+    Option<std::vec::Vec<crate::types::PhoneNumberAssociation>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_alpn_policy_not_supported_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::alpn_policy_not_supported_exception::Builder,
+    mut builder: crate::types::error::builders::AlpnPolicyNotSupportedExceptionBuilder,
 ) -> Result<
-    crate::error::alpn_policy_not_supported_exception::Builder,
+    crate::types::error::builders::AlpnPolicyNotSupportedExceptionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

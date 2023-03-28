@@ -2,7 +2,7 @@
 pub(crate) fn de_firewall_rule_group_metadata_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::FirewallRuleGroupMetadata>>,
+    Option<std::vec::Vec<crate::types::FirewallRuleGroupMetadata>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

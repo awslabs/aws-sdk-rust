@@ -3,130 +3,123 @@
 pub fn de_list_app_instance_user_endpoints_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListAppInstanceUserEndpointsOutput,
-    crate::error::ListAppInstanceUserEndpointsError,
+    crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsOutput,
+    crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListAppInstanceUserEndpointsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::ListAppInstanceUserEndpointsError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => {
-            crate::error::ListAppInstanceUserEndpointsError::BadRequestException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "BadRequestException" => crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsError::BadRequestException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::bad_request_exception::Builder::default();
+                    let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAppInstanceUserEndpointsError::unhandled)?;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ForbiddenException" => {
-            crate::error::ListAppInstanceUserEndpointsError::ForbiddenException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ForbiddenException" => crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsError::ForbiddenException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::forbidden_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ForbiddenExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAppInstanceUserEndpointsError::unhandled)?;
+                    output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ServiceFailureException" => {
-            crate::error::ListAppInstanceUserEndpointsError::ServiceFailureException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ServiceFailureException" => crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ServiceFailureExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAppInstanceUserEndpointsError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ServiceUnavailableException" => {
-            crate::error::ListAppInstanceUserEndpointsError::ServiceUnavailableException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ServiceUnavailableException" => crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsError::ServiceUnavailableException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::service_unavailable_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAppInstanceUserEndpointsError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ThrottledClientException" => {
-            crate::error::ListAppInstanceUserEndpointsError::ThrottledClientException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ThrottledClientException" => crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsError::ThrottledClientException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::throttled_client_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ThrottledClientExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_throttled_client_exception::de_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAppInstanceUserEndpointsError::unhandled)?;
+                    output = crate::protocol_serde::shape_throttled_client_exception::de_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "UnauthorizedClientException" => {
-            crate::error::ListAppInstanceUserEndpointsError::UnauthorizedClientException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "UnauthorizedClientException" => crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsError::UnauthorizedClientException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::unauthorized_client_exception::Builder::default();
+                    let mut output = crate::types::error::builders::UnauthorizedClientExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_unauthorized_client_exception::de_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAppInstanceUserEndpointsError::unhandled)?;
+                    output = crate::protocol_serde::shape_unauthorized_client_exception::de_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::ListAppInstanceUserEndpointsError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsError::generic(generic)
     })
 }
 
@@ -134,14 +127,14 @@ pub fn de_list_app_instance_user_endpoints_http_error(
 pub fn de_list_app_instance_user_endpoints_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListAppInstanceUserEndpointsOutput,
-    crate::error::ListAppInstanceUserEndpointsError,
+    crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsOutput,
+    crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_app_instance_user_endpoints_output::Builder::default();
+        let mut output = crate::operation::list_app_instance_user_endpoints::builders::ListAppInstanceUserEndpointsOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_list_app_instance_user_endpoints::de_list_app_instance_user_endpoints(response.body().as_ref(), output).map_err(crate::error::ListAppInstanceUserEndpointsError::unhandled)?;
+        output = crate::protocol_serde::shape_list_app_instance_user_endpoints::de_list_app_instance_user_endpoints(response.body().as_ref(), output).map_err(crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -149,13 +142,7 @@ pub fn de_list_app_instance_user_endpoints_http_response(
     })
 }
 
-pub(crate) fn de_list_app_instance_user_endpoints(
-    value: &[u8],
-    mut builder: crate::output::list_app_instance_user_endpoints_output::Builder,
-) -> Result<
-    crate::output::list_app_instance_user_endpoints_output::Builder,
-    aws_smithy_json::deserialize::error::DeserializeError,
-> {
+pub(crate) fn de_list_app_instance_user_endpoints(value: &[u8], mut builder: crate::operation::list_app_instance_user_endpoints::builders::ListAppInstanceUserEndpointsOutputBuilder) -> Result<crate::operation::list_app_instance_user_endpoints::builders::ListAppInstanceUserEndpointsOutputBuilder, aws_smithy_json::deserialize::error::DeserializeError>{
     let mut tokens_owned =
         aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
             .peekable();

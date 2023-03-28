@@ -2,7 +2,7 @@
 pub(crate) fn de_invalid_signal_decoder<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::InvalidSignalDecoder>,
+    Option<crate::types::InvalidSignalDecoder>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::invalid_signal_decoder::Builder::default();
+            let mut builder = crate::types::builders::InvalidSignalDecoderBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -39,7 +39,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::SignalDecoderFailureReason::from(
+                                            crate::types::SignalDecoderFailureReason::from(
                                                 u.as_ref(),
                                             )
                                         })

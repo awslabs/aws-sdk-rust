@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_delegation_set_already_created_xml_err(
     inp: &[u8],
-    mut builder: crate::error::delegation_set_already_created::Builder,
+    mut builder: crate::types::error::builders::DelegationSetAlreadyCreatedBuilder,
 ) -> Result<
-    crate::error::delegation_set_already_created::Builder,
+    crate::types::error::builders::DelegationSetAlreadyCreatedBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

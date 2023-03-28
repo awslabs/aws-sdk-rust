@@ -4,17 +4,17 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>You do not have sufficient access to perform this action.</p>
-    AccessDeniedException(crate::error::AccessDeniedException),
+    AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>Exception raised to indicate that authorization of an action was successful, when the <code>DryRun</code> flag is set to true.</p>
-    DryRunOperation(crate::error::DryRunOperation),
+    DryRunOperation(crate::types::error::DryRunOperation),
     /// <p>Exception raised when an internal, configuration, or dependency error is encountered.</p>
-    InternalServerError(crate::error::InternalServerError),
+    InternalServerError(crate::types::error::InternalServerError),
     /// <p>Exception raised when the provided input violates a policy constraint or is entered in the wrong format or data type.</p>
-    InvalidInputException(crate::error::InvalidInputException),
+    InvalidInputException(crate::types::error::InvalidInputException),
     /// <p>Exception raised when a request fails due to temporary unavailability of the service.</p>
-    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
-    ThrottlingException(crate::error::ThrottlingException),
+    ThrottlingException(crate::types::error::ThrottlingException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled),
 }
@@ -31,13 +31,21 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateHomeRegionControlError, R>>
-    for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_home_region_control::CreateHomeRegionControlError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateHomeRegionControlError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_home_region_control::CreateHomeRegionControlError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -54,38 +62,36 @@ where
         }
     }
 }
-impl From<crate::error::CreateHomeRegionControlError> for Error {
-    fn from(err: crate::error::CreateHomeRegionControlError) -> Self {
+impl From<crate::operation::create_home_region_control::CreateHomeRegionControlError> for Error {
+    fn from(
+        err: crate::operation::create_home_region_control::CreateHomeRegionControlError,
+    ) -> Self {
         match err {
-            crate::error::CreateHomeRegionControlError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::CreateHomeRegionControlError::DryRunOperation(inner) => {
-                Error::DryRunOperation(inner)
-            }
-            crate::error::CreateHomeRegionControlError::InternalServerError(inner) => {
-                Error::InternalServerError(inner)
-            }
-            crate::error::CreateHomeRegionControlError::InvalidInputException(inner) => {
-                Error::InvalidInputException(inner)
-            }
-            crate::error::CreateHomeRegionControlError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::CreateHomeRegionControlError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::CreateHomeRegionControlError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::create_home_region_control::CreateHomeRegionControlError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_home_region_control::CreateHomeRegionControlError::DryRunOperation(inner) => Error::DryRunOperation(inner),
+            crate::operation::create_home_region_control::CreateHomeRegionControlError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::create_home_region_control::CreateHomeRegionControlError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::create_home_region_control::CreateHomeRegionControlError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::create_home_region_control::CreateHomeRegionControlError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_home_region_control::CreateHomeRegionControlError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeHomeRegionControlsError, R>>
-    for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_home_region_controls::DescribeHomeRegionControlsError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeHomeRegionControlsError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_home_region_controls::DescribeHomeRegionControlsError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -102,69 +108,71 @@ where
         }
     }
 }
-impl From<crate::error::DescribeHomeRegionControlsError> for Error {
-    fn from(err: crate::error::DescribeHomeRegionControlsError) -> Self {
+impl From<crate::operation::describe_home_region_controls::DescribeHomeRegionControlsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_home_region_controls::DescribeHomeRegionControlsError,
+    ) -> Self {
         match err {
-            crate::error::DescribeHomeRegionControlsError::AccessDeniedException(inner) => {
+            crate::operation::describe_home_region_controls::DescribeHomeRegionControlsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::describe_home_region_controls::DescribeHomeRegionControlsError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::describe_home_region_controls::DescribeHomeRegionControlsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::describe_home_region_controls::DescribeHomeRegionControlsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::describe_home_region_controls::DescribeHomeRegionControlsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_home_region_controls::DescribeHomeRegionControlsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<crate::operation::get_home_region::GetHomeRegionError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_home_region::GetHomeRegionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_home_region::GetHomeRegionError> for Error {
+    fn from(err: crate::operation::get_home_region::GetHomeRegionError) -> Self {
+        match err {
+            crate::operation::get_home_region::GetHomeRegionError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::DescribeHomeRegionControlsError::InternalServerError(inner) => {
+            crate::operation::get_home_region::GetHomeRegionError::InternalServerError(inner) => {
                 Error::InternalServerError(inner)
             }
-            crate::error::DescribeHomeRegionControlsError::InvalidInputException(inner) => {
+            crate::operation::get_home_region::GetHomeRegionError::InvalidInputException(inner) => {
                 Error::InvalidInputException(inner)
             }
-            crate::error::DescribeHomeRegionControlsError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::DescribeHomeRegionControlsError::ThrottlingException(inner) => {
+            crate::operation::get_home_region::GetHomeRegionError::ServiceUnavailableException(
+                inner,
+            ) => Error::ServiceUnavailableException(inner),
+            crate::operation::get_home_region::GetHomeRegionError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
             }
-            crate::error::DescribeHomeRegionControlsError::Unhandled(inner) => {
+            crate::operation::get_home_region::GetHomeRegionError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetHomeRegionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetHomeRegionError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetHomeRegionError> for Error {
-    fn from(err: crate::error::GetHomeRegionError) -> Self {
-        match err {
-            crate::error::GetHomeRegionError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::GetHomeRegionError::InternalServerError(inner) => {
-                Error::InternalServerError(inner)
-            }
-            crate::error::GetHomeRegionError::InvalidInputException(inner) => {
-                Error::InvalidInputException(inner)
-            }
-            crate::error::GetHomeRegionError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::GetHomeRegionError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::GetHomeRegionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -2,7 +2,7 @@
 pub fn de_notification_attributes(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::collections::HashMap<std::string::String, crate::model::IdentityNotificationAttributes>,
+    std::collections::HashMap<std::string::String, crate::types::IdentityNotificationAttributes>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::collections::HashMap::new();
@@ -21,11 +21,11 @@ pub fn de_notification_attributes_entry(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
     out: &mut std::collections::HashMap<
         std::string::String,
-        crate::model::IdentityNotificationAttributes,
+        crate::types::IdentityNotificationAttributes,
     >,
 ) -> Result<(), aws_smithy_xml::decode::XmlDecodeError> {
     let mut k: Option<std::string::String> = None;
-    let mut v: Option<crate::model::IdentityNotificationAttributes> = None;
+    let mut v: Option<crate::types::IdentityNotificationAttributes> = None;
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("key") /* key com.amazonaws.ses#NotificationAttributes$key */ =>  {

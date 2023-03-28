@@ -2,74 +2,80 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_option_group_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::CreateOptionGroupOutput, crate::error::CreateOptionGroupError>
-{
+) -> std::result::Result<
+    crate::operation::create_option_group::CreateOptionGroupOutput,
+    crate::operation::create_option_group::CreateOptionGroupError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::CreateOptionGroupError::unhandled)?;
+        .map_err(crate::operation::create_option_group::CreateOptionGroupError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::CreateOptionGroupError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::create_option_group::CreateOptionGroupError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "OptionGroupAlreadyExistsFault" => {
-            crate::error::CreateOptionGroupError::OptionGroupAlreadyExistsFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "OptionGroupAlreadyExistsFault" => crate::operation::create_option_group::CreateOptionGroupError::OptionGroupAlreadyExistsFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::option_group_already_exists_fault::Builder::default();
+                    let mut output = crate::types::error::builders::OptionGroupAlreadyExistsFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_option_group_already_exists_fault::de_option_group_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateOptionGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_option_group_already_exists_fault::de_option_group_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_option_group::CreateOptionGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "OptionGroupQuotaExceededFault" => {
-            crate::error::CreateOptionGroupError::OptionGroupQuotaExceededFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "OptionGroupQuotaExceededFault" => crate::operation::create_option_group::CreateOptionGroupError::OptionGroupQuotaExceededFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::option_group_quota_exceeded_fault::Builder::default();
+                    let mut output = crate::types::error::builders::OptionGroupQuotaExceededFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_option_group_quota_exceeded_fault::de_option_group_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateOptionGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_option_group_quota_exceeded_fault::de_option_group_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_option_group::CreateOptionGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::CreateOptionGroupError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::create_option_group::CreateOptionGroupError::generic(generic)
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_option_group_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::CreateOptionGroupOutput, crate::error::CreateOptionGroupError>
-{
+) -> std::result::Result<
+    crate::operation::create_option_group::CreateOptionGroupOutput,
+    crate::operation::create_option_group::CreateOptionGroupError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::create_option_group_output::Builder::default();
+        let mut output = crate::operation::create_option_group::builders::CreateOptionGroupOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_create_option_group::de_create_option_group(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::CreateOptionGroupError::unhandled)?;
+        .map_err(crate::operation::create_option_group::CreateOptionGroupError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -80,9 +86,9 @@ pub fn de_create_option_group_http_response(
 #[allow(unused_mut)]
 pub fn de_create_option_group(
     inp: &[u8],
-    mut builder: crate::output::create_option_group_output::Builder,
+    mut builder: crate::operation::create_option_group::builders::CreateOptionGroupOutputBuilder,
 ) -> Result<
-    crate::output::create_option_group_output::Builder,
+    crate::operation::create_option_group::builders::CreateOptionGroupOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

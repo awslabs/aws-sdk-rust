@@ -2,7 +2,7 @@
 pub(crate) fn de_target_on_device_service_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::TargetOnDeviceService>>,
+    Option<std::vec::Vec<crate::types::TargetOnDeviceService>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

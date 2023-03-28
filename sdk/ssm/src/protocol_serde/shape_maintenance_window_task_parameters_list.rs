@@ -6,7 +6,7 @@ pub(crate) fn de_maintenance_window_task_parameters_list<'a, I>(
         std::vec::Vec<
             std::collections::HashMap<
                 std::string::String,
-                crate::model::MaintenanceWindowTaskParameterValueExpression,
+                crate::types::MaintenanceWindowTaskParameterValueExpression,
             >,
         >,
     >,

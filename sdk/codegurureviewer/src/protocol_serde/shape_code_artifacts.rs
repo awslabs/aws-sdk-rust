@@ -2,7 +2,7 @@
 pub(crate) fn de_code_artifacts<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::CodeArtifacts>,
+    Option<crate::types::CodeArtifacts>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::code_artifacts::Builder::default();
+            let mut builder = crate::types::builders::CodeArtifactsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -66,7 +66,7 @@ where
 
 pub fn ser_code_artifacts(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::CodeArtifacts,
+    input: &crate::types::CodeArtifacts,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.source_code_artifacts_object_key {
         object

@@ -3,105 +3,113 @@
 pub fn de_delete_endpoint_access_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteEndpointAccessOutput,
-    crate::error::DeleteEndpointAccessError,
+    crate::operation::delete_endpoint_access::DeleteEndpointAccessOutput,
+    crate::operation::delete_endpoint_access::DeleteEndpointAccessError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteEndpointAccessError::unhandled)?;
+        .map_err(crate::operation::delete_endpoint_access::DeleteEndpointAccessError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DeleteEndpointAccessError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::delete_endpoint_access::DeleteEndpointAccessError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ClusterNotFound" => crate::error::DeleteEndpointAccessError::ClusterNotFoundFault({
+        "ClusterNotFound" => crate::operation::delete_endpoint_access::DeleteEndpointAccessError::ClusterNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::cluster_not_found_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_cluster_not_found_fault::de_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteEndpointAccessError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ClusterNotFoundFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_cluster_not_found_fault::de_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_endpoint_access::DeleteEndpointAccessError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "EndpointNotFound" => crate::error::DeleteEndpointAccessError::EndpointNotFoundFault({
+        "EndpointNotFound" => crate::operation::delete_endpoint_access::DeleteEndpointAccessError::EndpointNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::endpoint_not_found_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_endpoint_not_found_fault::de_endpoint_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteEndpointAccessError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::EndpointNotFoundFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_endpoint_not_found_fault::de_endpoint_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_endpoint_access::DeleteEndpointAccessError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "InvalidClusterSecurityGroupState" => {
-            crate::error::DeleteEndpointAccessError::InvalidClusterSecurityGroupStateFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidClusterSecurityGroupState" => crate::operation::delete_endpoint_access::DeleteEndpointAccessError::InvalidClusterSecurityGroupStateFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_cluster_security_group_state_fault::Builder::default(
-                        );
+                    let mut output = crate::types::error::builders::InvalidClusterSecurityGroupStateFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_cluster_security_group_state_fault::de_invalid_cluster_security_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteEndpointAccessError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_cluster_security_group_state_fault::de_invalid_cluster_security_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_endpoint_access::DeleteEndpointAccessError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidClusterState" => {
-            crate::error::DeleteEndpointAccessError::InvalidClusterStateFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidClusterState" => crate::operation::delete_endpoint_access::DeleteEndpointAccessError::InvalidClusterStateFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_cluster_state_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidClusterStateFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_cluster_state_fault::de_invalid_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteEndpointAccessError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_cluster_state_fault::de_invalid_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_endpoint_access::DeleteEndpointAccessError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidEndpointState" => {
-            crate::error::DeleteEndpointAccessError::InvalidEndpointStateFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidEndpointState" => crate::operation::delete_endpoint_access::DeleteEndpointAccessError::InvalidEndpointStateFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_endpoint_state_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidEndpointStateFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_endpoint_state_fault::de_invalid_endpoint_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteEndpointAccessError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_endpoint_state_fault::de_invalid_endpoint_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_endpoint_access::DeleteEndpointAccessError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DeleteEndpointAccessError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::delete_endpoint_access::DeleteEndpointAccessError::generic(generic)
     })
 }
 
@@ -109,18 +117,18 @@ pub fn de_delete_endpoint_access_http_error(
 pub fn de_delete_endpoint_access_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteEndpointAccessOutput,
-    crate::error::DeleteEndpointAccessError,
+    crate::operation::delete_endpoint_access::DeleteEndpointAccessOutput,
+    crate::operation::delete_endpoint_access::DeleteEndpointAccessError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_endpoint_access_output::Builder::default();
+        let mut output = crate::operation::delete_endpoint_access::builders::DeleteEndpointAccessOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_delete_endpoint_access::de_delete_endpoint_access(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DeleteEndpointAccessError::unhandled)?;
+        .map_err(crate::operation::delete_endpoint_access::DeleteEndpointAccessError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -131,9 +139,9 @@ pub fn de_delete_endpoint_access_http_response(
 #[allow(unused_mut)]
 pub fn de_delete_endpoint_access(
     inp: &[u8],
-    mut builder: crate::output::delete_endpoint_access_output::Builder,
+    mut builder: crate::operation::delete_endpoint_access::builders::DeleteEndpointAccessOutputBuilder,
 ) -> Result<
-    crate::output::delete_endpoint_access_output::Builder,
+    crate::operation::delete_endpoint_access::builders::DeleteEndpointAccessOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

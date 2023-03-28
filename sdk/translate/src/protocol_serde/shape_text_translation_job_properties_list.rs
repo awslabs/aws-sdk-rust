@@ -2,7 +2,7 @@
 pub(crate) fn de_text_translation_job_properties_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::TextTranslationJobProperties>>,
+    Option<std::vec::Vec<crate::types::TextTranslationJobProperties>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

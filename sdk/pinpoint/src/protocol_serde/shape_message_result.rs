@@ -2,7 +2,7 @@
 pub(crate) fn de_message_result<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::MessageResult>,
+    Option<crate::types::MessageResult>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::message_result::Builder::default();
+            let mut builder = crate::types::builders::MessageResultBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::DeliveryStatus::from(u.as_ref()))
+                                            .map(|u| crate::types::DeliveryStatus::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

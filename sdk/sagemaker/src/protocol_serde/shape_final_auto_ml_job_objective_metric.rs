@@ -2,7 +2,7 @@
 pub(crate) fn de_final_auto_ml_job_objective_metric<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::FinalAutoMlJobObjectiveMetric>,
+    Option<crate::types::FinalAutoMlJobObjectiveMetric>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::final_auto_ml_job_objective_metric::Builder::default();
+            let mut builder =
+                crate::types::builders::FinalAutoMlJobObjectiveMetricBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +31,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::AutoMlJobObjectiveType::from(u.as_ref())
+                                            crate::types::AutoMlJobObjectiveType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -43,7 +44,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::AutoMlMetricEnum::from(u.as_ref())
+                                            crate::types::AutoMlMetricEnum::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

@@ -3,34 +3,30 @@
 pub fn de_retrieve_environment_info_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::RetrieveEnvironmentInfoOutput,
-    crate::error::RetrieveEnvironmentInfoError,
+    crate::operation::retrieve_environment_info::RetrieveEnvironmentInfoOutput,
+    crate::operation::retrieve_environment_info::RetrieveEnvironmentInfoError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::RetrieveEnvironmentInfoError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::retrieve_environment_info::RetrieveEnvironmentInfoError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::RetrieveEnvironmentInfoError::generic(generic))
+    Err(crate::operation::retrieve_environment_info::RetrieveEnvironmentInfoError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_retrieve_environment_info_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::RetrieveEnvironmentInfoOutput,
-    crate::error::RetrieveEnvironmentInfoError,
+    crate::operation::retrieve_environment_info::RetrieveEnvironmentInfoOutput,
+    crate::operation::retrieve_environment_info::RetrieveEnvironmentInfoError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::retrieve_environment_info_output::Builder::default();
+        let mut output = crate::operation::retrieve_environment_info::builders::RetrieveEnvironmentInfoOutputBuilder::default();
         let _ = response;
-        output =
-            crate::protocol_serde::shape_retrieve_environment_info::de_retrieve_environment_info(
-                response.body().as_ref(),
-                output,
-            )
-            .map_err(crate::error::RetrieveEnvironmentInfoError::unhandled)?;
+        output = crate::protocol_serde::shape_retrieve_environment_info::de_retrieve_environment_info(response.body().as_ref(), output).map_err(crate::operation::retrieve_environment_info::RetrieveEnvironmentInfoError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -41,9 +37,9 @@ pub fn de_retrieve_environment_info_http_response(
 #[allow(unused_mut)]
 pub fn de_retrieve_environment_info(
     inp: &[u8],
-    mut builder: crate::output::retrieve_environment_info_output::Builder,
+    mut builder: crate::operation::retrieve_environment_info::builders::RetrieveEnvironmentInfoOutputBuilder,
 ) -> Result<
-    crate::output::retrieve_environment_info_output::Builder,
+    crate::operation::retrieve_environment_info::builders::RetrieveEnvironmentInfoOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

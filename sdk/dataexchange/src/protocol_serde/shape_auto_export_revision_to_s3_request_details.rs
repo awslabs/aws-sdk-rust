@@ -2,7 +2,7 @@
 pub(crate) fn de_auto_export_revision_to_s3_request_details<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::AutoExportRevisionToS3RequestDetails>,
+    Option<crate::types::AutoExportRevisionToS3RequestDetails>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::auto_export_revision_to_s3_request_details::Builder::default();
+                crate::types::builders::AutoExportRevisionToS3RequestDetailsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -59,7 +59,7 @@ where
 
 pub fn ser_auto_export_revision_to_s3_request_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::AutoExportRevisionToS3RequestDetails,
+    input: &crate::types::AutoExportRevisionToS3RequestDetails,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.encryption {
         #[allow(unused_mut)]

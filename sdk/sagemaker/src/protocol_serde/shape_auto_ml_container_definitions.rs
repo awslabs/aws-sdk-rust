@@ -2,7 +2,7 @@
 pub(crate) fn de_auto_ml_container_definitions<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AutoMlContainerDefinition>>,
+    Option<std::vec::Vec<crate::types::AutoMlContainerDefinition>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_view_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::View>>,
+    Option<std::vec::Vec<crate::types::View>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

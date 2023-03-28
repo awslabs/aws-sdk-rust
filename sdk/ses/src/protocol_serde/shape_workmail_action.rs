@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_workmail_action(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::WorkmailAction,
+    input: &crate::types::WorkmailAction,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("TopicArn");
@@ -19,9 +19,9 @@ pub fn ser_workmail_action(
 
 pub fn de_workmail_action(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::WorkmailAction, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::WorkmailAction, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::WorkmailAction::builder();
+    let mut builder = crate::types::WorkmailAction::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("TopicArn") /* TopicArn com.amazonaws.ses#WorkmailAction$TopicArn */ =>  {

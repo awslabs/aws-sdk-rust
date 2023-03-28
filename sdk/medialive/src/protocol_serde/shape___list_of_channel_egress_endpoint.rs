@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_channel_egress_endpoint<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ChannelEgressEndpoint>>,
+    Option<std::vec::Vec<crate::types::ChannelEgressEndpoint>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

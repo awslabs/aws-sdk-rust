@@ -5,7 +5,7 @@ pub(crate) fn de_component_binding_properties<'a, I>(
     Option<
         std::collections::HashMap<
             std::string::String,
-            crate::model::ComponentBindingPropertiesValue,
+            crate::types::ComponentBindingPropertiesValue,
         >,
     >,
     aws_smithy_json::deserialize::error::DeserializeError,

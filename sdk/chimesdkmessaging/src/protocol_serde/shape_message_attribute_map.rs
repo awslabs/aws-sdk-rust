@@ -2,7 +2,7 @@
 pub(crate) fn de_message_attribute_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<std::string::String, crate::model::MessageAttributeValue>>,
+    Option<std::collections::HashMap<std::string::String, crate::types::MessageAttributeValue>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

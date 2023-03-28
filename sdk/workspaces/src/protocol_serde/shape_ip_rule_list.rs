@@ -2,7 +2,7 @@
 pub(crate) fn de_ip_rule_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::IpRuleItem>>,
+    Option<std::vec::Vec<crate::types::IpRuleItem>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

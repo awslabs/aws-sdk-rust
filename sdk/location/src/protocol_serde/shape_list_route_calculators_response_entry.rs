@@ -2,7 +2,7 @@
 pub(crate) fn de_list_route_calculators_response_entry<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ListRouteCalculatorsResponseEntry>,
+    Option<crate::types::ListRouteCalculatorsResponseEntry>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::list_route_calculators_response_entry::Builder::default();
+                crate::types::builders::ListRouteCalculatorsResponseEntryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -58,7 +58,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::PricingPlan::from(u.as_ref()))
+                                            .map(|u| crate::types::PricingPlan::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

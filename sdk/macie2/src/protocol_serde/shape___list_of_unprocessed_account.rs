@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_unprocessed_account<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::UnprocessedAccount>>,
+    Option<std::vec::Vec<crate::types::UnprocessedAccount>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

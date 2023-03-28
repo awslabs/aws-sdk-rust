@@ -2,7 +2,7 @@
 pub(crate) fn de_open_zfs_user_and_group_quotas<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::OpenZfsUserOrGroupQuota>>,
+    Option<std::vec::Vec<crate::types::OpenZfsUserOrGroupQuota>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

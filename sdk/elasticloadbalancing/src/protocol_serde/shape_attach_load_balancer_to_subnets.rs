@@ -3,96 +3,89 @@
 pub fn de_attach_load_balancer_to_subnets_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::AttachLoadBalancerToSubnetsOutput,
-    crate::error::AttachLoadBalancerToSubnetsError,
+    crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnetsOutput,
+    crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnetsError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::AttachLoadBalancerToSubnetsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnetsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::AttachLoadBalancerToSubnetsError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnetsError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LoadBalancerNotFound" => {
-            crate::error::AttachLoadBalancerToSubnetsError::AccessPointNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "LoadBalancerNotFound" => crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnetsError::AccessPointNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::access_point_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::AccessPointNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_access_point_not_found_exception::de_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AttachLoadBalancerToSubnetsError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_point_not_found_exception::de_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnetsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidConfigurationRequest" => {
-            crate::error::AttachLoadBalancerToSubnetsError::InvalidConfigurationRequestException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidConfigurationRequest" => crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnetsError::InvalidConfigurationRequestException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_configuration_request_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidConfigurationRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_configuration_request_exception::de_invalid_configuration_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AttachLoadBalancerToSubnetsError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_configuration_request_exception::de_invalid_configuration_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnetsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidSubnet" => {
-            crate::error::AttachLoadBalancerToSubnetsError::InvalidSubnetException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidSubnet" => crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnetsError::InvalidSubnetException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_subnet_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidSubnetExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_subnet_exception::de_invalid_subnet_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AttachLoadBalancerToSubnetsError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_subnet_exception::de_invalid_subnet_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnetsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "SubnetNotFound" => {
-            crate::error::AttachLoadBalancerToSubnetsError::SubnetNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "SubnetNotFound" => crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnetsError::SubnetNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::subnet_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::SubnetNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_subnet_not_found_exception::de_subnet_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AttachLoadBalancerToSubnetsError::unhandled)?;
+                    output = crate::protocol_serde::shape_subnet_not_found_exception::de_subnet_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnetsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::AttachLoadBalancerToSubnetsError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnetsError::generic(generic)
     })
 }
 
@@ -100,14 +93,14 @@ pub fn de_attach_load_balancer_to_subnets_http_error(
 pub fn de_attach_load_balancer_to_subnets_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::AttachLoadBalancerToSubnetsOutput,
-    crate::error::AttachLoadBalancerToSubnetsError,
+    crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnetsOutput,
+    crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnetsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::attach_load_balancer_to_subnets_output::Builder::default();
+        let mut output = crate::operation::attach_load_balancer_to_subnets::builders::AttachLoadBalancerToSubnetsOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_attach_load_balancer_to_subnets::de_attach_load_balancer_to_subnets(response.body().as_ref(), output).map_err(crate::error::AttachLoadBalancerToSubnetsError::unhandled)?;
+        output = crate::protocol_serde::shape_attach_load_balancer_to_subnets::de_attach_load_balancer_to_subnets(response.body().as_ref(), output).map_err(crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnetsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -116,13 +109,7 @@ pub fn de_attach_load_balancer_to_subnets_http_response(
 }
 
 #[allow(unused_mut)]
-pub fn de_attach_load_balancer_to_subnets(
-    inp: &[u8],
-    mut builder: crate::output::attach_load_balancer_to_subnets_output::Builder,
-) -> Result<
-    crate::output::attach_load_balancer_to_subnets_output::Builder,
-    aws_smithy_xml::decode::XmlDecodeError,
-> {
+pub fn de_attach_load_balancer_to_subnets(inp: &[u8], mut builder: crate::operation::attach_load_balancer_to_subnets::builders::AttachLoadBalancerToSubnetsOutputBuilder) -> Result<crate::operation::attach_load_balancer_to_subnets::builders::AttachLoadBalancerToSubnetsOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

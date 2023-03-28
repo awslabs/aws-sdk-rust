@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_batch_delete_request_size_exceeded_fault_xml_err(
     inp: &[u8],
-    mut builder: crate::error::batch_delete_request_size_exceeded_fault::Builder,
+    mut builder: crate::types::error::builders::BatchDeleteRequestSizeExceededFaultBuilder,
 ) -> Result<
-    crate::error::batch_delete_request_size_exceeded_fault::Builder,
+    crate::types::error::builders::BatchDeleteRequestSizeExceededFaultBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

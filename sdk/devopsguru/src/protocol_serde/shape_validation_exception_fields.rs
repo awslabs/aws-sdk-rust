@@ -2,7 +2,7 @@
 pub(crate) fn de_validation_exception_fields<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ValidationExceptionField>>,
+    Option<std::vec::Vec<crate::types::ValidationExceptionField>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -3,31 +3,28 @@
 pub fn de_describe_instance_event_windows_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeInstanceEventWindowsOutput,
-    crate::error::DescribeInstanceEventWindowsError,
+    crate::operation::describe_instance_event_windows::DescribeInstanceEventWindowsOutput,
+    crate::operation::describe_instance_event_windows::DescribeInstanceEventWindowsError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeInstanceEventWindowsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::describe_instance_event_windows::DescribeInstanceEventWindowsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::DescribeInstanceEventWindowsError::generic(
-        generic,
-    ))
+    Err(crate::operation::describe_instance_event_windows::DescribeInstanceEventWindowsError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_instance_event_windows_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeInstanceEventWindowsOutput,
-    crate::error::DescribeInstanceEventWindowsError,
+    crate::operation::describe_instance_event_windows::DescribeInstanceEventWindowsOutput,
+    crate::operation::describe_instance_event_windows::DescribeInstanceEventWindowsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_instance_event_windows_output::Builder::default();
+        let mut output = crate::operation::describe_instance_event_windows::builders::DescribeInstanceEventWindowsOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_describe_instance_event_windows::de_describe_instance_event_windows(response.body().as_ref(), output).map_err(crate::error::DescribeInstanceEventWindowsError::unhandled)?;
+        output = crate::protocol_serde::shape_describe_instance_event_windows::de_describe_instance_event_windows(response.body().as_ref(), output).map_err(crate::operation::describe_instance_event_windows::DescribeInstanceEventWindowsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -36,13 +33,7 @@ pub fn de_describe_instance_event_windows_http_response(
 }
 
 #[allow(unused_mut)]
-pub fn de_describe_instance_event_windows(
-    inp: &[u8],
-    mut builder: crate::output::describe_instance_event_windows_output::Builder,
-) -> Result<
-    crate::output::describe_instance_event_windows_output::Builder,
-    aws_smithy_xml::decode::XmlDecodeError,
-> {
+pub fn de_describe_instance_event_windows(inp: &[u8], mut builder: crate::operation::describe_instance_event_windows::builders::DescribeInstanceEventWindowsOutputBuilder) -> Result<crate::operation::describe_instance_event_windows::builders::DescribeInstanceEventWindowsOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

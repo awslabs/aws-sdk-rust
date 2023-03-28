@@ -3,76 +3,79 @@
 pub fn de_describe_vcenter_clients_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeVcenterClientsOutput,
-    crate::error::DescribeVcenterClientsError,
+    crate::operation::describe_vcenter_clients::DescribeVcenterClientsOutput,
+    crate::operation::describe_vcenter_clients::DescribeVcenterClientsError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeVcenterClientsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::describe_vcenter_clients::DescribeVcenterClientsError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::DescribeVcenterClientsError::unhandled(
-                generic,
-            ))
-        }
-    };
+    let error_code =
+        match generic.code() {
+            Some(code) => code,
+            None => return Err(
+                crate::operation::describe_vcenter_clients::DescribeVcenterClientsError::unhandled(
+                    generic,
+                ),
+            ),
+        };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceNotFoundException" => {
-            crate::error::DescribeVcenterClientsError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeVcenterClientsError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "UninitializedAccountException" => {
-            crate::error::DescribeVcenterClientsError::UninitializedAccountException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::uninitialized_account_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_uninitialized_account_exception::de_uninitialized_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeVcenterClientsError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ValidationException" => crate::error::DescribeVcenterClientsError::ValidationException({
+        "ResourceNotFoundException" => crate::operation::describe_vcenter_clients::DescribeVcenterClientsError::ResourceNotFoundException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeVcenterClientsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_vcenter_clients::DescribeVcenterClientsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::DescribeVcenterClientsError::generic(generic),
+        "UninitializedAccountException" => crate::operation::describe_vcenter_clients::DescribeVcenterClientsError::UninitializedAccountException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::UninitializedAccountExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_uninitialized_account_exception::de_uninitialized_account_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_vcenter_clients::DescribeVcenterClientsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ValidationException" => crate::operation::describe_vcenter_clients::DescribeVcenterClientsError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_vcenter_clients::DescribeVcenterClientsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::describe_vcenter_clients::DescribeVcenterClientsError::generic(generic)
     })
 }
 
@@ -80,19 +83,21 @@ pub fn de_describe_vcenter_clients_http_error(
 pub fn de_describe_vcenter_clients_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeVcenterClientsOutput,
-    crate::error::DescribeVcenterClientsError,
+    crate::operation::describe_vcenter_clients::DescribeVcenterClientsOutput,
+    crate::operation::describe_vcenter_clients::DescribeVcenterClientsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_vcenter_clients_output::Builder::default();
+        let mut output = crate::operation::describe_vcenter_clients::builders::DescribeVcenterClientsOutputBuilder::default();
         let _ = response;
         output =
             crate::protocol_serde::shape_describe_vcenter_clients::de_describe_vcenter_clients(
                 response.body().as_ref(),
                 output,
             )
-            .map_err(crate::error::DescribeVcenterClientsError::unhandled)?;
+            .map_err(
+                crate::operation::describe_vcenter_clients::DescribeVcenterClientsError::unhandled,
+            )?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -102,9 +107,9 @@ pub fn de_describe_vcenter_clients_http_response(
 
 pub(crate) fn de_describe_vcenter_clients(
     value: &[u8],
-    mut builder: crate::output::describe_vcenter_clients_output::Builder,
+    mut builder: crate::operation::describe_vcenter_clients::builders::DescribeVcenterClientsOutputBuilder,
 ) -> Result<
-    crate::output::describe_vcenter_clients_output::Builder,
+    crate::operation::describe_vcenter_clients::builders::DescribeVcenterClientsOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

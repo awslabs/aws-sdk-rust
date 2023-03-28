@@ -3,71 +3,79 @@
 pub fn de_list_violation_events_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListViolationEventsOutput,
-    crate::error::ListViolationEventsError,
+    crate::operation::list_violation_events::ListViolationEventsOutput,
+    crate::operation::list_violation_events::ListViolationEventsError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListViolationEventsError::unhandled)?;
+        .map_err(crate::operation::list_violation_events::ListViolationEventsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListViolationEventsError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::list_violation_events::ListViolationEventsError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalFailureException" => {
-            crate::error::ListViolationEventsError::InternalFailureException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::internal_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListViolationEventsError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InvalidRequestException" => {
-            crate::error::ListViolationEventsError::InvalidRequestException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_request_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListViolationEventsError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ThrottlingException" => crate::error::ListViolationEventsError::ThrottlingException({
+        "InternalFailureException" => crate::operation::list_violation_events::ListViolationEventsError::InternalFailureException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::throttling_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListViolationEventsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InternalFailureExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_violation_events::ListViolationEventsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::ListViolationEventsError::generic(generic),
+        "InvalidRequestException" => crate::operation::list_violation_events::ListViolationEventsError::InvalidRequestException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidRequestExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_violation_events::ListViolationEventsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ThrottlingException" => crate::operation::list_violation_events::ListViolationEventsError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_violation_events::ListViolationEventsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::list_violation_events::ListViolationEventsError::generic(generic)
     })
 }
 
@@ -75,18 +83,18 @@ pub fn de_list_violation_events_http_error(
 pub fn de_list_violation_events_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListViolationEventsOutput,
-    crate::error::ListViolationEventsError,
+    crate::operation::list_violation_events::ListViolationEventsOutput,
+    crate::operation::list_violation_events::ListViolationEventsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_violation_events_output::Builder::default();
+        let mut output = crate::operation::list_violation_events::builders::ListViolationEventsOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_violation_events::de_list_violation_events(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListViolationEventsError::unhandled)?;
+        .map_err(crate::operation::list_violation_events::ListViolationEventsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -96,9 +104,9 @@ pub fn de_list_violation_events_http_response(
 
 pub(crate) fn de_list_violation_events(
     value: &[u8],
-    mut builder: crate::output::list_violation_events_output::Builder,
+    mut builder: crate::operation::list_violation_events::builders::ListViolationEventsOutputBuilder,
 ) -> Result<
-    crate::output::list_violation_events_output::Builder,
+    crate::operation::list_violation_events::builders::ListViolationEventsOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

@@ -3,96 +3,99 @@
 pub fn de_get_bot_channel_association_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetBotChannelAssociationOutput,
-    crate::error::GetBotChannelAssociationError,
+    crate::operation::get_bot_channel_association::GetBotChannelAssociationOutput,
+    crate::operation::get_bot_channel_association::GetBotChannelAssociationError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetBotChannelAssociationError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::get_bot_channel_association::GetBotChannelAssociationError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::error::GetBotChannelAssociationError::unhandled(
+        None => return Err(
+            crate::operation::get_bot_channel_association::GetBotChannelAssociationError::unhandled(
                 generic,
-            ))
-        }
+            ),
+        ),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => {
-            crate::error::GetBotChannelAssociationError::BadRequestException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "BadRequestException" => crate::operation::get_bot_channel_association::GetBotChannelAssociationError::BadRequestException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::bad_request_exception::Builder::default();
+                    let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetBotChannelAssociationError::unhandled)?;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_bot_channel_association::GetBotChannelAssociationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InternalFailureException" => {
-            crate::error::GetBotChannelAssociationError::InternalFailureException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InternalFailureException" => crate::operation::get_bot_channel_association::GetBotChannelAssociationError::InternalFailureException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_failure_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InternalFailureExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetBotChannelAssociationError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_bot_channel_association::GetBotChannelAssociationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "LimitExceededException" => {
-            crate::error::GetBotChannelAssociationError::LimitExceededException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "LimitExceededException" => crate::operation::get_bot_channel_association::GetBotChannelAssociationError::LimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetBotChannelAssociationError::unhandled)?;
+                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_bot_channel_association::GetBotChannelAssociationError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::protocol_serde::shape_limit_exceeded_exception::de_retry_after_seconds_header(response.headers())
-                                                .map_err(|_|crate::error::GetBotChannelAssociationError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::operation::get_bot_channel_association::GetBotChannelAssociationError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "NotFoundException" => crate::error::GetBotChannelAssociationError::NotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetBotChannelAssociationError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::GetBotChannelAssociationError::generic(generic),
+        "NotFoundException" => crate::operation::get_bot_channel_association::GetBotChannelAssociationError::NotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::NotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_bot_channel_association::GetBotChannelAssociationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::get_bot_channel_association::GetBotChannelAssociationError::generic(generic)
     })
 }
 
@@ -100,14 +103,14 @@ pub fn de_get_bot_channel_association_http_error(
 pub fn de_get_bot_channel_association_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetBotChannelAssociationOutput,
-    crate::error::GetBotChannelAssociationError,
+    crate::operation::get_bot_channel_association::GetBotChannelAssociationOutput,
+    crate::operation::get_bot_channel_association::GetBotChannelAssociationError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_bot_channel_association_output::Builder::default();
+        let mut output = crate::operation::get_bot_channel_association::builders::GetBotChannelAssociationOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_get_bot_channel_association::de_get_bot_channel_association(response.body().as_ref(), output).map_err(crate::error::GetBotChannelAssociationError::unhandled)?;
+        output = crate::protocol_serde::shape_get_bot_channel_association::de_get_bot_channel_association(response.body().as_ref(), output).map_err(crate::operation::get_bot_channel_association::GetBotChannelAssociationError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -117,9 +120,9 @@ pub fn de_get_bot_channel_association_http_response(
 
 pub(crate) fn de_get_bot_channel_association(
     value: &[u8],
-    mut builder: crate::output::get_bot_channel_association_output::Builder,
+    mut builder: crate::operation::get_bot_channel_association::builders::GetBotChannelAssociationOutputBuilder,
 ) -> Result<
-    crate::output::get_bot_channel_association_output::Builder,
+    crate::operation::get_bot_channel_association::builders::GetBotChannelAssociationOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =
@@ -197,7 +200,7 @@ pub(crate) fn de_get_bot_channel_association(
                             )?
                             .map(|s| {
                                 s.to_unescaped()
-                                    .map(|u| crate::model::ChannelStatus::from(u.as_ref()))
+                                    .map(|u| crate::types::ChannelStatus::from(u.as_ref()))
                             })
                             .transpose()?,
                         );
@@ -209,7 +212,7 @@ pub(crate) fn de_get_bot_channel_association(
                             )?
                             .map(|s| {
                                 s.to_unescaped()
-                                    .map(|u| crate::model::ChannelType::from(u.as_ref()))
+                                    .map(|u| crate::types::ChannelType::from(u.as_ref()))
                             })
                             .transpose()?,
                         );

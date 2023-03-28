@@ -13,7 +13,7 @@ pub fn de_payload_payload(
     body: &mut aws_smithy_http::body::SdkBody,
 ) -> std::result::Result<
     aws_smithy_http::byte_stream::ByteStream,
-    crate::error::GetMediaForFragmentListError,
+    crate::operation::get_media_for_fragment_list::GetMediaForFragmentListError,
 > {
     // replace the body with an empty body
     let body = std::mem::replace(body, aws_smithy_http::body::SdkBody::taken());

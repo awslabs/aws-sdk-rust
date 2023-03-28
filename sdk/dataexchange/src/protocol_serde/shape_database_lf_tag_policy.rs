@@ -2,7 +2,7 @@
 pub(crate) fn de_database_lf_tag_policy<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::DatabaseLfTagPolicy>,
+    Option<crate::types::DatabaseLfTagPolicy>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::database_lf_tag_policy::Builder::default();
+            let mut builder = crate::types::builders::DatabaseLfTagPolicyBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

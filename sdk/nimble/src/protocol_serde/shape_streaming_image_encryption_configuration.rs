@@ -2,7 +2,7 @@
 pub(crate) fn de_streaming_image_encryption_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::StreamingImageEncryptionConfiguration>,
+    Option<crate::types::StreamingImageEncryptionConfiguration>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::streaming_image_encryption_configuration::Builder::default();
+                crate::types::builders::StreamingImageEncryptionConfigurationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -37,7 +37,7 @@ where
                                 builder = builder.set_key_type(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?.map(|s|
                                         s.to_unescaped().map(|u|
-                                            crate::model::StreamingImageEncryptionConfigurationKeyType::from(u.as_ref())
+                                            crate::types::StreamingImageEncryptionConfigurationKeyType::from(u.as_ref())
                                         )
                                     ).transpose()?
                                 );

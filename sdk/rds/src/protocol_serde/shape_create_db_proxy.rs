@@ -2,28 +2,33 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_db_proxy_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::CreateDbProxyOutput, crate::error::CreateDBProxyError> {
+) -> std::result::Result<
+    crate::operation::create_db_proxy::CreateDbProxyOutput,
+    crate::operation::create_db_proxy::CreateDBProxyError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::CreateDBProxyError::unhandled)?;
+        .map_err(crate::operation::create_db_proxy::CreateDBProxyError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::CreateDBProxyError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::create_db_proxy::CreateDBProxyError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "DBProxyAlreadyExistsFault" => {
-            crate::error::CreateDBProxyError::DbProxyAlreadyExistsFault({
+            crate::operation::create_db_proxy::CreateDBProxyError::DbProxyAlreadyExistsFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::db_proxy_already_exists_fault::Builder::default();
+                        crate::types::error::builders::DbProxyAlreadyExistsFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_db_proxy_already_exists_fault::de_db_proxy_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBProxyError::unhandled)?;
+                    output = crate::protocol_serde::shape_db_proxy_already_exists_fault::de_db_proxy_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_db_proxy::CreateDBProxyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -34,14 +39,14 @@ pub fn de_create_db_proxy_http_error(
             })
         }
         "DBProxyQuotaExceededFault" => {
-            crate::error::CreateDBProxyError::DbProxyQuotaExceededFault({
+            crate::operation::create_db_proxy::CreateDBProxyError::DbProxyQuotaExceededFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::db_proxy_quota_exceeded_fault::Builder::default();
+                        crate::types::error::builders::DbProxyQuotaExceededFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_db_proxy_quota_exceeded_fault::de_db_proxy_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBProxyError::unhandled)?;
+                    output = crate::protocol_serde::shape_db_proxy_quota_exceeded_fault::de_db_proxy_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_db_proxy::CreateDBProxyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -51,17 +56,17 @@ pub fn de_create_db_proxy_http_error(
                 tmp
             })
         }
-        "InvalidSubnet" => crate::error::CreateDBProxyError::InvalidSubnet({
+        "InvalidSubnet" => crate::operation::create_db_proxy::CreateDBProxyError::InvalidSubnet({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_subnet::Builder::default();
+                let mut output = crate::types::error::builders::InvalidSubnetBuilder::default();
                 let _ = response;
                 output = crate::protocol_serde::shape_invalid_subnet::de_invalid_subnet_xml_err(
                     response.body().as_ref(),
                     output,
                 )
-                .map_err(crate::error::CreateDBProxyError::unhandled)?;
+                .map_err(crate::operation::create_db_proxy::CreateDBProxyError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -70,23 +75,27 @@ pub fn de_create_db_proxy_http_error(
             }
             tmp
         }),
-        _ => crate::error::CreateDBProxyError::generic(generic),
+        _ => crate::operation::create_db_proxy::CreateDBProxyError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_db_proxy_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::CreateDbProxyOutput, crate::error::CreateDBProxyError> {
+) -> std::result::Result<
+    crate::operation::create_db_proxy::CreateDbProxyOutput,
+    crate::operation::create_db_proxy::CreateDBProxyError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::create_db_proxy_output::Builder::default();
+        let mut output =
+            crate::operation::create_db_proxy::builders::CreateDbProxyOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_create_db_proxy::de_create_db_proxy(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::CreateDBProxyError::unhandled)?;
+        .map_err(crate::operation::create_db_proxy::CreateDBProxyError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -97,9 +106,11 @@ pub fn de_create_db_proxy_http_response(
 #[allow(unused_mut)]
 pub fn de_create_db_proxy(
     inp: &[u8],
-    mut builder: crate::output::create_db_proxy_output::Builder,
-) -> Result<crate::output::create_db_proxy_output::Builder, aws_smithy_xml::decode::XmlDecodeError>
-{
+    mut builder: crate::operation::create_db_proxy::builders::CreateDbProxyOutputBuilder,
+) -> Result<
+    crate::operation::create_db_proxy::builders::CreateDbProxyOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

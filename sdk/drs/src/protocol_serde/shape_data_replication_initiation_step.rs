@@ -2,7 +2,7 @@
 pub(crate) fn de_data_replication_initiation_step<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::DataReplicationInitiationStep>,
+    Option<crate::types::DataReplicationInitiationStep>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::data_replication_initiation_step::Builder::default();
+            let mut builder =
+                crate::types::builders::DataReplicationInitiationStepBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +31,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::DataReplicationInitiationStepName::from(
+                                            crate::types::DataReplicationInitiationStepName::from(
                                                 u.as_ref(),
                                             )
                                         })
@@ -45,7 +46,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::DataReplicationInitiationStepStatus::from(
+                                            crate::types::DataReplicationInitiationStepStatus::from(
                                                 u.as_ref(),
                                             )
                                         })

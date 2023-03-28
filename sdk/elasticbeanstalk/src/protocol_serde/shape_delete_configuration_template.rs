@@ -3,44 +3,38 @@
 pub fn de_delete_configuration_template_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteConfigurationTemplateOutput,
-    crate::error::DeleteConfigurationTemplateError,
+    crate::operation::delete_configuration_template::DeleteConfigurationTemplateOutput,
+    crate::operation::delete_configuration_template::DeleteConfigurationTemplateError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteConfigurationTemplateError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::delete_configuration_template::DeleteConfigurationTemplateError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::DeleteConfigurationTemplateError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::delete_configuration_template::DeleteConfigurationTemplateError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "OperationInProgressFailure" => {
-            crate::error::DeleteConfigurationTemplateError::OperationInProgressException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "OperationInProgressFailure" => crate::operation::delete_configuration_template::DeleteConfigurationTemplateError::OperationInProgressException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::operation_in_progress_exception::Builder::default();
+                    let mut output = crate::types::error::builders::OperationInProgressExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_operation_in_progress_exception::de_operation_in_progress_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteConfigurationTemplateError::unhandled)?;
+                    output = crate::protocol_serde::shape_operation_in_progress_exception::de_operation_in_progress_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_configuration_template::DeleteConfigurationTemplateError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DeleteConfigurationTemplateError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::delete_configuration_template::DeleteConfigurationTemplateError::generic(generic)
     })
 }
 
@@ -48,12 +42,12 @@ pub fn de_delete_configuration_template_http_error(
 pub fn de_delete_configuration_template_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteConfigurationTemplateOutput,
-    crate::error::DeleteConfigurationTemplateError,
+    crate::operation::delete_configuration_template::DeleteConfigurationTemplateOutput,
+    crate::operation::delete_configuration_template::DeleteConfigurationTemplateError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_configuration_template_output::Builder::default();
+        let mut output = crate::operation::delete_configuration_template::builders::DeleteConfigurationTemplateOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

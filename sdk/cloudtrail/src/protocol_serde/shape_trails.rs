@@ -2,7 +2,7 @@
 pub(crate) fn de_trails<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::TrailInfo>>,
+    Option<std::vec::Vec<crate::types::TrailInfo>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

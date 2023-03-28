@@ -2,7 +2,7 @@
 pub(crate) fn de_routed_resources<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::RoutedResource>>,
+    Option<std::vec::Vec<crate::types::RoutedResource>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

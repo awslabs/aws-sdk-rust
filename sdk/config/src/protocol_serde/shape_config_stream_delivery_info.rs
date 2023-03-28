@@ -2,7 +2,7 @@
 pub(crate) fn de_config_stream_delivery_info<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ConfigStreamDeliveryInfo>,
+    Option<crate::types::ConfigStreamDeliveryInfo>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::config_stream_delivery_info::Builder::default();
+            let mut builder = crate::types::builders::ConfigStreamDeliveryInfoBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::DeliveryStatus::from(u.as_ref()))
+                                            .map(|u| crate::types::DeliveryStatus::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

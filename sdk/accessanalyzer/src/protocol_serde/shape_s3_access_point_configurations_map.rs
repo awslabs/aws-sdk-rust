@@ -3,7 +3,7 @@ pub(crate) fn de_s3_access_point_configurations_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<
-        std::collections::HashMap<std::string::String, crate::model::S3AccessPointConfiguration>,
+        std::collections::HashMap<std::string::String, crate::types::S3AccessPointConfiguration>,
     >,
     aws_smithy_json::deserialize::error::DeserializeError,
 >

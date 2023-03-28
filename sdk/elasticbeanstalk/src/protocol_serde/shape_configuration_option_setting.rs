@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_configuration_option_setting(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::ConfigurationOptionSetting,
+    input: &crate::types::ConfigurationOptionSetting,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("ResourceName");
@@ -29,9 +29,9 @@ pub fn ser_configuration_option_setting(
 
 pub fn de_configuration_option_setting(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::ConfigurationOptionSetting, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::ConfigurationOptionSetting, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::ConfigurationOptionSetting::builder();
+    let mut builder = crate::types::ConfigurationOptionSetting::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ResourceName") /* ResourceName com.amazonaws.elasticbeanstalk#ConfigurationOptionSetting$ResourceName */ =>  {

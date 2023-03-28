@@ -2,7 +2,7 @@
 pub(crate) fn de_processing_inputs<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ProcessingInput>>,
+    Option<std::vec::Vec<crate::types::ProcessingInput>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

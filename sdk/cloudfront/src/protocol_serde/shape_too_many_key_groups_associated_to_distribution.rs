@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_too_many_key_groups_associated_to_distribution_xml_err(
     inp: &[u8],
-    mut builder: crate::error::too_many_key_groups_associated_to_distribution::Builder,
+    mut builder: crate::types::error::builders::TooManyKeyGroupsAssociatedToDistributionBuilder,
 ) -> Result<
-    crate::error::too_many_key_groups_associated_to_distribution::Builder,
+    crate::types::error::builders::TooManyKeyGroupsAssociatedToDistributionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

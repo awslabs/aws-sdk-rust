@@ -2,7 +2,7 @@
 pub(crate) fn de_event_data_stores<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::EventDataStore>>,
+    Option<std::vec::Vec<crate::types::EventDataStore>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

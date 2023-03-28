@@ -2,7 +2,7 @@
 pub fn de_scheduled_instance_availability_set(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::ScheduledInstanceAvailability>,
+    std::vec::Vec<crate::types::ScheduledInstanceAvailability>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

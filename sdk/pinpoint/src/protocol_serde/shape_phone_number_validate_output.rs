@@ -2,10 +2,10 @@
 pub fn de_number_validate_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::NumberValidateResponse>,
-    crate::error::PhoneNumberValidateError,
+    std::option::Option<crate::types::NumberValidateResponse>,
+    crate::operation::phone_number_validate::PhoneNumberValidateError,
 > {
     (!body.is_empty()).then(||{
-        crate::protocol_serde::shape_number_validate_response::de_number_validate_response_payload(body).map_err(crate::error::PhoneNumberValidateError::unhandled)
+        crate::protocol_serde::shape_number_validate_response::de_number_validate_response_payload(body).map_err(crate::operation::phone_number_validate::PhoneNumberValidateError::unhandled)
     }).transpose()
 }

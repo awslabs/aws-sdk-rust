@@ -2,7 +2,7 @@
 pub(crate) fn de_skills_store_skill_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SkillsStoreSkill>>,
+    Option<std::vec::Vec<crate::types::SkillsStoreSkill>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

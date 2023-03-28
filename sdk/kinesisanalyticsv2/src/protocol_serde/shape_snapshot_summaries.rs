@@ -2,7 +2,7 @@
 pub(crate) fn de_snapshot_summaries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SnapshotDetails>>,
+    Option<std::vec::Vec<crate::types::SnapshotDetails>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

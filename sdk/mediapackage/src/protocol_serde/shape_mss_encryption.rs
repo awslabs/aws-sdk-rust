@@ -2,7 +2,7 @@
 pub(crate) fn de_mss_encryption<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::MssEncryption>,
+    Option<crate::types::MssEncryption>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::mss_encryption::Builder::default();
+            let mut builder = crate::types::builders::MssEncryptionBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -53,7 +53,7 @@ where
 
 pub fn ser_mss_encryption(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::MssEncryption,
+    input: &crate::types::MssEncryption,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.speke_key_provider {
         #[allow(unused_mut)]

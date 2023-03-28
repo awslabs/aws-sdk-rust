@@ -2,7 +2,7 @@
 pub(crate) fn de_canaries_last_run<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CanaryLastRun>>,
+    Option<std::vec::Vec<crate::types::CanaryLastRun>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

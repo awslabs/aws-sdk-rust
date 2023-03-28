@@ -2,42 +2,53 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_update_component_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::UpdateComponentOutput, crate::error::UpdateComponentError> {
+) -> std::result::Result<
+    crate::operation::update_component::UpdateComponentOutput,
+    crate::operation::update_component::UpdateComponentError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::UpdateComponentError::unhandled)?;
+        .map_err(crate::operation::update_component::UpdateComponentError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::UpdateComponentError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::update_component::UpdateComponentError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerException" => crate::error::UpdateComponentError::InternalServerException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateComponentError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InvalidParameterException" => {
-            crate::error::UpdateComponentError::InvalidParameterException({
+        "InternalServerException" => {
+            crate::operation::update_component::UpdateComponentError::InternalServerException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::InternalServerExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateComponentError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_component::UpdateComponentError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidParameterException" => {
+            crate::operation::update_component::UpdateComponentError::InvalidParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InvalidParameterExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_component::UpdateComponentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -48,13 +59,14 @@ pub fn de_update_component_http_error(
             })
         }
         "ResourceConflictException" => {
-            crate::error::UpdateComponentError::ResourceConflictException({
+            crate::operation::update_component::UpdateComponentError::ResourceConflictException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_conflict_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::ResourceConflictExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_conflict_exception::de_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateComponentError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_conflict_exception::de_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::update_component::UpdateComponentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -64,17 +76,21 @@ pub fn de_update_component_http_error(
                 tmp
             })
         }
-        _ => crate::error::UpdateComponentError::generic(generic),
+        _ => crate::operation::update_component::UpdateComponentError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_update_component_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::UpdateComponentOutput, crate::error::UpdateComponentError> {
+) -> std::result::Result<
+    crate::operation::update_component::UpdateComponentOutput,
+    crate::operation::update_component::UpdateComponentError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::update_component_output::Builder::default();
+        let mut output =
+            crate::operation::update_component::builders::UpdateComponentOutputBuilder::default();
         let _ = response;
         output = output.set_entity(
             crate::protocol_serde::shape_update_component_output::de_entity_payload(

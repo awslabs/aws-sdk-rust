@@ -2,7 +2,7 @@
 pub(crate) fn de_task_run_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::TaskRun>>,
+    Option<std::vec::Vec<crate::types::TaskRun>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

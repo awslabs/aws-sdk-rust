@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_policy_not_attachable_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::policy_not_attachable_exception::Builder,
+    mut builder: crate::types::error::builders::PolicyNotAttachableExceptionBuilder,
 ) -> Result<
-    crate::error::policy_not_attachable_exception::Builder,
+    crate::types::error::builders::PolicyNotAttachableExceptionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

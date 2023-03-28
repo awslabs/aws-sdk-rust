@@ -2,13 +2,10 @@
 pub fn de_virtual_gateway_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::VirtualGatewayData>,
-    crate::error::DescribeVirtualGatewayError,
+    std::option::Option<crate::types::VirtualGatewayData>,
+    crate::operation::describe_virtual_gateway::DescribeVirtualGatewayError,
 > {
-    (!body.is_empty())
-        .then(|| {
-            crate::protocol_serde::shape_virtual_gateway_data::de_virtual_gateway_data_payload(body)
-                .map_err(crate::error::DescribeVirtualGatewayError::unhandled)
-        })
-        .transpose()
+    (!body.is_empty()).then(||{
+        crate::protocol_serde::shape_virtual_gateway_data::de_virtual_gateway_data_payload(body).map_err(crate::operation::describe_virtual_gateway::DescribeVirtualGatewayError::unhandled)
+    }).transpose()
 }

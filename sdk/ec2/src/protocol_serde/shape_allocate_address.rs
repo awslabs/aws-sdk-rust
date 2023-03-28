@@ -2,28 +2,35 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_allocate_address_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::AllocateAddressOutput, crate::error::AllocateAddressError> {
+) -> std::result::Result<
+    crate::operation::allocate_address::AllocateAddressOutput,
+    crate::operation::allocate_address::AllocateAddressError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::AllocateAddressError::unhandled)?;
+        .map_err(crate::operation::allocate_address::AllocateAddressError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::AllocateAddressError::generic(generic))
+    Err(crate::operation::allocate_address::AllocateAddressError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_allocate_address_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::AllocateAddressOutput, crate::error::AllocateAddressError> {
+) -> std::result::Result<
+    crate::operation::allocate_address::AllocateAddressOutput,
+    crate::operation::allocate_address::AllocateAddressError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::allocate_address_output::Builder::default();
+        let mut output =
+            crate::operation::allocate_address::builders::AllocateAddressOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_allocate_address::de_allocate_address(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::AllocateAddressError::unhandled)?;
+        .map_err(crate::operation::allocate_address::AllocateAddressError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -34,9 +41,11 @@ pub fn de_allocate_address_http_response(
 #[allow(unused_mut)]
 pub fn de_allocate_address(
     inp: &[u8],
-    mut builder: crate::output::allocate_address_output::Builder,
-) -> Result<crate::output::allocate_address_output::Builder, aws_smithy_xml::decode::XmlDecodeError>
-{
+    mut builder: crate::operation::allocate_address::builders::AllocateAddressOutputBuilder,
+) -> Result<
+    crate::operation::allocate_address::builders::AllocateAddressOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -106,8 +115,8 @@ pub fn de_allocate_address(
             s if s.matches("domain") /* Domain com.amazonaws.ec2.synthetic#AllocateAddressOutput$Domain */ =>  {
                 let var_5 =
                     Some(
-                        Result::<crate::model::DomainType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::DomainType::from(
+                        Result::<crate::types::DomainType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::DomainType::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

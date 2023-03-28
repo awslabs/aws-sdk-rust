@@ -2,7 +2,7 @@
 pub(crate) fn de_recorder_config<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::RecorderConfig>,
+    Option<crate::types::RecorderConfig>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::recorder_config::Builder::default();
+            let mut builder = crate::types::builders::RecorderConfigBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -58,7 +58,7 @@ where
 
 pub fn ser_recorder_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::RecorderConfig,
+    input: &crate::types::RecorderConfig,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.media_source_config {
         #[allow(unused_mut)]

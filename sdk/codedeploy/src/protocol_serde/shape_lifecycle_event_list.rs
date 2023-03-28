@@ -2,7 +2,7 @@
 pub(crate) fn de_lifecycle_event_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::LifecycleEvent>>,
+    Option<std::vec::Vec<crate::types::LifecycleEvent>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

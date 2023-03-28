@@ -2,7 +2,7 @@
 pub(crate) fn de_hyper_parameter_training_job_definitions<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::HyperParameterTrainingJobDefinition>>,
+    Option<std::vec::Vec<crate::types::HyperParameterTrainingJobDefinition>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

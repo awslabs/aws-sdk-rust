@@ -2,7 +2,7 @@
 pub(crate) fn de_container_recipe_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ContainerRecipeSummary>,
+    Option<crate::types::ContainerRecipeSummary>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::container_recipe_summary::Builder::default();
+            let mut builder = crate::types::builders::ContainerRecipeSummaryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -39,7 +39,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::ContainerType::from(u.as_ref()))
+                                            .map(|u| crate::types::ContainerType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -60,7 +60,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::Platform::from(u.as_ref()))
+                                            .map(|u| crate::types::Platform::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

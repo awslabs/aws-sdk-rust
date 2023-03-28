@@ -2,7 +2,7 @@
 pub(crate) fn de_container_service_registry_login<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ContainerServiceRegistryLogin>,
+    Option<crate::types::ContainerServiceRegistryLogin>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::container_service_registry_login::Builder::default();
+            let mut builder =
+                crate::types::builders::ContainerServiceRegistryLoginBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

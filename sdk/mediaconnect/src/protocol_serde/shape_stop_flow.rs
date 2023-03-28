@@ -2,26 +2,34 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_stop_flow_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::StopFlowOutput, crate::error::StopFlowError> {
+) -> std::result::Result<
+    crate::operation::stop_flow::StopFlowOutput,
+    crate::operation::stop_flow::StopFlowError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::StopFlowError::unhandled)?;
+        .map_err(crate::operation::stop_flow::StopFlowError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::StopFlowError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::stop_flow::StopFlowError::unhandled(
+                generic,
+            ))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::StopFlowError::BadRequestException({
+        "BadRequestException" => crate::operation::stop_flow::StopFlowError::BadRequestException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_exception::Builder::default();
+                let mut output =
+                    crate::types::error::builders::BadRequestExceptionBuilder::default();
                 let _ = response;
-                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopFlowError::unhandled)?;
+                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::stop_flow::StopFlowError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -30,13 +38,14 @@ pub fn de_stop_flow_http_error(
             }
             tmp
         }),
-        "ForbiddenException" => crate::error::StopFlowError::ForbiddenException({
+        "ForbiddenException" => crate::operation::stop_flow::StopFlowError::ForbiddenException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_exception::Builder::default();
+                let mut output =
+                    crate::types::error::builders::ForbiddenExceptionBuilder::default();
                 let _ = response;
-                output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopFlowError::unhandled)?;
+                output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::stop_flow::StopFlowError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -46,14 +55,15 @@ pub fn de_stop_flow_http_error(
             tmp
         }),
         "InternalServerErrorException" => {
-            crate::error::StopFlowError::InternalServerErrorException({
+            crate::operation::stop_flow::StopFlowError::InternalServerErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::internal_server_error_exception::Builder::default();
+                        crate::types::error::builders::InternalServerErrorExceptionBuilder::default(
+                        );
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopFlowError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::stop_flow::StopFlowError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -63,13 +73,13 @@ pub fn de_stop_flow_http_error(
                 tmp
             })
         }
-        "NotFoundException" => crate::error::StopFlowError::NotFoundException({
+        "NotFoundException" => crate::operation::stop_flow::StopFlowError::NotFoundException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_exception::Builder::default();
+                let mut output = crate::types::error::builders::NotFoundExceptionBuilder::default();
                 let _ = response;
-                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopFlowError::unhandled)?;
+                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::stop_flow::StopFlowError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -79,14 +89,15 @@ pub fn de_stop_flow_http_error(
             tmp
         }),
         "ServiceUnavailableException" => {
-            crate::error::StopFlowError::ServiceUnavailableException({
+            crate::operation::stop_flow::StopFlowError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::service_unavailable_exception::Builder::default();
+                        crate::types::error::builders::ServiceUnavailableExceptionBuilder::default(
+                        );
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopFlowError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::stop_flow::StopFlowError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -96,36 +107,42 @@ pub fn de_stop_flow_http_error(
                 tmp
             })
         }
-        "TooManyRequestsException" => crate::error::StopFlowError::TooManyRequestsException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "TooManyRequestsException" => {
+            crate::operation::stop_flow::StopFlowError::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopFlowError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::StopFlowError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::stop_flow::StopFlowError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::stop_flow::StopFlowError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_stop_flow_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::StopFlowOutput, crate::error::StopFlowError> {
+) -> std::result::Result<
+    crate::operation::stop_flow::StopFlowOutput,
+    crate::operation::stop_flow::StopFlowError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::stop_flow_output::Builder::default();
+        let mut output = crate::operation::stop_flow::builders::StopFlowOutputBuilder::default();
         let _ = response;
         output =
             crate::protocol_serde::shape_stop_flow::de_stop_flow(response.body().as_ref(), output)
-                .map_err(crate::error::StopFlowError::unhandled)?;
+                .map_err(crate::operation::stop_flow::StopFlowError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -135,9 +152,9 @@ pub fn de_stop_flow_http_response(
 
 pub(crate) fn de_stop_flow(
     value: &[u8],
-    mut builder: crate::output::stop_flow_output::Builder,
+    mut builder: crate::operation::stop_flow::builders::StopFlowOutputBuilder,
 ) -> Result<
-    crate::output::stop_flow_output::Builder,
+    crate::operation::stop_flow::builders::StopFlowOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =
@@ -166,7 +183,7 @@ pub(crate) fn de_stop_flow(
                             )?
                             .map(|s| {
                                 s.to_unescaped()
-                                    .map(|u| crate::model::Status::from(u.as_ref()))
+                                    .map(|u| crate::types::Status::from(u.as_ref()))
                             })
                             .transpose()?,
                         );

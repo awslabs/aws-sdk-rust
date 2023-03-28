@@ -2,7 +2,7 @@
 pub(crate) fn de_object_identifier_and_link_name_tuple<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ObjectIdentifierAndLinkNameTuple>,
+    Option<crate::types::ObjectIdentifierAndLinkNameTuple>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::object_identifier_and_link_name_tuple::Builder::default();
+                crate::types::builders::ObjectIdentifierAndLinkNameTupleBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

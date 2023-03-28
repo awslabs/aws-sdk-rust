@@ -3,124 +3,130 @@
 pub fn de_get_image_recipe_policy_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetImageRecipePolicyOutput,
-    crate::error::GetImageRecipePolicyError,
+    crate::operation::get_image_recipe_policy::GetImageRecipePolicyOutput,
+    crate::operation::get_image_recipe_policy::GetImageRecipePolicyError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetImageRecipePolicyError::unhandled)?;
+        .map_err(crate::operation::get_image_recipe_policy::GetImageRecipePolicyError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::GetImageRecipePolicyError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::get_image_recipe_policy::GetImageRecipePolicyError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CallRateLimitExceededException" => {
-            crate::error::GetImageRecipePolicyError::CallRateLimitExceededException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "CallRateLimitExceededException" => crate::operation::get_image_recipe_policy::GetImageRecipePolicyError::CallRateLimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::call_rate_limit_exceeded_exception::Builder::default();
+                    let mut output = crate::types::error::builders::CallRateLimitExceededExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_call_rate_limit_exceeded_exception::de_call_rate_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetImageRecipePolicyError::unhandled)?;
+                    output = crate::protocol_serde::shape_call_rate_limit_exceeded_exception::de_call_rate_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_image_recipe_policy::GetImageRecipePolicyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ForbiddenException" => crate::error::GetImageRecipePolicyError::ForbiddenException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetImageRecipePolicyError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "InvalidRequestException" => {
-            crate::error::GetImageRecipePolicyError::InvalidRequestException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "ForbiddenException" => crate::operation::get_image_recipe_policy::GetImageRecipePolicyError::ForbiddenException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_request_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ForbiddenExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetImageRecipePolicyError::unhandled)?;
+                    output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_image_recipe_policy::GetImageRecipePolicyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ResourceNotFoundException" => {
-            crate::error::GetImageRecipePolicyError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidRequestException" => crate::operation::get_image_recipe_policy::GetImageRecipePolicyError::InvalidRequestException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetImageRecipePolicyError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_image_recipe_policy::GetImageRecipePolicyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ServiceException" => {
-            crate::error::GetImageRecipePolicyError::ServiceException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::get_image_recipe_policy::GetImageRecipePolicyError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::service_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_exception::de_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetImageRecipePolicyError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_image_recipe_policy::GetImageRecipePolicyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ServiceUnavailableException" => {
-            crate::error::GetImageRecipePolicyError::ServiceUnavailableException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ServiceException" => crate::operation::get_image_recipe_policy::GetImageRecipePolicyError::ServiceException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::service_unavailable_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ServiceExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetImageRecipePolicyError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_exception::de_service_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_image_recipe_policy::GetImageRecipePolicyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::GetImageRecipePolicyError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ServiceUnavailableException" => crate::operation::get_image_recipe_policy::GetImageRecipePolicyError::ServiceUnavailableException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_image_recipe_policy::GetImageRecipePolicyError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::get_image_recipe_policy::GetImageRecipePolicyError::generic(generic)
     })
 }
 
@@ -128,18 +134,18 @@ pub fn de_get_image_recipe_policy_http_error(
 pub fn de_get_image_recipe_policy_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetImageRecipePolicyOutput,
-    crate::error::GetImageRecipePolicyError,
+    crate::operation::get_image_recipe_policy::GetImageRecipePolicyOutput,
+    crate::operation::get_image_recipe_policy::GetImageRecipePolicyError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_image_recipe_policy_output::Builder::default();
+        let mut output = crate::operation::get_image_recipe_policy::builders::GetImageRecipePolicyOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_get_image_recipe_policy::de_get_image_recipe_policy(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::GetImageRecipePolicyError::unhandled)?;
+        .map_err(crate::operation::get_image_recipe_policy::GetImageRecipePolicyError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -149,9 +155,9 @@ pub fn de_get_image_recipe_policy_http_response(
 
 pub(crate) fn de_get_image_recipe_policy(
     value: &[u8],
-    mut builder: crate::output::get_image_recipe_policy_output::Builder,
+    mut builder: crate::operation::get_image_recipe_policy::builders::GetImageRecipePolicyOutputBuilder,
 ) -> Result<
-    crate::output::get_image_recipe_policy_output::Builder,
+    crate::operation::get_image_recipe_policy::builders::GetImageRecipePolicyOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

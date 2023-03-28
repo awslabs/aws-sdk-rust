@@ -3,72 +3,79 @@
 pub fn de_describe_target_health_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeTargetHealthOutput,
-    crate::error::DescribeTargetHealthError,
+    crate::operation::describe_target_health::DescribeTargetHealthOutput,
+    crate::operation::describe_target_health::DescribeTargetHealthError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeTargetHealthError::unhandled)?;
+        .map_err(crate::operation::describe_target_health::DescribeTargetHealthError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DescribeTargetHealthError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::describe_target_health::DescribeTargetHealthError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "HealthUnavailable" => {
-            crate::error::DescribeTargetHealthError::HealthUnavailableException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "HealthUnavailable" => crate::operation::describe_target_health::DescribeTargetHealthError::HealthUnavailableException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::health_unavailable_exception::Builder::default();
+                    let mut output = crate::types::error::builders::HealthUnavailableExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_health_unavailable_exception::de_health_unavailable_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeTargetHealthError::unhandled)?;
+                    output = crate::protocol_serde::shape_health_unavailable_exception::de_health_unavailable_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::describe_target_health::DescribeTargetHealthError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidTarget" => crate::error::DescribeTargetHealthError::InvalidTargetException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::invalid_target_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_target_exception::de_invalid_target_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeTargetHealthError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "TargetGroupNotFound" => {
-            crate::error::DescribeTargetHealthError::TargetGroupNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidTarget" => crate::operation::describe_target_health::DescribeTargetHealthError::InvalidTargetException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::target_group_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidTargetExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_target_group_not_found_exception::de_target_group_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeTargetHealthError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_target_exception::de_invalid_target_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::describe_target_health::DescribeTargetHealthError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DescribeTargetHealthError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TargetGroupNotFound" => crate::operation::describe_target_health::DescribeTargetHealthError::TargetGroupNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::TargetGroupNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_target_group_not_found_exception::de_target_group_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::describe_target_health::DescribeTargetHealthError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::describe_target_health::DescribeTargetHealthError::generic(generic)
     })
 }
 
@@ -76,18 +83,18 @@ pub fn de_describe_target_health_http_error(
 pub fn de_describe_target_health_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeTargetHealthOutput,
-    crate::error::DescribeTargetHealthError,
+    crate::operation::describe_target_health::DescribeTargetHealthOutput,
+    crate::operation::describe_target_health::DescribeTargetHealthError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_target_health_output::Builder::default();
+        let mut output = crate::operation::describe_target_health::builders::DescribeTargetHealthOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_describe_target_health::de_describe_target_health(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DescribeTargetHealthError::unhandled)?;
+        .map_err(crate::operation::describe_target_health::DescribeTargetHealthError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -98,9 +105,9 @@ pub fn de_describe_target_health_http_response(
 #[allow(unused_mut)]
 pub fn de_describe_target_health(
     inp: &[u8],
-    mut builder: crate::output::describe_target_health_output::Builder,
+    mut builder: crate::operation::describe_target_health::builders::DescribeTargetHealthOutputBuilder,
 ) -> Result<
-    crate::output::describe_target_health_output::Builder,
+    crate::operation::describe_target_health::builders::DescribeTargetHealthOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

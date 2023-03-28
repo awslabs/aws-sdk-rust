@@ -2,7 +2,7 @@
 pub fn de_ipv6_prefix_list(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::Ipv6PrefixSpecificationRequest>,
+    std::vec::Vec<crate::types::Ipv6PrefixSpecificationRequest>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

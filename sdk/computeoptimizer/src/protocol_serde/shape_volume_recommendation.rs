@@ -2,7 +2,7 @@
 pub(crate) fn de_volume_recommendation<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::VolumeRecommendation>,
+    Option<crate::types::VolumeRecommendation>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::volume_recommendation::Builder::default();
+            let mut builder = crate::types::builders::VolumeRecommendationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -53,7 +53,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::EbsFinding::from(u.as_ref()))
+                                            .map(|u| crate::types::EbsFinding::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -91,7 +91,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::CurrentPerformanceRisk::from(u.as_ref())
+                                            crate::types::CurrentPerformanceRisk::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

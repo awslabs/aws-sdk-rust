@@ -2,7 +2,7 @@
 pub(crate) fn de_test_case_scenarios_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::TestCaseScenario>>,
+    Option<std::vec::Vec<crate::types::TestCaseScenario>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

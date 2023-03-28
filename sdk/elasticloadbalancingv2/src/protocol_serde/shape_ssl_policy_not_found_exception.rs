@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_ssl_policy_not_found_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::ssl_policy_not_found_exception::Builder,
+    mut builder: crate::types::error::builders::SslPolicyNotFoundExceptionBuilder,
 ) -> Result<
-    crate::error::ssl_policy_not_found_exception::Builder,
+    crate::types::error::builders::SslPolicyNotFoundExceptionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

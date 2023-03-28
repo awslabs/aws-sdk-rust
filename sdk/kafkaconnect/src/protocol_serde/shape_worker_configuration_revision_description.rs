@@ -2,7 +2,7 @@
 pub(crate) fn de_worker_configuration_revision_description<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::WorkerConfigurationRevisionDescription>,
+    Option<crate::types::WorkerConfigurationRevisionDescription>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::worker_configuration_revision_description::Builder::default();
+                crate::types::builders::WorkerConfigurationRevisionDescriptionBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

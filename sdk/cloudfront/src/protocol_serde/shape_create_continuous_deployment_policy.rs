@@ -3,31 +3,28 @@
 pub fn de_create_continuous_deployment_policy_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateContinuousDeploymentPolicyOutput,
-    crate::error::CreateContinuousDeploymentPolicyError,
+    crate::operation::create_continuous_deployment_policy::CreateContinuousDeploymentPolicyOutput,
+    crate::operation::create_continuous_deployment_policy::CreateContinuousDeploymentPolicyError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::CreateContinuousDeploymentPolicyError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::create_continuous_deployment_policy::CreateContinuousDeploymentPolicyError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::CreateContinuousDeploymentPolicyError::unhandled(generic))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::create_continuous_deployment_policy::CreateContinuousDeploymentPolicyError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDenied" => crate::error::CreateContinuousDeploymentPolicyError::AccessDenied({
+        "AccessDenied" => crate::operation::create_continuous_deployment_policy::CreateContinuousDeploymentPolicyError::AccessDenied({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::access_denied::Builder::default();
+                    let mut output = crate::types::error::builders::AccessDeniedBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_access_denied::de_access_denied_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateContinuousDeploymentPolicyError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied::de_access_denied_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_continuous_deployment_policy::CreateContinuousDeploymentPolicyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -37,14 +34,14 @@ pub fn de_create_continuous_deployment_policy_http_error(
                                                     }
             tmp
         }),
-        "ContinuousDeploymentPolicyAlreadyExists" => crate::error::CreateContinuousDeploymentPolicyError::ContinuousDeploymentPolicyAlreadyExists({
+        "ContinuousDeploymentPolicyAlreadyExists" => crate::operation::create_continuous_deployment_policy::CreateContinuousDeploymentPolicyError::ContinuousDeploymentPolicyAlreadyExists({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::continuous_deployment_policy_already_exists::Builder::default();
+                    let mut output = crate::types::error::builders::ContinuousDeploymentPolicyAlreadyExistsBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_continuous_deployment_policy_already_exists::de_continuous_deployment_policy_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateContinuousDeploymentPolicyError::unhandled)?;
+                    output = crate::protocol_serde::shape_continuous_deployment_policy_already_exists::de_continuous_deployment_policy_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_continuous_deployment_policy::CreateContinuousDeploymentPolicyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -54,14 +51,14 @@ pub fn de_create_continuous_deployment_policy_http_error(
                                                     }
             tmp
         }),
-        "InconsistentQuantities" => crate::error::CreateContinuousDeploymentPolicyError::InconsistentQuantities({
+        "InconsistentQuantities" => crate::operation::create_continuous_deployment_policy::CreateContinuousDeploymentPolicyError::InconsistentQuantities({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::inconsistent_quantities::Builder::default();
+                    let mut output = crate::types::error::builders::InconsistentQuantitiesBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_inconsistent_quantities::de_inconsistent_quantities_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateContinuousDeploymentPolicyError::unhandled)?;
+                    output = crate::protocol_serde::shape_inconsistent_quantities::de_inconsistent_quantities_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_continuous_deployment_policy::CreateContinuousDeploymentPolicyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -71,14 +68,14 @@ pub fn de_create_continuous_deployment_policy_http_error(
                                                     }
             tmp
         }),
-        "InvalidArgument" => crate::error::CreateContinuousDeploymentPolicyError::InvalidArgument({
+        "InvalidArgument" => crate::operation::create_continuous_deployment_policy::CreateContinuousDeploymentPolicyError::InvalidArgument({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_argument::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidArgumentBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_argument::de_invalid_argument_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateContinuousDeploymentPolicyError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_argument::de_invalid_argument_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_continuous_deployment_policy::CreateContinuousDeploymentPolicyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -88,14 +85,14 @@ pub fn de_create_continuous_deployment_policy_http_error(
                                                     }
             tmp
         }),
-        "StagingDistributionInUse" => crate::error::CreateContinuousDeploymentPolicyError::StagingDistributionInUse({
+        "StagingDistributionInUse" => crate::operation::create_continuous_deployment_policy::CreateContinuousDeploymentPolicyError::StagingDistributionInUse({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::staging_distribution_in_use::Builder::default();
+                    let mut output = crate::types::error::builders::StagingDistributionInUseBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_staging_distribution_in_use::de_staging_distribution_in_use_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateContinuousDeploymentPolicyError::unhandled)?;
+                    output = crate::protocol_serde::shape_staging_distribution_in_use::de_staging_distribution_in_use_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_continuous_deployment_policy::CreateContinuousDeploymentPolicyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -105,14 +102,14 @@ pub fn de_create_continuous_deployment_policy_http_error(
                                                     }
             tmp
         }),
-        "TooManyContinuousDeploymentPolicies" => crate::error::CreateContinuousDeploymentPolicyError::TooManyContinuousDeploymentPolicies({
+        "TooManyContinuousDeploymentPolicies" => crate::operation::create_continuous_deployment_policy::CreateContinuousDeploymentPolicyError::TooManyContinuousDeploymentPolicies({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_continuous_deployment_policies::Builder::default();
+                    let mut output = crate::types::error::builders::TooManyContinuousDeploymentPoliciesBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_continuous_deployment_policies::de_too_many_continuous_deployment_policies_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateContinuousDeploymentPolicyError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_continuous_deployment_policies::de_too_many_continuous_deployment_policies_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_continuous_deployment_policy::CreateContinuousDeploymentPolicyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -122,7 +119,7 @@ pub fn de_create_continuous_deployment_policy_http_error(
                                                     }
             tmp
         }),
-        _ => crate::error::CreateContinuousDeploymentPolicyError::generic(generic)
+        _ => crate::operation::create_continuous_deployment_policy::CreateContinuousDeploymentPolicyError::generic(generic)
     })
 }
 
@@ -130,24 +127,23 @@ pub fn de_create_continuous_deployment_policy_http_error(
 pub fn de_create_continuous_deployment_policy_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateContinuousDeploymentPolicyOutput,
-    crate::error::CreateContinuousDeploymentPolicyError,
+    crate::operation::create_continuous_deployment_policy::CreateContinuousDeploymentPolicyOutput,
+    crate::operation::create_continuous_deployment_policy::CreateContinuousDeploymentPolicyError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::output::create_continuous_deployment_policy_output::Builder::default();
+        let mut output = crate::operation::create_continuous_deployment_policy::builders::CreateContinuousDeploymentPolicyOutputBuilder::default();
         let _ = response;
         output = output.set_continuous_deployment_policy(
             crate::protocol_serde::shape_create_continuous_deployment_policy_output::de_continuous_deployment_policy_payload(response.body().as_ref())?
         );
         output = output.set_e_tag(
             crate::protocol_serde::shape_create_continuous_deployment_policy_output::de_e_tag_header(response.headers())
-                                    .map_err(|_|crate::error::CreateContinuousDeploymentPolicyError::unhandled("Failed to parse ETag from header `ETag"))?
+                                    .map_err(|_|crate::operation::create_continuous_deployment_policy::CreateContinuousDeploymentPolicyError::unhandled("Failed to parse ETag from header `ETag"))?
         );
         output = output.set_location(
             crate::protocol_serde::shape_create_continuous_deployment_policy_output::de_location_header(response.headers())
-                                    .map_err(|_|crate::error::CreateContinuousDeploymentPolicyError::unhandled("Failed to parse Location from header `Location"))?
+                                    .map_err(|_|crate::operation::create_continuous_deployment_policy::CreateContinuousDeploymentPolicyError::unhandled("Failed to parse Location from header `Location"))?
         );
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

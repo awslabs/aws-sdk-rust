@@ -2,7 +2,7 @@
 pub(crate) fn de_slot_value_selection_setting<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::SlotValueSelectionSetting>,
+    Option<crate::types::SlotValueSelectionSetting>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::slot_value_selection_setting::Builder::default();
+            let mut builder = crate::types::builders::SlotValueSelectionSettingBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::SlotValueResolutionStrategy::from(
+                                            crate::types::SlotValueResolutionStrategy::from(
                                                 u.as_ref(),
                                             )
                                         })
@@ -73,7 +73,7 @@ where
 
 pub fn ser_slot_value_selection_setting(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::SlotValueSelectionSetting,
+    input: &crate::types::SlotValueSelectionSetting,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.resolution_strategy {
         object.key("resolutionStrategy").string(var_1.as_str());

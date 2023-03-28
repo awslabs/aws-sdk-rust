@@ -2,7 +2,7 @@
 pub(crate) fn de_service_registries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ServiceRegistry>>,
+    Option<std::vec::Vec<crate::types::ServiceRegistry>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

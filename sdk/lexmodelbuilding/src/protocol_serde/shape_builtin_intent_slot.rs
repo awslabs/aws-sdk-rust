@@ -2,7 +2,7 @@
 pub(crate) fn de_builtin_intent_slot<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::BuiltinIntentSlot>,
+    Option<crate::types::BuiltinIntentSlot>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::builtin_intent_slot::Builder::default();
+            let mut builder = crate::types::builders::BuiltinIntentSlotBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_entity_temporarily_unmodifiable_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::entity_temporarily_unmodifiable_exception::Builder,
+    mut builder: crate::types::error::builders::EntityTemporarilyUnmodifiableExceptionBuilder,
 ) -> Result<
-    crate::error::entity_temporarily_unmodifiable_exception::Builder,
+    crate::types::error::builders::EntityTemporarilyUnmodifiableExceptionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

@@ -2,7 +2,7 @@
 pub(crate) fn de_batch_environment_variable_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::BatchEnvironmentVariable>>,
+    Option<std::vec::Vec<crate::types::BatchEnvironmentVariable>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

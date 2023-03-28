@@ -2,7 +2,7 @@
 pub(crate) fn de_third_party_job_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ThirdPartyJob>>,
+    Option<std::vec::Vec<crate::types::ThirdPartyJob>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

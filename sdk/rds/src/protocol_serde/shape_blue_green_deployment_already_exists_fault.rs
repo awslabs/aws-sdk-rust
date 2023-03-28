@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_blue_green_deployment_already_exists_fault_xml_err(
     inp: &[u8],
-    mut builder: crate::error::blue_green_deployment_already_exists_fault::Builder,
+    mut builder: crate::types::error::builders::BlueGreenDeploymentAlreadyExistsFaultBuilder,
 ) -> Result<
-    crate::error::blue_green_deployment_already_exists_fault::Builder,
+    crate::types::error::builders::BlueGreenDeploymentAlreadyExistsFaultBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

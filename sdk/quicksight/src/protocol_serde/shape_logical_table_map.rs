@@ -2,7 +2,7 @@
 pub(crate) fn de_logical_table_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<std::string::String, crate::model::LogicalTable>>,
+    Option<std::collections::HashMap<std::string::String, crate::types::LogicalTable>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

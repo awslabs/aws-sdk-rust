@@ -3,40 +3,45 @@
 pub fn de_configure_health_check_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ConfigureHealthCheckOutput,
-    crate::error::ConfigureHealthCheckError,
+    crate::operation::configure_health_check::ConfigureHealthCheckOutput,
+    crate::operation::configure_health_check::ConfigureHealthCheckError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ConfigureHealthCheckError::unhandled)?;
+        .map_err(crate::operation::configure_health_check::ConfigureHealthCheckError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ConfigureHealthCheckError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::configure_health_check::ConfigureHealthCheckError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LoadBalancerNotFound" => {
-            crate::error::ConfigureHealthCheckError::AccessPointNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "LoadBalancerNotFound" => crate::operation::configure_health_check::ConfigureHealthCheckError::AccessPointNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::access_point_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::AccessPointNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_access_point_not_found_exception::de_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ConfigureHealthCheckError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_point_not_found_exception::de_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::configure_health_check::ConfigureHealthCheckError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::ConfigureHealthCheckError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::configure_health_check::ConfigureHealthCheckError::generic(generic)
     })
 }
 
@@ -44,18 +49,18 @@ pub fn de_configure_health_check_http_error(
 pub fn de_configure_health_check_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ConfigureHealthCheckOutput,
-    crate::error::ConfigureHealthCheckError,
+    crate::operation::configure_health_check::ConfigureHealthCheckOutput,
+    crate::operation::configure_health_check::ConfigureHealthCheckError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::configure_health_check_output::Builder::default();
+        let mut output = crate::operation::configure_health_check::builders::ConfigureHealthCheckOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_configure_health_check::de_configure_health_check(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ConfigureHealthCheckError::unhandled)?;
+        .map_err(crate::operation::configure_health_check::ConfigureHealthCheckError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -66,9 +71,9 @@ pub fn de_configure_health_check_http_response(
 #[allow(unused_mut)]
 pub fn de_configure_health_check(
     inp: &[u8],
-    mut builder: crate::output::configure_health_check_output::Builder,
+    mut builder: crate::operation::configure_health_check::builders::ConfigureHealthCheckOutputBuilder,
 ) -> Result<
-    crate::output::configure_health_check_output::Builder,
+    crate::operation::configure_health_check::builders::ConfigureHealthCheckOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_invalid_minimum_protocol_version_xml_err(
     inp: &[u8],
-    mut builder: crate::error::invalid_minimum_protocol_version::Builder,
+    mut builder: crate::types::error::builders::InvalidMinimumProtocolVersionBuilder,
 ) -> Result<
-    crate::error::invalid_minimum_protocol_version::Builder,
+    crate::types::error::builders::InvalidMinimumProtocolVersionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

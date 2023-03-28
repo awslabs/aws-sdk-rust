@@ -2,7 +2,7 @@
 pub(crate) fn de_profile_object_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ListProfileObjectsItem>>,
+    Option<std::vec::Vec<crate::types::ListProfileObjectsItem>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

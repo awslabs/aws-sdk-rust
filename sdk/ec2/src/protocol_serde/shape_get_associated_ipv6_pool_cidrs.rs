@@ -3,31 +3,32 @@
 pub fn de_get_associated_ipv6_pool_cidrs_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetAssociatedIpv6PoolCidrsOutput,
-    crate::error::GetAssociatedIpv6PoolCidrsError,
+    crate::operation::get_associated_ipv6_pool_cidrs::GetAssociatedIpv6PoolCidrsOutput,
+    crate::operation::get_associated_ipv6_pool_cidrs::GetAssociatedIpv6PoolCidrsError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetAssociatedIpv6PoolCidrsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::get_associated_ipv6_pool_cidrs::GetAssociatedIpv6PoolCidrsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::GetAssociatedIpv6PoolCidrsError::generic(
-        generic,
-    ))
+    Err(
+        crate::operation::get_associated_ipv6_pool_cidrs::GetAssociatedIpv6PoolCidrsError::generic(
+            generic,
+        ),
+    )
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_associated_ipv6_pool_cidrs_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetAssociatedIpv6PoolCidrsOutput,
-    crate::error::GetAssociatedIpv6PoolCidrsError,
+    crate::operation::get_associated_ipv6_pool_cidrs::GetAssociatedIpv6PoolCidrsOutput,
+    crate::operation::get_associated_ipv6_pool_cidrs::GetAssociatedIpv6PoolCidrsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_associated_ipv6_pool_cidrs_output::Builder::default();
+        let mut output = crate::operation::get_associated_ipv6_pool_cidrs::builders::GetAssociatedIpv6PoolCidrsOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_get_associated_ipv6_pool_cidrs::de_get_associated_ipv6_pool_cidrs(response.body().as_ref(), output).map_err(crate::error::GetAssociatedIpv6PoolCidrsError::unhandled)?;
+        output = crate::protocol_serde::shape_get_associated_ipv6_pool_cidrs::de_get_associated_ipv6_pool_cidrs(response.body().as_ref(), output).map_err(crate::operation::get_associated_ipv6_pool_cidrs::GetAssociatedIpv6PoolCidrsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -36,13 +37,7 @@ pub fn de_get_associated_ipv6_pool_cidrs_http_response(
 }
 
 #[allow(unused_mut)]
-pub fn de_get_associated_ipv6_pool_cidrs(
-    inp: &[u8],
-    mut builder: crate::output::get_associated_ipv6_pool_cidrs_output::Builder,
-) -> Result<
-    crate::output::get_associated_ipv6_pool_cidrs_output::Builder,
-    aws_smithy_xml::decode::XmlDecodeError,
-> {
+pub fn de_get_associated_ipv6_pool_cidrs(inp: &[u8], mut builder: crate::operation::get_associated_ipv6_pool_cidrs::builders::GetAssociatedIpv6PoolCidrsOutputBuilder) -> Result<crate::operation::get_associated_ipv6_pool_cidrs::builders::GetAssociatedIpv6PoolCidrsOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

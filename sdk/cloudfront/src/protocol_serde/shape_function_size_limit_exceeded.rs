@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_function_size_limit_exceeded_xml_err(
     inp: &[u8],
-    mut builder: crate::error::function_size_limit_exceeded::Builder,
+    mut builder: crate::types::error::builders::FunctionSizeLimitExceededBuilder,
 ) -> Result<
-    crate::error::function_size_limit_exceeded::Builder,
+    crate::types::error::builders::FunctionSizeLimitExceededBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

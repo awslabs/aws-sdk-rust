@@ -3,77 +3,72 @@
 pub fn de_enable_sharing_with_aws_organization_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::EnableSharingWithAwsOrganizationOutput,
-    crate::error::EnableSharingWithAwsOrganizationError,
+    crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganizationOutput,
+    crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganizationError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::EnableSharingWithAwsOrganizationError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganizationError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::EnableSharingWithAwsOrganizationError::unhandled(generic))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganizationError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "OperationNotPermittedException" => {
-            crate::error::EnableSharingWithAwsOrganizationError::OperationNotPermittedException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "OperationNotPermittedException" => crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganizationError::OperationNotPermittedException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::operation_not_permitted_exception::Builder::default();
+                    let mut output = crate::types::error::builders::OperationNotPermittedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_operation_not_permitted_exception::de_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EnableSharingWithAwsOrganizationError::unhandled)?;
+                    output = crate::protocol_serde::shape_operation_not_permitted_exception::de_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganizationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ServerInternalException" => {
-            crate::error::EnableSharingWithAwsOrganizationError::ServerInternalException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ServerInternalException" => crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganizationError::ServerInternalException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::server_internal_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ServerInternalExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_server_internal_exception::de_server_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EnableSharingWithAwsOrganizationError::unhandled)?;
+                    output = crate::protocol_serde::shape_server_internal_exception::de_server_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganizationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ServiceUnavailableException" => {
-            crate::error::EnableSharingWithAwsOrganizationError::ServiceUnavailableException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ServiceUnavailableException" => crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganizationError::ServiceUnavailableException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::service_unavailable_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EnableSharingWithAwsOrganizationError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganizationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::EnableSharingWithAwsOrganizationError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganizationError::generic(generic)
     })
 }
 
@@ -81,15 +76,14 @@ pub fn de_enable_sharing_with_aws_organization_http_error(
 pub fn de_enable_sharing_with_aws_organization_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::EnableSharingWithAwsOrganizationOutput,
-    crate::error::EnableSharingWithAwsOrganizationError,
+    crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganizationOutput,
+    crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganizationError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::output::enable_sharing_with_aws_organization_output::Builder::default();
+        let mut output = crate::operation::enable_sharing_with_aws_organization::builders::EnableSharingWithAwsOrganizationOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_enable_sharing_with_aws_organization::de_enable_sharing_with_aws_organization(response.body().as_ref(), output).map_err(crate::error::EnableSharingWithAwsOrganizationError::unhandled)?;
+        output = crate::protocol_serde::shape_enable_sharing_with_aws_organization::de_enable_sharing_with_aws_organization(response.body().as_ref(), output).map_err(crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganizationError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -97,13 +91,7 @@ pub fn de_enable_sharing_with_aws_organization_http_response(
     })
 }
 
-pub(crate) fn de_enable_sharing_with_aws_organization(
-    value: &[u8],
-    mut builder: crate::output::enable_sharing_with_aws_organization_output::Builder,
-) -> Result<
-    crate::output::enable_sharing_with_aws_organization_output::Builder,
-    aws_smithy_json::deserialize::error::DeserializeError,
-> {
+pub(crate) fn de_enable_sharing_with_aws_organization(value: &[u8], mut builder: crate::operation::enable_sharing_with_aws_organization::builders::EnableSharingWithAwsOrganizationOutputBuilder) -> Result<crate::operation::enable_sharing_with_aws_organization::builders::EnableSharingWithAwsOrganizationOutputBuilder, aws_smithy_json::deserialize::error::DeserializeError>{
     let mut tokens_owned =
         aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
             .peekable();

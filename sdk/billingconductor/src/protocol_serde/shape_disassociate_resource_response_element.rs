@@ -2,7 +2,7 @@
 pub(crate) fn de_disassociate_resource_response_element<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::DisassociateResourceResponseElement>,
+    Option<crate::types::DisassociateResourceResponseElement>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::disassociate_resource_response_element::Builder::default();
+                crate::types::builders::DisassociateResourceResponseElementBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

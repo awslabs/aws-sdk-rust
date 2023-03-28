@@ -2,7 +2,7 @@
 pub(crate) fn de_batch_resource_requirements_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::BatchResourceRequirement>>,
+    Option<std::vec::Vec<crate::types::BatchResourceRequirement>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

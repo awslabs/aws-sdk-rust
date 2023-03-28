@@ -2,13 +2,13 @@
 pub fn de_journey_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::JourneyResponse>,
-    crate::error::UpdateJourneyStateError,
+    std::option::Option<crate::types::JourneyResponse>,
+    crate::operation::update_journey_state::UpdateJourneyStateError,
 > {
     (!body.is_empty())
         .then(|| {
             crate::protocol_serde::shape_journey_response::de_journey_response_payload(body)
-                .map_err(crate::error::UpdateJourneyStateError::unhandled)
+                .map_err(crate::operation::update_journey_state::UpdateJourneyStateError::unhandled)
         })
         .transpose()
 }

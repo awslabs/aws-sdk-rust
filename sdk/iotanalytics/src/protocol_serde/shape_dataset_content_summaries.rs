@@ -2,7 +2,7 @@
 pub(crate) fn de_dataset_content_summaries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DatasetContentSummary>>,
+    Option<std::vec::Vec<crate::types::DatasetContentSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,13 +2,13 @@
 pub fn de_message_body_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::MessageBody>,
-    crate::error::UpdateSmsTemplateError,
+    std::option::Option<crate::types::MessageBody>,
+    crate::operation::update_sms_template::UpdateSmsTemplateError,
 > {
     (!body.is_empty())
         .then(|| {
             crate::protocol_serde::shape_message_body::de_message_body_payload(body)
-                .map_err(crate::error::UpdateSmsTemplateError::unhandled)
+                .map_err(crate::operation::update_sms_template::UpdateSmsTemplateError::unhandled)
         })
         .transpose()
 }

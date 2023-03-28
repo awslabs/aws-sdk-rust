@@ -2,26 +2,51 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_start_job_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::StartJobOutput, crate::error::StartJobError> {
+) -> std::result::Result<
+    crate::operation::start_job::StartJobOutput,
+    crate::operation::start_job::StartJobError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::StartJobError::unhandled)?;
+        .map_err(crate::operation::start_job::StartJobError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::StartJobError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::start_job::StartJobError::unhandled(
+                generic,
+            ))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::StartJobError::AccessDeniedException({
+        "AccessDeniedException" => {
+            crate::operation::start_job::StartJobError::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::AccessDeniedExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_job::StartJobError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ConflictException" => crate::operation::start_job::StartJobError::ConflictException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::error::access_denied_exception::Builder::default();
+                let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
                 let _ = response;
-                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartJobError::unhandled)?;
+                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_job::StartJobError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -30,13 +55,50 @@ pub fn de_start_job_http_error(
             }
             tmp
         }),
-        "ConflictException" => crate::error::StartJobError::ConflictException({
+        "InternalServerException" => {
+            crate::operation::start_job::StartJobError::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InternalServerExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_job::StartJobError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::operation::start_job::StartJobError::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_job::StartJobError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ThrottlingException" => crate::operation::start_job::StartJobError::ThrottlingException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::error::conflict_exception::Builder::default();
+                let mut output =
+                    crate::types::error::builders::ThrottlingExceptionBuilder::default();
                 let _ = response;
-                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartJobError::unhandled)?;
+                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_job::StartJobError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -45,13 +107,14 @@ pub fn de_start_job_http_error(
             }
             tmp
         }),
-        "InternalServerException" => crate::error::StartJobError::InternalServerException({
+        "ValidationException" => crate::operation::start_job::StartJobError::ValidationException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_exception::Builder::default();
+                let mut output =
+                    crate::types::error::builders::ValidationExceptionBuilder::default();
                 let _ = response;
-                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartJobError::unhandled)?;
+                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::start_job::StartJobError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -60,62 +123,20 @@ pub fn de_start_job_http_error(
             }
             tmp
         }),
-        "ResourceNotFoundException" => crate::error::StartJobError::ResourceNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::resource_not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartJobError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ThrottlingException" => crate::error::StartJobError::ThrottlingException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::throttling_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartJobError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ValidationException" => crate::error::StartJobError::ValidationException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartJobError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::StartJobError::generic(generic),
+        _ => crate::operation::start_job::StartJobError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_start_job_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::StartJobOutput, crate::error::StartJobError> {
+) -> std::result::Result<
+    crate::operation::start_job::StartJobOutput,
+    crate::operation::start_job::StartJobError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::start_job_output::Builder::default();
+        let mut output = crate::operation::start_job::builders::StartJobOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

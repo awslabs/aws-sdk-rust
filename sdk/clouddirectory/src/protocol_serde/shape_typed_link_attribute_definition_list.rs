@@ -2,7 +2,7 @@
 pub(crate) fn de_typed_link_attribute_definition_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::TypedLinkAttributeDefinition>>,
+    Option<std::vec::Vec<crate::types::TypedLinkAttributeDefinition>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

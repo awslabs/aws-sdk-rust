@@ -2,7 +2,7 @@
 pub(crate) fn de_customer_managed_policy_reference_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CustomerManagedPolicyReference>>,
+    Option<std::vec::Vec<crate::types::CustomerManagedPolicyReference>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

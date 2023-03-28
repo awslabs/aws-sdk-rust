@@ -2,7 +2,7 @@
 pub(crate) fn de_list_of_usage_plan_key<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::UsagePlanKey>>,
+    Option<std::vec::Vec<crate::types::UsagePlanKey>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

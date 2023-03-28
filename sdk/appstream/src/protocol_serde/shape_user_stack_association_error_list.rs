@@ -2,7 +2,7 @@
 pub(crate) fn de_user_stack_association_error_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::UserStackAssociationError>>,
+    Option<std::vec::Vec<crate::types::UserStackAssociationError>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

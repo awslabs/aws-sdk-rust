@@ -2,7 +2,7 @@
 pub(crate) fn de_sync_states<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<std::string::String, crate::model::SyncState>>,
+    Option<std::collections::HashMap<std::string::String, crate::types::SyncState>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,28 +2,32 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_copy_jobs_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListCopyJobsOutput, crate::error::ListCopyJobsError> {
+) -> std::result::Result<
+    crate::operation::list_copy_jobs::ListCopyJobsOutput,
+    crate::operation::list_copy_jobs::ListCopyJobsError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListCopyJobsError::unhandled)?;
+        .map_err(crate::operation::list_copy_jobs::ListCopyJobsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListCopyJobsError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::list_copy_jobs::ListCopyJobsError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidParameterValueException" => {
-            crate::error::ListCopyJobsError::InvalidParameterValueException({
+            crate::operation::list_copy_jobs::ListCopyJobsError::InvalidParameterValueException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_parameter_value_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListCopyJobsError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_copy_jobs::ListCopyJobsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -34,14 +38,15 @@ pub fn de_list_copy_jobs_http_error(
             })
         }
         "ServiceUnavailableException" => {
-            crate::error::ListCopyJobsError::ServiceUnavailableException({
+            crate::operation::list_copy_jobs::ListCopyJobsError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::service_unavailable_exception::Builder::default();
+                        crate::types::error::builders::ServiceUnavailableExceptionBuilder::default(
+                        );
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListCopyJobsError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_copy_jobs::ListCopyJobsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -51,23 +56,27 @@ pub fn de_list_copy_jobs_http_error(
                 tmp
             })
         }
-        _ => crate::error::ListCopyJobsError::generic(generic),
+        _ => crate::operation::list_copy_jobs::ListCopyJobsError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_copy_jobs_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListCopyJobsOutput, crate::error::ListCopyJobsError> {
+) -> std::result::Result<
+    crate::operation::list_copy_jobs::ListCopyJobsOutput,
+    crate::operation::list_copy_jobs::ListCopyJobsError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_copy_jobs_output::Builder::default();
+        let mut output =
+            crate::operation::list_copy_jobs::builders::ListCopyJobsOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_copy_jobs::de_list_copy_jobs(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListCopyJobsError::unhandled)?;
+        .map_err(crate::operation::list_copy_jobs::ListCopyJobsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -77,9 +86,9 @@ pub fn de_list_copy_jobs_http_response(
 
 pub(crate) fn de_list_copy_jobs(
     value: &[u8],
-    mut builder: crate::output::list_copy_jobs_output::Builder,
+    mut builder: crate::operation::list_copy_jobs::builders::ListCopyJobsOutputBuilder,
 ) -> Result<
-    crate::output::list_copy_jobs_output::Builder,
+    crate::operation::list_copy_jobs::builders::ListCopyJobsOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

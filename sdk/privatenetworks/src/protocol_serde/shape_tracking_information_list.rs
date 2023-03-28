@@ -2,7 +2,7 @@
 pub(crate) fn de_tracking_information_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::TrackingInformation>>,
+    Option<std::vec::Vec<crate::types::TrackingInformation>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_deployment_stage_status_summaries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DeploymentStageStatusSummary>>,
+    Option<std::vec::Vec<crate::types::DeploymentStageStatusSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

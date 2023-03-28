@@ -2,7 +2,7 @@
 pub(crate) fn de_spell_corrected_query_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SpellCorrectedQuery>>,
+    Option<std::vec::Vec<crate::types::SpellCorrectedQuery>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

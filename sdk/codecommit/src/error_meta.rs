@@ -4,449 +4,483 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>The specified Amazon Resource Name (ARN) does not exist in the AWS account.</p>
-    ActorDoesNotExistException(crate::error::ActorDoesNotExistException),
+    ActorDoesNotExistException(crate::types::error::ActorDoesNotExistException),
     /// <p>The content for the approval rule is empty. You must provide some content for an approval rule. The content cannot be null.</p>
-    ApprovalRuleContentRequiredException(crate::error::ApprovalRuleContentRequiredException),
+    ApprovalRuleContentRequiredException(crate::types::error::ApprovalRuleContentRequiredException),
     /// <p>The specified approval rule does not exist.</p>
-    ApprovalRuleDoesNotExistException(crate::error::ApprovalRuleDoesNotExistException),
+    ApprovalRuleDoesNotExistException(crate::types::error::ApprovalRuleDoesNotExistException),
     /// <p>An approval rule with that name already exists. Approval rule names must be unique within the scope of a pull request.</p>
-    ApprovalRuleNameAlreadyExistsException(crate::error::ApprovalRuleNameAlreadyExistsException),
+    ApprovalRuleNameAlreadyExistsException(
+        crate::types::error::ApprovalRuleNameAlreadyExistsException,
+    ),
     /// <p>An approval rule name is required, but was not specified.</p>
-    ApprovalRuleNameRequiredException(crate::error::ApprovalRuleNameRequiredException),
+    ApprovalRuleNameRequiredException(crate::types::error::ApprovalRuleNameRequiredException),
     /// <p>The content for the approval rule template is empty. You must provide some content for an approval rule template. The content cannot be null.</p>
     ApprovalRuleTemplateContentRequiredException(
-        crate::error::ApprovalRuleTemplateContentRequiredException,
+        crate::types::error::ApprovalRuleTemplateContentRequiredException,
     ),
     /// <p>The specified approval rule template does not exist. Verify that the name is correct and that you are signed in to the AWS Region where the template was created, and then try again.</p>
     ApprovalRuleTemplateDoesNotExistException(
-        crate::error::ApprovalRuleTemplateDoesNotExistException,
+        crate::types::error::ApprovalRuleTemplateDoesNotExistException,
     ),
     /// <p>The approval rule template is associated with one or more repositories. You cannot delete a template that is associated with a repository. Remove all associations, and then try again.</p>
-    ApprovalRuleTemplateInUseException(crate::error::ApprovalRuleTemplateInUseException),
+    ApprovalRuleTemplateInUseException(crate::types::error::ApprovalRuleTemplateInUseException),
     /// <p>You cannot create an approval rule template with that name because a template with that name already exists in this AWS Region for your AWS account. Approval rule template names must be unique.</p>
     ApprovalRuleTemplateNameAlreadyExistsException(
-        crate::error::ApprovalRuleTemplateNameAlreadyExistsException,
+        crate::types::error::ApprovalRuleTemplateNameAlreadyExistsException,
     ),
     /// <p>An approval rule template name is required, but was not specified.</p>
     ApprovalRuleTemplateNameRequiredException(
-        crate::error::ApprovalRuleTemplateNameRequiredException,
+        crate::types::error::ApprovalRuleTemplateNameRequiredException,
     ),
     /// <p>An approval state is required, but was not specified.</p>
-    ApprovalStateRequiredException(crate::error::ApprovalStateRequiredException),
+    ApprovalStateRequiredException(crate::types::error::ApprovalStateRequiredException),
     /// <p>The specified Amazon Resource Name (ARN) does not exist in the AWS account.</p>
-    AuthorDoesNotExistException(crate::error::AuthorDoesNotExistException),
+    AuthorDoesNotExistException(crate::types::error::AuthorDoesNotExistException),
     /// <p>The before commit ID and the after commit ID are the same, which is not valid. The before commit ID and the after commit ID must be different commit IDs.</p>
     BeforeCommitIdAndAfterCommitIdAreSameException(
-        crate::error::BeforeCommitIdAndAfterCommitIdAreSameException,
+        crate::types::error::BeforeCommitIdAndAfterCommitIdAreSameException,
     ),
     /// <p>The specified blob does not exist.</p>
-    BlobIdDoesNotExistException(crate::error::BlobIdDoesNotExistException),
+    BlobIdDoesNotExistException(crate::types::error::BlobIdDoesNotExistException),
     /// <p>A blob ID is required, but was not specified.</p>
-    BlobIdRequiredException(crate::error::BlobIdRequiredException),
+    BlobIdRequiredException(crate::types::error::BlobIdRequiredException),
     /// <p>The specified branch does not exist.</p>
-    BranchDoesNotExistException(crate::error::BranchDoesNotExistException),
+    BranchDoesNotExistException(crate::types::error::BranchDoesNotExistException),
     /// <p>Cannot create the branch with the specified name because the commit conflicts with an existing branch with the same name. Branch names must be unique.</p>
-    BranchNameExistsException(crate::error::BranchNameExistsException),
+    BranchNameExistsException(crate::types::error::BranchNameExistsException),
     /// <p>The specified branch name is not valid because it is a tag name. Enter the name of a branch in the repository. For a list of valid branch names, use <code>ListBranches</code>.</p>
-    BranchNameIsTagNameException(crate::error::BranchNameIsTagNameException),
+    BranchNameIsTagNameException(crate::types::error::BranchNameIsTagNameException),
     /// <p>A branch name is required, but was not specified.</p>
-    BranchNameRequiredException(crate::error::BranchNameRequiredException),
+    BranchNameRequiredException(crate::types::error::BranchNameRequiredException),
     /// <p>The approval rule cannot be deleted from the pull request because it was created by an approval rule template and applied to the pull request automatically.</p>
     CannotDeleteApprovalRuleFromTemplateException(
-        crate::error::CannotDeleteApprovalRuleFromTemplateException,
+        crate::types::error::CannotDeleteApprovalRuleFromTemplateException,
     ),
     /// <p>The approval rule cannot be modified for the pull request because it was created by an approval rule template and applied to the pull request automatically.</p>
     CannotModifyApprovalRuleFromTemplateException(
-        crate::error::CannotModifyApprovalRuleFromTemplateException,
+        crate::types::error::CannotModifyApprovalRuleFromTemplateException,
     ),
     /// <p>A client request token is required. A client request token is an unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
-    ClientRequestTokenRequiredException(crate::error::ClientRequestTokenRequiredException),
+    ClientRequestTokenRequiredException(crate::types::error::ClientRequestTokenRequiredException),
     /// <p>The comment is empty. You must provide some content for a comment. The content cannot be null.</p>
-    CommentContentRequiredException(crate::error::CommentContentRequiredException),
+    CommentContentRequiredException(crate::types::error::CommentContentRequiredException),
     /// <p>The comment is too large. Comments are limited to 1,000 characters.</p>
     CommentContentSizeLimitExceededException(
-        crate::error::CommentContentSizeLimitExceededException,
+        crate::types::error::CommentContentSizeLimitExceededException,
     ),
     /// <p>This comment has already been deleted. You cannot edit or delete a deleted comment.</p>
-    CommentDeletedException(crate::error::CommentDeletedException),
+    CommentDeletedException(crate::types::error::CommentDeletedException),
     /// <p>No comment exists with the provided ID. Verify that you have used the correct ID, and then try again.</p>
-    CommentDoesNotExistException(crate::error::CommentDoesNotExistException),
+    CommentDoesNotExistException(crate::types::error::CommentDoesNotExistException),
     /// <p>The comment ID is missing or null. A comment ID is required.</p>
-    CommentIdRequiredException(crate::error::CommentIdRequiredException),
+    CommentIdRequiredException(crate::types::error::CommentIdRequiredException),
     /// <p>You cannot modify or delete this comment. Only comment authors can modify or delete their comments.</p>
-    CommentNotCreatedByCallerException(crate::error::CommentNotCreatedByCallerException),
+    CommentNotCreatedByCallerException(crate::types::error::CommentNotCreatedByCallerException),
     /// <p>The specified commit does not exist or no commit was specified, and the specified repository has no default branch.</p>
-    CommitDoesNotExistException(crate::error::CommitDoesNotExistException),
+    CommitDoesNotExistException(crate::types::error::CommitDoesNotExistException),
     /// <p>The specified commit ID does not exist.</p>
-    CommitIdDoesNotExistException(crate::error::CommitIdDoesNotExistException),
+    CommitIdDoesNotExistException(crate::types::error::CommitIdDoesNotExistException),
     /// <p>A commit ID was not specified.</p>
-    CommitIdRequiredException(crate::error::CommitIdRequiredException),
+    CommitIdRequiredException(crate::types::error::CommitIdRequiredException),
     /// <p>The maximum number of allowed commit IDs in a batch request is 100. Verify that your batch requests contains no more than 100 commit IDs, and then try again.</p>
-    CommitIdsLimitExceededException(crate::error::CommitIdsLimitExceededException),
+    CommitIdsLimitExceededException(crate::types::error::CommitIdsLimitExceededException),
     /// <p>A list of commit IDs is required, but was either not specified or the list was empty.</p>
-    CommitIdsListRequiredException(crate::error::CommitIdsListRequiredException),
+    CommitIdsListRequiredException(crate::types::error::CommitIdsListRequiredException),
     /// <p>The commit message is too long. Provide a shorter string. </p>
-    CommitMessageLengthExceededException(crate::error::CommitMessageLengthExceededException),
+    CommitMessageLengthExceededException(crate::types::error::CommitMessageLengthExceededException),
     /// <p>A commit was not specified.</p>
-    CommitRequiredException(crate::error::CommitRequiredException),
+    CommitRequiredException(crate::types::error::CommitRequiredException),
     /// <p>The merge cannot be completed because the target branch has been modified. Another user might have modified the target branch while the merge was in progress. Wait a few minutes, and then try again.</p>
-    ConcurrentReferenceUpdateException(crate::error::ConcurrentReferenceUpdateException),
+    ConcurrentReferenceUpdateException(crate::types::error::ConcurrentReferenceUpdateException),
     /// <p>The specified branch is the default branch for the repository, and cannot be deleted. To delete this branch, you must first set another branch as the default branch.</p>
-    DefaultBranchCannotBeDeletedException(crate::error::DefaultBranchCannotBeDeletedException),
+    DefaultBranchCannotBeDeletedException(
+        crate::types::error::DefaultBranchCannotBeDeletedException,
+    ),
     /// <p>A file cannot be added to the repository because the specified path name has the same name as a file that already exists in this repository. Either provide a different name for the file, or specify a different path for the file.</p>
     DirectoryNameConflictsWithFileNameException(
-        crate::error::DirectoryNameConflictsWithFileNameException,
+        crate::types::error::DirectoryNameConflictsWithFileNameException,
     ),
     /// <p>An encryption integrity check failed.</p>
     EncryptionIntegrityChecksFailedException(
-        crate::error::EncryptionIntegrityChecksFailedException,
+        crate::types::error::EncryptionIntegrityChecksFailedException,
     ),
     /// <p>An encryption key could not be accessed.</p>
-    EncryptionKeyAccessDeniedException(crate::error::EncryptionKeyAccessDeniedException),
+    EncryptionKeyAccessDeniedException(crate::types::error::EncryptionKeyAccessDeniedException),
     /// <p>The encryption key is disabled.</p>
-    EncryptionKeyDisabledException(crate::error::EncryptionKeyDisabledException),
+    EncryptionKeyDisabledException(crate::types::error::EncryptionKeyDisabledException),
     /// <p>No encryption key was found.</p>
-    EncryptionKeyNotFoundException(crate::error::EncryptionKeyNotFoundException),
+    EncryptionKeyNotFoundException(crate::types::error::EncryptionKeyNotFoundException),
     /// <p>The encryption key is not available.</p>
-    EncryptionKeyUnavailableException(crate::error::EncryptionKeyUnavailableException),
+    EncryptionKeyUnavailableException(crate::types::error::EncryptionKeyUnavailableException),
     /// <p>The commit cannot be created because both a source file and file content have been specified for the same file. You cannot provide both. Either specify a source file or provide the file content directly.</p>
     FileContentAndSourceFileSpecifiedException(
-        crate::error::FileContentAndSourceFileSpecifiedException,
+        crate::types::error::FileContentAndSourceFileSpecifiedException,
     ),
     /// <p>The file cannot be added because it is empty. Empty files cannot be added to the repository with this API.</p>
-    FileContentRequiredException(crate::error::FileContentRequiredException),
+    FileContentRequiredException(crate::types::error::FileContentRequiredException),
     /// <p>The file cannot be added because it is too large. The maximum file size is 6 MB, and the combined file content change size is 7 MB. Consider making these changes using a Git client.</p>
-    FileContentSizeLimitExceededException(crate::error::FileContentSizeLimitExceededException),
+    FileContentSizeLimitExceededException(
+        crate::types::error::FileContentSizeLimitExceededException,
+    ),
     /// <p>The specified file does not exist. Verify that you have used the correct file name, full path, and extension.</p>
-    FileDoesNotExistException(crate::error::FileDoesNotExistException),
+    FileDoesNotExistException(crate::types::error::FileDoesNotExistException),
     /// <p>The commit cannot be created because no files have been specified as added, updated, or changed (PutFile or DeleteFile) for the commit.</p>
-    FileEntryRequiredException(crate::error::FileEntryRequiredException),
+    FileEntryRequiredException(crate::types::error::FileEntryRequiredException),
     /// <p>The commit cannot be created because no file mode has been specified. A file mode is required to update mode permissions for a file.</p>
-    FileModeRequiredException(crate::error::FileModeRequiredException),
+    FileModeRequiredException(crate::types::error::FileModeRequiredException),
     /// <p>A file cannot be added to the repository because the specified file name has the same name as a directory in this repository. Either provide another name for the file, or add the file in a directory that does not match the file name.</p>
     FileNameConflictsWithDirectoryNameException(
-        crate::error::FileNameConflictsWithDirectoryNameException,
+        crate::types::error::FileNameConflictsWithDirectoryNameException,
     ),
     /// <p>The commit cannot be created because a specified file path points to a submodule. Verify that the destination files have valid file paths that do not point to a submodule.</p>
     FilePathConflictsWithSubmodulePathException(
-        crate::error::FilePathConflictsWithSubmodulePathException,
+        crate::types::error::FilePathConflictsWithSubmodulePathException,
     ),
     /// <p>The specified file exceeds the file size limit for AWS CodeCommit. For more information about limits in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.</p>
-    FileTooLargeException(crate::error::FileTooLargeException),
+    FileTooLargeException(crate::types::error::FileTooLargeException),
     /// <p>The commit cannot be created because at least one of the overall changes in the commit results in a folder whose contents exceed the limit of 6 MB. Either reduce the number and size of your changes, or split the changes across multiple folders.</p>
-    FolderContentSizeLimitExceededException(crate::error::FolderContentSizeLimitExceededException),
+    FolderContentSizeLimitExceededException(
+        crate::types::error::FolderContentSizeLimitExceededException,
+    ),
     /// <p>The specified folder does not exist. Either the folder name is not correct, or you did not enter the full path to the folder.</p>
-    FolderDoesNotExistException(crate::error::FolderDoesNotExistException),
+    FolderDoesNotExistException(crate::types::error::FolderDoesNotExistException),
     /// <p>The client request token is not valid. Either the token is not in a valid format, or the token has been used in a previous request and cannot be reused.</p>
-    IdempotencyParameterMismatchException(crate::error::IdempotencyParameterMismatchException),
+    IdempotencyParameterMismatchException(
+        crate::types::error::IdempotencyParameterMismatchException,
+    ),
     /// <p>The Amazon Resource Name (ARN) is not valid. Make sure that you have provided the full ARN for the user who initiated the change for the pull request, and then try again.</p>
-    InvalidActorArnException(crate::error::InvalidActorArnException),
+    InvalidActorArnException(crate::types::error::InvalidActorArnException),
     /// <p>The content for the approval rule is not valid.</p>
-    InvalidApprovalRuleContentException(crate::error::InvalidApprovalRuleContentException),
+    InvalidApprovalRuleContentException(crate::types::error::InvalidApprovalRuleContentException),
     /// <p>The name for the approval rule is not valid.</p>
-    InvalidApprovalRuleNameException(crate::error::InvalidApprovalRuleNameException),
+    InvalidApprovalRuleNameException(crate::types::error::InvalidApprovalRuleNameException),
     /// <p>The content of the approval rule template is not valid.</p>
     InvalidApprovalRuleTemplateContentException(
-        crate::error::InvalidApprovalRuleTemplateContentException,
+        crate::types::error::InvalidApprovalRuleTemplateContentException,
     ),
     /// <p>The description for the approval rule template is not valid because it exceeds the maximum characters allowed for a description. For more information about limits in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.</p>
     InvalidApprovalRuleTemplateDescriptionException(
-        crate::error::InvalidApprovalRuleTemplateDescriptionException,
+        crate::types::error::InvalidApprovalRuleTemplateDescriptionException,
     ),
     /// <p>The name of the approval rule template is not valid. Template names must be between 1 and 100 valid characters in length. For more information about limits in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.</p>
     InvalidApprovalRuleTemplateNameException(
-        crate::error::InvalidApprovalRuleTemplateNameException,
+        crate::types::error::InvalidApprovalRuleTemplateNameException,
     ),
     /// <p>The state for the approval is not valid. Valid values include APPROVE and REVOKE. </p>
-    InvalidApprovalStateException(crate::error::InvalidApprovalStateException),
+    InvalidApprovalStateException(crate::types::error::InvalidApprovalStateException),
     /// <p>The Amazon Resource Name (ARN) is not valid. Make sure that you have provided the full ARN for the author of the pull request, and then try again.</p>
-    InvalidAuthorArnException(crate::error::InvalidAuthorArnException),
+    InvalidAuthorArnException(crate::types::error::InvalidAuthorArnException),
     /// <p>The specified blob is not valid.</p>
-    InvalidBlobIdException(crate::error::InvalidBlobIdException),
+    InvalidBlobIdException(crate::types::error::InvalidBlobIdException),
     /// <p>The specified reference name is not valid.</p>
-    InvalidBranchNameException(crate::error::InvalidBranchNameException),
+    InvalidBranchNameException(crate::types::error::InvalidBranchNameException),
     /// <p>The client request token is not valid.</p>
-    InvalidClientRequestTokenException(crate::error::InvalidClientRequestTokenException),
+    InvalidClientRequestTokenException(crate::types::error::InvalidClientRequestTokenException),
     /// <p>The comment ID is not in a valid format. Make sure that you have provided the full comment ID.</p>
-    InvalidCommentIdException(crate::error::InvalidCommentIdException),
+    InvalidCommentIdException(crate::types::error::InvalidCommentIdException),
     /// <p>The specified commit is not valid.</p>
-    InvalidCommitException(crate::error::InvalidCommitException),
+    InvalidCommitException(crate::types::error::InvalidCommitException),
     /// <p>The specified commit ID is not valid.</p>
-    InvalidCommitIdException(crate::error::InvalidCommitIdException),
+    InvalidCommitIdException(crate::types::error::InvalidCommitIdException),
     /// <p>The specified conflict detail level is not valid.</p>
-    InvalidConflictDetailLevelException(crate::error::InvalidConflictDetailLevelException),
+    InvalidConflictDetailLevelException(crate::types::error::InvalidConflictDetailLevelException),
     /// <p>The specified conflict resolution list is not valid.</p>
-    InvalidConflictResolutionException(crate::error::InvalidConflictResolutionException),
+    InvalidConflictResolutionException(crate::types::error::InvalidConflictResolutionException),
     /// <p>The specified conflict resolution strategy is not valid.</p>
     InvalidConflictResolutionStrategyException(
-        crate::error::InvalidConflictResolutionStrategyException,
+        crate::types::error::InvalidConflictResolutionStrategyException,
     ),
     /// <p>The specified continuation token is not valid.</p>
-    InvalidContinuationTokenException(crate::error::InvalidContinuationTokenException),
+    InvalidContinuationTokenException(crate::types::error::InvalidContinuationTokenException),
     /// <p>The specified deletion parameter is not valid.</p>
-    InvalidDeletionParameterException(crate::error::InvalidDeletionParameterException),
+    InvalidDeletionParameterException(crate::types::error::InvalidDeletionParameterException),
     /// <p>The pull request description is not valid. Descriptions cannot be more than 1,000 characters.</p>
-    InvalidDescriptionException(crate::error::InvalidDescriptionException),
+    InvalidDescriptionException(crate::types::error::InvalidDescriptionException),
     /// <p>The destination commit specifier is not valid. You must provide a valid branch name, tag, or full commit ID. </p>
     InvalidDestinationCommitSpecifierException(
-        crate::error::InvalidDestinationCommitSpecifierException,
+        crate::types::error::InvalidDestinationCommitSpecifierException,
     ),
     /// <p>The specified email address either contains one or more characters that are not allowed, or it exceeds the maximum number of characters allowed for an email address.</p>
-    InvalidEmailException(crate::error::InvalidEmailException),
+    InvalidEmailException(crate::types::error::InvalidEmailException),
     /// <p>The location of the file is not valid. Make sure that you include the file name and extension.</p>
-    InvalidFileLocationException(crate::error::InvalidFileLocationException),
+    InvalidFileLocationException(crate::types::error::InvalidFileLocationException),
     /// <p>The specified file mode permission is not valid. For a list of valid file mode permissions, see <code>PutFile</code>. </p>
-    InvalidFileModeException(crate::error::InvalidFileModeException),
+    InvalidFileModeException(crate::types::error::InvalidFileModeException),
     /// <p>The position is not valid. Make sure that the line number exists in the version of the file you want to comment on.</p>
-    InvalidFilePositionException(crate::error::InvalidFilePositionException),
+    InvalidFilePositionException(crate::types::error::InvalidFilePositionException),
     /// <p>The specified value for the number of conflict files to return is not valid.</p>
-    InvalidMaxConflictFilesException(crate::error::InvalidMaxConflictFilesException),
+    InvalidMaxConflictFilesException(crate::types::error::InvalidMaxConflictFilesException),
     /// <p>The specified value for the number of merge hunks to return is not valid.</p>
-    InvalidMaxMergeHunksException(crate::error::InvalidMaxMergeHunksException),
+    InvalidMaxMergeHunksException(crate::types::error::InvalidMaxMergeHunksException),
     /// <p>The specified number of maximum results is not valid.</p>
-    InvalidMaxResultsException(crate::error::InvalidMaxResultsException),
+    InvalidMaxResultsException(crate::types::error::InvalidMaxResultsException),
     /// <p>The specified merge option is not valid for this operation. Not all merge strategies are supported for all operations.</p>
-    InvalidMergeOptionException(crate::error::InvalidMergeOptionException),
+    InvalidMergeOptionException(crate::types::error::InvalidMergeOptionException),
     /// <p>The specified sort order is not valid.</p>
-    InvalidOrderException(crate::error::InvalidOrderException),
+    InvalidOrderException(crate::types::error::InvalidOrderException),
     /// <p>The override status is not valid. Valid statuses are OVERRIDE and REVOKE.</p>
-    InvalidOverrideStatusException(crate::error::InvalidOverrideStatusException),
+    InvalidOverrideStatusException(crate::types::error::InvalidOverrideStatusException),
     /// <p>The parent commit ID is not valid. The commit ID cannot be empty, and must match the head commit ID for the branch of the repository where you want to add or update a file.</p>
-    InvalidParentCommitIdException(crate::error::InvalidParentCommitIdException),
+    InvalidParentCommitIdException(crate::types::error::InvalidParentCommitIdException),
     /// <p>The specified path is not valid.</p>
-    InvalidPathException(crate::error::InvalidPathException),
+    InvalidPathException(crate::types::error::InvalidPathException),
     /// <p>The pull request event type is not valid. </p>
-    InvalidPullRequestEventTypeException(crate::error::InvalidPullRequestEventTypeException),
+    InvalidPullRequestEventTypeException(crate::types::error::InvalidPullRequestEventTypeException),
     /// <p>The pull request ID is not valid. Make sure that you have provided the full ID and that the pull request is in the specified repository, and then try again.</p>
-    InvalidPullRequestIdException(crate::error::InvalidPullRequestIdException),
+    InvalidPullRequestIdException(crate::types::error::InvalidPullRequestIdException),
     /// <p>The pull request status is not valid. The only valid values are <code>OPEN</code> and <code>CLOSED</code>.</p>
-    InvalidPullRequestStatusException(crate::error::InvalidPullRequestStatusException),
+    InvalidPullRequestStatusException(crate::types::error::InvalidPullRequestStatusException),
     /// <p>The pull request status update is not valid. The only valid update is from <code>OPEN</code> to <code>CLOSED</code>.</p>
-    InvalidPullRequestStatusUpdateException(crate::error::InvalidPullRequestStatusUpdateException),
+    InvalidPullRequestStatusUpdateException(
+        crate::types::error::InvalidPullRequestStatusUpdateException,
+    ),
     /// <p>The Amazon Resource Name (ARN) of the user or identity is not valid.</p>
-    InvalidReactionUserArnException(crate::error::InvalidReactionUserArnException),
+    InvalidReactionUserArnException(crate::types::error::InvalidReactionUserArnException),
     /// <p>The value of the reaction is not valid. For more information, see the <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit User Guide</a>.</p>
-    InvalidReactionValueException(crate::error::InvalidReactionValueException),
+    InvalidReactionValueException(crate::types::error::InvalidReactionValueException),
     /// <p>The specified reference name format is not valid. Reference names must conform to the Git references format (for example, refs/heads/master). For more information, see <a href="https://git-scm.com/book/en/v2/Git-Internals-Git-References">Git Internals - Git References</a> or consult your Git documentation.</p>
-    InvalidReferenceNameException(crate::error::InvalidReferenceNameException),
+    InvalidReferenceNameException(crate::types::error::InvalidReferenceNameException),
     /// <p>Either the enum is not in a valid format, or the specified file version enum is not valid in respect to the current file version.</p>
-    InvalidRelativeFileVersionEnumException(crate::error::InvalidRelativeFileVersionEnumException),
+    InvalidRelativeFileVersionEnumException(
+        crate::types::error::InvalidRelativeFileVersionEnumException,
+    ),
     /// <p>Automerge was specified for resolving the conflict, but the replacement type is not valid or content is missing. </p>
-    InvalidReplacementContentException(crate::error::InvalidReplacementContentException),
+    InvalidReplacementContentException(crate::types::error::InvalidReplacementContentException),
     /// <p>Automerge was specified for resolving the conflict, but the specified replacement type is not valid.</p>
-    InvalidReplacementTypeException(crate::error::InvalidReplacementTypeException),
+    InvalidReplacementTypeException(crate::types::error::InvalidReplacementTypeException),
     /// <p>The specified repository description is not valid.</p>
-    InvalidRepositoryDescriptionException(crate::error::InvalidRepositoryDescriptionException),
+    InvalidRepositoryDescriptionException(
+        crate::types::error::InvalidRepositoryDescriptionException,
+    ),
     /// <p>A specified repository name is not valid.</p> <note>
     /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
     /// </note>
-    InvalidRepositoryNameException(crate::error::InvalidRepositoryNameException),
+    InvalidRepositoryNameException(crate::types::error::InvalidRepositoryNameException),
     /// <p>One or more branch names specified for the trigger is not valid.</p>
     InvalidRepositoryTriggerBranchNameException(
-        crate::error::InvalidRepositoryTriggerBranchNameException,
+        crate::types::error::InvalidRepositoryTriggerBranchNameException,
     ),
     /// <p>The custom data provided for the trigger is not valid.</p>
     InvalidRepositoryTriggerCustomDataException(
-        crate::error::InvalidRepositoryTriggerCustomDataException,
+        crate::types::error::InvalidRepositoryTriggerCustomDataException,
     ),
     /// <p>The Amazon Resource Name (ARN) for the trigger is not valid for the specified destination. The most common reason for this error is that the ARN does not meet the requirements for the service type.</p>
     InvalidRepositoryTriggerDestinationArnException(
-        crate::error::InvalidRepositoryTriggerDestinationArnException,
+        crate::types::error::InvalidRepositoryTriggerDestinationArnException,
     ),
     /// <p>One or more events specified for the trigger is not valid. Check to make sure that all events specified match the requirements for allowed events.</p>
-    InvalidRepositoryTriggerEventsException(crate::error::InvalidRepositoryTriggerEventsException),
+    InvalidRepositoryTriggerEventsException(
+        crate::types::error::InvalidRepositoryTriggerEventsException,
+    ),
     /// <p>The name of the trigger is not valid.</p>
-    InvalidRepositoryTriggerNameException(crate::error::InvalidRepositoryTriggerNameException),
+    InvalidRepositoryTriggerNameException(
+        crate::types::error::InvalidRepositoryTriggerNameException,
+    ),
     /// <p>The AWS Region for the trigger target does not match the AWS Region for the repository. Triggers must be created in the same Region as the target for the trigger.</p>
-    InvalidRepositoryTriggerRegionException(crate::error::InvalidRepositoryTriggerRegionException),
+    InvalidRepositoryTriggerRegionException(
+        crate::types::error::InvalidRepositoryTriggerRegionException,
+    ),
     /// <p>The value for the resource ARN is not valid. For more information about resources in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.</p>
-    InvalidResourceArnException(crate::error::InvalidResourceArnException),
+    InvalidResourceArnException(crate::types::error::InvalidResourceArnException),
     /// <p>The revision ID is not valid. Use GetPullRequest to determine the value.</p>
-    InvalidRevisionIdException(crate::error::InvalidRevisionIdException),
+    InvalidRevisionIdException(crate::types::error::InvalidRevisionIdException),
     /// <p>The SHA-256 hash signature for the rule content is not valid.</p>
-    InvalidRuleContentSha256Exception(crate::error::InvalidRuleContentSha256Exception),
+    InvalidRuleContentSha256Exception(crate::types::error::InvalidRuleContentSha256Exception),
     /// <p>The specified sort by value is not valid.</p>
-    InvalidSortByException(crate::error::InvalidSortByException),
+    InvalidSortByException(crate::types::error::InvalidSortByException),
     /// <p>The source commit specifier is not valid. You must provide a valid branch name, tag, or full commit ID.</p>
-    InvalidSourceCommitSpecifierException(crate::error::InvalidSourceCommitSpecifierException),
+    InvalidSourceCommitSpecifierException(
+        crate::types::error::InvalidSourceCommitSpecifierException,
+    ),
     /// <p>The specified tag is not valid. Key names cannot be prefixed with aws:.</p>
-    InvalidSystemTagUsageException(crate::error::InvalidSystemTagUsageException),
+    InvalidSystemTagUsageException(crate::types::error::InvalidSystemTagUsageException),
     /// <p>The list of tags is not valid.</p>
-    InvalidTagKeysListException(crate::error::InvalidTagKeysListException),
+    InvalidTagKeysListException(crate::types::error::InvalidTagKeysListException),
     /// <p>The map of tags is not valid.</p>
-    InvalidTagsMapException(crate::error::InvalidTagsMapException),
+    InvalidTagsMapException(crate::types::error::InvalidTagsMapException),
     /// <p>The specified target branch is not valid.</p>
-    InvalidTargetBranchException(crate::error::InvalidTargetBranchException),
+    InvalidTargetBranchException(crate::types::error::InvalidTargetBranchException),
     /// <p>The target for the pull request is not valid. A target must contain the full values for the repository name, source branch, and destination branch for the pull request.</p>
-    InvalidTargetException(crate::error::InvalidTargetException),
+    InvalidTargetException(crate::types::error::InvalidTargetException),
     /// <p>The targets for the pull request is not valid or not in a valid format. Targets are a list of target objects. Each target object must contain the full values for the repository name, source branch, and destination branch for a pull request.</p>
-    InvalidTargetsException(crate::error::InvalidTargetsException),
+    InvalidTargetsException(crate::types::error::InvalidTargetsException),
     /// <p>The title of the pull request is not valid. Pull request titles cannot exceed 100 characters in length.</p>
-    InvalidTitleException(crate::error::InvalidTitleException),
+    InvalidTitleException(crate::types::error::InvalidTitleException),
     /// <p>The pull request cannot be merged automatically into the destination branch. You must manually merge the branches and resolve any conflicts.</p>
-    ManualMergeRequiredException(crate::error::ManualMergeRequiredException),
+    ManualMergeRequiredException(crate::types::error::ManualMergeRequiredException),
     /// <p>The number of branches for the trigger was exceeded.</p>
-    MaximumBranchesExceededException(crate::error::MaximumBranchesExceededException),
+    MaximumBranchesExceededException(crate::types::error::MaximumBranchesExceededException),
     /// <p>The number of allowed conflict resolution entries was exceeded.</p>
     MaximumConflictResolutionEntriesExceededException(
-        crate::error::MaximumConflictResolutionEntriesExceededException,
+        crate::types::error::MaximumConflictResolutionEntriesExceededException,
     ),
     /// <p>The number of files to load exceeds the allowed limit.</p>
     MaximumFileContentToLoadExceededException(
-        crate::error::MaximumFileContentToLoadExceededException,
+        crate::types::error::MaximumFileContentToLoadExceededException,
     ),
     /// <p>The number of specified files to change as part of this commit exceeds the maximum number of files that can be changed in a single commit. Consider using a Git client for these changes.</p>
-    MaximumFileEntriesExceededException(crate::error::MaximumFileEntriesExceededException),
+    MaximumFileEntriesExceededException(crate::types::error::MaximumFileEntriesExceededException),
     /// <p>The number of items to compare between the source or destination branches and the merge base has exceeded the maximum allowed.</p>
-    MaximumItemsToCompareExceededException(crate::error::MaximumItemsToCompareExceededException),
+    MaximumItemsToCompareExceededException(
+        crate::types::error::MaximumItemsToCompareExceededException,
+    ),
     /// <p>The number of approvals required for the approval rule exceeds the maximum number allowed.</p>
     MaximumNumberOfApprovalsExceededException(
-        crate::error::MaximumNumberOfApprovalsExceededException,
+        crate::types::error::MaximumNumberOfApprovalsExceededException,
     ),
     /// <p>You cannot create the pull request because the repository has too many open pull requests. The maximum number of open pull requests for a repository is 1,000. Close one or more open pull requests, and then try again.</p>
     MaximumOpenPullRequestsExceededException(
-        crate::error::MaximumOpenPullRequestsExceededException,
+        crate::types::error::MaximumOpenPullRequestsExceededException,
     ),
     /// <p>The maximum number of allowed repository names was exceeded. Currently, this number is 100.</p>
-    MaximumRepositoryNamesExceededException(crate::error::MaximumRepositoryNamesExceededException),
+    MaximumRepositoryNamesExceededException(
+        crate::types::error::MaximumRepositoryNamesExceededException,
+    ),
     /// <p>The number of triggers allowed for the repository was exceeded.</p>
     MaximumRepositoryTriggersExceededException(
-        crate::error::MaximumRepositoryTriggersExceededException,
+        crate::types::error::MaximumRepositoryTriggersExceededException,
     ),
     /// <p>The maximum number of approval rule templates for a repository has been exceeded. You cannot associate more than 25 approval rule templates with a repository.</p>
     MaximumRuleTemplatesAssociatedWithRepositoryException(
-        crate::error::MaximumRuleTemplatesAssociatedWithRepositoryException,
+        crate::types::error::MaximumRuleTemplatesAssociatedWithRepositoryException,
     ),
     /// <p>A merge option or stategy is required, and none was provided.</p>
-    MergeOptionRequiredException(crate::error::MergeOptionRequiredException),
+    MergeOptionRequiredException(crate::types::error::MergeOptionRequiredException),
     /// <p>More than one conflict resolution entries exists for the conflict. A conflict can have only one conflict resolution entry.</p>
     MultipleConflictResolutionEntriesException(
-        crate::error::MultipleConflictResolutionEntriesException,
+        crate::types::error::MultipleConflictResolutionEntriesException,
     ),
     /// <p>You cannot include more than one repository in a pull request. Make sure you have specified only one repository name in your request, and then try again.</p>
     MultipleRepositoriesInPullRequestException(
-        crate::error::MultipleRepositoriesInPullRequestException,
+        crate::types::error::MultipleRepositoriesInPullRequestException,
     ),
     /// <p>The user name is not valid because it has exceeded the character limit for author names. </p>
-    NameLengthExceededException(crate::error::NameLengthExceededException),
+    NameLengthExceededException(crate::types::error::NameLengthExceededException),
     /// <p>The commit cannot be created because no changes will be made to the repository as a result of this commit. A commit must contain at least one change.</p>
-    NoChangeException(crate::error::NoChangeException),
+    NoChangeException(crate::types::error::NoChangeException),
     /// <p>The maximum number of approval rule templates has been exceeded for this AWS Region. </p>
-    NumberOfRuleTemplatesExceededException(crate::error::NumberOfRuleTemplatesExceededException),
+    NumberOfRuleTemplatesExceededException(
+        crate::types::error::NumberOfRuleTemplatesExceededException,
+    ),
     /// <p>The approval rule cannot be added. The pull request has the maximum number of approval rules associated with it.</p>
-    NumberOfRulesExceededException(crate::error::NumberOfRulesExceededException),
+    NumberOfRulesExceededException(crate::types::error::NumberOfRulesExceededException),
     /// <p>The pull request has already had its approval rules set to override.</p>
-    OverrideAlreadySetException(crate::error::OverrideAlreadySetException),
+    OverrideAlreadySetException(crate::types::error::OverrideAlreadySetException),
     /// <p>An override status is required, but no value was provided. Valid values include OVERRIDE and REVOKE.</p>
-    OverrideStatusRequiredException(crate::error::OverrideStatusRequiredException),
+    OverrideStatusRequiredException(crate::types::error::OverrideStatusRequiredException),
     /// <p>The parent commit ID is not valid because it does not exist. The specified parent commit ID does not exist in the specified branch of the repository.</p>
-    ParentCommitDoesNotExistException(crate::error::ParentCommitDoesNotExistException),
+    ParentCommitDoesNotExistException(crate::types::error::ParentCommitDoesNotExistException),
     /// <p>The file could not be added because the provided parent commit ID is not the current tip of the specified branch. To view the full commit ID of the current head of the branch, use <code>GetBranch</code>.</p>
-    ParentCommitIdOutdatedException(crate::error::ParentCommitIdOutdatedException),
+    ParentCommitIdOutdatedException(crate::types::error::ParentCommitIdOutdatedException),
     /// <p>A parent commit ID is required. To view the full commit ID of a branch in a repository, use <code>GetBranch</code> or a Git command (for example, git pull or git log).</p>
-    ParentCommitIdRequiredException(crate::error::ParentCommitIdRequiredException),
+    ParentCommitIdRequiredException(crate::types::error::ParentCommitIdRequiredException),
     /// <p>The specified path does not exist.</p>
-    PathDoesNotExistException(crate::error::PathDoesNotExistException),
+    PathDoesNotExistException(crate::types::error::PathDoesNotExistException),
     /// <p>The folderPath for a location cannot be null.</p>
-    PathRequiredException(crate::error::PathRequiredException),
+    PathRequiredException(crate::types::error::PathRequiredException),
     /// <p>The pull request status cannot be updated because it is already closed.</p>
-    PullRequestAlreadyClosedException(crate::error::PullRequestAlreadyClosedException),
+    PullRequestAlreadyClosedException(crate::types::error::PullRequestAlreadyClosedException),
     /// <p>The pull request cannot be merged because one or more approval rules applied to the pull request have conditions that have not been met.</p>
     PullRequestApprovalRulesNotSatisfiedException(
-        crate::error::PullRequestApprovalRulesNotSatisfiedException,
+        crate::types::error::PullRequestApprovalRulesNotSatisfiedException,
     ),
     /// <p>The approval cannot be applied because the user approving the pull request matches the user who created the pull request. You cannot approve a pull request that you created.</p>
     PullRequestCannotBeApprovedByAuthorException(
-        crate::error::PullRequestCannotBeApprovedByAuthorException,
+        crate::types::error::PullRequestCannotBeApprovedByAuthorException,
     ),
     /// <p>The pull request ID could not be found. Make sure that you have specified the correct repository name and pull request ID, and then try again.</p>
-    PullRequestDoesNotExistException(crate::error::PullRequestDoesNotExistException),
+    PullRequestDoesNotExistException(crate::types::error::PullRequestDoesNotExistException),
     /// <p>A pull request ID is required, but none was provided.</p>
-    PullRequestIdRequiredException(crate::error::PullRequestIdRequiredException),
+    PullRequestIdRequiredException(crate::types::error::PullRequestIdRequiredException),
     /// <p>A pull request status is required, but none was provided.</p>
-    PullRequestStatusRequiredException(crate::error::PullRequestStatusRequiredException),
+    PullRequestStatusRequiredException(crate::types::error::PullRequestStatusRequiredException),
     /// <p>The commit cannot be created because one or more files specified in the commit reference both a file and a folder.</p>
-    PutFileEntryConflictException(crate::error::PutFileEntryConflictException),
+    PutFileEntryConflictException(crate::types::error::PutFileEntryConflictException),
     /// <p>The number of reactions has been exceeded. Reactions are limited to one reaction per user for each individual comment ID.</p>
-    ReactionLimitExceededException(crate::error::ReactionLimitExceededException),
+    ReactionLimitExceededException(crate::types::error::ReactionLimitExceededException),
     /// <p>A reaction value is required. </p>
-    ReactionValueRequiredException(crate::error::ReactionValueRequiredException),
+    ReactionValueRequiredException(crate::types::error::ReactionValueRequiredException),
     /// <p>The specified reference does not exist. You must provide a full commit ID.</p>
-    ReferenceDoesNotExistException(crate::error::ReferenceDoesNotExistException),
+    ReferenceDoesNotExistException(crate::types::error::ReferenceDoesNotExistException),
     /// <p>A reference name is required, but none was provided.</p>
-    ReferenceNameRequiredException(crate::error::ReferenceNameRequiredException),
+    ReferenceNameRequiredException(crate::types::error::ReferenceNameRequiredException),
     /// <p>The specified reference is not a supported type. </p>
-    ReferenceTypeNotSupportedException(crate::error::ReferenceTypeNotSupportedException),
+    ReferenceTypeNotSupportedException(crate::types::error::ReferenceTypeNotSupportedException),
     /// <p>USE_NEW_CONTENT was specified, but no replacement content has been provided.</p>
-    ReplacementContentRequiredException(crate::error::ReplacementContentRequiredException),
+    ReplacementContentRequiredException(crate::types::error::ReplacementContentRequiredException),
     /// <p>A replacement type is required.</p>
-    ReplacementTypeRequiredException(crate::error::ReplacementTypeRequiredException),
+    ReplacementTypeRequiredException(crate::types::error::ReplacementTypeRequiredException),
     /// <p>The specified repository does not exist.</p>
-    RepositoryDoesNotExistException(crate::error::RepositoryDoesNotExistException),
+    RepositoryDoesNotExistException(crate::types::error::RepositoryDoesNotExistException),
     /// <p>A repository resource limit was exceeded.</p>
-    RepositoryLimitExceededException(crate::error::RepositoryLimitExceededException),
+    RepositoryLimitExceededException(crate::types::error::RepositoryLimitExceededException),
     /// <p>The specified repository name already exists.</p>
-    RepositoryNameExistsException(crate::error::RepositoryNameExistsException),
+    RepositoryNameExistsException(crate::types::error::RepositoryNameExistsException),
     /// <p>A repository name is required, but was not specified.</p>
-    RepositoryNameRequiredException(crate::error::RepositoryNameRequiredException),
+    RepositoryNameRequiredException(crate::types::error::RepositoryNameRequiredException),
     /// <p>At least one repository name object is required, but was not specified.</p>
-    RepositoryNamesRequiredException(crate::error::RepositoryNamesRequiredException),
+    RepositoryNamesRequiredException(crate::types::error::RepositoryNamesRequiredException),
     /// <p>The repository does not contain any pull requests with that pull request ID. Use GetPullRequest to verify the correct repository name for the pull request ID.</p>
     RepositoryNotAssociatedWithPullRequestException(
-        crate::error::RepositoryNotAssociatedWithPullRequestException,
+        crate::types::error::RepositoryNotAssociatedWithPullRequestException,
     ),
     /// <p>At least one branch name is required, but was not specified in the trigger configuration.</p>
     RepositoryTriggerBranchNameListRequiredException(
-        crate::error::RepositoryTriggerBranchNameListRequiredException,
+        crate::types::error::RepositoryTriggerBranchNameListRequiredException,
     ),
     /// <p>A destination ARN for the target service for the trigger is required, but was not specified.</p>
     RepositoryTriggerDestinationArnRequiredException(
-        crate::error::RepositoryTriggerDestinationArnRequiredException,
+        crate::types::error::RepositoryTriggerDestinationArnRequiredException,
     ),
     /// <p>At least one event for the trigger is required, but was not specified.</p>
     RepositoryTriggerEventsListRequiredException(
-        crate::error::RepositoryTriggerEventsListRequiredException,
+        crate::types::error::RepositoryTriggerEventsListRequiredException,
     ),
     /// <p>A name for the trigger is required, but was not specified.</p>
-    RepositoryTriggerNameRequiredException(crate::error::RepositoryTriggerNameRequiredException),
+    RepositoryTriggerNameRequiredException(
+        crate::types::error::RepositoryTriggerNameRequiredException,
+    ),
     /// <p>The list of triggers for the repository is required, but was not specified.</p>
-    RepositoryTriggersListRequiredException(crate::error::RepositoryTriggersListRequiredException),
+    RepositoryTriggersListRequiredException(
+        crate::types::error::RepositoryTriggersListRequiredException,
+    ),
     /// <p>A valid Amazon Resource Name (ARN) for an AWS CodeCommit resource is required. For a list of valid resources in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.</p>
-    ResourceArnRequiredException(crate::error::ResourceArnRequiredException),
+    ResourceArnRequiredException(crate::types::error::ResourceArnRequiredException),
     /// <p>The commit cannot be created because one of the changes specifies copying or moving a .gitkeep file.</p>
-    RestrictedSourceFileException(crate::error::RestrictedSourceFileException),
+    RestrictedSourceFileException(crate::types::error::RestrictedSourceFileException),
     /// <p>A revision ID is required, but was not provided.</p>
-    RevisionIdRequiredException(crate::error::RevisionIdRequiredException),
+    RevisionIdRequiredException(crate::types::error::RevisionIdRequiredException),
     /// <p>The revision ID provided in the request does not match the current revision ID. Use GetPullRequest to retrieve the current revision ID.</p>
-    RevisionNotCurrentException(crate::error::RevisionNotCurrentException),
+    RevisionNotCurrentException(crate::types::error::RevisionNotCurrentException),
     /// <p>The file was not added or updated because the content of the file is exactly the same as the content of that file in the repository and branch that you specified.</p>
-    SameFileContentException(crate::error::SameFileContentException),
+    SameFileContentException(crate::types::error::SameFileContentException),
     /// <p>The commit cannot be created because one or more changes in this commit duplicate actions in the same file path. For example, you cannot make the same delete request to the same file in the same file path twice, or make a delete request and a move request to the same file as part of the same commit.</p>
-    SamePathRequestException(crate::error::SamePathRequestException),
+    SamePathRequestException(crate::types::error::SamePathRequestException),
     /// <p>The source branch and destination branch for the pull request are the same. You must specify different branches for the source and destination.</p>
-    SourceAndDestinationAreSameException(crate::error::SourceAndDestinationAreSameException),
+    SourceAndDestinationAreSameException(crate::types::error::SourceAndDestinationAreSameException),
     /// <p>The commit cannot be created because no source files or file content have been specified for the commit.</p>
-    SourceFileOrContentRequiredException(crate::error::SourceFileOrContentRequiredException),
+    SourceFileOrContentRequiredException(crate::types::error::SourceFileOrContentRequiredException),
     /// <p>A list of tag keys is required. The list cannot be empty or null.</p>
-    TagKeysListRequiredException(crate::error::TagKeysListRequiredException),
+    TagKeysListRequiredException(crate::types::error::TagKeysListRequiredException),
     /// <p>The tag policy is not valid.</p>
-    TagPolicyException(crate::error::TagPolicyException),
+    TagPolicyException(crate::types::error::TagPolicyException),
     /// <p>A map of tags is required.</p>
-    TagsMapRequiredException(crate::error::TagsMapRequiredException),
+    TagsMapRequiredException(crate::types::error::TagsMapRequiredException),
     /// <p>A pull request target is required. It cannot be empty or null. A pull request target must contain the full values for the repository name, source branch, and destination branch for the pull request.</p>
-    TargetRequiredException(crate::error::TargetRequiredException),
+    TargetRequiredException(crate::types::error::TargetRequiredException),
     /// <p>An array of target objects is required. It cannot be empty or null.</p>
-    TargetsRequiredException(crate::error::TargetsRequiredException),
+    TargetsRequiredException(crate::types::error::TargetsRequiredException),
     /// <p>The tip of the source branch in the destination repository does not match the tip of the source branch specified in your request. The pull request might have been updated. Make sure that you have the latest changes.</p>
     TipOfSourceReferenceIsDifferentException(
-        crate::error::TipOfSourceReferenceIsDifferentException,
+        crate::types::error::TipOfSourceReferenceIsDifferentException,
     ),
     /// <p>The divergence between the tips of the provided commit specifiers is too great to determine whether there might be any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.</p>
-    TipsDivergenceExceededException(crate::error::TipsDivergenceExceededException),
+    TipsDivergenceExceededException(crate::types::error::TipsDivergenceExceededException),
     /// <p>A pull request title is required. It cannot be empty or null.</p>
-    TitleRequiredException(crate::error::TitleRequiredException),
+    TitleRequiredException(crate::types::error::TitleRequiredException),
     /// <p>The maximum number of tags for an AWS CodeCommit resource has been exceeded.</p>
-    TooManyTagsException(crate::error::TooManyTagsException),
+    TooManyTagsException(crate::types::error::TooManyTagsException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled),
 }
@@ -642,10 +676,72 @@ impl std::fmt::Display for Error {
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::associate_approval_rule_template_with_repository::AssociateApprovalRuleTemplateWithRepositoryError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::associate_approval_rule_template_with_repository::AssociateApprovalRuleTemplateWithRepositoryError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::associate_approval_rule_template_with_repository::AssociateApprovalRuleTemplateWithRepositoryError> for Error {
+    fn from(err: crate::operation::associate_approval_rule_template_with_repository::AssociateApprovalRuleTemplateWithRepositoryError) -> Self {
+        match err {
+            crate::operation::associate_approval_rule_template_with_repository::AssociateApprovalRuleTemplateWithRepositoryError::ApprovalRuleTemplateDoesNotExistException(inner) => Error::ApprovalRuleTemplateDoesNotExistException(inner),
+            crate::operation::associate_approval_rule_template_with_repository::AssociateApprovalRuleTemplateWithRepositoryError::ApprovalRuleTemplateNameRequiredException(inner) => Error::ApprovalRuleTemplateNameRequiredException(inner),
+            crate::operation::associate_approval_rule_template_with_repository::AssociateApprovalRuleTemplateWithRepositoryError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
+            crate::operation::associate_approval_rule_template_with_repository::AssociateApprovalRuleTemplateWithRepositoryError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
+            crate::operation::associate_approval_rule_template_with_repository::AssociateApprovalRuleTemplateWithRepositoryError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
+            crate::operation::associate_approval_rule_template_with_repository::AssociateApprovalRuleTemplateWithRepositoryError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
+            crate::operation::associate_approval_rule_template_with_repository::AssociateApprovalRuleTemplateWithRepositoryError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
+            crate::operation::associate_approval_rule_template_with_repository::AssociateApprovalRuleTemplateWithRepositoryError::InvalidApprovalRuleTemplateNameException(inner) => Error::InvalidApprovalRuleTemplateNameException(inner),
+            crate::operation::associate_approval_rule_template_with_repository::AssociateApprovalRuleTemplateWithRepositoryError::InvalidRepositoryNameException(inner) => Error::InvalidRepositoryNameException(inner),
+            crate::operation::associate_approval_rule_template_with_repository::AssociateApprovalRuleTemplateWithRepositoryError::MaximumRuleTemplatesAssociatedWithRepositoryException(inner) => Error::MaximumRuleTemplatesAssociatedWithRepositoryException(inner),
+            crate::operation::associate_approval_rule_template_with_repository::AssociateApprovalRuleTemplateWithRepositoryError::RepositoryDoesNotExistException(inner) => Error::RepositoryDoesNotExistException(inner),
+            crate::operation::associate_approval_rule_template_with_repository::AssociateApprovalRuleTemplateWithRepositoryError::RepositoryNameRequiredException(inner) => Error::RepositoryNameRequiredException(inner),
+            crate::operation::associate_approval_rule_template_with_repository::AssociateApprovalRuleTemplateWithRepositoryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::batch_associate_approval_rule_template_with_repositories::BatchAssociateApprovalRuleTemplateWithRepositoriesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::batch_associate_approval_rule_template_with_repositories::BatchAssociateApprovalRuleTemplateWithRepositoriesError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::batch_associate_approval_rule_template_with_repositories::BatchAssociateApprovalRuleTemplateWithRepositoriesError> for Error {
+    fn from(err: crate::operation::batch_associate_approval_rule_template_with_repositories::BatchAssociateApprovalRuleTemplateWithRepositoriesError) -> Self {
+        match err {
+            crate::operation::batch_associate_approval_rule_template_with_repositories::BatchAssociateApprovalRuleTemplateWithRepositoriesError::ApprovalRuleTemplateDoesNotExistException(inner) => Error::ApprovalRuleTemplateDoesNotExistException(inner),
+            crate::operation::batch_associate_approval_rule_template_with_repositories::BatchAssociateApprovalRuleTemplateWithRepositoriesError::ApprovalRuleTemplateNameRequiredException(inner) => Error::ApprovalRuleTemplateNameRequiredException(inner),
+            crate::operation::batch_associate_approval_rule_template_with_repositories::BatchAssociateApprovalRuleTemplateWithRepositoriesError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
+            crate::operation::batch_associate_approval_rule_template_with_repositories::BatchAssociateApprovalRuleTemplateWithRepositoriesError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
+            crate::operation::batch_associate_approval_rule_template_with_repositories::BatchAssociateApprovalRuleTemplateWithRepositoriesError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
+            crate::operation::batch_associate_approval_rule_template_with_repositories::BatchAssociateApprovalRuleTemplateWithRepositoriesError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
+            crate::operation::batch_associate_approval_rule_template_with_repositories::BatchAssociateApprovalRuleTemplateWithRepositoriesError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
+            crate::operation::batch_associate_approval_rule_template_with_repositories::BatchAssociateApprovalRuleTemplateWithRepositoriesError::InvalidApprovalRuleTemplateNameException(inner) => Error::InvalidApprovalRuleTemplateNameException(inner),
+            crate::operation::batch_associate_approval_rule_template_with_repositories::BatchAssociateApprovalRuleTemplateWithRepositoriesError::MaximumRepositoryNamesExceededException(inner) => Error::MaximumRepositoryNamesExceededException(inner),
+            crate::operation::batch_associate_approval_rule_template_with_repositories::BatchAssociateApprovalRuleTemplateWithRepositoriesError::RepositoryNamesRequiredException(inner) => Error::RepositoryNamesRequiredException(inner),
+            crate::operation::batch_associate_approval_rule_template_with_repositories::BatchAssociateApprovalRuleTemplateWithRepositoriesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
-            crate::error::AssociateApprovalRuleTemplateWithRepositoryError,
+            crate::operation::batch_describe_merge_conflicts::BatchDescribeMergeConflictsError,
             R,
         >,
     > for Error
@@ -654,7 +750,7 @@ where
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::AssociateApprovalRuleTemplateWithRepositoryError,
+            crate::operation::batch_describe_merge_conflicts::BatchDescribeMergeConflictsError,
             R,
         >,
     ) -> Self {
@@ -673,29 +769,72 @@ where
         }
     }
 }
-impl From<crate::error::AssociateApprovalRuleTemplateWithRepositoryError> for Error {
-    fn from(err: crate::error::AssociateApprovalRuleTemplateWithRepositoryError) -> Self {
+impl From<crate::operation::batch_describe_merge_conflicts::BatchDescribeMergeConflictsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::batch_describe_merge_conflicts::BatchDescribeMergeConflictsError,
+    ) -> Self {
         match err {
-            crate::error::AssociateApprovalRuleTemplateWithRepositoryError::ApprovalRuleTemplateDoesNotExistException(inner) => Error::ApprovalRuleTemplateDoesNotExistException(inner),
-            crate::error::AssociateApprovalRuleTemplateWithRepositoryError::ApprovalRuleTemplateNameRequiredException(inner) => Error::ApprovalRuleTemplateNameRequiredException(inner),
-            crate::error::AssociateApprovalRuleTemplateWithRepositoryError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
-            crate::error::AssociateApprovalRuleTemplateWithRepositoryError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
-            crate::error::AssociateApprovalRuleTemplateWithRepositoryError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
-            crate::error::AssociateApprovalRuleTemplateWithRepositoryError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
-            crate::error::AssociateApprovalRuleTemplateWithRepositoryError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
-            crate::error::AssociateApprovalRuleTemplateWithRepositoryError::InvalidApprovalRuleTemplateNameException(inner) => Error::InvalidApprovalRuleTemplateNameException(inner),
-            crate::error::AssociateApprovalRuleTemplateWithRepositoryError::InvalidRepositoryNameException(inner) => Error::InvalidRepositoryNameException(inner),
-            crate::error::AssociateApprovalRuleTemplateWithRepositoryError::MaximumRuleTemplatesAssociatedWithRepositoryException(inner) => Error::MaximumRuleTemplatesAssociatedWithRepositoryException(inner),
-            crate::error::AssociateApprovalRuleTemplateWithRepositoryError::RepositoryDoesNotExistException(inner) => Error::RepositoryDoesNotExistException(inner),
-            crate::error::AssociateApprovalRuleTemplateWithRepositoryError::RepositoryNameRequiredException(inner) => Error::RepositoryNameRequiredException(inner),
-            crate::error::AssociateApprovalRuleTemplateWithRepositoryError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::batch_describe_merge_conflicts::BatchDescribeMergeConflictsError::CommitDoesNotExistException(inner) => Error::CommitDoesNotExistException(inner),
+            crate::operation::batch_describe_merge_conflicts::BatchDescribeMergeConflictsError::CommitRequiredException(inner) => Error::CommitRequiredException(inner),
+            crate::operation::batch_describe_merge_conflicts::BatchDescribeMergeConflictsError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
+            crate::operation::batch_describe_merge_conflicts::BatchDescribeMergeConflictsError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
+            crate::operation::batch_describe_merge_conflicts::BatchDescribeMergeConflictsError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
+            crate::operation::batch_describe_merge_conflicts::BatchDescribeMergeConflictsError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
+            crate::operation::batch_describe_merge_conflicts::BatchDescribeMergeConflictsError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
+            crate::operation::batch_describe_merge_conflicts::BatchDescribeMergeConflictsError::InvalidCommitException(inner) => Error::InvalidCommitException(inner),
+            crate::operation::batch_describe_merge_conflicts::BatchDescribeMergeConflictsError::InvalidConflictDetailLevelException(inner) => Error::InvalidConflictDetailLevelException(inner),
+            crate::operation::batch_describe_merge_conflicts::BatchDescribeMergeConflictsError::InvalidConflictResolutionStrategyException(inner) => Error::InvalidConflictResolutionStrategyException(inner),
+            crate::operation::batch_describe_merge_conflicts::BatchDescribeMergeConflictsError::InvalidContinuationTokenException(inner) => Error::InvalidContinuationTokenException(inner),
+            crate::operation::batch_describe_merge_conflicts::BatchDescribeMergeConflictsError::InvalidMaxConflictFilesException(inner) => Error::InvalidMaxConflictFilesException(inner),
+            crate::operation::batch_describe_merge_conflicts::BatchDescribeMergeConflictsError::InvalidMaxMergeHunksException(inner) => Error::InvalidMaxMergeHunksException(inner),
+            crate::operation::batch_describe_merge_conflicts::BatchDescribeMergeConflictsError::InvalidMergeOptionException(inner) => Error::InvalidMergeOptionException(inner),
+            crate::operation::batch_describe_merge_conflicts::BatchDescribeMergeConflictsError::InvalidRepositoryNameException(inner) => Error::InvalidRepositoryNameException(inner),
+            crate::operation::batch_describe_merge_conflicts::BatchDescribeMergeConflictsError::MaximumFileContentToLoadExceededException(inner) => Error::MaximumFileContentToLoadExceededException(inner),
+            crate::operation::batch_describe_merge_conflicts::BatchDescribeMergeConflictsError::MaximumItemsToCompareExceededException(inner) => Error::MaximumItemsToCompareExceededException(inner),
+            crate::operation::batch_describe_merge_conflicts::BatchDescribeMergeConflictsError::MergeOptionRequiredException(inner) => Error::MergeOptionRequiredException(inner),
+            crate::operation::batch_describe_merge_conflicts::BatchDescribeMergeConflictsError::RepositoryDoesNotExistException(inner) => Error::RepositoryDoesNotExistException(inner),
+            crate::operation::batch_describe_merge_conflicts::BatchDescribeMergeConflictsError::RepositoryNameRequiredException(inner) => Error::RepositoryNameRequiredException(inner),
+            crate::operation::batch_describe_merge_conflicts::BatchDescribeMergeConflictsError::TipsDivergenceExceededException(inner) => Error::TipsDivergenceExceededException(inner),
+            crate::operation::batch_describe_merge_conflicts::BatchDescribeMergeConflictsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::batch_disassociate_approval_rule_template_from_repositories::BatchDisassociateApprovalRuleTemplateFromRepositoriesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::batch_disassociate_approval_rule_template_from_repositories::BatchDisassociateApprovalRuleTemplateFromRepositoriesError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::batch_disassociate_approval_rule_template_from_repositories::BatchDisassociateApprovalRuleTemplateFromRepositoriesError> for Error {
+    fn from(err: crate::operation::batch_disassociate_approval_rule_template_from_repositories::BatchDisassociateApprovalRuleTemplateFromRepositoriesError) -> Self {
+        match err {
+            crate::operation::batch_disassociate_approval_rule_template_from_repositories::BatchDisassociateApprovalRuleTemplateFromRepositoriesError::ApprovalRuleTemplateDoesNotExistException(inner) => Error::ApprovalRuleTemplateDoesNotExistException(inner),
+            crate::operation::batch_disassociate_approval_rule_template_from_repositories::BatchDisassociateApprovalRuleTemplateFromRepositoriesError::ApprovalRuleTemplateNameRequiredException(inner) => Error::ApprovalRuleTemplateNameRequiredException(inner),
+            crate::operation::batch_disassociate_approval_rule_template_from_repositories::BatchDisassociateApprovalRuleTemplateFromRepositoriesError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
+            crate::operation::batch_disassociate_approval_rule_template_from_repositories::BatchDisassociateApprovalRuleTemplateFromRepositoriesError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
+            crate::operation::batch_disassociate_approval_rule_template_from_repositories::BatchDisassociateApprovalRuleTemplateFromRepositoriesError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
+            crate::operation::batch_disassociate_approval_rule_template_from_repositories::BatchDisassociateApprovalRuleTemplateFromRepositoriesError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
+            crate::operation::batch_disassociate_approval_rule_template_from_repositories::BatchDisassociateApprovalRuleTemplateFromRepositoriesError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
+            crate::operation::batch_disassociate_approval_rule_template_from_repositories::BatchDisassociateApprovalRuleTemplateFromRepositoriesError::InvalidApprovalRuleTemplateNameException(inner) => Error::InvalidApprovalRuleTemplateNameException(inner),
+            crate::operation::batch_disassociate_approval_rule_template_from_repositories::BatchDisassociateApprovalRuleTemplateFromRepositoriesError::MaximumRepositoryNamesExceededException(inner) => Error::MaximumRepositoryNamesExceededException(inner),
+            crate::operation::batch_disassociate_approval_rule_template_from_repositories::BatchDisassociateApprovalRuleTemplateFromRepositoriesError::RepositoryNamesRequiredException(inner) => Error::RepositoryNamesRequiredException(inner),
+            crate::operation::batch_disassociate_approval_rule_template_from_repositories::BatchDisassociateApprovalRuleTemplateFromRepositoriesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
-            crate::error::BatchAssociateApprovalRuleTemplateWithRepositoriesError,
+            crate::operation::batch_get_commits::BatchGetCommitsError,
             R,
         >,
     > for Error
@@ -704,7 +843,7 @@ where
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::BatchAssociateApprovalRuleTemplateWithRepositoriesError,
+            crate::operation::batch_get_commits::BatchGetCommitsError,
             R,
         >,
     ) -> Self {
@@ -723,78 +862,27 @@ where
         }
     }
 }
-impl From<crate::error::BatchAssociateApprovalRuleTemplateWithRepositoriesError> for Error {
-    fn from(err: crate::error::BatchAssociateApprovalRuleTemplateWithRepositoriesError) -> Self {
+impl From<crate::operation::batch_get_commits::BatchGetCommitsError> for Error {
+    fn from(err: crate::operation::batch_get_commits::BatchGetCommitsError) -> Self {
         match err {
-            crate::error::BatchAssociateApprovalRuleTemplateWithRepositoriesError::ApprovalRuleTemplateDoesNotExistException(inner) => Error::ApprovalRuleTemplateDoesNotExistException(inner),
-            crate::error::BatchAssociateApprovalRuleTemplateWithRepositoriesError::ApprovalRuleTemplateNameRequiredException(inner) => Error::ApprovalRuleTemplateNameRequiredException(inner),
-            crate::error::BatchAssociateApprovalRuleTemplateWithRepositoriesError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
-            crate::error::BatchAssociateApprovalRuleTemplateWithRepositoriesError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
-            crate::error::BatchAssociateApprovalRuleTemplateWithRepositoriesError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
-            crate::error::BatchAssociateApprovalRuleTemplateWithRepositoriesError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
-            crate::error::BatchAssociateApprovalRuleTemplateWithRepositoriesError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
-            crate::error::BatchAssociateApprovalRuleTemplateWithRepositoriesError::InvalidApprovalRuleTemplateNameException(inner) => Error::InvalidApprovalRuleTemplateNameException(inner),
-            crate::error::BatchAssociateApprovalRuleTemplateWithRepositoriesError::MaximumRepositoryNamesExceededException(inner) => Error::MaximumRepositoryNamesExceededException(inner),
-            crate::error::BatchAssociateApprovalRuleTemplateWithRepositoriesError::RepositoryNamesRequiredException(inner) => Error::RepositoryNamesRequiredException(inner),
-            crate::error::BatchAssociateApprovalRuleTemplateWithRepositoriesError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::BatchDescribeMergeConflictsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::BatchDescribeMergeConflictsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::BatchDescribeMergeConflictsError> for Error {
-    fn from(err: crate::error::BatchDescribeMergeConflictsError) -> Self {
-        match err {
-            crate::error::BatchDescribeMergeConflictsError::CommitDoesNotExistException(inner) => Error::CommitDoesNotExistException(inner),
-            crate::error::BatchDescribeMergeConflictsError::CommitRequiredException(inner) => Error::CommitRequiredException(inner),
-            crate::error::BatchDescribeMergeConflictsError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
-            crate::error::BatchDescribeMergeConflictsError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
-            crate::error::BatchDescribeMergeConflictsError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
-            crate::error::BatchDescribeMergeConflictsError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
-            crate::error::BatchDescribeMergeConflictsError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
-            crate::error::BatchDescribeMergeConflictsError::InvalidCommitException(inner) => Error::InvalidCommitException(inner),
-            crate::error::BatchDescribeMergeConflictsError::InvalidConflictDetailLevelException(inner) => Error::InvalidConflictDetailLevelException(inner),
-            crate::error::BatchDescribeMergeConflictsError::InvalidConflictResolutionStrategyException(inner) => Error::InvalidConflictResolutionStrategyException(inner),
-            crate::error::BatchDescribeMergeConflictsError::InvalidContinuationTokenException(inner) => Error::InvalidContinuationTokenException(inner),
-            crate::error::BatchDescribeMergeConflictsError::InvalidMaxConflictFilesException(inner) => Error::InvalidMaxConflictFilesException(inner),
-            crate::error::BatchDescribeMergeConflictsError::InvalidMaxMergeHunksException(inner) => Error::InvalidMaxMergeHunksException(inner),
-            crate::error::BatchDescribeMergeConflictsError::InvalidMergeOptionException(inner) => Error::InvalidMergeOptionException(inner),
-            crate::error::BatchDescribeMergeConflictsError::InvalidRepositoryNameException(inner) => Error::InvalidRepositoryNameException(inner),
-            crate::error::BatchDescribeMergeConflictsError::MaximumFileContentToLoadExceededException(inner) => Error::MaximumFileContentToLoadExceededException(inner),
-            crate::error::BatchDescribeMergeConflictsError::MaximumItemsToCompareExceededException(inner) => Error::MaximumItemsToCompareExceededException(inner),
-            crate::error::BatchDescribeMergeConflictsError::MergeOptionRequiredException(inner) => Error::MergeOptionRequiredException(inner),
-            crate::error::BatchDescribeMergeConflictsError::RepositoryDoesNotExistException(inner) => Error::RepositoryDoesNotExistException(inner),
-            crate::error::BatchDescribeMergeConflictsError::RepositoryNameRequiredException(inner) => Error::RepositoryNameRequiredException(inner),
-            crate::error::BatchDescribeMergeConflictsError::TipsDivergenceExceededException(inner) => Error::TipsDivergenceExceededException(inner),
-            crate::error::BatchDescribeMergeConflictsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::batch_get_commits::BatchGetCommitsError::CommitIdsLimitExceededException(inner) => Error::CommitIdsLimitExceededException(inner),
+            crate::operation::batch_get_commits::BatchGetCommitsError::CommitIdsListRequiredException(inner) => Error::CommitIdsListRequiredException(inner),
+            crate::operation::batch_get_commits::BatchGetCommitsError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
+            crate::operation::batch_get_commits::BatchGetCommitsError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
+            crate::operation::batch_get_commits::BatchGetCommitsError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
+            crate::operation::batch_get_commits::BatchGetCommitsError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
+            crate::operation::batch_get_commits::BatchGetCommitsError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
+            crate::operation::batch_get_commits::BatchGetCommitsError::InvalidRepositoryNameException(inner) => Error::InvalidRepositoryNameException(inner),
+            crate::operation::batch_get_commits::BatchGetCommitsError::RepositoryDoesNotExistException(inner) => Error::RepositoryDoesNotExistException(inner),
+            crate::operation::batch_get_commits::BatchGetCommitsError::RepositoryNameRequiredException(inner) => Error::RepositoryNameRequiredException(inner),
+            crate::operation::batch_get_commits::BatchGetCommitsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
-            crate::error::BatchDisassociateApprovalRuleTemplateFromRepositoriesError,
+            crate::operation::batch_get_repositories::BatchGetRepositoriesError,
             R,
         >,
     > for Error
@@ -803,7 +891,7 @@ where
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::BatchDisassociateApprovalRuleTemplateFromRepositoriesError,
+            crate::operation::batch_get_repositories::BatchGetRepositoriesError,
             R,
         >,
     ) -> Self {
@@ -822,1087 +910,25 @@ where
         }
     }
 }
-impl From<crate::error::BatchDisassociateApprovalRuleTemplateFromRepositoriesError> for Error {
-    fn from(err: crate::error::BatchDisassociateApprovalRuleTemplateFromRepositoriesError) -> Self {
+impl From<crate::operation::batch_get_repositories::BatchGetRepositoriesError> for Error {
+    fn from(err: crate::operation::batch_get_repositories::BatchGetRepositoriesError) -> Self {
         match err {
-            crate::error::BatchDisassociateApprovalRuleTemplateFromRepositoriesError::ApprovalRuleTemplateDoesNotExistException(inner) => Error::ApprovalRuleTemplateDoesNotExistException(inner),
-            crate::error::BatchDisassociateApprovalRuleTemplateFromRepositoriesError::ApprovalRuleTemplateNameRequiredException(inner) => Error::ApprovalRuleTemplateNameRequiredException(inner),
-            crate::error::BatchDisassociateApprovalRuleTemplateFromRepositoriesError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
-            crate::error::BatchDisassociateApprovalRuleTemplateFromRepositoriesError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
-            crate::error::BatchDisassociateApprovalRuleTemplateFromRepositoriesError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
-            crate::error::BatchDisassociateApprovalRuleTemplateFromRepositoriesError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
-            crate::error::BatchDisassociateApprovalRuleTemplateFromRepositoriesError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
-            crate::error::BatchDisassociateApprovalRuleTemplateFromRepositoriesError::InvalidApprovalRuleTemplateNameException(inner) => Error::InvalidApprovalRuleTemplateNameException(inner),
-            crate::error::BatchDisassociateApprovalRuleTemplateFromRepositoriesError::MaximumRepositoryNamesExceededException(inner) => Error::MaximumRepositoryNamesExceededException(inner),
-            crate::error::BatchDisassociateApprovalRuleTemplateFromRepositoriesError::RepositoryNamesRequiredException(inner) => Error::RepositoryNamesRequiredException(inner),
-            crate::error::BatchDisassociateApprovalRuleTemplateFromRepositoriesError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::BatchGetCommitsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::BatchGetCommitsError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::BatchGetCommitsError> for Error {
-    fn from(err: crate::error::BatchGetCommitsError) -> Self {
-        match err {
-            crate::error::BatchGetCommitsError::CommitIdsLimitExceededException(inner) => {
-                Error::CommitIdsLimitExceededException(inner)
-            }
-            crate::error::BatchGetCommitsError::CommitIdsListRequiredException(inner) => {
-                Error::CommitIdsListRequiredException(inner)
-            }
-            crate::error::BatchGetCommitsError::EncryptionIntegrityChecksFailedException(inner) => {
-                Error::EncryptionIntegrityChecksFailedException(inner)
-            }
-            crate::error::BatchGetCommitsError::EncryptionKeyAccessDeniedException(inner) => {
-                Error::EncryptionKeyAccessDeniedException(inner)
-            }
-            crate::error::BatchGetCommitsError::EncryptionKeyDisabledException(inner) => {
-                Error::EncryptionKeyDisabledException(inner)
-            }
-            crate::error::BatchGetCommitsError::EncryptionKeyNotFoundException(inner) => {
-                Error::EncryptionKeyNotFoundException(inner)
-            }
-            crate::error::BatchGetCommitsError::EncryptionKeyUnavailableException(inner) => {
-                Error::EncryptionKeyUnavailableException(inner)
-            }
-            crate::error::BatchGetCommitsError::InvalidRepositoryNameException(inner) => {
-                Error::InvalidRepositoryNameException(inner)
-            }
-            crate::error::BatchGetCommitsError::RepositoryDoesNotExistException(inner) => {
-                Error::RepositoryDoesNotExistException(inner)
-            }
-            crate::error::BatchGetCommitsError::RepositoryNameRequiredException(inner) => {
-                Error::RepositoryNameRequiredException(inner)
-            }
-            crate::error::BatchGetCommitsError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::BatchGetRepositoriesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::BatchGetRepositoriesError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::BatchGetRepositoriesError> for Error {
-    fn from(err: crate::error::BatchGetRepositoriesError) -> Self {
-        match err {
-            crate::error::BatchGetRepositoriesError::EncryptionIntegrityChecksFailedException(
-                inner,
-            ) => Error::EncryptionIntegrityChecksFailedException(inner),
-            crate::error::BatchGetRepositoriesError::EncryptionKeyAccessDeniedException(inner) => {
-                Error::EncryptionKeyAccessDeniedException(inner)
-            }
-            crate::error::BatchGetRepositoriesError::EncryptionKeyDisabledException(inner) => {
-                Error::EncryptionKeyDisabledException(inner)
-            }
-            crate::error::BatchGetRepositoriesError::EncryptionKeyNotFoundException(inner) => {
-                Error::EncryptionKeyNotFoundException(inner)
-            }
-            crate::error::BatchGetRepositoriesError::EncryptionKeyUnavailableException(inner) => {
-                Error::EncryptionKeyUnavailableException(inner)
-            }
-            crate::error::BatchGetRepositoriesError::InvalidRepositoryNameException(inner) => {
-                Error::InvalidRepositoryNameException(inner)
-            }
-            crate::error::BatchGetRepositoriesError::MaximumRepositoryNamesExceededException(
-                inner,
-            ) => Error::MaximumRepositoryNamesExceededException(inner),
-            crate::error::BatchGetRepositoriesError::RepositoryNamesRequiredException(inner) => {
-                Error::RepositoryNamesRequiredException(inner)
-            }
-            crate::error::BatchGetRepositoriesError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateApprovalRuleTemplateError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateApprovalRuleTemplateError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::CreateApprovalRuleTemplateError> for Error {
-    fn from(err: crate::error::CreateApprovalRuleTemplateError) -> Self {
-        match err {
-            crate::error::CreateApprovalRuleTemplateError::ApprovalRuleTemplateContentRequiredException(inner) => Error::ApprovalRuleTemplateContentRequiredException(inner),
-            crate::error::CreateApprovalRuleTemplateError::ApprovalRuleTemplateNameAlreadyExistsException(inner) => Error::ApprovalRuleTemplateNameAlreadyExistsException(inner),
-            crate::error::CreateApprovalRuleTemplateError::ApprovalRuleTemplateNameRequiredException(inner) => Error::ApprovalRuleTemplateNameRequiredException(inner),
-            crate::error::CreateApprovalRuleTemplateError::InvalidApprovalRuleTemplateContentException(inner) => Error::InvalidApprovalRuleTemplateContentException(inner),
-            crate::error::CreateApprovalRuleTemplateError::InvalidApprovalRuleTemplateDescriptionException(inner) => Error::InvalidApprovalRuleTemplateDescriptionException(inner),
-            crate::error::CreateApprovalRuleTemplateError::InvalidApprovalRuleTemplateNameException(inner) => Error::InvalidApprovalRuleTemplateNameException(inner),
-            crate::error::CreateApprovalRuleTemplateError::NumberOfRuleTemplatesExceededException(inner) => Error::NumberOfRuleTemplatesExceededException(inner),
-            crate::error::CreateApprovalRuleTemplateError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateBranchError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateBranchError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::CreateBranchError> for Error {
-    fn from(err: crate::error::CreateBranchError) -> Self {
-        match err {
-            crate::error::CreateBranchError::BranchNameExistsException(inner) => {
-                Error::BranchNameExistsException(inner)
-            }
-            crate::error::CreateBranchError::BranchNameRequiredException(inner) => {
-                Error::BranchNameRequiredException(inner)
-            }
-            crate::error::CreateBranchError::CommitDoesNotExistException(inner) => {
-                Error::CommitDoesNotExistException(inner)
-            }
-            crate::error::CreateBranchError::CommitIdRequiredException(inner) => {
-                Error::CommitIdRequiredException(inner)
-            }
-            crate::error::CreateBranchError::EncryptionIntegrityChecksFailedException(inner) => {
-                Error::EncryptionIntegrityChecksFailedException(inner)
-            }
-            crate::error::CreateBranchError::EncryptionKeyAccessDeniedException(inner) => {
-                Error::EncryptionKeyAccessDeniedException(inner)
-            }
-            crate::error::CreateBranchError::EncryptionKeyDisabledException(inner) => {
-                Error::EncryptionKeyDisabledException(inner)
-            }
-            crate::error::CreateBranchError::EncryptionKeyNotFoundException(inner) => {
-                Error::EncryptionKeyNotFoundException(inner)
-            }
-            crate::error::CreateBranchError::EncryptionKeyUnavailableException(inner) => {
-                Error::EncryptionKeyUnavailableException(inner)
-            }
-            crate::error::CreateBranchError::InvalidBranchNameException(inner) => {
-                Error::InvalidBranchNameException(inner)
-            }
-            crate::error::CreateBranchError::InvalidCommitIdException(inner) => {
-                Error::InvalidCommitIdException(inner)
-            }
-            crate::error::CreateBranchError::InvalidRepositoryNameException(inner) => {
-                Error::InvalidRepositoryNameException(inner)
-            }
-            crate::error::CreateBranchError::RepositoryDoesNotExistException(inner) => {
-                Error::RepositoryDoesNotExistException(inner)
-            }
-            crate::error::CreateBranchError::RepositoryNameRequiredException(inner) => {
-                Error::RepositoryNameRequiredException(inner)
-            }
-            crate::error::CreateBranchError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateCommitError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateCommitError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::CreateCommitError> for Error {
-    fn from(err: crate::error::CreateCommitError) -> Self {
-        match err {
-            crate::error::CreateCommitError::BranchDoesNotExistException(inner) => {
-                Error::BranchDoesNotExistException(inner)
-            }
-            crate::error::CreateCommitError::BranchNameIsTagNameException(inner) => {
-                Error::BranchNameIsTagNameException(inner)
-            }
-            crate::error::CreateCommitError::BranchNameRequiredException(inner) => {
-                Error::BranchNameRequiredException(inner)
-            }
-            crate::error::CreateCommitError::CommitMessageLengthExceededException(inner) => {
-                Error::CommitMessageLengthExceededException(inner)
-            }
-            crate::error::CreateCommitError::DirectoryNameConflictsWithFileNameException(inner) => {
-                Error::DirectoryNameConflictsWithFileNameException(inner)
-            }
-            crate::error::CreateCommitError::EncryptionIntegrityChecksFailedException(inner) => {
-                Error::EncryptionIntegrityChecksFailedException(inner)
-            }
-            crate::error::CreateCommitError::EncryptionKeyAccessDeniedException(inner) => {
-                Error::EncryptionKeyAccessDeniedException(inner)
-            }
-            crate::error::CreateCommitError::EncryptionKeyDisabledException(inner) => {
-                Error::EncryptionKeyDisabledException(inner)
-            }
-            crate::error::CreateCommitError::EncryptionKeyNotFoundException(inner) => {
-                Error::EncryptionKeyNotFoundException(inner)
-            }
-            crate::error::CreateCommitError::EncryptionKeyUnavailableException(inner) => {
-                Error::EncryptionKeyUnavailableException(inner)
-            }
-            crate::error::CreateCommitError::FileContentAndSourceFileSpecifiedException(inner) => {
-                Error::FileContentAndSourceFileSpecifiedException(inner)
-            }
-            crate::error::CreateCommitError::FileContentSizeLimitExceededException(inner) => {
-                Error::FileContentSizeLimitExceededException(inner)
-            }
-            crate::error::CreateCommitError::FileDoesNotExistException(inner) => {
-                Error::FileDoesNotExistException(inner)
-            }
-            crate::error::CreateCommitError::FileEntryRequiredException(inner) => {
-                Error::FileEntryRequiredException(inner)
-            }
-            crate::error::CreateCommitError::FileModeRequiredException(inner) => {
-                Error::FileModeRequiredException(inner)
-            }
-            crate::error::CreateCommitError::FileNameConflictsWithDirectoryNameException(inner) => {
-                Error::FileNameConflictsWithDirectoryNameException(inner)
-            }
-            crate::error::CreateCommitError::FilePathConflictsWithSubmodulePathException(inner) => {
-                Error::FilePathConflictsWithSubmodulePathException(inner)
-            }
-            crate::error::CreateCommitError::FolderContentSizeLimitExceededException(inner) => {
-                Error::FolderContentSizeLimitExceededException(inner)
-            }
-            crate::error::CreateCommitError::InvalidBranchNameException(inner) => {
-                Error::InvalidBranchNameException(inner)
-            }
-            crate::error::CreateCommitError::InvalidDeletionParameterException(inner) => {
-                Error::InvalidDeletionParameterException(inner)
-            }
-            crate::error::CreateCommitError::InvalidEmailException(inner) => {
-                Error::InvalidEmailException(inner)
-            }
-            crate::error::CreateCommitError::InvalidFileModeException(inner) => {
-                Error::InvalidFileModeException(inner)
-            }
-            crate::error::CreateCommitError::InvalidParentCommitIdException(inner) => {
-                Error::InvalidParentCommitIdException(inner)
-            }
-            crate::error::CreateCommitError::InvalidPathException(inner) => {
-                Error::InvalidPathException(inner)
-            }
-            crate::error::CreateCommitError::InvalidRepositoryNameException(inner) => {
-                Error::InvalidRepositoryNameException(inner)
-            }
-            crate::error::CreateCommitError::MaximumFileEntriesExceededException(inner) => {
-                Error::MaximumFileEntriesExceededException(inner)
-            }
-            crate::error::CreateCommitError::NameLengthExceededException(inner) => {
-                Error::NameLengthExceededException(inner)
-            }
-            crate::error::CreateCommitError::NoChangeException(inner) => {
-                Error::NoChangeException(inner)
-            }
-            crate::error::CreateCommitError::ParentCommitDoesNotExistException(inner) => {
-                Error::ParentCommitDoesNotExistException(inner)
-            }
-            crate::error::CreateCommitError::ParentCommitIdOutdatedException(inner) => {
-                Error::ParentCommitIdOutdatedException(inner)
-            }
-            crate::error::CreateCommitError::ParentCommitIdRequiredException(inner) => {
-                Error::ParentCommitIdRequiredException(inner)
-            }
-            crate::error::CreateCommitError::PathRequiredException(inner) => {
-                Error::PathRequiredException(inner)
-            }
-            crate::error::CreateCommitError::PutFileEntryConflictException(inner) => {
-                Error::PutFileEntryConflictException(inner)
-            }
-            crate::error::CreateCommitError::RepositoryDoesNotExistException(inner) => {
-                Error::RepositoryDoesNotExistException(inner)
-            }
-            crate::error::CreateCommitError::RepositoryNameRequiredException(inner) => {
-                Error::RepositoryNameRequiredException(inner)
-            }
-            crate::error::CreateCommitError::RestrictedSourceFileException(inner) => {
-                Error::RestrictedSourceFileException(inner)
-            }
-            crate::error::CreateCommitError::SamePathRequestException(inner) => {
-                Error::SamePathRequestException(inner)
-            }
-            crate::error::CreateCommitError::SourceFileOrContentRequiredException(inner) => {
-                Error::SourceFileOrContentRequiredException(inner)
-            }
-            crate::error::CreateCommitError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreatePullRequestError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreatePullRequestError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::CreatePullRequestError> for Error {
-    fn from(err: crate::error::CreatePullRequestError) -> Self {
-        match err {
-            crate::error::CreatePullRequestError::ClientRequestTokenRequiredException(inner) => {
-                Error::ClientRequestTokenRequiredException(inner)
-            }
-            crate::error::CreatePullRequestError::EncryptionIntegrityChecksFailedException(
-                inner,
-            ) => Error::EncryptionIntegrityChecksFailedException(inner),
-            crate::error::CreatePullRequestError::EncryptionKeyAccessDeniedException(inner) => {
-                Error::EncryptionKeyAccessDeniedException(inner)
-            }
-            crate::error::CreatePullRequestError::EncryptionKeyDisabledException(inner) => {
-                Error::EncryptionKeyDisabledException(inner)
-            }
-            crate::error::CreatePullRequestError::EncryptionKeyNotFoundException(inner) => {
-                Error::EncryptionKeyNotFoundException(inner)
-            }
-            crate::error::CreatePullRequestError::EncryptionKeyUnavailableException(inner) => {
-                Error::EncryptionKeyUnavailableException(inner)
-            }
-            crate::error::CreatePullRequestError::IdempotencyParameterMismatchException(inner) => {
-                Error::IdempotencyParameterMismatchException(inner)
-            }
-            crate::error::CreatePullRequestError::InvalidClientRequestTokenException(inner) => {
-                Error::InvalidClientRequestTokenException(inner)
-            }
-            crate::error::CreatePullRequestError::InvalidDescriptionException(inner) => {
-                Error::InvalidDescriptionException(inner)
-            }
-            crate::error::CreatePullRequestError::InvalidReferenceNameException(inner) => {
-                Error::InvalidReferenceNameException(inner)
-            }
-            crate::error::CreatePullRequestError::InvalidRepositoryNameException(inner) => {
-                Error::InvalidRepositoryNameException(inner)
-            }
-            crate::error::CreatePullRequestError::InvalidTargetException(inner) => {
-                Error::InvalidTargetException(inner)
-            }
-            crate::error::CreatePullRequestError::InvalidTargetsException(inner) => {
-                Error::InvalidTargetsException(inner)
-            }
-            crate::error::CreatePullRequestError::InvalidTitleException(inner) => {
-                Error::InvalidTitleException(inner)
-            }
-            crate::error::CreatePullRequestError::MaximumOpenPullRequestsExceededException(
-                inner,
-            ) => Error::MaximumOpenPullRequestsExceededException(inner),
-            crate::error::CreatePullRequestError::MultipleRepositoriesInPullRequestException(
-                inner,
-            ) => Error::MultipleRepositoriesInPullRequestException(inner),
-            crate::error::CreatePullRequestError::ReferenceDoesNotExistException(inner) => {
-                Error::ReferenceDoesNotExistException(inner)
-            }
-            crate::error::CreatePullRequestError::ReferenceNameRequiredException(inner) => {
-                Error::ReferenceNameRequiredException(inner)
-            }
-            crate::error::CreatePullRequestError::ReferenceTypeNotSupportedException(inner) => {
-                Error::ReferenceTypeNotSupportedException(inner)
-            }
-            crate::error::CreatePullRequestError::RepositoryDoesNotExistException(inner) => {
-                Error::RepositoryDoesNotExistException(inner)
-            }
-            crate::error::CreatePullRequestError::RepositoryNameRequiredException(inner) => {
-                Error::RepositoryNameRequiredException(inner)
-            }
-            crate::error::CreatePullRequestError::SourceAndDestinationAreSameException(inner) => {
-                Error::SourceAndDestinationAreSameException(inner)
-            }
-            crate::error::CreatePullRequestError::TargetRequiredException(inner) => {
-                Error::TargetRequiredException(inner)
-            }
-            crate::error::CreatePullRequestError::TargetsRequiredException(inner) => {
-                Error::TargetsRequiredException(inner)
-            }
-            crate::error::CreatePullRequestError::TitleRequiredException(inner) => {
-                Error::TitleRequiredException(inner)
-            }
-            crate::error::CreatePullRequestError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreatePullRequestApprovalRuleError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreatePullRequestApprovalRuleError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::CreatePullRequestApprovalRuleError> for Error {
-    fn from(err: crate::error::CreatePullRequestApprovalRuleError) -> Self {
-        match err {
-            crate::error::CreatePullRequestApprovalRuleError::ApprovalRuleContentRequiredException(inner) => Error::ApprovalRuleContentRequiredException(inner),
-            crate::error::CreatePullRequestApprovalRuleError::ApprovalRuleNameAlreadyExistsException(inner) => Error::ApprovalRuleNameAlreadyExistsException(inner),
-            crate::error::CreatePullRequestApprovalRuleError::ApprovalRuleNameRequiredException(inner) => Error::ApprovalRuleNameRequiredException(inner),
-            crate::error::CreatePullRequestApprovalRuleError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
-            crate::error::CreatePullRequestApprovalRuleError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
-            crate::error::CreatePullRequestApprovalRuleError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
-            crate::error::CreatePullRequestApprovalRuleError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
-            crate::error::CreatePullRequestApprovalRuleError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
-            crate::error::CreatePullRequestApprovalRuleError::InvalidApprovalRuleContentException(inner) => Error::InvalidApprovalRuleContentException(inner),
-            crate::error::CreatePullRequestApprovalRuleError::InvalidApprovalRuleNameException(inner) => Error::InvalidApprovalRuleNameException(inner),
-            crate::error::CreatePullRequestApprovalRuleError::InvalidPullRequestIdException(inner) => Error::InvalidPullRequestIdException(inner),
-            crate::error::CreatePullRequestApprovalRuleError::NumberOfRulesExceededException(inner) => Error::NumberOfRulesExceededException(inner),
-            crate::error::CreatePullRequestApprovalRuleError::PullRequestAlreadyClosedException(inner) => Error::PullRequestAlreadyClosedException(inner),
-            crate::error::CreatePullRequestApprovalRuleError::PullRequestDoesNotExistException(inner) => Error::PullRequestDoesNotExistException(inner),
-            crate::error::CreatePullRequestApprovalRuleError::PullRequestIdRequiredException(inner) => Error::PullRequestIdRequiredException(inner),
-            crate::error::CreatePullRequestApprovalRuleError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateRepositoryError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateRepositoryError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::CreateRepositoryError> for Error {
-    fn from(err: crate::error::CreateRepositoryError) -> Self {
-        match err {
-            crate::error::CreateRepositoryError::EncryptionIntegrityChecksFailedException(
-                inner,
-            ) => Error::EncryptionIntegrityChecksFailedException(inner),
-            crate::error::CreateRepositoryError::EncryptionKeyAccessDeniedException(inner) => {
-                Error::EncryptionKeyAccessDeniedException(inner)
-            }
-            crate::error::CreateRepositoryError::EncryptionKeyDisabledException(inner) => {
-                Error::EncryptionKeyDisabledException(inner)
-            }
-            crate::error::CreateRepositoryError::EncryptionKeyNotFoundException(inner) => {
-                Error::EncryptionKeyNotFoundException(inner)
-            }
-            crate::error::CreateRepositoryError::EncryptionKeyUnavailableException(inner) => {
-                Error::EncryptionKeyUnavailableException(inner)
-            }
-            crate::error::CreateRepositoryError::InvalidRepositoryDescriptionException(inner) => {
-                Error::InvalidRepositoryDescriptionException(inner)
-            }
-            crate::error::CreateRepositoryError::InvalidRepositoryNameException(inner) => {
-                Error::InvalidRepositoryNameException(inner)
-            }
-            crate::error::CreateRepositoryError::InvalidSystemTagUsageException(inner) => {
-                Error::InvalidSystemTagUsageException(inner)
-            }
-            crate::error::CreateRepositoryError::InvalidTagsMapException(inner) => {
-                Error::InvalidTagsMapException(inner)
-            }
-            crate::error::CreateRepositoryError::RepositoryLimitExceededException(inner) => {
-                Error::RepositoryLimitExceededException(inner)
-            }
-            crate::error::CreateRepositoryError::RepositoryNameExistsException(inner) => {
-                Error::RepositoryNameExistsException(inner)
-            }
-            crate::error::CreateRepositoryError::RepositoryNameRequiredException(inner) => {
-                Error::RepositoryNameRequiredException(inner)
-            }
-            crate::error::CreateRepositoryError::TagPolicyException(inner) => {
-                Error::TagPolicyException(inner)
-            }
-            crate::error::CreateRepositoryError::TooManyTagsException(inner) => {
-                Error::TooManyTagsException(inner)
-            }
-            crate::error::CreateRepositoryError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateUnreferencedMergeCommitError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateUnreferencedMergeCommitError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::CreateUnreferencedMergeCommitError> for Error {
-    fn from(err: crate::error::CreateUnreferencedMergeCommitError) -> Self {
-        match err {
-            crate::error::CreateUnreferencedMergeCommitError::CommitDoesNotExistException(inner) => Error::CommitDoesNotExistException(inner),
-            crate::error::CreateUnreferencedMergeCommitError::CommitMessageLengthExceededException(inner) => Error::CommitMessageLengthExceededException(inner),
-            crate::error::CreateUnreferencedMergeCommitError::CommitRequiredException(inner) => Error::CommitRequiredException(inner),
-            crate::error::CreateUnreferencedMergeCommitError::ConcurrentReferenceUpdateException(inner) => Error::ConcurrentReferenceUpdateException(inner),
-            crate::error::CreateUnreferencedMergeCommitError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
-            crate::error::CreateUnreferencedMergeCommitError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
-            crate::error::CreateUnreferencedMergeCommitError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
-            crate::error::CreateUnreferencedMergeCommitError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
-            crate::error::CreateUnreferencedMergeCommitError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
-            crate::error::CreateUnreferencedMergeCommitError::FileContentSizeLimitExceededException(inner) => Error::FileContentSizeLimitExceededException(inner),
-            crate::error::CreateUnreferencedMergeCommitError::FileModeRequiredException(inner) => Error::FileModeRequiredException(inner),
-            crate::error::CreateUnreferencedMergeCommitError::FolderContentSizeLimitExceededException(inner) => Error::FolderContentSizeLimitExceededException(inner),
-            crate::error::CreateUnreferencedMergeCommitError::InvalidCommitException(inner) => Error::InvalidCommitException(inner),
-            crate::error::CreateUnreferencedMergeCommitError::InvalidConflictDetailLevelException(inner) => Error::InvalidConflictDetailLevelException(inner),
-            crate::error::CreateUnreferencedMergeCommitError::InvalidConflictResolutionException(inner) => Error::InvalidConflictResolutionException(inner),
-            crate::error::CreateUnreferencedMergeCommitError::InvalidConflictResolutionStrategyException(inner) => Error::InvalidConflictResolutionStrategyException(inner),
-            crate::error::CreateUnreferencedMergeCommitError::InvalidEmailException(inner) => Error::InvalidEmailException(inner),
-            crate::error::CreateUnreferencedMergeCommitError::InvalidFileModeException(inner) => Error::InvalidFileModeException(inner),
-            crate::error::CreateUnreferencedMergeCommitError::InvalidMergeOptionException(inner) => Error::InvalidMergeOptionException(inner),
-            crate::error::CreateUnreferencedMergeCommitError::InvalidPathException(inner) => Error::InvalidPathException(inner),
-            crate::error::CreateUnreferencedMergeCommitError::InvalidReplacementContentException(inner) => Error::InvalidReplacementContentException(inner),
-            crate::error::CreateUnreferencedMergeCommitError::InvalidReplacementTypeException(inner) => Error::InvalidReplacementTypeException(inner),
-            crate::error::CreateUnreferencedMergeCommitError::InvalidRepositoryNameException(inner) => Error::InvalidRepositoryNameException(inner),
-            crate::error::CreateUnreferencedMergeCommitError::ManualMergeRequiredException(inner) => Error::ManualMergeRequiredException(inner),
-            crate::error::CreateUnreferencedMergeCommitError::MaximumConflictResolutionEntriesExceededException(inner) => Error::MaximumConflictResolutionEntriesExceededException(inner),
-            crate::error::CreateUnreferencedMergeCommitError::MaximumFileContentToLoadExceededException(inner) => Error::MaximumFileContentToLoadExceededException(inner),
-            crate::error::CreateUnreferencedMergeCommitError::MaximumItemsToCompareExceededException(inner) => Error::MaximumItemsToCompareExceededException(inner),
-            crate::error::CreateUnreferencedMergeCommitError::MergeOptionRequiredException(inner) => Error::MergeOptionRequiredException(inner),
-            crate::error::CreateUnreferencedMergeCommitError::MultipleConflictResolutionEntriesException(inner) => Error::MultipleConflictResolutionEntriesException(inner),
-            crate::error::CreateUnreferencedMergeCommitError::NameLengthExceededException(inner) => Error::NameLengthExceededException(inner),
-            crate::error::CreateUnreferencedMergeCommitError::PathRequiredException(inner) => Error::PathRequiredException(inner),
-            crate::error::CreateUnreferencedMergeCommitError::ReplacementContentRequiredException(inner) => Error::ReplacementContentRequiredException(inner),
-            crate::error::CreateUnreferencedMergeCommitError::ReplacementTypeRequiredException(inner) => Error::ReplacementTypeRequiredException(inner),
-            crate::error::CreateUnreferencedMergeCommitError::RepositoryDoesNotExistException(inner) => Error::RepositoryDoesNotExistException(inner),
-            crate::error::CreateUnreferencedMergeCommitError::RepositoryNameRequiredException(inner) => Error::RepositoryNameRequiredException(inner),
-            crate::error::CreateUnreferencedMergeCommitError::TipsDivergenceExceededException(inner) => Error::TipsDivergenceExceededException(inner),
-            crate::error::CreateUnreferencedMergeCommitError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteApprovalRuleTemplateError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteApprovalRuleTemplateError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DeleteApprovalRuleTemplateError> for Error {
-    fn from(err: crate::error::DeleteApprovalRuleTemplateError) -> Self {
-        match err {
-            crate::error::DeleteApprovalRuleTemplateError::ApprovalRuleTemplateInUseException(inner) => Error::ApprovalRuleTemplateInUseException(inner),
-            crate::error::DeleteApprovalRuleTemplateError::ApprovalRuleTemplateNameRequiredException(inner) => Error::ApprovalRuleTemplateNameRequiredException(inner),
-            crate::error::DeleteApprovalRuleTemplateError::InvalidApprovalRuleTemplateNameException(inner) => Error::InvalidApprovalRuleTemplateNameException(inner),
-            crate::error::DeleteApprovalRuleTemplateError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteBranchError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteBranchError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DeleteBranchError> for Error {
-    fn from(err: crate::error::DeleteBranchError) -> Self {
-        match err {
-            crate::error::DeleteBranchError::BranchNameRequiredException(inner) => {
-                Error::BranchNameRequiredException(inner)
-            }
-            crate::error::DeleteBranchError::DefaultBranchCannotBeDeletedException(inner) => {
-                Error::DefaultBranchCannotBeDeletedException(inner)
-            }
-            crate::error::DeleteBranchError::EncryptionIntegrityChecksFailedException(inner) => {
-                Error::EncryptionIntegrityChecksFailedException(inner)
-            }
-            crate::error::DeleteBranchError::EncryptionKeyAccessDeniedException(inner) => {
-                Error::EncryptionKeyAccessDeniedException(inner)
-            }
-            crate::error::DeleteBranchError::EncryptionKeyDisabledException(inner) => {
-                Error::EncryptionKeyDisabledException(inner)
-            }
-            crate::error::DeleteBranchError::EncryptionKeyNotFoundException(inner) => {
-                Error::EncryptionKeyNotFoundException(inner)
-            }
-            crate::error::DeleteBranchError::EncryptionKeyUnavailableException(inner) => {
-                Error::EncryptionKeyUnavailableException(inner)
-            }
-            crate::error::DeleteBranchError::InvalidBranchNameException(inner) => {
-                Error::InvalidBranchNameException(inner)
-            }
-            crate::error::DeleteBranchError::InvalidRepositoryNameException(inner) => {
-                Error::InvalidRepositoryNameException(inner)
-            }
-            crate::error::DeleteBranchError::RepositoryDoesNotExistException(inner) => {
-                Error::RepositoryDoesNotExistException(inner)
-            }
-            crate::error::DeleteBranchError::RepositoryNameRequiredException(inner) => {
-                Error::RepositoryNameRequiredException(inner)
-            }
-            crate::error::DeleteBranchError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteCommentContentError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteCommentContentError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DeleteCommentContentError> for Error {
-    fn from(err: crate::error::DeleteCommentContentError) -> Self {
-        match err {
-            crate::error::DeleteCommentContentError::CommentDeletedException(inner) => {
-                Error::CommentDeletedException(inner)
-            }
-            crate::error::DeleteCommentContentError::CommentDoesNotExistException(inner) => {
-                Error::CommentDoesNotExistException(inner)
-            }
-            crate::error::DeleteCommentContentError::CommentIdRequiredException(inner) => {
-                Error::CommentIdRequiredException(inner)
-            }
-            crate::error::DeleteCommentContentError::InvalidCommentIdException(inner) => {
-                Error::InvalidCommentIdException(inner)
-            }
-            crate::error::DeleteCommentContentError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteFileError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteFileError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DeleteFileError> for Error {
-    fn from(err: crate::error::DeleteFileError) -> Self {
-        match err {
-            crate::error::DeleteFileError::BranchDoesNotExistException(inner) => {
-                Error::BranchDoesNotExistException(inner)
-            }
-            crate::error::DeleteFileError::BranchNameIsTagNameException(inner) => {
-                Error::BranchNameIsTagNameException(inner)
-            }
-            crate::error::DeleteFileError::BranchNameRequiredException(inner) => {
-                Error::BranchNameRequiredException(inner)
-            }
-            crate::error::DeleteFileError::CommitMessageLengthExceededException(inner) => {
-                Error::CommitMessageLengthExceededException(inner)
-            }
-            crate::error::DeleteFileError::EncryptionIntegrityChecksFailedException(inner) => {
-                Error::EncryptionIntegrityChecksFailedException(inner)
-            }
-            crate::error::DeleteFileError::EncryptionKeyAccessDeniedException(inner) => {
-                Error::EncryptionKeyAccessDeniedException(inner)
-            }
-            crate::error::DeleteFileError::EncryptionKeyDisabledException(inner) => {
-                Error::EncryptionKeyDisabledException(inner)
-            }
-            crate::error::DeleteFileError::EncryptionKeyNotFoundException(inner) => {
-                Error::EncryptionKeyNotFoundException(inner)
-            }
-            crate::error::DeleteFileError::EncryptionKeyUnavailableException(inner) => {
-                Error::EncryptionKeyUnavailableException(inner)
-            }
-            crate::error::DeleteFileError::FileDoesNotExistException(inner) => {
-                Error::FileDoesNotExistException(inner)
-            }
-            crate::error::DeleteFileError::InvalidBranchNameException(inner) => {
-                Error::InvalidBranchNameException(inner)
-            }
-            crate::error::DeleteFileError::InvalidEmailException(inner) => {
-                Error::InvalidEmailException(inner)
-            }
-            crate::error::DeleteFileError::InvalidParentCommitIdException(inner) => {
-                Error::InvalidParentCommitIdException(inner)
-            }
-            crate::error::DeleteFileError::InvalidPathException(inner) => {
-                Error::InvalidPathException(inner)
-            }
-            crate::error::DeleteFileError::InvalidRepositoryNameException(inner) => {
-                Error::InvalidRepositoryNameException(inner)
-            }
-            crate::error::DeleteFileError::NameLengthExceededException(inner) => {
-                Error::NameLengthExceededException(inner)
-            }
-            crate::error::DeleteFileError::ParentCommitDoesNotExistException(inner) => {
-                Error::ParentCommitDoesNotExistException(inner)
-            }
-            crate::error::DeleteFileError::ParentCommitIdOutdatedException(inner) => {
-                Error::ParentCommitIdOutdatedException(inner)
-            }
-            crate::error::DeleteFileError::ParentCommitIdRequiredException(inner) => {
-                Error::ParentCommitIdRequiredException(inner)
-            }
-            crate::error::DeleteFileError::PathRequiredException(inner) => {
-                Error::PathRequiredException(inner)
-            }
-            crate::error::DeleteFileError::RepositoryDoesNotExistException(inner) => {
-                Error::RepositoryDoesNotExistException(inner)
-            }
-            crate::error::DeleteFileError::RepositoryNameRequiredException(inner) => {
-                Error::RepositoryNameRequiredException(inner)
-            }
-            crate::error::DeleteFileError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeletePullRequestApprovalRuleError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeletePullRequestApprovalRuleError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DeletePullRequestApprovalRuleError> for Error {
-    fn from(err: crate::error::DeletePullRequestApprovalRuleError) -> Self {
-        match err {
-            crate::error::DeletePullRequestApprovalRuleError::ApprovalRuleNameRequiredException(inner) => Error::ApprovalRuleNameRequiredException(inner),
-            crate::error::DeletePullRequestApprovalRuleError::CannotDeleteApprovalRuleFromTemplateException(inner) => Error::CannotDeleteApprovalRuleFromTemplateException(inner),
-            crate::error::DeletePullRequestApprovalRuleError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
-            crate::error::DeletePullRequestApprovalRuleError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
-            crate::error::DeletePullRequestApprovalRuleError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
-            crate::error::DeletePullRequestApprovalRuleError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
-            crate::error::DeletePullRequestApprovalRuleError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
-            crate::error::DeletePullRequestApprovalRuleError::InvalidApprovalRuleNameException(inner) => Error::InvalidApprovalRuleNameException(inner),
-            crate::error::DeletePullRequestApprovalRuleError::InvalidPullRequestIdException(inner) => Error::InvalidPullRequestIdException(inner),
-            crate::error::DeletePullRequestApprovalRuleError::PullRequestAlreadyClosedException(inner) => Error::PullRequestAlreadyClosedException(inner),
-            crate::error::DeletePullRequestApprovalRuleError::PullRequestDoesNotExistException(inner) => Error::PullRequestDoesNotExistException(inner),
-            crate::error::DeletePullRequestApprovalRuleError::PullRequestIdRequiredException(inner) => Error::PullRequestIdRequiredException(inner),
-            crate::error::DeletePullRequestApprovalRuleError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteRepositoryError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteRepositoryError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DeleteRepositoryError> for Error {
-    fn from(err: crate::error::DeleteRepositoryError) -> Self {
-        match err {
-            crate::error::DeleteRepositoryError::EncryptionIntegrityChecksFailedException(
-                inner,
-            ) => Error::EncryptionIntegrityChecksFailedException(inner),
-            crate::error::DeleteRepositoryError::EncryptionKeyAccessDeniedException(inner) => {
-                Error::EncryptionKeyAccessDeniedException(inner)
-            }
-            crate::error::DeleteRepositoryError::EncryptionKeyDisabledException(inner) => {
-                Error::EncryptionKeyDisabledException(inner)
-            }
-            crate::error::DeleteRepositoryError::EncryptionKeyNotFoundException(inner) => {
-                Error::EncryptionKeyNotFoundException(inner)
-            }
-            crate::error::DeleteRepositoryError::EncryptionKeyUnavailableException(inner) => {
-                Error::EncryptionKeyUnavailableException(inner)
-            }
-            crate::error::DeleteRepositoryError::InvalidRepositoryNameException(inner) => {
-                Error::InvalidRepositoryNameException(inner)
-            }
-            crate::error::DeleteRepositoryError::RepositoryNameRequiredException(inner) => {
-                Error::RepositoryNameRequiredException(inner)
-            }
-            crate::error::DeleteRepositoryError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeMergeConflictsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeMergeConflictsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribeMergeConflictsError> for Error {
-    fn from(err: crate::error::DescribeMergeConflictsError) -> Self {
-        match err {
-            crate::error::DescribeMergeConflictsError::CommitDoesNotExistException(inner) => Error::CommitDoesNotExistException(inner),
-            crate::error::DescribeMergeConflictsError::CommitRequiredException(inner) => Error::CommitRequiredException(inner),
-            crate::error::DescribeMergeConflictsError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
-            crate::error::DescribeMergeConflictsError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
-            crate::error::DescribeMergeConflictsError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
-            crate::error::DescribeMergeConflictsError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
-            crate::error::DescribeMergeConflictsError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
-            crate::error::DescribeMergeConflictsError::FileDoesNotExistException(inner) => Error::FileDoesNotExistException(inner),
-            crate::error::DescribeMergeConflictsError::InvalidCommitException(inner) => Error::InvalidCommitException(inner),
-            crate::error::DescribeMergeConflictsError::InvalidConflictDetailLevelException(inner) => Error::InvalidConflictDetailLevelException(inner),
-            crate::error::DescribeMergeConflictsError::InvalidConflictResolutionStrategyException(inner) => Error::InvalidConflictResolutionStrategyException(inner),
-            crate::error::DescribeMergeConflictsError::InvalidContinuationTokenException(inner) => Error::InvalidContinuationTokenException(inner),
-            crate::error::DescribeMergeConflictsError::InvalidMaxMergeHunksException(inner) => Error::InvalidMaxMergeHunksException(inner),
-            crate::error::DescribeMergeConflictsError::InvalidMergeOptionException(inner) => Error::InvalidMergeOptionException(inner),
-            crate::error::DescribeMergeConflictsError::InvalidPathException(inner) => Error::InvalidPathException(inner),
-            crate::error::DescribeMergeConflictsError::InvalidRepositoryNameException(inner) => Error::InvalidRepositoryNameException(inner),
-            crate::error::DescribeMergeConflictsError::MaximumFileContentToLoadExceededException(inner) => Error::MaximumFileContentToLoadExceededException(inner),
-            crate::error::DescribeMergeConflictsError::MaximumItemsToCompareExceededException(inner) => Error::MaximumItemsToCompareExceededException(inner),
-            crate::error::DescribeMergeConflictsError::MergeOptionRequiredException(inner) => Error::MergeOptionRequiredException(inner),
-            crate::error::DescribeMergeConflictsError::PathRequiredException(inner) => Error::PathRequiredException(inner),
-            crate::error::DescribeMergeConflictsError::RepositoryDoesNotExistException(inner) => Error::RepositoryDoesNotExistException(inner),
-            crate::error::DescribeMergeConflictsError::RepositoryNameRequiredException(inner) => Error::RepositoryNameRequiredException(inner),
-            crate::error::DescribeMergeConflictsError::TipsDivergenceExceededException(inner) => Error::TipsDivergenceExceededException(inner),
-            crate::error::DescribeMergeConflictsError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribePullRequestEventsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribePullRequestEventsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribePullRequestEventsError> for Error {
-    fn from(err: crate::error::DescribePullRequestEventsError) -> Self {
-        match err {
-            crate::error::DescribePullRequestEventsError::ActorDoesNotExistException(inner) => Error::ActorDoesNotExistException(inner),
-            crate::error::DescribePullRequestEventsError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
-            crate::error::DescribePullRequestEventsError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
-            crate::error::DescribePullRequestEventsError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
-            crate::error::DescribePullRequestEventsError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
-            crate::error::DescribePullRequestEventsError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
-            crate::error::DescribePullRequestEventsError::InvalidActorArnException(inner) => Error::InvalidActorArnException(inner),
-            crate::error::DescribePullRequestEventsError::InvalidContinuationTokenException(inner) => Error::InvalidContinuationTokenException(inner),
-            crate::error::DescribePullRequestEventsError::InvalidMaxResultsException(inner) => Error::InvalidMaxResultsException(inner),
-            crate::error::DescribePullRequestEventsError::InvalidPullRequestEventTypeException(inner) => Error::InvalidPullRequestEventTypeException(inner),
-            crate::error::DescribePullRequestEventsError::InvalidPullRequestIdException(inner) => Error::InvalidPullRequestIdException(inner),
-            crate::error::DescribePullRequestEventsError::PullRequestDoesNotExistException(inner) => Error::PullRequestDoesNotExistException(inner),
-            crate::error::DescribePullRequestEventsError::PullRequestIdRequiredException(inner) => Error::PullRequestIdRequiredException(inner),
-            crate::error::DescribePullRequestEventsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::batch_get_repositories::BatchGetRepositoriesError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
+            crate::operation::batch_get_repositories::BatchGetRepositoriesError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
+            crate::operation::batch_get_repositories::BatchGetRepositoriesError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
+            crate::operation::batch_get_repositories::BatchGetRepositoriesError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
+            crate::operation::batch_get_repositories::BatchGetRepositoriesError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
+            crate::operation::batch_get_repositories::BatchGetRepositoriesError::InvalidRepositoryNameException(inner) => Error::InvalidRepositoryNameException(inner),
+            crate::operation::batch_get_repositories::BatchGetRepositoriesError::MaximumRepositoryNamesExceededException(inner) => Error::MaximumRepositoryNamesExceededException(inner),
+            crate::operation::batch_get_repositories::BatchGetRepositoriesError::RepositoryNamesRequiredException(inner) => Error::RepositoryNamesRequiredException(inner),
+            crate::operation::batch_get_repositories::BatchGetRepositoriesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
-            crate::error::DisassociateApprovalRuleTemplateFromRepositoryError,
+            crate::operation::create_approval_rule_template::CreateApprovalRuleTemplateError,
             R,
         >,
     > for Error
@@ -1911,7 +937,7 @@ where
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::DisassociateApprovalRuleTemplateFromRepositoryError,
+            crate::operation::create_approval_rule_template::CreateApprovalRuleTemplateError,
             R,
         >,
     ) -> Self {
@@ -1930,33 +956,33 @@ where
         }
     }
 }
-impl From<crate::error::DisassociateApprovalRuleTemplateFromRepositoryError> for Error {
-    fn from(err: crate::error::DisassociateApprovalRuleTemplateFromRepositoryError) -> Self {
+impl From<crate::operation::create_approval_rule_template::CreateApprovalRuleTemplateError>
+    for Error
+{
+    fn from(
+        err: crate::operation::create_approval_rule_template::CreateApprovalRuleTemplateError,
+    ) -> Self {
         match err {
-            crate::error::DisassociateApprovalRuleTemplateFromRepositoryError::ApprovalRuleTemplateDoesNotExistException(inner) => Error::ApprovalRuleTemplateDoesNotExistException(inner),
-            crate::error::DisassociateApprovalRuleTemplateFromRepositoryError::ApprovalRuleTemplateNameRequiredException(inner) => Error::ApprovalRuleTemplateNameRequiredException(inner),
-            crate::error::DisassociateApprovalRuleTemplateFromRepositoryError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
-            crate::error::DisassociateApprovalRuleTemplateFromRepositoryError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
-            crate::error::DisassociateApprovalRuleTemplateFromRepositoryError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
-            crate::error::DisassociateApprovalRuleTemplateFromRepositoryError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
-            crate::error::DisassociateApprovalRuleTemplateFromRepositoryError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
-            crate::error::DisassociateApprovalRuleTemplateFromRepositoryError::InvalidApprovalRuleTemplateNameException(inner) => Error::InvalidApprovalRuleTemplateNameException(inner),
-            crate::error::DisassociateApprovalRuleTemplateFromRepositoryError::InvalidRepositoryNameException(inner) => Error::InvalidRepositoryNameException(inner),
-            crate::error::DisassociateApprovalRuleTemplateFromRepositoryError::RepositoryDoesNotExistException(inner) => Error::RepositoryDoesNotExistException(inner),
-            crate::error::DisassociateApprovalRuleTemplateFromRepositoryError::RepositoryNameRequiredException(inner) => Error::RepositoryNameRequiredException(inner),
-            crate::error::DisassociateApprovalRuleTemplateFromRepositoryError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::create_approval_rule_template::CreateApprovalRuleTemplateError::ApprovalRuleTemplateContentRequiredException(inner) => Error::ApprovalRuleTemplateContentRequiredException(inner),
+            crate::operation::create_approval_rule_template::CreateApprovalRuleTemplateError::ApprovalRuleTemplateNameAlreadyExistsException(inner) => Error::ApprovalRuleTemplateNameAlreadyExistsException(inner),
+            crate::operation::create_approval_rule_template::CreateApprovalRuleTemplateError::ApprovalRuleTemplateNameRequiredException(inner) => Error::ApprovalRuleTemplateNameRequiredException(inner),
+            crate::operation::create_approval_rule_template::CreateApprovalRuleTemplateError::InvalidApprovalRuleTemplateContentException(inner) => Error::InvalidApprovalRuleTemplateContentException(inner),
+            crate::operation::create_approval_rule_template::CreateApprovalRuleTemplateError::InvalidApprovalRuleTemplateDescriptionException(inner) => Error::InvalidApprovalRuleTemplateDescriptionException(inner),
+            crate::operation::create_approval_rule_template::CreateApprovalRuleTemplateError::InvalidApprovalRuleTemplateNameException(inner) => Error::InvalidApprovalRuleTemplateNameException(inner),
+            crate::operation::create_approval_rule_template::CreateApprovalRuleTemplateError::NumberOfRuleTemplatesExceededException(inner) => Error::NumberOfRuleTemplatesExceededException(inner),
+            crate::operation::create_approval_rule_template::CreateApprovalRuleTemplateError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::EvaluatePullRequestApprovalRulesError, R>>
+    From<aws_smithy_http::result::SdkError<crate::operation::create_branch::CreateBranchError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::EvaluatePullRequestApprovalRulesError,
+            crate::operation::create_branch::CreateBranchError,
             R,
         >,
     ) -> Self {
@@ -1975,31 +1001,38 @@ where
         }
     }
 }
-impl From<crate::error::EvaluatePullRequestApprovalRulesError> for Error {
-    fn from(err: crate::error::EvaluatePullRequestApprovalRulesError) -> Self {
+impl From<crate::operation::create_branch::CreateBranchError> for Error {
+    fn from(err: crate::operation::create_branch::CreateBranchError) -> Self {
         match err {
-            crate::error::EvaluatePullRequestApprovalRulesError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
-            crate::error::EvaluatePullRequestApprovalRulesError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
-            crate::error::EvaluatePullRequestApprovalRulesError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
-            crate::error::EvaluatePullRequestApprovalRulesError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
-            crate::error::EvaluatePullRequestApprovalRulesError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
-            crate::error::EvaluatePullRequestApprovalRulesError::InvalidPullRequestIdException(inner) => Error::InvalidPullRequestIdException(inner),
-            crate::error::EvaluatePullRequestApprovalRulesError::InvalidRevisionIdException(inner) => Error::InvalidRevisionIdException(inner),
-            crate::error::EvaluatePullRequestApprovalRulesError::PullRequestDoesNotExistException(inner) => Error::PullRequestDoesNotExistException(inner),
-            crate::error::EvaluatePullRequestApprovalRulesError::PullRequestIdRequiredException(inner) => Error::PullRequestIdRequiredException(inner),
-            crate::error::EvaluatePullRequestApprovalRulesError::RevisionIdRequiredException(inner) => Error::RevisionIdRequiredException(inner),
-            crate::error::EvaluatePullRequestApprovalRulesError::RevisionNotCurrentException(inner) => Error::RevisionNotCurrentException(inner),
-            crate::error::EvaluatePullRequestApprovalRulesError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::create_branch::CreateBranchError::BranchNameExistsException(inner) => Error::BranchNameExistsException(inner),
+            crate::operation::create_branch::CreateBranchError::BranchNameRequiredException(inner) => Error::BranchNameRequiredException(inner),
+            crate::operation::create_branch::CreateBranchError::CommitDoesNotExistException(inner) => Error::CommitDoesNotExistException(inner),
+            crate::operation::create_branch::CreateBranchError::CommitIdRequiredException(inner) => Error::CommitIdRequiredException(inner),
+            crate::operation::create_branch::CreateBranchError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
+            crate::operation::create_branch::CreateBranchError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
+            crate::operation::create_branch::CreateBranchError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
+            crate::operation::create_branch::CreateBranchError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
+            crate::operation::create_branch::CreateBranchError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
+            crate::operation::create_branch::CreateBranchError::InvalidBranchNameException(inner) => Error::InvalidBranchNameException(inner),
+            crate::operation::create_branch::CreateBranchError::InvalidCommitIdException(inner) => Error::InvalidCommitIdException(inner),
+            crate::operation::create_branch::CreateBranchError::InvalidRepositoryNameException(inner) => Error::InvalidRepositoryNameException(inner),
+            crate::operation::create_branch::CreateBranchError::RepositoryDoesNotExistException(inner) => Error::RepositoryDoesNotExistException(inner),
+            crate::operation::create_branch::CreateBranchError::RepositoryNameRequiredException(inner) => Error::RepositoryNameRequiredException(inner),
+            crate::operation::create_branch::CreateBranchError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetApprovalRuleTemplateError, R>>
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::create_commit::CreateCommitError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetApprovalRuleTemplateError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_commit::CreateCommitError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -2016,21 +1049,67 @@ where
         }
     }
 }
-impl From<crate::error::GetApprovalRuleTemplateError> for Error {
-    fn from(err: crate::error::GetApprovalRuleTemplateError) -> Self {
+impl From<crate::operation::create_commit::CreateCommitError> for Error {
+    fn from(err: crate::operation::create_commit::CreateCommitError) -> Self {
         match err {
-            crate::error::GetApprovalRuleTemplateError::ApprovalRuleTemplateDoesNotExistException(inner) => Error::ApprovalRuleTemplateDoesNotExistException(inner),
-            crate::error::GetApprovalRuleTemplateError::ApprovalRuleTemplateNameRequiredException(inner) => Error::ApprovalRuleTemplateNameRequiredException(inner),
-            crate::error::GetApprovalRuleTemplateError::InvalidApprovalRuleTemplateNameException(inner) => Error::InvalidApprovalRuleTemplateNameException(inner),
-            crate::error::GetApprovalRuleTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::create_commit::CreateCommitError::BranchDoesNotExistException(inner) => Error::BranchDoesNotExistException(inner),
+            crate::operation::create_commit::CreateCommitError::BranchNameIsTagNameException(inner) => Error::BranchNameIsTagNameException(inner),
+            crate::operation::create_commit::CreateCommitError::BranchNameRequiredException(inner) => Error::BranchNameRequiredException(inner),
+            crate::operation::create_commit::CreateCommitError::CommitMessageLengthExceededException(inner) => Error::CommitMessageLengthExceededException(inner),
+            crate::operation::create_commit::CreateCommitError::DirectoryNameConflictsWithFileNameException(inner) => Error::DirectoryNameConflictsWithFileNameException(inner),
+            crate::operation::create_commit::CreateCommitError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
+            crate::operation::create_commit::CreateCommitError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
+            crate::operation::create_commit::CreateCommitError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
+            crate::operation::create_commit::CreateCommitError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
+            crate::operation::create_commit::CreateCommitError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
+            crate::operation::create_commit::CreateCommitError::FileContentAndSourceFileSpecifiedException(inner) => Error::FileContentAndSourceFileSpecifiedException(inner),
+            crate::operation::create_commit::CreateCommitError::FileContentSizeLimitExceededException(inner) => Error::FileContentSizeLimitExceededException(inner),
+            crate::operation::create_commit::CreateCommitError::FileDoesNotExistException(inner) => Error::FileDoesNotExistException(inner),
+            crate::operation::create_commit::CreateCommitError::FileEntryRequiredException(inner) => Error::FileEntryRequiredException(inner),
+            crate::operation::create_commit::CreateCommitError::FileModeRequiredException(inner) => Error::FileModeRequiredException(inner),
+            crate::operation::create_commit::CreateCommitError::FileNameConflictsWithDirectoryNameException(inner) => Error::FileNameConflictsWithDirectoryNameException(inner),
+            crate::operation::create_commit::CreateCommitError::FilePathConflictsWithSubmodulePathException(inner) => Error::FilePathConflictsWithSubmodulePathException(inner),
+            crate::operation::create_commit::CreateCommitError::FolderContentSizeLimitExceededException(inner) => Error::FolderContentSizeLimitExceededException(inner),
+            crate::operation::create_commit::CreateCommitError::InvalidBranchNameException(inner) => Error::InvalidBranchNameException(inner),
+            crate::operation::create_commit::CreateCommitError::InvalidDeletionParameterException(inner) => Error::InvalidDeletionParameterException(inner),
+            crate::operation::create_commit::CreateCommitError::InvalidEmailException(inner) => Error::InvalidEmailException(inner),
+            crate::operation::create_commit::CreateCommitError::InvalidFileModeException(inner) => Error::InvalidFileModeException(inner),
+            crate::operation::create_commit::CreateCommitError::InvalidParentCommitIdException(inner) => Error::InvalidParentCommitIdException(inner),
+            crate::operation::create_commit::CreateCommitError::InvalidPathException(inner) => Error::InvalidPathException(inner),
+            crate::operation::create_commit::CreateCommitError::InvalidRepositoryNameException(inner) => Error::InvalidRepositoryNameException(inner),
+            crate::operation::create_commit::CreateCommitError::MaximumFileEntriesExceededException(inner) => Error::MaximumFileEntriesExceededException(inner),
+            crate::operation::create_commit::CreateCommitError::NameLengthExceededException(inner) => Error::NameLengthExceededException(inner),
+            crate::operation::create_commit::CreateCommitError::NoChangeException(inner) => Error::NoChangeException(inner),
+            crate::operation::create_commit::CreateCommitError::ParentCommitDoesNotExistException(inner) => Error::ParentCommitDoesNotExistException(inner),
+            crate::operation::create_commit::CreateCommitError::ParentCommitIdOutdatedException(inner) => Error::ParentCommitIdOutdatedException(inner),
+            crate::operation::create_commit::CreateCommitError::ParentCommitIdRequiredException(inner) => Error::ParentCommitIdRequiredException(inner),
+            crate::operation::create_commit::CreateCommitError::PathRequiredException(inner) => Error::PathRequiredException(inner),
+            crate::operation::create_commit::CreateCommitError::PutFileEntryConflictException(inner) => Error::PutFileEntryConflictException(inner),
+            crate::operation::create_commit::CreateCommitError::RepositoryDoesNotExistException(inner) => Error::RepositoryDoesNotExistException(inner),
+            crate::operation::create_commit::CreateCommitError::RepositoryNameRequiredException(inner) => Error::RepositoryNameRequiredException(inner),
+            crate::operation::create_commit::CreateCommitError::RestrictedSourceFileException(inner) => Error::RestrictedSourceFileException(inner),
+            crate::operation::create_commit::CreateCommitError::SamePathRequestException(inner) => Error::SamePathRequestException(inner),
+            crate::operation::create_commit::CreateCommitError::SourceFileOrContentRequiredException(inner) => Error::SourceFileOrContentRequiredException(inner),
+            crate::operation::create_commit::CreateCommitError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetBlobError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_pull_request::CreatePullRequestError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetBlobError, R>) -> Self {
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_pull_request::CreatePullRequestError,
+            R,
+        >,
+    ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
@@ -2046,220 +1125,802 @@ where
         }
     }
 }
-impl From<crate::error::GetBlobError> for Error {
-    fn from(err: crate::error::GetBlobError) -> Self {
+impl From<crate::operation::create_pull_request::CreatePullRequestError> for Error {
+    fn from(err: crate::operation::create_pull_request::CreatePullRequestError) -> Self {
         match err {
-            crate::error::GetBlobError::BlobIdDoesNotExistException(inner) => {
+            crate::operation::create_pull_request::CreatePullRequestError::ClientRequestTokenRequiredException(inner) => Error::ClientRequestTokenRequiredException(inner),
+            crate::operation::create_pull_request::CreatePullRequestError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
+            crate::operation::create_pull_request::CreatePullRequestError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
+            crate::operation::create_pull_request::CreatePullRequestError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
+            crate::operation::create_pull_request::CreatePullRequestError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
+            crate::operation::create_pull_request::CreatePullRequestError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
+            crate::operation::create_pull_request::CreatePullRequestError::IdempotencyParameterMismatchException(inner) => Error::IdempotencyParameterMismatchException(inner),
+            crate::operation::create_pull_request::CreatePullRequestError::InvalidClientRequestTokenException(inner) => Error::InvalidClientRequestTokenException(inner),
+            crate::operation::create_pull_request::CreatePullRequestError::InvalidDescriptionException(inner) => Error::InvalidDescriptionException(inner),
+            crate::operation::create_pull_request::CreatePullRequestError::InvalidReferenceNameException(inner) => Error::InvalidReferenceNameException(inner),
+            crate::operation::create_pull_request::CreatePullRequestError::InvalidRepositoryNameException(inner) => Error::InvalidRepositoryNameException(inner),
+            crate::operation::create_pull_request::CreatePullRequestError::InvalidTargetException(inner) => Error::InvalidTargetException(inner),
+            crate::operation::create_pull_request::CreatePullRequestError::InvalidTargetsException(inner) => Error::InvalidTargetsException(inner),
+            crate::operation::create_pull_request::CreatePullRequestError::InvalidTitleException(inner) => Error::InvalidTitleException(inner),
+            crate::operation::create_pull_request::CreatePullRequestError::MaximumOpenPullRequestsExceededException(inner) => Error::MaximumOpenPullRequestsExceededException(inner),
+            crate::operation::create_pull_request::CreatePullRequestError::MultipleRepositoriesInPullRequestException(inner) => Error::MultipleRepositoriesInPullRequestException(inner),
+            crate::operation::create_pull_request::CreatePullRequestError::ReferenceDoesNotExistException(inner) => Error::ReferenceDoesNotExistException(inner),
+            crate::operation::create_pull_request::CreatePullRequestError::ReferenceNameRequiredException(inner) => Error::ReferenceNameRequiredException(inner),
+            crate::operation::create_pull_request::CreatePullRequestError::ReferenceTypeNotSupportedException(inner) => Error::ReferenceTypeNotSupportedException(inner),
+            crate::operation::create_pull_request::CreatePullRequestError::RepositoryDoesNotExistException(inner) => Error::RepositoryDoesNotExistException(inner),
+            crate::operation::create_pull_request::CreatePullRequestError::RepositoryNameRequiredException(inner) => Error::RepositoryNameRequiredException(inner),
+            crate::operation::create_pull_request::CreatePullRequestError::SourceAndDestinationAreSameException(inner) => Error::SourceAndDestinationAreSameException(inner),
+            crate::operation::create_pull_request::CreatePullRequestError::TargetRequiredException(inner) => Error::TargetRequiredException(inner),
+            crate::operation::create_pull_request::CreatePullRequestError::TargetsRequiredException(inner) => Error::TargetsRequiredException(inner),
+            crate::operation::create_pull_request::CreatePullRequestError::TitleRequiredException(inner) => Error::TitleRequiredException(inner),
+            crate::operation::create_pull_request::CreatePullRequestError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_pull_request_approval_rule::CreatePullRequestApprovalRuleError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_pull_request_approval_rule::CreatePullRequestApprovalRuleError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_pull_request_approval_rule::CreatePullRequestApprovalRuleError>
+    for Error
+{
+    fn from(
+        err: crate::operation::create_pull_request_approval_rule::CreatePullRequestApprovalRuleError,
+    ) -> Self {
+        match err {
+            crate::operation::create_pull_request_approval_rule::CreatePullRequestApprovalRuleError::ApprovalRuleContentRequiredException(inner) => Error::ApprovalRuleContentRequiredException(inner),
+            crate::operation::create_pull_request_approval_rule::CreatePullRequestApprovalRuleError::ApprovalRuleNameAlreadyExistsException(inner) => Error::ApprovalRuleNameAlreadyExistsException(inner),
+            crate::operation::create_pull_request_approval_rule::CreatePullRequestApprovalRuleError::ApprovalRuleNameRequiredException(inner) => Error::ApprovalRuleNameRequiredException(inner),
+            crate::operation::create_pull_request_approval_rule::CreatePullRequestApprovalRuleError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
+            crate::operation::create_pull_request_approval_rule::CreatePullRequestApprovalRuleError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
+            crate::operation::create_pull_request_approval_rule::CreatePullRequestApprovalRuleError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
+            crate::operation::create_pull_request_approval_rule::CreatePullRequestApprovalRuleError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
+            crate::operation::create_pull_request_approval_rule::CreatePullRequestApprovalRuleError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
+            crate::operation::create_pull_request_approval_rule::CreatePullRequestApprovalRuleError::InvalidApprovalRuleContentException(inner) => Error::InvalidApprovalRuleContentException(inner),
+            crate::operation::create_pull_request_approval_rule::CreatePullRequestApprovalRuleError::InvalidApprovalRuleNameException(inner) => Error::InvalidApprovalRuleNameException(inner),
+            crate::operation::create_pull_request_approval_rule::CreatePullRequestApprovalRuleError::InvalidPullRequestIdException(inner) => Error::InvalidPullRequestIdException(inner),
+            crate::operation::create_pull_request_approval_rule::CreatePullRequestApprovalRuleError::NumberOfRulesExceededException(inner) => Error::NumberOfRulesExceededException(inner),
+            crate::operation::create_pull_request_approval_rule::CreatePullRequestApprovalRuleError::PullRequestAlreadyClosedException(inner) => Error::PullRequestAlreadyClosedException(inner),
+            crate::operation::create_pull_request_approval_rule::CreatePullRequestApprovalRuleError::PullRequestDoesNotExistException(inner) => Error::PullRequestDoesNotExistException(inner),
+            crate::operation::create_pull_request_approval_rule::CreatePullRequestApprovalRuleError::PullRequestIdRequiredException(inner) => Error::PullRequestIdRequiredException(inner),
+            crate::operation::create_pull_request_approval_rule::CreatePullRequestApprovalRuleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_repository::CreateRepositoryError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_repository::CreateRepositoryError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_repository::CreateRepositoryError> for Error {
+    fn from(err: crate::operation::create_repository::CreateRepositoryError) -> Self {
+        match err {
+            crate::operation::create_repository::CreateRepositoryError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
+            crate::operation::create_repository::CreateRepositoryError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
+            crate::operation::create_repository::CreateRepositoryError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
+            crate::operation::create_repository::CreateRepositoryError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
+            crate::operation::create_repository::CreateRepositoryError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
+            crate::operation::create_repository::CreateRepositoryError::InvalidRepositoryDescriptionException(inner) => Error::InvalidRepositoryDescriptionException(inner),
+            crate::operation::create_repository::CreateRepositoryError::InvalidRepositoryNameException(inner) => Error::InvalidRepositoryNameException(inner),
+            crate::operation::create_repository::CreateRepositoryError::InvalidSystemTagUsageException(inner) => Error::InvalidSystemTagUsageException(inner),
+            crate::operation::create_repository::CreateRepositoryError::InvalidTagsMapException(inner) => Error::InvalidTagsMapException(inner),
+            crate::operation::create_repository::CreateRepositoryError::RepositoryLimitExceededException(inner) => Error::RepositoryLimitExceededException(inner),
+            crate::operation::create_repository::CreateRepositoryError::RepositoryNameExistsException(inner) => Error::RepositoryNameExistsException(inner),
+            crate::operation::create_repository::CreateRepositoryError::RepositoryNameRequiredException(inner) => Error::RepositoryNameRequiredException(inner),
+            crate::operation::create_repository::CreateRepositoryError::TagPolicyException(inner) => Error::TagPolicyException(inner),
+            crate::operation::create_repository::CreateRepositoryError::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
+            crate::operation::create_repository::CreateRepositoryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitError>
+    for Error
+{
+    fn from(
+        err: crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitError,
+    ) -> Self {
+        match err {
+            crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitError::CommitDoesNotExistException(inner) => Error::CommitDoesNotExistException(inner),
+            crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitError::CommitMessageLengthExceededException(inner) => Error::CommitMessageLengthExceededException(inner),
+            crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitError::CommitRequiredException(inner) => Error::CommitRequiredException(inner),
+            crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitError::ConcurrentReferenceUpdateException(inner) => Error::ConcurrentReferenceUpdateException(inner),
+            crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
+            crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
+            crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
+            crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
+            crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
+            crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitError::FileContentSizeLimitExceededException(inner) => Error::FileContentSizeLimitExceededException(inner),
+            crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitError::FileModeRequiredException(inner) => Error::FileModeRequiredException(inner),
+            crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitError::FolderContentSizeLimitExceededException(inner) => Error::FolderContentSizeLimitExceededException(inner),
+            crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitError::InvalidCommitException(inner) => Error::InvalidCommitException(inner),
+            crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitError::InvalidConflictDetailLevelException(inner) => Error::InvalidConflictDetailLevelException(inner),
+            crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitError::InvalidConflictResolutionException(inner) => Error::InvalidConflictResolutionException(inner),
+            crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitError::InvalidConflictResolutionStrategyException(inner) => Error::InvalidConflictResolutionStrategyException(inner),
+            crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitError::InvalidEmailException(inner) => Error::InvalidEmailException(inner),
+            crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitError::InvalidFileModeException(inner) => Error::InvalidFileModeException(inner),
+            crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitError::InvalidMergeOptionException(inner) => Error::InvalidMergeOptionException(inner),
+            crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitError::InvalidPathException(inner) => Error::InvalidPathException(inner),
+            crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitError::InvalidReplacementContentException(inner) => Error::InvalidReplacementContentException(inner),
+            crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitError::InvalidReplacementTypeException(inner) => Error::InvalidReplacementTypeException(inner),
+            crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitError::InvalidRepositoryNameException(inner) => Error::InvalidRepositoryNameException(inner),
+            crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitError::ManualMergeRequiredException(inner) => Error::ManualMergeRequiredException(inner),
+            crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitError::MaximumConflictResolutionEntriesExceededException(inner) => Error::MaximumConflictResolutionEntriesExceededException(inner),
+            crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitError::MaximumFileContentToLoadExceededException(inner) => Error::MaximumFileContentToLoadExceededException(inner),
+            crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitError::MaximumItemsToCompareExceededException(inner) => Error::MaximumItemsToCompareExceededException(inner),
+            crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitError::MergeOptionRequiredException(inner) => Error::MergeOptionRequiredException(inner),
+            crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitError::MultipleConflictResolutionEntriesException(inner) => Error::MultipleConflictResolutionEntriesException(inner),
+            crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitError::NameLengthExceededException(inner) => Error::NameLengthExceededException(inner),
+            crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitError::PathRequiredException(inner) => Error::PathRequiredException(inner),
+            crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitError::ReplacementContentRequiredException(inner) => Error::ReplacementContentRequiredException(inner),
+            crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitError::ReplacementTypeRequiredException(inner) => Error::ReplacementTypeRequiredException(inner),
+            crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitError::RepositoryDoesNotExistException(inner) => Error::RepositoryDoesNotExistException(inner),
+            crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitError::RepositoryNameRequiredException(inner) => Error::RepositoryNameRequiredException(inner),
+            crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitError::TipsDivergenceExceededException(inner) => Error::TipsDivergenceExceededException(inner),
+            crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_approval_rule_template::DeleteApprovalRuleTemplateError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_approval_rule_template::DeleteApprovalRuleTemplateError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_approval_rule_template::DeleteApprovalRuleTemplateError>
+    for Error
+{
+    fn from(
+        err: crate::operation::delete_approval_rule_template::DeleteApprovalRuleTemplateError,
+    ) -> Self {
+        match err {
+            crate::operation::delete_approval_rule_template::DeleteApprovalRuleTemplateError::ApprovalRuleTemplateInUseException(inner) => Error::ApprovalRuleTemplateInUseException(inner),
+            crate::operation::delete_approval_rule_template::DeleteApprovalRuleTemplateError::ApprovalRuleTemplateNameRequiredException(inner) => Error::ApprovalRuleTemplateNameRequiredException(inner),
+            crate::operation::delete_approval_rule_template::DeleteApprovalRuleTemplateError::InvalidApprovalRuleTemplateNameException(inner) => Error::InvalidApprovalRuleTemplateNameException(inner),
+            crate::operation::delete_approval_rule_template::DeleteApprovalRuleTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::delete_branch::DeleteBranchError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_branch::DeleteBranchError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_branch::DeleteBranchError> for Error {
+    fn from(err: crate::operation::delete_branch::DeleteBranchError) -> Self {
+        match err {
+            crate::operation::delete_branch::DeleteBranchError::BranchNameRequiredException(inner) => Error::BranchNameRequiredException(inner),
+            crate::operation::delete_branch::DeleteBranchError::DefaultBranchCannotBeDeletedException(inner) => Error::DefaultBranchCannotBeDeletedException(inner),
+            crate::operation::delete_branch::DeleteBranchError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
+            crate::operation::delete_branch::DeleteBranchError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
+            crate::operation::delete_branch::DeleteBranchError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
+            crate::operation::delete_branch::DeleteBranchError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
+            crate::operation::delete_branch::DeleteBranchError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
+            crate::operation::delete_branch::DeleteBranchError::InvalidBranchNameException(inner) => Error::InvalidBranchNameException(inner),
+            crate::operation::delete_branch::DeleteBranchError::InvalidRepositoryNameException(inner) => Error::InvalidRepositoryNameException(inner),
+            crate::operation::delete_branch::DeleteBranchError::RepositoryDoesNotExistException(inner) => Error::RepositoryDoesNotExistException(inner),
+            crate::operation::delete_branch::DeleteBranchError::RepositoryNameRequiredException(inner) => Error::RepositoryNameRequiredException(inner),
+            crate::operation::delete_branch::DeleteBranchError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_comment_content::DeleteCommentContentError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_comment_content::DeleteCommentContentError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_comment_content::DeleteCommentContentError> for Error {
+    fn from(err: crate::operation::delete_comment_content::DeleteCommentContentError) -> Self {
+        match err {
+            crate::operation::delete_comment_content::DeleteCommentContentError::CommentDeletedException(inner) => Error::CommentDeletedException(inner),
+            crate::operation::delete_comment_content::DeleteCommentContentError::CommentDoesNotExistException(inner) => Error::CommentDoesNotExistException(inner),
+            crate::operation::delete_comment_content::DeleteCommentContentError::CommentIdRequiredException(inner) => Error::CommentIdRequiredException(inner),
+            crate::operation::delete_comment_content::DeleteCommentContentError::InvalidCommentIdException(inner) => Error::InvalidCommentIdException(inner),
+            crate::operation::delete_comment_content::DeleteCommentContentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_file::DeleteFileError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::delete_file::DeleteFileError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_file::DeleteFileError> for Error {
+    fn from(err: crate::operation::delete_file::DeleteFileError) -> Self {
+        match err {
+            crate::operation::delete_file::DeleteFileError::BranchDoesNotExistException(inner) => Error::BranchDoesNotExistException(inner),
+            crate::operation::delete_file::DeleteFileError::BranchNameIsTagNameException(inner) => Error::BranchNameIsTagNameException(inner),
+            crate::operation::delete_file::DeleteFileError::BranchNameRequiredException(inner) => Error::BranchNameRequiredException(inner),
+            crate::operation::delete_file::DeleteFileError::CommitMessageLengthExceededException(inner) => Error::CommitMessageLengthExceededException(inner),
+            crate::operation::delete_file::DeleteFileError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
+            crate::operation::delete_file::DeleteFileError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
+            crate::operation::delete_file::DeleteFileError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
+            crate::operation::delete_file::DeleteFileError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
+            crate::operation::delete_file::DeleteFileError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
+            crate::operation::delete_file::DeleteFileError::FileDoesNotExistException(inner) => Error::FileDoesNotExistException(inner),
+            crate::operation::delete_file::DeleteFileError::InvalidBranchNameException(inner) => Error::InvalidBranchNameException(inner),
+            crate::operation::delete_file::DeleteFileError::InvalidEmailException(inner) => Error::InvalidEmailException(inner),
+            crate::operation::delete_file::DeleteFileError::InvalidParentCommitIdException(inner) => Error::InvalidParentCommitIdException(inner),
+            crate::operation::delete_file::DeleteFileError::InvalidPathException(inner) => Error::InvalidPathException(inner),
+            crate::operation::delete_file::DeleteFileError::InvalidRepositoryNameException(inner) => Error::InvalidRepositoryNameException(inner),
+            crate::operation::delete_file::DeleteFileError::NameLengthExceededException(inner) => Error::NameLengthExceededException(inner),
+            crate::operation::delete_file::DeleteFileError::ParentCommitDoesNotExistException(inner) => Error::ParentCommitDoesNotExistException(inner),
+            crate::operation::delete_file::DeleteFileError::ParentCommitIdOutdatedException(inner) => Error::ParentCommitIdOutdatedException(inner),
+            crate::operation::delete_file::DeleteFileError::ParentCommitIdRequiredException(inner) => Error::ParentCommitIdRequiredException(inner),
+            crate::operation::delete_file::DeleteFileError::PathRequiredException(inner) => Error::PathRequiredException(inner),
+            crate::operation::delete_file::DeleteFileError::RepositoryDoesNotExistException(inner) => Error::RepositoryDoesNotExistException(inner),
+            crate::operation::delete_file::DeleteFileError::RepositoryNameRequiredException(inner) => Error::RepositoryNameRequiredException(inner),
+            crate::operation::delete_file::DeleteFileError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRuleError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRuleError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRuleError>
+    for Error
+{
+    fn from(
+        err: crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRuleError,
+    ) -> Self {
+        match err {
+            crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRuleError::ApprovalRuleNameRequiredException(inner) => Error::ApprovalRuleNameRequiredException(inner),
+            crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRuleError::CannotDeleteApprovalRuleFromTemplateException(inner) => Error::CannotDeleteApprovalRuleFromTemplateException(inner),
+            crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRuleError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
+            crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRuleError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
+            crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRuleError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
+            crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRuleError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
+            crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRuleError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
+            crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRuleError::InvalidApprovalRuleNameException(inner) => Error::InvalidApprovalRuleNameException(inner),
+            crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRuleError::InvalidPullRequestIdException(inner) => Error::InvalidPullRequestIdException(inner),
+            crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRuleError::PullRequestAlreadyClosedException(inner) => Error::PullRequestAlreadyClosedException(inner),
+            crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRuleError::PullRequestDoesNotExistException(inner) => Error::PullRequestDoesNotExistException(inner),
+            crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRuleError::PullRequestIdRequiredException(inner) => Error::PullRequestIdRequiredException(inner),
+            crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRuleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_repository::DeleteRepositoryError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_repository::DeleteRepositoryError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_repository::DeleteRepositoryError> for Error {
+    fn from(err: crate::operation::delete_repository::DeleteRepositoryError) -> Self {
+        match err {
+            crate::operation::delete_repository::DeleteRepositoryError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
+            crate::operation::delete_repository::DeleteRepositoryError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
+            crate::operation::delete_repository::DeleteRepositoryError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
+            crate::operation::delete_repository::DeleteRepositoryError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
+            crate::operation::delete_repository::DeleteRepositoryError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
+            crate::operation::delete_repository::DeleteRepositoryError::InvalidRepositoryNameException(inner) => Error::InvalidRepositoryNameException(inner),
+            crate::operation::delete_repository::DeleteRepositoryError::RepositoryNameRequiredException(inner) => Error::RepositoryNameRequiredException(inner),
+            crate::operation::delete_repository::DeleteRepositoryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_merge_conflicts::DescribeMergeConflictsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_merge_conflicts::DescribeMergeConflictsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_merge_conflicts::DescribeMergeConflictsError> for Error {
+    fn from(err: crate::operation::describe_merge_conflicts::DescribeMergeConflictsError) -> Self {
+        match err {
+            crate::operation::describe_merge_conflicts::DescribeMergeConflictsError::CommitDoesNotExistException(inner) => Error::CommitDoesNotExistException(inner),
+            crate::operation::describe_merge_conflicts::DescribeMergeConflictsError::CommitRequiredException(inner) => Error::CommitRequiredException(inner),
+            crate::operation::describe_merge_conflicts::DescribeMergeConflictsError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
+            crate::operation::describe_merge_conflicts::DescribeMergeConflictsError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
+            crate::operation::describe_merge_conflicts::DescribeMergeConflictsError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
+            crate::operation::describe_merge_conflicts::DescribeMergeConflictsError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
+            crate::operation::describe_merge_conflicts::DescribeMergeConflictsError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
+            crate::operation::describe_merge_conflicts::DescribeMergeConflictsError::FileDoesNotExistException(inner) => Error::FileDoesNotExistException(inner),
+            crate::operation::describe_merge_conflicts::DescribeMergeConflictsError::InvalidCommitException(inner) => Error::InvalidCommitException(inner),
+            crate::operation::describe_merge_conflicts::DescribeMergeConflictsError::InvalidConflictDetailLevelException(inner) => Error::InvalidConflictDetailLevelException(inner),
+            crate::operation::describe_merge_conflicts::DescribeMergeConflictsError::InvalidConflictResolutionStrategyException(inner) => Error::InvalidConflictResolutionStrategyException(inner),
+            crate::operation::describe_merge_conflicts::DescribeMergeConflictsError::InvalidContinuationTokenException(inner) => Error::InvalidContinuationTokenException(inner),
+            crate::operation::describe_merge_conflicts::DescribeMergeConflictsError::InvalidMaxMergeHunksException(inner) => Error::InvalidMaxMergeHunksException(inner),
+            crate::operation::describe_merge_conflicts::DescribeMergeConflictsError::InvalidMergeOptionException(inner) => Error::InvalidMergeOptionException(inner),
+            crate::operation::describe_merge_conflicts::DescribeMergeConflictsError::InvalidPathException(inner) => Error::InvalidPathException(inner),
+            crate::operation::describe_merge_conflicts::DescribeMergeConflictsError::InvalidRepositoryNameException(inner) => Error::InvalidRepositoryNameException(inner),
+            crate::operation::describe_merge_conflicts::DescribeMergeConflictsError::MaximumFileContentToLoadExceededException(inner) => Error::MaximumFileContentToLoadExceededException(inner),
+            crate::operation::describe_merge_conflicts::DescribeMergeConflictsError::MaximumItemsToCompareExceededException(inner) => Error::MaximumItemsToCompareExceededException(inner),
+            crate::operation::describe_merge_conflicts::DescribeMergeConflictsError::MergeOptionRequiredException(inner) => Error::MergeOptionRequiredException(inner),
+            crate::operation::describe_merge_conflicts::DescribeMergeConflictsError::PathRequiredException(inner) => Error::PathRequiredException(inner),
+            crate::operation::describe_merge_conflicts::DescribeMergeConflictsError::RepositoryDoesNotExistException(inner) => Error::RepositoryDoesNotExistException(inner),
+            crate::operation::describe_merge_conflicts::DescribeMergeConflictsError::RepositoryNameRequiredException(inner) => Error::RepositoryNameRequiredException(inner),
+            crate::operation::describe_merge_conflicts::DescribeMergeConflictsError::TipsDivergenceExceededException(inner) => Error::TipsDivergenceExceededException(inner),
+            crate::operation::describe_merge_conflicts::DescribeMergeConflictsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_pull_request_events::DescribePullRequestEventsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_pull_request_events::DescribePullRequestEventsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_pull_request_events::DescribePullRequestEventsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_pull_request_events::DescribePullRequestEventsError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_pull_request_events::DescribePullRequestEventsError::ActorDoesNotExistException(inner) => Error::ActorDoesNotExistException(inner),
+            crate::operation::describe_pull_request_events::DescribePullRequestEventsError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
+            crate::operation::describe_pull_request_events::DescribePullRequestEventsError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
+            crate::operation::describe_pull_request_events::DescribePullRequestEventsError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
+            crate::operation::describe_pull_request_events::DescribePullRequestEventsError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
+            crate::operation::describe_pull_request_events::DescribePullRequestEventsError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
+            crate::operation::describe_pull_request_events::DescribePullRequestEventsError::InvalidActorArnException(inner) => Error::InvalidActorArnException(inner),
+            crate::operation::describe_pull_request_events::DescribePullRequestEventsError::InvalidContinuationTokenException(inner) => Error::InvalidContinuationTokenException(inner),
+            crate::operation::describe_pull_request_events::DescribePullRequestEventsError::InvalidMaxResultsException(inner) => Error::InvalidMaxResultsException(inner),
+            crate::operation::describe_pull_request_events::DescribePullRequestEventsError::InvalidPullRequestEventTypeException(inner) => Error::InvalidPullRequestEventTypeException(inner),
+            crate::operation::describe_pull_request_events::DescribePullRequestEventsError::InvalidPullRequestIdException(inner) => Error::InvalidPullRequestIdException(inner),
+            crate::operation::describe_pull_request_events::DescribePullRequestEventsError::PullRequestDoesNotExistException(inner) => Error::PullRequestDoesNotExistException(inner),
+            crate::operation::describe_pull_request_events::DescribePullRequestEventsError::PullRequestIdRequiredException(inner) => Error::PullRequestIdRequiredException(inner),
+            crate::operation::describe_pull_request_events::DescribePullRequestEventsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryError> for Error {
+    fn from(err: crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryError) -> Self {
+        match err {
+            crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryError::ApprovalRuleTemplateDoesNotExistException(inner) => Error::ApprovalRuleTemplateDoesNotExistException(inner),
+            crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryError::ApprovalRuleTemplateNameRequiredException(inner) => Error::ApprovalRuleTemplateNameRequiredException(inner),
+            crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
+            crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
+            crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
+            crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
+            crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
+            crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryError::InvalidApprovalRuleTemplateNameException(inner) => Error::InvalidApprovalRuleTemplateNameException(inner),
+            crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryError::InvalidRepositoryNameException(inner) => Error::InvalidRepositoryNameException(inner),
+            crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryError::RepositoryDoesNotExistException(inner) => Error::RepositoryDoesNotExistException(inner),
+            crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryError::RepositoryNameRequiredException(inner) => Error::RepositoryNameRequiredException(inner),
+            crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::evaluate_pull_request_approval_rules::EvaluatePullRequestApprovalRulesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::evaluate_pull_request_approval_rules::EvaluatePullRequestApprovalRulesError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::evaluate_pull_request_approval_rules::EvaluatePullRequestApprovalRulesError> for Error {
+    fn from(err: crate::operation::evaluate_pull_request_approval_rules::EvaluatePullRequestApprovalRulesError) -> Self {
+        match err {
+            crate::operation::evaluate_pull_request_approval_rules::EvaluatePullRequestApprovalRulesError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
+            crate::operation::evaluate_pull_request_approval_rules::EvaluatePullRequestApprovalRulesError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
+            crate::operation::evaluate_pull_request_approval_rules::EvaluatePullRequestApprovalRulesError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
+            crate::operation::evaluate_pull_request_approval_rules::EvaluatePullRequestApprovalRulesError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
+            crate::operation::evaluate_pull_request_approval_rules::EvaluatePullRequestApprovalRulesError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
+            crate::operation::evaluate_pull_request_approval_rules::EvaluatePullRequestApprovalRulesError::InvalidPullRequestIdException(inner) => Error::InvalidPullRequestIdException(inner),
+            crate::operation::evaluate_pull_request_approval_rules::EvaluatePullRequestApprovalRulesError::InvalidRevisionIdException(inner) => Error::InvalidRevisionIdException(inner),
+            crate::operation::evaluate_pull_request_approval_rules::EvaluatePullRequestApprovalRulesError::PullRequestDoesNotExistException(inner) => Error::PullRequestDoesNotExistException(inner),
+            crate::operation::evaluate_pull_request_approval_rules::EvaluatePullRequestApprovalRulesError::PullRequestIdRequiredException(inner) => Error::PullRequestIdRequiredException(inner),
+            crate::operation::evaluate_pull_request_approval_rules::EvaluatePullRequestApprovalRulesError::RevisionIdRequiredException(inner) => Error::RevisionIdRequiredException(inner),
+            crate::operation::evaluate_pull_request_approval_rules::EvaluatePullRequestApprovalRulesError::RevisionNotCurrentException(inner) => Error::RevisionNotCurrentException(inner),
+            crate::operation::evaluate_pull_request_approval_rules::EvaluatePullRequestApprovalRulesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_approval_rule_template::GetApprovalRuleTemplateError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_approval_rule_template::GetApprovalRuleTemplateError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_approval_rule_template::GetApprovalRuleTemplateError> for Error {
+    fn from(
+        err: crate::operation::get_approval_rule_template::GetApprovalRuleTemplateError,
+    ) -> Self {
+        match err {
+            crate::operation::get_approval_rule_template::GetApprovalRuleTemplateError::ApprovalRuleTemplateDoesNotExistException(inner) => Error::ApprovalRuleTemplateDoesNotExistException(inner),
+            crate::operation::get_approval_rule_template::GetApprovalRuleTemplateError::ApprovalRuleTemplateNameRequiredException(inner) => Error::ApprovalRuleTemplateNameRequiredException(inner),
+            crate::operation::get_approval_rule_template::GetApprovalRuleTemplateError::InvalidApprovalRuleTemplateNameException(inner) => Error::InvalidApprovalRuleTemplateNameException(inner),
+            crate::operation::get_approval_rule_template::GetApprovalRuleTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_blob::GetBlobError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::get_blob::GetBlobError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_blob::GetBlobError> for Error {
+    fn from(err: crate::operation::get_blob::GetBlobError) -> Self {
+        match err {
+            crate::operation::get_blob::GetBlobError::BlobIdDoesNotExistException(inner) => {
                 Error::BlobIdDoesNotExistException(inner)
             }
-            crate::error::GetBlobError::BlobIdRequiredException(inner) => {
+            crate::operation::get_blob::GetBlobError::BlobIdRequiredException(inner) => {
                 Error::BlobIdRequiredException(inner)
             }
-            crate::error::GetBlobError::EncryptionIntegrityChecksFailedException(inner) => {
-                Error::EncryptionIntegrityChecksFailedException(inner)
-            }
-            crate::error::GetBlobError::EncryptionKeyAccessDeniedException(inner) => {
+            crate::operation::get_blob::GetBlobError::EncryptionIntegrityChecksFailedException(
+                inner,
+            ) => Error::EncryptionIntegrityChecksFailedException(inner),
+            crate::operation::get_blob::GetBlobError::EncryptionKeyAccessDeniedException(inner) => {
                 Error::EncryptionKeyAccessDeniedException(inner)
             }
-            crate::error::GetBlobError::EncryptionKeyDisabledException(inner) => {
+            crate::operation::get_blob::GetBlobError::EncryptionKeyDisabledException(inner) => {
                 Error::EncryptionKeyDisabledException(inner)
             }
-            crate::error::GetBlobError::EncryptionKeyNotFoundException(inner) => {
+            crate::operation::get_blob::GetBlobError::EncryptionKeyNotFoundException(inner) => {
                 Error::EncryptionKeyNotFoundException(inner)
             }
-            crate::error::GetBlobError::EncryptionKeyUnavailableException(inner) => {
+            crate::operation::get_blob::GetBlobError::EncryptionKeyUnavailableException(inner) => {
                 Error::EncryptionKeyUnavailableException(inner)
             }
-            crate::error::GetBlobError::FileTooLargeException(inner) => {
+            crate::operation::get_blob::GetBlobError::FileTooLargeException(inner) => {
                 Error::FileTooLargeException(inner)
             }
-            crate::error::GetBlobError::InvalidBlobIdException(inner) => {
+            crate::operation::get_blob::GetBlobError::InvalidBlobIdException(inner) => {
                 Error::InvalidBlobIdException(inner)
             }
-            crate::error::GetBlobError::InvalidRepositoryNameException(inner) => {
+            crate::operation::get_blob::GetBlobError::InvalidRepositoryNameException(inner) => {
                 Error::InvalidRepositoryNameException(inner)
             }
-            crate::error::GetBlobError::RepositoryDoesNotExistException(inner) => {
+            crate::operation::get_blob::GetBlobError::RepositoryDoesNotExistException(inner) => {
                 Error::RepositoryDoesNotExistException(inner)
             }
-            crate::error::GetBlobError::RepositoryNameRequiredException(inner) => {
+            crate::operation::get_blob::GetBlobError::RepositoryNameRequiredException(inner) => {
                 Error::RepositoryNameRequiredException(inner)
             }
-            crate::error::GetBlobError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_blob::GetBlobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetBranchError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetBranchError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetBranchError> for Error {
-    fn from(err: crate::error::GetBranchError) -> Self {
-        match err {
-            crate::error::GetBranchError::BranchDoesNotExistException(inner) => {
-                Error::BranchDoesNotExistException(inner)
-            }
-            crate::error::GetBranchError::BranchNameRequiredException(inner) => {
-                Error::BranchNameRequiredException(inner)
-            }
-            crate::error::GetBranchError::EncryptionIntegrityChecksFailedException(inner) => {
-                Error::EncryptionIntegrityChecksFailedException(inner)
-            }
-            crate::error::GetBranchError::EncryptionKeyAccessDeniedException(inner) => {
-                Error::EncryptionKeyAccessDeniedException(inner)
-            }
-            crate::error::GetBranchError::EncryptionKeyDisabledException(inner) => {
-                Error::EncryptionKeyDisabledException(inner)
-            }
-            crate::error::GetBranchError::EncryptionKeyNotFoundException(inner) => {
-                Error::EncryptionKeyNotFoundException(inner)
-            }
-            crate::error::GetBranchError::EncryptionKeyUnavailableException(inner) => {
-                Error::EncryptionKeyUnavailableException(inner)
-            }
-            crate::error::GetBranchError::InvalidBranchNameException(inner) => {
-                Error::InvalidBranchNameException(inner)
-            }
-            crate::error::GetBranchError::InvalidRepositoryNameException(inner) => {
-                Error::InvalidRepositoryNameException(inner)
-            }
-            crate::error::GetBranchError::RepositoryDoesNotExistException(inner) => {
-                Error::RepositoryDoesNotExistException(inner)
-            }
-            crate::error::GetBranchError::RepositoryNameRequiredException(inner) => {
-                Error::RepositoryNameRequiredException(inner)
-            }
-            crate::error::GetBranchError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetCommentError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetCommentError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetCommentError> for Error {
-    fn from(err: crate::error::GetCommentError) -> Self {
-        match err {
-            crate::error::GetCommentError::CommentDeletedException(inner) => {
-                Error::CommentDeletedException(inner)
-            }
-            crate::error::GetCommentError::CommentDoesNotExistException(inner) => {
-                Error::CommentDoesNotExistException(inner)
-            }
-            crate::error::GetCommentError::CommentIdRequiredException(inner) => {
-                Error::CommentIdRequiredException(inner)
-            }
-            crate::error::GetCommentError::EncryptionIntegrityChecksFailedException(inner) => {
-                Error::EncryptionIntegrityChecksFailedException(inner)
-            }
-            crate::error::GetCommentError::EncryptionKeyAccessDeniedException(inner) => {
-                Error::EncryptionKeyAccessDeniedException(inner)
-            }
-            crate::error::GetCommentError::EncryptionKeyDisabledException(inner) => {
-                Error::EncryptionKeyDisabledException(inner)
-            }
-            crate::error::GetCommentError::EncryptionKeyNotFoundException(inner) => {
-                Error::EncryptionKeyNotFoundException(inner)
-            }
-            crate::error::GetCommentError::EncryptionKeyUnavailableException(inner) => {
-                Error::EncryptionKeyUnavailableException(inner)
-            }
-            crate::error::GetCommentError::InvalidCommentIdException(inner) => {
-                Error::InvalidCommentIdException(inner)
-            }
-            crate::error::GetCommentError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetCommentReactionsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetCommentReactionsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetCommentReactionsError> for Error {
-    fn from(err: crate::error::GetCommentReactionsError) -> Self {
-        match err {
-            crate::error::GetCommentReactionsError::CommentDeletedException(inner) => {
-                Error::CommentDeletedException(inner)
-            }
-            crate::error::GetCommentReactionsError::CommentDoesNotExistException(inner) => {
-                Error::CommentDoesNotExistException(inner)
-            }
-            crate::error::GetCommentReactionsError::CommentIdRequiredException(inner) => {
-                Error::CommentIdRequiredException(inner)
-            }
-            crate::error::GetCommentReactionsError::InvalidCommentIdException(inner) => {
-                Error::InvalidCommentIdException(inner)
-            }
-            crate::error::GetCommentReactionsError::InvalidContinuationTokenException(inner) => {
-                Error::InvalidContinuationTokenException(inner)
-            }
-            crate::error::GetCommentReactionsError::InvalidMaxResultsException(inner) => {
-                Error::InvalidMaxResultsException(inner)
-            }
-            crate::error::GetCommentReactionsError::InvalidReactionUserArnException(inner) => {
-                Error::InvalidReactionUserArnException(inner)
-            }
-            crate::error::GetCommentReactionsError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetCommentsForComparedCommitError, R>>
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_branch::GetBranchError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetCommentsForComparedCommitError, R>,
+        err: aws_smithy_http::result::SdkError<crate::operation::get_branch::GetBranchError, R>,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -2276,33 +1937,31 @@ where
         }
     }
 }
-impl From<crate::error::GetCommentsForComparedCommitError> for Error {
-    fn from(err: crate::error::GetCommentsForComparedCommitError) -> Self {
+impl From<crate::operation::get_branch::GetBranchError> for Error {
+    fn from(err: crate::operation::get_branch::GetBranchError) -> Self {
         match err {
-            crate::error::GetCommentsForComparedCommitError::CommitDoesNotExistException(inner) => Error::CommitDoesNotExistException(inner),
-            crate::error::GetCommentsForComparedCommitError::CommitIdRequiredException(inner) => Error::CommitIdRequiredException(inner),
-            crate::error::GetCommentsForComparedCommitError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
-            crate::error::GetCommentsForComparedCommitError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
-            crate::error::GetCommentsForComparedCommitError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
-            crate::error::GetCommentsForComparedCommitError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
-            crate::error::GetCommentsForComparedCommitError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
-            crate::error::GetCommentsForComparedCommitError::InvalidCommitIdException(inner) => Error::InvalidCommitIdException(inner),
-            crate::error::GetCommentsForComparedCommitError::InvalidContinuationTokenException(inner) => Error::InvalidContinuationTokenException(inner),
-            crate::error::GetCommentsForComparedCommitError::InvalidMaxResultsException(inner) => Error::InvalidMaxResultsException(inner),
-            crate::error::GetCommentsForComparedCommitError::InvalidRepositoryNameException(inner) => Error::InvalidRepositoryNameException(inner),
-            crate::error::GetCommentsForComparedCommitError::RepositoryDoesNotExistException(inner) => Error::RepositoryDoesNotExistException(inner),
-            crate::error::GetCommentsForComparedCommitError::RepositoryNameRequiredException(inner) => Error::RepositoryNameRequiredException(inner),
-            crate::error::GetCommentsForComparedCommitError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_branch::GetBranchError::BranchDoesNotExistException(inner) => Error::BranchDoesNotExistException(inner),
+            crate::operation::get_branch::GetBranchError::BranchNameRequiredException(inner) => Error::BranchNameRequiredException(inner),
+            crate::operation::get_branch::GetBranchError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
+            crate::operation::get_branch::GetBranchError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
+            crate::operation::get_branch::GetBranchError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
+            crate::operation::get_branch::GetBranchError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
+            crate::operation::get_branch::GetBranchError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
+            crate::operation::get_branch::GetBranchError::InvalidBranchNameException(inner) => Error::InvalidBranchNameException(inner),
+            crate::operation::get_branch::GetBranchError::InvalidRepositoryNameException(inner) => Error::InvalidRepositoryNameException(inner),
+            crate::operation::get_branch::GetBranchError::RepositoryDoesNotExistException(inner) => Error::RepositoryDoesNotExistException(inner),
+            crate::operation::get_branch::GetBranchError::RepositoryNameRequiredException(inner) => Error::RepositoryNameRequiredException(inner),
+            crate::operation::get_branch::GetBranchError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetCommentsForPullRequestError, R>>
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_comment::GetCommentError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetCommentsForPullRequestError, R>,
+        err: aws_smithy_http::result::SdkError<crate::operation::get_comment::GetCommentError, R>,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -2319,35 +1978,38 @@ where
         }
     }
 }
-impl From<crate::error::GetCommentsForPullRequestError> for Error {
-    fn from(err: crate::error::GetCommentsForPullRequestError) -> Self {
+impl From<crate::operation::get_comment::GetCommentError> for Error {
+    fn from(err: crate::operation::get_comment::GetCommentError) -> Self {
         match err {
-            crate::error::GetCommentsForPullRequestError::CommitDoesNotExistException(inner) => Error::CommitDoesNotExistException(inner),
-            crate::error::GetCommentsForPullRequestError::CommitIdRequiredException(inner) => Error::CommitIdRequiredException(inner),
-            crate::error::GetCommentsForPullRequestError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
-            crate::error::GetCommentsForPullRequestError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
-            crate::error::GetCommentsForPullRequestError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
-            crate::error::GetCommentsForPullRequestError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
-            crate::error::GetCommentsForPullRequestError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
-            crate::error::GetCommentsForPullRequestError::InvalidCommitIdException(inner) => Error::InvalidCommitIdException(inner),
-            crate::error::GetCommentsForPullRequestError::InvalidContinuationTokenException(inner) => Error::InvalidContinuationTokenException(inner),
-            crate::error::GetCommentsForPullRequestError::InvalidMaxResultsException(inner) => Error::InvalidMaxResultsException(inner),
-            crate::error::GetCommentsForPullRequestError::InvalidPullRequestIdException(inner) => Error::InvalidPullRequestIdException(inner),
-            crate::error::GetCommentsForPullRequestError::InvalidRepositoryNameException(inner) => Error::InvalidRepositoryNameException(inner),
-            crate::error::GetCommentsForPullRequestError::PullRequestDoesNotExistException(inner) => Error::PullRequestDoesNotExistException(inner),
-            crate::error::GetCommentsForPullRequestError::PullRequestIdRequiredException(inner) => Error::PullRequestIdRequiredException(inner),
-            crate::error::GetCommentsForPullRequestError::RepositoryDoesNotExistException(inner) => Error::RepositoryDoesNotExistException(inner),
-            crate::error::GetCommentsForPullRequestError::RepositoryNameRequiredException(inner) => Error::RepositoryNameRequiredException(inner),
-            crate::error::GetCommentsForPullRequestError::RepositoryNotAssociatedWithPullRequestException(inner) => Error::RepositoryNotAssociatedWithPullRequestException(inner),
-            crate::error::GetCommentsForPullRequestError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_comment::GetCommentError::CommentDeletedException(inner) => Error::CommentDeletedException(inner),
+            crate::operation::get_comment::GetCommentError::CommentDoesNotExistException(inner) => Error::CommentDoesNotExistException(inner),
+            crate::operation::get_comment::GetCommentError::CommentIdRequiredException(inner) => Error::CommentIdRequiredException(inner),
+            crate::operation::get_comment::GetCommentError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
+            crate::operation::get_comment::GetCommentError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
+            crate::operation::get_comment::GetCommentError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
+            crate::operation::get_comment::GetCommentError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
+            crate::operation::get_comment::GetCommentError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
+            crate::operation::get_comment::GetCommentError::InvalidCommentIdException(inner) => Error::InvalidCommentIdException(inner),
+            crate::operation::get_comment::GetCommentError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetCommitError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_comment_reactions::GetCommentReactionsError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetCommitError, R>) -> Self {
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_comment_reactions::GetCommentReactionsError,
+            R,
+        >,
+    ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
@@ -2363,51 +2025,36 @@ where
         }
     }
 }
-impl From<crate::error::GetCommitError> for Error {
-    fn from(err: crate::error::GetCommitError) -> Self {
+impl From<crate::operation::get_comment_reactions::GetCommentReactionsError> for Error {
+    fn from(err: crate::operation::get_comment_reactions::GetCommentReactionsError) -> Self {
         match err {
-            crate::error::GetCommitError::CommitIdDoesNotExistException(inner) => {
-                Error::CommitIdDoesNotExistException(inner)
-            }
-            crate::error::GetCommitError::CommitIdRequiredException(inner) => {
-                Error::CommitIdRequiredException(inner)
-            }
-            crate::error::GetCommitError::EncryptionIntegrityChecksFailedException(inner) => {
-                Error::EncryptionIntegrityChecksFailedException(inner)
-            }
-            crate::error::GetCommitError::EncryptionKeyAccessDeniedException(inner) => {
-                Error::EncryptionKeyAccessDeniedException(inner)
-            }
-            crate::error::GetCommitError::EncryptionKeyDisabledException(inner) => {
-                Error::EncryptionKeyDisabledException(inner)
-            }
-            crate::error::GetCommitError::EncryptionKeyNotFoundException(inner) => {
-                Error::EncryptionKeyNotFoundException(inner)
-            }
-            crate::error::GetCommitError::EncryptionKeyUnavailableException(inner) => {
-                Error::EncryptionKeyUnavailableException(inner)
-            }
-            crate::error::GetCommitError::InvalidCommitIdException(inner) => {
-                Error::InvalidCommitIdException(inner)
-            }
-            crate::error::GetCommitError::InvalidRepositoryNameException(inner) => {
-                Error::InvalidRepositoryNameException(inner)
-            }
-            crate::error::GetCommitError::RepositoryDoesNotExistException(inner) => {
-                Error::RepositoryDoesNotExistException(inner)
-            }
-            crate::error::GetCommitError::RepositoryNameRequiredException(inner) => {
-                Error::RepositoryNameRequiredException(inner)
-            }
-            crate::error::GetCommitError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_comment_reactions::GetCommentReactionsError::CommentDeletedException(inner) => Error::CommentDeletedException(inner),
+            crate::operation::get_comment_reactions::GetCommentReactionsError::CommentDoesNotExistException(inner) => Error::CommentDoesNotExistException(inner),
+            crate::operation::get_comment_reactions::GetCommentReactionsError::CommentIdRequiredException(inner) => Error::CommentIdRequiredException(inner),
+            crate::operation::get_comment_reactions::GetCommentReactionsError::InvalidCommentIdException(inner) => Error::InvalidCommentIdException(inner),
+            crate::operation::get_comment_reactions::GetCommentReactionsError::InvalidContinuationTokenException(inner) => Error::InvalidContinuationTokenException(inner),
+            crate::operation::get_comment_reactions::GetCommentReactionsError::InvalidMaxResultsException(inner) => Error::InvalidMaxResultsException(inner),
+            crate::operation::get_comment_reactions::GetCommentReactionsError::InvalidReactionUserArnException(inner) => Error::InvalidReactionUserArnException(inner),
+            crate::operation::get_comment_reactions::GetCommentReactionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetDifferencesError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_comments_for_compared_commit::GetCommentsForComparedCommitError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetDifferencesError, R>) -> Self {
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_comments_for_compared_commit::GetCommentsForComparedCommitError,
+            R,
+        >,
+    ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
@@ -2423,490 +2070,263 @@ where
         }
     }
 }
-impl From<crate::error::GetDifferencesError> for Error {
-    fn from(err: crate::error::GetDifferencesError) -> Self {
+impl From<crate::operation::get_comments_for_compared_commit::GetCommentsForComparedCommitError>
+    for Error
+{
+    fn from(
+        err: crate::operation::get_comments_for_compared_commit::GetCommentsForComparedCommitError,
+    ) -> Self {
         match err {
-            crate::error::GetDifferencesError::CommitDoesNotExistException(inner) => {
+            crate::operation::get_comments_for_compared_commit::GetCommentsForComparedCommitError::CommitDoesNotExistException(inner) => Error::CommitDoesNotExistException(inner),
+            crate::operation::get_comments_for_compared_commit::GetCommentsForComparedCommitError::CommitIdRequiredException(inner) => Error::CommitIdRequiredException(inner),
+            crate::operation::get_comments_for_compared_commit::GetCommentsForComparedCommitError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
+            crate::operation::get_comments_for_compared_commit::GetCommentsForComparedCommitError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
+            crate::operation::get_comments_for_compared_commit::GetCommentsForComparedCommitError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
+            crate::operation::get_comments_for_compared_commit::GetCommentsForComparedCommitError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
+            crate::operation::get_comments_for_compared_commit::GetCommentsForComparedCommitError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
+            crate::operation::get_comments_for_compared_commit::GetCommentsForComparedCommitError::InvalidCommitIdException(inner) => Error::InvalidCommitIdException(inner),
+            crate::operation::get_comments_for_compared_commit::GetCommentsForComparedCommitError::InvalidContinuationTokenException(inner) => Error::InvalidContinuationTokenException(inner),
+            crate::operation::get_comments_for_compared_commit::GetCommentsForComparedCommitError::InvalidMaxResultsException(inner) => Error::InvalidMaxResultsException(inner),
+            crate::operation::get_comments_for_compared_commit::GetCommentsForComparedCommitError::InvalidRepositoryNameException(inner) => Error::InvalidRepositoryNameException(inner),
+            crate::operation::get_comments_for_compared_commit::GetCommentsForComparedCommitError::RepositoryDoesNotExistException(inner) => Error::RepositoryDoesNotExistException(inner),
+            crate::operation::get_comments_for_compared_commit::GetCommentsForComparedCommitError::RepositoryNameRequiredException(inner) => Error::RepositoryNameRequiredException(inner),
+            crate::operation::get_comments_for_compared_commit::GetCommentsForComparedCommitError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_comments_for_pull_request::GetCommentsForPullRequestError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_comments_for_pull_request::GetCommentsForPullRequestError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_comments_for_pull_request::GetCommentsForPullRequestError>
+    for Error
+{
+    fn from(
+        err: crate::operation::get_comments_for_pull_request::GetCommentsForPullRequestError,
+    ) -> Self {
+        match err {
+            crate::operation::get_comments_for_pull_request::GetCommentsForPullRequestError::CommitDoesNotExistException(inner) => Error::CommitDoesNotExistException(inner),
+            crate::operation::get_comments_for_pull_request::GetCommentsForPullRequestError::CommitIdRequiredException(inner) => Error::CommitIdRequiredException(inner),
+            crate::operation::get_comments_for_pull_request::GetCommentsForPullRequestError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
+            crate::operation::get_comments_for_pull_request::GetCommentsForPullRequestError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
+            crate::operation::get_comments_for_pull_request::GetCommentsForPullRequestError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
+            crate::operation::get_comments_for_pull_request::GetCommentsForPullRequestError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
+            crate::operation::get_comments_for_pull_request::GetCommentsForPullRequestError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
+            crate::operation::get_comments_for_pull_request::GetCommentsForPullRequestError::InvalidCommitIdException(inner) => Error::InvalidCommitIdException(inner),
+            crate::operation::get_comments_for_pull_request::GetCommentsForPullRequestError::InvalidContinuationTokenException(inner) => Error::InvalidContinuationTokenException(inner),
+            crate::operation::get_comments_for_pull_request::GetCommentsForPullRequestError::InvalidMaxResultsException(inner) => Error::InvalidMaxResultsException(inner),
+            crate::operation::get_comments_for_pull_request::GetCommentsForPullRequestError::InvalidPullRequestIdException(inner) => Error::InvalidPullRequestIdException(inner),
+            crate::operation::get_comments_for_pull_request::GetCommentsForPullRequestError::InvalidRepositoryNameException(inner) => Error::InvalidRepositoryNameException(inner),
+            crate::operation::get_comments_for_pull_request::GetCommentsForPullRequestError::PullRequestDoesNotExistException(inner) => Error::PullRequestDoesNotExistException(inner),
+            crate::operation::get_comments_for_pull_request::GetCommentsForPullRequestError::PullRequestIdRequiredException(inner) => Error::PullRequestIdRequiredException(inner),
+            crate::operation::get_comments_for_pull_request::GetCommentsForPullRequestError::RepositoryDoesNotExistException(inner) => Error::RepositoryDoesNotExistException(inner),
+            crate::operation::get_comments_for_pull_request::GetCommentsForPullRequestError::RepositoryNameRequiredException(inner) => Error::RepositoryNameRequiredException(inner),
+            crate::operation::get_comments_for_pull_request::GetCommentsForPullRequestError::RepositoryNotAssociatedWithPullRequestException(inner) => Error::RepositoryNotAssociatedWithPullRequestException(inner),
+            crate::operation::get_comments_for_pull_request::GetCommentsForPullRequestError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_commit::GetCommitError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::get_commit::GetCommitError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_commit::GetCommitError> for Error {
+    fn from(err: crate::operation::get_commit::GetCommitError) -> Self {
+        match err {
+            crate::operation::get_commit::GetCommitError::CommitIdDoesNotExistException(inner) => Error::CommitIdDoesNotExistException(inner),
+            crate::operation::get_commit::GetCommitError::CommitIdRequiredException(inner) => Error::CommitIdRequiredException(inner),
+            crate::operation::get_commit::GetCommitError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
+            crate::operation::get_commit::GetCommitError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
+            crate::operation::get_commit::GetCommitError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
+            crate::operation::get_commit::GetCommitError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
+            crate::operation::get_commit::GetCommitError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
+            crate::operation::get_commit::GetCommitError::InvalidCommitIdException(inner) => Error::InvalidCommitIdException(inner),
+            crate::operation::get_commit::GetCommitError::InvalidRepositoryNameException(inner) => Error::InvalidRepositoryNameException(inner),
+            crate::operation::get_commit::GetCommitError::RepositoryDoesNotExistException(inner) => Error::RepositoryDoesNotExistException(inner),
+            crate::operation::get_commit::GetCommitError::RepositoryNameRequiredException(inner) => Error::RepositoryNameRequiredException(inner),
+            crate::operation::get_commit::GetCommitError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_differences::GetDifferencesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_differences::GetDifferencesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_differences::GetDifferencesError> for Error {
+    fn from(err: crate::operation::get_differences::GetDifferencesError) -> Self {
+        match err {
+            crate::operation::get_differences::GetDifferencesError::CommitDoesNotExistException(inner) => Error::CommitDoesNotExistException(inner),
+            crate::operation::get_differences::GetDifferencesError::CommitRequiredException(inner) => Error::CommitRequiredException(inner),
+            crate::operation::get_differences::GetDifferencesError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
+            crate::operation::get_differences::GetDifferencesError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
+            crate::operation::get_differences::GetDifferencesError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
+            crate::operation::get_differences::GetDifferencesError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
+            crate::operation::get_differences::GetDifferencesError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
+            crate::operation::get_differences::GetDifferencesError::InvalidCommitException(inner) => Error::InvalidCommitException(inner),
+            crate::operation::get_differences::GetDifferencesError::InvalidCommitIdException(inner) => Error::InvalidCommitIdException(inner),
+            crate::operation::get_differences::GetDifferencesError::InvalidContinuationTokenException(inner) => Error::InvalidContinuationTokenException(inner),
+            crate::operation::get_differences::GetDifferencesError::InvalidMaxResultsException(inner) => Error::InvalidMaxResultsException(inner),
+            crate::operation::get_differences::GetDifferencesError::InvalidPathException(inner) => Error::InvalidPathException(inner),
+            crate::operation::get_differences::GetDifferencesError::InvalidRepositoryNameException(inner) => Error::InvalidRepositoryNameException(inner),
+            crate::operation::get_differences::GetDifferencesError::PathDoesNotExistException(inner) => Error::PathDoesNotExistException(inner),
+            crate::operation::get_differences::GetDifferencesError::RepositoryDoesNotExistException(inner) => Error::RepositoryDoesNotExistException(inner),
+            crate::operation::get_differences::GetDifferencesError::RepositoryNameRequiredException(inner) => Error::RepositoryNameRequiredException(inner),
+            crate::operation::get_differences::GetDifferencesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_file::GetFileError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::get_file::GetFileError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_file::GetFileError> for Error {
+    fn from(err: crate::operation::get_file::GetFileError) -> Self {
+        match err {
+            crate::operation::get_file::GetFileError::CommitDoesNotExistException(inner) => {
                 Error::CommitDoesNotExistException(inner)
             }
-            crate::error::GetDifferencesError::CommitRequiredException(inner) => {
-                Error::CommitRequiredException(inner)
-            }
-            crate::error::GetDifferencesError::EncryptionIntegrityChecksFailedException(inner) => {
-                Error::EncryptionIntegrityChecksFailedException(inner)
-            }
-            crate::error::GetDifferencesError::EncryptionKeyAccessDeniedException(inner) => {
+            crate::operation::get_file::GetFileError::EncryptionIntegrityChecksFailedException(
+                inner,
+            ) => Error::EncryptionIntegrityChecksFailedException(inner),
+            crate::operation::get_file::GetFileError::EncryptionKeyAccessDeniedException(inner) => {
                 Error::EncryptionKeyAccessDeniedException(inner)
             }
-            crate::error::GetDifferencesError::EncryptionKeyDisabledException(inner) => {
+            crate::operation::get_file::GetFileError::EncryptionKeyDisabledException(inner) => {
                 Error::EncryptionKeyDisabledException(inner)
             }
-            crate::error::GetDifferencesError::EncryptionKeyNotFoundException(inner) => {
+            crate::operation::get_file::GetFileError::EncryptionKeyNotFoundException(inner) => {
                 Error::EncryptionKeyNotFoundException(inner)
             }
-            crate::error::GetDifferencesError::EncryptionKeyUnavailableException(inner) => {
+            crate::operation::get_file::GetFileError::EncryptionKeyUnavailableException(inner) => {
                 Error::EncryptionKeyUnavailableException(inner)
             }
-            crate::error::GetDifferencesError::InvalidCommitException(inner) => {
-                Error::InvalidCommitException(inner)
-            }
-            crate::error::GetDifferencesError::InvalidCommitIdException(inner) => {
-                Error::InvalidCommitIdException(inner)
-            }
-            crate::error::GetDifferencesError::InvalidContinuationTokenException(inner) => {
-                Error::InvalidContinuationTokenException(inner)
-            }
-            crate::error::GetDifferencesError::InvalidMaxResultsException(inner) => {
-                Error::InvalidMaxResultsException(inner)
-            }
-            crate::error::GetDifferencesError::InvalidPathException(inner) => {
-                Error::InvalidPathException(inner)
-            }
-            crate::error::GetDifferencesError::InvalidRepositoryNameException(inner) => {
-                Error::InvalidRepositoryNameException(inner)
-            }
-            crate::error::GetDifferencesError::PathDoesNotExistException(inner) => {
-                Error::PathDoesNotExistException(inner)
-            }
-            crate::error::GetDifferencesError::RepositoryDoesNotExistException(inner) => {
-                Error::RepositoryDoesNotExistException(inner)
-            }
-            crate::error::GetDifferencesError::RepositoryNameRequiredException(inner) => {
-                Error::RepositoryNameRequiredException(inner)
-            }
-            crate::error::GetDifferencesError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetFileError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetFileError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetFileError> for Error {
-    fn from(err: crate::error::GetFileError) -> Self {
-        match err {
-            crate::error::GetFileError::CommitDoesNotExistException(inner) => {
-                Error::CommitDoesNotExistException(inner)
-            }
-            crate::error::GetFileError::EncryptionIntegrityChecksFailedException(inner) => {
-                Error::EncryptionIntegrityChecksFailedException(inner)
-            }
-            crate::error::GetFileError::EncryptionKeyAccessDeniedException(inner) => {
-                Error::EncryptionKeyAccessDeniedException(inner)
-            }
-            crate::error::GetFileError::EncryptionKeyDisabledException(inner) => {
-                Error::EncryptionKeyDisabledException(inner)
-            }
-            crate::error::GetFileError::EncryptionKeyNotFoundException(inner) => {
-                Error::EncryptionKeyNotFoundException(inner)
-            }
-            crate::error::GetFileError::EncryptionKeyUnavailableException(inner) => {
-                Error::EncryptionKeyUnavailableException(inner)
-            }
-            crate::error::GetFileError::FileDoesNotExistException(inner) => {
+            crate::operation::get_file::GetFileError::FileDoesNotExistException(inner) => {
                 Error::FileDoesNotExistException(inner)
             }
-            crate::error::GetFileError::FileTooLargeException(inner) => {
+            crate::operation::get_file::GetFileError::FileTooLargeException(inner) => {
                 Error::FileTooLargeException(inner)
             }
-            crate::error::GetFileError::InvalidCommitException(inner) => {
+            crate::operation::get_file::GetFileError::InvalidCommitException(inner) => {
                 Error::InvalidCommitException(inner)
             }
-            crate::error::GetFileError::InvalidPathException(inner) => {
+            crate::operation::get_file::GetFileError::InvalidPathException(inner) => {
                 Error::InvalidPathException(inner)
             }
-            crate::error::GetFileError::InvalidRepositoryNameException(inner) => {
+            crate::operation::get_file::GetFileError::InvalidRepositoryNameException(inner) => {
                 Error::InvalidRepositoryNameException(inner)
             }
-            crate::error::GetFileError::PathRequiredException(inner) => {
+            crate::operation::get_file::GetFileError::PathRequiredException(inner) => {
                 Error::PathRequiredException(inner)
             }
-            crate::error::GetFileError::RepositoryDoesNotExistException(inner) => {
+            crate::operation::get_file::GetFileError::RepositoryDoesNotExistException(inner) => {
                 Error::RepositoryDoesNotExistException(inner)
             }
-            crate::error::GetFileError::RepositoryNameRequiredException(inner) => {
+            crate::operation::get_file::GetFileError::RepositoryNameRequiredException(inner) => {
                 Error::RepositoryNameRequiredException(inner)
             }
-            crate::error::GetFileError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_file::GetFileError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetFolderError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetFolderError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetFolderError> for Error {
-    fn from(err: crate::error::GetFolderError) -> Self {
-        match err {
-            crate::error::GetFolderError::CommitDoesNotExistException(inner) => {
-                Error::CommitDoesNotExistException(inner)
-            }
-            crate::error::GetFolderError::EncryptionIntegrityChecksFailedException(inner) => {
-                Error::EncryptionIntegrityChecksFailedException(inner)
-            }
-            crate::error::GetFolderError::EncryptionKeyAccessDeniedException(inner) => {
-                Error::EncryptionKeyAccessDeniedException(inner)
-            }
-            crate::error::GetFolderError::EncryptionKeyDisabledException(inner) => {
-                Error::EncryptionKeyDisabledException(inner)
-            }
-            crate::error::GetFolderError::EncryptionKeyNotFoundException(inner) => {
-                Error::EncryptionKeyNotFoundException(inner)
-            }
-            crate::error::GetFolderError::EncryptionKeyUnavailableException(inner) => {
-                Error::EncryptionKeyUnavailableException(inner)
-            }
-            crate::error::GetFolderError::FolderDoesNotExistException(inner) => {
-                Error::FolderDoesNotExistException(inner)
-            }
-            crate::error::GetFolderError::InvalidCommitException(inner) => {
-                Error::InvalidCommitException(inner)
-            }
-            crate::error::GetFolderError::InvalidPathException(inner) => {
-                Error::InvalidPathException(inner)
-            }
-            crate::error::GetFolderError::InvalidRepositoryNameException(inner) => {
-                Error::InvalidRepositoryNameException(inner)
-            }
-            crate::error::GetFolderError::PathRequiredException(inner) => {
-                Error::PathRequiredException(inner)
-            }
-            crate::error::GetFolderError::RepositoryDoesNotExistException(inner) => {
-                Error::RepositoryDoesNotExistException(inner)
-            }
-            crate::error::GetFolderError::RepositoryNameRequiredException(inner) => {
-                Error::RepositoryNameRequiredException(inner)
-            }
-            crate::error::GetFolderError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetMergeCommitError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetMergeCommitError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetMergeCommitError> for Error {
-    fn from(err: crate::error::GetMergeCommitError) -> Self {
-        match err {
-            crate::error::GetMergeCommitError::CommitDoesNotExistException(inner) => {
-                Error::CommitDoesNotExistException(inner)
-            }
-            crate::error::GetMergeCommitError::CommitRequiredException(inner) => {
-                Error::CommitRequiredException(inner)
-            }
-            crate::error::GetMergeCommitError::EncryptionIntegrityChecksFailedException(inner) => {
-                Error::EncryptionIntegrityChecksFailedException(inner)
-            }
-            crate::error::GetMergeCommitError::EncryptionKeyAccessDeniedException(inner) => {
-                Error::EncryptionKeyAccessDeniedException(inner)
-            }
-            crate::error::GetMergeCommitError::EncryptionKeyDisabledException(inner) => {
-                Error::EncryptionKeyDisabledException(inner)
-            }
-            crate::error::GetMergeCommitError::EncryptionKeyNotFoundException(inner) => {
-                Error::EncryptionKeyNotFoundException(inner)
-            }
-            crate::error::GetMergeCommitError::EncryptionKeyUnavailableException(inner) => {
-                Error::EncryptionKeyUnavailableException(inner)
-            }
-            crate::error::GetMergeCommitError::InvalidCommitException(inner) => {
-                Error::InvalidCommitException(inner)
-            }
-            crate::error::GetMergeCommitError::InvalidConflictDetailLevelException(inner) => {
-                Error::InvalidConflictDetailLevelException(inner)
-            }
-            crate::error::GetMergeCommitError::InvalidConflictResolutionStrategyException(
-                inner,
-            ) => Error::InvalidConflictResolutionStrategyException(inner),
-            crate::error::GetMergeCommitError::InvalidRepositoryNameException(inner) => {
-                Error::InvalidRepositoryNameException(inner)
-            }
-            crate::error::GetMergeCommitError::RepositoryDoesNotExistException(inner) => {
-                Error::RepositoryDoesNotExistException(inner)
-            }
-            crate::error::GetMergeCommitError::RepositoryNameRequiredException(inner) => {
-                Error::RepositoryNameRequiredException(inner)
-            }
-            crate::error::GetMergeCommitError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetMergeConflictsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetMergeConflictsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetMergeConflictsError> for Error {
-    fn from(err: crate::error::GetMergeConflictsError) -> Self {
-        match err {
-            crate::error::GetMergeConflictsError::CommitDoesNotExistException(inner) => {
-                Error::CommitDoesNotExistException(inner)
-            }
-            crate::error::GetMergeConflictsError::CommitRequiredException(inner) => {
-                Error::CommitRequiredException(inner)
-            }
-            crate::error::GetMergeConflictsError::EncryptionIntegrityChecksFailedException(
-                inner,
-            ) => Error::EncryptionIntegrityChecksFailedException(inner),
-            crate::error::GetMergeConflictsError::EncryptionKeyAccessDeniedException(inner) => {
-                Error::EncryptionKeyAccessDeniedException(inner)
-            }
-            crate::error::GetMergeConflictsError::EncryptionKeyDisabledException(inner) => {
-                Error::EncryptionKeyDisabledException(inner)
-            }
-            crate::error::GetMergeConflictsError::EncryptionKeyNotFoundException(inner) => {
-                Error::EncryptionKeyNotFoundException(inner)
-            }
-            crate::error::GetMergeConflictsError::EncryptionKeyUnavailableException(inner) => {
-                Error::EncryptionKeyUnavailableException(inner)
-            }
-            crate::error::GetMergeConflictsError::InvalidCommitException(inner) => {
-                Error::InvalidCommitException(inner)
-            }
-            crate::error::GetMergeConflictsError::InvalidConflictDetailLevelException(inner) => {
-                Error::InvalidConflictDetailLevelException(inner)
-            }
-            crate::error::GetMergeConflictsError::InvalidConflictResolutionStrategyException(
-                inner,
-            ) => Error::InvalidConflictResolutionStrategyException(inner),
-            crate::error::GetMergeConflictsError::InvalidContinuationTokenException(inner) => {
-                Error::InvalidContinuationTokenException(inner)
-            }
-            crate::error::GetMergeConflictsError::InvalidDestinationCommitSpecifierException(
-                inner,
-            ) => Error::InvalidDestinationCommitSpecifierException(inner),
-            crate::error::GetMergeConflictsError::InvalidMaxConflictFilesException(inner) => {
-                Error::InvalidMaxConflictFilesException(inner)
-            }
-            crate::error::GetMergeConflictsError::InvalidMergeOptionException(inner) => {
-                Error::InvalidMergeOptionException(inner)
-            }
-            crate::error::GetMergeConflictsError::InvalidRepositoryNameException(inner) => {
-                Error::InvalidRepositoryNameException(inner)
-            }
-            crate::error::GetMergeConflictsError::InvalidSourceCommitSpecifierException(inner) => {
-                Error::InvalidSourceCommitSpecifierException(inner)
-            }
-            crate::error::GetMergeConflictsError::MaximumFileContentToLoadExceededException(
-                inner,
-            ) => Error::MaximumFileContentToLoadExceededException(inner),
-            crate::error::GetMergeConflictsError::MaximumItemsToCompareExceededException(inner) => {
-                Error::MaximumItemsToCompareExceededException(inner)
-            }
-            crate::error::GetMergeConflictsError::MergeOptionRequiredException(inner) => {
-                Error::MergeOptionRequiredException(inner)
-            }
-            crate::error::GetMergeConflictsError::RepositoryDoesNotExistException(inner) => {
-                Error::RepositoryDoesNotExistException(inner)
-            }
-            crate::error::GetMergeConflictsError::RepositoryNameRequiredException(inner) => {
-                Error::RepositoryNameRequiredException(inner)
-            }
-            crate::error::GetMergeConflictsError::TipsDivergenceExceededException(inner) => {
-                Error::TipsDivergenceExceededException(inner)
-            }
-            crate::error::GetMergeConflictsError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetMergeOptionsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetMergeOptionsError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetMergeOptionsError> for Error {
-    fn from(err: crate::error::GetMergeOptionsError) -> Self {
-        match err {
-            crate::error::GetMergeOptionsError::CommitDoesNotExistException(inner) => {
-                Error::CommitDoesNotExistException(inner)
-            }
-            crate::error::GetMergeOptionsError::CommitRequiredException(inner) => {
-                Error::CommitRequiredException(inner)
-            }
-            crate::error::GetMergeOptionsError::EncryptionIntegrityChecksFailedException(inner) => {
-                Error::EncryptionIntegrityChecksFailedException(inner)
-            }
-            crate::error::GetMergeOptionsError::EncryptionKeyAccessDeniedException(inner) => {
-                Error::EncryptionKeyAccessDeniedException(inner)
-            }
-            crate::error::GetMergeOptionsError::EncryptionKeyDisabledException(inner) => {
-                Error::EncryptionKeyDisabledException(inner)
-            }
-            crate::error::GetMergeOptionsError::EncryptionKeyNotFoundException(inner) => {
-                Error::EncryptionKeyNotFoundException(inner)
-            }
-            crate::error::GetMergeOptionsError::EncryptionKeyUnavailableException(inner) => {
-                Error::EncryptionKeyUnavailableException(inner)
-            }
-            crate::error::GetMergeOptionsError::InvalidCommitException(inner) => {
-                Error::InvalidCommitException(inner)
-            }
-            crate::error::GetMergeOptionsError::InvalidConflictDetailLevelException(inner) => {
-                Error::InvalidConflictDetailLevelException(inner)
-            }
-            crate::error::GetMergeOptionsError::InvalidConflictResolutionStrategyException(
-                inner,
-            ) => Error::InvalidConflictResolutionStrategyException(inner),
-            crate::error::GetMergeOptionsError::InvalidRepositoryNameException(inner) => {
-                Error::InvalidRepositoryNameException(inner)
-            }
-            crate::error::GetMergeOptionsError::MaximumFileContentToLoadExceededException(
-                inner,
-            ) => Error::MaximumFileContentToLoadExceededException(inner),
-            crate::error::GetMergeOptionsError::MaximumItemsToCompareExceededException(inner) => {
-                Error::MaximumItemsToCompareExceededException(inner)
-            }
-            crate::error::GetMergeOptionsError::RepositoryDoesNotExistException(inner) => {
-                Error::RepositoryDoesNotExistException(inner)
-            }
-            crate::error::GetMergeOptionsError::RepositoryNameRequiredException(inner) => {
-                Error::RepositoryNameRequiredException(inner)
-            }
-            crate::error::GetMergeOptionsError::TipsDivergenceExceededException(inner) => {
-                Error::TipsDivergenceExceededException(inner)
-            }
-            crate::error::GetMergeOptionsError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetPullRequestError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetPullRequestError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetPullRequestError> for Error {
-    fn from(err: crate::error::GetPullRequestError) -> Self {
-        match err {
-            crate::error::GetPullRequestError::EncryptionIntegrityChecksFailedException(inner) => {
-                Error::EncryptionIntegrityChecksFailedException(inner)
-            }
-            crate::error::GetPullRequestError::EncryptionKeyAccessDeniedException(inner) => {
-                Error::EncryptionKeyAccessDeniedException(inner)
-            }
-            crate::error::GetPullRequestError::EncryptionKeyDisabledException(inner) => {
-                Error::EncryptionKeyDisabledException(inner)
-            }
-            crate::error::GetPullRequestError::EncryptionKeyNotFoundException(inner) => {
-                Error::EncryptionKeyNotFoundException(inner)
-            }
-            crate::error::GetPullRequestError::EncryptionKeyUnavailableException(inner) => {
-                Error::EncryptionKeyUnavailableException(inner)
-            }
-            crate::error::GetPullRequestError::InvalidPullRequestIdException(inner) => {
-                Error::InvalidPullRequestIdException(inner)
-            }
-            crate::error::GetPullRequestError::PullRequestDoesNotExistException(inner) => {
-                Error::PullRequestDoesNotExistException(inner)
-            }
-            crate::error::GetPullRequestError::PullRequestIdRequiredException(inner) => {
-                Error::PullRequestIdRequiredException(inner)
-            }
-            crate::error::GetPullRequestError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetPullRequestApprovalStatesError, R>>
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_folder::GetFolderError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetPullRequestApprovalStatesError, R>,
+        err: aws_smithy_http::result::SdkError<crate::operation::get_folder::GetFolderError, R>,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -2923,210 +2343,30 @@ where
         }
     }
 }
-impl From<crate::error::GetPullRequestApprovalStatesError> for Error {
-    fn from(err: crate::error::GetPullRequestApprovalStatesError) -> Self {
+impl From<crate::operation::get_folder::GetFolderError> for Error {
+    fn from(err: crate::operation::get_folder::GetFolderError) -> Self {
         match err {
-            crate::error::GetPullRequestApprovalStatesError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
-            crate::error::GetPullRequestApprovalStatesError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
-            crate::error::GetPullRequestApprovalStatesError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
-            crate::error::GetPullRequestApprovalStatesError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
-            crate::error::GetPullRequestApprovalStatesError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
-            crate::error::GetPullRequestApprovalStatesError::InvalidPullRequestIdException(inner) => Error::InvalidPullRequestIdException(inner),
-            crate::error::GetPullRequestApprovalStatesError::InvalidRevisionIdException(inner) => Error::InvalidRevisionIdException(inner),
-            crate::error::GetPullRequestApprovalStatesError::PullRequestDoesNotExistException(inner) => Error::PullRequestDoesNotExistException(inner),
-            crate::error::GetPullRequestApprovalStatesError::PullRequestIdRequiredException(inner) => Error::PullRequestIdRequiredException(inner),
-            crate::error::GetPullRequestApprovalStatesError::RevisionIdRequiredException(inner) => Error::RevisionIdRequiredException(inner),
-            crate::error::GetPullRequestApprovalStatesError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetPullRequestOverrideStateError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetPullRequestOverrideStateError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetPullRequestOverrideStateError> for Error {
-    fn from(err: crate::error::GetPullRequestOverrideStateError) -> Self {
-        match err {
-            crate::error::GetPullRequestOverrideStateError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
-            crate::error::GetPullRequestOverrideStateError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
-            crate::error::GetPullRequestOverrideStateError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
-            crate::error::GetPullRequestOverrideStateError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
-            crate::error::GetPullRequestOverrideStateError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
-            crate::error::GetPullRequestOverrideStateError::InvalidPullRequestIdException(inner) => Error::InvalidPullRequestIdException(inner),
-            crate::error::GetPullRequestOverrideStateError::InvalidRevisionIdException(inner) => Error::InvalidRevisionIdException(inner),
-            crate::error::GetPullRequestOverrideStateError::PullRequestDoesNotExistException(inner) => Error::PullRequestDoesNotExistException(inner),
-            crate::error::GetPullRequestOverrideStateError::PullRequestIdRequiredException(inner) => Error::PullRequestIdRequiredException(inner),
-            crate::error::GetPullRequestOverrideStateError::RevisionIdRequiredException(inner) => Error::RevisionIdRequiredException(inner),
-            crate::error::GetPullRequestOverrideStateError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRepositoryError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetRepositoryError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetRepositoryError> for Error {
-    fn from(err: crate::error::GetRepositoryError) -> Self {
-        match err {
-            crate::error::GetRepositoryError::EncryptionIntegrityChecksFailedException(inner) => {
-                Error::EncryptionIntegrityChecksFailedException(inner)
-            }
-            crate::error::GetRepositoryError::EncryptionKeyAccessDeniedException(inner) => {
-                Error::EncryptionKeyAccessDeniedException(inner)
-            }
-            crate::error::GetRepositoryError::EncryptionKeyDisabledException(inner) => {
-                Error::EncryptionKeyDisabledException(inner)
-            }
-            crate::error::GetRepositoryError::EncryptionKeyNotFoundException(inner) => {
-                Error::EncryptionKeyNotFoundException(inner)
-            }
-            crate::error::GetRepositoryError::EncryptionKeyUnavailableException(inner) => {
-                Error::EncryptionKeyUnavailableException(inner)
-            }
-            crate::error::GetRepositoryError::InvalidRepositoryNameException(inner) => {
-                Error::InvalidRepositoryNameException(inner)
-            }
-            crate::error::GetRepositoryError::RepositoryDoesNotExistException(inner) => {
-                Error::RepositoryDoesNotExistException(inner)
-            }
-            crate::error::GetRepositoryError::RepositoryNameRequiredException(inner) => {
-                Error::RepositoryNameRequiredException(inner)
-            }
-            crate::error::GetRepositoryError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRepositoryTriggersError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetRepositoryTriggersError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetRepositoryTriggersError> for Error {
-    fn from(err: crate::error::GetRepositoryTriggersError) -> Self {
-        match err {
-            crate::error::GetRepositoryTriggersError::EncryptionIntegrityChecksFailedException(
-                inner,
-            ) => Error::EncryptionIntegrityChecksFailedException(inner),
-            crate::error::GetRepositoryTriggersError::EncryptionKeyAccessDeniedException(inner) => {
-                Error::EncryptionKeyAccessDeniedException(inner)
-            }
-            crate::error::GetRepositoryTriggersError::EncryptionKeyDisabledException(inner) => {
-                Error::EncryptionKeyDisabledException(inner)
-            }
-            crate::error::GetRepositoryTriggersError::EncryptionKeyNotFoundException(inner) => {
-                Error::EncryptionKeyNotFoundException(inner)
-            }
-            crate::error::GetRepositoryTriggersError::EncryptionKeyUnavailableException(inner) => {
-                Error::EncryptionKeyUnavailableException(inner)
-            }
-            crate::error::GetRepositoryTriggersError::InvalidRepositoryNameException(inner) => {
-                Error::InvalidRepositoryNameException(inner)
-            }
-            crate::error::GetRepositoryTriggersError::RepositoryDoesNotExistException(inner) => {
-                Error::RepositoryDoesNotExistException(inner)
-            }
-            crate::error::GetRepositoryTriggersError::RepositoryNameRequiredException(inner) => {
-                Error::RepositoryNameRequiredException(inner)
-            }
-            crate::error::GetRepositoryTriggersError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListApprovalRuleTemplatesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListApprovalRuleTemplatesError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::ListApprovalRuleTemplatesError> for Error {
-    fn from(err: crate::error::ListApprovalRuleTemplatesError) -> Self {
-        match err {
-            crate::error::ListApprovalRuleTemplatesError::InvalidContinuationTokenException(
-                inner,
-            ) => Error::InvalidContinuationTokenException(inner),
-            crate::error::ListApprovalRuleTemplatesError::InvalidMaxResultsException(inner) => {
-                Error::InvalidMaxResultsException(inner)
-            }
-            crate::error::ListApprovalRuleTemplatesError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::get_folder::GetFolderError::CommitDoesNotExistException(inner) => Error::CommitDoesNotExistException(inner),
+            crate::operation::get_folder::GetFolderError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
+            crate::operation::get_folder::GetFolderError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
+            crate::operation::get_folder::GetFolderError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
+            crate::operation::get_folder::GetFolderError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
+            crate::operation::get_folder::GetFolderError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
+            crate::operation::get_folder::GetFolderError::FolderDoesNotExistException(inner) => Error::FolderDoesNotExistException(inner),
+            crate::operation::get_folder::GetFolderError::InvalidCommitException(inner) => Error::InvalidCommitException(inner),
+            crate::operation::get_folder::GetFolderError::InvalidPathException(inner) => Error::InvalidPathException(inner),
+            crate::operation::get_folder::GetFolderError::InvalidRepositoryNameException(inner) => Error::InvalidRepositoryNameException(inner),
+            crate::operation::get_folder::GetFolderError::PathRequiredException(inner) => Error::PathRequiredException(inner),
+            crate::operation::get_folder::GetFolderError::RepositoryDoesNotExistException(inner) => Error::RepositoryDoesNotExistException(inner),
+            crate::operation::get_folder::GetFolderError::RepositoryNameRequiredException(inner) => Error::RepositoryNameRequiredException(inner),
+            crate::operation::get_folder::GetFolderError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
-            crate::error::ListAssociatedApprovalRuleTemplatesForRepositoryError,
+            crate::operation::get_merge_commit::GetMergeCommitError,
             R,
         >,
     > for Error
@@ -3135,7 +2375,7 @@ where
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::ListAssociatedApprovalRuleTemplatesForRepositoryError,
+            crate::operation::get_merge_commit::GetMergeCommitError,
             R,
         >,
     ) -> Self {
@@ -3154,187 +2394,30 @@ where
         }
     }
 }
-impl From<crate::error::ListAssociatedApprovalRuleTemplatesForRepositoryError> for Error {
-    fn from(err: crate::error::ListAssociatedApprovalRuleTemplatesForRepositoryError) -> Self {
+impl From<crate::operation::get_merge_commit::GetMergeCommitError> for Error {
+    fn from(err: crate::operation::get_merge_commit::GetMergeCommitError) -> Self {
         match err {
-            crate::error::ListAssociatedApprovalRuleTemplatesForRepositoryError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
-            crate::error::ListAssociatedApprovalRuleTemplatesForRepositoryError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
-            crate::error::ListAssociatedApprovalRuleTemplatesForRepositoryError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
-            crate::error::ListAssociatedApprovalRuleTemplatesForRepositoryError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
-            crate::error::ListAssociatedApprovalRuleTemplatesForRepositoryError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
-            crate::error::ListAssociatedApprovalRuleTemplatesForRepositoryError::InvalidContinuationTokenException(inner) => Error::InvalidContinuationTokenException(inner),
-            crate::error::ListAssociatedApprovalRuleTemplatesForRepositoryError::InvalidMaxResultsException(inner) => Error::InvalidMaxResultsException(inner),
-            crate::error::ListAssociatedApprovalRuleTemplatesForRepositoryError::InvalidRepositoryNameException(inner) => Error::InvalidRepositoryNameException(inner),
-            crate::error::ListAssociatedApprovalRuleTemplatesForRepositoryError::RepositoryDoesNotExistException(inner) => Error::RepositoryDoesNotExistException(inner),
-            crate::error::ListAssociatedApprovalRuleTemplatesForRepositoryError::RepositoryNameRequiredException(inner) => Error::RepositoryNameRequiredException(inner),
-            crate::error::ListAssociatedApprovalRuleTemplatesForRepositoryError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListBranchesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListBranchesError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::ListBranchesError> for Error {
-    fn from(err: crate::error::ListBranchesError) -> Self {
-        match err {
-            crate::error::ListBranchesError::EncryptionIntegrityChecksFailedException(inner) => {
-                Error::EncryptionIntegrityChecksFailedException(inner)
-            }
-            crate::error::ListBranchesError::EncryptionKeyAccessDeniedException(inner) => {
-                Error::EncryptionKeyAccessDeniedException(inner)
-            }
-            crate::error::ListBranchesError::EncryptionKeyDisabledException(inner) => {
-                Error::EncryptionKeyDisabledException(inner)
-            }
-            crate::error::ListBranchesError::EncryptionKeyNotFoundException(inner) => {
-                Error::EncryptionKeyNotFoundException(inner)
-            }
-            crate::error::ListBranchesError::EncryptionKeyUnavailableException(inner) => {
-                Error::EncryptionKeyUnavailableException(inner)
-            }
-            crate::error::ListBranchesError::InvalidContinuationTokenException(inner) => {
-                Error::InvalidContinuationTokenException(inner)
-            }
-            crate::error::ListBranchesError::InvalidRepositoryNameException(inner) => {
-                Error::InvalidRepositoryNameException(inner)
-            }
-            crate::error::ListBranchesError::RepositoryDoesNotExistException(inner) => {
-                Error::RepositoryDoesNotExistException(inner)
-            }
-            crate::error::ListBranchesError::RepositoryNameRequiredException(inner) => {
-                Error::RepositoryNameRequiredException(inner)
-            }
-            crate::error::ListBranchesError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListPullRequestsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListPullRequestsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::ListPullRequestsError> for Error {
-    fn from(err: crate::error::ListPullRequestsError) -> Self {
-        match err {
-            crate::error::ListPullRequestsError::AuthorDoesNotExistException(inner) => {
-                Error::AuthorDoesNotExistException(inner)
-            }
-            crate::error::ListPullRequestsError::EncryptionIntegrityChecksFailedException(
-                inner,
-            ) => Error::EncryptionIntegrityChecksFailedException(inner),
-            crate::error::ListPullRequestsError::EncryptionKeyAccessDeniedException(inner) => {
-                Error::EncryptionKeyAccessDeniedException(inner)
-            }
-            crate::error::ListPullRequestsError::EncryptionKeyDisabledException(inner) => {
-                Error::EncryptionKeyDisabledException(inner)
-            }
-            crate::error::ListPullRequestsError::EncryptionKeyNotFoundException(inner) => {
-                Error::EncryptionKeyNotFoundException(inner)
-            }
-            crate::error::ListPullRequestsError::EncryptionKeyUnavailableException(inner) => {
-                Error::EncryptionKeyUnavailableException(inner)
-            }
-            crate::error::ListPullRequestsError::InvalidAuthorArnException(inner) => {
-                Error::InvalidAuthorArnException(inner)
-            }
-            crate::error::ListPullRequestsError::InvalidContinuationTokenException(inner) => {
-                Error::InvalidContinuationTokenException(inner)
-            }
-            crate::error::ListPullRequestsError::InvalidMaxResultsException(inner) => {
-                Error::InvalidMaxResultsException(inner)
-            }
-            crate::error::ListPullRequestsError::InvalidPullRequestStatusException(inner) => {
-                Error::InvalidPullRequestStatusException(inner)
-            }
-            crate::error::ListPullRequestsError::InvalidRepositoryNameException(inner) => {
-                Error::InvalidRepositoryNameException(inner)
-            }
-            crate::error::ListPullRequestsError::RepositoryDoesNotExistException(inner) => {
-                Error::RepositoryDoesNotExistException(inner)
-            }
-            crate::error::ListPullRequestsError::RepositoryNameRequiredException(inner) => {
-                Error::RepositoryNameRequiredException(inner)
-            }
-            crate::error::ListPullRequestsError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListRepositoriesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListRepositoriesError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::ListRepositoriesError> for Error {
-    fn from(err: crate::error::ListRepositoriesError) -> Self {
-        match err {
-            crate::error::ListRepositoriesError::InvalidContinuationTokenException(inner) => {
-                Error::InvalidContinuationTokenException(inner)
-            }
-            crate::error::ListRepositoriesError::InvalidOrderException(inner) => {
-                Error::InvalidOrderException(inner)
-            }
-            crate::error::ListRepositoriesError::InvalidSortByException(inner) => {
-                Error::InvalidSortByException(inner)
-            }
-            crate::error::ListRepositoriesError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_merge_commit::GetMergeCommitError::CommitDoesNotExistException(inner) => Error::CommitDoesNotExistException(inner),
+            crate::operation::get_merge_commit::GetMergeCommitError::CommitRequiredException(inner) => Error::CommitRequiredException(inner),
+            crate::operation::get_merge_commit::GetMergeCommitError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
+            crate::operation::get_merge_commit::GetMergeCommitError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
+            crate::operation::get_merge_commit::GetMergeCommitError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
+            crate::operation::get_merge_commit::GetMergeCommitError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
+            crate::operation::get_merge_commit::GetMergeCommitError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
+            crate::operation::get_merge_commit::GetMergeCommitError::InvalidCommitException(inner) => Error::InvalidCommitException(inner),
+            crate::operation::get_merge_commit::GetMergeCommitError::InvalidConflictDetailLevelException(inner) => Error::InvalidConflictDetailLevelException(inner),
+            crate::operation::get_merge_commit::GetMergeCommitError::InvalidConflictResolutionStrategyException(inner) => Error::InvalidConflictResolutionStrategyException(inner),
+            crate::operation::get_merge_commit::GetMergeCommitError::InvalidRepositoryNameException(inner) => Error::InvalidRepositoryNameException(inner),
+            crate::operation::get_merge_commit::GetMergeCommitError::RepositoryDoesNotExistException(inner) => Error::RepositoryDoesNotExistException(inner),
+            crate::operation::get_merge_commit::GetMergeCommitError::RepositoryNameRequiredException(inner) => Error::RepositoryNameRequiredException(inner),
+            crate::operation::get_merge_commit::GetMergeCommitError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
-            crate::error::ListRepositoriesForApprovalRuleTemplateError,
+            crate::operation::get_merge_conflicts::GetMergeConflictsError,
             R,
         >,
     > for Error
@@ -3343,7 +2426,7 @@ where
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::ListRepositoriesForApprovalRuleTemplateError,
+            crate::operation::get_merge_conflicts::GetMergeConflictsError,
             R,
         >,
     ) -> Self {
@@ -3362,445 +2445,248 @@ where
         }
     }
 }
-impl From<crate::error::ListRepositoriesForApprovalRuleTemplateError> for Error {
-    fn from(err: crate::error::ListRepositoriesForApprovalRuleTemplateError) -> Self {
+impl From<crate::operation::get_merge_conflicts::GetMergeConflictsError> for Error {
+    fn from(err: crate::operation::get_merge_conflicts::GetMergeConflictsError) -> Self {
         match err {
-            crate::error::ListRepositoriesForApprovalRuleTemplateError::ApprovalRuleTemplateDoesNotExistException(inner) => Error::ApprovalRuleTemplateDoesNotExistException(inner),
-            crate::error::ListRepositoriesForApprovalRuleTemplateError::ApprovalRuleTemplateNameRequiredException(inner) => Error::ApprovalRuleTemplateNameRequiredException(inner),
-            crate::error::ListRepositoriesForApprovalRuleTemplateError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
-            crate::error::ListRepositoriesForApprovalRuleTemplateError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
-            crate::error::ListRepositoriesForApprovalRuleTemplateError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
-            crate::error::ListRepositoriesForApprovalRuleTemplateError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
-            crate::error::ListRepositoriesForApprovalRuleTemplateError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
-            crate::error::ListRepositoriesForApprovalRuleTemplateError::InvalidApprovalRuleTemplateNameException(inner) => Error::InvalidApprovalRuleTemplateNameException(inner),
-            crate::error::ListRepositoriesForApprovalRuleTemplateError::InvalidContinuationTokenException(inner) => Error::InvalidContinuationTokenException(inner),
-            crate::error::ListRepositoriesForApprovalRuleTemplateError::InvalidMaxResultsException(inner) => Error::InvalidMaxResultsException(inner),
-            crate::error::ListRepositoriesForApprovalRuleTemplateError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::ListTagsForResourceError> for Error {
-    fn from(err: crate::error::ListTagsForResourceError) -> Self {
-        match err {
-            crate::error::ListTagsForResourceError::InvalidRepositoryNameException(inner) => {
-                Error::InvalidRepositoryNameException(inner)
-            }
-            crate::error::ListTagsForResourceError::InvalidResourceArnException(inner) => {
-                Error::InvalidResourceArnException(inner)
-            }
-            crate::error::ListTagsForResourceError::RepositoryDoesNotExistException(inner) => {
-                Error::RepositoryDoesNotExistException(inner)
-            }
-            crate::error::ListTagsForResourceError::ResourceArnRequiredException(inner) => {
-                Error::ResourceArnRequiredException(inner)
-            }
-            crate::error::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::MergeBranchesByFastForwardError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::MergeBranchesByFastForwardError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::MergeBranchesByFastForwardError> for Error {
-    fn from(err: crate::error::MergeBranchesByFastForwardError) -> Self {
-        match err {
-            crate::error::MergeBranchesByFastForwardError::BranchDoesNotExistException(inner) => Error::BranchDoesNotExistException(inner),
-            crate::error::MergeBranchesByFastForwardError::BranchNameIsTagNameException(inner) => Error::BranchNameIsTagNameException(inner),
-            crate::error::MergeBranchesByFastForwardError::BranchNameRequiredException(inner) => Error::BranchNameRequiredException(inner),
-            crate::error::MergeBranchesByFastForwardError::CommitDoesNotExistException(inner) => Error::CommitDoesNotExistException(inner),
-            crate::error::MergeBranchesByFastForwardError::CommitRequiredException(inner) => Error::CommitRequiredException(inner),
-            crate::error::MergeBranchesByFastForwardError::ConcurrentReferenceUpdateException(inner) => Error::ConcurrentReferenceUpdateException(inner),
-            crate::error::MergeBranchesByFastForwardError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
-            crate::error::MergeBranchesByFastForwardError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
-            crate::error::MergeBranchesByFastForwardError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
-            crate::error::MergeBranchesByFastForwardError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
-            crate::error::MergeBranchesByFastForwardError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
-            crate::error::MergeBranchesByFastForwardError::InvalidBranchNameException(inner) => Error::InvalidBranchNameException(inner),
-            crate::error::MergeBranchesByFastForwardError::InvalidCommitException(inner) => Error::InvalidCommitException(inner),
-            crate::error::MergeBranchesByFastForwardError::InvalidRepositoryNameException(inner) => Error::InvalidRepositoryNameException(inner),
-            crate::error::MergeBranchesByFastForwardError::InvalidTargetBranchException(inner) => Error::InvalidTargetBranchException(inner),
-            crate::error::MergeBranchesByFastForwardError::ManualMergeRequiredException(inner) => Error::ManualMergeRequiredException(inner),
-            crate::error::MergeBranchesByFastForwardError::RepositoryDoesNotExistException(inner) => Error::RepositoryDoesNotExistException(inner),
-            crate::error::MergeBranchesByFastForwardError::RepositoryNameRequiredException(inner) => Error::RepositoryNameRequiredException(inner),
-            crate::error::MergeBranchesByFastForwardError::TipsDivergenceExceededException(inner) => Error::TipsDivergenceExceededException(inner),
-            crate::error::MergeBranchesByFastForwardError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::MergeBranchesBySquashError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::MergeBranchesBySquashError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::MergeBranchesBySquashError> for Error {
-    fn from(err: crate::error::MergeBranchesBySquashError) -> Self {
-        match err {
-            crate::error::MergeBranchesBySquashError::BranchDoesNotExistException(inner) => Error::BranchDoesNotExistException(inner),
-            crate::error::MergeBranchesBySquashError::BranchNameIsTagNameException(inner) => Error::BranchNameIsTagNameException(inner),
-            crate::error::MergeBranchesBySquashError::BranchNameRequiredException(inner) => Error::BranchNameRequiredException(inner),
-            crate::error::MergeBranchesBySquashError::CommitDoesNotExistException(inner) => Error::CommitDoesNotExistException(inner),
-            crate::error::MergeBranchesBySquashError::CommitMessageLengthExceededException(inner) => Error::CommitMessageLengthExceededException(inner),
-            crate::error::MergeBranchesBySquashError::CommitRequiredException(inner) => Error::CommitRequiredException(inner),
-            crate::error::MergeBranchesBySquashError::ConcurrentReferenceUpdateException(inner) => Error::ConcurrentReferenceUpdateException(inner),
-            crate::error::MergeBranchesBySquashError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
-            crate::error::MergeBranchesBySquashError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
-            crate::error::MergeBranchesBySquashError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
-            crate::error::MergeBranchesBySquashError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
-            crate::error::MergeBranchesBySquashError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
-            crate::error::MergeBranchesBySquashError::FileContentSizeLimitExceededException(inner) => Error::FileContentSizeLimitExceededException(inner),
-            crate::error::MergeBranchesBySquashError::FileModeRequiredException(inner) => Error::FileModeRequiredException(inner),
-            crate::error::MergeBranchesBySquashError::FolderContentSizeLimitExceededException(inner) => Error::FolderContentSizeLimitExceededException(inner),
-            crate::error::MergeBranchesBySquashError::InvalidBranchNameException(inner) => Error::InvalidBranchNameException(inner),
-            crate::error::MergeBranchesBySquashError::InvalidCommitException(inner) => Error::InvalidCommitException(inner),
-            crate::error::MergeBranchesBySquashError::InvalidConflictDetailLevelException(inner) => Error::InvalidConflictDetailLevelException(inner),
-            crate::error::MergeBranchesBySquashError::InvalidConflictResolutionException(inner) => Error::InvalidConflictResolutionException(inner),
-            crate::error::MergeBranchesBySquashError::InvalidConflictResolutionStrategyException(inner) => Error::InvalidConflictResolutionStrategyException(inner),
-            crate::error::MergeBranchesBySquashError::InvalidEmailException(inner) => Error::InvalidEmailException(inner),
-            crate::error::MergeBranchesBySquashError::InvalidFileModeException(inner) => Error::InvalidFileModeException(inner),
-            crate::error::MergeBranchesBySquashError::InvalidPathException(inner) => Error::InvalidPathException(inner),
-            crate::error::MergeBranchesBySquashError::InvalidReplacementContentException(inner) => Error::InvalidReplacementContentException(inner),
-            crate::error::MergeBranchesBySquashError::InvalidReplacementTypeException(inner) => Error::InvalidReplacementTypeException(inner),
-            crate::error::MergeBranchesBySquashError::InvalidRepositoryNameException(inner) => Error::InvalidRepositoryNameException(inner),
-            crate::error::MergeBranchesBySquashError::InvalidTargetBranchException(inner) => Error::InvalidTargetBranchException(inner),
-            crate::error::MergeBranchesBySquashError::ManualMergeRequiredException(inner) => Error::ManualMergeRequiredException(inner),
-            crate::error::MergeBranchesBySquashError::MaximumConflictResolutionEntriesExceededException(inner) => Error::MaximumConflictResolutionEntriesExceededException(inner),
-            crate::error::MergeBranchesBySquashError::MaximumFileContentToLoadExceededException(inner) => Error::MaximumFileContentToLoadExceededException(inner),
-            crate::error::MergeBranchesBySquashError::MaximumItemsToCompareExceededException(inner) => Error::MaximumItemsToCompareExceededException(inner),
-            crate::error::MergeBranchesBySquashError::MultipleConflictResolutionEntriesException(inner) => Error::MultipleConflictResolutionEntriesException(inner),
-            crate::error::MergeBranchesBySquashError::NameLengthExceededException(inner) => Error::NameLengthExceededException(inner),
-            crate::error::MergeBranchesBySquashError::PathRequiredException(inner) => Error::PathRequiredException(inner),
-            crate::error::MergeBranchesBySquashError::ReplacementContentRequiredException(inner) => Error::ReplacementContentRequiredException(inner),
-            crate::error::MergeBranchesBySquashError::ReplacementTypeRequiredException(inner) => Error::ReplacementTypeRequiredException(inner),
-            crate::error::MergeBranchesBySquashError::RepositoryDoesNotExistException(inner) => Error::RepositoryDoesNotExistException(inner),
-            crate::error::MergeBranchesBySquashError::RepositoryNameRequiredException(inner) => Error::RepositoryNameRequiredException(inner),
-            crate::error::MergeBranchesBySquashError::TipsDivergenceExceededException(inner) => Error::TipsDivergenceExceededException(inner),
-            crate::error::MergeBranchesBySquashError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::MergeBranchesByThreeWayError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::MergeBranchesByThreeWayError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::MergeBranchesByThreeWayError> for Error {
-    fn from(err: crate::error::MergeBranchesByThreeWayError) -> Self {
-        match err {
-            crate::error::MergeBranchesByThreeWayError::BranchDoesNotExistException(inner) => Error::BranchDoesNotExistException(inner),
-            crate::error::MergeBranchesByThreeWayError::BranchNameIsTagNameException(inner) => Error::BranchNameIsTagNameException(inner),
-            crate::error::MergeBranchesByThreeWayError::BranchNameRequiredException(inner) => Error::BranchNameRequiredException(inner),
-            crate::error::MergeBranchesByThreeWayError::CommitDoesNotExistException(inner) => Error::CommitDoesNotExistException(inner),
-            crate::error::MergeBranchesByThreeWayError::CommitMessageLengthExceededException(inner) => Error::CommitMessageLengthExceededException(inner),
-            crate::error::MergeBranchesByThreeWayError::CommitRequiredException(inner) => Error::CommitRequiredException(inner),
-            crate::error::MergeBranchesByThreeWayError::ConcurrentReferenceUpdateException(inner) => Error::ConcurrentReferenceUpdateException(inner),
-            crate::error::MergeBranchesByThreeWayError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
-            crate::error::MergeBranchesByThreeWayError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
-            crate::error::MergeBranchesByThreeWayError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
-            crate::error::MergeBranchesByThreeWayError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
-            crate::error::MergeBranchesByThreeWayError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
-            crate::error::MergeBranchesByThreeWayError::FileContentSizeLimitExceededException(inner) => Error::FileContentSizeLimitExceededException(inner),
-            crate::error::MergeBranchesByThreeWayError::FileModeRequiredException(inner) => Error::FileModeRequiredException(inner),
-            crate::error::MergeBranchesByThreeWayError::FolderContentSizeLimitExceededException(inner) => Error::FolderContentSizeLimitExceededException(inner),
-            crate::error::MergeBranchesByThreeWayError::InvalidBranchNameException(inner) => Error::InvalidBranchNameException(inner),
-            crate::error::MergeBranchesByThreeWayError::InvalidCommitException(inner) => Error::InvalidCommitException(inner),
-            crate::error::MergeBranchesByThreeWayError::InvalidConflictDetailLevelException(inner) => Error::InvalidConflictDetailLevelException(inner),
-            crate::error::MergeBranchesByThreeWayError::InvalidConflictResolutionException(inner) => Error::InvalidConflictResolutionException(inner),
-            crate::error::MergeBranchesByThreeWayError::InvalidConflictResolutionStrategyException(inner) => Error::InvalidConflictResolutionStrategyException(inner),
-            crate::error::MergeBranchesByThreeWayError::InvalidEmailException(inner) => Error::InvalidEmailException(inner),
-            crate::error::MergeBranchesByThreeWayError::InvalidFileModeException(inner) => Error::InvalidFileModeException(inner),
-            crate::error::MergeBranchesByThreeWayError::InvalidPathException(inner) => Error::InvalidPathException(inner),
-            crate::error::MergeBranchesByThreeWayError::InvalidReplacementContentException(inner) => Error::InvalidReplacementContentException(inner),
-            crate::error::MergeBranchesByThreeWayError::InvalidReplacementTypeException(inner) => Error::InvalidReplacementTypeException(inner),
-            crate::error::MergeBranchesByThreeWayError::InvalidRepositoryNameException(inner) => Error::InvalidRepositoryNameException(inner),
-            crate::error::MergeBranchesByThreeWayError::InvalidTargetBranchException(inner) => Error::InvalidTargetBranchException(inner),
-            crate::error::MergeBranchesByThreeWayError::ManualMergeRequiredException(inner) => Error::ManualMergeRequiredException(inner),
-            crate::error::MergeBranchesByThreeWayError::MaximumConflictResolutionEntriesExceededException(inner) => Error::MaximumConflictResolutionEntriesExceededException(inner),
-            crate::error::MergeBranchesByThreeWayError::MaximumFileContentToLoadExceededException(inner) => Error::MaximumFileContentToLoadExceededException(inner),
-            crate::error::MergeBranchesByThreeWayError::MaximumItemsToCompareExceededException(inner) => Error::MaximumItemsToCompareExceededException(inner),
-            crate::error::MergeBranchesByThreeWayError::MultipleConflictResolutionEntriesException(inner) => Error::MultipleConflictResolutionEntriesException(inner),
-            crate::error::MergeBranchesByThreeWayError::NameLengthExceededException(inner) => Error::NameLengthExceededException(inner),
-            crate::error::MergeBranchesByThreeWayError::PathRequiredException(inner) => Error::PathRequiredException(inner),
-            crate::error::MergeBranchesByThreeWayError::ReplacementContentRequiredException(inner) => Error::ReplacementContentRequiredException(inner),
-            crate::error::MergeBranchesByThreeWayError::ReplacementTypeRequiredException(inner) => Error::ReplacementTypeRequiredException(inner),
-            crate::error::MergeBranchesByThreeWayError::RepositoryDoesNotExistException(inner) => Error::RepositoryDoesNotExistException(inner),
-            crate::error::MergeBranchesByThreeWayError::RepositoryNameRequiredException(inner) => Error::RepositoryNameRequiredException(inner),
-            crate::error::MergeBranchesByThreeWayError::TipsDivergenceExceededException(inner) => Error::TipsDivergenceExceededException(inner),
-            crate::error::MergeBranchesByThreeWayError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::MergePullRequestByFastForwardError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::MergePullRequestByFastForwardError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::MergePullRequestByFastForwardError> for Error {
-    fn from(err: crate::error::MergePullRequestByFastForwardError) -> Self {
-        match err {
-            crate::error::MergePullRequestByFastForwardError::ConcurrentReferenceUpdateException(inner) => Error::ConcurrentReferenceUpdateException(inner),
-            crate::error::MergePullRequestByFastForwardError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
-            crate::error::MergePullRequestByFastForwardError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
-            crate::error::MergePullRequestByFastForwardError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
-            crate::error::MergePullRequestByFastForwardError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
-            crate::error::MergePullRequestByFastForwardError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
-            crate::error::MergePullRequestByFastForwardError::InvalidCommitIdException(inner) => Error::InvalidCommitIdException(inner),
-            crate::error::MergePullRequestByFastForwardError::InvalidPullRequestIdException(inner) => Error::InvalidPullRequestIdException(inner),
-            crate::error::MergePullRequestByFastForwardError::InvalidRepositoryNameException(inner) => Error::InvalidRepositoryNameException(inner),
-            crate::error::MergePullRequestByFastForwardError::ManualMergeRequiredException(inner) => Error::ManualMergeRequiredException(inner),
-            crate::error::MergePullRequestByFastForwardError::PullRequestAlreadyClosedException(inner) => Error::PullRequestAlreadyClosedException(inner),
-            crate::error::MergePullRequestByFastForwardError::PullRequestApprovalRulesNotSatisfiedException(inner) => Error::PullRequestApprovalRulesNotSatisfiedException(inner),
-            crate::error::MergePullRequestByFastForwardError::PullRequestDoesNotExistException(inner) => Error::PullRequestDoesNotExistException(inner),
-            crate::error::MergePullRequestByFastForwardError::PullRequestIdRequiredException(inner) => Error::PullRequestIdRequiredException(inner),
-            crate::error::MergePullRequestByFastForwardError::ReferenceDoesNotExistException(inner) => Error::ReferenceDoesNotExistException(inner),
-            crate::error::MergePullRequestByFastForwardError::RepositoryDoesNotExistException(inner) => Error::RepositoryDoesNotExistException(inner),
-            crate::error::MergePullRequestByFastForwardError::RepositoryNameRequiredException(inner) => Error::RepositoryNameRequiredException(inner),
-            crate::error::MergePullRequestByFastForwardError::RepositoryNotAssociatedWithPullRequestException(inner) => Error::RepositoryNotAssociatedWithPullRequestException(inner),
-            crate::error::MergePullRequestByFastForwardError::TipOfSourceReferenceIsDifferentException(inner) => Error::TipOfSourceReferenceIsDifferentException(inner),
-            crate::error::MergePullRequestByFastForwardError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::MergePullRequestBySquashError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::MergePullRequestBySquashError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::MergePullRequestBySquashError> for Error {
-    fn from(err: crate::error::MergePullRequestBySquashError) -> Self {
-        match err {
-            crate::error::MergePullRequestBySquashError::CommitMessageLengthExceededException(inner) => Error::CommitMessageLengthExceededException(inner),
-            crate::error::MergePullRequestBySquashError::ConcurrentReferenceUpdateException(inner) => Error::ConcurrentReferenceUpdateException(inner),
-            crate::error::MergePullRequestBySquashError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
-            crate::error::MergePullRequestBySquashError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
-            crate::error::MergePullRequestBySquashError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
-            crate::error::MergePullRequestBySquashError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
-            crate::error::MergePullRequestBySquashError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
-            crate::error::MergePullRequestBySquashError::FileContentSizeLimitExceededException(inner) => Error::FileContentSizeLimitExceededException(inner),
-            crate::error::MergePullRequestBySquashError::FolderContentSizeLimitExceededException(inner) => Error::FolderContentSizeLimitExceededException(inner),
-            crate::error::MergePullRequestBySquashError::InvalidCommitIdException(inner) => Error::InvalidCommitIdException(inner),
-            crate::error::MergePullRequestBySquashError::InvalidConflictDetailLevelException(inner) => Error::InvalidConflictDetailLevelException(inner),
-            crate::error::MergePullRequestBySquashError::InvalidConflictResolutionException(inner) => Error::InvalidConflictResolutionException(inner),
-            crate::error::MergePullRequestBySquashError::InvalidConflictResolutionStrategyException(inner) => Error::InvalidConflictResolutionStrategyException(inner),
-            crate::error::MergePullRequestBySquashError::InvalidEmailException(inner) => Error::InvalidEmailException(inner),
-            crate::error::MergePullRequestBySquashError::InvalidFileModeException(inner) => Error::InvalidFileModeException(inner),
-            crate::error::MergePullRequestBySquashError::InvalidPathException(inner) => Error::InvalidPathException(inner),
-            crate::error::MergePullRequestBySquashError::InvalidPullRequestIdException(inner) => Error::InvalidPullRequestIdException(inner),
-            crate::error::MergePullRequestBySquashError::InvalidReplacementContentException(inner) => Error::InvalidReplacementContentException(inner),
-            crate::error::MergePullRequestBySquashError::InvalidReplacementTypeException(inner) => Error::InvalidReplacementTypeException(inner),
-            crate::error::MergePullRequestBySquashError::InvalidRepositoryNameException(inner) => Error::InvalidRepositoryNameException(inner),
-            crate::error::MergePullRequestBySquashError::ManualMergeRequiredException(inner) => Error::ManualMergeRequiredException(inner),
-            crate::error::MergePullRequestBySquashError::MaximumConflictResolutionEntriesExceededException(inner) => Error::MaximumConflictResolutionEntriesExceededException(inner),
-            crate::error::MergePullRequestBySquashError::MaximumFileContentToLoadExceededException(inner) => Error::MaximumFileContentToLoadExceededException(inner),
-            crate::error::MergePullRequestBySquashError::MaximumItemsToCompareExceededException(inner) => Error::MaximumItemsToCompareExceededException(inner),
-            crate::error::MergePullRequestBySquashError::MultipleConflictResolutionEntriesException(inner) => Error::MultipleConflictResolutionEntriesException(inner),
-            crate::error::MergePullRequestBySquashError::NameLengthExceededException(inner) => Error::NameLengthExceededException(inner),
-            crate::error::MergePullRequestBySquashError::PathRequiredException(inner) => Error::PathRequiredException(inner),
-            crate::error::MergePullRequestBySquashError::PullRequestAlreadyClosedException(inner) => Error::PullRequestAlreadyClosedException(inner),
-            crate::error::MergePullRequestBySquashError::PullRequestApprovalRulesNotSatisfiedException(inner) => Error::PullRequestApprovalRulesNotSatisfiedException(inner),
-            crate::error::MergePullRequestBySquashError::PullRequestDoesNotExistException(inner) => Error::PullRequestDoesNotExistException(inner),
-            crate::error::MergePullRequestBySquashError::PullRequestIdRequiredException(inner) => Error::PullRequestIdRequiredException(inner),
-            crate::error::MergePullRequestBySquashError::ReplacementContentRequiredException(inner) => Error::ReplacementContentRequiredException(inner),
-            crate::error::MergePullRequestBySquashError::ReplacementTypeRequiredException(inner) => Error::ReplacementTypeRequiredException(inner),
-            crate::error::MergePullRequestBySquashError::RepositoryDoesNotExistException(inner) => Error::RepositoryDoesNotExistException(inner),
-            crate::error::MergePullRequestBySquashError::RepositoryNameRequiredException(inner) => Error::RepositoryNameRequiredException(inner),
-            crate::error::MergePullRequestBySquashError::RepositoryNotAssociatedWithPullRequestException(inner) => Error::RepositoryNotAssociatedWithPullRequestException(inner),
-            crate::error::MergePullRequestBySquashError::TipOfSourceReferenceIsDifferentException(inner) => Error::TipOfSourceReferenceIsDifferentException(inner),
-            crate::error::MergePullRequestBySquashError::TipsDivergenceExceededException(inner) => Error::TipsDivergenceExceededException(inner),
-            crate::error::MergePullRequestBySquashError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::MergePullRequestByThreeWayError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::MergePullRequestByThreeWayError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::MergePullRequestByThreeWayError> for Error {
-    fn from(err: crate::error::MergePullRequestByThreeWayError) -> Self {
-        match err {
-            crate::error::MergePullRequestByThreeWayError::CommitMessageLengthExceededException(inner) => Error::CommitMessageLengthExceededException(inner),
-            crate::error::MergePullRequestByThreeWayError::ConcurrentReferenceUpdateException(inner) => Error::ConcurrentReferenceUpdateException(inner),
-            crate::error::MergePullRequestByThreeWayError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
-            crate::error::MergePullRequestByThreeWayError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
-            crate::error::MergePullRequestByThreeWayError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
-            crate::error::MergePullRequestByThreeWayError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
-            crate::error::MergePullRequestByThreeWayError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
-            crate::error::MergePullRequestByThreeWayError::FileContentSizeLimitExceededException(inner) => Error::FileContentSizeLimitExceededException(inner),
-            crate::error::MergePullRequestByThreeWayError::FolderContentSizeLimitExceededException(inner) => Error::FolderContentSizeLimitExceededException(inner),
-            crate::error::MergePullRequestByThreeWayError::InvalidCommitIdException(inner) => Error::InvalidCommitIdException(inner),
-            crate::error::MergePullRequestByThreeWayError::InvalidConflictDetailLevelException(inner) => Error::InvalidConflictDetailLevelException(inner),
-            crate::error::MergePullRequestByThreeWayError::InvalidConflictResolutionException(inner) => Error::InvalidConflictResolutionException(inner),
-            crate::error::MergePullRequestByThreeWayError::InvalidConflictResolutionStrategyException(inner) => Error::InvalidConflictResolutionStrategyException(inner),
-            crate::error::MergePullRequestByThreeWayError::InvalidEmailException(inner) => Error::InvalidEmailException(inner),
-            crate::error::MergePullRequestByThreeWayError::InvalidFileModeException(inner) => Error::InvalidFileModeException(inner),
-            crate::error::MergePullRequestByThreeWayError::InvalidPathException(inner) => Error::InvalidPathException(inner),
-            crate::error::MergePullRequestByThreeWayError::InvalidPullRequestIdException(inner) => Error::InvalidPullRequestIdException(inner),
-            crate::error::MergePullRequestByThreeWayError::InvalidReplacementContentException(inner) => Error::InvalidReplacementContentException(inner),
-            crate::error::MergePullRequestByThreeWayError::InvalidReplacementTypeException(inner) => Error::InvalidReplacementTypeException(inner),
-            crate::error::MergePullRequestByThreeWayError::InvalidRepositoryNameException(inner) => Error::InvalidRepositoryNameException(inner),
-            crate::error::MergePullRequestByThreeWayError::ManualMergeRequiredException(inner) => Error::ManualMergeRequiredException(inner),
-            crate::error::MergePullRequestByThreeWayError::MaximumConflictResolutionEntriesExceededException(inner) => Error::MaximumConflictResolutionEntriesExceededException(inner),
-            crate::error::MergePullRequestByThreeWayError::MaximumFileContentToLoadExceededException(inner) => Error::MaximumFileContentToLoadExceededException(inner),
-            crate::error::MergePullRequestByThreeWayError::MaximumItemsToCompareExceededException(inner) => Error::MaximumItemsToCompareExceededException(inner),
-            crate::error::MergePullRequestByThreeWayError::MultipleConflictResolutionEntriesException(inner) => Error::MultipleConflictResolutionEntriesException(inner),
-            crate::error::MergePullRequestByThreeWayError::NameLengthExceededException(inner) => Error::NameLengthExceededException(inner),
-            crate::error::MergePullRequestByThreeWayError::PathRequiredException(inner) => Error::PathRequiredException(inner),
-            crate::error::MergePullRequestByThreeWayError::PullRequestAlreadyClosedException(inner) => Error::PullRequestAlreadyClosedException(inner),
-            crate::error::MergePullRequestByThreeWayError::PullRequestApprovalRulesNotSatisfiedException(inner) => Error::PullRequestApprovalRulesNotSatisfiedException(inner),
-            crate::error::MergePullRequestByThreeWayError::PullRequestDoesNotExistException(inner) => Error::PullRequestDoesNotExistException(inner),
-            crate::error::MergePullRequestByThreeWayError::PullRequestIdRequiredException(inner) => Error::PullRequestIdRequiredException(inner),
-            crate::error::MergePullRequestByThreeWayError::ReplacementContentRequiredException(inner) => Error::ReplacementContentRequiredException(inner),
-            crate::error::MergePullRequestByThreeWayError::ReplacementTypeRequiredException(inner) => Error::ReplacementTypeRequiredException(inner),
-            crate::error::MergePullRequestByThreeWayError::RepositoryDoesNotExistException(inner) => Error::RepositoryDoesNotExistException(inner),
-            crate::error::MergePullRequestByThreeWayError::RepositoryNameRequiredException(inner) => Error::RepositoryNameRequiredException(inner),
-            crate::error::MergePullRequestByThreeWayError::RepositoryNotAssociatedWithPullRequestException(inner) => Error::RepositoryNotAssociatedWithPullRequestException(inner),
-            crate::error::MergePullRequestByThreeWayError::TipOfSourceReferenceIsDifferentException(inner) => Error::TipOfSourceReferenceIsDifferentException(inner),
-            crate::error::MergePullRequestByThreeWayError::TipsDivergenceExceededException(inner) => Error::TipsDivergenceExceededException(inner),
-            crate::error::MergePullRequestByThreeWayError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_merge_conflicts::GetMergeConflictsError::CommitDoesNotExistException(inner) => Error::CommitDoesNotExistException(inner),
+            crate::operation::get_merge_conflicts::GetMergeConflictsError::CommitRequiredException(inner) => Error::CommitRequiredException(inner),
+            crate::operation::get_merge_conflicts::GetMergeConflictsError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
+            crate::operation::get_merge_conflicts::GetMergeConflictsError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
+            crate::operation::get_merge_conflicts::GetMergeConflictsError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
+            crate::operation::get_merge_conflicts::GetMergeConflictsError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
+            crate::operation::get_merge_conflicts::GetMergeConflictsError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
+            crate::operation::get_merge_conflicts::GetMergeConflictsError::InvalidCommitException(inner) => Error::InvalidCommitException(inner),
+            crate::operation::get_merge_conflicts::GetMergeConflictsError::InvalidConflictDetailLevelException(inner) => Error::InvalidConflictDetailLevelException(inner),
+            crate::operation::get_merge_conflicts::GetMergeConflictsError::InvalidConflictResolutionStrategyException(inner) => Error::InvalidConflictResolutionStrategyException(inner),
+            crate::operation::get_merge_conflicts::GetMergeConflictsError::InvalidContinuationTokenException(inner) => Error::InvalidContinuationTokenException(inner),
+            crate::operation::get_merge_conflicts::GetMergeConflictsError::InvalidDestinationCommitSpecifierException(inner) => Error::InvalidDestinationCommitSpecifierException(inner),
+            crate::operation::get_merge_conflicts::GetMergeConflictsError::InvalidMaxConflictFilesException(inner) => Error::InvalidMaxConflictFilesException(inner),
+            crate::operation::get_merge_conflicts::GetMergeConflictsError::InvalidMergeOptionException(inner) => Error::InvalidMergeOptionException(inner),
+            crate::operation::get_merge_conflicts::GetMergeConflictsError::InvalidRepositoryNameException(inner) => Error::InvalidRepositoryNameException(inner),
+            crate::operation::get_merge_conflicts::GetMergeConflictsError::InvalidSourceCommitSpecifierException(inner) => Error::InvalidSourceCommitSpecifierException(inner),
+            crate::operation::get_merge_conflicts::GetMergeConflictsError::MaximumFileContentToLoadExceededException(inner) => Error::MaximumFileContentToLoadExceededException(inner),
+            crate::operation::get_merge_conflicts::GetMergeConflictsError::MaximumItemsToCompareExceededException(inner) => Error::MaximumItemsToCompareExceededException(inner),
+            crate::operation::get_merge_conflicts::GetMergeConflictsError::MergeOptionRequiredException(inner) => Error::MergeOptionRequiredException(inner),
+            crate::operation::get_merge_conflicts::GetMergeConflictsError::RepositoryDoesNotExistException(inner) => Error::RepositoryDoesNotExistException(inner),
+            crate::operation::get_merge_conflicts::GetMergeConflictsError::RepositoryNameRequiredException(inner) => Error::RepositoryNameRequiredException(inner),
+            crate::operation::get_merge_conflicts::GetMergeConflictsError::TipsDivergenceExceededException(inner) => Error::TipsDivergenceExceededException(inner),
+            crate::operation::get_merge_conflicts::GetMergeConflictsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::OverridePullRequestApprovalRulesError, R>>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_merge_options::GetMergeOptionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_merge_options::GetMergeOptionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_merge_options::GetMergeOptionsError> for Error {
+    fn from(err: crate::operation::get_merge_options::GetMergeOptionsError) -> Self {
+        match err {
+            crate::operation::get_merge_options::GetMergeOptionsError::CommitDoesNotExistException(inner) => Error::CommitDoesNotExistException(inner),
+            crate::operation::get_merge_options::GetMergeOptionsError::CommitRequiredException(inner) => Error::CommitRequiredException(inner),
+            crate::operation::get_merge_options::GetMergeOptionsError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
+            crate::operation::get_merge_options::GetMergeOptionsError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
+            crate::operation::get_merge_options::GetMergeOptionsError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
+            crate::operation::get_merge_options::GetMergeOptionsError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
+            crate::operation::get_merge_options::GetMergeOptionsError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
+            crate::operation::get_merge_options::GetMergeOptionsError::InvalidCommitException(inner) => Error::InvalidCommitException(inner),
+            crate::operation::get_merge_options::GetMergeOptionsError::InvalidConflictDetailLevelException(inner) => Error::InvalidConflictDetailLevelException(inner),
+            crate::operation::get_merge_options::GetMergeOptionsError::InvalidConflictResolutionStrategyException(inner) => Error::InvalidConflictResolutionStrategyException(inner),
+            crate::operation::get_merge_options::GetMergeOptionsError::InvalidRepositoryNameException(inner) => Error::InvalidRepositoryNameException(inner),
+            crate::operation::get_merge_options::GetMergeOptionsError::MaximumFileContentToLoadExceededException(inner) => Error::MaximumFileContentToLoadExceededException(inner),
+            crate::operation::get_merge_options::GetMergeOptionsError::MaximumItemsToCompareExceededException(inner) => Error::MaximumItemsToCompareExceededException(inner),
+            crate::operation::get_merge_options::GetMergeOptionsError::RepositoryDoesNotExistException(inner) => Error::RepositoryDoesNotExistException(inner),
+            crate::operation::get_merge_options::GetMergeOptionsError::RepositoryNameRequiredException(inner) => Error::RepositoryNameRequiredException(inner),
+            crate::operation::get_merge_options::GetMergeOptionsError::TipsDivergenceExceededException(inner) => Error::TipsDivergenceExceededException(inner),
+            crate::operation::get_merge_options::GetMergeOptionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_pull_request::GetPullRequestError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_pull_request::GetPullRequestError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_pull_request::GetPullRequestError> for Error {
+    fn from(err: crate::operation::get_pull_request::GetPullRequestError) -> Self {
+        match err {
+            crate::operation::get_pull_request::GetPullRequestError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
+            crate::operation::get_pull_request::GetPullRequestError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
+            crate::operation::get_pull_request::GetPullRequestError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
+            crate::operation::get_pull_request::GetPullRequestError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
+            crate::operation::get_pull_request::GetPullRequestError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
+            crate::operation::get_pull_request::GetPullRequestError::InvalidPullRequestIdException(inner) => Error::InvalidPullRequestIdException(inner),
+            crate::operation::get_pull_request::GetPullRequestError::PullRequestDoesNotExistException(inner) => Error::PullRequestDoesNotExistException(inner),
+            crate::operation::get_pull_request::GetPullRequestError::PullRequestIdRequiredException(inner) => Error::PullRequestIdRequiredException(inner),
+            crate::operation::get_pull_request::GetPullRequestError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_pull_request_approval_states::GetPullRequestApprovalStatesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_pull_request_approval_states::GetPullRequestApprovalStatesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_pull_request_approval_states::GetPullRequestApprovalStatesError>
+    for Error
+{
+    fn from(
+        err: crate::operation::get_pull_request_approval_states::GetPullRequestApprovalStatesError,
+    ) -> Self {
+        match err {
+            crate::operation::get_pull_request_approval_states::GetPullRequestApprovalStatesError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
+            crate::operation::get_pull_request_approval_states::GetPullRequestApprovalStatesError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
+            crate::operation::get_pull_request_approval_states::GetPullRequestApprovalStatesError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
+            crate::operation::get_pull_request_approval_states::GetPullRequestApprovalStatesError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
+            crate::operation::get_pull_request_approval_states::GetPullRequestApprovalStatesError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
+            crate::operation::get_pull_request_approval_states::GetPullRequestApprovalStatesError::InvalidPullRequestIdException(inner) => Error::InvalidPullRequestIdException(inner),
+            crate::operation::get_pull_request_approval_states::GetPullRequestApprovalStatesError::InvalidRevisionIdException(inner) => Error::InvalidRevisionIdException(inner),
+            crate::operation::get_pull_request_approval_states::GetPullRequestApprovalStatesError::PullRequestDoesNotExistException(inner) => Error::PullRequestDoesNotExistException(inner),
+            crate::operation::get_pull_request_approval_states::GetPullRequestApprovalStatesError::PullRequestIdRequiredException(inner) => Error::PullRequestIdRequiredException(inner),
+            crate::operation::get_pull_request_approval_states::GetPullRequestApprovalStatesError::RevisionIdRequiredException(inner) => Error::RevisionIdRequiredException(inner),
+            crate::operation::get_pull_request_approval_states::GetPullRequestApprovalStatesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_pull_request_override_state::GetPullRequestOverrideStateError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_pull_request_override_state::GetPullRequestOverrideStateError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_pull_request_override_state::GetPullRequestOverrideStateError>
+    for Error
+{
+    fn from(
+        err: crate::operation::get_pull_request_override_state::GetPullRequestOverrideStateError,
+    ) -> Self {
+        match err {
+            crate::operation::get_pull_request_override_state::GetPullRequestOverrideStateError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
+            crate::operation::get_pull_request_override_state::GetPullRequestOverrideStateError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
+            crate::operation::get_pull_request_override_state::GetPullRequestOverrideStateError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
+            crate::operation::get_pull_request_override_state::GetPullRequestOverrideStateError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
+            crate::operation::get_pull_request_override_state::GetPullRequestOverrideStateError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
+            crate::operation::get_pull_request_override_state::GetPullRequestOverrideStateError::InvalidPullRequestIdException(inner) => Error::InvalidPullRequestIdException(inner),
+            crate::operation::get_pull_request_override_state::GetPullRequestOverrideStateError::InvalidRevisionIdException(inner) => Error::InvalidRevisionIdException(inner),
+            crate::operation::get_pull_request_override_state::GetPullRequestOverrideStateError::PullRequestDoesNotExistException(inner) => Error::PullRequestDoesNotExistException(inner),
+            crate::operation::get_pull_request_override_state::GetPullRequestOverrideStateError::PullRequestIdRequiredException(inner) => Error::PullRequestIdRequiredException(inner),
+            crate::operation::get_pull_request_override_state::GetPullRequestOverrideStateError::RevisionIdRequiredException(inner) => Error::RevisionIdRequiredException(inner),
+            crate::operation::get_pull_request_override_state::GetPullRequestOverrideStateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::get_repository::GetRepositoryError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::OverridePullRequestApprovalRulesError,
+            crate::operation::get_repository::GetRepositoryError,
             R,
         >,
     ) -> Self {
@@ -3819,35 +2705,152 @@ where
         }
     }
 }
-impl From<crate::error::OverridePullRequestApprovalRulesError> for Error {
-    fn from(err: crate::error::OverridePullRequestApprovalRulesError) -> Self {
+impl From<crate::operation::get_repository::GetRepositoryError> for Error {
+    fn from(err: crate::operation::get_repository::GetRepositoryError) -> Self {
         match err {
-            crate::error::OverridePullRequestApprovalRulesError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
-            crate::error::OverridePullRequestApprovalRulesError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
-            crate::error::OverridePullRequestApprovalRulesError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
-            crate::error::OverridePullRequestApprovalRulesError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
-            crate::error::OverridePullRequestApprovalRulesError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
-            crate::error::OverridePullRequestApprovalRulesError::InvalidOverrideStatusException(inner) => Error::InvalidOverrideStatusException(inner),
-            crate::error::OverridePullRequestApprovalRulesError::InvalidPullRequestIdException(inner) => Error::InvalidPullRequestIdException(inner),
-            crate::error::OverridePullRequestApprovalRulesError::InvalidRevisionIdException(inner) => Error::InvalidRevisionIdException(inner),
-            crate::error::OverridePullRequestApprovalRulesError::OverrideAlreadySetException(inner) => Error::OverrideAlreadySetException(inner),
-            crate::error::OverridePullRequestApprovalRulesError::OverrideStatusRequiredException(inner) => Error::OverrideStatusRequiredException(inner),
-            crate::error::OverridePullRequestApprovalRulesError::PullRequestAlreadyClosedException(inner) => Error::PullRequestAlreadyClosedException(inner),
-            crate::error::OverridePullRequestApprovalRulesError::PullRequestDoesNotExistException(inner) => Error::PullRequestDoesNotExistException(inner),
-            crate::error::OverridePullRequestApprovalRulesError::PullRequestIdRequiredException(inner) => Error::PullRequestIdRequiredException(inner),
-            crate::error::OverridePullRequestApprovalRulesError::RevisionIdRequiredException(inner) => Error::RevisionIdRequiredException(inner),
-            crate::error::OverridePullRequestApprovalRulesError::RevisionNotCurrentException(inner) => Error::RevisionNotCurrentException(inner),
-            crate::error::OverridePullRequestApprovalRulesError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_repository::GetRepositoryError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
+            crate::operation::get_repository::GetRepositoryError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
+            crate::operation::get_repository::GetRepositoryError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
+            crate::operation::get_repository::GetRepositoryError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
+            crate::operation::get_repository::GetRepositoryError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
+            crate::operation::get_repository::GetRepositoryError::InvalidRepositoryNameException(inner) => Error::InvalidRepositoryNameException(inner),
+            crate::operation::get_repository::GetRepositoryError::RepositoryDoesNotExistException(inner) => Error::RepositoryDoesNotExistException(inner),
+            crate::operation::get_repository::GetRepositoryError::RepositoryNameRequiredException(inner) => Error::RepositoryNameRequiredException(inner),
+            crate::operation::get_repository::GetRepositoryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PostCommentForComparedCommitError, R>>
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_repository_triggers::GetRepositoryTriggersError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_repository_triggers::GetRepositoryTriggersError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_repository_triggers::GetRepositoryTriggersError> for Error {
+    fn from(err: crate::operation::get_repository_triggers::GetRepositoryTriggersError) -> Self {
+        match err {
+            crate::operation::get_repository_triggers::GetRepositoryTriggersError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
+            crate::operation::get_repository_triggers::GetRepositoryTriggersError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
+            crate::operation::get_repository_triggers::GetRepositoryTriggersError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
+            crate::operation::get_repository_triggers::GetRepositoryTriggersError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
+            crate::operation::get_repository_triggers::GetRepositoryTriggersError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
+            crate::operation::get_repository_triggers::GetRepositoryTriggersError::InvalidRepositoryNameException(inner) => Error::InvalidRepositoryNameException(inner),
+            crate::operation::get_repository_triggers::GetRepositoryTriggersError::RepositoryDoesNotExistException(inner) => Error::RepositoryDoesNotExistException(inner),
+            crate::operation::get_repository_triggers::GetRepositoryTriggersError::RepositoryNameRequiredException(inner) => Error::RepositoryNameRequiredException(inner),
+            crate::operation::get_repository_triggers::GetRepositoryTriggersError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_approval_rule_templates::ListApprovalRuleTemplatesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_approval_rule_templates::ListApprovalRuleTemplatesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_approval_rule_templates::ListApprovalRuleTemplatesError>
+    for Error
+{
+    fn from(
+        err: crate::operation::list_approval_rule_templates::ListApprovalRuleTemplatesError,
+    ) -> Self {
+        match err {
+            crate::operation::list_approval_rule_templates::ListApprovalRuleTemplatesError::InvalidContinuationTokenException(inner) => Error::InvalidContinuationTokenException(inner),
+            crate::operation::list_approval_rule_templates::ListApprovalRuleTemplatesError::InvalidMaxResultsException(inner) => Error::InvalidMaxResultsException(inner),
+            crate::operation::list_approval_rule_templates::ListApprovalRuleTemplatesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_associated_approval_rule_templates_for_repository::ListAssociatedApprovalRuleTemplatesForRepositoryError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_associated_approval_rule_templates_for_repository::ListAssociatedApprovalRuleTemplatesForRepositoryError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::list_associated_approval_rule_templates_for_repository::ListAssociatedApprovalRuleTemplatesForRepositoryError> for Error {
+    fn from(err: crate::operation::list_associated_approval_rule_templates_for_repository::ListAssociatedApprovalRuleTemplatesForRepositoryError) -> Self {
+        match err {
+            crate::operation::list_associated_approval_rule_templates_for_repository::ListAssociatedApprovalRuleTemplatesForRepositoryError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
+            crate::operation::list_associated_approval_rule_templates_for_repository::ListAssociatedApprovalRuleTemplatesForRepositoryError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
+            crate::operation::list_associated_approval_rule_templates_for_repository::ListAssociatedApprovalRuleTemplatesForRepositoryError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
+            crate::operation::list_associated_approval_rule_templates_for_repository::ListAssociatedApprovalRuleTemplatesForRepositoryError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
+            crate::operation::list_associated_approval_rule_templates_for_repository::ListAssociatedApprovalRuleTemplatesForRepositoryError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
+            crate::operation::list_associated_approval_rule_templates_for_repository::ListAssociatedApprovalRuleTemplatesForRepositoryError::InvalidContinuationTokenException(inner) => Error::InvalidContinuationTokenException(inner),
+            crate::operation::list_associated_approval_rule_templates_for_repository::ListAssociatedApprovalRuleTemplatesForRepositoryError::InvalidMaxResultsException(inner) => Error::InvalidMaxResultsException(inner),
+            crate::operation::list_associated_approval_rule_templates_for_repository::ListAssociatedApprovalRuleTemplatesForRepositoryError::InvalidRepositoryNameException(inner) => Error::InvalidRepositoryNameException(inner),
+            crate::operation::list_associated_approval_rule_templates_for_repository::ListAssociatedApprovalRuleTemplatesForRepositoryError::RepositoryDoesNotExistException(inner) => Error::RepositoryDoesNotExistException(inner),
+            crate::operation::list_associated_approval_rule_templates_for_repository::ListAssociatedApprovalRuleTemplatesForRepositoryError::RepositoryNameRequiredException(inner) => Error::RepositoryNameRequiredException(inner),
+            crate::operation::list_associated_approval_rule_templates_for_repository::ListAssociatedApprovalRuleTemplatesForRepositoryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::list_branches::ListBranchesError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::PostCommentForComparedCommitError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_branches::ListBranchesError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -3864,43 +2867,871 @@ where
         }
     }
 }
-impl From<crate::error::PostCommentForComparedCommitError> for Error {
-    fn from(err: crate::error::PostCommentForComparedCommitError) -> Self {
+impl From<crate::operation::list_branches::ListBranchesError> for Error {
+    fn from(err: crate::operation::list_branches::ListBranchesError) -> Self {
         match err {
-            crate::error::PostCommentForComparedCommitError::BeforeCommitIdAndAfterCommitIdAreSameException(inner) => Error::BeforeCommitIdAndAfterCommitIdAreSameException(inner),
-            crate::error::PostCommentForComparedCommitError::ClientRequestTokenRequiredException(inner) => Error::ClientRequestTokenRequiredException(inner),
-            crate::error::PostCommentForComparedCommitError::CommentContentRequiredException(inner) => Error::CommentContentRequiredException(inner),
-            crate::error::PostCommentForComparedCommitError::CommentContentSizeLimitExceededException(inner) => Error::CommentContentSizeLimitExceededException(inner),
-            crate::error::PostCommentForComparedCommitError::CommitDoesNotExistException(inner) => Error::CommitDoesNotExistException(inner),
-            crate::error::PostCommentForComparedCommitError::CommitIdRequiredException(inner) => Error::CommitIdRequiredException(inner),
-            crate::error::PostCommentForComparedCommitError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
-            crate::error::PostCommentForComparedCommitError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
-            crate::error::PostCommentForComparedCommitError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
-            crate::error::PostCommentForComparedCommitError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
-            crate::error::PostCommentForComparedCommitError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
-            crate::error::PostCommentForComparedCommitError::IdempotencyParameterMismatchException(inner) => Error::IdempotencyParameterMismatchException(inner),
-            crate::error::PostCommentForComparedCommitError::InvalidClientRequestTokenException(inner) => Error::InvalidClientRequestTokenException(inner),
-            crate::error::PostCommentForComparedCommitError::InvalidCommitIdException(inner) => Error::InvalidCommitIdException(inner),
-            crate::error::PostCommentForComparedCommitError::InvalidFileLocationException(inner) => Error::InvalidFileLocationException(inner),
-            crate::error::PostCommentForComparedCommitError::InvalidFilePositionException(inner) => Error::InvalidFilePositionException(inner),
-            crate::error::PostCommentForComparedCommitError::InvalidPathException(inner) => Error::InvalidPathException(inner),
-            crate::error::PostCommentForComparedCommitError::InvalidRelativeFileVersionEnumException(inner) => Error::InvalidRelativeFileVersionEnumException(inner),
-            crate::error::PostCommentForComparedCommitError::InvalidRepositoryNameException(inner) => Error::InvalidRepositoryNameException(inner),
-            crate::error::PostCommentForComparedCommitError::PathDoesNotExistException(inner) => Error::PathDoesNotExistException(inner),
-            crate::error::PostCommentForComparedCommitError::PathRequiredException(inner) => Error::PathRequiredException(inner),
-            crate::error::PostCommentForComparedCommitError::RepositoryDoesNotExistException(inner) => Error::RepositoryDoesNotExistException(inner),
-            crate::error::PostCommentForComparedCommitError::RepositoryNameRequiredException(inner) => Error::RepositoryNameRequiredException(inner),
-            crate::error::PostCommentForComparedCommitError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_branches::ListBranchesError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
+            crate::operation::list_branches::ListBranchesError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
+            crate::operation::list_branches::ListBranchesError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
+            crate::operation::list_branches::ListBranchesError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
+            crate::operation::list_branches::ListBranchesError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
+            crate::operation::list_branches::ListBranchesError::InvalidContinuationTokenException(inner) => Error::InvalidContinuationTokenException(inner),
+            crate::operation::list_branches::ListBranchesError::InvalidRepositoryNameException(inner) => Error::InvalidRepositoryNameException(inner),
+            crate::operation::list_branches::ListBranchesError::RepositoryDoesNotExistException(inner) => Error::RepositoryDoesNotExistException(inner),
+            crate::operation::list_branches::ListBranchesError::RepositoryNameRequiredException(inner) => Error::RepositoryNameRequiredException(inner),
+            crate::operation::list_branches::ListBranchesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PostCommentForPullRequestError, R>>
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_pull_requests::ListPullRequestsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_pull_requests::ListPullRequestsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_pull_requests::ListPullRequestsError> for Error {
+    fn from(err: crate::operation::list_pull_requests::ListPullRequestsError) -> Self {
+        match err {
+            crate::operation::list_pull_requests::ListPullRequestsError::AuthorDoesNotExistException(inner) => Error::AuthorDoesNotExistException(inner),
+            crate::operation::list_pull_requests::ListPullRequestsError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
+            crate::operation::list_pull_requests::ListPullRequestsError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
+            crate::operation::list_pull_requests::ListPullRequestsError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
+            crate::operation::list_pull_requests::ListPullRequestsError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
+            crate::operation::list_pull_requests::ListPullRequestsError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
+            crate::operation::list_pull_requests::ListPullRequestsError::InvalidAuthorArnException(inner) => Error::InvalidAuthorArnException(inner),
+            crate::operation::list_pull_requests::ListPullRequestsError::InvalidContinuationTokenException(inner) => Error::InvalidContinuationTokenException(inner),
+            crate::operation::list_pull_requests::ListPullRequestsError::InvalidMaxResultsException(inner) => Error::InvalidMaxResultsException(inner),
+            crate::operation::list_pull_requests::ListPullRequestsError::InvalidPullRequestStatusException(inner) => Error::InvalidPullRequestStatusException(inner),
+            crate::operation::list_pull_requests::ListPullRequestsError::InvalidRepositoryNameException(inner) => Error::InvalidRepositoryNameException(inner),
+            crate::operation::list_pull_requests::ListPullRequestsError::RepositoryDoesNotExistException(inner) => Error::RepositoryDoesNotExistException(inner),
+            crate::operation::list_pull_requests::ListPullRequestsError::RepositoryNameRequiredException(inner) => Error::RepositoryNameRequiredException(inner),
+            crate::operation::list_pull_requests::ListPullRequestsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_repositories::ListRepositoriesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_repositories::ListRepositoriesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_repositories::ListRepositoriesError> for Error {
+    fn from(err: crate::operation::list_repositories::ListRepositoriesError) -> Self {
+        match err {
+            crate::operation::list_repositories::ListRepositoriesError::InvalidContinuationTokenException(inner) => Error::InvalidContinuationTokenException(inner),
+            crate::operation::list_repositories::ListRepositoriesError::InvalidOrderException(inner) => Error::InvalidOrderException(inner),
+            crate::operation::list_repositories::ListRepositoriesError::InvalidSortByException(inner) => Error::InvalidSortByException(inner),
+            crate::operation::list_repositories::ListRepositoriesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_repositories_for_approval_rule_template::ListRepositoriesForApprovalRuleTemplateError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_repositories_for_approval_rule_template::ListRepositoriesForApprovalRuleTemplateError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::list_repositories_for_approval_rule_template::ListRepositoriesForApprovalRuleTemplateError> for Error {
+    fn from(err: crate::operation::list_repositories_for_approval_rule_template::ListRepositoriesForApprovalRuleTemplateError) -> Self {
+        match err {
+            crate::operation::list_repositories_for_approval_rule_template::ListRepositoriesForApprovalRuleTemplateError::ApprovalRuleTemplateDoesNotExistException(inner) => Error::ApprovalRuleTemplateDoesNotExistException(inner),
+            crate::operation::list_repositories_for_approval_rule_template::ListRepositoriesForApprovalRuleTemplateError::ApprovalRuleTemplateNameRequiredException(inner) => Error::ApprovalRuleTemplateNameRequiredException(inner),
+            crate::operation::list_repositories_for_approval_rule_template::ListRepositoriesForApprovalRuleTemplateError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
+            crate::operation::list_repositories_for_approval_rule_template::ListRepositoriesForApprovalRuleTemplateError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
+            crate::operation::list_repositories_for_approval_rule_template::ListRepositoriesForApprovalRuleTemplateError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
+            crate::operation::list_repositories_for_approval_rule_template::ListRepositoriesForApprovalRuleTemplateError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
+            crate::operation::list_repositories_for_approval_rule_template::ListRepositoriesForApprovalRuleTemplateError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
+            crate::operation::list_repositories_for_approval_rule_template::ListRepositoriesForApprovalRuleTemplateError::InvalidApprovalRuleTemplateNameException(inner) => Error::InvalidApprovalRuleTemplateNameException(inner),
+            crate::operation::list_repositories_for_approval_rule_template::ListRepositoriesForApprovalRuleTemplateError::InvalidContinuationTokenException(inner) => Error::InvalidContinuationTokenException(inner),
+            crate::operation::list_repositories_for_approval_rule_template::ListRepositoriesForApprovalRuleTemplateError::InvalidMaxResultsException(inner) => Error::InvalidMaxResultsException(inner),
+            crate::operation::list_repositories_for_approval_rule_template::ListRepositoriesForApprovalRuleTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_tags_for_resource::ListTagsForResourceError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_tags_for_resource::ListTagsForResourceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> for Error {
+    fn from(err: crate::operation::list_tags_for_resource::ListTagsForResourceError) -> Self {
+        match err {
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::InvalidRepositoryNameException(inner) => Error::InvalidRepositoryNameException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::InvalidResourceArnException(inner) => Error::InvalidResourceArnException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::RepositoryDoesNotExistException(inner) => Error::RepositoryDoesNotExistException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceArnRequiredException(inner) => Error::ResourceArnRequiredException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::merge_branches_by_fast_forward::MergeBranchesByFastForwardError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::merge_branches_by_fast_forward::MergeBranchesByFastForwardError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::merge_branches_by_fast_forward::MergeBranchesByFastForwardError>
+    for Error
+{
+    fn from(
+        err: crate::operation::merge_branches_by_fast_forward::MergeBranchesByFastForwardError,
+    ) -> Self {
+        match err {
+            crate::operation::merge_branches_by_fast_forward::MergeBranchesByFastForwardError::BranchDoesNotExistException(inner) => Error::BranchDoesNotExistException(inner),
+            crate::operation::merge_branches_by_fast_forward::MergeBranchesByFastForwardError::BranchNameIsTagNameException(inner) => Error::BranchNameIsTagNameException(inner),
+            crate::operation::merge_branches_by_fast_forward::MergeBranchesByFastForwardError::BranchNameRequiredException(inner) => Error::BranchNameRequiredException(inner),
+            crate::operation::merge_branches_by_fast_forward::MergeBranchesByFastForwardError::CommitDoesNotExistException(inner) => Error::CommitDoesNotExistException(inner),
+            crate::operation::merge_branches_by_fast_forward::MergeBranchesByFastForwardError::CommitRequiredException(inner) => Error::CommitRequiredException(inner),
+            crate::operation::merge_branches_by_fast_forward::MergeBranchesByFastForwardError::ConcurrentReferenceUpdateException(inner) => Error::ConcurrentReferenceUpdateException(inner),
+            crate::operation::merge_branches_by_fast_forward::MergeBranchesByFastForwardError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
+            crate::operation::merge_branches_by_fast_forward::MergeBranchesByFastForwardError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
+            crate::operation::merge_branches_by_fast_forward::MergeBranchesByFastForwardError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
+            crate::operation::merge_branches_by_fast_forward::MergeBranchesByFastForwardError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
+            crate::operation::merge_branches_by_fast_forward::MergeBranchesByFastForwardError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
+            crate::operation::merge_branches_by_fast_forward::MergeBranchesByFastForwardError::InvalidBranchNameException(inner) => Error::InvalidBranchNameException(inner),
+            crate::operation::merge_branches_by_fast_forward::MergeBranchesByFastForwardError::InvalidCommitException(inner) => Error::InvalidCommitException(inner),
+            crate::operation::merge_branches_by_fast_forward::MergeBranchesByFastForwardError::InvalidRepositoryNameException(inner) => Error::InvalidRepositoryNameException(inner),
+            crate::operation::merge_branches_by_fast_forward::MergeBranchesByFastForwardError::InvalidTargetBranchException(inner) => Error::InvalidTargetBranchException(inner),
+            crate::operation::merge_branches_by_fast_forward::MergeBranchesByFastForwardError::ManualMergeRequiredException(inner) => Error::ManualMergeRequiredException(inner),
+            crate::operation::merge_branches_by_fast_forward::MergeBranchesByFastForwardError::RepositoryDoesNotExistException(inner) => Error::RepositoryDoesNotExistException(inner),
+            crate::operation::merge_branches_by_fast_forward::MergeBranchesByFastForwardError::RepositoryNameRequiredException(inner) => Error::RepositoryNameRequiredException(inner),
+            crate::operation::merge_branches_by_fast_forward::MergeBranchesByFastForwardError::TipsDivergenceExceededException(inner) => Error::TipsDivergenceExceededException(inner),
+            crate::operation::merge_branches_by_fast_forward::MergeBranchesByFastForwardError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::merge_branches_by_squash::MergeBranchesBySquashError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::merge_branches_by_squash::MergeBranchesBySquashError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::merge_branches_by_squash::MergeBranchesBySquashError> for Error {
+    fn from(err: crate::operation::merge_branches_by_squash::MergeBranchesBySquashError) -> Self {
+        match err {
+            crate::operation::merge_branches_by_squash::MergeBranchesBySquashError::BranchDoesNotExistException(inner) => Error::BranchDoesNotExistException(inner),
+            crate::operation::merge_branches_by_squash::MergeBranchesBySquashError::BranchNameIsTagNameException(inner) => Error::BranchNameIsTagNameException(inner),
+            crate::operation::merge_branches_by_squash::MergeBranchesBySquashError::BranchNameRequiredException(inner) => Error::BranchNameRequiredException(inner),
+            crate::operation::merge_branches_by_squash::MergeBranchesBySquashError::CommitDoesNotExistException(inner) => Error::CommitDoesNotExistException(inner),
+            crate::operation::merge_branches_by_squash::MergeBranchesBySquashError::CommitMessageLengthExceededException(inner) => Error::CommitMessageLengthExceededException(inner),
+            crate::operation::merge_branches_by_squash::MergeBranchesBySquashError::CommitRequiredException(inner) => Error::CommitRequiredException(inner),
+            crate::operation::merge_branches_by_squash::MergeBranchesBySquashError::ConcurrentReferenceUpdateException(inner) => Error::ConcurrentReferenceUpdateException(inner),
+            crate::operation::merge_branches_by_squash::MergeBranchesBySquashError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
+            crate::operation::merge_branches_by_squash::MergeBranchesBySquashError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
+            crate::operation::merge_branches_by_squash::MergeBranchesBySquashError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
+            crate::operation::merge_branches_by_squash::MergeBranchesBySquashError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
+            crate::operation::merge_branches_by_squash::MergeBranchesBySquashError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
+            crate::operation::merge_branches_by_squash::MergeBranchesBySquashError::FileContentSizeLimitExceededException(inner) => Error::FileContentSizeLimitExceededException(inner),
+            crate::operation::merge_branches_by_squash::MergeBranchesBySquashError::FileModeRequiredException(inner) => Error::FileModeRequiredException(inner),
+            crate::operation::merge_branches_by_squash::MergeBranchesBySquashError::FolderContentSizeLimitExceededException(inner) => Error::FolderContentSizeLimitExceededException(inner),
+            crate::operation::merge_branches_by_squash::MergeBranchesBySquashError::InvalidBranchNameException(inner) => Error::InvalidBranchNameException(inner),
+            crate::operation::merge_branches_by_squash::MergeBranchesBySquashError::InvalidCommitException(inner) => Error::InvalidCommitException(inner),
+            crate::operation::merge_branches_by_squash::MergeBranchesBySquashError::InvalidConflictDetailLevelException(inner) => Error::InvalidConflictDetailLevelException(inner),
+            crate::operation::merge_branches_by_squash::MergeBranchesBySquashError::InvalidConflictResolutionException(inner) => Error::InvalidConflictResolutionException(inner),
+            crate::operation::merge_branches_by_squash::MergeBranchesBySquashError::InvalidConflictResolutionStrategyException(inner) => Error::InvalidConflictResolutionStrategyException(inner),
+            crate::operation::merge_branches_by_squash::MergeBranchesBySquashError::InvalidEmailException(inner) => Error::InvalidEmailException(inner),
+            crate::operation::merge_branches_by_squash::MergeBranchesBySquashError::InvalidFileModeException(inner) => Error::InvalidFileModeException(inner),
+            crate::operation::merge_branches_by_squash::MergeBranchesBySquashError::InvalidPathException(inner) => Error::InvalidPathException(inner),
+            crate::operation::merge_branches_by_squash::MergeBranchesBySquashError::InvalidReplacementContentException(inner) => Error::InvalidReplacementContentException(inner),
+            crate::operation::merge_branches_by_squash::MergeBranchesBySquashError::InvalidReplacementTypeException(inner) => Error::InvalidReplacementTypeException(inner),
+            crate::operation::merge_branches_by_squash::MergeBranchesBySquashError::InvalidRepositoryNameException(inner) => Error::InvalidRepositoryNameException(inner),
+            crate::operation::merge_branches_by_squash::MergeBranchesBySquashError::InvalidTargetBranchException(inner) => Error::InvalidTargetBranchException(inner),
+            crate::operation::merge_branches_by_squash::MergeBranchesBySquashError::ManualMergeRequiredException(inner) => Error::ManualMergeRequiredException(inner),
+            crate::operation::merge_branches_by_squash::MergeBranchesBySquashError::MaximumConflictResolutionEntriesExceededException(inner) => Error::MaximumConflictResolutionEntriesExceededException(inner),
+            crate::operation::merge_branches_by_squash::MergeBranchesBySquashError::MaximumFileContentToLoadExceededException(inner) => Error::MaximumFileContentToLoadExceededException(inner),
+            crate::operation::merge_branches_by_squash::MergeBranchesBySquashError::MaximumItemsToCompareExceededException(inner) => Error::MaximumItemsToCompareExceededException(inner),
+            crate::operation::merge_branches_by_squash::MergeBranchesBySquashError::MultipleConflictResolutionEntriesException(inner) => Error::MultipleConflictResolutionEntriesException(inner),
+            crate::operation::merge_branches_by_squash::MergeBranchesBySquashError::NameLengthExceededException(inner) => Error::NameLengthExceededException(inner),
+            crate::operation::merge_branches_by_squash::MergeBranchesBySquashError::PathRequiredException(inner) => Error::PathRequiredException(inner),
+            crate::operation::merge_branches_by_squash::MergeBranchesBySquashError::ReplacementContentRequiredException(inner) => Error::ReplacementContentRequiredException(inner),
+            crate::operation::merge_branches_by_squash::MergeBranchesBySquashError::ReplacementTypeRequiredException(inner) => Error::ReplacementTypeRequiredException(inner),
+            crate::operation::merge_branches_by_squash::MergeBranchesBySquashError::RepositoryDoesNotExistException(inner) => Error::RepositoryDoesNotExistException(inner),
+            crate::operation::merge_branches_by_squash::MergeBranchesBySquashError::RepositoryNameRequiredException(inner) => Error::RepositoryNameRequiredException(inner),
+            crate::operation::merge_branches_by_squash::MergeBranchesBySquashError::TipsDivergenceExceededException(inner) => Error::TipsDivergenceExceededException(inner),
+            crate::operation::merge_branches_by_squash::MergeBranchesBySquashError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::merge_branches_by_three_way::MergeBranchesByThreeWayError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::merge_branches_by_three_way::MergeBranchesByThreeWayError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::merge_branches_by_three_way::MergeBranchesByThreeWayError> for Error {
+    fn from(
+        err: crate::operation::merge_branches_by_three_way::MergeBranchesByThreeWayError,
+    ) -> Self {
+        match err {
+            crate::operation::merge_branches_by_three_way::MergeBranchesByThreeWayError::BranchDoesNotExistException(inner) => Error::BranchDoesNotExistException(inner),
+            crate::operation::merge_branches_by_three_way::MergeBranchesByThreeWayError::BranchNameIsTagNameException(inner) => Error::BranchNameIsTagNameException(inner),
+            crate::operation::merge_branches_by_three_way::MergeBranchesByThreeWayError::BranchNameRequiredException(inner) => Error::BranchNameRequiredException(inner),
+            crate::operation::merge_branches_by_three_way::MergeBranchesByThreeWayError::CommitDoesNotExistException(inner) => Error::CommitDoesNotExistException(inner),
+            crate::operation::merge_branches_by_three_way::MergeBranchesByThreeWayError::CommitMessageLengthExceededException(inner) => Error::CommitMessageLengthExceededException(inner),
+            crate::operation::merge_branches_by_three_way::MergeBranchesByThreeWayError::CommitRequiredException(inner) => Error::CommitRequiredException(inner),
+            crate::operation::merge_branches_by_three_way::MergeBranchesByThreeWayError::ConcurrentReferenceUpdateException(inner) => Error::ConcurrentReferenceUpdateException(inner),
+            crate::operation::merge_branches_by_three_way::MergeBranchesByThreeWayError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
+            crate::operation::merge_branches_by_three_way::MergeBranchesByThreeWayError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
+            crate::operation::merge_branches_by_three_way::MergeBranchesByThreeWayError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
+            crate::operation::merge_branches_by_three_way::MergeBranchesByThreeWayError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
+            crate::operation::merge_branches_by_three_way::MergeBranchesByThreeWayError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
+            crate::operation::merge_branches_by_three_way::MergeBranchesByThreeWayError::FileContentSizeLimitExceededException(inner) => Error::FileContentSizeLimitExceededException(inner),
+            crate::operation::merge_branches_by_three_way::MergeBranchesByThreeWayError::FileModeRequiredException(inner) => Error::FileModeRequiredException(inner),
+            crate::operation::merge_branches_by_three_way::MergeBranchesByThreeWayError::FolderContentSizeLimitExceededException(inner) => Error::FolderContentSizeLimitExceededException(inner),
+            crate::operation::merge_branches_by_three_way::MergeBranchesByThreeWayError::InvalidBranchNameException(inner) => Error::InvalidBranchNameException(inner),
+            crate::operation::merge_branches_by_three_way::MergeBranchesByThreeWayError::InvalidCommitException(inner) => Error::InvalidCommitException(inner),
+            crate::operation::merge_branches_by_three_way::MergeBranchesByThreeWayError::InvalidConflictDetailLevelException(inner) => Error::InvalidConflictDetailLevelException(inner),
+            crate::operation::merge_branches_by_three_way::MergeBranchesByThreeWayError::InvalidConflictResolutionException(inner) => Error::InvalidConflictResolutionException(inner),
+            crate::operation::merge_branches_by_three_way::MergeBranchesByThreeWayError::InvalidConflictResolutionStrategyException(inner) => Error::InvalidConflictResolutionStrategyException(inner),
+            crate::operation::merge_branches_by_three_way::MergeBranchesByThreeWayError::InvalidEmailException(inner) => Error::InvalidEmailException(inner),
+            crate::operation::merge_branches_by_three_way::MergeBranchesByThreeWayError::InvalidFileModeException(inner) => Error::InvalidFileModeException(inner),
+            crate::operation::merge_branches_by_three_way::MergeBranchesByThreeWayError::InvalidPathException(inner) => Error::InvalidPathException(inner),
+            crate::operation::merge_branches_by_three_way::MergeBranchesByThreeWayError::InvalidReplacementContentException(inner) => Error::InvalidReplacementContentException(inner),
+            crate::operation::merge_branches_by_three_way::MergeBranchesByThreeWayError::InvalidReplacementTypeException(inner) => Error::InvalidReplacementTypeException(inner),
+            crate::operation::merge_branches_by_three_way::MergeBranchesByThreeWayError::InvalidRepositoryNameException(inner) => Error::InvalidRepositoryNameException(inner),
+            crate::operation::merge_branches_by_three_way::MergeBranchesByThreeWayError::InvalidTargetBranchException(inner) => Error::InvalidTargetBranchException(inner),
+            crate::operation::merge_branches_by_three_way::MergeBranchesByThreeWayError::ManualMergeRequiredException(inner) => Error::ManualMergeRequiredException(inner),
+            crate::operation::merge_branches_by_three_way::MergeBranchesByThreeWayError::MaximumConflictResolutionEntriesExceededException(inner) => Error::MaximumConflictResolutionEntriesExceededException(inner),
+            crate::operation::merge_branches_by_three_way::MergeBranchesByThreeWayError::MaximumFileContentToLoadExceededException(inner) => Error::MaximumFileContentToLoadExceededException(inner),
+            crate::operation::merge_branches_by_three_way::MergeBranchesByThreeWayError::MaximumItemsToCompareExceededException(inner) => Error::MaximumItemsToCompareExceededException(inner),
+            crate::operation::merge_branches_by_three_way::MergeBranchesByThreeWayError::MultipleConflictResolutionEntriesException(inner) => Error::MultipleConflictResolutionEntriesException(inner),
+            crate::operation::merge_branches_by_three_way::MergeBranchesByThreeWayError::NameLengthExceededException(inner) => Error::NameLengthExceededException(inner),
+            crate::operation::merge_branches_by_three_way::MergeBranchesByThreeWayError::PathRequiredException(inner) => Error::PathRequiredException(inner),
+            crate::operation::merge_branches_by_three_way::MergeBranchesByThreeWayError::ReplacementContentRequiredException(inner) => Error::ReplacementContentRequiredException(inner),
+            crate::operation::merge_branches_by_three_way::MergeBranchesByThreeWayError::ReplacementTypeRequiredException(inner) => Error::ReplacementTypeRequiredException(inner),
+            crate::operation::merge_branches_by_three_way::MergeBranchesByThreeWayError::RepositoryDoesNotExistException(inner) => Error::RepositoryDoesNotExistException(inner),
+            crate::operation::merge_branches_by_three_way::MergeBranchesByThreeWayError::RepositoryNameRequiredException(inner) => Error::RepositoryNameRequiredException(inner),
+            crate::operation::merge_branches_by_three_way::MergeBranchesByThreeWayError::TipsDivergenceExceededException(inner) => Error::TipsDivergenceExceededException(inner),
+            crate::operation::merge_branches_by_three_way::MergeBranchesByThreeWayError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardError>
+    for Error
+{
+    fn from(
+        err: crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardError,
+    ) -> Self {
+        match err {
+            crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardError::ConcurrentReferenceUpdateException(inner) => Error::ConcurrentReferenceUpdateException(inner),
+            crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
+            crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
+            crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
+            crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
+            crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
+            crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardError::InvalidCommitIdException(inner) => Error::InvalidCommitIdException(inner),
+            crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardError::InvalidPullRequestIdException(inner) => Error::InvalidPullRequestIdException(inner),
+            crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardError::InvalidRepositoryNameException(inner) => Error::InvalidRepositoryNameException(inner),
+            crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardError::ManualMergeRequiredException(inner) => Error::ManualMergeRequiredException(inner),
+            crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardError::PullRequestAlreadyClosedException(inner) => Error::PullRequestAlreadyClosedException(inner),
+            crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardError::PullRequestApprovalRulesNotSatisfiedException(inner) => Error::PullRequestApprovalRulesNotSatisfiedException(inner),
+            crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardError::PullRequestDoesNotExistException(inner) => Error::PullRequestDoesNotExistException(inner),
+            crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardError::PullRequestIdRequiredException(inner) => Error::PullRequestIdRequiredException(inner),
+            crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardError::ReferenceDoesNotExistException(inner) => Error::ReferenceDoesNotExistException(inner),
+            crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardError::RepositoryDoesNotExistException(inner) => Error::RepositoryDoesNotExistException(inner),
+            crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardError::RepositoryNameRequiredException(inner) => Error::RepositoryNameRequiredException(inner),
+            crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardError::RepositoryNotAssociatedWithPullRequestException(inner) => Error::RepositoryNotAssociatedWithPullRequestException(inner),
+            crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardError::TipOfSourceReferenceIsDifferentException(inner) => Error::TipOfSourceReferenceIsDifferentException(inner),
+            crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashError> for Error {
+    fn from(
+        err: crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashError,
+    ) -> Self {
+        match err {
+            crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashError::CommitMessageLengthExceededException(inner) => Error::CommitMessageLengthExceededException(inner),
+            crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashError::ConcurrentReferenceUpdateException(inner) => Error::ConcurrentReferenceUpdateException(inner),
+            crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
+            crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
+            crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
+            crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
+            crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
+            crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashError::FileContentSizeLimitExceededException(inner) => Error::FileContentSizeLimitExceededException(inner),
+            crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashError::FolderContentSizeLimitExceededException(inner) => Error::FolderContentSizeLimitExceededException(inner),
+            crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashError::InvalidCommitIdException(inner) => Error::InvalidCommitIdException(inner),
+            crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashError::InvalidConflictDetailLevelException(inner) => Error::InvalidConflictDetailLevelException(inner),
+            crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashError::InvalidConflictResolutionException(inner) => Error::InvalidConflictResolutionException(inner),
+            crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashError::InvalidConflictResolutionStrategyException(inner) => Error::InvalidConflictResolutionStrategyException(inner),
+            crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashError::InvalidEmailException(inner) => Error::InvalidEmailException(inner),
+            crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashError::InvalidFileModeException(inner) => Error::InvalidFileModeException(inner),
+            crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashError::InvalidPathException(inner) => Error::InvalidPathException(inner),
+            crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashError::InvalidPullRequestIdException(inner) => Error::InvalidPullRequestIdException(inner),
+            crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashError::InvalidReplacementContentException(inner) => Error::InvalidReplacementContentException(inner),
+            crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashError::InvalidReplacementTypeException(inner) => Error::InvalidReplacementTypeException(inner),
+            crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashError::InvalidRepositoryNameException(inner) => Error::InvalidRepositoryNameException(inner),
+            crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashError::ManualMergeRequiredException(inner) => Error::ManualMergeRequiredException(inner),
+            crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashError::MaximumConflictResolutionEntriesExceededException(inner) => Error::MaximumConflictResolutionEntriesExceededException(inner),
+            crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashError::MaximumFileContentToLoadExceededException(inner) => Error::MaximumFileContentToLoadExceededException(inner),
+            crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashError::MaximumItemsToCompareExceededException(inner) => Error::MaximumItemsToCompareExceededException(inner),
+            crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashError::MultipleConflictResolutionEntriesException(inner) => Error::MultipleConflictResolutionEntriesException(inner),
+            crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashError::NameLengthExceededException(inner) => Error::NameLengthExceededException(inner),
+            crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashError::PathRequiredException(inner) => Error::PathRequiredException(inner),
+            crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashError::PullRequestAlreadyClosedException(inner) => Error::PullRequestAlreadyClosedException(inner),
+            crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashError::PullRequestApprovalRulesNotSatisfiedException(inner) => Error::PullRequestApprovalRulesNotSatisfiedException(inner),
+            crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashError::PullRequestDoesNotExistException(inner) => Error::PullRequestDoesNotExistException(inner),
+            crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashError::PullRequestIdRequiredException(inner) => Error::PullRequestIdRequiredException(inner),
+            crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashError::ReplacementContentRequiredException(inner) => Error::ReplacementContentRequiredException(inner),
+            crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashError::ReplacementTypeRequiredException(inner) => Error::ReplacementTypeRequiredException(inner),
+            crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashError::RepositoryDoesNotExistException(inner) => Error::RepositoryDoesNotExistException(inner),
+            crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashError::RepositoryNameRequiredException(inner) => Error::RepositoryNameRequiredException(inner),
+            crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashError::RepositoryNotAssociatedWithPullRequestException(inner) => Error::RepositoryNotAssociatedWithPullRequestException(inner),
+            crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashError::TipOfSourceReferenceIsDifferentException(inner) => Error::TipOfSourceReferenceIsDifferentException(inner),
+            crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashError::TipsDivergenceExceededException(inner) => Error::TipsDivergenceExceededException(inner),
+            crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError>
+    for Error
+{
+    fn from(
+        err: crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError,
+    ) -> Self {
+        match err {
+            crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError::CommitMessageLengthExceededException(inner) => Error::CommitMessageLengthExceededException(inner),
+            crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError::ConcurrentReferenceUpdateException(inner) => Error::ConcurrentReferenceUpdateException(inner),
+            crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
+            crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
+            crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
+            crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
+            crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
+            crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError::FileContentSizeLimitExceededException(inner) => Error::FileContentSizeLimitExceededException(inner),
+            crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError::FolderContentSizeLimitExceededException(inner) => Error::FolderContentSizeLimitExceededException(inner),
+            crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError::InvalidCommitIdException(inner) => Error::InvalidCommitIdException(inner),
+            crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError::InvalidConflictDetailLevelException(inner) => Error::InvalidConflictDetailLevelException(inner),
+            crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError::InvalidConflictResolutionException(inner) => Error::InvalidConflictResolutionException(inner),
+            crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError::InvalidConflictResolutionStrategyException(inner) => Error::InvalidConflictResolutionStrategyException(inner),
+            crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError::InvalidEmailException(inner) => Error::InvalidEmailException(inner),
+            crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError::InvalidFileModeException(inner) => Error::InvalidFileModeException(inner),
+            crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError::InvalidPathException(inner) => Error::InvalidPathException(inner),
+            crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError::InvalidPullRequestIdException(inner) => Error::InvalidPullRequestIdException(inner),
+            crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError::InvalidReplacementContentException(inner) => Error::InvalidReplacementContentException(inner),
+            crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError::InvalidReplacementTypeException(inner) => Error::InvalidReplacementTypeException(inner),
+            crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError::InvalidRepositoryNameException(inner) => Error::InvalidRepositoryNameException(inner),
+            crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError::ManualMergeRequiredException(inner) => Error::ManualMergeRequiredException(inner),
+            crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError::MaximumConflictResolutionEntriesExceededException(inner) => Error::MaximumConflictResolutionEntriesExceededException(inner),
+            crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError::MaximumFileContentToLoadExceededException(inner) => Error::MaximumFileContentToLoadExceededException(inner),
+            crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError::MaximumItemsToCompareExceededException(inner) => Error::MaximumItemsToCompareExceededException(inner),
+            crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError::MultipleConflictResolutionEntriesException(inner) => Error::MultipleConflictResolutionEntriesException(inner),
+            crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError::NameLengthExceededException(inner) => Error::NameLengthExceededException(inner),
+            crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError::PathRequiredException(inner) => Error::PathRequiredException(inner),
+            crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError::PullRequestAlreadyClosedException(inner) => Error::PullRequestAlreadyClosedException(inner),
+            crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError::PullRequestApprovalRulesNotSatisfiedException(inner) => Error::PullRequestApprovalRulesNotSatisfiedException(inner),
+            crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError::PullRequestDoesNotExistException(inner) => Error::PullRequestDoesNotExistException(inner),
+            crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError::PullRequestIdRequiredException(inner) => Error::PullRequestIdRequiredException(inner),
+            crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError::ReplacementContentRequiredException(inner) => Error::ReplacementContentRequiredException(inner),
+            crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError::ReplacementTypeRequiredException(inner) => Error::ReplacementTypeRequiredException(inner),
+            crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError::RepositoryDoesNotExistException(inner) => Error::RepositoryDoesNotExistException(inner),
+            crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError::RepositoryNameRequiredException(inner) => Error::RepositoryNameRequiredException(inner),
+            crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError::RepositoryNotAssociatedWithPullRequestException(inner) => Error::RepositoryNotAssociatedWithPullRequestException(inner),
+            crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError::TipOfSourceReferenceIsDifferentException(inner) => Error::TipOfSourceReferenceIsDifferentException(inner),
+            crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError::TipsDivergenceExceededException(inner) => Error::TipsDivergenceExceededException(inner),
+            crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::override_pull_request_approval_rules::OverridePullRequestApprovalRulesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::override_pull_request_approval_rules::OverridePullRequestApprovalRulesError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::override_pull_request_approval_rules::OverridePullRequestApprovalRulesError> for Error {
+    fn from(err: crate::operation::override_pull_request_approval_rules::OverridePullRequestApprovalRulesError) -> Self {
+        match err {
+            crate::operation::override_pull_request_approval_rules::OverridePullRequestApprovalRulesError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
+            crate::operation::override_pull_request_approval_rules::OverridePullRequestApprovalRulesError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
+            crate::operation::override_pull_request_approval_rules::OverridePullRequestApprovalRulesError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
+            crate::operation::override_pull_request_approval_rules::OverridePullRequestApprovalRulesError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
+            crate::operation::override_pull_request_approval_rules::OverridePullRequestApprovalRulesError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
+            crate::operation::override_pull_request_approval_rules::OverridePullRequestApprovalRulesError::InvalidOverrideStatusException(inner) => Error::InvalidOverrideStatusException(inner),
+            crate::operation::override_pull_request_approval_rules::OverridePullRequestApprovalRulesError::InvalidPullRequestIdException(inner) => Error::InvalidPullRequestIdException(inner),
+            crate::operation::override_pull_request_approval_rules::OverridePullRequestApprovalRulesError::InvalidRevisionIdException(inner) => Error::InvalidRevisionIdException(inner),
+            crate::operation::override_pull_request_approval_rules::OverridePullRequestApprovalRulesError::OverrideAlreadySetException(inner) => Error::OverrideAlreadySetException(inner),
+            crate::operation::override_pull_request_approval_rules::OverridePullRequestApprovalRulesError::OverrideStatusRequiredException(inner) => Error::OverrideStatusRequiredException(inner),
+            crate::operation::override_pull_request_approval_rules::OverridePullRequestApprovalRulesError::PullRequestAlreadyClosedException(inner) => Error::PullRequestAlreadyClosedException(inner),
+            crate::operation::override_pull_request_approval_rules::OverridePullRequestApprovalRulesError::PullRequestDoesNotExistException(inner) => Error::PullRequestDoesNotExistException(inner),
+            crate::operation::override_pull_request_approval_rules::OverridePullRequestApprovalRulesError::PullRequestIdRequiredException(inner) => Error::PullRequestIdRequiredException(inner),
+            crate::operation::override_pull_request_approval_rules::OverridePullRequestApprovalRulesError::RevisionIdRequiredException(inner) => Error::RevisionIdRequiredException(inner),
+            crate::operation::override_pull_request_approval_rules::OverridePullRequestApprovalRulesError::RevisionNotCurrentException(inner) => Error::RevisionNotCurrentException(inner),
+            crate::operation::override_pull_request_approval_rules::OverridePullRequestApprovalRulesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError>
+    for Error
+{
+    fn from(
+        err: crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError,
+    ) -> Self {
+        match err {
+            crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::BeforeCommitIdAndAfterCommitIdAreSameException(inner) => Error::BeforeCommitIdAndAfterCommitIdAreSameException(inner),
+            crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::ClientRequestTokenRequiredException(inner) => Error::ClientRequestTokenRequiredException(inner),
+            crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::CommentContentRequiredException(inner) => Error::CommentContentRequiredException(inner),
+            crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::CommentContentSizeLimitExceededException(inner) => Error::CommentContentSizeLimitExceededException(inner),
+            crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::CommitDoesNotExistException(inner) => Error::CommitDoesNotExistException(inner),
+            crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::CommitIdRequiredException(inner) => Error::CommitIdRequiredException(inner),
+            crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
+            crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
+            crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
+            crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
+            crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
+            crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::IdempotencyParameterMismatchException(inner) => Error::IdempotencyParameterMismatchException(inner),
+            crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::InvalidClientRequestTokenException(inner) => Error::InvalidClientRequestTokenException(inner),
+            crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::InvalidCommitIdException(inner) => Error::InvalidCommitIdException(inner),
+            crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::InvalidFileLocationException(inner) => Error::InvalidFileLocationException(inner),
+            crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::InvalidFilePositionException(inner) => Error::InvalidFilePositionException(inner),
+            crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::InvalidPathException(inner) => Error::InvalidPathException(inner),
+            crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::InvalidRelativeFileVersionEnumException(inner) => Error::InvalidRelativeFileVersionEnumException(inner),
+            crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::InvalidRepositoryNameException(inner) => Error::InvalidRepositoryNameException(inner),
+            crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::PathDoesNotExistException(inner) => Error::PathDoesNotExistException(inner),
+            crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::PathRequiredException(inner) => Error::PathRequiredException(inner),
+            crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::RepositoryDoesNotExistException(inner) => Error::RepositoryDoesNotExistException(inner),
+            crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::RepositoryNameRequiredException(inner) => Error::RepositoryNameRequiredException(inner),
+            crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::post_comment_for_pull_request::PostCommentForPullRequestError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::post_comment_for_pull_request::PostCommentForPullRequestError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::post_comment_for_pull_request::PostCommentForPullRequestError>
+    for Error
+{
+    fn from(
+        err: crate::operation::post_comment_for_pull_request::PostCommentForPullRequestError,
+    ) -> Self {
+        match err {
+            crate::operation::post_comment_for_pull_request::PostCommentForPullRequestError::BeforeCommitIdAndAfterCommitIdAreSameException(inner) => Error::BeforeCommitIdAndAfterCommitIdAreSameException(inner),
+            crate::operation::post_comment_for_pull_request::PostCommentForPullRequestError::ClientRequestTokenRequiredException(inner) => Error::ClientRequestTokenRequiredException(inner),
+            crate::operation::post_comment_for_pull_request::PostCommentForPullRequestError::CommentContentRequiredException(inner) => Error::CommentContentRequiredException(inner),
+            crate::operation::post_comment_for_pull_request::PostCommentForPullRequestError::CommentContentSizeLimitExceededException(inner) => Error::CommentContentSizeLimitExceededException(inner),
+            crate::operation::post_comment_for_pull_request::PostCommentForPullRequestError::CommitDoesNotExistException(inner) => Error::CommitDoesNotExistException(inner),
+            crate::operation::post_comment_for_pull_request::PostCommentForPullRequestError::CommitIdRequiredException(inner) => Error::CommitIdRequiredException(inner),
+            crate::operation::post_comment_for_pull_request::PostCommentForPullRequestError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
+            crate::operation::post_comment_for_pull_request::PostCommentForPullRequestError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
+            crate::operation::post_comment_for_pull_request::PostCommentForPullRequestError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
+            crate::operation::post_comment_for_pull_request::PostCommentForPullRequestError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
+            crate::operation::post_comment_for_pull_request::PostCommentForPullRequestError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
+            crate::operation::post_comment_for_pull_request::PostCommentForPullRequestError::IdempotencyParameterMismatchException(inner) => Error::IdempotencyParameterMismatchException(inner),
+            crate::operation::post_comment_for_pull_request::PostCommentForPullRequestError::InvalidClientRequestTokenException(inner) => Error::InvalidClientRequestTokenException(inner),
+            crate::operation::post_comment_for_pull_request::PostCommentForPullRequestError::InvalidCommitIdException(inner) => Error::InvalidCommitIdException(inner),
+            crate::operation::post_comment_for_pull_request::PostCommentForPullRequestError::InvalidFileLocationException(inner) => Error::InvalidFileLocationException(inner),
+            crate::operation::post_comment_for_pull_request::PostCommentForPullRequestError::InvalidFilePositionException(inner) => Error::InvalidFilePositionException(inner),
+            crate::operation::post_comment_for_pull_request::PostCommentForPullRequestError::InvalidPathException(inner) => Error::InvalidPathException(inner),
+            crate::operation::post_comment_for_pull_request::PostCommentForPullRequestError::InvalidPullRequestIdException(inner) => Error::InvalidPullRequestIdException(inner),
+            crate::operation::post_comment_for_pull_request::PostCommentForPullRequestError::InvalidRelativeFileVersionEnumException(inner) => Error::InvalidRelativeFileVersionEnumException(inner),
+            crate::operation::post_comment_for_pull_request::PostCommentForPullRequestError::InvalidRepositoryNameException(inner) => Error::InvalidRepositoryNameException(inner),
+            crate::operation::post_comment_for_pull_request::PostCommentForPullRequestError::PathDoesNotExistException(inner) => Error::PathDoesNotExistException(inner),
+            crate::operation::post_comment_for_pull_request::PostCommentForPullRequestError::PathRequiredException(inner) => Error::PathRequiredException(inner),
+            crate::operation::post_comment_for_pull_request::PostCommentForPullRequestError::PullRequestDoesNotExistException(inner) => Error::PullRequestDoesNotExistException(inner),
+            crate::operation::post_comment_for_pull_request::PostCommentForPullRequestError::PullRequestIdRequiredException(inner) => Error::PullRequestIdRequiredException(inner),
+            crate::operation::post_comment_for_pull_request::PostCommentForPullRequestError::RepositoryDoesNotExistException(inner) => Error::RepositoryDoesNotExistException(inner),
+            crate::operation::post_comment_for_pull_request::PostCommentForPullRequestError::RepositoryNameRequiredException(inner) => Error::RepositoryNameRequiredException(inner),
+            crate::operation::post_comment_for_pull_request::PostCommentForPullRequestError::RepositoryNotAssociatedWithPullRequestException(inner) => Error::RepositoryNotAssociatedWithPullRequestException(inner),
+            crate::operation::post_comment_for_pull_request::PostCommentForPullRequestError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::post_comment_reply::PostCommentReplyError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::post_comment_reply::PostCommentReplyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::post_comment_reply::PostCommentReplyError> for Error {
+    fn from(err: crate::operation::post_comment_reply::PostCommentReplyError) -> Self {
+        match err {
+            crate::operation::post_comment_reply::PostCommentReplyError::ClientRequestTokenRequiredException(inner) => Error::ClientRequestTokenRequiredException(inner),
+            crate::operation::post_comment_reply::PostCommentReplyError::CommentContentRequiredException(inner) => Error::CommentContentRequiredException(inner),
+            crate::operation::post_comment_reply::PostCommentReplyError::CommentContentSizeLimitExceededException(inner) => Error::CommentContentSizeLimitExceededException(inner),
+            crate::operation::post_comment_reply::PostCommentReplyError::CommentDoesNotExistException(inner) => Error::CommentDoesNotExistException(inner),
+            crate::operation::post_comment_reply::PostCommentReplyError::CommentIdRequiredException(inner) => Error::CommentIdRequiredException(inner),
+            crate::operation::post_comment_reply::PostCommentReplyError::IdempotencyParameterMismatchException(inner) => Error::IdempotencyParameterMismatchException(inner),
+            crate::operation::post_comment_reply::PostCommentReplyError::InvalidClientRequestTokenException(inner) => Error::InvalidClientRequestTokenException(inner),
+            crate::operation::post_comment_reply::PostCommentReplyError::InvalidCommentIdException(inner) => Error::InvalidCommentIdException(inner),
+            crate::operation::post_comment_reply::PostCommentReplyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::put_comment_reaction::PutCommentReactionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::put_comment_reaction::PutCommentReactionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::put_comment_reaction::PutCommentReactionError> for Error {
+    fn from(err: crate::operation::put_comment_reaction::PutCommentReactionError) -> Self {
+        match err {
+            crate::operation::put_comment_reaction::PutCommentReactionError::CommentDeletedException(inner) => Error::CommentDeletedException(inner),
+            crate::operation::put_comment_reaction::PutCommentReactionError::CommentDoesNotExistException(inner) => Error::CommentDoesNotExistException(inner),
+            crate::operation::put_comment_reaction::PutCommentReactionError::CommentIdRequiredException(inner) => Error::CommentIdRequiredException(inner),
+            crate::operation::put_comment_reaction::PutCommentReactionError::InvalidCommentIdException(inner) => Error::InvalidCommentIdException(inner),
+            crate::operation::put_comment_reaction::PutCommentReactionError::InvalidReactionValueException(inner) => Error::InvalidReactionValueException(inner),
+            crate::operation::put_comment_reaction::PutCommentReactionError::ReactionLimitExceededException(inner) => Error::ReactionLimitExceededException(inner),
+            crate::operation::put_comment_reaction::PutCommentReactionError::ReactionValueRequiredException(inner) => Error::ReactionValueRequiredException(inner),
+            crate::operation::put_comment_reaction::PutCommentReactionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::put_file::PutFileError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::PostCommentForPullRequestError, R>,
+        err: aws_smithy_http::result::SdkError<crate::operation::put_file::PutFileError, R>,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -3917,46 +3748,58 @@ where
         }
     }
 }
-impl From<crate::error::PostCommentForPullRequestError> for Error {
-    fn from(err: crate::error::PostCommentForPullRequestError) -> Self {
+impl From<crate::operation::put_file::PutFileError> for Error {
+    fn from(err: crate::operation::put_file::PutFileError) -> Self {
         match err {
-            crate::error::PostCommentForPullRequestError::BeforeCommitIdAndAfterCommitIdAreSameException(inner) => Error::BeforeCommitIdAndAfterCommitIdAreSameException(inner),
-            crate::error::PostCommentForPullRequestError::ClientRequestTokenRequiredException(inner) => Error::ClientRequestTokenRequiredException(inner),
-            crate::error::PostCommentForPullRequestError::CommentContentRequiredException(inner) => Error::CommentContentRequiredException(inner),
-            crate::error::PostCommentForPullRequestError::CommentContentSizeLimitExceededException(inner) => Error::CommentContentSizeLimitExceededException(inner),
-            crate::error::PostCommentForPullRequestError::CommitDoesNotExistException(inner) => Error::CommitDoesNotExistException(inner),
-            crate::error::PostCommentForPullRequestError::CommitIdRequiredException(inner) => Error::CommitIdRequiredException(inner),
-            crate::error::PostCommentForPullRequestError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
-            crate::error::PostCommentForPullRequestError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
-            crate::error::PostCommentForPullRequestError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
-            crate::error::PostCommentForPullRequestError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
-            crate::error::PostCommentForPullRequestError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
-            crate::error::PostCommentForPullRequestError::IdempotencyParameterMismatchException(inner) => Error::IdempotencyParameterMismatchException(inner),
-            crate::error::PostCommentForPullRequestError::InvalidClientRequestTokenException(inner) => Error::InvalidClientRequestTokenException(inner),
-            crate::error::PostCommentForPullRequestError::InvalidCommitIdException(inner) => Error::InvalidCommitIdException(inner),
-            crate::error::PostCommentForPullRequestError::InvalidFileLocationException(inner) => Error::InvalidFileLocationException(inner),
-            crate::error::PostCommentForPullRequestError::InvalidFilePositionException(inner) => Error::InvalidFilePositionException(inner),
-            crate::error::PostCommentForPullRequestError::InvalidPathException(inner) => Error::InvalidPathException(inner),
-            crate::error::PostCommentForPullRequestError::InvalidPullRequestIdException(inner) => Error::InvalidPullRequestIdException(inner),
-            crate::error::PostCommentForPullRequestError::InvalidRelativeFileVersionEnumException(inner) => Error::InvalidRelativeFileVersionEnumException(inner),
-            crate::error::PostCommentForPullRequestError::InvalidRepositoryNameException(inner) => Error::InvalidRepositoryNameException(inner),
-            crate::error::PostCommentForPullRequestError::PathDoesNotExistException(inner) => Error::PathDoesNotExistException(inner),
-            crate::error::PostCommentForPullRequestError::PathRequiredException(inner) => Error::PathRequiredException(inner),
-            crate::error::PostCommentForPullRequestError::PullRequestDoesNotExistException(inner) => Error::PullRequestDoesNotExistException(inner),
-            crate::error::PostCommentForPullRequestError::PullRequestIdRequiredException(inner) => Error::PullRequestIdRequiredException(inner),
-            crate::error::PostCommentForPullRequestError::RepositoryDoesNotExistException(inner) => Error::RepositoryDoesNotExistException(inner),
-            crate::error::PostCommentForPullRequestError::RepositoryNameRequiredException(inner) => Error::RepositoryNameRequiredException(inner),
-            crate::error::PostCommentForPullRequestError::RepositoryNotAssociatedWithPullRequestException(inner) => Error::RepositoryNotAssociatedWithPullRequestException(inner),
-            crate::error::PostCommentForPullRequestError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::put_file::PutFileError::BranchDoesNotExistException(inner) => Error::BranchDoesNotExistException(inner),
+            crate::operation::put_file::PutFileError::BranchNameIsTagNameException(inner) => Error::BranchNameIsTagNameException(inner),
+            crate::operation::put_file::PutFileError::BranchNameRequiredException(inner) => Error::BranchNameRequiredException(inner),
+            crate::operation::put_file::PutFileError::CommitMessageLengthExceededException(inner) => Error::CommitMessageLengthExceededException(inner),
+            crate::operation::put_file::PutFileError::DirectoryNameConflictsWithFileNameException(inner) => Error::DirectoryNameConflictsWithFileNameException(inner),
+            crate::operation::put_file::PutFileError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
+            crate::operation::put_file::PutFileError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
+            crate::operation::put_file::PutFileError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
+            crate::operation::put_file::PutFileError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
+            crate::operation::put_file::PutFileError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
+            crate::operation::put_file::PutFileError::FileContentRequiredException(inner) => Error::FileContentRequiredException(inner),
+            crate::operation::put_file::PutFileError::FileContentSizeLimitExceededException(inner) => Error::FileContentSizeLimitExceededException(inner),
+            crate::operation::put_file::PutFileError::FileNameConflictsWithDirectoryNameException(inner) => Error::FileNameConflictsWithDirectoryNameException(inner),
+            crate::operation::put_file::PutFileError::FilePathConflictsWithSubmodulePathException(inner) => Error::FilePathConflictsWithSubmodulePathException(inner),
+            crate::operation::put_file::PutFileError::FolderContentSizeLimitExceededException(inner) => Error::FolderContentSizeLimitExceededException(inner),
+            crate::operation::put_file::PutFileError::InvalidBranchNameException(inner) => Error::InvalidBranchNameException(inner),
+            crate::operation::put_file::PutFileError::InvalidDeletionParameterException(inner) => Error::InvalidDeletionParameterException(inner),
+            crate::operation::put_file::PutFileError::InvalidEmailException(inner) => Error::InvalidEmailException(inner),
+            crate::operation::put_file::PutFileError::InvalidFileModeException(inner) => Error::InvalidFileModeException(inner),
+            crate::operation::put_file::PutFileError::InvalidParentCommitIdException(inner) => Error::InvalidParentCommitIdException(inner),
+            crate::operation::put_file::PutFileError::InvalidPathException(inner) => Error::InvalidPathException(inner),
+            crate::operation::put_file::PutFileError::InvalidRepositoryNameException(inner) => Error::InvalidRepositoryNameException(inner),
+            crate::operation::put_file::PutFileError::NameLengthExceededException(inner) => Error::NameLengthExceededException(inner),
+            crate::operation::put_file::PutFileError::ParentCommitDoesNotExistException(inner) => Error::ParentCommitDoesNotExistException(inner),
+            crate::operation::put_file::PutFileError::ParentCommitIdOutdatedException(inner) => Error::ParentCommitIdOutdatedException(inner),
+            crate::operation::put_file::PutFileError::ParentCommitIdRequiredException(inner) => Error::ParentCommitIdRequiredException(inner),
+            crate::operation::put_file::PutFileError::PathRequiredException(inner) => Error::PathRequiredException(inner),
+            crate::operation::put_file::PutFileError::RepositoryDoesNotExistException(inner) => Error::RepositoryDoesNotExistException(inner),
+            crate::operation::put_file::PutFileError::RepositoryNameRequiredException(inner) => Error::RepositoryNameRequiredException(inner),
+            crate::operation::put_file::PutFileError::SameFileContentException(inner) => Error::SameFileContentException(inner),
+            crate::operation::put_file::PutFileError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PostCommentReplyError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::put_repository_triggers::PutRepositoryTriggersError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::PostCommentReplyError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::put_repository_triggers::PutRepositoryTriggersError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -3973,802 +3816,108 @@ where
         }
     }
 }
-impl From<crate::error::PostCommentReplyError> for Error {
-    fn from(err: crate::error::PostCommentReplyError) -> Self {
+impl From<crate::operation::put_repository_triggers::PutRepositoryTriggersError> for Error {
+    fn from(err: crate::operation::put_repository_triggers::PutRepositoryTriggersError) -> Self {
         match err {
-            crate::error::PostCommentReplyError::ClientRequestTokenRequiredException(inner) => {
-                Error::ClientRequestTokenRequiredException(inner)
+            crate::operation::put_repository_triggers::PutRepositoryTriggersError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
+            crate::operation::put_repository_triggers::PutRepositoryTriggersError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
+            crate::operation::put_repository_triggers::PutRepositoryTriggersError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
+            crate::operation::put_repository_triggers::PutRepositoryTriggersError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
+            crate::operation::put_repository_triggers::PutRepositoryTriggersError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
+            crate::operation::put_repository_triggers::PutRepositoryTriggersError::InvalidRepositoryNameException(inner) => Error::InvalidRepositoryNameException(inner),
+            crate::operation::put_repository_triggers::PutRepositoryTriggersError::InvalidRepositoryTriggerBranchNameException(inner) => Error::InvalidRepositoryTriggerBranchNameException(inner),
+            crate::operation::put_repository_triggers::PutRepositoryTriggersError::InvalidRepositoryTriggerCustomDataException(inner) => Error::InvalidRepositoryTriggerCustomDataException(inner),
+            crate::operation::put_repository_triggers::PutRepositoryTriggersError::InvalidRepositoryTriggerDestinationArnException(inner) => Error::InvalidRepositoryTriggerDestinationArnException(inner),
+            crate::operation::put_repository_triggers::PutRepositoryTriggersError::InvalidRepositoryTriggerEventsException(inner) => Error::InvalidRepositoryTriggerEventsException(inner),
+            crate::operation::put_repository_triggers::PutRepositoryTriggersError::InvalidRepositoryTriggerNameException(inner) => Error::InvalidRepositoryTriggerNameException(inner),
+            crate::operation::put_repository_triggers::PutRepositoryTriggersError::InvalidRepositoryTriggerRegionException(inner) => Error::InvalidRepositoryTriggerRegionException(inner),
+            crate::operation::put_repository_triggers::PutRepositoryTriggersError::MaximumBranchesExceededException(inner) => Error::MaximumBranchesExceededException(inner),
+            crate::operation::put_repository_triggers::PutRepositoryTriggersError::MaximumRepositoryTriggersExceededException(inner) => Error::MaximumRepositoryTriggersExceededException(inner),
+            crate::operation::put_repository_triggers::PutRepositoryTriggersError::RepositoryDoesNotExistException(inner) => Error::RepositoryDoesNotExistException(inner),
+            crate::operation::put_repository_triggers::PutRepositoryTriggersError::RepositoryNameRequiredException(inner) => Error::RepositoryNameRequiredException(inner),
+            crate::operation::put_repository_triggers::PutRepositoryTriggersError::RepositoryTriggerBranchNameListRequiredException(inner) => Error::RepositoryTriggerBranchNameListRequiredException(inner),
+            crate::operation::put_repository_triggers::PutRepositoryTriggersError::RepositoryTriggerDestinationArnRequiredException(inner) => Error::RepositoryTriggerDestinationArnRequiredException(inner),
+            crate::operation::put_repository_triggers::PutRepositoryTriggersError::RepositoryTriggerEventsListRequiredException(inner) => Error::RepositoryTriggerEventsListRequiredException(inner),
+            crate::operation::put_repository_triggers::PutRepositoryTriggersError::RepositoryTriggerNameRequiredException(inner) => Error::RepositoryTriggerNameRequiredException(inner),
+            crate::operation::put_repository_triggers::PutRepositoryTriggersError::RepositoryTriggersListRequiredException(inner) => Error::RepositoryTriggersListRequiredException(inner),
+            crate::operation::put_repository_triggers::PutRepositoryTriggersError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
-            crate::error::PostCommentReplyError::CommentContentRequiredException(inner) => {
-                Error::CommentContentRequiredException(inner)
-            }
-            crate::error::PostCommentReplyError::CommentContentSizeLimitExceededException(
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::tag_resource::TagResourceError> for Error {
+    fn from(err: crate::operation::tag_resource::TagResourceError) -> Self {
+        match err {
+            crate::operation::tag_resource::TagResourceError::InvalidRepositoryNameException(
                 inner,
-            ) => Error::CommentContentSizeLimitExceededException(inner),
-            crate::error::PostCommentReplyError::CommentDoesNotExistException(inner) => {
-                Error::CommentDoesNotExistException(inner)
-            }
-            crate::error::PostCommentReplyError::CommentIdRequiredException(inner) => {
-                Error::CommentIdRequiredException(inner)
-            }
-            crate::error::PostCommentReplyError::IdempotencyParameterMismatchException(inner) => {
-                Error::IdempotencyParameterMismatchException(inner)
-            }
-            crate::error::PostCommentReplyError::InvalidClientRequestTokenException(inner) => {
-                Error::InvalidClientRequestTokenException(inner)
-            }
-            crate::error::PostCommentReplyError::InvalidCommentIdException(inner) => {
-                Error::InvalidCommentIdException(inner)
-            }
-            crate::error::PostCommentReplyError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutCommentReactionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::PutCommentReactionError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::PutCommentReactionError> for Error {
-    fn from(err: crate::error::PutCommentReactionError) -> Self {
-        match err {
-            crate::error::PutCommentReactionError::CommentDeletedException(inner) => {
-                Error::CommentDeletedException(inner)
-            }
-            crate::error::PutCommentReactionError::CommentDoesNotExistException(inner) => {
-                Error::CommentDoesNotExistException(inner)
-            }
-            crate::error::PutCommentReactionError::CommentIdRequiredException(inner) => {
-                Error::CommentIdRequiredException(inner)
-            }
-            crate::error::PutCommentReactionError::InvalidCommentIdException(inner) => {
-                Error::InvalidCommentIdException(inner)
-            }
-            crate::error::PutCommentReactionError::InvalidReactionValueException(inner) => {
-                Error::InvalidReactionValueException(inner)
-            }
-            crate::error::PutCommentReactionError::ReactionLimitExceededException(inner) => {
-                Error::ReactionLimitExceededException(inner)
-            }
-            crate::error::PutCommentReactionError::ReactionValueRequiredException(inner) => {
-                Error::ReactionValueRequiredException(inner)
-            }
-            crate::error::PutCommentReactionError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutFileError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::PutFileError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::PutFileError> for Error {
-    fn from(err: crate::error::PutFileError) -> Self {
-        match err {
-            crate::error::PutFileError::BranchDoesNotExistException(inner) => {
-                Error::BranchDoesNotExistException(inner)
-            }
-            crate::error::PutFileError::BranchNameIsTagNameException(inner) => {
-                Error::BranchNameIsTagNameException(inner)
-            }
-            crate::error::PutFileError::BranchNameRequiredException(inner) => {
-                Error::BranchNameRequiredException(inner)
-            }
-            crate::error::PutFileError::CommitMessageLengthExceededException(inner) => {
-                Error::CommitMessageLengthExceededException(inner)
-            }
-            crate::error::PutFileError::DirectoryNameConflictsWithFileNameException(inner) => {
-                Error::DirectoryNameConflictsWithFileNameException(inner)
-            }
-            crate::error::PutFileError::EncryptionIntegrityChecksFailedException(inner) => {
-                Error::EncryptionIntegrityChecksFailedException(inner)
-            }
-            crate::error::PutFileError::EncryptionKeyAccessDeniedException(inner) => {
-                Error::EncryptionKeyAccessDeniedException(inner)
-            }
-            crate::error::PutFileError::EncryptionKeyDisabledException(inner) => {
-                Error::EncryptionKeyDisabledException(inner)
-            }
-            crate::error::PutFileError::EncryptionKeyNotFoundException(inner) => {
-                Error::EncryptionKeyNotFoundException(inner)
-            }
-            crate::error::PutFileError::EncryptionKeyUnavailableException(inner) => {
-                Error::EncryptionKeyUnavailableException(inner)
-            }
-            crate::error::PutFileError::FileContentRequiredException(inner) => {
-                Error::FileContentRequiredException(inner)
-            }
-            crate::error::PutFileError::FileContentSizeLimitExceededException(inner) => {
-                Error::FileContentSizeLimitExceededException(inner)
-            }
-            crate::error::PutFileError::FileNameConflictsWithDirectoryNameException(inner) => {
-                Error::FileNameConflictsWithDirectoryNameException(inner)
-            }
-            crate::error::PutFileError::FilePathConflictsWithSubmodulePathException(inner) => {
-                Error::FilePathConflictsWithSubmodulePathException(inner)
-            }
-            crate::error::PutFileError::FolderContentSizeLimitExceededException(inner) => {
-                Error::FolderContentSizeLimitExceededException(inner)
-            }
-            crate::error::PutFileError::InvalidBranchNameException(inner) => {
-                Error::InvalidBranchNameException(inner)
-            }
-            crate::error::PutFileError::InvalidDeletionParameterException(inner) => {
-                Error::InvalidDeletionParameterException(inner)
-            }
-            crate::error::PutFileError::InvalidEmailException(inner) => {
-                Error::InvalidEmailException(inner)
-            }
-            crate::error::PutFileError::InvalidFileModeException(inner) => {
-                Error::InvalidFileModeException(inner)
-            }
-            crate::error::PutFileError::InvalidParentCommitIdException(inner) => {
-                Error::InvalidParentCommitIdException(inner)
-            }
-            crate::error::PutFileError::InvalidPathException(inner) => {
-                Error::InvalidPathException(inner)
-            }
-            crate::error::PutFileError::InvalidRepositoryNameException(inner) => {
-                Error::InvalidRepositoryNameException(inner)
-            }
-            crate::error::PutFileError::NameLengthExceededException(inner) => {
-                Error::NameLengthExceededException(inner)
-            }
-            crate::error::PutFileError::ParentCommitDoesNotExistException(inner) => {
-                Error::ParentCommitDoesNotExistException(inner)
-            }
-            crate::error::PutFileError::ParentCommitIdOutdatedException(inner) => {
-                Error::ParentCommitIdOutdatedException(inner)
-            }
-            crate::error::PutFileError::ParentCommitIdRequiredException(inner) => {
-                Error::ParentCommitIdRequiredException(inner)
-            }
-            crate::error::PutFileError::PathRequiredException(inner) => {
-                Error::PathRequiredException(inner)
-            }
-            crate::error::PutFileError::RepositoryDoesNotExistException(inner) => {
-                Error::RepositoryDoesNotExistException(inner)
-            }
-            crate::error::PutFileError::RepositoryNameRequiredException(inner) => {
-                Error::RepositoryNameRequiredException(inner)
-            }
-            crate::error::PutFileError::SameFileContentException(inner) => {
-                Error::SameFileContentException(inner)
-            }
-            crate::error::PutFileError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutRepositoryTriggersError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::PutRepositoryTriggersError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::PutRepositoryTriggersError> for Error {
-    fn from(err: crate::error::PutRepositoryTriggersError) -> Self {
-        match err {
-            crate::error::PutRepositoryTriggersError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
-            crate::error::PutRepositoryTriggersError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
-            crate::error::PutRepositoryTriggersError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
-            crate::error::PutRepositoryTriggersError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
-            crate::error::PutRepositoryTriggersError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
-            crate::error::PutRepositoryTriggersError::InvalidRepositoryNameException(inner) => Error::InvalidRepositoryNameException(inner),
-            crate::error::PutRepositoryTriggersError::InvalidRepositoryTriggerBranchNameException(inner) => Error::InvalidRepositoryTriggerBranchNameException(inner),
-            crate::error::PutRepositoryTriggersError::InvalidRepositoryTriggerCustomDataException(inner) => Error::InvalidRepositoryTriggerCustomDataException(inner),
-            crate::error::PutRepositoryTriggersError::InvalidRepositoryTriggerDestinationArnException(inner) => Error::InvalidRepositoryTriggerDestinationArnException(inner),
-            crate::error::PutRepositoryTriggersError::InvalidRepositoryTriggerEventsException(inner) => Error::InvalidRepositoryTriggerEventsException(inner),
-            crate::error::PutRepositoryTriggersError::InvalidRepositoryTriggerNameException(inner) => Error::InvalidRepositoryTriggerNameException(inner),
-            crate::error::PutRepositoryTriggersError::InvalidRepositoryTriggerRegionException(inner) => Error::InvalidRepositoryTriggerRegionException(inner),
-            crate::error::PutRepositoryTriggersError::MaximumBranchesExceededException(inner) => Error::MaximumBranchesExceededException(inner),
-            crate::error::PutRepositoryTriggersError::MaximumRepositoryTriggersExceededException(inner) => Error::MaximumRepositoryTriggersExceededException(inner),
-            crate::error::PutRepositoryTriggersError::RepositoryDoesNotExistException(inner) => Error::RepositoryDoesNotExistException(inner),
-            crate::error::PutRepositoryTriggersError::RepositoryNameRequiredException(inner) => Error::RepositoryNameRequiredException(inner),
-            crate::error::PutRepositoryTriggersError::RepositoryTriggerBranchNameListRequiredException(inner) => Error::RepositoryTriggerBranchNameListRequiredException(inner),
-            crate::error::PutRepositoryTriggersError::RepositoryTriggerDestinationArnRequiredException(inner) => Error::RepositoryTriggerDestinationArnRequiredException(inner),
-            crate::error::PutRepositoryTriggersError::RepositoryTriggerEventsListRequiredException(inner) => Error::RepositoryTriggerEventsListRequiredException(inner),
-            crate::error::PutRepositoryTriggersError::RepositoryTriggerNameRequiredException(inner) => Error::RepositoryTriggerNameRequiredException(inner),
-            crate::error::PutRepositoryTriggersError::RepositoryTriggersListRequiredException(inner) => Error::RepositoryTriggersListRequiredException(inner),
-            crate::error::PutRepositoryTriggersError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::TagResourceError> for Error {
-    fn from(err: crate::error::TagResourceError) -> Self {
-        match err {
-            crate::error::TagResourceError::InvalidRepositoryNameException(inner) => {
-                Error::InvalidRepositoryNameException(inner)
-            }
-            crate::error::TagResourceError::InvalidResourceArnException(inner) => {
-                Error::InvalidResourceArnException(inner)
-            }
-            crate::error::TagResourceError::InvalidSystemTagUsageException(inner) => {
-                Error::InvalidSystemTagUsageException(inner)
-            }
-            crate::error::TagResourceError::InvalidTagsMapException(inner) => {
+            ) => Error::InvalidRepositoryNameException(inner),
+            crate::operation::tag_resource::TagResourceError::InvalidResourceArnException(
+                inner,
+            ) => Error::InvalidResourceArnException(inner),
+            crate::operation::tag_resource::TagResourceError::InvalidSystemTagUsageException(
+                inner,
+            ) => Error::InvalidSystemTagUsageException(inner),
+            crate::operation::tag_resource::TagResourceError::InvalidTagsMapException(inner) => {
                 Error::InvalidTagsMapException(inner)
             }
-            crate::error::TagResourceError::RepositoryDoesNotExistException(inner) => {
-                Error::RepositoryDoesNotExistException(inner)
-            }
-            crate::error::TagResourceError::ResourceArnRequiredException(inner) => {
-                Error::ResourceArnRequiredException(inner)
-            }
-            crate::error::TagResourceError::TagPolicyException(inner) => {
+            crate::operation::tag_resource::TagResourceError::RepositoryDoesNotExistException(
+                inner,
+            ) => Error::RepositoryDoesNotExistException(inner),
+            crate::operation::tag_resource::TagResourceError::ResourceArnRequiredException(
+                inner,
+            ) => Error::ResourceArnRequiredException(inner),
+            crate::operation::tag_resource::TagResourceError::TagPolicyException(inner) => {
                 Error::TagPolicyException(inner)
             }
-            crate::error::TagResourceError::TagsMapRequiredException(inner) => {
+            crate::operation::tag_resource::TagResourceError::TagsMapRequiredException(inner) => {
                 Error::TagsMapRequiredException(inner)
             }
-            crate::error::TagResourceError::TooManyTagsException(inner) => {
+            crate::operation::tag_resource::TagResourceError::TooManyTagsException(inner) => {
                 Error::TooManyTagsException(inner)
             }
-            crate::error::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::TestRepositoryTriggersError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::TestRepositoryTriggersError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::TestRepositoryTriggersError> for Error {
-    fn from(err: crate::error::TestRepositoryTriggersError) -> Self {
-        match err {
-            crate::error::TestRepositoryTriggersError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
-            crate::error::TestRepositoryTriggersError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
-            crate::error::TestRepositoryTriggersError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
-            crate::error::TestRepositoryTriggersError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
-            crate::error::TestRepositoryTriggersError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
-            crate::error::TestRepositoryTriggersError::InvalidRepositoryNameException(inner) => Error::InvalidRepositoryNameException(inner),
-            crate::error::TestRepositoryTriggersError::InvalidRepositoryTriggerBranchNameException(inner) => Error::InvalidRepositoryTriggerBranchNameException(inner),
-            crate::error::TestRepositoryTriggersError::InvalidRepositoryTriggerCustomDataException(inner) => Error::InvalidRepositoryTriggerCustomDataException(inner),
-            crate::error::TestRepositoryTriggersError::InvalidRepositoryTriggerDestinationArnException(inner) => Error::InvalidRepositoryTriggerDestinationArnException(inner),
-            crate::error::TestRepositoryTriggersError::InvalidRepositoryTriggerEventsException(inner) => Error::InvalidRepositoryTriggerEventsException(inner),
-            crate::error::TestRepositoryTriggersError::InvalidRepositoryTriggerNameException(inner) => Error::InvalidRepositoryTriggerNameException(inner),
-            crate::error::TestRepositoryTriggersError::InvalidRepositoryTriggerRegionException(inner) => Error::InvalidRepositoryTriggerRegionException(inner),
-            crate::error::TestRepositoryTriggersError::MaximumBranchesExceededException(inner) => Error::MaximumBranchesExceededException(inner),
-            crate::error::TestRepositoryTriggersError::MaximumRepositoryTriggersExceededException(inner) => Error::MaximumRepositoryTriggersExceededException(inner),
-            crate::error::TestRepositoryTriggersError::RepositoryDoesNotExistException(inner) => Error::RepositoryDoesNotExistException(inner),
-            crate::error::TestRepositoryTriggersError::RepositoryNameRequiredException(inner) => Error::RepositoryNameRequiredException(inner),
-            crate::error::TestRepositoryTriggersError::RepositoryTriggerBranchNameListRequiredException(inner) => Error::RepositoryTriggerBranchNameListRequiredException(inner),
-            crate::error::TestRepositoryTriggersError::RepositoryTriggerDestinationArnRequiredException(inner) => Error::RepositoryTriggerDestinationArnRequiredException(inner),
-            crate::error::TestRepositoryTriggersError::RepositoryTriggerEventsListRequiredException(inner) => Error::RepositoryTriggerEventsListRequiredException(inner),
-            crate::error::TestRepositoryTriggersError::RepositoryTriggerNameRequiredException(inner) => Error::RepositoryTriggerNameRequiredException(inner),
-            crate::error::TestRepositoryTriggersError::RepositoryTriggersListRequiredException(inner) => Error::RepositoryTriggersListRequiredException(inner),
-            crate::error::TestRepositoryTriggersError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::UntagResourceError> for Error {
-    fn from(err: crate::error::UntagResourceError) -> Self {
-        match err {
-            crate::error::UntagResourceError::InvalidRepositoryNameException(inner) => {
-                Error::InvalidRepositoryNameException(inner)
-            }
-            crate::error::UntagResourceError::InvalidResourceArnException(inner) => {
-                Error::InvalidResourceArnException(inner)
-            }
-            crate::error::UntagResourceError::InvalidSystemTagUsageException(inner) => {
-                Error::InvalidSystemTagUsageException(inner)
-            }
-            crate::error::UntagResourceError::InvalidTagKeysListException(inner) => {
-                Error::InvalidTagKeysListException(inner)
-            }
-            crate::error::UntagResourceError::RepositoryDoesNotExistException(inner) => {
-                Error::RepositoryDoesNotExistException(inner)
-            }
-            crate::error::UntagResourceError::ResourceArnRequiredException(inner) => {
-                Error::ResourceArnRequiredException(inner)
-            }
-            crate::error::UntagResourceError::TagKeysListRequiredException(inner) => {
-                Error::TagKeysListRequiredException(inner)
-            }
-            crate::error::UntagResourceError::TagPolicyException(inner) => {
-                Error::TagPolicyException(inner)
-            }
-            crate::error::UntagResourceError::TooManyTagsException(inner) => {
-                Error::TooManyTagsException(inner)
-            }
-            crate::error::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::UpdateApprovalRuleTemplateContentError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::UpdateApprovalRuleTemplateContentError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::UpdateApprovalRuleTemplateContentError> for Error {
-    fn from(err: crate::error::UpdateApprovalRuleTemplateContentError) -> Self {
-        match err {
-            crate::error::UpdateApprovalRuleTemplateContentError::ApprovalRuleTemplateContentRequiredException(inner) => Error::ApprovalRuleTemplateContentRequiredException(inner),
-            crate::error::UpdateApprovalRuleTemplateContentError::ApprovalRuleTemplateDoesNotExistException(inner) => Error::ApprovalRuleTemplateDoesNotExistException(inner),
-            crate::error::UpdateApprovalRuleTemplateContentError::ApprovalRuleTemplateNameRequiredException(inner) => Error::ApprovalRuleTemplateNameRequiredException(inner),
-            crate::error::UpdateApprovalRuleTemplateContentError::InvalidApprovalRuleTemplateContentException(inner) => Error::InvalidApprovalRuleTemplateContentException(inner),
-            crate::error::UpdateApprovalRuleTemplateContentError::InvalidApprovalRuleTemplateNameException(inner) => Error::InvalidApprovalRuleTemplateNameException(inner),
-            crate::error::UpdateApprovalRuleTemplateContentError::InvalidRuleContentSha256Exception(inner) => Error::InvalidRuleContentSha256Exception(inner),
-            crate::error::UpdateApprovalRuleTemplateContentError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::UpdateApprovalRuleTemplateDescriptionError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::UpdateApprovalRuleTemplateDescriptionError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::UpdateApprovalRuleTemplateDescriptionError> for Error {
-    fn from(err: crate::error::UpdateApprovalRuleTemplateDescriptionError) -> Self {
-        match err {
-            crate::error::UpdateApprovalRuleTemplateDescriptionError::ApprovalRuleTemplateDoesNotExistException(inner) => Error::ApprovalRuleTemplateDoesNotExistException(inner),
-            crate::error::UpdateApprovalRuleTemplateDescriptionError::ApprovalRuleTemplateNameRequiredException(inner) => Error::ApprovalRuleTemplateNameRequiredException(inner),
-            crate::error::UpdateApprovalRuleTemplateDescriptionError::InvalidApprovalRuleTemplateDescriptionException(inner) => Error::InvalidApprovalRuleTemplateDescriptionException(inner),
-            crate::error::UpdateApprovalRuleTemplateDescriptionError::InvalidApprovalRuleTemplateNameException(inner) => Error::InvalidApprovalRuleTemplateNameException(inner),
-            crate::error::UpdateApprovalRuleTemplateDescriptionError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::UpdateApprovalRuleTemplateNameError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::UpdateApprovalRuleTemplateNameError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::UpdateApprovalRuleTemplateNameError> for Error {
-    fn from(err: crate::error::UpdateApprovalRuleTemplateNameError) -> Self {
-        match err {
-            crate::error::UpdateApprovalRuleTemplateNameError::ApprovalRuleTemplateDoesNotExistException(inner) => Error::ApprovalRuleTemplateDoesNotExistException(inner),
-            crate::error::UpdateApprovalRuleTemplateNameError::ApprovalRuleTemplateNameAlreadyExistsException(inner) => Error::ApprovalRuleTemplateNameAlreadyExistsException(inner),
-            crate::error::UpdateApprovalRuleTemplateNameError::ApprovalRuleTemplateNameRequiredException(inner) => Error::ApprovalRuleTemplateNameRequiredException(inner),
-            crate::error::UpdateApprovalRuleTemplateNameError::InvalidApprovalRuleTemplateNameException(inner) => Error::InvalidApprovalRuleTemplateNameException(inner),
-            crate::error::UpdateApprovalRuleTemplateNameError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateCommentError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateCommentError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::UpdateCommentError> for Error {
-    fn from(err: crate::error::UpdateCommentError) -> Self {
-        match err {
-            crate::error::UpdateCommentError::CommentContentRequiredException(inner) => {
-                Error::CommentContentRequiredException(inner)
-            }
-            crate::error::UpdateCommentError::CommentContentSizeLimitExceededException(inner) => {
-                Error::CommentContentSizeLimitExceededException(inner)
-            }
-            crate::error::UpdateCommentError::CommentDeletedException(inner) => {
-                Error::CommentDeletedException(inner)
-            }
-            crate::error::UpdateCommentError::CommentDoesNotExistException(inner) => {
-                Error::CommentDoesNotExistException(inner)
-            }
-            crate::error::UpdateCommentError::CommentIdRequiredException(inner) => {
-                Error::CommentIdRequiredException(inner)
-            }
-            crate::error::UpdateCommentError::CommentNotCreatedByCallerException(inner) => {
-                Error::CommentNotCreatedByCallerException(inner)
-            }
-            crate::error::UpdateCommentError::InvalidCommentIdException(inner) => {
-                Error::InvalidCommentIdException(inner)
-            }
-            crate::error::UpdateCommentError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateDefaultBranchError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateDefaultBranchError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::UpdateDefaultBranchError> for Error {
-    fn from(err: crate::error::UpdateDefaultBranchError) -> Self {
-        match err {
-            crate::error::UpdateDefaultBranchError::BranchDoesNotExistException(inner) => {
-                Error::BranchDoesNotExistException(inner)
-            }
-            crate::error::UpdateDefaultBranchError::BranchNameRequiredException(inner) => {
-                Error::BranchNameRequiredException(inner)
-            }
-            crate::error::UpdateDefaultBranchError::EncryptionIntegrityChecksFailedException(
-                inner,
-            ) => Error::EncryptionIntegrityChecksFailedException(inner),
-            crate::error::UpdateDefaultBranchError::EncryptionKeyAccessDeniedException(inner) => {
-                Error::EncryptionKeyAccessDeniedException(inner)
-            }
-            crate::error::UpdateDefaultBranchError::EncryptionKeyDisabledException(inner) => {
-                Error::EncryptionKeyDisabledException(inner)
-            }
-            crate::error::UpdateDefaultBranchError::EncryptionKeyNotFoundException(inner) => {
-                Error::EncryptionKeyNotFoundException(inner)
-            }
-            crate::error::UpdateDefaultBranchError::EncryptionKeyUnavailableException(inner) => {
-                Error::EncryptionKeyUnavailableException(inner)
-            }
-            crate::error::UpdateDefaultBranchError::InvalidBranchNameException(inner) => {
-                Error::InvalidBranchNameException(inner)
-            }
-            crate::error::UpdateDefaultBranchError::InvalidRepositoryNameException(inner) => {
-                Error::InvalidRepositoryNameException(inner)
-            }
-            crate::error::UpdateDefaultBranchError::RepositoryDoesNotExistException(inner) => {
-                Error::RepositoryDoesNotExistException(inner)
-            }
-            crate::error::UpdateDefaultBranchError::RepositoryNameRequiredException(inner) => {
-                Error::RepositoryNameRequiredException(inner)
-            }
-            crate::error::UpdateDefaultBranchError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::UpdatePullRequestApprovalRuleContentError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::UpdatePullRequestApprovalRuleContentError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::UpdatePullRequestApprovalRuleContentError> for Error {
-    fn from(err: crate::error::UpdatePullRequestApprovalRuleContentError) -> Self {
-        match err {
-            crate::error::UpdatePullRequestApprovalRuleContentError::ApprovalRuleContentRequiredException(inner) => Error::ApprovalRuleContentRequiredException(inner),
-            crate::error::UpdatePullRequestApprovalRuleContentError::ApprovalRuleDoesNotExistException(inner) => Error::ApprovalRuleDoesNotExistException(inner),
-            crate::error::UpdatePullRequestApprovalRuleContentError::ApprovalRuleNameRequiredException(inner) => Error::ApprovalRuleNameRequiredException(inner),
-            crate::error::UpdatePullRequestApprovalRuleContentError::CannotModifyApprovalRuleFromTemplateException(inner) => Error::CannotModifyApprovalRuleFromTemplateException(inner),
-            crate::error::UpdatePullRequestApprovalRuleContentError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
-            crate::error::UpdatePullRequestApprovalRuleContentError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
-            crate::error::UpdatePullRequestApprovalRuleContentError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
-            crate::error::UpdatePullRequestApprovalRuleContentError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
-            crate::error::UpdatePullRequestApprovalRuleContentError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
-            crate::error::UpdatePullRequestApprovalRuleContentError::InvalidApprovalRuleContentException(inner) => Error::InvalidApprovalRuleContentException(inner),
-            crate::error::UpdatePullRequestApprovalRuleContentError::InvalidApprovalRuleNameException(inner) => Error::InvalidApprovalRuleNameException(inner),
-            crate::error::UpdatePullRequestApprovalRuleContentError::InvalidPullRequestIdException(inner) => Error::InvalidPullRequestIdException(inner),
-            crate::error::UpdatePullRequestApprovalRuleContentError::InvalidRuleContentSha256Exception(inner) => Error::InvalidRuleContentSha256Exception(inner),
-            crate::error::UpdatePullRequestApprovalRuleContentError::PullRequestAlreadyClosedException(inner) => Error::PullRequestAlreadyClosedException(inner),
-            crate::error::UpdatePullRequestApprovalRuleContentError::PullRequestDoesNotExistException(inner) => Error::PullRequestDoesNotExistException(inner),
-            crate::error::UpdatePullRequestApprovalRuleContentError::PullRequestIdRequiredException(inner) => Error::PullRequestIdRequiredException(inner),
-            crate::error::UpdatePullRequestApprovalRuleContentError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::UpdatePullRequestApprovalStateError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::UpdatePullRequestApprovalStateError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::UpdatePullRequestApprovalStateError> for Error {
-    fn from(err: crate::error::UpdatePullRequestApprovalStateError) -> Self {
-        match err {
-            crate::error::UpdatePullRequestApprovalStateError::ApprovalStateRequiredException(inner) => Error::ApprovalStateRequiredException(inner),
-            crate::error::UpdatePullRequestApprovalStateError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
-            crate::error::UpdatePullRequestApprovalStateError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
-            crate::error::UpdatePullRequestApprovalStateError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
-            crate::error::UpdatePullRequestApprovalStateError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
-            crate::error::UpdatePullRequestApprovalStateError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
-            crate::error::UpdatePullRequestApprovalStateError::InvalidApprovalStateException(inner) => Error::InvalidApprovalStateException(inner),
-            crate::error::UpdatePullRequestApprovalStateError::InvalidPullRequestIdException(inner) => Error::InvalidPullRequestIdException(inner),
-            crate::error::UpdatePullRequestApprovalStateError::InvalidRevisionIdException(inner) => Error::InvalidRevisionIdException(inner),
-            crate::error::UpdatePullRequestApprovalStateError::MaximumNumberOfApprovalsExceededException(inner) => Error::MaximumNumberOfApprovalsExceededException(inner),
-            crate::error::UpdatePullRequestApprovalStateError::PullRequestAlreadyClosedException(inner) => Error::PullRequestAlreadyClosedException(inner),
-            crate::error::UpdatePullRequestApprovalStateError::PullRequestCannotBeApprovedByAuthorException(inner) => Error::PullRequestCannotBeApprovedByAuthorException(inner),
-            crate::error::UpdatePullRequestApprovalStateError::PullRequestDoesNotExistException(inner) => Error::PullRequestDoesNotExistException(inner),
-            crate::error::UpdatePullRequestApprovalStateError::PullRequestIdRequiredException(inner) => Error::PullRequestIdRequiredException(inner),
-            crate::error::UpdatePullRequestApprovalStateError::RevisionIdRequiredException(inner) => Error::RevisionIdRequiredException(inner),
-            crate::error::UpdatePullRequestApprovalStateError::RevisionNotCurrentException(inner) => Error::RevisionNotCurrentException(inner),
-            crate::error::UpdatePullRequestApprovalStateError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdatePullRequestDescriptionError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdatePullRequestDescriptionError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::UpdatePullRequestDescriptionError> for Error {
-    fn from(err: crate::error::UpdatePullRequestDescriptionError) -> Self {
-        match err {
-            crate::error::UpdatePullRequestDescriptionError::InvalidDescriptionException(inner) => {
-                Error::InvalidDescriptionException(inner)
-            }
-            crate::error::UpdatePullRequestDescriptionError::InvalidPullRequestIdException(
-                inner,
-            ) => Error::InvalidPullRequestIdException(inner),
-            crate::error::UpdatePullRequestDescriptionError::PullRequestAlreadyClosedException(
-                inner,
-            ) => Error::PullRequestAlreadyClosedException(inner),
-            crate::error::UpdatePullRequestDescriptionError::PullRequestDoesNotExistException(
-                inner,
-            ) => Error::PullRequestDoesNotExistException(inner),
-            crate::error::UpdatePullRequestDescriptionError::PullRequestIdRequiredException(
-                inner,
-            ) => Error::PullRequestIdRequiredException(inner),
-            crate::error::UpdatePullRequestDescriptionError::Unhandled(inner) => {
+            crate::operation::tag_resource::TagResourceError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdatePullRequestStatusError, R>>
-    for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::test_repository_triggers::TestRepositoryTriggersError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdatePullRequestStatusError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::test_repository_triggers::TestRepositoryTriggersError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -4785,31 +3934,45 @@ where
         }
     }
 }
-impl From<crate::error::UpdatePullRequestStatusError> for Error {
-    fn from(err: crate::error::UpdatePullRequestStatusError) -> Self {
+impl From<crate::operation::test_repository_triggers::TestRepositoryTriggersError> for Error {
+    fn from(err: crate::operation::test_repository_triggers::TestRepositoryTriggersError) -> Self {
         match err {
-            crate::error::UpdatePullRequestStatusError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
-            crate::error::UpdatePullRequestStatusError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
-            crate::error::UpdatePullRequestStatusError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
-            crate::error::UpdatePullRequestStatusError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
-            crate::error::UpdatePullRequestStatusError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
-            crate::error::UpdatePullRequestStatusError::InvalidPullRequestIdException(inner) => Error::InvalidPullRequestIdException(inner),
-            crate::error::UpdatePullRequestStatusError::InvalidPullRequestStatusException(inner) => Error::InvalidPullRequestStatusException(inner),
-            crate::error::UpdatePullRequestStatusError::InvalidPullRequestStatusUpdateException(inner) => Error::InvalidPullRequestStatusUpdateException(inner),
-            crate::error::UpdatePullRequestStatusError::PullRequestDoesNotExistException(inner) => Error::PullRequestDoesNotExistException(inner),
-            crate::error::UpdatePullRequestStatusError::PullRequestIdRequiredException(inner) => Error::PullRequestIdRequiredException(inner),
-            crate::error::UpdatePullRequestStatusError::PullRequestStatusRequiredException(inner) => Error::PullRequestStatusRequiredException(inner),
-            crate::error::UpdatePullRequestStatusError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::test_repository_triggers::TestRepositoryTriggersError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
+            crate::operation::test_repository_triggers::TestRepositoryTriggersError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
+            crate::operation::test_repository_triggers::TestRepositoryTriggersError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
+            crate::operation::test_repository_triggers::TestRepositoryTriggersError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
+            crate::operation::test_repository_triggers::TestRepositoryTriggersError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
+            crate::operation::test_repository_triggers::TestRepositoryTriggersError::InvalidRepositoryNameException(inner) => Error::InvalidRepositoryNameException(inner),
+            crate::operation::test_repository_triggers::TestRepositoryTriggersError::InvalidRepositoryTriggerBranchNameException(inner) => Error::InvalidRepositoryTriggerBranchNameException(inner),
+            crate::operation::test_repository_triggers::TestRepositoryTriggersError::InvalidRepositoryTriggerCustomDataException(inner) => Error::InvalidRepositoryTriggerCustomDataException(inner),
+            crate::operation::test_repository_triggers::TestRepositoryTriggersError::InvalidRepositoryTriggerDestinationArnException(inner) => Error::InvalidRepositoryTriggerDestinationArnException(inner),
+            crate::operation::test_repository_triggers::TestRepositoryTriggersError::InvalidRepositoryTriggerEventsException(inner) => Error::InvalidRepositoryTriggerEventsException(inner),
+            crate::operation::test_repository_triggers::TestRepositoryTriggersError::InvalidRepositoryTriggerNameException(inner) => Error::InvalidRepositoryTriggerNameException(inner),
+            crate::operation::test_repository_triggers::TestRepositoryTriggersError::InvalidRepositoryTriggerRegionException(inner) => Error::InvalidRepositoryTriggerRegionException(inner),
+            crate::operation::test_repository_triggers::TestRepositoryTriggersError::MaximumBranchesExceededException(inner) => Error::MaximumBranchesExceededException(inner),
+            crate::operation::test_repository_triggers::TestRepositoryTriggersError::MaximumRepositoryTriggersExceededException(inner) => Error::MaximumRepositoryTriggersExceededException(inner),
+            crate::operation::test_repository_triggers::TestRepositoryTriggersError::RepositoryDoesNotExistException(inner) => Error::RepositoryDoesNotExistException(inner),
+            crate::operation::test_repository_triggers::TestRepositoryTriggersError::RepositoryNameRequiredException(inner) => Error::RepositoryNameRequiredException(inner),
+            crate::operation::test_repository_triggers::TestRepositoryTriggersError::RepositoryTriggerBranchNameListRequiredException(inner) => Error::RepositoryTriggerBranchNameListRequiredException(inner),
+            crate::operation::test_repository_triggers::TestRepositoryTriggersError::RepositoryTriggerDestinationArnRequiredException(inner) => Error::RepositoryTriggerDestinationArnRequiredException(inner),
+            crate::operation::test_repository_triggers::TestRepositoryTriggersError::RepositoryTriggerEventsListRequiredException(inner) => Error::RepositoryTriggerEventsListRequiredException(inner),
+            crate::operation::test_repository_triggers::TestRepositoryTriggersError::RepositoryTriggerNameRequiredException(inner) => Error::RepositoryTriggerNameRequiredException(inner),
+            crate::operation::test_repository_triggers::TestRepositoryTriggersError::RepositoryTriggersListRequiredException(inner) => Error::RepositoryTriggersListRequiredException(inner),
+            crate::operation::test_repository_triggers::TestRepositoryTriggersError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdatePullRequestTitleError, R>>
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdatePullRequestTitleError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::untag_resource::UntagResourceError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -4826,38 +3989,111 @@ where
         }
     }
 }
-impl From<crate::error::UpdatePullRequestTitleError> for Error {
-    fn from(err: crate::error::UpdatePullRequestTitleError) -> Self {
+impl From<crate::operation::untag_resource::UntagResourceError> for Error {
+    fn from(err: crate::operation::untag_resource::UntagResourceError) -> Self {
         match err {
-            crate::error::UpdatePullRequestTitleError::InvalidPullRequestIdException(inner) => {
-                Error::InvalidPullRequestIdException(inner)
-            }
-            crate::error::UpdatePullRequestTitleError::InvalidTitleException(inner) => {
-                Error::InvalidTitleException(inner)
-            }
-            crate::error::UpdatePullRequestTitleError::PullRequestAlreadyClosedException(inner) => {
-                Error::PullRequestAlreadyClosedException(inner)
-            }
-            crate::error::UpdatePullRequestTitleError::PullRequestDoesNotExistException(inner) => {
-                Error::PullRequestDoesNotExistException(inner)
-            }
-            crate::error::UpdatePullRequestTitleError::PullRequestIdRequiredException(inner) => {
-                Error::PullRequestIdRequiredException(inner)
-            }
-            crate::error::UpdatePullRequestTitleError::TitleRequiredException(inner) => {
-                Error::TitleRequiredException(inner)
-            }
-            crate::error::UpdatePullRequestTitleError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::untag_resource::UntagResourceError::InvalidRepositoryNameException(inner) => Error::InvalidRepositoryNameException(inner),
+            crate::operation::untag_resource::UntagResourceError::InvalidResourceArnException(inner) => Error::InvalidResourceArnException(inner),
+            crate::operation::untag_resource::UntagResourceError::InvalidSystemTagUsageException(inner) => Error::InvalidSystemTagUsageException(inner),
+            crate::operation::untag_resource::UntagResourceError::InvalidTagKeysListException(inner) => Error::InvalidTagKeysListException(inner),
+            crate::operation::untag_resource::UntagResourceError::RepositoryDoesNotExistException(inner) => Error::RepositoryDoesNotExistException(inner),
+            crate::operation::untag_resource::UntagResourceError::ResourceArnRequiredException(inner) => Error::ResourceArnRequiredException(inner),
+            crate::operation::untag_resource::UntagResourceError::TagKeysListRequiredException(inner) => Error::TagKeysListRequiredException(inner),
+            crate::operation::untag_resource::UntagResourceError::TagPolicyException(inner) => Error::TagPolicyException(inner),
+            crate::operation::untag_resource::UntagResourceError::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
+            crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateRepositoryDescriptionError, R>>
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContentError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContentError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContentError> for Error {
+    fn from(err: crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContentError) -> Self {
+        match err {
+            crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContentError::ApprovalRuleTemplateContentRequiredException(inner) => Error::ApprovalRuleTemplateContentRequiredException(inner),
+            crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContentError::ApprovalRuleTemplateDoesNotExistException(inner) => Error::ApprovalRuleTemplateDoesNotExistException(inner),
+            crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContentError::ApprovalRuleTemplateNameRequiredException(inner) => Error::ApprovalRuleTemplateNameRequiredException(inner),
+            crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContentError::InvalidApprovalRuleTemplateContentException(inner) => Error::InvalidApprovalRuleTemplateContentException(inner),
+            crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContentError::InvalidApprovalRuleTemplateNameException(inner) => Error::InvalidApprovalRuleTemplateNameException(inner),
+            crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContentError::InvalidRuleContentSha256Exception(inner) => Error::InvalidRuleContentSha256Exception(inner),
+            crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_approval_rule_template_description::UpdateApprovalRuleTemplateDescriptionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::update_approval_rule_template_description::UpdateApprovalRuleTemplateDescriptionError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::update_approval_rule_template_description::UpdateApprovalRuleTemplateDescriptionError> for Error {
+    fn from(err: crate::operation::update_approval_rule_template_description::UpdateApprovalRuleTemplateDescriptionError) -> Self {
+        match err {
+            crate::operation::update_approval_rule_template_description::UpdateApprovalRuleTemplateDescriptionError::ApprovalRuleTemplateDoesNotExistException(inner) => Error::ApprovalRuleTemplateDoesNotExistException(inner),
+            crate::operation::update_approval_rule_template_description::UpdateApprovalRuleTemplateDescriptionError::ApprovalRuleTemplateNameRequiredException(inner) => Error::ApprovalRuleTemplateNameRequiredException(inner),
+            crate::operation::update_approval_rule_template_description::UpdateApprovalRuleTemplateDescriptionError::InvalidApprovalRuleTemplateDescriptionException(inner) => Error::InvalidApprovalRuleTemplateDescriptionException(inner),
+            crate::operation::update_approval_rule_template_description::UpdateApprovalRuleTemplateDescriptionError::InvalidApprovalRuleTemplateNameException(inner) => Error::InvalidApprovalRuleTemplateNameException(inner),
+            crate::operation::update_approval_rule_template_description::UpdateApprovalRuleTemplateDescriptionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_approval_rule_template_name::UpdateApprovalRuleTemplateNameError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::update_approval_rule_template_name::UpdateApprovalRuleTemplateNameError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::update_approval_rule_template_name::UpdateApprovalRuleTemplateNameError>
+    for Error
+{
+    fn from(
+        err: crate::operation::update_approval_rule_template_name::UpdateApprovalRuleTemplateNameError,
+    ) -> Self {
+        match err {
+            crate::operation::update_approval_rule_template_name::UpdateApprovalRuleTemplateNameError::ApprovalRuleTemplateDoesNotExistException(inner) => Error::ApprovalRuleTemplateDoesNotExistException(inner),
+            crate::operation::update_approval_rule_template_name::UpdateApprovalRuleTemplateNameError::ApprovalRuleTemplateNameAlreadyExistsException(inner) => Error::ApprovalRuleTemplateNameAlreadyExistsException(inner),
+            crate::operation::update_approval_rule_template_name::UpdateApprovalRuleTemplateNameError::ApprovalRuleTemplateNameRequiredException(inner) => Error::ApprovalRuleTemplateNameRequiredException(inner),
+            crate::operation::update_approval_rule_template_name::UpdateApprovalRuleTemplateNameError::InvalidApprovalRuleTemplateNameException(inner) => Error::InvalidApprovalRuleTemplateNameException(inner),
+            crate::operation::update_approval_rule_template_name::UpdateApprovalRuleTemplateNameError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::update_comment::UpdateCommentError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateRepositoryDescriptionError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_comment::UpdateCommentError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -4874,29 +4110,35 @@ where
         }
     }
 }
-impl From<crate::error::UpdateRepositoryDescriptionError> for Error {
-    fn from(err: crate::error::UpdateRepositoryDescriptionError) -> Self {
+impl From<crate::operation::update_comment::UpdateCommentError> for Error {
+    fn from(err: crate::operation::update_comment::UpdateCommentError) -> Self {
         match err {
-            crate::error::UpdateRepositoryDescriptionError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
-            crate::error::UpdateRepositoryDescriptionError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
-            crate::error::UpdateRepositoryDescriptionError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
-            crate::error::UpdateRepositoryDescriptionError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
-            crate::error::UpdateRepositoryDescriptionError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
-            crate::error::UpdateRepositoryDescriptionError::InvalidRepositoryDescriptionException(inner) => Error::InvalidRepositoryDescriptionException(inner),
-            crate::error::UpdateRepositoryDescriptionError::InvalidRepositoryNameException(inner) => Error::InvalidRepositoryNameException(inner),
-            crate::error::UpdateRepositoryDescriptionError::RepositoryDoesNotExistException(inner) => Error::RepositoryDoesNotExistException(inner),
-            crate::error::UpdateRepositoryDescriptionError::RepositoryNameRequiredException(inner) => Error::RepositoryNameRequiredException(inner),
-            crate::error::UpdateRepositoryDescriptionError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::update_comment::UpdateCommentError::CommentContentRequiredException(inner) => Error::CommentContentRequiredException(inner),
+            crate::operation::update_comment::UpdateCommentError::CommentContentSizeLimitExceededException(inner) => Error::CommentContentSizeLimitExceededException(inner),
+            crate::operation::update_comment::UpdateCommentError::CommentDeletedException(inner) => Error::CommentDeletedException(inner),
+            crate::operation::update_comment::UpdateCommentError::CommentDoesNotExistException(inner) => Error::CommentDoesNotExistException(inner),
+            crate::operation::update_comment::UpdateCommentError::CommentIdRequiredException(inner) => Error::CommentIdRequiredException(inner),
+            crate::operation::update_comment::UpdateCommentError::CommentNotCreatedByCallerException(inner) => Error::CommentNotCreatedByCallerException(inner),
+            crate::operation::update_comment::UpdateCommentError::InvalidCommentIdException(inner) => Error::InvalidCommentIdException(inner),
+            crate::operation::update_comment::UpdateCommentError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateRepositoryNameError, R>>
-    for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_default_branch::UpdateDefaultBranchError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateRepositoryNameError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_default_branch::UpdateDefaultBranchError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -4913,22 +4155,332 @@ where
         }
     }
 }
-impl From<crate::error::UpdateRepositoryNameError> for Error {
-    fn from(err: crate::error::UpdateRepositoryNameError) -> Self {
+impl From<crate::operation::update_default_branch::UpdateDefaultBranchError> for Error {
+    fn from(err: crate::operation::update_default_branch::UpdateDefaultBranchError) -> Self {
         match err {
-            crate::error::UpdateRepositoryNameError::InvalidRepositoryNameException(inner) => {
-                Error::InvalidRepositoryNameException(inner)
+            crate::operation::update_default_branch::UpdateDefaultBranchError::BranchDoesNotExistException(inner) => Error::BranchDoesNotExistException(inner),
+            crate::operation::update_default_branch::UpdateDefaultBranchError::BranchNameRequiredException(inner) => Error::BranchNameRequiredException(inner),
+            crate::operation::update_default_branch::UpdateDefaultBranchError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
+            crate::operation::update_default_branch::UpdateDefaultBranchError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
+            crate::operation::update_default_branch::UpdateDefaultBranchError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
+            crate::operation::update_default_branch::UpdateDefaultBranchError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
+            crate::operation::update_default_branch::UpdateDefaultBranchError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
+            crate::operation::update_default_branch::UpdateDefaultBranchError::InvalidBranchNameException(inner) => Error::InvalidBranchNameException(inner),
+            crate::operation::update_default_branch::UpdateDefaultBranchError::InvalidRepositoryNameException(inner) => Error::InvalidRepositoryNameException(inner),
+            crate::operation::update_default_branch::UpdateDefaultBranchError::RepositoryDoesNotExistException(inner) => Error::RepositoryDoesNotExistException(inner),
+            crate::operation::update_default_branch::UpdateDefaultBranchError::RepositoryNameRequiredException(inner) => Error::RepositoryNameRequiredException(inner),
+            crate::operation::update_default_branch::UpdateDefaultBranchError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError> for Error {
+    fn from(err: crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError) -> Self {
+        match err {
+            crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError::ApprovalRuleContentRequiredException(inner) => Error::ApprovalRuleContentRequiredException(inner),
+            crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError::ApprovalRuleDoesNotExistException(inner) => Error::ApprovalRuleDoesNotExistException(inner),
+            crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError::ApprovalRuleNameRequiredException(inner) => Error::ApprovalRuleNameRequiredException(inner),
+            crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError::CannotModifyApprovalRuleFromTemplateException(inner) => Error::CannotModifyApprovalRuleFromTemplateException(inner),
+            crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
+            crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
+            crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
+            crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
+            crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
+            crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError::InvalidApprovalRuleContentException(inner) => Error::InvalidApprovalRuleContentException(inner),
+            crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError::InvalidApprovalRuleNameException(inner) => Error::InvalidApprovalRuleNameException(inner),
+            crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError::InvalidPullRequestIdException(inner) => Error::InvalidPullRequestIdException(inner),
+            crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError::InvalidRuleContentSha256Exception(inner) => Error::InvalidRuleContentSha256Exception(inner),
+            crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError::PullRequestAlreadyClosedException(inner) => Error::PullRequestAlreadyClosedException(inner),
+            crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError::PullRequestDoesNotExistException(inner) => Error::PullRequestDoesNotExistException(inner),
+            crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError::PullRequestIdRequiredException(inner) => Error::PullRequestIdRequiredException(inner),
+            crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError>
+    for Error
+{
+    fn from(
+        err: crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError,
+    ) -> Self {
+        match err {
+            crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError::ApprovalStateRequiredException(inner) => Error::ApprovalStateRequiredException(inner),
+            crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
+            crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
+            crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
+            crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
+            crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
+            crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError::InvalidApprovalStateException(inner) => Error::InvalidApprovalStateException(inner),
+            crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError::InvalidPullRequestIdException(inner) => Error::InvalidPullRequestIdException(inner),
+            crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError::InvalidRevisionIdException(inner) => Error::InvalidRevisionIdException(inner),
+            crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError::MaximumNumberOfApprovalsExceededException(inner) => Error::MaximumNumberOfApprovalsExceededException(inner),
+            crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError::PullRequestAlreadyClosedException(inner) => Error::PullRequestAlreadyClosedException(inner),
+            crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError::PullRequestCannotBeApprovedByAuthorException(inner) => Error::PullRequestCannotBeApprovedByAuthorException(inner),
+            crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError::PullRequestDoesNotExistException(inner) => Error::PullRequestDoesNotExistException(inner),
+            crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError::PullRequestIdRequiredException(inner) => Error::PullRequestIdRequiredException(inner),
+            crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError::RevisionIdRequiredException(inner) => Error::RevisionIdRequiredException(inner),
+            crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError::RevisionNotCurrentException(inner) => Error::RevisionNotCurrentException(inner),
+            crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_pull_request_description::UpdatePullRequestDescriptionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_pull_request_description::UpdatePullRequestDescriptionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
-            crate::error::UpdateRepositoryNameError::RepositoryDoesNotExistException(inner) => {
-                Error::RepositoryDoesNotExistException(inner)
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_pull_request_description::UpdatePullRequestDescriptionError>
+    for Error
+{
+    fn from(
+        err: crate::operation::update_pull_request_description::UpdatePullRequestDescriptionError,
+    ) -> Self {
+        match err {
+            crate::operation::update_pull_request_description::UpdatePullRequestDescriptionError::InvalidDescriptionException(inner) => Error::InvalidDescriptionException(inner),
+            crate::operation::update_pull_request_description::UpdatePullRequestDescriptionError::InvalidPullRequestIdException(inner) => Error::InvalidPullRequestIdException(inner),
+            crate::operation::update_pull_request_description::UpdatePullRequestDescriptionError::PullRequestAlreadyClosedException(inner) => Error::PullRequestAlreadyClosedException(inner),
+            crate::operation::update_pull_request_description::UpdatePullRequestDescriptionError::PullRequestDoesNotExistException(inner) => Error::PullRequestDoesNotExistException(inner),
+            crate::operation::update_pull_request_description::UpdatePullRequestDescriptionError::PullRequestIdRequiredException(inner) => Error::PullRequestIdRequiredException(inner),
+            crate::operation::update_pull_request_description::UpdatePullRequestDescriptionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_pull_request_status::UpdatePullRequestStatusError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_pull_request_status::UpdatePullRequestStatusError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
-            crate::error::UpdateRepositoryNameError::RepositoryNameExistsException(inner) => {
-                Error::RepositoryNameExistsException(inner)
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_pull_request_status::UpdatePullRequestStatusError> for Error {
+    fn from(
+        err: crate::operation::update_pull_request_status::UpdatePullRequestStatusError,
+    ) -> Self {
+        match err {
+            crate::operation::update_pull_request_status::UpdatePullRequestStatusError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
+            crate::operation::update_pull_request_status::UpdatePullRequestStatusError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
+            crate::operation::update_pull_request_status::UpdatePullRequestStatusError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
+            crate::operation::update_pull_request_status::UpdatePullRequestStatusError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
+            crate::operation::update_pull_request_status::UpdatePullRequestStatusError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
+            crate::operation::update_pull_request_status::UpdatePullRequestStatusError::InvalidPullRequestIdException(inner) => Error::InvalidPullRequestIdException(inner),
+            crate::operation::update_pull_request_status::UpdatePullRequestStatusError::InvalidPullRequestStatusException(inner) => Error::InvalidPullRequestStatusException(inner),
+            crate::operation::update_pull_request_status::UpdatePullRequestStatusError::InvalidPullRequestStatusUpdateException(inner) => Error::InvalidPullRequestStatusUpdateException(inner),
+            crate::operation::update_pull_request_status::UpdatePullRequestStatusError::PullRequestDoesNotExistException(inner) => Error::PullRequestDoesNotExistException(inner),
+            crate::operation::update_pull_request_status::UpdatePullRequestStatusError::PullRequestIdRequiredException(inner) => Error::PullRequestIdRequiredException(inner),
+            crate::operation::update_pull_request_status::UpdatePullRequestStatusError::PullRequestStatusRequiredException(inner) => Error::PullRequestStatusRequiredException(inner),
+            crate::operation::update_pull_request_status::UpdatePullRequestStatusError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_pull_request_title::UpdatePullRequestTitleError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_pull_request_title::UpdatePullRequestTitleError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
-            crate::error::UpdateRepositoryNameError::RepositoryNameRequiredException(inner) => {
-                Error::RepositoryNameRequiredException(inner)
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_pull_request_title::UpdatePullRequestTitleError> for Error {
+    fn from(err: crate::operation::update_pull_request_title::UpdatePullRequestTitleError) -> Self {
+        match err {
+            crate::operation::update_pull_request_title::UpdatePullRequestTitleError::InvalidPullRequestIdException(inner) => Error::InvalidPullRequestIdException(inner),
+            crate::operation::update_pull_request_title::UpdatePullRequestTitleError::InvalidTitleException(inner) => Error::InvalidTitleException(inner),
+            crate::operation::update_pull_request_title::UpdatePullRequestTitleError::PullRequestAlreadyClosedException(inner) => Error::PullRequestAlreadyClosedException(inner),
+            crate::operation::update_pull_request_title::UpdatePullRequestTitleError::PullRequestDoesNotExistException(inner) => Error::PullRequestDoesNotExistException(inner),
+            crate::operation::update_pull_request_title::UpdatePullRequestTitleError::PullRequestIdRequiredException(inner) => Error::PullRequestIdRequiredException(inner),
+            crate::operation::update_pull_request_title::UpdatePullRequestTitleError::TitleRequiredException(inner) => Error::TitleRequiredException(inner),
+            crate::operation::update_pull_request_title::UpdatePullRequestTitleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_repository_description::UpdateRepositoryDescriptionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_repository_description::UpdateRepositoryDescriptionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
-            crate::error::UpdateRepositoryNameError::Unhandled(inner) => Error::Unhandled(inner),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_repository_description::UpdateRepositoryDescriptionError>
+    for Error
+{
+    fn from(
+        err: crate::operation::update_repository_description::UpdateRepositoryDescriptionError,
+    ) -> Self {
+        match err {
+            crate::operation::update_repository_description::UpdateRepositoryDescriptionError::EncryptionIntegrityChecksFailedException(inner) => Error::EncryptionIntegrityChecksFailedException(inner),
+            crate::operation::update_repository_description::UpdateRepositoryDescriptionError::EncryptionKeyAccessDeniedException(inner) => Error::EncryptionKeyAccessDeniedException(inner),
+            crate::operation::update_repository_description::UpdateRepositoryDescriptionError::EncryptionKeyDisabledException(inner) => Error::EncryptionKeyDisabledException(inner),
+            crate::operation::update_repository_description::UpdateRepositoryDescriptionError::EncryptionKeyNotFoundException(inner) => Error::EncryptionKeyNotFoundException(inner),
+            crate::operation::update_repository_description::UpdateRepositoryDescriptionError::EncryptionKeyUnavailableException(inner) => Error::EncryptionKeyUnavailableException(inner),
+            crate::operation::update_repository_description::UpdateRepositoryDescriptionError::InvalidRepositoryDescriptionException(inner) => Error::InvalidRepositoryDescriptionException(inner),
+            crate::operation::update_repository_description::UpdateRepositoryDescriptionError::InvalidRepositoryNameException(inner) => Error::InvalidRepositoryNameException(inner),
+            crate::operation::update_repository_description::UpdateRepositoryDescriptionError::RepositoryDoesNotExistException(inner) => Error::RepositoryDoesNotExistException(inner),
+            crate::operation::update_repository_description::UpdateRepositoryDescriptionError::RepositoryNameRequiredException(inner) => Error::RepositoryNameRequiredException(inner),
+            crate::operation::update_repository_description::UpdateRepositoryDescriptionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_repository_name::UpdateRepositoryNameError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_repository_name::UpdateRepositoryNameError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_repository_name::UpdateRepositoryNameError> for Error {
+    fn from(err: crate::operation::update_repository_name::UpdateRepositoryNameError) -> Self {
+        match err {
+            crate::operation::update_repository_name::UpdateRepositoryNameError::InvalidRepositoryNameException(inner) => Error::InvalidRepositoryNameException(inner),
+            crate::operation::update_repository_name::UpdateRepositoryNameError::RepositoryDoesNotExistException(inner) => Error::RepositoryDoesNotExistException(inner),
+            crate::operation::update_repository_name::UpdateRepositoryNameError::RepositoryNameExistsException(inner) => Error::RepositoryNameExistsException(inner),
+            crate::operation::update_repository_name::UpdateRepositoryNameError::RepositoryNameRequiredException(inner) => Error::RepositoryNameRequiredException(inner),
+            crate::operation::update_repository_name::UpdateRepositoryNameError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

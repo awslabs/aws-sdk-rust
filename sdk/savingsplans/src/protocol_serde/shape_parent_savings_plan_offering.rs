@@ -2,7 +2,7 @@
 pub(crate) fn de_parent_savings_plan_offering<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ParentSavingsPlanOffering>,
+    Option<crate::types::ParentSavingsPlanOffering>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::parent_savings_plan_offering::Builder::default();
+            let mut builder = crate::types::builders::ParentSavingsPlanOfferingBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -39,7 +39,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::SavingsPlanPaymentOption::from(u.as_ref())
+                                            crate::types::SavingsPlanPaymentOption::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -52,7 +52,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::SavingsPlanType::from(u.as_ref())
+                                            crate::types::SavingsPlanType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -74,7 +74,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::CurrencyCode::from(u.as_ref()))
+                                            .map(|u| crate::types::CurrencyCode::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

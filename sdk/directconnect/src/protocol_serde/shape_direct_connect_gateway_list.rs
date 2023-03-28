@@ -2,7 +2,7 @@
 pub(crate) fn de_direct_connect_gateway_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DirectConnectGateway>>,
+    Option<std::vec::Vec<crate::types::DirectConnectGateway>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

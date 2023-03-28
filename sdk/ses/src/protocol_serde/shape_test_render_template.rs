@@ -3,76 +3,77 @@
 pub fn de_test_render_template_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::TestRenderTemplateOutput,
-    crate::error::TestRenderTemplateError,
+    crate::operation::test_render_template::TestRenderTemplateOutput,
+    crate::operation::test_render_template::TestRenderTemplateError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::TestRenderTemplateError::unhandled)?;
+        .map_err(crate::operation::test_render_template::TestRenderTemplateError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::TestRenderTemplateError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::test_render_template::TestRenderTemplateError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidRenderingParameter" => {
-            crate::error::TestRenderTemplateError::InvalidRenderingParameterException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidRenderingParameter" => crate::operation::test_render_template::TestRenderTemplateError::InvalidRenderingParameterException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_rendering_parameter_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidRenderingParameterExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_rendering_parameter_exception::de_invalid_rendering_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TestRenderTemplateError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_rendering_parameter_exception::de_invalid_rendering_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::test_render_template::TestRenderTemplateError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "MissingRenderingAttribute" => {
-            crate::error::TestRenderTemplateError::MissingRenderingAttributeException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "MissingRenderingAttribute" => crate::operation::test_render_template::TestRenderTemplateError::MissingRenderingAttributeException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::missing_rendering_attribute_exception::Builder::default();
+                    let mut output = crate::types::error::builders::MissingRenderingAttributeExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_missing_rendering_attribute_exception::de_missing_rendering_attribute_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TestRenderTemplateError::unhandled)?;
+                    output = crate::protocol_serde::shape_missing_rendering_attribute_exception::de_missing_rendering_attribute_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::test_render_template::TestRenderTemplateError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "TemplateDoesNotExist" => {
-            crate::error::TestRenderTemplateError::TemplateDoesNotExistException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TemplateDoesNotExist" => crate::operation::test_render_template::TestRenderTemplateError::TemplateDoesNotExistException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::template_does_not_exist_exception::Builder::default();
+                    let mut output = crate::types::error::builders::TemplateDoesNotExistExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_template_does_not_exist_exception::de_template_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TestRenderTemplateError::unhandled)?;
+                    output = crate::protocol_serde::shape_template_does_not_exist_exception::de_template_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::test_render_template::TestRenderTemplateError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::TestRenderTemplateError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::test_render_template::TestRenderTemplateError::generic(generic)
     })
 }
 
@@ -80,18 +81,18 @@ pub fn de_test_render_template_http_error(
 pub fn de_test_render_template_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::TestRenderTemplateOutput,
-    crate::error::TestRenderTemplateError,
+    crate::operation::test_render_template::TestRenderTemplateOutput,
+    crate::operation::test_render_template::TestRenderTemplateError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::test_render_template_output::Builder::default();
+        let mut output = crate::operation::test_render_template::builders::TestRenderTemplateOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_test_render_template::de_test_render_template(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::TestRenderTemplateError::unhandled)?;
+        .map_err(crate::operation::test_render_template::TestRenderTemplateError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -102,9 +103,9 @@ pub fn de_test_render_template_http_response(
 #[allow(unused_mut)]
 pub fn de_test_render_template(
     inp: &[u8],
-    mut builder: crate::output::test_render_template_output::Builder,
+    mut builder: crate::operation::test_render_template::builders::TestRenderTemplateOutputBuilder,
 ) -> Result<
-    crate::output::test_render_template_output::Builder,
+    crate::operation::test_render_template::builders::TestRenderTemplateOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

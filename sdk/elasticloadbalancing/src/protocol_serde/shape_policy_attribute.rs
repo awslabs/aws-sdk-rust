@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_policy_attribute(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::PolicyAttribute,
+    input: &crate::types::PolicyAttribute,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("AttributeName");

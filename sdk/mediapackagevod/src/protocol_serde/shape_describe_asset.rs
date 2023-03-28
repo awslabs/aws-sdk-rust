@@ -2,43 +2,52 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_asset_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DescribeAssetOutput, crate::error::DescribeAssetError> {
+) -> std::result::Result<
+    crate::operation::describe_asset::DescribeAssetOutput,
+    crate::operation::describe_asset::DescribeAssetError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeAssetError::unhandled)?;
+        .map_err(crate::operation::describe_asset::DescribeAssetError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DescribeAssetError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::describe_asset::DescribeAssetError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ForbiddenException" => crate::error::DescribeAssetError::ForbiddenException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "ForbiddenException" => {
+            crate::operation::describe_asset::DescribeAssetError::ForbiddenException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAssetError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ForbiddenExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_asset::DescribeAssetError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "InternalServerErrorException" => {
-            crate::error::DescribeAssetError::InternalServerErrorException({
+            crate::operation::describe_asset::DescribeAssetError::InternalServerErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::internal_server_error_exception::Builder::default();
+                        crate::types::error::builders::InternalServerErrorExceptionBuilder::default(
+                        );
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAssetError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_asset::DescribeAssetError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -48,30 +57,34 @@ pub fn de_describe_asset_http_error(
                 tmp
             })
         }
-        "NotFoundException" => crate::error::DescribeAssetError::NotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "NotFoundException" => {
+            crate::operation::describe_asset::DescribeAssetError::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAssetError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::NotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_asset::DescribeAssetError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "ServiceUnavailableException" => {
-            crate::error::DescribeAssetError::ServiceUnavailableException({
+            crate::operation::describe_asset::DescribeAssetError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::service_unavailable_exception::Builder::default();
+                        crate::types::error::builders::ServiceUnavailableExceptionBuilder::default(
+                        );
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAssetError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_asset::DescribeAssetError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -81,30 +94,34 @@ pub fn de_describe_asset_http_error(
                 tmp
             })
         }
-        "TooManyRequestsException" => crate::error::DescribeAssetError::TooManyRequestsException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "TooManyRequestsException" => {
+            crate::operation::describe_asset::DescribeAssetError::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAssetError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_asset::DescribeAssetError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "UnprocessableEntityException" => {
-            crate::error::DescribeAssetError::UnprocessableEntityException({
+            crate::operation::describe_asset::DescribeAssetError::UnprocessableEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::unprocessable_entity_exception::Builder::default();
+                        crate::types::error::builders::UnprocessableEntityExceptionBuilder::default(
+                        );
                     let _ = response;
-                    output = crate::protocol_serde::shape_unprocessable_entity_exception::de_unprocessable_entity_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAssetError::unhandled)?;
+                    output = crate::protocol_serde::shape_unprocessable_entity_exception::de_unprocessable_entity_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_asset::DescribeAssetError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -114,23 +131,27 @@ pub fn de_describe_asset_http_error(
                 tmp
             })
         }
-        _ => crate::error::DescribeAssetError::generic(generic),
+        _ => crate::operation::describe_asset::DescribeAssetError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_asset_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DescribeAssetOutput, crate::error::DescribeAssetError> {
+) -> std::result::Result<
+    crate::operation::describe_asset::DescribeAssetOutput,
+    crate::operation::describe_asset::DescribeAssetError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_asset_output::Builder::default();
+        let mut output =
+            crate::operation::describe_asset::builders::DescribeAssetOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_describe_asset::de_describe_asset(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DescribeAssetError::unhandled)?;
+        .map_err(crate::operation::describe_asset::DescribeAssetError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -140,9 +161,9 @@ pub fn de_describe_asset_http_response(
 
 pub(crate) fn de_describe_asset(
     value: &[u8],
-    mut builder: crate::output::describe_asset_output::Builder,
+    mut builder: crate::operation::describe_asset::builders::DescribeAssetOutputBuilder,
 ) -> Result<
-    crate::output::describe_asset_output::Builder,
+    crate::operation::describe_asset::builders::DescribeAssetOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

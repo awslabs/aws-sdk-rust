@@ -3,75 +3,78 @@
 pub fn de_get_assistant_association_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetAssistantAssociationOutput,
-    crate::error::GetAssistantAssociationError,
+    crate::operation::get_assistant_association::GetAssistantAssociationOutput,
+    crate::operation::get_assistant_association::GetAssistantAssociationError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetAssistantAssociationError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::get_assistant_association::GetAssistantAssociationError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::error::GetAssistantAssociationError::unhandled(
+        None => return Err(
+            crate::operation::get_assistant_association::GetAssistantAssociationError::unhandled(
                 generic,
-            ))
-        }
+            ),
+        ),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => {
-            crate::error::GetAssistantAssociationError::AccessDeniedException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::access_denied_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAssistantAssociationError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ResourceNotFoundException" => {
-            crate::error::GetAssistantAssociationError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAssistantAssociationError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ValidationException" => crate::error::GetAssistantAssociationError::ValidationException({
+        "AccessDeniedException" => crate::operation::get_assistant_association::GetAssistantAssociationError::AccessDeniedException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAssistantAssociationError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_assistant_association::GetAssistantAssociationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::GetAssistantAssociationError::generic(generic),
+        "ResourceNotFoundException" => crate::operation::get_assistant_association::GetAssistantAssociationError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_assistant_association::GetAssistantAssociationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ValidationException" => crate::operation::get_assistant_association::GetAssistantAssociationError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_assistant_association::GetAssistantAssociationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::get_assistant_association::GetAssistantAssociationError::generic(generic)
     })
 }
 
@@ -79,19 +82,14 @@ pub fn de_get_assistant_association_http_error(
 pub fn de_get_assistant_association_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetAssistantAssociationOutput,
-    crate::error::GetAssistantAssociationError,
+    crate::operation::get_assistant_association::GetAssistantAssociationOutput,
+    crate::operation::get_assistant_association::GetAssistantAssociationError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_assistant_association_output::Builder::default();
+        let mut output = crate::operation::get_assistant_association::builders::GetAssistantAssociationOutputBuilder::default();
         let _ = response;
-        output =
-            crate::protocol_serde::shape_get_assistant_association::de_get_assistant_association(
-                response.body().as_ref(),
-                output,
-            )
-            .map_err(crate::error::GetAssistantAssociationError::unhandled)?;
+        output = crate::protocol_serde::shape_get_assistant_association::de_get_assistant_association(response.body().as_ref(), output).map_err(crate::operation::get_assistant_association::GetAssistantAssociationError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -101,9 +99,9 @@ pub fn de_get_assistant_association_http_response(
 
 pub(crate) fn de_get_assistant_association(
     value: &[u8],
-    mut builder: crate::output::get_assistant_association_output::Builder,
+    mut builder: crate::operation::get_assistant_association::builders::GetAssistantAssociationOutputBuilder,
 ) -> Result<
-    crate::output::get_assistant_association_output::Builder,
+    crate::operation::get_assistant_association::builders::GetAssistantAssociationOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

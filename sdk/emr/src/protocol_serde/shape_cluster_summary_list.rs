@@ -2,7 +2,7 @@
 pub(crate) fn de_cluster_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ClusterSummary>>,
+    Option<std::vec::Vec<crate::types::ClusterSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

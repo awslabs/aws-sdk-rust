@@ -4,8 +4,8 @@ pub(crate) fn de_audit_notification_target_configurations<'a, I>(
 ) -> Result<
     Option<
         std::collections::HashMap<
-            crate::model::AuditNotificationType,
-            crate::model::AuditNotificationTarget,
+            crate::types::AuditNotificationType,
+            crate::types::AuditNotificationTarget,
         >,
     >,
     aws_smithy_json::deserialize::error::DeserializeError,
@@ -28,7 +28,7 @@ where
                     Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         let key = key
                             .to_unescaped()
-                            .map(|u| crate::model::AuditNotificationType::from(u.as_ref()))?;
+                            .map(|u| crate::types::AuditNotificationType::from(u.as_ref()))?;
                         let value =
                             crate::protocol_serde::shape_audit_notification_target::de_audit_notification_target(tokens)?
                         ;

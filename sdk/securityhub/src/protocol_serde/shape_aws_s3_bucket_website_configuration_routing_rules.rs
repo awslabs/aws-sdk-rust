@@ -2,7 +2,7 @@
 pub(crate) fn de_aws_s3_bucket_website_configuration_routing_rules<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AwsS3BucketWebsiteConfigurationRoutingRule>>,
+    Option<std::vec::Vec<crate::types::AwsS3BucketWebsiteConfigurationRoutingRule>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

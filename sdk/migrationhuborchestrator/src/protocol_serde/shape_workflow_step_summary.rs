@@ -2,7 +2,7 @@
 pub(crate) fn de_workflow_step_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::WorkflowStepSummary>,
+    Option<crate::types::WorkflowStepSummary>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::workflow_step_summary::Builder::default();
+            let mut builder = crate::types::builders::WorkflowStepSummaryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -48,7 +48,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::StepActionType::from(u.as_ref()))
+                                            .map(|u| crate::types::StepActionType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -60,7 +60,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::Owner::from(u.as_ref()))
+                                            .map(|u| crate::types::Owner::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -86,7 +86,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::StepStatus::from(u.as_ref()))
+                                            .map(|u| crate::types::StepStatus::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

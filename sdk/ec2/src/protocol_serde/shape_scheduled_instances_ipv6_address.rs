@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_scheduled_instances_ipv6_address(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::ScheduledInstancesIpv6Address,
+    input: &crate::types::ScheduledInstancesIpv6Address,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Ipv6Address");

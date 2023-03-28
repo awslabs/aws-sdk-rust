@@ -3,96 +3,96 @@
 pub fn de_create_hsm_configuration_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateHsmConfigurationOutput,
-    crate::error::CreateHsmConfigurationError,
+    crate::operation::create_hsm_configuration::CreateHsmConfigurationOutput,
+    crate::operation::create_hsm_configuration::CreateHsmConfigurationError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::CreateHsmConfigurationError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::create_hsm_configuration::CreateHsmConfigurationError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::CreateHsmConfigurationError::unhandled(
-                generic,
-            ))
-        }
-    };
+    let error_code =
+        match generic.code() {
+            Some(code) => code,
+            None => return Err(
+                crate::operation::create_hsm_configuration::CreateHsmConfigurationError::unhandled(
+                    generic,
+                ),
+            ),
+        };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "HsmConfigurationAlreadyExistsFault" => {
-            crate::error::CreateHsmConfigurationError::HsmConfigurationAlreadyExistsFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "HsmConfigurationAlreadyExistsFault" => crate::operation::create_hsm_configuration::CreateHsmConfigurationError::HsmConfigurationAlreadyExistsFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::hsm_configuration_already_exists_fault::Builder::default();
+                    let mut output = crate::types::error::builders::HsmConfigurationAlreadyExistsFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_hsm_configuration_already_exists_fault::de_hsm_configuration_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateHsmConfigurationError::unhandled)?;
+                    output = crate::protocol_serde::shape_hsm_configuration_already_exists_fault::de_hsm_configuration_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_hsm_configuration::CreateHsmConfigurationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "HsmConfigurationQuotaExceededFault" => {
-            crate::error::CreateHsmConfigurationError::HsmConfigurationQuotaExceededFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "HsmConfigurationQuotaExceededFault" => crate::operation::create_hsm_configuration::CreateHsmConfigurationError::HsmConfigurationQuotaExceededFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::hsm_configuration_quota_exceeded_fault::Builder::default();
+                    let mut output = crate::types::error::builders::HsmConfigurationQuotaExceededFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_hsm_configuration_quota_exceeded_fault::de_hsm_configuration_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateHsmConfigurationError::unhandled)?;
+                    output = crate::protocol_serde::shape_hsm_configuration_quota_exceeded_fault::de_hsm_configuration_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_hsm_configuration::CreateHsmConfigurationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidTagFault" => {
-            crate::error::CreateHsmConfigurationError::InvalidTagFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidTagFault" => crate::operation::create_hsm_configuration::CreateHsmConfigurationError::InvalidTagFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_tag_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidTagFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_tag_fault::de_invalid_tag_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateHsmConfigurationError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_tag_fault::de_invalid_tag_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_hsm_configuration::CreateHsmConfigurationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "TagLimitExceededFault" => {
-            crate::error::CreateHsmConfigurationError::TagLimitExceededFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TagLimitExceededFault" => crate::operation::create_hsm_configuration::CreateHsmConfigurationError::TagLimitExceededFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::tag_limit_exceeded_fault::Builder::default();
+                    let mut output = crate::types::error::builders::TagLimitExceededFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_tag_limit_exceeded_fault::de_tag_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateHsmConfigurationError::unhandled)?;
+                    output = crate::protocol_serde::shape_tag_limit_exceeded_fault::de_tag_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_hsm_configuration::CreateHsmConfigurationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::CreateHsmConfigurationError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::create_hsm_configuration::CreateHsmConfigurationError::generic(generic)
     })
 }
 
@@ -100,19 +100,21 @@ pub fn de_create_hsm_configuration_http_error(
 pub fn de_create_hsm_configuration_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateHsmConfigurationOutput,
-    crate::error::CreateHsmConfigurationError,
+    crate::operation::create_hsm_configuration::CreateHsmConfigurationOutput,
+    crate::operation::create_hsm_configuration::CreateHsmConfigurationError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::create_hsm_configuration_output::Builder::default();
+        let mut output = crate::operation::create_hsm_configuration::builders::CreateHsmConfigurationOutputBuilder::default();
         let _ = response;
         output =
             crate::protocol_serde::shape_create_hsm_configuration::de_create_hsm_configuration(
                 response.body().as_ref(),
                 output,
             )
-            .map_err(crate::error::CreateHsmConfigurationError::unhandled)?;
+            .map_err(
+                crate::operation::create_hsm_configuration::CreateHsmConfigurationError::unhandled,
+            )?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -123,9 +125,9 @@ pub fn de_create_hsm_configuration_http_response(
 #[allow(unused_mut)]
 pub fn de_create_hsm_configuration(
     inp: &[u8],
-    mut builder: crate::output::create_hsm_configuration_output::Builder,
+    mut builder: crate::operation::create_hsm_configuration::builders::CreateHsmConfigurationOutputBuilder,
 ) -> Result<
-    crate::output::create_hsm_configuration_output::Builder,
+    crate::operation::create_hsm_configuration::builders::CreateHsmConfigurationOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

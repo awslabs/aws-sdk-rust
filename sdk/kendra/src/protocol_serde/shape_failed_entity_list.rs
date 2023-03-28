@@ -2,7 +2,7 @@
 pub(crate) fn de_failed_entity_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::FailedEntity>>,
+    Option<std::vec::Vec<crate::types::FailedEntity>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

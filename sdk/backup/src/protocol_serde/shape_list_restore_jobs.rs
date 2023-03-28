@@ -2,107 +2,115 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_restore_jobs_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListRestoreJobsOutput, crate::error::ListRestoreJobsError> {
+) -> std::result::Result<
+    crate::operation::list_restore_jobs::ListRestoreJobsOutput,
+    crate::operation::list_restore_jobs::ListRestoreJobsError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListRestoreJobsError::unhandled)?;
+        .map_err(crate::operation::list_restore_jobs::ListRestoreJobsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListRestoreJobsError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::list_restore_jobs::ListRestoreJobsError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => {
-            crate::error::ListRestoreJobsError::InvalidParameterValueException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidParameterValueException" => crate::operation::list_restore_jobs::ListRestoreJobsError::InvalidParameterValueException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_parameter_value_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRestoreJobsError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_restore_jobs::ListRestoreJobsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "MissingParameterValueException" => {
-            crate::error::ListRestoreJobsError::MissingParameterValueException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "MissingParameterValueException" => crate::operation::list_restore_jobs::ListRestoreJobsError::MissingParameterValueException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::missing_parameter_value_exception::Builder::default();
+                    let mut output = crate::types::error::builders::MissingParameterValueExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_missing_parameter_value_exception::de_missing_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRestoreJobsError::unhandled)?;
+                    output = crate::protocol_serde::shape_missing_parameter_value_exception::de_missing_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_restore_jobs::ListRestoreJobsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ResourceNotFoundException" => {
-            crate::error::ListRestoreJobsError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::list_restore_jobs::ListRestoreJobsError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRestoreJobsError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_restore_jobs::ListRestoreJobsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ServiceUnavailableException" => {
-            crate::error::ListRestoreJobsError::ServiceUnavailableException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ServiceUnavailableException" => crate::operation::list_restore_jobs::ListRestoreJobsError::ServiceUnavailableException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::service_unavailable_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRestoreJobsError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_restore_jobs::ListRestoreJobsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::ListRestoreJobsError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::list_restore_jobs::ListRestoreJobsError::generic(generic)
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_restore_jobs_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListRestoreJobsOutput, crate::error::ListRestoreJobsError> {
+) -> std::result::Result<
+    crate::operation::list_restore_jobs::ListRestoreJobsOutput,
+    crate::operation::list_restore_jobs::ListRestoreJobsError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_restore_jobs_output::Builder::default();
+        let mut output =
+            crate::operation::list_restore_jobs::builders::ListRestoreJobsOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_restore_jobs::de_list_restore_jobs(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListRestoreJobsError::unhandled)?;
+        .map_err(crate::operation::list_restore_jobs::ListRestoreJobsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -112,9 +120,9 @@ pub fn de_list_restore_jobs_http_response(
 
 pub(crate) fn de_list_restore_jobs(
     value: &[u8],
-    mut builder: crate::output::list_restore_jobs_output::Builder,
+    mut builder: crate::operation::list_restore_jobs::builders::ListRestoreJobsOutputBuilder,
 ) -> Result<
-    crate::output::list_restore_jobs_output::Builder,
+    crate::operation::list_restore_jobs::builders::ListRestoreJobsOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

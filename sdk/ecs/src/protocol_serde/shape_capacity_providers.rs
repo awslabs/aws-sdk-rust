@@ -2,7 +2,7 @@
 pub(crate) fn de_capacity_providers<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CapacityProvider>>,
+    Option<std::vec::Vec<crate::types::CapacityProvider>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

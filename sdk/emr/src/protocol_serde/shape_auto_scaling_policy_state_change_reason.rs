@@ -2,7 +2,7 @@
 pub(crate) fn de_auto_scaling_policy_state_change_reason<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::AutoScalingPolicyStateChangeReason>,
+    Option<crate::types::AutoScalingPolicyStateChangeReason>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::auto_scaling_policy_state_change_reason::Builder::default();
+                crate::types::builders::AutoScalingPolicyStateChangeReasonBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -28,7 +28,7 @@ where
                                 builder = builder.set_code(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?.map(|s|
                                         s.to_unescaped().map(|u|
-                                            crate::model::AutoScalingPolicyStateChangeReasonCode::from(u.as_ref())
+                                            crate::types::AutoScalingPolicyStateChangeReasonCode::from(u.as_ref())
                                         )
                                     ).transpose()?
                                 );

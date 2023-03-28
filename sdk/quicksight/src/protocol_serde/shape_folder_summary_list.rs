@@ -2,7 +2,7 @@
 pub(crate) fn de_folder_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::FolderSummary>>,
+    Option<std::vec::Vec<crate::types::FolderSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

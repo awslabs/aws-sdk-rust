@@ -2,7 +2,7 @@
 pub(crate) fn de_related_ops_items<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::RelatedOpsItem>>,
+    Option<std::vec::Vec<crate::types::RelatedOpsItem>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

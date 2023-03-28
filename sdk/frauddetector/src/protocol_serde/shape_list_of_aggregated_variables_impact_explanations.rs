@@ -2,7 +2,7 @@
 pub(crate) fn de_list_of_aggregated_variables_impact_explanations<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AggregatedVariablesImpactExplanation>>,
+    Option<std::vec::Vec<crate::types::AggregatedVariablesImpactExplanation>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub fn de_instance_type_info_from_instance_requirements_set(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::InstanceTypeInfoFromInstanceRequirements>,
+    std::vec::Vec<crate::types::InstanceTypeInfoFromInstanceRequirements>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

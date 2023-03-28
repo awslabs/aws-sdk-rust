@@ -2,8 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_not_found_xml_err(
     inp: &[u8],
-    mut builder: crate::error::not_found::Builder,
-) -> Result<crate::error::not_found::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    mut builder: crate::types::error::builders::NotFoundBuilder,
+) -> Result<crate::types::error::builders::NotFoundBuilder, aws_smithy_xml::decode::XmlDecodeError>
+{
     if inp.is_empty() {
         return Ok(builder);
     }

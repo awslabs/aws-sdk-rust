@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_no_such_field_level_encryption_profile_xml_err(
     inp: &[u8],
-    mut builder: crate::error::no_such_field_level_encryption_profile::Builder,
+    mut builder: crate::types::error::builders::NoSuchFieldLevelEncryptionProfileBuilder,
 ) -> Result<
-    crate::error::no_such_field_level_encryption_profile::Builder,
+    crate::types::error::builders::NoSuchFieldLevelEncryptionProfileBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

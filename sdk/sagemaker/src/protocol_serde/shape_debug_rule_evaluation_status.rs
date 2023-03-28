@@ -2,7 +2,7 @@
 pub(crate) fn de_debug_rule_evaluation_status<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::DebugRuleEvaluationStatus>,
+    Option<crate::types::DebugRuleEvaluationStatus>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::debug_rule_evaluation_status::Builder::default();
+            let mut builder = crate::types::builders::DebugRuleEvaluationStatusBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -48,7 +48,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::RuleEvaluationStatus::from(u.as_ref())
+                                            crate::types::RuleEvaluationStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

@@ -2,7 +2,7 @@
 pub(crate) fn de_insight_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::InsightSummary>,
+    Option<crate::types::InsightSummary>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::insight_summary::Builder::default();
+            let mut builder = crate::types::builders::InsightSummaryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -67,7 +67,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::InsightState::from(u.as_ref()))
+                                            .map(|u| crate::types::InsightState::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_sensitivity_inspection_templates_entry<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SensitivityInspectionTemplatesEntry>>,
+    Option<std::vec::Vec<crate::types::SensitivityInspectionTemplatesEntry>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_row_sort_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::FieldSortOptions>>,
+    Option<std::vec::Vec<crate::types::FieldSortOptions>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

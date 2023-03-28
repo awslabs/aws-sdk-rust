@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_number_of_nodes_quota_exceeded_fault_xml_err(
     inp: &[u8],
-    mut builder: crate::error::number_of_nodes_quota_exceeded_fault::Builder,
+    mut builder: crate::types::error::builders::NumberOfNodesQuotaExceededFaultBuilder,
 ) -> Result<
-    crate::error::number_of_nodes_quota_exceeded_fault::Builder,
+    crate::types::error::builders::NumberOfNodesQuotaExceededFaultBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

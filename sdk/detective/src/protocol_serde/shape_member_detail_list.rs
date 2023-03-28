@@ -2,7 +2,7 @@
 pub(crate) fn de_member_detail_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::MemberDetail>>,
+    Option<std::vec::Vec<crate::types::MemberDetail>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_registry_scanning_rule_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::RegistryScanningRule>>,
+    Option<std::vec::Vec<crate::types::RegistryScanningRule>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

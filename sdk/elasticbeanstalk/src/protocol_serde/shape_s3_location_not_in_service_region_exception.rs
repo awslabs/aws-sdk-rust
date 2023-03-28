@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_s3_location_not_in_service_region_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::s3_location_not_in_service_region_exception::Builder,
+    mut builder: crate::types::error::builders::S3LocationNotInServiceRegionExceptionBuilder,
 ) -> Result<
-    crate::error::s3_location_not_in_service_region_exception::Builder,
+    crate::types::error::builders::S3LocationNotInServiceRegionExceptionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

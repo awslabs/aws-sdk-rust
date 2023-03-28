@@ -2,7 +2,7 @@
 pub(crate) fn de_experiment_target_filter_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ExperimentTargetFilter>>,
+    Option<std::vec::Vec<crate::types::ExperimentTargetFilter>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

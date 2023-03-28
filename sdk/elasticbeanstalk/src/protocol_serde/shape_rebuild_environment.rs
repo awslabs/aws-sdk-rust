@@ -3,40 +3,43 @@
 pub fn de_rebuild_environment_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::RebuildEnvironmentOutput,
-    crate::error::RebuildEnvironmentError,
+    crate::operation::rebuild_environment::RebuildEnvironmentOutput,
+    crate::operation::rebuild_environment::RebuildEnvironmentError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::RebuildEnvironmentError::unhandled)?;
+        .map_err(crate::operation::rebuild_environment::RebuildEnvironmentError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::RebuildEnvironmentError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::rebuild_environment::RebuildEnvironmentError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InsufficientPrivilegesException" => {
-            crate::error::RebuildEnvironmentError::InsufficientPrivilegesException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InsufficientPrivilegesException" => crate::operation::rebuild_environment::RebuildEnvironmentError::InsufficientPrivilegesException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::insufficient_privileges_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InsufficientPrivilegesExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_insufficient_privileges_exception::de_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::RebuildEnvironmentError::unhandled)?;
+                    output = crate::protocol_serde::shape_insufficient_privileges_exception::de_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::rebuild_environment::RebuildEnvironmentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::RebuildEnvironmentError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::rebuild_environment::RebuildEnvironmentError::generic(generic)
     })
 }
 
@@ -44,12 +47,12 @@ pub fn de_rebuild_environment_http_error(
 pub fn de_rebuild_environment_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::RebuildEnvironmentOutput,
-    crate::error::RebuildEnvironmentError,
+    crate::operation::rebuild_environment::RebuildEnvironmentOutput,
+    crate::operation::rebuild_environment::RebuildEnvironmentError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::rebuild_environment_output::Builder::default();
+        let mut output = crate::operation::rebuild_environment::builders::RebuildEnvironmentOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

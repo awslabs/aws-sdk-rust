@@ -3,63 +3,61 @@
 pub fn de_get_traffic_policy_instance_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetTrafficPolicyInstanceOutput,
-    crate::error::GetTrafficPolicyInstanceError,
+    crate::operation::get_traffic_policy_instance::GetTrafficPolicyInstanceOutput,
+    crate::operation::get_traffic_policy_instance::GetTrafficPolicyInstanceError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetTrafficPolicyInstanceError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::get_traffic_policy_instance::GetTrafficPolicyInstanceError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::error::GetTrafficPolicyInstanceError::unhandled(
+        None => return Err(
+            crate::operation::get_traffic_policy_instance::GetTrafficPolicyInstanceError::unhandled(
                 generic,
-            ))
-        }
+            ),
+        ),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidInput" => crate::error::GetTrafficPolicyInstanceError::InvalidInput({
+        "InvalidInput" => crate::operation::get_traffic_policy_instance::GetTrafficPolicyInstanceError::InvalidInput({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::invalid_input::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_input::de_invalid_input_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::GetTrafficPolicyInstanceError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "NoSuchTrafficPolicyInstance" => {
-            crate::error::GetTrafficPolicyInstanceError::NoSuchTrafficPolicyInstance({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::no_such_traffic_policy_instance::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidInputBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_no_such_traffic_policy_instance::de_no_such_traffic_policy_instance_xml_err(response.body().as_ref(), output).map_err(crate::error::GetTrafficPolicyInstanceError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_input::de_invalid_input_xml_err(response.body().as_ref(), output).map_err(crate::operation::get_traffic_policy_instance::GetTrafficPolicyInstanceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::GetTrafficPolicyInstanceError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "NoSuchTrafficPolicyInstance" => crate::operation::get_traffic_policy_instance::GetTrafficPolicyInstanceError::NoSuchTrafficPolicyInstance({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::NoSuchTrafficPolicyInstanceBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_no_such_traffic_policy_instance::de_no_such_traffic_policy_instance_xml_err(response.body().as_ref(), output).map_err(crate::operation::get_traffic_policy_instance::GetTrafficPolicyInstanceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::get_traffic_policy_instance::GetTrafficPolicyInstanceError::generic(generic)
     })
 }
 
@@ -67,14 +65,14 @@ pub fn de_get_traffic_policy_instance_http_error(
 pub fn de_get_traffic_policy_instance_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetTrafficPolicyInstanceOutput,
-    crate::error::GetTrafficPolicyInstanceError,
+    crate::operation::get_traffic_policy_instance::GetTrafficPolicyInstanceOutput,
+    crate::operation::get_traffic_policy_instance::GetTrafficPolicyInstanceError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_traffic_policy_instance_output::Builder::default();
+        let mut output = crate::operation::get_traffic_policy_instance::builders::GetTrafficPolicyInstanceOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_get_traffic_policy_instance::de_get_traffic_policy_instance(response.body().as_ref(), output).map_err(crate::error::GetTrafficPolicyInstanceError::unhandled)?;
+        output = crate::protocol_serde::shape_get_traffic_policy_instance::de_get_traffic_policy_instance(response.body().as_ref(), output).map_err(crate::operation::get_traffic_policy_instance::GetTrafficPolicyInstanceError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -85,9 +83,9 @@ pub fn de_get_traffic_policy_instance_http_response(
 #[allow(unused_mut)]
 pub fn de_get_traffic_policy_instance(
     inp: &[u8],
-    mut builder: crate::output::get_traffic_policy_instance_output::Builder,
+    mut builder: crate::operation::get_traffic_policy_instance::builders::GetTrafficPolicyInstanceOutputBuilder,
 ) -> Result<
-    crate::output::get_traffic_policy_instance_output::Builder,
+    crate::operation::get_traffic_policy_instance::builders::GetTrafficPolicyInstanceOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

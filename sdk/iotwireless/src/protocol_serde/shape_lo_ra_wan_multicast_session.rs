@@ -2,7 +2,7 @@
 pub(crate) fn de_lo_ra_wan_multicast_session<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::LoRaWanMulticastSession>,
+    Option<crate::types::LoRaWanMulticastSession>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::lo_ra_wan_multicast_session::Builder::default();
+            let mut builder = crate::types::builders::LoRaWanMulticastSessionBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -83,7 +83,7 @@ where
 
 pub fn ser_lo_ra_wan_multicast_session(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::LoRaWanMulticastSession,
+    input: &crate::types::LoRaWanMulticastSession,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.dl_dr {
         object.key("DlDr").number(

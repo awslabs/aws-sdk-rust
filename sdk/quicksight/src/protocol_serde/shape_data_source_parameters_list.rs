@@ -2,7 +2,7 @@
 pub(crate) fn de_data_source_parameters_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DataSourceParameters>>,
+    Option<std::vec::Vec<crate::types::DataSourceParameters>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

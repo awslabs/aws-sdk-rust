@@ -2,7 +2,7 @@
 pub(crate) fn de_ota_update_info<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::OtaUpdateInfo>,
+    Option<crate::types::OtaUpdateInfo>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::ota_update_info::Builder::default();
+            let mut builder = crate::types::builders::OtaUpdateInfoBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -93,7 +93,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::TargetSelection::from(u.as_ref())
+                                            crate::types::TargetSelection::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -111,7 +111,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::OtaUpdateStatus::from(u.as_ref())
+                                            crate::types::OtaUpdateStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

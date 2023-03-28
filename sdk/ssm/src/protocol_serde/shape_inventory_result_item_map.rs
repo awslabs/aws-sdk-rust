@@ -2,7 +2,7 @@
 pub(crate) fn de_inventory_result_item_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<std::string::String, crate::model::InventoryResultItem>>,
+    Option<std::collections::HashMap<std::string::String, crate::types::InventoryResultItem>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

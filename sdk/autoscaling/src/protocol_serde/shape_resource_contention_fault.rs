@@ -2,9 +2,11 @@
 #[allow(unused_mut)]
 pub fn de_resource_contention_fault_xml_err(
     inp: &[u8],
-    mut builder: crate::error::resource_contention_fault::Builder,
-) -> Result<crate::error::resource_contention_fault::Builder, aws_smithy_xml::decode::XmlDecodeError>
-{
+    mut builder: crate::types::error::builders::ResourceContentionFaultBuilder,
+) -> Result<
+    crate::types::error::builders::ResourceContentionFaultBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     if inp.is_empty() {
         return Ok(builder);
     }

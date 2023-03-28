@@ -3,62 +3,62 @@
 pub fn de_put_managed_insight_rules_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::PutManagedInsightRulesOutput,
-    crate::error::PutManagedInsightRulesError,
+    crate::operation::put_managed_insight_rules::PutManagedInsightRulesOutput,
+    crate::operation::put_managed_insight_rules::PutManagedInsightRulesError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::PutManagedInsightRulesError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::put_managed_insight_rules::PutManagedInsightRulesError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::PutManagedInsightRulesError::unhandled(
-                generic,
-            ))
-        }
-    };
+    let error_code =
+        match generic.code() {
+            Some(code) => code,
+            None => return Err(
+                crate::operation::put_managed_insight_rules::PutManagedInsightRulesError::unhandled(
+                    generic,
+                ),
+            ),
+        };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValue" => {
-            crate::error::PutManagedInsightRulesError::InvalidParameterValueException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidParameterValue" => crate::operation::put_managed_insight_rules::PutManagedInsightRulesError::InvalidParameterValueException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_parameter_value_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutManagedInsightRulesError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::put_managed_insight_rules::PutManagedInsightRulesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "MissingParameter" => {
-            crate::error::PutManagedInsightRulesError::MissingRequiredParameterException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "MissingParameter" => crate::operation::put_managed_insight_rules::PutManagedInsightRulesError::MissingRequiredParameterException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::missing_required_parameter_exception::Builder::default();
+                    let mut output = crate::types::error::builders::MissingRequiredParameterExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_missing_required_parameter_exception::de_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutManagedInsightRulesError::unhandled)?;
+                    output = crate::protocol_serde::shape_missing_required_parameter_exception::de_missing_required_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::put_managed_insight_rules::PutManagedInsightRulesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::PutManagedInsightRulesError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::put_managed_insight_rules::PutManagedInsightRulesError::generic(generic)
     })
 }
 
@@ -66,19 +66,21 @@ pub fn de_put_managed_insight_rules_http_error(
 pub fn de_put_managed_insight_rules_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::PutManagedInsightRulesOutput,
-    crate::error::PutManagedInsightRulesError,
+    crate::operation::put_managed_insight_rules::PutManagedInsightRulesOutput,
+    crate::operation::put_managed_insight_rules::PutManagedInsightRulesError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::put_managed_insight_rules_output::Builder::default();
+        let mut output = crate::operation::put_managed_insight_rules::builders::PutManagedInsightRulesOutputBuilder::default();
         let _ = response;
         output =
             crate::protocol_serde::shape_put_managed_insight_rules::de_put_managed_insight_rules(
                 response.body().as_ref(),
                 output,
             )
-            .map_err(crate::error::PutManagedInsightRulesError::unhandled)?;
+            .map_err(
+                crate::operation::put_managed_insight_rules::PutManagedInsightRulesError::unhandled,
+            )?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -89,9 +91,9 @@ pub fn de_put_managed_insight_rules_http_response(
 #[allow(unused_mut)]
 pub fn de_put_managed_insight_rules(
     inp: &[u8],
-    mut builder: crate::output::put_managed_insight_rules_output::Builder,
+    mut builder: crate::operation::put_managed_insight_rules::builders::PutManagedInsightRulesOutputBuilder,
 ) -> Result<
-    crate::output::put_managed_insight_rules_output::Builder,
+    crate::operation::put_managed_insight_rules::builders::PutManagedInsightRulesOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

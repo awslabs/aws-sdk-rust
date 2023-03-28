@@ -2,7 +2,7 @@
 pub(crate) fn de_frame_metric_data<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::FrameMetricDatum>>,
+    Option<std::vec::Vec<crate::types::FrameMetricDatum>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

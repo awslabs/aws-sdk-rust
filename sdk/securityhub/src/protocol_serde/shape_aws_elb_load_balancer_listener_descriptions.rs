@@ -2,7 +2,7 @@
 pub(crate) fn de_aws_elb_load_balancer_listener_descriptions<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AwsElbLoadBalancerListenerDescription>>,
+    Option<std::vec::Vec<crate::types::AwsElbLoadBalancerListenerDescription>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

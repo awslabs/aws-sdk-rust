@@ -2,7 +2,7 @@
 pub(crate) fn de_share_results_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ShareResult>>,
+    Option<std::vec::Vec<crate::types::ShareResult>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

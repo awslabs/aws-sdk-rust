@@ -2,13 +2,14 @@
 pub fn de_message_body_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::MessageBody>,
-    crate::error::UpdateEndpointsBatchError,
+    std::option::Option<crate::types::MessageBody>,
+    crate::operation::update_endpoints_batch::UpdateEndpointsBatchError,
 > {
     (!body.is_empty())
         .then(|| {
-            crate::protocol_serde::shape_message_body::de_message_body_payload(body)
-                .map_err(crate::error::UpdateEndpointsBatchError::unhandled)
+            crate::protocol_serde::shape_message_body::de_message_body_payload(body).map_err(
+                crate::operation::update_endpoints_batch::UpdateEndpointsBatchError::unhandled,
+            )
         })
         .transpose()
 }

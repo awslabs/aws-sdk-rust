@@ -2,7 +2,7 @@
 pub(crate) fn de_item_collection_metrics_multiple<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ItemCollectionMetrics>>,
+    Option<std::vec::Vec<crate::types::ItemCollectionMetrics>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

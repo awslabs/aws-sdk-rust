@@ -2,7 +2,7 @@
 pub(crate) fn de_gauge_chart_conditional_formatting_option_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::GaugeChartConditionalFormattingOption>>,
+    Option<std::vec::Vec<crate::types::GaugeChartConditionalFormattingOption>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub fn de_environment_info_description_list(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::EnvironmentInfoDescription>,
+    std::vec::Vec<crate::types::EnvironmentInfoDescription>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

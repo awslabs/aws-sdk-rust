@@ -2,7 +2,7 @@
 pub(crate) fn de_additional_authentication_providers<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AdditionalAuthenticationProvider>>,
+    Option<std::vec::Vec<crate::types::AdditionalAuthenticationProvider>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

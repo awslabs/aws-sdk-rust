@@ -2,7 +2,7 @@
 pub(crate) fn de_package_filter_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::PackageFilter>>,
+    Option<std::vec::Vec<crate::types::PackageFilter>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

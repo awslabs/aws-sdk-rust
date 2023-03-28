@@ -2,7 +2,7 @@
 pub(crate) fn de_routing_config<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::RoutingConfig>,
+    Option<crate::types::RoutingConfig>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::routing_config::Builder::default();
+            let mut builder = crate::types::builders::RoutingConfigBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -53,7 +53,7 @@ where
 
 pub fn ser_routing_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::RoutingConfig,
+    input: &crate::types::RoutingConfig,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.failover_config {
         #[allow(unused_mut)]

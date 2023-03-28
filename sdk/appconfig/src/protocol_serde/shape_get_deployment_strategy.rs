@@ -3,71 +3,79 @@
 pub fn de_get_deployment_strategy_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetDeploymentStrategyOutput,
-    crate::error::GetDeploymentStrategyError,
+    crate::operation::get_deployment_strategy::GetDeploymentStrategyOutput,
+    crate::operation::get_deployment_strategy::GetDeploymentStrategyError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetDeploymentStrategyError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::get_deployment_strategy::GetDeploymentStrategyError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    let error_code = match generic.code() {
-        Some(code) => code,
-        None => return Err(crate::error::GetDeploymentStrategyError::unhandled(generic)),
-    };
+    let error_code =
+        match generic.code() {
+            Some(code) => code,
+            None => return Err(
+                crate::operation::get_deployment_strategy::GetDeploymentStrategyError::unhandled(
+                    generic,
+                ),
+            ),
+        };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::GetDeploymentStrategyError::BadRequestException({
+        "BadRequestException" => crate::operation::get_deployment_strategy::GetDeploymentStrategyError::BadRequestException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDeploymentStrategyError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_deployment_strategy::GetDeploymentStrategyError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "InternalServerException" => {
-            crate::error::GetDeploymentStrategyError::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalServerException" => crate::operation::get_deployment_strategy::GetDeploymentStrategyError::InternalServerException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDeploymentStrategyError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_deployment_strategy::GetDeploymentStrategyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ResourceNotFoundException" => {
-            crate::error::GetDeploymentStrategyError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::get_deployment_strategy::GetDeploymentStrategyError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDeploymentStrategyError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_deployment_strategy::GetDeploymentStrategyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::GetDeploymentStrategyError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::get_deployment_strategy::GetDeploymentStrategyError::generic(generic)
     })
 }
 
@@ -75,18 +83,20 @@ pub fn de_get_deployment_strategy_http_error(
 pub fn de_get_deployment_strategy_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetDeploymentStrategyOutput,
-    crate::error::GetDeploymentStrategyError,
+    crate::operation::get_deployment_strategy::GetDeploymentStrategyOutput,
+    crate::operation::get_deployment_strategy::GetDeploymentStrategyError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_deployment_strategy_output::Builder::default();
+        let mut output = crate::operation::get_deployment_strategy::builders::GetDeploymentStrategyOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_get_deployment_strategy::de_get_deployment_strategy(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::GetDeploymentStrategyError::unhandled)?;
+        .map_err(
+            crate::operation::get_deployment_strategy::GetDeploymentStrategyError::unhandled,
+        )?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -96,9 +106,9 @@ pub fn de_get_deployment_strategy_http_response(
 
 pub(crate) fn de_get_deployment_strategy(
     value: &[u8],
-    mut builder: crate::output::get_deployment_strategy_output::Builder,
+    mut builder: crate::operation::get_deployment_strategy::builders::GetDeploymentStrategyOutputBuilder,
 ) -> Result<
-    crate::output::get_deployment_strategy_output::Builder,
+    crate::operation::get_deployment_strategy::builders::GetDeploymentStrategyOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =
@@ -153,7 +163,7 @@ pub(crate) fn de_get_deployment_strategy(
                             )?
                             .map(|s| {
                                 s.to_unescaped()
-                                    .map(|u| crate::model::GrowthType::from(u.as_ref()))
+                                    .map(|u| crate::types::GrowthType::from(u.as_ref()))
                             })
                             .transpose()?,
                         );
@@ -183,7 +193,7 @@ pub(crate) fn de_get_deployment_strategy(
                             )?
                             .map(|s| {
                                 s.to_unescaped()
-                                    .map(|u| crate::model::ReplicateTo::from(u.as_ref()))
+                                    .map(|u| crate::types::ReplicateTo::from(u.as_ref()))
                             })
                             .transpose()?,
                         );

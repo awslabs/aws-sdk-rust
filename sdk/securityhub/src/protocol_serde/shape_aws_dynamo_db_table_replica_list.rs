@@ -2,7 +2,7 @@
 pub(crate) fn de_aws_dynamo_db_table_replica_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AwsDynamoDbTableReplica>>,
+    Option<std::vec::Vec<crate::types::AwsDynamoDbTableReplica>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

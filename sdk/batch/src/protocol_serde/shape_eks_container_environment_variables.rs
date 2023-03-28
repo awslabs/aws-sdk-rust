@@ -2,7 +2,7 @@
 pub(crate) fn de_eks_container_environment_variables<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::EksContainerEnvironmentVariable>>,
+    Option<std::vec::Vec<crate::types::EksContainerEnvironmentVariable>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

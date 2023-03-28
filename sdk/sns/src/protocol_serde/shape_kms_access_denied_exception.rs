@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_kms_access_denied_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::kms_access_denied_exception::Builder,
+    mut builder: crate::types::error::builders::KmsAccessDeniedExceptionBuilder,
 ) -> Result<
-    crate::error::kms_access_denied_exception::Builder,
+    crate::types::error::builders::KmsAccessDeniedExceptionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

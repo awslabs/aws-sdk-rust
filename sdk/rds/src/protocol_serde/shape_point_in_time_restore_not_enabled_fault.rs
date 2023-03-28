@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_point_in_time_restore_not_enabled_fault_xml_err(
     inp: &[u8],
-    mut builder: crate::error::point_in_time_restore_not_enabled_fault::Builder,
+    mut builder: crate::types::error::builders::PointInTimeRestoreNotEnabledFaultBuilder,
 ) -> Result<
-    crate::error::point_in_time_restore_not_enabled_fault::Builder,
+    crate::types::error::builders::PointInTimeRestoreNotEnabledFaultBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

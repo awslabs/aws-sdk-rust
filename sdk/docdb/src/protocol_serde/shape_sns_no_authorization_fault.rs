@@ -2,9 +2,11 @@
 #[allow(unused_mut)]
 pub fn de_sns_no_authorization_fault_xml_err(
     inp: &[u8],
-    mut builder: crate::error::sns_no_authorization_fault::Builder,
-) -> Result<crate::error::sns_no_authorization_fault::Builder, aws_smithy_xml::decode::XmlDecodeError>
-{
+    mut builder: crate::types::error::builders::SnsNoAuthorizationFaultBuilder,
+) -> Result<
+    crate::types::error::builders::SnsNoAuthorizationFaultBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     if inp.is_empty() {
         return Ok(builder);
     }

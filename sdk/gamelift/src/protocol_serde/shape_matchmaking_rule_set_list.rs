@@ -2,7 +2,7 @@
 pub(crate) fn de_matchmaking_rule_set_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::MatchmakingRuleSet>>,
+    Option<std::vec::Vec<crate::types::MatchmakingRuleSet>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

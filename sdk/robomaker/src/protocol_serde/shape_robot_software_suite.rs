@@ -2,7 +2,7 @@
 pub(crate) fn de_robot_software_suite<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::RobotSoftwareSuite>,
+    Option<crate::types::RobotSoftwareSuite>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::robot_software_suite::Builder::default();
+            let mut builder = crate::types::builders::RobotSoftwareSuiteBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::RobotSoftwareSuiteType::from(u.as_ref())
+                                            crate::types::RobotSoftwareSuiteType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -43,7 +43,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::RobotSoftwareSuiteVersionType::from(
+                                            crate::types::RobotSoftwareSuiteVersionType::from(
                                                 u.as_ref(),
                                             )
                                         })
@@ -76,7 +76,7 @@ where
 
 pub fn ser_robot_software_suite(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::RobotSoftwareSuite,
+    input: &crate::types::RobotSoftwareSuite,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.name {
         object.key("name").string(var_1.as_str());

@@ -2,7 +2,7 @@
 pub fn de_cache_node_update_status_list(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::CacheNodeUpdateStatus>,
+    std::vec::Vec<crate::types::CacheNodeUpdateStatus>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

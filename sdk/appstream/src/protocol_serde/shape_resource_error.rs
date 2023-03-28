@@ -2,7 +2,7 @@
 pub(crate) fn de_resource_error<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ResourceError>,
+    Option<crate::types::ResourceError>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::resource_error::Builder::default();
+            let mut builder = crate::types::builders::ResourceErrorBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::FleetErrorCode::from(u.as_ref()))
+                                            .map(|u| crate::types::FleetErrorCode::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

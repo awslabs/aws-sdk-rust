@@ -2,26 +2,30 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_app_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetAppOutput, crate::error::GetAppError> {
+) -> std::result::Result<
+    crate::operation::get_app::GetAppOutput,
+    crate::operation::get_app::GetAppError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetAppError::unhandled)?;
+        .map_err(crate::operation::get_app::GetAppError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::GetAppError::unhandled(generic)),
+        None => return Err(crate::operation::get_app::GetAppError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::GetAppError::BadRequestException({
+        "BadRequestException" => crate::operation::get_app::GetAppError::BadRequestException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_exception::Builder::default();
+                let mut output =
+                    crate::types::error::builders::BadRequestExceptionBuilder::default();
                 let _ = response;
-                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAppError::unhandled)?;
+                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_app::GetAppError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -30,13 +34,31 @@ pub fn de_get_app_http_error(
             }
             tmp
         }),
-        "InternalFailureException" => crate::error::GetAppError::InternalFailureException({
+        "InternalFailureException" => {
+            crate::operation::get_app::GetAppError::InternalFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InternalFailureExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_app::GetAppError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "NotFoundException" => crate::operation::get_app::GetAppError::NotFoundException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_failure_exception::Builder::default();
+                let mut output = crate::types::error::builders::NotFoundExceptionBuilder::default();
                 let _ = response;
-                output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAppError::unhandled)?;
+                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_app::GetAppError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -45,13 +67,14 @@ pub fn de_get_app_http_error(
             }
             tmp
         }),
-        "NotFoundException" => crate::error::GetAppError::NotFoundException({
+        "UnauthorizedException" => crate::operation::get_app::GetAppError::UnauthorizedException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_exception::Builder::default();
+                let mut output =
+                    crate::types::error::builders::UnauthorizedExceptionBuilder::default();
                 let _ = response;
-                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAppError::unhandled)?;
+                output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_app::GetAppError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -60,35 +83,23 @@ pub fn de_get_app_http_error(
             }
             tmp
         }),
-        "UnauthorizedException" => crate::error::GetAppError::UnauthorizedException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAppError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::GetAppError::generic(generic),
+        _ => crate::operation::get_app::GetAppError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_app_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetAppOutput, crate::error::GetAppError> {
+) -> std::result::Result<
+    crate::operation::get_app::GetAppOutput,
+    crate::operation::get_app::GetAppError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_app_output::Builder::default();
+        let mut output = crate::operation::get_app::builders::GetAppOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_get_app::de_get_app(response.body().as_ref(), output)
-            .map_err(crate::error::GetAppError::unhandled)?;
+            .map_err(crate::operation::get_app::GetAppError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -98,9 +109,9 @@ pub fn de_get_app_http_response(
 
 pub(crate) fn de_get_app(
     value: &[u8],
-    mut builder: crate::output::get_app_output::Builder,
+    mut builder: crate::operation::get_app::builders::GetAppOutputBuilder,
 ) -> Result<
-    crate::output::get_app_output::Builder,
+    crate::operation::get_app::builders::GetAppOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

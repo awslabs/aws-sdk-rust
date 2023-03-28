@@ -3,33 +3,35 @@
 pub fn de_create_replication_group_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateReplicationGroupOutput,
-    crate::error::CreateReplicationGroupError,
+    crate::operation::create_replication_group::CreateReplicationGroupOutput,
+    crate::operation::create_replication_group::CreateReplicationGroupError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::CreateReplicationGroupError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::create_replication_group::CreateReplicationGroupError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::CreateReplicationGroupError::unhandled(
-                generic,
-            ))
-        }
-    };
+    let error_code =
+        match generic.code() {
+            Some(code) => code,
+            None => return Err(
+                crate::operation::create_replication_group::CreateReplicationGroupError::unhandled(
+                    generic,
+                ),
+            ),
+        };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CacheClusterNotFound" => crate::error::CreateReplicationGroupError::CacheClusterNotFoundFault({
+        "CacheClusterNotFound" => crate::operation::create_replication_group::CreateReplicationGroupError::CacheClusterNotFoundFault({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::cache_cluster_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::CacheClusterNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_cache_cluster_not_found_fault::de_cache_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_cache_cluster_not_found_fault::de_cache_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_replication_group::CreateReplicationGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -39,14 +41,14 @@ pub fn de_create_replication_group_http_error(
                                                     }
             tmp
         }),
-        "CacheParameterGroupNotFound" => crate::error::CreateReplicationGroupError::CacheParameterGroupNotFoundFault({
+        "CacheParameterGroupNotFound" => crate::operation::create_replication_group::CreateReplicationGroupError::CacheParameterGroupNotFoundFault({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::cache_parameter_group_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::CacheParameterGroupNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_cache_parameter_group_not_found_fault::de_cache_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_cache_parameter_group_not_found_fault::de_cache_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_replication_group::CreateReplicationGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -56,14 +58,14 @@ pub fn de_create_replication_group_http_error(
                                                     }
             tmp
         }),
-        "CacheSecurityGroupNotFound" => crate::error::CreateReplicationGroupError::CacheSecurityGroupNotFoundFault({
+        "CacheSecurityGroupNotFound" => crate::operation::create_replication_group::CreateReplicationGroupError::CacheSecurityGroupNotFoundFault({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::cache_security_group_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::CacheSecurityGroupNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_cache_security_group_not_found_fault::de_cache_security_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_cache_security_group_not_found_fault::de_cache_security_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_replication_group::CreateReplicationGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -73,14 +75,14 @@ pub fn de_create_replication_group_http_error(
                                                     }
             tmp
         }),
-        "CacheSubnetGroupNotFoundFault" => crate::error::CreateReplicationGroupError::CacheSubnetGroupNotFoundFault({
+        "CacheSubnetGroupNotFoundFault" => crate::operation::create_replication_group::CreateReplicationGroupError::CacheSubnetGroupNotFoundFault({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::cache_subnet_group_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::CacheSubnetGroupNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_cache_subnet_group_not_found_fault::de_cache_subnet_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_cache_subnet_group_not_found_fault::de_cache_subnet_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_replication_group::CreateReplicationGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -90,14 +92,14 @@ pub fn de_create_replication_group_http_error(
                                                     }
             tmp
         }),
-        "ClusterQuotaForCustomerExceeded" => crate::error::CreateReplicationGroupError::ClusterQuotaForCustomerExceededFault({
+        "ClusterQuotaForCustomerExceeded" => crate::operation::create_replication_group::CreateReplicationGroupError::ClusterQuotaForCustomerExceededFault({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::cluster_quota_for_customer_exceeded_fault::Builder::default();
+                    let mut output = crate::types::error::builders::ClusterQuotaForCustomerExceededFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_cluster_quota_for_customer_exceeded_fault::de_cluster_quota_for_customer_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_cluster_quota_for_customer_exceeded_fault::de_cluster_quota_for_customer_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_replication_group::CreateReplicationGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -107,14 +109,14 @@ pub fn de_create_replication_group_http_error(
                                                     }
             tmp
         }),
-        "GlobalReplicationGroupNotFoundFault" => crate::error::CreateReplicationGroupError::GlobalReplicationGroupNotFoundFault({
+        "GlobalReplicationGroupNotFoundFault" => crate::operation::create_replication_group::CreateReplicationGroupError::GlobalReplicationGroupNotFoundFault({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::global_replication_group_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::GlobalReplicationGroupNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_global_replication_group_not_found_fault::de_global_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_global_replication_group_not_found_fault::de_global_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_replication_group::CreateReplicationGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -124,14 +126,14 @@ pub fn de_create_replication_group_http_error(
                                                     }
             tmp
         }),
-        "InsufficientCacheClusterCapacity" => crate::error::CreateReplicationGroupError::InsufficientCacheClusterCapacityFault({
+        "InsufficientCacheClusterCapacity" => crate::operation::create_replication_group::CreateReplicationGroupError::InsufficientCacheClusterCapacityFault({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::insufficient_cache_cluster_capacity_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InsufficientCacheClusterCapacityFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_insufficient_cache_cluster_capacity_fault::de_insufficient_cache_cluster_capacity_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_insufficient_cache_cluster_capacity_fault::de_insufficient_cache_cluster_capacity_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_replication_group::CreateReplicationGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -141,14 +143,14 @@ pub fn de_create_replication_group_http_error(
                                                     }
             tmp
         }),
-        "InvalidCacheClusterState" => crate::error::CreateReplicationGroupError::InvalidCacheClusterStateFault({
+        "InvalidCacheClusterState" => crate::operation::create_replication_group::CreateReplicationGroupError::InvalidCacheClusterStateFault({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_cache_cluster_state_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidCacheClusterStateFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_cache_cluster_state_fault::de_invalid_cache_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_cache_cluster_state_fault::de_invalid_cache_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_replication_group::CreateReplicationGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -158,14 +160,14 @@ pub fn de_create_replication_group_http_error(
                                                     }
             tmp
         }),
-        "InvalidGlobalReplicationGroupState" => crate::error::CreateReplicationGroupError::InvalidGlobalReplicationGroupStateFault({
+        "InvalidGlobalReplicationGroupState" => crate::operation::create_replication_group::CreateReplicationGroupError::InvalidGlobalReplicationGroupStateFault({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_global_replication_group_state_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidGlobalReplicationGroupStateFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_global_replication_group_state_fault::de_invalid_global_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_global_replication_group_state_fault::de_invalid_global_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_replication_group::CreateReplicationGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -175,14 +177,14 @@ pub fn de_create_replication_group_http_error(
                                                     }
             tmp
         }),
-        "InvalidParameterCombination" => crate::error::CreateReplicationGroupError::InvalidParameterCombinationException({
+        "InvalidParameterCombination" => crate::operation::create_replication_group::CreateReplicationGroupError::InvalidParameterCombinationException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_parameter_combination_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidParameterCombinationExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_combination_exception::de_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_combination_exception::de_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_replication_group::CreateReplicationGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -192,14 +194,14 @@ pub fn de_create_replication_group_http_error(
                                                     }
             tmp
         }),
-        "InvalidParameterValue" => crate::error::CreateReplicationGroupError::InvalidParameterValueException({
+        "InvalidParameterValue" => crate::operation::create_replication_group::CreateReplicationGroupError::InvalidParameterValueException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_replication_group::CreateReplicationGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -209,14 +211,14 @@ pub fn de_create_replication_group_http_error(
                                                     }
             tmp
         }),
-        "InvalidUserGroupState" => crate::error::CreateReplicationGroupError::InvalidUserGroupStateFault({
+        "InvalidUserGroupState" => crate::operation::create_replication_group::CreateReplicationGroupError::InvalidUserGroupStateFault({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_user_group_state_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidUserGroupStateFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_user_group_state_fault::de_invalid_user_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_user_group_state_fault::de_invalid_user_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_replication_group::CreateReplicationGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -226,14 +228,14 @@ pub fn de_create_replication_group_http_error(
                                                     }
             tmp
         }),
-        "InvalidVPCNetworkStateFault" => crate::error::CreateReplicationGroupError::InvalidVpcNetworkStateFault({
+        "InvalidVPCNetworkStateFault" => crate::operation::create_replication_group::CreateReplicationGroupError::InvalidVpcNetworkStateFault({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_vpc_network_state_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidVpcNetworkStateFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_vpc_network_state_fault::de_invalid_vpc_network_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_vpc_network_state_fault::de_invalid_vpc_network_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_replication_group::CreateReplicationGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -243,14 +245,14 @@ pub fn de_create_replication_group_http_error(
                                                     }
             tmp
         }),
-        "NodeGroupsPerReplicationGroupQuotaExceeded" => crate::error::CreateReplicationGroupError::NodeGroupsPerReplicationGroupQuotaExceededFault({
+        "NodeGroupsPerReplicationGroupQuotaExceeded" => crate::operation::create_replication_group::CreateReplicationGroupError::NodeGroupsPerReplicationGroupQuotaExceededFault({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::node_groups_per_replication_group_quota_exceeded_fault::Builder::default();
+                    let mut output = crate::types::error::builders::NodeGroupsPerReplicationGroupQuotaExceededFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_node_groups_per_replication_group_quota_exceeded_fault::de_node_groups_per_replication_group_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_node_groups_per_replication_group_quota_exceeded_fault::de_node_groups_per_replication_group_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_replication_group::CreateReplicationGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -260,14 +262,14 @@ pub fn de_create_replication_group_http_error(
                                                     }
             tmp
         }),
-        "NodeQuotaForClusterExceeded" => crate::error::CreateReplicationGroupError::NodeQuotaForClusterExceededFault({
+        "NodeQuotaForClusterExceeded" => crate::operation::create_replication_group::CreateReplicationGroupError::NodeQuotaForClusterExceededFault({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::node_quota_for_cluster_exceeded_fault::Builder::default();
+                    let mut output = crate::types::error::builders::NodeQuotaForClusterExceededFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_node_quota_for_cluster_exceeded_fault::de_node_quota_for_cluster_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_node_quota_for_cluster_exceeded_fault::de_node_quota_for_cluster_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_replication_group::CreateReplicationGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -277,14 +279,14 @@ pub fn de_create_replication_group_http_error(
                                                     }
             tmp
         }),
-        "NodeQuotaForCustomerExceeded" => crate::error::CreateReplicationGroupError::NodeQuotaForCustomerExceededFault({
+        "NodeQuotaForCustomerExceeded" => crate::operation::create_replication_group::CreateReplicationGroupError::NodeQuotaForCustomerExceededFault({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::node_quota_for_customer_exceeded_fault::Builder::default();
+                    let mut output = crate::types::error::builders::NodeQuotaForCustomerExceededFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_node_quota_for_customer_exceeded_fault::de_node_quota_for_customer_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_node_quota_for_customer_exceeded_fault::de_node_quota_for_customer_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_replication_group::CreateReplicationGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -294,14 +296,14 @@ pub fn de_create_replication_group_http_error(
                                                     }
             tmp
         }),
-        "ReplicationGroupAlreadyExists" => crate::error::CreateReplicationGroupError::ReplicationGroupAlreadyExistsFault({
+        "ReplicationGroupAlreadyExists" => crate::operation::create_replication_group::CreateReplicationGroupError::ReplicationGroupAlreadyExistsFault({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::replication_group_already_exists_fault::Builder::default();
+                    let mut output = crate::types::error::builders::ReplicationGroupAlreadyExistsFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_replication_group_already_exists_fault::de_replication_group_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_replication_group_already_exists_fault::de_replication_group_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_replication_group::CreateReplicationGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -311,14 +313,14 @@ pub fn de_create_replication_group_http_error(
                                                     }
             tmp
         }),
-        "TagQuotaPerResourceExceeded" => crate::error::CreateReplicationGroupError::TagQuotaPerResourceExceeded({
+        "TagQuotaPerResourceExceeded" => crate::operation::create_replication_group::CreateReplicationGroupError::TagQuotaPerResourceExceeded({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::tag_quota_per_resource_exceeded::Builder::default();
+                    let mut output = crate::types::error::builders::TagQuotaPerResourceExceededBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_tag_quota_per_resource_exceeded::de_tag_quota_per_resource_exceeded_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_tag_quota_per_resource_exceeded::de_tag_quota_per_resource_exceeded_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_replication_group::CreateReplicationGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -328,14 +330,14 @@ pub fn de_create_replication_group_http_error(
                                                     }
             tmp
         }),
-        "UserGroupNotFound" => crate::error::CreateReplicationGroupError::UserGroupNotFoundFault({
+        "UserGroupNotFound" => crate::operation::create_replication_group::CreateReplicationGroupError::UserGroupNotFoundFault({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::user_group_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::UserGroupNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_user_group_not_found_fault::de_user_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_user_group_not_found_fault::de_user_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_replication_group::CreateReplicationGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -345,7 +347,7 @@ pub fn de_create_replication_group_http_error(
                                                     }
             tmp
         }),
-        _ => crate::error::CreateReplicationGroupError::generic(generic)
+        _ => crate::operation::create_replication_group::CreateReplicationGroupError::generic(generic)
     })
 }
 
@@ -353,19 +355,21 @@ pub fn de_create_replication_group_http_error(
 pub fn de_create_replication_group_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateReplicationGroupOutput,
-    crate::error::CreateReplicationGroupError,
+    crate::operation::create_replication_group::CreateReplicationGroupOutput,
+    crate::operation::create_replication_group::CreateReplicationGroupError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::create_replication_group_output::Builder::default();
+        let mut output = crate::operation::create_replication_group::builders::CreateReplicationGroupOutputBuilder::default();
         let _ = response;
         output =
             crate::protocol_serde::shape_create_replication_group::de_create_replication_group(
                 response.body().as_ref(),
                 output,
             )
-            .map_err(crate::error::CreateReplicationGroupError::unhandled)?;
+            .map_err(
+                crate::operation::create_replication_group::CreateReplicationGroupError::unhandled,
+            )?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -376,9 +380,9 @@ pub fn de_create_replication_group_http_response(
 #[allow(unused_mut)]
 pub fn de_create_replication_group(
     inp: &[u8],
-    mut builder: crate::output::create_replication_group_output::Builder,
+    mut builder: crate::operation::create_replication_group::builders::CreateReplicationGroupOutputBuilder,
 ) -> Result<
-    crate::output::create_replication_group_output::Builder,
+    crate::operation::create_replication_group::builders::CreateReplicationGroupOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

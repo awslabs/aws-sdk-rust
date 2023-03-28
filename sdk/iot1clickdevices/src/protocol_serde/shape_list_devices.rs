@@ -2,58 +2,35 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_devices_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListDevicesOutput, crate::error::ListDevicesError> {
+) -> std::result::Result<
+    crate::operation::list_devices::ListDevicesOutput,
+    crate::operation::list_devices::ListDevicesError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListDevicesError::unhandled)?;
+        .map_err(crate::operation::list_devices::ListDevicesError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListDevicesError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::list_devices::ListDevicesError::unhandled(
+                generic,
+            ))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalFailureException" => crate::error::ListDevicesError::InternalFailureException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_failure_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDevicesError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InvalidRequestException" => crate::error::ListDevicesError::InvalidRequestException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::invalid_request_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDevicesError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "RangeNotSatisfiableException" => {
-            crate::error::ListDevicesError::RangeNotSatisfiableException({
+        "InternalFailureException" => {
+            crate::operation::list_devices::ListDevicesError::InternalFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::range_not_satisfiable_exception::Builder::default();
+                        crate::types::error::builders::InternalFailureExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_range_not_satisfiable_exception::de_range_not_satisfiable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDevicesError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_devices::ListDevicesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -63,23 +40,64 @@ pub fn de_list_devices_http_error(
                 tmp
             })
         }
-        _ => crate::error::ListDevicesError::generic(generic),
+        "InvalidRequestException" => {
+            crate::operation::list_devices::ListDevicesError::InvalidRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InvalidRequestExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_devices::ListDevicesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "RangeNotSatisfiableException" => {
+            crate::operation::list_devices::ListDevicesError::RangeNotSatisfiableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::RangeNotSatisfiableExceptionBuilder::default(
+                        );
+                    let _ = response;
+                    output = crate::protocol_serde::shape_range_not_satisfiable_exception::de_range_not_satisfiable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_devices::ListDevicesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::list_devices::ListDevicesError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_devices_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListDevicesOutput, crate::error::ListDevicesError> {
+) -> std::result::Result<
+    crate::operation::list_devices::ListDevicesOutput,
+    crate::operation::list_devices::ListDevicesError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_devices_output::Builder::default();
+        let mut output =
+            crate::operation::list_devices::builders::ListDevicesOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_devices::de_list_devices(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListDevicesError::unhandled)?;
+        .map_err(crate::operation::list_devices::ListDevicesError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -89,9 +107,9 @@ pub fn de_list_devices_http_response(
 
 pub(crate) fn de_list_devices(
     value: &[u8],
-    mut builder: crate::output::list_devices_output::Builder,
+    mut builder: crate::operation::list_devices::builders::ListDevicesOutputBuilder,
 ) -> Result<
-    crate::output::list_devices_output::Builder,
+    crate::operation::list_devices::builders::ListDevicesOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

@@ -2,7 +2,7 @@
 pub(crate) fn de_service_events<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ServiceEvent>>,
+    Option<std::vec::Vec<crate::types::ServiceEvent>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

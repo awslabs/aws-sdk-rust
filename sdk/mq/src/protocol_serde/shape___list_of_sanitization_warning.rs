@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_sanitization_warning<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SanitizationWarning>>,
+    Option<std::vec::Vec<crate::types::SanitizationWarning>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

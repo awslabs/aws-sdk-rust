@@ -2,81 +2,97 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_branches_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListBranchesOutput, crate::error::ListBranchesError> {
+) -> std::result::Result<
+    crate::operation::list_branches::ListBranchesOutput,
+    crate::operation::list_branches::ListBranchesError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListBranchesError::unhandled)?;
+        .map_err(crate::operation::list_branches::ListBranchesError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListBranchesError::unhandled(generic)),
+        None => return Err(crate::operation::list_branches::ListBranchesError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::ListBranchesError::BadRequestException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "BadRequestException" => {
+            crate::operation::list_branches::ListBranchesError::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListBranchesError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InternalFailureException" => crate::error::ListBranchesError::InternalFailureException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::BadRequestExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_branches::ListBranchesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InternalFailureException" => {
+            crate::operation::list_branches::ListBranchesError::InternalFailureException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_failure_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListBranchesError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "UnauthorizedException" => crate::error::ListBranchesError::UnauthorizedException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InternalFailureExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_branches::ListBranchesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "UnauthorizedException" => {
+            crate::operation::list_branches::ListBranchesError::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListBranchesError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::ListBranchesError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::UnauthorizedExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_branches::ListBranchesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::list_branches::ListBranchesError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_branches_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListBranchesOutput, crate::error::ListBranchesError> {
+) -> std::result::Result<
+    crate::operation::list_branches::ListBranchesOutput,
+    crate::operation::list_branches::ListBranchesError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_branches_output::Builder::default();
+        let mut output =
+            crate::operation::list_branches::builders::ListBranchesOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_branches::de_list_branches(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListBranchesError::unhandled)?;
+        .map_err(crate::operation::list_branches::ListBranchesError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -86,9 +102,9 @@ pub fn de_list_branches_http_response(
 
 pub(crate) fn de_list_branches(
     value: &[u8],
-    mut builder: crate::output::list_branches_output::Builder,
+    mut builder: crate::operation::list_branches::builders::ListBranchesOutputBuilder,
 ) -> Result<
-    crate::output::list_branches_output::Builder,
+    crate::operation::list_branches::builders::ListBranchesOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

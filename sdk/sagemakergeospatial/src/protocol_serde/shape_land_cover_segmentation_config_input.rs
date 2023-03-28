@@ -2,7 +2,7 @@
 pub(crate) fn de_land_cover_segmentation_config_input<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::LandCoverSegmentationConfigInput>,
+    Option<crate::types::LandCoverSegmentationConfigInput>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::land_cover_segmentation_config_input::Builder::default();
+                crate::types::builders::LandCoverSegmentationConfigInputBuilder::default();
             aws_smithy_json::deserialize::token::skip_to_end(tokens)?;
             Ok(Some(builder.build()))
         }
@@ -32,7 +32,7 @@ where
 
 pub fn ser_land_cover_segmentation_config_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::LandCoverSegmentationConfigInput,
+    input: &crate::types::LandCoverSegmentationConfigInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     let (_, _) = (object, input);
     Ok(())

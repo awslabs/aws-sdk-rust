@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_group_count<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::GroupCount>>,
+    Option<std::vec::Vec<crate::types::GroupCount>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

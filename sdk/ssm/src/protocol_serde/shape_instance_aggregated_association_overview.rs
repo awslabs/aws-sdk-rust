@@ -2,7 +2,7 @@
 pub(crate) fn de_instance_aggregated_association_overview<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::InstanceAggregatedAssociationOverview>,
+    Option<crate::types::InstanceAggregatedAssociationOverview>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::instance_aggregated_association_overview::Builder::default();
+                crate::types::builders::InstanceAggregatedAssociationOverviewBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

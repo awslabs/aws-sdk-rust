@@ -2,7 +2,7 @@
 pub(crate) fn de_product_codes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ProductCode>>,
+    Option<std::vec::Vec<crate::types::ProductCode>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

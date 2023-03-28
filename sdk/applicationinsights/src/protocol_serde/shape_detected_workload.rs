@@ -4,7 +4,7 @@ pub(crate) fn de_detected_workload<'a, I>(
 ) -> Result<
     Option<
         std::collections::HashMap<
-            crate::model::Tier,
+            crate::types::Tier,
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
     >,
@@ -28,7 +28,7 @@ where
                     Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         let key = key
                             .to_unescaped()
-                            .map(|u| crate::model::Tier::from(u.as_ref()))?;
+                            .map(|u| crate::types::Tier::from(u.as_ref()))?;
                         let value =
                             crate::protocol_serde::shape_workload_meta_data::de_workload_meta_data(
                                 tokens,

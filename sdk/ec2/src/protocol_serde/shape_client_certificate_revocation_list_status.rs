@@ -2,18 +2,18 @@
 pub fn de_client_certificate_revocation_list_status(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    crate::model::ClientCertificateRevocationListStatus,
+    crate::types::ClientCertificateRevocationListStatus,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     #[allow(unused_mut)]
-    let mut builder = crate::model::ClientCertificateRevocationListStatus::builder();
+    let mut builder = crate::types::ClientCertificateRevocationListStatus::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("code") /* Code com.amazonaws.ec2#ClientCertificateRevocationListStatus$Code */ =>  {
                 let var_1 =
                     Some(
-                        Result::<crate::model::ClientCertificateRevocationListStatusCode, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::ClientCertificateRevocationListStatusCode::from(
+                        Result::<crate::types::ClientCertificateRevocationListStatusCode, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::ClientCertificateRevocationListStatusCode::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

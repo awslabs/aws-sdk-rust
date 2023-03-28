@@ -2,7 +2,7 @@
 pub(crate) fn de_listed_certificates<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ListedCertificate>>,
+    Option<std::vec::Vec<crate::types::ListedCertificate>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

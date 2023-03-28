@@ -2,17 +2,17 @@
 pub fn de_field_level_encryption_list_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::FieldLevelEncryptionList>,
-    crate::error::ListFieldLevelEncryptionConfigsError,
+    std::option::Option<crate::types::FieldLevelEncryptionList>,
+    crate::operation::list_field_level_encryption_configs::ListFieldLevelEncryptionConfigsError,
 > {
     (!body.is_empty()).then(||{
-        crate::protocol_serde::shape_list_field_level_encryption_configs_output::de_field_level_encryption_list(body).map_err(crate::error::ListFieldLevelEncryptionConfigsError::unhandled)
+        crate::protocol_serde::shape_list_field_level_encryption_configs_output::de_field_level_encryption_list(body).map_err(crate::operation::list_field_level_encryption_configs::ListFieldLevelEncryptionConfigsError::unhandled)
     }).transpose()
 }
 
 pub fn de_field_level_encryption_list(
     inp: &[u8],
-) -> Result<crate::model::FieldLevelEncryptionList, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::FieldLevelEncryptionList, aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;

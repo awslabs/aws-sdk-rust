@@ -2,7 +2,7 @@
 pub(crate) fn de_server_process_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ServerProcess>>,
+    Option<std::vec::Vec<crate::types::ServerProcess>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

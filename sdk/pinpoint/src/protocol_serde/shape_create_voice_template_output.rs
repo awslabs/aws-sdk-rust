@@ -2,10 +2,10 @@
 pub fn de_create_template_message_body_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::CreateTemplateMessageBody>,
-    crate::error::CreateVoiceTemplateError,
+    std::option::Option<crate::types::CreateTemplateMessageBody>,
+    crate::operation::create_voice_template::CreateVoiceTemplateError,
 > {
     (!body.is_empty()).then(||{
-        crate::protocol_serde::shape_create_template_message_body::de_create_template_message_body_payload(body).map_err(crate::error::CreateVoiceTemplateError::unhandled)
+        crate::protocol_serde::shape_create_template_message_body::de_create_template_message_body_payload(body).map_err(crate::operation::create_voice_template::CreateVoiceTemplateError::unhandled)
     }).transpose()
 }

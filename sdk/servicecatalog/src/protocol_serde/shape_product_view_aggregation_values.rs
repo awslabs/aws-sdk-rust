@@ -2,7 +2,7 @@
 pub(crate) fn de_product_view_aggregation_values<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ProductViewAggregationValue>>,
+    Option<std::vec::Vec<crate::types::ProductViewAggregationValue>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_resource_keys<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ResourceKey>>,
+    Option<std::vec::Vec<crate::types::ResourceKey>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

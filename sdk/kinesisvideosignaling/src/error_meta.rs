@@ -4,17 +4,17 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>Your request was throttled because you have exceeded the limit of allowed client calls. Try making the call later.</p>
-    ClientLimitExceededException(crate::error::ClientLimitExceededException),
+    ClientLimitExceededException(crate::types::error::ClientLimitExceededException),
     /// <p>The value for this input parameter is invalid.</p>
-    InvalidArgumentException(crate::error::InvalidArgumentException),
+    InvalidArgumentException(crate::types::error::InvalidArgumentException),
     /// <p>The specified client is invalid.</p>
-    InvalidClientException(crate::error::InvalidClientException),
+    InvalidClientException(crate::types::error::InvalidClientException),
     /// <p>The caller is not authorized to perform this operation.</p>
-    NotAuthorizedException(crate::error::NotAuthorizedException),
+    NotAuthorizedException(crate::types::error::NotAuthorizedException),
     /// <p>The specified resource is not found.</p>
-    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>If the client session is expired. Once the client is connected, the session is valid for 45 minutes. Client should reconnect to the channel to continue sending/receiving messages.</p>
-    SessionExpiredException(crate::error::SessionExpiredException),
+    SessionExpiredException(crate::types::error::SessionExpiredException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled),
 }
@@ -31,12 +31,21 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetIceServerConfigError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_ice_server_config::GetIceServerConfigError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetIceServerConfigError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_ice_server_config::GetIceServerConfigError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -53,38 +62,34 @@ where
         }
     }
 }
-impl From<crate::error::GetIceServerConfigError> for Error {
-    fn from(err: crate::error::GetIceServerConfigError) -> Self {
+impl From<crate::operation::get_ice_server_config::GetIceServerConfigError> for Error {
+    fn from(err: crate::operation::get_ice_server_config::GetIceServerConfigError) -> Self {
         match err {
-            crate::error::GetIceServerConfigError::ClientLimitExceededException(inner) => {
-                Error::ClientLimitExceededException(inner)
-            }
-            crate::error::GetIceServerConfigError::InvalidArgumentException(inner) => {
-                Error::InvalidArgumentException(inner)
-            }
-            crate::error::GetIceServerConfigError::InvalidClientException(inner) => {
-                Error::InvalidClientException(inner)
-            }
-            crate::error::GetIceServerConfigError::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::GetIceServerConfigError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::GetIceServerConfigError::SessionExpiredException(inner) => {
-                Error::SessionExpiredException(inner)
-            }
-            crate::error::GetIceServerConfigError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_ice_server_config::GetIceServerConfigError::ClientLimitExceededException(inner) => Error::ClientLimitExceededException(inner),
+            crate::operation::get_ice_server_config::GetIceServerConfigError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::get_ice_server_config::GetIceServerConfigError::InvalidClientException(inner) => Error::InvalidClientException(inner),
+            crate::operation::get_ice_server_config::GetIceServerConfigError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::get_ice_server_config::GetIceServerConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_ice_server_config::GetIceServerConfigError::SessionExpiredException(inner) => Error::SessionExpiredException(inner),
+            crate::operation::get_ice_server_config::GetIceServerConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::SendAlexaOfferToMasterError, R>>
-    for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::SendAlexaOfferToMasterError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -101,22 +106,16 @@ where
         }
     }
 }
-impl From<crate::error::SendAlexaOfferToMasterError> for Error {
-    fn from(err: crate::error::SendAlexaOfferToMasterError) -> Self {
+impl From<crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterError> for Error {
+    fn from(
+        err: crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterError,
+    ) -> Self {
         match err {
-            crate::error::SendAlexaOfferToMasterError::ClientLimitExceededException(inner) => {
-                Error::ClientLimitExceededException(inner)
-            }
-            crate::error::SendAlexaOfferToMasterError::InvalidArgumentException(inner) => {
-                Error::InvalidArgumentException(inner)
-            }
-            crate::error::SendAlexaOfferToMasterError::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::SendAlexaOfferToMasterError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::SendAlexaOfferToMasterError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterError::ClientLimitExceededException(inner) => Error::ClientLimitExceededException(inner),
+            crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

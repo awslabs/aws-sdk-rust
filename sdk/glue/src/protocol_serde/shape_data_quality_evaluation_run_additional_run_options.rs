@@ -2,7 +2,7 @@
 pub(crate) fn de_data_quality_evaluation_run_additional_run_options<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::DataQualityEvaluationRunAdditionalRunOptions>,
+    Option<crate::types::DataQualityEvaluationRunAdditionalRunOptions>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,9 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder =
-                crate::model::data_quality_evaluation_run_additional_run_options::Builder::default(
-                );
+            let mut builder = crate::types::builders::DataQualityEvaluationRunAdditionalRunOptionsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -66,7 +64,7 @@ where
 
 pub fn ser_data_quality_evaluation_run_additional_run_options(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::DataQualityEvaluationRunAdditionalRunOptions,
+    input: &crate::types::DataQualityEvaluationRunAdditionalRunOptions,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.cloud_watch_metrics_enabled {
         object.key("CloudWatchMetricsEnabled").boolean(*var_1);

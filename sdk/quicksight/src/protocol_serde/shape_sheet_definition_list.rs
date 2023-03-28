@@ -2,7 +2,7 @@
 pub(crate) fn de_sheet_definition_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SheetDefinition>>,
+    Option<std::vec::Vec<crate::types::SheetDefinition>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

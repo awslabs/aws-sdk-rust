@@ -2,7 +2,7 @@
 pub(crate) fn de_failed_service_action_associations<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::FailedServiceActionAssociation>>,
+    Option<std::vec::Vec<crate::types::FailedServiceActionAssociation>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_glue_data_catalog_configuration_description<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::GlueDataCatalogConfigurationDescription>,
+    Option<crate::types::GlueDataCatalogConfigurationDescription>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::glue_data_catalog_configuration_description::Builder::default();
+                crate::types::builders::GlueDataCatalogConfigurationDescriptionBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

@@ -2,7 +2,7 @@
 pub(crate) fn de_service_ids<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ServiceId>>,
+    Option<std::vec::Vec<crate::types::ServiceId>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

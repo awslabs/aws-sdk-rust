@@ -2,7 +2,7 @@
 pub(crate) fn de_load_balancer_tls_certificate<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::LoadBalancerTlsCertificate>,
+    Option<crate::types::LoadBalancerTlsCertificate>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::load_balancer_tls_certificate::Builder::default();
+            let mut builder = crate::types::builders::LoadBalancerTlsCertificateBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -70,7 +70,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::ResourceType::from(u.as_ref()))
+                                            .map(|u| crate::types::ResourceType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -103,7 +103,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::LoadBalancerTlsCertificateStatus::from(
+                                            crate::types::LoadBalancerTlsCertificateStatus::from(
                                                 u.as_ref(),
                                             )
                                         })
@@ -129,7 +129,7 @@ where
                                 builder = builder.set_failure_reason(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?.map(|s|
                                         s.to_unescaped().map(|u|
-                                            crate::model::LoadBalancerTlsCertificateFailureReason::from(u.as_ref())
+                                            crate::types::LoadBalancerTlsCertificateFailureReason::from(u.as_ref())
                                         )
                                     ).transpose()?
                                 );
@@ -185,7 +185,7 @@ where
                                 builder = builder.set_revocation_reason(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?.map(|s|
                                         s.to_unescaped().map(|u|
-                                            crate::model::LoadBalancerTlsCertificateRevocationReason::from(u.as_ref())
+                                            crate::types::LoadBalancerTlsCertificateRevocationReason::from(u.as_ref())
                                         )
                                     ).transpose()?
                                 );

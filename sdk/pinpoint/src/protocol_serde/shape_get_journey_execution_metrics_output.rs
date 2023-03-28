@@ -2,10 +2,10 @@
 pub fn de_journey_execution_metrics_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::JourneyExecutionMetricsResponse>,
-    crate::error::GetJourneyExecutionMetricsError,
+    std::option::Option<crate::types::JourneyExecutionMetricsResponse>,
+    crate::operation::get_journey_execution_metrics::GetJourneyExecutionMetricsError,
 > {
     (!body.is_empty()).then(||{
-        crate::protocol_serde::shape_journey_execution_metrics_response::de_journey_execution_metrics_response_payload(body).map_err(crate::error::GetJourneyExecutionMetricsError::unhandled)
+        crate::protocol_serde::shape_journey_execution_metrics_response::de_journey_execution_metrics_response_payload(body).map_err(crate::operation::get_journey_execution_metrics::GetJourneyExecutionMetricsError::unhandled)
     }).transpose()
 }

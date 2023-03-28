@@ -3,29 +3,30 @@
 pub fn de_update_account_sending_enabled_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::UpdateAccountSendingEnabledOutput,
-    crate::error::UpdateAccountSendingEnabledError,
+    crate::operation::update_account_sending_enabled::UpdateAccountSendingEnabledOutput,
+    crate::operation::update_account_sending_enabled::UpdateAccountSendingEnabledError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::UpdateAccountSendingEnabledError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::update_account_sending_enabled::UpdateAccountSendingEnabledError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::UpdateAccountSendingEnabledError::generic(
-        generic,
-    ))
+    Err(
+        crate::operation::update_account_sending_enabled::UpdateAccountSendingEnabledError::generic(
+            generic,
+        ),
+    )
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_update_account_sending_enabled_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::UpdateAccountSendingEnabledOutput,
-    crate::error::UpdateAccountSendingEnabledError,
+    crate::operation::update_account_sending_enabled::UpdateAccountSendingEnabledOutput,
+    crate::operation::update_account_sending_enabled::UpdateAccountSendingEnabledError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::update_account_sending_enabled_output::Builder::default();
+        let mut output = crate::operation::update_account_sending_enabled::builders::UpdateAccountSendingEnabledOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

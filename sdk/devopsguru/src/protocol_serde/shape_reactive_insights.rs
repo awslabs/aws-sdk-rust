@@ -2,7 +2,7 @@
 pub(crate) fn de_reactive_insights<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ReactiveInsightSummary>>,
+    Option<std::vec::Vec<crate::types::ReactiveInsightSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

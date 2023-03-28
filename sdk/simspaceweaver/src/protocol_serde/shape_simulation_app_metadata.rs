@@ -2,7 +2,7 @@
 pub(crate) fn de_simulation_app_metadata<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::SimulationAppMetadata>,
+    Option<crate::types::SimulationAppMetadata>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::simulation_app_metadata::Builder::default();
+            let mut builder = crate::types::builders::SimulationAppMetadataBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -57,7 +57,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::SimulationAppStatus::from(u.as_ref())
+                                            crate::types::SimulationAppStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -70,7 +70,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::SimulationAppTargetStatus::from(
+                                            crate::types::SimulationAppTargetStatus::from(
                                                 u.as_ref(),
                                             )
                                         })

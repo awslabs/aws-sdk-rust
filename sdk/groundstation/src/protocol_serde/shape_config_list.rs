@@ -2,7 +2,7 @@
 pub(crate) fn de_config_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ConfigListItem>>,
+    Option<std::vec::Vec<crate::types::ConfigListItem>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

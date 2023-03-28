@@ -2,7 +2,7 @@
 pub(crate) fn de_control_mapping_sources<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ControlMappingSource>>,
+    Option<std::vec::Vec<crate::types::ControlMappingSource>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

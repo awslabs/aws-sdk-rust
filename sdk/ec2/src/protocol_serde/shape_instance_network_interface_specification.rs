@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_instance_network_interface_specification(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::InstanceNetworkInterfaceSpecification,
+    input: &crate::types::InstanceNetworkInterfaceSpecification,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("AssociatePublicIpAddress");
@@ -155,11 +155,11 @@ pub fn ser_instance_network_interface_specification(
 pub fn de_instance_network_interface_specification(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    crate::model::InstanceNetworkInterfaceSpecification,
+    crate::types::InstanceNetworkInterfaceSpecification,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     #[allow(unused_mut)]
-    let mut builder = crate::model::InstanceNetworkInterfaceSpecification::builder();
+    let mut builder = crate::types::InstanceNetworkInterfaceSpecification::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("associatePublicIpAddress") /* AssociatePublicIpAddress com.amazonaws.ec2#InstanceNetworkInterfaceSpecification$AssociatePublicIpAddress */ =>  {

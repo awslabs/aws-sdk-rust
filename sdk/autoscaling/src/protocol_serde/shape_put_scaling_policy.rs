@@ -2,58 +2,35 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_put_scaling_policy_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::PutScalingPolicyOutput, crate::error::PutScalingPolicyError>
-{
+) -> std::result::Result<
+    crate::operation::put_scaling_policy::PutScalingPolicyOutput,
+    crate::operation::put_scaling_policy::PutScalingPolicyError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::PutScalingPolicyError::unhandled)?;
+        .map_err(crate::operation::put_scaling_policy::PutScalingPolicyError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::PutScalingPolicyError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::put_scaling_policy::PutScalingPolicyError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceeded" => crate::error::PutScalingPolicyError::LimitExceededFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::limit_exceeded_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_limit_exceeded_fault::de_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PutScalingPolicyError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ResourceContention" => crate::error::PutScalingPolicyError::ResourceContentionFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::resource_contention_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_resource_contention_fault::de_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PutScalingPolicyError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ServiceLinkedRoleFailure" => {
-            crate::error::PutScalingPolicyError::ServiceLinkedRoleFailure({
+        "LimitExceeded" => {
+            crate::operation::put_scaling_policy::PutScalingPolicyError::LimitExceededFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::service_linked_role_failure::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::LimitExceededFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_linked_role_failure::de_service_linked_role_failure_xml_err(response.body().as_ref(), output).map_err(crate::error::PutScalingPolicyError::unhandled)?;
+                    output = crate::protocol_serde::shape_limit_exceeded_fault::de_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::put_scaling_policy::PutScalingPolicyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -63,24 +40,64 @@ pub fn de_put_scaling_policy_http_error(
                 tmp
             })
         }
-        _ => crate::error::PutScalingPolicyError::generic(generic),
+        "ResourceContention" => {
+            crate::operation::put_scaling_policy::PutScalingPolicyError::ResourceContentionFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ResourceContentionFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_contention_fault::de_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::put_scaling_policy::PutScalingPolicyError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ServiceLinkedRoleFailure" => {
+            crate::operation::put_scaling_policy::PutScalingPolicyError::ServiceLinkedRoleFailure({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ServiceLinkedRoleFailureBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_service_linked_role_failure::de_service_linked_role_failure_xml_err(response.body().as_ref(), output).map_err(crate::operation::put_scaling_policy::PutScalingPolicyError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::put_scaling_policy::PutScalingPolicyError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_put_scaling_policy_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::PutScalingPolicyOutput, crate::error::PutScalingPolicyError>
-{
+) -> std::result::Result<
+    crate::operation::put_scaling_policy::PutScalingPolicyOutput,
+    crate::operation::put_scaling_policy::PutScalingPolicyError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::put_scaling_policy_output::Builder::default();
+        let mut output =
+            crate::operation::put_scaling_policy::builders::PutScalingPolicyOutputBuilder::default(
+            );
         let _ = response;
         output = crate::protocol_serde::shape_put_scaling_policy::de_put_scaling_policy(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::PutScalingPolicyError::unhandled)?;
+        .map_err(crate::operation::put_scaling_policy::PutScalingPolicyError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -91,9 +108,11 @@ pub fn de_put_scaling_policy_http_response(
 #[allow(unused_mut)]
 pub fn de_put_scaling_policy(
     inp: &[u8],
-    mut builder: crate::output::put_scaling_policy_output::Builder,
-) -> Result<crate::output::put_scaling_policy_output::Builder, aws_smithy_xml::decode::XmlDecodeError>
-{
+    mut builder: crate::operation::put_scaling_policy::builders::PutScalingPolicyOutputBuilder,
+) -> Result<
+    crate::operation::put_scaling_policy::builders::PutScalingPolicyOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

@@ -2,8 +2,11 @@
 #[allow(unused_mut)]
 pub fn de_invalid_object_state_xml_err(
     inp: &[u8],
-    mut builder: crate::error::invalid_object_state::Builder,
-) -> Result<crate::error::invalid_object_state::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    mut builder: crate::types::error::builders::InvalidObjectStateBuilder,
+) -> Result<
+    crate::types::error::builders::InvalidObjectStateBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     if inp.is_empty() {
         return Ok(builder);
     }
@@ -28,8 +31,8 @@ pub fn de_invalid_object_state_xml_err(
             s if s.matches("StorageClass") /* StorageClass com.amazonaws.s3#InvalidObjectState$StorageClass */ =>  {
                 let var_2 =
                     Some(
-                        Result::<crate::model::StorageClass, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::StorageClass::from(
+                        Result::<crate::types::StorageClass, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::StorageClass::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
@@ -42,8 +45,8 @@ pub fn de_invalid_object_state_xml_err(
             s if s.matches("AccessTier") /* AccessTier com.amazonaws.s3#InvalidObjectState$AccessTier */ =>  {
                 let var_3 =
                     Some(
-                        Result::<crate::model::IntelligentTieringAccessTier, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::IntelligentTieringAccessTier::from(
+                        Result::<crate::types::IntelligentTieringAccessTier, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::IntelligentTieringAccessTier::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

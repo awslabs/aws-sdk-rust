@@ -2,7 +2,7 @@
 pub(crate) fn de_endpoint_groups<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::EndpointGroup>>,
+    Option<std::vec::Vec<crate::types::EndpointGroup>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

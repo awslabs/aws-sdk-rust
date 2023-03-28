@@ -2,7 +2,7 @@
 pub(crate) fn de_custom_auth_config_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CustomAuthConfig>>,
+    Option<std::vec::Vec<crate::types::CustomAuthConfig>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

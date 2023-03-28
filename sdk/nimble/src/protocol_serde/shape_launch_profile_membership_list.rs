@@ -2,7 +2,7 @@
 pub(crate) fn de_launch_profile_membership_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::LaunchProfileMembership>>,
+    Option<std::vec::Vec<crate::types::LaunchProfileMembership>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

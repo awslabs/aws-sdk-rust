@@ -2,7 +2,7 @@
 pub(crate) fn de_custom_vocabulary_items<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CustomVocabularyItem>>,
+    Option<std::vec::Vec<crate::types::CustomVocabularyItem>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

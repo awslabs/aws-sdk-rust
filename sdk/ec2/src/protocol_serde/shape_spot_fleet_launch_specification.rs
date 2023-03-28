@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_spot_fleet_launch_specification(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::SpotFleetLaunchSpecification,
+    input: &crate::types::SpotFleetLaunchSpecification,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("GroupSet");
@@ -137,9 +137,9 @@ pub fn ser_spot_fleet_launch_specification(
 
 pub fn de_spot_fleet_launch_specification(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::SpotFleetLaunchSpecification, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::SpotFleetLaunchSpecification, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::SpotFleetLaunchSpecification::builder();
+    let mut builder = crate::types::SpotFleetLaunchSpecification::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("groupSet") /* SecurityGroups com.amazonaws.ec2#SpotFleetLaunchSpecification$SecurityGroups */ =>  {
@@ -216,8 +216,8 @@ pub fn de_spot_fleet_launch_specification(
             s if s.matches("instanceType") /* InstanceType com.amazonaws.ec2#SpotFleetLaunchSpecification$InstanceType */ =>  {
                 let var_57 =
                     Some(
-                        Result::<crate::model::InstanceType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::InstanceType::from(
+                        Result::<crate::types::InstanceType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::InstanceType::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

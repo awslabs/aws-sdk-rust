@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_report_generation_limit_exceeded_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::report_generation_limit_exceeded_exception::Builder,
+    mut builder: crate::types::error::builders::ReportGenerationLimitExceededExceptionBuilder,
 ) -> Result<
-    crate::error::report_generation_limit_exceeded_exception::Builder,
+    crate::types::error::builders::ReportGenerationLimitExceededExceptionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

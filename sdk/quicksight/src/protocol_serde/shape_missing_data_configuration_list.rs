@@ -2,7 +2,7 @@
 pub(crate) fn de_missing_data_configuration_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::MissingDataConfiguration>>,
+    Option<std::vec::Vec<crate::types::MissingDataConfiguration>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

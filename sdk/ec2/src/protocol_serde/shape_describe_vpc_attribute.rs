@@ -3,33 +3,33 @@
 pub fn de_describe_vpc_attribute_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeVpcAttributeOutput,
-    crate::error::DescribeVpcAttributeError,
+    crate::operation::describe_vpc_attribute::DescribeVpcAttributeOutput,
+    crate::operation::describe_vpc_attribute::DescribeVpcAttributeError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeVpcAttributeError::unhandled)?;
+        .map_err(crate::operation::describe_vpc_attribute::DescribeVpcAttributeError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::DescribeVpcAttributeError::generic(generic))
+    Err(crate::operation::describe_vpc_attribute::DescribeVpcAttributeError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_vpc_attribute_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeVpcAttributeOutput,
-    crate::error::DescribeVpcAttributeError,
+    crate::operation::describe_vpc_attribute::DescribeVpcAttributeOutput,
+    crate::operation::describe_vpc_attribute::DescribeVpcAttributeError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_vpc_attribute_output::Builder::default();
+        let mut output = crate::operation::describe_vpc_attribute::builders::DescribeVpcAttributeOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_describe_vpc_attribute::de_describe_vpc_attribute(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DescribeVpcAttributeError::unhandled)?;
+        .map_err(crate::operation::describe_vpc_attribute::DescribeVpcAttributeError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -40,9 +40,9 @@ pub fn de_describe_vpc_attribute_http_response(
 #[allow(unused_mut)]
 pub fn de_describe_vpc_attribute(
     inp: &[u8],
-    mut builder: crate::output::describe_vpc_attribute_output::Builder,
+    mut builder: crate::operation::describe_vpc_attribute::builders::DescribeVpcAttributeOutputBuilder,
 ) -> Result<
-    crate::output::describe_vpc_attribute_output::Builder,
+    crate::operation::describe_vpc_attribute::builders::DescribeVpcAttributeOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

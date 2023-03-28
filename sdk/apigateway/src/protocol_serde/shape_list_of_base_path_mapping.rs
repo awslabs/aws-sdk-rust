@@ -2,7 +2,7 @@
 pub(crate) fn de_list_of_base_path_mapping<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::BasePathMapping>>,
+    Option<std::vec::Vec<crate::types::BasePathMapping>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

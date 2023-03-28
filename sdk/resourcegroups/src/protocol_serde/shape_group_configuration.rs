@@ -2,7 +2,7 @@
 pub(crate) fn de_group_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::GroupConfiguration>,
+    Option<crate::types::GroupConfiguration>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::group_configuration::Builder::default();
+            let mut builder = crate::types::builders::GroupConfigurationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -40,7 +40,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::GroupConfigurationStatus::from(u.as_ref())
+                                            crate::types::GroupConfigurationStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

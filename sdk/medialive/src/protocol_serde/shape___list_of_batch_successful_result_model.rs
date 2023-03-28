@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_batch_successful_result_model<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::BatchSuccessfulResultModel>>,
+    Option<std::vec::Vec<crate::types::BatchSuccessfulResultModel>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

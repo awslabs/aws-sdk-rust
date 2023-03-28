@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_packed_policy_too_large_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::packed_policy_too_large_exception::Builder,
+    mut builder: crate::types::error::builders::PackedPolicyTooLargeExceptionBuilder,
 ) -> Result<
-    crate::error::packed_policy_too_large_exception::Builder,
+    crate::types::error::builders::PackedPolicyTooLargeExceptionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

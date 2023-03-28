@@ -3,75 +3,78 @@
 pub fn de_get_email_identity_policies_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetEmailIdentityPoliciesOutput,
-    crate::error::GetEmailIdentityPoliciesError,
+    crate::operation::get_email_identity_policies::GetEmailIdentityPoliciesOutput,
+    crate::operation::get_email_identity_policies::GetEmailIdentityPoliciesError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetEmailIdentityPoliciesError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::get_email_identity_policies::GetEmailIdentityPoliciesError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::error::GetEmailIdentityPoliciesError::unhandled(
+        None => return Err(
+            crate::operation::get_email_identity_policies::GetEmailIdentityPoliciesError::unhandled(
                 generic,
-            ))
-        }
+            ),
+        ),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => {
-            crate::error::GetEmailIdentityPoliciesError::BadRequestException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "BadRequestException" => crate::operation::get_email_identity_policies::GetEmailIdentityPoliciesError::BadRequestException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::bad_request_exception::Builder::default();
+                    let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEmailIdentityPoliciesError::unhandled)?;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_email_identity_policies::GetEmailIdentityPoliciesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "NotFoundException" => crate::error::GetEmailIdentityPoliciesError::NotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEmailIdentityPoliciesError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "TooManyRequestsException" => {
-            crate::error::GetEmailIdentityPoliciesError::TooManyRequestsException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "NotFoundException" => crate::operation::get_email_identity_policies::GetEmailIdentityPoliciesError::NotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    let mut output = crate::types::error::builders::NotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEmailIdentityPoliciesError::unhandled)?;
+                    output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_email_identity_policies::GetEmailIdentityPoliciesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::GetEmailIdentityPoliciesError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TooManyRequestsException" => crate::operation::get_email_identity_policies::GetEmailIdentityPoliciesError::TooManyRequestsException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_email_identity_policies::GetEmailIdentityPoliciesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::get_email_identity_policies::GetEmailIdentityPoliciesError::generic(generic)
     })
 }
 
@@ -79,14 +82,14 @@ pub fn de_get_email_identity_policies_http_error(
 pub fn de_get_email_identity_policies_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetEmailIdentityPoliciesOutput,
-    crate::error::GetEmailIdentityPoliciesError,
+    crate::operation::get_email_identity_policies::GetEmailIdentityPoliciesOutput,
+    crate::operation::get_email_identity_policies::GetEmailIdentityPoliciesError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_email_identity_policies_output::Builder::default();
+        let mut output = crate::operation::get_email_identity_policies::builders::GetEmailIdentityPoliciesOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_get_email_identity_policies::de_get_email_identity_policies(response.body().as_ref(), output).map_err(crate::error::GetEmailIdentityPoliciesError::unhandled)?;
+        output = crate::protocol_serde::shape_get_email_identity_policies::de_get_email_identity_policies(response.body().as_ref(), output).map_err(crate::operation::get_email_identity_policies::GetEmailIdentityPoliciesError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -96,9 +99,9 @@ pub fn de_get_email_identity_policies_http_response(
 
 pub(crate) fn de_get_email_identity_policies(
     value: &[u8],
-    mut builder: crate::output::get_email_identity_policies_output::Builder,
+    mut builder: crate::operation::get_email_identity_policies::builders::GetEmailIdentityPoliciesOutputBuilder,
 ) -> Result<
-    crate::output::get_email_identity_policies_output::Builder,
+    crate::operation::get_email_identity_policies::builders::GetEmailIdentityPoliciesOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

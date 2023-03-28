@@ -2,7 +2,7 @@
 pub(crate) fn de_service_healths<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ServiceHealth>>,
+    Option<std::vec::Vec<crate::types::ServiceHealth>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

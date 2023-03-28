@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_run_instances_monitoring_enabled(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::RunInstancesMonitoringEnabled,
+    input: &crate::types::RunInstancesMonitoringEnabled,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Enabled");
@@ -14,9 +14,9 @@ pub fn ser_run_instances_monitoring_enabled(
 
 pub fn de_run_instances_monitoring_enabled(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::RunInstancesMonitoringEnabled, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::RunInstancesMonitoringEnabled, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::RunInstancesMonitoringEnabled::builder();
+    let mut builder = crate::types::RunInstancesMonitoringEnabled::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("enabled") /* Enabled com.amazonaws.ec2#RunInstancesMonitoringEnabled$Enabled */ =>  {

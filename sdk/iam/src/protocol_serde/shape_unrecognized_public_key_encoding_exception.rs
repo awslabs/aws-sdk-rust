@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_unrecognized_public_key_encoding_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::unrecognized_public_key_encoding_exception::Builder,
+    mut builder: crate::types::error::builders::UnrecognizedPublicKeyEncodingExceptionBuilder,
 ) -> Result<
-    crate::error::unrecognized_public_key_encoding_exception::Builder,
+    crate::types::error::builders::UnrecognizedPublicKeyEncodingExceptionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

@@ -2,7 +2,7 @@
 pub(crate) fn de_oidc_identity_provider_config<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::OidcIdentityProviderConfig>,
+    Option<crate::types::OidcIdentityProviderConfig>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::oidc_identity_provider_config::Builder::default();
+            let mut builder = crate::types::builders::OidcIdentityProviderConfigBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -121,7 +121,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::ConfigStatus::from(u.as_ref()))
+                                            .map(|u| crate::types::ConfigStatus::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

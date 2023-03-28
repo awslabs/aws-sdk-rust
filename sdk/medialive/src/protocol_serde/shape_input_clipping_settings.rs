@@ -2,7 +2,7 @@
 pub(crate) fn de_input_clipping_settings<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::InputClippingSettings>,
+    Option<crate::types::InputClippingSettings>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::input_clipping_settings::Builder::default();
+            let mut builder = crate::types::builders::InputClippingSettingsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::InputTimecodeSource::from(u.as_ref())
+                                            crate::types::InputTimecodeSource::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -75,7 +75,7 @@ where
 
 pub fn ser_input_clipping_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::InputClippingSettings,
+    input: &crate::types::InputClippingSettings,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.input_timecode_source {
         object.key("inputTimecodeSource").string(var_1.as_str());

@@ -2,7 +2,7 @@
 pub(crate) fn de_inference_accelerator_overrides<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::InferenceAcceleratorOverride>>,
+    Option<std::vec::Vec<crate::types::InferenceAcceleratorOverride>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

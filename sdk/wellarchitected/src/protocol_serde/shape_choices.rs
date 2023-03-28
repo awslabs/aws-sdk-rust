@@ -2,7 +2,7 @@
 pub(crate) fn de_choices<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Choice>>,
+    Option<std::vec::Vec<crate::types::Choice>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

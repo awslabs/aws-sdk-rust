@@ -2,7 +2,7 @@
 pub(crate) fn de_list_of_journey_response<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::JourneyResponse>>,
+    Option<std::vec::Vec<crate::types::JourneyResponse>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

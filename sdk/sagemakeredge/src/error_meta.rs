@@ -4,7 +4,7 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>An internal failure occurred. Try your request again. If the problem persists, contact Amazon Web Services customer support.</p>
-    InternalServiceException(crate::error::InternalServiceException),
+    InternalServiceException(crate::types::error::InternalServiceException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled),
 }
@@ -16,43 +16,21 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetDeploymentsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetDeploymentsError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetDeploymentsError> for Error {
-    fn from(err: crate::error::GetDeploymentsError) -> Self {
-        match err {
-            crate::error::GetDeploymentsError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
-            }
-            crate::error::GetDeploymentsError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetDeviceRegistrationError, R>>
-    for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_deployments::GetDeploymentsError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetDeviceRegistrationError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_deployments::GetDeploymentsError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -69,21 +47,34 @@ where
         }
     }
 }
-impl From<crate::error::GetDeviceRegistrationError> for Error {
-    fn from(err: crate::error::GetDeviceRegistrationError) -> Self {
+impl From<crate::operation::get_deployments::GetDeploymentsError> for Error {
+    fn from(err: crate::operation::get_deployments::GetDeploymentsError) -> Self {
         match err {
-            crate::error::GetDeviceRegistrationError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
+            crate::operation::get_deployments::GetDeploymentsError::InternalServiceException(
+                inner,
+            ) => Error::InternalServiceException(inner),
+            crate::operation::get_deployments::GetDeploymentsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
-            crate::error::GetDeviceRegistrationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::SendHeartbeatError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_device_registration::GetDeviceRegistrationError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::SendHeartbeatError, R>) -> Self {
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_device_registration::GetDeviceRegistrationError,
+            R,
+        >,
+    ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
@@ -99,13 +90,50 @@ where
         }
     }
 }
-impl From<crate::error::SendHeartbeatError> for Error {
-    fn from(err: crate::error::SendHeartbeatError) -> Self {
+impl From<crate::operation::get_device_registration::GetDeviceRegistrationError> for Error {
+    fn from(err: crate::operation::get_device_registration::GetDeviceRegistrationError) -> Self {
         match err {
-            crate::error::SendHeartbeatError::InternalServiceException(inner) => {
-                Error::InternalServiceException(inner)
+            crate::operation::get_device_registration::GetDeviceRegistrationError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::get_device_registration::GetDeviceRegistrationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::send_heartbeat::SendHeartbeatError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::send_heartbeat::SendHeartbeatError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
-            crate::error::SendHeartbeatError::Unhandled(inner) => Error::Unhandled(inner),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::send_heartbeat::SendHeartbeatError> for Error {
+    fn from(err: crate::operation::send_heartbeat::SendHeartbeatError) -> Self {
+        match err {
+            crate::operation::send_heartbeat::SendHeartbeatError::InternalServiceException(
+                inner,
+            ) => Error::InternalServiceException(inner),
+            crate::operation::send_heartbeat::SendHeartbeatError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }

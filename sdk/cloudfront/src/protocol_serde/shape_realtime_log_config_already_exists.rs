@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_realtime_log_config_already_exists_xml_err(
     inp: &[u8],
-    mut builder: crate::error::realtime_log_config_already_exists::Builder,
+    mut builder: crate::types::error::builders::RealtimeLogConfigAlreadyExistsBuilder,
 ) -> Result<
-    crate::error::realtime_log_config_already_exists::Builder,
+    crate::types::error::builders::RealtimeLogConfigAlreadyExistsBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

@@ -2,7 +2,7 @@
 pub(crate) fn de_canary_settings<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::CanarySettings>,
+    Option<crate::types::CanarySettings>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::canary_settings::Builder::default();
+            let mut builder = crate::types::builders::CanarySettingsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -77,7 +77,7 @@ where
 
 pub fn ser_canary_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::CanarySettings,
+    input: &crate::types::CanarySettings,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if input.percent_traffic != 0.0 {
         object.key("percentTraffic").number(

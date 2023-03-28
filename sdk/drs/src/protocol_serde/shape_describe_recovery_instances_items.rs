@@ -2,7 +2,7 @@
 pub(crate) fn de_describe_recovery_instances_items<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::RecoveryInstance>>,
+    Option<std::vec::Vec<crate::types::RecoveryInstance>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

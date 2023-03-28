@@ -2,7 +2,7 @@
 pub(crate) fn de_destination_port_mapping<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::DestinationPortMapping>,
+    Option<crate::types::DestinationPortMapping>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::destination_port_mapping::Builder::default();
+            let mut builder = crate::types::builders::DestinationPortMappingBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -78,7 +78,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::IpAddressType::from(u.as_ref()))
+                                            .map(|u| crate::types::IpAddressType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -87,7 +87,7 @@ where
                                 builder = builder.set_destination_traffic_state(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?.map(|s|
                                         s.to_unescaped().map(|u|
-                                            crate::model::CustomRoutingDestinationTrafficState::from(u.as_ref())
+                                            crate::types::CustomRoutingDestinationTrafficState::from(u.as_ref())
                                         )
                                     ).transpose()?
                                 );

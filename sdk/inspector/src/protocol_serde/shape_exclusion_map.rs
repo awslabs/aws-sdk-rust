@@ -2,7 +2,7 @@
 pub(crate) fn de_exclusion_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<std::string::String, crate::model::Exclusion>>,
+    Option<std::collections::HashMap<std::string::String, crate::types::Exclusion>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

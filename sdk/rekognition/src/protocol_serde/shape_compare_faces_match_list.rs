@@ -2,7 +2,7 @@
 pub(crate) fn de_compare_faces_match_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CompareFacesMatch>>,
+    Option<std::vec::Vec<crate::types::CompareFacesMatch>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

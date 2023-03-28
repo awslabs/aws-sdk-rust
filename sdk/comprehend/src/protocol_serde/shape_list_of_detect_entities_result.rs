@@ -2,7 +2,7 @@
 pub(crate) fn de_list_of_detect_entities_result<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::BatchDetectEntitiesItemResult>>,
+    Option<std::vec::Vec<crate::types::BatchDetectEntitiesItemResult>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

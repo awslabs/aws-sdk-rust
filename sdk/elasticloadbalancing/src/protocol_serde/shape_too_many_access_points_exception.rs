@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_too_many_access_points_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::too_many_access_points_exception::Builder,
+    mut builder: crate::types::error::builders::TooManyAccessPointsExceptionBuilder,
 ) -> Result<
-    crate::error::too_many_access_points_exception::Builder,
+    crate::types::error::builders::TooManyAccessPointsExceptionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

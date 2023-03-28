@@ -3,114 +3,110 @@
 pub fn de_describe_custom_vocabulary_metadata_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeCustomVocabularyMetadataOutput,
-    crate::error::DescribeCustomVocabularyMetadataError,
+    crate::operation::describe_custom_vocabulary_metadata::DescribeCustomVocabularyMetadataOutput,
+    crate::operation::describe_custom_vocabulary_metadata::DescribeCustomVocabularyMetadataError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeCustomVocabularyMetadataError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::describe_custom_vocabulary_metadata::DescribeCustomVocabularyMetadataError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::DescribeCustomVocabularyMetadataError::unhandled(generic))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::describe_custom_vocabulary_metadata::DescribeCustomVocabularyMetadataError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerException" => {
-            crate::error::DescribeCustomVocabularyMetadataError::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalServerException" => crate::operation::describe_custom_vocabulary_metadata::DescribeCustomVocabularyMetadataError::InternalServerException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeCustomVocabularyMetadataError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_custom_vocabulary_metadata::DescribeCustomVocabularyMetadataError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ResourceNotFoundException" => {
-            crate::error::DescribeCustomVocabularyMetadataError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::describe_custom_vocabulary_metadata::DescribeCustomVocabularyMetadataError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeCustomVocabularyMetadataError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_custom_vocabulary_metadata::DescribeCustomVocabularyMetadataError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ServiceQuotaExceededException" => {
-            crate::error::DescribeCustomVocabularyMetadataError::ServiceQuotaExceededException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ServiceQuotaExceededException" => crate::operation::describe_custom_vocabulary_metadata::DescribeCustomVocabularyMetadataError::ServiceQuotaExceededException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::service_quota_exceeded_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeCustomVocabularyMetadataError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_custom_vocabulary_metadata::DescribeCustomVocabularyMetadataError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ThrottlingException" => {
-            crate::error::DescribeCustomVocabularyMetadataError::ThrottlingException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ThrottlingException" => crate::operation::describe_custom_vocabulary_metadata::DescribeCustomVocabularyMetadataError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeCustomVocabularyMetadataError::unhandled)?;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_custom_vocabulary_metadata::DescribeCustomVocabularyMetadataError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::protocol_serde::shape_throttling_exception::de_retry_after_seconds_header(response.headers())
-                                                .map_err(|_|crate::error::DescribeCustomVocabularyMetadataError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::operation::describe_custom_vocabulary_metadata::DescribeCustomVocabularyMetadataError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ValidationException" => {
-            crate::error::DescribeCustomVocabularyMetadataError::ValidationException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ValidationException" => crate::operation::describe_custom_vocabulary_metadata::DescribeCustomVocabularyMetadataError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::validation_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeCustomVocabularyMetadataError::unhandled)?;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_custom_vocabulary_metadata::DescribeCustomVocabularyMetadataError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DescribeCustomVocabularyMetadataError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::describe_custom_vocabulary_metadata::DescribeCustomVocabularyMetadataError::generic(generic)
     })
 }
 
@@ -118,15 +114,14 @@ pub fn de_describe_custom_vocabulary_metadata_http_error(
 pub fn de_describe_custom_vocabulary_metadata_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeCustomVocabularyMetadataOutput,
-    crate::error::DescribeCustomVocabularyMetadataError,
+    crate::operation::describe_custom_vocabulary_metadata::DescribeCustomVocabularyMetadataOutput,
+    crate::operation::describe_custom_vocabulary_metadata::DescribeCustomVocabularyMetadataError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::output::describe_custom_vocabulary_metadata_output::Builder::default();
+        let mut output = crate::operation::describe_custom_vocabulary_metadata::builders::DescribeCustomVocabularyMetadataOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_describe_custom_vocabulary_metadata::de_describe_custom_vocabulary_metadata(response.body().as_ref(), output).map_err(crate::error::DescribeCustomVocabularyMetadataError::unhandled)?;
+        output = crate::protocol_serde::shape_describe_custom_vocabulary_metadata::de_describe_custom_vocabulary_metadata(response.body().as_ref(), output).map_err(crate::operation::describe_custom_vocabulary_metadata::DescribeCustomVocabularyMetadataError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -134,13 +129,7 @@ pub fn de_describe_custom_vocabulary_metadata_http_response(
     })
 }
 
-pub(crate) fn de_describe_custom_vocabulary_metadata(
-    value: &[u8],
-    mut builder: crate::output::describe_custom_vocabulary_metadata_output::Builder,
-) -> Result<
-    crate::output::describe_custom_vocabulary_metadata_output::Builder,
-    aws_smithy_json::deserialize::error::DeserializeError,
-> {
+pub(crate) fn de_describe_custom_vocabulary_metadata(value: &[u8], mut builder: crate::operation::describe_custom_vocabulary_metadata::builders::DescribeCustomVocabularyMetadataOutputBuilder) -> Result<crate::operation::describe_custom_vocabulary_metadata::builders::DescribeCustomVocabularyMetadataOutputBuilder, aws_smithy_json::deserialize::error::DeserializeError>{
     let mut tokens_owned =
         aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
             .peekable();
@@ -184,7 +173,7 @@ pub(crate) fn de_describe_custom_vocabulary_metadata(
                             )?
                             .map(|s| {
                                 s.to_unescaped()
-                                    .map(|u| crate::model::CustomVocabularyStatus::from(u.as_ref()))
+                                    .map(|u| crate::types::CustomVocabularyStatus::from(u.as_ref()))
                             })
                             .transpose()?,
                         );

@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_staging_distribution_in_use_xml_err(
     inp: &[u8],
-    mut builder: crate::error::staging_distribution_in_use::Builder,
+    mut builder: crate::types::error::builders::StagingDistributionInUseBuilder,
 ) -> Result<
-    crate::error::staging_distribution_in_use::Builder,
+    crate::types::error::builders::StagingDistributionInUseBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_predictive_scaling_predefined_metric_pair(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::PredictiveScalingPredefinedMetricPair,
+    input: &crate::types::PredictiveScalingPredefinedMetricPair,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("PredefinedMetricType");
@@ -20,18 +20,18 @@ pub fn ser_predictive_scaling_predefined_metric_pair(
 pub fn de_predictive_scaling_predefined_metric_pair(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    crate::model::PredictiveScalingPredefinedMetricPair,
+    crate::types::PredictiveScalingPredefinedMetricPair,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     #[allow(unused_mut)]
-    let mut builder = crate::model::PredictiveScalingPredefinedMetricPair::builder();
+    let mut builder = crate::types::PredictiveScalingPredefinedMetricPair::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("PredefinedMetricType") /* PredefinedMetricType com.amazonaws.autoscaling#PredictiveScalingPredefinedMetricPair$PredefinedMetricType */ =>  {
                 let var_5 =
                     Some(
-                        Result::<crate::model::PredefinedMetricPairType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::PredefinedMetricPairType::from(
+                        Result::<crate::types::PredefinedMetricPairType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::PredefinedMetricPairType::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

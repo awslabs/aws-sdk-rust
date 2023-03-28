@@ -2,7 +2,7 @@
 pub fn de_dkim_attributes(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::collections::HashMap<std::string::String, crate::model::IdentityDkimAttributes>,
+    std::collections::HashMap<std::string::String, crate::types::IdentityDkimAttributes>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::collections::HashMap::new();
@@ -21,10 +21,10 @@ pub fn de_dkim_attributes(
 
 pub fn de_dkim_attributes_entry(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-    out: &mut std::collections::HashMap<std::string::String, crate::model::IdentityDkimAttributes>,
+    out: &mut std::collections::HashMap<std::string::String, crate::types::IdentityDkimAttributes>,
 ) -> Result<(), aws_smithy_xml::decode::XmlDecodeError> {
     let mut k: Option<std::string::String> = None;
-    let mut v: Option<crate::model::IdentityDkimAttributes> = None;
+    let mut v: Option<crate::types::IdentityDkimAttributes> = None;
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("key") /* key com.amazonaws.ses#DkimAttributes$key */ =>  {

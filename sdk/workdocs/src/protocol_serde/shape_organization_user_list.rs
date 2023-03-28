@@ -2,7 +2,7 @@
 pub(crate) fn de_organization_user_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::User>>,
+    Option<std::vec::Vec<crate::types::User>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

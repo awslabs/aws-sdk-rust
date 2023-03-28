@@ -3,52 +3,62 @@
 pub fn de_get_server_certificate_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetServerCertificateOutput,
-    crate::error::GetServerCertificateError,
+    crate::operation::get_server_certificate::GetServerCertificateOutput,
+    crate::operation::get_server_certificate::GetServerCertificateError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetServerCertificateError::unhandled)?;
+        .map_err(crate::operation::get_server_certificate::GetServerCertificateError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::GetServerCertificateError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::get_server_certificate::GetServerCertificateError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "NoSuchEntity" => crate::error::GetServerCertificateError::NoSuchEntityException({
+        "NoSuchEntity" => crate::operation::get_server_certificate::GetServerCertificateError::NoSuchEntityException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::no_such_entity_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_no_such_entity_exception::de_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetServerCertificateError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::NoSuchEntityExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_no_such_entity_exception::de_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::get_server_certificate::GetServerCertificateError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "ServiceFailure" => crate::error::GetServerCertificateError::ServiceFailureException({
+        "ServiceFailure" => crate::operation::get_server_certificate::GetServerCertificateError::ServiceFailureException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::service_failure_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetServerCertificateError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ServiceFailureExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::get_server_certificate::GetServerCertificateError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::GetServerCertificateError::generic(generic),
+        _ => crate::operation::get_server_certificate::GetServerCertificateError::generic(generic)
     })
 }
 
@@ -56,18 +66,18 @@ pub fn de_get_server_certificate_http_error(
 pub fn de_get_server_certificate_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetServerCertificateOutput,
-    crate::error::GetServerCertificateError,
+    crate::operation::get_server_certificate::GetServerCertificateOutput,
+    crate::operation::get_server_certificate::GetServerCertificateError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_server_certificate_output::Builder::default();
+        let mut output = crate::operation::get_server_certificate::builders::GetServerCertificateOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_get_server_certificate::de_get_server_certificate(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::GetServerCertificateError::unhandled)?;
+        .map_err(crate::operation::get_server_certificate::GetServerCertificateError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -78,9 +88,9 @@ pub fn de_get_server_certificate_http_response(
 #[allow(unused_mut)]
 pub fn de_get_server_certificate(
     inp: &[u8],
-    mut builder: crate::output::get_server_certificate_output::Builder,
+    mut builder: crate::operation::get_server_certificate::builders::GetServerCertificateOutputBuilder,
 ) -> Result<
-    crate::output::get_server_certificate_output::Builder,
+    crate::operation::get_server_certificate::builders::GetServerCertificateOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

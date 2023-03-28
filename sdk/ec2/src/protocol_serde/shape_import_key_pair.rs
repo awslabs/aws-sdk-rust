@@ -2,28 +2,35 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_import_key_pair_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ImportKeyPairOutput, crate::error::ImportKeyPairError> {
+) -> std::result::Result<
+    crate::operation::import_key_pair::ImportKeyPairOutput,
+    crate::operation::import_key_pair::ImportKeyPairError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ImportKeyPairError::unhandled)?;
+        .map_err(crate::operation::import_key_pair::ImportKeyPairError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::ImportKeyPairError::generic(generic))
+    Err(crate::operation::import_key_pair::ImportKeyPairError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_import_key_pair_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ImportKeyPairOutput, crate::error::ImportKeyPairError> {
+) -> std::result::Result<
+    crate::operation::import_key_pair::ImportKeyPairOutput,
+    crate::operation::import_key_pair::ImportKeyPairError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::import_key_pair_output::Builder::default();
+        let mut output =
+            crate::operation::import_key_pair::builders::ImportKeyPairOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_import_key_pair::de_import_key_pair(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ImportKeyPairError::unhandled)?;
+        .map_err(crate::operation::import_key_pair::ImportKeyPairError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -34,9 +41,11 @@ pub fn de_import_key_pair_http_response(
 #[allow(unused_mut)]
 pub fn de_import_key_pair(
     inp: &[u8],
-    mut builder: crate::output::import_key_pair_output::Builder,
-) -> Result<crate::output::import_key_pair_output::Builder, aws_smithy_xml::decode::XmlDecodeError>
-{
+    mut builder: crate::operation::import_key_pair::builders::ImportKeyPairOutputBuilder,
+) -> Result<
+    crate::operation::import_key_pair::builders::ImportKeyPairOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

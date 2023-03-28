@@ -2,7 +2,7 @@
 pub(crate) fn de_waf_override_action<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::WafOverrideAction>,
+    Option<crate::types::WafOverrideAction>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::waf_override_action::Builder::default();
+            let mut builder = crate::types::builders::WafOverrideActionBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::WafOverrideActionType::from(u.as_ref())
+                                            crate::types::WafOverrideActionType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -61,7 +61,7 @@ where
 
 pub fn ser_waf_override_action(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::WafOverrideAction,
+    input: &crate::types::WafOverrideAction,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.r#type {
         object.key("Type").string(var_1.as_str());

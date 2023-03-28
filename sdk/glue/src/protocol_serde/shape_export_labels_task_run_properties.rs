@@ -2,7 +2,7 @@
 pub(crate) fn de_export_labels_task_run_properties<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ExportLabelsTaskRunProperties>,
+    Option<crate::types::ExportLabelsTaskRunProperties>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::export_labels_task_run_properties::Builder::default();
+            let mut builder =
+                crate::types::builders::ExportLabelsTaskRunPropertiesBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

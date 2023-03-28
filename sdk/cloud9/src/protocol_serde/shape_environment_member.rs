@@ -2,7 +2,7 @@
 pub(crate) fn de_environment_member<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::EnvironmentMember>,
+    Option<crate::types::EnvironmentMember>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::environment_member::Builder::default();
+            let mut builder = crate::types::builders::EnvironmentMemberBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::Permissions::from(u.as_ref()))
+                                            .map(|u| crate::types::Permissions::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

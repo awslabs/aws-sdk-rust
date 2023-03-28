@@ -2,7 +2,7 @@
 pub(crate) fn de_list_device_positions_response_entry_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ListDevicePositionsResponseEntry>>,
+    Option<std::vec::Vec<crate::types::ListDevicePositionsResponseEntry>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

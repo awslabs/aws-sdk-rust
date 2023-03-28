@@ -2,7 +2,7 @@
 pub(crate) fn de_scope_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Scope>>,
+    Option<std::vec::Vec<crate::types::Scope>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

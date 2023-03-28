@@ -2,7 +2,7 @@
 pub(crate) fn de_listed_executions<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ListedExecution>>,
+    Option<std::vec::Vec<crate::types::ListedExecution>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

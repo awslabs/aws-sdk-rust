@@ -2,7 +2,7 @@
 pub(crate) fn de_monitoring_inputs<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::MonitoringInput>>,
+    Option<std::vec::Vec<crate::types::MonitoringInput>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

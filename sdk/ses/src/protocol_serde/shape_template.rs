@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_template(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::Template,
+    input: &crate::types::Template,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("TemplateName");
@@ -29,9 +29,9 @@ pub fn ser_template(
 
 pub fn de_template(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::Template, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::Template, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::Template::builder();
+    let mut builder = crate::types::Template::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("TemplateName") /* TemplateName com.amazonaws.ses#Template$TemplateName */ =>  {

@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_dimension(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::Dimension,
+    input: &crate::types::Dimension,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Name");
@@ -19,9 +19,9 @@ pub fn ser_dimension(
 
 pub fn de_dimension(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::Dimension, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::Dimension, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::Dimension::builder();
+    let mut builder = crate::types::Dimension::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Name") /* Name com.amazonaws.cloudwatch#Dimension$Name */ =>  {

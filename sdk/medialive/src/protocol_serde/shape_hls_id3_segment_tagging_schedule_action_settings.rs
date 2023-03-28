@@ -2,7 +2,7 @@
 pub(crate) fn de_hls_id3_segment_tagging_schedule_action_settings<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::HlsId3SegmentTaggingScheduleActionSettings>,
+    Option<crate::types::HlsId3SegmentTaggingScheduleActionSettings>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,8 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::hls_id3_segment_tagging_schedule_action_settings::Builder::default();
+                crate::types::builders::HlsId3SegmentTaggingScheduleActionSettingsBuilder::default(
+                );
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -58,7 +59,7 @@ where
 
 pub fn ser_hls_id3_segment_tagging_schedule_action_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::HlsId3SegmentTaggingScheduleActionSettings,
+    input: &crate::types::HlsId3SegmentTaggingScheduleActionSettings,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.tag {
         object.key("tag").string(var_1.as_str());

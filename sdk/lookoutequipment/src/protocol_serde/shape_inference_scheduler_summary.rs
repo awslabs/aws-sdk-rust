@@ -2,7 +2,7 @@
 pub(crate) fn de_inference_scheduler_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::InferenceSchedulerSummary>,
+    Option<crate::types::InferenceSchedulerSummary>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::inference_scheduler_summary::Builder::default();
+            let mut builder = crate::types::builders::InferenceSchedulerSummaryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -66,7 +66,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::InferenceSchedulerStatus::from(u.as_ref())
+                                            crate::types::InferenceSchedulerStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -88,7 +88,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::DataUploadFrequency::from(u.as_ref())
+                                            crate::types::DataUploadFrequency::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -101,7 +101,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::LatestInferenceResult::from(u.as_ref())
+                                            crate::types::LatestInferenceResult::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

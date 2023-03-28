@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_too_many_distributions_with_lambda_associations_xml_err(
     inp: &[u8],
-    mut builder: crate::error::too_many_distributions_with_lambda_associations::Builder,
+    mut builder: crate::types::error::builders::TooManyDistributionsWithLambdaAssociationsBuilder,
 ) -> Result<
-    crate::error::too_many_distributions_with_lambda_associations::Builder,
+    crate::types::error::builders::TooManyDistributionsWithLambdaAssociationsBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

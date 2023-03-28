@@ -2,7 +2,7 @@
 pub(crate) fn de_multicast_group_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::MulticastGroup>>,
+    Option<std::vec::Vec<crate::types::MulticastGroup>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

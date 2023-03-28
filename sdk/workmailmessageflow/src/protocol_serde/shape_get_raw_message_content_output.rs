@@ -3,7 +3,7 @@ pub fn de_message_content_payload(
     body: &mut aws_smithy_http::body::SdkBody,
 ) -> std::result::Result<
     aws_smithy_http::byte_stream::ByteStream,
-    crate::error::GetRawMessageContentError,
+    crate::operation::get_raw_message_content::GetRawMessageContentError,
 > {
     // replace the body with an empty body
     let body = std::mem::replace(body, aws_smithy_http::body::SdkBody::taken());

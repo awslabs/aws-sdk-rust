@@ -3,37 +3,45 @@
 pub fn de_list_instance_profiles_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListInstanceProfilesOutput,
-    crate::error::ListInstanceProfilesError,
+    crate::operation::list_instance_profiles::ListInstanceProfilesOutput,
+    crate::operation::list_instance_profiles::ListInstanceProfilesError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListInstanceProfilesError::unhandled)?;
+        .map_err(crate::operation::list_instance_profiles::ListInstanceProfilesError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListInstanceProfilesError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::list_instance_profiles::ListInstanceProfilesError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ServiceFailure" => crate::error::ListInstanceProfilesError::ServiceFailureException({
+        "ServiceFailure" => crate::operation::list_instance_profiles::ListInstanceProfilesError::ServiceFailureException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::service_failure_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListInstanceProfilesError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ServiceFailureExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::list_instance_profiles::ListInstanceProfilesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::ListInstanceProfilesError::generic(generic),
+        _ => crate::operation::list_instance_profiles::ListInstanceProfilesError::generic(generic)
     })
 }
 
@@ -41,18 +49,18 @@ pub fn de_list_instance_profiles_http_error(
 pub fn de_list_instance_profiles_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListInstanceProfilesOutput,
-    crate::error::ListInstanceProfilesError,
+    crate::operation::list_instance_profiles::ListInstanceProfilesOutput,
+    crate::operation::list_instance_profiles::ListInstanceProfilesError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_instance_profiles_output::Builder::default();
+        let mut output = crate::operation::list_instance_profiles::builders::ListInstanceProfilesOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_instance_profiles::de_list_instance_profiles(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListInstanceProfilesError::unhandled)?;
+        .map_err(crate::operation::list_instance_profiles::ListInstanceProfilesError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -63,9 +71,9 @@ pub fn de_list_instance_profiles_http_response(
 #[allow(unused_mut)]
 pub fn de_list_instance_profiles(
     inp: &[u8],
-    mut builder: crate::output::list_instance_profiles_output::Builder,
+    mut builder: crate::operation::list_instance_profiles::builders::ListInstanceProfilesOutputBuilder,
 ) -> Result<
-    crate::output::list_instance_profiles_output::Builder,
+    crate::operation::list_instance_profiles::builders::ListInstanceProfilesOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

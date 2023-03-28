@@ -2,7 +2,7 @@
 pub(crate) fn de_add_on_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AddOn>>,
+    Option<std::vec::Vec<crate::types::AddOn>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_software_package_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SoftwarePackage>>,
+    Option<std::vec::Vec<crate::types::SoftwarePackage>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

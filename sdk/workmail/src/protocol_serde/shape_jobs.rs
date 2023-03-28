@@ -2,7 +2,7 @@
 pub(crate) fn de_jobs<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::MailboxExportJob>>,
+    Option<std::vec::Vec<crate::types::MailboxExportJob>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

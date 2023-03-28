@@ -2,7 +2,7 @@
 pub(crate) fn de_fms_policy_update_firewall_creation_config_action<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::FmsPolicyUpdateFirewallCreationConfigAction>,
+    Option<crate::types::FmsPolicyUpdateFirewallCreationConfigAction>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,8 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::fms_policy_update_firewall_creation_config_action::Builder::default();
+                crate::types::builders::FmsPolicyUpdateFirewallCreationConfigActionBuilder::default(
+                );
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

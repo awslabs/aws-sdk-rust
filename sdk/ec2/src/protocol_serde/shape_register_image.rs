@@ -2,28 +2,35 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_register_image_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::RegisterImageOutput, crate::error::RegisterImageError> {
+) -> std::result::Result<
+    crate::operation::register_image::RegisterImageOutput,
+    crate::operation::register_image::RegisterImageError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::RegisterImageError::unhandled)?;
+        .map_err(crate::operation::register_image::RegisterImageError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::RegisterImageError::generic(generic))
+    Err(crate::operation::register_image::RegisterImageError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_register_image_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::RegisterImageOutput, crate::error::RegisterImageError> {
+) -> std::result::Result<
+    crate::operation::register_image::RegisterImageOutput,
+    crate::operation::register_image::RegisterImageError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::register_image_output::Builder::default();
+        let mut output =
+            crate::operation::register_image::builders::RegisterImageOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_register_image::de_register_image(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::RegisterImageError::unhandled)?;
+        .map_err(crate::operation::register_image::RegisterImageError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -34,8 +41,11 @@ pub fn de_register_image_http_response(
 #[allow(unused_mut)]
 pub fn de_register_image(
     inp: &[u8],
-    mut builder: crate::output::register_image_output::Builder,
-) -> Result<crate::output::register_image_output::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    mut builder: crate::operation::register_image::builders::RegisterImageOutputBuilder,
+) -> Result<
+    crate::operation::register_image::builders::RegisterImageOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

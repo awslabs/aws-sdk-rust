@@ -2,7 +2,7 @@
 pub(crate) fn de_batch_put_asset_property_error_entry<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::BatchPutAssetPropertyErrorEntry>,
+    Option<crate::types::BatchPutAssetPropertyErrorEntry>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::batch_put_asset_property_error_entry::Builder::default();
+                crate::types::builders::BatchPutAssetPropertyErrorEntryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

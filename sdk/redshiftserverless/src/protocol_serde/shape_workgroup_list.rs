@@ -2,7 +2,7 @@
 pub(crate) fn de_workgroup_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Workgroup>>,
+    Option<std::vec::Vec<crate::types::Workgroup>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

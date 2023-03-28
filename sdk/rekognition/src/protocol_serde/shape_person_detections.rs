@@ -2,7 +2,7 @@
 pub(crate) fn de_person_detections<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::PersonDetection>>,
+    Option<std::vec::Vec<crate::types::PersonDetection>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

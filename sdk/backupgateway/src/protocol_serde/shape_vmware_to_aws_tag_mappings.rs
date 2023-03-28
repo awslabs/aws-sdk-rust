@@ -2,7 +2,7 @@
 pub(crate) fn de_vmware_to_aws_tag_mappings<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::VmwareToAwsTagMapping>>,
+    Option<std::vec::Vec<crate::types::VmwareToAwsTagMapping>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

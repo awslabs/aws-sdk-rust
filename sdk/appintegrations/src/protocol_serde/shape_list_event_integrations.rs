@@ -3,86 +3,96 @@
 pub fn de_list_event_integrations_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListEventIntegrationsOutput,
-    crate::error::ListEventIntegrationsError,
+    crate::operation::list_event_integrations::ListEventIntegrationsOutput,
+    crate::operation::list_event_integrations::ListEventIntegrationsError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListEventIntegrationsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::list_event_integrations::ListEventIntegrationsError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    let error_code = match generic.code() {
-        Some(code) => code,
-        None => return Err(crate::error::ListEventIntegrationsError::unhandled(generic)),
-    };
+    let error_code =
+        match generic.code() {
+            Some(code) => code,
+            None => return Err(
+                crate::operation::list_event_integrations::ListEventIntegrationsError::unhandled(
+                    generic,
+                ),
+            ),
+        };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => {
-            crate::error::ListEventIntegrationsError::AccessDeniedException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "AccessDeniedException" => crate::operation::list_event_integrations::ListEventIntegrationsError::AccessDeniedException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListEventIntegrationsError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_event_integrations::ListEventIntegrationsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InternalServiceError" => crate::error::ListEventIntegrationsError::InternalServiceError({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_service_error::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_service_error::de_internal_service_error_json_err(response.body().as_ref(), output).map_err(crate::error::ListEventIntegrationsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "InvalidRequestException" => {
-            crate::error::ListEventIntegrationsError::InvalidRequestException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalServiceError" => crate::operation::list_event_integrations::ListEventIntegrationsError::InternalServiceError({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_request_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InternalServiceErrorBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListEventIntegrationsError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_service_error::de_internal_service_error_json_err(response.body().as_ref(), output).map_err(crate::operation::list_event_integrations::ListEventIntegrationsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ThrottlingException" => crate::error::ListEventIntegrationsError::ThrottlingException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::throttling_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListEventIntegrationsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::ListEventIntegrationsError::generic(generic),
+        "InvalidRequestException" => crate::operation::list_event_integrations::ListEventIntegrationsError::InvalidRequestException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidRequestExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_event_integrations::ListEventIntegrationsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ThrottlingException" => crate::operation::list_event_integrations::ListEventIntegrationsError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_event_integrations::ListEventIntegrationsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::list_event_integrations::ListEventIntegrationsError::generic(generic)
     })
 }
 
@@ -90,18 +100,20 @@ pub fn de_list_event_integrations_http_error(
 pub fn de_list_event_integrations_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListEventIntegrationsOutput,
-    crate::error::ListEventIntegrationsError,
+    crate::operation::list_event_integrations::ListEventIntegrationsOutput,
+    crate::operation::list_event_integrations::ListEventIntegrationsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_event_integrations_output::Builder::default();
+        let mut output = crate::operation::list_event_integrations::builders::ListEventIntegrationsOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_event_integrations::de_list_event_integrations(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListEventIntegrationsError::unhandled)?;
+        .map_err(
+            crate::operation::list_event_integrations::ListEventIntegrationsError::unhandled,
+        )?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -111,9 +123,9 @@ pub fn de_list_event_integrations_http_response(
 
 pub(crate) fn de_list_event_integrations(
     value: &[u8],
-    mut builder: crate::output::list_event_integrations_output::Builder,
+    mut builder: crate::operation::list_event_integrations::builders::ListEventIntegrationsOutputBuilder,
 ) -> Result<
-    crate::output::list_event_integrations_output::Builder,
+    crate::operation::list_event_integrations::builders::ListEventIntegrationsOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

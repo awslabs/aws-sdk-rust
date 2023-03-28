@@ -2,7 +2,7 @@
 pub(crate) fn de_broker_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::BrokerSummary>,
+    Option<crate::types::BrokerSummary>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::broker_summary::Builder::default();
+            let mut builder = crate::types::builders::BrokerSummaryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -57,7 +57,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::BrokerState::from(u.as_ref()))
+                                            .map(|u| crate::types::BrokerState::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -77,7 +77,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::DeploymentMode::from(u.as_ref()))
+                                            .map(|u| crate::types::DeploymentMode::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -89,7 +89,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::EngineType::from(u.as_ref()))
+                                            .map(|u| crate::types::EngineType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

@@ -2,7 +2,7 @@
 pub(crate) fn de_checkpoint_configuration_description<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::CheckpointConfigurationDescription>,
+    Option<crate::types::CheckpointConfigurationDescription>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::checkpoint_configuration_description::Builder::default();
+                crate::types::builders::CheckpointConfigurationDescriptionBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -31,7 +31,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ConfigurationType::from(u.as_ref())
+                                            crate::types::ConfigurationType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

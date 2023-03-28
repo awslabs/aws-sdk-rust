@@ -3,70 +3,79 @@
 pub fn de_start_instance_refresh_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::StartInstanceRefreshOutput,
-    crate::error::StartInstanceRefreshError,
+    crate::operation::start_instance_refresh::StartInstanceRefreshOutput,
+    crate::operation::start_instance_refresh::StartInstanceRefreshError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::StartInstanceRefreshError::unhandled)?;
+        .map_err(crate::operation::start_instance_refresh::StartInstanceRefreshError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::StartInstanceRefreshError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::start_instance_refresh::StartInstanceRefreshError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InstanceRefreshInProgress" => {
-            crate::error::StartInstanceRefreshError::InstanceRefreshInProgressFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InstanceRefreshInProgress" => crate::operation::start_instance_refresh::StartInstanceRefreshError::InstanceRefreshInProgressFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::instance_refresh_in_progress_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InstanceRefreshInProgressFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_instance_refresh_in_progress_fault::de_instance_refresh_in_progress_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::StartInstanceRefreshError::unhandled)?;
+                    output = crate::protocol_serde::shape_instance_refresh_in_progress_fault::de_instance_refresh_in_progress_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::start_instance_refresh::StartInstanceRefreshError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "LimitExceeded" => crate::error::StartInstanceRefreshError::LimitExceededFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::limit_exceeded_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_limit_exceeded_fault::de_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::StartInstanceRefreshError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "ResourceContention" => crate::error::StartInstanceRefreshError::ResourceContentionFault({
+        "LimitExceeded" => crate::operation::start_instance_refresh::StartInstanceRefreshError::LimitExceededFault({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::resource_contention_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_resource_contention_fault::de_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::StartInstanceRefreshError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::LimitExceededFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_limit_exceeded_fault::de_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::start_instance_refresh::StartInstanceRefreshError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::StartInstanceRefreshError::generic(generic),
+        "ResourceContention" => crate::operation::start_instance_refresh::StartInstanceRefreshError::ResourceContentionFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ResourceContentionFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_contention_fault::de_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::start_instance_refresh::StartInstanceRefreshError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::start_instance_refresh::StartInstanceRefreshError::generic(generic)
     })
 }
 
@@ -74,18 +83,18 @@ pub fn de_start_instance_refresh_http_error(
 pub fn de_start_instance_refresh_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::StartInstanceRefreshOutput,
-    crate::error::StartInstanceRefreshError,
+    crate::operation::start_instance_refresh::StartInstanceRefreshOutput,
+    crate::operation::start_instance_refresh::StartInstanceRefreshError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::start_instance_refresh_output::Builder::default();
+        let mut output = crate::operation::start_instance_refresh::builders::StartInstanceRefreshOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_start_instance_refresh::de_start_instance_refresh(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::StartInstanceRefreshError::unhandled)?;
+        .map_err(crate::operation::start_instance_refresh::StartInstanceRefreshError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -96,9 +105,9 @@ pub fn de_start_instance_refresh_http_response(
 #[allow(unused_mut)]
 pub fn de_start_instance_refresh(
     inp: &[u8],
-    mut builder: crate::output::start_instance_refresh_output::Builder,
+    mut builder: crate::operation::start_instance_refresh::builders::StartInstanceRefreshOutputBuilder,
 ) -> Result<
-    crate::output::start_instance_refresh_output::Builder,
+    crate::operation::start_instance_refresh::builders::StartInstanceRefreshOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

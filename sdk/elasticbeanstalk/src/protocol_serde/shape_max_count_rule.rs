@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_max_count_rule(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::MaxCountRule,
+    input: &crate::types::MaxCountRule,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Enabled");
@@ -27,9 +27,9 @@ pub fn ser_max_count_rule(
 
 pub fn de_max_count_rule(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::MaxCountRule, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::MaxCountRule, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::MaxCountRule::builder();
+    let mut builder = crate::types::MaxCountRule::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Enabled") /* Enabled com.amazonaws.elasticbeanstalk#MaxCountRule$Enabled */ =>  {

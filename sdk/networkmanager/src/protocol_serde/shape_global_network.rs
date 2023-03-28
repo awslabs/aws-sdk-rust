@@ -2,7 +2,7 @@
 pub(crate) fn de_global_network<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::GlobalNetwork>,
+    Option<crate::types::GlobalNetwork>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::global_network::Builder::default();
+            let mut builder = crate::types::builders::GlobalNetworkBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -65,7 +65,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::GlobalNetworkState::from(u.as_ref())
+                                            crate::types::GlobalNetworkState::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

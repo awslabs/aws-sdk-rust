@@ -2,7 +2,7 @@
 pub(crate) fn de_node_type_specific_value_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::NodeTypeSpecificValue>>,
+    Option<std::vec::Vec<crate::types::NodeTypeSpecificValue>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

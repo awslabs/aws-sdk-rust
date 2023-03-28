@@ -2,18 +2,18 @@
 pub fn de_transit_gateway_peering_attachment_options(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    crate::model::TransitGatewayPeeringAttachmentOptions,
+    crate::types::TransitGatewayPeeringAttachmentOptions,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     #[allow(unused_mut)]
-    let mut builder = crate::model::TransitGatewayPeeringAttachmentOptions::builder();
+    let mut builder = crate::types::TransitGatewayPeeringAttachmentOptions::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("dynamicRouting") /* DynamicRouting com.amazonaws.ec2#TransitGatewayPeeringAttachmentOptions$DynamicRouting */ =>  {
                 let var_1 =
                     Some(
-                        Result::<crate::model::DynamicRoutingValue, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::DynamicRoutingValue::from(
+                        Result::<crate::types::DynamicRoutingValue, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::DynamicRoutingValue::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

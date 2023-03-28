@@ -2,7 +2,7 @@
 pub(crate) fn de_guardian_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::GuardianAttributes>,
+    Option<crate::types::GuardianAttributes>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::guardian_attributes::Builder::default();
+            let mut builder = crate::types::builders::GuardianAttributesBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::FeatureStatus::from(u.as_ref()))
+                                            .map(|u| crate::types::FeatureStatus::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -60,7 +60,7 @@ where
 
 pub fn ser_guardian_attributes(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::GuardianAttributes,
+    input: &crate::types::GuardianAttributes,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.optimized_shared_delivery {
         object.key("OptimizedSharedDelivery").string(var_1.as_str());

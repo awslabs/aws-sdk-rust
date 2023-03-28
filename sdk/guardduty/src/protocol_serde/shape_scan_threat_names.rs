@@ -2,7 +2,7 @@
 pub(crate) fn de_scan_threat_names<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ScanThreatName>>,
+    Option<std::vec::Vec<crate::types::ScanThreatName>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

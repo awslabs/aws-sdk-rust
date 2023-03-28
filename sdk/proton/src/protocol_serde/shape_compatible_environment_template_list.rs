@@ -2,7 +2,7 @@
 pub(crate) fn de_compatible_environment_template_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CompatibleEnvironmentTemplate>>,
+    Option<std::vec::Vec<crate::types::CompatibleEnvironmentTemplate>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

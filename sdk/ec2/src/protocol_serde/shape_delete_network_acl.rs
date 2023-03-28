@@ -2,24 +2,30 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_network_acl_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeleteNetworkAclOutput, crate::error::DeleteNetworkAclError>
-{
+) -> std::result::Result<
+    crate::operation::delete_network_acl::DeleteNetworkAclOutput,
+    crate::operation::delete_network_acl::DeleteNetworkAclError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteNetworkAclError::unhandled)?;
+        .map_err(crate::operation::delete_network_acl::DeleteNetworkAclError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::DeleteNetworkAclError::generic(generic))
+    Err(crate::operation::delete_network_acl::DeleteNetworkAclError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_network_acl_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeleteNetworkAclOutput, crate::error::DeleteNetworkAclError>
-{
+) -> std::result::Result<
+    crate::operation::delete_network_acl::DeleteNetworkAclOutput,
+    crate::operation::delete_network_acl::DeleteNetworkAclError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_network_acl_output::Builder::default();
+        let mut output =
+            crate::operation::delete_network_acl::builders::DeleteNetworkAclOutputBuilder::default(
+            );
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

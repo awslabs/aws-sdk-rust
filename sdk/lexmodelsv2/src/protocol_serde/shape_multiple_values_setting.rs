@@ -2,7 +2,7 @@
 pub(crate) fn de_multiple_values_setting<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::MultipleValuesSetting>,
+    Option<crate::types::MultipleValuesSetting>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::multiple_values_setting::Builder::default();
+            let mut builder = crate::types::builders::MultipleValuesSettingBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -55,7 +55,7 @@ where
 
 pub fn ser_multiple_values_setting(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::MultipleValuesSetting,
+    input: &crate::types::MultipleValuesSetting,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if input.allow_multiple_values {
         object

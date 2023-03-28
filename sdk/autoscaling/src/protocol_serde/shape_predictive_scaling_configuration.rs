@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_predictive_scaling_configuration(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::PredictiveScalingConfiguration,
+    input: &crate::types::PredictiveScalingConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("MetricSpecifications");
@@ -46,9 +46,9 @@ pub fn ser_predictive_scaling_configuration(
 
 pub fn de_predictive_scaling_configuration(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::PredictiveScalingConfiguration, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::PredictiveScalingConfiguration, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::PredictiveScalingConfiguration::builder();
+    let mut builder = crate::types::PredictiveScalingConfiguration::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("MetricSpecifications") /* MetricSpecifications com.amazonaws.autoscaling#PredictiveScalingConfiguration$MetricSpecifications */ =>  {
@@ -64,8 +64,8 @@ pub fn de_predictive_scaling_configuration(
             s if s.matches("Mode") /* Mode com.amazonaws.autoscaling#PredictiveScalingConfiguration$Mode */ =>  {
                 let var_15 =
                     Some(
-                        Result::<crate::model::PredictiveScalingMode, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::PredictiveScalingMode::from(
+                        Result::<crate::types::PredictiveScalingMode, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::PredictiveScalingMode::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
@@ -93,8 +93,8 @@ pub fn de_predictive_scaling_configuration(
             s if s.matches("MaxCapacityBreachBehavior") /* MaxCapacityBreachBehavior com.amazonaws.autoscaling#PredictiveScalingConfiguration$MaxCapacityBreachBehavior */ =>  {
                 let var_17 =
                     Some(
-                        Result::<crate::model::PredictiveScalingMaxCapacityBreachBehavior, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::PredictiveScalingMaxCapacityBreachBehavior::from(
+                        Result::<crate::types::PredictiveScalingMaxCapacityBreachBehavior, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::PredictiveScalingMaxCapacityBreachBehavior::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

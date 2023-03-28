@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_db_cluster_role_not_found_fault_xml_err(
     inp: &[u8],
-    mut builder: crate::error::db_cluster_role_not_found_fault::Builder,
+    mut builder: crate::types::error::builders::DbClusterRoleNotFoundFaultBuilder,
 ) -> Result<
-    crate::error::db_cluster_role_not_found_fault::Builder,
+    crate::types::error::builders::DbClusterRoleNotFoundFaultBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

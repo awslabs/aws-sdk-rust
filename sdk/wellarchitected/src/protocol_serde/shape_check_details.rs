@@ -2,7 +2,7 @@
 pub(crate) fn de_check_details<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CheckDetail>>,
+    Option<std::vec::Vec<crate::types::CheckDetail>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

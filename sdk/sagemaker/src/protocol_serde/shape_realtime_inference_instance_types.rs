@@ -2,7 +2,7 @@
 pub(crate) fn de_realtime_inference_instance_types<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ProductionVariantInstanceType>>,
+    Option<std::vec::Vec<crate::types::ProductionVariantInstanceType>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -29,7 +29,7 @@ where
                         )?
                         .map(|s| {
                             s.to_unescaped().map(|u| {
-                                crate::model::ProductionVariantInstanceType::from(u.as_ref())
+                                crate::types::ProductionVariantInstanceType::from(u.as_ref())
                             })
                         })
                         .transpose()?;

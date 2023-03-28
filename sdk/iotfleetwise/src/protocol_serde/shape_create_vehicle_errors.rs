@@ -2,7 +2,7 @@
 pub(crate) fn de_create_vehicle_errors<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CreateVehicleError>>,
+    Option<std::vec::Vec<crate::types::CreateVehicleError>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

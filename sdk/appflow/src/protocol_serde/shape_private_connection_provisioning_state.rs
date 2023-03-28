@@ -2,7 +2,7 @@
 pub(crate) fn de_private_connection_provisioning_state<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::PrivateConnectionProvisioningState>,
+    Option<crate::types::PrivateConnectionProvisioningState>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::private_connection_provisioning_state::Builder::default();
+                crate::types::builders::PrivateConnectionProvisioningStateBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -31,7 +31,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::PrivateConnectionProvisioningStatus::from(
+                                            crate::types::PrivateConnectionProvisioningStatus::from(
                                                 u.as_ref(),
                                             )
                                         })
@@ -52,7 +52,7 @@ where
                                 builder = builder.set_failure_cause(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?.map(|s|
                                         s.to_unescaped().map(|u|
-                                            crate::model::PrivateConnectionProvisioningFailureCause::from(u.as_ref())
+                                            crate::types::PrivateConnectionProvisioningFailureCause::from(u.as_ref())
                                         )
                                     ).transpose()?
                                 );

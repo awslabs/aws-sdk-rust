@@ -2,9 +2,11 @@
 #[allow(unused_mut)]
 pub fn de_endpoint_not_found_fault_xml_err(
     inp: &[u8],
-    mut builder: crate::error::endpoint_not_found_fault::Builder,
-) -> Result<crate::error::endpoint_not_found_fault::Builder, aws_smithy_xml::decode::XmlDecodeError>
-{
+    mut builder: crate::types::error::builders::EndpointNotFoundFaultBuilder,
+) -> Result<
+    crate::types::error::builders::EndpointNotFoundFaultBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     if inp.is_empty() {
         return Ok(builder);
     }

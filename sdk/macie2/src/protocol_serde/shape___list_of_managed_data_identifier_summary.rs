@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_managed_data_identifier_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ManagedDataIdentifierSummary>>,
+    Option<std::vec::Vec<crate::types::ManagedDataIdentifierSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_disruption_policy<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<crate::model::DisruptionType, crate::model::FailurePolicy>>,
+    Option<std::collections::HashMap<crate::types::DisruptionType, crate::types::FailurePolicy>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -23,7 +23,7 @@ where
                     Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         let key = key
                             .to_unescaped()
-                            .map(|u| crate::model::DisruptionType::from(u.as_ref()))?;
+                            .map(|u| crate::types::DisruptionType::from(u.as_ref()))?;
                         let value =
                             crate::protocol_serde::shape_failure_policy::de_failure_policy(tokens)?;
                         if let Some(value) = value {

@@ -2,7 +2,7 @@
 pub(crate) fn de_access_receiver_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ResourceReceivingAccess>>,
+    Option<std::vec::Vec<crate::types::ResourceReceivingAccess>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

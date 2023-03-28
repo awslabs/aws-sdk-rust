@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_invalid_key_signing_key_name_xml_err(
     inp: &[u8],
-    mut builder: crate::error::invalid_key_signing_key_name::Builder,
+    mut builder: crate::types::error::builders::InvalidKeySigningKeyNameBuilder,
 ) -> Result<
-    crate::error::invalid_key_signing_key_name::Builder,
+    crate::types::error::builders::InvalidKeySigningKeyNameBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

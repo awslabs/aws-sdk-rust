@@ -2,7 +2,7 @@
 pub(crate) fn de_permissions_boundary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::PermissionsBoundary>,
+    Option<crate::types::PermissionsBoundary>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::permissions_boundary::Builder::default();
+            let mut builder = crate::types::builders::PermissionsBoundaryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -62,7 +62,7 @@ where
 
 pub fn ser_permissions_boundary(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::PermissionsBoundary,
+    input: &crate::types::PermissionsBoundary,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.customer_managed_policy_reference {
         #[allow(unused_mut)]

@@ -2,7 +2,7 @@
 pub(crate) fn de_game_session_placement<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::GameSessionPlacement>,
+    Option<crate::types::GameSessionPlacement>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::game_session_placement::Builder::default();
+            let mut builder = crate::types::builders::GameSessionPlacementBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -48,7 +48,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::GameSessionPlacementState::from(
+                                            crate::types::GameSessionPlacementState::from(
                                                 u.as_ref(),
                                             )
                                         })

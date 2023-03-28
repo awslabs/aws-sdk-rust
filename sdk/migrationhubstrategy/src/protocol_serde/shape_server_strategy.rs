@@ -2,7 +2,7 @@
 pub(crate) fn de_server_strategy<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ServerStrategy>,
+    Option<crate::types::ServerStrategy>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::server_strategy::Builder::default();
+            let mut builder = crate::types::builders::ServerStrategyBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -35,7 +35,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::StrategyRecommendation::from(u.as_ref())
+                                            crate::types::StrategyRecommendation::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

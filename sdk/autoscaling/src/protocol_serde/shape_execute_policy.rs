@@ -2,43 +2,33 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_execute_policy_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ExecutePolicyOutput, crate::error::ExecutePolicyError> {
+) -> std::result::Result<
+    crate::operation::execute_policy::ExecutePolicyOutput,
+    crate::operation::execute_policy::ExecutePolicyError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ExecutePolicyError::unhandled)?;
+        .map_err(crate::operation::execute_policy::ExecutePolicyError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ExecutePolicyError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::execute_policy::ExecutePolicyError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceContention" => crate::error::ExecutePolicyError::ResourceContentionFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::resource_contention_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_resource_contention_fault::de_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ExecutePolicyError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ScalingActivityInProgress" => {
-            crate::error::ExecutePolicyError::ScalingActivityInProgressFault({
+        "ResourceContention" => {
+            crate::operation::execute_policy::ExecutePolicyError::ResourceContentionFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::scaling_activity_in_progress_fault::Builder::default();
+                        crate::types::error::builders::ResourceContentionFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_scaling_activity_in_progress_fault::de_scaling_activity_in_progress_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ExecutePolicyError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_contention_fault::de_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::execute_policy::ExecutePolicyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -48,17 +38,38 @@ pub fn de_execute_policy_http_error(
                 tmp
             })
         }
-        _ => crate::error::ExecutePolicyError::generic(generic),
+        "ScalingActivityInProgress" => {
+            crate::operation::execute_policy::ExecutePolicyError::ScalingActivityInProgressFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ScalingActivityInProgressFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_scaling_activity_in_progress_fault::de_scaling_activity_in_progress_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::execute_policy::ExecutePolicyError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::execute_policy::ExecutePolicyError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_execute_policy_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ExecutePolicyOutput, crate::error::ExecutePolicyError> {
+) -> std::result::Result<
+    crate::operation::execute_policy::ExecutePolicyOutput,
+    crate::operation::execute_policy::ExecutePolicyError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::execute_policy_output::Builder::default();
+        let mut output =
+            crate::operation::execute_policy::builders::ExecutePolicyOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

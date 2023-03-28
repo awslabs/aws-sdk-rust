@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_snapshot_disk_container(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::SnapshotDiskContainer,
+    input: &crate::types::SnapshotDiskContainer,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Description");

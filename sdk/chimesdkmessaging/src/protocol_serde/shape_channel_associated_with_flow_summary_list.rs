@@ -2,7 +2,7 @@
 pub(crate) fn de_channel_associated_with_flow_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ChannelAssociatedWithFlowSummary>>,
+    Option<std::vec::Vec<crate::types::ChannelAssociatedWithFlowSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

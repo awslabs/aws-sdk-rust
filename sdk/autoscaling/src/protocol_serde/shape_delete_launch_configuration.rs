@@ -3,58 +3,57 @@
 pub fn de_delete_launch_configuration_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteLaunchConfigurationOutput,
-    crate::error::DeleteLaunchConfigurationError,
+    crate::operation::delete_launch_configuration::DeleteLaunchConfigurationOutput,
+    crate::operation::delete_launch_configuration::DeleteLaunchConfigurationError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteLaunchConfigurationError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::delete_launch_configuration::DeleteLaunchConfigurationError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::DeleteLaunchConfigurationError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::delete_launch_configuration::DeleteLaunchConfigurationError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceContention" => {
-            crate::error::DeleteLaunchConfigurationError::ResourceContentionFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "ResourceContention" => crate::operation::delete_launch_configuration::DeleteLaunchConfigurationError::ResourceContentionFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_contention_fault::Builder::default();
+                    let mut output = crate::types::error::builders::ResourceContentionFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_contention_fault::de_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteLaunchConfigurationError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_contention_fault::de_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_launch_configuration::DeleteLaunchConfigurationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ResourceInUse" => crate::error::DeleteLaunchConfigurationError::ResourceInUseFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::resource_in_use_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_resource_in_use_fault::de_resource_in_use_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteLaunchConfigurationError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::DeleteLaunchConfigurationError::generic(generic),
+        "ResourceInUse" => crate::operation::delete_launch_configuration::DeleteLaunchConfigurationError::ResourceInUseFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ResourceInUseFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_in_use_fault::de_resource_in_use_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_launch_configuration::DeleteLaunchConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::delete_launch_configuration::DeleteLaunchConfigurationError::generic(generic)
     })
 }
 
@@ -62,12 +61,12 @@ pub fn de_delete_launch_configuration_http_error(
 pub fn de_delete_launch_configuration_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteLaunchConfigurationOutput,
-    crate::error::DeleteLaunchConfigurationError,
+    crate::operation::delete_launch_configuration::DeleteLaunchConfigurationOutput,
+    crate::operation::delete_launch_configuration::DeleteLaunchConfigurationError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_launch_configuration_output::Builder::default();
+        let mut output = crate::operation::delete_launch_configuration::builders::DeleteLaunchConfigurationOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

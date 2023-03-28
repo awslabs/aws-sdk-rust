@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_type_filters(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::TypeFilters,
+    input: &crate::types::TypeFilters,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Category");

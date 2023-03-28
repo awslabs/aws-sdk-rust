@@ -2,7 +2,7 @@
 pub fn de_vpc_cidr_block_association_set(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::VpcCidrBlockAssociation>,
+    std::vec::Vec<crate::types::VpcCidrBlockAssociation>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

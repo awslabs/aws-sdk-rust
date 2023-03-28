@@ -2,30 +2,36 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_route_table_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::CreateRouteTableOutput, crate::error::CreateRouteTableError>
-{
+) -> std::result::Result<
+    crate::operation::create_route_table::CreateRouteTableOutput,
+    crate::operation::create_route_table::CreateRouteTableError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::CreateRouteTableError::unhandled)?;
+        .map_err(crate::operation::create_route_table::CreateRouteTableError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::CreateRouteTableError::generic(generic))
+    Err(crate::operation::create_route_table::CreateRouteTableError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_route_table_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::CreateRouteTableOutput, crate::error::CreateRouteTableError>
-{
+) -> std::result::Result<
+    crate::operation::create_route_table::CreateRouteTableOutput,
+    crate::operation::create_route_table::CreateRouteTableError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::create_route_table_output::Builder::default();
+        let mut output =
+            crate::operation::create_route_table::builders::CreateRouteTableOutputBuilder::default(
+            );
         let _ = response;
         output = crate::protocol_serde::shape_create_route_table::de_create_route_table(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::CreateRouteTableError::unhandled)?;
+        .map_err(crate::operation::create_route_table::CreateRouteTableError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -36,9 +42,11 @@ pub fn de_create_route_table_http_response(
 #[allow(unused_mut)]
 pub fn de_create_route_table(
     inp: &[u8],
-    mut builder: crate::output::create_route_table_output::Builder,
-) -> Result<crate::output::create_route_table_output::Builder, aws_smithy_xml::decode::XmlDecodeError>
-{
+    mut builder: crate::operation::create_route_table::builders::CreateRouteTableOutputBuilder,
+) -> Result<
+    crate::operation::create_route_table::builders::CreateRouteTableOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

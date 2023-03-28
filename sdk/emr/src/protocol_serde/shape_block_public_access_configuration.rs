@@ -2,7 +2,7 @@
 pub(crate) fn de_block_public_access_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::BlockPublicAccessConfiguration>,
+    Option<crate::types::BlockPublicAccessConfiguration>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::block_public_access_configuration::Builder::default();
+            let mut builder =
+                crate::types::builders::BlockPublicAccessConfigurationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -81,7 +82,7 @@ where
 
 pub fn ser_block_public_access_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::BlockPublicAccessConfiguration,
+    input: &crate::types::BlockPublicAccessConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     {
         object

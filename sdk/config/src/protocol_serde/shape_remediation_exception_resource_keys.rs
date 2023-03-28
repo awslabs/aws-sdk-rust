@@ -2,7 +2,7 @@
 pub(crate) fn de_remediation_exception_resource_keys<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::RemediationExceptionResourceKey>>,
+    Option<std::vec::Vec<crate::types::RemediationExceptionResourceKey>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

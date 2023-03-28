@@ -2,7 +2,7 @@
 pub(crate) fn de_team_member_result<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::TeamMember>>,
+    Option<std::vec::Vec<crate::types::TeamMember>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

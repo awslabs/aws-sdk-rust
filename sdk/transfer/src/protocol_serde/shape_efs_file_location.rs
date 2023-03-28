@@ -2,7 +2,7 @@
 pub(crate) fn de_efs_file_location<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::EfsFileLocation>,
+    Option<crate::types::EfsFileLocation>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::efs_file_location::Builder::default();
+            let mut builder = crate::types::builders::EfsFileLocationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -66,7 +66,7 @@ where
 
 pub fn ser_efs_file_location(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::EfsFileLocation,
+    input: &crate::types::EfsFileLocation,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.file_system_id {
         object.key("FileSystemId").string(var_1.as_str());

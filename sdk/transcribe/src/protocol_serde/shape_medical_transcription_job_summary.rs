@@ -2,7 +2,7 @@
 pub(crate) fn de_medical_transcription_job_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::MedicalTranscriptionJobSummary>,
+    Option<crate::types::MedicalTranscriptionJobSummary>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::medical_transcription_job_summary::Builder::default();
+            let mut builder =
+                crate::types::builders::MedicalTranscriptionJobSummaryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -63,7 +64,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::LanguageCode::from(u.as_ref()))
+                                            .map(|u| crate::types::LanguageCode::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -75,7 +76,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::TranscriptionJobStatus::from(u.as_ref())
+                                            crate::types::TranscriptionJobStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -97,7 +98,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::OutputLocationType::from(u.as_ref())
+                                            crate::types::OutputLocationType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -110,7 +111,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::Specialty::from(u.as_ref()))
+                                            .map(|u| crate::types::Specialty::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -122,7 +123,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::MedicalContentIdentificationType::from(
+                                            crate::types::MedicalContentIdentificationType::from(
                                                 u.as_ref(),
                                             )
                                         })
@@ -137,7 +138,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::Type::from(u.as_ref()))
+                                            .map(|u| crate::types::Type::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

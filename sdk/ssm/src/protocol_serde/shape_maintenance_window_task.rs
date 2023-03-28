@@ -2,7 +2,7 @@
 pub(crate) fn de_maintenance_window_task<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::MaintenanceWindowTask>,
+    Option<crate::types::MaintenanceWindowTask>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::maintenance_window_task::Builder::default();
+            let mut builder = crate::types::builders::MaintenanceWindowTaskBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -57,7 +57,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::MaintenanceWindowTaskType::from(
+                                            crate::types::MaintenanceWindowTaskType::from(
                                                 u.as_ref(),
                                             )
                                         })
@@ -143,7 +143,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::MaintenanceWindowTaskCutoffBehavior::from(
+                                            crate::types::MaintenanceWindowTaskCutoffBehavior::from(
                                                 u.as_ref(),
                                             )
                                         })

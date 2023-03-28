@@ -2,7 +2,7 @@
 pub(crate) fn de_utilization_metrics<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::UtilizationMetric>>,
+    Option<std::vec::Vec<crate::types::UtilizationMetric>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

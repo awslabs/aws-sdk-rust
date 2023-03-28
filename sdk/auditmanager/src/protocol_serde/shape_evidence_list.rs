@@ -2,7 +2,7 @@
 pub(crate) fn de_evidence_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Evidence>>,
+    Option<std::vec::Vec<crate::types::Evidence>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

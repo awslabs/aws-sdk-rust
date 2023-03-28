@@ -2,7 +2,7 @@
 pub(crate) fn de_reverse_geocoding_config<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ReverseGeocodingConfig>,
+    Option<crate::types::ReverseGeocodingConfig>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::reverse_geocoding_config::Builder::default();
+            let mut builder = crate::types::builders::ReverseGeocodingConfigBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -66,7 +66,7 @@ where
 
 pub fn ser_reverse_geocoding_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::ReverseGeocodingConfig,
+    input: &crate::types::ReverseGeocodingConfig,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.y_attribute_name {
         object.key("YAttributeName").string(var_1.as_str());

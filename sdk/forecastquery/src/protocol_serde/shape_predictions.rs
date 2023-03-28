@@ -2,7 +2,7 @@
 pub(crate) fn de_predictions<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::DataPoint>>>,
+    Option<std::collections::HashMap<std::string::String, std::vec::Vec<crate::types::DataPoint>>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

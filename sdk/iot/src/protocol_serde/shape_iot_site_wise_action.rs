@@ -2,7 +2,7 @@
 pub(crate) fn de_iot_site_wise_action<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::IotSiteWiseAction>,
+    Option<crate::types::IotSiteWiseAction>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::iot_site_wise_action::Builder::default();
+            let mut builder = crate::types::builders::IotSiteWiseActionBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -62,7 +62,7 @@ where
 
 pub fn ser_iot_site_wise_action(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::IotSiteWiseAction,
+    input: &crate::types::IotSiteWiseAction,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.put_asset_property_value_entries {
         let mut array_2 = object.key("putAssetPropertyValueEntries").start_array();

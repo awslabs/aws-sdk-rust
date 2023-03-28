@@ -2,7 +2,7 @@
 pub(crate) fn de_node_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::NodeSummary>>,
+    Option<std::vec::Vec<crate::types::NodeSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

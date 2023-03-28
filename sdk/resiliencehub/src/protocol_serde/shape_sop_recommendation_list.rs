@@ -2,7 +2,7 @@
 pub(crate) fn de_sop_recommendation_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SopRecommendation>>,
+    Option<std::vec::Vec<crate::types::SopRecommendation>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

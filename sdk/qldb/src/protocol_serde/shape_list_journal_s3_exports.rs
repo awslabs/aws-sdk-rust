@@ -3,33 +3,33 @@
 pub fn de_list_journal_s3_exports_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListJournalS3ExportsOutput,
-    crate::error::ListJournalS3ExportsError,
+    crate::operation::list_journal_s3_exports::ListJournalS3ExportsOutput,
+    crate::operation::list_journal_s3_exports::ListJournalS3ExportsError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListJournalS3ExportsError::unhandled)?;
+        .map_err(crate::operation::list_journal_s3_exports::ListJournalS3ExportsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::ListJournalS3ExportsError::generic(generic))
+    Err(crate::operation::list_journal_s3_exports::ListJournalS3ExportsError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_journal_s3_exports_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListJournalS3ExportsOutput,
-    crate::error::ListJournalS3ExportsError,
+    crate::operation::list_journal_s3_exports::ListJournalS3ExportsOutput,
+    crate::operation::list_journal_s3_exports::ListJournalS3ExportsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_journal_s3_exports_output::Builder::default();
+        let mut output = crate::operation::list_journal_s3_exports::builders::ListJournalS3ExportsOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_journal_s3_exports::de_list_journal_s3_exports(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListJournalS3ExportsError::unhandled)?;
+        .map_err(crate::operation::list_journal_s3_exports::ListJournalS3ExportsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -39,9 +39,9 @@ pub fn de_list_journal_s3_exports_http_response(
 
 pub(crate) fn de_list_journal_s3_exports(
     value: &[u8],
-    mut builder: crate::output::list_journal_s3_exports_output::Builder,
+    mut builder: crate::operation::list_journal_s3_exports::builders::ListJournalS3ExportsOutputBuilder,
 ) -> Result<
-    crate::output::list_journal_s3_exports_output::Builder,
+    crate::operation::list_journal_s3_exports::builders::ListJournalS3ExportsOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

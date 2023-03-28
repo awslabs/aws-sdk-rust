@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_spot_placement(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::SpotPlacement,
+    input: &crate::types::SpotPlacement,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("AvailabilityZone");
@@ -24,9 +24,9 @@ pub fn ser_spot_placement(
 
 pub fn de_spot_placement(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::SpotPlacement, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::SpotPlacement, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::SpotPlacement::builder();
+    let mut builder = crate::types::SpotPlacement::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("availabilityZone") /* AvailabilityZone com.amazonaws.ec2#SpotPlacement$AvailabilityZone */ =>  {
@@ -58,8 +58,8 @@ pub fn de_spot_placement(
             s if s.matches("tenancy") /* Tenancy com.amazonaws.ec2#SpotPlacement$Tenancy */ =>  {
                 let var_9 =
                     Some(
-                        Result::<crate::model::Tenancy, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::Tenancy::from(
+                        Result::<crate::types::Tenancy, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::Tenancy::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_broker_instance<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::BrokerInstance>>,
+    Option<std::vec::Vec<crate::types::BrokerInstance>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

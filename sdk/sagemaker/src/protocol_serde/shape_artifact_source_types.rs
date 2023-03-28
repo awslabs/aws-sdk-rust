@@ -2,7 +2,7 @@
 pub(crate) fn de_artifact_source_types<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ArtifactSourceType>>,
+    Option<std::vec::Vec<crate::types::ArtifactSourceType>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

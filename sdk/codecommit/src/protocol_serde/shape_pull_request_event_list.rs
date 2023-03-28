@@ -2,7 +2,7 @@
 pub(crate) fn de_pull_request_event_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::PullRequestEvent>>,
+    Option<std::vec::Vec<crate::types::PullRequestEvent>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

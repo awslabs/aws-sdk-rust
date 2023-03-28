@@ -3,77 +3,72 @@
 pub fn de_list_enabled_products_for_import_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListEnabledProductsForImportOutput,
-    crate::error::ListEnabledProductsForImportError,
+    crate::operation::list_enabled_products_for_import::ListEnabledProductsForImportOutput,
+    crate::operation::list_enabled_products_for_import::ListEnabledProductsForImportError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListEnabledProductsForImportError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::list_enabled_products_for_import::ListEnabledProductsForImportError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::ListEnabledProductsForImportError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::list_enabled_products_for_import::ListEnabledProductsForImportError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalException" => {
-            crate::error::ListEnabledProductsForImportError::InternalException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalException" => crate::operation::list_enabled_products_for_import::ListEnabledProductsForImportError::InternalException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InternalExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_exception::de_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListEnabledProductsForImportError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_exception::de_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_enabled_products_for_import::ListEnabledProductsForImportError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidAccessException" => {
-            crate::error::ListEnabledProductsForImportError::InvalidAccessException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidAccessException" => crate::operation::list_enabled_products_for_import::ListEnabledProductsForImportError::InvalidAccessException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_access_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidAccessExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_access_exception::de_invalid_access_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListEnabledProductsForImportError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_access_exception::de_invalid_access_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_enabled_products_for_import::ListEnabledProductsForImportError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "LimitExceededException" => {
-            crate::error::ListEnabledProductsForImportError::LimitExceededException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "LimitExceededException" => crate::operation::list_enabled_products_for_import::ListEnabledProductsForImportError::LimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListEnabledProductsForImportError::unhandled)?;
+                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_enabled_products_for_import::ListEnabledProductsForImportError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::ListEnabledProductsForImportError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::list_enabled_products_for_import::ListEnabledProductsForImportError::generic(generic)
     })
 }
 
@@ -81,14 +76,14 @@ pub fn de_list_enabled_products_for_import_http_error(
 pub fn de_list_enabled_products_for_import_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListEnabledProductsForImportOutput,
-    crate::error::ListEnabledProductsForImportError,
+    crate::operation::list_enabled_products_for_import::ListEnabledProductsForImportOutput,
+    crate::operation::list_enabled_products_for_import::ListEnabledProductsForImportError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_enabled_products_for_import_output::Builder::default();
+        let mut output = crate::operation::list_enabled_products_for_import::builders::ListEnabledProductsForImportOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_list_enabled_products_for_import::de_list_enabled_products_for_import(response.body().as_ref(), output).map_err(crate::error::ListEnabledProductsForImportError::unhandled)?;
+        output = crate::protocol_serde::shape_list_enabled_products_for_import::de_list_enabled_products_for_import(response.body().as_ref(), output).map_err(crate::operation::list_enabled_products_for_import::ListEnabledProductsForImportError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -96,13 +91,7 @@ pub fn de_list_enabled_products_for_import_http_response(
     })
 }
 
-pub(crate) fn de_list_enabled_products_for_import(
-    value: &[u8],
-    mut builder: crate::output::list_enabled_products_for_import_output::Builder,
-) -> Result<
-    crate::output::list_enabled_products_for_import_output::Builder,
-    aws_smithy_json::deserialize::error::DeserializeError,
-> {
+pub(crate) fn de_list_enabled_products_for_import(value: &[u8], mut builder: crate::operation::list_enabled_products_for_import::builders::ListEnabledProductsForImportOutputBuilder) -> Result<crate::operation::list_enabled_products_for_import::builders::ListEnabledProductsForImportOutputBuilder, aws_smithy_json::deserialize::error::DeserializeError>{
     let mut tokens_owned =
         aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
             .peekable();

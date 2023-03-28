@@ -3,63 +3,55 @@
 pub fn de_get_field_level_encryption_config_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetFieldLevelEncryptionConfigOutput,
-    crate::error::GetFieldLevelEncryptionConfigError,
+    crate::operation::get_field_level_encryption_config::GetFieldLevelEncryptionConfigOutput,
+    crate::operation::get_field_level_encryption_config::GetFieldLevelEncryptionConfigError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetFieldLevelEncryptionConfigError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::get_field_level_encryption_config::GetFieldLevelEncryptionConfigError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::GetFieldLevelEncryptionConfigError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::get_field_level_encryption_config::GetFieldLevelEncryptionConfigError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDenied" => crate::error::GetFieldLevelEncryptionConfigError::AccessDenied({
+        "AccessDenied" => crate::operation::get_field_level_encryption_config::GetFieldLevelEncryptionConfigError::AccessDenied({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::access_denied::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_access_denied::de_access_denied_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::GetFieldLevelEncryptionConfigError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "NoSuchFieldLevelEncryptionConfig" => {
-            crate::error::GetFieldLevelEncryptionConfigError::NoSuchFieldLevelEncryptionConfig({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::no_such_field_level_encryption_config::Builder::default();
+                    let mut output = crate::types::error::builders::AccessDeniedBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_no_such_field_level_encryption_config::de_no_such_field_level_encryption_config_xml_err(response.body().as_ref(), output).map_err(crate::error::GetFieldLevelEncryptionConfigError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied::de_access_denied_xml_err(response.body().as_ref(), output).map_err(crate::operation::get_field_level_encryption_config::GetFieldLevelEncryptionConfigError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::GetFieldLevelEncryptionConfigError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "NoSuchFieldLevelEncryptionConfig" => crate::operation::get_field_level_encryption_config::GetFieldLevelEncryptionConfigError::NoSuchFieldLevelEncryptionConfig({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::NoSuchFieldLevelEncryptionConfigBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_no_such_field_level_encryption_config::de_no_such_field_level_encryption_config_xml_err(response.body().as_ref(), output).map_err(crate::operation::get_field_level_encryption_config::GetFieldLevelEncryptionConfigError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::get_field_level_encryption_config::GetFieldLevelEncryptionConfigError::generic(generic)
     })
 }
 
@@ -67,23 +59,16 @@ pub fn de_get_field_level_encryption_config_http_error(
 pub fn de_get_field_level_encryption_config_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetFieldLevelEncryptionConfigOutput,
-    crate::error::GetFieldLevelEncryptionConfigError,
+    crate::operation::get_field_level_encryption_config::GetFieldLevelEncryptionConfigOutput,
+    crate::operation::get_field_level_encryption_config::GetFieldLevelEncryptionConfigError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::output::get_field_level_encryption_config_output::Builder::default();
+        let mut output = crate::operation::get_field_level_encryption_config::builders::GetFieldLevelEncryptionConfigOutputBuilder::default();
         let _ = response;
         output = output.set_e_tag(
-            crate::protocol_serde::shape_get_field_level_encryption_config_output::de_e_tag_header(
-                response.headers(),
-            )
-            .map_err(|_| {
-                crate::error::GetFieldLevelEncryptionConfigError::unhandled(
-                    "Failed to parse ETag from header `ETag",
-                )
-            })?,
+            crate::protocol_serde::shape_get_field_level_encryption_config_output::de_e_tag_header(response.headers())
+                                    .map_err(|_|crate::operation::get_field_level_encryption_config::GetFieldLevelEncryptionConfigError::unhandled("Failed to parse ETag from header `ETag"))?
         );
         output = output.set_field_level_encryption_config(
             crate::protocol_serde::shape_get_field_level_encryption_config_output::de_field_level_encryption_config_payload(response.body().as_ref())?

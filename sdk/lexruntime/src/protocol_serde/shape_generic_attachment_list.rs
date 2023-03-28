@@ -2,7 +2,7 @@
 pub(crate) fn de_generic_attachment_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::GenericAttachment>>,
+    Option<std::vec::Vec<crate::types::GenericAttachment>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_pending_aggregation_request_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::PendingAggregationRequest>>,
+    Option<std::vec::Vec<crate::types::PendingAggregationRequest>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

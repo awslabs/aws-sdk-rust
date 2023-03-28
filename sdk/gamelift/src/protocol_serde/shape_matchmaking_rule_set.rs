@@ -2,7 +2,7 @@
 pub(crate) fn de_matchmaking_rule_set<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::MatchmakingRuleSet>,
+    Option<crate::types::MatchmakingRuleSet>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::matchmaking_rule_set::Builder::default();
+            let mut builder = crate::types::builders::MatchmakingRuleSetBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

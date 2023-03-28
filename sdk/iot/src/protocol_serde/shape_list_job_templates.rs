@@ -2,28 +2,35 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_job_templates_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListJobTemplatesOutput, crate::error::ListJobTemplatesError>
-{
+) -> std::result::Result<
+    crate::operation::list_job_templates::ListJobTemplatesOutput,
+    crate::operation::list_job_templates::ListJobTemplatesError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListJobTemplatesError::unhandled)?;
+        .map_err(crate::operation::list_job_templates::ListJobTemplatesError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListJobTemplatesError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::list_job_templates::ListJobTemplatesError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalFailureException" => {
-            crate::error::ListJobTemplatesError::InternalFailureException({
+            crate::operation::list_job_templates::ListJobTemplatesError::InternalFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_failure_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::InternalFailureExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListJobTemplatesError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_job_templates::ListJobTemplatesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -34,13 +41,14 @@ pub fn de_list_job_templates_http_error(
             })
         }
         "InvalidRequestException" => {
-            crate::error::ListJobTemplatesError::InvalidRequestException({
+            crate::operation::list_job_templates::ListJobTemplatesError::InvalidRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_request_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::InvalidRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListJobTemplatesError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_job_templates::ListJobTemplatesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -50,39 +58,46 @@ pub fn de_list_job_templates_http_error(
                 tmp
             })
         }
-        "ThrottlingException" => crate::error::ListJobTemplatesError::ThrottlingException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "ThrottlingException" => {
+            crate::operation::list_job_templates::ListJobTemplatesError::ThrottlingException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::throttling_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListJobTemplatesError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::ListJobTemplatesError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_job_templates::ListJobTemplatesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::list_job_templates::ListJobTemplatesError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_job_templates_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListJobTemplatesOutput, crate::error::ListJobTemplatesError>
-{
+) -> std::result::Result<
+    crate::operation::list_job_templates::ListJobTemplatesOutput,
+    crate::operation::list_job_templates::ListJobTemplatesError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_job_templates_output::Builder::default();
+        let mut output =
+            crate::operation::list_job_templates::builders::ListJobTemplatesOutputBuilder::default(
+            );
         let _ = response;
         output = crate::protocol_serde::shape_list_job_templates::de_list_job_templates(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListJobTemplatesError::unhandled)?;
+        .map_err(crate::operation::list_job_templates::ListJobTemplatesError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -92,9 +107,9 @@ pub fn de_list_job_templates_http_response(
 
 pub(crate) fn de_list_job_templates(
     value: &[u8],
-    mut builder: crate::output::list_job_templates_output::Builder,
+    mut builder: crate::operation::list_job_templates::builders::ListJobTemplatesOutputBuilder,
 ) -> Result<
-    crate::output::list_job_templates_output::Builder,
+    crate::operation::list_job_templates::builders::ListJobTemplatesOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

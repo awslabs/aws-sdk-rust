@@ -3,63 +3,57 @@
 pub fn de_reset_cluster_parameter_group_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ResetClusterParameterGroupOutput,
-    crate::error::ResetClusterParameterGroupError,
+    crate::operation::reset_cluster_parameter_group::ResetClusterParameterGroupOutput,
+    crate::operation::reset_cluster_parameter_group::ResetClusterParameterGroupError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ResetClusterParameterGroupError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::reset_cluster_parameter_group::ResetClusterParameterGroupError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::ResetClusterParameterGroupError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::reset_cluster_parameter_group::ResetClusterParameterGroupError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ClusterParameterGroupNotFound" => {
-            crate::error::ResetClusterParameterGroupError::ClusterParameterGroupNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "ClusterParameterGroupNotFound" => crate::operation::reset_cluster_parameter_group::ResetClusterParameterGroupError::ClusterParameterGroupNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::cluster_parameter_group_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::ClusterParameterGroupNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_cluster_parameter_group_not_found_fault::de_cluster_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ResetClusterParameterGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_cluster_parameter_group_not_found_fault::de_cluster_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::reset_cluster_parameter_group::ResetClusterParameterGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidClusterParameterGroupState" => {
-            crate::error::ResetClusterParameterGroupError::InvalidClusterParameterGroupStateFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidClusterParameterGroupState" => crate::operation::reset_cluster_parameter_group::ResetClusterParameterGroupError::InvalidClusterParameterGroupStateFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_cluster_parameter_group_state_fault::Builder::default(
-                        );
+                    let mut output = crate::types::error::builders::InvalidClusterParameterGroupStateFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_cluster_parameter_group_state_fault::de_invalid_cluster_parameter_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ResetClusterParameterGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_cluster_parameter_group_state_fault::de_invalid_cluster_parameter_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::reset_cluster_parameter_group::ResetClusterParameterGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::ResetClusterParameterGroupError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::reset_cluster_parameter_group::ResetClusterParameterGroupError::generic(generic)
     })
 }
 
@@ -67,14 +61,14 @@ pub fn de_reset_cluster_parameter_group_http_error(
 pub fn de_reset_cluster_parameter_group_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ResetClusterParameterGroupOutput,
-    crate::error::ResetClusterParameterGroupError,
+    crate::operation::reset_cluster_parameter_group::ResetClusterParameterGroupOutput,
+    crate::operation::reset_cluster_parameter_group::ResetClusterParameterGroupError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::reset_cluster_parameter_group_output::Builder::default();
+        let mut output = crate::operation::reset_cluster_parameter_group::builders::ResetClusterParameterGroupOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_reset_cluster_parameter_group::de_reset_cluster_parameter_group(response.body().as_ref(), output).map_err(crate::error::ResetClusterParameterGroupError::unhandled)?;
+        output = crate::protocol_serde::shape_reset_cluster_parameter_group::de_reset_cluster_parameter_group(response.body().as_ref(), output).map_err(crate::operation::reset_cluster_parameter_group::ResetClusterParameterGroupError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -83,13 +77,7 @@ pub fn de_reset_cluster_parameter_group_http_response(
 }
 
 #[allow(unused_mut)]
-pub fn de_reset_cluster_parameter_group(
-    inp: &[u8],
-    mut builder: crate::output::reset_cluster_parameter_group_output::Builder,
-) -> Result<
-    crate::output::reset_cluster_parameter_group_output::Builder,
-    aws_smithy_xml::decode::XmlDecodeError,
-> {
+pub fn de_reset_cluster_parameter_group(inp: &[u8], mut builder: crate::operation::reset_cluster_parameter_group::builders::ResetClusterParameterGroupOutputBuilder) -> Result<crate::operation::reset_cluster_parameter_group::builders::ResetClusterParameterGroupOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

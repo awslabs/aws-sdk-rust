@@ -2,7 +2,7 @@
 pub(crate) fn de_node_instances<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::NodeInstance>>,
+    Option<std::vec::Vec<crate::types::NodeInstance>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

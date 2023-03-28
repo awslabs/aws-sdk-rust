@@ -2,7 +2,7 @@
 pub(crate) fn de_renewal_settings<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::RenewalSettings>,
+    Option<crate::types::RenewalSettings>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::renewal_settings::Builder::default();
+            let mut builder = crate::types::builders::RenewalSettingsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ReservationAutomaticRenewal::from(
+                                            crate::types::ReservationAutomaticRenewal::from(
                                                 u.as_ref(),
                                             )
                                         })
@@ -72,7 +72,7 @@ where
 
 pub fn ser_renewal_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::RenewalSettings,
+    input: &crate::types::RenewalSettings,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.automatic_renewal {
         object.key("automaticRenewal").string(var_1.as_str());

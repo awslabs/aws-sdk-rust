@@ -2,8 +2,11 @@
 #[allow(unused_mut)]
 pub fn de_invalid_next_token_xml_err(
     inp: &[u8],
-    mut builder: crate::error::invalid_next_token::Builder,
-) -> Result<crate::error::invalid_next_token::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    mut builder: crate::types::error::builders::InvalidNextTokenBuilder,
+) -> Result<
+    crate::types::error::builders::InvalidNextTokenBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     if inp.is_empty() {
         return Ok(builder);
     }

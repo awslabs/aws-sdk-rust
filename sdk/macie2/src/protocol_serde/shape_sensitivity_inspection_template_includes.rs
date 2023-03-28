@@ -2,7 +2,7 @@
 pub(crate) fn de_sensitivity_inspection_template_includes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::SensitivityInspectionTemplateIncludes>,
+    Option<crate::types::SensitivityInspectionTemplateIncludes>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::sensitivity_inspection_template_includes::Builder::default();
+                crate::types::builders::SensitivityInspectionTemplateIncludesBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -64,7 +64,7 @@ where
 
 pub fn ser_sensitivity_inspection_template_includes(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::SensitivityInspectionTemplateIncludes,
+    input: &crate::types::SensitivityInspectionTemplateIncludes,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.allow_list_ids {
         let mut array_2 = object.key("allowListIds").start_array();

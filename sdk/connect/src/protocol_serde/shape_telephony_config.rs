@@ -2,7 +2,7 @@
 pub(crate) fn de_telephony_config<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::TelephonyConfig>,
+    Option<crate::types::TelephonyConfig>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::telephony_config::Builder::default();
+            let mut builder = crate::types::builders::TelephonyConfigBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -53,7 +53,7 @@ where
 
 pub fn ser_telephony_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::TelephonyConfig,
+    input: &crate::types::TelephonyConfig,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.distributions {
         let mut array_2 = object.key("Distributions").start_array();

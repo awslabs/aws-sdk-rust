@@ -3,80 +3,79 @@
 pub fn de_get_data_retrieval_policy_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetDataRetrievalPolicyOutput,
-    crate::error::GetDataRetrievalPolicyError,
+    crate::operation::get_data_retrieval_policy::GetDataRetrievalPolicyOutput,
+    crate::operation::get_data_retrieval_policy::GetDataRetrievalPolicyError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetDataRetrievalPolicyError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::get_data_retrieval_policy::GetDataRetrievalPolicyError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::GetDataRetrievalPolicyError::unhandled(
-                generic,
-            ))
-        }
-    };
+    let error_code =
+        match generic.code() {
+            Some(code) => code,
+            None => return Err(
+                crate::operation::get_data_retrieval_policy::GetDataRetrievalPolicyError::unhandled(
+                    generic,
+                ),
+            ),
+        };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => {
-            crate::error::GetDataRetrievalPolicyError::InvalidParameterValueException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidParameterValueException" => crate::operation::get_data_retrieval_policy::GetDataRetrievalPolicyError::InvalidParameterValueException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_parameter_value_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDataRetrievalPolicyError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_data_retrieval_policy::GetDataRetrievalPolicyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "MissingParameterValueException" => {
-            crate::error::GetDataRetrievalPolicyError::MissingParameterValueException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "MissingParameterValueException" => crate::operation::get_data_retrieval_policy::GetDataRetrievalPolicyError::MissingParameterValueException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::missing_parameter_value_exception::Builder::default();
+                    let mut output = crate::types::error::builders::MissingParameterValueExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_missing_parameter_value_exception::de_missing_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDataRetrievalPolicyError::unhandled)?;
+                    output = crate::protocol_serde::shape_missing_parameter_value_exception::de_missing_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_data_retrieval_policy::GetDataRetrievalPolicyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ServiceUnavailableException" => {
-            crate::error::GetDataRetrievalPolicyError::ServiceUnavailableException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ServiceUnavailableException" => crate::operation::get_data_retrieval_policy::GetDataRetrievalPolicyError::ServiceUnavailableException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::service_unavailable_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDataRetrievalPolicyError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_data_retrieval_policy::GetDataRetrievalPolicyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::GetDataRetrievalPolicyError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::get_data_retrieval_policy::GetDataRetrievalPolicyError::generic(generic)
     })
 }
 
@@ -84,19 +83,21 @@ pub fn de_get_data_retrieval_policy_http_error(
 pub fn de_get_data_retrieval_policy_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetDataRetrievalPolicyOutput,
-    crate::error::GetDataRetrievalPolicyError,
+    crate::operation::get_data_retrieval_policy::GetDataRetrievalPolicyOutput,
+    crate::operation::get_data_retrieval_policy::GetDataRetrievalPolicyError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_data_retrieval_policy_output::Builder::default();
+        let mut output = crate::operation::get_data_retrieval_policy::builders::GetDataRetrievalPolicyOutputBuilder::default();
         let _ = response;
         output =
             crate::protocol_serde::shape_get_data_retrieval_policy::de_get_data_retrieval_policy(
                 response.body().as_ref(),
                 output,
             )
-            .map_err(crate::error::GetDataRetrievalPolicyError::unhandled)?;
+            .map_err(
+                crate::operation::get_data_retrieval_policy::GetDataRetrievalPolicyError::unhandled,
+            )?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -106,9 +107,9 @@ pub fn de_get_data_retrieval_policy_http_response(
 
 pub(crate) fn de_get_data_retrieval_policy(
     value: &[u8],
-    mut builder: crate::output::get_data_retrieval_policy_output::Builder,
+    mut builder: crate::operation::get_data_retrieval_policy::builders::GetDataRetrievalPolicyOutputBuilder,
 ) -> Result<
-    crate::output::get_data_retrieval_policy_output::Builder,
+    crate::operation::get_data_retrieval_policy::builders::GetDataRetrievalPolicyOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

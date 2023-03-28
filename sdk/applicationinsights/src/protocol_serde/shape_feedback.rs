@@ -2,7 +2,7 @@
 pub(crate) fn de_feedback<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<crate::model::FeedbackKey, crate::model::FeedbackValue>>,
+    Option<std::collections::HashMap<crate::types::FeedbackKey, crate::types::FeedbackValue>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -23,13 +23,13 @@ where
                     Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         let key = key
                             .to_unescaped()
-                            .map(|u| crate::model::FeedbackKey::from(u.as_ref()))?;
+                            .map(|u| crate::types::FeedbackKey::from(u.as_ref()))?;
                         let value = aws_smithy_json::deserialize::token::expect_string_or_null(
                             tokens.next(),
                         )?
                         .map(|s| {
                             s.to_unescaped()
-                                .map(|u| crate::model::FeedbackValue::from(u.as_ref()))
+                                .map(|u| crate::types::FeedbackValue::from(u.as_ref()))
                         })
                         .transpose()?;
                         if let Some(value) = value {

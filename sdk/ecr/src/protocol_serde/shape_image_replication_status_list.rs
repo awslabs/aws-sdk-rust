@@ -2,7 +2,7 @@
 pub(crate) fn de_image_replication_status_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ImageReplicationStatus>>,
+    Option<std::vec::Vec<crate::types::ImageReplicationStatus>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_evaluate_on_exit_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::EvaluateOnExit>>,
+    Option<std::vec::Vec<crate::types::EvaluateOnExit>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

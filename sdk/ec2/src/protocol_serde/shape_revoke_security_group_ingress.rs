@@ -3,31 +3,34 @@
 pub fn de_revoke_security_group_ingress_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::RevokeSecurityGroupIngressOutput,
-    crate::error::RevokeSecurityGroupIngressError,
+    crate::operation::revoke_security_group_ingress::RevokeSecurityGroupIngressOutput,
+    crate::operation::revoke_security_group_ingress::RevokeSecurityGroupIngressError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::RevokeSecurityGroupIngressError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::revoke_security_group_ingress::RevokeSecurityGroupIngressError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::RevokeSecurityGroupIngressError::generic(
-        generic,
-    ))
+    Err(
+        crate::operation::revoke_security_group_ingress::RevokeSecurityGroupIngressError::generic(
+            generic,
+        ),
+    )
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_revoke_security_group_ingress_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::RevokeSecurityGroupIngressOutput,
-    crate::error::RevokeSecurityGroupIngressError,
+    crate::operation::revoke_security_group_ingress::RevokeSecurityGroupIngressOutput,
+    crate::operation::revoke_security_group_ingress::RevokeSecurityGroupIngressError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::revoke_security_group_ingress_output::Builder::default();
+        let mut output = crate::operation::revoke_security_group_ingress::builders::RevokeSecurityGroupIngressOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_revoke_security_group_ingress::de_revoke_security_group_ingress(response.body().as_ref(), output).map_err(crate::error::RevokeSecurityGroupIngressError::unhandled)?;
+        output = crate::protocol_serde::shape_revoke_security_group_ingress::de_revoke_security_group_ingress(response.body().as_ref(), output).map_err(crate::operation::revoke_security_group_ingress::RevokeSecurityGroupIngressError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -36,13 +39,7 @@ pub fn de_revoke_security_group_ingress_http_response(
 }
 
 #[allow(unused_mut)]
-pub fn de_revoke_security_group_ingress(
-    inp: &[u8],
-    mut builder: crate::output::revoke_security_group_ingress_output::Builder,
-) -> Result<
-    crate::output::revoke_security_group_ingress_output::Builder,
-    aws_smithy_xml::decode::XmlDecodeError,
-> {
+pub fn de_revoke_security_group_ingress(inp: &[u8], mut builder: crate::operation::revoke_security_group_ingress::builders::RevokeSecurityGroupIngressOutputBuilder) -> Result<crate::operation::revoke_security_group_ingress::builders::RevokeSecurityGroupIngressOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

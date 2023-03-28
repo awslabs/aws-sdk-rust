@@ -2,7 +2,7 @@
 pub(crate) fn de_elastic_load_balancer<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ElasticLoadBalancer>,
+    Option<crate::types::ElasticLoadBalancer>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::elastic_load_balancer::Builder::default();
+            let mut builder = crate::types::builders::ElasticLoadBalancerBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

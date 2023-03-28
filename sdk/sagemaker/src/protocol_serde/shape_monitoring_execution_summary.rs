@@ -2,7 +2,7 @@
 pub(crate) fn de_monitoring_execution_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::MonitoringExecutionSummary>,
+    Option<crate::types::MonitoringExecutionSummary>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::monitoring_execution_summary::Builder::default();
+            let mut builder = crate::types::builders::MonitoringExecutionSummaryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -63,7 +63,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ExecutionStatus::from(u.as_ref())
+                                            crate::types::ExecutionStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -112,7 +112,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::MonitoringType::from(u.as_ref()))
+                                            .map(|u| crate::types::MonitoringType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

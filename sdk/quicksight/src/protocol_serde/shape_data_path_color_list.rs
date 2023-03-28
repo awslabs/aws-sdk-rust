@@ -2,7 +2,7 @@
 pub(crate) fn de_data_path_color_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DataPathColor>>,
+    Option<std::vec::Vec<crate::types::DataPathColor>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_cloud_masking_config_input<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::CloudMaskingConfigInput>,
+    Option<crate::types::CloudMaskingConfigInput>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::cloud_masking_config_input::Builder::default();
+            let mut builder = crate::types::builders::CloudMaskingConfigInputBuilder::default();
             aws_smithy_json::deserialize::token::skip_to_end(tokens)?;
             Ok(Some(builder.build()))
         }
@@ -31,7 +31,7 @@ where
 
 pub fn ser_cloud_masking_config_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::CloudMaskingConfigInput,
+    input: &crate::types::CloudMaskingConfigInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     let (_, _) = (object, input);
     Ok(())

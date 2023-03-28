@@ -2,7 +2,7 @@
 pub(crate) fn de_decision_task_timed_out_event_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::DecisionTaskTimedOutEventAttributes>,
+    Option<crate::types::DecisionTaskTimedOutEventAttributes>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::decision_task_timed_out_event_attributes::Builder::default();
+                crate::types::builders::DecisionTaskTimedOutEventAttributesBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -31,7 +31,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::DecisionTaskTimeoutType::from(u.as_ref())
+                                            crate::types::DecisionTaskTimeoutType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

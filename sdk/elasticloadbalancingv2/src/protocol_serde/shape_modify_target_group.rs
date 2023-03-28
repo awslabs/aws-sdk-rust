@@ -2,74 +2,80 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_modify_target_group_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ModifyTargetGroupOutput, crate::error::ModifyTargetGroupError>
-{
+) -> std::result::Result<
+    crate::operation::modify_target_group::ModifyTargetGroupOutput,
+    crate::operation::modify_target_group::ModifyTargetGroupError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ModifyTargetGroupError::unhandled)?;
+        .map_err(crate::operation::modify_target_group::ModifyTargetGroupError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ModifyTargetGroupError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::modify_target_group::ModifyTargetGroupError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidConfigurationRequest" => {
-            crate::error::ModifyTargetGroupError::InvalidConfigurationRequestException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidConfigurationRequest" => crate::operation::modify_target_group::ModifyTargetGroupError::InvalidConfigurationRequestException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_configuration_request_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidConfigurationRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_configuration_request_exception::de_invalid_configuration_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyTargetGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_configuration_request_exception::de_invalid_configuration_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_target_group::ModifyTargetGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "TargetGroupNotFound" => {
-            crate::error::ModifyTargetGroupError::TargetGroupNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TargetGroupNotFound" => crate::operation::modify_target_group::ModifyTargetGroupError::TargetGroupNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::target_group_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::TargetGroupNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_target_group_not_found_exception::de_target_group_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyTargetGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_target_group_not_found_exception::de_target_group_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_target_group::ModifyTargetGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::ModifyTargetGroupError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::modify_target_group::ModifyTargetGroupError::generic(generic)
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_modify_target_group_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ModifyTargetGroupOutput, crate::error::ModifyTargetGroupError>
-{
+) -> std::result::Result<
+    crate::operation::modify_target_group::ModifyTargetGroupOutput,
+    crate::operation::modify_target_group::ModifyTargetGroupError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::modify_target_group_output::Builder::default();
+        let mut output = crate::operation::modify_target_group::builders::ModifyTargetGroupOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_modify_target_group::de_modify_target_group(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ModifyTargetGroupError::unhandled)?;
+        .map_err(crate::operation::modify_target_group::ModifyTargetGroupError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -80,9 +86,9 @@ pub fn de_modify_target_group_http_response(
 #[allow(unused_mut)]
 pub fn de_modify_target_group(
     inp: &[u8],
-    mut builder: crate::output::modify_target_group_output::Builder,
+    mut builder: crate::operation::modify_target_group::builders::ModifyTargetGroupOutputBuilder,
 ) -> Result<
-    crate::output::modify_target_group_output::Builder,
+    crate::operation::modify_target_group::builders::ModifyTargetGroupOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

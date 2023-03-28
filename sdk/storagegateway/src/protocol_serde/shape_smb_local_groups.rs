@@ -2,7 +2,7 @@
 pub(crate) fn de_smb_local_groups<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::SmbLocalGroups>,
+    Option<crate::types::SmbLocalGroups>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::smb_local_groups::Builder::default();
+            let mut builder = crate::types::builders::SmbLocalGroupsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -53,7 +53,7 @@ where
 
 pub fn ser_smb_local_groups(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::SmbLocalGroups,
+    input: &crate::types::SmbLocalGroups,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.gateway_admins {
         let mut array_2 = object.key("GatewayAdmins").start_array();

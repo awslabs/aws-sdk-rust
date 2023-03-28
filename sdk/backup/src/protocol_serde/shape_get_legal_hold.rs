@@ -2,28 +2,32 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_legal_hold_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetLegalHoldOutput, crate::error::GetLegalHoldError> {
+) -> std::result::Result<
+    crate::operation::get_legal_hold::GetLegalHoldOutput,
+    crate::operation::get_legal_hold::GetLegalHoldError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetLegalHoldError::unhandled)?;
+        .map_err(crate::operation::get_legal_hold::GetLegalHoldError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::GetLegalHoldError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::get_legal_hold::GetLegalHoldError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidParameterValueException" => {
-            crate::error::GetLegalHoldError::InvalidParameterValueException({
+            crate::operation::get_legal_hold::GetLegalHoldError::InvalidParameterValueException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_parameter_value_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLegalHoldError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_legal_hold::GetLegalHoldError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -34,14 +38,13 @@ pub fn de_get_legal_hold_http_error(
             })
         }
         "MissingParameterValueException" => {
-            crate::error::GetLegalHoldError::MissingParameterValueException({
+            crate::operation::get_legal_hold::GetLegalHoldError::MissingParameterValueException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::missing_parameter_value_exception::Builder::default();
+                    let mut output = crate::types::error::builders::MissingParameterValueExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_missing_parameter_value_exception::de_missing_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLegalHoldError::unhandled)?;
+                    output = crate::protocol_serde::shape_missing_parameter_value_exception::de_missing_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_legal_hold::GetLegalHoldError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -52,13 +55,14 @@ pub fn de_get_legal_hold_http_error(
             })
         }
         "ResourceNotFoundException" => {
-            crate::error::GetLegalHoldError::ResourceNotFoundException({
+            crate::operation::get_legal_hold::GetLegalHoldError::ResourceNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLegalHoldError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_legal_hold::GetLegalHoldError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -69,14 +73,15 @@ pub fn de_get_legal_hold_http_error(
             })
         }
         "ServiceUnavailableException" => {
-            crate::error::GetLegalHoldError::ServiceUnavailableException({
+            crate::operation::get_legal_hold::GetLegalHoldError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::service_unavailable_exception::Builder::default();
+                        crate::types::error::builders::ServiceUnavailableExceptionBuilder::default(
+                        );
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLegalHoldError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_legal_hold::GetLegalHoldError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -86,23 +91,27 @@ pub fn de_get_legal_hold_http_error(
                 tmp
             })
         }
-        _ => crate::error::GetLegalHoldError::generic(generic),
+        _ => crate::operation::get_legal_hold::GetLegalHoldError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_legal_hold_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetLegalHoldOutput, crate::error::GetLegalHoldError> {
+) -> std::result::Result<
+    crate::operation::get_legal_hold::GetLegalHoldOutput,
+    crate::operation::get_legal_hold::GetLegalHoldError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_legal_hold_output::Builder::default();
+        let mut output =
+            crate::operation::get_legal_hold::builders::GetLegalHoldOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_get_legal_hold::de_get_legal_hold(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::GetLegalHoldError::unhandled)?;
+        .map_err(crate::operation::get_legal_hold::GetLegalHoldError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -112,9 +121,9 @@ pub fn de_get_legal_hold_http_response(
 
 pub(crate) fn de_get_legal_hold(
     value: &[u8],
-    mut builder: crate::output::get_legal_hold_output::Builder,
+    mut builder: crate::operation::get_legal_hold::builders::GetLegalHoldOutputBuilder,
 ) -> Result<
-    crate::output::get_legal_hold_output::Builder,
+    crate::operation::get_legal_hold::builders::GetLegalHoldOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =
@@ -199,7 +208,7 @@ pub(crate) fn de_get_legal_hold(
                             )?
                             .map(|s| {
                                 s.to_unescaped()
-                                    .map(|u| crate::model::LegalHoldStatus::from(u.as_ref()))
+                                    .map(|u| crate::types::LegalHoldStatus::from(u.as_ref()))
                             })
                             .transpose()?,
                         );

@@ -2,7 +2,7 @@
 pub(crate) fn de_invalid_signals<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::InvalidSignal>>,
+    Option<std::vec::Vec<crate::types::InvalidSignal>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_disk_snapshot_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DiskSnapshot>>,
+    Option<std::vec::Vec<crate::types::DiskSnapshot>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

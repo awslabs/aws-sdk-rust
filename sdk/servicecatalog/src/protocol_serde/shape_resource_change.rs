@@ -2,7 +2,7 @@
 pub(crate) fn de_resource_change<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ResourceChange>,
+    Option<crate::types::ResourceChange>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::resource_change::Builder::default();
+            let mut builder = crate::types::builders::ResourceChangeBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::ChangeAction::from(u.as_ref()))
+                                            .map(|u| crate::types::ChangeAction::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -69,7 +69,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::Replacement::from(u.as_ref()))
+                                            .map(|u| crate::types::Replacement::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

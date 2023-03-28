@@ -2,7 +2,7 @@
 pub(crate) fn de_row_level_permission_tag_rule_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::RowLevelPermissionTagRule>>,
+    Option<std::vec::Vec<crate::types::RowLevelPermissionTagRule>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

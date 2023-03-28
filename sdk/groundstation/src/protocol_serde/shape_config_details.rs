@@ -2,7 +2,7 @@
 pub(crate) fn de_config_details<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ConfigDetails>,
+    Option<crate::types::ConfigDetails>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -29,26 +29,26 @@ where
                     }
                     variant = match key.to_unescaped()?.as_ref() {
                             "endpointDetails" => {
-                                Some(crate::model::ConfigDetails::EndpointDetails(
+                                Some(crate::types::ConfigDetails::EndpointDetails(
                                     crate::protocol_serde::shape_endpoint_details::de_endpoint_details(tokens)?
                                     .ok_or_else(|| aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'endpointDetails' cannot be null"))?
                                 ))
                             }
                             "antennaDemodDecodeDetails" => {
-                                Some(crate::model::ConfigDetails::AntennaDemodDecodeDetails(
+                                Some(crate::types::ConfigDetails::AntennaDemodDecodeDetails(
                                     crate::protocol_serde::shape_antenna_demod_decode_details::de_antenna_demod_decode_details(tokens)?
                                     .ok_or_else(|| aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'antennaDemodDecodeDetails' cannot be null"))?
                                 ))
                             }
                             "s3RecordingDetails" => {
-                                Some(crate::model::ConfigDetails::S3RecordingDetails(
+                                Some(crate::types::ConfigDetails::S3RecordingDetails(
                                     crate::protocol_serde::shape_s3_recording_details::de_s3_recording_details(tokens)?
                                     .ok_or_else(|| aws_smithy_json::deserialize::error::DeserializeError::custom("value for 's3RecordingDetails' cannot be null"))?
                                 ))
                             }
                             _ => {
                                                                       aws_smithy_json::deserialize::token::skip_value(tokens)?;
-                                                                      Some(crate::model::ConfigDetails::Unknown)
+                                                                      Some(crate::types::ConfigDetails::Unknown)
                                                                     }
                         };
                 }

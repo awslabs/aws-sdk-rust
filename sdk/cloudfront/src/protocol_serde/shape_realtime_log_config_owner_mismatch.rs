@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_realtime_log_config_owner_mismatch_xml_err(
     inp: &[u8],
-    mut builder: crate::error::realtime_log_config_owner_mismatch::Builder,
+    mut builder: crate::types::error::builders::RealtimeLogConfigOwnerMismatchBuilder,
 ) -> Result<
-    crate::error::realtime_log_config_owner_mismatch::Builder,
+    crate::types::error::builders::RealtimeLogConfigOwnerMismatchBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

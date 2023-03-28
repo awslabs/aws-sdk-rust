@@ -3,34 +3,37 @@
 pub fn de_create_network_interface_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateNetworkInterfaceOutput,
-    crate::error::CreateNetworkInterfaceError,
+    crate::operation::create_network_interface::CreateNetworkInterfaceOutput,
+    crate::operation::create_network_interface::CreateNetworkInterfaceError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::CreateNetworkInterfaceError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::create_network_interface::CreateNetworkInterfaceError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::CreateNetworkInterfaceError::generic(generic))
+    Err(crate::operation::create_network_interface::CreateNetworkInterfaceError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_network_interface_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateNetworkInterfaceOutput,
-    crate::error::CreateNetworkInterfaceError,
+    crate::operation::create_network_interface::CreateNetworkInterfaceOutput,
+    crate::operation::create_network_interface::CreateNetworkInterfaceError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::create_network_interface_output::Builder::default();
+        let mut output = crate::operation::create_network_interface::builders::CreateNetworkInterfaceOutputBuilder::default();
         let _ = response;
         output =
             crate::protocol_serde::shape_create_network_interface::de_create_network_interface(
                 response.body().as_ref(),
                 output,
             )
-            .map_err(crate::error::CreateNetworkInterfaceError::unhandled)?;
+            .map_err(
+                crate::operation::create_network_interface::CreateNetworkInterfaceError::unhandled,
+            )?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -41,9 +44,9 @@ pub fn de_create_network_interface_http_response(
 #[allow(unused_mut)]
 pub fn de_create_network_interface(
     inp: &[u8],
-    mut builder: crate::output::create_network_interface_output::Builder,
+    mut builder: crate::operation::create_network_interface::builders::CreateNetworkInterfaceOutputBuilder,
 ) -> Result<
-    crate::output::create_network_interface_output::Builder,
+    crate::operation::create_network_interface::builders::CreateNetworkInterfaceOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

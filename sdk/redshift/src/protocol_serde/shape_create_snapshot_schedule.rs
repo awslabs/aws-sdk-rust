@@ -3,130 +3,130 @@
 pub fn de_create_snapshot_schedule_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateSnapshotScheduleOutput,
-    crate::error::CreateSnapshotScheduleError,
+    crate::operation::create_snapshot_schedule::CreateSnapshotScheduleOutput,
+    crate::operation::create_snapshot_schedule::CreateSnapshotScheduleError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::CreateSnapshotScheduleError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::create_snapshot_schedule::CreateSnapshotScheduleError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::CreateSnapshotScheduleError::unhandled(
-                generic,
-            ))
-        }
-    };
+    let error_code =
+        match generic.code() {
+            Some(code) => code,
+            None => return Err(
+                crate::operation::create_snapshot_schedule::CreateSnapshotScheduleError::unhandled(
+                    generic,
+                ),
+            ),
+        };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidSchedule" => crate::error::CreateSnapshotScheduleError::InvalidScheduleFault({
+        "InvalidSchedule" => crate::operation::create_snapshot_schedule::CreateSnapshotScheduleError::InvalidScheduleFault({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::invalid_schedule_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_schedule_fault::de_invalid_schedule_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateSnapshotScheduleError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidScheduleFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_schedule_fault::de_invalid_schedule_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_snapshot_schedule::CreateSnapshotScheduleError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "InvalidTagFault" => {
-            crate::error::CreateSnapshotScheduleError::InvalidTagFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidTagFault" => crate::operation::create_snapshot_schedule::CreateSnapshotScheduleError::InvalidTagFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_tag_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidTagFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_tag_fault::de_invalid_tag_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateSnapshotScheduleError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_tag_fault::de_invalid_tag_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_snapshot_schedule::CreateSnapshotScheduleError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ScheduleDefinitionTypeUnsupported" => {
-            crate::error::CreateSnapshotScheduleError::ScheduleDefinitionTypeUnsupportedFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ScheduleDefinitionTypeUnsupported" => crate::operation::create_snapshot_schedule::CreateSnapshotScheduleError::ScheduleDefinitionTypeUnsupportedFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::schedule_definition_type_unsupported_fault::Builder::default(
-                        );
+                    let mut output = crate::types::error::builders::ScheduleDefinitionTypeUnsupportedFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_schedule_definition_type_unsupported_fault::de_schedule_definition_type_unsupported_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateSnapshotScheduleError::unhandled)?;
+                    output = crate::protocol_serde::shape_schedule_definition_type_unsupported_fault::de_schedule_definition_type_unsupported_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_snapshot_schedule::CreateSnapshotScheduleError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "SnapshotScheduleAlreadyExists" => {
-            crate::error::CreateSnapshotScheduleError::SnapshotScheduleAlreadyExistsFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "SnapshotScheduleAlreadyExists" => crate::operation::create_snapshot_schedule::CreateSnapshotScheduleError::SnapshotScheduleAlreadyExistsFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::snapshot_schedule_already_exists_fault::Builder::default();
+                    let mut output = crate::types::error::builders::SnapshotScheduleAlreadyExistsFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_snapshot_schedule_already_exists_fault::de_snapshot_schedule_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateSnapshotScheduleError::unhandled)?;
+                    output = crate::protocol_serde::shape_snapshot_schedule_already_exists_fault::de_snapshot_schedule_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_snapshot_schedule::CreateSnapshotScheduleError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "SnapshotScheduleQuotaExceeded" => {
-            crate::error::CreateSnapshotScheduleError::SnapshotScheduleQuotaExceededFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "SnapshotScheduleQuotaExceeded" => crate::operation::create_snapshot_schedule::CreateSnapshotScheduleError::SnapshotScheduleQuotaExceededFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::snapshot_schedule_quota_exceeded_fault::Builder::default();
+                    let mut output = crate::types::error::builders::SnapshotScheduleQuotaExceededFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_snapshot_schedule_quota_exceeded_fault::de_snapshot_schedule_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateSnapshotScheduleError::unhandled)?;
+                    output = crate::protocol_serde::shape_snapshot_schedule_quota_exceeded_fault::de_snapshot_schedule_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_snapshot_schedule::CreateSnapshotScheduleError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "TagLimitExceededFault" => {
-            crate::error::CreateSnapshotScheduleError::TagLimitExceededFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TagLimitExceededFault" => crate::operation::create_snapshot_schedule::CreateSnapshotScheduleError::TagLimitExceededFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::tag_limit_exceeded_fault::Builder::default();
+                    let mut output = crate::types::error::builders::TagLimitExceededFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_tag_limit_exceeded_fault::de_tag_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateSnapshotScheduleError::unhandled)?;
+                    output = crate::protocol_serde::shape_tag_limit_exceeded_fault::de_tag_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_snapshot_schedule::CreateSnapshotScheduleError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::CreateSnapshotScheduleError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::create_snapshot_schedule::CreateSnapshotScheduleError::generic(generic)
     })
 }
 
@@ -134,19 +134,21 @@ pub fn de_create_snapshot_schedule_http_error(
 pub fn de_create_snapshot_schedule_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateSnapshotScheduleOutput,
-    crate::error::CreateSnapshotScheduleError,
+    crate::operation::create_snapshot_schedule::CreateSnapshotScheduleOutput,
+    crate::operation::create_snapshot_schedule::CreateSnapshotScheduleError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::create_snapshot_schedule_output::Builder::default();
+        let mut output = crate::operation::create_snapshot_schedule::builders::CreateSnapshotScheduleOutputBuilder::default();
         let _ = response;
         output =
             crate::protocol_serde::shape_create_snapshot_schedule::de_create_snapshot_schedule(
                 response.body().as_ref(),
                 output,
             )
-            .map_err(crate::error::CreateSnapshotScheduleError::unhandled)?;
+            .map_err(
+                crate::operation::create_snapshot_schedule::CreateSnapshotScheduleError::unhandled,
+            )?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -157,9 +159,9 @@ pub fn de_create_snapshot_schedule_http_response(
 #[allow(unused_mut)]
 pub fn de_create_snapshot_schedule(
     inp: &[u8],
-    mut builder: crate::output::create_snapshot_schedule_output::Builder,
+    mut builder: crate::operation::create_snapshot_schedule::builders::CreateSnapshotScheduleOutputBuilder,
 ) -> Result<
-    crate::output::create_snapshot_schedule_output::Builder,
+    crate::operation::create_snapshot_schedule::builders::CreateSnapshotScheduleOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

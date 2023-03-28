@@ -2,7 +2,7 @@
 pub(crate) fn de_speke_key_provider<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::SpekeKeyProvider>,
+    Option<crate::types::SpekeKeyProvider>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::speke_key_provider::Builder::default();
+            let mut builder = crate::types::builders::SpekeKeyProviderBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -94,7 +94,7 @@ where
 
 pub fn ser_speke_key_provider(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::SpekeKeyProvider,
+    input: &crate::types::SpekeKeyProvider,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.certificate_arn {
         object.key("certificateArn").string(var_1.as_str());

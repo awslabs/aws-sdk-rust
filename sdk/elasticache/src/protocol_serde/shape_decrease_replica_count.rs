@@ -3,238 +3,232 @@
 pub fn de_decrease_replica_count_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DecreaseReplicaCountOutput,
-    crate::error::DecreaseReplicaCountError,
+    crate::operation::decrease_replica_count::DecreaseReplicaCountOutput,
+    crate::operation::decrease_replica_count::DecreaseReplicaCountError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DecreaseReplicaCountError::unhandled)?;
+        .map_err(crate::operation::decrease_replica_count::DecreaseReplicaCountError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DecreaseReplicaCountError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::decrease_replica_count::DecreaseReplicaCountError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ClusterQuotaForCustomerExceeded" => {
-            crate::error::DecreaseReplicaCountError::ClusterQuotaForCustomerExceededFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "ClusterQuotaForCustomerExceeded" => crate::operation::decrease_replica_count::DecreaseReplicaCountError::ClusterQuotaForCustomerExceededFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::cluster_quota_for_customer_exceeded_fault::Builder::default();
+                    let mut output = crate::types::error::builders::ClusterQuotaForCustomerExceededFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_cluster_quota_for_customer_exceeded_fault::de_cluster_quota_for_customer_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicaCountError::unhandled)?;
+                    output = crate::protocol_serde::shape_cluster_quota_for_customer_exceeded_fault::de_cluster_quota_for_customer_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::decrease_replica_count::DecreaseReplicaCountError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InsufficientCacheClusterCapacity" => {
-            crate::error::DecreaseReplicaCountError::InsufficientCacheClusterCapacityFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InsufficientCacheClusterCapacity" => crate::operation::decrease_replica_count::DecreaseReplicaCountError::InsufficientCacheClusterCapacityFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::insufficient_cache_cluster_capacity_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InsufficientCacheClusterCapacityFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_insufficient_cache_cluster_capacity_fault::de_insufficient_cache_cluster_capacity_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicaCountError::unhandled)?;
+                    output = crate::protocol_serde::shape_insufficient_cache_cluster_capacity_fault::de_insufficient_cache_cluster_capacity_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::decrease_replica_count::DecreaseReplicaCountError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidCacheClusterState" => {
-            crate::error::DecreaseReplicaCountError::InvalidCacheClusterStateFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidCacheClusterState" => crate::operation::decrease_replica_count::DecreaseReplicaCountError::InvalidCacheClusterStateFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_cache_cluster_state_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidCacheClusterStateFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_cache_cluster_state_fault::de_invalid_cache_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicaCountError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_cache_cluster_state_fault::de_invalid_cache_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::decrease_replica_count::DecreaseReplicaCountError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidParameterCombination" => {
-            crate::error::DecreaseReplicaCountError::InvalidParameterCombinationException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidParameterCombination" => crate::operation::decrease_replica_count::DecreaseReplicaCountError::InvalidParameterCombinationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_parameter_combination_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidParameterCombinationExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_combination_exception::de_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicaCountError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_combination_exception::de_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::decrease_replica_count::DecreaseReplicaCountError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidParameterValue" => {
-            crate::error::DecreaseReplicaCountError::InvalidParameterValueException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidParameterValue" => crate::operation::decrease_replica_count::DecreaseReplicaCountError::InvalidParameterValueException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_parameter_value_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicaCountError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::decrease_replica_count::DecreaseReplicaCountError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidReplicationGroupState" => {
-            crate::error::DecreaseReplicaCountError::InvalidReplicationGroupStateFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidReplicationGroupState" => crate::operation::decrease_replica_count::DecreaseReplicaCountError::InvalidReplicationGroupStateFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_replication_group_state_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidReplicationGroupStateFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_replication_group_state_fault::de_invalid_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicaCountError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_replication_group_state_fault::de_invalid_replication_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::decrease_replica_count::DecreaseReplicaCountError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidVPCNetworkStateFault" => {
-            crate::error::DecreaseReplicaCountError::InvalidVpcNetworkStateFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidVPCNetworkStateFault" => crate::operation::decrease_replica_count::DecreaseReplicaCountError::InvalidVpcNetworkStateFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_vpc_network_state_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidVpcNetworkStateFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_vpc_network_state_fault::de_invalid_vpc_network_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicaCountError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_vpc_network_state_fault::de_invalid_vpc_network_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::decrease_replica_count::DecreaseReplicaCountError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "NodeGroupsPerReplicationGroupQuotaExceeded" => {
-            crate::error::DecreaseReplicaCountError::NodeGroupsPerReplicationGroupQuotaExceededFault(
-                {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "NodeGroupsPerReplicationGroupQuotaExceeded" => crate::operation::decrease_replica_count::DecreaseReplicaCountError::NodeGroupsPerReplicationGroupQuotaExceededFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                    let mut output = crate::error::node_groups_per_replication_group_quota_exceeded_fault::Builder::default();
-                        let _ = response;
-                        output = crate::protocol_serde::shape_node_groups_per_replication_group_quota_exceeded_fault::de_node_groups_per_replication_group_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicaCountError::unhandled)?;
-                        let output = output.meta(generic);
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            )
-        }
-        "NodeQuotaForCustomerExceeded" => {
-            crate::error::DecreaseReplicaCountError::NodeQuotaForCustomerExceededFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::node_quota_for_customer_exceeded_fault::Builder::default();
+                    let mut output = crate::types::error::builders::NodeGroupsPerReplicationGroupQuotaExceededFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_node_quota_for_customer_exceeded_fault::de_node_quota_for_customer_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicaCountError::unhandled)?;
+                    output = crate::protocol_serde::shape_node_groups_per_replication_group_quota_exceeded_fault::de_node_groups_per_replication_group_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::decrease_replica_count::DecreaseReplicaCountError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "NoOperationFault" => {
-            crate::error::DecreaseReplicaCountError::NoOperationFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "NodeQuotaForCustomerExceeded" => crate::operation::decrease_replica_count::DecreaseReplicaCountError::NodeQuotaForCustomerExceededFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::no_operation_fault::Builder::default();
+                    let mut output = crate::types::error::builders::NodeQuotaForCustomerExceededFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_no_operation_fault::de_no_operation_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicaCountError::unhandled)?;
+                    output = crate::protocol_serde::shape_node_quota_for_customer_exceeded_fault::de_node_quota_for_customer_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::decrease_replica_count::DecreaseReplicaCountError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ReplicationGroupNotFoundFault" => {
-            crate::error::DecreaseReplicaCountError::ReplicationGroupNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "NoOperationFault" => crate::operation::decrease_replica_count::DecreaseReplicaCountError::NoOperationFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::replication_group_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::NoOperationFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_replication_group_not_found_fault::de_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicaCountError::unhandled)?;
+                    output = crate::protocol_serde::shape_no_operation_fault::de_no_operation_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::decrease_replica_count::DecreaseReplicaCountError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ServiceLinkedRoleNotFoundFault" => {
-            crate::error::DecreaseReplicaCountError::ServiceLinkedRoleNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ReplicationGroupNotFoundFault" => crate::operation::decrease_replica_count::DecreaseReplicaCountError::ReplicationGroupNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::service_linked_role_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::ReplicationGroupNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_linked_role_not_found_fault::de_service_linked_role_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DecreaseReplicaCountError::unhandled)?;
+                    output = crate::protocol_serde::shape_replication_group_not_found_fault::de_replication_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::decrease_replica_count::DecreaseReplicaCountError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DecreaseReplicaCountError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ServiceLinkedRoleNotFoundFault" => crate::operation::decrease_replica_count::DecreaseReplicaCountError::ServiceLinkedRoleNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ServiceLinkedRoleNotFoundFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_service_linked_role_not_found_fault::de_service_linked_role_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::decrease_replica_count::DecreaseReplicaCountError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::decrease_replica_count::DecreaseReplicaCountError::generic(generic)
     })
 }
 
@@ -242,18 +236,18 @@ pub fn de_decrease_replica_count_http_error(
 pub fn de_decrease_replica_count_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DecreaseReplicaCountOutput,
-    crate::error::DecreaseReplicaCountError,
+    crate::operation::decrease_replica_count::DecreaseReplicaCountOutput,
+    crate::operation::decrease_replica_count::DecreaseReplicaCountError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::decrease_replica_count_output::Builder::default();
+        let mut output = crate::operation::decrease_replica_count::builders::DecreaseReplicaCountOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_decrease_replica_count::de_decrease_replica_count(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DecreaseReplicaCountError::unhandled)?;
+        .map_err(crate::operation::decrease_replica_count::DecreaseReplicaCountError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -264,9 +258,9 @@ pub fn de_decrease_replica_count_http_response(
 #[allow(unused_mut)]
 pub fn de_decrease_replica_count(
     inp: &[u8],
-    mut builder: crate::output::decrease_replica_count_output::Builder,
+    mut builder: crate::operation::decrease_replica_count::builders::DecreaseReplicaCountOutputBuilder,
 ) -> Result<
-    crate::output::decrease_replica_count_output::Builder,
+    crate::operation::decrease_replica_count::builders::DecreaseReplicaCountOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

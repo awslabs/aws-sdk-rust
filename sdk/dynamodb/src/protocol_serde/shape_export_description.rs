@@ -2,7 +2,7 @@
 pub(crate) fn de_export_description<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ExportDescription>,
+    Option<crate::types::ExportDescription>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::export_description::Builder::default();
+            let mut builder = crate::types::builders::ExportDescriptionBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -39,7 +39,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::ExportStatus::from(u.as_ref()))
+                                            .map(|u| crate::types::ExportStatus::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -138,7 +138,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::S3SseAlgorithm::from(u.as_ref()))
+                                            .map(|u| crate::types::S3SseAlgorithm::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -177,7 +177,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::ExportFormat::from(u.as_ref()))
+                                            .map(|u| crate::types::ExportFormat::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

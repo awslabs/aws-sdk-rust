@@ -2,7 +2,7 @@
 pub(crate) fn de_s3_import_source<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::S3ImportSource>,
+    Option<crate::types::S3ImportSource>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::s3_import_source::Builder::default();
+            let mut builder = crate::types::builders::S3ImportSourceBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -75,7 +75,7 @@ where
 
 pub fn ser_s3_import_source(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::S3ImportSource,
+    input: &crate::types::S3ImportSource,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.s3_location_uri {
         object.key("S3LocationUri").string(var_1.as_str());

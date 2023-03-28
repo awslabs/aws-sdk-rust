@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_refresh_preferences(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::RefreshPreferences,
+    input: &crate::types::RefreshPreferences,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("MinHealthyPercentage");
@@ -52,9 +52,9 @@ pub fn ser_refresh_preferences(
 
 pub fn de_refresh_preferences(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::RefreshPreferences, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::RefreshPreferences, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::RefreshPreferences::builder();
+    let mut builder = crate::types::RefreshPreferences::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("MinHealthyPercentage") /* MinHealthyPercentage com.amazonaws.autoscaling#RefreshPreferences$MinHealthyPercentage */ =>  {

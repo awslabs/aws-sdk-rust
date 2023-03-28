@@ -2,7 +2,7 @@
 pub(crate) fn de_bucket_count_policy_allows_unencrypted_object_uploads<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::BucketCountPolicyAllowsUnencryptedObjectUploads>,
+    Option<crate::types::BucketCountPolicyAllowsUnencryptedObjectUploads>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::bucket_count_policy_allows_unencrypted_object_uploads::Builder::default();
+            let mut builder = crate::types::builders::BucketCountPolicyAllowsUnencryptedObjectUploadsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

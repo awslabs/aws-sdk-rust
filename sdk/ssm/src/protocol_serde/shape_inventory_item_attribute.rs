@@ -2,7 +2,7 @@
 pub(crate) fn de_inventory_item_attribute<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::InventoryItemAttribute>,
+    Option<crate::types::InventoryItemAttribute>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::inventory_item_attribute::Builder::default();
+            let mut builder = crate::types::builders::InventoryItemAttributeBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -39,7 +39,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::InventoryAttributeDataType::from(
+                                            crate::types::InventoryAttributeDataType::from(
                                                 u.as_ref(),
                                             )
                                         })

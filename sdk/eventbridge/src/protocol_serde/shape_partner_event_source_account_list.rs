@@ -2,7 +2,7 @@
 pub(crate) fn de_partner_event_source_account_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::PartnerEventSourceAccount>>,
+    Option<std::vec::Vec<crate::types::PartnerEventSourceAccount>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

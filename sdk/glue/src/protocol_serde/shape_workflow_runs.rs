@@ -2,7 +2,7 @@
 pub(crate) fn de_workflow_runs<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::WorkflowRun>>,
+    Option<std::vec::Vec<crate::types::WorkflowRun>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

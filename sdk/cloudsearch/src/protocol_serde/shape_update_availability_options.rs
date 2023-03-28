@@ -3,143 +3,142 @@
 pub fn de_update_availability_options_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::UpdateAvailabilityOptionsOutput,
-    crate::error::UpdateAvailabilityOptionsError,
+    crate::operation::update_availability_options::UpdateAvailabilityOptionsOutput,
+    crate::operation::update_availability_options::UpdateAvailabilityOptionsError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::UpdateAvailabilityOptionsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::update_availability_options::UpdateAvailabilityOptionsError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::UpdateAvailabilityOptionsError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::update_availability_options::UpdateAvailabilityOptionsError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BaseException" => crate::error::UpdateAvailabilityOptionsError::BaseException({
+        "BaseException" => crate::operation::update_availability_options::UpdateAvailabilityOptionsError::BaseException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::base_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_base_exception::de_base_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::UpdateAvailabilityOptionsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::BaseExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_base_exception::de_base_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::update_availability_options::UpdateAvailabilityOptionsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "DisabledAction" => {
-            crate::error::UpdateAvailabilityOptionsError::DisabledOperationException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::disabled_operation_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_disabled_operation_exception::de_disabled_operation_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateAvailabilityOptionsError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InternalException" => {
-            crate::error::UpdateAvailabilityOptionsError::InternalException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::internal_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_exception::de_internal_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateAvailabilityOptionsError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InvalidType" => crate::error::UpdateAvailabilityOptionsError::InvalidTypeException({
+        "DisabledAction" => crate::operation::update_availability_options::UpdateAvailabilityOptionsError::DisabledOperationException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::invalid_type_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_type_exception::de_invalid_type_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateAvailabilityOptionsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::DisabledOperationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_disabled_operation_exception::de_disabled_operation_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::update_availability_options::UpdateAvailabilityOptionsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "LimitExceeded" => crate::error::UpdateAvailabilityOptionsError::LimitExceededException({
+        "InternalException" => crate::operation::update_availability_options::UpdateAvailabilityOptionsError::InternalException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::limit_exceeded_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateAvailabilityOptionsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InternalExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_exception::de_internal_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::update_availability_options::UpdateAvailabilityOptionsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "ResourceNotFound" => {
-            crate::error::UpdateAvailabilityOptionsError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidType" => crate::operation::update_availability_options::UpdateAvailabilityOptionsError::InvalidTypeException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidTypeExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateAvailabilityOptionsError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_type_exception::de_invalid_type_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::update_availability_options::UpdateAvailabilityOptionsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ValidationException" => {
-            crate::error::UpdateAvailabilityOptionsError::ValidationException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "LimitExceeded" => crate::operation::update_availability_options::UpdateAvailabilityOptionsError::LimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::validation_exception::Builder::default();
+                    let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateAvailabilityOptionsError::unhandled)?;
+                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::update_availability_options::UpdateAvailabilityOptionsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::UpdateAvailabilityOptionsError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceNotFound" => crate::operation::update_availability_options::UpdateAvailabilityOptionsError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::update_availability_options::UpdateAvailabilityOptionsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ValidationException" => crate::operation::update_availability_options::UpdateAvailabilityOptionsError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::update_availability_options::UpdateAvailabilityOptionsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::update_availability_options::UpdateAvailabilityOptionsError::generic(generic)
     })
 }
 
@@ -147,14 +146,14 @@ pub fn de_update_availability_options_http_error(
 pub fn de_update_availability_options_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::UpdateAvailabilityOptionsOutput,
-    crate::error::UpdateAvailabilityOptionsError,
+    crate::operation::update_availability_options::UpdateAvailabilityOptionsOutput,
+    crate::operation::update_availability_options::UpdateAvailabilityOptionsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::update_availability_options_output::Builder::default();
+        let mut output = crate::operation::update_availability_options::builders::UpdateAvailabilityOptionsOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_update_availability_options::de_update_availability_options(response.body().as_ref(), output).map_err(crate::error::UpdateAvailabilityOptionsError::unhandled)?;
+        output = crate::protocol_serde::shape_update_availability_options::de_update_availability_options(response.body().as_ref(), output).map_err(crate::operation::update_availability_options::UpdateAvailabilityOptionsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -165,9 +164,9 @@ pub fn de_update_availability_options_http_response(
 #[allow(unused_mut)]
 pub fn de_update_availability_options(
     inp: &[u8],
-    mut builder: crate::output::update_availability_options_output::Builder,
+    mut builder: crate::operation::update_availability_options::builders::UpdateAvailabilityOptionsOutputBuilder,
 ) -> Result<
-    crate::output::update_availability_options_output::Builder,
+    crate::operation::update_availability_options::builders::UpdateAvailabilityOptionsOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

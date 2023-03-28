@@ -2,7 +2,7 @@
 pub(crate) fn de_treatment_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Treatment>>,
+    Option<std::vec::Vec<crate::types::Treatment>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

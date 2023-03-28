@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_reserved_db_instances_offering_not_found_fault_xml_err(
     inp: &[u8],
-    mut builder: crate::error::reserved_db_instances_offering_not_found_fault::Builder,
+    mut builder: crate::types::error::builders::ReservedDbInstancesOfferingNotFoundFaultBuilder,
 ) -> Result<
-    crate::error::reserved_db_instances_offering_not_found_fault::Builder,
+    crate::types::error::builders::ReservedDbInstancesOfferingNotFoundFaultBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

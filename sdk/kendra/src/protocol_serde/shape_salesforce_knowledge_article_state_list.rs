@@ -2,7 +2,7 @@
 pub(crate) fn de_salesforce_knowledge_article_state_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SalesforceKnowledgeArticleState>>,
+    Option<std::vec::Vec<crate::types::SalesforceKnowledgeArticleState>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -29,7 +29,7 @@ where
                         )?
                         .map(|s| {
                             s.to_unescaped().map(|u| {
-                                crate::model::SalesforceKnowledgeArticleState::from(u.as_ref())
+                                crate::types::SalesforceKnowledgeArticleState::from(u.as_ref())
                             })
                         })
                         .transpose()?;

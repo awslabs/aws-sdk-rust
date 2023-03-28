@@ -2,7 +2,7 @@
 pub(crate) fn de_job_queue_detail<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::JobQueueDetail>,
+    Option<crate::types::JobQueueDetail>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::job_queue_detail::Builder::default();
+            let mut builder = crate::types::builders::JobQueueDetailBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -48,7 +48,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::JqState::from(u.as_ref()))
+                                            .map(|u| crate::types::JqState::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -69,7 +69,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::JqStatus::from(u.as_ref()))
+                                            .map(|u| crate::types::JqStatus::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

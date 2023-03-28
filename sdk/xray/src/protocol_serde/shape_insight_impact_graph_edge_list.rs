@@ -2,7 +2,7 @@
 pub(crate) fn de_insight_impact_graph_edge_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::InsightImpactGraphEdge>>,
+    Option<std::vec::Vec<crate::types::InsightImpactGraphEdge>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

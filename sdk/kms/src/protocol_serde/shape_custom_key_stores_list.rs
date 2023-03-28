@@ -2,7 +2,7 @@
 pub(crate) fn de_custom_key_stores_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CustomKeyStoresListEntry>>,
+    Option<std::vec::Vec<crate::types::CustomKeyStoresListEntry>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

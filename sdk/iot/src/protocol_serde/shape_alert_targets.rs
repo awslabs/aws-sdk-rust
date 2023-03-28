@@ -2,7 +2,7 @@
 pub(crate) fn de_alert_targets<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<crate::model::AlertTargetType, crate::model::AlertTarget>>,
+    Option<std::collections::HashMap<crate::types::AlertTargetType, crate::types::AlertTarget>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -23,7 +23,7 @@ where
                     Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         let key = key
                             .to_unescaped()
-                            .map(|u| crate::model::AlertTargetType::from(u.as_ref()))?;
+                            .map(|u| crate::types::AlertTargetType::from(u.as_ref()))?;
                         let value =
                             crate::protocol_serde::shape_alert_target::de_alert_target(tokens)?;
                         if let Some(value) = value {

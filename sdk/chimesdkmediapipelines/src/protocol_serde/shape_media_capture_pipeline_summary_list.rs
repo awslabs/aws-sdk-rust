@@ -2,7 +2,7 @@
 pub(crate) fn de_media_capture_pipeline_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::MediaCapturePipelineSummary>>,
+    Option<std::vec::Vec<crate::types::MediaCapturePipelineSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

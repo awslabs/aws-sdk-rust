@@ -2,7 +2,7 @@
 pub(crate) fn de_routing_profile_queue_config_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::RoutingProfileQueueConfigSummary>,
+    Option<crate::types::RoutingProfileQueueConfigSummary>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::routing_profile_queue_config_summary::Builder::default();
+                crate::types::builders::RoutingProfileQueueConfigSummaryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -76,7 +76,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::Channel::from(u.as_ref()))
+                                            .map(|u| crate::types::Channel::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

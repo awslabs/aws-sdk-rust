@@ -2,26 +2,33 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_model_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetModelOutput, crate::error::GetModelError> {
+) -> std::result::Result<
+    crate::operation::get_model::GetModelOutput,
+    crate::operation::get_model::GetModelError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetModelError::unhandled)?;
+        .map_err(crate::operation::get_model::GetModelError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::GetModelError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::get_model::GetModelError::unhandled(
+                generic,
+            ))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "NotFoundException" => crate::error::GetModelError::NotFoundException({
+        "NotFoundException" => crate::operation::get_model::GetModelError::NotFoundException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_exception::Builder::default();
+                let mut output = crate::types::error::builders::NotFoundExceptionBuilder::default();
                 let _ = response;
-                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetModelError::unhandled)?;
+                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_model::GetModelError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -30,36 +37,42 @@ pub fn de_get_model_http_error(
             }
             tmp
         }),
-        "TooManyRequestsException" => crate::error::GetModelError::TooManyRequestsException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "TooManyRequestsException" => {
+            crate::operation::get_model::GetModelError::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetModelError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::GetModelError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_model::GetModelError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::get_model::GetModelError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_model_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetModelOutput, crate::error::GetModelError> {
+) -> std::result::Result<
+    crate::operation::get_model::GetModelOutput,
+    crate::operation::get_model::GetModelError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_model_output::Builder::default();
+        let mut output = crate::operation::get_model::builders::GetModelOutputBuilder::default();
         let _ = response;
         output =
             crate::protocol_serde::shape_get_model::de_get_model(response.body().as_ref(), output)
-                .map_err(crate::error::GetModelError::unhandled)?;
+                .map_err(crate::operation::get_model::GetModelError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -69,9 +82,9 @@ pub fn de_get_model_http_response(
 
 pub(crate) fn de_get_model(
     value: &[u8],
-    mut builder: crate::output::get_model_output::Builder,
+    mut builder: crate::operation::get_model::builders::GetModelOutputBuilder,
 ) -> Result<
-    crate::output::get_model_output::Builder,
+    crate::operation::get_model::builders::GetModelOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

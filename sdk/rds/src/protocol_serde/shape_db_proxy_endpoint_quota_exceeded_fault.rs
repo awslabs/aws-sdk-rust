@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_db_proxy_endpoint_quota_exceeded_fault_xml_err(
     inp: &[u8],
-    mut builder: crate::error::db_proxy_endpoint_quota_exceeded_fault::Builder,
+    mut builder: crate::types::error::builders::DbProxyEndpointQuotaExceededFaultBuilder,
 ) -> Result<
-    crate::error::db_proxy_endpoint_quota_exceeded_fault::Builder,
+    crate::types::error::builders::DbProxyEndpointQuotaExceededFaultBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

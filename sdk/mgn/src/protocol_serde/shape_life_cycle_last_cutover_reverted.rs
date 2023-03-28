@@ -2,7 +2,7 @@
 pub(crate) fn de_life_cycle_last_cutover_reverted<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::LifeCycleLastCutoverReverted>,
+    Option<crate::types::LifeCycleLastCutoverReverted>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::life_cycle_last_cutover_reverted::Builder::default();
+            let mut builder =
+                crate::types::builders::LifeCycleLastCutoverRevertedBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

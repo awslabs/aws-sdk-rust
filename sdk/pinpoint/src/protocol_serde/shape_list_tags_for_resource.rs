@@ -3,27 +3,27 @@
 pub fn de_list_tags_for_resource_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListTagsForResourceOutput,
-    crate::error::ListTagsForResourceError,
+    crate::operation::list_tags_for_resource::ListTagsForResourceOutput,
+    crate::operation::list_tags_for_resource::ListTagsForResourceError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+        .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::ListTagsForResourceError::generic(generic))
+    Err(crate::operation::list_tags_for_resource::ListTagsForResourceError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_tags_for_resource_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListTagsForResourceOutput,
-    crate::error::ListTagsForResourceError,
+    crate::operation::list_tags_for_resource::ListTagsForResourceOutput,
+    crate::operation::list_tags_for_resource::ListTagsForResourceError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_tags_for_resource_output::Builder::default();
+        let mut output = crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder::default();
         let _ = response;
         output = output.set_tags_model(
             crate::protocol_serde::shape_list_tags_for_resource_output::de_tags_model_payload(

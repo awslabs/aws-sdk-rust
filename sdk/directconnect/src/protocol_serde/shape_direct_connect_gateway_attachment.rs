@@ -2,7 +2,7 @@
 pub(crate) fn de_direct_connect_gateway_attachment<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::DirectConnectGatewayAttachment>,
+    Option<crate::types::DirectConnectGatewayAttachment>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::direct_connect_gateway_attachment::Builder::default();
+            let mut builder =
+                crate::types::builders::DirectConnectGatewayAttachmentBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -66,7 +67,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::DirectConnectGatewayAttachmentState::from(
+                                            crate::types::DirectConnectGatewayAttachmentState::from(
                                                 u.as_ref(),
                                             )
                                         })
@@ -81,7 +82,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::DirectConnectGatewayAttachmentType::from(
+                                            crate::types::DirectConnectGatewayAttachmentType::from(
                                                 u.as_ref(),
                                             )
                                         })

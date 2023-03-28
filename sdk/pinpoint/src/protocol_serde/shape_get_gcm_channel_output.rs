@@ -2,13 +2,13 @@
 pub fn de_gcm_channel_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::GcmChannelResponse>,
-    crate::error::GetGcmChannelError,
+    std::option::Option<crate::types::GcmChannelResponse>,
+    crate::operation::get_gcm_channel::GetGcmChannelError,
 > {
     (!body.is_empty())
         .then(|| {
             crate::protocol_serde::shape_gcm_channel_response::de_gcm_channel_response_payload(body)
-                .map_err(crate::error::GetGcmChannelError::unhandled)
+                .map_err(crate::operation::get_gcm_channel::GetGcmChannelError::unhandled)
         })
         .transpose()
 }

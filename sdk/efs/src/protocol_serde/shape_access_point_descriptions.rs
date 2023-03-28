@@ -2,7 +2,7 @@
 pub(crate) fn de_access_point_descriptions<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AccessPointDescription>>,
+    Option<std::vec::Vec<crate::types::AccessPointDescription>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

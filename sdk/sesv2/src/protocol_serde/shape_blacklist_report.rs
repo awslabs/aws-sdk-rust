@@ -3,7 +3,7 @@ pub(crate) fn de_blacklist_report<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<
-        std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::BlacklistEntry>>,
+        std::collections::HashMap<std::string::String, std::vec::Vec<crate::types::BlacklistEntry>>,
     >,
     aws_smithy_json::deserialize::error::DeserializeError,
 >

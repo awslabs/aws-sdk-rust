@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_vod_source<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::VodSource>>,
+    Option<std::vec::Vec<crate::types::VodSource>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

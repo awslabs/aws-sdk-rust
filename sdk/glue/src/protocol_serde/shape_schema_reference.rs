@@ -2,7 +2,7 @@
 pub(crate) fn de_schema_reference<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::SchemaReference>,
+    Option<crate::types::SchemaReference>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::schema_reference::Builder::default();
+            let mut builder = crate::types::builders::SchemaReferenceBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -71,7 +71,7 @@ where
 
 pub fn ser_schema_reference(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::SchemaReference,
+    input: &crate::types::SchemaReference,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.schema_id {
         #[allow(unused_mut)]

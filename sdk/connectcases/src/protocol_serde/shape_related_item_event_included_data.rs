@@ -2,7 +2,7 @@
 pub(crate) fn de_related_item_event_included_data<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::RelatedItemEventIncludedData>,
+    Option<crate::types::RelatedItemEventIncludedData>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::related_item_event_included_data::Builder::default();
+            let mut builder =
+                crate::types::builders::RelatedItemEventIncludedDataBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -55,7 +56,7 @@ where
 
 pub fn ser_related_item_event_included_data(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::RelatedItemEventIncludedData,
+    input: &crate::types::RelatedItemEventIncludedData,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.include_content {
         object.key("includeContent").boolean(*var_1);

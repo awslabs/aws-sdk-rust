@@ -2,7 +2,7 @@
 pub(crate) fn de_user_profile_details<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::UserProfileDetails>,
+    Option<crate::types::UserProfileDetails>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::user_profile_details::Builder::default();
+            let mut builder = crate::types::builders::UserProfileDetailsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -48,7 +48,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::UserProfileStatus::from(u.as_ref())
+                                            crate::types::UserProfileStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

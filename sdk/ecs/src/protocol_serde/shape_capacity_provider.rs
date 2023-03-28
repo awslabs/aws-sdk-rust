@@ -2,7 +2,7 @@
 pub(crate) fn de_capacity_provider<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::CapacityProvider>,
+    Option<crate::types::CapacityProvider>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::capacity_provider::Builder::default();
+            let mut builder = crate::types::builders::CapacityProviderBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -48,7 +48,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::CapacityProviderStatus::from(u.as_ref())
+                                            crate::types::CapacityProviderStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -66,7 +66,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::CapacityProviderUpdateStatus::from(
+                                            crate::types::CapacityProviderUpdateStatus::from(
                                                 u.as_ref(),
                                             )
                                         })

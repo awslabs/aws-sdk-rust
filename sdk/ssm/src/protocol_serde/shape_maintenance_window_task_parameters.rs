@@ -5,7 +5,7 @@ pub(crate) fn de_maintenance_window_task_parameters<'a, I>(
     Option<
         std::collections::HashMap<
             std::string::String,
-            crate::model::MaintenanceWindowTaskParameterValueExpression,
+            crate::types::MaintenanceWindowTaskParameterValueExpression,
         >,
     >,
     aws_smithy_json::deserialize::error::DeserializeError,

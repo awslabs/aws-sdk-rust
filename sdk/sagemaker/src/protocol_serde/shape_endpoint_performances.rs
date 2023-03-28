@@ -2,7 +2,7 @@
 pub(crate) fn de_endpoint_performances<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::EndpointPerformance>>,
+    Option<std::vec::Vec<crate::types::EndpointPerformance>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

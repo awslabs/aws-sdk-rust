@@ -2,9 +2,11 @@
 #[allow(unused_mut)]
 pub fn de_invalid_required_protocol_xml_err(
     inp: &[u8],
-    mut builder: crate::error::invalid_required_protocol::Builder,
-) -> Result<crate::error::invalid_required_protocol::Builder, aws_smithy_xml::decode::XmlDecodeError>
-{
+    mut builder: crate::types::error::builders::InvalidRequiredProtocolBuilder,
+) -> Result<
+    crate::types::error::builders::InvalidRequiredProtocolBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     if inp.is_empty() {
         return Ok(builder);
     }

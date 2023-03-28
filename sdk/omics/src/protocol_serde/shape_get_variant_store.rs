@@ -2,57 +2,35 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_variant_store_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetVariantStoreOutput, crate::error::GetVariantStoreError> {
+) -> std::result::Result<
+    crate::operation::get_variant_store::GetVariantStoreOutput,
+    crate::operation::get_variant_store::GetVariantStoreError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetVariantStoreError::unhandled)?;
+        .map_err(crate::operation::get_variant_store::GetVariantStoreError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::GetVariantStoreError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::get_variant_store::GetVariantStoreError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::GetVariantStoreError::AccessDeniedException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::access_denied_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVariantStoreError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InternalServerException" => crate::error::GetVariantStoreError::InternalServerException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVariantStoreError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ResourceNotFoundException" => {
-            crate::error::GetVariantStoreError::ResourceNotFoundException({
+        "AccessDeniedException" => {
+            crate::operation::get_variant_store::GetVariantStoreError::AccessDeniedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::AccessDeniedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVariantStoreError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_variant_store::GetVariantStoreError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -62,53 +40,99 @@ pub fn de_get_variant_store_http_error(
                 tmp
             })
         }
-        "ThrottlingException" => crate::error::GetVariantStoreError::ThrottlingException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "InternalServerException" => {
+            crate::operation::get_variant_store::GetVariantStoreError::InternalServerException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::throttling_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVariantStoreError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ValidationException" => crate::error::GetVariantStoreError::ValidationException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InternalServerExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_variant_store::GetVariantStoreError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::operation::get_variant_store::GetVariantStoreError::ResourceNotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVariantStoreError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::GetVariantStoreError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_variant_store::GetVariantStoreError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ThrottlingException" => {
+            crate::operation::get_variant_store::GetVariantStoreError::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_variant_store::GetVariantStoreError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ValidationException" => {
+            crate::operation::get_variant_store::GetVariantStoreError::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_variant_store::GetVariantStoreError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::get_variant_store::GetVariantStoreError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_variant_store_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetVariantStoreOutput, crate::error::GetVariantStoreError> {
+) -> std::result::Result<
+    crate::operation::get_variant_store::GetVariantStoreOutput,
+    crate::operation::get_variant_store::GetVariantStoreError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_variant_store_output::Builder::default();
+        let mut output =
+            crate::operation::get_variant_store::builders::GetVariantStoreOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_get_variant_store::de_get_variant_store(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::GetVariantStoreError::unhandled)?;
+        .map_err(crate::operation::get_variant_store::GetVariantStoreError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -118,9 +142,9 @@ pub fn de_get_variant_store_http_response(
 
 pub(crate) fn de_get_variant_store(
     value: &[u8],
-    mut builder: crate::output::get_variant_store_output::Builder,
+    mut builder: crate::operation::get_variant_store::builders::GetVariantStoreOutputBuilder,
 ) -> Result<
-    crate::output::get_variant_store_output::Builder,
+    crate::operation::get_variant_store::builders::GetVariantStoreOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =
@@ -185,7 +209,7 @@ pub(crate) fn de_get_variant_store(
                             )?
                             .map(|s| {
                                 s.to_unescaped()
-                                    .map(|u| crate::model::StoreStatus::from(u.as_ref()))
+                                    .map(|u| crate::types::StoreStatus::from(u.as_ref()))
                             })
                             .transpose()?,
                         );

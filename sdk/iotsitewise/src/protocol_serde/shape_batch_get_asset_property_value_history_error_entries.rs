@@ -2,7 +2,7 @@
 pub(crate) fn de_batch_get_asset_property_value_history_error_entries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::BatchGetAssetPropertyValueHistoryErrorEntry>>,
+    Option<std::vec::Vec<crate::types::BatchGetAssetPropertyValueHistoryErrorEntry>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

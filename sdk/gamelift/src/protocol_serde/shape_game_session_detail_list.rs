@@ -2,7 +2,7 @@
 pub(crate) fn de_game_session_detail_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::GameSessionDetail>>,
+    Option<std::vec::Vec<crate::types::GameSessionDetail>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

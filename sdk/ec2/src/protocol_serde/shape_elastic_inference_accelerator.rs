@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_elastic_inference_accelerator(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::ElasticInferenceAccelerator,
+    input: &crate::types::ElasticInferenceAccelerator,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Type");

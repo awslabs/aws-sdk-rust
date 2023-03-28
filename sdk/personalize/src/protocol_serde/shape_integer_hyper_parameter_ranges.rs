@@ -2,7 +2,7 @@
 pub(crate) fn de_integer_hyper_parameter_ranges<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::IntegerHyperParameterRange>>,
+    Option<std::vec::Vec<crate::types::IntegerHyperParameterRange>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

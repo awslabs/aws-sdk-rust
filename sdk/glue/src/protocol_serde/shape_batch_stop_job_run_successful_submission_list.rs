@@ -2,7 +2,7 @@
 pub(crate) fn de_batch_stop_job_run_successful_submission_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::BatchStopJobRunSuccessfulSubmission>>,
+    Option<std::vec::Vec<crate::types::BatchStopJobRunSuccessfulSubmission>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

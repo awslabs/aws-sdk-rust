@@ -2,7 +2,7 @@
 pub(crate) fn de_customer_managed_channel_s3_storage_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::CustomerManagedChannelS3StorageSummary>,
+    Option<crate::types::CustomerManagedChannelS3StorageSummary>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::customer_managed_channel_s3_storage_summary::Builder::default();
+                crate::types::builders::CustomerManagedChannelS3StorageSummaryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

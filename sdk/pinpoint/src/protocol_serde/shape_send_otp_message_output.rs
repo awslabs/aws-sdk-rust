@@ -2,13 +2,13 @@
 pub fn de_message_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::MessageResponse>,
-    crate::error::SendOTPMessageError,
+    std::option::Option<crate::types::MessageResponse>,
+    crate::operation::send_otp_message::SendOTPMessageError,
 > {
     (!body.is_empty())
         .then(|| {
             crate::protocol_serde::shape_message_response::de_message_response_payload(body)
-                .map_err(crate::error::SendOTPMessageError::unhandled)
+                .map_err(crate::operation::send_otp_message::SendOTPMessageError::unhandled)
         })
         .transpose()
 }

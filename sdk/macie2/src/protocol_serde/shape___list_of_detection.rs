@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_detection<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Detection>>,
+    Option<std::vec::Vec<crate::types::Detection>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

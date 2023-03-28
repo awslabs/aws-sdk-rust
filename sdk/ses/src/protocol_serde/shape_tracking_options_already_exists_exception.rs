@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_tracking_options_already_exists_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::tracking_options_already_exists_exception::Builder,
+    mut builder: crate::types::error::builders::TrackingOptionsAlreadyExistsExceptionBuilder,
 ) -> Result<
-    crate::error::tracking_options_already_exists_exception::Builder,
+    crate::types::error::builders::TrackingOptionsAlreadyExistsExceptionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

@@ -2,7 +2,7 @@
 pub(crate) fn de_deployed_images<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DeployedImage>>,
+    Option<std::vec::Vec<crate::types::DeployedImage>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

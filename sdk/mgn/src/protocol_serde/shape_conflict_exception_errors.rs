@@ -2,7 +2,7 @@
 pub(crate) fn de_conflict_exception_errors<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ErrorDetails>>,
+    Option<std::vec::Vec<crate::types::ErrorDetails>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

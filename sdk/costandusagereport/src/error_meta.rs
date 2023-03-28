@@ -4,13 +4,13 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>A report with the specified name already exists in the account. Specify a different report name.</p>
-    DuplicateReportNameException(crate::error::DuplicateReportNameException),
+    DuplicateReportNameException(crate::types::error::DuplicateReportNameException),
     /// <p>An error on the server occurred during the processing of your request. Try again later.</p>
-    InternalErrorException(crate::error::InternalErrorException),
+    InternalErrorException(crate::types::error::InternalErrorException),
     /// <p>This account already has five reports defined. To define a new report, you must delete an existing report.</p>
-    ReportLimitReachedException(crate::error::ReportLimitReachedException),
+    ReportLimitReachedException(crate::types::error::ReportLimitReachedException),
     /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
-    ValidationException(crate::error::ValidationException),
+    ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled),
 }
@@ -25,13 +25,21 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteReportDefinitionError, R>>
-    for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_report_definition::DeleteReportDefinitionError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteReportDefinitionError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_report_definition::DeleteReportDefinitionError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -48,26 +56,30 @@ where
         }
     }
 }
-impl From<crate::error::DeleteReportDefinitionError> for Error {
-    fn from(err: crate::error::DeleteReportDefinitionError) -> Self {
+impl From<crate::operation::delete_report_definition::DeleteReportDefinitionError> for Error {
+    fn from(err: crate::operation::delete_report_definition::DeleteReportDefinitionError) -> Self {
         match err {
-            crate::error::DeleteReportDefinitionError::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::DeleteReportDefinitionError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::DeleteReportDefinitionError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_report_definition::DeleteReportDefinitionError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::delete_report_definition::DeleteReportDefinitionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_report_definition::DeleteReportDefinitionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeReportDefinitionsError, R>>
-    for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_report_definitions::DescribeReportDefinitionsError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeReportDefinitionsError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_report_definitions::DescribeReportDefinitionsError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -84,25 +96,31 @@ where
         }
     }
 }
-impl From<crate::error::DescribeReportDefinitionsError> for Error {
-    fn from(err: crate::error::DescribeReportDefinitionsError) -> Self {
+impl From<crate::operation::describe_report_definitions::DescribeReportDefinitionsError> for Error {
+    fn from(
+        err: crate::operation::describe_report_definitions::DescribeReportDefinitionsError,
+    ) -> Self {
         match err {
-            crate::error::DescribeReportDefinitionsError::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::DescribeReportDefinitionsError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::describe_report_definitions::DescribeReportDefinitionsError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::describe_report_definitions::DescribeReportDefinitionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ModifyReportDefinitionError, R>>
-    for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::modify_report_definition::ModifyReportDefinitionError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ModifyReportDefinitionError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::modify_report_definition::ModifyReportDefinitionError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -119,25 +137,30 @@ where
         }
     }
 }
-impl From<crate::error::ModifyReportDefinitionError> for Error {
-    fn from(err: crate::error::ModifyReportDefinitionError) -> Self {
+impl From<crate::operation::modify_report_definition::ModifyReportDefinitionError> for Error {
+    fn from(err: crate::operation::modify_report_definition::ModifyReportDefinitionError) -> Self {
         match err {
-            crate::error::ModifyReportDefinitionError::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::ModifyReportDefinitionError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::ModifyReportDefinitionError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::modify_report_definition::ModifyReportDefinitionError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::modify_report_definition::ModifyReportDefinitionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::modify_report_definition::ModifyReportDefinitionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutReportDefinitionError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::put_report_definition::PutReportDefinitionError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::PutReportDefinitionError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::put_report_definition::PutReportDefinitionError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -154,22 +177,14 @@ where
         }
     }
 }
-impl From<crate::error::PutReportDefinitionError> for Error {
-    fn from(err: crate::error::PutReportDefinitionError) -> Self {
+impl From<crate::operation::put_report_definition::PutReportDefinitionError> for Error {
+    fn from(err: crate::operation::put_report_definition::PutReportDefinitionError) -> Self {
         match err {
-            crate::error::PutReportDefinitionError::DuplicateReportNameException(inner) => {
-                Error::DuplicateReportNameException(inner)
-            }
-            crate::error::PutReportDefinitionError::InternalErrorException(inner) => {
-                Error::InternalErrorException(inner)
-            }
-            crate::error::PutReportDefinitionError::ReportLimitReachedException(inner) => {
-                Error::ReportLimitReachedException(inner)
-            }
-            crate::error::PutReportDefinitionError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::PutReportDefinitionError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::put_report_definition::PutReportDefinitionError::DuplicateReportNameException(inner) => Error::DuplicateReportNameException(inner),
+            crate::operation::put_report_definition::PutReportDefinitionError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::put_report_definition::PutReportDefinitionError::ReportLimitReachedException(inner) => Error::ReportLimitReachedException(inner),
+            crate::operation::put_report_definition::PutReportDefinitionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::put_report_definition::PutReportDefinitionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

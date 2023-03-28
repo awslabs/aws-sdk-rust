@@ -2,7 +2,7 @@
 pub(crate) fn de_workflow_parameter_template<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<std::string::String, crate::model::WorkflowParameter>>,
+    Option<std::collections::HashMap<std::string::String, crate::types::WorkflowParameter>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -3,94 +3,89 @@
 pub fn de_list_traffic_distribution_groups_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListTrafficDistributionGroupsOutput,
-    crate::error::ListTrafficDistributionGroupsError,
+    crate::operation::list_traffic_distribution_groups::ListTrafficDistributionGroupsOutput,
+    crate::operation::list_traffic_distribution_groups::ListTrafficDistributionGroupsError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListTrafficDistributionGroupsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::list_traffic_distribution_groups::ListTrafficDistributionGroupsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::ListTrafficDistributionGroupsError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::list_traffic_distribution_groups::ListTrafficDistributionGroupsError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => {
-            crate::error::ListTrafficDistributionGroupsError::AccessDeniedException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "AccessDeniedException" => crate::operation::list_traffic_distribution_groups::ListTrafficDistributionGroupsError::AccessDeniedException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTrafficDistributionGroupsError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_traffic_distribution_groups::ListTrafficDistributionGroupsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InternalServiceException" => {
-            crate::error::ListTrafficDistributionGroupsError::InternalServiceException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InternalServiceException" => crate::operation::list_traffic_distribution_groups::ListTrafficDistributionGroupsError::InternalServiceException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_service_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InternalServiceExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_service_exception::de_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTrafficDistributionGroupsError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_service_exception::de_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_traffic_distribution_groups::ListTrafficDistributionGroupsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidRequestException" => {
-            crate::error::ListTrafficDistributionGroupsError::InvalidRequestException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidRequestException" => crate::operation::list_traffic_distribution_groups::ListTrafficDistributionGroupsError::InvalidRequestException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_request_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTrafficDistributionGroupsError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_traffic_distribution_groups::ListTrafficDistributionGroupsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ThrottlingException" => {
-            crate::error::ListTrafficDistributionGroupsError::ThrottlingException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ThrottlingException" => crate::operation::list_traffic_distribution_groups::ListTrafficDistributionGroupsError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTrafficDistributionGroupsError::unhandled)?;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_traffic_distribution_groups::ListTrafficDistributionGroupsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::ListTrafficDistributionGroupsError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::list_traffic_distribution_groups::ListTrafficDistributionGroupsError::generic(generic)
     })
 }
 
@@ -98,14 +93,14 @@ pub fn de_list_traffic_distribution_groups_http_error(
 pub fn de_list_traffic_distribution_groups_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListTrafficDistributionGroupsOutput,
-    crate::error::ListTrafficDistributionGroupsError,
+    crate::operation::list_traffic_distribution_groups::ListTrafficDistributionGroupsOutput,
+    crate::operation::list_traffic_distribution_groups::ListTrafficDistributionGroupsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_traffic_distribution_groups_output::Builder::default();
+        let mut output = crate::operation::list_traffic_distribution_groups::builders::ListTrafficDistributionGroupsOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_list_traffic_distribution_groups::de_list_traffic_distribution_groups(response.body().as_ref(), output).map_err(crate::error::ListTrafficDistributionGroupsError::unhandled)?;
+        output = crate::protocol_serde::shape_list_traffic_distribution_groups::de_list_traffic_distribution_groups(response.body().as_ref(), output).map_err(crate::operation::list_traffic_distribution_groups::ListTrafficDistributionGroupsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -113,13 +108,7 @@ pub fn de_list_traffic_distribution_groups_http_response(
     })
 }
 
-pub(crate) fn de_list_traffic_distribution_groups(
-    value: &[u8],
-    mut builder: crate::output::list_traffic_distribution_groups_output::Builder,
-) -> Result<
-    crate::output::list_traffic_distribution_groups_output::Builder,
-    aws_smithy_json::deserialize::error::DeserializeError,
-> {
+pub(crate) fn de_list_traffic_distribution_groups(value: &[u8], mut builder: crate::operation::list_traffic_distribution_groups::builders::ListTrafficDistributionGroupsOutputBuilder) -> Result<crate::operation::list_traffic_distribution_groups::builders::ListTrafficDistributionGroupsOutputBuilder, aws_smithy_json::deserialize::error::DeserializeError>{
     let mut tokens_owned =
         aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
             .peekable();

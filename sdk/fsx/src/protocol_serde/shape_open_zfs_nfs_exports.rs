@@ -2,7 +2,7 @@
 pub(crate) fn de_open_zfs_nfs_exports<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::OpenZfsNfsExport>>,
+    Option<std::vec::Vec<crate::types::OpenZfsNfsExport>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -3,58 +3,55 @@
 pub fn de_describe_account_audit_configuration_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeAccountAuditConfigurationOutput,
-    crate::error::DescribeAccountAuditConfigurationError,
+    crate::operation::describe_account_audit_configuration::DescribeAccountAuditConfigurationOutput,
+    crate::operation::describe_account_audit_configuration::DescribeAccountAuditConfigurationError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeAccountAuditConfigurationError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::describe_account_audit_configuration::DescribeAccountAuditConfigurationError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::DescribeAccountAuditConfigurationError::unhandled(generic))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::describe_account_audit_configuration::DescribeAccountAuditConfigurationError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalFailureException" => {
-            crate::error::DescribeAccountAuditConfigurationError::InternalFailureException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalFailureException" => crate::operation::describe_account_audit_configuration::DescribeAccountAuditConfigurationError::InternalFailureException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_failure_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InternalFailureExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAccountAuditConfigurationError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_account_audit_configuration::DescribeAccountAuditConfigurationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ThrottlingException" => {
-            crate::error::DescribeAccountAuditConfigurationError::ThrottlingException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ThrottlingException" => crate::operation::describe_account_audit_configuration::DescribeAccountAuditConfigurationError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAccountAuditConfigurationError::unhandled)?;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_account_audit_configuration::DescribeAccountAuditConfigurationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DescribeAccountAuditConfigurationError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::describe_account_audit_configuration::DescribeAccountAuditConfigurationError::generic(generic)
     })
 }
 
@@ -62,15 +59,14 @@ pub fn de_describe_account_audit_configuration_http_error(
 pub fn de_describe_account_audit_configuration_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeAccountAuditConfigurationOutput,
-    crate::error::DescribeAccountAuditConfigurationError,
+    crate::operation::describe_account_audit_configuration::DescribeAccountAuditConfigurationOutput,
+    crate::operation::describe_account_audit_configuration::DescribeAccountAuditConfigurationError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::output::describe_account_audit_configuration_output::Builder::default();
+        let mut output = crate::operation::describe_account_audit_configuration::builders::DescribeAccountAuditConfigurationOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_describe_account_audit_configuration::de_describe_account_audit_configuration(response.body().as_ref(), output).map_err(crate::error::DescribeAccountAuditConfigurationError::unhandled)?;
+        output = crate::protocol_serde::shape_describe_account_audit_configuration::de_describe_account_audit_configuration(response.body().as_ref(), output).map_err(crate::operation::describe_account_audit_configuration::DescribeAccountAuditConfigurationError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -78,13 +74,7 @@ pub fn de_describe_account_audit_configuration_http_response(
     })
 }
 
-pub(crate) fn de_describe_account_audit_configuration(
-    value: &[u8],
-    mut builder: crate::output::describe_account_audit_configuration_output::Builder,
-) -> Result<
-    crate::output::describe_account_audit_configuration_output::Builder,
-    aws_smithy_json::deserialize::error::DeserializeError,
-> {
+pub(crate) fn de_describe_account_audit_configuration(value: &[u8], mut builder: crate::operation::describe_account_audit_configuration::builders::DescribeAccountAuditConfigurationOutputBuilder) -> Result<crate::operation::describe_account_audit_configuration::builders::DescribeAccountAuditConfigurationOutputBuilder, aws_smithy_json::deserialize::error::DeserializeError>{
     let mut tokens_owned =
         aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
             .peekable();

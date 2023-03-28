@@ -2,7 +2,7 @@
 pub(crate) fn de_target_resource_type_parameter<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::TargetResourceTypeParameter>,
+    Option<crate::types::TargetResourceTypeParameter>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::target_resource_type_parameter::Builder::default();
+            let mut builder = crate::types::builders::TargetResourceTypeParameterBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

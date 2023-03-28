@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_production_access_not_granted_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::production_access_not_granted_exception::Builder,
+    mut builder: crate::types::error::builders::ProductionAccessNotGrantedExceptionBuilder,
 ) -> Result<
-    crate::error::production_access_not_granted_exception::Builder,
+    crate::types::error::builders::ProductionAccessNotGrantedExceptionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

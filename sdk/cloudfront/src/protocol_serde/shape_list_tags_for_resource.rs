@@ -3,100 +3,99 @@
 pub fn de_list_tags_for_resource_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListTagsForResourceOutput,
-    crate::error::ListTagsForResourceError,
+    crate::operation::list_tags_for_resource::ListTagsForResourceOutput,
+    crate::operation::list_tags_for_resource::ListTagsForResourceError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+        .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListTagsForResourceError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDenied" => crate::error::ListTagsForResourceError::AccessDenied({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "AccessDenied" => {
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::AccessDenied({
                 #[allow(unused_mut)]
-                let mut output = crate::error::access_denied::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_access_denied::de_access_denied_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::ListTagsForResourceError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InvalidArgument" => crate::error::ListTagsForResourceError::InvalidArgument({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::AccessDeniedBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_access_denied::de_access_denied_xml_err(response.body().as_ref(), output).map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidArgument" => {
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::InvalidArgument({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_argument::Builder::default();
-                let _ = response;
-                output =
-                    crate::protocol_serde::shape_invalid_argument::de_invalid_argument_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListTagsForResourceError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InvalidTagging" => crate::error::ListTagsForResourceError::InvalidTagging({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InvalidArgumentBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_argument::de_invalid_argument_xml_err(response.body().as_ref(), output).map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidTagging" => {
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::InvalidTagging({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_tagging::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_tagging::de_invalid_tagging_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::ListTagsForResourceError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "NoSuchResource" => crate::error::ListTagsForResourceError::NoSuchResource({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InvalidTaggingBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_tagging::de_invalid_tagging_xml_err(response.body().as_ref(), output).map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "NoSuchResource" => {
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::NoSuchResource({
                 #[allow(unused_mut)]
-                let mut output = crate::error::no_such_resource::Builder::default();
-                let _ = response;
-                output =
-                    crate::protocol_serde::shape_no_such_resource::de_no_such_resource_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListTagsForResourceError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::ListTagsForResourceError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::NoSuchResourceBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_no_such_resource::de_no_such_resource_xml_err(response.body().as_ref(), output).map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::list_tags_for_resource::ListTagsForResourceError::generic(generic),
     })
 }
 
@@ -104,12 +103,12 @@ pub fn de_list_tags_for_resource_http_error(
 pub fn de_list_tags_for_resource_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListTagsForResourceOutput,
-    crate::error::ListTagsForResourceError,
+    crate::operation::list_tags_for_resource::ListTagsForResourceOutput,
+    crate::operation::list_tags_for_resource::ListTagsForResourceError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_tags_for_resource_output::Builder::default();
+        let mut output = crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder::default();
         let _ = response;
         output = output.set_tags(
             crate::protocol_serde::shape_list_tags_for_resource_output::de_tags_payload(

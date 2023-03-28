@@ -2,7 +2,7 @@
 pub fn de_target_tracking_metric_data_queries(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::TargetTrackingMetricDataQuery>,
+    std::vec::Vec<crate::types::TargetTrackingMetricDataQuery>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

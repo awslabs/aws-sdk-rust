@@ -2,7 +2,7 @@
 pub fn de_platform_branch_summary_list(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::PlatformBranchSummary>,
+    std::vec::Vec<crate::types::PlatformBranchSummary>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

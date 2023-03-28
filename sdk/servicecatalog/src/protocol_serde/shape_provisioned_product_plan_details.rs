@@ -2,7 +2,7 @@
 pub(crate) fn de_provisioned_product_plan_details<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ProvisionedProductPlanDetails>,
+    Option<crate::types::ProvisionedProductPlanDetails>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::provisioned_product_plan_details::Builder::default();
+            let mut builder =
+                crate::types::builders::ProvisionedProductPlanDetailsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -92,7 +93,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ProvisionedProductPlanType::from(
+                                            crate::types::ProvisionedProductPlanType::from(
                                                 u.as_ref(),
                                             )
                                         })
@@ -116,7 +117,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ProvisionedProductPlanStatus::from(
+                                            crate::types::ProvisionedProductPlanStatus::from(
                                                 u.as_ref(),
                                             )
                                         })

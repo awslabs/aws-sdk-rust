@@ -2,7 +2,7 @@
 pub(crate) fn de_identities_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::IdentityDescription>>,
+    Option<std::vec::Vec<crate::types::IdentityDescription>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

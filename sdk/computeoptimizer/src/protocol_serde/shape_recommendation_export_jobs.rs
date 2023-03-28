@@ -2,7 +2,7 @@
 pub(crate) fn de_recommendation_export_jobs<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::RecommendationExportJob>>,
+    Option<std::vec::Vec<crate::types::RecommendationExportJob>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

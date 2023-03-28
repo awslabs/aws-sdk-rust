@@ -2,7 +2,7 @@
 pub(crate) fn de_column_group_column_schema_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ColumnGroupColumnSchema>>,
+    Option<std::vec::Vec<crate::types::ColumnGroupColumnSchema>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

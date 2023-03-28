@@ -2,7 +2,7 @@
 pub(crate) fn de_progress_event<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ProgressEvent>,
+    Option<crate::types::ProgressEvent>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::progress_event::Builder::default();
+            let mut builder = crate::types::builders::ProgressEventBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -57,7 +57,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::Operation::from(u.as_ref()))
+                                            .map(|u| crate::types::Operation::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -69,7 +69,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::OperationStatus::from(u.as_ref())
+                                            crate::types::OperationStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -108,7 +108,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::HandlerErrorCode::from(u.as_ref())
+                                            crate::types::HandlerErrorCode::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

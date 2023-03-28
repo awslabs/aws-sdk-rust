@@ -3,123 +3,128 @@
 pub fn de_describe_harvest_job_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeHarvestJobOutput,
-    crate::error::DescribeHarvestJobError,
+    crate::operation::describe_harvest_job::DescribeHarvestJobOutput,
+    crate::operation::describe_harvest_job::DescribeHarvestJobError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeHarvestJobError::unhandled)?;
+        .map_err(crate::operation::describe_harvest_job::DescribeHarvestJobError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DescribeHarvestJobError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::describe_harvest_job::DescribeHarvestJobError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ForbiddenException" => crate::error::DescribeHarvestJobError::ForbiddenException({
+        "ForbiddenException" => crate::operation::describe_harvest_job::DescribeHarvestJobError::ForbiddenException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeHarvestJobError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ForbiddenExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_harvest_job::DescribeHarvestJobError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "InternalServerErrorException" => {
-            crate::error::DescribeHarvestJobError::InternalServerErrorException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalServerErrorException" => crate::operation::describe_harvest_job::DescribeHarvestJobError::InternalServerErrorException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::internal_server_error_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InternalServerErrorExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeHarvestJobError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_harvest_job::DescribeHarvestJobError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "NotFoundException" => crate::error::DescribeHarvestJobError::NotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeHarvestJobError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "ServiceUnavailableException" => {
-            crate::error::DescribeHarvestJobError::ServiceUnavailableException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "NotFoundException" => crate::operation::describe_harvest_job::DescribeHarvestJobError::NotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::service_unavailable_exception::Builder::default();
+                    let mut output = crate::types::error::builders::NotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeHarvestJobError::unhandled)?;
+                    output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_harvest_job::DescribeHarvestJobError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "TooManyRequestsException" => {
-            crate::error::DescribeHarvestJobError::TooManyRequestsException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ServiceUnavailableException" => crate::operation::describe_harvest_job::DescribeHarvestJobError::ServiceUnavailableException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeHarvestJobError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_harvest_job::DescribeHarvestJobError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "UnprocessableEntityException" => {
-            crate::error::DescribeHarvestJobError::UnprocessableEntityException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TooManyRequestsException" => crate::operation::describe_harvest_job::DescribeHarvestJobError::TooManyRequestsException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::unprocessable_entity_exception::Builder::default();
+                    let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_unprocessable_entity_exception::de_unprocessable_entity_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeHarvestJobError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_harvest_job::DescribeHarvestJobError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DescribeHarvestJobError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "UnprocessableEntityException" => crate::operation::describe_harvest_job::DescribeHarvestJobError::UnprocessableEntityException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::UnprocessableEntityExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_unprocessable_entity_exception::de_unprocessable_entity_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_harvest_job::DescribeHarvestJobError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::describe_harvest_job::DescribeHarvestJobError::generic(generic)
     })
 }
 
@@ -127,18 +132,18 @@ pub fn de_describe_harvest_job_http_error(
 pub fn de_describe_harvest_job_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeHarvestJobOutput,
-    crate::error::DescribeHarvestJobError,
+    crate::operation::describe_harvest_job::DescribeHarvestJobOutput,
+    crate::operation::describe_harvest_job::DescribeHarvestJobError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_harvest_job_output::Builder::default();
+        let mut output = crate::operation::describe_harvest_job::builders::DescribeHarvestJobOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_describe_harvest_job::de_describe_harvest_job(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DescribeHarvestJobError::unhandled)?;
+        .map_err(crate::operation::describe_harvest_job::DescribeHarvestJobError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -148,9 +153,9 @@ pub fn de_describe_harvest_job_http_response(
 
 pub(crate) fn de_describe_harvest_job(
     value: &[u8],
-    mut builder: crate::output::describe_harvest_job_output::Builder,
+    mut builder: crate::operation::describe_harvest_job::builders::DescribeHarvestJobOutputBuilder,
 ) -> Result<
-    crate::output::describe_harvest_job_output::Builder,
+    crate::operation::describe_harvest_job::builders::DescribeHarvestJobOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =
@@ -238,7 +243,7 @@ pub(crate) fn de_describe_harvest_job(
                             )?
                             .map(|s| {
                                 s.to_unescaped()
-                                    .map(|u| crate::model::Status::from(u.as_ref()))
+                                    .map(|u| crate::types::Status::from(u.as_ref()))
                             })
                             .transpose()?,
                         );

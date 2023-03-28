@@ -2,7 +2,7 @@
 pub(crate) fn de_simulation_software_suite<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::SimulationSoftwareSuite>,
+    Option<crate::types::SimulationSoftwareSuite>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::simulation_software_suite::Builder::default();
+            let mut builder = crate::types::builders::SimulationSoftwareSuiteBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::SimulationSoftwareSuiteType::from(
+                                            crate::types::SimulationSoftwareSuiteType::from(
                                                 u.as_ref(),
                                             )
                                         })
@@ -72,7 +72,7 @@ where
 
 pub fn ser_simulation_software_suite(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::SimulationSoftwareSuite,
+    input: &crate::types::SimulationSoftwareSuite,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.name {
         object.key("name").string(var_1.as_str());

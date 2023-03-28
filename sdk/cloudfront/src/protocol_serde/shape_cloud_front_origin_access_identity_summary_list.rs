@@ -2,7 +2,7 @@
 pub fn de_cloud_front_origin_access_identity_summary_list(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::CloudFrontOriginAccessIdentitySummary>,
+    std::vec::Vec<crate::types::CloudFrontOriginAccessIdentitySummary>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

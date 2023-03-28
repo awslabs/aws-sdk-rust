@@ -2,7 +2,7 @@
 pub(crate) fn de_jdbc_data_type_mapping<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<crate::model::JdbcDataType, crate::model::GlueRecordType>>,
+    Option<std::collections::HashMap<crate::types::JdbcDataType, crate::types::GlueRecordType>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -23,13 +23,13 @@ where
                     Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         let key = key
                             .to_unescaped()
-                            .map(|u| crate::model::JdbcDataType::from(u.as_ref()))?;
+                            .map(|u| crate::types::JdbcDataType::from(u.as_ref()))?;
                         let value = aws_smithy_json::deserialize::token::expect_string_or_null(
                             tokens.next(),
                         )?
                         .map(|s| {
                             s.to_unescaped()
-                                .map(|u| crate::model::GlueRecordType::from(u.as_ref()))
+                                .map(|u| crate::types::GlueRecordType::from(u.as_ref()))
                         })
                         .transpose()?;
                         if let Some(value) = value {

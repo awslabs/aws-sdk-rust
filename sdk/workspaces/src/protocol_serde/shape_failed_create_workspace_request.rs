@@ -2,7 +2,7 @@
 pub(crate) fn de_failed_create_workspace_request<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::FailedCreateWorkspaceRequest>,
+    Option<crate::types::FailedCreateWorkspaceRequest>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::failed_create_workspace_request::Builder::default();
+            let mut builder =
+                crate::types::builders::FailedCreateWorkspaceRequestBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

@@ -2,43 +2,35 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_cognito_events_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetCognitoEventsOutput, crate::error::GetCognitoEventsError>
-{
+) -> std::result::Result<
+    crate::operation::get_cognito_events::GetCognitoEventsOutput,
+    crate::operation::get_cognito_events::GetCognitoEventsError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetCognitoEventsError::unhandled)?;
+        .map_err(crate::operation::get_cognito_events::GetCognitoEventsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::GetCognitoEventsError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::get_cognito_events::GetCognitoEventsError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalErrorException" => crate::error::GetCognitoEventsError::InternalErrorException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_error_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_error_exception::de_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCognitoEventsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InvalidParameterException" => {
-            crate::error::GetCognitoEventsError::InvalidParameterException({
+        "InternalErrorException" => {
+            crate::operation::get_cognito_events::GetCognitoEventsError::InternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::InternalErrorExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCognitoEventsError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_error_exception::de_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_cognito_events::GetCognitoEventsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -48,29 +40,34 @@ pub fn de_get_cognito_events_http_error(
                 tmp
             })
         }
-        "NotAuthorizedException" => crate::error::GetCognitoEventsError::NotAuthorizedException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::not_authorized_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_not_authorized_exception::de_not_authorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCognitoEventsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ResourceNotFoundException" => {
-            crate::error::GetCognitoEventsError::ResourceNotFoundException({
+        "InvalidParameterException" => {
+            crate::operation::get_cognito_events::GetCognitoEventsError::InvalidParameterException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidParameterExceptionBuilder::default();
+                        let _ = response;
+                        output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_cognito_events::GetCognitoEventsError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        "NotAuthorizedException" => {
+            crate::operation::get_cognito_events::GetCognitoEventsError::NotAuthorizedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::NotAuthorizedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCognitoEventsError::unhandled)?;
+                    output = crate::protocol_serde::shape_not_authorized_exception::de_not_authorized_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_cognito_events::GetCognitoEventsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -79,15 +76,35 @@ pub fn de_get_cognito_events_http_error(
                 }
                 tmp
             })
+        }
+        "ResourceNotFoundException" => {
+            crate::operation::get_cognito_events::GetCognitoEventsError::ResourceNotFoundException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                        let _ = response;
+                        output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_cognito_events::GetCognitoEventsError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
         }
         "TooManyRequestsException" => {
-            crate::error::GetCognitoEventsError::TooManyRequestsException({
+            crate::operation::get_cognito_events::GetCognitoEventsError::TooManyRequestsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCognitoEventsError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_cognito_events::GetCognitoEventsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -97,24 +114,28 @@ pub fn de_get_cognito_events_http_error(
                 tmp
             })
         }
-        _ => crate::error::GetCognitoEventsError::generic(generic),
+        _ => crate::operation::get_cognito_events::GetCognitoEventsError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_cognito_events_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetCognitoEventsOutput, crate::error::GetCognitoEventsError>
-{
+) -> std::result::Result<
+    crate::operation::get_cognito_events::GetCognitoEventsOutput,
+    crate::operation::get_cognito_events::GetCognitoEventsError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_cognito_events_output::Builder::default();
+        let mut output =
+            crate::operation::get_cognito_events::builders::GetCognitoEventsOutputBuilder::default(
+            );
         let _ = response;
         output = crate::protocol_serde::shape_get_cognito_events::de_get_cognito_events(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::GetCognitoEventsError::unhandled)?;
+        .map_err(crate::operation::get_cognito_events::GetCognitoEventsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -124,9 +145,9 @@ pub fn de_get_cognito_events_http_response(
 
 pub(crate) fn de_get_cognito_events(
     value: &[u8],
-    mut builder: crate::output::get_cognito_events_output::Builder,
+    mut builder: crate::operation::get_cognito_events::builders::GetCognitoEventsOutputBuilder,
 ) -> Result<
-    crate::output::get_cognito_events_output::Builder,
+    crate::operation::get_cognito_events::builders::GetCognitoEventsOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

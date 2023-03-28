@@ -3,63 +3,62 @@
 pub fn de_get_origin_access_control_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetOriginAccessControlOutput,
-    crate::error::GetOriginAccessControlError,
+    crate::operation::get_origin_access_control::GetOriginAccessControlOutput,
+    crate::operation::get_origin_access_control::GetOriginAccessControlError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetOriginAccessControlError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::get_origin_access_control::GetOriginAccessControlError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::GetOriginAccessControlError::unhandled(
-                generic,
-            ))
-        }
-    };
+    let error_code =
+        match generic.code() {
+            Some(code) => code,
+            None => return Err(
+                crate::operation::get_origin_access_control::GetOriginAccessControlError::unhandled(
+                    generic,
+                ),
+            ),
+        };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDenied" => crate::error::GetOriginAccessControlError::AccessDenied({
+        "AccessDenied" => crate::operation::get_origin_access_control::GetOriginAccessControlError::AccessDenied({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::access_denied::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_access_denied::de_access_denied_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::GetOriginAccessControlError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "NoSuchOriginAccessControl" => {
-            crate::error::GetOriginAccessControlError::NoSuchOriginAccessControl({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::no_such_origin_access_control::Builder::default();
+                    let mut output = crate::types::error::builders::AccessDeniedBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_no_such_origin_access_control::de_no_such_origin_access_control_xml_err(response.body().as_ref(), output).map_err(crate::error::GetOriginAccessControlError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied::de_access_denied_xml_err(response.body().as_ref(), output).map_err(crate::operation::get_origin_access_control::GetOriginAccessControlError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::GetOriginAccessControlError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "NoSuchOriginAccessControl" => crate::operation::get_origin_access_control::GetOriginAccessControlError::NoSuchOriginAccessControl({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::NoSuchOriginAccessControlBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_no_such_origin_access_control::de_no_such_origin_access_control_xml_err(response.body().as_ref(), output).map_err(crate::operation::get_origin_access_control::GetOriginAccessControlError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::get_origin_access_control::GetOriginAccessControlError::generic(generic)
     })
 }
 
@@ -67,19 +66,19 @@ pub fn de_get_origin_access_control_http_error(
 pub fn de_get_origin_access_control_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetOriginAccessControlOutput,
-    crate::error::GetOriginAccessControlError,
+    crate::operation::get_origin_access_control::GetOriginAccessControlOutput,
+    crate::operation::get_origin_access_control::GetOriginAccessControlError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_origin_access_control_output::Builder::default();
+        let mut output = crate::operation::get_origin_access_control::builders::GetOriginAccessControlOutputBuilder::default();
         let _ = response;
         output = output.set_e_tag(
             crate::protocol_serde::shape_get_origin_access_control_output::de_e_tag_header(
                 response.headers(),
             )
             .map_err(|_| {
-                crate::error::GetOriginAccessControlError::unhandled(
+                crate::operation::get_origin_access_control::GetOriginAccessControlError::unhandled(
                     "Failed to parse ETag from header `ETag",
                 )
             })?,

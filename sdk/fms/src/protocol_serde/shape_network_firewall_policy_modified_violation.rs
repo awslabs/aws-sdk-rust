@@ -2,7 +2,7 @@
 pub(crate) fn de_network_firewall_policy_modified_violation<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::NetworkFirewallPolicyModifiedViolation>,
+    Option<crate::types::NetworkFirewallPolicyModifiedViolation>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::network_firewall_policy_modified_violation::Builder::default();
+                crate::types::builders::NetworkFirewallPolicyModifiedViolationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

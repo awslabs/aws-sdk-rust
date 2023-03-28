@@ -2,7 +2,7 @@
 pub(crate) fn de_workspace_bundle<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::WorkspaceBundle>,
+    Option<crate::types::WorkspaceBundle>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::workspace_bundle::Builder::default();
+            let mut builder = crate::types::builders::WorkspaceBundleBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -112,7 +112,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::WorkspaceBundleState::from(u.as_ref())
+                                            crate::types::WorkspaceBundleState::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -125,7 +125,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::BundleType::from(u.as_ref()))
+                                            .map(|u| crate::types::BundleType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

@@ -2,7 +2,7 @@
 pub(crate) fn de_contact_flow_module<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ContactFlowModule>,
+    Option<crate::types::ContactFlowModule>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::contact_flow_module::Builder::default();
+            let mut builder = crate::types::builders::ContactFlowModuleBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -75,7 +75,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ContactFlowModuleState::from(u.as_ref())
+                                            crate::types::ContactFlowModuleState::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -88,7 +88,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ContactFlowModuleStatus::from(u.as_ref())
+                                            crate::types::ContactFlowModuleStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

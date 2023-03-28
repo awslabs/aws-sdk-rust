@@ -2,7 +2,7 @@
 pub(crate) fn de_audit_mitigation_actions_task_target<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::AuditMitigationActionsTaskTarget>,
+    Option<crate::types::AuditMitigationActionsTaskTarget>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::audit_mitigation_actions_task_target::Builder::default();
+                crate::types::builders::AuditMitigationActionsTaskTargetBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -70,7 +70,7 @@ where
 
 pub fn ser_audit_mitigation_actions_task_target(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::AuditMitigationActionsTaskTarget,
+    input: &crate::types::AuditMitigationActionsTaskTarget,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.audit_task_id {
         object.key("auditTaskId").string(var_1.as_str());

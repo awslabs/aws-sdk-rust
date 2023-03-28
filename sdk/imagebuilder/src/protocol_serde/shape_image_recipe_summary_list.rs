@@ -2,7 +2,7 @@
 pub(crate) fn de_image_recipe_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ImageRecipeSummary>>,
+    Option<std::vec::Vec<crate::types::ImageRecipeSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

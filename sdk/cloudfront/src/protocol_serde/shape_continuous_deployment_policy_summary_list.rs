@@ -2,7 +2,7 @@
 pub fn de_continuous_deployment_policy_summary_list(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::ContinuousDeploymentPolicySummary>,
+    std::vec::Vec<crate::types::ContinuousDeploymentPolicySummary>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

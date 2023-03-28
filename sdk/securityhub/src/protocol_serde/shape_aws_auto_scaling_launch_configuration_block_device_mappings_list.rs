@@ -3,7 +3,7 @@ pub(crate) fn de_aws_auto_scaling_launch_configuration_block_device_mappings_lis
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<
-        std::vec::Vec<crate::model::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails>,
+        std::vec::Vec<crate::types::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails>,
     >,
     aws_smithy_json::deserialize::error::DeserializeError,
 >

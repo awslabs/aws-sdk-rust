@@ -2,7 +2,7 @@
 pub(crate) fn de_unsupported_resource_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::UnsupportedResource>>,
+    Option<std::vec::Vec<crate::types::UnsupportedResource>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

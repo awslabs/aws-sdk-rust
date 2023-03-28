@@ -2,7 +2,7 @@
 pub(crate) fn de_rendering_engine<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::RenderingEngine>,
+    Option<crate::types::RenderingEngine>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::rendering_engine::Builder::default();
+            let mut builder = crate::types::builders::RenderingEngineBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::RenderingEngineType::from(u.as_ref())
+                                            crate::types::RenderingEngineType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -70,7 +70,7 @@ where
 
 pub fn ser_rendering_engine(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::RenderingEngine,
+    input: &crate::types::RenderingEngine,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.name {
         object.key("name").string(var_1.as_str());

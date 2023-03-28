@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_platform_application_disabled_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::platform_application_disabled_exception::Builder,
+    mut builder: crate::types::error::builders::PlatformApplicationDisabledExceptionBuilder,
 ) -> Result<
-    crate::error::platform_application_disabled_exception::Builder,
+    crate::types::error::builders::PlatformApplicationDisabledExceptionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

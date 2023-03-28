@@ -2,7 +2,7 @@
 pub(crate) fn de_coverages_by_time<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CoverageByTime>>,
+    Option<std::vec::Vec<crate::types::CoverageByTime>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_stack_errors<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::StackError>>,
+    Option<std::vec::Vec<crate::types::StackError>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub fn de_parameter_group_list(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::ClusterParameterGroup>,
+    std::vec::Vec<crate::types::ClusterParameterGroup>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

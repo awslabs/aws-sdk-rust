@@ -2,7 +2,7 @@
 pub(crate) fn de_copy_jobs_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CopyJob>>,
+    Option<std::vec::Vec<crate::types::CopyJob>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

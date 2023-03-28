@@ -2,7 +2,7 @@
 pub(crate) fn de_path_parameters_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<std::string::String, crate::model::DatasetParameter>>,
+    Option<std::collections::HashMap<std::string::String, crate::types::DatasetParameter>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

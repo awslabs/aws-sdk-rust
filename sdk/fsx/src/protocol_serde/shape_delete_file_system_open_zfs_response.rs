@@ -2,7 +2,7 @@
 pub(crate) fn de_delete_file_system_open_zfs_response<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::DeleteFileSystemOpenZfsResponse>,
+    Option<crate::types::DeleteFileSystemOpenZfsResponse>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::delete_file_system_open_zfs_response::Builder::default();
+                crate::types::builders::DeleteFileSystemOpenZfsResponseBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

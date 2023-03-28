@@ -2,7 +2,7 @@
 pub(crate) fn de_replication_task_assessment_result_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ReplicationTaskAssessmentResult>>,
+    Option<std::vec::Vec<crate::types::ReplicationTaskAssessmentResult>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

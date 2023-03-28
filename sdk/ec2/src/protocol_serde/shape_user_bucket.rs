@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_user_bucket(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::UserBucket,
+    input: &crate::types::UserBucket,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("S3Bucket");

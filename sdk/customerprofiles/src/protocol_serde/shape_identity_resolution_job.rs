@@ -2,7 +2,7 @@
 pub(crate) fn de_identity_resolution_job<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::IdentityResolutionJob>,
+    Option<crate::types::IdentityResolutionJob>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::identity_resolution_job::Builder::default();
+            let mut builder = crate::types::builders::IdentityResolutionJobBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -48,7 +48,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::IdentityResolutionJobStatus::from(
+                                            crate::types::IdentityResolutionJobStatus::from(
                                                 u.as_ref(),
                                             )
                                         })

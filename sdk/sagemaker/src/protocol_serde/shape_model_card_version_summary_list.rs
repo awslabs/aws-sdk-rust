@@ -2,7 +2,7 @@
 pub(crate) fn de_model_card_version_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ModelCardVersionSummary>>,
+    Option<std::vec::Vec<crate::types::ModelCardVersionSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

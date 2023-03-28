@@ -3,44 +3,45 @@
 pub fn de_describe_change_set_hooks_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeChangeSetHooksOutput,
-    crate::error::DescribeChangeSetHooksError,
+    crate::operation::describe_change_set_hooks::DescribeChangeSetHooksOutput,
+    crate::operation::describe_change_set_hooks::DescribeChangeSetHooksError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeChangeSetHooksError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::describe_change_set_hooks::DescribeChangeSetHooksError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::DescribeChangeSetHooksError::unhandled(
-                generic,
-            ))
-        }
-    };
+    let error_code =
+        match generic.code() {
+            Some(code) => code,
+            None => return Err(
+                crate::operation::describe_change_set_hooks::DescribeChangeSetHooksError::unhandled(
+                    generic,
+                ),
+            ),
+        };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ChangeSetNotFound" => {
-            crate::error::DescribeChangeSetHooksError::ChangeSetNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "ChangeSetNotFound" => crate::operation::describe_change_set_hooks::DescribeChangeSetHooksError::ChangeSetNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::change_set_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ChangeSetNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_change_set_not_found_exception::de_change_set_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeChangeSetHooksError::unhandled)?;
+                    output = crate::protocol_serde::shape_change_set_not_found_exception::de_change_set_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::describe_change_set_hooks::DescribeChangeSetHooksError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DescribeChangeSetHooksError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::describe_change_set_hooks::DescribeChangeSetHooksError::generic(generic)
     })
 }
 
@@ -48,19 +49,21 @@ pub fn de_describe_change_set_hooks_http_error(
 pub fn de_describe_change_set_hooks_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeChangeSetHooksOutput,
-    crate::error::DescribeChangeSetHooksError,
+    crate::operation::describe_change_set_hooks::DescribeChangeSetHooksOutput,
+    crate::operation::describe_change_set_hooks::DescribeChangeSetHooksError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_change_set_hooks_output::Builder::default();
+        let mut output = crate::operation::describe_change_set_hooks::builders::DescribeChangeSetHooksOutputBuilder::default();
         let _ = response;
         output =
             crate::protocol_serde::shape_describe_change_set_hooks::de_describe_change_set_hooks(
                 response.body().as_ref(),
                 output,
             )
-            .map_err(crate::error::DescribeChangeSetHooksError::unhandled)?;
+            .map_err(
+                crate::operation::describe_change_set_hooks::DescribeChangeSetHooksError::unhandled,
+            )?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -71,9 +74,9 @@ pub fn de_describe_change_set_hooks_http_response(
 #[allow(unused_mut)]
 pub fn de_describe_change_set_hooks(
     inp: &[u8],
-    mut builder: crate::output::describe_change_set_hooks_output::Builder,
+    mut builder: crate::operation::describe_change_set_hooks::builders::DescribeChangeSetHooksOutputBuilder,
 ) -> Result<
-    crate::output::describe_change_set_hooks_output::Builder,
+    crate::operation::describe_change_set_hooks::builders::DescribeChangeSetHooksOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
@@ -137,8 +140,8 @@ pub fn de_describe_change_set_hooks(
             s if s.matches("Status") /* Status com.amazonaws.cloudformation.synthetic#DescribeChangeSetHooksOutput$Status */ =>  {
                 let var_4 =
                     Some(
-                        Result::<crate::model::ChangeSetHooksStatus, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::ChangeSetHooksStatus::from(
+                        Result::<crate::types::ChangeSetHooksStatus, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::ChangeSetHooksStatus::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

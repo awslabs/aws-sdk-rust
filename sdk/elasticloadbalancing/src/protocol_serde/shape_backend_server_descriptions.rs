@@ -2,7 +2,7 @@
 pub fn de_backend_server_descriptions(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::BackendServerDescription>,
+    std::vec::Vec<crate::types::BackendServerDescription>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

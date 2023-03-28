@@ -2,7 +2,7 @@
 pub(crate) fn de_attack_vector_description_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AttackVectorDescription>>,
+    Option<std::vec::Vec<crate::types::AttackVectorDescription>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

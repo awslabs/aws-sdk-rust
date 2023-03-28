@@ -2,7 +2,7 @@
 pub(crate) fn de_slack_workspace_configuration_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SlackWorkspaceConfiguration>>,
+    Option<std::vec::Vec<crate::types::SlackWorkspaceConfiguration>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,50 +2,64 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_key_groups_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListKeyGroupsOutput, crate::error::ListKeyGroupsError> {
+) -> std::result::Result<
+    crate::operation::list_key_groups::ListKeyGroupsOutput,
+    crate::operation::list_key_groups::ListKeyGroupsError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListKeyGroupsError::unhandled)?;
+        .map_err(crate::operation::list_key_groups::ListKeyGroupsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListKeyGroupsError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::list_key_groups::ListKeyGroupsError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidArgument" => crate::error::ListKeyGroupsError::InvalidArgument({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "InvalidArgument" => {
+            crate::operation::list_key_groups::ListKeyGroupsError::InvalidArgument({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_argument::Builder::default();
-                let _ = response;
-                output =
-                    crate::protocol_serde::shape_invalid_argument::de_invalid_argument_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListKeyGroupsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::ListKeyGroupsError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InvalidArgumentBuilder::default();
+                    let _ = response;
+                    output =
+                        crate::protocol_serde::shape_invalid_argument::de_invalid_argument_xml_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(
+                            crate::operation::list_key_groups::ListKeyGroupsError::unhandled,
+                        )?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::list_key_groups::ListKeyGroupsError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_key_groups_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListKeyGroupsOutput, crate::error::ListKeyGroupsError> {
+) -> std::result::Result<
+    crate::operation::list_key_groups::ListKeyGroupsOutput,
+    crate::operation::list_key_groups::ListKeyGroupsError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_key_groups_output::Builder::default();
+        let mut output =
+            crate::operation::list_key_groups::builders::ListKeyGroupsOutputBuilder::default();
         let _ = response;
         output = output.set_key_group_list(
             crate::protocol_serde::shape_list_key_groups_output::de_key_group_list_payload(

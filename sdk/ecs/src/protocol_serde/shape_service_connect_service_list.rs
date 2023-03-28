@@ -2,7 +2,7 @@
 pub(crate) fn de_service_connect_service_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ServiceConnectService>>,
+    Option<std::vec::Vec<crate::types::ServiceConnectService>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

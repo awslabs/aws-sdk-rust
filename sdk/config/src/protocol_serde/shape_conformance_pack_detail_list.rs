@@ -2,7 +2,7 @@
 pub(crate) fn de_conformance_pack_detail_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ConformancePackDetail>>,
+    Option<std::vec::Vec<crate::types::ConformancePackDetail>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

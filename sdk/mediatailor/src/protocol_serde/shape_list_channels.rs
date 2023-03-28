@@ -2,28 +2,37 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_channels_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListChannelsOutput, crate::error::ListChannelsError> {
+) -> std::result::Result<
+    crate::operation::list_channels::ListChannelsOutput,
+    crate::operation::list_channels::ListChannelsError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListChannelsError::unhandled)?;
+        .map_err(crate::operation::list_channels::ListChannelsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::ListChannelsError::generic(generic))
+    Err(crate::operation::list_channels::ListChannelsError::generic(
+        generic,
+    ))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_channels_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListChannelsOutput, crate::error::ListChannelsError> {
+) -> std::result::Result<
+    crate::operation::list_channels::ListChannelsOutput,
+    crate::operation::list_channels::ListChannelsError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_channels_output::Builder::default();
+        let mut output =
+            crate::operation::list_channels::builders::ListChannelsOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_channels::de_list_channels(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListChannelsError::unhandled)?;
+        .map_err(crate::operation::list_channels::ListChannelsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -33,9 +42,9 @@ pub fn de_list_channels_http_response(
 
 pub(crate) fn de_list_channels(
     value: &[u8],
-    mut builder: crate::output::list_channels_output::Builder,
+    mut builder: crate::operation::list_channels::builders::ListChannelsOutputBuilder,
 ) -> Result<
-    crate::output::list_channels_output::Builder,
+    crate::operation::list_channels::builders::ListChannelsOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

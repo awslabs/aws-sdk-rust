@@ -2,7 +2,7 @@
 pub(crate) fn de_log_settings_response_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::LogSettingsResponse>>,
+    Option<std::vec::Vec<crate::types::LogSettingsResponse>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

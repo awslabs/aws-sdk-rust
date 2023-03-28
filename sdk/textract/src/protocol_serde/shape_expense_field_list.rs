@@ -2,7 +2,7 @@
 pub(crate) fn de_expense_field_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ExpenseField>>,
+    Option<std::vec::Vec<crate::types::ExpenseField>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

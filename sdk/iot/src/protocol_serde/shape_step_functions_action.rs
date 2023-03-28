@@ -2,7 +2,7 @@
 pub(crate) fn de_step_functions_action<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::StepFunctionsAction>,
+    Option<crate::types::StepFunctionsAction>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::step_functions_action::Builder::default();
+            let mut builder = crate::types::builders::StepFunctionsActionBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -75,7 +75,7 @@ where
 
 pub fn ser_step_functions_action(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::StepFunctionsAction,
+    input: &crate::types::StepFunctionsAction,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.execution_name_prefix {
         object.key("executionNamePrefix").string(var_1.as_str());

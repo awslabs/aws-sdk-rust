@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use aws_sdk_glacier::types::ByteStream;
-use aws_sdk_glacier::{Credentials, Region};
+use aws_sdk_glacier::config::{Credentials, Region};
+use aws_sdk_glacier::primitives::ByteStream;
 use aws_smithy_client::test_connection::capture_request;
 use aws_smithy_protocol_test::{assert_ok, validate_headers};
 

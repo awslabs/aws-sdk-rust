@@ -2,7 +2,7 @@
 pub(crate) fn de_endpoint_output_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::EndpointOutputConfiguration>,
+    Option<crate::types::EndpointOutputConfiguration>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::endpoint_output_configuration::Builder::default();
+            let mut builder = crate::types::builders::EndpointOutputConfigurationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -48,7 +48,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ProductionVariantInstanceType::from(
+                                            crate::types::ProductionVariantInstanceType::from(
                                                 u.as_ref(),
                                             )
                                         })

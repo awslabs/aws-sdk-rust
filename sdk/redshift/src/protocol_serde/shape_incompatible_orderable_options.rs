@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_incompatible_orderable_options_xml_err(
     inp: &[u8],
-    mut builder: crate::error::incompatible_orderable_options::Builder,
+    mut builder: crate::types::error::builders::IncompatibleOrderableOptionsBuilder,
 ) -> Result<
-    crate::error::incompatible_orderable_options::Builder,
+    crate::types::error::builders::IncompatibleOrderableOptionsBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

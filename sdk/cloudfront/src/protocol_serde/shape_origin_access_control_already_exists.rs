@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_origin_access_control_already_exists_xml_err(
     inp: &[u8],
-    mut builder: crate::error::origin_access_control_already_exists::Builder,
+    mut builder: crate::types::error::builders::OriginAccessControlAlreadyExistsBuilder,
 ) -> Result<
-    crate::error::origin_access_control_already_exists::Builder,
+    crate::types::error::builders::OriginAccessControlAlreadyExistsBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

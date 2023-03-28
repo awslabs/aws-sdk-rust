@@ -2,7 +2,7 @@
 pub(crate) fn de_log_target_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::LogTargetConfiguration>,
+    Option<crate::types::LogTargetConfiguration>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::log_target_configuration::Builder::default();
+            let mut builder = crate::types::builders::LogTargetConfigurationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -35,7 +35,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::LogLevel::from(u.as_ref()))
+                                            .map(|u| crate::types::LogLevel::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

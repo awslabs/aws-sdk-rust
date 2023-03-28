@@ -2,7 +2,7 @@
 pub(crate) fn de_usage_record_result_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::UsageRecordResult>>,
+    Option<std::vec::Vec<crate::types::UsageRecordResult>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

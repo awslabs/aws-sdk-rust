@@ -2,7 +2,7 @@
 pub(crate) fn de_failed_create_simulation_job_request<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::FailedCreateSimulationJobRequest>,
+    Option<crate::types::FailedCreateSimulationJobRequest>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::failed_create_simulation_job_request::Builder::default();
+                crate::types::builders::FailedCreateSimulationJobRequestBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -45,7 +45,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::SimulationJobErrorCode::from(u.as_ref())
+                                            crate::types::SimulationJobErrorCode::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

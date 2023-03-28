@@ -2,7 +2,7 @@
 pub(crate) fn de_cognito_streams<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::CognitoStreams>,
+    Option<crate::types::CognitoStreams>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::cognito_streams::Builder::default();
+            let mut builder = crate::types::builders::CognitoStreamsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -48,7 +48,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::StreamingStatus::from(u.as_ref())
+                                            crate::types::StreamingStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -79,7 +79,7 @@ where
 
 pub fn ser_cognito_streams(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::CognitoStreams,
+    input: &crate::types::CognitoStreams,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.stream_name {
         object.key("StreamName").string(var_1.as_str());

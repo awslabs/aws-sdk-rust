@@ -2,7 +2,7 @@
 pub(crate) fn de_document_group_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DocumentGroup>>,
+    Option<std::vec::Vec<crate::types::DocumentGroup>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

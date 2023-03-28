@@ -3,34 +3,37 @@
 pub fn de_modify_spot_fleet_request_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ModifySpotFleetRequestOutput,
-    crate::error::ModifySpotFleetRequestError,
+    crate::operation::modify_spot_fleet_request::ModifySpotFleetRequestOutput,
+    crate::operation::modify_spot_fleet_request::ModifySpotFleetRequestError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ModifySpotFleetRequestError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::modify_spot_fleet_request::ModifySpotFleetRequestError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::ModifySpotFleetRequestError::generic(generic))
+    Err(crate::operation::modify_spot_fleet_request::ModifySpotFleetRequestError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_modify_spot_fleet_request_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ModifySpotFleetRequestOutput,
-    crate::error::ModifySpotFleetRequestError,
+    crate::operation::modify_spot_fleet_request::ModifySpotFleetRequestOutput,
+    crate::operation::modify_spot_fleet_request::ModifySpotFleetRequestError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::modify_spot_fleet_request_output::Builder::default();
+        let mut output = crate::operation::modify_spot_fleet_request::builders::ModifySpotFleetRequestOutputBuilder::default();
         let _ = response;
         output =
             crate::protocol_serde::shape_modify_spot_fleet_request::de_modify_spot_fleet_request(
                 response.body().as_ref(),
                 output,
             )
-            .map_err(crate::error::ModifySpotFleetRequestError::unhandled)?;
+            .map_err(
+                crate::operation::modify_spot_fleet_request::ModifySpotFleetRequestError::unhandled,
+            )?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -41,9 +44,9 @@ pub fn de_modify_spot_fleet_request_http_response(
 #[allow(unused_mut)]
 pub fn de_modify_spot_fleet_request(
     inp: &[u8],
-    mut builder: crate::output::modify_spot_fleet_request_output::Builder,
+    mut builder: crate::operation::modify_spot_fleet_request::builders::ModifySpotFleetRequestOutputBuilder,
 ) -> Result<
-    crate::output::modify_spot_fleet_request_output::Builder,
+    crate::operation::modify_spot_fleet_request::builders::ModifySpotFleetRequestOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

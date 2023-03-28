@@ -2,7 +2,7 @@
 pub(crate) fn de_app_instance_user_endpoint_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::AppInstanceUserEndpointSummary>,
+    Option<crate::types::AppInstanceUserEndpointSummary>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::app_instance_user_endpoint_summary::Builder::default();
+            let mut builder =
+                crate::types::builders::AppInstanceUserEndpointSummaryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -57,7 +58,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::AppInstanceUserEndpointType::from(
+                                            crate::types::AppInstanceUserEndpointType::from(
                                                 u.as_ref(),
                                             )
                                         })
@@ -72,7 +73,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::AllowMessages::from(u.as_ref()))
+                                            .map(|u| crate::types::AllowMessages::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

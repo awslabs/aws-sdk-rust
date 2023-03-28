@@ -2,7 +2,7 @@
 pub(crate) fn de_account_enrollment_status<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::AccountEnrollmentStatus>,
+    Option<crate::types::AccountEnrollmentStatus>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::account_enrollment_status::Builder::default();
+            let mut builder = crate::types::builders::AccountEnrollmentStatusBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -39,7 +39,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::Status::from(u.as_ref()))
+                                            .map(|u| crate::types::Status::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

@@ -2,7 +2,7 @@
 pub(crate) fn de_member_data_source_configurations<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::MemberDataSourceConfiguration>>,
+    Option<std::vec::Vec<crate::types::MemberDataSourceConfiguration>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

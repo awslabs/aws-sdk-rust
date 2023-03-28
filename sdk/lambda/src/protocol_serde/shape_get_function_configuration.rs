@@ -3,99 +3,99 @@
 pub fn de_get_function_configuration_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetFunctionConfigurationOutput,
-    crate::error::GetFunctionConfigurationError,
+    crate::operation::get_function_configuration::GetFunctionConfigurationOutput,
+    crate::operation::get_function_configuration::GetFunctionConfigurationError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetFunctionConfigurationError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::get_function_configuration::GetFunctionConfigurationError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::error::GetFunctionConfigurationError::unhandled(
+        None => return Err(
+            crate::operation::get_function_configuration::GetFunctionConfigurationError::unhandled(
                 generic,
-            ))
-        }
+            ),
+        ),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => {
-            crate::error::GetFunctionConfigurationError::InvalidParameterValueException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidParameterValueException" => crate::operation::get_function_configuration::GetFunctionConfigurationError::InvalidParameterValueException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_parameter_value_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionConfigurationError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_function_configuration::GetFunctionConfigurationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ResourceNotFoundException" => {
-            crate::error::GetFunctionConfigurationError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::get_function_configuration::GetFunctionConfigurationError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionConfigurationError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_function_configuration::GetFunctionConfigurationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ServiceException" => {
-            crate::error::GetFunctionConfigurationError::ServiceException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ServiceException" => crate::operation::get_function_configuration::GetFunctionConfigurationError::ServiceException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::service_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ServiceExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_exception::de_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionConfigurationError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_exception::de_service_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_function_configuration::GetFunctionConfigurationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "TooManyRequestsException" => {
-            crate::error::GetFunctionConfigurationError::TooManyRequestsException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TooManyRequestsException" => crate::operation::get_function_configuration::GetFunctionConfigurationError::TooManyRequestsException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_exception::Builder::default();
+                    let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionConfigurationError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_function_configuration::GetFunctionConfigurationError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::protocol_serde::shape_too_many_requests_exception::de_retry_after_seconds_header(response.headers())
-                                                .map_err(|_|crate::error::GetFunctionConfigurationError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::operation::get_function_configuration::GetFunctionConfigurationError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::GetFunctionConfigurationError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::get_function_configuration::GetFunctionConfigurationError::generic(generic)
     })
 }
 
@@ -103,19 +103,14 @@ pub fn de_get_function_configuration_http_error(
 pub fn de_get_function_configuration_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetFunctionConfigurationOutput,
-    crate::error::GetFunctionConfigurationError,
+    crate::operation::get_function_configuration::GetFunctionConfigurationOutput,
+    crate::operation::get_function_configuration::GetFunctionConfigurationError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_function_configuration_output::Builder::default();
+        let mut output = crate::operation::get_function_configuration::builders::GetFunctionConfigurationOutputBuilder::default();
         let _ = response;
-        output =
-            crate::protocol_serde::shape_get_function_configuration::de_get_function_configuration(
-                response.body().as_ref(),
-                output,
-            )
-            .map_err(crate::error::GetFunctionConfigurationError::unhandled)?;
+        output = crate::protocol_serde::shape_get_function_configuration::de_get_function_configuration(response.body().as_ref(), output).map_err(crate::operation::get_function_configuration::GetFunctionConfigurationError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -125,9 +120,9 @@ pub fn de_get_function_configuration_http_response(
 
 pub(crate) fn de_get_function_configuration(
     value: &[u8],
-    mut builder: crate::output::get_function_configuration_output::Builder,
+    mut builder: crate::operation::get_function_configuration::builders::GetFunctionConfigurationOutputBuilder,
 ) -> Result<
-    crate::output::get_function_configuration_output::Builder,
+    crate::operation::get_function_configuration::builders::GetFunctionConfigurationOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =
@@ -255,7 +250,7 @@ pub(crate) fn de_get_function_configuration(
                             )?
                             .map(|s| {
                                 s.to_unescaped()
-                                    .map(|u| crate::model::LastUpdateStatus::from(u.as_ref()))
+                                    .map(|u| crate::types::LastUpdateStatus::from(u.as_ref()))
                             })
                             .transpose()?,
                         );
@@ -276,7 +271,7 @@ pub(crate) fn de_get_function_configuration(
                             )?
                             .map(|s| {
                                 s.to_unescaped().map(|u| {
-                                    crate::model::LastUpdateStatusReasonCode::from(u.as_ref())
+                                    crate::types::LastUpdateStatusReasonCode::from(u.as_ref())
                                 })
                             })
                             .transpose()?,
@@ -312,7 +307,7 @@ pub(crate) fn de_get_function_configuration(
                             )?
                             .map(|s| {
                                 s.to_unescaped()
-                                    .map(|u| crate::model::PackageType::from(u.as_ref()))
+                                    .map(|u| crate::types::PackageType::from(u.as_ref()))
                             })
                             .transpose()?,
                         );
@@ -342,7 +337,7 @@ pub(crate) fn de_get_function_configuration(
                             )?
                             .map(|s| {
                                 s.to_unescaped()
-                                    .map(|u| crate::model::Runtime::from(u.as_ref()))
+                                    .map(|u| crate::types::Runtime::from(u.as_ref()))
                             })
                             .transpose()?,
                         );
@@ -382,7 +377,7 @@ pub(crate) fn de_get_function_configuration(
                             )?
                             .map(|s| {
                                 s.to_unescaped()
-                                    .map(|u| crate::model::State::from(u.as_ref()))
+                                    .map(|u| crate::types::State::from(u.as_ref()))
                             })
                             .transpose()?,
                         );
@@ -403,7 +398,7 @@ pub(crate) fn de_get_function_configuration(
                             )?
                             .map(|s| {
                                 s.to_unescaped()
-                                    .map(|u| crate::model::StateReasonCode::from(u.as_ref()))
+                                    .map(|u| crate::types::StateReasonCode::from(u.as_ref()))
                             })
                             .transpose()?,
                         );

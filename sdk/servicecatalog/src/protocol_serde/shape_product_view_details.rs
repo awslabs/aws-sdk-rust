@@ -2,7 +2,7 @@
 pub(crate) fn de_product_view_details<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ProductViewDetail>>,
+    Option<std::vec::Vec<crate::types::ProductViewDetail>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_vpn_tunnel_options_specification(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::VpnTunnelOptionsSpecification,
+    input: &crate::types::VpnTunnelOptionsSpecification,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("TunnelInsideCidr");

@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_too_many_distributions_with_single_function_arn_xml_err(
     inp: &[u8],
-    mut builder: crate::error::too_many_distributions_with_single_function_arn::Builder,
+    mut builder: crate::types::error::builders::TooManyDistributionsWithSingleFunctionArnBuilder,
 ) -> Result<
-    crate::error::too_many_distributions_with_single_function_arn::Builder,
+    crate::types::error::builders::TooManyDistributionsWithSingleFunctionArnBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

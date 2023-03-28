@@ -3,7 +3,7 @@ pub(crate) fn de_directory_configuration_setting_request_detailed_status<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<
-        std::collections::HashMap<std::string::String, crate::model::DirectoryConfigurationStatus>,
+        std::collections::HashMap<std::string::String, crate::types::DirectoryConfigurationStatus>,
     >,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
@@ -29,7 +29,7 @@ where
                         )?
                         .map(|s| {
                             s.to_unescaped().map(|u| {
-                                crate::model::DirectoryConfigurationStatus::from(u.as_ref())
+                                crate::types::DirectoryConfigurationStatus::from(u.as_ref())
                             })
                         })
                         .transpose()?;

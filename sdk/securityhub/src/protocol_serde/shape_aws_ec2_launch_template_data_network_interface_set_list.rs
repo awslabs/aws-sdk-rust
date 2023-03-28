@@ -2,7 +2,7 @@
 pub(crate) fn de_aws_ec2_launch_template_data_network_interface_set_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails>>,
+    Option<std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

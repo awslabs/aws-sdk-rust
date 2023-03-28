@@ -2,7 +2,7 @@
 pub(crate) fn de_organization_event_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::OrganizationEvent>>,
+    Option<std::vec::Vec<crate::types::OrganizationEvent>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

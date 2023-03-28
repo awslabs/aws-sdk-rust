@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_customized_metric_specification(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::CustomizedMetricSpecification,
+    input: &crate::types::CustomizedMetricSpecification,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("MetricName");
@@ -51,9 +51,9 @@ pub fn ser_customized_metric_specification(
 
 pub fn de_customized_metric_specification(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::CustomizedMetricSpecification, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::CustomizedMetricSpecification, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::CustomizedMetricSpecification::builder();
+    let mut builder = crate::types::CustomizedMetricSpecification::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("MetricName") /* MetricName com.amazonaws.autoscaling#CustomizedMetricSpecification$MetricName */ =>  {
@@ -95,8 +95,8 @@ pub fn de_customized_metric_specification(
             s if s.matches("Statistic") /* Statistic com.amazonaws.autoscaling#CustomizedMetricSpecification$Statistic */ =>  {
                 let var_22 =
                     Some(
-                        Result::<crate::model::MetricStatistic, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::MetricStatistic::from(
+                        Result::<crate::types::MetricStatistic, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::MetricStatistic::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

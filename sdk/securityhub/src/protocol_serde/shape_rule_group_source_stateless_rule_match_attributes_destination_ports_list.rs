@@ -3,7 +3,7 @@ pub(crate) fn de_rule_group_source_stateless_rule_match_attributes_destination_p
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<
-        std::vec::Vec<crate::model::RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts>,
+        std::vec::Vec<crate::types::RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts>,
     >,
     aws_smithy_json::deserialize::error::DeserializeError,
 >

@@ -2,7 +2,7 @@
 pub(crate) fn de_cors_policy<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CorsRule>>,
+    Option<std::vec::Vec<crate::types::CorsRule>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

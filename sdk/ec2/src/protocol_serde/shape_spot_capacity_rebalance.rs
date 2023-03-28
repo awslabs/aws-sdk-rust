@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_spot_capacity_rebalance(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::SpotCapacityRebalance,
+    input: &crate::types::SpotCapacityRebalance,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("ReplacementStrategy");
@@ -22,16 +22,16 @@ pub fn ser_spot_capacity_rebalance(
 
 pub fn de_spot_capacity_rebalance(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::SpotCapacityRebalance, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::SpotCapacityRebalance, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::SpotCapacityRebalance::builder();
+    let mut builder = crate::types::SpotCapacityRebalance::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("replacementStrategy") /* ReplacementStrategy com.amazonaws.ec2#SpotCapacityRebalance$ReplacementStrategy */ =>  {
                 let var_5 =
                     Some(
-                        Result::<crate::model::ReplacementStrategy, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::ReplacementStrategy::from(
+                        Result::<crate::types::ReplacementStrategy, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::ReplacementStrategy::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

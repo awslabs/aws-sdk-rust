@@ -2,7 +2,7 @@
 pub(crate) fn de_entity_descriptions<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::EntityDescription>>,
+    Option<std::vec::Vec<crate::types::EntityDescription>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

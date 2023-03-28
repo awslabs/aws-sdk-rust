@@ -2,11 +2,11 @@
 pub fn de_transit_gateway_multicast_registered_group_members(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    crate::model::TransitGatewayMulticastRegisteredGroupMembers,
+    crate::types::TransitGatewayMulticastRegisteredGroupMembers,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     #[allow(unused_mut)]
-    let mut builder = crate::model::TransitGatewayMulticastRegisteredGroupMembers::builder();
+    let mut builder = crate::types::TransitGatewayMulticastRegisteredGroupMembers::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("transitGatewayMulticastDomainId") /* TransitGatewayMulticastDomainId com.amazonaws.ec2#TransitGatewayMulticastRegisteredGroupMembers$TransitGatewayMulticastDomainId */ =>  {

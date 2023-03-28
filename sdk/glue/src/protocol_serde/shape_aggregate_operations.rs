@@ -2,7 +2,7 @@
 pub(crate) fn de_aggregate_operations<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AggregateOperation>>,
+    Option<std::vec::Vec<crate::types::AggregateOperation>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

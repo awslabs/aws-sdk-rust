@@ -2,7 +2,7 @@
 pub(crate) fn de_document_review_comment_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DocumentReviewCommentSource>>,
+    Option<std::vec::Vec<crate::types::DocumentReviewCommentSource>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

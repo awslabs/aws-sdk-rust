@@ -2,7 +2,7 @@
 pub(crate) fn de_list_of_labels<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DocumentLabel>>,
+    Option<std::vec::Vec<crate::types::DocumentLabel>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

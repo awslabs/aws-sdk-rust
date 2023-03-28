@@ -2,7 +2,7 @@
 pub fn de_resource_identifier_summaries(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::ResourceIdentifierSummary>,
+    std::vec::Vec<crate::types::ResourceIdentifierSummary>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

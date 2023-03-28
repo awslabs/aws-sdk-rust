@@ -2,7 +2,7 @@
 pub fn de_instance_status_details_list(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::InstanceStatusDetails>,
+    std::vec::Vec<crate::types::InstanceStatusDetails>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

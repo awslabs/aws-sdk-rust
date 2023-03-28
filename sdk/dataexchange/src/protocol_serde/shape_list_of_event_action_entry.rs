@@ -2,7 +2,7 @@
 pub(crate) fn de_list_of_event_action_entry<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::EventActionEntry>>,
+    Option<std::vec::Vec<crate::types::EventActionEntry>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

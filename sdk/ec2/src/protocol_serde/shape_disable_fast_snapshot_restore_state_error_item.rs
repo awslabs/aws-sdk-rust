@@ -2,11 +2,11 @@
 pub fn de_disable_fast_snapshot_restore_state_error_item(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    crate::model::DisableFastSnapshotRestoreStateErrorItem,
+    crate::types::DisableFastSnapshotRestoreStateErrorItem,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     #[allow(unused_mut)]
-    let mut builder = crate::model::DisableFastSnapshotRestoreStateErrorItem::builder();
+    let mut builder = crate::types::DisableFastSnapshotRestoreStateErrorItem::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("availabilityZone") /* AvailabilityZone com.amazonaws.ec2#DisableFastSnapshotRestoreStateErrorItem$AvailabilityZone */ =>  {

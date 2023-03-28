@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_trusted_key_group_does_not_exist_xml_err(
     inp: &[u8],
-    mut builder: crate::error::trusted_key_group_does_not_exist::Builder,
+    mut builder: crate::types::error::builders::TrustedKeyGroupDoesNotExistBuilder,
 ) -> Result<
-    crate::error::trusted_key_group_does_not_exist::Builder,
+    crate::types::error::builders::TrustedKeyGroupDoesNotExistBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

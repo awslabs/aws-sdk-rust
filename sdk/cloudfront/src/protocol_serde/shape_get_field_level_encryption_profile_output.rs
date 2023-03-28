@@ -12,17 +12,17 @@ pub(crate) fn de_e_tag_header(
 pub fn de_field_level_encryption_profile_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::FieldLevelEncryptionProfile>,
-    crate::error::GetFieldLevelEncryptionProfileError,
+    std::option::Option<crate::types::FieldLevelEncryptionProfile>,
+    crate::operation::get_field_level_encryption_profile::GetFieldLevelEncryptionProfileError,
 > {
     (!body.is_empty()).then(||{
-        crate::protocol_serde::shape_get_field_level_encryption_profile_output::de_field_level_encryption_profile(body).map_err(crate::error::GetFieldLevelEncryptionProfileError::unhandled)
+        crate::protocol_serde::shape_get_field_level_encryption_profile_output::de_field_level_encryption_profile(body).map_err(crate::operation::get_field_level_encryption_profile::GetFieldLevelEncryptionProfileError::unhandled)
     }).transpose()
 }
 
 pub fn de_field_level_encryption_profile(
     inp: &[u8],
-) -> Result<crate::model::FieldLevelEncryptionProfile, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::FieldLevelEncryptionProfile, aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;

@@ -2,7 +2,7 @@
 pub(crate) fn de_self_managed_kafka_event_source_config<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::SelfManagedKafkaEventSourceConfig>,
+    Option<crate::types::SelfManagedKafkaEventSourceConfig>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::self_managed_kafka_event_source_config::Builder::default();
+                crate::types::builders::SelfManagedKafkaEventSourceConfigBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -58,7 +58,7 @@ where
 
 pub fn ser_self_managed_kafka_event_source_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::SelfManagedKafkaEventSourceConfig,
+    input: &crate::types::SelfManagedKafkaEventSourceConfig,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.consumer_group_id {
         object.key("ConsumerGroupId").string(var_1.as_str());

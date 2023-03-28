@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_video_description<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::VideoDescription>>,
+    Option<std::vec::Vec<crate::types::VideoDescription>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

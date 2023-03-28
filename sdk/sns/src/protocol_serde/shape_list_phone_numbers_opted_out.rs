@@ -3,91 +3,91 @@
 pub fn de_list_phone_numbers_opted_out_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListPhoneNumbersOptedOutOutput,
-    crate::error::ListPhoneNumbersOptedOutError,
+    crate::operation::list_phone_numbers_opted_out::ListPhoneNumbersOptedOutOutput,
+    crate::operation::list_phone_numbers_opted_out::ListPhoneNumbersOptedOutError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListPhoneNumbersOptedOutError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::list_phone_numbers_opted_out::ListPhoneNumbersOptedOutError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::ListPhoneNumbersOptedOutError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::list_phone_numbers_opted_out::ListPhoneNumbersOptedOutError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AuthorizationError" => {
-            crate::error::ListPhoneNumbersOptedOutError::AuthorizationErrorException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "AuthorizationError" => crate::operation::list_phone_numbers_opted_out::ListPhoneNumbersOptedOutError::AuthorizationErrorException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::authorization_error_exception::Builder::default();
+                    let mut output = crate::types::error::builders::AuthorizationErrorExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_authorization_error_exception::de_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListPhoneNumbersOptedOutError::unhandled)?;
+                    output = crate::protocol_serde::shape_authorization_error_exception::de_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::list_phone_numbers_opted_out::ListPhoneNumbersOptedOutError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InternalError" => crate::error::ListPhoneNumbersOptedOutError::InternalErrorException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_error_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_error_exception::de_internal_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListPhoneNumbersOptedOutError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "InvalidParameter" => {
-            crate::error::ListPhoneNumbersOptedOutError::InvalidParameterException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalError" => crate::operation::list_phone_numbers_opted_out::ListPhoneNumbersOptedOutError::InternalErrorException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InternalErrorExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListPhoneNumbersOptedOutError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_error_exception::de_internal_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::list_phone_numbers_opted_out::ListPhoneNumbersOptedOutError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "Throttled" => crate::error::ListPhoneNumbersOptedOutError::ThrottledException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::throttled_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttled_exception::de_throttled_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListPhoneNumbersOptedOutError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::ListPhoneNumbersOptedOutError::generic(generic),
+        "InvalidParameter" => crate::operation::list_phone_numbers_opted_out::ListPhoneNumbersOptedOutError::InvalidParameterException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidParameterExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::list_phone_numbers_opted_out::ListPhoneNumbersOptedOutError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "Throttled" => crate::operation::list_phone_numbers_opted_out::ListPhoneNumbersOptedOutError::ThrottledException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ThrottledExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_throttled_exception::de_throttled_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::list_phone_numbers_opted_out::ListPhoneNumbersOptedOutError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::list_phone_numbers_opted_out::ListPhoneNumbersOptedOutError::generic(generic)
     })
 }
 
@@ -95,14 +95,14 @@ pub fn de_list_phone_numbers_opted_out_http_error(
 pub fn de_list_phone_numbers_opted_out_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListPhoneNumbersOptedOutOutput,
-    crate::error::ListPhoneNumbersOptedOutError,
+    crate::operation::list_phone_numbers_opted_out::ListPhoneNumbersOptedOutOutput,
+    crate::operation::list_phone_numbers_opted_out::ListPhoneNumbersOptedOutError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_phone_numbers_opted_out_output::Builder::default();
+        let mut output = crate::operation::list_phone_numbers_opted_out::builders::ListPhoneNumbersOptedOutOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_list_phone_numbers_opted_out::de_list_phone_numbers_opted_out(response.body().as_ref(), output).map_err(crate::error::ListPhoneNumbersOptedOutError::unhandled)?;
+        output = crate::protocol_serde::shape_list_phone_numbers_opted_out::de_list_phone_numbers_opted_out(response.body().as_ref(), output).map_err(crate::operation::list_phone_numbers_opted_out::ListPhoneNumbersOptedOutError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -113,9 +113,9 @@ pub fn de_list_phone_numbers_opted_out_http_response(
 #[allow(unused_mut)]
 pub fn de_list_phone_numbers_opted_out(
     inp: &[u8],
-    mut builder: crate::output::list_phone_numbers_opted_out_output::Builder,
+    mut builder: crate::operation::list_phone_numbers_opted_out::builders::ListPhoneNumbersOptedOutOutputBuilder,
 ) -> Result<
-    crate::output::list_phone_numbers_opted_out_output::Builder,
+    crate::operation::list_phone_numbers_opted_out::builders::ListPhoneNumbersOptedOutOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

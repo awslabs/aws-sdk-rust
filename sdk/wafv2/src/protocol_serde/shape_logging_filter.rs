@@ -2,7 +2,7 @@
 pub(crate) fn de_logging_filter<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::LoggingFilter>,
+    Option<crate::types::LoggingFilter>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::logging_filter::Builder::default();
+            let mut builder = crate::types::builders::LoggingFilterBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -35,7 +35,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::FilterBehavior::from(u.as_ref()))
+                                            .map(|u| crate::types::FilterBehavior::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -65,7 +65,7 @@ where
 
 pub fn ser_logging_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::LoggingFilter,
+    input: &crate::types::LoggingFilter,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.filters {
         let mut array_2 = object.key("Filters").start_array();

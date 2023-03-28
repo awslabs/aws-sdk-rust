@@ -3,75 +3,72 @@
 pub fn de_delete_account_password_policy_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteAccountPasswordPolicyOutput,
-    crate::error::DeleteAccountPasswordPolicyError,
+    crate::operation::delete_account_password_policy::DeleteAccountPasswordPolicyOutput,
+    crate::operation::delete_account_password_policy::DeleteAccountPasswordPolicyError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteAccountPasswordPolicyError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::delete_account_password_policy::DeleteAccountPasswordPolicyError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::DeleteAccountPasswordPolicyError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::delete_account_password_policy::DeleteAccountPasswordPolicyError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceeded" => {
-            crate::error::DeleteAccountPasswordPolicyError::LimitExceededException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "LimitExceeded" => crate::operation::delete_account_password_policy::DeleteAccountPasswordPolicyError::LimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteAccountPasswordPolicyError::unhandled)?;
+                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_account_password_policy::DeleteAccountPasswordPolicyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "NoSuchEntity" => crate::error::DeleteAccountPasswordPolicyError::NoSuchEntityException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::no_such_entity_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_no_such_entity_exception::de_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteAccountPasswordPolicyError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "ServiceFailure" => {
-            crate::error::DeleteAccountPasswordPolicyError::ServiceFailureException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "NoSuchEntity" => crate::operation::delete_account_password_policy::DeleteAccountPasswordPolicyError::NoSuchEntityException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
+                    let mut output = crate::types::error::builders::NoSuchEntityExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteAccountPasswordPolicyError::unhandled)?;
+                    output = crate::protocol_serde::shape_no_such_entity_exception::de_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_account_password_policy::DeleteAccountPasswordPolicyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DeleteAccountPasswordPolicyError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ServiceFailure" => crate::operation::delete_account_password_policy::DeleteAccountPasswordPolicyError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ServiceFailureExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_account_password_policy::DeleteAccountPasswordPolicyError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::delete_account_password_policy::DeleteAccountPasswordPolicyError::generic(generic)
     })
 }
 
@@ -79,12 +76,12 @@ pub fn de_delete_account_password_policy_http_error(
 pub fn de_delete_account_password_policy_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteAccountPasswordPolicyOutput,
-    crate::error::DeleteAccountPasswordPolicyError,
+    crate::operation::delete_account_password_policy::DeleteAccountPasswordPolicyOutput,
+    crate::operation::delete_account_password_policy::DeleteAccountPasswordPolicyError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_account_password_policy_output::Builder::default();
+        let mut output = crate::operation::delete_account_password_policy::builders::DeleteAccountPasswordPolicyOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

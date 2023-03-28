@@ -2,7 +2,7 @@
 pub(crate) fn de_evaluation_modes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::EvaluationModeConfiguration>>,
+    Option<std::vec::Vec<crate::types::EvaluationModeConfiguration>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

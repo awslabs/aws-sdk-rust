@@ -2,7 +2,7 @@
 pub(crate) fn de_kernel_specs<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::KernelSpec>>,
+    Option<std::vec::Vec<crate::types::KernelSpec>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

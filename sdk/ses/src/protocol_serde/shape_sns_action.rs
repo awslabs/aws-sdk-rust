@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_sns_action(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::SnsAction,
+    input: &crate::types::SnsAction,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("TopicArn");
@@ -19,9 +19,9 @@ pub fn ser_sns_action(
 
 pub fn de_sns_action(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::SnsAction, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::SnsAction, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::SnsAction::builder();
+    let mut builder = crate::types::SnsAction::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("TopicArn") /* TopicArn com.amazonaws.ses#SNSAction$TopicArn */ =>  {
@@ -40,8 +40,8 @@ pub fn de_sns_action(
             s if s.matches("Encoding") /* Encoding com.amazonaws.ses#SNSAction$Encoding */ =>  {
                 let var_6 =
                     Some(
-                        Result::<crate::model::SnsActionEncoding, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::SnsActionEncoding::from(
+                        Result::<crate::types::SnsActionEncoding, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::SnsActionEncoding::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

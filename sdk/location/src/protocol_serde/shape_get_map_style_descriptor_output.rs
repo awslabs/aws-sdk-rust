@@ -3,7 +3,7 @@ pub fn de_blob_payload(
     body: &[u8],
 ) -> std::result::Result<
     std::option::Option<aws_smithy_types::Blob>,
-    crate::error::GetMapStyleDescriptorError,
+    crate::operation::get_map_style_descriptor::GetMapStyleDescriptorError,
 > {
     (!body.is_empty())
         .then(|| Ok(aws_smithy_types::Blob::new(body)))

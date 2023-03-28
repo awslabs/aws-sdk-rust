@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_readiness_check_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ReadinessCheckSummary>>,
+    Option<std::vec::Vec<crate::types::ReadinessCheckSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

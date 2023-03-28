@@ -2,7 +2,7 @@
 pub(crate) fn de_rule_group_source_stateless_rule_match_attributes_source_ports_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::RuleGroupSourceStatelessRuleMatchAttributesSourcePorts>>,
+    Option<std::vec::Vec<crate::types::RuleGroupSourceStatelessRuleMatchAttributesSourcePorts>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

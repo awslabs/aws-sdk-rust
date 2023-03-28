@@ -2,7 +2,7 @@
 pub fn de_noncurrent_version_transition_list(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::NoncurrentVersionTransition>,
+    std::vec::Vec<crate::types::NoncurrentVersionTransition>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

@@ -2,7 +2,7 @@
 pub(crate) fn de_experience_entities_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ExperienceEntitiesSummary>>,
+    Option<std::vec::Vec<crate::types::ExperienceEntitiesSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

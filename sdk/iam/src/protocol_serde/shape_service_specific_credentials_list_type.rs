@@ -2,7 +2,7 @@
 pub fn de_service_specific_credentials_list_type(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::ServiceSpecificCredentialMetadata>,
+    std::vec::Vec<crate::types::ServiceSpecificCredentialMetadata>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

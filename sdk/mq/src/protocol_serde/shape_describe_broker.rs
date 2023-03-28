@@ -2,58 +2,33 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_broker_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DescribeBrokerOutput, crate::error::DescribeBrokerError> {
+) -> std::result::Result<
+    crate::operation::describe_broker::DescribeBrokerOutput,
+    crate::operation::describe_broker::DescribeBrokerError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeBrokerError::unhandled)?;
+        .map_err(crate::operation::describe_broker::DescribeBrokerError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DescribeBrokerError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::describe_broker::DescribeBrokerError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::DescribeBrokerError::BadRequestException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeBrokerError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ForbiddenException" => crate::error::DescribeBrokerError::ForbiddenException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeBrokerError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InternalServerErrorException" => {
-            crate::error::DescribeBrokerError::InternalServerErrorException({
+        "BadRequestException" => {
+            crate::operation::describe_broker::DescribeBrokerError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::internal_server_error_exception::Builder::default();
+                        crate::types::error::builders::BadRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeBrokerError::unhandled)?;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_broker::DescribeBrokerError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -63,38 +38,82 @@ pub fn de_describe_broker_http_error(
                 tmp
             })
         }
-        "NotFoundException" => crate::error::DescribeBrokerError::NotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "ForbiddenException" => {
+            crate::operation::describe_broker::DescribeBrokerError::ForbiddenException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeBrokerError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::DescribeBrokerError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ForbiddenExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_broker::DescribeBrokerError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InternalServerErrorException" => {
+            crate::operation::describe_broker::DescribeBrokerError::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InternalServerErrorExceptionBuilder::default(
+                        );
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_broker::DescribeBrokerError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "NotFoundException" => {
+            crate::operation::describe_broker::DescribeBrokerError::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::NotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_broker::DescribeBrokerError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::describe_broker::DescribeBrokerError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_broker_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DescribeBrokerOutput, crate::error::DescribeBrokerError> {
+) -> std::result::Result<
+    crate::operation::describe_broker::DescribeBrokerOutput,
+    crate::operation::describe_broker::DescribeBrokerError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_broker_output::Builder::default();
+        let mut output =
+            crate::operation::describe_broker::builders::DescribeBrokerOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_describe_broker::de_describe_broker(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DescribeBrokerError::unhandled)?;
+        .map_err(crate::operation::describe_broker::DescribeBrokerError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -104,9 +123,9 @@ pub fn de_describe_broker_http_response(
 
 pub(crate) fn de_describe_broker(
     value: &[u8],
-    mut builder: crate::output::describe_broker_output::Builder,
+    mut builder: crate::operation::describe_broker::builders::DescribeBrokerOutputBuilder,
 ) -> Result<
-    crate::output::describe_broker_output::Builder,
+    crate::operation::describe_broker::builders::DescribeBrokerOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =
@@ -131,7 +150,7 @@ pub(crate) fn de_describe_broker(
                             )?
                             .map(|s| {
                                 s.to_unescaped()
-                                    .map(|u| crate::model::AuthenticationStrategy::from(u.as_ref()))
+                                    .map(|u| crate::types::AuthenticationStrategy::from(u.as_ref()))
                             })
                             .transpose()?,
                         );
@@ -182,7 +201,7 @@ pub(crate) fn de_describe_broker(
                             )?
                             .map(|s| {
                                 s.to_unescaped()
-                                    .map(|u| crate::model::BrokerState::from(u.as_ref()))
+                                    .map(|u| crate::types::BrokerState::from(u.as_ref()))
                             })
                             .transpose()?,
                         );
@@ -207,7 +226,7 @@ pub(crate) fn de_describe_broker(
                             )?
                             .map(|s| {
                                 s.to_unescaped()
-                                    .map(|u| crate::model::DeploymentMode::from(u.as_ref()))
+                                    .map(|u| crate::types::DeploymentMode::from(u.as_ref()))
                             })
                             .transpose()?,
                         );
@@ -226,7 +245,7 @@ pub(crate) fn de_describe_broker(
                             )?
                             .map(|s| {
                                 s.to_unescaped()
-                                    .map(|u| crate::model::EngineType::from(u.as_ref()))
+                                    .map(|u| crate::types::EngineType::from(u.as_ref()))
                             })
                             .transpose()?,
                         );
@@ -273,7 +292,7 @@ pub(crate) fn de_describe_broker(
                             )?
                             .map(|s| {
                                 s.to_unescaped()
-                                    .map(|u| crate::model::AuthenticationStrategy::from(u.as_ref()))
+                                    .map(|u| crate::types::AuthenticationStrategy::from(u.as_ref()))
                             })
                             .transpose()?,
                         );
@@ -329,7 +348,7 @@ pub(crate) fn de_describe_broker(
                             )?
                             .map(|s| {
                                 s.to_unescaped()
-                                    .map(|u| crate::model::BrokerStorageType::from(u.as_ref()))
+                                    .map(|u| crate::types::BrokerStorageType::from(u.as_ref()))
                             })
                             .transpose()?,
                         );

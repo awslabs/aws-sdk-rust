@@ -2,7 +2,7 @@
 pub(crate) fn de_assessment_run_notification_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AssessmentRunNotification>>,
+    Option<std::vec::Vec<crate::types::AssessmentRunNotification>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

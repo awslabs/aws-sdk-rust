@@ -2,7 +2,7 @@
 pub fn de_group_identifier_set(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::SecurityGroupIdentifier>,
+    std::vec::Vec<crate::types::SecurityGroupIdentifier>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

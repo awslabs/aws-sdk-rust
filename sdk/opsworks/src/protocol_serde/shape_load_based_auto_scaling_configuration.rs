@@ -2,7 +2,7 @@
 pub(crate) fn de_load_based_auto_scaling_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::LoadBasedAutoScalingConfiguration>,
+    Option<crate::types::LoadBasedAutoScalingConfiguration>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::load_based_auto_scaling_configuration::Builder::default();
+                crate::types::builders::LoadBasedAutoScalingConfigurationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

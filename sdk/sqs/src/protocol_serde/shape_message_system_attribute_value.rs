@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_message_system_attribute_value(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::MessageSystemAttributeValue,
+    input: &crate::types::MessageSystemAttributeValue,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("StringValue");

@@ -2,7 +2,7 @@
 pub(crate) fn de_copy_actions<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CopyAction>>,
+    Option<std::vec::Vec<crate::types::CopyAction>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -3,134 +3,130 @@
 pub fn de_create_cache_subnet_group_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateCacheSubnetGroupOutput,
-    crate::error::CreateCacheSubnetGroupError,
+    crate::operation::create_cache_subnet_group::CreateCacheSubnetGroupOutput,
+    crate::operation::create_cache_subnet_group::CreateCacheSubnetGroupError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::CreateCacheSubnetGroupError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::create_cache_subnet_group::CreateCacheSubnetGroupError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::CreateCacheSubnetGroupError::unhandled(
-                generic,
-            ))
-        }
-    };
+    let error_code =
+        match generic.code() {
+            Some(code) => code,
+            None => return Err(
+                crate::operation::create_cache_subnet_group::CreateCacheSubnetGroupError::unhandled(
+                    generic,
+                ),
+            ),
+        };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CacheSubnetGroupAlreadyExists" => {
-            crate::error::CreateCacheSubnetGroupError::CacheSubnetGroupAlreadyExistsFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::cache_subnet_group_already_exists_fault::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_cache_subnet_group_already_exists_fault::de_cache_subnet_group_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheSubnetGroupError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "CacheSubnetGroupQuotaExceeded" => {
-            crate::error::CreateCacheSubnetGroupError::CacheSubnetGroupQuotaExceededFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::cache_subnet_group_quota_exceeded_fault::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_cache_subnet_group_quota_exceeded_fault::de_cache_subnet_group_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheSubnetGroupError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "CacheSubnetQuotaExceededFault" => {
-            crate::error::CreateCacheSubnetGroupError::CacheSubnetQuotaExceededFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::cache_subnet_quota_exceeded_fault::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_cache_subnet_quota_exceeded_fault::de_cache_subnet_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheSubnetGroupError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InvalidSubnet" => crate::error::CreateCacheSubnetGroupError::InvalidSubnet({
+        "CacheSubnetGroupAlreadyExists" => crate::operation::create_cache_subnet_group::CreateCacheSubnetGroupError::CacheSubnetGroupAlreadyExistsFault({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::invalid_subnet::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_subnet::de_invalid_subnet_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::CreateCacheSubnetGroupError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::CacheSubnetGroupAlreadyExistsFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_cache_subnet_group_already_exists_fault::de_cache_subnet_group_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_cache_subnet_group::CreateCacheSubnetGroupError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "SubnetNotAllowedFault" => {
-            crate::error::CreateCacheSubnetGroupError::SubnetNotAllowedFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "CacheSubnetGroupQuotaExceeded" => crate::operation::create_cache_subnet_group::CreateCacheSubnetGroupError::CacheSubnetGroupQuotaExceededFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::subnet_not_allowed_fault::Builder::default();
+                    let mut output = crate::types::error::builders::CacheSubnetGroupQuotaExceededFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_subnet_not_allowed_fault::de_subnet_not_allowed_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheSubnetGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_cache_subnet_group_quota_exceeded_fault::de_cache_subnet_group_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_cache_subnet_group::CreateCacheSubnetGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "TagQuotaPerResourceExceeded" => {
-            crate::error::CreateCacheSubnetGroupError::TagQuotaPerResourceExceeded({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "CacheSubnetQuotaExceededFault" => crate::operation::create_cache_subnet_group::CreateCacheSubnetGroupError::CacheSubnetQuotaExceededFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::tag_quota_per_resource_exceeded::Builder::default();
+                    let mut output = crate::types::error::builders::CacheSubnetQuotaExceededFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_tag_quota_per_resource_exceeded::de_tag_quota_per_resource_exceeded_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCacheSubnetGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_cache_subnet_quota_exceeded_fault::de_cache_subnet_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_cache_subnet_group::CreateCacheSubnetGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::CreateCacheSubnetGroupError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidSubnet" => crate::operation::create_cache_subnet_group::CreateCacheSubnetGroupError::InvalidSubnet({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidSubnetBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_subnet::de_invalid_subnet_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_cache_subnet_group::CreateCacheSubnetGroupError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "SubnetNotAllowedFault" => crate::operation::create_cache_subnet_group::CreateCacheSubnetGroupError::SubnetNotAllowedFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::SubnetNotAllowedFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_subnet_not_allowed_fault::de_subnet_not_allowed_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_cache_subnet_group::CreateCacheSubnetGroupError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TagQuotaPerResourceExceeded" => crate::operation::create_cache_subnet_group::CreateCacheSubnetGroupError::TagQuotaPerResourceExceeded({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::TagQuotaPerResourceExceededBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_tag_quota_per_resource_exceeded::de_tag_quota_per_resource_exceeded_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_cache_subnet_group::CreateCacheSubnetGroupError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::create_cache_subnet_group::CreateCacheSubnetGroupError::generic(generic)
     })
 }
 
@@ -138,19 +134,21 @@ pub fn de_create_cache_subnet_group_http_error(
 pub fn de_create_cache_subnet_group_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateCacheSubnetGroupOutput,
-    crate::error::CreateCacheSubnetGroupError,
+    crate::operation::create_cache_subnet_group::CreateCacheSubnetGroupOutput,
+    crate::operation::create_cache_subnet_group::CreateCacheSubnetGroupError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::create_cache_subnet_group_output::Builder::default();
+        let mut output = crate::operation::create_cache_subnet_group::builders::CreateCacheSubnetGroupOutputBuilder::default();
         let _ = response;
         output =
             crate::protocol_serde::shape_create_cache_subnet_group::de_create_cache_subnet_group(
                 response.body().as_ref(),
                 output,
             )
-            .map_err(crate::error::CreateCacheSubnetGroupError::unhandled)?;
+            .map_err(
+                crate::operation::create_cache_subnet_group::CreateCacheSubnetGroupError::unhandled,
+            )?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -161,9 +159,9 @@ pub fn de_create_cache_subnet_group_http_response(
 #[allow(unused_mut)]
 pub fn de_create_cache_subnet_group(
     inp: &[u8],
-    mut builder: crate::output::create_cache_subnet_group_output::Builder,
+    mut builder: crate::operation::create_cache_subnet_group::builders::CreateCacheSubnetGroupOutputBuilder,
 ) -> Result<
-    crate::output::create_cache_subnet_group_output::Builder,
+    crate::operation::create_cache_subnet_group::builders::CreateCacheSubnetGroupOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

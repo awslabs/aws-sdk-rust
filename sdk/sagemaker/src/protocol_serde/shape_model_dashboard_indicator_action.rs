@@ -2,7 +2,7 @@
 pub(crate) fn de_model_dashboard_indicator_action<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ModelDashboardIndicatorAction>,
+    Option<crate::types::ModelDashboardIndicatorAction>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::model_dashboard_indicator_action::Builder::default();
+            let mut builder =
+                crate::types::builders::ModelDashboardIndicatorActionBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

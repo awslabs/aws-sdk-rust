@@ -2,7 +2,7 @@
 pub(crate) fn de_automation_execution<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::AutomationExecution>,
+    Option<crate::types::AutomationExecution>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::automation_execution::Builder::default();
+            let mut builder = crate::types::builders::AutomationExecutionBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -73,7 +73,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::AutomationExecutionStatus::from(
+                                            crate::types::AutomationExecutionStatus::from(
                                                 u.as_ref(),
                                             )
                                         })
@@ -119,7 +119,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::ExecutionMode::from(u.as_ref()))
+                                            .map(|u| crate::types::ExecutionMode::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -240,7 +240,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::AutomationSubtype::from(u.as_ref())
+                                            crate::types::AutomationSubtype::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

@@ -2,7 +2,7 @@
 pub(crate) fn de_endpoint_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::EndpointConfiguration>,
+    Option<crate::types::EndpointConfiguration>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::endpoint_configuration::Builder::default();
+            let mut builder = crate::types::builders::EndpointConfigurationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -60,7 +60,7 @@ where
 
 pub fn ser_endpoint_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::EndpointConfiguration,
+    input: &crate::types::EndpointConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.types {
         let mut array_2 = object.key("types").start_array();

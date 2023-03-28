@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_insufficient_cluster_capacity_fault_xml_err(
     inp: &[u8],
-    mut builder: crate::error::insufficient_cluster_capacity_fault::Builder,
+    mut builder: crate::types::error::builders::InsufficientClusterCapacityFaultBuilder,
 ) -> Result<
-    crate::error::insufficient_cluster_capacity_fault::Builder,
+    crate::types::error::builders::InsufficientClusterCapacityFaultBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

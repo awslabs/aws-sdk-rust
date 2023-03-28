@@ -2,7 +2,7 @@
 pub(crate) fn de_cloud_watch_events_execution_data_details<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::CloudWatchEventsExecutionDataDetails>,
+    Option<crate::types::CloudWatchEventsExecutionDataDetails>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::cloud_watch_events_execution_data_details::Builder::default();
+                crate::types::builders::CloudWatchEventsExecutionDataDetailsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

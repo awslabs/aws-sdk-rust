@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_parameter(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::Parameter,
+    input: &crate::types::Parameter,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("ParameterKey");
@@ -29,9 +29,9 @@ pub fn ser_parameter(
 
 pub fn de_parameter(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::Parameter, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::Parameter, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::Parameter::builder();
+    let mut builder = crate::types::Parameter::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ParameterKey") /* ParameterKey com.amazonaws.cloudformation#Parameter$ParameterKey */ =>  {

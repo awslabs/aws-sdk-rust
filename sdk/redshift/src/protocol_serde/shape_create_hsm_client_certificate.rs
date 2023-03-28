@@ -3,98 +3,91 @@
 pub fn de_create_hsm_client_certificate_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateHsmClientCertificateOutput,
-    crate::error::CreateHsmClientCertificateError,
+    crate::operation::create_hsm_client_certificate::CreateHsmClientCertificateOutput,
+    crate::operation::create_hsm_client_certificate::CreateHsmClientCertificateError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::CreateHsmClientCertificateError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::create_hsm_client_certificate::CreateHsmClientCertificateError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::CreateHsmClientCertificateError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::create_hsm_client_certificate::CreateHsmClientCertificateError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "HsmClientCertificateAlreadyExistsFault" => {
-            crate::error::CreateHsmClientCertificateError::HsmClientCertificateAlreadyExistsFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "HsmClientCertificateAlreadyExistsFault" => crate::operation::create_hsm_client_certificate::CreateHsmClientCertificateError::HsmClientCertificateAlreadyExistsFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::hsm_client_certificate_already_exists_fault::Builder::default(
-                        );
+                    let mut output = crate::types::error::builders::HsmClientCertificateAlreadyExistsFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_hsm_client_certificate_already_exists_fault::de_hsm_client_certificate_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateHsmClientCertificateError::unhandled)?;
+                    output = crate::protocol_serde::shape_hsm_client_certificate_already_exists_fault::de_hsm_client_certificate_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_hsm_client_certificate::CreateHsmClientCertificateError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "HsmClientCertificateQuotaExceededFault" => {
-            crate::error::CreateHsmClientCertificateError::HsmClientCertificateQuotaExceededFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "HsmClientCertificateQuotaExceededFault" => crate::operation::create_hsm_client_certificate::CreateHsmClientCertificateError::HsmClientCertificateQuotaExceededFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::hsm_client_certificate_quota_exceeded_fault::Builder::default(
-                        );
+                    let mut output = crate::types::error::builders::HsmClientCertificateQuotaExceededFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_hsm_client_certificate_quota_exceeded_fault::de_hsm_client_certificate_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateHsmClientCertificateError::unhandled)?;
+                    output = crate::protocol_serde::shape_hsm_client_certificate_quota_exceeded_fault::de_hsm_client_certificate_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_hsm_client_certificate::CreateHsmClientCertificateError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidTagFault" => {
-            crate::error::CreateHsmClientCertificateError::InvalidTagFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidTagFault" => crate::operation::create_hsm_client_certificate::CreateHsmClientCertificateError::InvalidTagFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_tag_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidTagFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_tag_fault::de_invalid_tag_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateHsmClientCertificateError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_tag_fault::de_invalid_tag_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_hsm_client_certificate::CreateHsmClientCertificateError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "TagLimitExceededFault" => {
-            crate::error::CreateHsmClientCertificateError::TagLimitExceededFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TagLimitExceededFault" => crate::operation::create_hsm_client_certificate::CreateHsmClientCertificateError::TagLimitExceededFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::tag_limit_exceeded_fault::Builder::default();
+                    let mut output = crate::types::error::builders::TagLimitExceededFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_tag_limit_exceeded_fault::de_tag_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateHsmClientCertificateError::unhandled)?;
+                    output = crate::protocol_serde::shape_tag_limit_exceeded_fault::de_tag_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_hsm_client_certificate::CreateHsmClientCertificateError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::CreateHsmClientCertificateError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::create_hsm_client_certificate::CreateHsmClientCertificateError::generic(generic)
     })
 }
 
@@ -102,14 +95,14 @@ pub fn de_create_hsm_client_certificate_http_error(
 pub fn de_create_hsm_client_certificate_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateHsmClientCertificateOutput,
-    crate::error::CreateHsmClientCertificateError,
+    crate::operation::create_hsm_client_certificate::CreateHsmClientCertificateOutput,
+    crate::operation::create_hsm_client_certificate::CreateHsmClientCertificateError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::create_hsm_client_certificate_output::Builder::default();
+        let mut output = crate::operation::create_hsm_client_certificate::builders::CreateHsmClientCertificateOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_create_hsm_client_certificate::de_create_hsm_client_certificate(response.body().as_ref(), output).map_err(crate::error::CreateHsmClientCertificateError::unhandled)?;
+        output = crate::protocol_serde::shape_create_hsm_client_certificate::de_create_hsm_client_certificate(response.body().as_ref(), output).map_err(crate::operation::create_hsm_client_certificate::CreateHsmClientCertificateError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -118,13 +111,7 @@ pub fn de_create_hsm_client_certificate_http_response(
 }
 
 #[allow(unused_mut)]
-pub fn de_create_hsm_client_certificate(
-    inp: &[u8],
-    mut builder: crate::output::create_hsm_client_certificate_output::Builder,
-) -> Result<
-    crate::output::create_hsm_client_certificate_output::Builder,
-    aws_smithy_xml::decode::XmlDecodeError,
-> {
+pub fn de_create_hsm_client_certificate(inp: &[u8], mut builder: crate::operation::create_hsm_client_certificate::builders::CreateHsmClientCertificateOutputBuilder) -> Result<crate::operation::create_hsm_client_certificate::builders::CreateHsmClientCertificateOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

@@ -2,7 +2,7 @@
 pub(crate) fn de_tcp_flags<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::TcpFlagField>>,
+    Option<std::vec::Vec<crate::types::TcpFlagField>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub fn de_target_health_descriptions(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::TargetHealthDescription>,
+    std::vec::Vec<crate::types::TargetHealthDescription>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

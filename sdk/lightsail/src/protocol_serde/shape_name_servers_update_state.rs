@@ -2,7 +2,7 @@
 pub(crate) fn de_name_servers_update_state<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::NameServersUpdateState>,
+    Option<crate::types::NameServersUpdateState>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::name_servers_update_state::Builder::default();
+            let mut builder = crate::types::builders::NameServersUpdateStateBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::NameServersUpdateStateCode::from(
+                                            crate::types::NameServersUpdateStateCode::from(
                                                 u.as_ref(),
                                             )
                                         })

@@ -2,7 +2,7 @@
 pub(crate) fn de_resource_data_sync_organizational_unit_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ResourceDataSyncOrganizationalUnit>>,
+    Option<std::vec::Vec<crate::types::ResourceDataSyncOrganizationalUnit>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

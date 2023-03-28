@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_authenticate_cognito_action_config(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::AuthenticateCognitoActionConfig,
+    input: &crate::types::AuthenticateCognitoActionConfig,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("UserPoolArn");
@@ -60,9 +60,9 @@ pub fn ser_authenticate_cognito_action_config(
 
 pub fn de_authenticate_cognito_action_config(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::AuthenticateCognitoActionConfig, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::AuthenticateCognitoActionConfig, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::AuthenticateCognitoActionConfig::builder();
+    let mut builder = crate::types::AuthenticateCognitoActionConfig::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("UserPoolArn") /* UserPoolArn com.amazonaws.elasticloadbalancingv2#AuthenticateCognitoActionConfig$UserPoolArn */ =>  {
@@ -158,8 +158,8 @@ pub fn de_authenticate_cognito_action_config(
             s if s.matches("OnUnauthenticatedRequest") /* OnUnauthenticatedRequest com.amazonaws.elasticloadbalancingv2#AuthenticateCognitoActionConfig$OnUnauthenticatedRequest */ =>  {
                 let var_28 =
                     Some(
-                        Result::<crate::model::AuthenticateCognitoActionConditionalBehaviorEnum, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::AuthenticateCognitoActionConditionalBehaviorEnum::from(
+                        Result::<crate::types::AuthenticateCognitoActionConditionalBehaviorEnum, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::AuthenticateCognitoActionConditionalBehaviorEnum::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

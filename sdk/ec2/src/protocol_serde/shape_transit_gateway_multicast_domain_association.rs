@@ -2,11 +2,11 @@
 pub fn de_transit_gateway_multicast_domain_association(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    crate::model::TransitGatewayMulticastDomainAssociation,
+    crate::types::TransitGatewayMulticastDomainAssociation,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     #[allow(unused_mut)]
-    let mut builder = crate::model::TransitGatewayMulticastDomainAssociation::builder();
+    let mut builder = crate::types::TransitGatewayMulticastDomainAssociation::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("transitGatewayAttachmentId") /* TransitGatewayAttachmentId com.amazonaws.ec2#TransitGatewayMulticastDomainAssociation$TransitGatewayAttachmentId */ =>  {
@@ -38,8 +38,8 @@ pub fn de_transit_gateway_multicast_domain_association(
             s if s.matches("resourceType") /* ResourceType com.amazonaws.ec2#TransitGatewayMulticastDomainAssociation$ResourceType */ =>  {
                 let var_3 =
                     Some(
-                        Result::<crate::model::TransitGatewayAttachmentResourceType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::TransitGatewayAttachmentResourceType::from(
+                        Result::<crate::types::TransitGatewayAttachmentResourceType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::TransitGatewayAttachmentResourceType::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

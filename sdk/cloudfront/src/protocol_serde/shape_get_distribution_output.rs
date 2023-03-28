@@ -2,13 +2,13 @@
 pub fn de_distribution_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::Distribution>,
-    crate::error::GetDistributionError,
+    std::option::Option<crate::types::Distribution>,
+    crate::operation::get_distribution::GetDistributionError,
 > {
     (!body.is_empty())
         .then(|| {
             crate::protocol_serde::shape_get_distribution_output::de_distribution(body)
-                .map_err(crate::error::GetDistributionError::unhandled)
+                .map_err(crate::operation::get_distribution::GetDistributionError::unhandled)
         })
         .transpose()
 }
@@ -25,7 +25,7 @@ pub(crate) fn de_e_tag_header(
 
 pub fn de_distribution(
     inp: &[u8],
-) -> Result<crate::model::Distribution, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::Distribution, aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;

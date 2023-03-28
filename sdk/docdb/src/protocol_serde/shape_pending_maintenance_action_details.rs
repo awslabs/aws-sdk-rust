@@ -2,7 +2,7 @@
 pub fn de_pending_maintenance_action_details(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::PendingMaintenanceAction>,
+    std::vec::Vec<crate::types::PendingMaintenanceAction>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

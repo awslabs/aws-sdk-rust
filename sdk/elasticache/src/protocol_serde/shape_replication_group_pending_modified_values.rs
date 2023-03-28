@@ -2,11 +2,11 @@
 pub fn de_replication_group_pending_modified_values(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    crate::model::ReplicationGroupPendingModifiedValues,
+    crate::types::ReplicationGroupPendingModifiedValues,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     #[allow(unused_mut)]
-    let mut builder = crate::model::ReplicationGroupPendingModifiedValues::builder();
+    let mut builder = crate::types::ReplicationGroupPendingModifiedValues::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("PrimaryClusterId") /* PrimaryClusterId com.amazonaws.elasticache#ReplicationGroupPendingModifiedValues$PrimaryClusterId */ =>  {
@@ -25,8 +25,8 @@ pub fn de_replication_group_pending_modified_values(
             s if s.matches("AutomaticFailoverStatus") /* AutomaticFailoverStatus com.amazonaws.elasticache#ReplicationGroupPendingModifiedValues$AutomaticFailoverStatus */ =>  {
                 let var_2 =
                     Some(
-                        Result::<crate::model::PendingAutomaticFailoverStatus, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::PendingAutomaticFailoverStatus::from(
+                        Result::<crate::types::PendingAutomaticFailoverStatus, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::PendingAutomaticFailoverStatus::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
@@ -49,8 +49,8 @@ pub fn de_replication_group_pending_modified_values(
             s if s.matches("AuthTokenStatus") /* AuthTokenStatus com.amazonaws.elasticache#ReplicationGroupPendingModifiedValues$AuthTokenStatus */ =>  {
                 let var_4 =
                     Some(
-                        Result::<crate::model::AuthTokenUpdateStatus, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::AuthTokenUpdateStatus::from(
+                        Result::<crate::types::AuthTokenUpdateStatus, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::AuthTokenUpdateStatus::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
@@ -98,8 +98,8 @@ pub fn de_replication_group_pending_modified_values(
             s if s.matches("TransitEncryptionMode") /* TransitEncryptionMode com.amazonaws.elasticache#ReplicationGroupPendingModifiedValues$TransitEncryptionMode */ =>  {
                 let var_8 =
                     Some(
-                        Result::<crate::model::TransitEncryptionMode, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::TransitEncryptionMode::from(
+                        Result::<crate::types::TransitEncryptionMode, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::TransitEncryptionMode::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

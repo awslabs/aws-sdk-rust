@@ -2,7 +2,7 @@
 pub(crate) fn de_attachment_content<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::AttachmentContent>,
+    Option<crate::types::AttachmentContent>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::attachment_content::Builder::default();
+            let mut builder = crate::types::builders::AttachmentContentBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -57,7 +57,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::AttachmentHashType::from(u.as_ref())
+                                            crate::types::AttachmentHashType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_instance_requirements(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::InstanceRequirements,
+    input: &crate::types::InstanceRequirements,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("VCpuCount");
@@ -188,9 +188,9 @@ pub fn ser_instance_requirements(
 
 pub fn de_instance_requirements(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::InstanceRequirements, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::InstanceRequirements, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::InstanceRequirements::builder();
+    let mut builder = crate::types::InstanceRequirements::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("vCpuCount") /* VCpuCount com.amazonaws.ec2#InstanceRequirements$VCpuCount */ =>  {
@@ -286,8 +286,8 @@ pub fn de_instance_requirements(
             s if s.matches("bareMetal") /* BareMetal com.amazonaws.ec2#InstanceRequirements$BareMetal */ =>  {
                 let var_79 =
                     Some(
-                        Result::<crate::model::BareMetal, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::BareMetal::from(
+                        Result::<crate::types::BareMetal, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::BareMetal::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
@@ -300,8 +300,8 @@ pub fn de_instance_requirements(
             s if s.matches("burstablePerformance") /* BurstablePerformance com.amazonaws.ec2#InstanceRequirements$BurstablePerformance */ =>  {
                 let var_80 =
                     Some(
-                        Result::<crate::model::BurstablePerformance, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::BurstablePerformance::from(
+                        Result::<crate::types::BurstablePerformance, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::BurstablePerformance::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
@@ -339,8 +339,8 @@ pub fn de_instance_requirements(
             s if s.matches("localStorage") /* LocalStorage com.amazonaws.ec2#InstanceRequirements$LocalStorage */ =>  {
                 let var_83 =
                     Some(
-                        Result::<crate::model::LocalStorage, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::LocalStorage::from(
+                        Result::<crate::types::LocalStorage, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::LocalStorage::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

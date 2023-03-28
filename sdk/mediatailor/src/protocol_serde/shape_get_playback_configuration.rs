@@ -3,36 +3,34 @@
 pub fn de_get_playback_configuration_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetPlaybackConfigurationOutput,
-    crate::error::GetPlaybackConfigurationError,
+    crate::operation::get_playback_configuration::GetPlaybackConfigurationOutput,
+    crate::operation::get_playback_configuration::GetPlaybackConfigurationError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetPlaybackConfigurationError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::get_playback_configuration::GetPlaybackConfigurationError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::GetPlaybackConfigurationError::generic(
-        generic,
-    ))
+    Err(
+        crate::operation::get_playback_configuration::GetPlaybackConfigurationError::generic(
+            generic,
+        ),
+    )
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_playback_configuration_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetPlaybackConfigurationOutput,
-    crate::error::GetPlaybackConfigurationError,
+    crate::operation::get_playback_configuration::GetPlaybackConfigurationOutput,
+    crate::operation::get_playback_configuration::GetPlaybackConfigurationError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_playback_configuration_output::Builder::default();
+        let mut output = crate::operation::get_playback_configuration::builders::GetPlaybackConfigurationOutputBuilder::default();
         let _ = response;
-        output =
-            crate::protocol_serde::shape_get_playback_configuration::de_get_playback_configuration(
-                response.body().as_ref(),
-                output,
-            )
-            .map_err(crate::error::GetPlaybackConfigurationError::unhandled)?;
+        output = crate::protocol_serde::shape_get_playback_configuration::de_get_playback_configuration(response.body().as_ref(), output).map_err(crate::operation::get_playback_configuration::GetPlaybackConfigurationError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -42,9 +40,9 @@ pub fn de_get_playback_configuration_http_response(
 
 pub(crate) fn de_get_playback_configuration(
     value: &[u8],
-    mut builder: crate::output::get_playback_configuration_output::Builder,
+    mut builder: crate::operation::get_playback_configuration::builders::GetPlaybackConfigurationOutputBuilder,
 ) -> Result<
-    crate::output::get_playback_configuration_output::Builder,
+    crate::operation::get_playback_configuration::builders::GetPlaybackConfigurationOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

@@ -2,7 +2,7 @@
 pub(crate) fn de_application_component_detail<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ApplicationComponentDetail>,
+    Option<crate::types::ApplicationComponentDetail>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::application_component_detail::Builder::default();
+            let mut builder = crate::types::builders::ApplicationComponentDetailBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -53,7 +53,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::SrcCodeOrDbAnalysisStatus::from(
+                                            crate::types::SrcCodeOrDbAnalysisStatus::from(
                                                 u.as_ref(),
                                             )
                                         })
@@ -92,7 +92,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::AppType::from(u.as_ref()))
+                                            .map(|u| crate::types::AppType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -104,7 +104,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ResourceSubType::from(u.as_ref())
+                                            crate::types::ResourceSubType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -117,7 +117,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::InclusionStatus::from(u.as_ref())
+                                            crate::types::InclusionStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -135,7 +135,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::AntipatternReportStatus::from(u.as_ref())
+                                            crate::types::AntipatternReportStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -199,7 +199,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::RuntimeAnalysisStatus::from(u.as_ref())
+                                            crate::types::RuntimeAnalysisStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

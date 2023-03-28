@@ -2,200 +2,217 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_start_export_task_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::StartExportTaskOutput, crate::error::StartExportTaskError> {
+) -> std::result::Result<
+    crate::operation::start_export_task::StartExportTaskOutput,
+    crate::operation::start_export_task::StartExportTaskError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::StartExportTaskError::unhandled)?;
+        .map_err(crate::operation::start_export_task::StartExportTaskError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::StartExportTaskError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::start_export_task::StartExportTaskError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBClusterNotFoundFault" => crate::error::StartExportTaskError::DbClusterNotFoundFault({
+        "DBClusterNotFoundFault" => crate::operation::start_export_task::StartExportTaskError::DbClusterNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::db_cluster_not_found_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_db_cluster_not_found_fault::de_db_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::StartExportTaskError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "DBClusterSnapshotNotFoundFault" => {
-            crate::error::StartExportTaskError::DbClusterSnapshotNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::db_cluster_snapshot_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::DbClusterNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_db_cluster_snapshot_not_found_fault::de_db_cluster_snapshot_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::StartExportTaskError::unhandled)?;
+                    output = crate::protocol_serde::shape_db_cluster_not_found_fault::de_db_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::start_export_task::StartExportTaskError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "DBSnapshotNotFound" => crate::error::StartExportTaskError::DbSnapshotNotFoundFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::db_snapshot_not_found_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_db_snapshot_not_found_fault::de_db_snapshot_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::StartExportTaskError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "ExportTaskAlreadyExists" => {
-            crate::error::StartExportTaskError::ExportTaskAlreadyExistsFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::export_task_already_exists_fault::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_export_task_already_exists_fault::de_export_task_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::StartExportTaskError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "IamRoleMissingPermissions" => {
-            crate::error::StartExportTaskError::IamRoleMissingPermissionsFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::iam_role_missing_permissions_fault::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_iam_role_missing_permissions_fault::de_iam_role_missing_permissions_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::StartExportTaskError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "IamRoleNotFound" => crate::error::StartExportTaskError::IamRoleNotFoundFault({
+        "DBClusterSnapshotNotFoundFault" => crate::operation::start_export_task::StartExportTaskError::DbClusterSnapshotNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::iam_role_not_found_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_iam_role_not_found_fault::de_iam_role_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::StartExportTaskError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::DbClusterSnapshotNotFoundFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_db_cluster_snapshot_not_found_fault::de_db_cluster_snapshot_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::start_export_task::StartExportTaskError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "InvalidExportOnly" => crate::error::StartExportTaskError::InvalidExportOnlyFault({
+        "DBSnapshotNotFound" => crate::operation::start_export_task::StartExportTaskError::DbSnapshotNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::invalid_export_only_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_export_only_fault::de_invalid_export_only_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::StartExportTaskError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InvalidExportSourceState" => {
-            crate::error::StartExportTaskError::InvalidExportSourceStateFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_export_source_state_fault::Builder::default();
+                    let mut output = crate::types::error::builders::DbSnapshotNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_export_source_state_fault::de_invalid_export_source_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::StartExportTaskError::unhandled)?;
+                    output = crate::protocol_serde::shape_db_snapshot_not_found_fault::de_db_snapshot_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::start_export_task::StartExportTaskError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidS3BucketFault" => crate::error::StartExportTaskError::InvalidS3BucketFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::invalid_s3_bucket_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_s3_bucket_fault::de_invalid_s3_bucket_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::StartExportTaskError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "KMSKeyNotAccessibleFault" => {
-            crate::error::StartExportTaskError::KmsKeyNotAccessibleFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "ExportTaskAlreadyExists" => crate::operation::start_export_task::StartExportTaskError::ExportTaskAlreadyExistsFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::kms_key_not_accessible_fault::Builder::default();
+                    let mut output = crate::types::error::builders::ExportTaskAlreadyExistsFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_kms_key_not_accessible_fault::de_kms_key_not_accessible_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::StartExportTaskError::unhandled)?;
+                    output = crate::protocol_serde::shape_export_task_already_exists_fault::de_export_task_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::start_export_task::StartExportTaskError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::StartExportTaskError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "IamRoleMissingPermissions" => crate::operation::start_export_task::StartExportTaskError::IamRoleMissingPermissionsFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::IamRoleMissingPermissionsFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_iam_role_missing_permissions_fault::de_iam_role_missing_permissions_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::start_export_task::StartExportTaskError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "IamRoleNotFound" => crate::operation::start_export_task::StartExportTaskError::IamRoleNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::IamRoleNotFoundFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_iam_role_not_found_fault::de_iam_role_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::start_export_task::StartExportTaskError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidExportOnly" => crate::operation::start_export_task::StartExportTaskError::InvalidExportOnlyFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidExportOnlyFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_export_only_fault::de_invalid_export_only_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::start_export_task::StartExportTaskError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidExportSourceState" => crate::operation::start_export_task::StartExportTaskError::InvalidExportSourceStateFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidExportSourceStateFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_export_source_state_fault::de_invalid_export_source_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::start_export_task::StartExportTaskError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidS3BucketFault" => crate::operation::start_export_task::StartExportTaskError::InvalidS3BucketFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidS3BucketFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_s3_bucket_fault::de_invalid_s3_bucket_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::start_export_task::StartExportTaskError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "KMSKeyNotAccessibleFault" => crate::operation::start_export_task::StartExportTaskError::KmsKeyNotAccessibleFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::KmsKeyNotAccessibleFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_kms_key_not_accessible_fault::de_kms_key_not_accessible_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::start_export_task::StartExportTaskError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::start_export_task::StartExportTaskError::generic(generic)
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_start_export_task_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::StartExportTaskOutput, crate::error::StartExportTaskError> {
+) -> std::result::Result<
+    crate::operation::start_export_task::StartExportTaskOutput,
+    crate::operation::start_export_task::StartExportTaskError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::start_export_task_output::Builder::default();
+        let mut output =
+            crate::operation::start_export_task::builders::StartExportTaskOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_start_export_task::de_start_export_task(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::StartExportTaskError::unhandled)?;
+        .map_err(crate::operation::start_export_task::StartExportTaskError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -206,9 +223,11 @@ pub fn de_start_export_task_http_response(
 #[allow(unused_mut)]
 pub fn de_start_export_task(
     inp: &[u8],
-    mut builder: crate::output::start_export_task_output::Builder,
-) -> Result<crate::output::start_export_task_output::Builder, aws_smithy_xml::decode::XmlDecodeError>
-{
+    mut builder: crate::operation::start_export_task::builders::StartExportTaskOutputBuilder,
+) -> Result<
+    crate::operation::start_export_task::builders::StartExportTaskOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -433,8 +452,8 @@ pub fn de_start_export_task(
             s if s.matches("SourceType") /* SourceType com.amazonaws.rds.synthetic#StartExportTaskOutput$SourceType */ =>  {
                 let var_16 =
                     Some(
-                        Result::<crate::model::ExportSourceType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::ExportSourceType::from(
+                        Result::<crate::types::ExportSourceType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::ExportSourceType::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

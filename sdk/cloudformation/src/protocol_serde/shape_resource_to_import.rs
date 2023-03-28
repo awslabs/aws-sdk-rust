@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_resource_to_import(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::ResourceToImport,
+    input: &crate::types::ResourceToImport,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("ResourceType");

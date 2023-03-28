@@ -2,7 +2,7 @@
 pub(crate) fn de_exclude_data_volume_tag_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Tag>>,
+    Option<std::vec::Vec<crate::types::Tag>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

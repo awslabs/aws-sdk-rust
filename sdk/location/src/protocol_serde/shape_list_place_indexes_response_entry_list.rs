@@ -2,7 +2,7 @@
 pub(crate) fn de_list_place_indexes_response_entry_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ListPlaceIndexesResponseEntry>>,
+    Option<std::vec::Vec<crate::types::ListPlaceIndexesResponseEntry>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

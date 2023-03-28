@@ -2,131 +2,142 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_update_receipt_rule_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::UpdateReceiptRuleOutput, crate::error::UpdateReceiptRuleError>
-{
+) -> std::result::Result<
+    crate::operation::update_receipt_rule::UpdateReceiptRuleOutput,
+    crate::operation::update_receipt_rule::UpdateReceiptRuleError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::UpdateReceiptRuleError::unhandled)?;
+        .map_err(crate::operation::update_receipt_rule::UpdateReceiptRuleError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::UpdateReceiptRuleError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::update_receipt_rule::UpdateReceiptRuleError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidLambdaFunction" => {
-            crate::error::UpdateReceiptRuleError::InvalidLambdaFunctionException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidLambdaFunction" => crate::operation::update_receipt_rule::UpdateReceiptRuleError::InvalidLambdaFunctionException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_lambda_function_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidLambdaFunctionExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_lambda_function_exception::de_invalid_lambda_function_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateReceiptRuleError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_lambda_function_exception::de_invalid_lambda_function_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::update_receipt_rule::UpdateReceiptRuleError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidS3Configuration" => {
-            crate::error::UpdateReceiptRuleError::InvalidS3ConfigurationException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidS3Configuration" => crate::operation::update_receipt_rule::UpdateReceiptRuleError::InvalidS3ConfigurationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_s3_configuration_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidS3ConfigurationExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_s3_configuration_exception::de_invalid_s3_configuration_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateReceiptRuleError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_s3_configuration_exception::de_invalid_s3_configuration_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::update_receipt_rule::UpdateReceiptRuleError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidSnsTopic" => crate::error::UpdateReceiptRuleError::InvalidSnsTopicException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::invalid_sns_topic_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_sns_topic_exception::de_invalid_sns_topic_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateReceiptRuleError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "LimitExceeded" => crate::error::UpdateReceiptRuleError::LimitExceededException({
+        "InvalidSnsTopic" => crate::operation::update_receipt_rule::UpdateReceiptRuleError::InvalidSnsTopicException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::limit_exceeded_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateReceiptRuleError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "RuleDoesNotExist" => crate::error::UpdateReceiptRuleError::RuleDoesNotExistException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::rule_does_not_exist_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_rule_does_not_exist_exception::de_rule_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateReceiptRuleError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "RuleSetDoesNotExist" => {
-            crate::error::UpdateReceiptRuleError::RuleSetDoesNotExistException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::rule_set_does_not_exist_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidSnsTopicExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_rule_set_does_not_exist_exception::de_rule_set_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateReceiptRuleError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_sns_topic_exception::de_invalid_sns_topic_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::update_receipt_rule::UpdateReceiptRuleError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::UpdateReceiptRuleError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "LimitExceeded" => crate::operation::update_receipt_rule::UpdateReceiptRuleError::LimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::update_receipt_rule::UpdateReceiptRuleError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "RuleDoesNotExist" => crate::operation::update_receipt_rule::UpdateReceiptRuleError::RuleDoesNotExistException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::RuleDoesNotExistExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_rule_does_not_exist_exception::de_rule_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::update_receipt_rule::UpdateReceiptRuleError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "RuleSetDoesNotExist" => crate::operation::update_receipt_rule::UpdateReceiptRuleError::RuleSetDoesNotExistException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::RuleSetDoesNotExistExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_rule_set_does_not_exist_exception::de_rule_set_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::update_receipt_rule::UpdateReceiptRuleError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::update_receipt_rule::UpdateReceiptRuleError::generic(generic)
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_update_receipt_rule_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::UpdateReceiptRuleOutput, crate::error::UpdateReceiptRuleError>
-{
+) -> std::result::Result<
+    crate::operation::update_receipt_rule::UpdateReceiptRuleOutput,
+    crate::operation::update_receipt_rule::UpdateReceiptRuleError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::update_receipt_rule_output::Builder::default();
+        let mut output = crate::operation::update_receipt_rule::builders::UpdateReceiptRuleOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

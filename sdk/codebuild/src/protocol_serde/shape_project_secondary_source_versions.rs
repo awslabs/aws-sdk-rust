@@ -2,7 +2,7 @@
 pub(crate) fn de_project_secondary_source_versions<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ProjectSourceVersion>>,
+    Option<std::vec::Vec<crate::types::ProjectSourceVersion>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

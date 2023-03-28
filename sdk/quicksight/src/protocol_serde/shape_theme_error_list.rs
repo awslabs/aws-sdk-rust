@@ -2,7 +2,7 @@
 pub(crate) fn de_theme_error_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ThemeError>>,
+    Option<std::vec::Vec<crate::types::ThemeError>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

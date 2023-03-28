@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_unavailability_reason_code<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::UnavailabilityReasonCode>>,
+    Option<std::vec::Vec<crate::types::UnavailabilityReasonCode>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -29,7 +29,7 @@ where
                         )?
                         .map(|s| {
                             s.to_unescaped()
-                                .map(|u| crate::model::UnavailabilityReasonCode::from(u.as_ref()))
+                                .map(|u| crate::types::UnavailabilityReasonCode::from(u.as_ref()))
                         })
                         .transpose()?;
                         if let Some(value) = value {

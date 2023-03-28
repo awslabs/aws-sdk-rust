@@ -2,7 +2,7 @@
 pub(crate) fn de_search_cases_response_item_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<std::option::Option<crate::model::SearchCasesResponseItem>>>,
+    Option<std::vec::Vec<std::option::Option<crate::types::SearchCasesResponseItem>>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -4,7 +4,7 @@ pub(crate) fn de_aws_ec2_launch_template_data_network_interface_set_ipv6_address
 ) -> Result<
     Option<
         std::vec::Vec<
-            crate::model::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails,
+            crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails,
         >,
     >,
     aws_smithy_json::deserialize::error::DeserializeError,

@@ -2,7 +2,7 @@
 pub(crate) fn de_gateway_route_status<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::GatewayRouteStatus>,
+    Option<crate::types::GatewayRouteStatus>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::gateway_route_status::Builder::default();
+            let mut builder = crate::types::builders::GatewayRouteStatusBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::GatewayRouteStatusCode::from(u.as_ref())
+                                            crate::types::GatewayRouteStatusCode::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

@@ -3,157 +3,164 @@
 pub fn de_notify_object_complete_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::NotifyObjectCompleteOutput,
-    crate::error::NotifyObjectCompleteError,
+    crate::operation::notify_object_complete::NotifyObjectCompleteOutput,
+    crate::operation::notify_object_complete::NotifyObjectCompleteError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::NotifyObjectCompleteError::unhandled)?;
+        .map_err(crate::operation::notify_object_complete::NotifyObjectCompleteError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::NotifyObjectCompleteError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::notify_object_complete::NotifyObjectCompleteError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => {
-            crate::error::NotifyObjectCompleteError::AccessDeniedException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::access_denied_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::NotifyObjectCompleteError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "IllegalArgumentException" => {
-            crate::error::NotifyObjectCompleteError::IllegalArgumentException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::illegal_argument_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_illegal_argument_exception::de_illegal_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::NotifyObjectCompleteError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "KMSInvalidKeyUsageException" => {
-            crate::error::NotifyObjectCompleteError::KmsInvalidKeyUsageException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::kms_invalid_key_usage_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_kms_invalid_key_usage_exception::de_kms_invalid_key_usage_exception_json_err(response.body().as_ref(), output).map_err(crate::error::NotifyObjectCompleteError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "NotReadableInputStreamException" => {
-            crate::error::NotifyObjectCompleteError::NotReadableInputStreamException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::not_readable_input_stream_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_not_readable_input_stream_exception::de_not_readable_input_stream_exception_json_err(response.body().as_ref(), output).map_err(crate::error::NotifyObjectCompleteError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "RetryableException" => crate::error::NotifyObjectCompleteError::RetryableException({
+        "AccessDeniedException" => crate::operation::notify_object_complete::NotifyObjectCompleteError::AccessDeniedException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::retryable_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_retryable_exception::de_retryable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::NotifyObjectCompleteError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::notify_object_complete::NotifyObjectCompleteError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "ServiceInternalException" => {
-            crate::error::NotifyObjectCompleteError::ServiceInternalException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_internal_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_service_internal_exception::de_service_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::NotifyObjectCompleteError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ServiceUnavailableException" => {
-            crate::error::NotifyObjectCompleteError::ServiceUnavailableException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::service_unavailable_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::NotifyObjectCompleteError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ThrottlingException" => crate::error::NotifyObjectCompleteError::ThrottlingException({
+        "IllegalArgumentException" => crate::operation::notify_object_complete::NotifyObjectCompleteError::IllegalArgumentException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::throttling_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::NotifyObjectCompleteError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::IllegalArgumentExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_illegal_argument_exception::de_illegal_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::notify_object_complete::NotifyObjectCompleteError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::NotifyObjectCompleteError::generic(generic),
+        "KMSInvalidKeyUsageException" => crate::operation::notify_object_complete::NotifyObjectCompleteError::KmsInvalidKeyUsageException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::KmsInvalidKeyUsageExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_kms_invalid_key_usage_exception::de_kms_invalid_key_usage_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::notify_object_complete::NotifyObjectCompleteError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "NotReadableInputStreamException" => crate::operation::notify_object_complete::NotifyObjectCompleteError::NotReadableInputStreamException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::NotReadableInputStreamExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_not_readable_input_stream_exception::de_not_readable_input_stream_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::notify_object_complete::NotifyObjectCompleteError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "RetryableException" => crate::operation::notify_object_complete::NotifyObjectCompleteError::RetryableException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::RetryableExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_retryable_exception::de_retryable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::notify_object_complete::NotifyObjectCompleteError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ServiceInternalException" => crate::operation::notify_object_complete::NotifyObjectCompleteError::ServiceInternalException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ServiceInternalExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_service_internal_exception::de_service_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::notify_object_complete::NotifyObjectCompleteError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ServiceUnavailableException" => crate::operation::notify_object_complete::NotifyObjectCompleteError::ServiceUnavailableException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::notify_object_complete::NotifyObjectCompleteError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ThrottlingException" => crate::operation::notify_object_complete::NotifyObjectCompleteError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::notify_object_complete::NotifyObjectCompleteError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::notify_object_complete::NotifyObjectCompleteError::generic(generic)
     })
 }
 
@@ -161,18 +168,18 @@ pub fn de_notify_object_complete_http_error(
 pub fn de_notify_object_complete_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::NotifyObjectCompleteOutput,
-    crate::error::NotifyObjectCompleteError,
+    crate::operation::notify_object_complete::NotifyObjectCompleteOutput,
+    crate::operation::notify_object_complete::NotifyObjectCompleteError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::notify_object_complete_output::Builder::default();
+        let mut output = crate::operation::notify_object_complete::builders::NotifyObjectCompleteOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_notify_object_complete::de_notify_object_complete(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::NotifyObjectCompleteError::unhandled)?;
+        .map_err(crate::operation::notify_object_complete::NotifyObjectCompleteError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -182,9 +189,9 @@ pub fn de_notify_object_complete_http_response(
 
 pub(crate) fn de_notify_object_complete(
     value: &[u8],
-    mut builder: crate::output::notify_object_complete_output::Builder,
+    mut builder: crate::operation::notify_object_complete::builders::NotifyObjectCompleteOutputBuilder,
 ) -> Result<
-    crate::output::notify_object_complete_output::Builder,
+    crate::operation::notify_object_complete::builders::NotifyObjectCompleteOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =
@@ -213,7 +220,7 @@ pub(crate) fn de_notify_object_complete(
                             )?
                             .map(|s| {
                                 s.to_unescaped().map(|u| {
-                                    crate::model::SummaryChecksumAlgorithm::from(u.as_ref())
+                                    crate::types::SummaryChecksumAlgorithm::from(u.as_ref())
                                 })
                             })
                             .transpose()?,

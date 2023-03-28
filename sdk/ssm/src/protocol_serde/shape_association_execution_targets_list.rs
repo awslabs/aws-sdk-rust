@@ -2,7 +2,7 @@
 pub(crate) fn de_association_execution_targets_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AssociationExecutionTarget>>,
+    Option<std::vec::Vec<crate::types::AssociationExecutionTarget>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

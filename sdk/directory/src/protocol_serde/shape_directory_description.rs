@@ -2,7 +2,7 @@
 pub(crate) fn de_directory_description<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::DirectoryDescription>,
+    Option<crate::types::DirectoryDescription>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::directory_description::Builder::default();
+            let mut builder = crate::types::builders::DirectoryDescriptionBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -57,7 +57,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::DirectorySize::from(u.as_ref()))
+                                            .map(|u| crate::types::DirectorySize::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -69,7 +69,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::DirectoryEdition::from(u.as_ref())
+                                            crate::types::DirectoryEdition::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -116,7 +116,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::DirectoryStage::from(u.as_ref()))
+                                            .map(|u| crate::types::DirectoryStage::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -128,7 +128,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::ShareStatus::from(u.as_ref()))
+                                            .map(|u| crate::types::ShareStatus::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -140,7 +140,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::ShareMethod::from(u.as_ref()))
+                                            .map(|u| crate::types::ShareMethod::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -177,7 +177,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::DirectoryType::from(u.as_ref()))
+                                            .map(|u| crate::types::DirectoryType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -204,7 +204,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::RadiusStatus::from(u.as_ref()))
+                                            .map(|u| crate::types::RadiusStatus::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -253,7 +253,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::OsVersion::from(u.as_ref()))
+                                            .map(|u| crate::types::OsVersion::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

@@ -2,51 +2,61 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_policies_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListPoliciesOutput, crate::error::ListPoliciesError> {
+) -> std::result::Result<
+    crate::operation::list_policies::ListPoliciesOutput,
+    crate::operation::list_policies::ListPoliciesError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListPoliciesError::unhandled)?;
+        .map_err(crate::operation::list_policies::ListPoliciesError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListPoliciesError::unhandled(generic)),
+        None => return Err(crate::operation::list_policies::ListPoliciesError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ServiceFailure" => crate::error::ListPoliciesError::ServiceFailureException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "ServiceFailure" => {
+            crate::operation::list_policies::ListPoliciesError::ServiceFailureException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::service_failure_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListPoliciesError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::ListPoliciesError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ServiceFailureExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::list_policies::ListPoliciesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::list_policies::ListPoliciesError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_policies_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListPoliciesOutput, crate::error::ListPoliciesError> {
+) -> std::result::Result<
+    crate::operation::list_policies::ListPoliciesOutput,
+    crate::operation::list_policies::ListPoliciesError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_policies_output::Builder::default();
+        let mut output =
+            crate::operation::list_policies::builders::ListPoliciesOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_policies::de_list_policies(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListPoliciesError::unhandled)?;
+        .map_err(crate::operation::list_policies::ListPoliciesError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -57,8 +67,11 @@ pub fn de_list_policies_http_response(
 #[allow(unused_mut)]
 pub fn de_list_policies(
     inp: &[u8],
-    mut builder: crate::output::list_policies_output::Builder,
-) -> Result<crate::output::list_policies_output::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    mut builder: crate::operation::list_policies::builders::ListPoliciesOutputBuilder,
+) -> Result<
+    crate::operation::list_policies::builders::ListPoliciesOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

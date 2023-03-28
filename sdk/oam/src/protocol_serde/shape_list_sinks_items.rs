@@ -2,7 +2,7 @@
 pub(crate) fn de_list_sinks_items<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ListSinksItem>>,
+    Option<std::vec::Vec<crate::types::ListSinksItem>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

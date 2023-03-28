@@ -2,7 +2,7 @@
 pub(crate) fn de_resolver_rules<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ResolverRule>>,
+    Option<std::vec::Vec<crate::types::ResolverRule>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

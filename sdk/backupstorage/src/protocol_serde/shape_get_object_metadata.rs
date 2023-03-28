@@ -2,13 +2,15 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_object_metadata_http_response(
     op_response: &mut aws_smithy_http::operation::Response,
-) -> std::result::Result<crate::output::GetObjectMetadataOutput, crate::error::GetObjectMetadataError>
-{
+) -> std::result::Result<
+    crate::operation::get_object_metadata::GetObjectMetadataOutput,
+    crate::operation::get_object_metadata::GetObjectMetadataError,
+> {
     #[allow(unused_variables)]
     let (response, properties) = op_response.parts_mut();
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_object_metadata_output::Builder::default();
+        let mut output = crate::operation::get_object_metadata::builders::GetObjectMetadataOutputBuilder::default();
         let _ = response;
         output = output.set_metadata_blob(Some(
             crate::protocol_serde::shape_get_object_metadata_output::de_metadata_blob_payload(
@@ -17,22 +19,22 @@ pub fn de_get_object_metadata_http_response(
         ));
         output = output.set_metadata_blob_checksum(
             crate::protocol_serde::shape_get_object_metadata_output::de_metadata_blob_checksum_header(response.headers())
-                                    .map_err(|_|crate::error::GetObjectMetadataError::unhandled("Failed to parse MetadataBlobChecksum from header `x-amz-checksum"))?
+                                    .map_err(|_|crate::operation::get_object_metadata::GetObjectMetadataError::unhandled("Failed to parse MetadataBlobChecksum from header `x-amz-checksum"))?
         );
         output = output.set_metadata_blob_checksum_algorithm(
             crate::protocol_serde::shape_get_object_metadata_output::de_metadata_blob_checksum_algorithm_header(response.headers())
-                                    .map_err(|_|crate::error::GetObjectMetadataError::unhandled("Failed to parse MetadataBlobChecksumAlgorithm from header `x-amz-checksum-algorithm"))?
+                                    .map_err(|_|crate::operation::get_object_metadata::GetObjectMetadataError::unhandled("Failed to parse MetadataBlobChecksumAlgorithm from header `x-amz-checksum-algorithm"))?
         );
         output = output.set_metadata_blob_length(
             crate::protocol_serde::shape_get_object_metadata_output::de_metadata_blob_length_header(response.headers())
-                                    .map_err(|_|crate::error::GetObjectMetadataError::unhandled("Failed to parse MetadataBlobLength from header `x-amz-data-length"))?
+                                    .map_err(|_|crate::operation::get_object_metadata::GetObjectMetadataError::unhandled("Failed to parse MetadataBlobLength from header `x-amz-data-length"))?
         );
         output = output.set_metadata_string(
             crate::protocol_serde::shape_get_object_metadata_output::de_metadata_string_header(
                 response.headers(),
             )
             .map_err(|_| {
-                crate::error::GetObjectMetadataError::unhandled(
+                crate::operation::get_object_metadata::GetObjectMetadataError::unhandled(
                     "Failed to parse MetadataString from header `x-amz-metadata-string",
                 )
             })?,
@@ -47,152 +49,162 @@ pub fn de_get_object_metadata_http_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_object_metadata_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetObjectMetadataOutput, crate::error::GetObjectMetadataError>
-{
+) -> std::result::Result<
+    crate::operation::get_object_metadata::GetObjectMetadataOutput,
+    crate::operation::get_object_metadata::GetObjectMetadataError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetObjectMetadataError::unhandled)?;
+        .map_err(crate::operation::get_object_metadata::GetObjectMetadataError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::GetObjectMetadataError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::get_object_metadata::GetObjectMetadataError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::GetObjectMetadataError::AccessDeniedException({
+        "AccessDeniedException" => crate::operation::get_object_metadata::GetObjectMetadataError::AccessDeniedException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::access_denied_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetObjectMetadataError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_object_metadata::GetObjectMetadataError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "IllegalArgumentException" => {
-            crate::error::GetObjectMetadataError::IllegalArgumentException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::illegal_argument_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_illegal_argument_exception::de_illegal_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetObjectMetadataError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "KMSInvalidKeyUsageException" => {
-            crate::error::GetObjectMetadataError::KmsInvalidKeyUsageException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::kms_invalid_key_usage_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_kms_invalid_key_usage_exception::de_kms_invalid_key_usage_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetObjectMetadataError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ResourceNotFoundException" => {
-            crate::error::GetObjectMetadataError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetObjectMetadataError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "RetryableException" => crate::error::GetObjectMetadataError::RetryableException({
+        "IllegalArgumentException" => crate::operation::get_object_metadata::GetObjectMetadataError::IllegalArgumentException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::retryable_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_retryable_exception::de_retryable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetObjectMetadataError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::IllegalArgumentExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_illegal_argument_exception::de_illegal_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_object_metadata::GetObjectMetadataError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "ServiceInternalException" => {
-            crate::error::GetObjectMetadataError::ServiceInternalException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_internal_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_service_internal_exception::de_service_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetObjectMetadataError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ServiceUnavailableException" => {
-            crate::error::GetObjectMetadataError::ServiceUnavailableException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::service_unavailable_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetObjectMetadataError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ThrottlingException" => crate::error::GetObjectMetadataError::ThrottlingException({
+        "KMSInvalidKeyUsageException" => crate::operation::get_object_metadata::GetObjectMetadataError::KmsInvalidKeyUsageException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::throttling_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetObjectMetadataError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::KmsInvalidKeyUsageExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_kms_invalid_key_usage_exception::de_kms_invalid_key_usage_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_object_metadata::GetObjectMetadataError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::GetObjectMetadataError::generic(generic),
+        "ResourceNotFoundException" => crate::operation::get_object_metadata::GetObjectMetadataError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_object_metadata::GetObjectMetadataError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "RetryableException" => crate::operation::get_object_metadata::GetObjectMetadataError::RetryableException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::RetryableExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_retryable_exception::de_retryable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_object_metadata::GetObjectMetadataError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ServiceInternalException" => crate::operation::get_object_metadata::GetObjectMetadataError::ServiceInternalException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ServiceInternalExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_service_internal_exception::de_service_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_object_metadata::GetObjectMetadataError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ServiceUnavailableException" => crate::operation::get_object_metadata::GetObjectMetadataError::ServiceUnavailableException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_object_metadata::GetObjectMetadataError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ThrottlingException" => crate::operation::get_object_metadata::GetObjectMetadataError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_object_metadata::GetObjectMetadataError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::get_object_metadata::GetObjectMetadataError::generic(generic)
     })
 }

@@ -2,7 +2,7 @@
 pub(crate) fn de_scaling_instructions<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ScalingInstruction>>,
+    Option<std::vec::Vec<crate::types::ScalingInstruction>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

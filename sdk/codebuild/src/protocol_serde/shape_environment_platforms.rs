@@ -2,7 +2,7 @@
 pub(crate) fn de_environment_platforms<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::EnvironmentPlatform>>,
+    Option<std::vec::Vec<crate::types::EnvironmentPlatform>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

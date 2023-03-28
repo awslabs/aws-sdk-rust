@@ -2,28 +2,34 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_tags_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListTagsOutput, crate::error::ListTagsError> {
+) -> std::result::Result<
+    crate::operation::list_tags::ListTagsOutput,
+    crate::operation::list_tags::ListTagsError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListTagsError::unhandled)?;
+        .map_err(crate::operation::list_tags::ListTagsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListTagsError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::list_tags::ListTagsError::unhandled(
+                generic,
+            ))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidParameterValueException" => {
-            crate::error::ListTagsError::InvalidParameterValueException({
+            crate::operation::list_tags::ListTagsError::InvalidParameterValueException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_parameter_value_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_tags::ListTagsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -34,14 +40,13 @@ pub fn de_list_tags_http_error(
             })
         }
         "MissingParameterValueException" => {
-            crate::error::ListTagsError::MissingParameterValueException({
+            crate::operation::list_tags::ListTagsError::MissingParameterValueException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::missing_parameter_value_exception::Builder::default();
+                    let mut output = crate::types::error::builders::MissingParameterValueExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_missing_parameter_value_exception::de_missing_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsError::unhandled)?;
+                    output = crate::protocol_serde::shape_missing_parameter_value_exception::de_missing_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_tags::ListTagsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -51,30 +56,34 @@ pub fn de_list_tags_http_error(
                 tmp
             })
         }
-        "ResourceNotFoundException" => crate::error::ListTagsError::ResourceNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "ResourceNotFoundException" => {
+            crate::operation::list_tags::ListTagsError::ResourceNotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::resource_not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_tags::ListTagsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "ServiceUnavailableException" => {
-            crate::error::ListTagsError::ServiceUnavailableException({
+            crate::operation::list_tags::ListTagsError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::service_unavailable_exception::Builder::default();
+                        crate::types::error::builders::ServiceUnavailableExceptionBuilder::default(
+                        );
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_tags::ListTagsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -84,21 +93,24 @@ pub fn de_list_tags_http_error(
                 tmp
             })
         }
-        _ => crate::error::ListTagsError::generic(generic),
+        _ => crate::operation::list_tags::ListTagsError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_tags_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListTagsOutput, crate::error::ListTagsError> {
+) -> std::result::Result<
+    crate::operation::list_tags::ListTagsOutput,
+    crate::operation::list_tags::ListTagsError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_tags_output::Builder::default();
+        let mut output = crate::operation::list_tags::builders::ListTagsOutputBuilder::default();
         let _ = response;
         output =
             crate::protocol_serde::shape_list_tags::de_list_tags(response.body().as_ref(), output)
-                .map_err(crate::error::ListTagsError::unhandled)?;
+                .map_err(crate::operation::list_tags::ListTagsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -108,9 +120,9 @@ pub fn de_list_tags_http_response(
 
 pub(crate) fn de_list_tags(
     value: &[u8],
-    mut builder: crate::output::list_tags_output::Builder,
+    mut builder: crate::operation::list_tags::builders::ListTagsOutputBuilder,
 ) -> Result<
-    crate::output::list_tags_output::Builder,
+    crate::operation::list_tags::builders::ListTagsOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

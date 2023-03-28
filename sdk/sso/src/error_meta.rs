@@ -4,13 +4,13 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>Indicates that a problem occurred with the input to the request. For example, a required parameter might be missing or out of range.</p>
-    InvalidRequestException(crate::error::InvalidRequestException),
+    InvalidRequestException(crate::types::error::InvalidRequestException),
     /// <p>The specified resource doesn't exist.</p>
-    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>Indicates that the request is being made too frequently and is more than what the server can handle.</p>
-    TooManyRequestsException(crate::error::TooManyRequestsException),
+    TooManyRequestsException(crate::types::error::TooManyRequestsException),
     /// <p>Indicates that the request is not authorized. This can happen due to an invalid access token in the request.</p>
-    UnauthorizedException(crate::error::UnauthorizedException),
+    UnauthorizedException(crate::types::error::UnauthorizedException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled),
 }
@@ -25,12 +25,21 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRoleCredentialsError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_role_credentials::GetRoleCredentialsError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetRoleCredentialsError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_role_credentials::GetRoleCredentialsError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -47,31 +56,32 @@ where
         }
     }
 }
-impl From<crate::error::GetRoleCredentialsError> for Error {
-    fn from(err: crate::error::GetRoleCredentialsError) -> Self {
+impl From<crate::operation::get_role_credentials::GetRoleCredentialsError> for Error {
+    fn from(err: crate::operation::get_role_credentials::GetRoleCredentialsError) -> Self {
         match err {
-            crate::error::GetRoleCredentialsError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::GetRoleCredentialsError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::GetRoleCredentialsError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::GetRoleCredentialsError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::GetRoleCredentialsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_role_credentials::GetRoleCredentialsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::get_role_credentials::GetRoleCredentialsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_role_credentials::GetRoleCredentialsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_role_credentials::GetRoleCredentialsError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::get_role_credentials::GetRoleCredentialsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListAccountRolesError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_account_roles::ListAccountRolesError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListAccountRolesError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_account_roles::ListAccountRolesError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -88,30 +98,29 @@ where
         }
     }
 }
-impl From<crate::error::ListAccountRolesError> for Error {
-    fn from(err: crate::error::ListAccountRolesError) -> Self {
+impl From<crate::operation::list_account_roles::ListAccountRolesError> for Error {
+    fn from(err: crate::operation::list_account_roles::ListAccountRolesError) -> Self {
         match err {
-            crate::error::ListAccountRolesError::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::ListAccountRolesError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::ListAccountRolesError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::ListAccountRolesError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::error::ListAccountRolesError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_account_roles::ListAccountRolesError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::list_account_roles::ListAccountRolesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_account_roles::ListAccountRolesError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::list_account_roles::ListAccountRolesError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::list_account_roles::ListAccountRolesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListAccountsError, R>> for Error
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::list_accounts::ListAccountsError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListAccountsError, R>) -> Self {
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_accounts::ListAccountsError,
+            R,
+        >,
+    ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
@@ -127,30 +136,34 @@ where
         }
     }
 }
-impl From<crate::error::ListAccountsError> for Error {
-    fn from(err: crate::error::ListAccountsError) -> Self {
+impl From<crate::operation::list_accounts::ListAccountsError> for Error {
+    fn from(err: crate::operation::list_accounts::ListAccountsError) -> Self {
         match err {
-            crate::error::ListAccountsError::InvalidRequestException(inner) => {
+            crate::operation::list_accounts::ListAccountsError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
-            crate::error::ListAccountsError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::ListAccountsError::TooManyRequestsException(inner) => {
+            crate::operation::list_accounts::ListAccountsError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_accounts::ListAccountsError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::ListAccountsError::UnauthorizedException(inner) => {
+            crate::operation::list_accounts::ListAccountsError::UnauthorizedException(inner) => {
                 Error::UnauthorizedException(inner)
             }
-            crate::error::ListAccountsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_accounts::ListAccountsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::LogoutError, R>> for Error
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::logout::LogoutError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::LogoutError, R>) -> Self {
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::logout::LogoutError, R>,
+    ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
@@ -166,19 +179,19 @@ where
         }
     }
 }
-impl From<crate::error::LogoutError> for Error {
-    fn from(err: crate::error::LogoutError) -> Self {
+impl From<crate::operation::logout::LogoutError> for Error {
+    fn from(err: crate::operation::logout::LogoutError) -> Self {
         match err {
-            crate::error::LogoutError::InvalidRequestException(inner) => {
+            crate::operation::logout::LogoutError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
-            crate::error::LogoutError::TooManyRequestsException(inner) => {
+            crate::operation::logout::LogoutError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::LogoutError::UnauthorizedException(inner) => {
+            crate::operation::logout::LogoutError::UnauthorizedException(inner) => {
                 Error::UnauthorizedException(inner)
             }
-            crate::error::LogoutError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::logout::LogoutError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -2,7 +2,7 @@
 pub(crate) fn de_cloud_watch_logs_log_streams<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CloudWatchLogsLogStream>>,
+    Option<std::vec::Vec<crate::types::CloudWatchLogsLogStream>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

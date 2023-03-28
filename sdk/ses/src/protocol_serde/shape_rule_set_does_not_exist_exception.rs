@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_rule_set_does_not_exist_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::rule_set_does_not_exist_exception::Builder,
+    mut builder: crate::types::error::builders::RuleSetDoesNotExistExceptionBuilder,
 ) -> Result<
-    crate::error::rule_set_does_not_exist_exception::Builder,
+    crate::types::error::builders::RuleSetDoesNotExistExceptionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

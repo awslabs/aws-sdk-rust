@@ -2,7 +2,7 @@
 pub fn de_lb_cookie_stickiness_policies(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::LbCookieStickinessPolicy>,
+    std::vec::Vec<crate::types::LbCookieStickinessPolicy>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

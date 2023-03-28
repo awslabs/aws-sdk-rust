@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_response_headers_policy_already_exists_xml_err(
     inp: &[u8],
-    mut builder: crate::error::response_headers_policy_already_exists::Builder,
+    mut builder: crate::types::error::builders::ResponseHeadersPolicyAlreadyExistsBuilder,
 ) -> Result<
-    crate::error::response_headers_policy_already_exists::Builder,
+    crate::types::error::builders::ResponseHeadersPolicyAlreadyExistsBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

@@ -2,42 +2,31 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_contents_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListContentsOutput, crate::error::ListContentsError> {
+) -> std::result::Result<
+    crate::operation::list_contents::ListContentsOutput,
+    crate::operation::list_contents::ListContentsError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListContentsError::unhandled)?;
+        .map_err(crate::operation::list_contents::ListContentsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListContentsError::unhandled(generic)),
+        None => return Err(crate::operation::list_contents::ListContentsError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::ListContentsError::AccessDeniedException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::access_denied_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListContentsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ResourceNotFoundException" => {
-            crate::error::ListContentsError::ResourceNotFoundException({
+        "AccessDeniedException" => {
+            crate::operation::list_contents::ListContentsError::AccessDeniedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::AccessDeniedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListContentsError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_contents::ListContentsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -47,38 +36,63 @@ pub fn de_list_contents_http_error(
                 tmp
             })
         }
-        "ValidationException" => crate::error::ListContentsError::ValidationException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "ResourceNotFoundException" => {
+            crate::operation::list_contents::ListContentsError::ResourceNotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListContentsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::ListContentsError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_contents::ListContentsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ValidationException" => {
+            crate::operation::list_contents::ListContentsError::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_contents::ListContentsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::list_contents::ListContentsError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_contents_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListContentsOutput, crate::error::ListContentsError> {
+) -> std::result::Result<
+    crate::operation::list_contents::ListContentsOutput,
+    crate::operation::list_contents::ListContentsError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_contents_output::Builder::default();
+        let mut output =
+            crate::operation::list_contents::builders::ListContentsOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_contents::de_list_contents(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListContentsError::unhandled)?;
+        .map_err(crate::operation::list_contents::ListContentsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -88,9 +102,9 @@ pub fn de_list_contents_http_response(
 
 pub(crate) fn de_list_contents(
     value: &[u8],
-    mut builder: crate::output::list_contents_output::Builder,
+    mut builder: crate::operation::list_contents::builders::ListContentsOutputBuilder,
 ) -> Result<
-    crate::output::list_contents_output::Builder,
+    crate::operation::list_contents::builders::ListContentsOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

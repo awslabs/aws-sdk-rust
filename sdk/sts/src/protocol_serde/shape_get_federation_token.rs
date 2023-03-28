@@ -3,75 +3,77 @@
 pub fn de_get_federation_token_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetFederationTokenOutput,
-    crate::error::GetFederationTokenError,
+    crate::operation::get_federation_token::GetFederationTokenOutput,
+    crate::operation::get_federation_token::GetFederationTokenError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetFederationTokenError::unhandled)?;
+        .map_err(crate::operation::get_federation_token::GetFederationTokenError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::GetFederationTokenError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::get_federation_token::GetFederationTokenError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "MalformedPolicyDocument" => {
-            crate::error::GetFederationTokenError::MalformedPolicyDocumentException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "MalformedPolicyDocument" => crate::operation::get_federation_token::GetFederationTokenError::MalformedPolicyDocumentException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::malformed_policy_document_exception::Builder::default();
+                    let mut output = crate::types::error::builders::MalformedPolicyDocumentExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_malformed_policy_document_exception::de_malformed_policy_document_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetFederationTokenError::unhandled)?;
+                    output = crate::protocol_serde::shape_malformed_policy_document_exception::de_malformed_policy_document_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::get_federation_token::GetFederationTokenError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "PackedPolicyTooLarge" => {
-            crate::error::GetFederationTokenError::PackedPolicyTooLargeException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "PackedPolicyTooLarge" => crate::operation::get_federation_token::GetFederationTokenError::PackedPolicyTooLargeException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::packed_policy_too_large_exception::Builder::default();
+                    let mut output = crate::types::error::builders::PackedPolicyTooLargeExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_packed_policy_too_large_exception::de_packed_policy_too_large_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetFederationTokenError::unhandled)?;
+                    output = crate::protocol_serde::shape_packed_policy_too_large_exception::de_packed_policy_too_large_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::get_federation_token::GetFederationTokenError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "RegionDisabledException" => {
-            crate::error::GetFederationTokenError::RegionDisabledException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "RegionDisabledException" => crate::operation::get_federation_token::GetFederationTokenError::RegionDisabledException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::region_disabled_exception::Builder::default();
+                    let mut output = crate::types::error::builders::RegionDisabledExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_region_disabled_exception::de_region_disabled_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetFederationTokenError::unhandled)?;
+                    output = crate::protocol_serde::shape_region_disabled_exception::de_region_disabled_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::get_federation_token::GetFederationTokenError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::GetFederationTokenError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::get_federation_token::GetFederationTokenError::generic(generic)
     })
 }
 
@@ -79,18 +81,18 @@ pub fn de_get_federation_token_http_error(
 pub fn de_get_federation_token_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetFederationTokenOutput,
-    crate::error::GetFederationTokenError,
+    crate::operation::get_federation_token::GetFederationTokenOutput,
+    crate::operation::get_federation_token::GetFederationTokenError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_federation_token_output::Builder::default();
+        let mut output = crate::operation::get_federation_token::builders::GetFederationTokenOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_get_federation_token::de_get_federation_token(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::GetFederationTokenError::unhandled)?;
+        .map_err(crate::operation::get_federation_token::GetFederationTokenError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -101,9 +103,9 @@ pub fn de_get_federation_token_http_response(
 #[allow(unused_mut)]
 pub fn de_get_federation_token(
     inp: &[u8],
-    mut builder: crate::output::get_federation_token_output::Builder,
+    mut builder: crate::operation::get_federation_token::builders::GetFederationTokenOutputBuilder,
 ) -> Result<
-    crate::output::get_federation_token_output::Builder,
+    crate::operation::get_federation_token::builders::GetFederationTokenOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

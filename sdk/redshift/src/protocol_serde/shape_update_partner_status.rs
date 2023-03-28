@@ -3,70 +3,79 @@
 pub fn de_update_partner_status_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::UpdatePartnerStatusOutput,
-    crate::error::UpdatePartnerStatusError,
+    crate::operation::update_partner_status::UpdatePartnerStatusOutput,
+    crate::operation::update_partner_status::UpdatePartnerStatusError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::UpdatePartnerStatusError::unhandled)?;
+        .map_err(crate::operation::update_partner_status::UpdatePartnerStatusError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::UpdatePartnerStatusError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::update_partner_status::UpdatePartnerStatusError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ClusterNotFound" => crate::error::UpdatePartnerStatusError::ClusterNotFoundFault({
+        "ClusterNotFound" => crate::operation::update_partner_status::UpdatePartnerStatusError::ClusterNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::cluster_not_found_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_cluster_not_found_fault::de_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdatePartnerStatusError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "PartnerNotFound" => crate::error::UpdatePartnerStatusError::PartnerNotFoundFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::partner_not_found_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_partner_not_found_fault::de_partner_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdatePartnerStatusError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "UnauthorizedPartnerIntegration" => {
-            crate::error::UpdatePartnerStatusError::UnauthorizedPartnerIntegrationFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::unauthorized_partner_integration_fault::Builder::default();
+                    let mut output = crate::types::error::builders::ClusterNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_unauthorized_partner_integration_fault::de_unauthorized_partner_integration_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdatePartnerStatusError::unhandled)?;
+                    output = crate::protocol_serde::shape_cluster_not_found_fault::de_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::update_partner_status::UpdatePartnerStatusError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::UpdatePartnerStatusError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "PartnerNotFound" => crate::operation::update_partner_status::UpdatePartnerStatusError::PartnerNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::PartnerNotFoundFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_partner_not_found_fault::de_partner_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::update_partner_status::UpdatePartnerStatusError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "UnauthorizedPartnerIntegration" => crate::operation::update_partner_status::UpdatePartnerStatusError::UnauthorizedPartnerIntegrationFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::UnauthorizedPartnerIntegrationFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_unauthorized_partner_integration_fault::de_unauthorized_partner_integration_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::update_partner_status::UpdatePartnerStatusError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::update_partner_status::UpdatePartnerStatusError::generic(generic)
     })
 }
 
@@ -74,18 +83,18 @@ pub fn de_update_partner_status_http_error(
 pub fn de_update_partner_status_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::UpdatePartnerStatusOutput,
-    crate::error::UpdatePartnerStatusError,
+    crate::operation::update_partner_status::UpdatePartnerStatusOutput,
+    crate::operation::update_partner_status::UpdatePartnerStatusError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::update_partner_status_output::Builder::default();
+        let mut output = crate::operation::update_partner_status::builders::UpdatePartnerStatusOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_update_partner_status::de_update_partner_status(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::UpdatePartnerStatusError::unhandled)?;
+        .map_err(crate::operation::update_partner_status::UpdatePartnerStatusError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -96,9 +105,9 @@ pub fn de_update_partner_status_http_response(
 #[allow(unused_mut)]
 pub fn de_update_partner_status(
     inp: &[u8],
-    mut builder: crate::output::update_partner_status_output::Builder,
+    mut builder: crate::operation::update_partner_status::builders::UpdatePartnerStatusOutputBuilder,
 ) -> Result<
-    crate::output::update_partner_status_output::Builder,
+    crate::operation::update_partner_status::builders::UpdatePartnerStatusOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

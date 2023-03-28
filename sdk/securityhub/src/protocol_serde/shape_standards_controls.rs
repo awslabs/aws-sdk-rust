@@ -2,7 +2,7 @@
 pub(crate) fn de_standards_controls<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::StandardsControl>>,
+    Option<std::vec::Vec<crate::types::StandardsControl>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

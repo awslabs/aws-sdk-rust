@@ -2,7 +2,7 @@
 pub(crate) fn de_routing_controls<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::RoutingControl>>,
+    Option<std::vec::Vec<crate::types::RoutingControl>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

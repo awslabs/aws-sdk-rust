@@ -3,37 +3,45 @@
 pub fn de_list_type_registrations_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListTypeRegistrationsOutput,
-    crate::error::ListTypeRegistrationsError,
+    crate::operation::list_type_registrations::ListTypeRegistrationsOutput,
+    crate::operation::list_type_registrations::ListTypeRegistrationsError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListTypeRegistrationsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::list_type_registrations::ListTypeRegistrationsError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    let error_code = match generic.code() {
-        Some(code) => code,
-        None => return Err(crate::error::ListTypeRegistrationsError::unhandled(generic)),
-    };
+    let error_code =
+        match generic.code() {
+            Some(code) => code,
+            None => return Err(
+                crate::operation::list_type_registrations::ListTypeRegistrationsError::unhandled(
+                    generic,
+                ),
+            ),
+        };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CFNRegistryException" => crate::error::ListTypeRegistrationsError::CfnRegistryException({
+        "CFNRegistryException" => crate::operation::list_type_registrations::ListTypeRegistrationsError::CfnRegistryException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::cfn_registry_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_cfn_registry_exception::de_cfn_registry_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTypeRegistrationsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::CfnRegistryExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_cfn_registry_exception::de_cfn_registry_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::list_type_registrations::ListTypeRegistrationsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::ListTypeRegistrationsError::generic(generic),
+        _ => crate::operation::list_type_registrations::ListTypeRegistrationsError::generic(generic)
     })
 }
 
@@ -41,18 +49,20 @@ pub fn de_list_type_registrations_http_error(
 pub fn de_list_type_registrations_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListTypeRegistrationsOutput,
-    crate::error::ListTypeRegistrationsError,
+    crate::operation::list_type_registrations::ListTypeRegistrationsOutput,
+    crate::operation::list_type_registrations::ListTypeRegistrationsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_type_registrations_output::Builder::default();
+        let mut output = crate::operation::list_type_registrations::builders::ListTypeRegistrationsOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_type_registrations::de_list_type_registrations(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListTypeRegistrationsError::unhandled)?;
+        .map_err(
+            crate::operation::list_type_registrations::ListTypeRegistrationsError::unhandled,
+        )?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -63,9 +73,9 @@ pub fn de_list_type_registrations_http_response(
 #[allow(unused_mut)]
 pub fn de_list_type_registrations(
     inp: &[u8],
-    mut builder: crate::output::list_type_registrations_output::Builder,
+    mut builder: crate::operation::list_type_registrations::builders::ListTypeRegistrationsOutputBuilder,
 ) -> Result<
-    crate::output::list_type_registrations_output::Builder,
+    crate::operation::list_type_registrations::builders::ListTypeRegistrationsOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

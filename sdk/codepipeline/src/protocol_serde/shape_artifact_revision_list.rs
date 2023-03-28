@@ -2,7 +2,7 @@
 pub(crate) fn de_artifact_revision_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ArtifactRevision>>,
+    Option<std::vec::Vec<crate::types::ArtifactRevision>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

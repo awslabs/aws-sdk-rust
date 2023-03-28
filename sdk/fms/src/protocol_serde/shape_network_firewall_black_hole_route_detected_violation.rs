@@ -2,7 +2,7 @@
 pub(crate) fn de_network_firewall_black_hole_route_detected_violation<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::NetworkFirewallBlackHoleRouteDetectedViolation>,
+    Option<crate::types::NetworkFirewallBlackHoleRouteDetectedViolation>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::network_firewall_black_hole_route_detected_violation::Builder::default();
+            let mut builder = crate::types::builders::NetworkFirewallBlackHoleRouteDetectedViolationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

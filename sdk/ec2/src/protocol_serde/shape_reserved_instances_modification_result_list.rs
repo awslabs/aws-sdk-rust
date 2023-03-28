@@ -2,7 +2,7 @@
 pub fn de_reserved_instances_modification_result_list(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::ReservedInstancesModificationResult>,
+    std::vec::Vec<crate::types::ReservedInstancesModificationResult>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

@@ -3,7 +3,7 @@ pub(crate) fn de_aws_ec2_launch_template_data_network_interface_set_ipv6_prefixe
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<
-        std::vec::Vec<crate::model::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails>,
+        std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails>,
     >,
     aws_smithy_json::deserialize::error::DeserializeError,
 >

@@ -3,31 +3,32 @@
 pub fn de_create_subnet_cidr_reservation_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateSubnetCidrReservationOutput,
-    crate::error::CreateSubnetCidrReservationError,
+    crate::operation::create_subnet_cidr_reservation::CreateSubnetCidrReservationOutput,
+    crate::operation::create_subnet_cidr_reservation::CreateSubnetCidrReservationError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::CreateSubnetCidrReservationError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::create_subnet_cidr_reservation::CreateSubnetCidrReservationError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::CreateSubnetCidrReservationError::generic(
-        generic,
-    ))
+    Err(
+        crate::operation::create_subnet_cidr_reservation::CreateSubnetCidrReservationError::generic(
+            generic,
+        ),
+    )
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_subnet_cidr_reservation_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateSubnetCidrReservationOutput,
-    crate::error::CreateSubnetCidrReservationError,
+    crate::operation::create_subnet_cidr_reservation::CreateSubnetCidrReservationOutput,
+    crate::operation::create_subnet_cidr_reservation::CreateSubnetCidrReservationError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::create_subnet_cidr_reservation_output::Builder::default();
+        let mut output = crate::operation::create_subnet_cidr_reservation::builders::CreateSubnetCidrReservationOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_create_subnet_cidr_reservation::de_create_subnet_cidr_reservation(response.body().as_ref(), output).map_err(crate::error::CreateSubnetCidrReservationError::unhandled)?;
+        output = crate::protocol_serde::shape_create_subnet_cidr_reservation::de_create_subnet_cidr_reservation(response.body().as_ref(), output).map_err(crate::operation::create_subnet_cidr_reservation::CreateSubnetCidrReservationError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -36,13 +37,7 @@ pub fn de_create_subnet_cidr_reservation_http_response(
 }
 
 #[allow(unused_mut)]
-pub fn de_create_subnet_cidr_reservation(
-    inp: &[u8],
-    mut builder: crate::output::create_subnet_cidr_reservation_output::Builder,
-) -> Result<
-    crate::output::create_subnet_cidr_reservation_output::Builder,
-    aws_smithy_xml::decode::XmlDecodeError,
-> {
+pub fn de_create_subnet_cidr_reservation(inp: &[u8], mut builder: crate::operation::create_subnet_cidr_reservation::builders::CreateSubnetCidrReservationOutputBuilder) -> Result<crate::operation::create_subnet_cidr_reservation::builders::CreateSubnetCidrReservationOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_custom_db_engine_version_not_found_fault_xml_err(
     inp: &[u8],
-    mut builder: crate::error::custom_db_engine_version_not_found_fault::Builder,
+    mut builder: crate::types::error::builders::CustomDbEngineVersionNotFoundFaultBuilder,
 ) -> Result<
-    crate::error::custom_db_engine_version_not_found_fault::Builder,
+    crate::types::error::builders::CustomDbEngineVersionNotFoundFaultBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

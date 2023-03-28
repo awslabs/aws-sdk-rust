@@ -2,7 +2,7 @@
 pub(crate) fn de_performance_insights_metrics_details<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::PerformanceInsightsMetricsDetail>>,
+    Option<std::vec::Vec<crate::types::PerformanceInsightsMetricsDetail>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

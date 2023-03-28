@@ -2,7 +2,7 @@
 pub(crate) fn de_task_execution_result_detail<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::TaskExecutionResultDetail>,
+    Option<crate::types::TaskExecutionResultDetail>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::task_execution_result_detail::Builder::default();
+            let mut builder = crate::types::builders::TaskExecutionResultDetailBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -39,7 +39,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::PhaseStatus::from(u.as_ref()))
+                                            .map(|u| crate::types::PhaseStatus::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -69,7 +69,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::PhaseStatus::from(u.as_ref()))
+                                            .map(|u| crate::types::PhaseStatus::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -90,7 +90,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::PhaseStatus::from(u.as_ref()))
+                                            .map(|u| crate::types::PhaseStatus::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

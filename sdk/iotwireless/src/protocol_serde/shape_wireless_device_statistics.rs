@@ -2,7 +2,7 @@
 pub(crate) fn de_wireless_device_statistics<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::WirelessDeviceStatistics>,
+    Option<crate::types::WirelessDeviceStatistics>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::wireless_device_statistics::Builder::default();
+            let mut builder = crate::types::builders::WirelessDeviceStatisticsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -48,7 +48,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::WirelessDeviceType::from(u.as_ref())
+                                            crate::types::WirelessDeviceType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -98,7 +98,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::FuotaDeviceStatus::from(u.as_ref())
+                                            crate::types::FuotaDeviceStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

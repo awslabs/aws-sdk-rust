@@ -2,7 +2,7 @@
 pub(crate) fn de_pii_entities_detection_job_properties_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::PiiEntitiesDetectionJobProperties>>,
+    Option<std::vec::Vec<crate::types::PiiEntitiesDetectionJobProperties>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

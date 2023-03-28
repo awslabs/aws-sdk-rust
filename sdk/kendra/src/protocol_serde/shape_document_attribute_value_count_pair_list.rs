@@ -2,7 +2,7 @@
 pub(crate) fn de_document_attribute_value_count_pair_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DocumentAttributeValueCountPair>>,
+    Option<std::vec::Vec<crate::types::DocumentAttributeValueCountPair>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

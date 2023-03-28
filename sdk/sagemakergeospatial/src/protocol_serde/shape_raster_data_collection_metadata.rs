@@ -2,7 +2,7 @@
 pub(crate) fn de_raster_data_collection_metadata<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::RasterDataCollectionMetadata>,
+    Option<crate::types::RasterDataCollectionMetadata>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::raster_data_collection_metadata::Builder::default();
+            let mut builder =
+                crate::types::builders::RasterDataCollectionMetadataBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -48,7 +49,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::DataCollectionType::from(u.as_ref())
+                                            crate::types::DataCollectionType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

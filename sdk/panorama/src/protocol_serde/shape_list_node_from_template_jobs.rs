@@ -3,96 +3,95 @@
 pub fn de_list_node_from_template_jobs_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListNodeFromTemplateJobsOutput,
-    crate::error::ListNodeFromTemplateJobsError,
+    crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsOutput,
+    crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListNodeFromTemplateJobsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::ListNodeFromTemplateJobsError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => {
-            crate::error::ListNodeFromTemplateJobsError::AccessDeniedException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "AccessDeniedException" => crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsError::AccessDeniedException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListNodeFromTemplateJobsError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ConflictException" => crate::error::ListNodeFromTemplateJobsError::ConflictException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::conflict_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListNodeFromTemplateJobsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "InternalServerException" => {
-            crate::error::ListNodeFromTemplateJobsError::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "ConflictException" => crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListNodeFromTemplateJobsError::unhandled)?;
+                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InternalServerException" => crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsError::InternalServerException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::protocol_serde::shape_internal_server_exception::de_retry_after_seconds_header(response.headers())
-                                                .map_err(|_|crate::error::ListNodeFromTemplateJobsError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
                     );
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ValidationException" => {
-            crate::error::ListNodeFromTemplateJobsError::ValidationException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ValidationException" => crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::validation_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListNodeFromTemplateJobsError::unhandled)?;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::ListNodeFromTemplateJobsError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsError::generic(generic)
     })
 }
 
@@ -100,14 +99,14 @@ pub fn de_list_node_from_template_jobs_http_error(
 pub fn de_list_node_from_template_jobs_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListNodeFromTemplateJobsOutput,
-    crate::error::ListNodeFromTemplateJobsError,
+    crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsOutput,
+    crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_node_from_template_jobs_output::Builder::default();
+        let mut output = crate::operation::list_node_from_template_jobs::builders::ListNodeFromTemplateJobsOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_list_node_from_template_jobs::de_list_node_from_template_jobs(response.body().as_ref(), output).map_err(crate::error::ListNodeFromTemplateJobsError::unhandled)?;
+        output = crate::protocol_serde::shape_list_node_from_template_jobs::de_list_node_from_template_jobs(response.body().as_ref(), output).map_err(crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -117,9 +116,9 @@ pub fn de_list_node_from_template_jobs_http_response(
 
 pub(crate) fn de_list_node_from_template_jobs(
     value: &[u8],
-    mut builder: crate::output::list_node_from_template_jobs_output::Builder,
+    mut builder: crate::operation::list_node_from_template_jobs::builders::ListNodeFromTemplateJobsOutputBuilder,
 ) -> Result<
-    crate::output::list_node_from_template_jobs_output::Builder,
+    crate::operation::list_node_from_template_jobs::builders::ListNodeFromTemplateJobsOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

@@ -2,7 +2,7 @@
 pub(crate) fn de_list_import_file_task_information<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ImportFileTaskInformation>>,
+    Option<std::vec::Vec<crate::types::ImportFileTaskInformation>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

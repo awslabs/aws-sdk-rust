@@ -2,7 +2,7 @@
 pub(crate) fn de_response_time_root_causes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ResponseTimeRootCause>>,
+    Option<std::vec::Vec<crate::types::ResponseTimeRootCause>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

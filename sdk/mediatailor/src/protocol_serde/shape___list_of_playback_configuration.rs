@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_playback_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::PlaybackConfiguration>>,
+    Option<std::vec::Vec<crate::types::PlaybackConfiguration>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_aws_code_build_project_environment_environment_variables_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails>>,
+    Option<std::vec::Vec<crate::types::AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

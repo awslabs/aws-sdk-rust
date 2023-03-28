@@ -2,7 +2,7 @@
 pub(crate) fn de_batch_delete_object_response<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::BatchDeleteObjectResponse>,
+    Option<crate::types::BatchDeleteObjectResponse>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::batch_delete_object_response::Builder::default();
+            let mut builder = crate::types::builders::BatchDeleteObjectResponseBuilder::default();
             aws_smithy_json::deserialize::token::skip_to_end(tokens)?;
             Ok(Some(builder.build()))
         }

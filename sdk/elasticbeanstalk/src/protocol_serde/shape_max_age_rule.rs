@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_max_age_rule(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::MaxAgeRule,
+    input: &crate::types::MaxAgeRule,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Enabled");
@@ -27,9 +27,9 @@ pub fn ser_max_age_rule(
 
 pub fn de_max_age_rule(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::MaxAgeRule, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::MaxAgeRule, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::MaxAgeRule::builder();
+    let mut builder = crate::types::MaxAgeRule::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Enabled") /* Enabled com.amazonaws.elasticbeanstalk#MaxAgeRule$Enabled */ =>  {

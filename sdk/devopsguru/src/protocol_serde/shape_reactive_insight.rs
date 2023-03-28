@@ -2,7 +2,7 @@
 pub(crate) fn de_reactive_insight<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ReactiveInsight>,
+    Option<crate::types::ReactiveInsight>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::reactive_insight::Builder::default();
+            let mut builder = crate::types::builders::ReactiveInsightBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -48,7 +48,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::InsightSeverity::from(u.as_ref())
+                                            crate::types::InsightSeverity::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -61,7 +61,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::InsightStatus::from(u.as_ref()))
+                                            .map(|u| crate::types::InsightStatus::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

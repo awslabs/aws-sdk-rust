@@ -2,7 +2,7 @@
 pub(crate) fn de_export_job_properties_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ExportJobProperties>>,
+    Option<std::vec::Vec<crate::types::ExportJobProperties>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

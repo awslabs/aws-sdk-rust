@@ -3,54 +3,62 @@
 pub fn de_delete_managed_endpoint_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteManagedEndpointOutput,
-    crate::error::DeleteManagedEndpointError,
+    crate::operation::delete_managed_endpoint::DeleteManagedEndpointOutput,
+    crate::operation::delete_managed_endpoint::DeleteManagedEndpointError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteManagedEndpointError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::delete_managed_endpoint::DeleteManagedEndpointError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    let error_code = match generic.code() {
-        Some(code) => code,
-        None => return Err(crate::error::DeleteManagedEndpointError::unhandled(generic)),
-    };
+    let error_code =
+        match generic.code() {
+            Some(code) => code,
+            None => return Err(
+                crate::operation::delete_managed_endpoint::DeleteManagedEndpointError::unhandled(
+                    generic,
+                ),
+            ),
+        };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerException" => {
-            crate::error::DeleteManagedEndpointError::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalServerException" => crate::operation::delete_managed_endpoint::DeleteManagedEndpointError::InternalServerException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteManagedEndpointError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_managed_endpoint::DeleteManagedEndpointError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ValidationException" => crate::error::DeleteManagedEndpointError::ValidationException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteManagedEndpointError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::DeleteManagedEndpointError::generic(generic),
+        "ValidationException" => crate::operation::delete_managed_endpoint::DeleteManagedEndpointError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_managed_endpoint::DeleteManagedEndpointError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::delete_managed_endpoint::DeleteManagedEndpointError::generic(generic)
     })
 }
 
@@ -58,18 +66,20 @@ pub fn de_delete_managed_endpoint_http_error(
 pub fn de_delete_managed_endpoint_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteManagedEndpointOutput,
-    crate::error::DeleteManagedEndpointError,
+    crate::operation::delete_managed_endpoint::DeleteManagedEndpointOutput,
+    crate::operation::delete_managed_endpoint::DeleteManagedEndpointError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_managed_endpoint_output::Builder::default();
+        let mut output = crate::operation::delete_managed_endpoint::builders::DeleteManagedEndpointOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_delete_managed_endpoint::de_delete_managed_endpoint(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DeleteManagedEndpointError::unhandled)?;
+        .map_err(
+            crate::operation::delete_managed_endpoint::DeleteManagedEndpointError::unhandled,
+        )?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -79,9 +89,9 @@ pub fn de_delete_managed_endpoint_http_response(
 
 pub(crate) fn de_delete_managed_endpoint(
     value: &[u8],
-    mut builder: crate::output::delete_managed_endpoint_output::Builder,
+    mut builder: crate::operation::delete_managed_endpoint::builders::DeleteManagedEndpointOutputBuilder,
 ) -> Result<
-    crate::output::delete_managed_endpoint_output::Builder,
+    crate::operation::delete_managed_endpoint::builders::DeleteManagedEndpointOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

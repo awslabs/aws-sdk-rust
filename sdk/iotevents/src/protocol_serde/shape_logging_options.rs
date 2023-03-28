@@ -2,7 +2,7 @@
 pub(crate) fn de_logging_options<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::LoggingOptions>,
+    Option<crate::types::LoggingOptions>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::logging_options::Builder::default();
+            let mut builder = crate::types::builders::LoggingOptionsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -39,7 +39,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::LoggingLevel::from(u.as_ref()))
+                                            .map(|u| crate::types::LoggingLevel::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -81,7 +81,7 @@ where
 
 pub fn ser_logging_options(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::LoggingOptions,
+    input: &crate::types::LoggingOptions,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.role_arn {
         object.key("roleArn").string(var_1.as_str());

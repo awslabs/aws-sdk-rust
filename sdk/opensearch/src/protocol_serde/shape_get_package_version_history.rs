@@ -3,111 +3,112 @@
 pub fn de_get_package_version_history_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetPackageVersionHistoryOutput,
-    crate::error::GetPackageVersionHistoryError,
+    crate::operation::get_package_version_history::GetPackageVersionHistoryOutput,
+    crate::operation::get_package_version_history::GetPackageVersionHistoryError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetPackageVersionHistoryError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::get_package_version_history::GetPackageVersionHistoryError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::error::GetPackageVersionHistoryError::unhandled(
+        None => return Err(
+            crate::operation::get_package_version_history::GetPackageVersionHistoryError::unhandled(
                 generic,
-            ))
-        }
+            ),
+        ),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => {
-            crate::error::GetPackageVersionHistoryError::AccessDeniedException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "AccessDeniedException" => crate::operation::get_package_version_history::GetPackageVersionHistoryError::AccessDeniedException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPackageVersionHistoryError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_package_version_history::GetPackageVersionHistoryError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "BaseException" => crate::error::GetPackageVersionHistoryError::BaseException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::base_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_base_exception::de_base_exception_json_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::GetPackageVersionHistoryError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "InternalException" => crate::error::GetPackageVersionHistoryError::InternalException({
+        "BaseException" => crate::operation::get_package_version_history::GetPackageVersionHistoryError::BaseException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_exception::de_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPackageVersionHistoryError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::BaseExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_base_exception::de_base_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_package_version_history::GetPackageVersionHistoryError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "ResourceNotFoundException" => {
-            crate::error::GetPackageVersionHistoryError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalException" => crate::operation::get_package_version_history::GetPackageVersionHistoryError::InternalException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InternalExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPackageVersionHistoryError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_exception::de_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_package_version_history::GetPackageVersionHistoryError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ValidationException" => {
-            crate::error::GetPackageVersionHistoryError::ValidationException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::get_package_version_history::GetPackageVersionHistoryError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::validation_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPackageVersionHistoryError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_package_version_history::GetPackageVersionHistoryError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::GetPackageVersionHistoryError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ValidationException" => crate::operation::get_package_version_history::GetPackageVersionHistoryError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_package_version_history::GetPackageVersionHistoryError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::get_package_version_history::GetPackageVersionHistoryError::generic(generic)
     })
 }
 
@@ -115,14 +116,14 @@ pub fn de_get_package_version_history_http_error(
 pub fn de_get_package_version_history_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetPackageVersionHistoryOutput,
-    crate::error::GetPackageVersionHistoryError,
+    crate::operation::get_package_version_history::GetPackageVersionHistoryOutput,
+    crate::operation::get_package_version_history::GetPackageVersionHistoryError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_package_version_history_output::Builder::default();
+        let mut output = crate::operation::get_package_version_history::builders::GetPackageVersionHistoryOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_get_package_version_history::de_get_package_version_history(response.body().as_ref(), output).map_err(crate::error::GetPackageVersionHistoryError::unhandled)?;
+        output = crate::protocol_serde::shape_get_package_version_history::de_get_package_version_history(response.body().as_ref(), output).map_err(crate::operation::get_package_version_history::GetPackageVersionHistoryError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -132,9 +133,9 @@ pub fn de_get_package_version_history_http_response(
 
 pub(crate) fn de_get_package_version_history(
     value: &[u8],
-    mut builder: crate::output::get_package_version_history_output::Builder,
+    mut builder: crate::operation::get_package_version_history::builders::GetPackageVersionHistoryOutputBuilder,
 ) -> Result<
-    crate::output::get_package_version_history_output::Builder,
+    crate::operation::get_package_version_history::builders::GetPackageVersionHistoryOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

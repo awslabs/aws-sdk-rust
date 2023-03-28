@@ -2,7 +2,7 @@
 pub(crate) fn de_schemas<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DatasetSchemaSummary>>,
+    Option<std::vec::Vec<crate::types::DatasetSchemaSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

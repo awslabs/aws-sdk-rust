@@ -2,7 +2,7 @@
 pub(crate) fn de_distribution_configuration_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DistributionConfigurationSummary>>,
+    Option<std::vec::Vec<crate::types::DistributionConfigurationSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

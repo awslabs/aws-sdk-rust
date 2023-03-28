@@ -2,7 +2,7 @@
 pub(crate) fn de_analysis_result_locations<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AnalysisResultLocation>>,
+    Option<std::vec::Vec<crate::types::AnalysisResultLocation>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

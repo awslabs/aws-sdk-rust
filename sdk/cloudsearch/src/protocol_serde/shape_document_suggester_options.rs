@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_document_suggester_options(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::DocumentSuggesterOptions,
+    input: &crate::types::DocumentSuggesterOptions,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("SourceField");
@@ -24,9 +24,9 @@ pub fn ser_document_suggester_options(
 
 pub fn de_document_suggester_options(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::DocumentSuggesterOptions, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::DocumentSuggesterOptions, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::DocumentSuggesterOptions::builder();
+    let mut builder = crate::types::DocumentSuggesterOptions::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("SourceField") /* SourceField com.amazonaws.cloudsearch#DocumentSuggesterOptions$SourceField */ =>  {
@@ -45,8 +45,8 @@ pub fn de_document_suggester_options(
             s if s.matches("FuzzyMatching") /* FuzzyMatching com.amazonaws.cloudsearch#DocumentSuggesterOptions$FuzzyMatching */ =>  {
                 let var_8 =
                     Some(
-                        Result::<crate::model::SuggesterFuzzyMatching, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::SuggesterFuzzyMatching::from(
+                        Result::<crate::types::SuggesterFuzzyMatching, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::SuggesterFuzzyMatching::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

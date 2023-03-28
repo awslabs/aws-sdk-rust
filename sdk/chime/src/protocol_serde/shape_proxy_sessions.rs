@@ -2,7 +2,7 @@
 pub(crate) fn de_proxy_sessions<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ProxySession>>,
+    Option<std::vec::Vec<crate::types::ProxySession>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

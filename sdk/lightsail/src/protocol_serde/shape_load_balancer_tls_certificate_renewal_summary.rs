@@ -2,7 +2,7 @@
 pub(crate) fn de_load_balancer_tls_certificate_renewal_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::LoadBalancerTlsCertificateRenewalSummary>,
+    Option<crate::types::LoadBalancerTlsCertificateRenewalSummary>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::load_balancer_tls_certificate_renewal_summary::Builder::default();
+                crate::types::builders::LoadBalancerTlsCertificateRenewalSummaryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -28,7 +28,7 @@ where
                                 builder = builder.set_renewal_status(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?.map(|s|
                                         s.to_unescaped().map(|u|
-                                            crate::model::LoadBalancerTlsCertificateRenewalStatus::from(u.as_ref())
+                                            crate::types::LoadBalancerTlsCertificateRenewalStatus::from(u.as_ref())
                                         )
                                     ).transpose()?
                                 );

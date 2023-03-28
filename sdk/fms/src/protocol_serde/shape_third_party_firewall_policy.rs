@@ -2,7 +2,7 @@
 pub(crate) fn de_third_party_firewall_policy<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ThirdPartyFirewallPolicy>,
+    Option<crate::types::ThirdPartyFirewallPolicy>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::third_party_firewall_policy::Builder::default();
+            let mut builder = crate::types::builders::ThirdPartyFirewallPolicyBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::FirewallDeploymentModel::from(u.as_ref())
+                                            crate::types::FirewallDeploymentModel::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -61,7 +61,7 @@ where
 
 pub fn ser_third_party_firewall_policy(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::ThirdPartyFirewallPolicy,
+    input: &crate::types::ThirdPartyFirewallPolicy,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.firewall_deployment_model {
         object.key("FirewallDeploymentModel").string(var_1.as_str());

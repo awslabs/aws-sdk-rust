@@ -3,33 +3,33 @@
 pub fn de_verify_domain_identity_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::VerifyDomainIdentityOutput,
-    crate::error::VerifyDomainIdentityError,
+    crate::operation::verify_domain_identity::VerifyDomainIdentityOutput,
+    crate::operation::verify_domain_identity::VerifyDomainIdentityError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::VerifyDomainIdentityError::unhandled)?;
+        .map_err(crate::operation::verify_domain_identity::VerifyDomainIdentityError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::VerifyDomainIdentityError::generic(generic))
+    Err(crate::operation::verify_domain_identity::VerifyDomainIdentityError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_verify_domain_identity_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::VerifyDomainIdentityOutput,
-    crate::error::VerifyDomainIdentityError,
+    crate::operation::verify_domain_identity::VerifyDomainIdentityOutput,
+    crate::operation::verify_domain_identity::VerifyDomainIdentityError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::verify_domain_identity_output::Builder::default();
+        let mut output = crate::operation::verify_domain_identity::builders::VerifyDomainIdentityOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_verify_domain_identity::de_verify_domain_identity(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::VerifyDomainIdentityError::unhandled)?;
+        .map_err(crate::operation::verify_domain_identity::VerifyDomainIdentityError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -40,9 +40,9 @@ pub fn de_verify_domain_identity_http_response(
 #[allow(unused_mut)]
 pub fn de_verify_domain_identity(
     inp: &[u8],
-    mut builder: crate::output::verify_domain_identity_output::Builder,
+    mut builder: crate::operation::verify_domain_identity::builders::VerifyDomainIdentityOutputBuilder,
 ) -> Result<
-    crate::output::verify_domain_identity_output::Builder,
+    crate::operation::verify_domain_identity::builders::VerifyDomainIdentityOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_multiplex_program_pipeline_detail<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::MultiplexProgramPipelineDetail>>,
+    Option<std::vec::Vec<crate::types::MultiplexProgramPipelineDetail>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_processor_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Processor>>,
+    Option<std::vec::Vec<crate::types::Processor>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

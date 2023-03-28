@@ -2,7 +2,7 @@
 pub(crate) fn de_destination_description_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DestinationDescription>>,
+    Option<std::vec::Vec<crate::types::DestinationDescription>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

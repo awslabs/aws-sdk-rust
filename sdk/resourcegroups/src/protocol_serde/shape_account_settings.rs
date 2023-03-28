@@ -2,7 +2,7 @@
 pub(crate) fn de_account_settings<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::AccountSettings>,
+    Option<crate::types::AccountSettings>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::account_settings::Builder::default();
+            let mut builder = crate::types::builders::AccountSettingsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::GroupLifecycleEventsDesiredStatus::from(
+                                            crate::types::GroupLifecycleEventsDesiredStatus::from(
                                                 u.as_ref(),
                                             )
                                         })
@@ -45,7 +45,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::GroupLifecycleEventsStatus::from(
+                                            crate::types::GroupLifecycleEventsStatus::from(
                                                 u.as_ref(),
                                             )
                                         })

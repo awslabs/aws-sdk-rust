@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_validation_error<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ValidationError>>,
+    Option<std::vec::Vec<crate::types::ValidationError>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

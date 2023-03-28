@@ -2,7 +2,7 @@
 pub(crate) fn de_repository_trigger_execution_failure<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::RepositoryTriggerExecutionFailure>,
+    Option<crate::types::RepositoryTriggerExecutionFailure>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::repository_trigger_execution_failure::Builder::default();
+                crate::types::builders::RepositoryTriggerExecutionFailureBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

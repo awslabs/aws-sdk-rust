@@ -2,7 +2,7 @@
 pub(crate) fn de_custom_artifacts_configuration_description_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CustomArtifactConfigurationDescription>>,
+    Option<std::vec::Vec<crate::types::CustomArtifactConfigurationDescription>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

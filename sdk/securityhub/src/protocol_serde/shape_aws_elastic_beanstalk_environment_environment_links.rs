@@ -2,7 +2,7 @@
 pub(crate) fn de_aws_elastic_beanstalk_environment_environment_links<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AwsElasticBeanstalkEnvironmentEnvironmentLink>>,
+    Option<std::vec::Vec<crate::types::AwsElasticBeanstalkEnvironmentEnvironmentLink>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

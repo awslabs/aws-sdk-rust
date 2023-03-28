@@ -2,7 +2,7 @@
 pub(crate) fn de_failed_delete_remediation_exceptions_batch<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::FailedDeleteRemediationExceptionsBatch>,
+    Option<crate::types::FailedDeleteRemediationExceptionsBatch>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::failed_delete_remediation_exceptions_batch::Builder::default();
+                crate::types::builders::FailedDeleteRemediationExceptionsBatchBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

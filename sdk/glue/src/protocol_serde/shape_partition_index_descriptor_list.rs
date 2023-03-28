@@ -2,7 +2,7 @@
 pub(crate) fn de_partition_index_descriptor_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::PartitionIndexDescriptor>>,
+    Option<std::vec::Vec<crate::types::PartitionIndexDescriptor>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

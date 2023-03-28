@@ -2,7 +2,7 @@
 pub(crate) fn de_client_authentication_settings_info<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ClientAuthenticationSettingInfo>>,
+    Option<std::vec::Vec<crate::types::ClientAuthenticationSettingInfo>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

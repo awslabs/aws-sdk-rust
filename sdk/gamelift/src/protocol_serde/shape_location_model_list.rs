@@ -2,7 +2,7 @@
 pub(crate) fn de_location_model_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::LocationModel>>,
+    Option<std::vec::Vec<crate::types::LocationModel>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

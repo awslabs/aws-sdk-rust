@@ -2,7 +2,7 @@
 pub(crate) fn de_dataset_content_delivery_rules<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DatasetContentDeliveryRule>>,
+    Option<std::vec::Vec<crate::types::DatasetContentDeliveryRule>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

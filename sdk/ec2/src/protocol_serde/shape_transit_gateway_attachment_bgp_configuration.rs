@@ -2,11 +2,11 @@
 pub fn de_transit_gateway_attachment_bgp_configuration(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    crate::model::TransitGatewayAttachmentBgpConfiguration,
+    crate::types::TransitGatewayAttachmentBgpConfiguration,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     #[allow(unused_mut)]
-    let mut builder = crate::model::TransitGatewayAttachmentBgpConfiguration::builder();
+    let mut builder = crate::types::TransitGatewayAttachmentBgpConfiguration::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("transitGatewayAsn") /* TransitGatewayAsn com.amazonaws.ec2#TransitGatewayAttachmentBgpConfiguration$TransitGatewayAsn */ =>  {
@@ -68,8 +68,8 @@ pub fn de_transit_gateway_attachment_bgp_configuration(
             s if s.matches("bgpStatus") /* BgpStatus com.amazonaws.ec2#TransitGatewayAttachmentBgpConfiguration$BgpStatus */ =>  {
                 let var_5 =
                     Some(
-                        Result::<crate::model::BgpStatus, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::BgpStatus::from(
+                        Result::<crate::types::BgpStatus, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::BgpStatus::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

@@ -2,28 +2,37 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_modify_hosts_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ModifyHostsOutput, crate::error::ModifyHostsError> {
+) -> std::result::Result<
+    crate::operation::modify_hosts::ModifyHostsOutput,
+    crate::operation::modify_hosts::ModifyHostsError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ModifyHostsError::unhandled)?;
+        .map_err(crate::operation::modify_hosts::ModifyHostsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::ModifyHostsError::generic(generic))
+    Err(crate::operation::modify_hosts::ModifyHostsError::generic(
+        generic,
+    ))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_modify_hosts_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ModifyHostsOutput, crate::error::ModifyHostsError> {
+) -> std::result::Result<
+    crate::operation::modify_hosts::ModifyHostsOutput,
+    crate::operation::modify_hosts::ModifyHostsError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::modify_hosts_output::Builder::default();
+        let mut output =
+            crate::operation::modify_hosts::builders::ModifyHostsOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_modify_hosts::de_modify_hosts(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ModifyHostsError::unhandled)?;
+        .map_err(crate::operation::modify_hosts::ModifyHostsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -34,8 +43,11 @@ pub fn de_modify_hosts_http_response(
 #[allow(unused_mut)]
 pub fn de_modify_hosts(
     inp: &[u8],
-    mut builder: crate::output::modify_hosts_output::Builder,
-) -> Result<crate::output::modify_hosts_output::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    mut builder: crate::operation::modify_hosts::builders::ModifyHostsOutputBuilder,
+) -> Result<
+    crate::operation::modify_hosts::builders::ModifyHostsOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

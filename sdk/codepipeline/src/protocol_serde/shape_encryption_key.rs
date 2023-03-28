@@ -2,7 +2,7 @@
 pub(crate) fn de_encryption_key<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::EncryptionKey>,
+    Option<crate::types::EncryptionKey>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::encryption_key::Builder::default();
+            let mut builder = crate::types::builders::EncryptionKeyBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -39,7 +39,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::EncryptionKeyType::from(u.as_ref())
+                                            crate::types::EncryptionKeyType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -70,7 +70,7 @@ where
 
 pub fn ser_encryption_key(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::EncryptionKey,
+    input: &crate::types::EncryptionKey,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.id {
         object.key("id").string(var_1.as_str());

@@ -2,7 +2,7 @@
 pub(crate) fn de_timestream_resources<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::TimestreamResources>,
+    Option<crate::types::TimestreamResources>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::timestream_resources::Builder::default();
+            let mut builder = crate::types::builders::TimestreamResourcesBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -66,7 +66,7 @@ where
 
 pub fn ser_timestream_resources(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::TimestreamResources,
+    input: &crate::types::TimestreamResources,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.timestream_database_name {
         object.key("timestreamDatabaseName").string(var_1.as_str());

@@ -2,7 +2,7 @@
 pub(crate) fn de_interconnect_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Interconnect>>,
+    Option<std::vec::Vec<crate::types::Interconnect>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

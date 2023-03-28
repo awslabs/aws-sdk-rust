@@ -3,31 +3,34 @@
 pub fn de_disable_serial_console_access_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DisableSerialConsoleAccessOutput,
-    crate::error::DisableSerialConsoleAccessError,
+    crate::operation::disable_serial_console_access::DisableSerialConsoleAccessOutput,
+    crate::operation::disable_serial_console_access::DisableSerialConsoleAccessError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DisableSerialConsoleAccessError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::disable_serial_console_access::DisableSerialConsoleAccessError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::DisableSerialConsoleAccessError::generic(
-        generic,
-    ))
+    Err(
+        crate::operation::disable_serial_console_access::DisableSerialConsoleAccessError::generic(
+            generic,
+        ),
+    )
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_disable_serial_console_access_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DisableSerialConsoleAccessOutput,
-    crate::error::DisableSerialConsoleAccessError,
+    crate::operation::disable_serial_console_access::DisableSerialConsoleAccessOutput,
+    crate::operation::disable_serial_console_access::DisableSerialConsoleAccessError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::disable_serial_console_access_output::Builder::default();
+        let mut output = crate::operation::disable_serial_console_access::builders::DisableSerialConsoleAccessOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_disable_serial_console_access::de_disable_serial_console_access(response.body().as_ref(), output).map_err(crate::error::DisableSerialConsoleAccessError::unhandled)?;
+        output = crate::protocol_serde::shape_disable_serial_console_access::de_disable_serial_console_access(response.body().as_ref(), output).map_err(crate::operation::disable_serial_console_access::DisableSerialConsoleAccessError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -36,13 +39,7 @@ pub fn de_disable_serial_console_access_http_response(
 }
 
 #[allow(unused_mut)]
-pub fn de_disable_serial_console_access(
-    inp: &[u8],
-    mut builder: crate::output::disable_serial_console_access_output::Builder,
-) -> Result<
-    crate::output::disable_serial_console_access_output::Builder,
-    aws_smithy_xml::decode::XmlDecodeError,
-> {
+pub fn de_disable_serial_console_access(inp: &[u8], mut builder: crate::operation::disable_serial_console_access::builders::DisableSerialConsoleAccessOutputBuilder) -> Result<crate::operation::disable_serial_console_access::builders::DisableSerialConsoleAccessOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

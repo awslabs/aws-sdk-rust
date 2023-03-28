@@ -2,58 +2,35 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_api_association_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetApiAssociationOutput, crate::error::GetApiAssociationError>
-{
+) -> std::result::Result<
+    crate::operation::get_api_association::GetApiAssociationOutput,
+    crate::operation::get_api_association::GetApiAssociationError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetApiAssociationError::unhandled)?;
+        .map_err(crate::operation::get_api_association::GetApiAssociationError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::GetApiAssociationError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::get_api_association::GetApiAssociationError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::GetApiAssociationError::AccessDeniedException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::access_denied_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetApiAssociationError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "BadRequestException" => crate::error::GetApiAssociationError::BadRequestException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetApiAssociationError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InternalFailureException" => {
-            crate::error::GetApiAssociationError::InternalFailureException({
+        "AccessDeniedException" => {
+            crate::operation::get_api_association::GetApiAssociationError::AccessDeniedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_failure_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::AccessDeniedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetApiAssociationError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_api_association::GetApiAssociationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -63,39 +40,83 @@ pub fn de_get_api_association_http_error(
                 tmp
             })
         }
-        "NotFoundException" => crate::error::GetApiAssociationError::NotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "BadRequestException" => {
+            crate::operation::get_api_association::GetApiAssociationError::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetApiAssociationError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::GetApiAssociationError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::BadRequestExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_api_association::GetApiAssociationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InternalFailureException" => {
+            crate::operation::get_api_association::GetApiAssociationError::InternalFailureException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::types::error::builders::InternalFailureExceptionBuilder::default(
+                            );
+                        let _ = response;
+                        output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_api_association::GetApiAssociationError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        "NotFoundException" => {
+            crate::operation::get_api_association::GetApiAssociationError::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::NotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_api_association::GetApiAssociationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::get_api_association::GetApiAssociationError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_api_association_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetApiAssociationOutput, crate::error::GetApiAssociationError>
-{
+) -> std::result::Result<
+    crate::operation::get_api_association::GetApiAssociationOutput,
+    crate::operation::get_api_association::GetApiAssociationError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_api_association_output::Builder::default();
+        let mut output = crate::operation::get_api_association::builders::GetApiAssociationOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_get_api_association::de_get_api_association(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::GetApiAssociationError::unhandled)?;
+        .map_err(crate::operation::get_api_association::GetApiAssociationError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -105,9 +126,9 @@ pub fn de_get_api_association_http_response(
 
 pub(crate) fn de_get_api_association(
     value: &[u8],
-    mut builder: crate::output::get_api_association_output::Builder,
+    mut builder: crate::operation::get_api_association::builders::GetApiAssociationOutputBuilder,
 ) -> Result<
-    crate::output::get_api_association_output::Builder,
+    crate::operation::get_api_association::builders::GetApiAssociationOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

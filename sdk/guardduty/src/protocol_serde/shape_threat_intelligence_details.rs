@@ -2,7 +2,7 @@
 pub(crate) fn de_threat_intelligence_details<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ThreatIntelligenceDetail>>,
+    Option<std::vec::Vec<crate::types::ThreatIntelligenceDetail>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

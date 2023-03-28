@@ -2,15 +2,15 @@
 pub fn de_verification_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::VerificationResponse>,
-    crate::error::VerifyOTPMessageError,
+    std::option::Option<crate::types::VerificationResponse>,
+    crate::operation::verify_otp_message::VerifyOTPMessageError,
 > {
     (!body.is_empty())
         .then(|| {
             crate::protocol_serde::shape_verification_response::de_verification_response_payload(
                 body,
             )
-            .map_err(crate::error::VerifyOTPMessageError::unhandled)
+            .map_err(crate::operation::verify_otp_message::VerifyOTPMessageError::unhandled)
         })
         .transpose()
 }

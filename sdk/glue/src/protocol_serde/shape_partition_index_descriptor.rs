@@ -2,7 +2,7 @@
 pub(crate) fn de_partition_index_descriptor<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::PartitionIndexDescriptor>,
+    Option<crate::types::PartitionIndexDescriptor>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::partition_index_descriptor::Builder::default();
+            let mut builder = crate::types::builders::PartitionIndexDescriptorBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -44,7 +44,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::PartitionIndexStatus::from(u.as_ref())
+                                            crate::types::PartitionIndexStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

@@ -2,7 +2,7 @@
 pub(crate) fn de_affected_entity<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::AffectedEntity>,
+    Option<crate::types::AffectedEntity>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::affected_entity::Builder::default();
+            let mut builder = crate::types::builders::AffectedEntityBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -83,7 +83,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::EntityStatusCode::from(u.as_ref())
+                                            crate::types::EntityStatusCode::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

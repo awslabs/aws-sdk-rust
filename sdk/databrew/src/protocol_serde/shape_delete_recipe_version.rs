@@ -3,69 +3,79 @@
 pub fn de_delete_recipe_version_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteRecipeVersionOutput,
-    crate::error::DeleteRecipeVersionError,
+    crate::operation::delete_recipe_version::DeleteRecipeVersionOutput,
+    crate::operation::delete_recipe_version::DeleteRecipeVersionError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteRecipeVersionError::unhandled)?;
+        .map_err(crate::operation::delete_recipe_version::DeleteRecipeVersionError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DeleteRecipeVersionError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::delete_recipe_version::DeleteRecipeVersionError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConflictException" => crate::error::DeleteRecipeVersionError::ConflictException({
+        "ConflictException" => crate::operation::delete_recipe_version::DeleteRecipeVersionError::ConflictException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::conflict_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRecipeVersionError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ResourceNotFoundException" => {
-            crate::error::DeleteRecipeVersionError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRecipeVersionError::unhandled)?;
+                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_recipe_version::DeleteRecipeVersionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ValidationException" => crate::error::DeleteRecipeVersionError::ValidationException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRecipeVersionError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::DeleteRecipeVersionError::generic(generic),
+        "ResourceNotFoundException" => crate::operation::delete_recipe_version::DeleteRecipeVersionError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_recipe_version::DeleteRecipeVersionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ValidationException" => crate::operation::delete_recipe_version::DeleteRecipeVersionError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_recipe_version::DeleteRecipeVersionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::delete_recipe_version::DeleteRecipeVersionError::generic(generic)
     })
 }
 
@@ -73,18 +83,18 @@ pub fn de_delete_recipe_version_http_error(
 pub fn de_delete_recipe_version_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteRecipeVersionOutput,
-    crate::error::DeleteRecipeVersionError,
+    crate::operation::delete_recipe_version::DeleteRecipeVersionOutput,
+    crate::operation::delete_recipe_version::DeleteRecipeVersionError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_recipe_version_output::Builder::default();
+        let mut output = crate::operation::delete_recipe_version::builders::DeleteRecipeVersionOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_delete_recipe_version::de_delete_recipe_version(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DeleteRecipeVersionError::unhandled)?;
+        .map_err(crate::operation::delete_recipe_version::DeleteRecipeVersionError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -94,9 +104,9 @@ pub fn de_delete_recipe_version_http_response(
 
 pub(crate) fn de_delete_recipe_version(
     value: &[u8],
-    mut builder: crate::output::delete_recipe_version_output::Builder,
+    mut builder: crate::operation::delete_recipe_version::builders::DeleteRecipeVersionOutputBuilder,
 ) -> Result<
-    crate::output::delete_recipe_version_output::Builder,
+    crate::operation::delete_recipe_version::builders::DeleteRecipeVersionOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

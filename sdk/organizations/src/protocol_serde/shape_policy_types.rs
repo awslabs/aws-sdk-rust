@@ -2,7 +2,7 @@
 pub(crate) fn de_policy_types<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::PolicyTypeSummary>>,
+    Option<std::vec::Vec<crate::types::PolicyTypeSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

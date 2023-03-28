@@ -2,7 +2,7 @@
 pub(crate) fn de_dag_edges<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CodeGenEdge>>,
+    Option<std::vec::Vec<crate::types::CodeGenEdge>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

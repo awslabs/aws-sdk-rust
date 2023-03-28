@@ -2,7 +2,7 @@
 pub(crate) fn de_sip_rule_target_application_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SipRuleTargetApplication>>,
+    Option<std::vec::Vec<crate::types::SipRuleTargetApplication>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

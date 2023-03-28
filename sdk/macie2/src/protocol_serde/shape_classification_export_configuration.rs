@@ -2,7 +2,7 @@
 pub(crate) fn de_classification_export_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ClassificationExportConfiguration>,
+    Option<crate::types::ClassificationExportConfiguration>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::classification_export_configuration::Builder::default();
+            let mut builder =
+                crate::types::builders::ClassificationExportConfigurationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -55,7 +56,7 @@ where
 
 pub fn ser_classification_export_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::ClassificationExportConfiguration,
+    input: &crate::types::ClassificationExportConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.s3_destination {
         #[allow(unused_mut)]

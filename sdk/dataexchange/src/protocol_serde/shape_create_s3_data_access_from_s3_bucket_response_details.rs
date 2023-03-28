@@ -2,7 +2,7 @@
 pub(crate) fn de_create_s3_data_access_from_s3_bucket_response_details<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::CreateS3DataAccessFromS3BucketResponseDetails>,
+    Option<crate::types::CreateS3DataAccessFromS3BucketResponseDetails>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::create_s3_data_access_from_s3_bucket_response_details::Builder::default();
+            let mut builder = crate::types::builders::CreateS3DataAccessFromS3BucketResponseDetailsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

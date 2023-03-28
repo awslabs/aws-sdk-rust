@@ -2,18 +2,18 @@
 pub fn de_message_system_attribute_map_entry(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
     out: &mut std::collections::HashMap<
-        crate::model::MessageSystemAttributeName,
+        crate::types::MessageSystemAttributeName,
         std::string::String,
     >,
 ) -> Result<(), aws_smithy_xml::decode::XmlDecodeError> {
-    let mut k: Option<crate::model::MessageSystemAttributeName> = None;
+    let mut k: Option<crate::types::MessageSystemAttributeName> = None;
     let mut v: Option<std::string::String> = None;
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Name") /* key com.amazonaws.sqs#MessageSystemAttributeMap$key */ =>  {
                 k = Some(
-                    Result::<crate::model::MessageSystemAttributeName, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                        crate::model::MessageSystemAttributeName::from(
+                    Result::<crate::types::MessageSystemAttributeName, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                        crate::types::MessageSystemAttributeName::from(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                         )
                     )

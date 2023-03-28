@@ -2,7 +2,7 @@
 pub(crate) fn de_hierarchy_group_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::HierarchyGroupSummary>>,
+    Option<std::vec::Vec<crate::types::HierarchyGroupSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

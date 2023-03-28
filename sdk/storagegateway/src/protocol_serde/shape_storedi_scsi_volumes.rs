@@ -2,7 +2,7 @@
 pub(crate) fn de_storedi_scsi_volumes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::StorediScsiVolume>>,
+    Option<std::vec::Vec<crate::types::StorediScsiVolume>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

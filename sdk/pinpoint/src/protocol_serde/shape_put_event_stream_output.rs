@@ -2,13 +2,13 @@
 pub fn de_event_stream_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::EventStream>,
-    crate::error::PutEventStreamError,
+    std::option::Option<crate::types::EventStream>,
+    crate::operation::put_event_stream::PutEventStreamError,
 > {
     (!body.is_empty())
         .then(|| {
             crate::protocol_serde::shape_event_stream::de_event_stream_payload(body)
-                .map_err(crate::error::PutEventStreamError::unhandled)
+                .map_err(crate::operation::put_event_stream::PutEventStreamError::unhandled)
         })
         .transpose()
 }

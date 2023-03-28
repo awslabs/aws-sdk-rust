@@ -3,27 +3,27 @@
 pub fn de_report_instance_status_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ReportInstanceStatusOutput,
-    crate::error::ReportInstanceStatusError,
+    crate::operation::report_instance_status::ReportInstanceStatusOutput,
+    crate::operation::report_instance_status::ReportInstanceStatusError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ReportInstanceStatusError::unhandled)?;
+        .map_err(crate::operation::report_instance_status::ReportInstanceStatusError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::ReportInstanceStatusError::generic(generic))
+    Err(crate::operation::report_instance_status::ReportInstanceStatusError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_report_instance_status_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ReportInstanceStatusOutput,
-    crate::error::ReportInstanceStatusError,
+    crate::operation::report_instance_status::ReportInstanceStatusOutput,
+    crate::operation::report_instance_status::ReportInstanceStatusError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::report_instance_status_output::Builder::default();
+        let mut output = crate::operation::report_instance_status::builders::ReportInstanceStatusOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

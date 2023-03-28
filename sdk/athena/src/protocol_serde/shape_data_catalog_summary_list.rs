@@ -2,7 +2,7 @@
 pub(crate) fn de_data_catalog_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DataCatalogSummary>>,
+    Option<std::vec::Vec<crate::types::DataCatalogSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

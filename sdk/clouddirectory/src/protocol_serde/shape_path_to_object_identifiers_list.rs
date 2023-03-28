@@ -2,7 +2,7 @@
 pub(crate) fn de_path_to_object_identifiers_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::PathToObjectIdentifiers>>,
+    Option<std::vec::Vec<crate::types::PathToObjectIdentifiers>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

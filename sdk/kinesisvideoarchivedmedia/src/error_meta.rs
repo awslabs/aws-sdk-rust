@@ -4,24 +4,24 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>Kinesis Video Streams has throttled the request because you have exceeded a limit. Try making the call later. For information about limits, see <a href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/limits.html">Kinesis Video Streams Limits</a>.</p>
-    ClientLimitExceededException(crate::error::ClientLimitExceededException),
+    ClientLimitExceededException(crate::types::error::ClientLimitExceededException),
     /// <p>A specified parameter exceeds its restrictions, is not supported, or can't be used.</p>
-    InvalidArgumentException(crate::error::InvalidArgumentException),
+    InvalidArgumentException(crate::types::error::InvalidArgumentException),
     /// <p>The codec private data in at least one of the tracks of the video stream is not valid for this operation.</p>
-    InvalidCodecPrivateDataException(crate::error::InvalidCodecPrivateDataException),
+    InvalidCodecPrivateDataException(crate::types::error::InvalidCodecPrivateDataException),
     /// <p>One or more frames in the requested clip could not be parsed based on the specified codec.</p>
-    InvalidMediaFrameException(crate::error::InvalidMediaFrameException),
+    InvalidMediaFrameException(crate::types::error::InvalidMediaFrameException),
     /// <p>No codec private data was found in at least one of tracks of the video stream.</p>
-    MissingCodecPrivateDataException(crate::error::MissingCodecPrivateDataException),
+    MissingCodecPrivateDataException(crate::types::error::MissingCodecPrivateDataException),
     /// <p>A streaming session was requested for a stream that does not retain data (that is, has a <code>DataRetentionInHours</code> of 0). </p>
-    NoDataRetentionException(crate::error::NoDataRetentionException),
+    NoDataRetentionException(crate::types::error::NoDataRetentionException),
     /// <p>Status Code: 403, The caller is not authorized to perform an operation on the given stream, or the token has expired.</p>
-    NotAuthorizedException(crate::error::NotAuthorizedException),
+    NotAuthorizedException(crate::types::error::NotAuthorizedException),
     /// <p> <code>GetMedia</code> throws this error when Kinesis Video Streams can't find the stream that you specified.</p>
     /// <p> <code>GetHLSStreamingSessionURL</code> and <code>GetDASHStreamingSessionURL</code> throw this error if a session with a <code>PlaybackMode</code> of <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>is requested for a stream that has no fragments within the requested time range, or if a session with a <code>PlaybackMode</code> of <code>LIVE</code> is requested for a stream that has no fragments within the last 30 seconds.</p>
-    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The type of the media (for example, h.264 or h.265 video or ACC or G.711 audio) could not be determined from the codec IDs of the tracks in the first fragment for a playback session. The codec ID for track 1 should be <code>V_MPEG/ISO/AVC</code> and, optionally, the codec ID for track 2 should be <code>A_AAC</code>.</p>
-    UnsupportedStreamMediaTypeException(crate::error::UnsupportedStreamMediaTypeException),
+    UnsupportedStreamMediaTypeException(crate::types::error::UnsupportedStreamMediaTypeException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled),
 }
@@ -41,11 +41,14 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetClipError, R>> for Error
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_clip::GetClipError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetClipError, R>) -> Self {
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::get_clip::GetClipError, R>,
+    ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
@@ -61,47 +64,55 @@ where
         }
     }
 }
-impl From<crate::error::GetClipError> for Error {
-    fn from(err: crate::error::GetClipError) -> Self {
+impl From<crate::operation::get_clip::GetClipError> for Error {
+    fn from(err: crate::operation::get_clip::GetClipError) -> Self {
         match err {
-            crate::error::GetClipError::ClientLimitExceededException(inner) => {
+            crate::operation::get_clip::GetClipError::ClientLimitExceededException(inner) => {
                 Error::ClientLimitExceededException(inner)
             }
-            crate::error::GetClipError::InvalidArgumentException(inner) => {
+            crate::operation::get_clip::GetClipError::InvalidArgumentException(inner) => {
                 Error::InvalidArgumentException(inner)
             }
-            crate::error::GetClipError::InvalidCodecPrivateDataException(inner) => {
+            crate::operation::get_clip::GetClipError::InvalidCodecPrivateDataException(inner) => {
                 Error::InvalidCodecPrivateDataException(inner)
             }
-            crate::error::GetClipError::InvalidMediaFrameException(inner) => {
+            crate::operation::get_clip::GetClipError::InvalidMediaFrameException(inner) => {
                 Error::InvalidMediaFrameException(inner)
             }
-            crate::error::GetClipError::MissingCodecPrivateDataException(inner) => {
+            crate::operation::get_clip::GetClipError::MissingCodecPrivateDataException(inner) => {
                 Error::MissingCodecPrivateDataException(inner)
             }
-            crate::error::GetClipError::NoDataRetentionException(inner) => {
+            crate::operation::get_clip::GetClipError::NoDataRetentionException(inner) => {
                 Error::NoDataRetentionException(inner)
             }
-            crate::error::GetClipError::NotAuthorizedException(inner) => {
+            crate::operation::get_clip::GetClipError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
             }
-            crate::error::GetClipError::ResourceNotFoundException(inner) => {
+            crate::operation::get_clip::GetClipError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::error::GetClipError::UnsupportedStreamMediaTypeException(inner) => {
-                Error::UnsupportedStreamMediaTypeException(inner)
-            }
-            crate::error::GetClipError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_clip::GetClipError::UnsupportedStreamMediaTypeException(
+                inner,
+            ) => Error::UnsupportedStreamMediaTypeException(inner),
+            crate::operation::get_clip::GetClipError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetDASHStreamingSessionURLError, R>>
-    for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_dash_streaming_session_url::GetDASHStreamingSessionURLError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetDASHStreamingSessionURLError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_dash_streaming_session_url::GetDASHStreamingSessionURLError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -118,46 +129,134 @@ where
         }
     }
 }
-impl From<crate::error::GetDASHStreamingSessionURLError> for Error {
-    fn from(err: crate::error::GetDASHStreamingSessionURLError) -> Self {
+impl From<crate::operation::get_dash_streaming_session_url::GetDASHStreamingSessionURLError>
+    for Error
+{
+    fn from(
+        err: crate::operation::get_dash_streaming_session_url::GetDASHStreamingSessionURLError,
+    ) -> Self {
         match err {
-            crate::error::GetDASHStreamingSessionURLError::ClientLimitExceededException(inner) => {
+            crate::operation::get_dash_streaming_session_url::GetDASHStreamingSessionURLError::ClientLimitExceededException(inner) => Error::ClientLimitExceededException(inner),
+            crate::operation::get_dash_streaming_session_url::GetDASHStreamingSessionURLError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::get_dash_streaming_session_url::GetDASHStreamingSessionURLError::InvalidCodecPrivateDataException(inner) => Error::InvalidCodecPrivateDataException(inner),
+            crate::operation::get_dash_streaming_session_url::GetDASHStreamingSessionURLError::MissingCodecPrivateDataException(inner) => Error::MissingCodecPrivateDataException(inner),
+            crate::operation::get_dash_streaming_session_url::GetDASHStreamingSessionURLError::NoDataRetentionException(inner) => Error::NoDataRetentionException(inner),
+            crate::operation::get_dash_streaming_session_url::GetDASHStreamingSessionURLError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::get_dash_streaming_session_url::GetDASHStreamingSessionURLError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_dash_streaming_session_url::GetDASHStreamingSessionURLError::UnsupportedStreamMediaTypeException(inner) => Error::UnsupportedStreamMediaTypeException(inner),
+            crate::operation::get_dash_streaming_session_url::GetDASHStreamingSessionURLError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_hls_streaming_session_url::GetHLSStreamingSessionURLError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_hls_streaming_session_url::GetHLSStreamingSessionURLError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_hls_streaming_session_url::GetHLSStreamingSessionURLError>
+    for Error
+{
+    fn from(
+        err: crate::operation::get_hls_streaming_session_url::GetHLSStreamingSessionURLError,
+    ) -> Self {
+        match err {
+            crate::operation::get_hls_streaming_session_url::GetHLSStreamingSessionURLError::ClientLimitExceededException(inner) => Error::ClientLimitExceededException(inner),
+            crate::operation::get_hls_streaming_session_url::GetHLSStreamingSessionURLError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::get_hls_streaming_session_url::GetHLSStreamingSessionURLError::InvalidCodecPrivateDataException(inner) => Error::InvalidCodecPrivateDataException(inner),
+            crate::operation::get_hls_streaming_session_url::GetHLSStreamingSessionURLError::MissingCodecPrivateDataException(inner) => Error::MissingCodecPrivateDataException(inner),
+            crate::operation::get_hls_streaming_session_url::GetHLSStreamingSessionURLError::NoDataRetentionException(inner) => Error::NoDataRetentionException(inner),
+            crate::operation::get_hls_streaming_session_url::GetHLSStreamingSessionURLError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::get_hls_streaming_session_url::GetHLSStreamingSessionURLError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_hls_streaming_session_url::GetHLSStreamingSessionURLError::UnsupportedStreamMediaTypeException(inner) => Error::UnsupportedStreamMediaTypeException(inner),
+            crate::operation::get_hls_streaming_session_url::GetHLSStreamingSessionURLError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_images::GetImagesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::get_images::GetImagesError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_images::GetImagesError> for Error {
+    fn from(err: crate::operation::get_images::GetImagesError) -> Self {
+        match err {
+            crate::operation::get_images::GetImagesError::ClientLimitExceededException(inner) => {
                 Error::ClientLimitExceededException(inner)
             }
-            crate::error::GetDASHStreamingSessionURLError::InvalidArgumentException(inner) => {
+            crate::operation::get_images::GetImagesError::InvalidArgumentException(inner) => {
                 Error::InvalidArgumentException(inner)
             }
-            crate::error::GetDASHStreamingSessionURLError::InvalidCodecPrivateDataException(
-                inner,
-            ) => Error::InvalidCodecPrivateDataException(inner),
-            crate::error::GetDASHStreamingSessionURLError::MissingCodecPrivateDataException(
-                inner,
-            ) => Error::MissingCodecPrivateDataException(inner),
-            crate::error::GetDASHStreamingSessionURLError::NoDataRetentionException(inner) => {
-                Error::NoDataRetentionException(inner)
-            }
-            crate::error::GetDASHStreamingSessionURLError::NotAuthorizedException(inner) => {
+            crate::operation::get_images::GetImagesError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
             }
-            crate::error::GetDASHStreamingSessionURLError::ResourceNotFoundException(inner) => {
+            crate::operation::get_images::GetImagesError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::error::GetDASHStreamingSessionURLError::UnsupportedStreamMediaTypeException(
-                inner,
-            ) => Error::UnsupportedStreamMediaTypeException(inner),
-            crate::error::GetDASHStreamingSessionURLError::Unhandled(inner) => {
+            crate::operation::get_images::GetImagesError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetHLSStreamingSessionURLError, R>>
-    for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_media_for_fragment_list::GetMediaForFragmentListError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetHLSStreamingSessionURLError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_media_for_fragment_list::GetMediaForFragmentListError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -174,156 +273,64 @@ where
         }
     }
 }
-impl From<crate::error::GetHLSStreamingSessionURLError> for Error {
-    fn from(err: crate::error::GetHLSStreamingSessionURLError) -> Self {
+impl From<crate::operation::get_media_for_fragment_list::GetMediaForFragmentListError> for Error {
+    fn from(
+        err: crate::operation::get_media_for_fragment_list::GetMediaForFragmentListError,
+    ) -> Self {
         match err {
-            crate::error::GetHLSStreamingSessionURLError::ClientLimitExceededException(inner) => {
-                Error::ClientLimitExceededException(inner)
+            crate::operation::get_media_for_fragment_list::GetMediaForFragmentListError::ClientLimitExceededException(inner) => Error::ClientLimitExceededException(inner),
+            crate::operation::get_media_for_fragment_list::GetMediaForFragmentListError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::get_media_for_fragment_list::GetMediaForFragmentListError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::get_media_for_fragment_list::GetMediaForFragmentListError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_media_for_fragment_list::GetMediaForFragmentListError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::list_fragments::ListFragmentsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_fragments::ListFragmentsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
-            crate::error::GetHLSStreamingSessionURLError::InvalidArgumentException(inner) => {
-                Error::InvalidArgumentException(inner)
-            }
-            crate::error::GetHLSStreamingSessionURLError::InvalidCodecPrivateDataException(
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_fragments::ListFragmentsError> for Error {
+    fn from(err: crate::operation::list_fragments::ListFragmentsError) -> Self {
+        match err {
+            crate::operation::list_fragments::ListFragmentsError::ClientLimitExceededException(
                 inner,
-            ) => Error::InvalidCodecPrivateDataException(inner),
-            crate::error::GetHLSStreamingSessionURLError::MissingCodecPrivateDataException(
+            ) => Error::ClientLimitExceededException(inner),
+            crate::operation::list_fragments::ListFragmentsError::InvalidArgumentException(
                 inner,
-            ) => Error::MissingCodecPrivateDataException(inner),
-            crate::error::GetHLSStreamingSessionURLError::NoDataRetentionException(inner) => {
-                Error::NoDataRetentionException(inner)
-            }
-            crate::error::GetHLSStreamingSessionURLError::NotAuthorizedException(inner) => {
+            ) => Error::InvalidArgumentException(inner),
+            crate::operation::list_fragments::ListFragmentsError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
             }
-            crate::error::GetHLSStreamingSessionURLError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::GetHLSStreamingSessionURLError::UnsupportedStreamMediaTypeException(
+            crate::operation::list_fragments::ListFragmentsError::ResourceNotFoundException(
                 inner,
-            ) => Error::UnsupportedStreamMediaTypeException(inner),
-            crate::error::GetHLSStreamingSessionURLError::Unhandled(inner) => {
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_fragments::ListFragmentsError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetImagesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetImagesError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetImagesError> for Error {
-    fn from(err: crate::error::GetImagesError) -> Self {
-        match err {
-            crate::error::GetImagesError::ClientLimitExceededException(inner) => {
-                Error::ClientLimitExceededException(inner)
-            }
-            crate::error::GetImagesError::InvalidArgumentException(inner) => {
-                Error::InvalidArgumentException(inner)
-            }
-            crate::error::GetImagesError::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::GetImagesError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::GetImagesError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetMediaForFragmentListError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetMediaForFragmentListError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetMediaForFragmentListError> for Error {
-    fn from(err: crate::error::GetMediaForFragmentListError) -> Self {
-        match err {
-            crate::error::GetMediaForFragmentListError::ClientLimitExceededException(inner) => {
-                Error::ClientLimitExceededException(inner)
-            }
-            crate::error::GetMediaForFragmentListError::InvalidArgumentException(inner) => {
-                Error::InvalidArgumentException(inner)
-            }
-            crate::error::GetMediaForFragmentListError::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::GetMediaForFragmentListError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::GetMediaForFragmentListError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListFragmentsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListFragmentsError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::ListFragmentsError> for Error {
-    fn from(err: crate::error::ListFragmentsError) -> Self {
-        match err {
-            crate::error::ListFragmentsError::ClientLimitExceededException(inner) => {
-                Error::ClientLimitExceededException(inner)
-            }
-            crate::error::ListFragmentsError::InvalidArgumentException(inner) => {
-                Error::InvalidArgumentException(inner)
-            }
-            crate::error::ListFragmentsError::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::error::ListFragmentsError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::ListFragmentsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -2,7 +2,7 @@
 pub(crate) fn de_auto_tune_maintenance_schedule_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AutoTuneMaintenanceSchedule>>,
+    Option<std::vec::Vec<crate::types::AutoTuneMaintenanceSchedule>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

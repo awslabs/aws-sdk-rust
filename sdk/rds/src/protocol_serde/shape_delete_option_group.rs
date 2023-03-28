@@ -2,67 +2,74 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_option_group_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeleteOptionGroupOutput, crate::error::DeleteOptionGroupError>
-{
+) -> std::result::Result<
+    crate::operation::delete_option_group::DeleteOptionGroupOutput,
+    crate::operation::delete_option_group::DeleteOptionGroupError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteOptionGroupError::unhandled)?;
+        .map_err(crate::operation::delete_option_group::DeleteOptionGroupError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DeleteOptionGroupError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::delete_option_group::DeleteOptionGroupError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidOptionGroupStateFault" => {
-            crate::error::DeleteOptionGroupError::InvalidOptionGroupStateFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidOptionGroupStateFault" => crate::operation::delete_option_group::DeleteOptionGroupError::InvalidOptionGroupStateFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_option_group_state_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidOptionGroupStateFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_option_group_state_fault::de_invalid_option_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteOptionGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_option_group_state_fault::de_invalid_option_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_option_group::DeleteOptionGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "OptionGroupNotFoundFault" => {
-            crate::error::DeleteOptionGroupError::OptionGroupNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "OptionGroupNotFoundFault" => crate::operation::delete_option_group::DeleteOptionGroupError::OptionGroupNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::option_group_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::OptionGroupNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_option_group_not_found_fault::de_option_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteOptionGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_option_group_not_found_fault::de_option_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_option_group::DeleteOptionGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DeleteOptionGroupError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::delete_option_group::DeleteOptionGroupError::generic(generic)
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_option_group_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeleteOptionGroupOutput, crate::error::DeleteOptionGroupError>
-{
+) -> std::result::Result<
+    crate::operation::delete_option_group::DeleteOptionGroupOutput,
+    crate::operation::delete_option_group::DeleteOptionGroupError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_option_group_output::Builder::default();
+        let mut output = crate::operation::delete_option_group::builders::DeleteOptionGroupOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

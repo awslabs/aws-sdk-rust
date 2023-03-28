@@ -2,7 +2,7 @@
 pub fn de_network_interface_ipv6_addresses_list(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::NetworkInterfaceIpv6Address>,
+    std::vec::Vec<crate::types::NetworkInterfaceIpv6Address>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_iam_instance_profile_specification(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::IamInstanceProfileSpecification,
+    input: &crate::types::IamInstanceProfileSpecification,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Arn");
@@ -19,9 +19,9 @@ pub fn ser_iam_instance_profile_specification(
 
 pub fn de_iam_instance_profile_specification(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::IamInstanceProfileSpecification, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::IamInstanceProfileSpecification, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::IamInstanceProfileSpecification::builder();
+    let mut builder = crate::types::IamInstanceProfileSpecification::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("arn") /* Arn com.amazonaws.ec2#IamInstanceProfileSpecification$Arn */ =>  {

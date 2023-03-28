@@ -3,97 +3,89 @@
 pub fn de_delete_monitoring_subscription_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteMonitoringSubscriptionOutput,
-    crate::error::DeleteMonitoringSubscriptionError,
+    crate::operation::delete_monitoring_subscription::DeleteMonitoringSubscriptionOutput,
+    crate::operation::delete_monitoring_subscription::DeleteMonitoringSubscriptionError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteMonitoringSubscriptionError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::delete_monitoring_subscription::DeleteMonitoringSubscriptionError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::DeleteMonitoringSubscriptionError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::delete_monitoring_subscription::DeleteMonitoringSubscriptionError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDenied" => crate::error::DeleteMonitoringSubscriptionError::AccessDenied({
+        "AccessDenied" => crate::operation::delete_monitoring_subscription::DeleteMonitoringSubscriptionError::AccessDenied({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::access_denied::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_access_denied::de_access_denied_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::DeleteMonitoringSubscriptionError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::AccessDeniedBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_access_denied::de_access_denied_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_monitoring_subscription::DeleteMonitoringSubscriptionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "NoSuchDistribution" => {
-            crate::error::DeleteMonitoringSubscriptionError::NoSuchDistribution({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "NoSuchDistribution" => crate::operation::delete_monitoring_subscription::DeleteMonitoringSubscriptionError::NoSuchDistribution({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::no_such_distribution::Builder::default();
+                    let mut output = crate::types::error::builders::NoSuchDistributionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_no_such_distribution::de_no_such_distribution_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteMonitoringSubscriptionError::unhandled)?;
+                    output = crate::protocol_serde::shape_no_such_distribution::de_no_such_distribution_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_monitoring_subscription::DeleteMonitoringSubscriptionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "NoSuchMonitoringSubscription" => {
-            crate::error::DeleteMonitoringSubscriptionError::NoSuchMonitoringSubscription({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "NoSuchMonitoringSubscription" => crate::operation::delete_monitoring_subscription::DeleteMonitoringSubscriptionError::NoSuchMonitoringSubscription({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::no_such_monitoring_subscription::Builder::default();
+                    let mut output = crate::types::error::builders::NoSuchMonitoringSubscriptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_no_such_monitoring_subscription::de_no_such_monitoring_subscription_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteMonitoringSubscriptionError::unhandled)?;
+                    output = crate::protocol_serde::shape_no_such_monitoring_subscription::de_no_such_monitoring_subscription_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_monitoring_subscription::DeleteMonitoringSubscriptionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "UnsupportedOperation" => {
-            crate::error::DeleteMonitoringSubscriptionError::UnsupportedOperation({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "UnsupportedOperation" => crate::operation::delete_monitoring_subscription::DeleteMonitoringSubscriptionError::UnsupportedOperation({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::unsupported_operation::Builder::default();
+                    let mut output = crate::types::error::builders::UnsupportedOperationBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_unsupported_operation::de_unsupported_operation_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteMonitoringSubscriptionError::unhandled)?;
+                    output = crate::protocol_serde::shape_unsupported_operation::de_unsupported_operation_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_monitoring_subscription::DeleteMonitoringSubscriptionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DeleteMonitoringSubscriptionError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::delete_monitoring_subscription::DeleteMonitoringSubscriptionError::generic(generic)
     })
 }
 
@@ -101,12 +93,12 @@ pub fn de_delete_monitoring_subscription_http_error(
 pub fn de_delete_monitoring_subscription_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteMonitoringSubscriptionOutput,
-    crate::error::DeleteMonitoringSubscriptionError,
+    crate::operation::delete_monitoring_subscription::DeleteMonitoringSubscriptionOutput,
+    crate::operation::delete_monitoring_subscription::DeleteMonitoringSubscriptionError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_monitoring_subscription_output::Builder::default();
+        let mut output = crate::operation::delete_monitoring_subscription::builders::DeleteMonitoringSubscriptionOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

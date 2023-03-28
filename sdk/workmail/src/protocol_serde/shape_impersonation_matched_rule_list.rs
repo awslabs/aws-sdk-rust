@@ -2,7 +2,7 @@
 pub(crate) fn de_impersonation_matched_rule_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ImpersonationMatchedRule>>,
+    Option<std::vec::Vec<crate::types::ImpersonationMatchedRule>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

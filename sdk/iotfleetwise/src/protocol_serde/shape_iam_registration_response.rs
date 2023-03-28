@@ -2,7 +2,7 @@
 pub(crate) fn de_iam_registration_response<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::IamRegistrationResponse>,
+    Option<crate::types::IamRegistrationResponse>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::iam_registration_response::Builder::default();
+            let mut builder = crate::types::builders::IamRegistrationResponseBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -39,7 +39,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::RegistrationStatus::from(u.as_ref())
+                                            crate::types::RegistrationStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

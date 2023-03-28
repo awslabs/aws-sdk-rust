@@ -2,17 +2,17 @@
 pub fn de_distribution_id_list_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::DistributionIdList>,
-    crate::error::ListDistributionsByKeyGroupError,
+    std::option::Option<crate::types::DistributionIdList>,
+    crate::operation::list_distributions_by_key_group::ListDistributionsByKeyGroupError,
 > {
     (!body.is_empty()).then(||{
-        crate::protocol_serde::shape_list_distributions_by_key_group_output::de_distribution_id_list(body).map_err(crate::error::ListDistributionsByKeyGroupError::unhandled)
+        crate::protocol_serde::shape_list_distributions_by_key_group_output::de_distribution_id_list(body).map_err(crate::operation::list_distributions_by_key_group::ListDistributionsByKeyGroupError::unhandled)
     }).transpose()
 }
 
 pub fn de_distribution_id_list(
     inp: &[u8],
-) -> Result<crate::model::DistributionIdList, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::DistributionIdList, aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;

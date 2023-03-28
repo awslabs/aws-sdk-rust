@@ -2,73 +2,35 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_preset_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetPresetOutput, crate::error::GetPresetError> {
+) -> std::result::Result<
+    crate::operation::get_preset::GetPresetOutput,
+    crate::operation::get_preset::GetPresetError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetPresetError::unhandled)?;
+        .map_err(crate::operation::get_preset::GetPresetError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::GetPresetError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::get_preset::GetPresetError::unhandled(
+                generic,
+            ))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::GetPresetError::BadRequestException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPresetError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ConflictException" => crate::error::GetPresetError::ConflictException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::conflict_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPresetError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ForbiddenException" => crate::error::GetPresetError::ForbiddenException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPresetError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InternalServerErrorException" => {
-            crate::error::GetPresetError::InternalServerErrorException({
+        "BadRequestException" => {
+            crate::operation::get_preset::GetPresetError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::internal_server_error_exception::Builder::default();
+                        crate::types::error::builders::BadRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPresetError::unhandled)?;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_preset::GetPresetError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -78,13 +40,13 @@ pub fn de_get_preset_http_error(
                 tmp
             })
         }
-        "NotFoundException" => crate::error::GetPresetError::NotFoundException({
+        "ConflictException" => crate::operation::get_preset::GetPresetError::ConflictException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_exception::Builder::default();
+                let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
                 let _ = response;
-                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPresetError::unhandled)?;
+                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_preset::GetPresetError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -93,13 +55,14 @@ pub fn de_get_preset_http_error(
             }
             tmp
         }),
-        "TooManyRequestsException" => crate::error::GetPresetError::TooManyRequestsException({
+        "ForbiddenException" => crate::operation::get_preset::GetPresetError::ForbiddenException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_exception::Builder::default();
+                let mut output =
+                    crate::types::error::builders::ForbiddenExceptionBuilder::default();
                 let _ = response;
-                output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPresetError::unhandled)?;
+                output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_preset::GetPresetError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -108,23 +71,78 @@ pub fn de_get_preset_http_error(
             }
             tmp
         }),
-        _ => crate::error::GetPresetError::generic(generic),
+        "InternalServerErrorException" => {
+            crate::operation::get_preset::GetPresetError::InternalServerErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InternalServerErrorExceptionBuilder::default(
+                        );
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_preset::GetPresetError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "NotFoundException" => crate::operation::get_preset::GetPresetError::NotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::NotFoundExceptionBuilder::default();
+                let _ = response;
+                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_preset::GetPresetError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyRequestsException" => {
+            crate::operation::get_preset::GetPresetError::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_preset::GetPresetError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::get_preset::GetPresetError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_preset_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetPresetOutput, crate::error::GetPresetError> {
+) -> std::result::Result<
+    crate::operation::get_preset::GetPresetOutput,
+    crate::operation::get_preset::GetPresetError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_preset_output::Builder::default();
+        let mut output = crate::operation::get_preset::builders::GetPresetOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_get_preset::de_get_preset(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::GetPresetError::unhandled)?;
+        .map_err(crate::operation::get_preset::GetPresetError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -134,9 +152,9 @@ pub fn de_get_preset_http_response(
 
 pub(crate) fn de_get_preset(
     value: &[u8],
-    mut builder: crate::output::get_preset_output::Builder,
+    mut builder: crate::operation::get_preset::builders::GetPresetOutputBuilder,
 ) -> Result<
-    crate::output::get_preset_output::Builder,
+    crate::operation::get_preset::builders::GetPresetOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

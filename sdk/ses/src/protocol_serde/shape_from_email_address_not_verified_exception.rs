@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_from_email_address_not_verified_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::from_email_address_not_verified_exception::Builder,
+    mut builder: crate::types::error::builders::FromEmailAddressNotVerifiedExceptionBuilder,
 ) -> Result<
-    crate::error::from_email_address_not_verified_exception::Builder,
+    crate::types::error::builders::FromEmailAddressNotVerifiedExceptionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

@@ -2,7 +2,7 @@
 pub(crate) fn de_schedule_action<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ScheduleAction>,
+    Option<crate::types::ScheduleAction>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::schedule_action::Builder::default();
+            let mut builder = crate::types::builders::ScheduleActionBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -67,7 +67,7 @@ where
 
 pub fn ser_schedule_action(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::ScheduleAction,
+    input: &crate::types::ScheduleAction,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.action_name {
         object.key("actionName").string(var_1.as_str());

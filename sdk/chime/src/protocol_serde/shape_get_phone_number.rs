@@ -2,88 +2,106 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_phone_number_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetPhoneNumberOutput, crate::error::GetPhoneNumberError> {
+) -> std::result::Result<
+    crate::operation::get_phone_number::GetPhoneNumberOutput,
+    crate::operation::get_phone_number::GetPhoneNumberError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetPhoneNumberError::unhandled)?;
+        .map_err(crate::operation::get_phone_number::GetPhoneNumberError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::GetPhoneNumberError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::get_phone_number::GetPhoneNumberError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::GetPhoneNumberError::BadRequestException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPhoneNumberError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ForbiddenException" => crate::error::GetPhoneNumberError::ForbiddenException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPhoneNumberError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "NotFoundException" => crate::error::GetPhoneNumberError::NotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPhoneNumberError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ServiceFailureException" => crate::error::GetPhoneNumberError::ServiceFailureException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::service_failure_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPhoneNumberError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ServiceUnavailableException" => {
-            crate::error::GetPhoneNumberError::ServiceUnavailableException({
+        "BadRequestException" => {
+            crate::operation::get_phone_number::GetPhoneNumberError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::service_unavailable_exception::Builder::default();
+                        crate::types::error::builders::BadRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPhoneNumberError::unhandled)?;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_phone_number::GetPhoneNumberError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ForbiddenException" => {
+            crate::operation::get_phone_number::GetPhoneNumberError::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ForbiddenExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_phone_number::GetPhoneNumberError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "NotFoundException" => {
+            crate::operation::get_phone_number::GetPhoneNumberError::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::NotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_phone_number::GetPhoneNumberError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ServiceFailureException" => {
+            crate::operation::get_phone_number::GetPhoneNumberError::ServiceFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ServiceFailureExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_phone_number::GetPhoneNumberError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::operation::get_phone_number::GetPhoneNumberError::ServiceUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ServiceUnavailableExceptionBuilder::default(
+                        );
+                    let _ = response;
+                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_phone_number::GetPhoneNumberError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -94,13 +112,14 @@ pub fn de_get_phone_number_http_error(
             })
         }
         "ThrottledClientException" => {
-            crate::error::GetPhoneNumberError::ThrottledClientException({
+            crate::operation::get_phone_number::GetPhoneNumberError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::throttled_client_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::ThrottledClientExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_throttled_client_exception::de_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPhoneNumberError::unhandled)?;
+                    output = crate::protocol_serde::shape_throttled_client_exception::de_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_phone_number::GetPhoneNumberError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -111,14 +130,15 @@ pub fn de_get_phone_number_http_error(
             })
         }
         "UnauthorizedClientException" => {
-            crate::error::GetPhoneNumberError::UnauthorizedClientException({
+            crate::operation::get_phone_number::GetPhoneNumberError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::unauthorized_client_exception::Builder::default();
+                        crate::types::error::builders::UnauthorizedClientExceptionBuilder::default(
+                        );
                     let _ = response;
-                    output = crate::protocol_serde::shape_unauthorized_client_exception::de_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPhoneNumberError::unhandled)?;
+                    output = crate::protocol_serde::shape_unauthorized_client_exception::de_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_phone_number::GetPhoneNumberError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -128,23 +148,27 @@ pub fn de_get_phone_number_http_error(
                 tmp
             })
         }
-        _ => crate::error::GetPhoneNumberError::generic(generic),
+        _ => crate::operation::get_phone_number::GetPhoneNumberError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_phone_number_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetPhoneNumberOutput, crate::error::GetPhoneNumberError> {
+) -> std::result::Result<
+    crate::operation::get_phone_number::GetPhoneNumberOutput,
+    crate::operation::get_phone_number::GetPhoneNumberError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_phone_number_output::Builder::default();
+        let mut output =
+            crate::operation::get_phone_number::builders::GetPhoneNumberOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_get_phone_number::de_get_phone_number(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::GetPhoneNumberError::unhandled)?;
+        .map_err(crate::operation::get_phone_number::GetPhoneNumberError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -154,9 +178,9 @@ pub fn de_get_phone_number_http_response(
 
 pub(crate) fn de_get_phone_number(
     value: &[u8],
-    mut builder: crate::output::get_phone_number_output::Builder,
+    mut builder: crate::operation::get_phone_number::builders::GetPhoneNumberOutputBuilder,
 ) -> Result<
-    crate::output::get_phone_number_output::Builder,
+    crate::operation::get_phone_number::builders::GetPhoneNumberOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

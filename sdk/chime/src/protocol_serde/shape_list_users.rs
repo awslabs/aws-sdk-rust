@@ -2,26 +2,52 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_users_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListUsersOutput, crate::error::ListUsersError> {
+) -> std::result::Result<
+    crate::operation::list_users::ListUsersOutput,
+    crate::operation::list_users::ListUsersError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListUsersError::unhandled)?;
+        .map_err(crate::operation::list_users::ListUsersError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListUsersError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::list_users::ListUsersError::unhandled(
+                generic,
+            ))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::ListUsersError::BadRequestException({
+        "BadRequestException" => {
+            crate::operation::list_users::ListUsersError::BadRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::BadRequestExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_users::ListUsersError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ForbiddenException" => crate::operation::list_users::ListUsersError::ForbiddenException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_exception::Builder::default();
+                let mut output =
+                    crate::types::error::builders::ForbiddenExceptionBuilder::default();
                 let _ = response;
-                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListUsersError::unhandled)?;
+                output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_users::ListUsersError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -30,13 +56,13 @@ pub fn de_list_users_http_error(
             }
             tmp
         }),
-        "ForbiddenException" => crate::error::ListUsersError::ForbiddenException({
+        "NotFoundException" => crate::operation::list_users::ListUsersError::NotFoundException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_exception::Builder::default();
+                let mut output = crate::types::error::builders::NotFoundExceptionBuilder::default();
                 let _ = response;
-                output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListUsersError::unhandled)?;
+                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_users::ListUsersError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -45,45 +71,34 @@ pub fn de_list_users_http_error(
             }
             tmp
         }),
-        "NotFoundException" => crate::error::ListUsersError::NotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "ServiceFailureException" => {
+            crate::operation::list_users::ListUsersError::ServiceFailureException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListUsersError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ServiceFailureException" => crate::error::ListUsersError::ServiceFailureException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::service_failure_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListUsersError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ServiceFailureExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_users::ListUsersError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "ServiceUnavailableException" => {
-            crate::error::ListUsersError::ServiceUnavailableException({
+            crate::operation::list_users::ListUsersError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::service_unavailable_exception::Builder::default();
+                        crate::types::error::builders::ServiceUnavailableExceptionBuilder::default(
+                        );
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListUsersError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_users::ListUsersError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -93,30 +108,34 @@ pub fn de_list_users_http_error(
                 tmp
             })
         }
-        "ThrottledClientException" => crate::error::ListUsersError::ThrottledClientException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "ThrottledClientException" => {
+            crate::operation::list_users::ListUsersError::ThrottledClientException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::throttled_client_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttled_client_exception::de_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListUsersError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ThrottledClientExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_throttled_client_exception::de_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_users::ListUsersError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "UnauthorizedClientException" => {
-            crate::error::ListUsersError::UnauthorizedClientException({
+            crate::operation::list_users::ListUsersError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::unauthorized_client_exception::Builder::default();
+                        crate::types::error::builders::UnauthorizedClientExceptionBuilder::default(
+                        );
                     let _ = response;
-                    output = crate::protocol_serde::shape_unauthorized_client_exception::de_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListUsersError::unhandled)?;
+                    output = crate::protocol_serde::shape_unauthorized_client_exception::de_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_users::ListUsersError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -126,23 +145,26 @@ pub fn de_list_users_http_error(
                 tmp
             })
         }
-        _ => crate::error::ListUsersError::generic(generic),
+        _ => crate::operation::list_users::ListUsersError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_users_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListUsersOutput, crate::error::ListUsersError> {
+) -> std::result::Result<
+    crate::operation::list_users::ListUsersOutput,
+    crate::operation::list_users::ListUsersError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_users_output::Builder::default();
+        let mut output = crate::operation::list_users::builders::ListUsersOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_users::de_list_users(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListUsersError::unhandled)?;
+        .map_err(crate::operation::list_users::ListUsersError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -152,9 +174,9 @@ pub fn de_list_users_http_response(
 
 pub(crate) fn de_list_users(
     value: &[u8],
-    mut builder: crate::output::list_users_output::Builder,
+    mut builder: crate::operation::list_users::builders::ListUsersOutputBuilder,
 ) -> Result<
-    crate::output::list_users_output::Builder,
+    crate::operation::list_users::builders::ListUsersOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

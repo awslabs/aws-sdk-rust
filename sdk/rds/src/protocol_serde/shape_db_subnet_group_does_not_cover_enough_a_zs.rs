@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_db_subnet_group_does_not_cover_enough_a_zs_xml_err(
     inp: &[u8],
-    mut builder: crate::error::db_subnet_group_does_not_cover_enough_a_zs::Builder,
+    mut builder: crate::types::error::builders::DbSubnetGroupDoesNotCoverEnoughAZsBuilder,
 ) -> Result<
-    crate::error::db_subnet_group_does_not_cover_enough_a_zs::Builder,
+    crate::types::error::builders::DbSubnetGroupDoesNotCoverEnoughAZsBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

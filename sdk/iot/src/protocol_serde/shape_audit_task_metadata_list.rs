@@ -2,7 +2,7 @@
 pub(crate) fn de_audit_task_metadata_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AuditTaskMetadata>>,
+    Option<std::vec::Vec<crate::types::AuditTaskMetadata>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_time_range_filter(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::TimeRangeFilter,
+    input: &crate::types::TimeRangeFilter,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("StartTime");

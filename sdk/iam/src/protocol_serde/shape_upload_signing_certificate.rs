@@ -3,143 +3,146 @@
 pub fn de_upload_signing_certificate_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::UploadSigningCertificateOutput,
-    crate::error::UploadSigningCertificateError,
+    crate::operation::upload_signing_certificate::UploadSigningCertificateOutput,
+    crate::operation::upload_signing_certificate::UploadSigningCertificateError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::UploadSigningCertificateError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::upload_signing_certificate::UploadSigningCertificateError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::error::UploadSigningCertificateError::unhandled(
+        None => return Err(
+            crate::operation::upload_signing_certificate::UploadSigningCertificateError::unhandled(
                 generic,
-            ))
-        }
+            ),
+        ),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DuplicateCertificate" => {
-            crate::error::UploadSigningCertificateError::DuplicateCertificateException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::duplicate_certificate_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_duplicate_certificate_exception::de_duplicate_certificate_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UploadSigningCertificateError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "EntityAlreadyExists" => {
-            crate::error::UploadSigningCertificateError::EntityAlreadyExistsException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::entity_already_exists_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_entity_already_exists_exception::de_entity_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UploadSigningCertificateError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InvalidCertificate" => {
-            crate::error::UploadSigningCertificateError::InvalidCertificateException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_certificate_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_certificate_exception::de_invalid_certificate_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UploadSigningCertificateError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "LimitExceeded" => crate::error::UploadSigningCertificateError::LimitExceededException({
+        "DuplicateCertificate" => crate::operation::upload_signing_certificate::UploadSigningCertificateError::DuplicateCertificateException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::limit_exceeded_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UploadSigningCertificateError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::DuplicateCertificateExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_duplicate_certificate_exception::de_duplicate_certificate_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::upload_signing_certificate::UploadSigningCertificateError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "MalformedCertificate" => {
-            crate::error::UploadSigningCertificateError::MalformedCertificateException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "EntityAlreadyExists" => crate::operation::upload_signing_certificate::UploadSigningCertificateError::EntityAlreadyExistsException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::malformed_certificate_exception::Builder::default();
+                    let mut output = crate::types::error::builders::EntityAlreadyExistsExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_malformed_certificate_exception::de_malformed_certificate_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UploadSigningCertificateError::unhandled)?;
+                    output = crate::protocol_serde::shape_entity_already_exists_exception::de_entity_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::upload_signing_certificate::UploadSigningCertificateError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "NoSuchEntity" => crate::error::UploadSigningCertificateError::NoSuchEntityException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::no_such_entity_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_no_such_entity_exception::de_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UploadSigningCertificateError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "ServiceFailure" => crate::error::UploadSigningCertificateError::ServiceFailureException({
+        "InvalidCertificate" => crate::operation::upload_signing_certificate::UploadSigningCertificateError::InvalidCertificateException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::service_failure_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UploadSigningCertificateError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidCertificateExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_certificate_exception::de_invalid_certificate_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::upload_signing_certificate::UploadSigningCertificateError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::UploadSigningCertificateError::generic(generic),
+        "LimitExceeded" => crate::operation::upload_signing_certificate::UploadSigningCertificateError::LimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::upload_signing_certificate::UploadSigningCertificateError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "MalformedCertificate" => crate::operation::upload_signing_certificate::UploadSigningCertificateError::MalformedCertificateException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::MalformedCertificateExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_malformed_certificate_exception::de_malformed_certificate_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::upload_signing_certificate::UploadSigningCertificateError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "NoSuchEntity" => crate::operation::upload_signing_certificate::UploadSigningCertificateError::NoSuchEntityException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::NoSuchEntityExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_no_such_entity_exception::de_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::upload_signing_certificate::UploadSigningCertificateError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ServiceFailure" => crate::operation::upload_signing_certificate::UploadSigningCertificateError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ServiceFailureExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::upload_signing_certificate::UploadSigningCertificateError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::upload_signing_certificate::UploadSigningCertificateError::generic(generic)
     })
 }
 
@@ -147,19 +150,14 @@ pub fn de_upload_signing_certificate_http_error(
 pub fn de_upload_signing_certificate_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::UploadSigningCertificateOutput,
-    crate::error::UploadSigningCertificateError,
+    crate::operation::upload_signing_certificate::UploadSigningCertificateOutput,
+    crate::operation::upload_signing_certificate::UploadSigningCertificateError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::upload_signing_certificate_output::Builder::default();
+        let mut output = crate::operation::upload_signing_certificate::builders::UploadSigningCertificateOutputBuilder::default();
         let _ = response;
-        output =
-            crate::protocol_serde::shape_upload_signing_certificate::de_upload_signing_certificate(
-                response.body().as_ref(),
-                output,
-            )
-            .map_err(crate::error::UploadSigningCertificateError::unhandled)?;
+        output = crate::protocol_serde::shape_upload_signing_certificate::de_upload_signing_certificate(response.body().as_ref(), output).map_err(crate::operation::upload_signing_certificate::UploadSigningCertificateError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -170,9 +168,9 @@ pub fn de_upload_signing_certificate_http_response(
 #[allow(unused_mut)]
 pub fn de_upload_signing_certificate(
     inp: &[u8],
-    mut builder: crate::output::upload_signing_certificate_output::Builder,
+    mut builder: crate::operation::upload_signing_certificate::builders::UploadSigningCertificateOutputBuilder,
 ) -> Result<
-    crate::output::upload_signing_certificate_output::Builder,
+    crate::operation::upload_signing_certificate::builders::UploadSigningCertificateOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

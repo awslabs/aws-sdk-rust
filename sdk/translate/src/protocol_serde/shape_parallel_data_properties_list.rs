@@ -2,7 +2,7 @@
 pub(crate) fn de_parallel_data_properties_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ParallelDataProperties>>,
+    Option<std::vec::Vec<crate::types::ParallelDataProperties>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_lo_ra_wan_join_event_notification_configurations<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::LoRaWanJoinEventNotificationConfigurations>,
+    Option<crate::types::LoRaWanJoinEventNotificationConfigurations>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,8 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::lo_ra_wan_join_event_notification_configurations::Builder::default();
+                crate::types::builders::LoRaWanJoinEventNotificationConfigurationsBuilder::default(
+                );
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -31,7 +32,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::EventNotificationTopicStatus::from(
+                                            crate::types::EventNotificationTopicStatus::from(
                                                 u.as_ref(),
                                             )
                                         })
@@ -64,7 +65,7 @@ where
 
 pub fn ser_lo_ra_wan_join_event_notification_configurations(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::LoRaWanJoinEventNotificationConfigurations,
+    input: &crate::types::LoRaWanJoinEventNotificationConfigurations,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.dev_eui_event_topic {
         object.key("DevEuiEventTopic").string(var_1.as_str());

@@ -3,61 +3,61 @@
 pub fn de_describe_db_proxy_endpoints_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeDbProxyEndpointsOutput,
-    crate::error::DescribeDBProxyEndpointsError,
+    crate::operation::describe_db_proxy_endpoints::DescribeDbProxyEndpointsOutput,
+    crate::operation::describe_db_proxy_endpoints::DescribeDBProxyEndpointsError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeDBProxyEndpointsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::describe_db_proxy_endpoints::DescribeDBProxyEndpointsError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::error::DescribeDBProxyEndpointsError::unhandled(
+        None => return Err(
+            crate::operation::describe_db_proxy_endpoints::DescribeDBProxyEndpointsError::unhandled(
                 generic,
-            ))
-        }
+            ),
+        ),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBProxyEndpointNotFoundFault" => {
-            crate::error::DescribeDBProxyEndpointsError::DbProxyEndpointNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "DBProxyEndpointNotFoundFault" => crate::operation::describe_db_proxy_endpoints::DescribeDBProxyEndpointsError::DbProxyEndpointNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::db_proxy_endpoint_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::DbProxyEndpointNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_db_proxy_endpoint_not_found_fault::de_db_proxy_endpoint_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeDBProxyEndpointsError::unhandled)?;
+                    output = crate::protocol_serde::shape_db_proxy_endpoint_not_found_fault::de_db_proxy_endpoint_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::describe_db_proxy_endpoints::DescribeDBProxyEndpointsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "DBProxyNotFoundFault" => {
-            crate::error::DescribeDBProxyEndpointsError::DbProxyNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "DBProxyNotFoundFault" => crate::operation::describe_db_proxy_endpoints::DescribeDBProxyEndpointsError::DbProxyNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::db_proxy_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::DbProxyNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_db_proxy_not_found_fault::de_db_proxy_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeDBProxyEndpointsError::unhandled)?;
+                    output = crate::protocol_serde::shape_db_proxy_not_found_fault::de_db_proxy_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::describe_db_proxy_endpoints::DescribeDBProxyEndpointsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DescribeDBProxyEndpointsError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::describe_db_proxy_endpoints::DescribeDBProxyEndpointsError::generic(generic)
     })
 }
 
@@ -65,14 +65,14 @@ pub fn de_describe_db_proxy_endpoints_http_error(
 pub fn de_describe_db_proxy_endpoints_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeDbProxyEndpointsOutput,
-    crate::error::DescribeDBProxyEndpointsError,
+    crate::operation::describe_db_proxy_endpoints::DescribeDbProxyEndpointsOutput,
+    crate::operation::describe_db_proxy_endpoints::DescribeDBProxyEndpointsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_db_proxy_endpoints_output::Builder::default();
+        let mut output = crate::operation::describe_db_proxy_endpoints::builders::DescribeDbProxyEndpointsOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_describe_db_proxy_endpoints::de_describe_db_proxy_endpoints(response.body().as_ref(), output).map_err(crate::error::DescribeDBProxyEndpointsError::unhandled)?;
+        output = crate::protocol_serde::shape_describe_db_proxy_endpoints::de_describe_db_proxy_endpoints(response.body().as_ref(), output).map_err(crate::operation::describe_db_proxy_endpoints::DescribeDBProxyEndpointsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -83,9 +83,9 @@ pub fn de_describe_db_proxy_endpoints_http_response(
 #[allow(unused_mut)]
 pub fn de_describe_db_proxy_endpoints(
     inp: &[u8],
-    mut builder: crate::output::describe_db_proxy_endpoints_output::Builder,
+    mut builder: crate::operation::describe_db_proxy_endpoints::builders::DescribeDbProxyEndpointsOutputBuilder,
 ) -> Result<
-    crate::output::describe_db_proxy_endpoints_output::Builder,
+    crate::operation::describe_db_proxy_endpoints::builders::DescribeDbProxyEndpointsOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

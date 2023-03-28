@@ -2,7 +2,7 @@
 pub(crate) fn de_supported_endpoint_type_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SupportedEndpointType>>,
+    Option<std::vec::Vec<crate::types::SupportedEndpointType>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

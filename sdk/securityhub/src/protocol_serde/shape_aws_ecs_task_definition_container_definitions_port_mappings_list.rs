@@ -3,7 +3,7 @@ pub(crate) fn de_aws_ecs_task_definition_container_definitions_port_mappings_lis
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<
-        std::vec::Vec<crate::model::AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails>,
+        std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails>,
     >,
     aws_smithy_json::deserialize::error::DeserializeError,
 >

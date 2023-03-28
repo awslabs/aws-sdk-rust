@@ -3,34 +3,34 @@
 pub fn de_create_managed_prefix_list_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateManagedPrefixListOutput,
-    crate::error::CreateManagedPrefixListError,
+    crate::operation::create_managed_prefix_list::CreateManagedPrefixListOutput,
+    crate::operation::create_managed_prefix_list::CreateManagedPrefixListError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::CreateManagedPrefixListError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::create_managed_prefix_list::CreateManagedPrefixListError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::CreateManagedPrefixListError::generic(generic))
+    Err(
+        crate::operation::create_managed_prefix_list::CreateManagedPrefixListError::generic(
+            generic,
+        ),
+    )
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_managed_prefix_list_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateManagedPrefixListOutput,
-    crate::error::CreateManagedPrefixListError,
+    crate::operation::create_managed_prefix_list::CreateManagedPrefixListOutput,
+    crate::operation::create_managed_prefix_list::CreateManagedPrefixListError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::create_managed_prefix_list_output::Builder::default();
+        let mut output = crate::operation::create_managed_prefix_list::builders::CreateManagedPrefixListOutputBuilder::default();
         let _ = response;
-        output =
-            crate::protocol_serde::shape_create_managed_prefix_list::de_create_managed_prefix_list(
-                response.body().as_ref(),
-                output,
-            )
-            .map_err(crate::error::CreateManagedPrefixListError::unhandled)?;
+        output = crate::protocol_serde::shape_create_managed_prefix_list::de_create_managed_prefix_list(response.body().as_ref(), output).map_err(crate::operation::create_managed_prefix_list::CreateManagedPrefixListError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -41,9 +41,9 @@ pub fn de_create_managed_prefix_list_http_response(
 #[allow(unused_mut)]
 pub fn de_create_managed_prefix_list(
     inp: &[u8],
-    mut builder: crate::output::create_managed_prefix_list_output::Builder,
+    mut builder: crate::operation::create_managed_prefix_list::builders::CreateManagedPrefixListOutputBuilder,
 ) -> Result<
-    crate::output::create_managed_prefix_list_output::Builder,
+    crate::operation::create_managed_prefix_list::builders::CreateManagedPrefixListOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

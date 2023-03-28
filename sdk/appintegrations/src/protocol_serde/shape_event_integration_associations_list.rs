@@ -2,7 +2,7 @@
 pub(crate) fn de_event_integration_associations_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::EventIntegrationAssociation>>,
+    Option<std::vec::Vec<crate::types::EventIntegrationAssociation>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

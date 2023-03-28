@@ -6,7 +6,7 @@ pub(crate) fn de_batch_get_response_map<'a, I>(
         std::collections::HashMap<
             std::string::String,
             std::vec::Vec<
-                std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
+                std::collections::HashMap<std::string::String, crate::types::AttributeValue>,
             >,
         >,
     >,

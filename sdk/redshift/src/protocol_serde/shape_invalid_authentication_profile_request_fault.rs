@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_invalid_authentication_profile_request_fault_xml_err(
     inp: &[u8],
-    mut builder: crate::error::invalid_authentication_profile_request_fault::Builder,
+    mut builder: crate::types::error::builders::InvalidAuthenticationProfileRequestFaultBuilder,
 ) -> Result<
-    crate::error::invalid_authentication_profile_request_fault::Builder,
+    crate::types::error::builders::InvalidAuthenticationProfileRequestFaultBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

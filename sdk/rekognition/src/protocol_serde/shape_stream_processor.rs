@@ -2,7 +2,7 @@
 pub(crate) fn de_stream_processor<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::StreamProcessor>,
+    Option<crate::types::StreamProcessor>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::stream_processor::Builder::default();
+            let mut builder = crate::types::builders::StreamProcessorBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -39,7 +39,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::StreamProcessorStatus::from(u.as_ref())
+                                            crate::types::StreamProcessorStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

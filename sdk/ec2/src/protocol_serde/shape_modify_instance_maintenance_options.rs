@@ -3,30 +3,28 @@
 pub fn de_modify_instance_maintenance_options_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ModifyInstanceMaintenanceOptionsOutput,
-    crate::error::ModifyInstanceMaintenanceOptionsError,
+    crate::operation::modify_instance_maintenance_options::ModifyInstanceMaintenanceOptionsOutput,
+    crate::operation::modify_instance_maintenance_options::ModifyInstanceMaintenanceOptionsError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ModifyInstanceMaintenanceOptionsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::modify_instance_maintenance_options::ModifyInstanceMaintenanceOptionsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::ModifyInstanceMaintenanceOptionsError::generic(generic))
+    Err(crate::operation::modify_instance_maintenance_options::ModifyInstanceMaintenanceOptionsError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_modify_instance_maintenance_options_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ModifyInstanceMaintenanceOptionsOutput,
-    crate::error::ModifyInstanceMaintenanceOptionsError,
+    crate::operation::modify_instance_maintenance_options::ModifyInstanceMaintenanceOptionsOutput,
+    crate::operation::modify_instance_maintenance_options::ModifyInstanceMaintenanceOptionsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::output::modify_instance_maintenance_options_output::Builder::default();
+        let mut output = crate::operation::modify_instance_maintenance_options::builders::ModifyInstanceMaintenanceOptionsOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_modify_instance_maintenance_options::de_modify_instance_maintenance_options(response.body().as_ref(), output).map_err(crate::error::ModifyInstanceMaintenanceOptionsError::unhandled)?;
+        output = crate::protocol_serde::shape_modify_instance_maintenance_options::de_modify_instance_maintenance_options(response.body().as_ref(), output).map_err(crate::operation::modify_instance_maintenance_options::ModifyInstanceMaintenanceOptionsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -35,13 +33,7 @@ pub fn de_modify_instance_maintenance_options_http_response(
 }
 
 #[allow(unused_mut)]
-pub fn de_modify_instance_maintenance_options(
-    inp: &[u8],
-    mut builder: crate::output::modify_instance_maintenance_options_output::Builder,
-) -> Result<
-    crate::output::modify_instance_maintenance_options_output::Builder,
-    aws_smithy_xml::decode::XmlDecodeError,
-> {
+pub fn de_modify_instance_maintenance_options(inp: &[u8], mut builder: crate::operation::modify_instance_maintenance_options::builders::ModifyInstanceMaintenanceOptionsOutputBuilder) -> Result<crate::operation::modify_instance_maintenance_options::builders::ModifyInstanceMaintenanceOptionsOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -72,8 +64,8 @@ pub fn de_modify_instance_maintenance_options(
             s if s.matches("autoRecovery") /* AutoRecovery com.amazonaws.ec2.synthetic#ModifyInstanceMaintenanceOptionsOutput$AutoRecovery */ =>  {
                 let var_2 =
                     Some(
-                        Result::<crate::model::InstanceAutoRecoveryState, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::InstanceAutoRecoveryState::from(
+                        Result::<crate::types::InstanceAutoRecoveryState, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::InstanceAutoRecoveryState::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

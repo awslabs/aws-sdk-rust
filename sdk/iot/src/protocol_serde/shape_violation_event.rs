@@ -2,7 +2,7 @@
 pub(crate) fn de_violation_event<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ViolationEvent>,
+    Option<crate::types::ViolationEvent>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::violation_event::Builder::default();
+            let mut builder = crate::types::builders::ViolationEventBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -74,7 +74,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ViolationEventType::from(u.as_ref())
+                                            crate::types::ViolationEventType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -87,7 +87,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::VerificationState::from(u.as_ref())
+                                            crate::types::VerificationState::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

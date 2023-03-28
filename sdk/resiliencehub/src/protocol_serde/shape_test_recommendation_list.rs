@@ -2,7 +2,7 @@
 pub(crate) fn de_test_recommendation_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::TestRecommendation>>,
+    Option<std::vec::Vec<crate::types::TestRecommendation>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -3,31 +3,28 @@
 pub fn de_describe_notification_subscriptions_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeNotificationSubscriptionsOutput,
-    crate::error::DescribeNotificationSubscriptionsError,
+    crate::operation::describe_notification_subscriptions::DescribeNotificationSubscriptionsOutput,
+    crate::operation::describe_notification_subscriptions::DescribeNotificationSubscriptionsError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeNotificationSubscriptionsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::describe_notification_subscriptions::DescribeNotificationSubscriptionsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::DescribeNotificationSubscriptionsError::unhandled(generic))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::describe_notification_subscriptions::DescribeNotificationSubscriptionsError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "EntityNotExistsException" => crate::error::DescribeNotificationSubscriptionsError::EntityNotExistsException({
+        "EntityNotExistsException" => crate::operation::describe_notification_subscriptions::DescribeNotificationSubscriptionsError::EntityNotExistsException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::entity_not_exists_exception::Builder::default();
+                    let mut output = crate::types::error::builders::EntityNotExistsExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_entity_not_exists_exception::de_entity_not_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeNotificationSubscriptionsError::unhandled)?;
+                    output = crate::protocol_serde::shape_entity_not_exists_exception::de_entity_not_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_notification_subscriptions::DescribeNotificationSubscriptionsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -37,14 +34,14 @@ pub fn de_describe_notification_subscriptions_http_error(
                                                     }
             tmp
         }),
-        "ServiceUnavailableException" => crate::error::DescribeNotificationSubscriptionsError::ServiceUnavailableException({
+        "ServiceUnavailableException" => crate::operation::describe_notification_subscriptions::DescribeNotificationSubscriptionsError::ServiceUnavailableException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::service_unavailable_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeNotificationSubscriptionsError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_notification_subscriptions::DescribeNotificationSubscriptionsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -54,14 +51,14 @@ pub fn de_describe_notification_subscriptions_http_error(
                                                     }
             tmp
         }),
-        "UnauthorizedResourceAccessException" => crate::error::DescribeNotificationSubscriptionsError::UnauthorizedResourceAccessException({
+        "UnauthorizedResourceAccessException" => crate::operation::describe_notification_subscriptions::DescribeNotificationSubscriptionsError::UnauthorizedResourceAccessException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::unauthorized_resource_access_exception::Builder::default();
+                    let mut output = crate::types::error::builders::UnauthorizedResourceAccessExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_unauthorized_resource_access_exception::de_unauthorized_resource_access_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeNotificationSubscriptionsError::unhandled)?;
+                    output = crate::protocol_serde::shape_unauthorized_resource_access_exception::de_unauthorized_resource_access_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_notification_subscriptions::DescribeNotificationSubscriptionsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -71,7 +68,7 @@ pub fn de_describe_notification_subscriptions_http_error(
                                                     }
             tmp
         }),
-        _ => crate::error::DescribeNotificationSubscriptionsError::generic(generic)
+        _ => crate::operation::describe_notification_subscriptions::DescribeNotificationSubscriptionsError::generic(generic)
     })
 }
 
@@ -79,15 +76,14 @@ pub fn de_describe_notification_subscriptions_http_error(
 pub fn de_describe_notification_subscriptions_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeNotificationSubscriptionsOutput,
-    crate::error::DescribeNotificationSubscriptionsError,
+    crate::operation::describe_notification_subscriptions::DescribeNotificationSubscriptionsOutput,
+    crate::operation::describe_notification_subscriptions::DescribeNotificationSubscriptionsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::output::describe_notification_subscriptions_output::Builder::default();
+        let mut output = crate::operation::describe_notification_subscriptions::builders::DescribeNotificationSubscriptionsOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_describe_notification_subscriptions::de_describe_notification_subscriptions(response.body().as_ref(), output).map_err(crate::error::DescribeNotificationSubscriptionsError::unhandled)?;
+        output = crate::protocol_serde::shape_describe_notification_subscriptions::de_describe_notification_subscriptions(response.body().as_ref(), output).map_err(crate::operation::describe_notification_subscriptions::DescribeNotificationSubscriptionsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -95,13 +91,7 @@ pub fn de_describe_notification_subscriptions_http_response(
     })
 }
 
-pub(crate) fn de_describe_notification_subscriptions(
-    value: &[u8],
-    mut builder: crate::output::describe_notification_subscriptions_output::Builder,
-) -> Result<
-    crate::output::describe_notification_subscriptions_output::Builder,
-    aws_smithy_json::deserialize::error::DeserializeError,
-> {
+pub(crate) fn de_describe_notification_subscriptions(value: &[u8], mut builder: crate::operation::describe_notification_subscriptions::builders::DescribeNotificationSubscriptionsOutputBuilder) -> Result<crate::operation::describe_notification_subscriptions::builders::DescribeNotificationSubscriptionsOutputBuilder, aws_smithy_json::deserialize::error::DeserializeError>{
     let mut tokens_owned =
         aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
             .peekable();

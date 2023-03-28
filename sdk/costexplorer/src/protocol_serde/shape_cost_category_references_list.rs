@@ -2,7 +2,7 @@
 pub(crate) fn de_cost_category_references_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CostCategoryReference>>,
+    Option<std::vec::Vec<crate::types::CostCategoryReference>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

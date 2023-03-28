@@ -3,10 +3,10 @@ pub fn de_payload_payload(
     body: &mut aws_smithy_http::body::SdkBody,
 ) -> std::result::Result<
     aws_smithy_http::event_stream::Receiver<
-        crate::model::SelectObjectContentEventStream,
-        crate::error::SelectObjectContentEventStreamError,
+        crate::types::SelectObjectContentEventStream,
+        crate::types::error::SelectObjectContentEventStreamError,
     >,
-    crate::error::SelectObjectContentError,
+    crate::operation::select_object_content::SelectObjectContentError,
 > {
     let unmarshaller = crate::event_stream_serde::SelectObjectContentEventStreamUnmarshaller::new();
     let body = std::mem::replace(body, aws_smithy_http::body::SdkBody::taken());

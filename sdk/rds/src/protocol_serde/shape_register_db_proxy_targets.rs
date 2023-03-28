@@ -3,185 +3,181 @@
 pub fn de_register_db_proxy_targets_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::RegisterDbProxyTargetsOutput,
-    crate::error::RegisterDBProxyTargetsError,
+    crate::operation::register_db_proxy_targets::RegisterDbProxyTargetsOutput,
+    crate::operation::register_db_proxy_targets::RegisterDBProxyTargetsError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::RegisterDBProxyTargetsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::register_db_proxy_targets::RegisterDBProxyTargetsError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::RegisterDBProxyTargetsError::unhandled(
-                generic,
-            ))
-        }
-    };
+    let error_code =
+        match generic.code() {
+            Some(code) => code,
+            None => return Err(
+                crate::operation::register_db_proxy_targets::RegisterDBProxyTargetsError::unhandled(
+                    generic,
+                ),
+            ),
+        };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBClusterNotFoundFault" => {
-            crate::error::RegisterDBProxyTargetsError::DbClusterNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "DBClusterNotFoundFault" => crate::operation::register_db_proxy_targets::RegisterDBProxyTargetsError::DbClusterNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::db_cluster_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::DbClusterNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_db_cluster_not_found_fault::de_db_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RegisterDBProxyTargetsError::unhandled)?;
+                    output = crate::protocol_serde::shape_db_cluster_not_found_fault::de_db_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::register_db_proxy_targets::RegisterDBProxyTargetsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "DBInstanceNotFound" => {
-            crate::error::RegisterDBProxyTargetsError::DbInstanceNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "DBInstanceNotFound" => crate::operation::register_db_proxy_targets::RegisterDBProxyTargetsError::DbInstanceNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::db_instance_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::DbInstanceNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_db_instance_not_found_fault::de_db_instance_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RegisterDBProxyTargetsError::unhandled)?;
+                    output = crate::protocol_serde::shape_db_instance_not_found_fault::de_db_instance_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::register_db_proxy_targets::RegisterDBProxyTargetsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "DBProxyNotFoundFault" => {
-            crate::error::RegisterDBProxyTargetsError::DbProxyNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "DBProxyNotFoundFault" => crate::operation::register_db_proxy_targets::RegisterDBProxyTargetsError::DbProxyNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::db_proxy_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::DbProxyNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_db_proxy_not_found_fault::de_db_proxy_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RegisterDBProxyTargetsError::unhandled)?;
+                    output = crate::protocol_serde::shape_db_proxy_not_found_fault::de_db_proxy_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::register_db_proxy_targets::RegisterDBProxyTargetsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "DBProxyTargetAlreadyRegisteredFault" => {
-            crate::error::RegisterDBProxyTargetsError::DbProxyTargetAlreadyRegisteredFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "DBProxyTargetAlreadyRegisteredFault" => crate::operation::register_db_proxy_targets::RegisterDBProxyTargetsError::DbProxyTargetAlreadyRegisteredFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::db_proxy_target_already_registered_fault::Builder::default();
+                    let mut output = crate::types::error::builders::DbProxyTargetAlreadyRegisteredFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_db_proxy_target_already_registered_fault::de_db_proxy_target_already_registered_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RegisterDBProxyTargetsError::unhandled)?;
+                    output = crate::protocol_serde::shape_db_proxy_target_already_registered_fault::de_db_proxy_target_already_registered_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::register_db_proxy_targets::RegisterDBProxyTargetsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "DBProxyTargetGroupNotFoundFault" => {
-            crate::error::RegisterDBProxyTargetsError::DbProxyTargetGroupNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "DBProxyTargetGroupNotFoundFault" => crate::operation::register_db_proxy_targets::RegisterDBProxyTargetsError::DbProxyTargetGroupNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::db_proxy_target_group_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::DbProxyTargetGroupNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_db_proxy_target_group_not_found_fault::de_db_proxy_target_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RegisterDBProxyTargetsError::unhandled)?;
+                    output = crate::protocol_serde::shape_db_proxy_target_group_not_found_fault::de_db_proxy_target_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::register_db_proxy_targets::RegisterDBProxyTargetsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InsufficientAvailableIPsInSubnetFault" => {
-            crate::error::RegisterDBProxyTargetsError::InsufficientAvailableIPsInSubnetFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InsufficientAvailableIPsInSubnetFault" => crate::operation::register_db_proxy_targets::RegisterDBProxyTargetsError::InsufficientAvailableIPsInSubnetFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::insufficient_available_i_ps_in_subnet_fault::Builder::default(
-                        );
+                    let mut output = crate::types::error::builders::InsufficientAvailableIPsInSubnetFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_insufficient_available_i_ps_in_subnet_fault::de_insufficient_available_i_ps_in_subnet_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RegisterDBProxyTargetsError::unhandled)?;
+                    output = crate::protocol_serde::shape_insufficient_available_i_ps_in_subnet_fault::de_insufficient_available_i_ps_in_subnet_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::register_db_proxy_targets::RegisterDBProxyTargetsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidDBClusterStateFault" => {
-            crate::error::RegisterDBProxyTargetsError::InvalidDbClusterStateFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidDBClusterStateFault" => crate::operation::register_db_proxy_targets::RegisterDBProxyTargetsError::InvalidDbClusterStateFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_db_cluster_state_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidDbClusterStateFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_db_cluster_state_fault::de_invalid_db_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RegisterDBProxyTargetsError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_db_cluster_state_fault::de_invalid_db_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::register_db_proxy_targets::RegisterDBProxyTargetsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidDBInstanceState" => {
-            crate::error::RegisterDBProxyTargetsError::InvalidDbInstanceStateFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidDBInstanceState" => crate::operation::register_db_proxy_targets::RegisterDBProxyTargetsError::InvalidDbInstanceStateFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_db_instance_state_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidDbInstanceStateFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_db_instance_state_fault::de_invalid_db_instance_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RegisterDBProxyTargetsError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_db_instance_state_fault::de_invalid_db_instance_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::register_db_proxy_targets::RegisterDBProxyTargetsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidDBProxyStateFault" => {
-            crate::error::RegisterDBProxyTargetsError::InvalidDbProxyStateFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidDBProxyStateFault" => crate::operation::register_db_proxy_targets::RegisterDBProxyTargetsError::InvalidDbProxyStateFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_db_proxy_state_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidDbProxyStateFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_db_proxy_state_fault::de_invalid_db_proxy_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RegisterDBProxyTargetsError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_db_proxy_state_fault::de_invalid_db_proxy_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::register_db_proxy_targets::RegisterDBProxyTargetsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::RegisterDBProxyTargetsError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::register_db_proxy_targets::RegisterDBProxyTargetsError::generic(generic)
     })
 }
 
@@ -189,19 +185,21 @@ pub fn de_register_db_proxy_targets_http_error(
 pub fn de_register_db_proxy_targets_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::RegisterDbProxyTargetsOutput,
-    crate::error::RegisterDBProxyTargetsError,
+    crate::operation::register_db_proxy_targets::RegisterDbProxyTargetsOutput,
+    crate::operation::register_db_proxy_targets::RegisterDBProxyTargetsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::register_db_proxy_targets_output::Builder::default();
+        let mut output = crate::operation::register_db_proxy_targets::builders::RegisterDbProxyTargetsOutputBuilder::default();
         let _ = response;
         output =
             crate::protocol_serde::shape_register_db_proxy_targets::de_register_db_proxy_targets(
                 response.body().as_ref(),
                 output,
             )
-            .map_err(crate::error::RegisterDBProxyTargetsError::unhandled)?;
+            .map_err(
+                crate::operation::register_db_proxy_targets::RegisterDBProxyTargetsError::unhandled,
+            )?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -212,9 +210,9 @@ pub fn de_register_db_proxy_targets_http_response(
 #[allow(unused_mut)]
 pub fn de_register_db_proxy_targets(
     inp: &[u8],
-    mut builder: crate::output::register_db_proxy_targets_output::Builder,
+    mut builder: crate::operation::register_db_proxy_targets::builders::RegisterDbProxyTargetsOutputBuilder,
 ) -> Result<
-    crate::output::register_db_proxy_targets_output::Builder,
+    crate::operation::register_db_proxy_targets::builders::RegisterDbProxyTargetsOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

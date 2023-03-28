@@ -2,7 +2,7 @@
 pub(crate) fn de_telephony_settings<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::TelephonySettings>,
+    Option<crate::types::TelephonySettings>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::telephony_settings::Builder::default();
+            let mut builder = crate::types::builders::TelephonySettingsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -69,7 +69,7 @@ where
 
 pub fn ser_telephony_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::TelephonySettings,
+    input: &crate::types::TelephonySettings,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.inbound_calling {
         object.key("InboundCalling").boolean(*var_1);

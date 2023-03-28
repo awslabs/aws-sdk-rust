@@ -2,7 +2,7 @@
 pub(crate) fn de_standards_subscriptions<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::StandardsSubscription>>,
+    Option<std::vec::Vec<crate::types::StandardsSubscription>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

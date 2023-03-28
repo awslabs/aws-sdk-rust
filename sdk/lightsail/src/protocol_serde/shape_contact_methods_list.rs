@@ -2,7 +2,7 @@
 pub(crate) fn de_contact_methods_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ContactMethod>>,
+    Option<std::vec::Vec<crate::types::ContactMethod>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

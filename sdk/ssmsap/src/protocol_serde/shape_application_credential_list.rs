@@ -2,7 +2,7 @@
 pub(crate) fn de_application_credential_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ApplicationCredential>>,
+    Option<std::vec::Vec<crate::types::ApplicationCredential>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

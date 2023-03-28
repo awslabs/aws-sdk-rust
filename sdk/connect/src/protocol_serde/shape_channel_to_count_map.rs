@@ -2,7 +2,7 @@
 pub(crate) fn de_channel_to_count_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<crate::model::Channel, i32>>,
+    Option<std::collections::HashMap<crate::types::Channel, i32>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -23,7 +23,7 @@ where
                     Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         let key = key
                             .to_unescaped()
-                            .map(|u| crate::model::Channel::from(u.as_ref()))?;
+                            .map(|u| crate::types::Channel::from(u.as_ref()))?;
                         let value = aws_smithy_json::deserialize::token::expect_number_or_null(
                             tokens.next(),
                         )?

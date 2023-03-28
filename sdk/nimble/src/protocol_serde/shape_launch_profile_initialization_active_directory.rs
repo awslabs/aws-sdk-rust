@@ -2,7 +2,7 @@
 pub(crate) fn de_launch_profile_initialization_active_directory<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::LaunchProfileInitializationActiveDirectory>,
+    Option<crate::types::LaunchProfileInitializationActiveDirectory>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,8 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::launch_profile_initialization_active_directory::Builder::default();
+                crate::types::builders::LaunchProfileInitializationActiveDirectoryBuilder::default(
+                );
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

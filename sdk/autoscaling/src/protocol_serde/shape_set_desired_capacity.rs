@@ -3,55 +3,60 @@
 pub fn de_set_desired_capacity_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::SetDesiredCapacityOutput,
-    crate::error::SetDesiredCapacityError,
+    crate::operation::set_desired_capacity::SetDesiredCapacityOutput,
+    crate::operation::set_desired_capacity::SetDesiredCapacityError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::SetDesiredCapacityError::unhandled)?;
+        .map_err(crate::operation::set_desired_capacity::SetDesiredCapacityError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::SetDesiredCapacityError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::set_desired_capacity::SetDesiredCapacityError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceContention" => crate::error::SetDesiredCapacityError::ResourceContentionFault({
+        "ResourceContention" => crate::operation::set_desired_capacity::SetDesiredCapacityError::ResourceContentionFault({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::resource_contention_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_resource_contention_fault::de_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::SetDesiredCapacityError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ScalingActivityInProgress" => {
-            crate::error::SetDesiredCapacityError::ScalingActivityInProgressFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::scaling_activity_in_progress_fault::Builder::default();
+                    let mut output = crate::types::error::builders::ResourceContentionFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_scaling_activity_in_progress_fault::de_scaling_activity_in_progress_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::SetDesiredCapacityError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_contention_fault::de_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::set_desired_capacity::SetDesiredCapacityError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::SetDesiredCapacityError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ScalingActivityInProgress" => crate::operation::set_desired_capacity::SetDesiredCapacityError::ScalingActivityInProgressFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ScalingActivityInProgressFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_scaling_activity_in_progress_fault::de_scaling_activity_in_progress_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::set_desired_capacity::SetDesiredCapacityError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::set_desired_capacity::SetDesiredCapacityError::generic(generic)
     })
 }
 
@@ -59,12 +64,12 @@ pub fn de_set_desired_capacity_http_error(
 pub fn de_set_desired_capacity_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::SetDesiredCapacityOutput,
-    crate::error::SetDesiredCapacityError,
+    crate::operation::set_desired_capacity::SetDesiredCapacityOutput,
+    crate::operation::set_desired_capacity::SetDesiredCapacityError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::set_desired_capacity_output::Builder::default();
+        let mut output = crate::operation::set_desired_capacity::builders::SetDesiredCapacityOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

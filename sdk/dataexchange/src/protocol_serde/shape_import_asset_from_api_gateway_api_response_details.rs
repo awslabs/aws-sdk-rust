@@ -2,7 +2,7 @@
 pub(crate) fn de_import_asset_from_api_gateway_api_response_details<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ImportAssetFromApiGatewayApiResponseDetails>,
+    Option<crate::types::ImportAssetFromApiGatewayApiResponseDetails>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::import_asset_from_api_gateway_api_response_details::Builder::default(
+                crate::types::builders::ImportAssetFromApiGatewayApiResponseDetailsBuilder::default(
                 );
             loop {
                 match tokens.next().transpose()? {
@@ -103,7 +103,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::ProtocolType::from(u.as_ref()))
+                                            .map(|u| crate::types::ProtocolType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

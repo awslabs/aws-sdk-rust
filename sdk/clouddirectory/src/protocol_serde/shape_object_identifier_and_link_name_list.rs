@@ -2,7 +2,7 @@
 pub(crate) fn de_object_identifier_and_link_name_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ObjectIdentifierAndLinkNameTuple>>,
+    Option<std::vec::Vec<crate::types::ObjectIdentifierAndLinkNameTuple>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_custom_key_stores_list_entry<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::CustomKeyStoresListEntry>,
+    Option<crate::types::CustomKeyStoresListEntry>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::custom_key_stores_list_entry::Builder::default();
+            let mut builder = crate::types::builders::CustomKeyStoresListEntryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -66,7 +66,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ConnectionStateType::from(u.as_ref())
+                                            crate::types::ConnectionStateType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -79,7 +79,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ConnectionErrorCodeType::from(u.as_ref())
+                                            crate::types::ConnectionErrorCodeType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -100,7 +100,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::CustomKeyStoreType::from(u.as_ref())
+                                            crate::types::CustomKeyStoreType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

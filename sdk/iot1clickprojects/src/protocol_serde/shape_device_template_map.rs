@@ -2,7 +2,7 @@
 pub(crate) fn de_device_template_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<std::string::String, crate::model::DeviceTemplate>>,
+    Option<std::collections::HashMap<std::string::String, crate::types::DeviceTemplate>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

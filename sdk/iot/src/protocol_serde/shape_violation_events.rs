@@ -2,7 +2,7 @@
 pub(crate) fn de_violation_events<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ViolationEvent>>,
+    Option<std::vec::Vec<crate::types::ViolationEvent>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

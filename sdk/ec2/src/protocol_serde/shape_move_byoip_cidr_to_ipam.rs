@@ -3,33 +3,33 @@
 pub fn de_move_byoip_cidr_to_ipam_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::MoveByoipCidrToIpamOutput,
-    crate::error::MoveByoipCidrToIpamError,
+    crate::operation::move_byoip_cidr_to_ipam::MoveByoipCidrToIpamOutput,
+    crate::operation::move_byoip_cidr_to_ipam::MoveByoipCidrToIpamError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::MoveByoipCidrToIpamError::unhandled)?;
+        .map_err(crate::operation::move_byoip_cidr_to_ipam::MoveByoipCidrToIpamError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::MoveByoipCidrToIpamError::generic(generic))
+    Err(crate::operation::move_byoip_cidr_to_ipam::MoveByoipCidrToIpamError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_move_byoip_cidr_to_ipam_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::MoveByoipCidrToIpamOutput,
-    crate::error::MoveByoipCidrToIpamError,
+    crate::operation::move_byoip_cidr_to_ipam::MoveByoipCidrToIpamOutput,
+    crate::operation::move_byoip_cidr_to_ipam::MoveByoipCidrToIpamError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::move_byoip_cidr_to_ipam_output::Builder::default();
+        let mut output = crate::operation::move_byoip_cidr_to_ipam::builders::MoveByoipCidrToIpamOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_move_byoip_cidr_to_ipam::de_move_byoip_cidr_to_ipam(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::MoveByoipCidrToIpamError::unhandled)?;
+        .map_err(crate::operation::move_byoip_cidr_to_ipam::MoveByoipCidrToIpamError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -40,9 +40,9 @@ pub fn de_move_byoip_cidr_to_ipam_http_response(
 #[allow(unused_mut)]
 pub fn de_move_byoip_cidr_to_ipam(
     inp: &[u8],
-    mut builder: crate::output::move_byoip_cidr_to_ipam_output::Builder,
+    mut builder: crate::operation::move_byoip_cidr_to_ipam::builders::MoveByoipCidrToIpamOutputBuilder,
 ) -> Result<
-    crate::output::move_byoip_cidr_to_ipam_output::Builder,
+    crate::operation::move_byoip_cidr_to_ipam::builders::MoveByoipCidrToIpamOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

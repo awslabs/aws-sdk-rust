@@ -2,7 +2,7 @@
 pub(crate) fn de_list_of_s3_bucket_info<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::S3BucketInfo>>,
+    Option<std::vec::Vec<crate::types::S3BucketInfo>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

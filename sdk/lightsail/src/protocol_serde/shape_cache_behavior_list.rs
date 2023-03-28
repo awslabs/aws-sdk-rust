@@ -2,7 +2,7 @@
 pub(crate) fn de_cache_behavior_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CacheBehaviorPerPath>>,
+    Option<std::vec::Vec<crate::types::CacheBehaviorPerPath>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

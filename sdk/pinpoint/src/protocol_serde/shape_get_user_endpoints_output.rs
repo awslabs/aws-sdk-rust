@@ -2,13 +2,13 @@
 pub fn de_endpoints_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::EndpointsResponse>,
-    crate::error::GetUserEndpointsError,
+    std::option::Option<crate::types::EndpointsResponse>,
+    crate::operation::get_user_endpoints::GetUserEndpointsError,
 > {
     (!body.is_empty())
         .then(|| {
             crate::protocol_serde::shape_endpoints_response::de_endpoints_response_payload(body)
-                .map_err(crate::error::GetUserEndpointsError::unhandled)
+                .map_err(crate::operation::get_user_endpoints::GetUserEndpointsError::unhandled)
         })
         .transpose()
 }

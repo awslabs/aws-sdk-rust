@@ -2,7 +2,7 @@
 pub(crate) fn de_related_item_content<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::RelatedItemContent>,
+    Option<crate::types::RelatedItemContent>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -28,7 +28,7 @@ where
                         );
                     }
                     variant = match key.to_unescaped()?.as_ref() {
-                        "contact" => Some(crate::model::RelatedItemContent::Contact(
+                        "contact" => Some(crate::types::RelatedItemContent::Contact(
                             crate::protocol_serde::shape_contact_content::de_contact_content(
                                 tokens,
                             )?
@@ -38,7 +38,7 @@ where
                                 )
                             })?,
                         )),
-                        "comment" => Some(crate::model::RelatedItemContent::Comment(
+                        "comment" => Some(crate::types::RelatedItemContent::Comment(
                             crate::protocol_serde::shape_comment_content::de_comment_content(
                                 tokens,
                             )?
@@ -50,7 +50,7 @@ where
                         )),
                         _ => {
                             aws_smithy_json::deserialize::token::skip_value(tokens)?;
-                            Some(crate::model::RelatedItemContent::Unknown)
+                            Some(crate::types::RelatedItemContent::Unknown)
                         }
                     };
                 }

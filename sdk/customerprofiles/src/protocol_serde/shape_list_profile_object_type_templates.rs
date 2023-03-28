@@ -3,107 +3,106 @@
 pub fn de_list_profile_object_type_templates_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListProfileObjectTypeTemplatesOutput,
-    crate::error::ListProfileObjectTypeTemplatesError,
+    crate::operation::list_profile_object_type_templates::ListProfileObjectTypeTemplatesOutput,
+    crate::operation::list_profile_object_type_templates::ListProfileObjectTypeTemplatesError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListProfileObjectTypeTemplatesError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::list_profile_object_type_templates::ListProfileObjectTypeTemplatesError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => return Err(crate::error::ListProfileObjectTypeTemplatesError::unhandled(generic)),
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::list_profile_object_type_templates::ListProfileObjectTypeTemplatesError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => {
-            crate::error::ListProfileObjectTypeTemplatesError::AccessDeniedException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "AccessDeniedException" => crate::operation::list_profile_object_type_templates::ListProfileObjectTypeTemplatesError::AccessDeniedException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListProfileObjectTypeTemplatesError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_profile_object_type_templates::ListProfileObjectTypeTemplatesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "BadRequestException" => {
-            crate::error::ListProfileObjectTypeTemplatesError::BadRequestException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "BadRequestException" => crate::operation::list_profile_object_type_templates::ListProfileObjectTypeTemplatesError::BadRequestException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::bad_request_exception::Builder::default();
+                    let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListProfileObjectTypeTemplatesError::unhandled)?;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_profile_object_type_templates::ListProfileObjectTypeTemplatesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InternalServerException" => {
-            crate::error::ListProfileObjectTypeTemplatesError::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InternalServerException" => crate::operation::list_profile_object_type_templates::ListProfileObjectTypeTemplatesError::InternalServerException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListProfileObjectTypeTemplatesError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_profile_object_type_templates::ListProfileObjectTypeTemplatesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ResourceNotFoundException" => {
-            crate::error::ListProfileObjectTypeTemplatesError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::list_profile_object_type_templates::ListProfileObjectTypeTemplatesError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListProfileObjectTypeTemplatesError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_profile_object_type_templates::ListProfileObjectTypeTemplatesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ThrottlingException" => {
-            crate::error::ListProfileObjectTypeTemplatesError::ThrottlingException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ThrottlingException" => crate::operation::list_profile_object_type_templates::ListProfileObjectTypeTemplatesError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListProfileObjectTypeTemplatesError::unhandled)?;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_profile_object_type_templates::ListProfileObjectTypeTemplatesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::ListProfileObjectTypeTemplatesError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::list_profile_object_type_templates::ListProfileObjectTypeTemplatesError::generic(generic)
     })
 }
 
@@ -111,15 +110,14 @@ pub fn de_list_profile_object_type_templates_http_error(
 pub fn de_list_profile_object_type_templates_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListProfileObjectTypeTemplatesOutput,
-    crate::error::ListProfileObjectTypeTemplatesError,
+    crate::operation::list_profile_object_type_templates::ListProfileObjectTypeTemplatesOutput,
+    crate::operation::list_profile_object_type_templates::ListProfileObjectTypeTemplatesError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::output::list_profile_object_type_templates_output::Builder::default();
+        let mut output = crate::operation::list_profile_object_type_templates::builders::ListProfileObjectTypeTemplatesOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_list_profile_object_type_templates::de_list_profile_object_type_templates(response.body().as_ref(), output).map_err(crate::error::ListProfileObjectTypeTemplatesError::unhandled)?;
+        output = crate::protocol_serde::shape_list_profile_object_type_templates::de_list_profile_object_type_templates(response.body().as_ref(), output).map_err(crate::operation::list_profile_object_type_templates::ListProfileObjectTypeTemplatesError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -127,13 +125,7 @@ pub fn de_list_profile_object_type_templates_http_response(
     })
 }
 
-pub(crate) fn de_list_profile_object_type_templates(
-    value: &[u8],
-    mut builder: crate::output::list_profile_object_type_templates_output::Builder,
-) -> Result<
-    crate::output::list_profile_object_type_templates_output::Builder,
-    aws_smithy_json::deserialize::error::DeserializeError,
-> {
+pub(crate) fn de_list_profile_object_type_templates(value: &[u8], mut builder: crate::operation::list_profile_object_type_templates::builders::ListProfileObjectTypeTemplatesOutputBuilder) -> Result<crate::operation::list_profile_object_type_templates::builders::ListProfileObjectTypeTemplatesOutputBuilder, aws_smithy_json::deserialize::error::DeserializeError>{
     let mut tokens_owned =
         aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
             .peekable();

@@ -2,28 +2,35 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_profile_times_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListProfileTimesOutput, crate::error::ListProfileTimesError>
-{
+) -> std::result::Result<
+    crate::operation::list_profile_times::ListProfileTimesOutput,
+    crate::operation::list_profile_times::ListProfileTimesError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListProfileTimesError::unhandled)?;
+        .map_err(crate::operation::list_profile_times::ListProfileTimesError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListProfileTimesError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::list_profile_times::ListProfileTimesError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalServerException" => {
-            crate::error::ListProfileTimesError::InternalServerException({
+            crate::operation::list_profile_times::ListProfileTimesError::InternalServerException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::InternalServerExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListProfileTimesError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_profile_times::ListProfileTimesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -34,13 +41,33 @@ pub fn de_list_profile_times_http_error(
             })
         }
         "ResourceNotFoundException" => {
-            crate::error::ListProfileTimesError::ResourceNotFoundException({
+            crate::operation::list_profile_times::ListProfileTimesError::ResourceNotFoundException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                        let _ = response;
+                        output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_profile_times::ListProfileTimesError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        "ThrottlingException" => {
+            crate::operation::list_profile_times::ListProfileTimesError::ThrottlingException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::ThrottlingExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListProfileTimesError::unhandled)?;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_profile_times::ListProfileTimesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -50,54 +77,46 @@ pub fn de_list_profile_times_http_error(
                 tmp
             })
         }
-        "ThrottlingException" => crate::error::ListProfileTimesError::ThrottlingException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "ValidationException" => {
+            crate::operation::list_profile_times::ListProfileTimesError::ValidationException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::throttling_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListProfileTimesError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ValidationException" => crate::error::ListProfileTimesError::ValidationException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListProfileTimesError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::ListProfileTimesError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_profile_times::ListProfileTimesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::list_profile_times::ListProfileTimesError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_profile_times_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListProfileTimesOutput, crate::error::ListProfileTimesError>
-{
+) -> std::result::Result<
+    crate::operation::list_profile_times::ListProfileTimesOutput,
+    crate::operation::list_profile_times::ListProfileTimesError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_profile_times_output::Builder::default();
+        let mut output =
+            crate::operation::list_profile_times::builders::ListProfileTimesOutputBuilder::default(
+            );
         let _ = response;
         output = crate::protocol_serde::shape_list_profile_times::de_list_profile_times(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListProfileTimesError::unhandled)?;
+        .map_err(crate::operation::list_profile_times::ListProfileTimesError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -107,9 +126,9 @@ pub fn de_list_profile_times_http_response(
 
 pub(crate) fn de_list_profile_times(
     value: &[u8],
-    mut builder: crate::output::list_profile_times_output::Builder,
+    mut builder: crate::operation::list_profile_times::builders::ListProfileTimesOutputBuilder,
 ) -> Result<
-    crate::output::list_profile_times_output::Builder,
+    crate::operation::list_profile_times::builders::ListProfileTimesOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

@@ -2,7 +2,7 @@
 pub(crate) fn de_created_artifact_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CreatedArtifact>>,
+    Option<std::vec::Vec<crate::types::CreatedArtifact>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_aws_elbv2_load_balancer_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AwsElbv2LoadBalancerAttribute>>,
+    Option<std::vec::Vec<crate::types::AwsElbv2LoadBalancerAttribute>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

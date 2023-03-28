@@ -3,101 +3,111 @@
 pub fn de_get_annotation_store_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetAnnotationStoreOutput,
-    crate::error::GetAnnotationStoreError,
+    crate::operation::get_annotation_store::GetAnnotationStoreOutput,
+    crate::operation::get_annotation_store::GetAnnotationStoreError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetAnnotationStoreError::unhandled)?;
+        .map_err(crate::operation::get_annotation_store::GetAnnotationStoreError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::GetAnnotationStoreError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::get_annotation_store::GetAnnotationStoreError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::GetAnnotationStoreError::AccessDeniedException({
+        "AccessDeniedException" => crate::operation::get_annotation_store::GetAnnotationStoreError::AccessDeniedException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::access_denied_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAnnotationStoreError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InternalServerException" => {
-            crate::error::GetAnnotationStoreError::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAnnotationStoreError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_annotation_store::GetAnnotationStoreError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ResourceNotFoundException" => {
-            crate::error::GetAnnotationStoreError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InternalServerException" => crate::operation::get_annotation_store::GetAnnotationStoreError::InternalServerException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAnnotationStoreError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_annotation_store::GetAnnotationStoreError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ThrottlingException" => crate::error::GetAnnotationStoreError::ThrottlingException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::throttling_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAnnotationStoreError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "ValidationException" => crate::error::GetAnnotationStoreError::ValidationException({
+        "ResourceNotFoundException" => crate::operation::get_annotation_store::GetAnnotationStoreError::ResourceNotFoundException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAnnotationStoreError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_annotation_store::GetAnnotationStoreError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::GetAnnotationStoreError::generic(generic),
+        "ThrottlingException" => crate::operation::get_annotation_store::GetAnnotationStoreError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_annotation_store::GetAnnotationStoreError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ValidationException" => crate::operation::get_annotation_store::GetAnnotationStoreError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_annotation_store::GetAnnotationStoreError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::get_annotation_store::GetAnnotationStoreError::generic(generic)
     })
 }
 
@@ -105,18 +115,18 @@ pub fn de_get_annotation_store_http_error(
 pub fn de_get_annotation_store_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetAnnotationStoreOutput,
-    crate::error::GetAnnotationStoreError,
+    crate::operation::get_annotation_store::GetAnnotationStoreOutput,
+    crate::operation::get_annotation_store::GetAnnotationStoreError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_annotation_store_output::Builder::default();
+        let mut output = crate::operation::get_annotation_store::builders::GetAnnotationStoreOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_get_annotation_store::de_get_annotation_store(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::GetAnnotationStoreError::unhandled)?;
+        .map_err(crate::operation::get_annotation_store::GetAnnotationStoreError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -126,9 +136,9 @@ pub fn de_get_annotation_store_http_response(
 
 pub(crate) fn de_get_annotation_store(
     value: &[u8],
-    mut builder: crate::output::get_annotation_store_output::Builder,
+    mut builder: crate::operation::get_annotation_store::builders::GetAnnotationStoreOutputBuilder,
 ) -> Result<
-    crate::output::get_annotation_store_output::Builder,
+    crate::operation::get_annotation_store::builders::GetAnnotationStoreOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =
@@ -193,7 +203,7 @@ pub(crate) fn de_get_annotation_store(
                             )?
                             .map(|s| {
                                 s.to_unescaped()
-                                    .map(|u| crate::model::StoreStatus::from(u.as_ref()))
+                                    .map(|u| crate::types::StoreStatus::from(u.as_ref()))
                             })
                             .transpose()?,
                         );
@@ -223,7 +233,7 @@ pub(crate) fn de_get_annotation_store(
                             )?
                             .map(|s| {
                                 s.to_unescaped()
-                                    .map(|u| crate::model::StoreFormat::from(u.as_ref()))
+                                    .map(|u| crate::types::StoreFormat::from(u.as_ref()))
                             })
                             .transpose()?,
                         );

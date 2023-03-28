@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_baseline_ebs_bandwidth_mbps(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::BaselineEbsBandwidthMbps,
+    input: &crate::types::BaselineEbsBandwidthMbps,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Min");
@@ -25,9 +25,9 @@ pub fn ser_baseline_ebs_bandwidth_mbps(
 
 pub fn de_baseline_ebs_bandwidth_mbps(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::BaselineEbsBandwidthMbps, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::BaselineEbsBandwidthMbps, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::BaselineEbsBandwidthMbps::builder();
+    let mut builder = crate::types::BaselineEbsBandwidthMbps::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("min") /* Min com.amazonaws.ec2#BaselineEbsBandwidthMbps$Min */ =>  {

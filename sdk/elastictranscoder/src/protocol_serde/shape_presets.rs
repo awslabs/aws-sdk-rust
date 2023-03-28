@@ -2,7 +2,7 @@
 pub(crate) fn de_presets<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Preset>>,
+    Option<std::vec::Vec<crate::types::Preset>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

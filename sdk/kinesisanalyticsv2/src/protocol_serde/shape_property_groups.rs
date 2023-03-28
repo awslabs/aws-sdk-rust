@@ -2,7 +2,7 @@
 pub(crate) fn de_property_groups<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::PropertyGroup>>,
+    Option<std::vec::Vec<crate::types::PropertyGroup>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

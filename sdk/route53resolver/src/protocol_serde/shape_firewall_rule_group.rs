@@ -2,7 +2,7 @@
 pub(crate) fn de_firewall_rule_group<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::FirewallRuleGroup>,
+    Option<crate::types::FirewallRuleGroup>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::firewall_rule_group::Builder::default();
+            let mut builder = crate::types::builders::FirewallRuleGroupBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -66,7 +66,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::FirewallRuleGroupStatus::from(u.as_ref())
+                                            crate::types::FirewallRuleGroupStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -106,7 +106,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::ShareStatus::from(u.as_ref()))
+                                            .map(|u| crate::types::ShareStatus::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

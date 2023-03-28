@@ -2,7 +2,7 @@
 pub(crate) fn de_transition_events<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::TransitionEvent>>,
+    Option<std::vec::Vec<crate::types::TransitionEvent>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

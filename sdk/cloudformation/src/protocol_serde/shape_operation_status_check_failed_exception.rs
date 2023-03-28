@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_operation_status_check_failed_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::operation_status_check_failed_exception::Builder,
+    mut builder: crate::types::error::builders::OperationStatusCheckFailedExceptionBuilder,
 ) -> Result<
-    crate::error::operation_status_check_failed_exception::Builder,
+    crate::types::error::builders::OperationStatusCheckFailedExceptionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

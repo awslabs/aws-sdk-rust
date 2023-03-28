@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_subscription_limit_exceeded_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::subscription_limit_exceeded_exception::Builder,
+    mut builder: crate::types::error::builders::SubscriptionLimitExceededExceptionBuilder,
 ) -> Result<
-    crate::error::subscription_limit_exceeded_exception::Builder,
+    crate::types::error::builders::SubscriptionLimitExceededExceptionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

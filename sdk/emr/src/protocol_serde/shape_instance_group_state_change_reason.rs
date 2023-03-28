@@ -2,7 +2,7 @@
 pub(crate) fn de_instance_group_state_change_reason<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::InstanceGroupStateChangeReason>,
+    Option<crate::types::InstanceGroupStateChangeReason>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::instance_group_state_change_reason::Builder::default();
+            let mut builder =
+                crate::types::builders::InstanceGroupStateChangeReasonBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +31,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::InstanceGroupStateChangeReasonCode::from(
+                                            crate::types::InstanceGroupStateChangeReasonCode::from(
                                                 u.as_ref(),
                                             )
                                         })

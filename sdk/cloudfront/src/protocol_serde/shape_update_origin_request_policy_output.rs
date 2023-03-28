@@ -12,17 +12,17 @@ pub(crate) fn de_e_tag_header(
 pub fn de_origin_request_policy_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::OriginRequestPolicy>,
-    crate::error::UpdateOriginRequestPolicyError,
+    std::option::Option<crate::types::OriginRequestPolicy>,
+    crate::operation::update_origin_request_policy::UpdateOriginRequestPolicyError,
 > {
     (!body.is_empty()).then(||{
-        crate::protocol_serde::shape_update_origin_request_policy_output::de_origin_request_policy(body).map_err(crate::error::UpdateOriginRequestPolicyError::unhandled)
+        crate::protocol_serde::shape_update_origin_request_policy_output::de_origin_request_policy(body).map_err(crate::operation::update_origin_request_policy::UpdateOriginRequestPolicyError::unhandled)
     }).transpose()
 }
 
 pub fn de_origin_request_policy(
     inp: &[u8],
-) -> Result<crate::model::OriginRequestPolicy, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::OriginRequestPolicy, aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;

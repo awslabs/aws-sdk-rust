@@ -3,59 +3,55 @@
 pub fn de_get_group_certificate_configuration_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetGroupCertificateConfigurationOutput,
-    crate::error::GetGroupCertificateConfigurationError,
+    crate::operation::get_group_certificate_configuration::GetGroupCertificateConfigurationOutput,
+    crate::operation::get_group_certificate_configuration::GetGroupCertificateConfigurationError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetGroupCertificateConfigurationError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::get_group_certificate_configuration::GetGroupCertificateConfigurationError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::GetGroupCertificateConfigurationError::unhandled(generic))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::get_group_certificate_configuration::GetGroupCertificateConfigurationError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => {
-            crate::error::GetGroupCertificateConfigurationError::BadRequestException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "BadRequestException" => crate::operation::get_group_certificate_configuration::GetGroupCertificateConfigurationError::BadRequestException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::bad_request_exception::Builder::default();
+                    let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetGroupCertificateConfigurationError::unhandled)?;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_group_certificate_configuration::GetGroupCertificateConfigurationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InternalServerErrorException" => {
-            crate::error::GetGroupCertificateConfigurationError::InternalServerErrorException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InternalServerErrorException" => crate::operation::get_group_certificate_configuration::GetGroupCertificateConfigurationError::InternalServerErrorException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::internal_server_error_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InternalServerErrorExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetGroupCertificateConfigurationError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_group_certificate_configuration::GetGroupCertificateConfigurationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::GetGroupCertificateConfigurationError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::get_group_certificate_configuration::GetGroupCertificateConfigurationError::generic(generic)
     })
 }
 
@@ -63,15 +59,14 @@ pub fn de_get_group_certificate_configuration_http_error(
 pub fn de_get_group_certificate_configuration_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetGroupCertificateConfigurationOutput,
-    crate::error::GetGroupCertificateConfigurationError,
+    crate::operation::get_group_certificate_configuration::GetGroupCertificateConfigurationOutput,
+    crate::operation::get_group_certificate_configuration::GetGroupCertificateConfigurationError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::output::get_group_certificate_configuration_output::Builder::default();
+        let mut output = crate::operation::get_group_certificate_configuration::builders::GetGroupCertificateConfigurationOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_get_group_certificate_configuration::de_get_group_certificate_configuration(response.body().as_ref(), output).map_err(crate::error::GetGroupCertificateConfigurationError::unhandled)?;
+        output = crate::protocol_serde::shape_get_group_certificate_configuration::de_get_group_certificate_configuration(response.body().as_ref(), output).map_err(crate::operation::get_group_certificate_configuration::GetGroupCertificateConfigurationError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -79,13 +74,7 @@ pub fn de_get_group_certificate_configuration_http_response(
     })
 }
 
-pub(crate) fn de_get_group_certificate_configuration(
-    value: &[u8],
-    mut builder: crate::output::get_group_certificate_configuration_output::Builder,
-) -> Result<
-    crate::output::get_group_certificate_configuration_output::Builder,
-    aws_smithy_json::deserialize::error::DeserializeError,
-> {
+pub(crate) fn de_get_group_certificate_configuration(value: &[u8], mut builder: crate::operation::get_group_certificate_configuration::builders::GetGroupCertificateConfigurationOutputBuilder) -> Result<crate::operation::get_group_certificate_configuration::builders::GetGroupCertificateConfigurationOutputBuilder, aws_smithy_json::deserialize::error::DeserializeError>{
     let mut tokens_owned =
         aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
             .peekable();

@@ -3,32 +3,28 @@
 pub fn de_cancel_reserved_instances_listing_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CancelReservedInstancesListingOutput,
-    crate::error::CancelReservedInstancesListingError,
+    crate::operation::cancel_reserved_instances_listing::CancelReservedInstancesListingOutput,
+    crate::operation::cancel_reserved_instances_listing::CancelReservedInstancesListingError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::CancelReservedInstancesListingError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::cancel_reserved_instances_listing::CancelReservedInstancesListingError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::CancelReservedInstancesListingError::generic(
-        generic,
-    ))
+    Err(crate::operation::cancel_reserved_instances_listing::CancelReservedInstancesListingError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_cancel_reserved_instances_listing_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CancelReservedInstancesListingOutput,
-    crate::error::CancelReservedInstancesListingError,
+    crate::operation::cancel_reserved_instances_listing::CancelReservedInstancesListingOutput,
+    crate::operation::cancel_reserved_instances_listing::CancelReservedInstancesListingError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::output::cancel_reserved_instances_listing_output::Builder::default();
+        let mut output = crate::operation::cancel_reserved_instances_listing::builders::CancelReservedInstancesListingOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_cancel_reserved_instances_listing::de_cancel_reserved_instances_listing(response.body().as_ref(), output).map_err(crate::error::CancelReservedInstancesListingError::unhandled)?;
+        output = crate::protocol_serde::shape_cancel_reserved_instances_listing::de_cancel_reserved_instances_listing(response.body().as_ref(), output).map_err(crate::operation::cancel_reserved_instances_listing::CancelReservedInstancesListingError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -37,13 +33,7 @@ pub fn de_cancel_reserved_instances_listing_http_response(
 }
 
 #[allow(unused_mut)]
-pub fn de_cancel_reserved_instances_listing(
-    inp: &[u8],
-    mut builder: crate::output::cancel_reserved_instances_listing_output::Builder,
-) -> Result<
-    crate::output::cancel_reserved_instances_listing_output::Builder,
-    aws_smithy_xml::decode::XmlDecodeError,
-> {
+pub fn de_cancel_reserved_instances_listing(inp: &[u8], mut builder: crate::operation::cancel_reserved_instances_listing::builders::CancelReservedInstancesListingOutputBuilder) -> Result<crate::operation::cancel_reserved_instances_listing::builders::CancelReservedInstancesListingOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

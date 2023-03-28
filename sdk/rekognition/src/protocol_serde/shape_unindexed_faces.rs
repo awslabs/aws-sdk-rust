@@ -2,7 +2,7 @@
 pub(crate) fn de_unindexed_faces<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::UnindexedFace>>,
+    Option<std::vec::Vec<crate::types::UnindexedFace>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

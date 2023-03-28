@@ -2,7 +2,7 @@
 pub(crate) fn de_anomaly_detector_data_quality_metric_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AnomalyDetectorDataQualityMetric>>,
+    Option<std::vec::Vec<crate::types::AnomalyDetectorDataQualityMetric>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

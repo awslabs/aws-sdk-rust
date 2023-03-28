@@ -2,7 +2,7 @@
 pub(crate) fn de_list_of_mfa_types_element<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::MfaTypesElement>>,
+    Option<std::vec::Vec<crate::types::MfaTypesElement>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -29,7 +29,7 @@ where
                         )?
                         .map(|s| {
                             s.to_unescaped()
-                                .map(|u| crate::model::MfaTypesElement::from(u.as_ref()))
+                                .map(|u| crate::types::MfaTypesElement::from(u.as_ref()))
                         })
                         .transpose()?;
                         if let Some(value) = value {

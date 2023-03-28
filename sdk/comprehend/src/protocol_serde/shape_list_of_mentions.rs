@@ -2,7 +2,7 @@
 pub(crate) fn de_list_of_mentions<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::TargetedSentimentMention>>,
+    Option<std::vec::Vec<crate::types::TargetedSentimentMention>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

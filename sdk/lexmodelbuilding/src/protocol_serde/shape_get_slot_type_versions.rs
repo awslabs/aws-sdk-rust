@@ -3,90 +3,100 @@
 pub fn de_get_slot_type_versions_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetSlotTypeVersionsOutput,
-    crate::error::GetSlotTypeVersionsError,
+    crate::operation::get_slot_type_versions::GetSlotTypeVersionsOutput,
+    crate::operation::get_slot_type_versions::GetSlotTypeVersionsError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetSlotTypeVersionsError::unhandled)?;
+        .map_err(crate::operation::get_slot_type_versions::GetSlotTypeVersionsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::GetSlotTypeVersionsError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::get_slot_type_versions::GetSlotTypeVersionsError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::GetSlotTypeVersionsError::BadRequestException({
+        "BadRequestException" => crate::operation::get_slot_type_versions::GetSlotTypeVersionsError::BadRequestException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSlotTypeVersionsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InternalFailureException" => {
-            crate::error::GetSlotTypeVersionsError::InternalFailureException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_failure_exception::Builder::default();
+                    let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSlotTypeVersionsError::unhandled)?;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_slot_type_versions::GetSlotTypeVersionsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "LimitExceededException" => {
-            crate::error::GetSlotTypeVersionsError::LimitExceededException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InternalFailureException" => crate::operation::get_slot_type_versions::GetSlotTypeVersionsError::InternalFailureException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InternalFailureExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSlotTypeVersionsError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_slot_type_versions::GetSlotTypeVersionsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "LimitExceededException" => crate::operation::get_slot_type_versions::GetSlotTypeVersionsError::LimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_slot_type_versions::GetSlotTypeVersionsError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::protocol_serde::shape_limit_exceeded_exception::de_retry_after_seconds_header(response.headers())
-                                                .map_err(|_|crate::error::GetSlotTypeVersionsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::operation::get_slot_type_versions::GetSlotTypeVersionsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "NotFoundException" => crate::error::GetSlotTypeVersionsError::NotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSlotTypeVersionsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::GetSlotTypeVersionsError::generic(generic),
+        "NotFoundException" => crate::operation::get_slot_type_versions::GetSlotTypeVersionsError::NotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::NotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_slot_type_versions::GetSlotTypeVersionsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::get_slot_type_versions::GetSlotTypeVersionsError::generic(generic)
     })
 }
 
@@ -94,18 +104,18 @@ pub fn de_get_slot_type_versions_http_error(
 pub fn de_get_slot_type_versions_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetSlotTypeVersionsOutput,
-    crate::error::GetSlotTypeVersionsError,
+    crate::operation::get_slot_type_versions::GetSlotTypeVersionsOutput,
+    crate::operation::get_slot_type_versions::GetSlotTypeVersionsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_slot_type_versions_output::Builder::default();
+        let mut output = crate::operation::get_slot_type_versions::builders::GetSlotTypeVersionsOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_get_slot_type_versions::de_get_slot_type_versions(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::GetSlotTypeVersionsError::unhandled)?;
+        .map_err(crate::operation::get_slot_type_versions::GetSlotTypeVersionsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -115,9 +125,9 @@ pub fn de_get_slot_type_versions_http_response(
 
 pub(crate) fn de_get_slot_type_versions(
     value: &[u8],
-    mut builder: crate::output::get_slot_type_versions_output::Builder,
+    mut builder: crate::operation::get_slot_type_versions::builders::GetSlotTypeVersionsOutputBuilder,
 ) -> Result<
-    crate::output::get_slot_type_versions_output::Builder,
+    crate::operation::get_slot_type_versions::builders::GetSlotTypeVersionsOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

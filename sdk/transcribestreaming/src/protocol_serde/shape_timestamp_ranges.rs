@@ -2,7 +2,7 @@
 pub(crate) fn de_timestamp_ranges<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::TimestampRange>>,
+    Option<std::vec::Vec<crate::types::TimestampRange>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_configuration_set_sending_paused_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::configuration_set_sending_paused_exception::Builder,
+    mut builder: crate::types::error::builders::ConfigurationSetSendingPausedExceptionBuilder,
 ) -> Result<
-    crate::error::configuration_set_sending_paused_exception::Builder,
+    crate::types::error::builders::ConfigurationSetSendingPausedExceptionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

@@ -3,80 +3,79 @@
 pub fn de_describe_service_updates_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeServiceUpdatesOutput,
-    crate::error::DescribeServiceUpdatesError,
+    crate::operation::describe_service_updates::DescribeServiceUpdatesOutput,
+    crate::operation::describe_service_updates::DescribeServiceUpdatesError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeServiceUpdatesError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::describe_service_updates::DescribeServiceUpdatesError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::DescribeServiceUpdatesError::unhandled(
-                generic,
-            ))
-        }
-    };
+    let error_code =
+        match generic.code() {
+            Some(code) => code,
+            None => return Err(
+                crate::operation::describe_service_updates::DescribeServiceUpdatesError::unhandled(
+                    generic,
+                ),
+            ),
+        };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterCombination" => {
-            crate::error::DescribeServiceUpdatesError::InvalidParameterCombinationException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidParameterCombination" => crate::operation::describe_service_updates::DescribeServiceUpdatesError::InvalidParameterCombinationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_parameter_combination_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidParameterCombinationExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_combination_exception::de_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeServiceUpdatesError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_combination_exception::de_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::describe_service_updates::DescribeServiceUpdatesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidParameterValue" => {
-            crate::error::DescribeServiceUpdatesError::InvalidParameterValueException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidParameterValue" => crate::operation::describe_service_updates::DescribeServiceUpdatesError::InvalidParameterValueException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_parameter_value_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeServiceUpdatesError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::describe_service_updates::DescribeServiceUpdatesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ServiceUpdateNotFoundFault" => {
-            crate::error::DescribeServiceUpdatesError::ServiceUpdateNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ServiceUpdateNotFoundFault" => crate::operation::describe_service_updates::DescribeServiceUpdatesError::ServiceUpdateNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::service_update_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::ServiceUpdateNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_update_not_found_fault::de_service_update_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeServiceUpdatesError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_update_not_found_fault::de_service_update_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::describe_service_updates::DescribeServiceUpdatesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DescribeServiceUpdatesError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::describe_service_updates::DescribeServiceUpdatesError::generic(generic)
     })
 }
 
@@ -84,19 +83,21 @@ pub fn de_describe_service_updates_http_error(
 pub fn de_describe_service_updates_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeServiceUpdatesOutput,
-    crate::error::DescribeServiceUpdatesError,
+    crate::operation::describe_service_updates::DescribeServiceUpdatesOutput,
+    crate::operation::describe_service_updates::DescribeServiceUpdatesError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_service_updates_output::Builder::default();
+        let mut output = crate::operation::describe_service_updates::builders::DescribeServiceUpdatesOutputBuilder::default();
         let _ = response;
         output =
             crate::protocol_serde::shape_describe_service_updates::de_describe_service_updates(
                 response.body().as_ref(),
                 output,
             )
-            .map_err(crate::error::DescribeServiceUpdatesError::unhandled)?;
+            .map_err(
+                crate::operation::describe_service_updates::DescribeServiceUpdatesError::unhandled,
+            )?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -107,9 +108,9 @@ pub fn de_describe_service_updates_http_response(
 #[allow(unused_mut)]
 pub fn de_describe_service_updates(
     inp: &[u8],
-    mut builder: crate::output::describe_service_updates_output::Builder,
+    mut builder: crate::operation::describe_service_updates::builders::DescribeServiceUpdatesOutputBuilder,
 ) -> Result<
-    crate::output::describe_service_updates_output::Builder,
+    crate::operation::describe_service_updates::builders::DescribeServiceUpdatesOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

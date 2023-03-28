@@ -2,7 +2,7 @@
 pub fn de_journey_execution_metrics_response_payload(
     input: &[u8],
 ) -> Result<
-    crate::model::JourneyExecutionMetricsResponse,
+    crate::types::JourneyExecutionMetricsResponse,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =
@@ -25,7 +25,7 @@ pub fn de_journey_execution_metrics_response_payload(
 pub(crate) fn de_journey_execution_metrics_response<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::JourneyExecutionMetricsResponse>,
+    Option<crate::types::JourneyExecutionMetricsResponse>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -40,7 +40,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::journey_execution_metrics_response::Builder::default();
+            let mut builder =
+                crate::types::builders::JourneyExecutionMetricsResponseBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

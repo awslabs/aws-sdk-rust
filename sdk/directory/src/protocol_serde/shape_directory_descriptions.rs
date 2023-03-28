@@ -2,7 +2,7 @@
 pub(crate) fn de_directory_descriptions<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DirectoryDescription>>,
+    Option<std::vec::Vec<crate::types::DirectoryDescription>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

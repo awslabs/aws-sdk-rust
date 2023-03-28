@@ -2,7 +2,7 @@
 pub(crate) fn de_firewall_subnet_missing_vpc_endpoint_violation<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::FirewallSubnetMissingVpcEndpointViolation>,
+    Option<crate::types::FirewallSubnetMissingVpcEndpointViolation>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::firewall_subnet_missing_vpc_endpoint_violation::Builder::default();
+                crate::types::builders::FirewallSubnetMissingVpcEndpointViolationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

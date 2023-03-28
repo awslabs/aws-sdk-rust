@@ -2,7 +2,7 @@
 pub(crate) fn de_speaker_summaries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SpeakerSummary>>,
+    Option<std::vec::Vec<crate::types::SpeakerSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_batch_update_detector_error_entries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::BatchUpdateDetectorErrorEntry>>,
+    Option<std::vec::Vec<crate::types::BatchUpdateDetectorErrorEntry>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

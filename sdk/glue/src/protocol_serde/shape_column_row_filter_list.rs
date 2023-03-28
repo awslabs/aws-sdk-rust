@@ -2,7 +2,7 @@
 pub(crate) fn de_column_row_filter_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ColumnRowFilter>>,
+    Option<std::vec::Vec<crate::types::ColumnRowFilter>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

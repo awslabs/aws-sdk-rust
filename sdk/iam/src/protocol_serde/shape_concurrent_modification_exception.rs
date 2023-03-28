@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_concurrent_modification_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::concurrent_modification_exception::Builder,
+    mut builder: crate::types::error::builders::ConcurrentModificationExceptionBuilder,
 ) -> Result<
-    crate::error::concurrent_modification_exception::Builder,
+    crate::types::error::builders::ConcurrentModificationExceptionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

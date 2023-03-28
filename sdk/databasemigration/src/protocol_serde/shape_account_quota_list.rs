@@ -2,7 +2,7 @@
 pub(crate) fn de_account_quota_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AccountQuota>>,
+    Option<std::vec::Vec<crate::types::AccountQuota>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_event_source_mappings_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::EventSourceMappingConfiguration>>,
+    Option<std::vec::Vec<crate::types::EventSourceMappingConfiguration>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

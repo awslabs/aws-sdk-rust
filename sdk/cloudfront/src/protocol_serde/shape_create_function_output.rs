@@ -12,13 +12,13 @@ pub(crate) fn de_e_tag_header(
 pub fn de_function_summary_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::FunctionSummary>,
-    crate::error::CreateFunctionError,
+    std::option::Option<crate::types::FunctionSummary>,
+    crate::operation::create_function::CreateFunctionError,
 > {
     (!body.is_empty())
         .then(|| {
             crate::protocol_serde::shape_create_function_output::de_function_summary(body)
-                .map_err(crate::error::CreateFunctionError::unhandled)
+                .map_err(crate::operation::create_function::CreateFunctionError::unhandled)
         })
         .transpose()
 }
@@ -35,7 +35,7 @@ pub(crate) fn de_location_header(
 
 pub fn de_function_summary(
     inp: &[u8],
-) -> Result<crate::model::FunctionSummary, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::FunctionSummary, aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;

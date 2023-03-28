@@ -2,7 +2,7 @@
 pub(crate) fn de_export_resource_specification<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ExportResourceSpecification>,
+    Option<crate::types::ExportResourceSpecification>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::export_resource_specification::Builder::default();
+            let mut builder = crate::types::builders::ExportResourceSpecificationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -63,7 +63,7 @@ where
 
 pub fn ser_export_resource_specification(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::ExportResourceSpecification,
+    input: &crate::types::ExportResourceSpecification,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.bot_export_specification {
         #[allow(unused_mut)]

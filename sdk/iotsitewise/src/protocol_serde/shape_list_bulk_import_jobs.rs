@@ -3,88 +3,96 @@
 pub fn de_list_bulk_import_jobs_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListBulkImportJobsOutput,
-    crate::error::ListBulkImportJobsError,
+    crate::operation::list_bulk_import_jobs::ListBulkImportJobsOutput,
+    crate::operation::list_bulk_import_jobs::ListBulkImportJobsError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListBulkImportJobsError::unhandled)?;
+        .map_err(crate::operation::list_bulk_import_jobs::ListBulkImportJobsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListBulkImportJobsError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::list_bulk_import_jobs::ListBulkImportJobsError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalFailureException" => {
-            crate::error::ListBulkImportJobsError::InternalFailureException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::internal_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListBulkImportJobsError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InvalidRequestException" => {
-            crate::error::ListBulkImportJobsError::InvalidRequestException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_request_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListBulkImportJobsError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ResourceNotFoundException" => {
-            crate::error::ListBulkImportJobsError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListBulkImportJobsError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ThrottlingException" => crate::error::ListBulkImportJobsError::ThrottlingException({
+        "InternalFailureException" => crate::operation::list_bulk_import_jobs::ListBulkImportJobsError::InternalFailureException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::throttling_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListBulkImportJobsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InternalFailureExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_bulk_import_jobs::ListBulkImportJobsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::ListBulkImportJobsError::generic(generic),
+        "InvalidRequestException" => crate::operation::list_bulk_import_jobs::ListBulkImportJobsError::InvalidRequestException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidRequestExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_bulk_import_jobs::ListBulkImportJobsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::list_bulk_import_jobs::ListBulkImportJobsError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_bulk_import_jobs::ListBulkImportJobsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ThrottlingException" => crate::operation::list_bulk_import_jobs::ListBulkImportJobsError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_bulk_import_jobs::ListBulkImportJobsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::list_bulk_import_jobs::ListBulkImportJobsError::generic(generic)
     })
 }
 
@@ -92,18 +100,18 @@ pub fn de_list_bulk_import_jobs_http_error(
 pub fn de_list_bulk_import_jobs_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListBulkImportJobsOutput,
-    crate::error::ListBulkImportJobsError,
+    crate::operation::list_bulk_import_jobs::ListBulkImportJobsOutput,
+    crate::operation::list_bulk_import_jobs::ListBulkImportJobsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_bulk_import_jobs_output::Builder::default();
+        let mut output = crate::operation::list_bulk_import_jobs::builders::ListBulkImportJobsOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_bulk_import_jobs::de_list_bulk_import_jobs(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListBulkImportJobsError::unhandled)?;
+        .map_err(crate::operation::list_bulk_import_jobs::ListBulkImportJobsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -113,9 +121,9 @@ pub fn de_list_bulk_import_jobs_http_response(
 
 pub(crate) fn de_list_bulk_import_jobs(
     value: &[u8],
-    mut builder: crate::output::list_bulk_import_jobs_output::Builder,
+    mut builder: crate::operation::list_bulk_import_jobs::builders::ListBulkImportJobsOutputBuilder,
 ) -> Result<
-    crate::output::list_bulk_import_jobs_output::Builder,
+    crate::operation::list_bulk_import_jobs::builders::ListBulkImportJobsOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

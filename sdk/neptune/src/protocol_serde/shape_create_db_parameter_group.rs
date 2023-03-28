@@ -3,62 +3,62 @@
 pub fn de_create_db_parameter_group_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateDbParameterGroupOutput,
-    crate::error::CreateDBParameterGroupError,
+    crate::operation::create_db_parameter_group::CreateDbParameterGroupOutput,
+    crate::operation::create_db_parameter_group::CreateDBParameterGroupError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::CreateDBParameterGroupError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::create_db_parameter_group::CreateDBParameterGroupError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::CreateDBParameterGroupError::unhandled(
-                generic,
-            ))
-        }
-    };
+    let error_code =
+        match generic.code() {
+            Some(code) => code,
+            None => return Err(
+                crate::operation::create_db_parameter_group::CreateDBParameterGroupError::unhandled(
+                    generic,
+                ),
+            ),
+        };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBParameterGroupAlreadyExists" => {
-            crate::error::CreateDBParameterGroupError::DbParameterGroupAlreadyExistsFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "DBParameterGroupAlreadyExists" => crate::operation::create_db_parameter_group::CreateDBParameterGroupError::DbParameterGroupAlreadyExistsFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::db_parameter_group_already_exists_fault::Builder::default();
+                    let mut output = crate::types::error::builders::DbParameterGroupAlreadyExistsFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_db_parameter_group_already_exists_fault::de_db_parameter_group_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBParameterGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_db_parameter_group_already_exists_fault::de_db_parameter_group_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_db_parameter_group::CreateDBParameterGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "DBParameterGroupQuotaExceeded" => {
-            crate::error::CreateDBParameterGroupError::DbParameterGroupQuotaExceededFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "DBParameterGroupQuotaExceeded" => crate::operation::create_db_parameter_group::CreateDBParameterGroupError::DbParameterGroupQuotaExceededFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::db_parameter_group_quota_exceeded_fault::Builder::default();
+                    let mut output = crate::types::error::builders::DbParameterGroupQuotaExceededFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_db_parameter_group_quota_exceeded_fault::de_db_parameter_group_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBParameterGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_db_parameter_group_quota_exceeded_fault::de_db_parameter_group_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_db_parameter_group::CreateDBParameterGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::CreateDBParameterGroupError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::create_db_parameter_group::CreateDBParameterGroupError::generic(generic)
     })
 }
 
@@ -66,19 +66,21 @@ pub fn de_create_db_parameter_group_http_error(
 pub fn de_create_db_parameter_group_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateDbParameterGroupOutput,
-    crate::error::CreateDBParameterGroupError,
+    crate::operation::create_db_parameter_group::CreateDbParameterGroupOutput,
+    crate::operation::create_db_parameter_group::CreateDBParameterGroupError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::create_db_parameter_group_output::Builder::default();
+        let mut output = crate::operation::create_db_parameter_group::builders::CreateDbParameterGroupOutputBuilder::default();
         let _ = response;
         output =
             crate::protocol_serde::shape_create_db_parameter_group::de_create_db_parameter_group(
                 response.body().as_ref(),
                 output,
             )
-            .map_err(crate::error::CreateDBParameterGroupError::unhandled)?;
+            .map_err(
+                crate::operation::create_db_parameter_group::CreateDBParameterGroupError::unhandled,
+            )?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -89,9 +91,9 @@ pub fn de_create_db_parameter_group_http_response(
 #[allow(unused_mut)]
 pub fn de_create_db_parameter_group(
     inp: &[u8],
-    mut builder: crate::output::create_db_parameter_group_output::Builder,
+    mut builder: crate::operation::create_db_parameter_group::builders::CreateDbParameterGroupOutputBuilder,
 ) -> Result<
-    crate::output::create_db_parameter_group_output::Builder,
+    crate::operation::create_db_parameter_group::builders::CreateDbParameterGroupOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

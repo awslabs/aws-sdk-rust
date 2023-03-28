@@ -2,7 +2,7 @@
 pub(crate) fn de_access_control_configuration_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AccessControlConfigurationSummary>>,
+    Option<std::vec::Vec<crate::types::AccessControlConfigurationSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

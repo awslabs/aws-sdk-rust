@@ -2,7 +2,7 @@
 pub(crate) fn de_findings<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Finding>>,
+    Option<std::vec::Vec<crate::types::Finding>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

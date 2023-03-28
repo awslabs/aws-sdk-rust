@@ -2,7 +2,7 @@
 pub(crate) fn de_associated_transcript_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AssociatedTranscript>>,
+    Option<std::vec::Vec<crate::types::AssociatedTranscript>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

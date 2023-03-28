@@ -2,8 +2,11 @@
 #[allow(unused_mut)]
 pub fn de_opted_out_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::opted_out_exception::Builder,
-) -> Result<crate::error::opted_out_exception::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    mut builder: crate::types::error::builders::OptedOutExceptionBuilder,
+) -> Result<
+    crate::types::error::builders::OptedOutExceptionBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     if inp.is_empty() {
         return Ok(builder);
     }

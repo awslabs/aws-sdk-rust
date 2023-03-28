@@ -2,7 +2,7 @@
 pub(crate) fn de_access_token_summaries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AccessTokenSummary>>,
+    Option<std::vec::Vec<crate::types::AccessTokenSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

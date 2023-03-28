@@ -2,7 +2,7 @@
 pub(crate) fn de_included_property_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::IncludedProperty>>,
+    Option<std::vec::Vec<crate::types::IncludedProperty>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

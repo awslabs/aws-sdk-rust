@@ -2,7 +2,7 @@
 pub(crate) fn de_supported_storage_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SupportedStorageEnum>>,
+    Option<std::vec::Vec<crate::types::SupportedStorageEnum>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -29,7 +29,7 @@ where
                         )?
                         .map(|s| {
                             s.to_unescaped()
-                                .map(|u| crate::model::SupportedStorageEnum::from(u.as_ref()))
+                                .map(|u| crate::types::SupportedStorageEnum::from(u.as_ref()))
                         })
                         .transpose()?;
                         if let Some(value) = value {

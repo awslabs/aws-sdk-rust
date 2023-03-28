@@ -2,7 +2,7 @@
 pub fn de_cache_node_type_specific_value_list(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::CacheNodeTypeSpecificValue>,
+    std::vec::Vec<crate::types::CacheNodeTypeSpecificValue>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

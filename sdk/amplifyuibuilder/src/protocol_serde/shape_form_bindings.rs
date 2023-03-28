@@ -2,7 +2,7 @@
 pub(crate) fn de_form_bindings<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<std::string::String, crate::model::FormBindingElement>>,
+    Option<std::collections::HashMap<std::string::String, crate::types::FormBindingElement>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

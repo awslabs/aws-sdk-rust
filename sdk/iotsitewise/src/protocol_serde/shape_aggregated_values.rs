@@ -2,7 +2,7 @@
 pub(crate) fn de_aggregated_values<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AggregatedValue>>,
+    Option<std::vec::Vec<crate::types::AggregatedValue>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,57 +2,69 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_ota_update_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetOtaUpdateOutput, crate::error::GetOTAUpdateError> {
+) -> std::result::Result<
+    crate::operation::get_ota_update::GetOtaUpdateOutput,
+    crate::operation::get_ota_update::GetOTAUpdateError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetOTAUpdateError::unhandled)?;
+        .map_err(crate::operation::get_ota_update::GetOTAUpdateError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::GetOTAUpdateError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::get_ota_update::GetOTAUpdateError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalFailureException" => crate::error::GetOTAUpdateError::InternalFailureException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_failure_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetOTAUpdateError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InvalidRequestException" => crate::error::GetOTAUpdateError::InvalidRequestException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::invalid_request_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetOTAUpdateError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ResourceNotFoundException" => {
-            crate::error::GetOTAUpdateError::ResourceNotFoundException({
+        "InternalFailureException" => {
+            crate::operation::get_ota_update::GetOTAUpdateError::InternalFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::InternalFailureExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetOTAUpdateError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_ota_update::GetOTAUpdateError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidRequestException" => {
+            crate::operation::get_ota_update::GetOTAUpdateError::InvalidRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InvalidRequestExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_ota_update::GetOTAUpdateError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::operation::get_ota_update::GetOTAUpdateError::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_ota_update::GetOTAUpdateError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -63,14 +75,15 @@ pub fn de_get_ota_update_http_error(
             })
         }
         "ServiceUnavailableException" => {
-            crate::error::GetOTAUpdateError::ServiceUnavailableException({
+            crate::operation::get_ota_update::GetOTAUpdateError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::service_unavailable_exception::Builder::default();
+                        crate::types::error::builders::ServiceUnavailableExceptionBuilder::default(
+                        );
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetOTAUpdateError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_ota_update::GetOTAUpdateError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -80,53 +93,63 @@ pub fn de_get_ota_update_http_error(
                 tmp
             })
         }
-        "ThrottlingException" => crate::error::GetOTAUpdateError::ThrottlingException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "ThrottlingException" => {
+            crate::operation::get_ota_update::GetOTAUpdateError::ThrottlingException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::throttling_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetOTAUpdateError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "UnauthorizedException" => crate::error::GetOTAUpdateError::UnauthorizedException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_ota_update::GetOTAUpdateError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "UnauthorizedException" => {
+            crate::operation::get_ota_update::GetOTAUpdateError::UnauthorizedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetOTAUpdateError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::GetOTAUpdateError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::UnauthorizedExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_ota_update::GetOTAUpdateError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::get_ota_update::GetOTAUpdateError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_ota_update_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetOtaUpdateOutput, crate::error::GetOTAUpdateError> {
+) -> std::result::Result<
+    crate::operation::get_ota_update::GetOtaUpdateOutput,
+    crate::operation::get_ota_update::GetOTAUpdateError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_ota_update_output::Builder::default();
+        let mut output =
+            crate::operation::get_ota_update::builders::GetOtaUpdateOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_get_ota_update::de_get_ota_update(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::GetOTAUpdateError::unhandled)?;
+        .map_err(crate::operation::get_ota_update::GetOTAUpdateError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -136,9 +159,9 @@ pub fn de_get_ota_update_http_response(
 
 pub(crate) fn de_get_ota_update(
     value: &[u8],
-    mut builder: crate::output::get_ota_update_output::Builder,
+    mut builder: crate::operation::get_ota_update::builders::GetOtaUpdateOutputBuilder,
 ) -> Result<
-    crate::output::get_ota_update_output::Builder,
+    crate::operation::get_ota_update::builders::GetOtaUpdateOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

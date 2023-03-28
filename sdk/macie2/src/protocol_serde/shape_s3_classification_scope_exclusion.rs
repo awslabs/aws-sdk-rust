@@ -2,7 +2,7 @@
 pub(crate) fn de_s3_classification_scope_exclusion<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::S3ClassificationScopeExclusion>,
+    Option<crate::types::S3ClassificationScopeExclusion>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::s3_classification_scope_exclusion::Builder::default();
+            let mut builder =
+                crate::types::builders::S3ClassificationScopeExclusionBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

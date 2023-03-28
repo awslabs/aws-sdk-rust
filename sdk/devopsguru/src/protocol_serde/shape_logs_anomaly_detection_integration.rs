@@ -2,7 +2,7 @@
 pub(crate) fn de_logs_anomaly_detection_integration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::LogsAnomalyDetectionIntegration>,
+    Option<crate::types::LogsAnomalyDetectionIntegration>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::logs_anomaly_detection_integration::Builder::default();
+            let mut builder =
+                crate::types::builders::LogsAnomalyDetectionIntegrationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +31,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::OptInStatus::from(u.as_ref()))
+                                            .map(|u| crate::types::OptInStatus::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

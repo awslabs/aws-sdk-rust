@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_invalid_origin_read_timeout_xml_err(
     inp: &[u8],
-    mut builder: crate::error::invalid_origin_read_timeout::Builder,
+    mut builder: crate::types::error::builders::InvalidOriginReadTimeoutBuilder,
 ) -> Result<
-    crate::error::invalid_origin_read_timeout::Builder,
+    crate::types::error::builders::InvalidOriginReadTimeoutBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

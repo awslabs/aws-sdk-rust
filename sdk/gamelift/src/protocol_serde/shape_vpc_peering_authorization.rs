@@ -2,7 +2,7 @@
 pub(crate) fn de_vpc_peering_authorization<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::VpcPeeringAuthorization>,
+    Option<crate::types::VpcPeeringAuthorization>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::vpc_peering_authorization::Builder::default();
+            let mut builder = crate::types::builders::VpcPeeringAuthorizationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

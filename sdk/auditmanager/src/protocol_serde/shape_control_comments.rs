@@ -2,7 +2,7 @@
 pub(crate) fn de_control_comments<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ControlComment>>,
+    Option<std::vec::Vec<crate::types::ControlComment>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

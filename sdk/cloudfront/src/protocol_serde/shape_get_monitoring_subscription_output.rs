@@ -2,17 +2,17 @@
 pub fn de_monitoring_subscription_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::MonitoringSubscription>,
-    crate::error::GetMonitoringSubscriptionError,
+    std::option::Option<crate::types::MonitoringSubscription>,
+    crate::operation::get_monitoring_subscription::GetMonitoringSubscriptionError,
 > {
     (!body.is_empty()).then(||{
-        crate::protocol_serde::shape_get_monitoring_subscription_output::de_monitoring_subscription(body).map_err(crate::error::GetMonitoringSubscriptionError::unhandled)
+        crate::protocol_serde::shape_get_monitoring_subscription_output::de_monitoring_subscription(body).map_err(crate::operation::get_monitoring_subscription::GetMonitoringSubscriptionError::unhandled)
     }).transpose()
 }
 
 pub fn de_monitoring_subscription(
     inp: &[u8],
-) -> Result<crate::model::MonitoringSubscription, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::MonitoringSubscription, aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;

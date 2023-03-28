@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_cluster_on_latest_revision_fault_xml_err(
     inp: &[u8],
-    mut builder: crate::error::cluster_on_latest_revision_fault::Builder,
+    mut builder: crate::types::error::builders::ClusterOnLatestRevisionFaultBuilder,
 ) -> Result<
-    crate::error::cluster_on_latest_revision_fault::Builder,
+    crate::types::error::builders::ClusterOnLatestRevisionFaultBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

@@ -2,7 +2,7 @@
 pub(crate) fn de_file_path_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::FilePaths>>,
+    Option<std::vec::Vec<crate::types::FilePaths>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

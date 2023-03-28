@@ -2,7 +2,7 @@
 pub(crate) fn de_calculated_fields<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CalculatedField>>,
+    Option<std::vec::Vec<crate::types::CalculatedField>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

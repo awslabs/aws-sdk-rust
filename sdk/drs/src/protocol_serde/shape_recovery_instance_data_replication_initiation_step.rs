@@ -2,7 +2,7 @@
 pub(crate) fn de_recovery_instance_data_replication_initiation_step<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::RecoveryInstanceDataReplicationInitiationStep>,
+    Option<crate::types::RecoveryInstanceDataReplicationInitiationStep>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,9 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder =
-                crate::model::recovery_instance_data_replication_initiation_step::Builder::default(
-                );
+            let mut builder = crate::types::builders::RecoveryInstanceDataReplicationInitiationStepBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -29,7 +27,7 @@ where
                                 builder = builder.set_name(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?.map(|s|
                                         s.to_unescaped().map(|u|
-                                            crate::model::RecoveryInstanceDataReplicationInitiationStepName::from(u.as_ref())
+                                            crate::types::RecoveryInstanceDataReplicationInitiationStepName::from(u.as_ref())
                                         )
                                     ).transpose()?
                                 );
@@ -38,7 +36,7 @@ where
                                 builder = builder.set_status(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?.map(|s|
                                         s.to_unescaped().map(|u|
-                                            crate::model::RecoveryInstanceDataReplicationInitiationStepStatus::from(u.as_ref())
+                                            crate::types::RecoveryInstanceDataReplicationInitiationStepStatus::from(u.as_ref())
                                         )
                                     ).transpose()?
                                 );

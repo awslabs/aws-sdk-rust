@@ -2,7 +2,7 @@
 pub(crate) fn de_billing_group_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::BillingGroupListElement>>,
+    Option<std::vec::Vec<crate::types::BillingGroupListElement>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

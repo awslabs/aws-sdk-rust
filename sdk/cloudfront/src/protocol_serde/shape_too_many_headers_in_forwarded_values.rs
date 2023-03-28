@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_too_many_headers_in_forwarded_values_xml_err(
     inp: &[u8],
-    mut builder: crate::error::too_many_headers_in_forwarded_values::Builder,
+    mut builder: crate::types::error::builders::TooManyHeadersInForwardedValuesBuilder,
 ) -> Result<
-    crate::error::too_many_headers_in_forwarded_values::Builder,
+    crate::types::error::builders::TooManyHeadersInForwardedValuesBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

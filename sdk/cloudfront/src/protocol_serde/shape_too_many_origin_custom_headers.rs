@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_too_many_origin_custom_headers_xml_err(
     inp: &[u8],
-    mut builder: crate::error::too_many_origin_custom_headers::Builder,
+    mut builder: crate::types::error::builders::TooManyOriginCustomHeadersBuilder,
 ) -> Result<
-    crate::error::too_many_origin_custom_headers::Builder,
+    crate::types::error::builders::TooManyOriginCustomHeadersBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

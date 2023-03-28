@@ -2,66 +2,79 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_put_dashboard_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::PutDashboardOutput, crate::error::PutDashboardError> {
+) -> std::result::Result<
+    crate::operation::put_dashboard::PutDashboardOutput,
+    crate::operation::put_dashboard::PutDashboardError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::PutDashboardError::unhandled)?;
+        .map_err(crate::operation::put_dashboard::PutDashboardError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::PutDashboardError::unhandled(generic)),
+        None => return Err(crate::operation::put_dashboard::PutDashboardError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterInput" => crate::error::PutDashboardError::DashboardInvalidInputError({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "InvalidParameterInput" => {
+            crate::operation::put_dashboard::PutDashboardError::DashboardInvalidInputError({
                 #[allow(unused_mut)]
-                let mut output = crate::error::dashboard_invalid_input_error::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_dashboard_invalid_input_error::de_dashboard_invalid_input_error_xml_err(response.body().as_ref(), output).map_err(crate::error::PutDashboardError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InternalServiceError" => crate::error::PutDashboardError::InternalServiceFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::DashboardInvalidInputErrorBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_dashboard_invalid_input_error::de_dashboard_invalid_input_error_xml_err(response.body().as_ref(), output).map_err(crate::operation::put_dashboard::PutDashboardError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InternalServiceError" => {
+            crate::operation::put_dashboard::PutDashboardError::InternalServiceFault({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_service_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_service_fault::de_internal_service_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PutDashboardError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::PutDashboardError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InternalServiceFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_service_fault::de_internal_service_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::put_dashboard::PutDashboardError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::put_dashboard::PutDashboardError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_put_dashboard_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::PutDashboardOutput, crate::error::PutDashboardError> {
+) -> std::result::Result<
+    crate::operation::put_dashboard::PutDashboardOutput,
+    crate::operation::put_dashboard::PutDashboardError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::put_dashboard_output::Builder::default();
+        let mut output =
+            crate::operation::put_dashboard::builders::PutDashboardOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_put_dashboard::de_put_dashboard(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::PutDashboardError::unhandled)?;
+        .map_err(crate::operation::put_dashboard::PutDashboardError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -72,8 +85,11 @@ pub fn de_put_dashboard_http_response(
 #[allow(unused_mut)]
 pub fn de_put_dashboard(
     inp: &[u8],
-    mut builder: crate::output::put_dashboard_output::Builder,
-) -> Result<crate::output::put_dashboard_output::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    mut builder: crate::operation::put_dashboard::builders::PutDashboardOutputBuilder,
+) -> Result<
+    crate::operation::put_dashboard::builders::PutDashboardOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

@@ -2,7 +2,7 @@
 pub(crate) fn de_aws_ec2_launch_template_data_license_set_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AwsEc2LaunchTemplateDataLicenseSetDetails>>,
+    Option<std::vec::Vec<crate::types::AwsEc2LaunchTemplateDataLicenseSetDetails>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

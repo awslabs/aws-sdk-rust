@@ -2,7 +2,7 @@
 pub(crate) fn de_csv_mapping_parameters<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::CsvMappingParameters>,
+    Option<crate::types::CsvMappingParameters>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::csv_mapping_parameters::Builder::default();
+            let mut builder = crate::types::builders::CsvMappingParametersBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -66,7 +66,7 @@ where
 
 pub fn ser_csv_mapping_parameters(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::CsvMappingParameters,
+    input: &crate::types::CsvMappingParameters,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.record_row_delimiter {
         object.key("RecordRowDelimiter").string(var_1.as_str());

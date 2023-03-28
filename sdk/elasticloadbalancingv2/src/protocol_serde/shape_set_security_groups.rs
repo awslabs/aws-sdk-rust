@@ -2,92 +2,97 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_set_security_groups_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::SetSecurityGroupsOutput, crate::error::SetSecurityGroupsError>
-{
+) -> std::result::Result<
+    crate::operation::set_security_groups::SetSecurityGroupsOutput,
+    crate::operation::set_security_groups::SetSecurityGroupsError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::SetSecurityGroupsError::unhandled)?;
+        .map_err(crate::operation::set_security_groups::SetSecurityGroupsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::SetSecurityGroupsError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::set_security_groups::SetSecurityGroupsError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidConfigurationRequest" => {
-            crate::error::SetSecurityGroupsError::InvalidConfigurationRequestException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidConfigurationRequest" => crate::operation::set_security_groups::SetSecurityGroupsError::InvalidConfigurationRequestException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_configuration_request_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidConfigurationRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_configuration_request_exception::de_invalid_configuration_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetSecurityGroupsError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_configuration_request_exception::de_invalid_configuration_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::set_security_groups::SetSecurityGroupsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidSecurityGroup" => {
-            crate::error::SetSecurityGroupsError::InvalidSecurityGroupException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidSecurityGroup" => crate::operation::set_security_groups::SetSecurityGroupsError::InvalidSecurityGroupException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_security_group_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidSecurityGroupExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_security_group_exception::de_invalid_security_group_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetSecurityGroupsError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_security_group_exception::de_invalid_security_group_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::set_security_groups::SetSecurityGroupsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "LoadBalancerNotFound" => {
-            crate::error::SetSecurityGroupsError::LoadBalancerNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "LoadBalancerNotFound" => crate::operation::set_security_groups::SetSecurityGroupsError::LoadBalancerNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::load_balancer_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::LoadBalancerNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_load_balancer_not_found_exception::de_load_balancer_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetSecurityGroupsError::unhandled)?;
+                    output = crate::protocol_serde::shape_load_balancer_not_found_exception::de_load_balancer_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::set_security_groups::SetSecurityGroupsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::SetSecurityGroupsError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::set_security_groups::SetSecurityGroupsError::generic(generic)
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_set_security_groups_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::SetSecurityGroupsOutput, crate::error::SetSecurityGroupsError>
-{
+) -> std::result::Result<
+    crate::operation::set_security_groups::SetSecurityGroupsOutput,
+    crate::operation::set_security_groups::SetSecurityGroupsError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::set_security_groups_output::Builder::default();
+        let mut output = crate::operation::set_security_groups::builders::SetSecurityGroupsOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_set_security_groups::de_set_security_groups(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::SetSecurityGroupsError::unhandled)?;
+        .map_err(crate::operation::set_security_groups::SetSecurityGroupsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -98,9 +103,9 @@ pub fn de_set_security_groups_http_response(
 #[allow(unused_mut)]
 pub fn de_set_security_groups(
     inp: &[u8],
-    mut builder: crate::output::set_security_groups_output::Builder,
+    mut builder: crate::operation::set_security_groups::builders::SetSecurityGroupsOutputBuilder,
 ) -> Result<
-    crate::output::set_security_groups_output::Builder,
+    crate::operation::set_security_groups::builders::SetSecurityGroupsOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

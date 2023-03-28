@@ -3,134 +3,123 @@
 pub fn de_get_reserved_node_exchange_offerings_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetReservedNodeExchangeOfferingsOutput,
-    crate::error::GetReservedNodeExchangeOfferingsError,
+    crate::operation::get_reserved_node_exchange_offerings::GetReservedNodeExchangeOfferingsOutput,
+    crate::operation::get_reserved_node_exchange_offerings::GetReservedNodeExchangeOfferingsError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetReservedNodeExchangeOfferingsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::get_reserved_node_exchange_offerings::GetReservedNodeExchangeOfferingsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::GetReservedNodeExchangeOfferingsError::unhandled(generic))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::get_reserved_node_exchange_offerings::GetReservedNodeExchangeOfferingsError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DependentServiceUnavailableFault" => {
-            crate::error::GetReservedNodeExchangeOfferingsError::DependentServiceUnavailableFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "DependentServiceUnavailableFault" => crate::operation::get_reserved_node_exchange_offerings::GetReservedNodeExchangeOfferingsError::DependentServiceUnavailableFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::dependent_service_unavailable_fault::Builder::default();
+                    let mut output = crate::types::error::builders::DependentServiceUnavailableFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_dependent_service_unavailable_fault::de_dependent_service_unavailable_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::GetReservedNodeExchangeOfferingsError::unhandled)?;
+                    output = crate::protocol_serde::shape_dependent_service_unavailable_fault::de_dependent_service_unavailable_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::get_reserved_node_exchange_offerings::GetReservedNodeExchangeOfferingsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidReservedNodeState" => {
-            crate::error::GetReservedNodeExchangeOfferingsError::InvalidReservedNodeStateFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidReservedNodeState" => crate::operation::get_reserved_node_exchange_offerings::GetReservedNodeExchangeOfferingsError::InvalidReservedNodeStateFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_reserved_node_state_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidReservedNodeStateFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_reserved_node_state_fault::de_invalid_reserved_node_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::GetReservedNodeExchangeOfferingsError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_reserved_node_state_fault::de_invalid_reserved_node_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::get_reserved_node_exchange_offerings::GetReservedNodeExchangeOfferingsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ReservedNodeAlreadyMigrated" => {
-            crate::error::GetReservedNodeExchangeOfferingsError::ReservedNodeAlreadyMigratedFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ReservedNodeAlreadyMigrated" => crate::operation::get_reserved_node_exchange_offerings::GetReservedNodeExchangeOfferingsError::ReservedNodeAlreadyMigratedFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::reserved_node_already_migrated_fault::Builder::default();
+                    let mut output = crate::types::error::builders::ReservedNodeAlreadyMigratedFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_reserved_node_already_migrated_fault::de_reserved_node_already_migrated_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::GetReservedNodeExchangeOfferingsError::unhandled)?;
+                    output = crate::protocol_serde::shape_reserved_node_already_migrated_fault::de_reserved_node_already_migrated_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::get_reserved_node_exchange_offerings::GetReservedNodeExchangeOfferingsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ReservedNodeNotFound" => {
-            crate::error::GetReservedNodeExchangeOfferingsError::ReservedNodeNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ReservedNodeNotFound" => crate::operation::get_reserved_node_exchange_offerings::GetReservedNodeExchangeOfferingsError::ReservedNodeNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::reserved_node_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::ReservedNodeNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_reserved_node_not_found_fault::de_reserved_node_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::GetReservedNodeExchangeOfferingsError::unhandled)?;
+                    output = crate::protocol_serde::shape_reserved_node_not_found_fault::de_reserved_node_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::get_reserved_node_exchange_offerings::GetReservedNodeExchangeOfferingsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ReservedNodeOfferingNotFound" => {
-            crate::error::GetReservedNodeExchangeOfferingsError::ReservedNodeOfferingNotFoundFault(
-                {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ReservedNodeOfferingNotFound" => crate::operation::get_reserved_node_exchange_offerings::GetReservedNodeExchangeOfferingsError::ReservedNodeOfferingNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::reserved_node_offering_not_found_fault::Builder::default(
-                            );
-                        let _ = response;
-                        output = crate::protocol_serde::shape_reserved_node_offering_not_found_fault::de_reserved_node_offering_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::GetReservedNodeExchangeOfferingsError::unhandled)?;
-                        let output = output.meta(generic);
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            )
-        }
-        "UnsupportedOperation" => {
-            crate::error::GetReservedNodeExchangeOfferingsError::UnsupportedOperationFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::unsupported_operation_fault::Builder::default();
+                    let mut output = crate::types::error::builders::ReservedNodeOfferingNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_unsupported_operation_fault::de_unsupported_operation_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::GetReservedNodeExchangeOfferingsError::unhandled)?;
+                    output = crate::protocol_serde::shape_reserved_node_offering_not_found_fault::de_reserved_node_offering_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::get_reserved_node_exchange_offerings::GetReservedNodeExchangeOfferingsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::GetReservedNodeExchangeOfferingsError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "UnsupportedOperation" => crate::operation::get_reserved_node_exchange_offerings::GetReservedNodeExchangeOfferingsError::UnsupportedOperationFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::UnsupportedOperationFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_unsupported_operation_fault::de_unsupported_operation_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::get_reserved_node_exchange_offerings::GetReservedNodeExchangeOfferingsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::get_reserved_node_exchange_offerings::GetReservedNodeExchangeOfferingsError::generic(generic)
     })
 }
 
@@ -138,15 +127,14 @@ pub fn de_get_reserved_node_exchange_offerings_http_error(
 pub fn de_get_reserved_node_exchange_offerings_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetReservedNodeExchangeOfferingsOutput,
-    crate::error::GetReservedNodeExchangeOfferingsError,
+    crate::operation::get_reserved_node_exchange_offerings::GetReservedNodeExchangeOfferingsOutput,
+    crate::operation::get_reserved_node_exchange_offerings::GetReservedNodeExchangeOfferingsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::output::get_reserved_node_exchange_offerings_output::Builder::default();
+        let mut output = crate::operation::get_reserved_node_exchange_offerings::builders::GetReservedNodeExchangeOfferingsOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_get_reserved_node_exchange_offerings::de_get_reserved_node_exchange_offerings(response.body().as_ref(), output).map_err(crate::error::GetReservedNodeExchangeOfferingsError::unhandled)?;
+        output = crate::protocol_serde::shape_get_reserved_node_exchange_offerings::de_get_reserved_node_exchange_offerings(response.body().as_ref(), output).map_err(crate::operation::get_reserved_node_exchange_offerings::GetReservedNodeExchangeOfferingsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -155,13 +143,7 @@ pub fn de_get_reserved_node_exchange_offerings_http_response(
 }
 
 #[allow(unused_mut)]
-pub fn de_get_reserved_node_exchange_offerings(
-    inp: &[u8],
-    mut builder: crate::output::get_reserved_node_exchange_offerings_output::Builder,
-) -> Result<
-    crate::output::get_reserved_node_exchange_offerings_output::Builder,
-    aws_smithy_xml::decode::XmlDecodeError,
-> {
+pub fn de_get_reserved_node_exchange_offerings(inp: &[u8], mut builder: crate::operation::get_reserved_node_exchange_offerings::builders::GetReservedNodeExchangeOfferingsOutputBuilder) -> Result<crate::operation::get_reserved_node_exchange_offerings::builders::GetReservedNodeExchangeOfferingsOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

@@ -2,86 +2,99 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_cache_policies_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListCachePoliciesOutput, crate::error::ListCachePoliciesError>
-{
+) -> std::result::Result<
+    crate::operation::list_cache_policies::ListCachePoliciesOutput,
+    crate::operation::list_cache_policies::ListCachePoliciesError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListCachePoliciesError::unhandled)?;
+        .map_err(crate::operation::list_cache_policies::ListCachePoliciesError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListCachePoliciesError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::list_cache_policies::ListCachePoliciesError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDenied" => crate::error::ListCachePoliciesError::AccessDenied({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "AccessDenied" => {
+            crate::operation::list_cache_policies::ListCachePoliciesError::AccessDenied({
                 #[allow(unused_mut)]
-                let mut output = crate::error::access_denied::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_access_denied::de_access_denied_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::ListCachePoliciesError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InvalidArgument" => crate::error::ListCachePoliciesError::InvalidArgument({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::invalid_argument::Builder::default();
-                let _ = response;
-                output =
-                    crate::protocol_serde::shape_invalid_argument::de_invalid_argument_xml_err(
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::AccessDeniedBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_access_denied::de_access_denied_xml_err(
                         response.body().as_ref(),
                         output,
                     )
-                    .map_err(crate::error::ListCachePoliciesError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "NoSuchCachePolicy" => crate::error::ListCachePoliciesError::NoSuchCachePolicy({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                    .map_err(
+                        crate::operation::list_cache_policies::ListCachePoliciesError::unhandled,
+                    )?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidArgument" => {
+            crate::operation::list_cache_policies::ListCachePoliciesError::InvalidArgument({
                 #[allow(unused_mut)]
-                let mut output = crate::error::no_such_cache_policy::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_no_such_cache_policy::de_no_such_cache_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::ListCachePoliciesError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::ListCachePoliciesError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InvalidArgumentBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_argument::de_invalid_argument_xml_err(response.body().as_ref(), output).map_err(crate::operation::list_cache_policies::ListCachePoliciesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "NoSuchCachePolicy" => {
+            crate::operation::list_cache_policies::ListCachePoliciesError::NoSuchCachePolicy({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::NoSuchCachePolicyBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_no_such_cache_policy::de_no_such_cache_policy_xml_err(response.body().as_ref(), output).map_err(crate::operation::list_cache_policies::ListCachePoliciesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::list_cache_policies::ListCachePoliciesError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_cache_policies_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListCachePoliciesOutput, crate::error::ListCachePoliciesError>
-{
+) -> std::result::Result<
+    crate::operation::list_cache_policies::ListCachePoliciesOutput,
+    crate::operation::list_cache_policies::ListCachePoliciesError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_cache_policies_output::Builder::default();
+        let mut output = crate::operation::list_cache_policies::builders::ListCachePoliciesOutputBuilder::default();
         let _ = response;
         output = output.set_cache_policy_list(
             crate::protocol_serde::shape_list_cache_policies_output::de_cache_policy_list_payload(

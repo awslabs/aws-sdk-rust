@@ -2,123 +2,132 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_db_cluster_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeleteDbClusterOutput, crate::error::DeleteDBClusterError> {
+) -> std::result::Result<
+    crate::operation::delete_db_cluster::DeleteDbClusterOutput,
+    crate::operation::delete_db_cluster::DeleteDBClusterError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteDBClusterError::unhandled)?;
+        .map_err(crate::operation::delete_db_cluster::DeleteDBClusterError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DeleteDBClusterError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::delete_db_cluster::DeleteDBClusterError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBClusterNotFoundFault" => crate::error::DeleteDBClusterError::DbClusterNotFoundFault({
+        "DBClusterNotFoundFault" => crate::operation::delete_db_cluster::DeleteDBClusterError::DbClusterNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::db_cluster_not_found_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_db_cluster_not_found_fault::de_db_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteDBClusterError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::DbClusterNotFoundFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_db_cluster_not_found_fault::de_db_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_db_cluster::DeleteDBClusterError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "DBClusterSnapshotAlreadyExistsFault" => {
-            crate::error::DeleteDBClusterError::DbClusterSnapshotAlreadyExistsFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "DBClusterSnapshotAlreadyExistsFault" => crate::operation::delete_db_cluster::DeleteDBClusterError::DbClusterSnapshotAlreadyExistsFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::db_cluster_snapshot_already_exists_fault::Builder::default();
+                    let mut output = crate::types::error::builders::DbClusterSnapshotAlreadyExistsFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_db_cluster_snapshot_already_exists_fault::de_db_cluster_snapshot_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteDBClusterError::unhandled)?;
+                    output = crate::protocol_serde::shape_db_cluster_snapshot_already_exists_fault::de_db_cluster_snapshot_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_db_cluster::DeleteDBClusterError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidDBClusterSnapshotStateFault" => {
-            crate::error::DeleteDBClusterError::InvalidDbClusterSnapshotStateFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidDBClusterSnapshotStateFault" => crate::operation::delete_db_cluster::DeleteDBClusterError::InvalidDbClusterSnapshotStateFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_db_cluster_snapshot_state_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidDbClusterSnapshotStateFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_db_cluster_snapshot_state_fault::de_invalid_db_cluster_snapshot_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteDBClusterError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_db_cluster_snapshot_state_fault::de_invalid_db_cluster_snapshot_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_db_cluster::DeleteDBClusterError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidDBClusterStateFault" => {
-            crate::error::DeleteDBClusterError::InvalidDbClusterStateFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidDBClusterStateFault" => crate::operation::delete_db_cluster::DeleteDBClusterError::InvalidDbClusterStateFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_db_cluster_state_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidDbClusterStateFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_db_cluster_state_fault::de_invalid_db_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteDBClusterError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_db_cluster_state_fault::de_invalid_db_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_db_cluster::DeleteDBClusterError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "SnapshotQuotaExceeded" => {
-            crate::error::DeleteDBClusterError::SnapshotQuotaExceededFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "SnapshotQuotaExceeded" => crate::operation::delete_db_cluster::DeleteDBClusterError::SnapshotQuotaExceededFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::snapshot_quota_exceeded_fault::Builder::default();
+                    let mut output = crate::types::error::builders::SnapshotQuotaExceededFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_snapshot_quota_exceeded_fault::de_snapshot_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteDBClusterError::unhandled)?;
+                    output = crate::protocol_serde::shape_snapshot_quota_exceeded_fault::de_snapshot_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_db_cluster::DeleteDBClusterError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DeleteDBClusterError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::delete_db_cluster::DeleteDBClusterError::generic(generic)
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_db_cluster_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeleteDbClusterOutput, crate::error::DeleteDBClusterError> {
+) -> std::result::Result<
+    crate::operation::delete_db_cluster::DeleteDbClusterOutput,
+    crate::operation::delete_db_cluster::DeleteDBClusterError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_db_cluster_output::Builder::default();
+        let mut output =
+            crate::operation::delete_db_cluster::builders::DeleteDbClusterOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_delete_db_cluster::de_delete_db_cluster(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DeleteDBClusterError::unhandled)?;
+        .map_err(crate::operation::delete_db_cluster::DeleteDBClusterError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -129,9 +138,11 @@ pub fn de_delete_db_cluster_http_response(
 #[allow(unused_mut)]
 pub fn de_delete_db_cluster(
     inp: &[u8],
-    mut builder: crate::output::delete_db_cluster_output::Builder,
-) -> Result<crate::output::delete_db_cluster_output::Builder, aws_smithy_xml::decode::XmlDecodeError>
-{
+    mut builder: crate::operation::delete_db_cluster::builders::DeleteDbClusterOutputBuilder,
+) -> Result<
+    crate::operation::delete_db_cluster::builders::DeleteDbClusterOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

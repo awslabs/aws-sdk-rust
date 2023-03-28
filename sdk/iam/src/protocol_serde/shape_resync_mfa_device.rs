@@ -2,93 +2,109 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_resync_mfa_device_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ResyncMfaDeviceOutput, crate::error::ResyncMFADeviceError> {
+) -> std::result::Result<
+    crate::operation::resync_mfa_device::ResyncMfaDeviceOutput,
+    crate::operation::resync_mfa_device::ResyncMFADeviceError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ResyncMFADeviceError::unhandled)?;
+        .map_err(crate::operation::resync_mfa_device::ResyncMFADeviceError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ResyncMFADeviceError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::resync_mfa_device::ResyncMFADeviceError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidAuthenticationCode" => {
-            crate::error::ResyncMFADeviceError::InvalidAuthenticationCodeException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidAuthenticationCode" => crate::operation::resync_mfa_device::ResyncMFADeviceError::InvalidAuthenticationCodeException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_authentication_code_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidAuthenticationCodeExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_authentication_code_exception::de_invalid_authentication_code_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ResyncMFADeviceError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_authentication_code_exception::de_invalid_authentication_code_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::resync_mfa_device::ResyncMFADeviceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "LimitExceeded" => crate::error::ResyncMFADeviceError::LimitExceededException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::limit_exceeded_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ResyncMFADeviceError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "NoSuchEntity" => crate::error::ResyncMFADeviceError::NoSuchEntityException({
+        "LimitExceeded" => crate::operation::resync_mfa_device::ResyncMFADeviceError::LimitExceededException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::no_such_entity_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_no_such_entity_exception::de_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ResyncMFADeviceError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::resync_mfa_device::ResyncMFADeviceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "ServiceFailure" => crate::error::ResyncMFADeviceError::ServiceFailureException({
+        "NoSuchEntity" => crate::operation::resync_mfa_device::ResyncMFADeviceError::NoSuchEntityException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::service_failure_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ResyncMFADeviceError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::NoSuchEntityExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_no_such_entity_exception::de_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::resync_mfa_device::ResyncMFADeviceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::ResyncMFADeviceError::generic(generic),
+        "ServiceFailure" => crate::operation::resync_mfa_device::ResyncMFADeviceError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ServiceFailureExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::resync_mfa_device::ResyncMFADeviceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::resync_mfa_device::ResyncMFADeviceError::generic(generic)
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_resync_mfa_device_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ResyncMfaDeviceOutput, crate::error::ResyncMFADeviceError> {
+) -> std::result::Result<
+    crate::operation::resync_mfa_device::ResyncMfaDeviceOutput,
+    crate::operation::resync_mfa_device::ResyncMFADeviceError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::resync_mfa_device_output::Builder::default();
+        let mut output =
+            crate::operation::resync_mfa_device::builders::ResyncMfaDeviceOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

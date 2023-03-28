@@ -2,7 +2,7 @@
 pub fn de_transit_gateway_route_table_association_list(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::TransitGatewayRouteTableAssociation>,
+    std::vec::Vec<crate::types::TransitGatewayRouteTableAssociation>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

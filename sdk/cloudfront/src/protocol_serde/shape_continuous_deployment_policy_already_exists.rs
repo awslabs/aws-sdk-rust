@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_continuous_deployment_policy_already_exists_xml_err(
     inp: &[u8],
-    mut builder: crate::error::continuous_deployment_policy_already_exists::Builder,
+    mut builder: crate::types::error::builders::ContinuousDeploymentPolicyAlreadyExistsBuilder,
 ) -> Result<
-    crate::error::continuous_deployment_policy_already_exists::Builder,
+    crate::types::error::builders::ContinuousDeploymentPolicyAlreadyExistsBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

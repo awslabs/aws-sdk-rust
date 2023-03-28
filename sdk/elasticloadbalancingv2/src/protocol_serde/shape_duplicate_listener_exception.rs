@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_duplicate_listener_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::duplicate_listener_exception::Builder,
+    mut builder: crate::types::error::builders::DuplicateListenerExceptionBuilder,
 ) -> Result<
-    crate::error::duplicate_listener_exception::Builder,
+    crate::types::error::builders::DuplicateListenerExceptionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

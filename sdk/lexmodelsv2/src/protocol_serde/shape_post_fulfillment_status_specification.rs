@@ -2,7 +2,7 @@
 pub(crate) fn de_post_fulfillment_status_specification<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::PostFulfillmentStatusSpecification>,
+    Option<crate::types::PostFulfillmentStatusSpecification>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::post_fulfillment_status_specification::Builder::default();
+                crate::types::builders::PostFulfillmentStatusSpecificationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -100,7 +100,7 @@ where
 
 pub fn ser_post_fulfillment_status_specification(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::PostFulfillmentStatusSpecification,
+    input: &crate::types::PostFulfillmentStatusSpecification,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.success_response {
         #[allow(unused_mut)]

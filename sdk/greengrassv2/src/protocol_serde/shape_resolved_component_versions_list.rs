@@ -2,7 +2,7 @@
 pub(crate) fn de_resolved_component_versions_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ResolvedComponentVersion>>,
+    Option<std::vec::Vec<crate::types::ResolvedComponentVersion>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

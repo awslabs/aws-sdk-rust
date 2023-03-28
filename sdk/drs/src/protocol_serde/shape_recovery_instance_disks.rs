@@ -2,7 +2,7 @@
 pub(crate) fn de_recovery_instance_disks<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::RecoveryInstanceDisk>>,
+    Option<std::vec::Vec<crate::types::RecoveryInstanceDisk>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_event_notification_item_configurations<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::EventNotificationItemConfigurations>,
+    Option<crate::types::EventNotificationItemConfigurations>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::event_notification_item_configurations::Builder::default();
+                crate::types::builders::EventNotificationItemConfigurationsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

@@ -2,7 +2,7 @@
 pub(crate) fn de_update_cost_allocation_tags_status_errors<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::UpdateCostAllocationTagsStatusError>>,
+    Option<std::vec::Vec<crate::types::UpdateCostAllocationTagsStatusError>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

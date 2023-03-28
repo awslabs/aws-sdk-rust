@@ -22,17 +22,17 @@ pub(crate) fn de_location_header(
 pub fn de_origin_request_policy_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::OriginRequestPolicy>,
-    crate::error::CreateOriginRequestPolicyError,
+    std::option::Option<crate::types::OriginRequestPolicy>,
+    crate::operation::create_origin_request_policy::CreateOriginRequestPolicyError,
 > {
     (!body.is_empty()).then(||{
-        crate::protocol_serde::shape_create_origin_request_policy_output::de_origin_request_policy(body).map_err(crate::error::CreateOriginRequestPolicyError::unhandled)
+        crate::protocol_serde::shape_create_origin_request_policy_output::de_origin_request_policy(body).map_err(crate::operation::create_origin_request_policy::CreateOriginRequestPolicyError::unhandled)
     }).transpose()
 }
 
 pub fn de_origin_request_policy(
     inp: &[u8],
-) -> Result<crate::model::OriginRequestPolicy, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::OriginRequestPolicy, aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;

@@ -2,7 +2,7 @@
 pub(crate) fn de_device_pool_compatibility_results<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DevicePoolCompatibilityResult>>,
+    Option<std::vec::Vec<crate::types::DevicePoolCompatibilityResult>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

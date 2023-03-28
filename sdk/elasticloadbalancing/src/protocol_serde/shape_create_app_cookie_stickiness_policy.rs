@@ -3,96 +3,89 @@
 pub fn de_create_app_cookie_stickiness_policy_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateAppCookieStickinessPolicyOutput,
-    crate::error::CreateAppCookieStickinessPolicyError,
+    crate::operation::create_app_cookie_stickiness_policy::CreateAppCookieStickinessPolicyOutput,
+    crate::operation::create_app_cookie_stickiness_policy::CreateAppCookieStickinessPolicyError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::CreateAppCookieStickinessPolicyError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::create_app_cookie_stickiness_policy::CreateAppCookieStickinessPolicyError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => return Err(crate::error::CreateAppCookieStickinessPolicyError::unhandled(generic)),
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::create_app_cookie_stickiness_policy::CreateAppCookieStickinessPolicyError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LoadBalancerNotFound" => {
-            crate::error::CreateAppCookieStickinessPolicyError::AccessPointNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "LoadBalancerNotFound" => crate::operation::create_app_cookie_stickiness_policy::CreateAppCookieStickinessPolicyError::AccessPointNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::access_point_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::AccessPointNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_access_point_not_found_exception::de_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateAppCookieStickinessPolicyError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_point_not_found_exception::de_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_app_cookie_stickiness_policy::CreateAppCookieStickinessPolicyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "DuplicatePolicyName" => {
-            crate::error::CreateAppCookieStickinessPolicyError::DuplicatePolicyNameException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "DuplicatePolicyName" => crate::operation::create_app_cookie_stickiness_policy::CreateAppCookieStickinessPolicyError::DuplicatePolicyNameException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::duplicate_policy_name_exception::Builder::default();
+                    let mut output = crate::types::error::builders::DuplicatePolicyNameExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_duplicate_policy_name_exception::de_duplicate_policy_name_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateAppCookieStickinessPolicyError::unhandled)?;
+                    output = crate::protocol_serde::shape_duplicate_policy_name_exception::de_duplicate_policy_name_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_app_cookie_stickiness_policy::CreateAppCookieStickinessPolicyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidConfigurationRequest" => {
-            crate::error::CreateAppCookieStickinessPolicyError::InvalidConfigurationRequestException(
-                {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidConfigurationRequest" => crate::operation::create_app_cookie_stickiness_policy::CreateAppCookieStickinessPolicyError::InvalidConfigurationRequestException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::invalid_configuration_request_exception::Builder::default(
-                            );
-                        let _ = response;
-                        output = crate::protocol_serde::shape_invalid_configuration_request_exception::de_invalid_configuration_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateAppCookieStickinessPolicyError::unhandled)?;
-                        let output = output.meta(generic);
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            )
-        }
-        "TooManyPolicies" => {
-            crate::error::CreateAppCookieStickinessPolicyError::TooManyPoliciesException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_policies_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidConfigurationRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_policies_exception::de_too_many_policies_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateAppCookieStickinessPolicyError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_configuration_request_exception::de_invalid_configuration_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_app_cookie_stickiness_policy::CreateAppCookieStickinessPolicyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::CreateAppCookieStickinessPolicyError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TooManyPolicies" => crate::operation::create_app_cookie_stickiness_policy::CreateAppCookieStickinessPolicyError::TooManyPoliciesException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::TooManyPoliciesExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_too_many_policies_exception::de_too_many_policies_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_app_cookie_stickiness_policy::CreateAppCookieStickinessPolicyError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::create_app_cookie_stickiness_policy::CreateAppCookieStickinessPolicyError::generic(generic)
     })
 }
 
@@ -100,13 +93,12 @@ pub fn de_create_app_cookie_stickiness_policy_http_error(
 pub fn de_create_app_cookie_stickiness_policy_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateAppCookieStickinessPolicyOutput,
-    crate::error::CreateAppCookieStickinessPolicyError,
+    crate::operation::create_app_cookie_stickiness_policy::CreateAppCookieStickinessPolicyOutput,
+    crate::operation::create_app_cookie_stickiness_policy::CreateAppCookieStickinessPolicyError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::output::create_app_cookie_stickiness_policy_output::Builder::default();
+        let mut output = crate::operation::create_app_cookie_stickiness_policy::builders::CreateAppCookieStickinessPolicyOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

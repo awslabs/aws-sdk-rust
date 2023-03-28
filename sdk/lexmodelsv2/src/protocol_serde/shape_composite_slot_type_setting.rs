@@ -2,7 +2,7 @@
 pub(crate) fn de_composite_slot_type_setting<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::CompositeSlotTypeSetting>,
+    Option<crate::types::CompositeSlotTypeSetting>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::composite_slot_type_setting::Builder::default();
+            let mut builder = crate::types::builders::CompositeSlotTypeSettingBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -53,7 +53,7 @@ where
 
 pub fn ser_composite_slot_type_setting(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::CompositeSlotTypeSetting,
+    input: &crate::types::CompositeSlotTypeSetting,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.sub_slots {
         let mut array_2 = object.key("subSlots").start_array();

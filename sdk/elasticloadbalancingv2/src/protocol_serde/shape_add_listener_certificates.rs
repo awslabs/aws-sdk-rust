@@ -3,79 +3,78 @@
 pub fn de_add_listener_certificates_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::AddListenerCertificatesOutput,
-    crate::error::AddListenerCertificatesError,
+    crate::operation::add_listener_certificates::AddListenerCertificatesOutput,
+    crate::operation::add_listener_certificates::AddListenerCertificatesError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::AddListenerCertificatesError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::add_listener_certificates::AddListenerCertificatesError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::error::AddListenerCertificatesError::unhandled(
+        None => return Err(
+            crate::operation::add_listener_certificates::AddListenerCertificatesError::unhandled(
                 generic,
-            ))
-        }
+            ),
+        ),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CertificateNotFound" => {
-            crate::error::AddListenerCertificatesError::CertificateNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "CertificateNotFound" => crate::operation::add_listener_certificates::AddListenerCertificatesError::CertificateNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::certificate_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::CertificateNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_certificate_not_found_exception::de_certificate_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AddListenerCertificatesError::unhandled)?;
+                    output = crate::protocol_serde::shape_certificate_not_found_exception::de_certificate_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::add_listener_certificates::AddListenerCertificatesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ListenerNotFound" => {
-            crate::error::AddListenerCertificatesError::ListenerNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ListenerNotFound" => crate::operation::add_listener_certificates::AddListenerCertificatesError::ListenerNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::listener_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ListenerNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_listener_not_found_exception::de_listener_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AddListenerCertificatesError::unhandled)?;
+                    output = crate::protocol_serde::shape_listener_not_found_exception::de_listener_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::add_listener_certificates::AddListenerCertificatesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "TooManyCertificates" => {
-            crate::error::AddListenerCertificatesError::TooManyCertificatesException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TooManyCertificates" => crate::operation::add_listener_certificates::AddListenerCertificatesError::TooManyCertificatesException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::too_many_certificates_exception::Builder::default();
+                    let mut output = crate::types::error::builders::TooManyCertificatesExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_certificates_exception::de_too_many_certificates_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AddListenerCertificatesError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_certificates_exception::de_too_many_certificates_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::add_listener_certificates::AddListenerCertificatesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::AddListenerCertificatesError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::add_listener_certificates::AddListenerCertificatesError::generic(generic)
     })
 }
 
@@ -83,19 +82,14 @@ pub fn de_add_listener_certificates_http_error(
 pub fn de_add_listener_certificates_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::AddListenerCertificatesOutput,
-    crate::error::AddListenerCertificatesError,
+    crate::operation::add_listener_certificates::AddListenerCertificatesOutput,
+    crate::operation::add_listener_certificates::AddListenerCertificatesError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::add_listener_certificates_output::Builder::default();
+        let mut output = crate::operation::add_listener_certificates::builders::AddListenerCertificatesOutputBuilder::default();
         let _ = response;
-        output =
-            crate::protocol_serde::shape_add_listener_certificates::de_add_listener_certificates(
-                response.body().as_ref(),
-                output,
-            )
-            .map_err(crate::error::AddListenerCertificatesError::unhandled)?;
+        output = crate::protocol_serde::shape_add_listener_certificates::de_add_listener_certificates(response.body().as_ref(), output).map_err(crate::operation::add_listener_certificates::AddListenerCertificatesError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -106,9 +100,9 @@ pub fn de_add_listener_certificates_http_response(
 #[allow(unused_mut)]
 pub fn de_add_listener_certificates(
     inp: &[u8],
-    mut builder: crate::output::add_listener_certificates_output::Builder,
+    mut builder: crate::operation::add_listener_certificates::builders::AddListenerCertificatesOutputBuilder,
 ) -> Result<
-    crate::output::add_listener_certificates_output::Builder,
+    crate::operation::add_listener_certificates::builders::AddListenerCertificatesOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

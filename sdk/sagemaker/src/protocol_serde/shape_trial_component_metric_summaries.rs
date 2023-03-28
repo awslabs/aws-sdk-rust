@@ -2,7 +2,7 @@
 pub(crate) fn de_trial_component_metric_summaries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::TrialComponentMetricSummary>>,
+    Option<std::vec::Vec<crate::types::TrialComponentMetricSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

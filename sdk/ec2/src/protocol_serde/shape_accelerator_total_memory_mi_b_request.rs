@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_accelerator_total_memory_mi_b_request(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::AcceleratorTotalMemoryMiBRequest,
+    input: &crate::types::AcceleratorTotalMemoryMiBRequest,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Min");

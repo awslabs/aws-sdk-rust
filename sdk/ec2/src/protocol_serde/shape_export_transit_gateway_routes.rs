@@ -3,31 +3,34 @@
 pub fn de_export_transit_gateway_routes_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ExportTransitGatewayRoutesOutput,
-    crate::error::ExportTransitGatewayRoutesError,
+    crate::operation::export_transit_gateway_routes::ExportTransitGatewayRoutesOutput,
+    crate::operation::export_transit_gateway_routes::ExportTransitGatewayRoutesError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ExportTransitGatewayRoutesError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::export_transit_gateway_routes::ExportTransitGatewayRoutesError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::ExportTransitGatewayRoutesError::generic(
-        generic,
-    ))
+    Err(
+        crate::operation::export_transit_gateway_routes::ExportTransitGatewayRoutesError::generic(
+            generic,
+        ),
+    )
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_export_transit_gateway_routes_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ExportTransitGatewayRoutesOutput,
-    crate::error::ExportTransitGatewayRoutesError,
+    crate::operation::export_transit_gateway_routes::ExportTransitGatewayRoutesOutput,
+    crate::operation::export_transit_gateway_routes::ExportTransitGatewayRoutesError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::export_transit_gateway_routes_output::Builder::default();
+        let mut output = crate::operation::export_transit_gateway_routes::builders::ExportTransitGatewayRoutesOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_export_transit_gateway_routes::de_export_transit_gateway_routes(response.body().as_ref(), output).map_err(crate::error::ExportTransitGatewayRoutesError::unhandled)?;
+        output = crate::protocol_serde::shape_export_transit_gateway_routes::de_export_transit_gateway_routes(response.body().as_ref(), output).map_err(crate::operation::export_transit_gateway_routes::ExportTransitGatewayRoutesError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -36,13 +39,7 @@ pub fn de_export_transit_gateway_routes_http_response(
 }
 
 #[allow(unused_mut)]
-pub fn de_export_transit_gateway_routes(
-    inp: &[u8],
-    mut builder: crate::output::export_transit_gateway_routes_output::Builder,
-) -> Result<
-    crate::output::export_transit_gateway_routes_output::Builder,
-    aws_smithy_xml::decode::XmlDecodeError,
-> {
+pub fn de_export_transit_gateway_routes(inp: &[u8], mut builder: crate::operation::export_transit_gateway_routes::builders::ExportTransitGatewayRoutesOutputBuilder) -> Result<crate::operation::export_transit_gateway_routes::builders::ExportTransitGatewayRoutesOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

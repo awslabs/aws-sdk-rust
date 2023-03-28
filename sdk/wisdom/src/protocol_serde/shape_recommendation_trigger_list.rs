@@ -2,7 +2,7 @@
 pub(crate) fn de_recommendation_trigger_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::RecommendationTrigger>>,
+    Option<std::vec::Vec<crate::types::RecommendationTrigger>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

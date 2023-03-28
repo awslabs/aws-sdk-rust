@@ -3,7 +3,7 @@ pub fn de_payload_payload(
     body: &[u8],
 ) -> std::result::Result<
     std::option::Option<aws_smithy_types::Blob>,
-    crate::error::UpdateThingShadowError,
+    crate::operation::update_thing_shadow::UpdateThingShadowError,
 > {
     (!body.is_empty())
         .then(|| Ok(aws_smithy_types::Blob::new(body)))

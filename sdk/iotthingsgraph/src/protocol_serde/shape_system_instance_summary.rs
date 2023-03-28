@@ -2,7 +2,7 @@
 pub(crate) fn de_system_instance_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::SystemInstanceSummary>,
+    Option<crate::types::SystemInstanceSummary>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::system_instance_summary::Builder::default();
+            let mut builder = crate::types::builders::SystemInstanceSummaryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -48,7 +48,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::SystemInstanceDeploymentStatus::from(
+                                            crate::types::SystemInstanceDeploymentStatus::from(
                                                 u.as_ref(),
                                             )
                                         })
@@ -63,7 +63,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::DeploymentTarget::from(u.as_ref())
+                                            crate::types::DeploymentTarget::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

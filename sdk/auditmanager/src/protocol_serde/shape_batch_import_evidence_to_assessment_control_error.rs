@@ -2,7 +2,7 @@
 pub(crate) fn de_batch_import_evidence_to_assessment_control_error<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::BatchImportEvidenceToAssessmentControlError>,
+    Option<crate::types::BatchImportEvidenceToAssessmentControlError>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,8 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::batch_import_evidence_to_assessment_control_error::Builder::default();
+                crate::types::builders::BatchImportEvidenceToAssessmentControlErrorBuilder::default(
+                );
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

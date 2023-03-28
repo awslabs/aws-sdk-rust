@@ -2,7 +2,7 @@
 pub(crate) fn de_load_balancer_tls_policy_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::LoadBalancerTlsPolicy>>,
+    Option<std::vec::Vec<crate::types::LoadBalancerTlsPolicy>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

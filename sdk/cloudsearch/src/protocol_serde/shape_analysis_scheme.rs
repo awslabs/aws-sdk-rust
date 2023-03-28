@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_analysis_scheme(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::AnalysisScheme,
+    input: &crate::types::AnalysisScheme,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("AnalysisSchemeName");
@@ -24,9 +24,9 @@ pub fn ser_analysis_scheme(
 
 pub fn de_analysis_scheme(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::AnalysisScheme, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::AnalysisScheme, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::AnalysisScheme::builder();
+    let mut builder = crate::types::AnalysisScheme::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("AnalysisSchemeName") /* AnalysisSchemeName com.amazonaws.cloudsearch#AnalysisScheme$AnalysisSchemeName */ =>  {
@@ -45,8 +45,8 @@ pub fn de_analysis_scheme(
             s if s.matches("AnalysisSchemeLanguage") /* AnalysisSchemeLanguage com.amazonaws.cloudsearch#AnalysisScheme$AnalysisSchemeLanguage */ =>  {
                 let var_8 =
                     Some(
-                        Result::<crate::model::AnalysisSchemeLanguage, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::AnalysisSchemeLanguage::from(
+                        Result::<crate::types::AnalysisSchemeLanguage, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::AnalysisSchemeLanguage::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

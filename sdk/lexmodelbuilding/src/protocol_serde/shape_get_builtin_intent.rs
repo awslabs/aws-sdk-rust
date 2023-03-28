@@ -2,43 +2,35 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_builtin_intent_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetBuiltinIntentOutput, crate::error::GetBuiltinIntentError>
-{
+) -> std::result::Result<
+    crate::operation::get_builtin_intent::GetBuiltinIntentOutput,
+    crate::operation::get_builtin_intent::GetBuiltinIntentError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetBuiltinIntentError::unhandled)?;
+        .map_err(crate::operation::get_builtin_intent::GetBuiltinIntentError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::GetBuiltinIntentError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::get_builtin_intent::GetBuiltinIntentError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::GetBuiltinIntentError::BadRequestException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetBuiltinIntentError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InternalFailureException" => {
-            crate::error::GetBuiltinIntentError::InternalFailureException({
+        "BadRequestException" => {
+            crate::operation::get_builtin_intent::GetBuiltinIntentError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_failure_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::BadRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetBuiltinIntentError::unhandled)?;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_builtin_intent::GetBuiltinIntentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -48,58 +40,86 @@ pub fn de_get_builtin_intent_http_error(
                 tmp
             })
         }
-        "LimitExceededException" => crate::error::GetBuiltinIntentError::LimitExceededException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "InternalFailureException" => {
+            crate::operation::get_builtin_intent::GetBuiltinIntentError::InternalFailureException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::limit_exceeded_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetBuiltinIntentError::unhandled)?;
-                output = output.set_retry_after_seconds(
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InternalFailureExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_builtin_intent::GetBuiltinIntentError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "LimitExceededException" => {
+            crate::operation::get_builtin_intent::GetBuiltinIntentError::LimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::LimitExceededExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_builtin_intent::GetBuiltinIntentError::unhandled)?;
+                    output = output.set_retry_after_seconds(
                         crate::protocol_serde::shape_limit_exceeded_exception::de_retry_after_seconds_header(response.headers())
-                                                .map_err(|_|crate::error::GetBuiltinIntentError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::operation::get_builtin_intent::GetBuiltinIntentError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "NotFoundException" => crate::error::GetBuiltinIntentError::NotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "NotFoundException" => {
+            crate::operation::get_builtin_intent::GetBuiltinIntentError::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetBuiltinIntentError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::GetBuiltinIntentError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::NotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_builtin_intent::GetBuiltinIntentError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::get_builtin_intent::GetBuiltinIntentError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_builtin_intent_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetBuiltinIntentOutput, crate::error::GetBuiltinIntentError>
-{
+) -> std::result::Result<
+    crate::operation::get_builtin_intent::GetBuiltinIntentOutput,
+    crate::operation::get_builtin_intent::GetBuiltinIntentError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_builtin_intent_output::Builder::default();
+        let mut output =
+            crate::operation::get_builtin_intent::builders::GetBuiltinIntentOutputBuilder::default(
+            );
         let _ = response;
         output = crate::protocol_serde::shape_get_builtin_intent::de_get_builtin_intent(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::GetBuiltinIntentError::unhandled)?;
+        .map_err(crate::operation::get_builtin_intent::GetBuiltinIntentError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -109,9 +129,9 @@ pub fn de_get_builtin_intent_http_response(
 
 pub(crate) fn de_get_builtin_intent(
     value: &[u8],
-    mut builder: crate::output::get_builtin_intent_output::Builder,
+    mut builder: crate::operation::get_builtin_intent::builders::GetBuiltinIntentOutputBuilder,
 ) -> Result<
-    crate::output::get_builtin_intent_output::Builder,
+    crate::operation::get_builtin_intent::builders::GetBuiltinIntentOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

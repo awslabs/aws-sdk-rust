@@ -2,22 +2,31 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_tags_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::CreateTagsOutput, crate::error::CreateTagsError> {
+) -> std::result::Result<
+    crate::operation::create_tags::CreateTagsOutput,
+    crate::operation::create_tags::CreateTagsError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::CreateTagsError::unhandled)?;
+        .map_err(crate::operation::create_tags::CreateTagsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::CreateTagsError::generic(generic))
+    Err(crate::operation::create_tags::CreateTagsError::generic(
+        generic,
+    ))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_tags_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::CreateTagsOutput, crate::error::CreateTagsError> {
+) -> std::result::Result<
+    crate::operation::create_tags::CreateTagsOutput,
+    crate::operation::create_tags::CreateTagsError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::create_tags_output::Builder::default();
+        let mut output =
+            crate::operation::create_tags::builders::CreateTagsOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

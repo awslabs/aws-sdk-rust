@@ -3,80 +3,72 @@
 pub fn de_describe_cache_parameter_groups_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeCacheParameterGroupsOutput,
-    crate::error::DescribeCacheParameterGroupsError,
+    crate::operation::describe_cache_parameter_groups::DescribeCacheParameterGroupsOutput,
+    crate::operation::describe_cache_parameter_groups::DescribeCacheParameterGroupsError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeCacheParameterGroupsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::describe_cache_parameter_groups::DescribeCacheParameterGroupsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::DescribeCacheParameterGroupsError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::describe_cache_parameter_groups::DescribeCacheParameterGroupsError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CacheParameterGroupNotFound" => {
-            crate::error::DescribeCacheParameterGroupsError::CacheParameterGroupNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "CacheParameterGroupNotFound" => crate::operation::describe_cache_parameter_groups::DescribeCacheParameterGroupsError::CacheParameterGroupNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::cache_parameter_group_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::CacheParameterGroupNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_cache_parameter_group_not_found_fault::de_cache_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeCacheParameterGroupsError::unhandled)?;
+                    output = crate::protocol_serde::shape_cache_parameter_group_not_found_fault::de_cache_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::describe_cache_parameter_groups::DescribeCacheParameterGroupsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidParameterCombination" => {
-            crate::error::DescribeCacheParameterGroupsError::InvalidParameterCombinationException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidParameterCombination" => crate::operation::describe_cache_parameter_groups::DescribeCacheParameterGroupsError::InvalidParameterCombinationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_parameter_combination_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidParameterCombinationExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_combination_exception::de_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeCacheParameterGroupsError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_combination_exception::de_invalid_parameter_combination_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::describe_cache_parameter_groups::DescribeCacheParameterGroupsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidParameterValue" => {
-            crate::error::DescribeCacheParameterGroupsError::InvalidParameterValueException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidParameterValue" => crate::operation::describe_cache_parameter_groups::DescribeCacheParameterGroupsError::InvalidParameterValueException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_parameter_value_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeCacheParameterGroupsError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::describe_cache_parameter_groups::DescribeCacheParameterGroupsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DescribeCacheParameterGroupsError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::describe_cache_parameter_groups::DescribeCacheParameterGroupsError::generic(generic)
     })
 }
 
@@ -84,14 +76,14 @@ pub fn de_describe_cache_parameter_groups_http_error(
 pub fn de_describe_cache_parameter_groups_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeCacheParameterGroupsOutput,
-    crate::error::DescribeCacheParameterGroupsError,
+    crate::operation::describe_cache_parameter_groups::DescribeCacheParameterGroupsOutput,
+    crate::operation::describe_cache_parameter_groups::DescribeCacheParameterGroupsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_cache_parameter_groups_output::Builder::default();
+        let mut output = crate::operation::describe_cache_parameter_groups::builders::DescribeCacheParameterGroupsOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_describe_cache_parameter_groups::de_describe_cache_parameter_groups(response.body().as_ref(), output).map_err(crate::error::DescribeCacheParameterGroupsError::unhandled)?;
+        output = crate::protocol_serde::shape_describe_cache_parameter_groups::de_describe_cache_parameter_groups(response.body().as_ref(), output).map_err(crate::operation::describe_cache_parameter_groups::DescribeCacheParameterGroupsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -100,13 +92,7 @@ pub fn de_describe_cache_parameter_groups_http_response(
 }
 
 #[allow(unused_mut)]
-pub fn de_describe_cache_parameter_groups(
-    inp: &[u8],
-    mut builder: crate::output::describe_cache_parameter_groups_output::Builder,
-) -> Result<
-    crate::output::describe_cache_parameter_groups_output::Builder,
-    aws_smithy_xml::decode::XmlDecodeError,
-> {
+pub fn de_describe_cache_parameter_groups(inp: &[u8], mut builder: crate::operation::describe_cache_parameter_groups::builders::DescribeCacheParameterGroupsOutputBuilder) -> Result<crate::operation::describe_cache_parameter_groups::builders::DescribeCacheParameterGroupsOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

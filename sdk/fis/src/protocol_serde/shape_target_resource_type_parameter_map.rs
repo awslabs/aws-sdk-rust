@@ -3,7 +3,7 @@ pub(crate) fn de_target_resource_type_parameter_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<
-        std::collections::HashMap<std::string::String, crate::model::TargetResourceTypeParameter>,
+        std::collections::HashMap<std::string::String, crate::types::TargetResourceTypeParameter>,
     >,
     aws_smithy_json::deserialize::error::DeserializeError,
 >

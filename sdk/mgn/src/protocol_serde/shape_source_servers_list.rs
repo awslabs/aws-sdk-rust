@@ -2,7 +2,7 @@
 pub(crate) fn de_source_servers_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SourceServer>>,
+    Option<std::vec::Vec<crate::types::SourceServer>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

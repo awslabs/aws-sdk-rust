@@ -2,7 +2,7 @@
 pub(crate) fn de_intent_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Intent>>,
+    Option<std::vec::Vec<crate::types::Intent>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

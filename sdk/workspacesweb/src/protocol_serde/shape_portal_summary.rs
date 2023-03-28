@@ -2,7 +2,7 @@
 pub(crate) fn de_portal_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::PortalSummary>,
+    Option<crate::types::PortalSummary>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::portal_summary::Builder::default();
+            let mut builder = crate::types::builders::PortalSummaryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -39,7 +39,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::RendererType::from(u.as_ref()))
+                                            .map(|u| crate::types::RendererType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -51,7 +51,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::BrowserType::from(u.as_ref()))
+                                            .map(|u| crate::types::BrowserType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -63,7 +63,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::PortalStatus::from(u.as_ref()))
+                                            .map(|u| crate::types::PortalStatus::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -146,7 +146,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::AuthenticationType::from(u.as_ref())
+                                            crate::types::AuthenticationType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

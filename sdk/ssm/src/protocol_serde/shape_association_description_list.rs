@@ -2,7 +2,7 @@
 pub(crate) fn de_association_description_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AssociationDescription>>,
+    Option<std::vec::Vec<crate::types::AssociationDescription>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

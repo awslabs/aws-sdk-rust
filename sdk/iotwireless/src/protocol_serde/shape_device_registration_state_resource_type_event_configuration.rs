@@ -2,7 +2,7 @@
 pub(crate) fn de_device_registration_state_resource_type_event_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::DeviceRegistrationStateResourceTypeEventConfiguration>,
+    Option<crate::types::DeviceRegistrationStateResourceTypeEventConfiguration>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::device_registration_state_resource_type_event_configuration::Builder::default();
+            let mut builder = crate::types::builders::DeviceRegistrationStateResourceTypeEventConfigurationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -53,7 +53,7 @@ where
 
 pub fn ser_device_registration_state_resource_type_event_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::DeviceRegistrationStateResourceTypeEventConfiguration,
+    input: &crate::types::DeviceRegistrationStateResourceTypeEventConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.sidewalk {
         #[allow(unused_mut)]

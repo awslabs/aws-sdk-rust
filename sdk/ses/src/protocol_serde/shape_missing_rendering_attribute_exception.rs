@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_missing_rendering_attribute_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::missing_rendering_attribute_exception::Builder,
+    mut builder: crate::types::error::builders::MissingRenderingAttributeExceptionBuilder,
 ) -> Result<
-    crate::error::missing_rendering_attribute_exception::Builder,
+    crate::types::error::builders::MissingRenderingAttributeExceptionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

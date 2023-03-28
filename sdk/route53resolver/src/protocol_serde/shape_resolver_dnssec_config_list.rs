@@ -2,7 +2,7 @@
 pub(crate) fn de_resolver_dnssec_config_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ResolverDnssecConfig>>,
+    Option<std::vec::Vec<crate::types::ResolverDnssecConfig>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

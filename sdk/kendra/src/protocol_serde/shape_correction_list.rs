@@ -2,7 +2,7 @@
 pub(crate) fn de_correction_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Correction>>,
+    Option<std::vec::Vec<crate::types::Correction>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

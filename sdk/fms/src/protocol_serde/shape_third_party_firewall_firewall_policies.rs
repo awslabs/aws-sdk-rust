@@ -2,7 +2,7 @@
 pub(crate) fn de_third_party_firewall_firewall_policies<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ThirdPartyFirewallFirewallPolicy>>,
+    Option<std::vec::Vec<crate::types::ThirdPartyFirewallFirewallPolicy>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

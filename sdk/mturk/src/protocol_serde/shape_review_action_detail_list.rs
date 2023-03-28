@@ -2,7 +2,7 @@
 pub(crate) fn de_review_action_detail_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ReviewActionDetail>>,
+    Option<std::vec::Vec<crate::types::ReviewActionDetail>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

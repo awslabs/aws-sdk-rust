@@ -2,7 +2,7 @@
 pub(crate) fn de_portfolio_details<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::PortfolioDetail>>,
+    Option<std::vec::Vec<crate::types::PortfolioDetail>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

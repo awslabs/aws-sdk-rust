@@ -2,7 +2,7 @@
 pub(crate) fn de_data_retrieval_policy<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::DataRetrievalPolicy>,
+    Option<crate::types::DataRetrievalPolicy>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::data_retrieval_policy::Builder::default();
+            let mut builder = crate::types::builders::DataRetrievalPolicyBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -53,7 +53,7 @@ where
 
 pub fn ser_data_retrieval_policy(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::DataRetrievalPolicy,
+    input: &crate::types::DataRetrievalPolicy,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.rules {
         let mut array_2 = object.key("Rules").start_array();

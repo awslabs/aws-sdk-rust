@@ -2,43 +2,51 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_stop_db_cluster_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::StopDbClusterOutput, crate::error::StopDBClusterError> {
+) -> std::result::Result<
+    crate::operation::stop_db_cluster::StopDbClusterOutput,
+    crate::operation::stop_db_cluster::StopDBClusterError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::StopDBClusterError::unhandled)?;
+        .map_err(crate::operation::stop_db_cluster::StopDBClusterError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::StopDBClusterError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::stop_db_cluster::StopDBClusterError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBClusterNotFoundFault" => crate::error::StopDBClusterError::DbClusterNotFoundFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::db_cluster_not_found_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_db_cluster_not_found_fault::de_db_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::StopDBClusterError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InvalidDBClusterStateFault" => {
-            crate::error::StopDBClusterError::InvalidDbClusterStateFault({
+        "DBClusterNotFoundFault" => {
+            crate::operation::stop_db_cluster::StopDBClusterError::DbClusterNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::invalid_db_cluster_state_fault::Builder::default();
+                        crate::types::error::builders::DbClusterNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_db_cluster_state_fault::de_invalid_db_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::StopDBClusterError::unhandled)?;
+                    output = crate::protocol_serde::shape_db_cluster_not_found_fault::de_db_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::stop_db_cluster::StopDBClusterError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidDBClusterStateFault" => {
+            crate::operation::stop_db_cluster::StopDBClusterError::InvalidDbClusterStateFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InvalidDbClusterStateFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_db_cluster_state_fault::de_invalid_db_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::stop_db_cluster::StopDBClusterError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -49,14 +57,15 @@ pub fn de_stop_db_cluster_http_error(
             })
         }
         "InvalidDBInstanceState" => {
-            crate::error::StopDBClusterError::InvalidDbInstanceStateFault({
+            crate::operation::stop_db_cluster::StopDBClusterError::InvalidDbInstanceStateFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::invalid_db_instance_state_fault::Builder::default();
+                        crate::types::error::builders::InvalidDbInstanceStateFaultBuilder::default(
+                        );
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_db_instance_state_fault::de_invalid_db_instance_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::StopDBClusterError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_db_instance_state_fault::de_invalid_db_instance_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::stop_db_cluster::StopDBClusterError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -66,23 +75,27 @@ pub fn de_stop_db_cluster_http_error(
                 tmp
             })
         }
-        _ => crate::error::StopDBClusterError::generic(generic),
+        _ => crate::operation::stop_db_cluster::StopDBClusterError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_stop_db_cluster_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::StopDbClusterOutput, crate::error::StopDBClusterError> {
+) -> std::result::Result<
+    crate::operation::stop_db_cluster::StopDbClusterOutput,
+    crate::operation::stop_db_cluster::StopDBClusterError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::stop_db_cluster_output::Builder::default();
+        let mut output =
+            crate::operation::stop_db_cluster::builders::StopDbClusterOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_stop_db_cluster::de_stop_db_cluster(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::StopDBClusterError::unhandled)?;
+        .map_err(crate::operation::stop_db_cluster::StopDBClusterError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -93,9 +106,11 @@ pub fn de_stop_db_cluster_http_response(
 #[allow(unused_mut)]
 pub fn de_stop_db_cluster(
     inp: &[u8],
-    mut builder: crate::output::stop_db_cluster_output::Builder,
-) -> Result<crate::output::stop_db_cluster_output::Builder, aws_smithy_xml::decode::XmlDecodeError>
-{
+    mut builder: crate::operation::stop_db_cluster::builders::StopDbClusterOutputBuilder,
+) -> Result<
+    crate::operation::stop_db_cluster::builders::StopDbClusterOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

@@ -2,7 +2,7 @@
 pub(crate) fn de_intent_closing_setting<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::IntentClosingSetting>,
+    Option<crate::types::IntentClosingSetting>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::intent_closing_setting::Builder::default();
+            let mut builder = crate::types::builders::IntentClosingSettingBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -72,7 +72,7 @@ where
 
 pub fn ser_intent_closing_setting(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::IntentClosingSetting,
+    input: &crate::types::IntentClosingSetting,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.closing_response {
         #[allow(unused_mut)]

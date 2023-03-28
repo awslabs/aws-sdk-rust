@@ -2,27 +2,31 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_record_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeleteRecordOutput, crate::error::DeleteRecordError> {
+) -> std::result::Result<
+    crate::operation::delete_record::DeleteRecordOutput,
+    crate::operation::delete_record::DeleteRecordError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteRecordError::unhandled)?;
+        .map_err(crate::operation::delete_record::DeleteRecordError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DeleteRecordError::unhandled(generic)),
+        None => return Err(crate::operation::delete_record::DeleteRecordError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AccessForbidden" => {
-            crate::error::DeleteRecordError::AccessForbidden({
+            crate::operation::delete_record::DeleteRecordError::AccessForbidden({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::access_forbidden::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::AccessForbiddenBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_access_forbidden::de_access_forbidden_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRecordError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_forbidden::de_access_forbidden_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_record::DeleteRecordError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -33,13 +37,14 @@ pub fn de_delete_record_http_error(
             })
         }
         "InternalFailure" => {
-            crate::error::DeleteRecordError::InternalFailure({
+            crate::operation::delete_record::DeleteRecordError::InternalFailure({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_failure::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::InternalFailureBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_failure::de_internal_failure_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRecordError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_failure::de_internal_failure_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_record::DeleteRecordError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -49,29 +54,33 @@ pub fn de_delete_record_http_error(
                 tmp
             })
         }
-        "ServiceUnavailable" => crate::error::DeleteRecordError::ServiceUnavailable({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "ServiceUnavailable" => {
+            crate::operation::delete_record::DeleteRecordError::ServiceUnavailable({
                 #[allow(unused_mut)]
-                let mut output = crate::error::service_unavailable::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_service_unavailable::de_service_unavailable_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRecordError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ServiceUnavailableBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_service_unavailable::de_service_unavailable_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_record::DeleteRecordError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "ValidationError" => {
-            crate::error::DeleteRecordError::ValidationError({
+            crate::operation::delete_record::DeleteRecordError::ValidationError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::validation_error::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::ValidationErrorBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_validation_error::de_validation_error_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRecordError::unhandled)?;
+                    output = crate::protocol_serde::shape_validation_error::de_validation_error_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_record::DeleteRecordError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -81,17 +90,21 @@ pub fn de_delete_record_http_error(
                 tmp
             })
         }
-        _ => crate::error::DeleteRecordError::generic(generic),
+        _ => crate::operation::delete_record::DeleteRecordError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_record_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeleteRecordOutput, crate::error::DeleteRecordError> {
+) -> std::result::Result<
+    crate::operation::delete_record::DeleteRecordOutput,
+    crate::operation::delete_record::DeleteRecordError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_record_output::Builder::default();
+        let mut output =
+            crate::operation::delete_record::builders::DeleteRecordOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

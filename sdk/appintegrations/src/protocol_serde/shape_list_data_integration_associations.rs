@@ -3,107 +3,106 @@
 pub fn de_list_data_integration_associations_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListDataIntegrationAssociationsOutput,
-    crate::error::ListDataIntegrationAssociationsError,
+    crate::operation::list_data_integration_associations::ListDataIntegrationAssociationsOutput,
+    crate::operation::list_data_integration_associations::ListDataIntegrationAssociationsError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListDataIntegrationAssociationsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::list_data_integration_associations::ListDataIntegrationAssociationsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => return Err(crate::error::ListDataIntegrationAssociationsError::unhandled(generic)),
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::list_data_integration_associations::ListDataIntegrationAssociationsError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => {
-            crate::error::ListDataIntegrationAssociationsError::AccessDeniedException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "AccessDeniedException" => crate::operation::list_data_integration_associations::ListDataIntegrationAssociationsError::AccessDeniedException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDataIntegrationAssociationsError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_data_integration_associations::ListDataIntegrationAssociationsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InternalServiceError" => {
-            crate::error::ListDataIntegrationAssociationsError::InternalServiceError({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InternalServiceError" => crate::operation::list_data_integration_associations::ListDataIntegrationAssociationsError::InternalServiceError({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_service_error::Builder::default();
+                    let mut output = crate::types::error::builders::InternalServiceErrorBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_service_error::de_internal_service_error_json_err(response.body().as_ref(), output).map_err(crate::error::ListDataIntegrationAssociationsError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_service_error::de_internal_service_error_json_err(response.body().as_ref(), output).map_err(crate::operation::list_data_integration_associations::ListDataIntegrationAssociationsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidRequestException" => {
-            crate::error::ListDataIntegrationAssociationsError::InvalidRequestException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidRequestException" => crate::operation::list_data_integration_associations::ListDataIntegrationAssociationsError::InvalidRequestException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_request_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDataIntegrationAssociationsError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_data_integration_associations::ListDataIntegrationAssociationsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ResourceNotFoundException" => {
-            crate::error::ListDataIntegrationAssociationsError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::list_data_integration_associations::ListDataIntegrationAssociationsError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDataIntegrationAssociationsError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_data_integration_associations::ListDataIntegrationAssociationsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ThrottlingException" => {
-            crate::error::ListDataIntegrationAssociationsError::ThrottlingException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ThrottlingException" => crate::operation::list_data_integration_associations::ListDataIntegrationAssociationsError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDataIntegrationAssociationsError::unhandled)?;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_data_integration_associations::ListDataIntegrationAssociationsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::ListDataIntegrationAssociationsError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::list_data_integration_associations::ListDataIntegrationAssociationsError::generic(generic)
     })
 }
 
@@ -111,15 +110,14 @@ pub fn de_list_data_integration_associations_http_error(
 pub fn de_list_data_integration_associations_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListDataIntegrationAssociationsOutput,
-    crate::error::ListDataIntegrationAssociationsError,
+    crate::operation::list_data_integration_associations::ListDataIntegrationAssociationsOutput,
+    crate::operation::list_data_integration_associations::ListDataIntegrationAssociationsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::output::list_data_integration_associations_output::Builder::default();
+        let mut output = crate::operation::list_data_integration_associations::builders::ListDataIntegrationAssociationsOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_list_data_integration_associations::de_list_data_integration_associations(response.body().as_ref(), output).map_err(crate::error::ListDataIntegrationAssociationsError::unhandled)?;
+        output = crate::protocol_serde::shape_list_data_integration_associations::de_list_data_integration_associations(response.body().as_ref(), output).map_err(crate::operation::list_data_integration_associations::ListDataIntegrationAssociationsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -127,13 +125,7 @@ pub fn de_list_data_integration_associations_http_response(
     })
 }
 
-pub(crate) fn de_list_data_integration_associations(
-    value: &[u8],
-    mut builder: crate::output::list_data_integration_associations_output::Builder,
-) -> Result<
-    crate::output::list_data_integration_associations_output::Builder,
-    aws_smithy_json::deserialize::error::DeserializeError,
-> {
+pub(crate) fn de_list_data_integration_associations(value: &[u8], mut builder: crate::operation::list_data_integration_associations::builders::ListDataIntegrationAssociationsOutputBuilder) -> Result<crate::operation::list_data_integration_associations::builders::ListDataIntegrationAssociationsOutputBuilder, aws_smithy_json::deserialize::error::DeserializeError>{
     let mut tokens_owned =
         aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
             .peekable();

@@ -2,7 +2,7 @@
 pub(crate) fn de_history_event_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::HistoryEvent>>,
+    Option<std::vec::Vec<crate::types::HistoryEvent>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

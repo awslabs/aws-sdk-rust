@@ -2,7 +2,7 @@
 pub(crate) fn de_build_batch_phase<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::BuildBatchPhase>,
+    Option<crate::types::BuildBatchPhase>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::build_batch_phase::Builder::default();
+            let mut builder = crate::types::builders::BuildBatchPhaseBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::BuildBatchPhaseType::from(u.as_ref())
+                                            crate::types::BuildBatchPhaseType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -43,7 +43,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::StatusType::from(u.as_ref()))
+                                            .map(|u| crate::types::StatusType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

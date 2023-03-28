@@ -2,7 +2,7 @@
 pub(crate) fn de_self_manage_resources<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::SelfManageResources>,
+    Option<crate::types::SelfManageResources>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::self_manage_resources::Builder::default();
+            let mut builder = crate::types::builders::SelfManageResourcesBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -53,7 +53,7 @@ where
 
 pub fn ser_self_manage_resources(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::SelfManageResources,
+    input: &crate::types::SelfManageResources,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.target_destination {
         let mut array_2 = object.key("targetDestination").start_array();

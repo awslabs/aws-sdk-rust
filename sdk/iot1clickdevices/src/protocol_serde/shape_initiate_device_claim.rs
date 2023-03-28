@@ -3,90 +3,96 @@
 pub fn de_initiate_device_claim_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::InitiateDeviceClaimOutput,
-    crate::error::InitiateDeviceClaimError,
+    crate::operation::initiate_device_claim::InitiateDeviceClaimOutput,
+    crate::operation::initiate_device_claim::InitiateDeviceClaimError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::InitiateDeviceClaimError::unhandled)?;
+        .map_err(crate::operation::initiate_device_claim::InitiateDeviceClaimError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::InitiateDeviceClaimError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::initiate_device_claim::InitiateDeviceClaimError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalFailureException" => {
-            crate::error::InitiateDeviceClaimError::InternalFailureException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalFailureException" => crate::operation::initiate_device_claim::InitiateDeviceClaimError::InternalFailureException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_failure_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InternalFailureExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InitiateDeviceClaimError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::initiate_device_claim::InitiateDeviceClaimError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidRequestException" => {
-            crate::error::InitiateDeviceClaimError::InvalidRequestException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidRequestException" => crate::operation::initiate_device_claim::InitiateDeviceClaimError::InvalidRequestException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_request_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InitiateDeviceClaimError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::initiate_device_claim::InitiateDeviceClaimError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ResourceConflictException" => {
-            crate::error::InitiateDeviceClaimError::ResourceConflictException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceConflictException" => crate::operation::initiate_device_claim::InitiateDeviceClaimError::ResourceConflictException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_conflict_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ResourceConflictExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_conflict_exception::de_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InitiateDeviceClaimError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_conflict_exception::de_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::initiate_device_claim::InitiateDeviceClaimError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ResourceNotFoundException" => {
-            crate::error::InitiateDeviceClaimError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::initiate_device_claim::InitiateDeviceClaimError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InitiateDeviceClaimError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::initiate_device_claim::InitiateDeviceClaimError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::InitiateDeviceClaimError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::initiate_device_claim::InitiateDeviceClaimError::generic(generic)
     })
 }
 
@@ -94,18 +100,18 @@ pub fn de_initiate_device_claim_http_error(
 pub fn de_initiate_device_claim_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::InitiateDeviceClaimOutput,
-    crate::error::InitiateDeviceClaimError,
+    crate::operation::initiate_device_claim::InitiateDeviceClaimOutput,
+    crate::operation::initiate_device_claim::InitiateDeviceClaimError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::initiate_device_claim_output::Builder::default();
+        let mut output = crate::operation::initiate_device_claim::builders::InitiateDeviceClaimOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_initiate_device_claim::de_initiate_device_claim(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::InitiateDeviceClaimError::unhandled)?;
+        .map_err(crate::operation::initiate_device_claim::InitiateDeviceClaimError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -115,9 +121,9 @@ pub fn de_initiate_device_claim_http_response(
 
 pub(crate) fn de_initiate_device_claim(
     value: &[u8],
-    mut builder: crate::output::initiate_device_claim_output::Builder,
+    mut builder: crate::operation::initiate_device_claim::builders::InitiateDeviceClaimOutputBuilder,
 ) -> Result<
-    crate::output::initiate_device_claim_output::Builder,
+    crate::operation::initiate_device_claim::builders::InitiateDeviceClaimOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

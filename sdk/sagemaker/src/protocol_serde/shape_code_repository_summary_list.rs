@@ -2,7 +2,7 @@
 pub(crate) fn de_code_repository_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CodeRepositorySummary>>,
+    Option<std::vec::Vec<crate::types::CodeRepositorySummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

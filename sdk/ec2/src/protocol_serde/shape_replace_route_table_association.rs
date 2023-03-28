@@ -3,31 +3,28 @@
 pub fn de_replace_route_table_association_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ReplaceRouteTableAssociationOutput,
-    crate::error::ReplaceRouteTableAssociationError,
+    crate::operation::replace_route_table_association::ReplaceRouteTableAssociationOutput,
+    crate::operation::replace_route_table_association::ReplaceRouteTableAssociationError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ReplaceRouteTableAssociationError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::replace_route_table_association::ReplaceRouteTableAssociationError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::ReplaceRouteTableAssociationError::generic(
-        generic,
-    ))
+    Err(crate::operation::replace_route_table_association::ReplaceRouteTableAssociationError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_replace_route_table_association_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ReplaceRouteTableAssociationOutput,
-    crate::error::ReplaceRouteTableAssociationError,
+    crate::operation::replace_route_table_association::ReplaceRouteTableAssociationOutput,
+    crate::operation::replace_route_table_association::ReplaceRouteTableAssociationError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::replace_route_table_association_output::Builder::default();
+        let mut output = crate::operation::replace_route_table_association::builders::ReplaceRouteTableAssociationOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_replace_route_table_association::de_replace_route_table_association(response.body().as_ref(), output).map_err(crate::error::ReplaceRouteTableAssociationError::unhandled)?;
+        output = crate::protocol_serde::shape_replace_route_table_association::de_replace_route_table_association(response.body().as_ref(), output).map_err(crate::operation::replace_route_table_association::ReplaceRouteTableAssociationError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -36,13 +33,7 @@ pub fn de_replace_route_table_association_http_response(
 }
 
 #[allow(unused_mut)]
-pub fn de_replace_route_table_association(
-    inp: &[u8],
-    mut builder: crate::output::replace_route_table_association_output::Builder,
-) -> Result<
-    crate::output::replace_route_table_association_output::Builder,
-    aws_smithy_xml::decode::XmlDecodeError,
-> {
+pub fn de_replace_route_table_association(inp: &[u8], mut builder: crate::operation::replace_route_table_association::builders::ReplaceRouteTableAssociationOutputBuilder) -> Result<crate::operation::replace_route_table_association::builders::ReplaceRouteTableAssociationOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

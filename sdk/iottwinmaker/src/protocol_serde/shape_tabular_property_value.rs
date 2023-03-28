@@ -2,7 +2,7 @@
 pub(crate) fn de_tabular_property_value<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<std::collections::HashMap<std::string::String, crate::model::DataValue>>>,
+    Option<std::vec::Vec<std::collections::HashMap<std::string::String, crate::types::DataValue>>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

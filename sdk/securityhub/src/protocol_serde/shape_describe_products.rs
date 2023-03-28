@@ -2,98 +2,119 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_products_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DescribeProductsOutput, crate::error::DescribeProductsError>
-{
+) -> std::result::Result<
+    crate::operation::describe_products::DescribeProductsOutput,
+    crate::operation::describe_products::DescribeProductsError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeProductsError::unhandled)?;
+        .map_err(crate::operation::describe_products::DescribeProductsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DescribeProductsError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::describe_products::DescribeProductsError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalException" => crate::error::DescribeProductsError::InternalException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "InternalException" => {
+            crate::operation::describe_products::DescribeProductsError::InternalException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_exception::de_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeProductsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InvalidAccessException" => crate::error::DescribeProductsError::InvalidAccessException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InternalExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_exception::de_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_products::DescribeProductsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidAccessException" => {
+            crate::operation::describe_products::DescribeProductsError::InvalidAccessException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_access_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_access_exception::de_invalid_access_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeProductsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InvalidInputException" => crate::error::DescribeProductsError::InvalidInputException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InvalidAccessExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_access_exception::de_invalid_access_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_products::DescribeProductsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidInputException" => {
+            crate::operation::describe_products::DescribeProductsError::InvalidInputException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_input_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_input_exception::de_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeProductsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "LimitExceededException" => crate::error::DescribeProductsError::LimitExceededException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InvalidInputExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_input_exception::de_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_products::DescribeProductsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "LimitExceededException" => {
+            crate::operation::describe_products::DescribeProductsError::LimitExceededException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::limit_exceeded_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeProductsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::DescribeProductsError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::LimitExceededExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_products::DescribeProductsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::describe_products::DescribeProductsError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_products_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DescribeProductsOutput, crate::error::DescribeProductsError>
-{
+) -> std::result::Result<
+    crate::operation::describe_products::DescribeProductsOutput,
+    crate::operation::describe_products::DescribeProductsError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_products_output::Builder::default();
+        let mut output =
+            crate::operation::describe_products::builders::DescribeProductsOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_describe_products::de_describe_products(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DescribeProductsError::unhandled)?;
+        .map_err(crate::operation::describe_products::DescribeProductsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -103,9 +124,9 @@ pub fn de_describe_products_http_response(
 
 pub(crate) fn de_describe_products(
     value: &[u8],
-    mut builder: crate::output::describe_products_output::Builder,
+    mut builder: crate::operation::describe_products::builders::DescribeProductsOutputBuilder,
 ) -> Result<
-    crate::output::describe_products_output::Builder,
+    crate::operation::describe_products::builders::DescribeProductsOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

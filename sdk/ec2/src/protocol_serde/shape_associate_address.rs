@@ -2,30 +2,35 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_associate_address_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::AssociateAddressOutput, crate::error::AssociateAddressError>
-{
+) -> std::result::Result<
+    crate::operation::associate_address::AssociateAddressOutput,
+    crate::operation::associate_address::AssociateAddressError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::AssociateAddressError::unhandled)?;
+        .map_err(crate::operation::associate_address::AssociateAddressError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::AssociateAddressError::generic(generic))
+    Err(crate::operation::associate_address::AssociateAddressError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_associate_address_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::AssociateAddressOutput, crate::error::AssociateAddressError>
-{
+) -> std::result::Result<
+    crate::operation::associate_address::AssociateAddressOutput,
+    crate::operation::associate_address::AssociateAddressError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::associate_address_output::Builder::default();
+        let mut output =
+            crate::operation::associate_address::builders::AssociateAddressOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_associate_address::de_associate_address(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::AssociateAddressError::unhandled)?;
+        .map_err(crate::operation::associate_address::AssociateAddressError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -36,9 +41,11 @@ pub fn de_associate_address_http_response(
 #[allow(unused_mut)]
 pub fn de_associate_address(
     inp: &[u8],
-    mut builder: crate::output::associate_address_output::Builder,
-) -> Result<crate::output::associate_address_output::Builder, aws_smithy_xml::decode::XmlDecodeError>
-{
+    mut builder: crate::operation::associate_address::builders::AssociateAddressOutputBuilder,
+) -> Result<
+    crate::operation::associate_address::builders::AssociateAddressOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

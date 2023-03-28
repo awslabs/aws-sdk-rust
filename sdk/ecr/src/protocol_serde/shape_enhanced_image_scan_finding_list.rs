@@ -2,7 +2,7 @@
 pub(crate) fn de_enhanced_image_scan_finding_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::EnhancedImageScanFinding>>,
+    Option<std::vec::Vec<crate::types::EnhancedImageScanFinding>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,26 +2,33 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_route_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetRouteOutput, crate::error::GetRouteError> {
+) -> std::result::Result<
+    crate::operation::get_route::GetRouteOutput,
+    crate::operation::get_route::GetRouteError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetRouteError::unhandled)?;
+        .map_err(crate::operation::get_route::GetRouteError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::GetRouteError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::get_route::GetRouteError::unhandled(
+                generic,
+            ))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "NotFoundException" => crate::error::GetRouteError::NotFoundException({
+        "NotFoundException" => crate::operation::get_route::GetRouteError::NotFoundException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_exception::Builder::default();
+                let mut output = crate::types::error::builders::NotFoundExceptionBuilder::default();
                 let _ = response;
-                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRouteError::unhandled)?;
+                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_route::GetRouteError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -30,36 +37,42 @@ pub fn de_get_route_http_error(
             }
             tmp
         }),
-        "TooManyRequestsException" => crate::error::GetRouteError::TooManyRequestsException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "TooManyRequestsException" => {
+            crate::operation::get_route::GetRouteError::TooManyRequestsException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::too_many_requests_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRouteError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::GetRouteError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_route::GetRouteError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::get_route::GetRouteError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_route_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetRouteOutput, crate::error::GetRouteError> {
+) -> std::result::Result<
+    crate::operation::get_route::GetRouteOutput,
+    crate::operation::get_route::GetRouteError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_route_output::Builder::default();
+        let mut output = crate::operation::get_route::builders::GetRouteOutputBuilder::default();
         let _ = response;
         output =
             crate::protocol_serde::shape_get_route::de_get_route(response.body().as_ref(), output)
-                .map_err(crate::error::GetRouteError::unhandled)?;
+                .map_err(crate::operation::get_route::GetRouteError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -69,9 +82,9 @@ pub fn de_get_route_http_response(
 
 pub(crate) fn de_get_route(
     value: &[u8],
-    mut builder: crate::output::get_route_output::Builder,
+    mut builder: crate::operation::get_route::builders::GetRouteOutputBuilder,
 ) -> Result<
-    crate::output::get_route_output::Builder,
+    crate::operation::get_route::builders::GetRouteOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =
@@ -110,7 +123,7 @@ pub(crate) fn de_get_route(
                             )?
                             .map(|s| {
                                 s.to_unescaped()
-                                    .map(|u| crate::model::AuthorizationType::from(u.as_ref()))
+                                    .map(|u| crate::types::AuthorizationType::from(u.as_ref()))
                             })
                             .transpose()?,
                         );

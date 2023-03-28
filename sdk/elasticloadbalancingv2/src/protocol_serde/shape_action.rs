@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_action(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::Action,
+    input: &crate::types::Action,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Type");
@@ -56,16 +56,16 @@ pub fn ser_action(
 
 pub fn de_action(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::Action, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::Action, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::Action::builder();
+    let mut builder = crate::types::Action::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Type") /* Type com.amazonaws.elasticloadbalancingv2#Action$Type */ =>  {
                 let var_17 =
                     Some(
-                        Result::<crate::model::ActionTypeEnum, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::ActionTypeEnum::from(
+                        Result::<crate::types::ActionTypeEnum, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::ActionTypeEnum::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

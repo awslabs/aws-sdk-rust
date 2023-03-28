@@ -2,7 +2,7 @@
 pub(crate) fn de_job_execution_summary_for_thing_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::JobExecutionSummaryForThing>>,
+    Option<std::vec::Vec<crate::types::JobExecutionSummaryForThing>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

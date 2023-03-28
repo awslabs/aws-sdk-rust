@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_field_level_encryption_profile_size_exceeded_xml_err(
     inp: &[u8],
-    mut builder: crate::error::field_level_encryption_profile_size_exceeded::Builder,
+    mut builder: crate::types::error::builders::FieldLevelEncryptionProfileSizeExceededBuilder,
 ) -> Result<
-    crate::error::field_level_encryption_profile_size_exceeded::Builder,
+    crate::types::error::builders::FieldLevelEncryptionProfileSizeExceededBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

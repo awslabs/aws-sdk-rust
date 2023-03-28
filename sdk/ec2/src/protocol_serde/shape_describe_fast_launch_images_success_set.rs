@@ -2,7 +2,7 @@
 pub fn de_describe_fast_launch_images_success_set(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::DescribeFastLaunchImagesSuccessItem>,
+    std::vec::Vec<crate::types::DescribeFastLaunchImagesSuccessItem>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

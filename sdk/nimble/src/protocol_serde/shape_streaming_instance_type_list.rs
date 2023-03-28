@@ -2,7 +2,7 @@
 pub(crate) fn de_streaming_instance_type_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::StreamingInstanceType>>,
+    Option<std::vec::Vec<crate::types::StreamingInstanceType>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -29,7 +29,7 @@ where
                         )?
                         .map(|s| {
                             s.to_unescaped()
-                                .map(|u| crate::model::StreamingInstanceType::from(u.as_ref()))
+                                .map(|u| crate::types::StreamingInstanceType::from(u.as_ref()))
                         })
                         .transpose()?;
                         if let Some(value) = value {

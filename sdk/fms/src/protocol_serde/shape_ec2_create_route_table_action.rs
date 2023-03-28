@@ -2,7 +2,7 @@
 pub(crate) fn de_ec2_create_route_table_action<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::Ec2CreateRouteTableAction>,
+    Option<crate::types::Ec2CreateRouteTableAction>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::ec2_create_route_table_action::Builder::default();
+            let mut builder = crate::types::builders::Ec2CreateRouteTableActionBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

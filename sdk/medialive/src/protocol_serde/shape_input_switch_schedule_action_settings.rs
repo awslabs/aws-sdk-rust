@@ -2,7 +2,7 @@
 pub(crate) fn de_input_switch_schedule_action_settings<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::InputSwitchScheduleActionSettings>,
+    Option<crate::types::InputSwitchScheduleActionSettings>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::input_switch_schedule_action_settings::Builder::default();
+                crate::types::builders::InputSwitchScheduleActionSettingsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -68,7 +68,7 @@ where
 
 pub fn ser_input_switch_schedule_action_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::InputSwitchScheduleActionSettings,
+    input: &crate::types::InputSwitchScheduleActionSettings,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.input_attachment_name_reference {
         object

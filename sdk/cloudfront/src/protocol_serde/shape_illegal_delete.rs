@@ -2,8 +2,11 @@
 #[allow(unused_mut)]
 pub fn de_illegal_delete_xml_err(
     inp: &[u8],
-    mut builder: crate::error::illegal_delete::Builder,
-) -> Result<crate::error::illegal_delete::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    mut builder: crate::types::error::builders::IllegalDeleteBuilder,
+) -> Result<
+    crate::types::error::builders::IllegalDeleteBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     if inp.is_empty() {
         return Ok(builder);
     }

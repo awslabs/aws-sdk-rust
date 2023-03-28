@@ -2,7 +2,7 @@
 pub(crate) fn de_job_worker_executor_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::JobWorkerExecutorConfiguration>,
+    Option<crate::types::JobWorkerExecutorConfiguration>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::job_worker_executor_configuration::Builder::default();
+            let mut builder =
+                crate::types::builders::JobWorkerExecutorConfigurationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -58,7 +59,7 @@ where
 
 pub fn ser_job_worker_executor_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::JobWorkerExecutorConfiguration,
+    input: &crate::types::JobWorkerExecutorConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.polling_accounts {
         let mut array_2 = object.key("pollingAccounts").start_array();

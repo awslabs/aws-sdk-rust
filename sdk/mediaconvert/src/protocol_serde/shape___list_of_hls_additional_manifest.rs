@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_hls_additional_manifest<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::HlsAdditionalManifest>>,
+    Option<std::vec::Vec<crate::types::HlsAdditionalManifest>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

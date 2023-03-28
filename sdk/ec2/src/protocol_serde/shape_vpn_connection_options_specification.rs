@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_vpn_connection_options_specification(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::VpnConnectionOptionsSpecification,
+    input: &crate::types::VpnConnectionOptionsSpecification,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("EnableAcceleration");

@@ -3,94 +3,91 @@
 pub fn de_list_vpc_endpoints_for_domain_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListVpcEndpointsForDomainOutput,
-    crate::error::ListVpcEndpointsForDomainError,
+    crate::operation::list_vpc_endpoints_for_domain::ListVpcEndpointsForDomainOutput,
+    crate::operation::list_vpc_endpoints_for_domain::ListVpcEndpointsForDomainError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListVpcEndpointsForDomainError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::list_vpc_endpoints_for_domain::ListVpcEndpointsForDomainError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::ListVpcEndpointsForDomainError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::list_vpc_endpoints_for_domain::ListVpcEndpointsForDomainError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BaseException" => crate::error::ListVpcEndpointsForDomainError::BaseException({
+        "BaseException" => crate::operation::list_vpc_endpoints_for_domain::ListVpcEndpointsForDomainError::BaseException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::base_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_base_exception::de_base_exception_json_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::ListVpcEndpointsForDomainError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "DisabledOperationException" => {
-            crate::error::ListVpcEndpointsForDomainError::DisabledOperationException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::disabled_operation_exception::Builder::default();
+                    let mut output = crate::types::error::builders::BaseExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_disabled_operation_exception::de_disabled_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListVpcEndpointsForDomainError::unhandled)?;
+                    output = crate::protocol_serde::shape_base_exception::de_base_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_vpc_endpoints_for_domain::ListVpcEndpointsForDomainError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InternalException" => crate::error::ListVpcEndpointsForDomainError::InternalException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_exception::de_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListVpcEndpointsForDomainError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "ResourceNotFoundException" => {
-            crate::error::ListVpcEndpointsForDomainError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "DisabledOperationException" => crate::operation::list_vpc_endpoints_for_domain::ListVpcEndpointsForDomainError::DisabledOperationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::DisabledOperationExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListVpcEndpointsForDomainError::unhandled)?;
+                    output = crate::protocol_serde::shape_disabled_operation_exception::de_disabled_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_vpc_endpoints_for_domain::ListVpcEndpointsForDomainError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::ListVpcEndpointsForDomainError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InternalException" => crate::operation::list_vpc_endpoints_for_domain::ListVpcEndpointsForDomainError::InternalException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InternalExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_exception::de_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_vpc_endpoints_for_domain::ListVpcEndpointsForDomainError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::list_vpc_endpoints_for_domain::ListVpcEndpointsForDomainError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_vpc_endpoints_for_domain::ListVpcEndpointsForDomainError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::list_vpc_endpoints_for_domain::ListVpcEndpointsForDomainError::generic(generic)
     })
 }
 
@@ -98,14 +95,14 @@ pub fn de_list_vpc_endpoints_for_domain_http_error(
 pub fn de_list_vpc_endpoints_for_domain_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListVpcEndpointsForDomainOutput,
-    crate::error::ListVpcEndpointsForDomainError,
+    crate::operation::list_vpc_endpoints_for_domain::ListVpcEndpointsForDomainOutput,
+    crate::operation::list_vpc_endpoints_for_domain::ListVpcEndpointsForDomainError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_vpc_endpoints_for_domain_output::Builder::default();
+        let mut output = crate::operation::list_vpc_endpoints_for_domain::builders::ListVpcEndpointsForDomainOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_list_vpc_endpoints_for_domain::de_list_vpc_endpoints_for_domain(response.body().as_ref(), output).map_err(crate::error::ListVpcEndpointsForDomainError::unhandled)?;
+        output = crate::protocol_serde::shape_list_vpc_endpoints_for_domain::de_list_vpc_endpoints_for_domain(response.body().as_ref(), output).map_err(crate::operation::list_vpc_endpoints_for_domain::ListVpcEndpointsForDomainError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -113,13 +110,7 @@ pub fn de_list_vpc_endpoints_for_domain_http_response(
     })
 }
 
-pub(crate) fn de_list_vpc_endpoints_for_domain(
-    value: &[u8],
-    mut builder: crate::output::list_vpc_endpoints_for_domain_output::Builder,
-) -> Result<
-    crate::output::list_vpc_endpoints_for_domain_output::Builder,
-    aws_smithy_json::deserialize::error::DeserializeError,
-> {
+pub(crate) fn de_list_vpc_endpoints_for_domain(value: &[u8], mut builder: crate::operation::list_vpc_endpoints_for_domain::builders::ListVpcEndpointsForDomainOutputBuilder) -> Result<crate::operation::list_vpc_endpoints_for_domain::builders::ListVpcEndpointsForDomainOutputBuilder, aws_smithy_json::deserialize::error::DeserializeError>{
     let mut tokens_owned =
         aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
             .peekable();

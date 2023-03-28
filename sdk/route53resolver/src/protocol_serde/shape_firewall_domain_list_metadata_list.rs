@@ -2,7 +2,7 @@
 pub(crate) fn de_firewall_domain_list_metadata_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::FirewallDomainListMetadata>>,
+    Option<std::vec::Vec<crate::types::FirewallDomainListMetadata>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

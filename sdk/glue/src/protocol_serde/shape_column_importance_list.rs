@@ -2,7 +2,7 @@
 pub(crate) fn de_column_importance_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ColumnImportance>>,
+    Option<std::vec::Vec<crate::types::ColumnImportance>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

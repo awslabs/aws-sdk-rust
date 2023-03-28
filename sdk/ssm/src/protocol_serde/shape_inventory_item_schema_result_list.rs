@@ -2,7 +2,7 @@
 pub(crate) fn de_inventory_item_schema_result_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::InventoryItemSchema>>,
+    Option<std::vec::Vec<crate::types::InventoryItemSchema>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

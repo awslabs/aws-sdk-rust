@@ -2,7 +2,7 @@
 pub(crate) fn de_app_instance_user_endpoint_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AppInstanceUserEndpointSummary>>,
+    Option<std::vec::Vec<crate::types::AppInstanceUserEndpointSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

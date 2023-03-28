@@ -3,97 +3,89 @@
 pub fn de_get_backup_vault_notifications_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetBackupVaultNotificationsOutput,
-    crate::error::GetBackupVaultNotificationsError,
+    crate::operation::get_backup_vault_notifications::GetBackupVaultNotificationsOutput,
+    crate::operation::get_backup_vault_notifications::GetBackupVaultNotificationsError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetBackupVaultNotificationsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::get_backup_vault_notifications::GetBackupVaultNotificationsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::GetBackupVaultNotificationsError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::get_backup_vault_notifications::GetBackupVaultNotificationsError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => {
-            crate::error::GetBackupVaultNotificationsError::InvalidParameterValueException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidParameterValueException" => crate::operation::get_backup_vault_notifications::GetBackupVaultNotificationsError::InvalidParameterValueException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_parameter_value_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetBackupVaultNotificationsError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_backup_vault_notifications::GetBackupVaultNotificationsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "MissingParameterValueException" => {
-            crate::error::GetBackupVaultNotificationsError::MissingParameterValueException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "MissingParameterValueException" => crate::operation::get_backup_vault_notifications::GetBackupVaultNotificationsError::MissingParameterValueException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::missing_parameter_value_exception::Builder::default();
+                    let mut output = crate::types::error::builders::MissingParameterValueExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_missing_parameter_value_exception::de_missing_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetBackupVaultNotificationsError::unhandled)?;
+                    output = crate::protocol_serde::shape_missing_parameter_value_exception::de_missing_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_backup_vault_notifications::GetBackupVaultNotificationsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ResourceNotFoundException" => {
-            crate::error::GetBackupVaultNotificationsError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::get_backup_vault_notifications::GetBackupVaultNotificationsError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetBackupVaultNotificationsError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_backup_vault_notifications::GetBackupVaultNotificationsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ServiceUnavailableException" => {
-            crate::error::GetBackupVaultNotificationsError::ServiceUnavailableException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ServiceUnavailableException" => crate::operation::get_backup_vault_notifications::GetBackupVaultNotificationsError::ServiceUnavailableException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::service_unavailable_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetBackupVaultNotificationsError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_backup_vault_notifications::GetBackupVaultNotificationsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::GetBackupVaultNotificationsError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::get_backup_vault_notifications::GetBackupVaultNotificationsError::generic(generic)
     })
 }
 
@@ -101,14 +93,14 @@ pub fn de_get_backup_vault_notifications_http_error(
 pub fn de_get_backup_vault_notifications_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetBackupVaultNotificationsOutput,
-    crate::error::GetBackupVaultNotificationsError,
+    crate::operation::get_backup_vault_notifications::GetBackupVaultNotificationsOutput,
+    crate::operation::get_backup_vault_notifications::GetBackupVaultNotificationsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_backup_vault_notifications_output::Builder::default();
+        let mut output = crate::operation::get_backup_vault_notifications::builders::GetBackupVaultNotificationsOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_get_backup_vault_notifications::de_get_backup_vault_notifications(response.body().as_ref(), output).map_err(crate::error::GetBackupVaultNotificationsError::unhandled)?;
+        output = crate::protocol_serde::shape_get_backup_vault_notifications::de_get_backup_vault_notifications(response.body().as_ref(), output).map_err(crate::operation::get_backup_vault_notifications::GetBackupVaultNotificationsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -116,13 +108,7 @@ pub fn de_get_backup_vault_notifications_http_response(
     })
 }
 
-pub(crate) fn de_get_backup_vault_notifications(
-    value: &[u8],
-    mut builder: crate::output::get_backup_vault_notifications_output::Builder,
-) -> Result<
-    crate::output::get_backup_vault_notifications_output::Builder,
-    aws_smithy_json::deserialize::error::DeserializeError,
-> {
+pub(crate) fn de_get_backup_vault_notifications(value: &[u8], mut builder: crate::operation::get_backup_vault_notifications::builders::GetBackupVaultNotificationsOutputBuilder) -> Result<crate::operation::get_backup_vault_notifications::builders::GetBackupVaultNotificationsOutputBuilder, aws_smithy_json::deserialize::error::DeserializeError>{
     let mut tokens_owned =
         aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
             .peekable();

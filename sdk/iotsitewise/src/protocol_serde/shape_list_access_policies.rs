@@ -3,71 +3,77 @@
 pub fn de_list_access_policies_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListAccessPoliciesOutput,
-    crate::error::ListAccessPoliciesError,
+    crate::operation::list_access_policies::ListAccessPoliciesOutput,
+    crate::operation::list_access_policies::ListAccessPoliciesError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListAccessPoliciesError::unhandled)?;
+        .map_err(crate::operation::list_access_policies::ListAccessPoliciesError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListAccessPoliciesError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::list_access_policies::ListAccessPoliciesError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalFailureException" => {
-            crate::error::ListAccessPoliciesError::InternalFailureException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::internal_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAccessPoliciesError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InvalidRequestException" => {
-            crate::error::ListAccessPoliciesError::InvalidRequestException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_request_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAccessPoliciesError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ThrottlingException" => crate::error::ListAccessPoliciesError::ThrottlingException({
+        "InternalFailureException" => crate::operation::list_access_policies::ListAccessPoliciesError::InternalFailureException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::throttling_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAccessPoliciesError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InternalFailureExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_access_policies::ListAccessPoliciesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::ListAccessPoliciesError::generic(generic),
+        "InvalidRequestException" => crate::operation::list_access_policies::ListAccessPoliciesError::InvalidRequestException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidRequestExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_access_policies::ListAccessPoliciesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ThrottlingException" => crate::operation::list_access_policies::ListAccessPoliciesError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_access_policies::ListAccessPoliciesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::list_access_policies::ListAccessPoliciesError::generic(generic)
     })
 }
 
@@ -75,18 +81,18 @@ pub fn de_list_access_policies_http_error(
 pub fn de_list_access_policies_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListAccessPoliciesOutput,
-    crate::error::ListAccessPoliciesError,
+    crate::operation::list_access_policies::ListAccessPoliciesOutput,
+    crate::operation::list_access_policies::ListAccessPoliciesError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_access_policies_output::Builder::default();
+        let mut output = crate::operation::list_access_policies::builders::ListAccessPoliciesOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_access_policies::de_list_access_policies(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListAccessPoliciesError::unhandled)?;
+        .map_err(crate::operation::list_access_policies::ListAccessPoliciesError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -96,9 +102,9 @@ pub fn de_list_access_policies_http_response(
 
 pub(crate) fn de_list_access_policies(
     value: &[u8],
-    mut builder: crate::output::list_access_policies_output::Builder,
+    mut builder: crate::operation::list_access_policies::builders::ListAccessPoliciesOutputBuilder,
 ) -> Result<
-    crate::output::list_access_policies_output::Builder,
+    crate::operation::list_access_policies::builders::ListAccessPoliciesOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

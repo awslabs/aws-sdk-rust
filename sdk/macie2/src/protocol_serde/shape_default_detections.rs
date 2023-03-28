@@ -2,7 +2,7 @@
 pub(crate) fn de_default_detections<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DefaultDetection>>,
+    Option<std::vec::Vec<crate::types::DefaultDetection>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

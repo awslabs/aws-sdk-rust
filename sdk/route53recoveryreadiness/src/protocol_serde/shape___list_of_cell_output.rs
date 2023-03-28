@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_cell_output<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CellOutput>>,
+    Option<std::vec::Vec<crate::types::CellOutput>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

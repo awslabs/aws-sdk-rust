@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_target_tracking_metric_stat(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::TargetTrackingMetricStat,
+    input: &crate::types::TargetTrackingMetricStat,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Metric");
@@ -24,9 +24,9 @@ pub fn ser_target_tracking_metric_stat(
 
 pub fn de_target_tracking_metric_stat(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::TargetTrackingMetricStat, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::TargetTrackingMetricStat, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::TargetTrackingMetricStat::builder();
+    let mut builder = crate::types::TargetTrackingMetricStat::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Metric") /* Metric com.amazonaws.autoscaling#TargetTrackingMetricStat$Metric */ =>  {

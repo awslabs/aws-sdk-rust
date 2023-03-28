@@ -2,7 +2,7 @@
 pub(crate) fn de_effective_recommendation_preferences<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::EffectiveRecommendationPreferences>,
+    Option<crate::types::EffectiveRecommendationPreferences>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::effective_recommendation_preferences::Builder::default();
+                crate::types::builders::EffectiveRecommendationPreferencesBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -36,7 +36,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::EnhancedInfrastructureMetrics::from(
+                                            crate::types::EnhancedInfrastructureMetrics::from(
                                                 u.as_ref(),
                                             )
                                         })
@@ -51,7 +51,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::InferredWorkloadTypesPreference::from(
+                                            crate::types::InferredWorkloadTypesPreference::from(
                                                 u.as_ref(),
                                             )
                                         })

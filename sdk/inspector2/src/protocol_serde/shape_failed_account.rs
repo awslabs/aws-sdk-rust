@@ -2,7 +2,7 @@
 pub(crate) fn de_failed_account<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::FailedAccount>,
+    Option<crate::types::FailedAccount>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::failed_account::Builder::default();
+            let mut builder = crate::types::builders::FailedAccountBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -39,7 +39,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::Status::from(u.as_ref()))
+                                            .map(|u| crate::types::Status::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -56,7 +56,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::ErrorCode::from(u.as_ref()))
+                                            .map(|u| crate::types::ErrorCode::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

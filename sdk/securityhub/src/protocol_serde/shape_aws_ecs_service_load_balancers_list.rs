@@ -2,7 +2,7 @@
 pub(crate) fn de_aws_ecs_service_load_balancers_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AwsEcsServiceLoadBalancersDetails>>,
+    Option<std::vec::Vec<crate::types::AwsEcsServiceLoadBalancersDetails>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

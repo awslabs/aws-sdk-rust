@@ -2,42 +2,53 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_component_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::CreateComponentOutput, crate::error::CreateComponentError> {
+) -> std::result::Result<
+    crate::operation::create_component::CreateComponentOutput,
+    crate::operation::create_component::CreateComponentError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::CreateComponentError::unhandled)?;
+        .map_err(crate::operation::create_component::CreateComponentError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::CreateComponentError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::create_component::CreateComponentError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerException" => crate::error::CreateComponentError::InternalServerException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateComponentError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InvalidParameterException" => {
-            crate::error::CreateComponentError::InvalidParameterException({
+        "InternalServerException" => {
+            crate::operation::create_component::CreateComponentError::InternalServerException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::InternalServerExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateComponentError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_component::CreateComponentError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidParameterException" => {
+            crate::operation::create_component::CreateComponentError::InvalidParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InvalidParameterExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_component::CreateComponentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -48,13 +59,14 @@ pub fn de_create_component_http_error(
             })
         }
         "ResourceConflictException" => {
-            crate::error::CreateComponentError::ResourceConflictException({
+            crate::operation::create_component::CreateComponentError::ResourceConflictException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_conflict_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::ResourceConflictExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_conflict_exception::de_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateComponentError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_conflict_exception::de_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_component::CreateComponentError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -65,34 +77,39 @@ pub fn de_create_component_http_error(
             })
         }
         "ServiceQuotaExceededException" => {
-            crate::error::CreateComponentError::ServiceQuotaExceededException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            crate::operation::create_component::CreateComponentError::ServiceQuotaExceededException(
+                {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::service_quota_exceeded_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateComponentError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::default();
+                        let _ = response;
+                        output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::create_component::CreateComponentError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
         }
-        _ => crate::error::CreateComponentError::generic(generic),
+        _ => crate::operation::create_component::CreateComponentError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_component_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::CreateComponentOutput, crate::error::CreateComponentError> {
+) -> std::result::Result<
+    crate::operation::create_component::CreateComponentOutput,
+    crate::operation::create_component::CreateComponentError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::create_component_output::Builder::default();
+        let mut output =
+            crate::operation::create_component::builders::CreateComponentOutputBuilder::default();
         let _ = response;
         output = output.set_entity(
             crate::protocol_serde::shape_create_component_output::de_entity_payload(

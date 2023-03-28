@@ -2,7 +2,7 @@
 pub(crate) fn de_topic_rule_destination<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::TopicRuleDestination>,
+    Option<crate::types::TopicRuleDestination>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::topic_rule_destination::Builder::default();
+            let mut builder = crate::types::builders::TopicRuleDestinationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -39,7 +39,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::TopicRuleDestinationStatus::from(
+                                            crate::types::TopicRuleDestinationStatus::from(
                                                 u.as_ref(),
                                             )
                                         })

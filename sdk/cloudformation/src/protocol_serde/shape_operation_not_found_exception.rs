@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_operation_not_found_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::operation_not_found_exception::Builder,
+    mut builder: crate::types::error::builders::OperationNotFoundExceptionBuilder,
 ) -> Result<
-    crate::error::operation_not_found_exception::Builder,
+    crate::types::error::builders::OperationNotFoundExceptionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

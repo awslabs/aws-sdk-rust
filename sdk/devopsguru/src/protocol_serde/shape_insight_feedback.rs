@@ -2,7 +2,7 @@
 pub(crate) fn de_insight_feedback<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::InsightFeedback>,
+    Option<crate::types::InsightFeedback>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::insight_feedback::Builder::default();
+            let mut builder = crate::types::builders::InsightFeedbackBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -39,7 +39,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::InsightFeedbackOption::from(u.as_ref())
+                                            crate::types::InsightFeedbackOption::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -70,7 +70,7 @@ where
 
 pub fn ser_insight_feedback(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::InsightFeedback,
+    input: &crate::types::InsightFeedback,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.id {
         object.key("Id").string(var_1.as_str());

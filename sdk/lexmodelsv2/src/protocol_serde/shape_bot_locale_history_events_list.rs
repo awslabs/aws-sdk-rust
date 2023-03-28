@@ -2,7 +2,7 @@
 pub(crate) fn de_bot_locale_history_events_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::BotLocaleHistoryEvent>>,
+    Option<std::vec::Vec<crate::types::BotLocaleHistoryEvent>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

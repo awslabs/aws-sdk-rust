@@ -2,8 +2,11 @@
 #[allow(unused_mut)]
 pub fn de_incompatible_version_xml_err(
     inp: &[u8],
-    mut builder: crate::error::incompatible_version::Builder,
-) -> Result<crate::error::incompatible_version::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    mut builder: crate::types::error::builders::IncompatibleVersionBuilder,
+) -> Result<
+    crate::types::error::builders::IncompatibleVersionBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     if inp.is_empty() {
         return Ok(builder);
     }

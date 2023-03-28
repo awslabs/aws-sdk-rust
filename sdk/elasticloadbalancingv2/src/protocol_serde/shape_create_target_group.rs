@@ -2,107 +2,114 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_target_group_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::CreateTargetGroupOutput, crate::error::CreateTargetGroupError>
-{
+) -> std::result::Result<
+    crate::operation::create_target_group::CreateTargetGroupOutput,
+    crate::operation::create_target_group::CreateTargetGroupError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::CreateTargetGroupError::unhandled)?;
+        .map_err(crate::operation::create_target_group::CreateTargetGroupError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::CreateTargetGroupError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::create_target_group::CreateTargetGroupError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DuplicateTargetGroupName" => {
-            crate::error::CreateTargetGroupError::DuplicateTargetGroupNameException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::duplicate_target_group_name_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_duplicate_target_group_name_exception::de_duplicate_target_group_name_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateTargetGroupError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InvalidConfigurationRequest" => {
-            crate::error::CreateTargetGroupError::InvalidConfigurationRequestException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_configuration_request_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_configuration_request_exception::de_invalid_configuration_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateTargetGroupError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "TooManyTags" => crate::error::CreateTargetGroupError::TooManyTagsException({
+        "DuplicateTargetGroupName" => crate::operation::create_target_group::CreateTargetGroupError::DuplicateTargetGroupNameException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::too_many_tags_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_too_many_tags_exception::de_too_many_tags_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateTargetGroupError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::DuplicateTargetGroupNameExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_duplicate_target_group_name_exception::de_duplicate_target_group_name_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_target_group::CreateTargetGroupError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "TooManyTargetGroups" => {
-            crate::error::CreateTargetGroupError::TooManyTargetGroupsException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidConfigurationRequest" => crate::operation::create_target_group::CreateTargetGroupError::InvalidConfigurationRequestException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::too_many_target_groups_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidConfigurationRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_target_groups_exception::de_too_many_target_groups_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateTargetGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_configuration_request_exception::de_invalid_configuration_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_target_group::CreateTargetGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::CreateTargetGroupError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TooManyTags" => crate::operation::create_target_group::CreateTargetGroupError::TooManyTagsException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::TooManyTagsExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_too_many_tags_exception::de_too_many_tags_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_target_group::CreateTargetGroupError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TooManyTargetGroups" => crate::operation::create_target_group::CreateTargetGroupError::TooManyTargetGroupsException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::TooManyTargetGroupsExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_too_many_target_groups_exception::de_too_many_target_groups_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_target_group::CreateTargetGroupError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::create_target_group::CreateTargetGroupError::generic(generic)
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_target_group_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::CreateTargetGroupOutput, crate::error::CreateTargetGroupError>
-{
+) -> std::result::Result<
+    crate::operation::create_target_group::CreateTargetGroupOutput,
+    crate::operation::create_target_group::CreateTargetGroupError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::create_target_group_output::Builder::default();
+        let mut output = crate::operation::create_target_group::builders::CreateTargetGroupOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_create_target_group::de_create_target_group(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::CreateTargetGroupError::unhandled)?;
+        .map_err(crate::operation::create_target_group::CreateTargetGroupError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -113,9 +120,9 @@ pub fn de_create_target_group_http_response(
 #[allow(unused_mut)]
 pub fn de_create_target_group(
     inp: &[u8],
-    mut builder: crate::output::create_target_group_output::Builder,
+    mut builder: crate::operation::create_target_group::builders::CreateTargetGroupOutputBuilder,
 ) -> Result<
-    crate::output::create_target_group_output::Builder,
+    crate::operation::create_target_group::builders::CreateTargetGroupOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

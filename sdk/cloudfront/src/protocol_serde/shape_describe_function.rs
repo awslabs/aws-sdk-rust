@@ -2,69 +2,84 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_function_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DescribeFunctionOutput, crate::error::DescribeFunctionError>
-{
+) -> std::result::Result<
+    crate::operation::describe_function::DescribeFunctionOutput,
+    crate::operation::describe_function::DescribeFunctionError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeFunctionError::unhandled)?;
+        .map_err(crate::operation::describe_function::DescribeFunctionError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DescribeFunctionError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::describe_function::DescribeFunctionError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "NoSuchFunctionExists" => crate::error::DescribeFunctionError::NoSuchFunctionExists({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "NoSuchFunctionExists" => {
+            crate::operation::describe_function::DescribeFunctionError::NoSuchFunctionExists({
                 #[allow(unused_mut)]
-                let mut output = crate::error::no_such_function_exists::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_no_such_function_exists::de_no_such_function_exists_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeFunctionError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "UnsupportedOperation" => crate::error::DescribeFunctionError::UnsupportedOperation({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::NoSuchFunctionExistsBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_no_such_function_exists::de_no_such_function_exists_xml_err(response.body().as_ref(), output).map_err(crate::operation::describe_function::DescribeFunctionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "UnsupportedOperation" => {
+            crate::operation::describe_function::DescribeFunctionError::UnsupportedOperation({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unsupported_operation::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_unsupported_operation::de_unsupported_operation_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeFunctionError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::DescribeFunctionError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::UnsupportedOperationBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_unsupported_operation::de_unsupported_operation_xml_err(response.body().as_ref(), output).map_err(crate::operation::describe_function::DescribeFunctionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::describe_function::DescribeFunctionError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_function_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DescribeFunctionOutput, crate::error::DescribeFunctionError>
-{
+) -> std::result::Result<
+    crate::operation::describe_function::DescribeFunctionOutput,
+    crate::operation::describe_function::DescribeFunctionError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_function_output::Builder::default();
+        let mut output =
+            crate::operation::describe_function::builders::DescribeFunctionOutputBuilder::default();
         let _ = response;
         output = output.set_e_tag(
             crate::protocol_serde::shape_describe_function_output::de_e_tag_header(
                 response.headers(),
             )
             .map_err(|_| {
-                crate::error::DescribeFunctionError::unhandled(
+                crate::operation::describe_function::DescribeFunctionError::unhandled(
                     "Failed to parse ETag from header `ETag",
                 )
             })?,

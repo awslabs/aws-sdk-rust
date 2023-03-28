@@ -2,7 +2,7 @@
 pub(crate) fn de_import_file_task_information<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ImportFileTaskInformation>,
+    Option<crate::types::ImportFileTaskInformation>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::import_file_task_information::Builder::default();
+            let mut builder = crate::types::builders::ImportFileTaskInformationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -39,7 +39,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ImportFileTaskStatus::from(u.as_ref())
+                                            crate::types::ImportFileTaskStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

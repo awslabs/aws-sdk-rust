@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_no_such_traffic_policy_instance_xml_err(
     inp: &[u8],
-    mut builder: crate::error::no_such_traffic_policy_instance::Builder,
+    mut builder: crate::types::error::builders::NoSuchTrafficPolicyInstanceBuilder,
 ) -> Result<
-    crate::error::no_such_traffic_policy_instance::Builder,
+    crate::types::error::builders::NoSuchTrafficPolicyInstanceBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

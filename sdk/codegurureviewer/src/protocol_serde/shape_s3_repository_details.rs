@@ -2,7 +2,7 @@
 pub(crate) fn de_s3_repository_details<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::S3RepositoryDetails>,
+    Option<crate::types::S3RepositoryDetails>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::s3_repository_details::Builder::default();
+            let mut builder = crate::types::builders::S3RepositoryDetailsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -64,7 +64,7 @@ where
 
 pub fn ser_s3_repository_details(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::S3RepositoryDetails,
+    input: &crate::types::S3RepositoryDetails,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.bucket_name {
         object.key("BucketName").string(var_1.as_str());

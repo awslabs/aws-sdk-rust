@@ -2,7 +2,7 @@
 pub(crate) fn de_repository_sync_events<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::RepositorySyncEvent>>,
+    Option<std::vec::Vec<crate::types::RepositorySyncEvent>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

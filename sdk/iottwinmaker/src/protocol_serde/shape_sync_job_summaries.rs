@@ -2,7 +2,7 @@
 pub(crate) fn de_sync_job_summaries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SyncJobSummary>>,
+    Option<std::vec::Vec<crate::types::SyncJobSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

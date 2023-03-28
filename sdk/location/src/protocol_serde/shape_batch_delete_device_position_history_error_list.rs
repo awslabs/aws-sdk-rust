@@ -2,7 +2,7 @@
 pub(crate) fn de_batch_delete_device_position_history_error_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::BatchDeleteDevicePositionHistoryError>>,
+    Option<std::vec::Vec<crate::types::BatchDeleteDevicePositionHistoryError>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

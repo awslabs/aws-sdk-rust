@@ -3,129 +3,123 @@
 pub fn de_describe_storage_configuration_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeStorageConfigurationOutput,
-    crate::error::DescribeStorageConfigurationError,
+    crate::operation::describe_storage_configuration::DescribeStorageConfigurationOutput,
+    crate::operation::describe_storage_configuration::DescribeStorageConfigurationError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeStorageConfigurationError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::DescribeStorageConfigurationError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConflictingOperationException" => {
-            crate::error::DescribeStorageConfigurationError::ConflictingOperationException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "ConflictingOperationException" => crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::ConflictingOperationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::conflicting_operation_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ConflictingOperationExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_conflicting_operation_exception::de_conflicting_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeStorageConfigurationError::unhandled)?;
+                    output = crate::protocol_serde::shape_conflicting_operation_exception::de_conflicting_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InternalFailureException" => {
-            crate::error::DescribeStorageConfigurationError::InternalFailureException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InternalFailureException" => crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::InternalFailureException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_failure_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InternalFailureExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeStorageConfigurationError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidRequestException" => {
-            crate::error::DescribeStorageConfigurationError::InvalidRequestException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidRequestException" => crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::InvalidRequestException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_request_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeStorageConfigurationError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "LimitExceededException" => {
-            crate::error::DescribeStorageConfigurationError::LimitExceededException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "LimitExceededException" => crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::LimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeStorageConfigurationError::unhandled)?;
+                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ResourceNotFoundException" => {
-            crate::error::DescribeStorageConfigurationError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeStorageConfigurationError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ThrottlingException" => {
-            crate::error::DescribeStorageConfigurationError::ThrottlingException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ThrottlingException" => crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeStorageConfigurationError::unhandled)?;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DescribeStorageConfigurationError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::generic(generic)
     })
 }
 
@@ -133,14 +127,14 @@ pub fn de_describe_storage_configuration_http_error(
 pub fn de_describe_storage_configuration_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeStorageConfigurationOutput,
-    crate::error::DescribeStorageConfigurationError,
+    crate::operation::describe_storage_configuration::DescribeStorageConfigurationOutput,
+    crate::operation::describe_storage_configuration::DescribeStorageConfigurationError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_storage_configuration_output::Builder::default();
+        let mut output = crate::operation::describe_storage_configuration::builders::DescribeStorageConfigurationOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_describe_storage_configuration::de_describe_storage_configuration(response.body().as_ref(), output).map_err(crate::error::DescribeStorageConfigurationError::unhandled)?;
+        output = crate::protocol_serde::shape_describe_storage_configuration::de_describe_storage_configuration(response.body().as_ref(), output).map_err(crate::operation::describe_storage_configuration::DescribeStorageConfigurationError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -148,13 +142,7 @@ pub fn de_describe_storage_configuration_http_response(
     })
 }
 
-pub(crate) fn de_describe_storage_configuration(
-    value: &[u8],
-    mut builder: crate::output::describe_storage_configuration_output::Builder,
-) -> Result<
-    crate::output::describe_storage_configuration_output::Builder,
-    aws_smithy_json::deserialize::error::DeserializeError,
-> {
+pub(crate) fn de_describe_storage_configuration(value: &[u8], mut builder: crate::operation::describe_storage_configuration::builders::DescribeStorageConfigurationOutputBuilder) -> Result<crate::operation::describe_storage_configuration::builders::DescribeStorageConfigurationOutputBuilder, aws_smithy_json::deserialize::error::DeserializeError>{
     let mut tokens_owned =
         aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
             .peekable();
@@ -177,7 +165,7 @@ pub(crate) fn de_describe_storage_configuration(
                             )?
                             .map(|s| {
                                 s.to_unescaped().map(|u| {
-                                    crate::model::DisassociatedDataStorageState::from(u.as_ref())
+                                    crate::types::DisassociatedDataStorageState::from(u.as_ref())
                                 })
                             })
                             .transpose()?,
@@ -210,7 +198,7 @@ pub(crate) fn de_describe_storage_configuration(
                             )?
                             .map(|s| {
                                 s.to_unescaped()
-                                    .map(|u| crate::model::StorageType::from(u.as_ref()))
+                                    .map(|u| crate::types::StorageType::from(u.as_ref()))
                             })
                             .transpose()?,
                         );

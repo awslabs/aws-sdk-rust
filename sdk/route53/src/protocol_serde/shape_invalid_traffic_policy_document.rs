@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_invalid_traffic_policy_document_xml_err(
     inp: &[u8],
-    mut builder: crate::error::invalid_traffic_policy_document::Builder,
+    mut builder: crate::types::error::builders::InvalidTrafficPolicyDocumentBuilder,
 ) -> Result<
-    crate::error::invalid_traffic_policy_document::Builder,
+    crate::types::error::builders::InvalidTrafficPolicyDocumentBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

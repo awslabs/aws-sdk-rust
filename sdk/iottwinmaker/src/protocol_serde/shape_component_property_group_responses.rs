@@ -5,7 +5,7 @@ pub(crate) fn de_component_property_group_responses<'a, I>(
     Option<
         std::collections::HashMap<
             std::string::String,
-            crate::model::ComponentPropertyGroupResponse,
+            crate::types::ComponentPropertyGroupResponse,
         >,
     >,
     aws_smithy_json::deserialize::error::DeserializeError,

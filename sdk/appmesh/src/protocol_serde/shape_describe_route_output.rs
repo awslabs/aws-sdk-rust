@@ -2,13 +2,13 @@
 pub fn de_route_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::RouteData>,
-    crate::error::DescribeRouteError,
+    std::option::Option<crate::types::RouteData>,
+    crate::operation::describe_route::DescribeRouteError,
 > {
     (!body.is_empty())
         .then(|| {
             crate::protocol_serde::shape_route_data::de_route_data_payload(body)
-                .map_err(crate::error::DescribeRouteError::unhandled)
+                .map_err(crate::operation::describe_route::DescribeRouteError::unhandled)
         })
         .transpose()
 }

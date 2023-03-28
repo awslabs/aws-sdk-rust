@@ -2,7 +2,7 @@
 pub(crate) fn de_s3_bucket_transcript_source<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::S3BucketTranscriptSource>,
+    Option<crate::types::S3BucketTranscriptSource>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::s3_bucket_transcript_source::Builder::default();
+            let mut builder = crate::types::builders::S3BucketTranscriptSourceBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -46,7 +46,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::TranscriptFormat::from(u.as_ref())
+                                            crate::types::TranscriptFormat::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -91,7 +91,7 @@ where
 
 pub fn ser_s3_bucket_transcript_source(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::S3BucketTranscriptSource,
+    input: &crate::types::S3BucketTranscriptSource,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.s3_bucket_name {
         object.key("s3BucketName").string(var_1.as_str());

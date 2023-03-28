@@ -3,76 +3,79 @@
 pub fn de_create_db_security_group_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateDbSecurityGroupOutput,
-    crate::error::CreateDBSecurityGroupError,
+    crate::operation::create_db_security_group::CreateDbSecurityGroupOutput,
+    crate::operation::create_db_security_group::CreateDBSecurityGroupError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::CreateDBSecurityGroupError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::create_db_security_group::CreateDBSecurityGroupError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    let error_code = match generic.code() {
-        Some(code) => code,
-        None => return Err(crate::error::CreateDBSecurityGroupError::unhandled(generic)),
-    };
+    let error_code =
+        match generic.code() {
+            Some(code) => code,
+            None => return Err(
+                crate::operation::create_db_security_group::CreateDBSecurityGroupError::unhandled(
+                    generic,
+                ),
+            ),
+        };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBSecurityGroupAlreadyExists" => {
-            crate::error::CreateDBSecurityGroupError::DbSecurityGroupAlreadyExistsFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "DBSecurityGroupAlreadyExists" => crate::operation::create_db_security_group::CreateDBSecurityGroupError::DbSecurityGroupAlreadyExistsFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::db_security_group_already_exists_fault::Builder::default();
+                    let mut output = crate::types::error::builders::DbSecurityGroupAlreadyExistsFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_db_security_group_already_exists_fault::de_db_security_group_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBSecurityGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_db_security_group_already_exists_fault::de_db_security_group_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_db_security_group::CreateDBSecurityGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "DBSecurityGroupNotSupported" => {
-            crate::error::CreateDBSecurityGroupError::DbSecurityGroupNotSupportedFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "DBSecurityGroupNotSupported" => crate::operation::create_db_security_group::CreateDBSecurityGroupError::DbSecurityGroupNotSupportedFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::db_security_group_not_supported_fault::Builder::default();
+                    let mut output = crate::types::error::builders::DbSecurityGroupNotSupportedFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_db_security_group_not_supported_fault::de_db_security_group_not_supported_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBSecurityGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_db_security_group_not_supported_fault::de_db_security_group_not_supported_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_db_security_group::CreateDBSecurityGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "QuotaExceeded.DBSecurityGroup" => {
-            crate::error::CreateDBSecurityGroupError::DbSecurityGroupQuotaExceededFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "QuotaExceeded.DBSecurityGroup" => crate::operation::create_db_security_group::CreateDBSecurityGroupError::DbSecurityGroupQuotaExceededFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::db_security_group_quota_exceeded_fault::Builder::default();
+                    let mut output = crate::types::error::builders::DbSecurityGroupQuotaExceededFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_db_security_group_quota_exceeded_fault::de_db_security_group_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBSecurityGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_db_security_group_quota_exceeded_fault::de_db_security_group_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_db_security_group::CreateDBSecurityGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::CreateDBSecurityGroupError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::create_db_security_group::CreateDBSecurityGroupError::generic(generic)
     })
 }
 
@@ -80,19 +83,21 @@ pub fn de_create_db_security_group_http_error(
 pub fn de_create_db_security_group_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateDbSecurityGroupOutput,
-    crate::error::CreateDBSecurityGroupError,
+    crate::operation::create_db_security_group::CreateDbSecurityGroupOutput,
+    crate::operation::create_db_security_group::CreateDBSecurityGroupError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::create_db_security_group_output::Builder::default();
+        let mut output = crate::operation::create_db_security_group::builders::CreateDbSecurityGroupOutputBuilder::default();
         let _ = response;
         output =
             crate::protocol_serde::shape_create_db_security_group::de_create_db_security_group(
                 response.body().as_ref(),
                 output,
             )
-            .map_err(crate::error::CreateDBSecurityGroupError::unhandled)?;
+            .map_err(
+                crate::operation::create_db_security_group::CreateDBSecurityGroupError::unhandled,
+            )?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -103,9 +108,9 @@ pub fn de_create_db_security_group_http_response(
 #[allow(unused_mut)]
 pub fn de_create_db_security_group(
     inp: &[u8],
-    mut builder: crate::output::create_db_security_group_output::Builder,
+    mut builder: crate::operation::create_db_security_group::builders::CreateDbSecurityGroupOutputBuilder,
 ) -> Result<
-    crate::output::create_db_security_group_output::Builder,
+    crate::operation::create_db_security_group::builders::CreateDbSecurityGroupOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

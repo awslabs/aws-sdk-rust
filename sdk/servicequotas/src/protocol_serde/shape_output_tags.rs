@@ -2,7 +2,7 @@
 pub(crate) fn de_output_tags<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Tag>>,
+    Option<std::vec::Vec<crate::types::Tag>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

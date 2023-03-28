@@ -2,101 +2,114 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_kafka_versions_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListKafkaVersionsOutput, crate::error::ListKafkaVersionsError>
-{
+) -> std::result::Result<
+    crate::operation::list_kafka_versions::ListKafkaVersionsOutput,
+    crate::operation::list_kafka_versions::ListKafkaVersionsError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListKafkaVersionsError::unhandled)?;
+        .map_err(crate::operation::list_kafka_versions::ListKafkaVersionsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListKafkaVersionsError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::list_kafka_versions::ListKafkaVersionsError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::ListKafkaVersionsError::BadRequestException({
+        "BadRequestException" => crate::operation::list_kafka_versions::ListKafkaVersionsError::BadRequestException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListKafkaVersionsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ForbiddenException" => crate::error::ListKafkaVersionsError::ForbiddenException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListKafkaVersionsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InternalServerErrorException" => {
-            crate::error::ListKafkaVersionsError::InternalServerErrorException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::internal_server_error_exception::Builder::default();
+                    let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListKafkaVersionsError::unhandled)?;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_kafka_versions::ListKafkaVersionsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "UnauthorizedException" => crate::error::ListKafkaVersionsError::UnauthorizedException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListKafkaVersionsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::ListKafkaVersionsError::generic(generic),
+        "ForbiddenException" => crate::operation::list_kafka_versions::ListKafkaVersionsError::ForbiddenException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ForbiddenExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_kafka_versions::ListKafkaVersionsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InternalServerErrorException" => crate::operation::list_kafka_versions::ListKafkaVersionsError::InternalServerErrorException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InternalServerErrorExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_kafka_versions::ListKafkaVersionsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "UnauthorizedException" => crate::operation::list_kafka_versions::ListKafkaVersionsError::UnauthorizedException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::UnauthorizedExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_kafka_versions::ListKafkaVersionsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::list_kafka_versions::ListKafkaVersionsError::generic(generic)
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_kafka_versions_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListKafkaVersionsOutput, crate::error::ListKafkaVersionsError>
-{
+) -> std::result::Result<
+    crate::operation::list_kafka_versions::ListKafkaVersionsOutput,
+    crate::operation::list_kafka_versions::ListKafkaVersionsError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_kafka_versions_output::Builder::default();
+        let mut output = crate::operation::list_kafka_versions::builders::ListKafkaVersionsOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_kafka_versions::de_list_kafka_versions(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListKafkaVersionsError::unhandled)?;
+        .map_err(crate::operation::list_kafka_versions::ListKafkaVersionsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -106,9 +119,9 @@ pub fn de_list_kafka_versions_http_response(
 
 pub(crate) fn de_list_kafka_versions(
     value: &[u8],
-    mut builder: crate::output::list_kafka_versions_output::Builder,
+    mut builder: crate::operation::list_kafka_versions::builders::ListKafkaVersionsOutputBuilder,
 ) -> Result<
-    crate::output::list_kafka_versions_output::Builder,
+    crate::operation::list_kafka_versions::builders::ListKafkaVersionsOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

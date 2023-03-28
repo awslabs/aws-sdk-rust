@@ -2,7 +2,7 @@
 pub(crate) fn de_core_network_segment_edge_identifier<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::CoreNetworkSegmentEdgeIdentifier>,
+    Option<crate::types::CoreNetworkSegmentEdgeIdentifier>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::core_network_segment_edge_identifier::Builder::default();
+                crate::types::builders::CoreNetworkSegmentEdgeIdentifierBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -76,7 +76,7 @@ where
 
 pub fn ser_core_network_segment_edge_identifier(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::CoreNetworkSegmentEdgeIdentifier,
+    input: &crate::types::CoreNetworkSegmentEdgeIdentifier,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.core_network_id {
         object.key("CoreNetworkId").string(var_1.as_str());

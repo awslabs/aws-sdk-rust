@@ -4,17 +4,17 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p> Your account isn't registered with Audit Manager. Check the delegated administrator setup on the Audit Manager settings page, and try again. </p>
-    AccessDeniedException(crate::error::AccessDeniedException),
+    AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p> An internal service error occurred during the processing of your request. Try again later. </p>
-    InternalServerException(crate::error::InternalServerException),
+    InternalServerException(crate::types::error::InternalServerException),
     /// <p> The resource that's specified in the request can't be found. </p>
-    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>You've reached your account quota for this resource type. To perform the requested action, delete some existing resources or <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">request a quota increase</a> from the Service Quotas console. For a list of Audit Manager service quotas, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/service-quotas.html">Quotas and restrictions for Audit Manager</a>.</p>
-    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>The request was denied due to request throttling.</p>
-    ThrottlingException(crate::error::ThrottlingException),
+    ThrottlingException(crate::types::error::ThrottlingException),
     /// <p> The request has invalid or missing parameters. </p>
-    ValidationException(crate::error::ValidationException),
+    ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled),
 }
@@ -31,10 +31,154 @@ impl std::fmt::Display for Error {
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::associate_assessment_report_evidence_folder::AssociateAssessmentReportEvidenceFolderError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::associate_assessment_report_evidence_folder::AssociateAssessmentReportEvidenceFolderError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::associate_assessment_report_evidence_folder::AssociateAssessmentReportEvidenceFolderError> for Error {
+    fn from(err: crate::operation::associate_assessment_report_evidence_folder::AssociateAssessmentReportEvidenceFolderError) -> Self {
+        match err {
+            crate::operation::associate_assessment_report_evidence_folder::AssociateAssessmentReportEvidenceFolderError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::associate_assessment_report_evidence_folder::AssociateAssessmentReportEvidenceFolderError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::associate_assessment_report_evidence_folder::AssociateAssessmentReportEvidenceFolderError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::associate_assessment_report_evidence_folder::AssociateAssessmentReportEvidenceFolderError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::associate_assessment_report_evidence_folder::AssociateAssessmentReportEvidenceFolderError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::batch_associate_assessment_report_evidence::BatchAssociateAssessmentReportEvidenceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::batch_associate_assessment_report_evidence::BatchAssociateAssessmentReportEvidenceError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::batch_associate_assessment_report_evidence::BatchAssociateAssessmentReportEvidenceError> for Error {
+    fn from(err: crate::operation::batch_associate_assessment_report_evidence::BatchAssociateAssessmentReportEvidenceError) -> Self {
+        match err {
+            crate::operation::batch_associate_assessment_report_evidence::BatchAssociateAssessmentReportEvidenceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::batch_associate_assessment_report_evidence::BatchAssociateAssessmentReportEvidenceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::batch_associate_assessment_report_evidence::BatchAssociateAssessmentReportEvidenceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::batch_associate_assessment_report_evidence::BatchAssociateAssessmentReportEvidenceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::batch_associate_assessment_report_evidence::BatchAssociateAssessmentReportEvidenceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::batch_create_delegation_by_assessment::BatchCreateDelegationByAssessmentError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::batch_create_delegation_by_assessment::BatchCreateDelegationByAssessmentError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::batch_create_delegation_by_assessment::BatchCreateDelegationByAssessmentError> for Error {
+    fn from(err: crate::operation::batch_create_delegation_by_assessment::BatchCreateDelegationByAssessmentError) -> Self {
+        match err {
+            crate::operation::batch_create_delegation_by_assessment::BatchCreateDelegationByAssessmentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::batch_create_delegation_by_assessment::BatchCreateDelegationByAssessmentError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::batch_create_delegation_by_assessment::BatchCreateDelegationByAssessmentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::batch_create_delegation_by_assessment::BatchCreateDelegationByAssessmentError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::batch_create_delegation_by_assessment::BatchCreateDelegationByAssessmentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::batch_delete_delegation_by_assessment::BatchDeleteDelegationByAssessmentError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::batch_delete_delegation_by_assessment::BatchDeleteDelegationByAssessmentError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::batch_delete_delegation_by_assessment::BatchDeleteDelegationByAssessmentError> for Error {
+    fn from(err: crate::operation::batch_delete_delegation_by_assessment::BatchDeleteDelegationByAssessmentError) -> Self {
+        match err {
+            crate::operation::batch_delete_delegation_by_assessment::BatchDeleteDelegationByAssessmentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::batch_delete_delegation_by_assessment::BatchDeleteDelegationByAssessmentError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::batch_delete_delegation_by_assessment::BatchDeleteDelegationByAssessmentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::batch_delete_delegation_by_assessment::BatchDeleteDelegationByAssessmentError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::batch_delete_delegation_by_assessment::BatchDeleteDelegationByAssessmentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::batch_disassociate_assessment_report_evidence::BatchDisassociateAssessmentReportEvidenceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::batch_disassociate_assessment_report_evidence::BatchDisassociateAssessmentReportEvidenceError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::batch_disassociate_assessment_report_evidence::BatchDisassociateAssessmentReportEvidenceError> for Error {
+    fn from(err: crate::operation::batch_disassociate_assessment_report_evidence::BatchDisassociateAssessmentReportEvidenceError) -> Self {
+        match err {
+            crate::operation::batch_disassociate_assessment_report_evidence::BatchDisassociateAssessmentReportEvidenceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::batch_disassociate_assessment_report_evidence::BatchDisassociateAssessmentReportEvidenceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::batch_disassociate_assessment_report_evidence::BatchDisassociateAssessmentReportEvidenceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::batch_disassociate_assessment_report_evidence::BatchDisassociateAssessmentReportEvidenceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::batch_disassociate_assessment_report_evidence::BatchDisassociateAssessmentReportEvidenceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::batch_import_evidence_to_assessment_control::BatchImportEvidenceToAssessmentControlError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::batch_import_evidence_to_assessment_control::BatchImportEvidenceToAssessmentControlError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::batch_import_evidence_to_assessment_control::BatchImportEvidenceToAssessmentControlError> for Error {
+    fn from(err: crate::operation::batch_import_evidence_to_assessment_control::BatchImportEvidenceToAssessmentControlError) -> Self {
+        match err {
+            crate::operation::batch_import_evidence_to_assessment_control::BatchImportEvidenceToAssessmentControlError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::batch_import_evidence_to_assessment_control::BatchImportEvidenceToAssessmentControlError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::batch_import_evidence_to_assessment_control::BatchImportEvidenceToAssessmentControlError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::batch_import_evidence_to_assessment_control::BatchImportEvidenceToAssessmentControlError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::batch_import_evidence_to_assessment_control::BatchImportEvidenceToAssessmentControlError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
-            crate::error::AssociateAssessmentReportEvidenceFolderError,
+            crate::operation::create_assessment::CreateAssessmentError,
             R,
         >,
     > for Error
@@ -43,7 +187,7 @@ where
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::AssociateAssessmentReportEvidenceFolderError,
+            crate::operation::create_assessment::CreateAssessmentError,
             R,
         >,
     ) -> Self {
@@ -62,21 +206,22 @@ where
         }
     }
 }
-impl From<crate::error::AssociateAssessmentReportEvidenceFolderError> for Error {
-    fn from(err: crate::error::AssociateAssessmentReportEvidenceFolderError) -> Self {
+impl From<crate::operation::create_assessment::CreateAssessmentError> for Error {
+    fn from(err: crate::operation::create_assessment::CreateAssessmentError) -> Self {
         match err {
-            crate::error::AssociateAssessmentReportEvidenceFolderError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::AssociateAssessmentReportEvidenceFolderError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::AssociateAssessmentReportEvidenceFolderError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::AssociateAssessmentReportEvidenceFolderError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::AssociateAssessmentReportEvidenceFolderError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::create_assessment::CreateAssessmentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_assessment::CreateAssessmentError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_assessment::CreateAssessmentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_assessment::CreateAssessmentError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_assessment::CreateAssessmentError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_assessment::CreateAssessmentError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
-            crate::error::BatchAssociateAssessmentReportEvidenceError,
+            crate::operation::create_assessment_framework::CreateAssessmentFrameworkError,
             R,
         >,
     > for Error
@@ -85,7 +230,7 @@ where
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::BatchAssociateAssessmentReportEvidenceError,
+            crate::operation::create_assessment_framework::CreateAssessmentFrameworkError,
             R,
         >,
     ) -> Self {
@@ -104,26 +249,71 @@ where
         }
     }
 }
-impl From<crate::error::BatchAssociateAssessmentReportEvidenceError> for Error {
-    fn from(err: crate::error::BatchAssociateAssessmentReportEvidenceError) -> Self {
+impl From<crate::operation::create_assessment_framework::CreateAssessmentFrameworkError> for Error {
+    fn from(
+        err: crate::operation::create_assessment_framework::CreateAssessmentFrameworkError,
+    ) -> Self {
         match err {
-            crate::error::BatchAssociateAssessmentReportEvidenceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::BatchAssociateAssessmentReportEvidenceError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::BatchAssociateAssessmentReportEvidenceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::BatchAssociateAssessmentReportEvidenceError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::BatchAssociateAssessmentReportEvidenceError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::create_assessment_framework::CreateAssessmentFrameworkError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_assessment_framework::CreateAssessmentFrameworkError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_assessment_framework::CreateAssessmentFrameworkError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_assessment_framework::CreateAssessmentFrameworkError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_assessment_framework::CreateAssessmentFrameworkError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_assessment_framework::CreateAssessmentFrameworkError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::BatchCreateDelegationByAssessmentError, R>>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_assessment_report::CreateAssessmentReportError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_assessment_report::CreateAssessmentReportError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_assessment_report::CreateAssessmentReportError> for Error {
+    fn from(err: crate::operation::create_assessment_report::CreateAssessmentReportError) -> Self {
+        match err {
+            crate::operation::create_assessment_report::CreateAssessmentReportError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_assessment_report::CreateAssessmentReportError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_assessment_report::CreateAssessmentReportError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_assessment_report::CreateAssessmentReportError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_assessment_report::CreateAssessmentReportError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::create_control::CreateControlError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::BatchCreateDelegationByAssessmentError,
+            crate::operation::create_control::CreateControlError,
             R,
         >,
     ) -> Self {
@@ -142,36 +332,43 @@ where
         }
     }
 }
-impl From<crate::error::BatchCreateDelegationByAssessmentError> for Error {
-    fn from(err: crate::error::BatchCreateDelegationByAssessmentError) -> Self {
+impl From<crate::operation::create_control::CreateControlError> for Error {
+    fn from(err: crate::operation::create_control::CreateControlError) -> Self {
         match err {
-            crate::error::BatchCreateDelegationByAssessmentError::AccessDeniedException(inner) => {
+            crate::operation::create_control::CreateControlError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::BatchCreateDelegationByAssessmentError::InternalServerException(
+            crate::operation::create_control::CreateControlError::InternalServerException(
                 inner,
             ) => Error::InternalServerException(inner),
-            crate::error::BatchCreateDelegationByAssessmentError::ResourceNotFoundException(
+            crate::operation::create_control::CreateControlError::ResourceNotFoundException(
                 inner,
             ) => Error::ResourceNotFoundException(inner),
-            crate::error::BatchCreateDelegationByAssessmentError::ValidationException(inner) => {
+            crate::operation::create_control::CreateControlError::ServiceQuotaExceededException(
+                inner,
+            ) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_control::CreateControlError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
-            crate::error::BatchCreateDelegationByAssessmentError::Unhandled(inner) => {
+            crate::operation::create_control::CreateControlError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
         }
     }
 }
 impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::BatchDeleteDelegationByAssessmentError, R>>
-    for Error
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_assessment::DeleteAssessmentError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::BatchDeleteDelegationByAssessmentError,
+            crate::operation::delete_assessment::DeleteAssessmentError,
             R,
         >,
     ) -> Self {
@@ -190,22 +387,174 @@ where
         }
     }
 }
-impl From<crate::error::BatchDeleteDelegationByAssessmentError> for Error {
-    fn from(err: crate::error::BatchDeleteDelegationByAssessmentError) -> Self {
+impl From<crate::operation::delete_assessment::DeleteAssessmentError> for Error {
+    fn from(err: crate::operation::delete_assessment::DeleteAssessmentError) -> Self {
         match err {
-            crate::error::BatchDeleteDelegationByAssessmentError::AccessDeniedException(inner) => {
+            crate::operation::delete_assessment::DeleteAssessmentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_assessment::DeleteAssessmentError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_assessment::DeleteAssessmentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_assessment::DeleteAssessmentError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_assessment::DeleteAssessmentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_assessment_framework::DeleteAssessmentFrameworkError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_assessment_framework::DeleteAssessmentFrameworkError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_assessment_framework::DeleteAssessmentFrameworkError> for Error {
+    fn from(
+        err: crate::operation::delete_assessment_framework::DeleteAssessmentFrameworkError,
+    ) -> Self {
+        match err {
+            crate::operation::delete_assessment_framework::DeleteAssessmentFrameworkError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_assessment_framework::DeleteAssessmentFrameworkError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_assessment_framework::DeleteAssessmentFrameworkError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_assessment_framework::DeleteAssessmentFrameworkError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_assessment_framework::DeleteAssessmentFrameworkError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_assessment_framework_share::DeleteAssessmentFrameworkShareError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_assessment_framework_share::DeleteAssessmentFrameworkShareError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::delete_assessment_framework_share::DeleteAssessmentFrameworkShareError>
+    for Error
+{
+    fn from(
+        err: crate::operation::delete_assessment_framework_share::DeleteAssessmentFrameworkShareError,
+    ) -> Self {
+        match err {
+            crate::operation::delete_assessment_framework_share::DeleteAssessmentFrameworkShareError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_assessment_framework_share::DeleteAssessmentFrameworkShareError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_assessment_framework_share::DeleteAssessmentFrameworkShareError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_assessment_framework_share::DeleteAssessmentFrameworkShareError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_assessment_framework_share::DeleteAssessmentFrameworkShareError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_assessment_report::DeleteAssessmentReportError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_assessment_report::DeleteAssessmentReportError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_assessment_report::DeleteAssessmentReportError> for Error {
+    fn from(err: crate::operation::delete_assessment_report::DeleteAssessmentReportError) -> Self {
+        match err {
+            crate::operation::delete_assessment_report::DeleteAssessmentReportError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_assessment_report::DeleteAssessmentReportError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_assessment_report::DeleteAssessmentReportError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_assessment_report::DeleteAssessmentReportError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_assessment_report::DeleteAssessmentReportError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::delete_control::DeleteControlError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_control::DeleteControlError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_control::DeleteControlError> for Error {
+    fn from(err: crate::operation::delete_control::DeleteControlError) -> Self {
+        match err {
+            crate::operation::delete_control::DeleteControlError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::BatchDeleteDelegationByAssessmentError::InternalServerException(
+            crate::operation::delete_control::DeleteControlError::InternalServerException(
                 inner,
             ) => Error::InternalServerException(inner),
-            crate::error::BatchDeleteDelegationByAssessmentError::ResourceNotFoundException(
+            crate::operation::delete_control::DeleteControlError::ResourceNotFoundException(
                 inner,
             ) => Error::ResourceNotFoundException(inner),
-            crate::error::BatchDeleteDelegationByAssessmentError::ValidationException(inner) => {
+            crate::operation::delete_control::DeleteControlError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
-            crate::error::BatchDeleteDelegationByAssessmentError::Unhandled(inner) => {
+            crate::operation::delete_control::DeleteControlError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
         }
@@ -214,7 +563,7 @@ impl From<crate::error::BatchDeleteDelegationByAssessmentError> for Error {
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
-            crate::error::BatchDisassociateAssessmentReportEvidenceError,
+            crate::operation::deregister_account::DeregisterAccountError,
             R,
         >,
     > for Error
@@ -223,7 +572,7 @@ where
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::BatchDisassociateAssessmentReportEvidenceError,
+            crate::operation::deregister_account::DeregisterAccountError,
             R,
         >,
     ) -> Self {
@@ -242,21 +591,69 @@ where
         }
     }
 }
-impl From<crate::error::BatchDisassociateAssessmentReportEvidenceError> for Error {
-    fn from(err: crate::error::BatchDisassociateAssessmentReportEvidenceError) -> Self {
+impl From<crate::operation::deregister_account::DeregisterAccountError> for Error {
+    fn from(err: crate::operation::deregister_account::DeregisterAccountError) -> Self {
         match err {
-            crate::error::BatchDisassociateAssessmentReportEvidenceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::BatchDisassociateAssessmentReportEvidenceError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::BatchDisassociateAssessmentReportEvidenceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::BatchDisassociateAssessmentReportEvidenceError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::BatchDisassociateAssessmentReportEvidenceError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::deregister_account::DeregisterAccountError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::deregister_account::DeregisterAccountError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::deregister_account::DeregisterAccountError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::deregister_account::DeregisterAccountError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::deregister_account::DeregisterAccountError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::deregister_organization_admin_account::DeregisterOrganizationAdminAccountError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::deregister_organization_admin_account::DeregisterOrganizationAdminAccountError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::deregister_organization_admin_account::DeregisterOrganizationAdminAccountError> for Error {
+    fn from(err: crate::operation::deregister_organization_admin_account::DeregisterOrganizationAdminAccountError) -> Self {
+        match err {
+            crate::operation::deregister_organization_admin_account::DeregisterOrganizationAdminAccountError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::deregister_organization_admin_account::DeregisterOrganizationAdminAccountError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::deregister_organization_admin_account::DeregisterOrganizationAdminAccountError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::deregister_organization_admin_account::DeregisterOrganizationAdminAccountError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::deregister_organization_admin_account::DeregisterOrganizationAdminAccountError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::disassociate_assessment_report_evidence_folder::DisassociateAssessmentReportEvidenceFolderError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::disassociate_assessment_report_evidence_folder::DisassociateAssessmentReportEvidenceFolderError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::disassociate_assessment_report_evidence_folder::DisassociateAssessmentReportEvidenceFolderError> for Error {
+    fn from(err: crate::operation::disassociate_assessment_report_evidence_folder::DisassociateAssessmentReportEvidenceFolderError) -> Self {
+        match err {
+            crate::operation::disassociate_assessment_report_evidence_folder::DisassociateAssessmentReportEvidenceFolderError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::disassociate_assessment_report_evidence_folder::DisassociateAssessmentReportEvidenceFolderError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::disassociate_assessment_report_evidence_folder::DisassociateAssessmentReportEvidenceFolderError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::disassociate_assessment_report_evidence_folder::DisassociateAssessmentReportEvidenceFolderError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::disassociate_assessment_report_evidence_folder::DisassociateAssessmentReportEvidenceFolderError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
-            crate::error::BatchImportEvidenceToAssessmentControlError,
+            crate::operation::get_account_status::GetAccountStatusError,
             R,
         >,
     > for Error
@@ -265,7 +662,7 @@ where
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::BatchImportEvidenceToAssessmentControlError,
+            crate::operation::get_account_status::GetAccountStatusError,
             R,
         >,
     ) -> Self {
@@ -284,286 +681,23 @@ where
         }
     }
 }
-impl From<crate::error::BatchImportEvidenceToAssessmentControlError> for Error {
-    fn from(err: crate::error::BatchImportEvidenceToAssessmentControlError) -> Self {
+impl From<crate::operation::get_account_status::GetAccountStatusError> for Error {
+    fn from(err: crate::operation::get_account_status::GetAccountStatusError) -> Self {
         match err {
-            crate::error::BatchImportEvidenceToAssessmentControlError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::BatchImportEvidenceToAssessmentControlError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::BatchImportEvidenceToAssessmentControlError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::BatchImportEvidenceToAssessmentControlError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::BatchImportEvidenceToAssessmentControlError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateAssessmentError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateAssessmentError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::CreateAssessmentError> for Error {
-    fn from(err: crate::error::CreateAssessmentError) -> Self {
-        match err {
-            crate::error::CreateAssessmentError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::CreateAssessmentError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::CreateAssessmentError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::CreateAssessmentError::ServiceQuotaExceededException(inner) => {
-                Error::ServiceQuotaExceededException(inner)
-            }
-            crate::error::CreateAssessmentError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::CreateAssessmentError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateAssessmentFrameworkError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateAssessmentFrameworkError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::CreateAssessmentFrameworkError> for Error {
-    fn from(err: crate::error::CreateAssessmentFrameworkError) -> Self {
-        match err {
-            crate::error::CreateAssessmentFrameworkError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::CreateAssessmentFrameworkError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::CreateAssessmentFrameworkError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::CreateAssessmentFrameworkError::ServiceQuotaExceededException(inner) => {
-                Error::ServiceQuotaExceededException(inner)
-            }
-            crate::error::CreateAssessmentFrameworkError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::CreateAssessmentFrameworkError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateAssessmentReportError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateAssessmentReportError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::CreateAssessmentReportError> for Error {
-    fn from(err: crate::error::CreateAssessmentReportError) -> Self {
-        match err {
-            crate::error::CreateAssessmentReportError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::CreateAssessmentReportError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::CreateAssessmentReportError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::CreateAssessmentReportError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::CreateAssessmentReportError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateControlError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateControlError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::CreateControlError> for Error {
-    fn from(err: crate::error::CreateControlError) -> Self {
-        match err {
-            crate::error::CreateControlError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::CreateControlError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::CreateControlError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::CreateControlError::ServiceQuotaExceededException(inner) => {
-                Error::ServiceQuotaExceededException(inner)
-            }
-            crate::error::CreateControlError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::CreateControlError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteAssessmentError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteAssessmentError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DeleteAssessmentError> for Error {
-    fn from(err: crate::error::DeleteAssessmentError) -> Self {
-        match err {
-            crate::error::DeleteAssessmentError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::DeleteAssessmentError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::DeleteAssessmentError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DeleteAssessmentError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::DeleteAssessmentError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteAssessmentFrameworkError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteAssessmentFrameworkError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DeleteAssessmentFrameworkError> for Error {
-    fn from(err: crate::error::DeleteAssessmentFrameworkError) -> Self {
-        match err {
-            crate::error::DeleteAssessmentFrameworkError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::DeleteAssessmentFrameworkError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::DeleteAssessmentFrameworkError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DeleteAssessmentFrameworkError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::DeleteAssessmentFrameworkError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::get_account_status::GetAccountStatusError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_account_status::GetAccountStatusError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::DeleteAssessmentFrameworkShareError, R>>
+    From<aws_smithy_http::result::SdkError<crate::operation::get_assessment::GetAssessmentError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::DeleteAssessmentFrameworkShareError,
+            crate::operation::get_assessment::GetAssessmentError,
             R,
         >,
     ) -> Self {
@@ -582,193 +716,22 @@ where
         }
     }
 }
-impl From<crate::error::DeleteAssessmentFrameworkShareError> for Error {
-    fn from(err: crate::error::DeleteAssessmentFrameworkShareError) -> Self {
+impl From<crate::operation::get_assessment::GetAssessmentError> for Error {
+    fn from(err: crate::operation::get_assessment::GetAssessmentError) -> Self {
         match err {
-            crate::error::DeleteAssessmentFrameworkShareError::AccessDeniedException(inner) => {
+            crate::operation::get_assessment::GetAssessmentError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::DeleteAssessmentFrameworkShareError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::DeleteAssessmentFrameworkShareError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DeleteAssessmentFrameworkShareError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::DeleteAssessmentFrameworkShareError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteAssessmentReportError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteAssessmentReportError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DeleteAssessmentReportError> for Error {
-    fn from(err: crate::error::DeleteAssessmentReportError) -> Self {
-        match err {
-            crate::error::DeleteAssessmentReportError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::DeleteAssessmentReportError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::DeleteAssessmentReportError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DeleteAssessmentReportError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::DeleteAssessmentReportError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteControlError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteControlError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DeleteControlError> for Error {
-    fn from(err: crate::error::DeleteControlError) -> Self {
-        match err {
-            crate::error::DeleteControlError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::DeleteControlError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::DeleteControlError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DeleteControlError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::DeleteControlError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeregisterAccountError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeregisterAccountError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DeregisterAccountError> for Error {
-    fn from(err: crate::error::DeregisterAccountError) -> Self {
-        match err {
-            crate::error::DeregisterAccountError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::DeregisterAccountError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::DeregisterAccountError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DeregisterAccountError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::DeregisterAccountError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<crate::error::DeregisterOrganizationAdminAccountError, R>,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DeregisterOrganizationAdminAccountError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DeregisterOrganizationAdminAccountError> for Error {
-    fn from(err: crate::error::DeregisterOrganizationAdminAccountError) -> Self {
-        match err {
-            crate::error::DeregisterOrganizationAdminAccountError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::DeregisterOrganizationAdminAccountError::InternalServerException(
+            crate::operation::get_assessment::GetAssessmentError::InternalServerException(
                 inner,
             ) => Error::InternalServerException(inner),
-            crate::error::DeregisterOrganizationAdminAccountError::ResourceNotFoundException(
+            crate::operation::get_assessment::GetAssessmentError::ResourceNotFoundException(
                 inner,
             ) => Error::ResourceNotFoundException(inner),
-            crate::error::DeregisterOrganizationAdminAccountError::ValidationException(inner) => {
+            crate::operation::get_assessment::GetAssessmentError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
-            crate::error::DeregisterOrganizationAdminAccountError::Unhandled(inner) => {
+            crate::operation::get_assessment::GetAssessmentError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
         }
@@ -777,7 +740,7 @@ impl From<crate::error::DeregisterOrganizationAdminAccountError> for Error {
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
-            crate::error::DisassociateAssessmentReportEvidenceFolderError,
+            crate::operation::get_assessment_framework::GetAssessmentFrameworkError,
             R,
         >,
     > for Error
@@ -786,7 +749,7 @@ where
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::DisassociateAssessmentReportEvidenceFolderError,
+            crate::operation::get_assessment_framework::GetAssessmentFrameworkError,
             R,
         >,
     ) -> Self {
@@ -805,419 +768,30 @@ where
         }
     }
 }
-impl From<crate::error::DisassociateAssessmentReportEvidenceFolderError> for Error {
-    fn from(err: crate::error::DisassociateAssessmentReportEvidenceFolderError) -> Self {
+impl From<crate::operation::get_assessment_framework::GetAssessmentFrameworkError> for Error {
+    fn from(err: crate::operation::get_assessment_framework::GetAssessmentFrameworkError) -> Self {
         match err {
-            crate::error::DisassociateAssessmentReportEvidenceFolderError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DisassociateAssessmentReportEvidenceFolderError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DisassociateAssessmentReportEvidenceFolderError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DisassociateAssessmentReportEvidenceFolderError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DisassociateAssessmentReportEvidenceFolderError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetAccountStatusError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetAccountStatusError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetAccountStatusError> for Error {
-    fn from(err: crate::error::GetAccountStatusError) -> Self {
-        match err {
-            crate::error::GetAccountStatusError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::GetAccountStatusError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetAssessmentError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetAssessmentError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetAssessmentError> for Error {
-    fn from(err: crate::error::GetAssessmentError) -> Self {
-        match err {
-            crate::error::GetAssessmentError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::GetAssessmentError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::GetAssessmentError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::GetAssessmentError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::GetAssessmentError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetAssessmentFrameworkError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetAssessmentFrameworkError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetAssessmentFrameworkError> for Error {
-    fn from(err: crate::error::GetAssessmentFrameworkError) -> Self {
-        match err {
-            crate::error::GetAssessmentFrameworkError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::GetAssessmentFrameworkError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::GetAssessmentFrameworkError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::GetAssessmentFrameworkError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::GetAssessmentFrameworkError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetAssessmentReportUrlError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetAssessmentReportUrlError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetAssessmentReportUrlError> for Error {
-    fn from(err: crate::error::GetAssessmentReportUrlError) -> Self {
-        match err {
-            crate::error::GetAssessmentReportUrlError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::GetAssessmentReportUrlError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::GetAssessmentReportUrlError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::GetAssessmentReportUrlError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::GetAssessmentReportUrlError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetChangeLogsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetChangeLogsError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetChangeLogsError> for Error {
-    fn from(err: crate::error::GetChangeLogsError) -> Self {
-        match err {
-            crate::error::GetChangeLogsError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::GetChangeLogsError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::GetChangeLogsError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::GetChangeLogsError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::GetChangeLogsError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetControlError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetControlError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetControlError> for Error {
-    fn from(err: crate::error::GetControlError) -> Self {
-        match err {
-            crate::error::GetControlError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::GetControlError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::GetControlError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::GetControlError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::GetControlError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetDelegationsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetDelegationsError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetDelegationsError> for Error {
-    fn from(err: crate::error::GetDelegationsError) -> Self {
-        match err {
-            crate::error::GetDelegationsError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::GetDelegationsError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::GetDelegationsError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::GetDelegationsError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetEvidenceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetEvidenceError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetEvidenceError> for Error {
-    fn from(err: crate::error::GetEvidenceError) -> Self {
-        match err {
-            crate::error::GetEvidenceError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::GetEvidenceError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::GetEvidenceError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::GetEvidenceError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::GetEvidenceError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetEvidenceByEvidenceFolderError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetEvidenceByEvidenceFolderError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetEvidenceByEvidenceFolderError> for Error {
-    fn from(err: crate::error::GetEvidenceByEvidenceFolderError) -> Self {
-        match err {
-            crate::error::GetEvidenceByEvidenceFolderError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::GetEvidenceByEvidenceFolderError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::GetEvidenceByEvidenceFolderError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::GetEvidenceByEvidenceFolderError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::GetEvidenceByEvidenceFolderError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetEvidenceFolderError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetEvidenceFolderError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetEvidenceFolderError> for Error {
-    fn from(err: crate::error::GetEvidenceFolderError) -> Self {
-        match err {
-            crate::error::GetEvidenceFolderError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::GetEvidenceFolderError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::GetEvidenceFolderError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::GetEvidenceFolderError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::GetEvidenceFolderError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::get_assessment_framework::GetAssessmentFrameworkError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_assessment_framework::GetAssessmentFrameworkError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_assessment_framework::GetAssessmentFrameworkError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_assessment_framework::GetAssessmentFrameworkError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_assessment_framework::GetAssessmentFrameworkError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::GetEvidenceFoldersByAssessmentError, R>>
-    for Error
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_assessment_report_url::GetAssessmentReportUrlError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::GetEvidenceFoldersByAssessmentError,
+            crate::operation::get_assessment_report_url::GetAssessmentReportUrlError,
             R,
         >,
     ) -> Self {
@@ -1236,22 +810,105 @@ where
         }
     }
 }
-impl From<crate::error::GetEvidenceFoldersByAssessmentError> for Error {
-    fn from(err: crate::error::GetEvidenceFoldersByAssessmentError) -> Self {
+impl From<crate::operation::get_assessment_report_url::GetAssessmentReportUrlError> for Error {
+    fn from(err: crate::operation::get_assessment_report_url::GetAssessmentReportUrlError) -> Self {
         match err {
-            crate::error::GetEvidenceFoldersByAssessmentError::AccessDeniedException(inner) => {
+            crate::operation::get_assessment_report_url::GetAssessmentReportUrlError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_assessment_report_url::GetAssessmentReportUrlError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_assessment_report_url::GetAssessmentReportUrlError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_assessment_report_url::GetAssessmentReportUrlError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_assessment_report_url::GetAssessmentReportUrlError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<crate::operation::get_change_logs::GetChangeLogsError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_change_logs::GetChangeLogsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_change_logs::GetChangeLogsError> for Error {
+    fn from(err: crate::operation::get_change_logs::GetChangeLogsError) -> Self {
+        match err {
+            crate::operation::get_change_logs::GetChangeLogsError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::GetEvidenceFoldersByAssessmentError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::GetEvidenceFoldersByAssessmentError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::GetEvidenceFoldersByAssessmentError::ValidationException(inner) => {
+            crate::operation::get_change_logs::GetChangeLogsError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::get_change_logs::GetChangeLogsError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_change_logs::GetChangeLogsError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
-            crate::error::GetEvidenceFoldersByAssessmentError::Unhandled(inner) => {
+            crate::operation::get_change_logs::GetChangeLogsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_control::GetControlError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::get_control::GetControlError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_control::GetControlError> for Error {
+    fn from(err: crate::operation::get_control::GetControlError) -> Self {
+        match err {
+            crate::operation::get_control::GetControlError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_control::GetControlError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_control::GetControlError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_control::GetControlError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_control::GetControlError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
         }
@@ -1260,7 +917,7 @@ impl From<crate::error::GetEvidenceFoldersByAssessmentError> for Error {
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
-            crate::error::GetEvidenceFoldersByAssessmentControlError,
+            crate::operation::get_delegations::GetDelegationsError,
             R,
         >,
     > for Error
@@ -1269,7 +926,7 @@ where
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::GetEvidenceFoldersByAssessmentControlError,
+            crate::operation::get_delegations::GetDelegationsError,
             R,
         >,
     ) -> Self {
@@ -1288,295 +945,590 @@ where
         }
     }
 }
-impl From<crate::error::GetEvidenceFoldersByAssessmentControlError> for Error {
-    fn from(err: crate::error::GetEvidenceFoldersByAssessmentControlError) -> Self {
+impl From<crate::operation::get_delegations::GetDelegationsError> for Error {
+    fn from(err: crate::operation::get_delegations::GetDelegationsError) -> Self {
         match err {
-            crate::error::GetEvidenceFoldersByAssessmentControlError::AccessDeniedException(
+            crate::operation::get_delegations::GetDelegationsError::AccessDeniedException(
                 inner,
             ) => Error::AccessDeniedException(inner),
-            crate::error::GetEvidenceFoldersByAssessmentControlError::InternalServerException(
+            crate::operation::get_delegations::GetDelegationsError::InternalServerException(
                 inner,
             ) => Error::InternalServerException(inner),
-            crate::error::GetEvidenceFoldersByAssessmentControlError::ResourceNotFoundException(
+            crate::operation::get_delegations::GetDelegationsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_delegations::GetDelegationsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_evidence::GetEvidenceError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::get_evidence::GetEvidenceError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_evidence::GetEvidenceError> for Error {
+    fn from(err: crate::operation::get_evidence::GetEvidenceError) -> Self {
+        match err {
+            crate::operation::get_evidence::GetEvidenceError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_evidence::GetEvidenceError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_evidence::GetEvidenceError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_evidence::GetEvidenceError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_evidence::GetEvidenceError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_evidence_by_evidence_folder::GetEvidenceByEvidenceFolderError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_evidence_by_evidence_folder::GetEvidenceByEvidenceFolderError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_evidence_by_evidence_folder::GetEvidenceByEvidenceFolderError>
+    for Error
+{
+    fn from(
+        err: crate::operation::get_evidence_by_evidence_folder::GetEvidenceByEvidenceFolderError,
+    ) -> Self {
+        match err {
+            crate::operation::get_evidence_by_evidence_folder::GetEvidenceByEvidenceFolderError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_evidence_by_evidence_folder::GetEvidenceByEvidenceFolderError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_evidence_by_evidence_folder::GetEvidenceByEvidenceFolderError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_evidence_by_evidence_folder::GetEvidenceByEvidenceFolderError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_evidence_by_evidence_folder::GetEvidenceByEvidenceFolderError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_evidence_folder::GetEvidenceFolderError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_evidence_folder::GetEvidenceFolderError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_evidence_folder::GetEvidenceFolderError> for Error {
+    fn from(err: crate::operation::get_evidence_folder::GetEvidenceFolderError) -> Self {
+        match err {
+            crate::operation::get_evidence_folder::GetEvidenceFolderError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_evidence_folder::GetEvidenceFolderError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_evidence_folder::GetEvidenceFolderError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_evidence_folder::GetEvidenceFolderError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_evidence_folder::GetEvidenceFolderError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_evidence_folders_by_assessment::GetEvidenceFoldersByAssessmentError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_evidence_folders_by_assessment::GetEvidenceFoldersByAssessmentError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::get_evidence_folders_by_assessment::GetEvidenceFoldersByAssessmentError>
+    for Error
+{
+    fn from(
+        err: crate::operation::get_evidence_folders_by_assessment::GetEvidenceFoldersByAssessmentError,
+    ) -> Self {
+        match err {
+            crate::operation::get_evidence_folders_by_assessment::GetEvidenceFoldersByAssessmentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_evidence_folders_by_assessment::GetEvidenceFoldersByAssessmentError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_evidence_folders_by_assessment::GetEvidenceFoldersByAssessmentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_evidence_folders_by_assessment::GetEvidenceFoldersByAssessmentError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_evidence_folders_by_assessment::GetEvidenceFoldersByAssessmentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_evidence_folders_by_assessment_control::GetEvidenceFoldersByAssessmentControlError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_evidence_folders_by_assessment_control::GetEvidenceFoldersByAssessmentControlError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::get_evidence_folders_by_assessment_control::GetEvidenceFoldersByAssessmentControlError> for Error {
+    fn from(err: crate::operation::get_evidence_folders_by_assessment_control::GetEvidenceFoldersByAssessmentControlError) -> Self {
+        match err {
+            crate::operation::get_evidence_folders_by_assessment_control::GetEvidenceFoldersByAssessmentControlError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_evidence_folders_by_assessment_control::GetEvidenceFoldersByAssessmentControlError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_evidence_folders_by_assessment_control::GetEvidenceFoldersByAssessmentControlError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_evidence_folders_by_assessment_control::GetEvidenceFoldersByAssessmentControlError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_evidence_folders_by_assessment_control::GetEvidenceFoldersByAssessmentControlError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_insights::GetInsightsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::get_insights::GetInsightsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_insights::GetInsightsError> for Error {
+    fn from(err: crate::operation::get_insights::GetInsightsError) -> Self {
+        match err {
+            crate::operation::get_insights::GetInsightsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_insights::GetInsightsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_insights::GetInsightsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_insights_by_assessment::GetInsightsByAssessmentError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_insights_by_assessment::GetInsightsByAssessmentError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_insights_by_assessment::GetInsightsByAssessmentError> for Error {
+    fn from(
+        err: crate::operation::get_insights_by_assessment::GetInsightsByAssessmentError,
+    ) -> Self {
+        match err {
+            crate::operation::get_insights_by_assessment::GetInsightsByAssessmentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_insights_by_assessment::GetInsightsByAssessmentError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_insights_by_assessment::GetInsightsByAssessmentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_insights_by_assessment::GetInsightsByAssessmentError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_insights_by_assessment::GetInsightsByAssessmentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_organization_admin_account::GetOrganizationAdminAccountError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_organization_admin_account::GetOrganizationAdminAccountError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_organization_admin_account::GetOrganizationAdminAccountError>
+    for Error
+{
+    fn from(
+        err: crate::operation::get_organization_admin_account::GetOrganizationAdminAccountError,
+    ) -> Self {
+        match err {
+            crate::operation::get_organization_admin_account::GetOrganizationAdminAccountError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_organization_admin_account::GetOrganizationAdminAccountError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_organization_admin_account::GetOrganizationAdminAccountError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_organization_admin_account::GetOrganizationAdminAccountError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_organization_admin_account::GetOrganizationAdminAccountError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_services_in_scope::GetServicesInScopeError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_services_in_scope::GetServicesInScopeError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_services_in_scope::GetServicesInScopeError> for Error {
+    fn from(err: crate::operation::get_services_in_scope::GetServicesInScopeError) -> Self {
+        match err {
+            crate::operation::get_services_in_scope::GetServicesInScopeError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_services_in_scope::GetServicesInScopeError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_services_in_scope::GetServicesInScopeError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_services_in_scope::GetServicesInScopeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_settings::GetSettingsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::get_settings::GetSettingsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_settings::GetSettingsError> for Error {
+    fn from(err: crate::operation::get_settings::GetSettingsError) -> Self {
+        match err {
+            crate::operation::get_settings::GetSettingsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_settings::GetSettingsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_settings::GetSettingsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_assessment_control_insights_by_control_domain::ListAssessmentControlInsightsByControlDomainError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_assessment_control_insights_by_control_domain::ListAssessmentControlInsightsByControlDomainError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::list_assessment_control_insights_by_control_domain::ListAssessmentControlInsightsByControlDomainError> for Error {
+    fn from(err: crate::operation::list_assessment_control_insights_by_control_domain::ListAssessmentControlInsightsByControlDomainError) -> Self {
+        match err {
+            crate::operation::list_assessment_control_insights_by_control_domain::ListAssessmentControlInsightsByControlDomainError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_assessment_control_insights_by_control_domain::ListAssessmentControlInsightsByControlDomainError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_assessment_control_insights_by_control_domain::ListAssessmentControlInsightsByControlDomainError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_assessment_control_insights_by_control_domain::ListAssessmentControlInsightsByControlDomainError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_assessment_control_insights_by_control_domain::ListAssessmentControlInsightsByControlDomainError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_assessment_frameworks::ListAssessmentFrameworksError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_assessment_frameworks::ListAssessmentFrameworksError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_assessment_frameworks::ListAssessmentFrameworksError> for Error {
+    fn from(
+        err: crate::operation::list_assessment_frameworks::ListAssessmentFrameworksError,
+    ) -> Self {
+        match err {
+            crate::operation::list_assessment_frameworks::ListAssessmentFrameworksError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_assessment_frameworks::ListAssessmentFrameworksError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_assessment_frameworks::ListAssessmentFrameworksError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_assessment_frameworks::ListAssessmentFrameworksError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsError> for Error {
+    fn from(err: crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsError) -> Self {
+        match err {
+            crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequestsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_assessment_reports::ListAssessmentReportsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_assessment_reports::ListAssessmentReportsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_assessment_reports::ListAssessmentReportsError> for Error {
+    fn from(err: crate::operation::list_assessment_reports::ListAssessmentReportsError) -> Self {
+        match err {
+            crate::operation::list_assessment_reports::ListAssessmentReportsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_assessment_reports::ListAssessmentReportsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_assessment_reports::ListAssessmentReportsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_assessment_reports::ListAssessmentReportsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_assessments::ListAssessmentsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_assessments::ListAssessmentsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_assessments::ListAssessmentsError> for Error {
+    fn from(err: crate::operation::list_assessments::ListAssessmentsError) -> Self {
+        match err {
+            crate::operation::list_assessments::ListAssessmentsError::AccessDeniedException(
                 inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::error::GetEvidenceFoldersByAssessmentControlError::ValidationException(
+            ) => Error::AccessDeniedException(inner),
+            crate::operation::list_assessments::ListAssessmentsError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::list_assessments::ListAssessmentsError::ValidationException(
                 inner,
             ) => Error::ValidationException(inner),
-            crate::error::GetEvidenceFoldersByAssessmentControlError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetInsightsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetInsightsError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetInsightsError> for Error {
-    fn from(err: crate::error::GetInsightsError) -> Self {
-        match err {
-            crate::error::GetInsightsError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::GetInsightsError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::GetInsightsError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetInsightsByAssessmentError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetInsightsByAssessmentError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetInsightsByAssessmentError> for Error {
-    fn from(err: crate::error::GetInsightsByAssessmentError) -> Self {
-        match err {
-            crate::error::GetInsightsByAssessmentError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::GetInsightsByAssessmentError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::GetInsightsByAssessmentError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::GetInsightsByAssessmentError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::GetInsightsByAssessmentError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetOrganizationAdminAccountError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetOrganizationAdminAccountError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetOrganizationAdminAccountError> for Error {
-    fn from(err: crate::error::GetOrganizationAdminAccountError) -> Self {
-        match err {
-            crate::error::GetOrganizationAdminAccountError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::GetOrganizationAdminAccountError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::GetOrganizationAdminAccountError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::GetOrganizationAdminAccountError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::GetOrganizationAdminAccountError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetServicesInScopeError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetServicesInScopeError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetServicesInScopeError> for Error {
-    fn from(err: crate::error::GetServicesInScopeError) -> Self {
-        match err {
-            crate::error::GetServicesInScopeError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::GetServicesInScopeError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::GetServicesInScopeError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::GetServicesInScopeError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetSettingsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetSettingsError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetSettingsError> for Error {
-    fn from(err: crate::error::GetSettingsError) -> Self {
-        match err {
-            crate::error::GetSettingsError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::GetSettingsError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::GetSettingsError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::ListAssessmentControlInsightsByControlDomainError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::ListAssessmentControlInsightsByControlDomainError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::ListAssessmentControlInsightsByControlDomainError> for Error {
-    fn from(err: crate::error::ListAssessmentControlInsightsByControlDomainError) -> Self {
-        match err {
-            crate::error::ListAssessmentControlInsightsByControlDomainError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::ListAssessmentControlInsightsByControlDomainError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::ListAssessmentControlInsightsByControlDomainError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::ListAssessmentControlInsightsByControlDomainError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::ListAssessmentControlInsightsByControlDomainError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListAssessmentFrameworksError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListAssessmentFrameworksError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::ListAssessmentFrameworksError> for Error {
-    fn from(err: crate::error::ListAssessmentFrameworksError) -> Self {
-        match err {
-            crate::error::ListAssessmentFrameworksError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::ListAssessmentFrameworksError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::ListAssessmentFrameworksError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::ListAssessmentFrameworksError::Unhandled(inner) => {
+            crate::operation::list_assessments::ListAssessmentsError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
         }
@@ -1585,7 +1537,7 @@ impl From<crate::error::ListAssessmentFrameworksError> for Error {
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
-            crate::error::ListAssessmentFrameworkShareRequestsError,
+            crate::operation::list_control_domain_insights::ListControlDomainInsightsError,
             R,
         >,
     > for Error
@@ -1594,7 +1546,7 @@ where
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::ListAssessmentFrameworkShareRequestsError,
+            crate::operation::list_control_domain_insights::ListControlDomainInsightsError,
             R,
         >,
     ) -> Self {
@@ -1613,190 +1565,447 @@ where
         }
     }
 }
-impl From<crate::error::ListAssessmentFrameworkShareRequestsError> for Error {
-    fn from(err: crate::error::ListAssessmentFrameworkShareRequestsError) -> Self {
+impl From<crate::operation::list_control_domain_insights::ListControlDomainInsightsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::list_control_domain_insights::ListControlDomainInsightsError,
+    ) -> Self {
         match err {
-            crate::error::ListAssessmentFrameworkShareRequestsError::AccessDeniedException(
+            crate::operation::list_control_domain_insights::ListControlDomainInsightsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_control_domain_insights::ListControlDomainInsightsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_control_domain_insights::ListControlDomainInsightsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_control_domain_insights::ListControlDomainInsightsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_control_domain_insights::ListControlDomainInsightsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_control_domain_insights_by_assessment::ListControlDomainInsightsByAssessmentError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_control_domain_insights_by_assessment::ListControlDomainInsightsByAssessmentError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::list_control_domain_insights_by_assessment::ListControlDomainInsightsByAssessmentError> for Error {
+    fn from(err: crate::operation::list_control_domain_insights_by_assessment::ListControlDomainInsightsByAssessmentError) -> Self {
+        match err {
+            crate::operation::list_control_domain_insights_by_assessment::ListControlDomainInsightsByAssessmentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_control_domain_insights_by_assessment::ListControlDomainInsightsByAssessmentError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_control_domain_insights_by_assessment::ListControlDomainInsightsByAssessmentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_control_domain_insights_by_assessment::ListControlDomainInsightsByAssessmentError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_control_domain_insights_by_assessment::ListControlDomainInsightsByAssessmentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_control_insights_by_control_domain::ListControlInsightsByControlDomainError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_control_insights_by_control_domain::ListControlInsightsByControlDomainError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::list_control_insights_by_control_domain::ListControlInsightsByControlDomainError> for Error {
+    fn from(err: crate::operation::list_control_insights_by_control_domain::ListControlInsightsByControlDomainError) -> Self {
+        match err {
+            crate::operation::list_control_insights_by_control_domain::ListControlInsightsByControlDomainError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_control_insights_by_control_domain::ListControlInsightsByControlDomainError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_control_insights_by_control_domain::ListControlInsightsByControlDomainError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_control_insights_by_control_domain::ListControlInsightsByControlDomainError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_control_insights_by_control_domain::ListControlInsightsByControlDomainError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::list_controls::ListControlsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_controls::ListControlsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_controls::ListControlsError> for Error {
+    fn from(err: crate::operation::list_controls::ListControlsError) -> Self {
+        match err {
+            crate::operation::list_controls::ListControlsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_controls::ListControlsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_controls::ListControlsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_controls::ListControlsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_keywords_for_data_source::ListKeywordsForDataSourceError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_keywords_for_data_source::ListKeywordsForDataSourceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_keywords_for_data_source::ListKeywordsForDataSourceError>
+    for Error
+{
+    fn from(
+        err: crate::operation::list_keywords_for_data_source::ListKeywordsForDataSourceError,
+    ) -> Self {
+        match err {
+            crate::operation::list_keywords_for_data_source::ListKeywordsForDataSourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_keywords_for_data_source::ListKeywordsForDataSourceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_keywords_for_data_source::ListKeywordsForDataSourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_keywords_for_data_source::ListKeywordsForDataSourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_notifications::ListNotificationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_notifications::ListNotificationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_notifications::ListNotificationsError> for Error {
+    fn from(err: crate::operation::list_notifications::ListNotificationsError) -> Self {
+        match err {
+            crate::operation::list_notifications::ListNotificationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_notifications::ListNotificationsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_notifications::ListNotificationsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_notifications::ListNotificationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_tags_for_resource::ListTagsForResourceError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_tags_for_resource::ListTagsForResourceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> for Error {
+    fn from(err: crate::operation::list_tags_for_resource::ListTagsForResourceError) -> Self {
+        match err {
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::register_account::RegisterAccountError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::register_account::RegisterAccountError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::register_account::RegisterAccountError> for Error {
+    fn from(err: crate::operation::register_account::RegisterAccountError) -> Self {
+        match err {
+            crate::operation::register_account::RegisterAccountError::AccessDeniedException(
                 inner,
             ) => Error::AccessDeniedException(inner),
-            crate::error::ListAssessmentFrameworkShareRequestsError::InternalServerException(
+            crate::operation::register_account::RegisterAccountError::InternalServerException(
                 inner,
             ) => Error::InternalServerException(inner),
-            crate::error::ListAssessmentFrameworkShareRequestsError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::ListAssessmentFrameworkShareRequestsError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListAssessmentReportsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListAssessmentReportsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::ListAssessmentReportsError> for Error {
-    fn from(err: crate::error::ListAssessmentReportsError) -> Self {
-        match err {
-            crate::error::ListAssessmentReportsError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::ListAssessmentReportsError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::ListAssessmentReportsError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::ListAssessmentReportsError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListAssessmentsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListAssessmentsError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::ListAssessmentsError> for Error {
-    fn from(err: crate::error::ListAssessmentsError) -> Self {
-        match err {
-            crate::error::ListAssessmentsError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::ListAssessmentsError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::ListAssessmentsError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::ListAssessmentsError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListControlDomainInsightsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListControlDomainInsightsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::ListControlDomainInsightsError> for Error {
-    fn from(err: crate::error::ListControlDomainInsightsError) -> Self {
-        match err {
-            crate::error::ListControlDomainInsightsError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::ListControlDomainInsightsError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::ListControlDomainInsightsError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::ListControlDomainInsightsError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::ListControlDomainInsightsError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::ListControlDomainInsightsByAssessmentError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::ListControlDomainInsightsByAssessmentError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::ListControlDomainInsightsByAssessmentError> for Error {
-    fn from(err: crate::error::ListControlDomainInsightsByAssessmentError) -> Self {
-        match err {
-            crate::error::ListControlDomainInsightsByAssessmentError::AccessDeniedException(
-                inner,
-            ) => Error::AccessDeniedException(inner),
-            crate::error::ListControlDomainInsightsByAssessmentError::InternalServerException(
-                inner,
-            ) => Error::InternalServerException(inner),
-            crate::error::ListControlDomainInsightsByAssessmentError::ResourceNotFoundException(
+            crate::operation::register_account::RegisterAccountError::ResourceNotFoundException(
                 inner,
             ) => Error::ResourceNotFoundException(inner),
-            crate::error::ListControlDomainInsightsByAssessmentError::ValidationException(
+            crate::operation::register_account::RegisterAccountError::ThrottlingException(
+                inner,
+            ) => Error::ThrottlingException(inner),
+            crate::operation::register_account::RegisterAccountError::ValidationException(
                 inner,
             ) => Error::ValidationException(inner),
-            crate::error::ListControlDomainInsightsByAssessmentError::Unhandled(inner) => {
+            crate::operation::register_account::RegisterAccountError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::register_organization_admin_account::RegisterOrganizationAdminAccountError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::register_organization_admin_account::RegisterOrganizationAdminAccountError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::register_organization_admin_account::RegisterOrganizationAdminAccountError> for Error {
+    fn from(err: crate::operation::register_organization_admin_account::RegisterOrganizationAdminAccountError) -> Self {
+        match err {
+            crate::operation::register_organization_admin_account::RegisterOrganizationAdminAccountError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::register_organization_admin_account::RegisterOrganizationAdminAccountError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::register_organization_admin_account::RegisterOrganizationAdminAccountError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::register_organization_admin_account::RegisterOrganizationAdminAccountError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::register_organization_admin_account::RegisterOrganizationAdminAccountError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::start_assessment_framework_share::StartAssessmentFrameworkShareError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::start_assessment_framework_share::StartAssessmentFrameworkShareError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::start_assessment_framework_share::StartAssessmentFrameworkShareError>
+    for Error
+{
+    fn from(
+        err: crate::operation::start_assessment_framework_share::StartAssessmentFrameworkShareError,
+    ) -> Self {
+        match err {
+            crate::operation::start_assessment_framework_share::StartAssessmentFrameworkShareError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::start_assessment_framework_share::StartAssessmentFrameworkShareError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_assessment_framework_share::StartAssessmentFrameworkShareError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_assessment_framework_share::StartAssessmentFrameworkShareError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::start_assessment_framework_share::StartAssessmentFrameworkShareError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::tag_resource::TagResourceError> for Error {
+    fn from(err: crate::operation::tag_resource::TagResourceError) -> Self {
+        match err {
+            crate::operation::tag_resource::TagResourceError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::tag_resource::TagResourceError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::tag_resource::TagResourceError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::tag_resource::TagResourceError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::untag_resource::UntagResourceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::untag_resource::UntagResourceError> for Error {
+    fn from(err: crate::operation::untag_resource::UntagResourceError) -> Self {
+        match err {
+            crate::operation::untag_resource::UntagResourceError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::untag_resource::UntagResourceError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
         }
@@ -1804,14 +2013,17 @@ impl From<crate::error::ListControlDomainInsightsByAssessmentError> for Error {
 }
 impl<R>
     From<
-        aws_smithy_http::result::SdkError<crate::error::ListControlInsightsByControlDomainError, R>,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_assessment::UpdateAssessmentError,
+            R,
+        >,
     > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::ListControlInsightsByControlDomainError,
+            crate::operation::update_assessment::UpdateAssessmentError,
             R,
         >,
     ) -> Self {
@@ -1830,231 +2042,261 @@ where
         }
     }
 }
-impl From<crate::error::ListControlInsightsByControlDomainError> for Error {
-    fn from(err: crate::error::ListControlInsightsByControlDomainError) -> Self {
+impl From<crate::operation::update_assessment::UpdateAssessmentError> for Error {
+    fn from(err: crate::operation::update_assessment::UpdateAssessmentError) -> Self {
         match err {
-            crate::error::ListControlInsightsByControlDomainError::AccessDeniedException(inner) => {
+            crate::operation::update_assessment::UpdateAssessmentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_assessment::UpdateAssessmentError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_assessment::UpdateAssessmentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_assessment::UpdateAssessmentError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_assessment::UpdateAssessmentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_assessment_control::UpdateAssessmentControlError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_assessment_control::UpdateAssessmentControlError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_assessment_control::UpdateAssessmentControlError> for Error {
+    fn from(
+        err: crate::operation::update_assessment_control::UpdateAssessmentControlError,
+    ) -> Self {
+        match err {
+            crate::operation::update_assessment_control::UpdateAssessmentControlError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_assessment_control::UpdateAssessmentControlError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_assessment_control::UpdateAssessmentControlError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_assessment_control::UpdateAssessmentControlError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_assessment_control::UpdateAssessmentControlError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_assessment_control_set_status::UpdateAssessmentControlSetStatusError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::update_assessment_control_set_status::UpdateAssessmentControlSetStatusError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::update_assessment_control_set_status::UpdateAssessmentControlSetStatusError> for Error {
+    fn from(err: crate::operation::update_assessment_control_set_status::UpdateAssessmentControlSetStatusError) -> Self {
+        match err {
+            crate::operation::update_assessment_control_set_status::UpdateAssessmentControlSetStatusError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_assessment_control_set_status::UpdateAssessmentControlSetStatusError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_assessment_control_set_status::UpdateAssessmentControlSetStatusError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_assessment_control_set_status::UpdateAssessmentControlSetStatusError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_assessment_control_set_status::UpdateAssessmentControlSetStatusError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_assessment_framework::UpdateAssessmentFrameworkError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_assessment_framework::UpdateAssessmentFrameworkError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_assessment_framework::UpdateAssessmentFrameworkError> for Error {
+    fn from(
+        err: crate::operation::update_assessment_framework::UpdateAssessmentFrameworkError,
+    ) -> Self {
+        match err {
+            crate::operation::update_assessment_framework::UpdateAssessmentFrameworkError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_assessment_framework::UpdateAssessmentFrameworkError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_assessment_framework::UpdateAssessmentFrameworkError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_assessment_framework::UpdateAssessmentFrameworkError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_assessment_framework::UpdateAssessmentFrameworkError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_assessment_framework_share::UpdateAssessmentFrameworkShareError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::update_assessment_framework_share::UpdateAssessmentFrameworkShareError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::update_assessment_framework_share::UpdateAssessmentFrameworkShareError>
+    for Error
+{
+    fn from(
+        err: crate::operation::update_assessment_framework_share::UpdateAssessmentFrameworkShareError,
+    ) -> Self {
+        match err {
+            crate::operation::update_assessment_framework_share::UpdateAssessmentFrameworkShareError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_assessment_framework_share::UpdateAssessmentFrameworkShareError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_assessment_framework_share::UpdateAssessmentFrameworkShareError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_assessment_framework_share::UpdateAssessmentFrameworkShareError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_assessment_framework_share::UpdateAssessmentFrameworkShareError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_assessment_status::UpdateAssessmentStatusError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_assessment_status::UpdateAssessmentStatusError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_assessment_status::UpdateAssessmentStatusError> for Error {
+    fn from(err: crate::operation::update_assessment_status::UpdateAssessmentStatusError) -> Self {
+        match err {
+            crate::operation::update_assessment_status::UpdateAssessmentStatusError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_assessment_status::UpdateAssessmentStatusError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_assessment_status::UpdateAssessmentStatusError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_assessment_status::UpdateAssessmentStatusError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::update_assessment_status::UpdateAssessmentStatusError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_assessment_status::UpdateAssessmentStatusError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::update_control::UpdateControlError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_control::UpdateControlError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_control::UpdateControlError> for Error {
+    fn from(err: crate::operation::update_control::UpdateControlError) -> Self {
+        match err {
+            crate::operation::update_control::UpdateControlError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::ListControlInsightsByControlDomainError::InternalServerException(
+            crate::operation::update_control::UpdateControlError::InternalServerException(
                 inner,
             ) => Error::InternalServerException(inner),
-            crate::error::ListControlInsightsByControlDomainError::ResourceNotFoundException(
+            crate::operation::update_control::UpdateControlError::ResourceNotFoundException(
                 inner,
             ) => Error::ResourceNotFoundException(inner),
-            crate::error::ListControlInsightsByControlDomainError::ValidationException(inner) => {
+            crate::operation::update_control::UpdateControlError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
-            crate::error::ListControlInsightsByControlDomainError::Unhandled(inner) => {
+            crate::operation::update_control::UpdateControlError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListControlsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListControlsError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::ListControlsError> for Error {
-    fn from(err: crate::error::ListControlsError) -> Self {
-        match err {
-            crate::error::ListControlsError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::ListControlsError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::ListControlsError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::ListControlsError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListKeywordsForDataSourceError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListKeywordsForDataSourceError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::ListKeywordsForDataSourceError> for Error {
-    fn from(err: crate::error::ListKeywordsForDataSourceError) -> Self {
-        match err {
-            crate::error::ListKeywordsForDataSourceError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::ListKeywordsForDataSourceError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::ListKeywordsForDataSourceError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::ListKeywordsForDataSourceError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListNotificationsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListNotificationsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::ListNotificationsError> for Error {
-    fn from(err: crate::error::ListNotificationsError) -> Self {
-        match err {
-            crate::error::ListNotificationsError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::ListNotificationsError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::ListNotificationsError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::ListNotificationsError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::ListTagsForResourceError> for Error {
-    fn from(err: crate::error::ListTagsForResourceError) -> Self {
-        match err {
-            crate::error::ListTagsForResourceError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::ListTagsForResourceError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::ListTagsForResourceError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::RegisterAccountError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::RegisterAccountError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::RegisterAccountError> for Error {
-    fn from(err: crate::error::RegisterAccountError) -> Self {
-        match err {
-            crate::error::RegisterAccountError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::RegisterAccountError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::RegisterAccountError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::RegisterAccountError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::RegisterAccountError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::RegisterAccountError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::RegisterOrganizationAdminAccountError, R>>
-    for Error
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_settings::UpdateSettingsError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::RegisterOrganizationAdminAccountError,
+            crate::operation::update_settings::UpdateSettingsError,
             R,
         >,
     ) -> Self {
@@ -2073,531 +2315,45 @@ where
         }
     }
 }
-impl From<crate::error::RegisterOrganizationAdminAccountError> for Error {
-    fn from(err: crate::error::RegisterOrganizationAdminAccountError) -> Self {
+impl From<crate::operation::update_settings::UpdateSettingsError> for Error {
+    fn from(err: crate::operation::update_settings::UpdateSettingsError) -> Self {
         match err {
-            crate::error::RegisterOrganizationAdminAccountError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::RegisterOrganizationAdminAccountError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::RegisterOrganizationAdminAccountError::ResourceNotFoundException(
+            crate::operation::update_settings::UpdateSettingsError::AccessDeniedException(
                 inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::error::RegisterOrganizationAdminAccountError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::RegisterOrganizationAdminAccountError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartAssessmentFrameworkShareError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::StartAssessmentFrameworkShareError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::StartAssessmentFrameworkShareError> for Error {
-    fn from(err: crate::error::StartAssessmentFrameworkShareError) -> Self {
-        match err {
-            crate::error::StartAssessmentFrameworkShareError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::StartAssessmentFrameworkShareError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::StartAssessmentFrameworkShareError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::StartAssessmentFrameworkShareError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::StartAssessmentFrameworkShareError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::TagResourceError> for Error {
-    fn from(err: crate::error::TagResourceError) -> Self {
-        match err {
-            crate::error::TagResourceError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::TagResourceError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::TagResourceError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::UntagResourceError> for Error {
-    fn from(err: crate::error::UntagResourceError) -> Self {
-        match err {
-            crate::error::UntagResourceError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::UntagResourceError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::UntagResourceError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateAssessmentError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateAssessmentError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::UpdateAssessmentError> for Error {
-    fn from(err: crate::error::UpdateAssessmentError) -> Self {
-        match err {
-            crate::error::UpdateAssessmentError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::UpdateAssessmentError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::UpdateAssessmentError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::UpdateAssessmentError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::UpdateAssessmentError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateAssessmentControlError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateAssessmentControlError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::UpdateAssessmentControlError> for Error {
-    fn from(err: crate::error::UpdateAssessmentControlError) -> Self {
-        match err {
-            crate::error::UpdateAssessmentControlError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::UpdateAssessmentControlError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::UpdateAssessmentControlError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::UpdateAssessmentControlError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::UpdateAssessmentControlError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::UpdateAssessmentControlSetStatusError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::UpdateAssessmentControlSetStatusError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::UpdateAssessmentControlSetStatusError> for Error {
-    fn from(err: crate::error::UpdateAssessmentControlSetStatusError) -> Self {
-        match err {
-            crate::error::UpdateAssessmentControlSetStatusError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::UpdateAssessmentControlSetStatusError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::UpdateAssessmentControlSetStatusError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::error::UpdateAssessmentControlSetStatusError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::UpdateAssessmentControlSetStatusError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateAssessmentFrameworkError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateAssessmentFrameworkError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::UpdateAssessmentFrameworkError> for Error {
-    fn from(err: crate::error::UpdateAssessmentFrameworkError) -> Self {
-        match err {
-            crate::error::UpdateAssessmentFrameworkError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::UpdateAssessmentFrameworkError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::UpdateAssessmentFrameworkError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::UpdateAssessmentFrameworkError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::UpdateAssessmentFrameworkError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::UpdateAssessmentFrameworkShareError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::UpdateAssessmentFrameworkShareError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::UpdateAssessmentFrameworkShareError> for Error {
-    fn from(err: crate::error::UpdateAssessmentFrameworkShareError) -> Self {
-        match err {
-            crate::error::UpdateAssessmentFrameworkShareError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::UpdateAssessmentFrameworkShareError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::UpdateAssessmentFrameworkShareError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::UpdateAssessmentFrameworkShareError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::UpdateAssessmentFrameworkShareError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateAssessmentStatusError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateAssessmentStatusError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::UpdateAssessmentStatusError> for Error {
-    fn from(err: crate::error::UpdateAssessmentStatusError) -> Self {
-        match err {
-            crate::error::UpdateAssessmentStatusError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::UpdateAssessmentStatusError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::UpdateAssessmentStatusError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::UpdateAssessmentStatusError::ServiceQuotaExceededException(inner) => {
-                Error::ServiceQuotaExceededException(inner)
-            }
-            crate::error::UpdateAssessmentStatusError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::UpdateAssessmentStatusError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateControlError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateControlError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::UpdateControlError> for Error {
-    fn from(err: crate::error::UpdateControlError) -> Self {
-        match err {
-            crate::error::UpdateControlError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::UpdateControlError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::UpdateControlError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::UpdateControlError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::UpdateControlError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateSettingsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateSettingsError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::UpdateSettingsError> for Error {
-    fn from(err: crate::error::UpdateSettingsError) -> Self {
-        match err {
-            crate::error::UpdateSettingsError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::UpdateSettingsError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::UpdateSettingsError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::UpdateSettingsError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::ValidateAssessmentReportIntegrityError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::ValidateAssessmentReportIntegrityError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::ValidateAssessmentReportIntegrityError> for Error {
-    fn from(err: crate::error::ValidateAssessmentReportIntegrityError) -> Self {
-        match err {
-            crate::error::ValidateAssessmentReportIntegrityError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::ValidateAssessmentReportIntegrityError::InternalServerException(
+            ) => Error::AccessDeniedException(inner),
+            crate::operation::update_settings::UpdateSettingsError::InternalServerException(
                 inner,
             ) => Error::InternalServerException(inner),
-            crate::error::ValidateAssessmentReportIntegrityError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::error::ValidateAssessmentReportIntegrityError::ValidationException(inner) => {
+            crate::operation::update_settings::UpdateSettingsError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
-            crate::error::ValidateAssessmentReportIntegrityError::Unhandled(inner) => {
+            crate::operation::update_settings::UpdateSettingsError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::validate_assessment_report_integrity::ValidateAssessmentReportIntegrityError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::validate_assessment_report_integrity::ValidateAssessmentReportIntegrityError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::validate_assessment_report_integrity::ValidateAssessmentReportIntegrityError> for Error {
+    fn from(err: crate::operation::validate_assessment_report_integrity::ValidateAssessmentReportIntegrityError) -> Self {
+        match err {
+            crate::operation::validate_assessment_report_integrity::ValidateAssessmentReportIntegrityError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::validate_assessment_report_integrity::ValidateAssessmentReportIntegrityError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::validate_assessment_report_integrity::ValidateAssessmentReportIntegrityError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::validate_assessment_report_integrity::ValidateAssessmentReportIntegrityError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::validate_assessment_report_integrity::ValidateAssessmentReportIntegrityError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

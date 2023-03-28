@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_dns_servers_options_modify_structure(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::DnsServersOptionsModifyStructure,
+    input: &crate::types::DnsServersOptionsModifyStructure,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("CustomDnsServers");

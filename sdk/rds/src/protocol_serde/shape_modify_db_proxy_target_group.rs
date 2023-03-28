@@ -3,78 +3,74 @@
 pub fn de_modify_db_proxy_target_group_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ModifyDbProxyTargetGroupOutput,
-    crate::error::ModifyDBProxyTargetGroupError,
+    crate::operation::modify_db_proxy_target_group::ModifyDbProxyTargetGroupOutput,
+    crate::operation::modify_db_proxy_target_group::ModifyDBProxyTargetGroupError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ModifyDBProxyTargetGroupError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::modify_db_proxy_target_group::ModifyDBProxyTargetGroupError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::ModifyDBProxyTargetGroupError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::modify_db_proxy_target_group::ModifyDBProxyTargetGroupError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBProxyNotFoundFault" => {
-            crate::error::ModifyDBProxyTargetGroupError::DbProxyNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "DBProxyNotFoundFault" => crate::operation::modify_db_proxy_target_group::ModifyDBProxyTargetGroupError::DbProxyNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::db_proxy_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::DbProxyNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_db_proxy_not_found_fault::de_db_proxy_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyDBProxyTargetGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_db_proxy_not_found_fault::de_db_proxy_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_db_proxy_target_group::ModifyDBProxyTargetGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "DBProxyTargetGroupNotFoundFault" => {
-            crate::error::ModifyDBProxyTargetGroupError::DbProxyTargetGroupNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "DBProxyTargetGroupNotFoundFault" => crate::operation::modify_db_proxy_target_group::ModifyDBProxyTargetGroupError::DbProxyTargetGroupNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::db_proxy_target_group_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::DbProxyTargetGroupNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_db_proxy_target_group_not_found_fault::de_db_proxy_target_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyDBProxyTargetGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_db_proxy_target_group_not_found_fault::de_db_proxy_target_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_db_proxy_target_group::ModifyDBProxyTargetGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidDBProxyStateFault" => {
-            crate::error::ModifyDBProxyTargetGroupError::InvalidDbProxyStateFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidDBProxyStateFault" => crate::operation::modify_db_proxy_target_group::ModifyDBProxyTargetGroupError::InvalidDbProxyStateFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_db_proxy_state_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidDbProxyStateFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_db_proxy_state_fault::de_invalid_db_proxy_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyDBProxyTargetGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_db_proxy_state_fault::de_invalid_db_proxy_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_db_proxy_target_group::ModifyDBProxyTargetGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::ModifyDBProxyTargetGroupError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::modify_db_proxy_target_group::ModifyDBProxyTargetGroupError::generic(generic)
     })
 }
 
@@ -82,14 +78,14 @@ pub fn de_modify_db_proxy_target_group_http_error(
 pub fn de_modify_db_proxy_target_group_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ModifyDbProxyTargetGroupOutput,
-    crate::error::ModifyDBProxyTargetGroupError,
+    crate::operation::modify_db_proxy_target_group::ModifyDbProxyTargetGroupOutput,
+    crate::operation::modify_db_proxy_target_group::ModifyDBProxyTargetGroupError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::modify_db_proxy_target_group_output::Builder::default();
+        let mut output = crate::operation::modify_db_proxy_target_group::builders::ModifyDbProxyTargetGroupOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_modify_db_proxy_target_group::de_modify_db_proxy_target_group(response.body().as_ref(), output).map_err(crate::error::ModifyDBProxyTargetGroupError::unhandled)?;
+        output = crate::protocol_serde::shape_modify_db_proxy_target_group::de_modify_db_proxy_target_group(response.body().as_ref(), output).map_err(crate::operation::modify_db_proxy_target_group::ModifyDBProxyTargetGroupError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -100,9 +96,9 @@ pub fn de_modify_db_proxy_target_group_http_response(
 #[allow(unused_mut)]
 pub fn de_modify_db_proxy_target_group(
     inp: &[u8],
-    mut builder: crate::output::modify_db_proxy_target_group_output::Builder,
+    mut builder: crate::operation::modify_db_proxy_target_group::builders::ModifyDbProxyTargetGroupOutputBuilder,
 ) -> Result<
-    crate::output::modify_db_proxy_target_group_output::Builder,
+    crate::operation::modify_db_proxy_target_group::builders::ModifyDbProxyTargetGroupOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

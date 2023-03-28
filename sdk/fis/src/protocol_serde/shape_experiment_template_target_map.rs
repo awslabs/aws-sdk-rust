@@ -2,7 +2,7 @@
 pub(crate) fn de_experiment_template_target_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<std::string::String, crate::model::ExperimentTemplateTarget>>,
+    Option<std::collections::HashMap<std::string::String, crate::types::ExperimentTemplateTarget>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

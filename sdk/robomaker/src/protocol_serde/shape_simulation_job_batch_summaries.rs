@@ -2,7 +2,7 @@
 pub(crate) fn de_simulation_job_batch_summaries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SimulationJobBatchSummary>>,
+    Option<std::vec::Vec<crate::types::SimulationJobBatchSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_unfiltered_partition_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::UnfilteredPartition>>,
+    Option<std::vec::Vec<crate::types::UnfilteredPartition>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

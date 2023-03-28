@@ -2,7 +2,7 @@
 pub(crate) fn de_subscription_filters<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SubscriptionFilter>>,
+    Option<std::vec::Vec<crate::types::SubscriptionFilter>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

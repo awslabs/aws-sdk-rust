@@ -2,7 +2,7 @@
 pub(crate) fn de_patch_rule_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::PatchRule>>,
+    Option<std::vec::Vec<crate::types::PatchRule>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

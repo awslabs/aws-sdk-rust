@@ -2,7 +2,7 @@
 pub(crate) fn de_ide_configuration_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::IdeConfiguration>>,
+    Option<std::vec::Vec<crate::types::IdeConfiguration>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

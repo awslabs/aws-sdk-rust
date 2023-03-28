@@ -2,26 +2,69 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_logout_user_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::LogoutUserOutput, crate::error::LogoutUserError> {
+) -> std::result::Result<
+    crate::operation::logout_user::LogoutUserOutput,
+    crate::operation::logout_user::LogoutUserError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::LogoutUserError::unhandled)?;
+        .map_err(crate::operation::logout_user::LogoutUserError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::LogoutUserError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::logout_user::LogoutUserError::unhandled(
+                generic,
+            ))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::LogoutUserError::BadRequestException({
+        "BadRequestException" => {
+            crate::operation::logout_user::LogoutUserError::BadRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::BadRequestExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::logout_user::LogoutUserError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ForbiddenException" => {
+            crate::operation::logout_user::LogoutUserError::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ForbiddenExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::logout_user::LogoutUserError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "NotFoundException" => crate::operation::logout_user::LogoutUserError::NotFoundException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_exception::Builder::default();
+                let mut output = crate::types::error::builders::NotFoundExceptionBuilder::default();
                 let _ = response;
-                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::LogoutUserError::unhandled)?;
+                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::logout_user::LogoutUserError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -30,60 +73,34 @@ pub fn de_logout_user_http_error(
             }
             tmp
         }),
-        "ForbiddenException" => crate::error::LogoutUserError::ForbiddenException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "ServiceFailureException" => {
+            crate::operation::logout_user::LogoutUserError::ServiceFailureException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::LogoutUserError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "NotFoundException" => crate::error::LogoutUserError::NotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::LogoutUserError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ServiceFailureException" => crate::error::LogoutUserError::ServiceFailureException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::service_failure_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::LogoutUserError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ServiceFailureExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::logout_user::LogoutUserError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "ServiceUnavailableException" => {
-            crate::error::LogoutUserError::ServiceUnavailableException({
+            crate::operation::logout_user::LogoutUserError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::service_unavailable_exception::Builder::default();
+                        crate::types::error::builders::ServiceUnavailableExceptionBuilder::default(
+                        );
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::LogoutUserError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::logout_user::LogoutUserError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -93,30 +110,34 @@ pub fn de_logout_user_http_error(
                 tmp
             })
         }
-        "ThrottledClientException" => crate::error::LogoutUserError::ThrottledClientException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "ThrottledClientException" => {
+            crate::operation::logout_user::LogoutUserError::ThrottledClientException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::throttled_client_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttled_client_exception::de_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::LogoutUserError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ThrottledClientExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_throttled_client_exception::de_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::logout_user::LogoutUserError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "UnauthorizedClientException" => {
-            crate::error::LogoutUserError::UnauthorizedClientException({
+            crate::operation::logout_user::LogoutUserError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::unauthorized_client_exception::Builder::default();
+                        crate::types::error::builders::UnauthorizedClientExceptionBuilder::default(
+                        );
                     let _ = response;
-                    output = crate::protocol_serde::shape_unauthorized_client_exception::de_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::LogoutUserError::unhandled)?;
+                    output = crate::protocol_serde::shape_unauthorized_client_exception::de_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::logout_user::LogoutUserError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -126,17 +147,21 @@ pub fn de_logout_user_http_error(
                 tmp
             })
         }
-        _ => crate::error::LogoutUserError::generic(generic),
+        _ => crate::operation::logout_user::LogoutUserError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_logout_user_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::LogoutUserOutput, crate::error::LogoutUserError> {
+) -> std::result::Result<
+    crate::operation::logout_user::LogoutUserOutput,
+    crate::operation::logout_user::LogoutUserError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::logout_user_output::Builder::default();
+        let mut output =
+            crate::operation::logout_user::builders::LogoutUserOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

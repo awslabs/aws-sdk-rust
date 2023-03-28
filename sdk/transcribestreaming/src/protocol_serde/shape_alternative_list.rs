@@ -2,7 +2,7 @@
 pub(crate) fn de_alternative_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Alternative>>,
+    Option<std::vec::Vec<crate::types::Alternative>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

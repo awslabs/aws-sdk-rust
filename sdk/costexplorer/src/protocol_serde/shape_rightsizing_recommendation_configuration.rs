@@ -2,7 +2,7 @@
 pub(crate) fn de_rightsizing_recommendation_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::RightsizingRecommendationConfiguration>,
+    Option<crate::types::RightsizingRecommendationConfiguration>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::rightsizing_recommendation_configuration::Builder::default();
+                crate::types::builders::RightsizingRecommendationConfigurationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -31,7 +31,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::RecommendationTarget::from(u.as_ref())
+                                            crate::types::RecommendationTarget::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -69,7 +69,7 @@ where
 
 pub fn ser_rightsizing_recommendation_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::RightsizingRecommendationConfiguration,
+    input: &crate::types::RightsizingRecommendationConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.recommendation_target {
         object.key("RecommendationTarget").string(var_1.as_str());

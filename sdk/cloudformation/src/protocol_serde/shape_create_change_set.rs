@@ -2,84 +2,98 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_change_set_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::CreateChangeSetOutput, crate::error::CreateChangeSetError> {
+) -> std::result::Result<
+    crate::operation::create_change_set::CreateChangeSetOutput,
+    crate::operation::create_change_set::CreateChangeSetError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::CreateChangeSetError::unhandled)?;
+        .map_err(crate::operation::create_change_set::CreateChangeSetError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::CreateChangeSetError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::create_change_set::CreateChangeSetError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AlreadyExistsException" => crate::error::CreateChangeSetError::AlreadyExistsException({
+        "AlreadyExistsException" => crate::operation::create_change_set::CreateChangeSetError::AlreadyExistsException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::already_exists_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_already_exists_exception::de_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateChangeSetError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InsufficientCapabilitiesException" => {
-            crate::error::CreateChangeSetError::InsufficientCapabilitiesException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::insufficient_capabilities_exception::Builder::default();
+                    let mut output = crate::types::error::builders::AlreadyExistsExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_insufficient_capabilities_exception::de_insufficient_capabilities_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateChangeSetError::unhandled)?;
+                    output = crate::protocol_serde::shape_already_exists_exception::de_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_change_set::CreateChangeSetError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "LimitExceededException" => crate::error::CreateChangeSetError::LimitExceededException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::limit_exceeded_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateChangeSetError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::CreateChangeSetError::generic(generic),
+        "InsufficientCapabilitiesException" => crate::operation::create_change_set::CreateChangeSetError::InsufficientCapabilitiesException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InsufficientCapabilitiesExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_insufficient_capabilities_exception::de_insufficient_capabilities_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_change_set::CreateChangeSetError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "LimitExceededException" => crate::operation::create_change_set::CreateChangeSetError::LimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_change_set::CreateChangeSetError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::create_change_set::CreateChangeSetError::generic(generic)
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_change_set_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::CreateChangeSetOutput, crate::error::CreateChangeSetError> {
+) -> std::result::Result<
+    crate::operation::create_change_set::CreateChangeSetOutput,
+    crate::operation::create_change_set::CreateChangeSetError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::create_change_set_output::Builder::default();
+        let mut output =
+            crate::operation::create_change_set::builders::CreateChangeSetOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_create_change_set::de_create_change_set(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::CreateChangeSetError::unhandled)?;
+        .map_err(crate::operation::create_change_set::CreateChangeSetError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -90,9 +104,11 @@ pub fn de_create_change_set_http_response(
 #[allow(unused_mut)]
 pub fn de_create_change_set(
     inp: &[u8],
-    mut builder: crate::output::create_change_set_output::Builder,
-) -> Result<crate::output::create_change_set_output::Builder, aws_smithy_xml::decode::XmlDecodeError>
-{
+    mut builder: crate::operation::create_change_set::builders::CreateChangeSetOutputBuilder,
+) -> Result<
+    crate::operation::create_change_set::builders::CreateChangeSetOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

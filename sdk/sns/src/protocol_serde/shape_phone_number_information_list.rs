@@ -2,7 +2,7 @@
 pub fn de_phone_number_information_list(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::PhoneNumberInformation>,
+    std::vec::Vec<crate::types::PhoneNumberInformation>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

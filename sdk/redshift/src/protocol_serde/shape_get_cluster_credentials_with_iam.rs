@@ -3,60 +3,55 @@
 pub fn de_get_cluster_credentials_with_iam_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetClusterCredentialsWithIamOutput,
-    crate::error::GetClusterCredentialsWithIAMError,
+    crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIamOutput,
+    crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIAMError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetClusterCredentialsWithIAMError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIAMError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::GetClusterCredentialsWithIAMError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIAMError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ClusterNotFound" => {
-            crate::error::GetClusterCredentialsWithIAMError::ClusterNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "ClusterNotFound" => crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIAMError::ClusterNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::cluster_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::ClusterNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_cluster_not_found_fault::de_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::GetClusterCredentialsWithIAMError::unhandled)?;
+                    output = crate::protocol_serde::shape_cluster_not_found_fault::de_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIAMError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "UnsupportedOperation" => {
-            crate::error::GetClusterCredentialsWithIAMError::UnsupportedOperationFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "UnsupportedOperation" => crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIAMError::UnsupportedOperationFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::unsupported_operation_fault::Builder::default();
+                    let mut output = crate::types::error::builders::UnsupportedOperationFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_unsupported_operation_fault::de_unsupported_operation_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::GetClusterCredentialsWithIAMError::unhandled)?;
+                    output = crate::protocol_serde::shape_unsupported_operation_fault::de_unsupported_operation_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIAMError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::GetClusterCredentialsWithIAMError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIAMError::generic(generic)
     })
 }
 
@@ -64,14 +59,14 @@ pub fn de_get_cluster_credentials_with_iam_http_error(
 pub fn de_get_cluster_credentials_with_iam_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetClusterCredentialsWithIamOutput,
-    crate::error::GetClusterCredentialsWithIAMError,
+    crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIamOutput,
+    crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIAMError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_cluster_credentials_with_iam_output::Builder::default();
+        let mut output = crate::operation::get_cluster_credentials_with_iam::builders::GetClusterCredentialsWithIamOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_get_cluster_credentials_with_iam::de_get_cluster_credentials_with_iam(response.body().as_ref(), output).map_err(crate::error::GetClusterCredentialsWithIAMError::unhandled)?;
+        output = crate::protocol_serde::shape_get_cluster_credentials_with_iam::de_get_cluster_credentials_with_iam(response.body().as_ref(), output).map_err(crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIAMError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -80,13 +75,7 @@ pub fn de_get_cluster_credentials_with_iam_http_response(
 }
 
 #[allow(unused_mut)]
-pub fn de_get_cluster_credentials_with_iam(
-    inp: &[u8],
-    mut builder: crate::output::get_cluster_credentials_with_iam_output::Builder,
-) -> Result<
-    crate::output::get_cluster_credentials_with_iam_output::Builder,
-    aws_smithy_xml::decode::XmlDecodeError,
-> {
+pub fn de_get_cluster_credentials_with_iam(inp: &[u8], mut builder: crate::operation::get_cluster_credentials_with_iam::builders::GetClusterCredentialsWithIamOutputBuilder) -> Result<crate::operation::get_cluster_credentials_with_iam::builders::GetClusterCredentialsWithIamOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

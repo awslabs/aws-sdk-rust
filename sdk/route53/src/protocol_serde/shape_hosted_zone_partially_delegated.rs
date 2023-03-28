@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_hosted_zone_partially_delegated_xml_err(
     inp: &[u8],
-    mut builder: crate::error::hosted_zone_partially_delegated::Builder,
+    mut builder: crate::types::error::builders::HostedZonePartiallyDelegatedBuilder,
 ) -> Result<
-    crate::error::hosted_zone_partially_delegated::Builder,
+    crate::types::error::builders::HostedZonePartiallyDelegatedBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

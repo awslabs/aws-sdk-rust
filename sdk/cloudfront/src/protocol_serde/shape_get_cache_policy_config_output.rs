@@ -2,15 +2,17 @@
 pub fn de_cache_policy_config_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::CachePolicyConfig>,
-    crate::error::GetCachePolicyConfigError,
+    std::option::Option<crate::types::CachePolicyConfig>,
+    crate::operation::get_cache_policy_config::GetCachePolicyConfigError,
 > {
     (!body.is_empty())
         .then(|| {
             crate::protocol_serde::shape_get_cache_policy_config_output::de_cache_policy_config(
                 body,
             )
-            .map_err(crate::error::GetCachePolicyConfigError::unhandled)
+            .map_err(
+                crate::operation::get_cache_policy_config::GetCachePolicyConfigError::unhandled,
+            )
         })
         .transpose()
 }
@@ -27,7 +29,7 @@ pub(crate) fn de_e_tag_header(
 
 pub fn de_cache_policy_config(
     inp: &[u8],
-) -> Result<crate::model::CachePolicyConfig, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::CachePolicyConfig, aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;

@@ -2,7 +2,7 @@
 pub fn de_summary_map_type(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::collections::HashMap<crate::model::SummaryKeyType, i32>,
+    std::collections::HashMap<crate::types::SummaryKeyType, i32>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::collections::HashMap::new();
@@ -21,16 +21,16 @@ pub fn de_summary_map_type(
 
 pub fn de_summary_map_type_entry(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-    out: &mut std::collections::HashMap<crate::model::SummaryKeyType, i32>,
+    out: &mut std::collections::HashMap<crate::types::SummaryKeyType, i32>,
 ) -> Result<(), aws_smithy_xml::decode::XmlDecodeError> {
-    let mut k: Option<crate::model::SummaryKeyType> = None;
+    let mut k: Option<crate::types::SummaryKeyType> = None;
     let mut v: Option<i32> = None;
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("key") /* key com.amazonaws.iam#summaryMapType$key */ =>  {
                 k = Some(
-                    Result::<crate::model::SummaryKeyType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                        crate::model::SummaryKeyType::from(
+                    Result::<crate::types::SummaryKeyType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                        crate::types::SummaryKeyType::from(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                         )
                     )

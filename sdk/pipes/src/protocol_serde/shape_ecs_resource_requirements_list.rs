@@ -2,7 +2,7 @@
 pub(crate) fn de_ecs_resource_requirements_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::EcsResourceRequirement>>,
+    Option<std::vec::Vec<crate::types::EcsResourceRequirement>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

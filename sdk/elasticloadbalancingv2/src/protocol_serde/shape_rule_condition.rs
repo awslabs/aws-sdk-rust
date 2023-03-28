@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_rule_condition(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::RuleCondition,
+    input: &crate::types::RuleCondition,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Field");
@@ -57,9 +57,9 @@ pub fn ser_rule_condition(
 
 pub fn de_rule_condition(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::RuleCondition, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::RuleCondition, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::RuleCondition::builder();
+    let mut builder = crate::types::RuleCondition::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Field") /* Field com.amazonaws.elasticloadbalancingv2#RuleCondition$Field */ =>  {

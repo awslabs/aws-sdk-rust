@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_too_many_headers_in_origin_request_policy_xml_err(
     inp: &[u8],
-    mut builder: crate::error::too_many_headers_in_origin_request_policy::Builder,
+    mut builder: crate::types::error::builders::TooManyHeadersInOriginRequestPolicyBuilder,
 ) -> Result<
-    crate::error::too_many_headers_in_origin_request_policy::Builder,
+    crate::types::error::builders::TooManyHeadersInOriginRequestPolicyBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

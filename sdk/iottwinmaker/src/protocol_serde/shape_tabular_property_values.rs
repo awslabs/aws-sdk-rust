@@ -4,7 +4,7 @@ pub(crate) fn de_tabular_property_values<'a, I>(
 ) -> Result<
     Option<
         std::vec::Vec<
-            std::vec::Vec<std::collections::HashMap<std::string::String, crate::model::DataValue>>,
+            std::vec::Vec<std::collections::HashMap<std::string::String, crate::types::DataValue>>,
         >,
     >,
     aws_smithy_json::deserialize::error::DeserializeError,

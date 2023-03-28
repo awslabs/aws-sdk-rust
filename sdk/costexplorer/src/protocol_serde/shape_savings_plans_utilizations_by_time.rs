@@ -2,7 +2,7 @@
 pub(crate) fn de_savings_plans_utilizations_by_time<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SavingsPlansUtilizationByTime>>,
+    Option<std::vec::Vec<crate::types::SavingsPlansUtilizationByTime>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_category_properties_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CategoryProperties>>,
+    Option<std::vec::Vec<crate::types::CategoryProperties>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

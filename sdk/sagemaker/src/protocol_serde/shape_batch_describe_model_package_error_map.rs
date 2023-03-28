@@ -5,7 +5,7 @@ pub(crate) fn de_batch_describe_model_package_error_map<'a, I>(
     Option<
         std::collections::HashMap<
             std::string::String,
-            crate::model::BatchDescribeModelPackageError,
+            crate::types::BatchDescribeModelPackageError,
         >,
     >,
     aws_smithy_json::deserialize::error::DeserializeError,

@@ -2,7 +2,7 @@
 pub fn de_cancel_spot_fleet_requests_success_set(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::CancelSpotFleetRequestsSuccessItem>,
+    std::vec::Vec<crate::types::CancelSpotFleetRequestsSuccessItem>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

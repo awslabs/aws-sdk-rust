@@ -3,77 +3,72 @@
 pub fn de_list_associated_attribute_groups_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListAssociatedAttributeGroupsOutput,
-    crate::error::ListAssociatedAttributeGroupsError,
+    crate::operation::list_associated_attribute_groups::ListAssociatedAttributeGroupsOutput,
+    crate::operation::list_associated_attribute_groups::ListAssociatedAttributeGroupsError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListAssociatedAttributeGroupsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::list_associated_attribute_groups::ListAssociatedAttributeGroupsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::ListAssociatedAttributeGroupsError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::list_associated_attribute_groups::ListAssociatedAttributeGroupsError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerException" => {
-            crate::error::ListAssociatedAttributeGroupsError::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalServerException" => crate::operation::list_associated_attribute_groups::ListAssociatedAttributeGroupsError::InternalServerException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAssociatedAttributeGroupsError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_associated_attribute_groups::ListAssociatedAttributeGroupsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ResourceNotFoundException" => {
-            crate::error::ListAssociatedAttributeGroupsError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::list_associated_attribute_groups::ListAssociatedAttributeGroupsError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAssociatedAttributeGroupsError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_associated_attribute_groups::ListAssociatedAttributeGroupsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ValidationException" => {
-            crate::error::ListAssociatedAttributeGroupsError::ValidationException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ValidationException" => crate::operation::list_associated_attribute_groups::ListAssociatedAttributeGroupsError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::validation_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAssociatedAttributeGroupsError::unhandled)?;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_associated_attribute_groups::ListAssociatedAttributeGroupsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::ListAssociatedAttributeGroupsError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::list_associated_attribute_groups::ListAssociatedAttributeGroupsError::generic(generic)
     })
 }
 
@@ -81,14 +76,14 @@ pub fn de_list_associated_attribute_groups_http_error(
 pub fn de_list_associated_attribute_groups_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListAssociatedAttributeGroupsOutput,
-    crate::error::ListAssociatedAttributeGroupsError,
+    crate::operation::list_associated_attribute_groups::ListAssociatedAttributeGroupsOutput,
+    crate::operation::list_associated_attribute_groups::ListAssociatedAttributeGroupsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_associated_attribute_groups_output::Builder::default();
+        let mut output = crate::operation::list_associated_attribute_groups::builders::ListAssociatedAttributeGroupsOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_list_associated_attribute_groups::de_list_associated_attribute_groups(response.body().as_ref(), output).map_err(crate::error::ListAssociatedAttributeGroupsError::unhandled)?;
+        output = crate::protocol_serde::shape_list_associated_attribute_groups::de_list_associated_attribute_groups(response.body().as_ref(), output).map_err(crate::operation::list_associated_attribute_groups::ListAssociatedAttributeGroupsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -96,13 +91,7 @@ pub fn de_list_associated_attribute_groups_http_response(
     })
 }
 
-pub(crate) fn de_list_associated_attribute_groups(
-    value: &[u8],
-    mut builder: crate::output::list_associated_attribute_groups_output::Builder,
-) -> Result<
-    crate::output::list_associated_attribute_groups_output::Builder,
-    aws_smithy_json::deserialize::error::DeserializeError,
-> {
+pub(crate) fn de_list_associated_attribute_groups(value: &[u8], mut builder: crate::operation::list_associated_attribute_groups::builders::ListAssociatedAttributeGroupsOutputBuilder) -> Result<crate::operation::list_associated_attribute_groups::builders::ListAssociatedAttributeGroupsOutputBuilder, aws_smithy_json::deserialize::error::DeserializeError>{
     let mut tokens_owned =
         aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
             .peekable();

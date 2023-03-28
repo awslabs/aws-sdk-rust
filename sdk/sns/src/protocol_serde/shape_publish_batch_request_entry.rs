@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_publish_batch_request_entry(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::PublishBatchRequestEntry,
+    input: &crate::types::PublishBatchRequestEntry,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Id");

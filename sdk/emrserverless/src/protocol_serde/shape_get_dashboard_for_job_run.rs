@@ -3,71 +3,79 @@
 pub fn de_get_dashboard_for_job_run_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetDashboardForJobRunOutput,
-    crate::error::GetDashboardForJobRunError,
+    crate::operation::get_dashboard_for_job_run::GetDashboardForJobRunOutput,
+    crate::operation::get_dashboard_for_job_run::GetDashboardForJobRunError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetDashboardForJobRunError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::get_dashboard_for_job_run::GetDashboardForJobRunError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    let error_code = match generic.code() {
-        Some(code) => code,
-        None => return Err(crate::error::GetDashboardForJobRunError::unhandled(generic)),
-    };
+    let error_code =
+        match generic.code() {
+            Some(code) => code,
+            None => return Err(
+                crate::operation::get_dashboard_for_job_run::GetDashboardForJobRunError::unhandled(
+                    generic,
+                ),
+            ),
+        };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerException" => {
-            crate::error::GetDashboardForJobRunError::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDashboardForJobRunError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ResourceNotFoundException" => {
-            crate::error::GetDashboardForJobRunError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDashboardForJobRunError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ValidationException" => crate::error::GetDashboardForJobRunError::ValidationException({
+        "InternalServerException" => crate::operation::get_dashboard_for_job_run::GetDashboardForJobRunError::InternalServerException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDashboardForJobRunError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_dashboard_for_job_run::GetDashboardForJobRunError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::GetDashboardForJobRunError::generic(generic),
+        "ResourceNotFoundException" => crate::operation::get_dashboard_for_job_run::GetDashboardForJobRunError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_dashboard_for_job_run::GetDashboardForJobRunError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ValidationException" => crate::operation::get_dashboard_for_job_run::GetDashboardForJobRunError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_dashboard_for_job_run::GetDashboardForJobRunError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::get_dashboard_for_job_run::GetDashboardForJobRunError::generic(generic)
     })
 }
 
@@ -75,19 +83,21 @@ pub fn de_get_dashboard_for_job_run_http_error(
 pub fn de_get_dashboard_for_job_run_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetDashboardForJobRunOutput,
-    crate::error::GetDashboardForJobRunError,
+    crate::operation::get_dashboard_for_job_run::GetDashboardForJobRunOutput,
+    crate::operation::get_dashboard_for_job_run::GetDashboardForJobRunError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_dashboard_for_job_run_output::Builder::default();
+        let mut output = crate::operation::get_dashboard_for_job_run::builders::GetDashboardForJobRunOutputBuilder::default();
         let _ = response;
         output =
             crate::protocol_serde::shape_get_dashboard_for_job_run::de_get_dashboard_for_job_run(
                 response.body().as_ref(),
                 output,
             )
-            .map_err(crate::error::GetDashboardForJobRunError::unhandled)?;
+            .map_err(
+                crate::operation::get_dashboard_for_job_run::GetDashboardForJobRunError::unhandled,
+            )?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -97,9 +107,9 @@ pub fn de_get_dashboard_for_job_run_http_response(
 
 pub(crate) fn de_get_dashboard_for_job_run(
     value: &[u8],
-    mut builder: crate::output::get_dashboard_for_job_run_output::Builder,
+    mut builder: crate::operation::get_dashboard_for_job_run::builders::GetDashboardForJobRunOutputBuilder,
 ) -> Result<
-    crate::output::get_dashboard_for_job_run_output::Builder,
+    crate::operation::get_dashboard_for_job_run::builders::GetDashboardForJobRunOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

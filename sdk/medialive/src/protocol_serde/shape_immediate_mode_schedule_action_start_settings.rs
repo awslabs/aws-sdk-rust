@@ -2,7 +2,7 @@
 pub(crate) fn de_immediate_mode_schedule_action_start_settings<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ImmediateModeScheduleActionStartSettings>,
+    Option<crate::types::ImmediateModeScheduleActionStartSettings>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::immediate_mode_schedule_action_start_settings::Builder::default();
+                crate::types::builders::ImmediateModeScheduleActionStartSettingsBuilder::default();
             aws_smithy_json::deserialize::token::skip_to_end(tokens)?;
             Ok(Some(builder.build()))
         }
@@ -32,7 +32,7 @@ where
 
 pub fn ser_immediate_mode_schedule_action_start_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::ImmediateModeScheduleActionStartSettings,
+    input: &crate::types::ImmediateModeScheduleActionStartSettings,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     let (_, _) = (object, input);
     Ok(())

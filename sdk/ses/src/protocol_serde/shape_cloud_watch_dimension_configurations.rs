@@ -2,7 +2,7 @@
 pub fn de_cloud_watch_dimension_configurations(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::CloudWatchDimensionConfiguration>,
+    std::vec::Vec<crate::types::CloudWatchDimensionConfiguration>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

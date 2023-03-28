@@ -3,174 +3,181 @@
 pub fn de_get_session_embed_url_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetSessionEmbedUrlOutput,
-    crate::error::GetSessionEmbedUrlError,
+    crate::operation::get_session_embed_url::GetSessionEmbedUrlOutput,
+    crate::operation::get_session_embed_url::GetSessionEmbedUrlError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetSessionEmbedUrlError::unhandled)?;
+        .map_err(crate::operation::get_session_embed_url::GetSessionEmbedUrlError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::GetSessionEmbedUrlError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::get_session_embed_url::GetSessionEmbedUrlError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::GetSessionEmbedUrlError::AccessDeniedException({
+        "AccessDeniedException" => crate::operation::get_session_embed_url::GetSessionEmbedUrlError::AccessDeniedException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::access_denied_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSessionEmbedUrlError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_session_embed_url::GetSessionEmbedUrlError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "InternalFailureException" => {
-            crate::error::GetSessionEmbedUrlError::InternalFailureException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::internal_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSessionEmbedUrlError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InvalidParameterValueException" => {
-            crate::error::GetSessionEmbedUrlError::InvalidParameterValueException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_parameter_value_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSessionEmbedUrlError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "QuickSightUserNotFoundException" => {
-            crate::error::GetSessionEmbedUrlError::QuickSightUserNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::quick_sight_user_not_found_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_quick_sight_user_not_found_exception::de_quick_sight_user_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSessionEmbedUrlError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ResourceExistsException" => {
-            crate::error::GetSessionEmbedUrlError::ResourceExistsException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_exists_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_exists_exception::de_resource_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSessionEmbedUrlError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ResourceNotFoundException" => {
-            crate::error::GetSessionEmbedUrlError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSessionEmbedUrlError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "SessionLifetimeInMinutesInvalidException" => {
-            crate::error::GetSessionEmbedUrlError::SessionLifetimeInMinutesInvalidException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::session_lifetime_in_minutes_invalid_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_session_lifetime_in_minutes_invalid_exception::de_session_lifetime_in_minutes_invalid_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSessionEmbedUrlError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ThrottlingException" => crate::error::GetSessionEmbedUrlError::ThrottlingException({
+        "InternalFailureException" => crate::operation::get_session_embed_url::GetSessionEmbedUrlError::InternalFailureException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::throttling_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSessionEmbedUrlError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InternalFailureExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_session_embed_url::GetSessionEmbedUrlError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "UnsupportedUserEditionException" => {
-            crate::error::GetSessionEmbedUrlError::UnsupportedUserEditionException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidParameterValueException" => crate::operation::get_session_embed_url::GetSessionEmbedUrlError::InvalidParameterValueException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::unsupported_user_edition_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_unsupported_user_edition_exception::de_unsupported_user_edition_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSessionEmbedUrlError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_session_embed_url::GetSessionEmbedUrlError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::GetSessionEmbedUrlError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "QuickSightUserNotFoundException" => crate::operation::get_session_embed_url::GetSessionEmbedUrlError::QuickSightUserNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::QuickSightUserNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_quick_sight_user_not_found_exception::de_quick_sight_user_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_session_embed_url::GetSessionEmbedUrlError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceExistsException" => crate::operation::get_session_embed_url::GetSessionEmbedUrlError::ResourceExistsException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ResourceExistsExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_exists_exception::de_resource_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_session_embed_url::GetSessionEmbedUrlError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::get_session_embed_url::GetSessionEmbedUrlError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_session_embed_url::GetSessionEmbedUrlError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "SessionLifetimeInMinutesInvalidException" => crate::operation::get_session_embed_url::GetSessionEmbedUrlError::SessionLifetimeInMinutesInvalidException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::SessionLifetimeInMinutesInvalidExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_session_lifetime_in_minutes_invalid_exception::de_session_lifetime_in_minutes_invalid_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_session_embed_url::GetSessionEmbedUrlError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ThrottlingException" => crate::operation::get_session_embed_url::GetSessionEmbedUrlError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_session_embed_url::GetSessionEmbedUrlError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "UnsupportedUserEditionException" => crate::operation::get_session_embed_url::GetSessionEmbedUrlError::UnsupportedUserEditionException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::UnsupportedUserEditionExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_unsupported_user_edition_exception::de_unsupported_user_edition_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_session_embed_url::GetSessionEmbedUrlError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::get_session_embed_url::GetSessionEmbedUrlError::generic(generic)
     })
 }
 
@@ -178,18 +185,18 @@ pub fn de_get_session_embed_url_http_error(
 pub fn de_get_session_embed_url_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetSessionEmbedUrlOutput,
-    crate::error::GetSessionEmbedUrlError,
+    crate::operation::get_session_embed_url::GetSessionEmbedUrlOutput,
+    crate::operation::get_session_embed_url::GetSessionEmbedUrlError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_session_embed_url_output::Builder::default();
+        let mut output = crate::operation::get_session_embed_url::builders::GetSessionEmbedUrlOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_get_session_embed_url::de_get_session_embed_url(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::GetSessionEmbedUrlError::unhandled)?;
+        .map_err(crate::operation::get_session_embed_url::GetSessionEmbedUrlError::unhandled)?;
         output = output.set_status(Some(response.status().as_u16() as _));
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
@@ -200,9 +207,9 @@ pub fn de_get_session_embed_url_http_response(
 
 pub(crate) fn de_get_session_embed_url(
     value: &[u8],
-    mut builder: crate::output::get_session_embed_url_output::Builder,
+    mut builder: crate::operation::get_session_embed_url::builders::GetSessionEmbedUrlOutputBuilder,
 ) -> Result<
-    crate::output::get_session_embed_url_output::Builder,
+    crate::operation::get_session_embed_url::builders::GetSessionEmbedUrlOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

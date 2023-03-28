@@ -2,7 +2,7 @@
 pub(crate) fn de_elicitation_code_hook_invocation_setting<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ElicitationCodeHookInvocationSetting>,
+    Option<crate::types::ElicitationCodeHookInvocationSetting>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::elicitation_code_hook_invocation_setting::Builder::default();
+                crate::types::builders::ElicitationCodeHookInvocationSettingBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -65,7 +65,7 @@ where
 
 pub fn ser_elicitation_code_hook_invocation_setting(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::ElicitationCodeHookInvocationSetting,
+    input: &crate::types::ElicitationCodeHookInvocationSetting,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.enable_code_hook_invocation {
         object.key("enableCodeHookInvocation").boolean(*var_1);

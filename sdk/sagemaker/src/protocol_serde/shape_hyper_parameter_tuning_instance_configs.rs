@@ -2,7 +2,7 @@
 pub(crate) fn de_hyper_parameter_tuning_instance_configs<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::HyperParameterTuningInstanceConfig>>,
+    Option<std::vec::Vec<crate::types::HyperParameterTuningInstanceConfig>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_crawler_history<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::CrawlerHistory>,
+    Option<crate::types::CrawlerHistory>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::crawler_history::Builder::default();
+            let mut builder = crate::types::builders::CrawlerHistoryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -39,7 +39,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::CrawlerHistoryState::from(u.as_ref())
+                                            crate::types::CrawlerHistoryState::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

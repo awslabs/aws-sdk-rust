@@ -2,7 +2,7 @@
 pub(crate) fn de_reserved_instance<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ReservedInstance>,
+    Option<crate::types::ReservedInstance>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::reserved_instance::Builder::default();
+            let mut builder = crate::types::builders::ReservedInstanceBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -66,7 +66,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::OpenSearchPartitionInstanceType::from(
+                                            crate::types::OpenSearchPartitionInstanceType::from(
                                                 u.as_ref(),
                                             )
                                         })
@@ -141,7 +141,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ReservedInstancePaymentOption::from(
+                                            crate::types::ReservedInstancePaymentOption::from(
                                                 u.as_ref(),
                                             )
                                         })

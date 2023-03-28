@@ -2,7 +2,7 @@
 pub(crate) fn de_external_model_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ExternalModel>>,
+    Option<std::vec::Vec<crate::types::ExternalModel>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

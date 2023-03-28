@@ -2,7 +2,7 @@
 pub(crate) fn de_evaluation_results<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::EvaluationResult>>,
+    Option<std::vec::Vec<crate::types::EvaluationResult>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,17 +2,17 @@
 pub fn de_conflicting_aliases_list_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::ConflictingAliasesList>,
-    crate::error::ListConflictingAliasesError,
+    std::option::Option<crate::types::ConflictingAliasesList>,
+    crate::operation::list_conflicting_aliases::ListConflictingAliasesError,
 > {
     (!body.is_empty()).then(||{
-        crate::protocol_serde::shape_list_conflicting_aliases_output::de_conflicting_aliases_list(body).map_err(crate::error::ListConflictingAliasesError::unhandled)
+        crate::protocol_serde::shape_list_conflicting_aliases_output::de_conflicting_aliases_list(body).map_err(crate::operation::list_conflicting_aliases::ListConflictingAliasesError::unhandled)
     }).transpose()
 }
 
 pub fn de_conflicting_aliases_list(
     inp: &[u8],
-) -> Result<crate::model::ConflictingAliasesList, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::ConflictingAliasesList, aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;

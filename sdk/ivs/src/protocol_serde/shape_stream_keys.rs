@@ -2,7 +2,7 @@
 pub(crate) fn de_stream_keys<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::StreamKey>>,
+    Option<std::vec::Vec<crate::types::StreamKey>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

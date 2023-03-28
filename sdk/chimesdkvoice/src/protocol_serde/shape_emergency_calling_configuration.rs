@@ -2,7 +2,7 @@
 pub(crate) fn de_emergency_calling_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::EmergencyCallingConfiguration>,
+    Option<crate::types::EmergencyCallingConfiguration>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::emergency_calling_configuration::Builder::default();
+            let mut builder =
+                crate::types::builders::EmergencyCallingConfigurationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -53,7 +54,7 @@ where
 
 pub fn ser_emergency_calling_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::EmergencyCallingConfiguration,
+    input: &crate::types::EmergencyCallingConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.dnis {
         let mut array_2 = object.key("DNIS").start_array();

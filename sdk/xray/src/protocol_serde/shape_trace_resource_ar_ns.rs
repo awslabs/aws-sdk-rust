@@ -2,7 +2,7 @@
 pub(crate) fn de_trace_resource_ar_ns<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ResourceArnDetail>>,
+    Option<std::vec::Vec<crate::types::ResourceArnDetail>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

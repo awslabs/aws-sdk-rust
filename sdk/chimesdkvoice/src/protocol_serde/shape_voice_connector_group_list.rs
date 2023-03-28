@@ -2,7 +2,7 @@
 pub(crate) fn de_voice_connector_group_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::VoiceConnectorGroup>>,
+    Option<std::vec::Vec<crate::types::VoiceConnectorGroup>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

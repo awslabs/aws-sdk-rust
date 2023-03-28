@@ -2,13 +2,15 @@
 pub fn de_virtual_gateway_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::VirtualGatewayData>,
-    crate::error::DeleteVirtualGatewayError,
+    std::option::Option<crate::types::VirtualGatewayData>,
+    crate::operation::delete_virtual_gateway::DeleteVirtualGatewayError,
 > {
     (!body.is_empty())
         .then(|| {
             crate::protocol_serde::shape_virtual_gateway_data::de_virtual_gateway_data_payload(body)
-                .map_err(crate::error::DeleteVirtualGatewayError::unhandled)
+                .map_err(
+                    crate::operation::delete_virtual_gateway::DeleteVirtualGatewayError::unhandled,
+                )
         })
         .transpose()
 }

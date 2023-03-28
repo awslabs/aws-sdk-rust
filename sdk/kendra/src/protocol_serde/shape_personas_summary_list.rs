@@ -2,7 +2,7 @@
 pub(crate) fn de_personas_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::PersonasSummary>>,
+    Option<std::vec::Vec<crate::types::PersonasSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

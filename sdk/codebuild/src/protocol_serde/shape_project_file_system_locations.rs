@@ -2,7 +2,7 @@
 pub(crate) fn de_project_file_system_locations<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ProjectFileSystemLocation>>,
+    Option<std::vec::Vec<crate::types::ProjectFileSystemLocation>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

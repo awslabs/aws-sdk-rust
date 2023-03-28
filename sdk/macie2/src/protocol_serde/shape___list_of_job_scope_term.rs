@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_job_scope_term<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::JobScopeTerm>>,
+    Option<std::vec::Vec<crate::types::JobScopeTerm>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

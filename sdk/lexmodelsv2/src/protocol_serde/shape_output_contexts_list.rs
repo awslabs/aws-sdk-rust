@@ -2,7 +2,7 @@
 pub(crate) fn de_output_contexts_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::OutputContext>>,
+    Option<std::vec::Vec<crate::types::OutputContext>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -3,79 +3,78 @@
 pub fn de_describe_analysis_schemes_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeAnalysisSchemesOutput,
-    crate::error::DescribeAnalysisSchemesError,
+    crate::operation::describe_analysis_schemes::DescribeAnalysisSchemesOutput,
+    crate::operation::describe_analysis_schemes::DescribeAnalysisSchemesError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeAnalysisSchemesError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::describe_analysis_schemes::DescribeAnalysisSchemesError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::error::DescribeAnalysisSchemesError::unhandled(
+        None => return Err(
+            crate::operation::describe_analysis_schemes::DescribeAnalysisSchemesError::unhandled(
                 generic,
-            ))
-        }
+            ),
+        ),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BaseException" => crate::error::DescribeAnalysisSchemesError::BaseException({
+        "BaseException" => crate::operation::describe_analysis_schemes::DescribeAnalysisSchemesError::BaseException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::base_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_base_exception::de_base_exception_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::DescribeAnalysisSchemesError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::BaseExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_base_exception::de_base_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::describe_analysis_schemes::DescribeAnalysisSchemesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "InternalException" => {
-            crate::error::DescribeAnalysisSchemesError::InternalException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalException" => crate::operation::describe_analysis_schemes::DescribeAnalysisSchemesError::InternalException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InternalExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_exception::de_internal_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeAnalysisSchemesError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_exception::de_internal_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::describe_analysis_schemes::DescribeAnalysisSchemesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ResourceNotFound" => {
-            crate::error::DescribeAnalysisSchemesError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceNotFound" => crate::operation::describe_analysis_schemes::DescribeAnalysisSchemesError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeAnalysisSchemesError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::describe_analysis_schemes::DescribeAnalysisSchemesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DescribeAnalysisSchemesError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::describe_analysis_schemes::DescribeAnalysisSchemesError::generic(generic)
     })
 }
 
@@ -83,19 +82,14 @@ pub fn de_describe_analysis_schemes_http_error(
 pub fn de_describe_analysis_schemes_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeAnalysisSchemesOutput,
-    crate::error::DescribeAnalysisSchemesError,
+    crate::operation::describe_analysis_schemes::DescribeAnalysisSchemesOutput,
+    crate::operation::describe_analysis_schemes::DescribeAnalysisSchemesError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_analysis_schemes_output::Builder::default();
+        let mut output = crate::operation::describe_analysis_schemes::builders::DescribeAnalysisSchemesOutputBuilder::default();
         let _ = response;
-        output =
-            crate::protocol_serde::shape_describe_analysis_schemes::de_describe_analysis_schemes(
-                response.body().as_ref(),
-                output,
-            )
-            .map_err(crate::error::DescribeAnalysisSchemesError::unhandled)?;
+        output = crate::protocol_serde::shape_describe_analysis_schemes::de_describe_analysis_schemes(response.body().as_ref(), output).map_err(crate::operation::describe_analysis_schemes::DescribeAnalysisSchemesError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -106,9 +100,9 @@ pub fn de_describe_analysis_schemes_http_response(
 #[allow(unused_mut)]
 pub fn de_describe_analysis_schemes(
     inp: &[u8],
-    mut builder: crate::output::describe_analysis_schemes_output::Builder,
+    mut builder: crate::operation::describe_analysis_schemes::builders::DescribeAnalysisSchemesOutputBuilder,
 ) -> Result<
-    crate::output::describe_analysis_schemes_output::Builder,
+    crate::operation::describe_analysis_schemes::builders::DescribeAnalysisSchemesOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

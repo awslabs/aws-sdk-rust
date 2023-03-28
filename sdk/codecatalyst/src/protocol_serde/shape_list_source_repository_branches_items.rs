@@ -2,7 +2,7 @@
 pub(crate) fn de_list_source_repository_branches_items<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ListSourceRepositoryBranchesItem>>,
+    Option<std::vec::Vec<crate::types::ListSourceRepositoryBranchesItem>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

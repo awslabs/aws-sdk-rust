@@ -3,91 +3,96 @@
 pub fn de_create_platform_endpoint_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreatePlatformEndpointOutput,
-    crate::error::CreatePlatformEndpointError,
+    crate::operation::create_platform_endpoint::CreatePlatformEndpointOutput,
+    crate::operation::create_platform_endpoint::CreatePlatformEndpointError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::CreatePlatformEndpointError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::create_platform_endpoint::CreatePlatformEndpointError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::CreatePlatformEndpointError::unhandled(
-                generic,
-            ))
-        }
-    };
+    let error_code =
+        match generic.code() {
+            Some(code) => code,
+            None => return Err(
+                crate::operation::create_platform_endpoint::CreatePlatformEndpointError::unhandled(
+                    generic,
+                ),
+            ),
+        };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AuthorizationError" => {
-            crate::error::CreatePlatformEndpointError::AuthorizationErrorException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "AuthorizationError" => crate::operation::create_platform_endpoint::CreatePlatformEndpointError::AuthorizationErrorException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::authorization_error_exception::Builder::default();
+                    let mut output = crate::types::error::builders::AuthorizationErrorExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_authorization_error_exception::de_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreatePlatformEndpointError::unhandled)?;
+                    output = crate::protocol_serde::shape_authorization_error_exception::de_authorization_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_platform_endpoint::CreatePlatformEndpointError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InternalError" => crate::error::CreatePlatformEndpointError::InternalErrorException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_error_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_error_exception::de_internal_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreatePlatformEndpointError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "InvalidParameter" => {
-            crate::error::CreatePlatformEndpointError::InvalidParameterException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalError" => crate::operation::create_platform_endpoint::CreatePlatformEndpointError::InternalErrorException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InternalErrorExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreatePlatformEndpointError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_error_exception::de_internal_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_platform_endpoint::CreatePlatformEndpointError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "NotFound" => crate::error::CreatePlatformEndpointError::NotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreatePlatformEndpointError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::CreatePlatformEndpointError::generic(generic),
+        "InvalidParameter" => crate::operation::create_platform_endpoint::CreatePlatformEndpointError::InvalidParameterException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidParameterExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_platform_endpoint::CreatePlatformEndpointError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "NotFound" => crate::operation::create_platform_endpoint::CreatePlatformEndpointError::NotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::NotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_platform_endpoint::CreatePlatformEndpointError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::create_platform_endpoint::CreatePlatformEndpointError::generic(generic)
     })
 }
 
@@ -95,19 +100,21 @@ pub fn de_create_platform_endpoint_http_error(
 pub fn de_create_platform_endpoint_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreatePlatformEndpointOutput,
-    crate::error::CreatePlatformEndpointError,
+    crate::operation::create_platform_endpoint::CreatePlatformEndpointOutput,
+    crate::operation::create_platform_endpoint::CreatePlatformEndpointError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::create_platform_endpoint_output::Builder::default();
+        let mut output = crate::operation::create_platform_endpoint::builders::CreatePlatformEndpointOutputBuilder::default();
         let _ = response;
         output =
             crate::protocol_serde::shape_create_platform_endpoint::de_create_platform_endpoint(
                 response.body().as_ref(),
                 output,
             )
-            .map_err(crate::error::CreatePlatformEndpointError::unhandled)?;
+            .map_err(
+                crate::operation::create_platform_endpoint::CreatePlatformEndpointError::unhandled,
+            )?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -118,9 +125,9 @@ pub fn de_create_platform_endpoint_http_response(
 #[allow(unused_mut)]
 pub fn de_create_platform_endpoint(
     inp: &[u8],
-    mut builder: crate::output::create_platform_endpoint_output::Builder,
+    mut builder: crate::operation::create_platform_endpoint::builders::CreatePlatformEndpointOutputBuilder,
 ) -> Result<
-    crate::output::create_platform_endpoint_output::Builder,
+    crate::operation::create_platform_endpoint::builders::CreatePlatformEndpointOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

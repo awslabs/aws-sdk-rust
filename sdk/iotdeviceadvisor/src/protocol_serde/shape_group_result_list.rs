@@ -2,7 +2,7 @@
 pub(crate) fn de_group_result_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::GroupResult>>,
+    Option<std::vec::Vec<crate::types::GroupResult>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

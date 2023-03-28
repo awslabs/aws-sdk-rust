@@ -2,7 +2,7 @@
 pub(crate) fn de_network_interfaces<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::NetworkInterface>>,
+    Option<std::vec::Vec<crate::types::NetworkInterface>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

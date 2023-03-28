@@ -2,13 +2,13 @@
 pub fn de_entity_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::Component>,
-    crate::error::UpdateComponentError,
+    std::option::Option<crate::types::Component>,
+    crate::operation::update_component::UpdateComponentError,
 > {
     (!body.is_empty())
         .then(|| {
             crate::protocol_serde::shape_component::de_component_payload(body)
-                .map_err(crate::error::UpdateComponentError::unhandled)
+                .map_err(crate::operation::update_component::UpdateComponentError::unhandled)
         })
         .transpose()
 }

@@ -2,7 +2,7 @@
 pub fn de_vpc_security_group_membership_list(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::VpcSecurityGroupMembership>,
+    std::vec::Vec<crate::types::VpcSecurityGroupMembership>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

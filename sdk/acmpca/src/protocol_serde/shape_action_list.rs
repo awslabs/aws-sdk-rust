@@ -2,7 +2,7 @@
 pub(crate) fn de_action_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ActionType>>,
+    Option<std::vec::Vec<crate::types::ActionType>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -29,7 +29,7 @@ where
                         )?
                         .map(|s| {
                             s.to_unescaped()
-                                .map(|u| crate::model::ActionType::from(u.as_ref()))
+                                .map(|u| crate::types::ActionType::from(u.as_ref()))
                         })
                         .transpose()?;
                         if let Some(value) = value {

@@ -2,7 +2,7 @@
 pub fn de_publish_batch_result_entry_list(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::PublishBatchResultEntry>,
+    std::vec::Vec<crate::types::PublishBatchResultEntry>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

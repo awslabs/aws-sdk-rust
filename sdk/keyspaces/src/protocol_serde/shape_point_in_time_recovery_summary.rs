@@ -2,7 +2,7 @@
 pub(crate) fn de_point_in_time_recovery_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::PointInTimeRecoverySummary>,
+    Option<crate::types::PointInTimeRecoverySummary>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::point_in_time_recovery_summary::Builder::default();
+            let mut builder = crate::types::builders::PointInTimeRecoverySummaryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::PointInTimeRecoveryStatus::from(
+                                            crate::types::PointInTimeRecoveryStatus::from(
                                                 u.as_ref(),
                                             )
                                         })

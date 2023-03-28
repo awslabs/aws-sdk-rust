@@ -2,7 +2,7 @@
 pub(crate) fn de_pending_modified_relational_database_values<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::PendingModifiedRelationalDatabaseValues>,
+    Option<crate::types::PendingModifiedRelationalDatabaseValues>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::pending_modified_relational_database_values::Builder::default();
+                crate::types::builders::PendingModifiedRelationalDatabaseValuesBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

@@ -3,62 +3,62 @@
 pub fn de_batch_apply_update_action_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::BatchApplyUpdateActionOutput,
-    crate::error::BatchApplyUpdateActionError,
+    crate::operation::batch_apply_update_action::BatchApplyUpdateActionOutput,
+    crate::operation::batch_apply_update_action::BatchApplyUpdateActionError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::BatchApplyUpdateActionError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::batch_apply_update_action::BatchApplyUpdateActionError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::BatchApplyUpdateActionError::unhandled(
-                generic,
-            ))
-        }
-    };
+    let error_code =
+        match generic.code() {
+            Some(code) => code,
+            None => return Err(
+                crate::operation::batch_apply_update_action::BatchApplyUpdateActionError::unhandled(
+                    generic,
+                ),
+            ),
+        };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValue" => {
-            crate::error::BatchApplyUpdateActionError::InvalidParameterValueException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidParameterValue" => crate::operation::batch_apply_update_action::BatchApplyUpdateActionError::InvalidParameterValueException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_parameter_value_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::BatchApplyUpdateActionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::batch_apply_update_action::BatchApplyUpdateActionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ServiceUpdateNotFoundFault" => {
-            crate::error::BatchApplyUpdateActionError::ServiceUpdateNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ServiceUpdateNotFoundFault" => crate::operation::batch_apply_update_action::BatchApplyUpdateActionError::ServiceUpdateNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::service_update_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::ServiceUpdateNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_update_not_found_fault::de_service_update_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::BatchApplyUpdateActionError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_update_not_found_fault::de_service_update_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::batch_apply_update_action::BatchApplyUpdateActionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::BatchApplyUpdateActionError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::batch_apply_update_action::BatchApplyUpdateActionError::generic(generic)
     })
 }
 
@@ -66,19 +66,21 @@ pub fn de_batch_apply_update_action_http_error(
 pub fn de_batch_apply_update_action_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::BatchApplyUpdateActionOutput,
-    crate::error::BatchApplyUpdateActionError,
+    crate::operation::batch_apply_update_action::BatchApplyUpdateActionOutput,
+    crate::operation::batch_apply_update_action::BatchApplyUpdateActionError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::batch_apply_update_action_output::Builder::default();
+        let mut output = crate::operation::batch_apply_update_action::builders::BatchApplyUpdateActionOutputBuilder::default();
         let _ = response;
         output =
             crate::protocol_serde::shape_batch_apply_update_action::de_batch_apply_update_action(
                 response.body().as_ref(),
                 output,
             )
-            .map_err(crate::error::BatchApplyUpdateActionError::unhandled)?;
+            .map_err(
+                crate::operation::batch_apply_update_action::BatchApplyUpdateActionError::unhandled,
+            )?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -89,9 +91,9 @@ pub fn de_batch_apply_update_action_http_response(
 #[allow(unused_mut)]
 pub fn de_batch_apply_update_action(
     inp: &[u8],
-    mut builder: crate::output::batch_apply_update_action_output::Builder,
+    mut builder: crate::operation::batch_apply_update_action::builders::BatchApplyUpdateActionOutputBuilder,
 ) -> Result<
-    crate::output::batch_apply_update_action_output::Builder,
+    crate::operation::batch_apply_update_action::builders::BatchApplyUpdateActionOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

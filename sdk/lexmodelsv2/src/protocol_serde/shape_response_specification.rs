@@ -2,7 +2,7 @@
 pub(crate) fn de_response_specification<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ResponseSpecification>,
+    Option<crate::types::ResponseSpecification>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::response_specification::Builder::default();
+            let mut builder = crate::types::builders::ResponseSpecificationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -60,7 +60,7 @@ where
 
 pub fn ser_response_specification(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::ResponseSpecification,
+    input: &crate::types::ResponseSpecification,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.message_groups {
         let mut array_2 = object.key("messageGroups").start_array();

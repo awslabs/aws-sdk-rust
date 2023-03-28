@@ -2,7 +2,7 @@
 pub(crate) fn de_insight_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::InsightSummary>>,
+    Option<std::vec::Vec<crate::types::InsightSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

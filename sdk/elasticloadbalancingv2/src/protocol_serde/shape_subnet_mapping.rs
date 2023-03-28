@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_subnet_mapping(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::SubnetMapping,
+    input: &crate::types::SubnetMapping,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("SubnetId");

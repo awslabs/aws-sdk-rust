@@ -2,7 +2,7 @@
 pub(crate) fn de_keyword_information<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::KeywordInformation>,
+    Option<crate::types::KeywordInformation>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::keyword_information::Builder::default();
+            let mut builder = crate::types::builders::KeywordInformationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -48,7 +48,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::KeywordAction::from(u.as_ref()))
+                                            .map(|u| crate::types::KeywordAction::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

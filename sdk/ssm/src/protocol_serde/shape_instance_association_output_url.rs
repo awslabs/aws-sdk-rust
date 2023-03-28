@@ -2,7 +2,7 @@
 pub(crate) fn de_instance_association_output_url<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::InstanceAssociationOutputUrl>,
+    Option<crate::types::InstanceAssociationOutputUrl>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::instance_association_output_url::Builder::default();
+            let mut builder =
+                crate::types::builders::InstanceAssociationOutputUrlBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

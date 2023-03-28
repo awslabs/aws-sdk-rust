@@ -2,7 +2,7 @@
 pub(crate) fn de_describe_event_details_for_organization_failed_set<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::OrganizationEventDetailsErrorItem>>,
+    Option<std::vec::Vec<crate::types::OrganizationEventDetailsErrorItem>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

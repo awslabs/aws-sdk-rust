@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_resource_already_exists_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::resource_already_exists_exception::Builder,
+    mut builder: crate::types::error::builders::ResourceAlreadyExistsExceptionBuilder,
 ) -> Result<
-    crate::error::resource_already_exists_exception::Builder,
+    crate::types::error::builders::ResourceAlreadyExistsExceptionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

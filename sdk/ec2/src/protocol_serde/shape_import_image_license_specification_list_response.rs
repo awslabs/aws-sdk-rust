@@ -2,7 +2,7 @@
 pub fn de_import_image_license_specification_list_response(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::ImportImageLicenseConfigurationResponse>,
+    std::vec::Vec<crate::types::ImportImageLicenseConfigurationResponse>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

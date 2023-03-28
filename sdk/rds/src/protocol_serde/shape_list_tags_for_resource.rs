@@ -3,120 +3,130 @@
 pub fn de_list_tags_for_resource_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListTagsForResourceOutput,
-    crate::error::ListTagsForResourceError,
+    crate::operation::list_tags_for_resource::ListTagsForResourceOutput,
+    crate::operation::list_tags_for_resource::ListTagsForResourceError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+        .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListTagsForResourceError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BlueGreenDeploymentNotFoundFault" => {
-            crate::error::ListTagsForResourceError::BlueGreenDeploymentNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "BlueGreenDeploymentNotFoundFault" => crate::operation::list_tags_for_resource::ListTagsForResourceError::BlueGreenDeploymentNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::blue_green_deployment_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::BlueGreenDeploymentNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_blue_green_deployment_not_found_fault::de_blue_green_deployment_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    output = crate::protocol_serde::shape_blue_green_deployment_not_found_fault::de_blue_green_deployment_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "DBClusterNotFoundFault" => {
-            crate::error::ListTagsForResourceError::DbClusterNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "DBClusterNotFoundFault" => crate::operation::list_tags_for_resource::ListTagsForResourceError::DbClusterNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::db_cluster_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::DbClusterNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_db_cluster_not_found_fault::de_db_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    output = crate::protocol_serde::shape_db_cluster_not_found_fault::de_db_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "DBInstanceNotFound" => crate::error::ListTagsForResourceError::DbInstanceNotFoundFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::db_instance_not_found_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_db_instance_not_found_fault::de_db_instance_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "DBProxyNotFoundFault" => crate::error::ListTagsForResourceError::DbProxyNotFoundFault({
+        "DBInstanceNotFound" => crate::operation::list_tags_for_resource::ListTagsForResourceError::DbInstanceNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::db_proxy_not_found_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_db_proxy_not_found_fault::de_db_proxy_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "DBProxyTargetGroupNotFoundFault" => {
-            crate::error::ListTagsForResourceError::DbProxyTargetGroupNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::db_proxy_target_group_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::DbInstanceNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_db_proxy_target_group_not_found_fault::de_db_proxy_target_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    output = crate::protocol_serde::shape_db_instance_not_found_fault::de_db_instance_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "DBSnapshotNotFound" => crate::error::ListTagsForResourceError::DbSnapshotNotFoundFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::db_snapshot_not_found_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_db_snapshot_not_found_fault::de_db_snapshot_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::ListTagsForResourceError::generic(generic),
+        "DBProxyNotFoundFault" => crate::operation::list_tags_for_resource::ListTagsForResourceError::DbProxyNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::DbProxyNotFoundFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_db_proxy_not_found_fault::de_db_proxy_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "DBProxyTargetGroupNotFoundFault" => crate::operation::list_tags_for_resource::ListTagsForResourceError::DbProxyTargetGroupNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::DbProxyTargetGroupNotFoundFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_db_proxy_target_group_not_found_fault::de_db_proxy_target_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "DBSnapshotNotFound" => crate::operation::list_tags_for_resource::ListTagsForResourceError::DbSnapshotNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::DbSnapshotNotFoundFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_db_snapshot_not_found_fault::de_db_snapshot_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::list_tags_for_resource::ListTagsForResourceError::generic(generic)
     })
 }
 
@@ -124,18 +134,18 @@ pub fn de_list_tags_for_resource_http_error(
 pub fn de_list_tags_for_resource_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListTagsForResourceOutput,
-    crate::error::ListTagsForResourceError,
+    crate::operation::list_tags_for_resource::ListTagsForResourceOutput,
+    crate::operation::list_tags_for_resource::ListTagsForResourceError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_tags_for_resource_output::Builder::default();
+        let mut output = crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_tags_for_resource::de_list_tags_for_resource(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+        .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -146,9 +156,9 @@ pub fn de_list_tags_for_resource_http_response(
 #[allow(unused_mut)]
 pub fn de_list_tags_for_resource(
     inp: &[u8],
-    mut builder: crate::output::list_tags_for_resource_output::Builder,
+    mut builder: crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder,
 ) -> Result<
-    crate::output::list_tags_for_resource_output::Builder,
+    crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

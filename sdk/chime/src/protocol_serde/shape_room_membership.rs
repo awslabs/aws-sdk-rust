@@ -2,7 +2,7 @@
 pub(crate) fn de_room_membership<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::RoomMembership>,
+    Option<crate::types::RoomMembership>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::room_membership::Builder::default();
+            let mut builder = crate::types::builders::RoomMembershipBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -44,7 +44,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::RoomMembershipRole::from(u.as_ref())
+                                            crate::types::RoomMembershipRole::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

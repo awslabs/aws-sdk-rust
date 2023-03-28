@@ -2,7 +2,7 @@
 pub(crate) fn de_configuration_tag_set<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ConfigurationTag>>,
+    Option<std::vec::Vec<crate::types::ConfigurationTag>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

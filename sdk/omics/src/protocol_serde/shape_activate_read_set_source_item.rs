@@ -2,7 +2,7 @@
 pub(crate) fn de_activate_read_set_source_item<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ActivateReadSetSourceItem>,
+    Option<crate::types::ActivateReadSetSourceItem>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::activate_read_set_source_item::Builder::default();
+            let mut builder = crate::types::builders::ActivateReadSetSourceItemBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -39,7 +39,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ReadSetActivationJobItemStatus::from(
+                                            crate::types::ReadSetActivationJobItemStatus::from(
                                                 u.as_ref(),
                                             )
                                         })

@@ -2,7 +2,7 @@
 pub(crate) fn de_disk_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Disk>>,
+    Option<std::vec::Vec<crate::types::Disk>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

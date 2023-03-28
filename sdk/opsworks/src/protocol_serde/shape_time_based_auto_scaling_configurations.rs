@@ -2,7 +2,7 @@
 pub(crate) fn de_time_based_auto_scaling_configurations<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::TimeBasedAutoScalingConfiguration>>,
+    Option<std::vec::Vec<crate::types::TimeBasedAutoScalingConfiguration>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

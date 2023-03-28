@@ -2,7 +2,7 @@
 pub(crate) fn de_amazon_code_guru_profiler_integration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::AmazonCodeGuruProfilerIntegration>,
+    Option<crate::types::AmazonCodeGuruProfilerIntegration>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::amazon_code_guru_profiler_integration::Builder::default();
+                crate::types::builders::AmazonCodeGuruProfilerIntegrationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -31,7 +31,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::EventSourceOptInStatus::from(u.as_ref())
+                                            crate::types::EventSourceOptInStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -62,7 +62,7 @@ where
 
 pub fn ser_amazon_code_guru_profiler_integration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::AmazonCodeGuruProfilerIntegration,
+    input: &crate::types::AmazonCodeGuruProfilerIntegration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.status {
         object.key("Status").string(var_1.as_str());

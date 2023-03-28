@@ -2,7 +2,7 @@
 pub(crate) fn de_application_dpu_sizes_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ApplicationDpuSizes>>,
+    Option<std::vec::Vec<crate::types::ApplicationDpuSizes>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

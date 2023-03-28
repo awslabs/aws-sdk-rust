@@ -2,7 +2,7 @@
 pub(crate) fn de_vpc_dns_target_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::VpcDnsTarget>>,
+    Option<std::vec::Vec<crate::types::VpcDnsTarget>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

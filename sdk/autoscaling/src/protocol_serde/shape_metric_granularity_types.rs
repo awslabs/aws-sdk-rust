@@ -2,7 +2,7 @@
 pub fn de_metric_granularity_types(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::MetricGranularityType>,
+    std::vec::Vec<crate::types::MetricGranularityType>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

@@ -2,7 +2,7 @@
 pub(crate) fn de_aws_dynamo_db_table_key_schema_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AwsDynamoDbTableKeySchema>>,
+    Option<std::vec::Vec<crate::types::AwsDynamoDbTableKeySchema>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

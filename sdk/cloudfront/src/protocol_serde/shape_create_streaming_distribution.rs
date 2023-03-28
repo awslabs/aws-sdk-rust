@@ -3,262 +3,242 @@
 pub fn de_create_streaming_distribution_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateStreamingDistributionOutput,
-    crate::error::CreateStreamingDistributionError,
+    crate::operation::create_streaming_distribution::CreateStreamingDistributionOutput,
+    crate::operation::create_streaming_distribution::CreateStreamingDistributionError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::CreateStreamingDistributionError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::create_streaming_distribution::CreateStreamingDistributionError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::CreateStreamingDistributionError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::create_streaming_distribution::CreateStreamingDistributionError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDenied" => crate::error::CreateStreamingDistributionError::AccessDenied({
+        "AccessDenied" => crate::operation::create_streaming_distribution::CreateStreamingDistributionError::AccessDenied({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::access_denied::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_access_denied::de_access_denied_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::CreateStreamingDistributionError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::AccessDeniedBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_access_denied::de_access_denied_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_streaming_distribution::CreateStreamingDistributionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "CNAMEAlreadyExists" => {
-            crate::error::CreateStreamingDistributionError::CnameAlreadyExists({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::cname_already_exists::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_cname_already_exists::de_cname_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStreamingDistributionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InconsistentQuantities" => {
-            crate::error::CreateStreamingDistributionError::InconsistentQuantities({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::inconsistent_quantities::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_inconsistent_quantities::de_inconsistent_quantities_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStreamingDistributionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InvalidArgument" => crate::error::CreateStreamingDistributionError::InvalidArgument({
+        "CNAMEAlreadyExists" => crate::operation::create_streaming_distribution::CreateStreamingDistributionError::CnameAlreadyExists({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::invalid_argument::Builder::default();
-                let _ = response;
-                output =
-                    crate::protocol_serde::shape_invalid_argument::de_invalid_argument_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateStreamingDistributionError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::CnameAlreadyExistsBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_cname_already_exists::de_cname_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_streaming_distribution::CreateStreamingDistributionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "InvalidOrigin" => crate::error::CreateStreamingDistributionError::InvalidOrigin({
+        "InconsistentQuantities" => crate::operation::create_streaming_distribution::CreateStreamingDistributionError::InconsistentQuantities({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::invalid_origin::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_origin::de_invalid_origin_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::CreateStreamingDistributionError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InconsistentQuantitiesBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_inconsistent_quantities::de_inconsistent_quantities_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_streaming_distribution::CreateStreamingDistributionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "InvalidOriginAccessControl" => {
-            crate::error::CreateStreamingDistributionError::InvalidOriginAccessControl({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_origin_access_control::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_origin_access_control::de_invalid_origin_access_control_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStreamingDistributionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InvalidOriginAccessIdentity" => {
-            crate::error::CreateStreamingDistributionError::InvalidOriginAccessIdentity({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_origin_access_identity::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_origin_access_identity::de_invalid_origin_access_identity_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStreamingDistributionError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "MissingBody" => crate::error::CreateStreamingDistributionError::MissingBody({
+        "InvalidArgument" => crate::operation::create_streaming_distribution::CreateStreamingDistributionError::InvalidArgument({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::missing_body::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_missing_body::de_missing_body_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::CreateStreamingDistributionError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidArgumentBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_argument::de_invalid_argument_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_streaming_distribution::CreateStreamingDistributionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "StreamingDistributionAlreadyExists" => {
-            crate::error::CreateStreamingDistributionError::StreamingDistributionAlreadyExists({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidOrigin" => crate::operation::create_streaming_distribution::CreateStreamingDistributionError::InvalidOrigin({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::streaming_distribution_already_exists::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidOriginBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_streaming_distribution_already_exists::de_streaming_distribution_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStreamingDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_origin::de_invalid_origin_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_streaming_distribution::CreateStreamingDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "TooManyStreamingDistributionCNAMEs" => {
-            crate::error::CreateStreamingDistributionError::TooManyStreamingDistributionCnamEs({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidOriginAccessControl" => crate::operation::create_streaming_distribution::CreateStreamingDistributionError::InvalidOriginAccessControl({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::too_many_streaming_distribution_cnam_es::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidOriginAccessControlBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_streaming_distribution_cnam_es::de_too_many_streaming_distribution_cnam_es_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStreamingDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_origin_access_control::de_invalid_origin_access_control_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_streaming_distribution::CreateStreamingDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "TooManyStreamingDistributions" => {
-            crate::error::CreateStreamingDistributionError::TooManyStreamingDistributions({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidOriginAccessIdentity" => crate::operation::create_streaming_distribution::CreateStreamingDistributionError::InvalidOriginAccessIdentity({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::too_many_streaming_distributions::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidOriginAccessIdentityBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_streaming_distributions::de_too_many_streaming_distributions_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStreamingDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_origin_access_identity::de_invalid_origin_access_identity_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_streaming_distribution::CreateStreamingDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "TooManyTrustedSigners" => {
-            crate::error::CreateStreamingDistributionError::TooManyTrustedSigners({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "MissingBody" => crate::operation::create_streaming_distribution::CreateStreamingDistributionError::MissingBody({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_trusted_signers::Builder::default();
+                    let mut output = crate::types::error::builders::MissingBodyBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_trusted_signers::de_too_many_trusted_signers_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStreamingDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_missing_body::de_missing_body_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_streaming_distribution::CreateStreamingDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "TrustedSignerDoesNotExist" => {
-            crate::error::CreateStreamingDistributionError::TrustedSignerDoesNotExist({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "StreamingDistributionAlreadyExists" => crate::operation::create_streaming_distribution::CreateStreamingDistributionError::StreamingDistributionAlreadyExists({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::trusted_signer_does_not_exist::Builder::default();
+                    let mut output = crate::types::error::builders::StreamingDistributionAlreadyExistsBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_trusted_signer_does_not_exist::de_trusted_signer_does_not_exist_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStreamingDistributionError::unhandled)?;
+                    output = crate::protocol_serde::shape_streaming_distribution_already_exists::de_streaming_distribution_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_streaming_distribution::CreateStreamingDistributionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::CreateStreamingDistributionError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TooManyStreamingDistributionCNAMEs" => crate::operation::create_streaming_distribution::CreateStreamingDistributionError::TooManyStreamingDistributionCnamEs({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::TooManyStreamingDistributionCnamEsBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_too_many_streaming_distribution_cnam_es::de_too_many_streaming_distribution_cnam_es_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_streaming_distribution::CreateStreamingDistributionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TooManyStreamingDistributions" => crate::operation::create_streaming_distribution::CreateStreamingDistributionError::TooManyStreamingDistributions({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::TooManyStreamingDistributionsBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_too_many_streaming_distributions::de_too_many_streaming_distributions_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_streaming_distribution::CreateStreamingDistributionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TooManyTrustedSigners" => crate::operation::create_streaming_distribution::CreateStreamingDistributionError::TooManyTrustedSigners({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::TooManyTrustedSignersBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_too_many_trusted_signers::de_too_many_trusted_signers_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_streaming_distribution::CreateStreamingDistributionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TrustedSignerDoesNotExist" => crate::operation::create_streaming_distribution::CreateStreamingDistributionError::TrustedSignerDoesNotExist({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::TrustedSignerDoesNotExistBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_trusted_signer_does_not_exist::de_trusted_signer_does_not_exist_xml_err(response.body().as_ref(), output).map_err(crate::operation::create_streaming_distribution::CreateStreamingDistributionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::create_streaming_distribution::CreateStreamingDistributionError::generic(generic)
     })
 }
 
@@ -266,32 +246,20 @@ pub fn de_create_streaming_distribution_http_error(
 pub fn de_create_streaming_distribution_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateStreamingDistributionOutput,
-    crate::error::CreateStreamingDistributionError,
+    crate::operation::create_streaming_distribution::CreateStreamingDistributionOutput,
+    crate::operation::create_streaming_distribution::CreateStreamingDistributionError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::create_streaming_distribution_output::Builder::default();
+        let mut output = crate::operation::create_streaming_distribution::builders::CreateStreamingDistributionOutputBuilder::default();
         let _ = response;
         output = output.set_e_tag(
-            crate::protocol_serde::shape_create_streaming_distribution_output::de_e_tag_header(
-                response.headers(),
-            )
-            .map_err(|_| {
-                crate::error::CreateStreamingDistributionError::unhandled(
-                    "Failed to parse ETag from header `ETag",
-                )
-            })?,
+            crate::protocol_serde::shape_create_streaming_distribution_output::de_e_tag_header(response.headers())
+                                    .map_err(|_|crate::operation::create_streaming_distribution::CreateStreamingDistributionError::unhandled("Failed to parse ETag from header `ETag"))?
         );
         output = output.set_location(
-            crate::protocol_serde::shape_create_streaming_distribution_output::de_location_header(
-                response.headers(),
-            )
-            .map_err(|_| {
-                crate::error::CreateStreamingDistributionError::unhandled(
-                    "Failed to parse Location from header `Location",
-                )
-            })?,
+            crate::protocol_serde::shape_create_streaming_distribution_output::de_location_header(response.headers())
+                                    .map_err(|_|crate::operation::create_streaming_distribution::CreateStreamingDistributionError::unhandled("Failed to parse Location from header `Location"))?
         );
         output = output.set_streaming_distribution(
             crate::protocol_serde::shape_create_streaming_distribution_output::de_streaming_distribution_payload(response.body().as_ref())?

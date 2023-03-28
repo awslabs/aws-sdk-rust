@@ -2,7 +2,7 @@
 pub(crate) fn de_filtered_log_events<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::FilteredLogEvent>>,
+    Option<std::vec::Vec<crate::types::FilteredLogEvent>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

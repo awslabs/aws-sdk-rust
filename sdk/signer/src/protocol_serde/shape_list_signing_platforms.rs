@@ -3,89 +3,96 @@
 pub fn de_list_signing_platforms_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListSigningPlatformsOutput,
-    crate::error::ListSigningPlatformsError,
+    crate::operation::list_signing_platforms::ListSigningPlatformsOutput,
+    crate::operation::list_signing_platforms::ListSigningPlatformsError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListSigningPlatformsError::unhandled)?;
+        .map_err(crate::operation::list_signing_platforms::ListSigningPlatformsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListSigningPlatformsError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::list_signing_platforms::ListSigningPlatformsError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => {
-            crate::error::ListSigningPlatformsError::AccessDeniedException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::access_denied_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSigningPlatformsError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InternalServiceErrorException" => {
-            crate::error::ListSigningPlatformsError::InternalServiceErrorException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::internal_service_error_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_service_error_exception::de_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSigningPlatformsError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "TooManyRequestsException" => {
-            crate::error::ListSigningPlatformsError::TooManyRequestsException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSigningPlatformsError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ValidationException" => crate::error::ListSigningPlatformsError::ValidationException({
+        "AccessDeniedException" => crate::operation::list_signing_platforms::ListSigningPlatformsError::AccessDeniedException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSigningPlatformsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_signing_platforms::ListSigningPlatformsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::ListSigningPlatformsError::generic(generic),
+        "InternalServiceErrorException" => crate::operation::list_signing_platforms::ListSigningPlatformsError::InternalServiceErrorException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InternalServiceErrorExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_service_error_exception::de_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_signing_platforms::ListSigningPlatformsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "TooManyRequestsException" => crate::operation::list_signing_platforms::ListSigningPlatformsError::TooManyRequestsException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_signing_platforms::ListSigningPlatformsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ValidationException" => crate::operation::list_signing_platforms::ListSigningPlatformsError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_signing_platforms::ListSigningPlatformsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::list_signing_platforms::ListSigningPlatformsError::generic(generic)
     })
 }
 
@@ -93,18 +100,18 @@ pub fn de_list_signing_platforms_http_error(
 pub fn de_list_signing_platforms_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListSigningPlatformsOutput,
-    crate::error::ListSigningPlatformsError,
+    crate::operation::list_signing_platforms::ListSigningPlatformsOutput,
+    crate::operation::list_signing_platforms::ListSigningPlatformsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_signing_platforms_output::Builder::default();
+        let mut output = crate::operation::list_signing_platforms::builders::ListSigningPlatformsOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_signing_platforms::de_list_signing_platforms(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListSigningPlatformsError::unhandled)?;
+        .map_err(crate::operation::list_signing_platforms::ListSigningPlatformsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -114,9 +121,9 @@ pub fn de_list_signing_platforms_http_response(
 
 pub(crate) fn de_list_signing_platforms(
     value: &[u8],
-    mut builder: crate::output::list_signing_platforms_output::Builder,
+    mut builder: crate::operation::list_signing_platforms::builders::ListSigningPlatformsOutputBuilder,
 ) -> Result<
-    crate::output::list_signing_platforms_output::Builder,
+    crate::operation::list_signing_platforms::builders::ListSigningPlatformsOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

@@ -2,7 +2,7 @@
 pub(crate) fn de_vector_enrichment_job_config<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::VectorEnrichmentJobConfig>,
+    Option<crate::types::VectorEnrichmentJobConfig>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -29,20 +29,20 @@ where
                     }
                     variant = match key.to_unescaped()?.as_ref() {
                             "ReverseGeocodingConfig" => {
-                                Some(crate::model::VectorEnrichmentJobConfig::ReverseGeocodingConfig(
+                                Some(crate::types::VectorEnrichmentJobConfig::ReverseGeocodingConfig(
                                     crate::protocol_serde::shape_reverse_geocoding_config::de_reverse_geocoding_config(tokens)?
                                     .ok_or_else(|| aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'ReverseGeocodingConfig' cannot be null"))?
                                 ))
                             }
                             "MapMatchingConfig" => {
-                                Some(crate::model::VectorEnrichmentJobConfig::MapMatchingConfig(
+                                Some(crate::types::VectorEnrichmentJobConfig::MapMatchingConfig(
                                     crate::protocol_serde::shape_map_matching_config::de_map_matching_config(tokens)?
                                     .ok_or_else(|| aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'MapMatchingConfig' cannot be null"))?
                                 ))
                             }
                             _ => {
                                                                       aws_smithy_json::deserialize::token::skip_value(tokens)?;
-                                                                      Some(crate::model::VectorEnrichmentJobConfig::Unknown)
+                                                                      Some(crate::types::VectorEnrichmentJobConfig::Unknown)
                                                                     }
                         };
                 }
@@ -69,10 +69,10 @@ where
 
 pub fn ser_vector_enrichment_job_config(
     object_6: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::VectorEnrichmentJobConfig,
+    input: &crate::types::VectorEnrichmentJobConfig,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     match input {
-        crate::model::VectorEnrichmentJobConfig::ReverseGeocodingConfig(inner) => {
+        crate::types::VectorEnrichmentJobConfig::ReverseGeocodingConfig(inner) => {
             #[allow(unused_mut)]
             let mut object_1 = object_6.key("ReverseGeocodingConfig").start_object();
             crate::protocol_serde::shape_reverse_geocoding_config::ser_reverse_geocoding_config(
@@ -81,7 +81,7 @@ pub fn ser_vector_enrichment_job_config(
             )?;
             object_1.finish();
         }
-        crate::model::VectorEnrichmentJobConfig::MapMatchingConfig(inner) => {
+        crate::types::VectorEnrichmentJobConfig::MapMatchingConfig(inner) => {
             #[allow(unused_mut)]
             let mut object_2 = object_6.key("MapMatchingConfig").start_object();
             crate::protocol_serde::shape_map_matching_config::ser_map_matching_config(
@@ -90,7 +90,7 @@ pub fn ser_vector_enrichment_job_config(
             )?;
             object_2.finish();
         }
-        crate::model::VectorEnrichmentJobConfig::Unknown => {
+        crate::types::VectorEnrichmentJobConfig::Unknown => {
             return Err(
                 aws_smithy_http::operation::error::SerializationError::unknown_variant(
                     "VectorEnrichmentJobConfig",

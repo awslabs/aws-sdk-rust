@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_invalid_origin_keepalive_timeout_xml_err(
     inp: &[u8],
-    mut builder: crate::error::invalid_origin_keepalive_timeout::Builder,
+    mut builder: crate::types::error::builders::InvalidOriginKeepaliveTimeoutBuilder,
 ) -> Result<
-    crate::error::invalid_origin_keepalive_timeout::Builder,
+    crate::types::error::builders::InvalidOriginKeepaliveTimeoutBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

@@ -3,119 +3,120 @@
 pub fn de_list_rule_groups_namespaces_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListRuleGroupsNamespacesOutput,
-    crate::error::ListRuleGroupsNamespacesError,
+    crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesOutput,
+    crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListRuleGroupsNamespacesError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::error::ListRuleGroupsNamespacesError::unhandled(
+        None => return Err(
+            crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesError::unhandled(
                 generic,
-            ))
-        }
+            ),
+        ),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => {
-            crate::error::ListRuleGroupsNamespacesError::AccessDeniedException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "AccessDeniedException" => crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesError::AccessDeniedException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRuleGroupsNamespacesError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InternalServerException" => {
-            crate::error::ListRuleGroupsNamespacesError::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InternalServerException" => crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesError::InternalServerException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRuleGroupsNamespacesError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::protocol_serde::shape_internal_server_exception::de_retry_after_seconds_header(response.headers())
-                                                .map_err(|_|crate::error::ListRuleGroupsNamespacesError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ResourceNotFoundException" => {
-            crate::error::ListRuleGroupsNamespacesError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRuleGroupsNamespacesError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ThrottlingException" => {
-            crate::error::ListRuleGroupsNamespacesError::ThrottlingException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ThrottlingException" => crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRuleGroupsNamespacesError::unhandled)?;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::protocol_serde::shape_throttling_exception::de_retry_after_seconds_header(response.headers())
-                                                .map_err(|_|crate::error::ListRuleGroupsNamespacesError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ValidationException" => {
-            crate::error::ListRuleGroupsNamespacesError::ValidationException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ValidationException" => crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::validation_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRuleGroupsNamespacesError::unhandled)?;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::ListRuleGroupsNamespacesError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesError::generic(generic)
     })
 }
 
@@ -123,14 +124,14 @@ pub fn de_list_rule_groups_namespaces_http_error(
 pub fn de_list_rule_groups_namespaces_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListRuleGroupsNamespacesOutput,
-    crate::error::ListRuleGroupsNamespacesError,
+    crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesOutput,
+    crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_rule_groups_namespaces_output::Builder::default();
+        let mut output = crate::operation::list_rule_groups_namespaces::builders::ListRuleGroupsNamespacesOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_list_rule_groups_namespaces::de_list_rule_groups_namespaces(response.body().as_ref(), output).map_err(crate::error::ListRuleGroupsNamespacesError::unhandled)?;
+        output = crate::protocol_serde::shape_list_rule_groups_namespaces::de_list_rule_groups_namespaces(response.body().as_ref(), output).map_err(crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -140,9 +141,9 @@ pub fn de_list_rule_groups_namespaces_http_response(
 
 pub(crate) fn de_list_rule_groups_namespaces(
     value: &[u8],
-    mut builder: crate::output::list_rule_groups_namespaces_output::Builder,
+    mut builder: crate::operation::list_rule_groups_namespaces::builders::ListRuleGroupsNamespacesOutputBuilder,
 ) -> Result<
-    crate::output::list_rule_groups_namespaces_output::Builder,
+    crate::operation::list_rule_groups_namespaces::builders::ListRuleGroupsNamespacesOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

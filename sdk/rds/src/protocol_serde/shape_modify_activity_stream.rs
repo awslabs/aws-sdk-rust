@@ -3,72 +3,79 @@
 pub fn de_modify_activity_stream_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ModifyActivityStreamOutput,
-    crate::error::ModifyActivityStreamError,
+    crate::operation::modify_activity_stream::ModifyActivityStreamOutput,
+    crate::operation::modify_activity_stream::ModifyActivityStreamError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ModifyActivityStreamError::unhandled)?;
+        .map_err(crate::operation::modify_activity_stream::ModifyActivityStreamError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ModifyActivityStreamError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::modify_activity_stream::ModifyActivityStreamError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBInstanceNotFound" => crate::error::ModifyActivityStreamError::DbInstanceNotFoundFault({
+        "DBInstanceNotFound" => crate::operation::modify_activity_stream::ModifyActivityStreamError::DbInstanceNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::db_instance_not_found_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_db_instance_not_found_fault::de_db_instance_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyActivityStreamError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::DbInstanceNotFoundFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_db_instance_not_found_fault::de_db_instance_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_activity_stream::ModifyActivityStreamError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "InvalidDBInstanceState" => {
-            crate::error::ModifyActivityStreamError::InvalidDbInstanceStateFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidDBInstanceState" => crate::operation::modify_activity_stream::ModifyActivityStreamError::InvalidDbInstanceStateFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_db_instance_state_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidDbInstanceStateFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_db_instance_state_fault::de_invalid_db_instance_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyActivityStreamError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_db_instance_state_fault::de_invalid_db_instance_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_activity_stream::ModifyActivityStreamError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ResourceNotFoundFault" => {
-            crate::error::ModifyActivityStreamError::ResourceNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceNotFoundFault" => crate::operation::modify_activity_stream::ModifyActivityStreamError::ResourceNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::ResourceNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_fault::de_resource_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyActivityStreamError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_fault::de_resource_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_activity_stream::ModifyActivityStreamError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::ModifyActivityStreamError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::modify_activity_stream::ModifyActivityStreamError::generic(generic)
     })
 }
 
@@ -76,18 +83,18 @@ pub fn de_modify_activity_stream_http_error(
 pub fn de_modify_activity_stream_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ModifyActivityStreamOutput,
-    crate::error::ModifyActivityStreamError,
+    crate::operation::modify_activity_stream::ModifyActivityStreamOutput,
+    crate::operation::modify_activity_stream::ModifyActivityStreamError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::modify_activity_stream_output::Builder::default();
+        let mut output = crate::operation::modify_activity_stream::builders::ModifyActivityStreamOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_modify_activity_stream::de_modify_activity_stream(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ModifyActivityStreamError::unhandled)?;
+        .map_err(crate::operation::modify_activity_stream::ModifyActivityStreamError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -98,9 +105,9 @@ pub fn de_modify_activity_stream_http_response(
 #[allow(unused_mut)]
 pub fn de_modify_activity_stream(
     inp: &[u8],
-    mut builder: crate::output::modify_activity_stream_output::Builder,
+    mut builder: crate::operation::modify_activity_stream::builders::ModifyActivityStreamOutputBuilder,
 ) -> Result<
-    crate::output::modify_activity_stream_output::Builder,
+    crate::operation::modify_activity_stream::builders::ModifyActivityStreamOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
@@ -154,8 +161,8 @@ pub fn de_modify_activity_stream(
             s if s.matches("Status") /* Status com.amazonaws.rds.synthetic#ModifyActivityStreamOutput$Status */ =>  {
                 let var_3 =
                     Some(
-                        Result::<crate::model::ActivityStreamStatus, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::ActivityStreamStatus::from(
+                        Result::<crate::types::ActivityStreamStatus, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::ActivityStreamStatus::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
@@ -168,8 +175,8 @@ pub fn de_modify_activity_stream(
             s if s.matches("Mode") /* Mode com.amazonaws.rds.synthetic#ModifyActivityStreamOutput$Mode */ =>  {
                 let var_4 =
                     Some(
-                        Result::<crate::model::ActivityStreamMode, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::ActivityStreamMode::from(
+                        Result::<crate::types::ActivityStreamMode, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::ActivityStreamMode::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
@@ -197,8 +204,8 @@ pub fn de_modify_activity_stream(
             s if s.matches("PolicyStatus") /* PolicyStatus com.amazonaws.rds.synthetic#ModifyActivityStreamOutput$PolicyStatus */ =>  {
                 let var_6 =
                     Some(
-                        Result::<crate::model::ActivityStreamPolicyStatus, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::ActivityStreamPolicyStatus::from(
+                        Result::<crate::types::ActivityStreamPolicyStatus, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::ActivityStreamPolicyStatus::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

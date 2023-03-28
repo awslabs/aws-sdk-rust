@@ -3,31 +3,34 @@
 pub fn de_modify_verified_access_group_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ModifyVerifiedAccessGroupOutput,
-    crate::error::ModifyVerifiedAccessGroupError,
+    crate::operation::modify_verified_access_group::ModifyVerifiedAccessGroupOutput,
+    crate::operation::modify_verified_access_group::ModifyVerifiedAccessGroupError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ModifyVerifiedAccessGroupError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::modify_verified_access_group::ModifyVerifiedAccessGroupError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::ModifyVerifiedAccessGroupError::generic(
-        generic,
-    ))
+    Err(
+        crate::operation::modify_verified_access_group::ModifyVerifiedAccessGroupError::generic(
+            generic,
+        ),
+    )
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_modify_verified_access_group_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ModifyVerifiedAccessGroupOutput,
-    crate::error::ModifyVerifiedAccessGroupError,
+    crate::operation::modify_verified_access_group::ModifyVerifiedAccessGroupOutput,
+    crate::operation::modify_verified_access_group::ModifyVerifiedAccessGroupError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::modify_verified_access_group_output::Builder::default();
+        let mut output = crate::operation::modify_verified_access_group::builders::ModifyVerifiedAccessGroupOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_modify_verified_access_group::de_modify_verified_access_group(response.body().as_ref(), output).map_err(crate::error::ModifyVerifiedAccessGroupError::unhandled)?;
+        output = crate::protocol_serde::shape_modify_verified_access_group::de_modify_verified_access_group(response.body().as_ref(), output).map_err(crate::operation::modify_verified_access_group::ModifyVerifiedAccessGroupError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -36,13 +39,7 @@ pub fn de_modify_verified_access_group_http_response(
 }
 
 #[allow(unused_mut)]
-pub fn de_modify_verified_access_group(
-    inp: &[u8],
-    mut builder: crate::output::modify_verified_access_group_output::Builder,
-) -> Result<
-    crate::output::modify_verified_access_group_output::Builder,
-    aws_smithy_xml::decode::XmlDecodeError,
-> {
+pub fn de_modify_verified_access_group(inp: &[u8], mut builder: crate::operation::modify_verified_access_group::builders::ModifyVerifiedAccessGroupOutputBuilder) -> Result<crate::operation::modify_verified_access_group::builders::ModifyVerifiedAccessGroupOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

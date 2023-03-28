@@ -2,7 +2,7 @@
 pub(crate) fn de_o_auth2_custom_properties_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::OAuth2CustomParameter>>,
+    Option<std::vec::Vec<crate::types::OAuth2CustomParameter>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

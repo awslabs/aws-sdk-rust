@@ -2,7 +2,7 @@
 pub(crate) fn de_mail_from_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::MailFromAttributes>,
+    Option<crate::types::MailFromAttributes>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::mail_from_attributes::Builder::default();
+            let mut builder = crate::types::builders::MailFromAttributesBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -39,7 +39,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::MailFromDomainStatus::from(u.as_ref())
+                                            crate::types::MailFromDomainStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -52,7 +52,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::BehaviorOnMxFailure::from(u.as_ref())
+                                            crate::types::BehaviorOnMxFailure::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

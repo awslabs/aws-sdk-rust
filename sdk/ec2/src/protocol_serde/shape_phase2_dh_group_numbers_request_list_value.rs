@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_phase2_dh_group_numbers_request_list_value(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::Phase2DhGroupNumbersRequestListValue,
+    input: &crate::types::Phase2DhGroupNumbersRequestListValue,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Value");

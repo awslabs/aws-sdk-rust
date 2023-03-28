@@ -2,7 +2,7 @@
 pub(crate) fn de_vtl_devices<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::VtlDevice>>,
+    Option<std::vec::Vec<crate::types::VtlDevice>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

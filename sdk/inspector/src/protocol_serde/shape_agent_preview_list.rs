@@ -2,7 +2,7 @@
 pub(crate) fn de_agent_preview_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AgentPreview>>,
+    Option<std::vec::Vec<crate::types::AgentPreview>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

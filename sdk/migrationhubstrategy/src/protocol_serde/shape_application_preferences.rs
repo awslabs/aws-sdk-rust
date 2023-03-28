@@ -2,7 +2,7 @@
 pub(crate) fn de_application_preferences<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ApplicationPreferences>,
+    Option<crate::types::ApplicationPreferences>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::application_preferences::Builder::default();
+            let mut builder = crate::types::builders::ApplicationPreferencesBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -53,7 +53,7 @@ where
 
 pub fn ser_application_preferences(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::ApplicationPreferences,
+    input: &crate::types::ApplicationPreferences,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.management_preference {
         #[allow(unused_mut)]

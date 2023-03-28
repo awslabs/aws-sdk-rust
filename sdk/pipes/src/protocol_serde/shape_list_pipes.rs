@@ -2,30 +2,38 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_pipes_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListPipesOutput, crate::error::ListPipesError> {
+) -> std::result::Result<
+    crate::operation::list_pipes::ListPipesOutput,
+    crate::operation::list_pipes::ListPipesError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListPipesError::unhandled)?;
+        .map_err(crate::operation::list_pipes::ListPipesError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListPipesError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::list_pipes::ListPipesError::unhandled(
+                generic,
+            ))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InternalException" => {
-            crate::error::ListPipesError::InternalException({
+            crate::operation::list_pipes::ListPipesError::InternalException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::InternalExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_exception::de_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListPipesError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_exception::de_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_pipes::ListPipesError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::protocol_serde::shape_internal_exception::de_retry_after_seconds_header(response.headers())
-                                                .map_err(|_|crate::error::ListPipesError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::operation::list_pipes::ListPipesError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
                     let output = output.meta(generic);
                     output.build()
@@ -36,57 +44,66 @@ pub fn de_list_pipes_http_error(
                 tmp
             })
         }
-        "ThrottlingException" => crate::error::ListPipesError::ThrottlingException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "ThrottlingException" => {
+            crate::operation::list_pipes::ListPipesError::ThrottlingException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::throttling_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListPipesError::unhandled)?;
-                output = output.set_retry_after_seconds(
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_pipes::ListPipesError::unhandled)?;
+                    output = output.set_retry_after_seconds(
                         crate::protocol_serde::shape_throttling_exception::de_retry_after_seconds_header(response.headers())
-                                                .map_err(|_|crate::error::ListPipesError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::operation::list_pipes::ListPipesError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ValidationException" => crate::error::ListPipesError::ValidationException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ValidationException" => {
+            crate::operation::list_pipes::ListPipesError::ValidationException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListPipesError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::ListPipesError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_pipes::ListPipesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::list_pipes::ListPipesError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_pipes_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListPipesOutput, crate::error::ListPipesError> {
+) -> std::result::Result<
+    crate::operation::list_pipes::ListPipesOutput,
+    crate::operation::list_pipes::ListPipesError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_pipes_output::Builder::default();
+        let mut output = crate::operation::list_pipes::builders::ListPipesOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_pipes::de_list_pipes(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListPipesError::unhandled)?;
+        .map_err(crate::operation::list_pipes::ListPipesError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -96,9 +113,9 @@ pub fn de_list_pipes_http_response(
 
 pub(crate) fn de_list_pipes(
     value: &[u8],
-    mut builder: crate::output::list_pipes_output::Builder,
+    mut builder: crate::operation::list_pipes::builders::ListPipesOutputBuilder,
 ) -> Result<
-    crate::output::list_pipes_output::Builder,
+    crate::operation::list_pipes::builders::ListPipesOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

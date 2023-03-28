@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_path_pattern_condition_config(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::PathPatternConditionConfig,
+    input: &crate::types::PathPatternConditionConfig,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Values");
@@ -20,9 +20,9 @@ pub fn ser_path_pattern_condition_config(
 
 pub fn de_path_pattern_condition_config(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::PathPatternConditionConfig, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::PathPatternConditionConfig, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::PathPatternConditionConfig::builder();
+    let mut builder = crate::types::PathPatternConditionConfig::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Values") /* Values com.amazonaws.elasticloadbalancingv2#PathPatternConditionConfig$Values */ =>  {

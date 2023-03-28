@@ -3,37 +3,45 @@
 pub fn de_detach_load_balancers_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DetachLoadBalancersOutput,
-    crate::error::DetachLoadBalancersError,
+    crate::operation::detach_load_balancers::DetachLoadBalancersOutput,
+    crate::operation::detach_load_balancers::DetachLoadBalancersError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DetachLoadBalancersError::unhandled)?;
+        .map_err(crate::operation::detach_load_balancers::DetachLoadBalancersError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DetachLoadBalancersError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::detach_load_balancers::DetachLoadBalancersError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceContention" => crate::error::DetachLoadBalancersError::ResourceContentionFault({
+        "ResourceContention" => crate::operation::detach_load_balancers::DetachLoadBalancersError::ResourceContentionFault({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::resource_contention_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_resource_contention_fault::de_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DetachLoadBalancersError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ResourceContentionFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_contention_fault::de_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::detach_load_balancers::DetachLoadBalancersError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::DetachLoadBalancersError::generic(generic),
+        _ => crate::operation::detach_load_balancers::DetachLoadBalancersError::generic(generic)
     })
 }
 
@@ -41,12 +49,12 @@ pub fn de_detach_load_balancers_http_error(
 pub fn de_detach_load_balancers_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DetachLoadBalancersOutput,
-    crate::error::DetachLoadBalancersError,
+    crate::operation::detach_load_balancers::DetachLoadBalancersOutput,
+    crate::operation::detach_load_balancers::DetachLoadBalancersError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::detach_load_balancers_output::Builder::default();
+        let mut output = crate::operation::detach_load_balancers::builders::DetachLoadBalancersOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

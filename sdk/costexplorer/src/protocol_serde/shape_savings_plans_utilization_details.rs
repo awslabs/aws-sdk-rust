@@ -2,7 +2,7 @@
 pub(crate) fn de_savings_plans_utilization_details<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SavingsPlansUtilizationDetail>>,
+    Option<std::vec::Vec<crate::types::SavingsPlansUtilizationDetail>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

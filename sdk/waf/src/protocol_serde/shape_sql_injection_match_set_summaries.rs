@@ -2,7 +2,7 @@
 pub(crate) fn de_sql_injection_match_set_summaries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SqlInjectionMatchSetSummary>>,
+    Option<std::vec::Vec<crate::types::SqlInjectionMatchSetSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_account_level_bpa_sync<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::AccountLevelBpaSync>,
+    Option<crate::types::AccountLevelBpaSync>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::account_level_bpa_sync::Builder::default();
+            let mut builder = crate::types::builders::AccountLevelBpaSyncBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::AccountLevelBpaSyncStatus::from(
+                                            crate::types::AccountLevelBpaSyncStatus::from(
                                                 u.as_ref(),
                                             )
                                         })
@@ -53,7 +53,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::BpaStatusMessage::from(u.as_ref())
+                                            crate::types::BpaStatusMessage::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

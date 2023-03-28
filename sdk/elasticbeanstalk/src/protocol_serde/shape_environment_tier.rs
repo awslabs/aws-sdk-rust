@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_environment_tier(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::EnvironmentTier,
+    input: &crate::types::EnvironmentTier,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Name");
@@ -24,9 +24,9 @@ pub fn ser_environment_tier(
 
 pub fn de_environment_tier(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::EnvironmentTier, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::EnvironmentTier, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::EnvironmentTier::builder();
+    let mut builder = crate::types::EnvironmentTier::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Name") /* Name com.amazonaws.elasticbeanstalk#EnvironmentTier$Name */ =>  {

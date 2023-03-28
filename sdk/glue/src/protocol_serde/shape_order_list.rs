@@ -2,7 +2,7 @@
 pub(crate) fn de_order_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Order>>,
+    Option<std::vec::Vec<crate::types::Order>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

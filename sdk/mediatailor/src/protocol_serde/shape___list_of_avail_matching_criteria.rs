@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_avail_matching_criteria<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AvailMatchingCriteria>>,
+    Option<std::vec::Vec<crate::types::AvailMatchingCriteria>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

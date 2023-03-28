@@ -2,7 +2,7 @@
 pub(crate) fn de_anomaly_monitors<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AnomalyMonitor>>,
+    Option<std::vec::Vec<crate::types::AnomalyMonitor>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

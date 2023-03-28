@@ -2,22 +2,29 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_set_stack_policy_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::SetStackPolicyOutput, crate::error::SetStackPolicyError> {
+) -> std::result::Result<
+    crate::operation::set_stack_policy::SetStackPolicyOutput,
+    crate::operation::set_stack_policy::SetStackPolicyError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::SetStackPolicyError::unhandled)?;
+        .map_err(crate::operation::set_stack_policy::SetStackPolicyError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::SetStackPolicyError::generic(generic))
+    Err(crate::operation::set_stack_policy::SetStackPolicyError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_set_stack_policy_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::SetStackPolicyOutput, crate::error::SetStackPolicyError> {
+) -> std::result::Result<
+    crate::operation::set_stack_policy::SetStackPolicyOutput,
+    crate::operation::set_stack_policy::SetStackPolicyError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::set_stack_policy_output::Builder::default();
+        let mut output =
+            crate::operation::set_stack_policy::builders::SetStackPolicyOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

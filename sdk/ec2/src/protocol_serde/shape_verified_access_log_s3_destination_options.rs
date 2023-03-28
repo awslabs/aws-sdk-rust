@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_verified_access_log_s3_destination_options(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::VerifiedAccessLogS3DestinationOptions,
+    input: &crate::types::VerifiedAccessLogS3DestinationOptions,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Enabled");

@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_additional_attribute(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::AdditionalAttribute,
+    input: &crate::types::AdditionalAttribute,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Key");
@@ -19,9 +19,9 @@ pub fn ser_additional_attribute(
 
 pub fn de_additional_attribute(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::AdditionalAttribute, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::AdditionalAttribute, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::AdditionalAttribute::builder();
+    let mut builder = crate::types::AdditionalAttribute::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Key") /* Key com.amazonaws.elasticloadbalancing#AdditionalAttribute$Key */ =>  {

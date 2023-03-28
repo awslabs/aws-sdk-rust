@@ -2,7 +2,7 @@
 pub(crate) fn de_app_instance_admin_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AppInstanceAdminSummary>>,
+    Option<std::vec::Vec<crate::types::AppInstanceAdminSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

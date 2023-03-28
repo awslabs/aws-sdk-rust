@@ -2,7 +2,7 @@
 pub(crate) fn de_mapped_resource_configuration_list_item<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::MappedResourceConfigurationListItem>,
+    Option<crate::types::MappedResourceConfigurationListItem>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::mapped_resource_configuration_list_item::Builder::default();
+                crate::types::builders::MappedResourceConfigurationListItemBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

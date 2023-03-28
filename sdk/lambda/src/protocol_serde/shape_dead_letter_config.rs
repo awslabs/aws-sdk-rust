@@ -2,7 +2,7 @@
 pub(crate) fn de_dead_letter_config<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::DeadLetterConfig>,
+    Option<crate::types::DeadLetterConfig>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::dead_letter_config::Builder::default();
+            let mut builder = crate::types::builders::DeadLetterConfigBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -57,7 +57,7 @@ where
 
 pub fn ser_dead_letter_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::DeadLetterConfig,
+    input: &crate::types::DeadLetterConfig,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.target_arn {
         object.key("TargetArn").string(var_1.as_str());

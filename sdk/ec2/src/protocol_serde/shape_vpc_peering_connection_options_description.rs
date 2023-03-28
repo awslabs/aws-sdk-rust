@@ -2,11 +2,11 @@
 pub fn de_vpc_peering_connection_options_description(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    crate::model::VpcPeeringConnectionOptionsDescription,
+    crate::types::VpcPeeringConnectionOptionsDescription,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     #[allow(unused_mut)]
-    let mut builder = crate::model::VpcPeeringConnectionOptionsDescription::builder();
+    let mut builder = crate::types::VpcPeeringConnectionOptionsDescription::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("allowDnsResolutionFromRemoteVpc") /* AllowDnsResolutionFromRemoteVpc com.amazonaws.ec2#VpcPeeringConnectionOptionsDescription$AllowDnsResolutionFromRemoteVpc */ =>  {

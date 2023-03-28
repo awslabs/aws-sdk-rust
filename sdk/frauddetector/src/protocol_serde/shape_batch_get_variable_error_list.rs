@@ -2,7 +2,7 @@
 pub(crate) fn de_batch_get_variable_error_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::BatchGetVariableError>>,
+    Option<std::vec::Vec<crate::types::BatchGetVariableError>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

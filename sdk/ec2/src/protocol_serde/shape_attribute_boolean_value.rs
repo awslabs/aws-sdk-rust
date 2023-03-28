@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_attribute_boolean_value(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::AttributeBooleanValue,
+    input: &crate::types::AttributeBooleanValue,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Value");
@@ -14,9 +14,9 @@ pub fn ser_attribute_boolean_value(
 
 pub fn de_attribute_boolean_value(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::AttributeBooleanValue, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::AttributeBooleanValue, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::AttributeBooleanValue::builder();
+    let mut builder = crate::types::AttributeBooleanValue::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("value") /* Value com.amazonaws.ec2#AttributeBooleanValue$Value */ =>  {

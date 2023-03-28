@@ -2,7 +2,7 @@
 pub(crate) fn de_advanced_field_selectors<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AdvancedFieldSelector>>,
+    Option<std::vec::Vec<crate::types::AdvancedFieldSelector>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

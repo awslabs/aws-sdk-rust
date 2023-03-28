@@ -2,7 +2,7 @@
 pub(crate) fn de_start_timer_failed_event_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::StartTimerFailedEventAttributes>,
+    Option<crate::types::StartTimerFailedEventAttributes>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::start_timer_failed_event_attributes::Builder::default();
+            let mut builder =
+                crate::types::builders::StartTimerFailedEventAttributesBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -39,7 +40,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::StartTimerFailedCause::from(u.as_ref())
+                                            crate::types::StartTimerFailedCause::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

@@ -3,40 +3,45 @@
 pub fn de_describe_db_parameters_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeDbParametersOutput,
-    crate::error::DescribeDBParametersError,
+    crate::operation::describe_db_parameters::DescribeDbParametersOutput,
+    crate::operation::describe_db_parameters::DescribeDBParametersError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeDBParametersError::unhandled)?;
+        .map_err(crate::operation::describe_db_parameters::DescribeDBParametersError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DescribeDBParametersError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::describe_db_parameters::DescribeDBParametersError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBParameterGroupNotFound" => {
-            crate::error::DescribeDBParametersError::DbParameterGroupNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "DBParameterGroupNotFound" => crate::operation::describe_db_parameters::DescribeDBParametersError::DbParameterGroupNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::db_parameter_group_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::DbParameterGroupNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_db_parameter_group_not_found_fault::de_db_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeDBParametersError::unhandled)?;
+                    output = crate::protocol_serde::shape_db_parameter_group_not_found_fault::de_db_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::describe_db_parameters::DescribeDBParametersError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DescribeDBParametersError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::describe_db_parameters::DescribeDBParametersError::generic(generic)
     })
 }
 
@@ -44,18 +49,18 @@ pub fn de_describe_db_parameters_http_error(
 pub fn de_describe_db_parameters_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeDbParametersOutput,
-    crate::error::DescribeDBParametersError,
+    crate::operation::describe_db_parameters::DescribeDbParametersOutput,
+    crate::operation::describe_db_parameters::DescribeDBParametersError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_db_parameters_output::Builder::default();
+        let mut output = crate::operation::describe_db_parameters::builders::DescribeDbParametersOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_describe_db_parameters::de_describe_db_parameters(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DescribeDBParametersError::unhandled)?;
+        .map_err(crate::operation::describe_db_parameters::DescribeDBParametersError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -66,9 +71,9 @@ pub fn de_describe_db_parameters_http_response(
 #[allow(unused_mut)]
 pub fn de_describe_db_parameters(
     inp: &[u8],
-    mut builder: crate::output::describe_db_parameters_output::Builder,
+    mut builder: crate::operation::describe_db_parameters::builders::DescribeDbParametersOutputBuilder,
 ) -> Result<
-    crate::output::describe_db_parameters_output::Builder,
+    crate::operation::describe_db_parameters::builders::DescribeDbParametersOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

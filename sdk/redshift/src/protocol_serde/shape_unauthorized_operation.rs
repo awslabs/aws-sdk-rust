@@ -2,8 +2,11 @@
 #[allow(unused_mut)]
 pub fn de_unauthorized_operation_xml_err(
     inp: &[u8],
-    mut builder: crate::error::unauthorized_operation::Builder,
-) -> Result<crate::error::unauthorized_operation::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    mut builder: crate::types::error::builders::UnauthorizedOperationBuilder,
+) -> Result<
+    crate::types::error::builders::UnauthorizedOperationBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     if inp.is_empty() {
         return Ok(builder);
     }

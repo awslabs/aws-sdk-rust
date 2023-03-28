@@ -2,88 +2,35 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_insight_results_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetInsightResultsOutput, crate::error::GetInsightResultsError>
-{
+) -> std::result::Result<
+    crate::operation::get_insight_results::GetInsightResultsOutput,
+    crate::operation::get_insight_results::GetInsightResultsError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetInsightResultsError::unhandled)?;
+        .map_err(crate::operation::get_insight_results::GetInsightResultsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::GetInsightResultsError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::get_insight_results::GetInsightResultsError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalException" => crate::error::GetInsightResultsError::InternalException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::internal_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_exception::de_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetInsightResultsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InvalidAccessException" => crate::error::GetInsightResultsError::InvalidAccessException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::invalid_access_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_access_exception::de_invalid_access_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetInsightResultsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InvalidInputException" => crate::error::GetInsightResultsError::InvalidInputException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::invalid_input_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_input_exception::de_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetInsightResultsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "LimitExceededException" => crate::error::GetInsightResultsError::LimitExceededException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::limit_exceeded_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetInsightResultsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ResourceNotFoundException" => {
-            crate::error::GetInsightResultsError::ResourceNotFoundException({
+        "InternalException" => {
+            crate::operation::get_insight_results::GetInsightResultsError::InternalException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::InternalExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetInsightResultsError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_exception::de_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_insight_results::GetInsightResultsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -93,24 +40,99 @@ pub fn de_get_insight_results_http_error(
                 tmp
             })
         }
-        _ => crate::error::GetInsightResultsError::generic(generic),
+        "InvalidAccessException" => {
+            crate::operation::get_insight_results::GetInsightResultsError::InvalidAccessException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InvalidAccessExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_access_exception::de_invalid_access_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_insight_results::GetInsightResultsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidInputException" => {
+            crate::operation::get_insight_results::GetInsightResultsError::InvalidInputException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InvalidInputExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_input_exception::de_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_insight_results::GetInsightResultsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "LimitExceededException" => {
+            crate::operation::get_insight_results::GetInsightResultsError::LimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::LimitExceededExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_insight_results::GetInsightResultsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::operation::get_insight_results::GetInsightResultsError::ResourceNotFoundException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                        let _ = response;
+                        output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_insight_results::GetInsightResultsError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        _ => crate::operation::get_insight_results::GetInsightResultsError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_insight_results_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetInsightResultsOutput, crate::error::GetInsightResultsError>
-{
+) -> std::result::Result<
+    crate::operation::get_insight_results::GetInsightResultsOutput,
+    crate::operation::get_insight_results::GetInsightResultsError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_insight_results_output::Builder::default();
+        let mut output = crate::operation::get_insight_results::builders::GetInsightResultsOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_get_insight_results::de_get_insight_results(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::GetInsightResultsError::unhandled)?;
+        .map_err(crate::operation::get_insight_results::GetInsightResultsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -120,9 +142,9 @@ pub fn de_get_insight_results_http_response(
 
 pub(crate) fn de_get_insight_results(
     value: &[u8],
-    mut builder: crate::output::get_insight_results_output::Builder,
+    mut builder: crate::operation::get_insight_results::builders::GetInsightResultsOutputBuilder,
 ) -> Result<
-    crate::output::get_insight_results_output::Builder,
+    crate::operation::get_insight_results::builders::GetInsightResultsOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

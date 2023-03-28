@@ -2,7 +2,7 @@
 pub(crate) fn de_invite_action_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::InviteAction>>,
+    Option<std::vec::Vec<crate::types::InviteAction>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

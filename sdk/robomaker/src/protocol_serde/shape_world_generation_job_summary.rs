@@ -2,7 +2,7 @@
 pub(crate) fn de_world_generation_job_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::WorldGenerationJobSummary>,
+    Option<crate::types::WorldGenerationJobSummary>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::world_generation_job_summary::Builder::default();
+            let mut builder = crate::types::builders::WorldGenerationJobSummaryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -56,7 +56,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::WorldGenerationJobStatus::from(u.as_ref())
+                                            crate::types::WorldGenerationJobStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

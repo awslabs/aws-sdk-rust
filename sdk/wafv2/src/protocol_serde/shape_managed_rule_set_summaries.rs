@@ -2,7 +2,7 @@
 pub(crate) fn de_managed_rule_set_summaries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ManagedRuleSetSummary>>,
+    Option<std::vec::Vec<crate::types::ManagedRuleSetSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

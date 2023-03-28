@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_endpoint_disabled_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::endpoint_disabled_exception::Builder,
+    mut builder: crate::types::error::builders::EndpointDisabledExceptionBuilder,
 ) -> Result<
-    crate::error::endpoint_disabled_exception::Builder,
+    crate::types::error::builders::EndpointDisabledExceptionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

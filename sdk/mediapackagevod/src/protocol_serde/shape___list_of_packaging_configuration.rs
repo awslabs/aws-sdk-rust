@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_packaging_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::PackagingConfiguration>>,
+    Option<std::vec::Vec<crate::types::PackagingConfiguration>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

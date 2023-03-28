@@ -2,17 +2,20 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_chunk_http_response(
     op_response: &mut aws_smithy_http::operation::Response,
-) -> std::result::Result<crate::output::GetChunkOutput, crate::error::GetChunkError> {
+) -> std::result::Result<
+    crate::operation::get_chunk::GetChunkOutput,
+    crate::operation::get_chunk::GetChunkError,
+> {
     #[allow(unused_variables)]
     let (response, properties) = op_response.parts_mut();
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_chunk_output::Builder::default();
+        let mut output = crate::operation::get_chunk::builders::GetChunkOutputBuilder::default();
         let _ = response;
         output = output.set_checksum(
             crate::protocol_serde::shape_get_chunk_output::de_checksum_header(response.headers())
                 .map_err(|_| {
-                crate::error::GetChunkError::unhandled(
+                crate::operation::get_chunk::GetChunkError::unhandled(
                     "Failed to parse Checksum from header `x-amz-checksum",
                 )
             })?,
@@ -22,7 +25,7 @@ pub fn de_get_chunk_http_response(
                 response.headers(),
             )
             .map_err(|_| {
-                crate::error::GetChunkError::unhandled(
+                crate::operation::get_chunk::GetChunkError::unhandled(
                     "Failed to parse ChecksumAlgorithm from header `x-amz-checksum-algorithm",
                 )
             })?,
@@ -33,7 +36,7 @@ pub fn de_get_chunk_http_response(
         output = output.set_length(
             crate::protocol_serde::shape_get_chunk_output::de_length_header(response.headers())
                 .map_err(|_| {
-                    crate::error::GetChunkError::unhandled(
+                    crate::operation::get_chunk::GetChunkError::unhandled(
                         "Failed to parse Length from header `x-amz-data-length",
                     )
                 })?,
@@ -48,58 +51,35 @@ pub fn de_get_chunk_http_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_chunk_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetChunkOutput, crate::error::GetChunkError> {
+) -> std::result::Result<
+    crate::operation::get_chunk::GetChunkOutput,
+    crate::operation::get_chunk::GetChunkError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetChunkError::unhandled)?;
+        .map_err(crate::operation::get_chunk::GetChunkError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::GetChunkError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::get_chunk::GetChunkError::unhandled(
+                generic,
+            ))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::GetChunkError::AccessDeniedException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::access_denied_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetChunkError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "IllegalArgumentException" => crate::error::GetChunkError::IllegalArgumentException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::illegal_argument_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_illegal_argument_exception::de_illegal_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetChunkError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "KMSInvalidKeyUsageException" => {
-            crate::error::GetChunkError::KmsInvalidKeyUsageException({
+        "AccessDeniedException" => {
+            crate::operation::get_chunk::GetChunkError::AccessDeniedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::kms_invalid_key_usage_exception::Builder::default();
+                        crate::types::error::builders::AccessDeniedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_kms_invalid_key_usage_exception::de_kms_invalid_key_usage_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetChunkError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_chunk::GetChunkError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -109,13 +89,69 @@ pub fn de_get_chunk_http_error(
                 tmp
             })
         }
-        "ResourceNotFoundException" => crate::error::GetChunkError::ResourceNotFoundException({
+        "IllegalArgumentException" => {
+            crate::operation::get_chunk::GetChunkError::IllegalArgumentException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::IllegalArgumentExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_illegal_argument_exception::de_illegal_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_chunk::GetChunkError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "KMSInvalidKeyUsageException" => {
+            crate::operation::get_chunk::GetChunkError::KmsInvalidKeyUsageException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::KmsInvalidKeyUsageExceptionBuilder::default(
+                        );
+                    let _ = response;
+                    output = crate::protocol_serde::shape_kms_invalid_key_usage_exception::de_kms_invalid_key_usage_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_chunk::GetChunkError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::operation::get_chunk::GetChunkError::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_chunk::GetChunkError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "RetryableException" => crate::operation::get_chunk::GetChunkError::RetryableException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::error::resource_not_found_exception::Builder::default();
+                let mut output =
+                    crate::types::error::builders::RetryableExceptionBuilder::default();
                 let _ = response;
-                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetChunkError::unhandled)?;
+                output = crate::protocol_serde::shape_retryable_exception::de_retryable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_chunk::GetChunkError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -124,13 +160,32 @@ pub fn de_get_chunk_http_error(
             }
             tmp
         }),
-        "RetryableException" => crate::error::GetChunkError::RetryableException({
+        "ServiceInternalException" => {
+            crate::operation::get_chunk::GetChunkError::ServiceInternalException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ServiceInternalExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_service_internal_exception::de_service_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_chunk::GetChunkError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ThrottlingException" => crate::operation::get_chunk::GetChunkError::ThrottlingException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::error::retryable_exception::Builder::default();
+                let mut output =
+                    crate::types::error::builders::ThrottlingExceptionBuilder::default();
                 let _ = response;
-                output = crate::protocol_serde::shape_retryable_exception::de_retryable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetChunkError::unhandled)?;
+                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_chunk::GetChunkError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -139,36 +194,6 @@ pub fn de_get_chunk_http_error(
             }
             tmp
         }),
-        "ServiceInternalException" => crate::error::GetChunkError::ServiceInternalException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::service_internal_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_service_internal_exception::de_service_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetChunkError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ThrottlingException" => crate::error::GetChunkError::ThrottlingException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::throttling_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetChunkError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::GetChunkError::generic(generic),
+        _ => crate::operation::get_chunk::GetChunkError::generic(generic),
     })
 }

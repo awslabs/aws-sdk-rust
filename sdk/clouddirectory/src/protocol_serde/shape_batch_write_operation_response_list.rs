@@ -2,7 +2,7 @@
 pub(crate) fn de_batch_write_operation_response_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::BatchWriteOperationResponse>>,
+    Option<std::vec::Vec<crate::types::BatchWriteOperationResponse>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

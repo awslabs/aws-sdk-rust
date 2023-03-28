@@ -4,7 +4,7 @@ pub(crate) fn de_aws_ecs_task_definition_container_definitions_resource_requirem
 ) -> Result<
     Option<
         std::vec::Vec<
-            crate::model::AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails,
+            crate::types::AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails,
         >,
     >,
     aws_smithy_json::deserialize::error::DeserializeError,

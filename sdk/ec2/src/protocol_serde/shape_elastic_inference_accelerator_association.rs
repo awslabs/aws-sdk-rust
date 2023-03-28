@@ -2,11 +2,11 @@
 pub fn de_elastic_inference_accelerator_association(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    crate::model::ElasticInferenceAcceleratorAssociation,
+    crate::types::ElasticInferenceAcceleratorAssociation,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     #[allow(unused_mut)]
-    let mut builder = crate::model::ElasticInferenceAcceleratorAssociation::builder();
+    let mut builder = crate::types::ElasticInferenceAcceleratorAssociation::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("elasticInferenceAcceleratorArn") /* ElasticInferenceAcceleratorArn com.amazonaws.ec2#ElasticInferenceAcceleratorAssociation$ElasticInferenceAcceleratorArn */ =>  {

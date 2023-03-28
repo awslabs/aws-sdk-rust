@@ -2,7 +2,7 @@
 pub(crate) fn de_fleet_attributes<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::FleetAttributes>,
+    Option<crate::types::FleetAttributes>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::fleet_attributes::Builder::default();
+            let mut builder = crate::types::builders::FleetAttributesBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -48,7 +48,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::FleetType::from(u.as_ref()))
+                                            .map(|u| crate::types::FleetType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -60,7 +60,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::Ec2InstanceType::from(u.as_ref())
+                                            crate::types::Ec2InstanceType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -107,7 +107,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::FleetStatus::from(u.as_ref()))
+                                            .map(|u| crate::types::FleetStatus::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -180,7 +180,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ProtectionPolicy::from(u.as_ref())
+                                            crate::types::ProtectionPolicy::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -193,7 +193,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::OperatingSystem::from(u.as_ref())
+                                            crate::types::OperatingSystem::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -235,7 +235,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::ComputeType::from(u.as_ref()))
+                                            .map(|u| crate::types::ComputeType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_failover_condition<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::FailoverCondition>>,
+    Option<std::vec::Vec<crate::types::FailoverCondition>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

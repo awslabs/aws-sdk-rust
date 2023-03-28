@@ -2,7 +2,7 @@
 pub(crate) fn de_instance_onboarding_job_status<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::InstanceOnboardingJobStatus>,
+    Option<crate::types::InstanceOnboardingJobStatus>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::instance_onboarding_job_status::Builder::default();
+            let mut builder = crate::types::builders::InstanceOnboardingJobStatusBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -39,7 +39,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::InstanceOnboardingJobStatusCode::from(
+                                            crate::types::InstanceOnboardingJobStatusCode::from(
                                                 u.as_ref(),
                                             )
                                         })
@@ -54,7 +54,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::InstanceOnboardingJobFailureCode::from(
+                                            crate::types::InstanceOnboardingJobFailureCode::from(
                                                 u.as_ref(),
                                             )
                                         })

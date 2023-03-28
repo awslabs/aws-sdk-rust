@@ -2,7 +2,7 @@
 pub(crate) fn de_profile_times<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ProfileTime>>,
+    Option<std::vec::Vec<crate::types::ProfileTime>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

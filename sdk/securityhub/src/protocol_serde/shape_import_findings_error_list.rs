@@ -2,7 +2,7 @@
 pub(crate) fn de_import_findings_error_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ImportFindingsError>>,
+    Option<std::vec::Vec<crate::types::ImportFindingsError>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

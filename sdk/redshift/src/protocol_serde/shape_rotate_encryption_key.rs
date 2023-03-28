@@ -3,73 +3,79 @@
 pub fn de_rotate_encryption_key_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::RotateEncryptionKeyOutput,
-    crate::error::RotateEncryptionKeyError,
+    crate::operation::rotate_encryption_key::RotateEncryptionKeyOutput,
+    crate::operation::rotate_encryption_key::RotateEncryptionKeyError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::RotateEncryptionKeyError::unhandled)?;
+        .map_err(crate::operation::rotate_encryption_key::RotateEncryptionKeyError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::RotateEncryptionKeyError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::rotate_encryption_key::RotateEncryptionKeyError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ClusterNotFound" => crate::error::RotateEncryptionKeyError::ClusterNotFoundFault({
+        "ClusterNotFound" => crate::operation::rotate_encryption_key::RotateEncryptionKeyError::ClusterNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::cluster_not_found_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_cluster_not_found_fault::de_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RotateEncryptionKeyError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ClusterNotFoundFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_cluster_not_found_fault::de_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::rotate_encryption_key::RotateEncryptionKeyError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "DependentServiceRequestThrottlingFault" => {
-            crate::error::RotateEncryptionKeyError::DependentServiceRequestThrottlingFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "DependentServiceRequestThrottlingFault" => crate::operation::rotate_encryption_key::RotateEncryptionKeyError::DependentServiceRequestThrottlingFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::dependent_service_request_throttling_fault::Builder::default(
-                        );
+                    let mut output = crate::types::error::builders::DependentServiceRequestThrottlingFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_dependent_service_request_throttling_fault::de_dependent_service_request_throttling_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RotateEncryptionKeyError::unhandled)?;
+                    output = crate::protocol_serde::shape_dependent_service_request_throttling_fault::de_dependent_service_request_throttling_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::rotate_encryption_key::RotateEncryptionKeyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidClusterState" => {
-            crate::error::RotateEncryptionKeyError::InvalidClusterStateFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidClusterState" => crate::operation::rotate_encryption_key::RotateEncryptionKeyError::InvalidClusterStateFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_cluster_state_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidClusterStateFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_cluster_state_fault::de_invalid_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RotateEncryptionKeyError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_cluster_state_fault::de_invalid_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::rotate_encryption_key::RotateEncryptionKeyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::RotateEncryptionKeyError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::rotate_encryption_key::RotateEncryptionKeyError::generic(generic)
     })
 }
 
@@ -77,18 +83,18 @@ pub fn de_rotate_encryption_key_http_error(
 pub fn de_rotate_encryption_key_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::RotateEncryptionKeyOutput,
-    crate::error::RotateEncryptionKeyError,
+    crate::operation::rotate_encryption_key::RotateEncryptionKeyOutput,
+    crate::operation::rotate_encryption_key::RotateEncryptionKeyError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::rotate_encryption_key_output::Builder::default();
+        let mut output = crate::operation::rotate_encryption_key::builders::RotateEncryptionKeyOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_rotate_encryption_key::de_rotate_encryption_key(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::RotateEncryptionKeyError::unhandled)?;
+        .map_err(crate::operation::rotate_encryption_key::RotateEncryptionKeyError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -99,9 +105,9 @@ pub fn de_rotate_encryption_key_http_response(
 #[allow(unused_mut)]
 pub fn de_rotate_encryption_key(
     inp: &[u8],
-    mut builder: crate::output::rotate_encryption_key_output::Builder,
+    mut builder: crate::operation::rotate_encryption_key::builders::RotateEncryptionKeyOutputBuilder,
 ) -> Result<
-    crate::output::rotate_encryption_key_output::Builder,
+    crate::operation::rotate_encryption_key::builders::RotateEncryptionKeyOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

@@ -2,103 +2,114 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_proposal_votes_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListProposalVotesOutput, crate::error::ListProposalVotesError>
-{
+) -> std::result::Result<
+    crate::operation::list_proposal_votes::ListProposalVotesOutput,
+    crate::operation::list_proposal_votes::ListProposalVotesError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListProposalVotesError::unhandled)?;
+        .map_err(crate::operation::list_proposal_votes::ListProposalVotesError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListProposalVotesError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::list_proposal_votes::ListProposalVotesError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::ListProposalVotesError::AccessDeniedException({
+        "AccessDeniedException" => crate::operation::list_proposal_votes::ListProposalVotesError::AccessDeniedException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::access_denied_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListProposalVotesError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InternalServiceErrorException" => {
-            crate::error::ListProposalVotesError::InternalServiceErrorException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::internal_service_error_exception::Builder::default();
+                    let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_service_error_exception::de_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListProposalVotesError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_proposal_votes::ListProposalVotesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidRequestException" => {
-            crate::error::ListProposalVotesError::InvalidRequestException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_request_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListProposalVotesError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ThrottlingException" => crate::error::ListProposalVotesError::ThrottlingException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::throttling_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListProposalVotesError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        _ => crate::error::ListProposalVotesError::generic(generic),
+        "InternalServiceErrorException" => crate::operation::list_proposal_votes::ListProposalVotesError::InternalServiceErrorException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InternalServiceErrorExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_service_error_exception::de_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_proposal_votes::ListProposalVotesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidRequestException" => crate::operation::list_proposal_votes::ListProposalVotesError::InvalidRequestException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidRequestExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_proposal_votes::ListProposalVotesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ThrottlingException" => crate::operation::list_proposal_votes::ListProposalVotesError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_proposal_votes::ListProposalVotesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::list_proposal_votes::ListProposalVotesError::generic(generic)
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_proposal_votes_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListProposalVotesOutput, crate::error::ListProposalVotesError>
-{
+) -> std::result::Result<
+    crate::operation::list_proposal_votes::ListProposalVotesOutput,
+    crate::operation::list_proposal_votes::ListProposalVotesError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_proposal_votes_output::Builder::default();
+        let mut output = crate::operation::list_proposal_votes::builders::ListProposalVotesOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_proposal_votes::de_list_proposal_votes(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListProposalVotesError::unhandled)?;
+        .map_err(crate::operation::list_proposal_votes::ListProposalVotesError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -108,9 +119,9 @@ pub fn de_list_proposal_votes_http_response(
 
 pub(crate) fn de_list_proposal_votes(
     value: &[u8],
-    mut builder: crate::output::list_proposal_votes_output::Builder,
+    mut builder: crate::operation::list_proposal_votes::builders::ListProposalVotesOutputBuilder,
 ) -> Result<
-    crate::output::list_proposal_votes_output::Builder,
+    crate::operation::list_proposal_votes::builders::ListProposalVotesOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

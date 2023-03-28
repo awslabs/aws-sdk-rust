@@ -2,28 +2,32 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_vault_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DescribeVaultOutput, crate::error::DescribeVaultError> {
+) -> std::result::Result<
+    crate::operation::describe_vault::DescribeVaultOutput,
+    crate::operation::describe_vault::DescribeVaultError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeVaultError::unhandled)?;
+        .map_err(crate::operation::describe_vault::DescribeVaultError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DescribeVaultError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::describe_vault::DescribeVaultError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidParameterValueException" => {
-            crate::error::DescribeVaultError::InvalidParameterValueException({
+            crate::operation::describe_vault::DescribeVaultError::InvalidParameterValueException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_parameter_value_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeVaultError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_vault::DescribeVaultError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -34,14 +38,13 @@ pub fn de_describe_vault_http_error(
             })
         }
         "MissingParameterValueException" => {
-            crate::error::DescribeVaultError::MissingParameterValueException({
+            crate::operation::describe_vault::DescribeVaultError::MissingParameterValueException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::missing_parameter_value_exception::Builder::default();
+                    let mut output = crate::types::error::builders::MissingParameterValueExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_missing_parameter_value_exception::de_missing_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeVaultError::unhandled)?;
+                    output = crate::protocol_serde::shape_missing_parameter_value_exception::de_missing_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_vault::DescribeVaultError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -52,13 +55,14 @@ pub fn de_describe_vault_http_error(
             })
         }
         "ResourceNotFoundException" => {
-            crate::error::DescribeVaultError::ResourceNotFoundException({
+            crate::operation::describe_vault::DescribeVaultError::ResourceNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeVaultError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_vault::DescribeVaultError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -69,14 +73,15 @@ pub fn de_describe_vault_http_error(
             })
         }
         "ServiceUnavailableException" => {
-            crate::error::DescribeVaultError::ServiceUnavailableException({
+            crate::operation::describe_vault::DescribeVaultError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::service_unavailable_exception::Builder::default();
+                        crate::types::error::builders::ServiceUnavailableExceptionBuilder::default(
+                        );
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeVaultError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_vault::DescribeVaultError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -86,23 +91,27 @@ pub fn de_describe_vault_http_error(
                 tmp
             })
         }
-        _ => crate::error::DescribeVaultError::generic(generic),
+        _ => crate::operation::describe_vault::DescribeVaultError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_vault_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DescribeVaultOutput, crate::error::DescribeVaultError> {
+) -> std::result::Result<
+    crate::operation::describe_vault::DescribeVaultOutput,
+    crate::operation::describe_vault::DescribeVaultError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_vault_output::Builder::default();
+        let mut output =
+            crate::operation::describe_vault::builders::DescribeVaultOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_describe_vault::de_describe_vault(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DescribeVaultError::unhandled)?;
+        .map_err(crate::operation::describe_vault::DescribeVaultError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -112,9 +121,9 @@ pub fn de_describe_vault_http_response(
 
 pub(crate) fn de_describe_vault(
     value: &[u8],
-    mut builder: crate::output::describe_vault_output::Builder,
+    mut builder: crate::operation::describe_vault::builders::DescribeVaultOutputBuilder,
 ) -> Result<
-    crate::output::describe_vault_output::Builder,
+    crate::operation::describe_vault::builders::DescribeVaultOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

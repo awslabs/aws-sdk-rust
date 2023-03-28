@@ -2,7 +2,7 @@
 pub(crate) fn de_classifier_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Classifier>>,
+    Option<std::vec::Vec<crate::types::Classifier>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_user_properties<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::UserProperty>>,
+    Option<std::vec::Vec<crate::types::UserProperty>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_unprocessed_named_query_id_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::UnprocessedNamedQueryId>>,
+    Option<std::vec::Vec<crate::types::UnprocessedNamedQueryId>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

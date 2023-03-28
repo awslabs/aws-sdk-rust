@@ -2,7 +2,7 @@
 pub(crate) fn de_availability_configuration_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AvailabilityConfiguration>>,
+    Option<std::vec::Vec<crate::types::AvailabilityConfiguration>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -4,7 +4,7 @@ pub(crate) fn de_schema<'a, I>(
 ) -> Result<
     Option<
         std::vec::Vec<
-            std::collections::HashMap<std::string::String, crate::model::SchemaValueType>,
+            std::collections::HashMap<std::string::String, crate::types::SchemaValueType>,
         >,
     >,
     aws_smithy_json::deserialize::error::DeserializeError,

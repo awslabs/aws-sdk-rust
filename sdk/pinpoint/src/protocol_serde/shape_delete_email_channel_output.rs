@@ -2,15 +2,15 @@
 pub fn de_email_channel_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::EmailChannelResponse>,
-    crate::error::DeleteEmailChannelError,
+    std::option::Option<crate::types::EmailChannelResponse>,
+    crate::operation::delete_email_channel::DeleteEmailChannelError,
 > {
     (!body.is_empty())
         .then(|| {
             crate::protocol_serde::shape_email_channel_response::de_email_channel_response_payload(
                 body,
             )
-            .map_err(crate::error::DeleteEmailChannelError::unhandled)
+            .map_err(crate::operation::delete_email_channel::DeleteEmailChannelError::unhandled)
         })
         .transpose()
 }

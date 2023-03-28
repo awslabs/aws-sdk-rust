@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_input_device_settings<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::InputDeviceSettings>>,
+    Option<std::vec::Vec<crate::types::InputDeviceSettings>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

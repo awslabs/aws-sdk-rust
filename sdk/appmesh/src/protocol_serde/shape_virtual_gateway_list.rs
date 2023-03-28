@@ -2,7 +2,7 @@
 pub(crate) fn de_virtual_gateway_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::VirtualGatewayRef>>,
+    Option<std::vec::Vec<crate::types::VirtualGatewayRef>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

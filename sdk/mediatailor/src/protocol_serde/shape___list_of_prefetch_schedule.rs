@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_prefetch_schedule<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::PrefetchSchedule>>,
+    Option<std::vec::Vec<crate::types::PrefetchSchedule>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

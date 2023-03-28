@@ -2,7 +2,7 @@
 pub fn de_medical_transcript_event_payload(
     input: &[u8],
 ) -> Result<
-    crate::model::MedicalTranscriptEvent,
+    crate::types::MedicalTranscriptEvent,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =
@@ -29,7 +29,7 @@ pub fn de_medical_transcript_event_payload(
 pub(crate) fn de_medical_transcript_event<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::MedicalTranscriptEvent>,
+    Option<crate::types::MedicalTranscriptEvent>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -44,7 +44,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::medical_transcript_event::Builder::default();
+            let mut builder = crate::types::builders::MedicalTranscriptEventBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

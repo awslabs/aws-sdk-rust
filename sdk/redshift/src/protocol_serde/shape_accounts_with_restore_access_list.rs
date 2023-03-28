@@ -2,7 +2,7 @@
 pub fn de_accounts_with_restore_access_list(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::AccountWithRestoreAccess>,
+    std::vec::Vec<crate::types::AccountWithRestoreAccess>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_integration_response<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::IntegrationResponse>>,
+    Option<std::vec::Vec<crate::types::IntegrationResponse>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

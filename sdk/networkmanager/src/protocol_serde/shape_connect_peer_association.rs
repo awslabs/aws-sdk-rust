@@ -2,7 +2,7 @@
 pub(crate) fn de_connect_peer_association<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ConnectPeerAssociation>,
+    Option<crate::types::ConnectPeerAssociation>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::connect_peer_association::Builder::default();
+            let mut builder = crate::types::builders::ConnectPeerAssociationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -66,7 +66,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ConnectPeerAssociationState::from(
+                                            crate::types::ConnectPeerAssociationState::from(
                                                 u.as_ref(),
                                             )
                                         })

@@ -2,7 +2,7 @@
 pub(crate) fn de_enabled_service_principals<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::EnabledServicePrincipal>>,
+    Option<std::vec::Vec<crate::types::EnabledServicePrincipal>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

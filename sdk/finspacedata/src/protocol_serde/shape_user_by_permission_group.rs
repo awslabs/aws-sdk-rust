@@ -2,7 +2,7 @@
 pub(crate) fn de_user_by_permission_group<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::UserByPermissionGroup>,
+    Option<crate::types::UserByPermissionGroup>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::user_by_permission_group::Builder::default();
+            let mut builder = crate::types::builders::UserByPermissionGroupBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -39,7 +39,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::UserStatus::from(u.as_ref()))
+                                            .map(|u| crate::types::UserStatus::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -78,7 +78,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::UserType::from(u.as_ref()))
+                                            .map(|u| crate::types::UserType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -90,7 +90,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::ApiAccess::from(u.as_ref()))
+                                            .map(|u| crate::types::ApiAccess::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -111,7 +111,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::PermissionGroupMembershipStatus::from(
+                                            crate::types::PermissionGroupMembershipStatus::from(
                                                 u.as_ref(),
                                             )
                                         })

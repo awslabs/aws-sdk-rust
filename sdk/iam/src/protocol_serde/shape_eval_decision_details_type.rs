@@ -2,7 +2,7 @@
 pub fn de_eval_decision_details_type(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::collections::HashMap<std::string::String, crate::model::PolicyEvaluationDecisionType>,
+    std::collections::HashMap<std::string::String, crate::types::PolicyEvaluationDecisionType>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::collections::HashMap::new();
@@ -21,11 +21,11 @@ pub fn de_eval_decision_details_type_entry(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
     out: &mut std::collections::HashMap<
         std::string::String,
-        crate::model::PolicyEvaluationDecisionType,
+        crate::types::PolicyEvaluationDecisionType,
     >,
 ) -> Result<(), aws_smithy_xml::decode::XmlDecodeError> {
     let mut k: Option<std::string::String> = None;
-    let mut v: Option<crate::model::PolicyEvaluationDecisionType> = None;
+    let mut v: Option<crate::types::PolicyEvaluationDecisionType> = None;
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("key") /* key com.amazonaws.iam#EvalDecisionDetailsType$key */ =>  {
@@ -40,8 +40,8 @@ pub fn de_eval_decision_details_type_entry(
             ,
             s if s.matches("value") /* value com.amazonaws.iam#EvalDecisionDetailsType$value */ =>  {
                 v = Some(
-                    Result::<crate::model::PolicyEvaluationDecisionType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                        crate::model::PolicyEvaluationDecisionType::from(
+                    Result::<crate::types::PolicyEvaluationDecisionType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                        crate::types::PolicyEvaluationDecisionType::from(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                         )
                     )

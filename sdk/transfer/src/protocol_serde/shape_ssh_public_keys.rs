@@ -2,7 +2,7 @@
 pub(crate) fn de_ssh_public_keys<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SshPublicKey>>,
+    Option<std::vec::Vec<crate::types::SshPublicKey>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

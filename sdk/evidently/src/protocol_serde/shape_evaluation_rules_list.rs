@@ -2,7 +2,7 @@
 pub(crate) fn de_evaluation_rules_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::EvaluationRule>>,
+    Option<std::vec::Vec<crate::types::EvaluationRule>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

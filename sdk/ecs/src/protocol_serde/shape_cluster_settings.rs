@@ -2,7 +2,7 @@
 pub(crate) fn de_cluster_settings<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ClusterSetting>>,
+    Option<std::vec::Vec<crate::types::ClusterSetting>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

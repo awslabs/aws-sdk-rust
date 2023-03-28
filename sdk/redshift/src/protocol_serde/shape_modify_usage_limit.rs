@@ -2,83 +2,103 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_modify_usage_limit_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ModifyUsageLimitOutput, crate::error::ModifyUsageLimitError>
-{
+) -> std::result::Result<
+    crate::operation::modify_usage_limit::ModifyUsageLimitOutput,
+    crate::operation::modify_usage_limit::ModifyUsageLimitError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ModifyUsageLimitError::unhandled)?;
+        .map_err(crate::operation::modify_usage_limit::ModifyUsageLimitError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ModifyUsageLimitError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::modify_usage_limit::ModifyUsageLimitError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidUsageLimit" => crate::error::ModifyUsageLimitError::InvalidUsageLimitFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "InvalidUsageLimit" => {
+            crate::operation::modify_usage_limit::ModifyUsageLimitError::InvalidUsageLimitFault({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_usage_limit_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_usage_limit_fault::de_invalid_usage_limit_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyUsageLimitError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "UnsupportedOperation" => crate::error::ModifyUsageLimitError::UnsupportedOperationFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InvalidUsageLimitFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_usage_limit_fault::de_invalid_usage_limit_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_usage_limit::ModifyUsageLimitError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "UnsupportedOperation" => {
+            crate::operation::modify_usage_limit::ModifyUsageLimitError::UnsupportedOperationFault(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::UnsupportedOperationFaultBuilder::default();
+                        let _ = response;
+                        output = crate::protocol_serde::shape_unsupported_operation_fault::de_unsupported_operation_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_usage_limit::ModifyUsageLimitError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        "UsageLimitNotFound" => {
+            crate::operation::modify_usage_limit::ModifyUsageLimitError::UsageLimitNotFoundFault({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unsupported_operation_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_unsupported_operation_fault::de_unsupported_operation_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyUsageLimitError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "UsageLimitNotFound" => crate::error::ModifyUsageLimitError::UsageLimitNotFoundFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::usage_limit_not_found_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_usage_limit_not_found_fault::de_usage_limit_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyUsageLimitError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::ModifyUsageLimitError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::UsageLimitNotFoundFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_usage_limit_not_found_fault::de_usage_limit_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_usage_limit::ModifyUsageLimitError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::modify_usage_limit::ModifyUsageLimitError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_modify_usage_limit_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ModifyUsageLimitOutput, crate::error::ModifyUsageLimitError>
-{
+) -> std::result::Result<
+    crate::operation::modify_usage_limit::ModifyUsageLimitOutput,
+    crate::operation::modify_usage_limit::ModifyUsageLimitError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::modify_usage_limit_output::Builder::default();
+        let mut output =
+            crate::operation::modify_usage_limit::builders::ModifyUsageLimitOutputBuilder::default(
+            );
         let _ = response;
         output = crate::protocol_serde::shape_modify_usage_limit::de_modify_usage_limit(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ModifyUsageLimitError::unhandled)?;
+        .map_err(crate::operation::modify_usage_limit::ModifyUsageLimitError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -89,9 +109,11 @@ pub fn de_modify_usage_limit_http_response(
 #[allow(unused_mut)]
 pub fn de_modify_usage_limit(
     inp: &[u8],
-    mut builder: crate::output::modify_usage_limit_output::Builder,
-) -> Result<crate::output::modify_usage_limit_output::Builder, aws_smithy_xml::decode::XmlDecodeError>
-{
+    mut builder: crate::operation::modify_usage_limit::builders::ModifyUsageLimitOutputBuilder,
+) -> Result<
+    crate::operation::modify_usage_limit::builders::ModifyUsageLimitOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -143,8 +165,8 @@ pub fn de_modify_usage_limit(
             s if s.matches("FeatureType") /* FeatureType com.amazonaws.redshift.synthetic#ModifyUsageLimitOutput$FeatureType */ =>  {
                 let var_3 =
                     Some(
-                        Result::<crate::model::UsageLimitFeatureType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::UsageLimitFeatureType::from(
+                        Result::<crate::types::UsageLimitFeatureType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::UsageLimitFeatureType::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
@@ -157,8 +179,8 @@ pub fn de_modify_usage_limit(
             s if s.matches("LimitType") /* LimitType com.amazonaws.redshift.synthetic#ModifyUsageLimitOutput$LimitType */ =>  {
                 let var_4 =
                     Some(
-                        Result::<crate::model::UsageLimitLimitType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::UsageLimitLimitType::from(
+                        Result::<crate::types::UsageLimitLimitType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::UsageLimitLimitType::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
@@ -186,8 +208,8 @@ pub fn de_modify_usage_limit(
             s if s.matches("Period") /* Period com.amazonaws.redshift.synthetic#ModifyUsageLimitOutput$Period */ =>  {
                 let var_6 =
                     Some(
-                        Result::<crate::model::UsageLimitPeriod, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::UsageLimitPeriod::from(
+                        Result::<crate::types::UsageLimitPeriod, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::UsageLimitPeriod::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
@@ -200,8 +222,8 @@ pub fn de_modify_usage_limit(
             s if s.matches("BreachAction") /* BreachAction com.amazonaws.redshift.synthetic#ModifyUsageLimitOutput$BreachAction */ =>  {
                 let var_7 =
                     Some(
-                        Result::<crate::model::UsageLimitBreachAction, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::UsageLimitBreachAction::from(
+                        Result::<crate::types::UsageLimitBreachAction, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::UsageLimitBreachAction::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

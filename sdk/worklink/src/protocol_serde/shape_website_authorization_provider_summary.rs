@@ -2,7 +2,7 @@
 pub(crate) fn de_website_authorization_provider_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::WebsiteAuthorizationProviderSummary>,
+    Option<crate::types::WebsiteAuthorizationProviderSummary>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::website_authorization_provider_summary::Builder::default();
+                crate::types::builders::WebsiteAuthorizationProviderSummaryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -40,7 +40,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::AuthorizationProviderType::from(
+                                            crate::types::AuthorizationProviderType::from(
                                                 u.as_ref(),
                                             )
                                         })

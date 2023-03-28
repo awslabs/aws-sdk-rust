@@ -2,7 +2,7 @@
 pub(crate) fn de_remediation_configurations<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::RemediationConfiguration>>,
+    Option<std::vec::Vec<crate::types::RemediationConfiguration>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

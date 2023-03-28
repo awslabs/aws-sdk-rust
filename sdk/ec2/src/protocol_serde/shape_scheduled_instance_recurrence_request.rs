@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_scheduled_instance_recurrence_request(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::ScheduledInstanceRecurrenceRequest,
+    input: &crate::types::ScheduledInstanceRecurrenceRequest,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Frequency");

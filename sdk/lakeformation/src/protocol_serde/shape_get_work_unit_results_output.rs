@@ -3,7 +3,7 @@ pub fn de_result_stream_payload(
     body: &mut aws_smithy_http::body::SdkBody,
 ) -> std::result::Result<
     aws_smithy_http::byte_stream::ByteStream,
-    crate::error::GetWorkUnitResultsError,
+    crate::operation::get_work_unit_results::GetWorkUnitResultsError,
 > {
     // replace the body with an empty body
     let body = std::mem::replace(body, aws_smithy_http::body::SdkBody::taken());

@@ -2,7 +2,7 @@
 pub(crate) fn de_integration_association_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::IntegrationAssociationSummary>,
+    Option<crate::types::IntegrationAssociationSummary>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::integration_association_summary::Builder::default();
+            let mut builder =
+                crate::types::builders::IntegrationAssociationSummaryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -57,7 +58,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::IntegrationType::from(u.as_ref())
+                                            crate::types::IntegrationType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -97,7 +98,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::SourceType::from(u.as_ref()))
+                                            .map(|u| crate::types::SourceType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

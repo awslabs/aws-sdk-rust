@@ -3,63 +3,55 @@
 pub fn de_delete_custom_db_engine_version_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteCustomDbEngineVersionOutput,
-    crate::error::DeleteCustomDBEngineVersionError,
+    crate::operation::delete_custom_db_engine_version::DeleteCustomDbEngineVersionOutput,
+    crate::operation::delete_custom_db_engine_version::DeleteCustomDBEngineVersionError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteCustomDBEngineVersionError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::delete_custom_db_engine_version::DeleteCustomDBEngineVersionError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::DeleteCustomDBEngineVersionError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::delete_custom_db_engine_version::DeleteCustomDBEngineVersionError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CustomDBEngineVersionNotFoundFault" => {
-            crate::error::DeleteCustomDBEngineVersionError::CustomDbEngineVersionNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "CustomDBEngineVersionNotFoundFault" => crate::operation::delete_custom_db_engine_version::DeleteCustomDBEngineVersionError::CustomDbEngineVersionNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::custom_db_engine_version_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::CustomDbEngineVersionNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_custom_db_engine_version_not_found_fault::de_custom_db_engine_version_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCustomDBEngineVersionError::unhandled)?;
+                    output = crate::protocol_serde::shape_custom_db_engine_version_not_found_fault::de_custom_db_engine_version_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_custom_db_engine_version::DeleteCustomDBEngineVersionError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidCustomDBEngineVersionStateFault" => {
-            crate::error::DeleteCustomDBEngineVersionError::InvalidCustomDbEngineVersionStateFault(
-                {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidCustomDBEngineVersionStateFault" => crate::operation::delete_custom_db_engine_version::DeleteCustomDBEngineVersionError::InvalidCustomDbEngineVersionStateFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_custom_db_engine_version_state_fault::Builder::default();
-                        let _ = response;
-                        output = crate::protocol_serde::shape_invalid_custom_db_engine_version_state_fault::de_invalid_custom_db_engine_version_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteCustomDBEngineVersionError::unhandled)?;
-                        let output = output.meta(generic);
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            )
-        }
-        _ => crate::error::DeleteCustomDBEngineVersionError::generic(generic),
+                    let mut output = crate::types::error::builders::InvalidCustomDbEngineVersionStateFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_custom_db_engine_version_state_fault::de_invalid_custom_db_engine_version_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_custom_db_engine_version::DeleteCustomDBEngineVersionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::delete_custom_db_engine_version::DeleteCustomDBEngineVersionError::generic(generic)
     })
 }
 
@@ -67,14 +59,14 @@ pub fn de_delete_custom_db_engine_version_http_error(
 pub fn de_delete_custom_db_engine_version_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteCustomDbEngineVersionOutput,
-    crate::error::DeleteCustomDBEngineVersionError,
+    crate::operation::delete_custom_db_engine_version::DeleteCustomDbEngineVersionOutput,
+    crate::operation::delete_custom_db_engine_version::DeleteCustomDBEngineVersionError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_custom_db_engine_version_output::Builder::default();
+        let mut output = crate::operation::delete_custom_db_engine_version::builders::DeleteCustomDbEngineVersionOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_delete_custom_db_engine_version::de_delete_custom_db_engine_version(response.body().as_ref(), output).map_err(crate::error::DeleteCustomDBEngineVersionError::unhandled)?;
+        output = crate::protocol_serde::shape_delete_custom_db_engine_version::de_delete_custom_db_engine_version(response.body().as_ref(), output).map_err(crate::operation::delete_custom_db_engine_version::DeleteCustomDBEngineVersionError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -83,13 +75,7 @@ pub fn de_delete_custom_db_engine_version_http_response(
 }
 
 #[allow(unused_mut)]
-pub fn de_delete_custom_db_engine_version(
-    inp: &[u8],
-    mut builder: crate::output::delete_custom_db_engine_version_output::Builder,
-) -> Result<
-    crate::output::delete_custom_db_engine_version_output::Builder,
-    aws_smithy_xml::decode::XmlDecodeError,
-> {
+pub fn de_delete_custom_db_engine_version(inp: &[u8], mut builder: crate::operation::delete_custom_db_engine_version::builders::DeleteCustomDbEngineVersionOutputBuilder) -> Result<crate::operation::delete_custom_db_engine_version::builders::DeleteCustomDbEngineVersionOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

@@ -2,7 +2,7 @@
 pub(crate) fn de_journal_s3_export_description<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::JournalS3ExportDescription>,
+    Option<crate::types::JournalS3ExportDescription>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::journal_s3_export_description::Builder::default();
+            let mut builder = crate::types::builders::JournalS3ExportDescriptionBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -56,7 +56,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::ExportStatus::from(u.as_ref()))
+                                            .map(|u| crate::types::ExportStatus::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -98,7 +98,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::OutputFormat::from(u.as_ref()))
+                                            .map(|u| crate::types::OutputFormat::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

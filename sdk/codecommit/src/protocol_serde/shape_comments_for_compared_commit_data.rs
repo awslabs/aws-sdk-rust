@@ -2,7 +2,7 @@
 pub(crate) fn de_comments_for_compared_commit_data<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CommentsForComparedCommit>>,
+    Option<std::vec::Vec<crate::types::CommentsForComparedCommit>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

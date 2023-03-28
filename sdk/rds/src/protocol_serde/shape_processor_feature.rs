@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_processor_feature(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::ProcessorFeature,
+    input: &crate::types::ProcessorFeature,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Name");
@@ -19,9 +19,9 @@ pub fn ser_processor_feature(
 
 pub fn de_processor_feature(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::ProcessorFeature, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::ProcessorFeature, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::ProcessorFeature::builder();
+    let mut builder = crate::types::ProcessorFeature::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Name") /* Name com.amazonaws.rds#ProcessorFeature$Name */ =>  {

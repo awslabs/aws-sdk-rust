@@ -2,7 +2,7 @@
 pub(crate) fn de_connection_header_parameters_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ConnectionHeaderParameter>>,
+    Option<std::vec::Vec<crate::types::ConnectionHeaderParameter>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_sensitive_data_detections_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SensitiveDataDetections>>,
+    Option<std::vec::Vec<crate::types::SensitiveDataDetections>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

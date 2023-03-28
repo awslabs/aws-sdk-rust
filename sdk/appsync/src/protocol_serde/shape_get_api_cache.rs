@@ -2,43 +2,31 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_api_cache_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetApiCacheOutput, crate::error::GetApiCacheError> {
+) -> std::result::Result<
+    crate::operation::get_api_cache::GetApiCacheOutput,
+    crate::operation::get_api_cache::GetApiCacheError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetApiCacheError::unhandled)?;
+        .map_err(crate::operation::get_api_cache::GetApiCacheError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::GetApiCacheError::unhandled(generic)),
+        None => return Err(crate::operation::get_api_cache::GetApiCacheError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::GetApiCacheError::BadRequestException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetApiCacheError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ConcurrentModificationException" => {
-            crate::error::GetApiCacheError::ConcurrentModificationException({
+        "BadRequestException" => {
+            crate::operation::get_api_cache::GetApiCacheError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::concurrent_modification_exception::Builder::default();
+                        crate::types::error::builders::BadRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_concurrent_modification_exception::de_concurrent_modification_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetApiCacheError::unhandled)?;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_api_cache::GetApiCacheError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -48,68 +36,98 @@ pub fn de_get_api_cache_http_error(
                 tmp
             })
         }
-        "InternalFailureException" => crate::error::GetApiCacheError::InternalFailureException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "ConcurrentModificationException" => {
+            crate::operation::get_api_cache::GetApiCacheError::ConcurrentModificationException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_failure_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetApiCacheError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "NotFoundException" => crate::error::GetApiCacheError::NotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ConcurrentModificationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_concurrent_modification_exception::de_concurrent_modification_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_api_cache::GetApiCacheError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InternalFailureException" => {
+            crate::operation::get_api_cache::GetApiCacheError::InternalFailureException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetApiCacheError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "UnauthorizedException" => crate::error::GetApiCacheError::UnauthorizedException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InternalFailureExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_api_cache::GetApiCacheError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "NotFoundException" => {
+            crate::operation::get_api_cache::GetApiCacheError::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetApiCacheError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::GetApiCacheError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::NotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_api_cache::GetApiCacheError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "UnauthorizedException" => {
+            crate::operation::get_api_cache::GetApiCacheError::UnauthorizedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::UnauthorizedExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_api_cache::GetApiCacheError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::get_api_cache::GetApiCacheError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_api_cache_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetApiCacheOutput, crate::error::GetApiCacheError> {
+) -> std::result::Result<
+    crate::operation::get_api_cache::GetApiCacheOutput,
+    crate::operation::get_api_cache::GetApiCacheError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_api_cache_output::Builder::default();
+        let mut output =
+            crate::operation::get_api_cache::builders::GetApiCacheOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_get_api_cache::de_get_api_cache(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::GetApiCacheError::unhandled)?;
+        .map_err(crate::operation::get_api_cache::GetApiCacheError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -119,9 +137,9 @@ pub fn de_get_api_cache_http_response(
 
 pub(crate) fn de_get_api_cache(
     value: &[u8],
-    mut builder: crate::output::get_api_cache_output::Builder,
+    mut builder: crate::operation::get_api_cache::builders::GetApiCacheOutputBuilder,
 ) -> Result<
-    crate::output::get_api_cache_output::Builder,
+    crate::operation::get_api_cache::builders::GetApiCacheOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

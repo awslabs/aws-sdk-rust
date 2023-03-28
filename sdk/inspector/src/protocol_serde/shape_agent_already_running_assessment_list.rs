@@ -2,7 +2,7 @@
 pub(crate) fn de_agent_already_running_assessment_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AgentAlreadyRunningAssessment>>,
+    Option<std::vec::Vec<crate::types::AgentAlreadyRunningAssessment>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

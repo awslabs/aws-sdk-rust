@@ -2,7 +2,7 @@
 pub(crate) fn de_slot_value_regex_filter<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::SlotValueRegexFilter>,
+    Option<crate::types::SlotValueRegexFilter>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::slot_value_regex_filter::Builder::default();
+            let mut builder = crate::types::builders::SlotValueRegexFilterBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -57,7 +57,7 @@ where
 
 pub fn ser_slot_value_regex_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::SlotValueRegexFilter,
+    input: &crate::types::SlotValueRegexFilter,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.pattern {
         object.key("pattern").string(var_1.as_str());

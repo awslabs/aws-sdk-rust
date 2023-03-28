@@ -7,7 +7,7 @@ pub(crate) fn de_aws_ecs_task_definition_proxy_configuration_proxy_configuration
 ) -> Result<
     Option<
         std::vec::Vec<
-            crate::model::AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails,
+            crate::types::AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails,
         >,
     >,
     aws_smithy_json::deserialize::error::DeserializeError,

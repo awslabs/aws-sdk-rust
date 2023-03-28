@@ -2,7 +2,7 @@
 pub(crate) fn de_spend_limit_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SpendLimit>>,
+    Option<std::vec::Vec<crate::types::SpendLimit>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

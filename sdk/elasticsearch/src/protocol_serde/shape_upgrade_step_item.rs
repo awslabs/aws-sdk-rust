@@ -2,7 +2,7 @@
 pub(crate) fn de_upgrade_step_item<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::UpgradeStepItem>,
+    Option<crate::types::UpgradeStepItem>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::upgrade_step_item::Builder::default();
+            let mut builder = crate::types::builders::UpgradeStepItemBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::UpgradeStep::from(u.as_ref()))
+                                            .map(|u| crate::types::UpgradeStep::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -42,7 +42,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::UpgradeStatus::from(u.as_ref()))
+                                            .map(|u| crate::types::UpgradeStatus::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

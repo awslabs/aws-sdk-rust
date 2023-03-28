@@ -3,58 +3,61 @@
 pub fn de_modify_cluster_maintenance_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ModifyClusterMaintenanceOutput,
-    crate::error::ModifyClusterMaintenanceError,
+    crate::operation::modify_cluster_maintenance::ModifyClusterMaintenanceOutput,
+    crate::operation::modify_cluster_maintenance::ModifyClusterMaintenanceError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ModifyClusterMaintenanceError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::modify_cluster_maintenance::ModifyClusterMaintenanceError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::error::ModifyClusterMaintenanceError::unhandled(
+        None => return Err(
+            crate::operation::modify_cluster_maintenance::ModifyClusterMaintenanceError::unhandled(
                 generic,
-            ))
-        }
+            ),
+        ),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ClusterNotFound" => crate::error::ModifyClusterMaintenanceError::ClusterNotFoundFault({
+        "ClusterNotFound" => crate::operation::modify_cluster_maintenance::ModifyClusterMaintenanceError::ClusterNotFoundFault({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::cluster_not_found_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_cluster_not_found_fault::de_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyClusterMaintenanceError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InvalidClusterState" => {
-            crate::error::ModifyClusterMaintenanceError::InvalidClusterStateFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_cluster_state_fault::Builder::default();
+                    let mut output = crate::types::error::builders::ClusterNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_cluster_state_fault::de_invalid_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyClusterMaintenanceError::unhandled)?;
+                    output = crate::protocol_serde::shape_cluster_not_found_fault::de_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_cluster_maintenance::ModifyClusterMaintenanceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::ModifyClusterMaintenanceError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidClusterState" => crate::operation::modify_cluster_maintenance::ModifyClusterMaintenanceError::InvalidClusterStateFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidClusterStateFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_cluster_state_fault::de_invalid_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::modify_cluster_maintenance::ModifyClusterMaintenanceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::modify_cluster_maintenance::ModifyClusterMaintenanceError::generic(generic)
     })
 }
 
@@ -62,19 +65,14 @@ pub fn de_modify_cluster_maintenance_http_error(
 pub fn de_modify_cluster_maintenance_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ModifyClusterMaintenanceOutput,
-    crate::error::ModifyClusterMaintenanceError,
+    crate::operation::modify_cluster_maintenance::ModifyClusterMaintenanceOutput,
+    crate::operation::modify_cluster_maintenance::ModifyClusterMaintenanceError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::modify_cluster_maintenance_output::Builder::default();
+        let mut output = crate::operation::modify_cluster_maintenance::builders::ModifyClusterMaintenanceOutputBuilder::default();
         let _ = response;
-        output =
-            crate::protocol_serde::shape_modify_cluster_maintenance::de_modify_cluster_maintenance(
-                response.body().as_ref(),
-                output,
-            )
-            .map_err(crate::error::ModifyClusterMaintenanceError::unhandled)?;
+        output = crate::protocol_serde::shape_modify_cluster_maintenance::de_modify_cluster_maintenance(response.body().as_ref(), output).map_err(crate::operation::modify_cluster_maintenance::ModifyClusterMaintenanceError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -85,9 +83,9 @@ pub fn de_modify_cluster_maintenance_http_response(
 #[allow(unused_mut)]
 pub fn de_modify_cluster_maintenance(
     inp: &[u8],
-    mut builder: crate::output::modify_cluster_maintenance_output::Builder,
+    mut builder: crate::operation::modify_cluster_maintenance::builders::ModifyClusterMaintenanceOutputBuilder,
 ) -> Result<
-    crate::output::modify_cluster_maintenance_output::Builder,
+    crate::operation::modify_cluster_maintenance::builders::ModifyClusterMaintenanceOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

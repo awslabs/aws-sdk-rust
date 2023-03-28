@@ -2,7 +2,7 @@
 pub(crate) fn de_bot_alias_metadata_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::BotAliasMetadata>>,
+    Option<std::vec::Vec<crate::types::BotAliasMetadata>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

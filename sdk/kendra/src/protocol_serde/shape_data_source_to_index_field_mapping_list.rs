@@ -2,7 +2,7 @@
 pub(crate) fn de_data_source_to_index_field_mapping_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
+    Option<std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

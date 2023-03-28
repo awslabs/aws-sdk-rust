@@ -31,7 +31,10 @@ pub(crate) fn de_log_result_header(
 
 pub fn de_payload_payload(
     body: &[u8],
-) -> std::result::Result<std::option::Option<aws_smithy_types::Blob>, crate::error::InvokeError> {
+) -> std::result::Result<
+    std::option::Option<aws_smithy_types::Blob>,
+    crate::operation::invoke::InvokeError,
+> {
     (!body.is_empty())
         .then(|| Ok(aws_smithy_types::Blob::new(body)))
         .transpose()

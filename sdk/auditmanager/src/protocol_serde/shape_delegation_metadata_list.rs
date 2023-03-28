@@ -2,7 +2,7 @@
 pub(crate) fn de_delegation_metadata_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DelegationMetadata>>,
+    Option<std::vec::Vec<crate::types::DelegationMetadata>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

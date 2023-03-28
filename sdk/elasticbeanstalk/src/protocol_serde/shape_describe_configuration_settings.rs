@@ -3,43 +3,38 @@
 pub fn de_describe_configuration_settings_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeConfigurationSettingsOutput,
-    crate::error::DescribeConfigurationSettingsError,
+    crate::operation::describe_configuration_settings::DescribeConfigurationSettingsOutput,
+    crate::operation::describe_configuration_settings::DescribeConfigurationSettingsError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeConfigurationSettingsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::describe_configuration_settings::DescribeConfigurationSettingsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::DescribeConfigurationSettingsError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::describe_configuration_settings::DescribeConfigurationSettingsError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "TooManyBucketsException" => {
-            crate::error::DescribeConfigurationSettingsError::TooManyBucketsException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "TooManyBucketsException" => crate::operation::describe_configuration_settings::DescribeConfigurationSettingsError::TooManyBucketsException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_buckets_exception::Builder::default();
+                    let mut output = crate::types::error::builders::TooManyBucketsExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_buckets_exception::de_too_many_buckets_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeConfigurationSettingsError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_buckets_exception::de_too_many_buckets_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::describe_configuration_settings::DescribeConfigurationSettingsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DescribeConfigurationSettingsError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::describe_configuration_settings::DescribeConfigurationSettingsError::generic(generic)
     })
 }
 
@@ -47,14 +42,14 @@ pub fn de_describe_configuration_settings_http_error(
 pub fn de_describe_configuration_settings_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeConfigurationSettingsOutput,
-    crate::error::DescribeConfigurationSettingsError,
+    crate::operation::describe_configuration_settings::DescribeConfigurationSettingsOutput,
+    crate::operation::describe_configuration_settings::DescribeConfigurationSettingsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_configuration_settings_output::Builder::default();
+        let mut output = crate::operation::describe_configuration_settings::builders::DescribeConfigurationSettingsOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_describe_configuration_settings::de_describe_configuration_settings(response.body().as_ref(), output).map_err(crate::error::DescribeConfigurationSettingsError::unhandled)?;
+        output = crate::protocol_serde::shape_describe_configuration_settings::de_describe_configuration_settings(response.body().as_ref(), output).map_err(crate::operation::describe_configuration_settings::DescribeConfigurationSettingsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -63,13 +58,7 @@ pub fn de_describe_configuration_settings_http_response(
 }
 
 #[allow(unused_mut)]
-pub fn de_describe_configuration_settings(
-    inp: &[u8],
-    mut builder: crate::output::describe_configuration_settings_output::Builder,
-) -> Result<
-    crate::output::describe_configuration_settings_output::Builder,
-    aws_smithy_xml::decode::XmlDecodeError,
-> {
+pub fn de_describe_configuration_settings(inp: &[u8], mut builder: crate::operation::describe_configuration_settings::builders::DescribeConfigurationSettingsOutputBuilder) -> Result<crate::operation::describe_configuration_settings::builders::DescribeConfigurationSettingsOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

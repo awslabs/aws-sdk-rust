@@ -2,7 +2,7 @@
 pub(crate) fn de_dynamo_db_target_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DynamoDbTarget>>,
+    Option<std::vec::Vec<crate::types::DynamoDbTarget>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

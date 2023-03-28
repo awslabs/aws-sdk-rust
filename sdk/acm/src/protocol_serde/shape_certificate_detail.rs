@@ -2,7 +2,7 @@
 pub(crate) fn de_certificate_detail<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::CertificateDetail>,
+    Option<crate::types::CertificateDetail>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::certificate_detail::Builder::default();
+            let mut builder = crate::types::builders::CertificateDetailBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -111,7 +111,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::CertificateStatus::from(u.as_ref())
+                                            crate::types::CertificateStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -132,7 +132,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::RevocationReason::from(u.as_ref())
+                                            crate::types::RevocationReason::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -161,7 +161,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::KeyAlgorithm::from(u.as_ref()))
+                                            .map(|u| crate::types::KeyAlgorithm::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -189,7 +189,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::FailureReason::from(u.as_ref()))
+                                            .map(|u| crate::types::FailureReason::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -201,7 +201,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::CertificateType::from(u.as_ref())
+                                            crate::types::CertificateType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -240,7 +240,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::RenewalEligibility::from(u.as_ref())
+                                            crate::types::RenewalEligibility::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

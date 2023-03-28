@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_text_options(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::TextOptions,
+    input: &crate::types::TextOptions,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("DefaultValue");
@@ -39,9 +39,9 @@ pub fn ser_text_options(
 
 pub fn de_text_options(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::TextOptions, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::TextOptions, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::TextOptions::builder();
+    let mut builder = crate::types::TextOptions::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("DefaultValue") /* DefaultValue com.amazonaws.cloudsearch#TextOptions$DefaultValue */ =>  {

@@ -2,7 +2,7 @@
 pub(crate) fn de_current_metric_data_collections<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CurrentMetricData>>,
+    Option<std::vec::Vec<crate::types::CurrentMetricData>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_invalid_s3_key_prefix_fault_xml_err(
     inp: &[u8],
-    mut builder: crate::error::invalid_s3_key_prefix_fault::Builder,
+    mut builder: crate::types::error::builders::InvalidS3KeyPrefixFaultBuilder,
 ) -> Result<
-    crate::error::invalid_s3_key_prefix_fault::Builder,
+    crate::types::error::builders::InvalidS3KeyPrefixFaultBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

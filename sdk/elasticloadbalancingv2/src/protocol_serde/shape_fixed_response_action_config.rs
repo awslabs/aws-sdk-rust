@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_fixed_response_action_config(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::FixedResponseActionConfig,
+    input: &crate::types::FixedResponseActionConfig,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("MessageBody");
@@ -24,9 +24,9 @@ pub fn ser_fixed_response_action_config(
 
 pub fn de_fixed_response_action_config(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::FixedResponseActionConfig, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::FixedResponseActionConfig, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::FixedResponseActionConfig::builder();
+    let mut builder = crate::types::FixedResponseActionConfig::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("MessageBody") /* MessageBody com.amazonaws.elasticloadbalancingv2#FixedResponseActionConfig$MessageBody */ =>  {

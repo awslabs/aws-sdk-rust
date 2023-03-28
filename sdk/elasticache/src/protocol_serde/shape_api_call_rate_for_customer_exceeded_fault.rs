@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_api_call_rate_for_customer_exceeded_fault_xml_err(
     inp: &[u8],
-    mut builder: crate::error::api_call_rate_for_customer_exceeded_fault::Builder,
+    mut builder: crate::types::error::builders::ApiCallRateForCustomerExceededFaultBuilder,
 ) -> Result<
-    crate::error::api_call_rate_for_customer_exceeded_fault::Builder,
+    crate::types::error::builders::ApiCallRateForCustomerExceededFaultBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

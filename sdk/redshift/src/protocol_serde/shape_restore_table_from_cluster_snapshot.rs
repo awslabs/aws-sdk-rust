@@ -3,29 +3,28 @@
 pub fn de_restore_table_from_cluster_snapshot_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::RestoreTableFromClusterSnapshotOutput,
-    crate::error::RestoreTableFromClusterSnapshotError,
+    crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotOutput,
+    crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::RestoreTableFromClusterSnapshotError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => return Err(crate::error::RestoreTableFromClusterSnapshotError::unhandled(generic)),
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ClusterNotFound" => crate::error::RestoreTableFromClusterSnapshotError::ClusterNotFoundFault({
+        "ClusterNotFound" => crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotError::ClusterNotFoundFault({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::cluster_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::ClusterNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_cluster_not_found_fault::de_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreTableFromClusterSnapshotError::unhandled)?;
+                    output = crate::protocol_serde::shape_cluster_not_found_fault::de_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -35,14 +34,14 @@ pub fn de_restore_table_from_cluster_snapshot_http_error(
                                                     }
             tmp
         }),
-        "ClusterSnapshotNotFound" => crate::error::RestoreTableFromClusterSnapshotError::ClusterSnapshotNotFoundFault({
+        "ClusterSnapshotNotFound" => crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotError::ClusterSnapshotNotFoundFault({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::cluster_snapshot_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::ClusterSnapshotNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_cluster_snapshot_not_found_fault::de_cluster_snapshot_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreTableFromClusterSnapshotError::unhandled)?;
+                    output = crate::protocol_serde::shape_cluster_snapshot_not_found_fault::de_cluster_snapshot_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -52,14 +51,14 @@ pub fn de_restore_table_from_cluster_snapshot_http_error(
                                                     }
             tmp
         }),
-        "InProgressTableRestoreQuotaExceededFault" => crate::error::RestoreTableFromClusterSnapshotError::InProgressTableRestoreQuotaExceededFault({
+        "InProgressTableRestoreQuotaExceededFault" => crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotError::InProgressTableRestoreQuotaExceededFault({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::in_progress_table_restore_quota_exceeded_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InProgressTableRestoreQuotaExceededFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_in_progress_table_restore_quota_exceeded_fault::de_in_progress_table_restore_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreTableFromClusterSnapshotError::unhandled)?;
+                    output = crate::protocol_serde::shape_in_progress_table_restore_quota_exceeded_fault::de_in_progress_table_restore_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -69,14 +68,14 @@ pub fn de_restore_table_from_cluster_snapshot_http_error(
                                                     }
             tmp
         }),
-        "InvalidClusterSnapshotState" => crate::error::RestoreTableFromClusterSnapshotError::InvalidClusterSnapshotStateFault({
+        "InvalidClusterSnapshotState" => crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotError::InvalidClusterSnapshotStateFault({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_cluster_snapshot_state_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidClusterSnapshotStateFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_cluster_snapshot_state_fault::de_invalid_cluster_snapshot_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreTableFromClusterSnapshotError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_cluster_snapshot_state_fault::de_invalid_cluster_snapshot_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -86,14 +85,14 @@ pub fn de_restore_table_from_cluster_snapshot_http_error(
                                                     }
             tmp
         }),
-        "InvalidClusterState" => crate::error::RestoreTableFromClusterSnapshotError::InvalidClusterStateFault({
+        "InvalidClusterState" => crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotError::InvalidClusterStateFault({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_cluster_state_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidClusterStateFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_cluster_state_fault::de_invalid_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreTableFromClusterSnapshotError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_cluster_state_fault::de_invalid_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -103,14 +102,14 @@ pub fn de_restore_table_from_cluster_snapshot_http_error(
                                                     }
             tmp
         }),
-        "InvalidTableRestoreArgument" => crate::error::RestoreTableFromClusterSnapshotError::InvalidTableRestoreArgumentFault({
+        "InvalidTableRestoreArgument" => crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotError::InvalidTableRestoreArgumentFault({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_table_restore_argument_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidTableRestoreArgumentFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_table_restore_argument_fault::de_invalid_table_restore_argument_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreTableFromClusterSnapshotError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_table_restore_argument_fault::de_invalid_table_restore_argument_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -120,14 +119,14 @@ pub fn de_restore_table_from_cluster_snapshot_http_error(
                                                     }
             tmp
         }),
-        "UnsupportedOperation" => crate::error::RestoreTableFromClusterSnapshotError::UnsupportedOperationFault({
+        "UnsupportedOperation" => crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotError::UnsupportedOperationFault({
             #[allow(unused_mut)]
             let mut tmp =
                  {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::unsupported_operation_fault::Builder::default();
+                    let mut output = crate::types::error::builders::UnsupportedOperationFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_unsupported_operation_fault::de_unsupported_operation_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreTableFromClusterSnapshotError::unhandled)?;
+                    output = crate::protocol_serde::shape_unsupported_operation_fault::de_unsupported_operation_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -137,7 +136,7 @@ pub fn de_restore_table_from_cluster_snapshot_http_error(
                                                     }
             tmp
         }),
-        _ => crate::error::RestoreTableFromClusterSnapshotError::generic(generic)
+        _ => crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotError::generic(generic)
     })
 }
 
@@ -145,15 +144,14 @@ pub fn de_restore_table_from_cluster_snapshot_http_error(
 pub fn de_restore_table_from_cluster_snapshot_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::RestoreTableFromClusterSnapshotOutput,
-    crate::error::RestoreTableFromClusterSnapshotError,
+    crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotOutput,
+    crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::output::restore_table_from_cluster_snapshot_output::Builder::default();
+        let mut output = crate::operation::restore_table_from_cluster_snapshot::builders::RestoreTableFromClusterSnapshotOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_restore_table_from_cluster_snapshot::de_restore_table_from_cluster_snapshot(response.body().as_ref(), output).map_err(crate::error::RestoreTableFromClusterSnapshotError::unhandled)?;
+        output = crate::protocol_serde::shape_restore_table_from_cluster_snapshot::de_restore_table_from_cluster_snapshot(response.body().as_ref(), output).map_err(crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -162,13 +160,7 @@ pub fn de_restore_table_from_cluster_snapshot_http_response(
 }
 
 #[allow(unused_mut)]
-pub fn de_restore_table_from_cluster_snapshot(
-    inp: &[u8],
-    mut builder: crate::output::restore_table_from_cluster_snapshot_output::Builder,
-) -> Result<
-    crate::output::restore_table_from_cluster_snapshot_output::Builder,
-    aws_smithy_xml::decode::XmlDecodeError,
-> {
+pub fn de_restore_table_from_cluster_snapshot(inp: &[u8], mut builder: crate::operation::restore_table_from_cluster_snapshot::builders::RestoreTableFromClusterSnapshotOutputBuilder) -> Result<crate::operation::restore_table_from_cluster_snapshot::builders::RestoreTableFromClusterSnapshotOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

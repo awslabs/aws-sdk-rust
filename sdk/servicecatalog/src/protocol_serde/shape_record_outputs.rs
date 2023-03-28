@@ -2,7 +2,7 @@
 pub(crate) fn de_record_outputs<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::RecordOutput>>,
+    Option<std::vec::Vec<crate::types::RecordOutput>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

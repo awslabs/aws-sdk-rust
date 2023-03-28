@@ -2,7 +2,7 @@
 pub(crate) fn de_resource_path_component_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ResourcePathComponent>>,
+    Option<std::vec::Vec<crate::types::ResourcePathComponent>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

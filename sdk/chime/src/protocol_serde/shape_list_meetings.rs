@@ -2,73 +2,86 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_meetings_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListMeetingsOutput, crate::error::ListMeetingsError> {
+) -> std::result::Result<
+    crate::operation::list_meetings::ListMeetingsOutput,
+    crate::operation::list_meetings::ListMeetingsError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListMeetingsError::unhandled)?;
+        .map_err(crate::operation::list_meetings::ListMeetingsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListMeetingsError::unhandled(generic)),
+        None => return Err(crate::operation::list_meetings::ListMeetingsError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::ListMeetingsError::BadRequestException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "BadRequestException" => {
+            crate::operation::list_meetings::ListMeetingsError::BadRequestException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListMeetingsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ForbiddenException" => crate::error::ListMeetingsError::ForbiddenException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::BadRequestExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_meetings::ListMeetingsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ForbiddenException" => {
+            crate::operation::list_meetings::ListMeetingsError::ForbiddenException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::forbidden_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListMeetingsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ServiceFailureException" => crate::error::ListMeetingsError::ServiceFailureException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ForbiddenExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_meetings::ListMeetingsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ServiceFailureException" => {
+            crate::operation::list_meetings::ListMeetingsError::ServiceFailureException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::service_failure_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListMeetingsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ServiceFailureExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_meetings::ListMeetingsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "ServiceUnavailableException" => {
-            crate::error::ListMeetingsError::ServiceUnavailableException({
+            crate::operation::list_meetings::ListMeetingsError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::service_unavailable_exception::Builder::default();
+                        crate::types::error::builders::ServiceUnavailableExceptionBuilder::default(
+                        );
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListMeetingsError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_meetings::ListMeetingsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -78,30 +91,34 @@ pub fn de_list_meetings_http_error(
                 tmp
             })
         }
-        "ThrottledClientException" => crate::error::ListMeetingsError::ThrottledClientException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "ThrottledClientException" => {
+            crate::operation::list_meetings::ListMeetingsError::ThrottledClientException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::throttled_client_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_throttled_client_exception::de_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListMeetingsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ThrottledClientExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_throttled_client_exception::de_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_meetings::ListMeetingsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "UnauthorizedClientException" => {
-            crate::error::ListMeetingsError::UnauthorizedClientException({
+            crate::operation::list_meetings::ListMeetingsError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::unauthorized_client_exception::Builder::default();
+                        crate::types::error::builders::UnauthorizedClientExceptionBuilder::default(
+                        );
                     let _ = response;
-                    output = crate::protocol_serde::shape_unauthorized_client_exception::de_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListMeetingsError::unhandled)?;
+                    output = crate::protocol_serde::shape_unauthorized_client_exception::de_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_meetings::ListMeetingsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -111,23 +128,27 @@ pub fn de_list_meetings_http_error(
                 tmp
             })
         }
-        _ => crate::error::ListMeetingsError::generic(generic),
+        _ => crate::operation::list_meetings::ListMeetingsError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_meetings_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListMeetingsOutput, crate::error::ListMeetingsError> {
+) -> std::result::Result<
+    crate::operation::list_meetings::ListMeetingsOutput,
+    crate::operation::list_meetings::ListMeetingsError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_meetings_output::Builder::default();
+        let mut output =
+            crate::operation::list_meetings::builders::ListMeetingsOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_meetings::de_list_meetings(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListMeetingsError::unhandled)?;
+        .map_err(crate::operation::list_meetings::ListMeetingsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -137,9 +158,9 @@ pub fn de_list_meetings_http_response(
 
 pub(crate) fn de_list_meetings(
     value: &[u8],
-    mut builder: crate::output::list_meetings_output::Builder,
+    mut builder: crate::operation::list_meetings::builders::ListMeetingsOutputBuilder,
 ) -> Result<
-    crate::output::list_meetings_output::Builder,
+    crate::operation::list_meetings::builders::ListMeetingsOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

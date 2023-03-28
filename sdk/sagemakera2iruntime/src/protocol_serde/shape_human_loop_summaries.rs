@@ -2,7 +2,7 @@
 pub(crate) fn de_human_loop_summaries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::HumanLoopSummary>>,
+    Option<std::vec::Vec<crate::types::HumanLoopSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

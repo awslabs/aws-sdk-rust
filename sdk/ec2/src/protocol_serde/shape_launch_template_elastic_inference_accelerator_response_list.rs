@@ -2,7 +2,7 @@
 pub fn de_launch_template_elastic_inference_accelerator_response_list(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::LaunchTemplateElasticInferenceAcceleratorResponse>,
+    std::vec::Vec<crate::types::LaunchTemplateElasticInferenceAcceleratorResponse>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

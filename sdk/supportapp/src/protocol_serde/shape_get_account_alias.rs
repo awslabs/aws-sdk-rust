@@ -2,51 +2,65 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_account_alias_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetAccountAliasOutput, crate::error::GetAccountAliasError> {
+) -> std::result::Result<
+    crate::operation::get_account_alias::GetAccountAliasOutput,
+    crate::operation::get_account_alias::GetAccountAliasError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetAccountAliasError::unhandled)?;
+        .map_err(crate::operation::get_account_alias::GetAccountAliasError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::GetAccountAliasError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::get_account_alias::GetAccountAliasError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerException" => crate::error::GetAccountAliasError::InternalServerException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "InternalServerException" => {
+            crate::operation::get_account_alias::GetAccountAliasError::InternalServerException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAccountAliasError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::GetAccountAliasError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InternalServerExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_account_alias::GetAccountAliasError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::get_account_alias::GetAccountAliasError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_account_alias_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::GetAccountAliasOutput, crate::error::GetAccountAliasError> {
+) -> std::result::Result<
+    crate::operation::get_account_alias::GetAccountAliasOutput,
+    crate::operation::get_account_alias::GetAccountAliasError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_account_alias_output::Builder::default();
+        let mut output =
+            crate::operation::get_account_alias::builders::GetAccountAliasOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_get_account_alias::de_get_account_alias(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::GetAccountAliasError::unhandled)?;
+        .map_err(crate::operation::get_account_alias::GetAccountAliasError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -56,9 +70,9 @@ pub fn de_get_account_alias_http_response(
 
 pub(crate) fn de_get_account_alias(
     value: &[u8],
-    mut builder: crate::output::get_account_alias_output::Builder,
+    mut builder: crate::operation::get_account_alias::builders::GetAccountAliasOutputBuilder,
 ) -> Result<
-    crate::output::get_account_alias_output::Builder,
+    crate::operation::get_account_alias::builders::GetAccountAliasOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

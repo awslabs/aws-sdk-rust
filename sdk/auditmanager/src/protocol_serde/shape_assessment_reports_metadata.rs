@@ -2,7 +2,7 @@
 pub(crate) fn de_assessment_reports_metadata<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AssessmentReportMetadata>>,
+    Option<std::vec::Vec<crate::types::AssessmentReportMetadata>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

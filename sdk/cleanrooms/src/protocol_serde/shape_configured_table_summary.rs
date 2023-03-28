@@ -2,7 +2,7 @@
 pub(crate) fn de_configured_table_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ConfiguredTableSummary>,
+    Option<crate::types::ConfiguredTableSummary>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::configured_table_summary::Builder::default();
+            let mut builder = crate::types::builders::ConfiguredTableSummaryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -78,7 +78,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::AnalysisMethod::from(u.as_ref()))
+                                            .map(|u| crate::types::AnalysisMethod::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

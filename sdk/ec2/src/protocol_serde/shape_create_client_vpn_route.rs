@@ -3,33 +3,33 @@
 pub fn de_create_client_vpn_route_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateClientVpnRouteOutput,
-    crate::error::CreateClientVpnRouteError,
+    crate::operation::create_client_vpn_route::CreateClientVpnRouteOutput,
+    crate::operation::create_client_vpn_route::CreateClientVpnRouteError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::CreateClientVpnRouteError::unhandled)?;
+        .map_err(crate::operation::create_client_vpn_route::CreateClientVpnRouteError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::CreateClientVpnRouteError::generic(generic))
+    Err(crate::operation::create_client_vpn_route::CreateClientVpnRouteError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_client_vpn_route_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateClientVpnRouteOutput,
-    crate::error::CreateClientVpnRouteError,
+    crate::operation::create_client_vpn_route::CreateClientVpnRouteOutput,
+    crate::operation::create_client_vpn_route::CreateClientVpnRouteError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::create_client_vpn_route_output::Builder::default();
+        let mut output = crate::operation::create_client_vpn_route::builders::CreateClientVpnRouteOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_create_client_vpn_route::de_create_client_vpn_route(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::CreateClientVpnRouteError::unhandled)?;
+        .map_err(crate::operation::create_client_vpn_route::CreateClientVpnRouteError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -40,9 +40,9 @@ pub fn de_create_client_vpn_route_http_response(
 #[allow(unused_mut)]
 pub fn de_create_client_vpn_route(
     inp: &[u8],
-    mut builder: crate::output::create_client_vpn_route_output::Builder,
+    mut builder: crate::operation::create_client_vpn_route::builders::CreateClientVpnRouteOutputBuilder,
 ) -> Result<
-    crate::output::create_client_vpn_route_output::Builder,
+    crate::operation::create_client_vpn_route::builders::CreateClientVpnRouteOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

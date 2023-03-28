@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_rollback_configuration(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::RollbackConfiguration,
+    input: &crate::types::RollbackConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("RollbackTriggers");
@@ -28,9 +28,9 @@ pub fn ser_rollback_configuration(
 
 pub fn de_rollback_configuration(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::RollbackConfiguration, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::RollbackConfiguration, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::RollbackConfiguration::builder();
+    let mut builder = crate::types::RollbackConfiguration::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("RollbackTriggers") /* RollbackTriggers com.amazonaws.cloudformation#RollbackConfiguration$RollbackTriggers */ =>  {

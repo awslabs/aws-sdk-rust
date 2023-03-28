@@ -2,7 +2,7 @@
 pub(crate) fn de_ledger_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::LedgerSummary>>,
+    Option<std::vec::Vec<crate::types::LedgerSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

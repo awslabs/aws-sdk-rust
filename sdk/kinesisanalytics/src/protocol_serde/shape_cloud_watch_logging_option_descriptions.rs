@@ -2,7 +2,7 @@
 pub(crate) fn de_cloud_watch_logging_option_descriptions<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CloudWatchLoggingOptionDescription>>,
+    Option<std::vec::Vec<crate::types::CloudWatchLoggingOptionDescription>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

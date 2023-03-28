@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_anomaly_detector_configuration(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::AnomalyDetectorConfiguration,
+    input: &crate::types::AnomalyDetectorConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("ExcludedTimeRanges");
@@ -25,9 +25,9 @@ pub fn ser_anomaly_detector_configuration(
 
 pub fn de_anomaly_detector_configuration(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::AnomalyDetectorConfiguration, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::AnomalyDetectorConfiguration, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::AnomalyDetectorConfiguration::builder();
+    let mut builder = crate::types::AnomalyDetectorConfiguration::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ExcludedTimeRanges") /* ExcludedTimeRanges com.amazonaws.cloudwatch#AnomalyDetectorConfiguration$ExcludedTimeRanges */ =>  {

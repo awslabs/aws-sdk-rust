@@ -2,7 +2,7 @@
 pub(crate) fn de_percentiles<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::PercentPair>>,
+    Option<std::vec::Vec<crate::types::PercentPair>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

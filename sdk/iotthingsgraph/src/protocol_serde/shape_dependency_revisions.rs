@@ -2,7 +2,7 @@
 pub(crate) fn de_dependency_revisions<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DependencyRevision>>,
+    Option<std::vec::Vec<crate::types::DependencyRevision>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

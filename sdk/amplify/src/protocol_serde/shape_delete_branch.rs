@@ -2,43 +2,31 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_branch_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeleteBranchOutput, crate::error::DeleteBranchError> {
+) -> std::result::Result<
+    crate::operation::delete_branch::DeleteBranchOutput,
+    crate::operation::delete_branch::DeleteBranchError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteBranchError::unhandled)?;
+        .map_err(crate::operation::delete_branch::DeleteBranchError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DeleteBranchError::unhandled(generic)),
+        None => return Err(crate::operation::delete_branch::DeleteBranchError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::DeleteBranchError::BadRequestException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteBranchError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "DependentServiceFailureException" => {
-            crate::error::DeleteBranchError::DependentServiceFailureException({
+        "BadRequestException" => {
+            crate::operation::delete_branch::DeleteBranchError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output =
-                        crate::error::dependent_service_failure_exception::Builder::default();
+                        crate::types::error::builders::BadRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_dependent_service_failure_exception::de_dependent_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteBranchError::unhandled)?;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_branch::DeleteBranchError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -48,68 +36,98 @@ pub fn de_delete_branch_http_error(
                 tmp
             })
         }
-        "InternalFailureException" => crate::error::DeleteBranchError::InternalFailureException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "DependentServiceFailureException" => {
+            crate::operation::delete_branch::DeleteBranchError::DependentServiceFailureException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_failure_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteBranchError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "NotFoundException" => crate::error::DeleteBranchError::NotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::DependentServiceFailureExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_dependent_service_failure_exception::de_dependent_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_branch::DeleteBranchError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InternalFailureException" => {
+            crate::operation::delete_branch::DeleteBranchError::InternalFailureException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteBranchError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "UnauthorizedException" => crate::error::DeleteBranchError::UnauthorizedException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InternalFailureExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_branch::DeleteBranchError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "NotFoundException" => {
+            crate::operation::delete_branch::DeleteBranchError::NotFoundException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::unauthorized_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteBranchError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::DeleteBranchError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::NotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_branch::DeleteBranchError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "UnauthorizedException" => {
+            crate::operation::delete_branch::DeleteBranchError::UnauthorizedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::UnauthorizedExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_branch::DeleteBranchError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::delete_branch::DeleteBranchError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_branch_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeleteBranchOutput, crate::error::DeleteBranchError> {
+) -> std::result::Result<
+    crate::operation::delete_branch::DeleteBranchOutput,
+    crate::operation::delete_branch::DeleteBranchError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_branch_output::Builder::default();
+        let mut output =
+            crate::operation::delete_branch::builders::DeleteBranchOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_delete_branch::de_delete_branch(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DeleteBranchError::unhandled)?;
+        .map_err(crate::operation::delete_branch::DeleteBranchError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -119,9 +137,9 @@ pub fn de_delete_branch_http_response(
 
 pub(crate) fn de_delete_branch(
     value: &[u8],
-    mut builder: crate::output::delete_branch_output::Builder,
+    mut builder: crate::operation::delete_branch::builders::DeleteBranchOutputBuilder,
 ) -> Result<
-    crate::output::delete_branch_output::Builder,
+    crate::operation::delete_branch::builders::DeleteBranchOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

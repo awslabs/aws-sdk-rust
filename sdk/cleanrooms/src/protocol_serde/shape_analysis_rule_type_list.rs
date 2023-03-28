@@ -2,7 +2,7 @@
 pub(crate) fn de_analysis_rule_type_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AnalysisRuleType>>,
+    Option<std::vec::Vec<crate::types::AnalysisRuleType>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -29,7 +29,7 @@ where
                         )?
                         .map(|s| {
                             s.to_unescaped()
-                                .map(|u| crate::model::AnalysisRuleType::from(u.as_ref()))
+                                .map(|u| crate::types::AnalysisRuleType::from(u.as_ref()))
                         })
                         .transpose()?;
                         if let Some(value) = value {

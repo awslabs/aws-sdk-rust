@@ -2,7 +2,7 @@
 pub(crate) fn de_channels<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Channel>>,
+    Option<std::vec::Vec<crate::types::Channel>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

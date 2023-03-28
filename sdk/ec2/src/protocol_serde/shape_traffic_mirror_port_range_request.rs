@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_traffic_mirror_port_range_request(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::TrafficMirrorPortRangeRequest,
+    input: &crate::types::TrafficMirrorPortRangeRequest,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("FromPort");

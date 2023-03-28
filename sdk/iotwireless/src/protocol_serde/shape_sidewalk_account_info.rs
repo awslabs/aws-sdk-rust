@@ -2,7 +2,7 @@
 pub(crate) fn de_sidewalk_account_info<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::SidewalkAccountInfo>,
+    Option<crate::types::SidewalkAccountInfo>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::sidewalk_account_info::Builder::default();
+            let mut builder = crate::types::builders::SidewalkAccountInfoBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -66,7 +66,7 @@ where
 
 pub fn ser_sidewalk_account_info(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::SidewalkAccountInfo,
+    input: &crate::types::SidewalkAccountInfo,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.amazon_id {
         object.key("AmazonId").string(var_1.as_str());

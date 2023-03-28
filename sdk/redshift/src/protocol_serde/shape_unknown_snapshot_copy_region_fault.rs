@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_unknown_snapshot_copy_region_fault_xml_err(
     inp: &[u8],
-    mut builder: crate::error::unknown_snapshot_copy_region_fault::Builder,
+    mut builder: crate::types::error::builders::UnknownSnapshotCopyRegionFaultBuilder,
 ) -> Result<
-    crate::error::unknown_snapshot_copy_region_fault::Builder,
+    crate::types::error::builders::UnknownSnapshotCopyRegionFaultBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

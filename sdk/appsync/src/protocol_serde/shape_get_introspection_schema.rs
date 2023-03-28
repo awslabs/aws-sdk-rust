@@ -3,92 +3,96 @@
 pub fn de_get_introspection_schema_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetIntrospectionSchemaOutput,
-    crate::error::GetIntrospectionSchemaError,
+    crate::operation::get_introspection_schema::GetIntrospectionSchemaOutput,
+    crate::operation::get_introspection_schema::GetIntrospectionSchemaError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetIntrospectionSchemaError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::get_introspection_schema::GetIntrospectionSchemaError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::GetIntrospectionSchemaError::unhandled(
-                generic,
-            ))
-        }
-    };
+    let error_code =
+        match generic.code() {
+            Some(code) => code,
+            None => return Err(
+                crate::operation::get_introspection_schema::GetIntrospectionSchemaError::unhandled(
+                    generic,
+                ),
+            ),
+        };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "GraphQLSchemaException" => {
-            crate::error::GetIntrospectionSchemaError::GraphQlSchemaException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::graph_ql_schema_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_graph_ql_schema_exception::de_graph_ql_schema_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetIntrospectionSchemaError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "InternalFailureException" => {
-            crate::error::GetIntrospectionSchemaError::InternalFailureException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::internal_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetIntrospectionSchemaError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "NotFoundException" => crate::error::GetIntrospectionSchemaError::NotFoundException({
+        "GraphQLSchemaException" => crate::operation::get_introspection_schema::GetIntrospectionSchemaError::GraphQlSchemaException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::not_found_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetIntrospectionSchemaError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::GraphQlSchemaExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_graph_ql_schema_exception::de_graph_ql_schema_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_introspection_schema::GetIntrospectionSchemaError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "UnauthorizedException" => {
-            crate::error::GetIntrospectionSchemaError::UnauthorizedException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalFailureException" => crate::operation::get_introspection_schema::GetIntrospectionSchemaError::InternalFailureException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::unauthorized_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InternalFailureExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetIntrospectionSchemaError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_introspection_schema::GetIntrospectionSchemaError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::GetIntrospectionSchemaError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "NotFoundException" => crate::operation::get_introspection_schema::GetIntrospectionSchemaError::NotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::NotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_introspection_schema::GetIntrospectionSchemaError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "UnauthorizedException" => crate::operation::get_introspection_schema::GetIntrospectionSchemaError::UnauthorizedException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::UnauthorizedExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_unauthorized_exception::de_unauthorized_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_introspection_schema::GetIntrospectionSchemaError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::get_introspection_schema::GetIntrospectionSchemaError::generic(generic)
     })
 }
 
@@ -96,12 +100,12 @@ pub fn de_get_introspection_schema_http_error(
 pub fn de_get_introspection_schema_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetIntrospectionSchemaOutput,
-    crate::error::GetIntrospectionSchemaError,
+    crate::operation::get_introspection_schema::GetIntrospectionSchemaOutput,
+    crate::operation::get_introspection_schema::GetIntrospectionSchemaError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_introspection_schema_output::Builder::default();
+        let mut output = crate::operation::get_introspection_schema::builders::GetIntrospectionSchemaOutputBuilder::default();
         let _ = response;
         output = output.set_schema(
             crate::protocol_serde::shape_get_introspection_schema_output::de_schema_payload(

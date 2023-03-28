@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_source_cluster_not_supported_fault_xml_err(
     inp: &[u8],
-    mut builder: crate::error::source_cluster_not_supported_fault::Builder,
+    mut builder: crate::types::error::builders::SourceClusterNotSupportedFaultBuilder,
 ) -> Result<
-    crate::error::source_cluster_not_supported_fault::Builder,
+    crate::types::error::builders::SourceClusterNotSupportedFaultBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

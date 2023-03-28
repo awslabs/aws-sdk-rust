@@ -2,7 +2,7 @@
 pub(crate) fn de_image_identifier_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ImageIdentifier>>,
+    Option<std::vec::Vec<crate::types::ImageIdentifier>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_command_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Command>>,
+    Option<std::vec::Vec<crate::types::Command>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

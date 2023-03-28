@@ -2,7 +2,7 @@
 pub(crate) fn de_data_quality_rule_recommendation_run_description<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::DataQualityRuleRecommendationRunDescription>,
+    Option<crate::types::DataQualityRuleRecommendationRunDescription>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,8 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::data_quality_rule_recommendation_run_description::Builder::default();
+                crate::types::builders::DataQualityRuleRecommendationRunDescriptionBuilder::default(
+                );
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -40,7 +41,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::TaskStatusType::from(u.as_ref()))
+                                            .map(|u| crate::types::TaskStatusType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

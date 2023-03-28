@@ -2,7 +2,7 @@
 pub(crate) fn de_emotions<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Emotion>>,
+    Option<std::vec::Vec<crate::types::Emotion>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

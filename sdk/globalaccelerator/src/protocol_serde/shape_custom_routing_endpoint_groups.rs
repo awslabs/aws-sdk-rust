@@ -2,7 +2,7 @@
 pub(crate) fn de_custom_routing_endpoint_groups<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CustomRoutingEndpointGroup>>,
+    Option<std::vec::Vec<crate::types::CustomRoutingEndpointGroup>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

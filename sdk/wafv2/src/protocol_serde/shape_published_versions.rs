@@ -2,7 +2,7 @@
 pub(crate) fn de_published_versions<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<std::string::String, crate::model::ManagedRuleSetVersion>>,
+    Option<std::collections::HashMap<std::string::String, crate::types::ManagedRuleSetVersion>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

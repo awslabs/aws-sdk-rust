@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_hls_ad_markers<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::HlsAdMarkers>>,
+    Option<std::vec::Vec<crate::types::HlsAdMarkers>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -29,7 +29,7 @@ where
                         )?
                         .map(|s| {
                             s.to_unescaped()
-                                .map(|u| crate::model::HlsAdMarkers::from(u.as_ref()))
+                                .map(|u| crate::types::HlsAdMarkers::from(u.as_ref()))
                         })
                         .transpose()?;
                         if let Some(value) = value {

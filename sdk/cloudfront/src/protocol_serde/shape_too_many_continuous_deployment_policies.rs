@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_too_many_continuous_deployment_policies_xml_err(
     inp: &[u8],
-    mut builder: crate::error::too_many_continuous_deployment_policies::Builder,
+    mut builder: crate::types::error::builders::TooManyContinuousDeploymentPoliciesBuilder,
 ) -> Result<
-    crate::error::too_many_continuous_deployment_policies::Builder,
+    crate::types::error::builders::TooManyContinuousDeploymentPoliciesBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

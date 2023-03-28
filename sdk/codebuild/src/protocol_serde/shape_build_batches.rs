@@ -2,7 +2,7 @@
 pub(crate) fn de_build_batches<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::BuildBatch>>,
+    Option<std::vec::Vec<crate::types::BuildBatch>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

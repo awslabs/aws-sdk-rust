@@ -2,7 +2,7 @@
 pub(crate) fn de_batch_disassociate_project_assets_errors<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AssetErrorDetails>>,
+    Option<std::vec::Vec<crate::types::AssetErrorDetails>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_interpolated_asset_property_value<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::InterpolatedAssetPropertyValue>,
+    Option<crate::types::InterpolatedAssetPropertyValue>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::interpolated_asset_property_value::Builder::default();
+            let mut builder =
+                crate::types::builders::InterpolatedAssetPropertyValueBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

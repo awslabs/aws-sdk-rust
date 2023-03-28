@@ -2,7 +2,7 @@
 pub(crate) fn de_user_by_permission_group_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::UserByPermissionGroup>>,
+    Option<std::vec::Vec<crate::types::UserByPermissionGroup>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

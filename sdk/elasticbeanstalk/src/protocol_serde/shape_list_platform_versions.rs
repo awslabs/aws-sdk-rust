@@ -3,58 +3,62 @@
 pub fn de_list_platform_versions_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListPlatformVersionsOutput,
-    crate::error::ListPlatformVersionsError,
+    crate::operation::list_platform_versions::ListPlatformVersionsOutput,
+    crate::operation::list_platform_versions::ListPlatformVersionsError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListPlatformVersionsError::unhandled)?;
+        .map_err(crate::operation::list_platform_versions::ListPlatformVersionsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListPlatformVersionsError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::list_platform_versions::ListPlatformVersionsError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ElasticBeanstalkServiceException" => {
-            crate::error::ListPlatformVersionsError::ElasticBeanstalkServiceException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "ElasticBeanstalkServiceException" => crate::operation::list_platform_versions::ListPlatformVersionsError::ElasticBeanstalkServiceException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::elastic_beanstalk_service_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ElasticBeanstalkServiceExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_elastic_beanstalk_service_exception::de_elastic_beanstalk_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListPlatformVersionsError::unhandled)?;
+                    output = crate::protocol_serde::shape_elastic_beanstalk_service_exception::de_elastic_beanstalk_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::list_platform_versions::ListPlatformVersionsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InsufficientPrivilegesException" => {
-            crate::error::ListPlatformVersionsError::InsufficientPrivilegesException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InsufficientPrivilegesException" => crate::operation::list_platform_versions::ListPlatformVersionsError::InsufficientPrivilegesException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::insufficient_privileges_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InsufficientPrivilegesExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_insufficient_privileges_exception::de_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListPlatformVersionsError::unhandled)?;
+                    output = crate::protocol_serde::shape_insufficient_privileges_exception::de_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::list_platform_versions::ListPlatformVersionsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::ListPlatformVersionsError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::list_platform_versions::ListPlatformVersionsError::generic(generic)
     })
 }
 
@@ -62,18 +66,18 @@ pub fn de_list_platform_versions_http_error(
 pub fn de_list_platform_versions_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListPlatformVersionsOutput,
-    crate::error::ListPlatformVersionsError,
+    crate::operation::list_platform_versions::ListPlatformVersionsOutput,
+    crate::operation::list_platform_versions::ListPlatformVersionsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_platform_versions_output::Builder::default();
+        let mut output = crate::operation::list_platform_versions::builders::ListPlatformVersionsOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_platform_versions::de_list_platform_versions(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListPlatformVersionsError::unhandled)?;
+        .map_err(crate::operation::list_platform_versions::ListPlatformVersionsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -84,9 +88,9 @@ pub fn de_list_platform_versions_http_response(
 #[allow(unused_mut)]
 pub fn de_list_platform_versions(
     inp: &[u8],
-    mut builder: crate::output::list_platform_versions_output::Builder,
+    mut builder: crate::operation::list_platform_versions::builders::ListPlatformVersionsOutputBuilder,
 ) -> Result<
-    crate::output::list_platform_versions_output::Builder,
+    crate::operation::list_platform_versions::builders::ListPlatformVersionsOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

@@ -2,7 +2,7 @@
 pub(crate) fn de_unprocessed_trace_segment_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::UnprocessedTraceSegment>>,
+    Option<std::vec::Vec<crate::types::UnprocessedTraceSegment>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

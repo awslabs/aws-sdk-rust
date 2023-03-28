@@ -2,20 +2,20 @@
 pub fn de_public_key_list_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::PublicKeyList>,
-    crate::error::ListPublicKeysError,
+    std::option::Option<crate::types::PublicKeyList>,
+    crate::operation::list_public_keys::ListPublicKeysError,
 > {
     (!body.is_empty())
         .then(|| {
             crate::protocol_serde::shape_list_public_keys_output::de_public_key_list(body)
-                .map_err(crate::error::ListPublicKeysError::unhandled)
+                .map_err(crate::operation::list_public_keys::ListPublicKeysError::unhandled)
         })
         .transpose()
 }
 
 pub fn de_public_key_list(
     inp: &[u8],
-) -> Result<crate::model::PublicKeyList, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::PublicKeyList, aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;

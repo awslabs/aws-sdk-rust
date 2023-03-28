@@ -2,7 +2,7 @@
 pub(crate) fn de_compute_limits<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ComputeLimits>,
+    Option<crate::types::ComputeLimits>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::compute_limits::Builder::default();
+            let mut builder = crate::types::builders::ComputeLimitsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ComputeLimitsUnitType::from(u.as_ref())
+                                            crate::types::ComputeLimitsUnitType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -97,7 +97,7 @@ where
 
 pub fn ser_compute_limits(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::ComputeLimits,
+    input: &crate::types::ComputeLimits,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.unit_type {
         object.key("UnitType").string(var_1.as_str());

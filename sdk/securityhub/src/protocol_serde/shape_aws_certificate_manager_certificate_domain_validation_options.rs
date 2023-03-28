@@ -2,7 +2,7 @@
 pub(crate) fn de_aws_certificate_manager_certificate_domain_validation_options<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AwsCertificateManagerCertificateDomainValidationOption>>,
+    Option<std::vec::Vec<crate::types::AwsCertificateManagerCertificateDomainValidationOption>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

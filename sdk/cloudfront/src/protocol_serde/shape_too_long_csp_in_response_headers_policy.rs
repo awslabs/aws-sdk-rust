@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_too_long_csp_in_response_headers_policy_xml_err(
     inp: &[u8],
-    mut builder: crate::error::too_long_csp_in_response_headers_policy::Builder,
+    mut builder: crate::types::error::builders::TooLongCspInResponseHeadersPolicyBuilder,
 ) -> Result<
-    crate::error::too_long_csp_in_response_headers_policy::Builder,
+    crate::types::error::builders::TooLongCspInResponseHeadersPolicyBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

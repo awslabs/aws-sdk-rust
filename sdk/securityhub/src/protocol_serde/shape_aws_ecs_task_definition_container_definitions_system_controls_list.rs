@@ -3,7 +3,7 @@ pub(crate) fn de_aws_ecs_task_definition_container_definitions_system_controls_l
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
     Option<
-        std::vec::Vec<crate::model::AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails>,
+        std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails>,
     >,
     aws_smithy_json::deserialize::error::DeserializeError,
 >

@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_managed_action_invalid_state_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::managed_action_invalid_state_exception::Builder,
+    mut builder: crate::types::error::builders::ManagedActionInvalidStateExceptionBuilder,
 ) -> Result<
-    crate::error::managed_action_invalid_state_exception::Builder,
+    crate::types::error::builders::ManagedActionInvalidStateExceptionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

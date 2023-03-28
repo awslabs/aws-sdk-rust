@@ -2,7 +2,7 @@
 pub(crate) fn de_pricing_rule_list_element<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::PricingRuleListElement>,
+    Option<crate::types::PricingRuleListElement>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::pricing_rule_list_element::Builder::default();
+            let mut builder = crate::types::builders::PricingRuleListElementBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -57,7 +57,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::PricingRuleScope::from(u.as_ref())
+                                            crate::types::PricingRuleScope::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -70,7 +70,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::PricingRuleType::from(u.as_ref())
+                                            crate::types::PricingRuleType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

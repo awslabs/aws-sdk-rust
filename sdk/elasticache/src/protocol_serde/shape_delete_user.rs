@@ -2,29 +2,34 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_user_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeleteUserOutput, crate::error::DeleteUserError> {
+) -> std::result::Result<
+    crate::operation::delete_user::DeleteUserOutput,
+    crate::operation::delete_user::DeleteUserError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteUserError::unhandled)?;
+        .map_err(crate::operation::delete_user::DeleteUserError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DeleteUserError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::delete_user::DeleteUserError::unhandled(
+                generic,
+            ))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "DefaultUserAssociatedToUserGroup" => {
-            crate::error::DeleteUserError::DefaultUserAssociatedToUserGroupFault({
+            crate::operation::delete_user::DeleteUserError::DefaultUserAssociatedToUserGroupFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::default_user_associated_to_user_group_fault::Builder::default(
-                        );
+                    let mut output = crate::types::error::builders::DefaultUserAssociatedToUserGroupFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_default_user_associated_to_user_group_fault::de_default_user_associated_to_user_group_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteUserError::unhandled)?;
+                    output = crate::protocol_serde::shape_default_user_associated_to_user_group_fault::de_default_user_associated_to_user_group_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_user::DeleteUserError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -34,46 +39,49 @@ pub fn de_delete_user_http_error(
                 tmp
             })
         }
-        "InvalidParameterValue" => crate::error::DeleteUserError::InvalidParameterValueException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "InvalidParameterValue" => {
+            crate::operation::delete_user::DeleteUserError::InvalidParameterValueException({
                 #[allow(unused_mut)]
-                let mut output =
-                    crate::error::invalid_parameter_value_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteUserError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InvalidUserState" => crate::error::DeleteUserError::InvalidUserStateFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_user::DeleteUserError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidUserState" => {
+            crate::operation::delete_user::DeleteUserError::InvalidUserStateFault({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_user_state_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_user_state_fault::de_invalid_user_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteUserError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InvalidUserStateFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_user_state_fault::de_invalid_user_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_user::DeleteUserError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "ServiceLinkedRoleNotFoundFault" => {
-            crate::error::DeleteUserError::ServiceLinkedRoleNotFoundFault({
+            crate::operation::delete_user::DeleteUserError::ServiceLinkedRoleNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::service_linked_role_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::ServiceLinkedRoleNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_linked_role_not_found_fault::de_service_linked_role_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteUserError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_linked_role_not_found_fault::de_service_linked_role_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_user::DeleteUserError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -83,13 +91,13 @@ pub fn de_delete_user_http_error(
                 tmp
             })
         }
-        "UserNotFound" => crate::error::DeleteUserError::UserNotFoundFault({
+        "UserNotFound" => crate::operation::delete_user::DeleteUserError::UserNotFoundFault({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::error::user_not_found_fault::Builder::default();
+                let mut output = crate::types::error::builders::UserNotFoundFaultBuilder::default();
                 let _ = response;
-                output = crate::protocol_serde::shape_user_not_found_fault::de_user_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteUserError::unhandled)?;
+                output = crate::protocol_serde::shape_user_not_found_fault::de_user_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_user::DeleteUserError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -98,23 +106,27 @@ pub fn de_delete_user_http_error(
             }
             tmp
         }),
-        _ => crate::error::DeleteUserError::generic(generic),
+        _ => crate::operation::delete_user::DeleteUserError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_user_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeleteUserOutput, crate::error::DeleteUserError> {
+) -> std::result::Result<
+    crate::operation::delete_user::DeleteUserOutput,
+    crate::operation::delete_user::DeleteUserError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_user_output::Builder::default();
+        let mut output =
+            crate::operation::delete_user::builders::DeleteUserOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_delete_user::de_delete_user(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DeleteUserError::unhandled)?;
+        .map_err(crate::operation::delete_user::DeleteUserError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -125,8 +137,11 @@ pub fn de_delete_user_http_response(
 #[allow(unused_mut)]
 pub fn de_delete_user(
     inp: &[u8],
-    mut builder: crate::output::delete_user_output::Builder,
-) -> Result<crate::output::delete_user_output::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    mut builder: crate::operation::delete_user::builders::DeleteUserOutputBuilder,
+) -> Result<
+    crate::operation::delete_user::builders::DeleteUserOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

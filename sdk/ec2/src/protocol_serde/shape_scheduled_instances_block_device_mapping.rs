@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_scheduled_instances_block_device_mapping(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::ScheduledInstancesBlockDeviceMapping,
+    input: &crate::types::ScheduledInstancesBlockDeviceMapping,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("DeviceName");

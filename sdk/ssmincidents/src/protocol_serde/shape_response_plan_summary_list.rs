@@ -2,7 +2,7 @@
 pub(crate) fn de_response_plan_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ResponsePlanSummary>>,
+    Option<std::vec::Vec<crate::types::ResponsePlanSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

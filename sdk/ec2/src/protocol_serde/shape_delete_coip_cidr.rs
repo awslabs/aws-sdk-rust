@@ -2,28 +2,35 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_coip_cidr_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeleteCoipCidrOutput, crate::error::DeleteCoipCidrError> {
+) -> std::result::Result<
+    crate::operation::delete_coip_cidr::DeleteCoipCidrOutput,
+    crate::operation::delete_coip_cidr::DeleteCoipCidrError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteCoipCidrError::unhandled)?;
+        .map_err(crate::operation::delete_coip_cidr::DeleteCoipCidrError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::DeleteCoipCidrError::generic(generic))
+    Err(crate::operation::delete_coip_cidr::DeleteCoipCidrError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_coip_cidr_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeleteCoipCidrOutput, crate::error::DeleteCoipCidrError> {
+) -> std::result::Result<
+    crate::operation::delete_coip_cidr::DeleteCoipCidrOutput,
+    crate::operation::delete_coip_cidr::DeleteCoipCidrError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_coip_cidr_output::Builder::default();
+        let mut output =
+            crate::operation::delete_coip_cidr::builders::DeleteCoipCidrOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_delete_coip_cidr::de_delete_coip_cidr(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DeleteCoipCidrError::unhandled)?;
+        .map_err(crate::operation::delete_coip_cidr::DeleteCoipCidrError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -34,9 +41,11 @@ pub fn de_delete_coip_cidr_http_response(
 #[allow(unused_mut)]
 pub fn de_delete_coip_cidr(
     inp: &[u8],
-    mut builder: crate::output::delete_coip_cidr_output::Builder,
-) -> Result<crate::output::delete_coip_cidr_output::Builder, aws_smithy_xml::decode::XmlDecodeError>
-{
+    mut builder: crate::operation::delete_coip_cidr::builders::DeleteCoipCidrOutputBuilder,
+) -> Result<
+    crate::operation::delete_coip_cidr::builders::DeleteCoipCidrOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

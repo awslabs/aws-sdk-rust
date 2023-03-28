@@ -2,66 +2,81 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_disable_logging_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DisableLoggingOutput, crate::error::DisableLoggingError> {
+) -> std::result::Result<
+    crate::operation::disable_logging::DisableLoggingOutput,
+    crate::operation::disable_logging::DisableLoggingError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DisableLoggingError::unhandled)?;
+        .map_err(crate::operation::disable_logging::DisableLoggingError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DisableLoggingError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::disable_logging::DisableLoggingError::unhandled(generic))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ClusterNotFound" => crate::error::DisableLoggingError::ClusterNotFoundFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "ClusterNotFound" => {
+            crate::operation::disable_logging::DisableLoggingError::ClusterNotFoundFault({
                 #[allow(unused_mut)]
-                let mut output = crate::error::cluster_not_found_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_cluster_not_found_fault::de_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DisableLoggingError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InvalidClusterState" => crate::error::DisableLoggingError::InvalidClusterStateFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ClusterNotFoundFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_cluster_not_found_fault::de_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::disable_logging::DisableLoggingError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidClusterState" => {
+            crate::operation::disable_logging::DisableLoggingError::InvalidClusterStateFault({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_cluster_state_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_cluster_state_fault::de_invalid_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DisableLoggingError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::DisableLoggingError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InvalidClusterStateFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_cluster_state_fault::de_invalid_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::disable_logging::DisableLoggingError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::disable_logging::DisableLoggingError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_disable_logging_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DisableLoggingOutput, crate::error::DisableLoggingError> {
+) -> std::result::Result<
+    crate::operation::disable_logging::DisableLoggingOutput,
+    crate::operation::disable_logging::DisableLoggingError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::disable_logging_output::Builder::default();
+        let mut output =
+            crate::operation::disable_logging::builders::DisableLoggingOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_disable_logging::de_disable_logging(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DisableLoggingError::unhandled)?;
+        .map_err(crate::operation::disable_logging::DisableLoggingError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -72,9 +87,11 @@ pub fn de_disable_logging_http_response(
 #[allow(unused_mut)]
 pub fn de_disable_logging(
     inp: &[u8],
-    mut builder: crate::output::disable_logging_output::Builder,
-) -> Result<crate::output::disable_logging_output::Builder, aws_smithy_xml::decode::XmlDecodeError>
-{
+    mut builder: crate::operation::disable_logging::builders::DisableLoggingOutputBuilder,
+) -> Result<
+    crate::operation::disable_logging::builders::DisableLoggingOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -182,8 +199,8 @@ pub fn de_disable_logging(
             s if s.matches("LogDestinationType") /* LogDestinationType com.amazonaws.redshift.synthetic#DisableLoggingOutput$LogDestinationType */ =>  {
                 let var_7 =
                     Some(
-                        Result::<crate::model::LogDestinationType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::LogDestinationType::from(
+                        Result::<crate::types::LogDestinationType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::LogDestinationType::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

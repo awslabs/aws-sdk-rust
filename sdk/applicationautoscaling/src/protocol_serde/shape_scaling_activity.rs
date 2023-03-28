@@ -2,7 +2,7 @@
 pub(crate) fn de_scaling_activity<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ScalingActivity>,
+    Option<crate::types::ScalingActivity>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::scaling_activity::Builder::default();
+            let mut builder = crate::types::builders::ScalingActivityBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -39,7 +39,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ServiceNamespace::from(u.as_ref())
+                                            crate::types::ServiceNamespace::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -61,7 +61,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ScalableDimension::from(u.as_ref())
+                                            crate::types::ScalableDimension::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -108,7 +108,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ScalingActivityStatusCode::from(
+                                            crate::types::ScalingActivityStatusCode::from(
                                                 u.as_ref(),
                                             )
                                         })

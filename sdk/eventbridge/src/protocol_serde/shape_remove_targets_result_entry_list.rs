@@ -2,7 +2,7 @@
 pub(crate) fn de_remove_targets_result_entry_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::RemoveTargetsResultEntry>>,
+    Option<std::vec::Vec<crate::types::RemoveTargetsResultEntry>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

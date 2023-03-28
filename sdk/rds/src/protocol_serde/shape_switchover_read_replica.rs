@@ -3,57 +3,62 @@
 pub fn de_switchover_read_replica_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::SwitchoverReadReplicaOutput,
-    crate::error::SwitchoverReadReplicaError,
+    crate::operation::switchover_read_replica::SwitchoverReadReplicaOutput,
+    crate::operation::switchover_read_replica::SwitchoverReadReplicaError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::SwitchoverReadReplicaError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::switchover_read_replica::SwitchoverReadReplicaError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    let error_code = match generic.code() {
-        Some(code) => code,
-        None => return Err(crate::error::SwitchoverReadReplicaError::unhandled(generic)),
-    };
+    let error_code =
+        match generic.code() {
+            Some(code) => code,
+            None => return Err(
+                crate::operation::switchover_read_replica::SwitchoverReadReplicaError::unhandled(
+                    generic,
+                ),
+            ),
+        };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBInstanceNotFound" => {
-            crate::error::SwitchoverReadReplicaError::DbInstanceNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "DBInstanceNotFound" => crate::operation::switchover_read_replica::SwitchoverReadReplicaError::DbInstanceNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::db_instance_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::DbInstanceNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_db_instance_not_found_fault::de_db_instance_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::SwitchoverReadReplicaError::unhandled)?;
+                    output = crate::protocol_serde::shape_db_instance_not_found_fault::de_db_instance_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::switchover_read_replica::SwitchoverReadReplicaError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidDBInstanceState" => {
-            crate::error::SwitchoverReadReplicaError::InvalidDbInstanceStateFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InvalidDBInstanceState" => crate::operation::switchover_read_replica::SwitchoverReadReplicaError::InvalidDbInstanceStateFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_db_instance_state_fault::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidDbInstanceStateFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_db_instance_state_fault::de_invalid_db_instance_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::SwitchoverReadReplicaError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_db_instance_state_fault::de_invalid_db_instance_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::switchover_read_replica::SwitchoverReadReplicaError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::SwitchoverReadReplicaError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::switchover_read_replica::SwitchoverReadReplicaError::generic(generic)
     })
 }
 
@@ -61,18 +66,20 @@ pub fn de_switchover_read_replica_http_error(
 pub fn de_switchover_read_replica_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::SwitchoverReadReplicaOutput,
-    crate::error::SwitchoverReadReplicaError,
+    crate::operation::switchover_read_replica::SwitchoverReadReplicaOutput,
+    crate::operation::switchover_read_replica::SwitchoverReadReplicaError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::switchover_read_replica_output::Builder::default();
+        let mut output = crate::operation::switchover_read_replica::builders::SwitchoverReadReplicaOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_switchover_read_replica::de_switchover_read_replica(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::SwitchoverReadReplicaError::unhandled)?;
+        .map_err(
+            crate::operation::switchover_read_replica::SwitchoverReadReplicaError::unhandled,
+        )?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -83,9 +90,9 @@ pub fn de_switchover_read_replica_http_response(
 #[allow(unused_mut)]
 pub fn de_switchover_read_replica(
     inp: &[u8],
-    mut builder: crate::output::switchover_read_replica_output::Builder,
+    mut builder: crate::operation::switchover_read_replica::builders::SwitchoverReadReplicaOutputBuilder,
 ) -> Result<
-    crate::output::switchover_read_replica_output::Builder,
+    crate::operation::switchover_read_replica::builders::SwitchoverReadReplicaOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

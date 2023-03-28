@@ -2,7 +2,7 @@
 pub(crate) fn de_elastic_ips<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ElasticIp>>,
+    Option<std::vec::Vec<crate::types::ElasticIp>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,30 +2,33 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_tags_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DescribeTagsOutput, crate::error::DescribeTagsError> {
+) -> std::result::Result<
+    crate::operation::describe_tags::DescribeTagsOutput,
+    crate::operation::describe_tags::DescribeTagsError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeTagsError::unhandled)?;
+        .map_err(crate::operation::describe_tags::DescribeTagsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DescribeTagsError::unhandled(generic)),
+        None => return Err(crate::operation::describe_tags::DescribeTagsError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequest" => crate::error::DescribeTagsError::BadRequest({
+        "BadRequest" => crate::operation::describe_tags::DescribeTagsError::BadRequest({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::error::bad_request::Builder::default();
+                let mut output = crate::types::error::builders::BadRequestBuilder::default();
                 let _ = response;
                 output = crate::protocol_serde::shape_bad_request::de_bad_request_json_err(
                     response.body().as_ref(),
                     output,
                 )
-                .map_err(crate::error::DescribeTagsError::unhandled)?;
+                .map_err(crate::operation::describe_tags::DescribeTagsError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -34,53 +37,63 @@ pub fn de_describe_tags_http_error(
             }
             tmp
         }),
-        "FileSystemNotFound" => crate::error::DescribeTagsError::FileSystemNotFound({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "FileSystemNotFound" => {
+            crate::operation::describe_tags::DescribeTagsError::FileSystemNotFound({
                 #[allow(unused_mut)]
-                let mut output = crate::error::file_system_not_found::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_file_system_not_found::de_file_system_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeTagsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InternalServerError" => crate::error::DescribeTagsError::InternalServerError({
-            #[allow(unused_mut)]
-            let mut tmp = {
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::FileSystemNotFoundBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_file_system_not_found::de_file_system_not_found_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_tags::DescribeTagsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InternalServerError" => {
+            crate::operation::describe_tags::DescribeTagsError::InternalServerError({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_error::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeTagsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::DescribeTagsError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InternalServerErrorBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_tags::DescribeTagsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::describe_tags::DescribeTagsError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_tags_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DescribeTagsOutput, crate::error::DescribeTagsError> {
+) -> std::result::Result<
+    crate::operation::describe_tags::DescribeTagsOutput,
+    crate::operation::describe_tags::DescribeTagsError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_tags_output::Builder::default();
+        let mut output =
+            crate::operation::describe_tags::builders::DescribeTagsOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_describe_tags::de_describe_tags(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DescribeTagsError::unhandled)?;
+        .map_err(crate::operation::describe_tags::DescribeTagsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -90,9 +103,9 @@ pub fn de_describe_tags_http_response(
 
 pub(crate) fn de_describe_tags(
     value: &[u8],
-    mut builder: crate::output::describe_tags_output::Builder,
+    mut builder: crate::operation::describe_tags::builders::DescribeTagsOutputBuilder,
 ) -> Result<
-    crate::output::describe_tags_output::Builder,
+    crate::operation::describe_tags::builders::DescribeTagsOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

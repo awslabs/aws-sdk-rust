@@ -2,7 +2,7 @@
 pub(crate) fn de_contact_flow_summary_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ContactFlowSummary>>,
+    Option<std::vec::Vec<crate::types::ContactFlowSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_streaming_session_storage_mode_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::StreamingSessionStorageMode>>,
+    Option<std::vec::Vec<crate::types::StreamingSessionStorageMode>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -29,7 +29,7 @@ where
                         )?
                         .map(|s| {
                             s.to_unescaped().map(|u| {
-                                crate::model::StreamingSessionStorageMode::from(u.as_ref())
+                                crate::types::StreamingSessionStorageMode::from(u.as_ref())
                             })
                         })
                         .transpose()?;

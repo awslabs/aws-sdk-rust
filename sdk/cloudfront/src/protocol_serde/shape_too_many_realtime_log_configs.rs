@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_too_many_realtime_log_configs_xml_err(
     inp: &[u8],
-    mut builder: crate::error::too_many_realtime_log_configs::Builder,
+    mut builder: crate::types::error::builders::TooManyRealtimeLogConfigsBuilder,
 ) -> Result<
-    crate::error::too_many_realtime_log_configs::Builder,
+    crate::types::error::builders::TooManyRealtimeLogConfigsBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

@@ -2,9 +2,11 @@
 #[allow(unused_mut)]
 pub fn de_region_disabled_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::region_disabled_exception::Builder,
-) -> Result<crate::error::region_disabled_exception::Builder, aws_smithy_xml::decode::XmlDecodeError>
-{
+    mut builder: crate::types::error::builders::RegionDisabledExceptionBuilder,
+) -> Result<
+    crate::types::error::builders::RegionDisabledExceptionBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     if inp.is_empty() {
         return Ok(builder);
     }

@@ -2,7 +2,7 @@
 pub(crate) fn de_placed_player_session_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::PlacedPlayerSession>>,
+    Option<std::vec::Vec<crate::types::PlacedPlayerSession>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

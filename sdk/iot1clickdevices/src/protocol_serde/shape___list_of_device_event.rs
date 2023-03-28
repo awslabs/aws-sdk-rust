@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_device_event<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DeviceEvent>>,
+    Option<std::vec::Vec<crate::types::DeviceEvent>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

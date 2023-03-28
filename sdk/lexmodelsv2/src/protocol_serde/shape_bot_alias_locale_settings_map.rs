@@ -2,7 +2,7 @@
 pub(crate) fn de_bot_alias_locale_settings_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<std::string::String, crate::model::BotAliasLocaleSettings>>,
+    Option<std::collections::HashMap<std::string::String, crate::types::BotAliasLocaleSettings>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

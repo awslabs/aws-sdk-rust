@@ -2,7 +2,7 @@
 pub(crate) fn de_performance_insights_reference_comparison_values<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::PerformanceInsightsReferenceComparisonValues>,
+    Option<crate::types::PerformanceInsightsReferenceComparisonValues>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,8 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder =
-                crate::model::performance_insights_reference_comparison_values::Builder::default();
+            let mut builder = crate::types::builders::PerformanceInsightsReferenceComparisonValuesBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

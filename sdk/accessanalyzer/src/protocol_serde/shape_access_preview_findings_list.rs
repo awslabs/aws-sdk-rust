@@ -2,7 +2,7 @@
 pub(crate) fn de_access_preview_findings_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AccessPreviewFinding>>,
+    Option<std::vec::Vec<crate::types::AccessPreviewFinding>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

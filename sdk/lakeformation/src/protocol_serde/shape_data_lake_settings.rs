@@ -2,7 +2,7 @@
 pub(crate) fn de_data_lake_settings<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::DataLakeSettings>,
+    Option<crate::types::DataLakeSettings>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::data_lake_settings::Builder::default();
+            let mut builder = crate::types::builders::DataLakeSettingsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -92,7 +92,7 @@ where
 
 pub fn ser_data_lake_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::DataLakeSettings,
+    input: &crate::types::DataLakeSettings,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.data_lake_admins {
         let mut array_2 = object.key("DataLakeAdmins").start_array();

@@ -3,60 +3,61 @@
 pub fn de_delete_experiment_template_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteExperimentTemplateOutput,
-    crate::error::DeleteExperimentTemplateError,
+    crate::operation::delete_experiment_template::DeleteExperimentTemplateOutput,
+    crate::operation::delete_experiment_template::DeleteExperimentTemplateError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteExperimentTemplateError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::delete_experiment_template::DeleteExperimentTemplateError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::error::DeleteExperimentTemplateError::unhandled(
+        None => return Err(
+            crate::operation::delete_experiment_template::DeleteExperimentTemplateError::unhandled(
                 generic,
-            ))
-        }
+            ),
+        ),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceNotFoundException" => {
-            crate::error::DeleteExperimentTemplateError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "ResourceNotFoundException" => crate::operation::delete_experiment_template::DeleteExperimentTemplateError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteExperimentTemplateError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_experiment_template::DeleteExperimentTemplateError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ValidationException" => {
-            crate::error::DeleteExperimentTemplateError::ValidationException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ValidationException" => crate::operation::delete_experiment_template::DeleteExperimentTemplateError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::validation_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteExperimentTemplateError::unhandled)?;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::delete_experiment_template::DeleteExperimentTemplateError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DeleteExperimentTemplateError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::delete_experiment_template::DeleteExperimentTemplateError::generic(generic)
     })
 }
 
@@ -64,19 +65,14 @@ pub fn de_delete_experiment_template_http_error(
 pub fn de_delete_experiment_template_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DeleteExperimentTemplateOutput,
-    crate::error::DeleteExperimentTemplateError,
+    crate::operation::delete_experiment_template::DeleteExperimentTemplateOutput,
+    crate::operation::delete_experiment_template::DeleteExperimentTemplateError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_experiment_template_output::Builder::default();
+        let mut output = crate::operation::delete_experiment_template::builders::DeleteExperimentTemplateOutputBuilder::default();
         let _ = response;
-        output =
-            crate::protocol_serde::shape_delete_experiment_template::de_delete_experiment_template(
-                response.body().as_ref(),
-                output,
-            )
-            .map_err(crate::error::DeleteExperimentTemplateError::unhandled)?;
+        output = crate::protocol_serde::shape_delete_experiment_template::de_delete_experiment_template(response.body().as_ref(), output).map_err(crate::operation::delete_experiment_template::DeleteExperimentTemplateError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -86,9 +82,9 @@ pub fn de_delete_experiment_template_http_response(
 
 pub(crate) fn de_delete_experiment_template(
     value: &[u8],
-    mut builder: crate::output::delete_experiment_template_output::Builder,
+    mut builder: crate::operation::delete_experiment_template::builders::DeleteExperimentTemplateOutputBuilder,
 ) -> Result<
-    crate::output::delete_experiment_template_output::Builder,
+    crate::operation::delete_experiment_template::builders::DeleteExperimentTemplateOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

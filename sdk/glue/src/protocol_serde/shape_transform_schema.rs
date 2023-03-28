@@ -2,7 +2,7 @@
 pub(crate) fn de_transform_schema<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SchemaColumn>>,
+    Option<std::vec::Vec<crate::types::SchemaColumn>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

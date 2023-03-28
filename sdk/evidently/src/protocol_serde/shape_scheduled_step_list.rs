@@ -2,7 +2,7 @@
 pub(crate) fn de_scheduled_step_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ScheduledSplit>>,
+    Option<std::vec::Vec<crate::types::ScheduledSplit>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

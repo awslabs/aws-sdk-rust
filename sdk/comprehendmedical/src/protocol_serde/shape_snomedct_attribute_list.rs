@@ -2,7 +2,7 @@
 pub(crate) fn de_snomedct_attribute_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::SnomedctAttribute>>,
+    Option<std::vec::Vec<crate::types::SnomedctAttribute>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

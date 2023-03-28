@@ -2,7 +2,7 @@
 pub(crate) fn de_certificate_description<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::CertificateDescription>,
+    Option<crate::types::CertificateDescription>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::certificate_description::Builder::default();
+            let mut builder = crate::types::builders::CertificateDescriptionBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -57,7 +57,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::CertificateStatus::from(u.as_ref())
+                                            crate::types::CertificateStatus::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -143,7 +143,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::CertificateMode::from(u.as_ref())
+                                            crate::types::CertificateMode::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

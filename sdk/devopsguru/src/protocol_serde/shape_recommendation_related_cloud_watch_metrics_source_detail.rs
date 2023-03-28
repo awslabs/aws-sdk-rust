@@ -2,7 +2,7 @@
 pub(crate) fn de_recommendation_related_cloud_watch_metrics_source_detail<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::RecommendationRelatedCloudWatchMetricsSourceDetail>,
+    Option<crate::types::RecommendationRelatedCloudWatchMetricsSourceDetail>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::recommendation_related_cloud_watch_metrics_source_detail::Builder::default();
+            let mut builder = crate::types::builders::RecommendationRelatedCloudWatchMetricsSourceDetailBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

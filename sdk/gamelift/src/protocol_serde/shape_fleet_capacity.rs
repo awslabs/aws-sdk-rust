@@ -2,7 +2,7 @@
 pub(crate) fn de_fleet_capacity<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::FleetCapacity>,
+    Option<crate::types::FleetCapacity>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::fleet_capacity::Builder::default();
+            let mut builder = crate::types::builders::FleetCapacityBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -48,7 +48,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::Ec2InstanceType::from(u.as_ref())
+                                            crate::types::Ec2InstanceType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

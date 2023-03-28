@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_cloud_watch_dimension_configuration(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::CloudWatchDimensionConfiguration,
+    input: &crate::types::CloudWatchDimensionConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("DimensionName");
@@ -24,10 +24,10 @@ pub fn ser_cloud_watch_dimension_configuration(
 
 pub fn de_cloud_watch_dimension_configuration(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::CloudWatchDimensionConfiguration, aws_smithy_xml::decode::XmlDecodeError>
+) -> Result<crate::types::CloudWatchDimensionConfiguration, aws_smithy_xml::decode::XmlDecodeError>
 {
     #[allow(unused_mut)]
-    let mut builder = crate::model::CloudWatchDimensionConfiguration::builder();
+    let mut builder = crate::types::CloudWatchDimensionConfiguration::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("DimensionName") /* DimensionName com.amazonaws.ses#CloudWatchDimensionConfiguration$DimensionName */ =>  {
@@ -46,8 +46,8 @@ pub fn de_cloud_watch_dimension_configuration(
             s if s.matches("DimensionValueSource") /* DimensionValueSource com.amazonaws.ses#CloudWatchDimensionConfiguration$DimensionValueSource */ =>  {
                 let var_8 =
                     Some(
-                        Result::<crate::model::DimensionValueSource, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::DimensionValueSource::from(
+                        Result::<crate::types::DimensionValueSource, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::DimensionValueSource::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

@@ -2,7 +2,7 @@
 pub(crate) fn de_fleet_metric_name_and_arn<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::FleetMetricNameAndArn>,
+    Option<crate::types::FleetMetricNameAndArn>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::fleet_metric_name_and_arn::Builder::default();
+            let mut builder = crate::types::builders::FleetMetricNameAndArnBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

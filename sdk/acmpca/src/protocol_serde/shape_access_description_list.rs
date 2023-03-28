@@ -2,7 +2,7 @@
 pub(crate) fn de_access_description_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AccessDescription>>,
+    Option<std::vec::Vec<crate::types::AccessDescription>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

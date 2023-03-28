@@ -2,51 +2,65 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_exit_standby_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ExitStandbyOutput, crate::error::ExitStandbyError> {
+) -> std::result::Result<
+    crate::operation::exit_standby::ExitStandbyOutput,
+    crate::operation::exit_standby::ExitStandbyError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ExitStandbyError::unhandled)?;
+        .map_err(crate::operation::exit_standby::ExitStandbyError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ExitStandbyError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::exit_standby::ExitStandbyError::unhandled(
+                generic,
+            ))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceContention" => crate::error::ExitStandbyError::ResourceContentionFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "ResourceContention" => {
+            crate::operation::exit_standby::ExitStandbyError::ResourceContentionFault({
                 #[allow(unused_mut)]
-                let mut output = crate::error::resource_contention_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_resource_contention_fault::de_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ExitStandbyError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::ExitStandbyError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ResourceContentionFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_contention_fault::de_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::exit_standby::ExitStandbyError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::exit_standby::ExitStandbyError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_exit_standby_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ExitStandbyOutput, crate::error::ExitStandbyError> {
+) -> std::result::Result<
+    crate::operation::exit_standby::ExitStandbyOutput,
+    crate::operation::exit_standby::ExitStandbyError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::exit_standby_output::Builder::default();
+        let mut output =
+            crate::operation::exit_standby::builders::ExitStandbyOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_exit_standby::de_exit_standby(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ExitStandbyError::unhandled)?;
+        .map_err(crate::operation::exit_standby::ExitStandbyError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -57,8 +71,11 @@ pub fn de_exit_standby_http_response(
 #[allow(unused_mut)]
 pub fn de_exit_standby(
     inp: &[u8],
-    mut builder: crate::output::exit_standby_output::Builder,
-) -> Result<crate::output::exit_standby_output::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    mut builder: crate::operation::exit_standby::builders::ExitStandbyOutputBuilder,
+) -> Result<
+    crate::operation::exit_standby::builders::ExitStandbyOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

@@ -4,7 +4,7 @@ pub(crate) fn de_aws_ecs_task_definition_container_definitions_environment_files
 ) -> Result<
     Option<
         std::vec::Vec<
-            crate::model::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails,
+            crate::types::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails,
         >,
     >,
     aws_smithy_json::deserialize::error::DeserializeError,

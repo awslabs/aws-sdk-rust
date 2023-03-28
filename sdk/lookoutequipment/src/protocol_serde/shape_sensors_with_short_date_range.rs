@@ -2,7 +2,7 @@
 pub(crate) fn de_sensors_with_short_date_range<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::SensorsWithShortDateRange>,
+    Option<crate::types::SensorsWithShortDateRange>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::sensors_with_short_date_range::Builder::default();
+            let mut builder = crate::types::builders::SensorsWithShortDateRangeBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

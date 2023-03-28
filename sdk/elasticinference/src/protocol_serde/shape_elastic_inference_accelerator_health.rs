@@ -2,7 +2,7 @@
 pub(crate) fn de_elastic_inference_accelerator_health<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ElasticInferenceAcceleratorHealth>,
+    Option<crate::types::ElasticInferenceAcceleratorHealth>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::elastic_inference_accelerator_health::Builder::default();
+                crate::types::builders::ElasticInferenceAcceleratorHealthBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

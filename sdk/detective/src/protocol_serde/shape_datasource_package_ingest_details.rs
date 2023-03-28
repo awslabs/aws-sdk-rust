@@ -4,8 +4,8 @@ pub(crate) fn de_datasource_package_ingest_details<'a, I>(
 ) -> Result<
     Option<
         std::collections::HashMap<
-            crate::model::DatasourcePackage,
-            crate::model::DatasourcePackageIngestDetail,
+            crate::types::DatasourcePackage,
+            crate::types::DatasourcePackageIngestDetail,
         >,
     >,
     aws_smithy_json::deserialize::error::DeserializeError,
@@ -28,7 +28,7 @@ where
                     Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         let key = key
                             .to_unescaped()
-                            .map(|u| crate::model::DatasourcePackage::from(u.as_ref()))?;
+                            .map(|u| crate::types::DatasourcePackage::from(u.as_ref()))?;
                         let value =
                             crate::protocol_serde::shape_datasource_package_ingest_detail::de_datasource_package_ingest_detail(tokens)?
                         ;

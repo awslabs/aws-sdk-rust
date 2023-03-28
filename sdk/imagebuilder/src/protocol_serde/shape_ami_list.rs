@@ -2,7 +2,7 @@
 pub(crate) fn de_ami_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Ami>>,
+    Option<std::vec::Vec<crate::types::Ami>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

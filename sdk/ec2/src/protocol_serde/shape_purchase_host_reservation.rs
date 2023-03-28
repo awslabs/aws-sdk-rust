@@ -3,34 +3,30 @@
 pub fn de_purchase_host_reservation_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::PurchaseHostReservationOutput,
-    crate::error::PurchaseHostReservationError,
+    crate::operation::purchase_host_reservation::PurchaseHostReservationOutput,
+    crate::operation::purchase_host_reservation::PurchaseHostReservationError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::PurchaseHostReservationError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::purchase_host_reservation::PurchaseHostReservationError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::PurchaseHostReservationError::generic(generic))
+    Err(crate::operation::purchase_host_reservation::PurchaseHostReservationError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_purchase_host_reservation_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::PurchaseHostReservationOutput,
-    crate::error::PurchaseHostReservationError,
+    crate::operation::purchase_host_reservation::PurchaseHostReservationOutput,
+    crate::operation::purchase_host_reservation::PurchaseHostReservationError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::purchase_host_reservation_output::Builder::default();
+        let mut output = crate::operation::purchase_host_reservation::builders::PurchaseHostReservationOutputBuilder::default();
         let _ = response;
-        output =
-            crate::protocol_serde::shape_purchase_host_reservation::de_purchase_host_reservation(
-                response.body().as_ref(),
-                output,
-            )
-            .map_err(crate::error::PurchaseHostReservationError::unhandled)?;
+        output = crate::protocol_serde::shape_purchase_host_reservation::de_purchase_host_reservation(response.body().as_ref(), output).map_err(crate::operation::purchase_host_reservation::PurchaseHostReservationError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -41,9 +37,9 @@ pub fn de_purchase_host_reservation_http_response(
 #[allow(unused_mut)]
 pub fn de_purchase_host_reservation(
     inp: &[u8],
-    mut builder: crate::output::purchase_host_reservation_output::Builder,
+    mut builder: crate::operation::purchase_host_reservation::builders::PurchaseHostReservationOutputBuilder,
 ) -> Result<
-    crate::output::purchase_host_reservation_output::Builder,
+    crate::operation::purchase_host_reservation::builders::PurchaseHostReservationOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
@@ -76,8 +72,8 @@ pub fn de_purchase_host_reservation(
             s if s.matches("currencyCode") /* CurrencyCode com.amazonaws.ec2.synthetic#PurchaseHostReservationOutput$CurrencyCode */ =>  {
                 let var_2 =
                     Some(
-                        Result::<crate::model::CurrencyCodeValues, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::CurrencyCodeValues::from(
+                        Result::<crate::types::CurrencyCodeValues, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::CurrencyCodeValues::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

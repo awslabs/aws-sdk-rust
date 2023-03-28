@@ -2,7 +2,7 @@
 pub(crate) fn de_deployment_application_configs<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DeploymentApplicationConfig>>,
+    Option<std::vec::Vec<crate::types::DeploymentApplicationConfig>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

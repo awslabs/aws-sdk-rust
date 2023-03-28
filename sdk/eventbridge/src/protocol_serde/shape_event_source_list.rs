@@ -2,7 +2,7 @@
 pub(crate) fn de_event_source_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::EventSource>>,
+    Option<std::vec::Vec<crate::types::EventSource>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

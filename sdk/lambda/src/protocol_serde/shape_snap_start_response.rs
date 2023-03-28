@@ -2,7 +2,7 @@
 pub(crate) fn de_snap_start_response<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::SnapStartResponse>,
+    Option<crate::types::SnapStartResponse>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::snap_start_response::Builder::default();
+            let mut builder = crate::types::builders::SnapStartResponseBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::SnapStartApplyOn::from(u.as_ref())
+                                            crate::types::SnapStartApplyOn::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -43,7 +43,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::SnapStartOptimizationStatus::from(
+                                            crate::types::SnapStartOptimizationStatus::from(
                                                 u.as_ref(),
                                             )
                                         })

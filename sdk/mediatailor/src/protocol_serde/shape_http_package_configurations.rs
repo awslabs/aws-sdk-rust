@@ -2,7 +2,7 @@
 pub(crate) fn de_http_package_configurations<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::HttpPackageConfiguration>>,
+    Option<std::vec::Vec<crate::types::HttpPackageConfiguration>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

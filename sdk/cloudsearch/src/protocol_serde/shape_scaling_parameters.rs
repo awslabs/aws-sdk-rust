@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_scaling_parameters(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::ScalingParameters,
+    input: &crate::types::ScalingParameters,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("DesiredInstanceType");
@@ -30,16 +30,16 @@ pub fn ser_scaling_parameters(
 
 pub fn de_scaling_parameters(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::ScalingParameters, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::ScalingParameters, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::ScalingParameters::builder();
+    let mut builder = crate::types::ScalingParameters::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("DesiredInstanceType") /* DesiredInstanceType com.amazonaws.cloudsearch#ScalingParameters$DesiredInstanceType */ =>  {
                 let var_5 =
                     Some(
-                        Result::<crate::model::PartitionInstanceType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::PartitionInstanceType::from(
+                        Result::<crate::types::PartitionInstanceType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::PartitionInstanceType::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

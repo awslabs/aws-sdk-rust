@@ -2,7 +2,7 @@
 pub(crate) fn de_user_pool_client_list_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::UserPoolClientDescription>>,
+    Option<std::vec::Vec<crate::types::UserPoolClientDescription>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

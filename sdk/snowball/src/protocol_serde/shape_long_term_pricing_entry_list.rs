@@ -2,7 +2,7 @@
 pub(crate) fn de_long_term_pricing_entry_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::LongTermPricingListEntry>>,
+    Option<std::vec::Vec<crate::types::LongTermPricingListEntry>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

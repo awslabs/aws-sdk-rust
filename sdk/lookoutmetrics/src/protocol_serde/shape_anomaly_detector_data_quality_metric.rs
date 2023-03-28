@@ -2,7 +2,7 @@
 pub(crate) fn de_anomaly_detector_data_quality_metric<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::AnomalyDetectorDataQualityMetric>,
+    Option<crate::types::AnomalyDetectorDataQualityMetric>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::anomaly_detector_data_quality_metric::Builder::default();
+                crate::types::builders::AnomalyDetectorDataQualityMetricBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

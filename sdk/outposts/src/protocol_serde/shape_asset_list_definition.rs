@@ -2,7 +2,7 @@
 pub(crate) fn de_asset_list_definition<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AssetInfo>>,
+    Option<std::vec::Vec<crate::types::AssetInfo>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

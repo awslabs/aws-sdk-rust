@@ -2,7 +2,7 @@
 pub(crate) fn de_join_event_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::JoinEventConfiguration>,
+    Option<crate::types::JoinEventConfiguration>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::join_event_configuration::Builder::default();
+            let mut builder = crate::types::builders::JoinEventConfigurationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -35,7 +35,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::EventNotificationTopicStatus::from(
+                                            crate::types::EventNotificationTopicStatus::from(
                                                 u.as_ref(),
                                             )
                                         })
@@ -68,7 +68,7 @@ where
 
 pub fn ser_join_event_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::JoinEventConfiguration,
+    input: &crate::types::JoinEventConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.lo_ra_wan {
         #[allow(unused_mut)]

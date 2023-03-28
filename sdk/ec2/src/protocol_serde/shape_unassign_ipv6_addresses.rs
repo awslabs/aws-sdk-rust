@@ -3,33 +3,36 @@
 pub fn de_unassign_ipv6_addresses_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::UnassignIpv6AddressesOutput,
-    crate::error::UnassignIpv6AddressesError,
+    crate::operation::unassign_ipv6_addresses::UnassignIpv6AddressesOutput,
+    crate::operation::unassign_ipv6_addresses::UnassignIpv6AddressesError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::UnassignIpv6AddressesError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::unassign_ipv6_addresses::UnassignIpv6AddressesError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::UnassignIpv6AddressesError::generic(generic))
+    Err(crate::operation::unassign_ipv6_addresses::UnassignIpv6AddressesError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_unassign_ipv6_addresses_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::UnassignIpv6AddressesOutput,
-    crate::error::UnassignIpv6AddressesError,
+    crate::operation::unassign_ipv6_addresses::UnassignIpv6AddressesOutput,
+    crate::operation::unassign_ipv6_addresses::UnassignIpv6AddressesError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::unassign_ipv6_addresses_output::Builder::default();
+        let mut output = crate::operation::unassign_ipv6_addresses::builders::UnassignIpv6AddressesOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_unassign_ipv6_addresses::de_unassign_ipv6_addresses(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::UnassignIpv6AddressesError::unhandled)?;
+        .map_err(
+            crate::operation::unassign_ipv6_addresses::UnassignIpv6AddressesError::unhandled,
+        )?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -40,9 +43,9 @@ pub fn de_unassign_ipv6_addresses_http_response(
 #[allow(unused_mut)]
 pub fn de_unassign_ipv6_addresses(
     inp: &[u8],
-    mut builder: crate::output::unassign_ipv6_addresses_output::Builder,
+    mut builder: crate::operation::unassign_ipv6_addresses::builders::UnassignIpv6AddressesOutputBuilder,
 ) -> Result<
-    crate::output::unassign_ipv6_addresses_output::Builder,
+    crate::operation::unassign_ipv6_addresses::builders::UnassignIpv6AddressesOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

@@ -2,7 +2,7 @@
 pub(crate) fn de_rule_groups<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::RuleGroupMetadata>>,
+    Option<std::vec::Vec<crate::types::RuleGroupMetadata>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

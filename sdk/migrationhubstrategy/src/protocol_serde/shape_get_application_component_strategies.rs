@@ -3,75 +3,72 @@
 pub fn de_get_application_component_strategies_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetApplicationComponentStrategiesOutput,
-    crate::error::GetApplicationComponentStrategiesError,
+    crate::operation::get_application_component_strategies::GetApplicationComponentStrategiesOutput,
+    crate::operation::get_application_component_strategies::GetApplicationComponentStrategiesError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetApplicationComponentStrategiesError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::get_application_component_strategies::GetApplicationComponentStrategiesError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::GetApplicationComponentStrategiesError::unhandled(generic))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::get_application_component_strategies::GetApplicationComponentStrategiesError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerException" => {
-            crate::error::GetApplicationComponentStrategiesError::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalServerException" => crate::operation::get_application_component_strategies::GetApplicationComponentStrategiesError::InternalServerException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetApplicationComponentStrategiesError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_application_component_strategies::GetApplicationComponentStrategiesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ResourceNotFoundException" => {
-            crate::error::GetApplicationComponentStrategiesError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::get_application_component_strategies::GetApplicationComponentStrategiesError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetApplicationComponentStrategiesError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_application_component_strategies::GetApplicationComponentStrategiesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ThrottlingException" => {
-            crate::error::GetApplicationComponentStrategiesError::ThrottlingException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ThrottlingException" => crate::operation::get_application_component_strategies::GetApplicationComponentStrategiesError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::throttling_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetApplicationComponentStrategiesError::unhandled)?;
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_application_component_strategies::GetApplicationComponentStrategiesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::GetApplicationComponentStrategiesError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::get_application_component_strategies::GetApplicationComponentStrategiesError::generic(generic)
     })
 }
 
@@ -79,15 +76,14 @@ pub fn de_get_application_component_strategies_http_error(
 pub fn de_get_application_component_strategies_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetApplicationComponentStrategiesOutput,
-    crate::error::GetApplicationComponentStrategiesError,
+    crate::operation::get_application_component_strategies::GetApplicationComponentStrategiesOutput,
+    crate::operation::get_application_component_strategies::GetApplicationComponentStrategiesError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::output::get_application_component_strategies_output::Builder::default();
+        let mut output = crate::operation::get_application_component_strategies::builders::GetApplicationComponentStrategiesOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_get_application_component_strategies::de_get_application_component_strategies(response.body().as_ref(), output).map_err(crate::error::GetApplicationComponentStrategiesError::unhandled)?;
+        output = crate::protocol_serde::shape_get_application_component_strategies::de_get_application_component_strategies(response.body().as_ref(), output).map_err(crate::operation::get_application_component_strategies::GetApplicationComponentStrategiesError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -95,13 +91,7 @@ pub fn de_get_application_component_strategies_http_response(
     })
 }
 
-pub(crate) fn de_get_application_component_strategies(
-    value: &[u8],
-    mut builder: crate::output::get_application_component_strategies_output::Builder,
-) -> Result<
-    crate::output::get_application_component_strategies_output::Builder,
-    aws_smithy_json::deserialize::error::DeserializeError,
-> {
+pub(crate) fn de_get_application_component_strategies(value: &[u8], mut builder: crate::operation::get_application_component_strategies::builders::GetApplicationComponentStrategiesOutputBuilder) -> Result<crate::operation::get_application_component_strategies::builders::GetApplicationComponentStrategiesOutputBuilder, aws_smithy_json::deserialize::error::DeserializeError>{
     let mut tokens_owned =
         aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
             .peekable();

@@ -2,7 +2,7 @@
 pub(crate) fn de_location_timestamp<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::LocationTimestamp>,
+    Option<crate::types::LocationTimestamp>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::location_timestamp::Builder::default();
+            let mut builder = crate::types::builders::LocationTimestampBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -66,7 +66,7 @@ where
 
 pub fn ser_location_timestamp(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::LocationTimestamp,
+    input: &crate::types::LocationTimestamp,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.value {
         object.key("value").string(var_1.as_str());

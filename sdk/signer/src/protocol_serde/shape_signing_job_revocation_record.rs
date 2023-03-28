@@ -2,7 +2,7 @@
 pub(crate) fn de_signing_job_revocation_record<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::SigningJobRevocationRecord>,
+    Option<crate::types::SigningJobRevocationRecord>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::signing_job_revocation_record::Builder::default();
+            let mut builder = crate::types::builders::SigningJobRevocationRecordBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

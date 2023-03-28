@@ -2,7 +2,7 @@
 pub(crate) fn de_vocabulary_filters<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::VocabularyFilterInfo>>,
+    Option<std::vec::Vec<crate::types::VocabularyFilterInfo>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

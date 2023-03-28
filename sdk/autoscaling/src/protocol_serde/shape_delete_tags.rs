@@ -2,26 +2,52 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_tags_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeleteTagsOutput, crate::error::DeleteTagsError> {
+) -> std::result::Result<
+    crate::operation::delete_tags::DeleteTagsOutput,
+    crate::operation::delete_tags::DeleteTagsError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteTagsError::unhandled)?;
+        .map_err(crate::operation::delete_tags::DeleteTagsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DeleteTagsError::unhandled(generic)),
+        None => {
+            return Err(crate::operation::delete_tags::DeleteTagsError::unhandled(
+                generic,
+            ))
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceContention" => crate::error::DeleteTagsError::ResourceContentionFault({
+        "ResourceContention" => {
+            crate::operation::delete_tags::DeleteTagsError::ResourceContentionFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ResourceContentionFaultBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_contention_fault::de_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_tags::DeleteTagsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ResourceInUse" => crate::operation::delete_tags::DeleteTagsError::ResourceInUseFault({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::error::resource_contention_fault::Builder::default();
+                let mut output =
+                    crate::types::error::builders::ResourceInUseFaultBuilder::default();
                 let _ = response;
-                output = crate::protocol_serde::shape_resource_contention_fault::de_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteTagsError::unhandled)?;
+                output = crate::protocol_serde::shape_resource_in_use_fault::de_resource_in_use_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_tags::DeleteTagsError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -30,32 +56,21 @@ pub fn de_delete_tags_http_error(
             }
             tmp
         }),
-        "ResourceInUse" => crate::error::DeleteTagsError::ResourceInUseFault({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::resource_in_use_fault::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_resource_in_use_fault::de_resource_in_use_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteTagsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::DeleteTagsError::generic(generic),
+        _ => crate::operation::delete_tags::DeleteTagsError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_tags_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeleteTagsOutput, crate::error::DeleteTagsError> {
+) -> std::result::Result<
+    crate::operation::delete_tags::DeleteTagsOutput,
+    crate::operation::delete_tags::DeleteTagsError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_tags_output::Builder::default();
+        let mut output =
+            crate::operation::delete_tags::builders::DeleteTagsOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

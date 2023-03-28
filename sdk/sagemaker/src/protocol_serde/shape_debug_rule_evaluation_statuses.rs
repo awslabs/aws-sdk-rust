@@ -2,7 +2,7 @@
 pub(crate) fn de_debug_rule_evaluation_statuses<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DebugRuleEvaluationStatus>>,
+    Option<std::vec::Vec<crate::types::DebugRuleEvaluationStatus>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

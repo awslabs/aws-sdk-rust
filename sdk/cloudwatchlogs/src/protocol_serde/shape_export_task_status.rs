@@ -2,7 +2,7 @@
 pub(crate) fn de_export_task_status<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ExportTaskStatus>,
+    Option<crate::types::ExportTaskStatus>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::export_task_status::Builder::default();
+            let mut builder = crate::types::builders::ExportTaskStatusBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ExportTaskStatusCode::from(u.as_ref())
+                                            crate::types::ExportTaskStatusCode::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

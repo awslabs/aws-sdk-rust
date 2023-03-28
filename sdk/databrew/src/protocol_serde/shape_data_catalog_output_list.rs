@@ -2,7 +2,7 @@
 pub(crate) fn de_data_catalog_output_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DataCatalogOutput>>,
+    Option<std::vec::Vec<crate::types::DataCatalogOutput>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -3,95 +3,89 @@
 pub fn de_change_message_visibility_batch_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ChangeMessageVisibilityBatchOutput,
-    crate::error::ChangeMessageVisibilityBatchError,
+    crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchOutput,
+    crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ChangeMessageVisibilityBatchError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::ChangeMessageVisibilityBatchError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AWS.SimpleQueueService.BatchEntryIdsNotDistinct" => {
-            crate::error::ChangeMessageVisibilityBatchError::BatchEntryIdsNotDistinct({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "AWS.SimpleQueueService.BatchEntryIdsNotDistinct" => crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchError::BatchEntryIdsNotDistinct({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::batch_entry_ids_not_distinct::Builder::default();
+                    let mut output = crate::types::error::builders::BatchEntryIdsNotDistinctBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_batch_entry_ids_not_distinct::de_batch_entry_ids_not_distinct_xml_err(response.body().as_ref(), output).map_err(crate::error::ChangeMessageVisibilityBatchError::unhandled)?;
+                    output = crate::protocol_serde::shape_batch_entry_ids_not_distinct::de_batch_entry_ids_not_distinct_xml_err(response.body().as_ref(), output).map_err(crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "AWS.SimpleQueueService.EmptyBatchRequest" => {
-            crate::error::ChangeMessageVisibilityBatchError::EmptyBatchRequest({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "AWS.SimpleQueueService.EmptyBatchRequest" => crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchError::EmptyBatchRequest({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::empty_batch_request::Builder::default();
+                    let mut output = crate::types::error::builders::EmptyBatchRequestBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_empty_batch_request::de_empty_batch_request_xml_err(response.body().as_ref(), output).map_err(crate::error::ChangeMessageVisibilityBatchError::unhandled)?;
+                    output = crate::protocol_serde::shape_empty_batch_request::de_empty_batch_request_xml_err(response.body().as_ref(), output).map_err(crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "AWS.SimpleQueueService.InvalidBatchEntryId" => {
-            crate::error::ChangeMessageVisibilityBatchError::InvalidBatchEntryId({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "AWS.SimpleQueueService.InvalidBatchEntryId" => crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchError::InvalidBatchEntryId({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_batch_entry_id::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidBatchEntryIdBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_batch_entry_id::de_invalid_batch_entry_id_xml_err(response.body().as_ref(), output).map_err(crate::error::ChangeMessageVisibilityBatchError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_batch_entry_id::de_invalid_batch_entry_id_xml_err(response.body().as_ref(), output).map_err(crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "AWS.SimpleQueueService.TooManyEntriesInBatchRequest" => {
-            crate::error::ChangeMessageVisibilityBatchError::TooManyEntriesInBatchRequest({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "AWS.SimpleQueueService.TooManyEntriesInBatchRequest" => crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchError::TooManyEntriesInBatchRequest({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::too_many_entries_in_batch_request::Builder::default();
+                    let mut output = crate::types::error::builders::TooManyEntriesInBatchRequestBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_too_many_entries_in_batch_request::de_too_many_entries_in_batch_request_xml_err(response.body().as_ref(), output).map_err(crate::error::ChangeMessageVisibilityBatchError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_entries_in_batch_request::de_too_many_entries_in_batch_request_xml_err(response.body().as_ref(), output).map_err(crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::ChangeMessageVisibilityBatchError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchError::generic(generic)
     })
 }
 
@@ -99,14 +93,14 @@ pub fn de_change_message_visibility_batch_http_error(
 pub fn de_change_message_visibility_batch_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ChangeMessageVisibilityBatchOutput,
-    crate::error::ChangeMessageVisibilityBatchError,
+    crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchOutput,
+    crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::change_message_visibility_batch_output::Builder::default();
+        let mut output = crate::operation::change_message_visibility_batch::builders::ChangeMessageVisibilityBatchOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_change_message_visibility_batch::de_change_message_visibility_batch(response.body().as_ref(), output).map_err(crate::error::ChangeMessageVisibilityBatchError::unhandled)?;
+        output = crate::protocol_serde::shape_change_message_visibility_batch::de_change_message_visibility_batch(response.body().as_ref(), output).map_err(crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -115,13 +109,7 @@ pub fn de_change_message_visibility_batch_http_response(
 }
 
 #[allow(unused_mut)]
-pub fn de_change_message_visibility_batch(
-    inp: &[u8],
-    mut builder: crate::output::change_message_visibility_batch_output::Builder,
-) -> Result<
-    crate::output::change_message_visibility_batch_output::Builder,
-    aws_smithy_xml::decode::XmlDecodeError,
-> {
+pub fn de_change_message_visibility_batch(inp: &[u8], mut builder: crate::operation::change_message_visibility_batch::builders::ChangeMessageVisibilityBatchOutputBuilder) -> Result<crate::operation::change_message_visibility_batch::builders::ChangeMessageVisibilityBatchOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
@@ -147,7 +135,7 @@ pub fn de_change_message_visibility_batch(
             s if s.matches("ChangeMessageVisibilityBatchResultEntry") /* Successful com.amazonaws.sqs.synthetic#ChangeMessageVisibilityBatchOutput$Successful */ =>  {
                 let var_1 =
                     Some(
-                        Result::<std::vec::Vec<crate::model::ChangeMessageVisibilityBatchResultEntry>, aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                        Result::<std::vec::Vec<crate::types::ChangeMessageVisibilityBatchResultEntry>, aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_2 = builder.successful.take().unwrap_or_default();
                             list_2.push(
                                 crate::protocol_serde::shape_change_message_visibility_batch_result_entry::de_change_message_visibility_batch_result_entry(&mut tag)
@@ -164,7 +152,7 @@ pub fn de_change_message_visibility_batch(
             s if s.matches("BatchResultErrorEntry") /* Failed com.amazonaws.sqs.synthetic#ChangeMessageVisibilityBatchOutput$Failed */ =>  {
                 let var_3 =
                     Some(
-                        Result::<std::vec::Vec<crate::model::BatchResultErrorEntry>, aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                        Result::<std::vec::Vec<crate::types::BatchResultErrorEntry>, aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_4 = builder.failed.take().unwrap_or_default();
                             list_4.push(
                                 crate::protocol_serde::shape_batch_result_error_entry::de_batch_result_error_entry(&mut tag)

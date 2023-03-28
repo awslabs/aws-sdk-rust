@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_type_configuration_identifier(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::TypeConfigurationIdentifier,
+    input: &crate::types::TypeConfigurationIdentifier,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("TypeArn");
@@ -34,9 +34,9 @@ pub fn ser_type_configuration_identifier(
 
 pub fn de_type_configuration_identifier(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::TypeConfigurationIdentifier, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::TypeConfigurationIdentifier, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::TypeConfigurationIdentifier::builder();
+    let mut builder = crate::types::TypeConfigurationIdentifier::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("TypeArn") /* TypeArn com.amazonaws.cloudformation#TypeConfigurationIdentifier$TypeArn */ =>  {
@@ -81,8 +81,8 @@ pub fn de_type_configuration_identifier(
             s if s.matches("Type") /* Type com.amazonaws.cloudformation#TypeConfigurationIdentifier$Type */ =>  {
                 let var_14 =
                     Some(
-                        Result::<crate::model::ThirdPartyType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::model::ThirdPartyType::from(
+                        Result::<crate::types::ThirdPartyType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::ThirdPartyType::from(
                                 aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )

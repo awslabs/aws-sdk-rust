@@ -3,40 +3,38 @@
 pub fn de_describe_load_balancer_policy_types_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeLoadBalancerPolicyTypesOutput,
-    crate::error::DescribeLoadBalancerPolicyTypesError,
+    crate::operation::describe_load_balancer_policy_types::DescribeLoadBalancerPolicyTypesOutput,
+    crate::operation::describe_load_balancer_policy_types::DescribeLoadBalancerPolicyTypesError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeLoadBalancerPolicyTypesError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::describe_load_balancer_policy_types::DescribeLoadBalancerPolicyTypesError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => return Err(crate::error::DescribeLoadBalancerPolicyTypesError::unhandled(generic)),
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::describe_load_balancer_policy_types::DescribeLoadBalancerPolicyTypesError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "PolicyTypeNotFound" => {
-            crate::error::DescribeLoadBalancerPolicyTypesError::PolicyTypeNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "PolicyTypeNotFound" => crate::operation::describe_load_balancer_policy_types::DescribeLoadBalancerPolicyTypesError::PolicyTypeNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::policy_type_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::PolicyTypeNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_policy_type_not_found_exception::de_policy_type_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeLoadBalancerPolicyTypesError::unhandled)?;
+                    output = crate::protocol_serde::shape_policy_type_not_found_exception::de_policy_type_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::describe_load_balancer_policy_types::DescribeLoadBalancerPolicyTypesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DescribeLoadBalancerPolicyTypesError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::describe_load_balancer_policy_types::DescribeLoadBalancerPolicyTypesError::generic(generic)
     })
 }
 
@@ -44,15 +42,14 @@ pub fn de_describe_load_balancer_policy_types_http_error(
 pub fn de_describe_load_balancer_policy_types_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeLoadBalancerPolicyTypesOutput,
-    crate::error::DescribeLoadBalancerPolicyTypesError,
+    crate::operation::describe_load_balancer_policy_types::DescribeLoadBalancerPolicyTypesOutput,
+    crate::operation::describe_load_balancer_policy_types::DescribeLoadBalancerPolicyTypesError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::output::describe_load_balancer_policy_types_output::Builder::default();
+        let mut output = crate::operation::describe_load_balancer_policy_types::builders::DescribeLoadBalancerPolicyTypesOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_describe_load_balancer_policy_types::de_describe_load_balancer_policy_types(response.body().as_ref(), output).map_err(crate::error::DescribeLoadBalancerPolicyTypesError::unhandled)?;
+        output = crate::protocol_serde::shape_describe_load_balancer_policy_types::de_describe_load_balancer_policy_types(response.body().as_ref(), output).map_err(crate::operation::describe_load_balancer_policy_types::DescribeLoadBalancerPolicyTypesError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -61,13 +58,7 @@ pub fn de_describe_load_balancer_policy_types_http_response(
 }
 
 #[allow(unused_mut)]
-pub fn de_describe_load_balancer_policy_types(
-    inp: &[u8],
-    mut builder: crate::output::describe_load_balancer_policy_types_output::Builder,
-) -> Result<
-    crate::output::describe_load_balancer_policy_types_output::Builder,
-    aws_smithy_xml::decode::XmlDecodeError,
-> {
+pub fn de_describe_load_balancer_policy_types(inp: &[u8], mut builder: crate::operation::describe_load_balancer_policy_types::builders::DescribeLoadBalancerPolicyTypesOutputBuilder) -> Result<crate::operation::describe_load_balancer_policy_types::builders::DescribeLoadBalancerPolicyTypesOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

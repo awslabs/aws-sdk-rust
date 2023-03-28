@@ -2,7 +2,7 @@
 pub(crate) fn de_as2_transports<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::As2Transport>>,
+    Option<std::vec::Vec<crate::types::As2Transport>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -29,7 +29,7 @@ where
                         )?
                         .map(|s| {
                             s.to_unescaped()
-                                .map(|u| crate::model::As2Transport::from(u.as_ref()))
+                                .map(|u| crate::types::As2Transport::from(u.as_ref()))
                         })
                         .transpose()?;
                         if let Some(value) = value {

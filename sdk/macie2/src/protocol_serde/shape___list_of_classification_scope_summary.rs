@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_classification_scope_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ClassificationScopeSummary>>,
+    Option<std::vec::Vec<crate::types::ClassificationScopeSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

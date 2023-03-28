@@ -2,7 +2,7 @@
 pub(crate) fn de_inventory_deletion_summary_items<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::InventoryDeletionSummaryItem>>,
+    Option<std::vec::Vec<crate::types::InventoryDeletionSummaryItem>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

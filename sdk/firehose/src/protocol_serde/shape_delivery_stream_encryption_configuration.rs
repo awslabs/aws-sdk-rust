@@ -2,7 +2,7 @@
 pub(crate) fn de_delivery_stream_encryption_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::DeliveryStreamEncryptionConfiguration>,
+    Option<crate::types::DeliveryStreamEncryptionConfiguration>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::delivery_stream_encryption_configuration::Builder::default();
+                crate::types::builders::DeliveryStreamEncryptionConfigurationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -40,7 +40,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped()
-                                            .map(|u| crate::model::KeyType::from(u.as_ref()))
+                                            .map(|u| crate::types::KeyType::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );
@@ -52,7 +52,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::DeliveryStreamEncryptionStatus::from(
+                                            crate::types::DeliveryStreamEncryptionStatus::from(
                                                 u.as_ref(),
                                             )
                                         })

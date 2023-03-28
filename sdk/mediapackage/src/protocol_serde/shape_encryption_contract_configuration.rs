@@ -2,7 +2,7 @@
 pub(crate) fn de_encryption_contract_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::EncryptionContractConfiguration>,
+    Option<crate::types::EncryptionContractConfiguration>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::encryption_contract_configuration::Builder::default();
+            let mut builder =
+                crate::types::builders::EncryptionContractConfigurationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +31,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::PresetSpeke20Audio::from(u.as_ref())
+                                            crate::types::PresetSpeke20Audio::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -43,7 +44,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::PresetSpeke20Video::from(u.as_ref())
+                                            crate::types::PresetSpeke20Video::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -74,7 +75,7 @@ where
 
 pub fn ser_encryption_contract_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::EncryptionContractConfiguration,
+    input: &crate::types::EncryptionContractConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.preset_speke20_audio {
         object.key("presetSpeke20Audio").string(var_1.as_str());

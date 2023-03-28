@@ -2,28 +2,35 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_stack_sets_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListStackSetsOutput, crate::error::ListStackSetsError> {
+) -> std::result::Result<
+    crate::operation::list_stack_sets::ListStackSetsOutput,
+    crate::operation::list_stack_sets::ListStackSetsError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListStackSetsError::unhandled)?;
+        .map_err(crate::operation::list_stack_sets::ListStackSetsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::ListStackSetsError::generic(generic))
+    Err(crate::operation::list_stack_sets::ListStackSetsError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_stack_sets_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListStackSetsOutput, crate::error::ListStackSetsError> {
+) -> std::result::Result<
+    crate::operation::list_stack_sets::ListStackSetsOutput,
+    crate::operation::list_stack_sets::ListStackSetsError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_stack_sets_output::Builder::default();
+        let mut output =
+            crate::operation::list_stack_sets::builders::ListStackSetsOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_stack_sets::de_list_stack_sets(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListStackSetsError::unhandled)?;
+        .map_err(crate::operation::list_stack_sets::ListStackSetsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -34,9 +41,11 @@ pub fn de_list_stack_sets_http_response(
 #[allow(unused_mut)]
 pub fn de_list_stack_sets(
     inp: &[u8],
-    mut builder: crate::output::list_stack_sets_output::Builder,
-) -> Result<crate::output::list_stack_sets_output::Builder, aws_smithy_xml::decode::XmlDecodeError>
-{
+    mut builder: crate::operation::list_stack_sets::builders::ListStackSetsOutputBuilder,
+) -> Result<
+    crate::operation::list_stack_sets::builders::ListStackSetsOutputBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

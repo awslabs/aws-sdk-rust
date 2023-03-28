@@ -2,7 +2,7 @@
 pub(crate) fn de_app_validation_configurations<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AppValidationConfiguration>>,
+    Option<std::vec::Vec<crate::types::AppValidationConfiguration>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

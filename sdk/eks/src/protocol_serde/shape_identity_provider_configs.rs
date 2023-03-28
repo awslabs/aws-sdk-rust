@@ -2,7 +2,7 @@
 pub(crate) fn de_identity_provider_configs<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::IdentityProviderConfig>>,
+    Option<std::vec::Vec<crate::types::IdentityProviderConfig>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

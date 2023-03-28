@@ -4,25 +4,25 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>The request syntax was malformed. Check your request syntax and try again.</p>
-    BadRequestException(crate::error::BadRequestException),
+    BadRequestException(crate::types::error::BadRequestException),
     /// <p>The request contains a client token that was used for a previous update resource call with different specifications. Try the request again with a new client token.</p>
-    ConflictException(crate::error::ConflictException),
+    ConflictException(crate::types::error::ConflictException),
     /// <p>You don't have permissions to perform this action.</p>
-    ForbiddenException(crate::error::ForbiddenException),
+    ForbiddenException(crate::types::error::ForbiddenException),
     /// <p>The request processing has failed because of an unknown error, exception, or failure.</p>
-    InternalServerErrorException(crate::error::InternalServerErrorException),
+    InternalServerErrorException(crate::types::error::InternalServerErrorException),
     /// <p>You have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service Limits</a> in the <i>App Mesh User Guide</i>.</p>
-    LimitExceededException(crate::error::LimitExceededException),
+    LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>The specified resource doesn't exist. Check your request syntax and try again.</p>
-    NotFoundException(crate::error::NotFoundException),
+    NotFoundException(crate::types::error::NotFoundException),
     /// <p>You can't delete the specified resource because it's in use or required by another resource.</p>
-    ResourceInUseException(crate::error::ResourceInUseException),
+    ResourceInUseException(crate::types::error::ResourceInUseException),
     /// <p>The request has failed due to a temporary failure of the service.</p>
-    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
     /// <p>The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best results, use an increasing or variable sleep interval between requests.</p>
-    TooManyRequestsException(crate::error::TooManyRequestsException),
+    TooManyRequestsException(crate::types::error::TooManyRequestsException),
     /// <p>The request exceeds the maximum allowed number of tags allowed per resource. The current limit is 50 user tags per resource. You must reduce the number of tags in the request. None of the tags in this request were applied.</p>
-    TooManyTagsException(crate::error::TooManyTagsException),
+    TooManyTagsException(crate::types::error::TooManyTagsException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled),
 }
@@ -43,12 +43,21 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateGatewayRouteError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_gateway_route::CreateGatewayRouteError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateGatewayRouteError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_gateway_route::CreateGatewayRouteError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -65,42 +74,85 @@ where
         }
     }
 }
-impl From<crate::error::CreateGatewayRouteError> for Error {
-    fn from(err: crate::error::CreateGatewayRouteError) -> Self {
+impl From<crate::operation::create_gateway_route::CreateGatewayRouteError> for Error {
+    fn from(err: crate::operation::create_gateway_route::CreateGatewayRouteError) -> Self {
         match err {
-            crate::error::CreateGatewayRouteError::BadRequestException(inner) => {
+            crate::operation::create_gateway_route::CreateGatewayRouteError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_gateway_route::CreateGatewayRouteError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_gateway_route::CreateGatewayRouteError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::create_gateway_route::CreateGatewayRouteError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::create_gateway_route::CreateGatewayRouteError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_gateway_route::CreateGatewayRouteError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_gateway_route::CreateGatewayRouteError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::create_gateway_route::CreateGatewayRouteError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::create_gateway_route::CreateGatewayRouteError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_mesh::CreateMeshError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::create_mesh::CreateMeshError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_mesh::CreateMeshError> for Error {
+    fn from(err: crate::operation::create_mesh::CreateMeshError) -> Self {
+        match err {
+            crate::operation::create_mesh::CreateMeshError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::CreateGatewayRouteError::ConflictException(inner) => {
+            crate::operation::create_mesh::CreateMeshError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
-            crate::error::CreateGatewayRouteError::ForbiddenException(inner) => {
+            crate::operation::create_mesh::CreateMeshError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::CreateGatewayRouteError::InternalServerErrorException(inner) => {
+            crate::operation::create_mesh::CreateMeshError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::CreateGatewayRouteError::LimitExceededException(inner) => {
+            crate::operation::create_mesh::CreateMeshError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::CreateGatewayRouteError::NotFoundException(inner) => {
+            crate::operation::create_mesh::CreateMeshError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::CreateGatewayRouteError::ServiceUnavailableException(inner) => {
+            crate::operation::create_mesh::CreateMeshError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
-            crate::error::CreateGatewayRouteError::TooManyRequestsException(inner) => {
+            crate::operation::create_mesh::CreateMeshError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::CreateGatewayRouteError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::create_mesh::CreateMeshError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateMeshError, R>> for Error
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_route::CreateRouteError, R>>
+    for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateMeshError, R>) -> Self {
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::create_route::CreateRouteError, R>,
+    ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
@@ -116,42 +168,55 @@ where
         }
     }
 }
-impl From<crate::error::CreateMeshError> for Error {
-    fn from(err: crate::error::CreateMeshError) -> Self {
+impl From<crate::operation::create_route::CreateRouteError> for Error {
+    fn from(err: crate::operation::create_route::CreateRouteError) -> Self {
         match err {
-            crate::error::CreateMeshError::BadRequestException(inner) => {
+            crate::operation::create_route::CreateRouteError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::CreateMeshError::ConflictException(inner) => {
+            crate::operation::create_route::CreateRouteError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
-            crate::error::CreateMeshError::ForbiddenException(inner) => {
+            crate::operation::create_route::CreateRouteError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::CreateMeshError::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::CreateMeshError::LimitExceededException(inner) => {
+            crate::operation::create_route::CreateRouteError::InternalServerErrorException(
+                inner,
+            ) => Error::InternalServerErrorException(inner),
+            crate::operation::create_route::CreateRouteError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::CreateMeshError::NotFoundException(inner) => {
+            crate::operation::create_route::CreateRouteError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::CreateMeshError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::CreateMeshError::TooManyRequestsException(inner) => {
+            crate::operation::create_route::CreateRouteError::ServiceUnavailableException(
+                inner,
+            ) => Error::ServiceUnavailableException(inner),
+            crate::operation::create_route::CreateRouteError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::CreateMeshError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::create_route::CreateRouteError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateRouteError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_virtual_gateway::CreateVirtualGatewayError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateRouteError, R>) -> Self {
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_virtual_gateway::CreateVirtualGatewayError,
+            R,
+        >,
+    ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
@@ -167,44 +232,211 @@ where
         }
     }
 }
-impl From<crate::error::CreateRouteError> for Error {
-    fn from(err: crate::error::CreateRouteError) -> Self {
+impl From<crate::operation::create_virtual_gateway::CreateVirtualGatewayError> for Error {
+    fn from(err: crate::operation::create_virtual_gateway::CreateVirtualGatewayError) -> Self {
         match err {
-            crate::error::CreateRouteError::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::CreateRouteError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::CreateRouteError::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::CreateRouteError::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::CreateRouteError::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::CreateRouteError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::CreateRouteError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::CreateRouteError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::CreateRouteError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::create_virtual_gateway::CreateVirtualGatewayError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_virtual_gateway::CreateVirtualGatewayError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_virtual_gateway::CreateVirtualGatewayError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::create_virtual_gateway::CreateVirtualGatewayError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::create_virtual_gateway::CreateVirtualGatewayError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_virtual_gateway::CreateVirtualGatewayError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_virtual_gateway::CreateVirtualGatewayError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::create_virtual_gateway::CreateVirtualGatewayError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::create_virtual_gateway::CreateVirtualGatewayError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateVirtualGatewayError, R>>
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_virtual_node::CreateVirtualNodeError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_virtual_node::CreateVirtualNodeError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_virtual_node::CreateVirtualNodeError> for Error {
+    fn from(err: crate::operation::create_virtual_node::CreateVirtualNodeError) -> Self {
+        match err {
+            crate::operation::create_virtual_node::CreateVirtualNodeError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_virtual_node::CreateVirtualNodeError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_virtual_node::CreateVirtualNodeError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::create_virtual_node::CreateVirtualNodeError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::create_virtual_node::CreateVirtualNodeError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_virtual_node::CreateVirtualNodeError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_virtual_node::CreateVirtualNodeError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::create_virtual_node::CreateVirtualNodeError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::create_virtual_node::CreateVirtualNodeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_virtual_router::CreateVirtualRouterError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_virtual_router::CreateVirtualRouterError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_virtual_router::CreateVirtualRouterError> for Error {
+    fn from(err: crate::operation::create_virtual_router::CreateVirtualRouterError) -> Self {
+        match err {
+            crate::operation::create_virtual_router::CreateVirtualRouterError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_virtual_router::CreateVirtualRouterError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_virtual_router::CreateVirtualRouterError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::create_virtual_router::CreateVirtualRouterError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::create_virtual_router::CreateVirtualRouterError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_virtual_router::CreateVirtualRouterError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_virtual_router::CreateVirtualRouterError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::create_virtual_router::CreateVirtualRouterError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::create_virtual_router::CreateVirtualRouterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_virtual_service::CreateVirtualServiceError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_virtual_service::CreateVirtualServiceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_virtual_service::CreateVirtualServiceError> for Error {
+    fn from(err: crate::operation::create_virtual_service::CreateVirtualServiceError) -> Self {
+        match err {
+            crate::operation::create_virtual_service::CreateVirtualServiceError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_virtual_service::CreateVirtualServiceError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_virtual_service::CreateVirtualServiceError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::create_virtual_service::CreateVirtualServiceError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::create_virtual_service::CreateVirtualServiceError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_virtual_service::CreateVirtualServiceError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_virtual_service::CreateVirtualServiceError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::create_virtual_service::CreateVirtualServiceError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::create_virtual_service::CreateVirtualServiceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_gateway_route::DeleteGatewayRouteError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_gateway_route::DeleteGatewayRouteError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_gateway_route::DeleteGatewayRouteError> for Error {
+    fn from(err: crate::operation::delete_gateway_route::DeleteGatewayRouteError) -> Self {
+        match err {
+            crate::operation::delete_gateway_route::DeleteGatewayRouteError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_gateway_route::DeleteGatewayRouteError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::delete_gateway_route::DeleteGatewayRouteError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::delete_gateway_route::DeleteGatewayRouteError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_gateway_route::DeleteGatewayRouteError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::delete_gateway_route::DeleteGatewayRouteError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::delete_gateway_route::DeleteGatewayRouteError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::delete_gateway_route::DeleteGatewayRouteError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_mesh::DeleteMeshError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateVirtualGatewayError, R>,
+        err: aws_smithy_http::result::SdkError<crate::operation::delete_mesh::DeleteMeshError, R>,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -221,350 +453,43 @@ where
         }
     }
 }
-impl From<crate::error::CreateVirtualGatewayError> for Error {
-    fn from(err: crate::error::CreateVirtualGatewayError) -> Self {
+impl From<crate::operation::delete_mesh::DeleteMeshError> for Error {
+    fn from(err: crate::operation::delete_mesh::DeleteMeshError) -> Self {
         match err {
-            crate::error::CreateVirtualGatewayError::BadRequestException(inner) => {
+            crate::operation::delete_mesh::DeleteMeshError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::CreateVirtualGatewayError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::CreateVirtualGatewayError::ForbiddenException(inner) => {
+            crate::operation::delete_mesh::DeleteMeshError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::CreateVirtualGatewayError::InternalServerErrorException(inner) => {
+            crate::operation::delete_mesh::DeleteMeshError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::CreateVirtualGatewayError::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::CreateVirtualGatewayError::NotFoundException(inner) => {
+            crate::operation::delete_mesh::DeleteMeshError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::CreateVirtualGatewayError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::CreateVirtualGatewayError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::CreateVirtualGatewayError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateVirtualNodeError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateVirtualNodeError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::CreateVirtualNodeError> for Error {
-    fn from(err: crate::error::CreateVirtualNodeError) -> Self {
-        match err {
-            crate::error::CreateVirtualNodeError::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::CreateVirtualNodeError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::CreateVirtualNodeError::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::CreateVirtualNodeError::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::CreateVirtualNodeError::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::CreateVirtualNodeError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::CreateVirtualNodeError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::CreateVirtualNodeError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::CreateVirtualNodeError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateVirtualRouterError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateVirtualRouterError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::CreateVirtualRouterError> for Error {
-    fn from(err: crate::error::CreateVirtualRouterError) -> Self {
-        match err {
-            crate::error::CreateVirtualRouterError::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::CreateVirtualRouterError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::CreateVirtualRouterError::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::CreateVirtualRouterError::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::CreateVirtualRouterError::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::CreateVirtualRouterError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::CreateVirtualRouterError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::CreateVirtualRouterError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::CreateVirtualRouterError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateVirtualServiceError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateVirtualServiceError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::CreateVirtualServiceError> for Error {
-    fn from(err: crate::error::CreateVirtualServiceError) -> Self {
-        match err {
-            crate::error::CreateVirtualServiceError::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::CreateVirtualServiceError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::CreateVirtualServiceError::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::CreateVirtualServiceError::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::CreateVirtualServiceError::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::CreateVirtualServiceError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::CreateVirtualServiceError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::CreateVirtualServiceError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::CreateVirtualServiceError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteGatewayRouteError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteGatewayRouteError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DeleteGatewayRouteError> for Error {
-    fn from(err: crate::error::DeleteGatewayRouteError) -> Self {
-        match err {
-            crate::error::DeleteGatewayRouteError::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteGatewayRouteError::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DeleteGatewayRouteError::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::DeleteGatewayRouteError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteGatewayRouteError::ResourceInUseException(inner) => {
+            crate::operation::delete_mesh::DeleteMeshError::ResourceInUseException(inner) => {
                 Error::ResourceInUseException(inner)
             }
-            crate::error::DeleteGatewayRouteError::ServiceUnavailableException(inner) => {
+            crate::operation::delete_mesh::DeleteMeshError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
-            crate::error::DeleteGatewayRouteError::TooManyRequestsException(inner) => {
+            crate::operation::delete_mesh::DeleteMeshError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::DeleteGatewayRouteError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_mesh::DeleteMeshError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteMeshError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteMeshError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DeleteMeshError> for Error {
-    fn from(err: crate::error::DeleteMeshError) -> Self {
-        match err {
-            crate::error::DeleteMeshError::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteMeshError::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DeleteMeshError::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::DeleteMeshError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteMeshError::ResourceInUseException(inner) => {
-                Error::ResourceInUseException(inner)
-            }
-            crate::error::DeleteMeshError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::DeleteMeshError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DeleteMeshError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteRouteError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteRouteError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DeleteRouteError> for Error {
-    fn from(err: crate::error::DeleteRouteError) -> Self {
-        match err {
-            crate::error::DeleteRouteError::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteRouteError::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DeleteRouteError::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::DeleteRouteError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteRouteError::ResourceInUseException(inner) => {
-                Error::ResourceInUseException(inner)
-            }
-            crate::error::DeleteRouteError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::DeleteRouteError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DeleteRouteError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteVirtualGatewayError, R>>
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_route::DeleteRouteError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteVirtualGatewayError, R>,
+        err: aws_smithy_http::result::SdkError<crate::operation::delete_route::DeleteRouteError, R>,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -581,40 +506,51 @@ where
         }
     }
 }
-impl From<crate::error::DeleteVirtualGatewayError> for Error {
-    fn from(err: crate::error::DeleteVirtualGatewayError) -> Self {
+impl From<crate::operation::delete_route::DeleteRouteError> for Error {
+    fn from(err: crate::operation::delete_route::DeleteRouteError) -> Self {
         match err {
-            crate::error::DeleteVirtualGatewayError::BadRequestException(inner) => {
+            crate::operation::delete_route::DeleteRouteError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::DeleteVirtualGatewayError::ForbiddenException(inner) => {
+            crate::operation::delete_route::DeleteRouteError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::DeleteVirtualGatewayError::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::DeleteVirtualGatewayError::NotFoundException(inner) => {
+            crate::operation::delete_route::DeleteRouteError::InternalServerErrorException(
+                inner,
+            ) => Error::InternalServerErrorException(inner),
+            crate::operation::delete_route::DeleteRouteError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DeleteVirtualGatewayError::ResourceInUseException(inner) => {
+            crate::operation::delete_route::DeleteRouteError::ResourceInUseException(inner) => {
                 Error::ResourceInUseException(inner)
             }
-            crate::error::DeleteVirtualGatewayError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::DeleteVirtualGatewayError::TooManyRequestsException(inner) => {
+            crate::operation::delete_route::DeleteRouteError::ServiceUnavailableException(
+                inner,
+            ) => Error::ServiceUnavailableException(inner),
+            crate::operation::delete_route::DeleteRouteError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::DeleteVirtualGatewayError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_route::DeleteRouteError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteVirtualNodeError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_virtual_gateway::DeleteVirtualGatewayError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteVirtualNodeError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_virtual_gateway::DeleteVirtualGatewayError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -631,40 +567,35 @@ where
         }
     }
 }
-impl From<crate::error::DeleteVirtualNodeError> for Error {
-    fn from(err: crate::error::DeleteVirtualNodeError) -> Self {
+impl From<crate::operation::delete_virtual_gateway::DeleteVirtualGatewayError> for Error {
+    fn from(err: crate::operation::delete_virtual_gateway::DeleteVirtualGatewayError) -> Self {
         match err {
-            crate::error::DeleteVirtualNodeError::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteVirtualNodeError::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DeleteVirtualNodeError::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::DeleteVirtualNodeError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteVirtualNodeError::ResourceInUseException(inner) => {
-                Error::ResourceInUseException(inner)
-            }
-            crate::error::DeleteVirtualNodeError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::DeleteVirtualNodeError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DeleteVirtualNodeError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_virtual_gateway::DeleteVirtualGatewayError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_virtual_gateway::DeleteVirtualGatewayError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::delete_virtual_gateway::DeleteVirtualGatewayError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::delete_virtual_gateway::DeleteVirtualGatewayError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_virtual_gateway::DeleteVirtualGatewayError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::delete_virtual_gateway::DeleteVirtualGatewayError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::delete_virtual_gateway::DeleteVirtualGatewayError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::delete_virtual_gateway::DeleteVirtualGatewayError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteVirtualRouterError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_virtual_node::DeleteVirtualNodeError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteVirtualRouterError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_virtual_node::DeleteVirtualNodeError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -681,41 +612,165 @@ where
         }
     }
 }
-impl From<crate::error::DeleteVirtualRouterError> for Error {
-    fn from(err: crate::error::DeleteVirtualRouterError) -> Self {
+impl From<crate::operation::delete_virtual_node::DeleteVirtualNodeError> for Error {
+    fn from(err: crate::operation::delete_virtual_node::DeleteVirtualNodeError) -> Self {
         match err {
-            crate::error::DeleteVirtualRouterError::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteVirtualRouterError::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DeleteVirtualRouterError::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::DeleteVirtualRouterError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteVirtualRouterError::ResourceInUseException(inner) => {
-                Error::ResourceInUseException(inner)
-            }
-            crate::error::DeleteVirtualRouterError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::DeleteVirtualRouterError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DeleteVirtualRouterError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::delete_virtual_node::DeleteVirtualNodeError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_virtual_node::DeleteVirtualNodeError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::delete_virtual_node::DeleteVirtualNodeError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::delete_virtual_node::DeleteVirtualNodeError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_virtual_node::DeleteVirtualNodeError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::delete_virtual_node::DeleteVirtualNodeError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::delete_virtual_node::DeleteVirtualNodeError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::delete_virtual_node::DeleteVirtualNodeError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteVirtualServiceError, R>>
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_virtual_router::DeleteVirtualRouterError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_virtual_router::DeleteVirtualRouterError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_virtual_router::DeleteVirtualRouterError> for Error {
+    fn from(err: crate::operation::delete_virtual_router::DeleteVirtualRouterError) -> Self {
+        match err {
+            crate::operation::delete_virtual_router::DeleteVirtualRouterError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_virtual_router::DeleteVirtualRouterError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::delete_virtual_router::DeleteVirtualRouterError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::delete_virtual_router::DeleteVirtualRouterError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_virtual_router::DeleteVirtualRouterError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::delete_virtual_router::DeleteVirtualRouterError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::delete_virtual_router::DeleteVirtualRouterError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::delete_virtual_router::DeleteVirtualRouterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_virtual_service::DeleteVirtualServiceError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_virtual_service::DeleteVirtualServiceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_virtual_service::DeleteVirtualServiceError> for Error {
+    fn from(err: crate::operation::delete_virtual_service::DeleteVirtualServiceError) -> Self {
+        match err {
+            crate::operation::delete_virtual_service::DeleteVirtualServiceError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_virtual_service::DeleteVirtualServiceError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::delete_virtual_service::DeleteVirtualServiceError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::delete_virtual_service::DeleteVirtualServiceError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_virtual_service::DeleteVirtualServiceError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::delete_virtual_service::DeleteVirtualServiceError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::delete_virtual_service::DeleteVirtualServiceError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::delete_virtual_service::DeleteVirtualServiceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_gateway_route::DescribeGatewayRouteError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_gateway_route::DescribeGatewayRouteError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_gateway_route::DescribeGatewayRouteError> for Error {
+    fn from(err: crate::operation::describe_gateway_route::DescribeGatewayRouteError) -> Self {
+        match err {
+            crate::operation::describe_gateway_route::DescribeGatewayRouteError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::describe_gateway_route::DescribeGatewayRouteError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::describe_gateway_route::DescribeGatewayRouteError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::describe_gateway_route::DescribeGatewayRouteError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::describe_gateway_route::DescribeGatewayRouteError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::describe_gateway_route::DescribeGatewayRouteError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::describe_gateway_route::DescribeGatewayRouteError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::describe_mesh::DescribeMeshError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteVirtualServiceError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_mesh::DescribeMeshError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -732,41 +787,44 @@ where
         }
     }
 }
-impl From<crate::error::DeleteVirtualServiceError> for Error {
-    fn from(err: crate::error::DeleteVirtualServiceError) -> Self {
+impl From<crate::operation::describe_mesh::DescribeMeshError> for Error {
+    fn from(err: crate::operation::describe_mesh::DescribeMeshError) -> Self {
         match err {
-            crate::error::DeleteVirtualServiceError::BadRequestException(inner) => {
+            crate::operation::describe_mesh::DescribeMeshError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::DeleteVirtualServiceError::ForbiddenException(inner) => {
+            crate::operation::describe_mesh::DescribeMeshError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::DeleteVirtualServiceError::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::DeleteVirtualServiceError::NotFoundException(inner) => {
+            crate::operation::describe_mesh::DescribeMeshError::InternalServerErrorException(
+                inner,
+            ) => Error::InternalServerErrorException(inner),
+            crate::operation::describe_mesh::DescribeMeshError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DeleteVirtualServiceError::ResourceInUseException(inner) => {
-                Error::ResourceInUseException(inner)
-            }
-            crate::error::DeleteVirtualServiceError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::DeleteVirtualServiceError::TooManyRequestsException(inner) => {
+            crate::operation::describe_mesh::DescribeMeshError::ServiceUnavailableException(
+                inner,
+            ) => Error::ServiceUnavailableException(inner),
+            crate::operation::describe_mesh::DescribeMeshError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::DeleteVirtualServiceError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::describe_mesh::DescribeMeshError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeGatewayRouteError, R>>
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::describe_route::DescribeRouteError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeGatewayRouteError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_route::DescribeRouteError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -783,36 +841,49 @@ where
         }
     }
 }
-impl From<crate::error::DescribeGatewayRouteError> for Error {
-    fn from(err: crate::error::DescribeGatewayRouteError) -> Self {
+impl From<crate::operation::describe_route::DescribeRouteError> for Error {
+    fn from(err: crate::operation::describe_route::DescribeRouteError) -> Self {
         match err {
-            crate::error::DescribeGatewayRouteError::BadRequestException(inner) => {
+            crate::operation::describe_route::DescribeRouteError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::DescribeGatewayRouteError::ForbiddenException(inner) => {
+            crate::operation::describe_route::DescribeRouteError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::DescribeGatewayRouteError::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::DescribeGatewayRouteError::NotFoundException(inner) => {
+            crate::operation::describe_route::DescribeRouteError::InternalServerErrorException(
+                inner,
+            ) => Error::InternalServerErrorException(inner),
+            crate::operation::describe_route::DescribeRouteError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DescribeGatewayRouteError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
+            crate::operation::describe_route::DescribeRouteError::ServiceUnavailableException(
+                inner,
+            ) => Error::ServiceUnavailableException(inner),
+            crate::operation::describe_route::DescribeRouteError::TooManyRequestsException(
+                inner,
+            ) => Error::TooManyRequestsException(inner),
+            crate::operation::describe_route::DescribeRouteError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
-            crate::error::DescribeGatewayRouteError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DescribeGatewayRouteError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeMeshError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_virtual_gateway::DescribeVirtualGatewayError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeMeshError, R>) -> Self {
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_virtual_gateway::DescribeVirtualGatewayError,
+            R,
+        >,
+    ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
@@ -828,36 +899,35 @@ where
         }
     }
 }
-impl From<crate::error::DescribeMeshError> for Error {
-    fn from(err: crate::error::DescribeMeshError) -> Self {
+impl From<crate::operation::describe_virtual_gateway::DescribeVirtualGatewayError> for Error {
+    fn from(err: crate::operation::describe_virtual_gateway::DescribeVirtualGatewayError) -> Self {
         match err {
-            crate::error::DescribeMeshError::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DescribeMeshError::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DescribeMeshError::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::DescribeMeshError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DescribeMeshError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::DescribeMeshError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DescribeMeshError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::describe_virtual_gateway::DescribeVirtualGatewayError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::describe_virtual_gateway::DescribeVirtualGatewayError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::describe_virtual_gateway::DescribeVirtualGatewayError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::describe_virtual_gateway::DescribeVirtualGatewayError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::describe_virtual_gateway::DescribeVirtualGatewayError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::describe_virtual_gateway::DescribeVirtualGatewayError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::describe_virtual_gateway::DescribeVirtualGatewayError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeRouteError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_virtual_node::DescribeVirtualNodeError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeRouteError, R>) -> Self {
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_virtual_node::DescribeVirtualNodeError,
+            R,
+        >,
+    ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
@@ -873,38 +943,158 @@ where
         }
     }
 }
-impl From<crate::error::DescribeRouteError> for Error {
-    fn from(err: crate::error::DescribeRouteError) -> Self {
+impl From<crate::operation::describe_virtual_node::DescribeVirtualNodeError> for Error {
+    fn from(err: crate::operation::describe_virtual_node::DescribeVirtualNodeError) -> Self {
         match err {
-            crate::error::DescribeRouteError::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DescribeRouteError::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DescribeRouteError::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::DescribeRouteError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DescribeRouteError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::DescribeRouteError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DescribeRouteError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::describe_virtual_node::DescribeVirtualNodeError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::describe_virtual_node::DescribeVirtualNodeError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::describe_virtual_node::DescribeVirtualNodeError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::describe_virtual_node::DescribeVirtualNodeError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::describe_virtual_node::DescribeVirtualNodeError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::describe_virtual_node::DescribeVirtualNodeError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::describe_virtual_node::DescribeVirtualNodeError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeVirtualGatewayError, R>>
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_virtual_router::DescribeVirtualRouterError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_virtual_router::DescribeVirtualRouterError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_virtual_router::DescribeVirtualRouterError> for Error {
+    fn from(err: crate::operation::describe_virtual_router::DescribeVirtualRouterError) -> Self {
+        match err {
+            crate::operation::describe_virtual_router::DescribeVirtualRouterError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::describe_virtual_router::DescribeVirtualRouterError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::describe_virtual_router::DescribeVirtualRouterError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::describe_virtual_router::DescribeVirtualRouterError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::describe_virtual_router::DescribeVirtualRouterError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::describe_virtual_router::DescribeVirtualRouterError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::describe_virtual_router::DescribeVirtualRouterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_virtual_service::DescribeVirtualServiceError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_virtual_service::DescribeVirtualServiceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_virtual_service::DescribeVirtualServiceError> for Error {
+    fn from(err: crate::operation::describe_virtual_service::DescribeVirtualServiceError) -> Self {
+        match err {
+            crate::operation::describe_virtual_service::DescribeVirtualServiceError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::describe_virtual_service::DescribeVirtualServiceError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::describe_virtual_service::DescribeVirtualServiceError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::describe_virtual_service::DescribeVirtualServiceError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::describe_virtual_service::DescribeVirtualServiceError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::describe_virtual_service::DescribeVirtualServiceError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::describe_virtual_service::DescribeVirtualServiceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_gateway_routes::ListGatewayRoutesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_gateway_routes::ListGatewayRoutesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_gateway_routes::ListGatewayRoutesError> for Error {
+    fn from(err: crate::operation::list_gateway_routes::ListGatewayRoutesError) -> Self {
+        match err {
+            crate::operation::list_gateway_routes::ListGatewayRoutesError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_gateway_routes::ListGatewayRoutesError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::list_gateway_routes::ListGatewayRoutesError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::list_gateway_routes::ListGatewayRoutesError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::list_gateway_routes::ListGatewayRoutesError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::list_gateway_routes::ListGatewayRoutesError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::list_gateway_routes::ListGatewayRoutesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_meshes::ListMeshesError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeVirtualGatewayError, R>,
+        err: aws_smithy_http::result::SdkError<crate::operation::list_meshes::ListMeshesError, R>,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -921,85 +1111,40 @@ where
         }
     }
 }
-impl From<crate::error::DescribeVirtualGatewayError> for Error {
-    fn from(err: crate::error::DescribeVirtualGatewayError) -> Self {
+impl From<crate::operation::list_meshes::ListMeshesError> for Error {
+    fn from(err: crate::operation::list_meshes::ListMeshesError) -> Self {
         match err {
-            crate::error::DescribeVirtualGatewayError::BadRequestException(inner) => {
+            crate::operation::list_meshes::ListMeshesError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::DescribeVirtualGatewayError::ForbiddenException(inner) => {
+            crate::operation::list_meshes::ListMeshesError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::DescribeVirtualGatewayError::InternalServerErrorException(inner) => {
+            crate::operation::list_meshes::ListMeshesError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::DescribeVirtualGatewayError::NotFoundException(inner) => {
+            crate::operation::list_meshes::ListMeshesError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DescribeVirtualGatewayError::ServiceUnavailableException(inner) => {
+            crate::operation::list_meshes::ListMeshesError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
-            crate::error::DescribeVirtualGatewayError::TooManyRequestsException(inner) => {
+            crate::operation::list_meshes::ListMeshesError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::DescribeVirtualGatewayError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_meshes::ListMeshesError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeVirtualNodeError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeVirtualNodeError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DescribeVirtualNodeError> for Error {
-    fn from(err: crate::error::DescribeVirtualNodeError) -> Self {
-        match err {
-            crate::error::DescribeVirtualNodeError::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DescribeVirtualNodeError::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DescribeVirtualNodeError::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::DescribeVirtualNodeError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DescribeVirtualNodeError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::DescribeVirtualNodeError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DescribeVirtualNodeError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeVirtualRouterError, R>>
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_routes::ListRoutesError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeVirtualRouterError, R>,
+        err: aws_smithy_http::result::SdkError<crate::operation::list_routes::ListRoutesError, R>,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -1016,38 +1161,260 @@ where
         }
     }
 }
-impl From<crate::error::DescribeVirtualRouterError> for Error {
-    fn from(err: crate::error::DescribeVirtualRouterError) -> Self {
+impl From<crate::operation::list_routes::ListRoutesError> for Error {
+    fn from(err: crate::operation::list_routes::ListRoutesError) -> Self {
         match err {
-            crate::error::DescribeVirtualRouterError::BadRequestException(inner) => {
+            crate::operation::list_routes::ListRoutesError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::DescribeVirtualRouterError::ForbiddenException(inner) => {
+            crate::operation::list_routes::ListRoutesError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::DescribeVirtualRouterError::InternalServerErrorException(inner) => {
+            crate::operation::list_routes::ListRoutesError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::DescribeVirtualRouterError::NotFoundException(inner) => {
+            crate::operation::list_routes::ListRoutesError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DescribeVirtualRouterError::ServiceUnavailableException(inner) => {
+            crate::operation::list_routes::ListRoutesError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
-            crate::error::DescribeVirtualRouterError::TooManyRequestsException(inner) => {
+            crate::operation::list_routes::ListRoutesError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::DescribeVirtualRouterError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_routes::ListRoutesError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeVirtualServiceError, R>>
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_tags_for_resource::ListTagsForResourceError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_tags_for_resource::ListTagsForResourceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> for Error {
+    fn from(err: crate::operation::list_tags_for_resource::ListTagsForResourceError) -> Self {
+        match err {
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_virtual_gateways::ListVirtualGatewaysError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_virtual_gateways::ListVirtualGatewaysError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_virtual_gateways::ListVirtualGatewaysError> for Error {
+    fn from(err: crate::operation::list_virtual_gateways::ListVirtualGatewaysError) -> Self {
+        match err {
+            crate::operation::list_virtual_gateways::ListVirtualGatewaysError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_virtual_gateways::ListVirtualGatewaysError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::list_virtual_gateways::ListVirtualGatewaysError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::list_virtual_gateways::ListVirtualGatewaysError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::list_virtual_gateways::ListVirtualGatewaysError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::list_virtual_gateways::ListVirtualGatewaysError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::list_virtual_gateways::ListVirtualGatewaysError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_virtual_nodes::ListVirtualNodesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_virtual_nodes::ListVirtualNodesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_virtual_nodes::ListVirtualNodesError> for Error {
+    fn from(err: crate::operation::list_virtual_nodes::ListVirtualNodesError) -> Self {
+        match err {
+            crate::operation::list_virtual_nodes::ListVirtualNodesError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_virtual_nodes::ListVirtualNodesError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::list_virtual_nodes::ListVirtualNodesError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::list_virtual_nodes::ListVirtualNodesError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::list_virtual_nodes::ListVirtualNodesError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::list_virtual_nodes::ListVirtualNodesError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::list_virtual_nodes::ListVirtualNodesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_virtual_routers::ListVirtualRoutersError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_virtual_routers::ListVirtualRoutersError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_virtual_routers::ListVirtualRoutersError> for Error {
+    fn from(err: crate::operation::list_virtual_routers::ListVirtualRoutersError) -> Self {
+        match err {
+            crate::operation::list_virtual_routers::ListVirtualRoutersError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_virtual_routers::ListVirtualRoutersError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::list_virtual_routers::ListVirtualRoutersError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::list_virtual_routers::ListVirtualRoutersError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::list_virtual_routers::ListVirtualRoutersError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::list_virtual_routers::ListVirtualRoutersError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::list_virtual_routers::ListVirtualRoutersError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_virtual_services::ListVirtualServicesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_virtual_services::ListVirtualServicesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_virtual_services::ListVirtualServicesError> for Error {
+    fn from(err: crate::operation::list_virtual_services::ListVirtualServicesError) -> Self {
+        match err {
+            crate::operation::list_virtual_services::ListVirtualServicesError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_virtual_services::ListVirtualServicesError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::list_virtual_services::ListVirtualServicesError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::list_virtual_services::ListVirtualServicesError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::list_virtual_services::ListVirtualServicesError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::list_virtual_services::ListVirtualServicesError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::list_virtual_services::ListVirtualServicesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeVirtualServiceError, R>,
+        err: aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -1064,655 +1431,47 @@ where
         }
     }
 }
-impl From<crate::error::DescribeVirtualServiceError> for Error {
-    fn from(err: crate::error::DescribeVirtualServiceError) -> Self {
+impl From<crate::operation::tag_resource::TagResourceError> for Error {
+    fn from(err: crate::operation::tag_resource::TagResourceError) -> Self {
         match err {
-            crate::error::DescribeVirtualServiceError::BadRequestException(inner) => {
+            crate::operation::tag_resource::TagResourceError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::DescribeVirtualServiceError::ForbiddenException(inner) => {
+            crate::operation::tag_resource::TagResourceError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::DescribeVirtualServiceError::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::DescribeVirtualServiceError::NotFoundException(inner) => {
+            crate::operation::tag_resource::TagResourceError::InternalServerErrorException(
+                inner,
+            ) => Error::InternalServerErrorException(inner),
+            crate::operation::tag_resource::TagResourceError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DescribeVirtualServiceError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::DescribeVirtualServiceError::TooManyRequestsException(inner) => {
+            crate::operation::tag_resource::TagResourceError::ServiceUnavailableException(
+                inner,
+            ) => Error::ServiceUnavailableException(inner),
+            crate::operation::tag_resource::TagResourceError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::DescribeVirtualServiceError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListGatewayRoutesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListGatewayRoutesError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::ListGatewayRoutesError> for Error {
-    fn from(err: crate::error::ListGatewayRoutesError) -> Self {
-        match err {
-            crate::error::ListGatewayRoutesError::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::ListGatewayRoutesError::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::ListGatewayRoutesError::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::ListGatewayRoutesError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::ListGatewayRoutesError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::ListGatewayRoutesError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::ListGatewayRoutesError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListMeshesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListMeshesError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::ListMeshesError> for Error {
-    fn from(err: crate::error::ListMeshesError) -> Self {
-        match err {
-            crate::error::ListMeshesError::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::ListMeshesError::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::ListMeshesError::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::ListMeshesError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::ListMeshesError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::ListMeshesError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::ListMeshesError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListRoutesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListRoutesError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::ListRoutesError> for Error {
-    fn from(err: crate::error::ListRoutesError) -> Self {
-        match err {
-            crate::error::ListRoutesError::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::ListRoutesError::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::ListRoutesError::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::ListRoutesError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::ListRoutesError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::ListRoutesError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::ListRoutesError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::ListTagsForResourceError> for Error {
-    fn from(err: crate::error::ListTagsForResourceError) -> Self {
-        match err {
-            crate::error::ListTagsForResourceError::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::ListTagsForResourceError::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::ListTagsForResourceError::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::ListTagsForResourceError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::ListTagsForResourceError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::ListTagsForResourceError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListVirtualGatewaysError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListVirtualGatewaysError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::ListVirtualGatewaysError> for Error {
-    fn from(err: crate::error::ListVirtualGatewaysError) -> Self {
-        match err {
-            crate::error::ListVirtualGatewaysError::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::ListVirtualGatewaysError::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::ListVirtualGatewaysError::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::ListVirtualGatewaysError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::ListVirtualGatewaysError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::ListVirtualGatewaysError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::ListVirtualGatewaysError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListVirtualNodesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListVirtualNodesError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::ListVirtualNodesError> for Error {
-    fn from(err: crate::error::ListVirtualNodesError) -> Self {
-        match err {
-            crate::error::ListVirtualNodesError::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::ListVirtualNodesError::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::ListVirtualNodesError::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::ListVirtualNodesError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::ListVirtualNodesError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::ListVirtualNodesError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::ListVirtualNodesError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListVirtualRoutersError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListVirtualRoutersError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::ListVirtualRoutersError> for Error {
-    fn from(err: crate::error::ListVirtualRoutersError) -> Self {
-        match err {
-            crate::error::ListVirtualRoutersError::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::ListVirtualRoutersError::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::ListVirtualRoutersError::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::ListVirtualRoutersError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::ListVirtualRoutersError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::ListVirtualRoutersError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::ListVirtualRoutersError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListVirtualServicesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListVirtualServicesError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::ListVirtualServicesError> for Error {
-    fn from(err: crate::error::ListVirtualServicesError) -> Self {
-        match err {
-            crate::error::ListVirtualServicesError::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::ListVirtualServicesError::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::ListVirtualServicesError::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::ListVirtualServicesError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::ListVirtualServicesError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::ListVirtualServicesError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::ListVirtualServicesError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::TagResourceError> for Error {
-    fn from(err: crate::error::TagResourceError) -> Self {
-        match err {
-            crate::error::TagResourceError::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::TagResourceError::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::TagResourceError::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::TagResourceError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::TagResourceError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::TagResourceError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::TagResourceError::TooManyTagsException(inner) => {
+            crate::operation::tag_resource::TagResourceError::TooManyTagsException(inner) => {
                 Error::TooManyTagsException(inner)
             }
-            crate::error::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::tag_resource::TagResourceError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::UntagResourceError> for Error {
-    fn from(err: crate::error::UntagResourceError) -> Self {
-        match err {
-            crate::error::UntagResourceError::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::UntagResourceError::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::UntagResourceError::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::UntagResourceError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UntagResourceError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::UntagResourceError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateGatewayRouteError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateGatewayRouteError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::UpdateGatewayRouteError> for Error {
-    fn from(err: crate::error::UpdateGatewayRouteError) -> Self {
-        match err {
-            crate::error::UpdateGatewayRouteError::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::UpdateGatewayRouteError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::UpdateGatewayRouteError::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::UpdateGatewayRouteError::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::UpdateGatewayRouteError::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::UpdateGatewayRouteError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateGatewayRouteError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::UpdateGatewayRouteError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::UpdateGatewayRouteError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateMeshError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateMeshError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::UpdateMeshError> for Error {
-    fn from(err: crate::error::UpdateMeshError) -> Self {
-        match err {
-            crate::error::UpdateMeshError::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::UpdateMeshError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::UpdateMeshError::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::UpdateMeshError::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::UpdateMeshError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateMeshError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::UpdateMeshError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::UpdateMeshError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateRouteError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateRouteError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::UpdateRouteError> for Error {
-    fn from(err: crate::error::UpdateRouteError) -> Self {
-        match err {
-            crate::error::UpdateRouteError::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::UpdateRouteError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::UpdateRouteError::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::UpdateRouteError::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::UpdateRouteError::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::UpdateRouteError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateRouteError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::UpdateRouteError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::UpdateRouteError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateVirtualGatewayError, R>>
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateVirtualGatewayError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::untag_resource::UntagResourceError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -1729,43 +1488,48 @@ where
         }
     }
 }
-impl From<crate::error::UpdateVirtualGatewayError> for Error {
-    fn from(err: crate::error::UpdateVirtualGatewayError) -> Self {
+impl From<crate::operation::untag_resource::UntagResourceError> for Error {
+    fn from(err: crate::operation::untag_resource::UntagResourceError) -> Self {
         match err {
-            crate::error::UpdateVirtualGatewayError::BadRequestException(inner) => {
+            crate::operation::untag_resource::UntagResourceError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::UpdateVirtualGatewayError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::UpdateVirtualGatewayError::ForbiddenException(inner) => {
+            crate::operation::untag_resource::UntagResourceError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::UpdateVirtualGatewayError::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::UpdateVirtualGatewayError::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::UpdateVirtualGatewayError::NotFoundException(inner) => {
+            crate::operation::untag_resource::UntagResourceError::InternalServerErrorException(
+                inner,
+            ) => Error::InternalServerErrorException(inner),
+            crate::operation::untag_resource::UntagResourceError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::UpdateVirtualGatewayError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
+            crate::operation::untag_resource::UntagResourceError::ServiceUnavailableException(
+                inner,
+            ) => Error::ServiceUnavailableException(inner),
+            crate::operation::untag_resource::UntagResourceError::TooManyRequestsException(
+                inner,
+            ) => Error::TooManyRequestsException(inner),
+            crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
-            crate::error::UpdateVirtualGatewayError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::UpdateVirtualGatewayError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateVirtualNodeError, R>> for Error
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_gateway_route::UpdateGatewayRouteError,
+            R,
+        >,
+    > for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateVirtualNodeError, R>,
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_gateway_route::UpdateGatewayRouteError,
+            R,
+        >,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -1782,97 +1546,28 @@ where
         }
     }
 }
-impl From<crate::error::UpdateVirtualNodeError> for Error {
-    fn from(err: crate::error::UpdateVirtualNodeError) -> Self {
+impl From<crate::operation::update_gateway_route::UpdateGatewayRouteError> for Error {
+    fn from(err: crate::operation::update_gateway_route::UpdateGatewayRouteError) -> Self {
         match err {
-            crate::error::UpdateVirtualNodeError::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::UpdateVirtualNodeError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::UpdateVirtualNodeError::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::UpdateVirtualNodeError::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::UpdateVirtualNodeError::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::UpdateVirtualNodeError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateVirtualNodeError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::UpdateVirtualNodeError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::UpdateVirtualNodeError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::update_gateway_route::UpdateGatewayRouteError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_gateway_route::UpdateGatewayRouteError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_gateway_route::UpdateGatewayRouteError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::update_gateway_route::UpdateGatewayRouteError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::update_gateway_route::UpdateGatewayRouteError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::update_gateway_route::UpdateGatewayRouteError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_gateway_route::UpdateGatewayRouteError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::update_gateway_route::UpdateGatewayRouteError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::update_gateway_route::UpdateGatewayRouteError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateVirtualRouterError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateVirtualRouterError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::UpdateVirtualRouterError> for Error {
-    fn from(err: crate::error::UpdateVirtualRouterError) -> Self {
-        match err {
-            crate::error::UpdateVirtualRouterError::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::UpdateVirtualRouterError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::UpdateVirtualRouterError::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::UpdateVirtualRouterError::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::UpdateVirtualRouterError::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::UpdateVirtualRouterError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateVirtualRouterError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::UpdateVirtualRouterError::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::UpdateVirtualRouterError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateVirtualServiceError, R>>
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_mesh::UpdateMeshError, R>>
     for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateVirtualServiceError, R>,
+        err: aws_smithy_http::result::SdkError<crate::operation::update_mesh::UpdateMeshError, R>,
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
@@ -1889,34 +1584,273 @@ where
         }
     }
 }
-impl From<crate::error::UpdateVirtualServiceError> for Error {
-    fn from(err: crate::error::UpdateVirtualServiceError) -> Self {
+impl From<crate::operation::update_mesh::UpdateMeshError> for Error {
+    fn from(err: crate::operation::update_mesh::UpdateMeshError) -> Self {
         match err {
-            crate::error::UpdateVirtualServiceError::BadRequestException(inner) => {
+            crate::operation::update_mesh::UpdateMeshError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::UpdateVirtualServiceError::ConflictException(inner) => {
+            crate::operation::update_mesh::UpdateMeshError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
-            crate::error::UpdateVirtualServiceError::ForbiddenException(inner) => {
+            crate::operation::update_mesh::UpdateMeshError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::UpdateVirtualServiceError::InternalServerErrorException(inner) => {
+            crate::operation::update_mesh::UpdateMeshError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::UpdateVirtualServiceError::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::error::UpdateVirtualServiceError::NotFoundException(inner) => {
+            crate::operation::update_mesh::UpdateMeshError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::UpdateVirtualServiceError::ServiceUnavailableException(inner) => {
+            crate::operation::update_mesh::UpdateMeshError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
-            crate::error::UpdateVirtualServiceError::TooManyRequestsException(inner) => {
+            crate::operation::update_mesh::UpdateMeshError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::UpdateVirtualServiceError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::update_mesh::UpdateMeshError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_route::UpdateRouteError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::update_route::UpdateRouteError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_route::UpdateRouteError> for Error {
+    fn from(err: crate::operation::update_route::UpdateRouteError) -> Self {
+        match err {
+            crate::operation::update_route::UpdateRouteError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::update_route::UpdateRouteError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_route::UpdateRouteError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::update_route::UpdateRouteError::InternalServerErrorException(
+                inner,
+            ) => Error::InternalServerErrorException(inner),
+            crate::operation::update_route::UpdateRouteError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::update_route::UpdateRouteError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::update_route::UpdateRouteError::ServiceUnavailableException(
+                inner,
+            ) => Error::ServiceUnavailableException(inner),
+            crate::operation::update_route::UpdateRouteError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::update_route::UpdateRouteError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_virtual_gateway::UpdateVirtualGatewayError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_virtual_gateway::UpdateVirtualGatewayError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_virtual_gateway::UpdateVirtualGatewayError> for Error {
+    fn from(err: crate::operation::update_virtual_gateway::UpdateVirtualGatewayError) -> Self {
+        match err {
+            crate::operation::update_virtual_gateway::UpdateVirtualGatewayError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_virtual_gateway::UpdateVirtualGatewayError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_virtual_gateway::UpdateVirtualGatewayError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::update_virtual_gateway::UpdateVirtualGatewayError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::update_virtual_gateway::UpdateVirtualGatewayError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::update_virtual_gateway::UpdateVirtualGatewayError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_virtual_gateway::UpdateVirtualGatewayError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::update_virtual_gateway::UpdateVirtualGatewayError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::update_virtual_gateway::UpdateVirtualGatewayError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_virtual_node::UpdateVirtualNodeError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_virtual_node::UpdateVirtualNodeError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_virtual_node::UpdateVirtualNodeError> for Error {
+    fn from(err: crate::operation::update_virtual_node::UpdateVirtualNodeError) -> Self {
+        match err {
+            crate::operation::update_virtual_node::UpdateVirtualNodeError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_virtual_node::UpdateVirtualNodeError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_virtual_node::UpdateVirtualNodeError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::update_virtual_node::UpdateVirtualNodeError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::update_virtual_node::UpdateVirtualNodeError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::update_virtual_node::UpdateVirtualNodeError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_virtual_node::UpdateVirtualNodeError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::update_virtual_node::UpdateVirtualNodeError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::update_virtual_node::UpdateVirtualNodeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_virtual_router::UpdateVirtualRouterError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_virtual_router::UpdateVirtualRouterError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_virtual_router::UpdateVirtualRouterError> for Error {
+    fn from(err: crate::operation::update_virtual_router::UpdateVirtualRouterError) -> Self {
+        match err {
+            crate::operation::update_virtual_router::UpdateVirtualRouterError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_virtual_router::UpdateVirtualRouterError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_virtual_router::UpdateVirtualRouterError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::update_virtual_router::UpdateVirtualRouterError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::update_virtual_router::UpdateVirtualRouterError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::update_virtual_router::UpdateVirtualRouterError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_virtual_router::UpdateVirtualRouterError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::update_virtual_router::UpdateVirtualRouterError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::update_virtual_router::UpdateVirtualRouterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_virtual_service::UpdateVirtualServiceError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_virtual_service::UpdateVirtualServiceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_virtual_service::UpdateVirtualServiceError> for Error {
+    fn from(err: crate::operation::update_virtual_service::UpdateVirtualServiceError) -> Self {
+        match err {
+            crate::operation::update_virtual_service::UpdateVirtualServiceError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_virtual_service::UpdateVirtualServiceError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_virtual_service::UpdateVirtualServiceError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::update_virtual_service::UpdateVirtualServiceError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::update_virtual_service::UpdateVirtualServiceError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::update_virtual_service::UpdateVirtualServiceError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_virtual_service::UpdateVirtualServiceError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::update_virtual_service::UpdateVirtualServiceError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::update_virtual_service::UpdateVirtualServiceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

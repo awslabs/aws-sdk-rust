@@ -2,7 +2,7 @@
 pub fn de_delete_fleet_success_set(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::DeleteFleetSuccessItem>,
+    std::vec::Vec<crate::types::DeleteFleetSuccessItem>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

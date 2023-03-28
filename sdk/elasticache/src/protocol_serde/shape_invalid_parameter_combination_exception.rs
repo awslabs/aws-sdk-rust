@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_invalid_parameter_combination_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::invalid_parameter_combination_exception::Builder,
+    mut builder: crate::types::error::builders::InvalidParameterCombinationExceptionBuilder,
 ) -> Result<
-    crate::error::invalid_parameter_combination_exception::Builder,
+    crate::types::error::builders::InvalidParameterCombinationExceptionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

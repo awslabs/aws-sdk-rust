@@ -2,11 +2,11 @@
 pub fn de_fast_launch_launch_template_specification_response(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    crate::model::FastLaunchLaunchTemplateSpecificationResponse,
+    crate::types::FastLaunchLaunchTemplateSpecificationResponse,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     #[allow(unused_mut)]
-    let mut builder = crate::model::FastLaunchLaunchTemplateSpecificationResponse::builder();
+    let mut builder = crate::types::FastLaunchLaunchTemplateSpecificationResponse::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("launchTemplateId") /* LaunchTemplateId com.amazonaws.ec2#FastLaunchLaunchTemplateSpecificationResponse$LaunchTemplateId */ =>  {

@@ -2,7 +2,7 @@
 pub(crate) fn de_api_gateway_proxy_input<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ApiGatewayProxyInput>,
+    Option<crate::types::ApiGatewayProxyInput>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::api_gateway_proxy_input::Builder::default();
+            let mut builder = crate::types::builders::ApiGatewayProxyInputBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ApiGatewayEndpointType::from(u.as_ref())
+                                            crate::types::ApiGatewayEndpointType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -70,7 +70,7 @@ where
 
 pub fn ser_api_gateway_proxy_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::ApiGatewayProxyInput,
+    input: &crate::types::ApiGatewayProxyInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.endpoint_type {
         object.key("EndpointType").string(var_1.as_str());

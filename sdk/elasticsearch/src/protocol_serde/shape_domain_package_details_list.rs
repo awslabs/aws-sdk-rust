@@ -2,7 +2,7 @@
 pub(crate) fn de_domain_package_details_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DomainPackageDetails>>,
+    Option<std::vec::Vec<crate::types::DomainPackageDetails>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_context_entry(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::ContextEntry,
+    input: &crate::types::ContextEntry,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("ContextKeyName");

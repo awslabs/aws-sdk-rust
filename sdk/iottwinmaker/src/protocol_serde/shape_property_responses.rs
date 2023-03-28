@@ -2,7 +2,7 @@
 pub(crate) fn de_property_responses<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<std::string::String, crate::model::PropertyResponse>>,
+    Option<std::collections::HashMap<std::string::String, crate::types::PropertyResponse>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

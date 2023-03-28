@@ -2,11 +2,11 @@
 pub fn de_successful_instance_credit_specification_item(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    crate::model::SuccessfulInstanceCreditSpecificationItem,
+    crate::types::SuccessfulInstanceCreditSpecificationItem,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     #[allow(unused_mut)]
-    let mut builder = crate::model::SuccessfulInstanceCreditSpecificationItem::builder();
+    let mut builder = crate::types::SuccessfulInstanceCreditSpecificationItem::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("instanceId") /* InstanceId com.amazonaws.ec2#SuccessfulInstanceCreditSpecificationItem$InstanceId */ =>  {

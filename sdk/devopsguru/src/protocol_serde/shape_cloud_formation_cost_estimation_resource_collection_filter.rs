@@ -2,7 +2,7 @@
 pub(crate) fn de_cloud_formation_cost_estimation_resource_collection_filter<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::CloudFormationCostEstimationResourceCollectionFilter>,
+    Option<crate::types::CloudFormationCostEstimationResourceCollectionFilter>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::cloud_formation_cost_estimation_resource_collection_filter::Builder::default();
+            let mut builder = crate::types::builders::CloudFormationCostEstimationResourceCollectionFilterBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -53,7 +53,7 @@ where
 
 pub fn ser_cloud_formation_cost_estimation_resource_collection_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::CloudFormationCostEstimationResourceCollectionFilter,
+    input: &crate::types::CloudFormationCostEstimationResourceCollectionFilter,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.stack_names {
         let mut array_2 = object.key("StackNames").start_array();

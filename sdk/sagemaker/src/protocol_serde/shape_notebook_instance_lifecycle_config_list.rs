@@ -2,7 +2,7 @@
 pub(crate) fn de_notebook_instance_lifecycle_config_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::NotebookInstanceLifecycleHook>>,
+    Option<std::vec::Vec<crate::types::NotebookInstanceLifecycleHook>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

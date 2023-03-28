@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_prefix_list_id(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::PrefixListId,
+    input: &crate::types::PrefixListId,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Description");
@@ -19,9 +19,9 @@ pub fn ser_prefix_list_id(
 
 pub fn de_prefix_list_id(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::PrefixListId, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::PrefixListId, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::PrefixListId::builder();
+    let mut builder = crate::types::PrefixListId::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("description") /* Description com.amazonaws.ec2#PrefixListId$Description */ =>  {

@@ -2,7 +2,7 @@
 pub(crate) fn de___list_of_api<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Api>>,
+    Option<std::vec::Vec<crate::types::Api>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

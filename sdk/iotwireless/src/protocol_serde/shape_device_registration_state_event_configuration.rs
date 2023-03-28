@@ -2,7 +2,7 @@
 pub(crate) fn de_device_registration_state_event_configuration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::DeviceRegistrationStateEventConfiguration>,
+    Option<crate::types::DeviceRegistrationStateEventConfiguration>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::device_registration_state_event_configuration::Builder::default();
+                crate::types::builders::DeviceRegistrationStateEventConfigurationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -36,7 +36,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::EventNotificationTopicStatus::from(
+                                            crate::types::EventNotificationTopicStatus::from(
                                                 u.as_ref(),
                                             )
                                         })
@@ -69,7 +69,7 @@ where
 
 pub fn ser_device_registration_state_event_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::DeviceRegistrationStateEventConfiguration,
+    input: &crate::types::DeviceRegistrationStateEventConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.sidewalk {
         #[allow(unused_mut)]

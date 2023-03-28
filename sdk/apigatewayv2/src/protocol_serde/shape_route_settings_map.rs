@@ -2,7 +2,7 @@
 pub(crate) fn de_route_settings_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<std::string::String, crate::model::RouteSettings>>,
+    Option<std::collections::HashMap<std::string::String, crate::types::RouteSettings>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

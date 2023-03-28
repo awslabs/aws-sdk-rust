@@ -2,7 +2,7 @@
 pub(crate) fn de_copy_job_child_jobs_in_state<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<crate::model::CopyJobState, i64>>,
+    Option<std::collections::HashMap<crate::types::CopyJobState, i64>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -23,7 +23,7 @@ where
                     Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         let key = key
                             .to_unescaped()
-                            .map(|u| crate::model::CopyJobState::from(u.as_ref()))?;
+                            .map(|u| crate::types::CopyJobState::from(u.as_ref()))?;
                         let value = aws_smithy_json::deserialize::token::expect_number_or_null(
                             tokens.next(),
                         )?

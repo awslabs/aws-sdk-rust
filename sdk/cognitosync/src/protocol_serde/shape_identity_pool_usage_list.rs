@@ -2,7 +2,7 @@
 pub(crate) fn de_identity_pool_usage_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::IdentityPoolUsage>>,
+    Option<std::vec::Vec<crate::types::IdentityPoolUsage>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

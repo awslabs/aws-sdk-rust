@@ -2,7 +2,7 @@
 pub(crate) fn de_cascading_control_source_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::CascadingControlSource>>,
+    Option<std::vec::Vec<crate::types::CascadingControlSource>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

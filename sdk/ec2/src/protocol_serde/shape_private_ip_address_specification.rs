@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_private_ip_address_specification(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::PrivateIpAddressSpecification,
+    input: &crate::types::PrivateIpAddressSpecification,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Primary");
@@ -19,9 +19,9 @@ pub fn ser_private_ip_address_specification(
 
 pub fn de_private_ip_address_specification(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::PrivateIpAddressSpecification, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::PrivateIpAddressSpecification, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::PrivateIpAddressSpecification::builder();
+    let mut builder = crate::types::PrivateIpAddressSpecification::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("primary") /* Primary com.amazonaws.ec2#PrivateIpAddressSpecification$Primary */ =>  {

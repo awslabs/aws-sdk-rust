@@ -3,33 +3,33 @@
 pub fn de_describe_elastic_gpus_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeElasticGpusOutput,
-    crate::error::DescribeElasticGpusError,
+    crate::operation::describe_elastic_gpus::DescribeElasticGpusOutput,
+    crate::operation::describe_elastic_gpus::DescribeElasticGpusError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeElasticGpusError::unhandled)?;
+        .map_err(crate::operation::describe_elastic_gpus::DescribeElasticGpusError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::DescribeElasticGpusError::generic(generic))
+    Err(crate::operation::describe_elastic_gpus::DescribeElasticGpusError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_elastic_gpus_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeElasticGpusOutput,
-    crate::error::DescribeElasticGpusError,
+    crate::operation::describe_elastic_gpus::DescribeElasticGpusOutput,
+    crate::operation::describe_elastic_gpus::DescribeElasticGpusError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_elastic_gpus_output::Builder::default();
+        let mut output = crate::operation::describe_elastic_gpus::builders::DescribeElasticGpusOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_describe_elastic_gpus::de_describe_elastic_gpus(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DescribeElasticGpusError::unhandled)?;
+        .map_err(crate::operation::describe_elastic_gpus::DescribeElasticGpusError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -40,9 +40,9 @@ pub fn de_describe_elastic_gpus_http_response(
 #[allow(unused_mut)]
 pub fn de_describe_elastic_gpus(
     inp: &[u8],
-    mut builder: crate::output::describe_elastic_gpus_output::Builder,
+    mut builder: crate::operation::describe_elastic_gpus::builders::DescribeElasticGpusOutputBuilder,
 ) -> Result<
-    crate::output::describe_elastic_gpus_output::Builder,
+    crate::operation::describe_elastic_gpus::builders::DescribeElasticGpusOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

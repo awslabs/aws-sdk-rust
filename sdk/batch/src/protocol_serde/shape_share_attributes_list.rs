@@ -2,7 +2,7 @@
 pub(crate) fn de_share_attributes_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ShareAttributes>>,
+    Option<std::vec::Vec<crate::types::ShareAttributes>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

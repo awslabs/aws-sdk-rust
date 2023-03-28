@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_name_already_exists_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::name_already_exists_exception::Builder,
+    mut builder: crate::types::error::builders::NameAlreadyExistsExceptionBuilder,
 ) -> Result<
-    crate::error::name_already_exists_exception::Builder,
+    crate::types::error::builders::NameAlreadyExistsExceptionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

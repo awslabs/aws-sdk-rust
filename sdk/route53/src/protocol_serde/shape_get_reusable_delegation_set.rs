@@ -3,79 +3,78 @@
 pub fn de_get_reusable_delegation_set_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetReusableDelegationSetOutput,
-    crate::error::GetReusableDelegationSetError,
+    crate::operation::get_reusable_delegation_set::GetReusableDelegationSetOutput,
+    crate::operation::get_reusable_delegation_set::GetReusableDelegationSetError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetReusableDelegationSetError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::get_reusable_delegation_set::GetReusableDelegationSetError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::error::GetReusableDelegationSetError::unhandled(
+        None => return Err(
+            crate::operation::get_reusable_delegation_set::GetReusableDelegationSetError::unhandled(
                 generic,
-            ))
-        }
+            ),
+        ),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DelegationSetNotReusable" => {
-            crate::error::GetReusableDelegationSetError::DelegationSetNotReusable({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "DelegationSetNotReusable" => crate::operation::get_reusable_delegation_set::GetReusableDelegationSetError::DelegationSetNotReusable({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::delegation_set_not_reusable::Builder::default();
+                    let mut output = crate::types::error::builders::DelegationSetNotReusableBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_delegation_set_not_reusable::de_delegation_set_not_reusable_xml_err(response.body().as_ref(), output).map_err(crate::error::GetReusableDelegationSetError::unhandled)?;
+                    output = crate::protocol_serde::shape_delegation_set_not_reusable::de_delegation_set_not_reusable_xml_err(response.body().as_ref(), output).map_err(crate::operation::get_reusable_delegation_set::GetReusableDelegationSetError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InvalidInput" => crate::error::GetReusableDelegationSetError::InvalidInput({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::invalid_input::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_input::de_invalid_input_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::GetReusableDelegationSetError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "NoSuchDelegationSet" => {
-            crate::error::GetReusableDelegationSetError::NoSuchDelegationSet({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidInput" => crate::operation::get_reusable_delegation_set::GetReusableDelegationSetError::InvalidInput({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::no_such_delegation_set::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidInputBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_no_such_delegation_set::de_no_such_delegation_set_xml_err(response.body().as_ref(), output).map_err(crate::error::GetReusableDelegationSetError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_input::de_invalid_input_xml_err(response.body().as_ref(), output).map_err(crate::operation::get_reusable_delegation_set::GetReusableDelegationSetError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::GetReusableDelegationSetError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "NoSuchDelegationSet" => crate::operation::get_reusable_delegation_set::GetReusableDelegationSetError::NoSuchDelegationSet({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::NoSuchDelegationSetBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_no_such_delegation_set::de_no_such_delegation_set_xml_err(response.body().as_ref(), output).map_err(crate::operation::get_reusable_delegation_set::GetReusableDelegationSetError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::get_reusable_delegation_set::GetReusableDelegationSetError::generic(generic)
     })
 }
 
@@ -83,14 +82,14 @@ pub fn de_get_reusable_delegation_set_http_error(
 pub fn de_get_reusable_delegation_set_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetReusableDelegationSetOutput,
-    crate::error::GetReusableDelegationSetError,
+    crate::operation::get_reusable_delegation_set::GetReusableDelegationSetOutput,
+    crate::operation::get_reusable_delegation_set::GetReusableDelegationSetError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_reusable_delegation_set_output::Builder::default();
+        let mut output = crate::operation::get_reusable_delegation_set::builders::GetReusableDelegationSetOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_get_reusable_delegation_set::de_get_reusable_delegation_set(response.body().as_ref(), output).map_err(crate::error::GetReusableDelegationSetError::unhandled)?;
+        output = crate::protocol_serde::shape_get_reusable_delegation_set::de_get_reusable_delegation_set(response.body().as_ref(), output).map_err(crate::operation::get_reusable_delegation_set::GetReusableDelegationSetError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -101,9 +100,9 @@ pub fn de_get_reusable_delegation_set_http_response(
 #[allow(unused_mut)]
 pub fn de_get_reusable_delegation_set(
     inp: &[u8],
-    mut builder: crate::output::get_reusable_delegation_set_output::Builder,
+    mut builder: crate::operation::get_reusable_delegation_set::builders::GetReusableDelegationSetOutputBuilder,
 ) -> Result<
-    crate::output::get_reusable_delegation_set_output::Builder,
+    crate::operation::get_reusable_delegation_set::builders::GetReusableDelegationSetOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

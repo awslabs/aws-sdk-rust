@@ -2,7 +2,7 @@
 pub(crate) fn de_assessment_evidence_folder<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::AssessmentEvidenceFolder>,
+    Option<crate::types::AssessmentEvidenceFolder>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::assessment_evidence_folder::Builder::default();
+            let mut builder = crate::types::builders::AssessmentEvidenceFolderBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

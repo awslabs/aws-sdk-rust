@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_snapshot_copy_already_enabled_fault_xml_err(
     inp: &[u8],
-    mut builder: crate::error::snapshot_copy_already_enabled_fault::Builder,
+    mut builder: crate::types::error::builders::SnapshotCopyAlreadyEnabledFaultBuilder,
 ) -> Result<
-    crate::error::snapshot_copy_already_enabled_fault::Builder,
+    crate::types::error::builders::SnapshotCopyAlreadyEnabledFaultBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

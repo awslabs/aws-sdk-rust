@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_invalid_db_subnet_group_state_fault_xml_err(
     inp: &[u8],
-    mut builder: crate::error::invalid_db_subnet_group_state_fault::Builder,
+    mut builder: crate::types::error::builders::InvalidDbSubnetGroupStateFaultBuilder,
 ) -> Result<
-    crate::error::invalid_db_subnet_group_state_fault::Builder,
+    crate::types::error::builders::InvalidDbSubnetGroupStateFaultBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

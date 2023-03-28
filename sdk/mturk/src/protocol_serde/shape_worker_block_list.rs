@@ -2,7 +2,7 @@
 pub(crate) fn de_worker_block_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::WorkerBlock>>,
+    Option<std::vec::Vec<crate::types::WorkerBlock>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

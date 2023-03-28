@@ -3,31 +3,28 @@
 pub fn de_create_verified_access_instance_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateVerifiedAccessInstanceOutput,
-    crate::error::CreateVerifiedAccessInstanceError,
+    crate::operation::create_verified_access_instance::CreateVerifiedAccessInstanceOutput,
+    crate::operation::create_verified_access_instance::CreateVerifiedAccessInstanceError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::CreateVerifiedAccessInstanceError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::create_verified_access_instance::CreateVerifiedAccessInstanceError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::CreateVerifiedAccessInstanceError::generic(
-        generic,
-    ))
+    Err(crate::operation::create_verified_access_instance::CreateVerifiedAccessInstanceError::generic(generic))
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_verified_access_instance_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::CreateVerifiedAccessInstanceOutput,
-    crate::error::CreateVerifiedAccessInstanceError,
+    crate::operation::create_verified_access_instance::CreateVerifiedAccessInstanceOutput,
+    crate::operation::create_verified_access_instance::CreateVerifiedAccessInstanceError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::create_verified_access_instance_output::Builder::default();
+        let mut output = crate::operation::create_verified_access_instance::builders::CreateVerifiedAccessInstanceOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_create_verified_access_instance::de_create_verified_access_instance(response.body().as_ref(), output).map_err(crate::error::CreateVerifiedAccessInstanceError::unhandled)?;
+        output = crate::protocol_serde::shape_create_verified_access_instance::de_create_verified_access_instance(response.body().as_ref(), output).map_err(crate::operation::create_verified_access_instance::CreateVerifiedAccessInstanceError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -36,13 +33,7 @@ pub fn de_create_verified_access_instance_http_response(
 }
 
 #[allow(unused_mut)]
-pub fn de_create_verified_access_instance(
-    inp: &[u8],
-    mut builder: crate::output::create_verified_access_instance_output::Builder,
-) -> Result<
-    crate::output::create_verified_access_instance_output::Builder,
-    aws_smithy_xml::decode::XmlDecodeError,
-> {
+pub fn de_create_verified_access_instance(inp: &[u8], mut builder: crate::operation::create_verified_access_instance::builders::CreateVerifiedAccessInstanceOutputBuilder) -> Result<crate::operation::create_verified_access_instance::builders::CreateVerifiedAccessInstanceOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

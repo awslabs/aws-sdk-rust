@@ -2,7 +2,7 @@
 pub(crate) fn de_fixed_mode_schedule_action_start_settings<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::FixedModeScheduleActionStartSettings>,
+    Option<crate::types::FixedModeScheduleActionStartSettings>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::fixed_mode_schedule_action_start_settings::Builder::default();
+                crate::types::builders::FixedModeScheduleActionStartSettingsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -58,7 +58,7 @@ where
 
 pub fn ser_fixed_mode_schedule_action_start_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::FixedModeScheduleActionStartSettings,
+    input: &crate::types::FixedModeScheduleActionStartSettings,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.time {
         object.key("time").string(var_1.as_str());

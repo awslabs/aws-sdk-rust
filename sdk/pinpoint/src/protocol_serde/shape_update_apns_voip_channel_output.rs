@@ -2,10 +2,10 @@
 pub fn de_apns_voip_channel_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::ApnsVoipChannelResponse>,
-    crate::error::UpdateApnsVoipChannelError,
+    std::option::Option<crate::types::ApnsVoipChannelResponse>,
+    crate::operation::update_apns_voip_channel::UpdateApnsVoipChannelError,
 > {
     (!body.is_empty()).then(||{
-        crate::protocol_serde::shape_apns_voip_channel_response::de_apns_voip_channel_response_payload(body).map_err(crate::error::UpdateApnsVoipChannelError::unhandled)
+        crate::protocol_serde::shape_apns_voip_channel_response::de_apns_voip_channel_response_payload(body).map_err(crate::operation::update_apns_voip_channel::UpdateApnsVoipChannelError::unhandled)
     }).transpose()
 }

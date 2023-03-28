@@ -2,7 +2,7 @@
 pub(crate) fn de_studio_component_summary<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::StudioComponentSummary>,
+    Option<crate::types::StudioComponentSummary>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::studio_component_summary::Builder::default();
+            let mut builder = crate::types::builders::StudioComponentSummaryBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -74,7 +74,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::StudioComponentSubtype::from(u.as_ref())
+                                            crate::types::StudioComponentSubtype::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -87,7 +87,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::StudioComponentType::from(u.as_ref())
+                                            crate::types::StudioComponentType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

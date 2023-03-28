@@ -2,7 +2,7 @@
 pub(crate) fn de_import_asset_from_signed_url_job_error_details<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ImportAssetFromSignedUrlJobErrorDetails>,
+    Option<crate::types::ImportAssetFromSignedUrlJobErrorDetails>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::import_asset_from_signed_url_job_error_details::Builder::default();
+                crate::types::builders::ImportAssetFromSignedUrlJobErrorDetailsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,

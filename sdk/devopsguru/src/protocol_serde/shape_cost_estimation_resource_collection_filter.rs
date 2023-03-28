@@ -2,7 +2,7 @@
 pub(crate) fn de_cost_estimation_resource_collection_filter<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::CostEstimationResourceCollectionFilter>,
+    Option<crate::types::CostEstimationResourceCollectionFilter>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::cost_estimation_resource_collection_filter::Builder::default();
+                crate::types::builders::CostEstimationResourceCollectionFilterBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -59,7 +59,7 @@ where
 
 pub fn ser_cost_estimation_resource_collection_filter(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::CostEstimationResourceCollectionFilter,
+    input: &crate::types::CostEstimationResourceCollectionFilter,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.cloud_formation {
         #[allow(unused_mut)]

@@ -2,7 +2,7 @@
 pub(crate) fn de_portfolio_share_detail<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::PortfolioShareDetail>,
+    Option<crate::types::PortfolioShareDetail>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::portfolio_share_detail::Builder::default();
+            let mut builder = crate::types::builders::PortfolioShareDetailBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -39,7 +39,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::DescribePortfolioShareType::from(
+                                            crate::types::DescribePortfolioShareType::from(
                                                 u.as_ref(),
                                             )
                                         })

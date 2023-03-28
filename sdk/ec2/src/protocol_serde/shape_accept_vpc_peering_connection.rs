@@ -3,31 +3,34 @@
 pub fn de_accept_vpc_peering_connection_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::AcceptVpcPeeringConnectionOutput,
-    crate::error::AcceptVpcPeeringConnectionError,
+    crate::operation::accept_vpc_peering_connection::AcceptVpcPeeringConnectionOutput,
+    crate::operation::accept_vpc_peering_connection::AcceptVpcPeeringConnectionError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::AcceptVpcPeeringConnectionError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::accept_vpc_peering_connection::AcceptVpcPeeringConnectionError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
-    Err(crate::error::AcceptVpcPeeringConnectionError::generic(
-        generic,
-    ))
+    Err(
+        crate::operation::accept_vpc_peering_connection::AcceptVpcPeeringConnectionError::generic(
+            generic,
+        ),
+    )
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_accept_vpc_peering_connection_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::AcceptVpcPeeringConnectionOutput,
-    crate::error::AcceptVpcPeeringConnectionError,
+    crate::operation::accept_vpc_peering_connection::AcceptVpcPeeringConnectionOutput,
+    crate::operation::accept_vpc_peering_connection::AcceptVpcPeeringConnectionError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::accept_vpc_peering_connection_output::Builder::default();
+        let mut output = crate::operation::accept_vpc_peering_connection::builders::AcceptVpcPeeringConnectionOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_accept_vpc_peering_connection::de_accept_vpc_peering_connection(response.body().as_ref(), output).map_err(crate::error::AcceptVpcPeeringConnectionError::unhandled)?;
+        output = crate::protocol_serde::shape_accept_vpc_peering_connection::de_accept_vpc_peering_connection(response.body().as_ref(), output).map_err(crate::operation::accept_vpc_peering_connection::AcceptVpcPeeringConnectionError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -36,13 +39,7 @@ pub fn de_accept_vpc_peering_connection_http_response(
 }
 
 #[allow(unused_mut)]
-pub fn de_accept_vpc_peering_connection(
-    inp: &[u8],
-    mut builder: crate::output::accept_vpc_peering_connection_output::Builder,
-) -> Result<
-    crate::output::accept_vpc_peering_connection_output::Builder,
-    aws_smithy_xml::decode::XmlDecodeError,
-> {
+pub fn de_accept_vpc_peering_connection(inp: &[u8], mut builder: crate::operation::accept_vpc_peering_connection::builders::AcceptVpcPeeringConnectionOutputBuilder) -> Result<crate::operation::accept_vpc_peering_connection::builders::AcceptVpcPeeringConnectionOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

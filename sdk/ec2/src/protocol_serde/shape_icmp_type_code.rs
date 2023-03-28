@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_icmp_type_code(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::IcmpTypeCode,
+    input: &crate::types::IcmpTypeCode,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Code");
@@ -25,9 +25,9 @@ pub fn ser_icmp_type_code(
 
 pub fn de_icmp_type_code(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::IcmpTypeCode, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::IcmpTypeCode, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::IcmpTypeCode::builder();
+    let mut builder = crate::types::IcmpTypeCode::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("code") /* Code com.amazonaws.ec2#IcmpTypeCode$Code */ =>  {

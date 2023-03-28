@@ -2,20 +2,20 @@
 pub fn de_retention_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::ObjectLockRetention>,
-    crate::error::GetObjectRetentionError,
+    std::option::Option<crate::types::ObjectLockRetention>,
+    crate::operation::get_object_retention::GetObjectRetentionError,
 > {
     (!body.is_empty())
         .then(|| {
             crate::protocol_serde::shape_get_object_retention_output::de_retention(body)
-                .map_err(crate::error::GetObjectRetentionError::unhandled)
+                .map_err(crate::operation::get_object_retention::GetObjectRetentionError::unhandled)
         })
         .transpose()
 }
 
 pub fn de_retention(
     inp: &[u8],
-) -> Result<crate::model::ObjectLockRetention, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::ObjectLockRetention, aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;

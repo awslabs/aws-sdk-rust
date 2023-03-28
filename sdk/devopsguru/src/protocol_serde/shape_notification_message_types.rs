@@ -2,7 +2,7 @@
 pub(crate) fn de_notification_message_types<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::NotificationMessageType>>,
+    Option<std::vec::Vec<crate::types::NotificationMessageType>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -29,7 +29,7 @@ where
                         )?
                         .map(|s| {
                             s.to_unescaped()
-                                .map(|u| crate::model::NotificationMessageType::from(u.as_ref()))
+                                .map(|u| crate::types::NotificationMessageType::from(u.as_ref()))
                         })
                         .transpose()?;
                         if let Some(value) = value {

@@ -2,7 +2,7 @@
 pub fn de_successful_instance_credit_specification_set(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::SuccessfulInstanceCreditSpecificationItem>,
+    std::vec::Vec<crate::types::SuccessfulInstanceCreditSpecificationItem>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

@@ -2,13 +2,13 @@
 pub fn de_events_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::model::EventsResponse>,
-    crate::error::PutEventsError,
+    std::option::Option<crate::types::EventsResponse>,
+    crate::operation::put_events::PutEventsError,
 > {
     (!body.is_empty())
         .then(|| {
             crate::protocol_serde::shape_events_response::de_events_response_payload(body)
-                .map_err(crate::error::PutEventsError::unhandled)
+                .map_err(crate::operation::put_events::PutEventsError::unhandled)
         })
         .transpose()
 }

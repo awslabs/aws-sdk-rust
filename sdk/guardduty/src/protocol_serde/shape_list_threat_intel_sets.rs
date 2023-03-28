@@ -3,55 +3,62 @@
 pub fn de_list_threat_intel_sets_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListThreatIntelSetsOutput,
-    crate::error::ListThreatIntelSetsError,
+    crate::operation::list_threat_intel_sets::ListThreatIntelSetsOutput,
+    crate::operation::list_threat_intel_sets::ListThreatIntelSetsError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListThreatIntelSetsError::unhandled)?;
+        .map_err(crate::operation::list_threat_intel_sets::ListThreatIntelSetsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListThreatIntelSetsError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::list_threat_intel_sets::ListThreatIntelSetsError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::ListThreatIntelSetsError::BadRequestException({
+        "BadRequestException" => crate::operation::list_threat_intel_sets::ListThreatIntelSetsError::BadRequestException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListThreatIntelSetsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InternalServerErrorException" => {
-            crate::error::ListThreatIntelSetsError::InternalServerErrorException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::internal_server_error_exception::Builder::default();
+                    let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListThreatIntelSetsError::unhandled)?;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_threat_intel_sets::ListThreatIntelSetsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::ListThreatIntelSetsError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InternalServerErrorException" => crate::operation::list_threat_intel_sets::ListThreatIntelSetsError::InternalServerErrorException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InternalServerErrorExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_server_error_exception::de_internal_server_error_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_threat_intel_sets::ListThreatIntelSetsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::list_threat_intel_sets::ListThreatIntelSetsError::generic(generic)
     })
 }
 
@@ -59,18 +66,18 @@ pub fn de_list_threat_intel_sets_http_error(
 pub fn de_list_threat_intel_sets_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::ListThreatIntelSetsOutput,
-    crate::error::ListThreatIntelSetsError,
+    crate::operation::list_threat_intel_sets::ListThreatIntelSetsOutput,
+    crate::operation::list_threat_intel_sets::ListThreatIntelSetsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_threat_intel_sets_output::Builder::default();
+        let mut output = crate::operation::list_threat_intel_sets::builders::ListThreatIntelSetsOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_threat_intel_sets::de_list_threat_intel_sets(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListThreatIntelSetsError::unhandled)?;
+        .map_err(crate::operation::list_threat_intel_sets::ListThreatIntelSetsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -80,9 +87,9 @@ pub fn de_list_threat_intel_sets_http_response(
 
 pub(crate) fn de_list_threat_intel_sets(
     value: &[u8],
-    mut builder: crate::output::list_threat_intel_sets_output::Builder,
+    mut builder: crate::operation::list_threat_intel_sets::builders::ListThreatIntelSetsOutputBuilder,
 ) -> Result<
-    crate::output::list_threat_intel_sets_output::Builder,
+    crate::operation::list_threat_intel_sets::builders::ListThreatIntelSetsOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

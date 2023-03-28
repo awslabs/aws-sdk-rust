@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_connection_settings(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::ConnectionSettings,
+    input: &crate::types::ConnectionSettings,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("IdleTimeout");
@@ -17,9 +17,9 @@ pub fn ser_connection_settings(
 
 pub fn de_connection_settings(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::ConnectionSettings, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::ConnectionSettings, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::ConnectionSettings::builder();
+    let mut builder = crate::types::ConnectionSettings::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("IdleTimeout") /* IdleTimeout com.amazonaws.elasticloadbalancing#ConnectionSettings$IdleTimeout */ =>  {

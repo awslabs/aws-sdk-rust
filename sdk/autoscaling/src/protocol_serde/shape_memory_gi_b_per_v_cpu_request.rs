@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_memory_gi_b_per_v_cpu_request(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::MemoryGiBPerVCpuRequest,
+    input: &crate::types::MemoryGiBPerVCpuRequest,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Min");
@@ -25,9 +25,9 @@ pub fn ser_memory_gi_b_per_v_cpu_request(
 
 pub fn de_memory_gi_b_per_v_cpu_request(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::MemoryGiBPerVCpuRequest, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::MemoryGiBPerVCpuRequest, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::MemoryGiBPerVCpuRequest::builder();
+    let mut builder = crate::types::MemoryGiBPerVCpuRequest::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Min") /* Min com.amazonaws.autoscaling#MemoryGiBPerVCpuRequest$Min */ =>  {

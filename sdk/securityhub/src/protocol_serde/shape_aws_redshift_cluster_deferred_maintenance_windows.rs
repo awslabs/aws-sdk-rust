@@ -2,7 +2,7 @@
 pub(crate) fn de_aws_redshift_cluster_deferred_maintenance_windows<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AwsRedshiftClusterDeferredMaintenanceWindow>>,
+    Option<std::vec::Vec<crate::types::AwsRedshiftClusterDeferredMaintenanceWindow>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

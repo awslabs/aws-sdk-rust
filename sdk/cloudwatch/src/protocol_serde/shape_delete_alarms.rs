@@ -2,27 +2,31 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_alarms_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeleteAlarmsOutput, crate::error::DeleteAlarmsError> {
+) -> std::result::Result<
+    crate::operation::delete_alarms::DeleteAlarmsOutput,
+    crate::operation::delete_alarms::DeleteAlarmsError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DeleteAlarmsError::unhandled)?;
+        .map_err(crate::operation::delete_alarms::DeleteAlarmsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DeleteAlarmsError::unhandled(generic)),
+        None => return Err(crate::operation::delete_alarms::DeleteAlarmsError::unhandled(generic)),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ResourceNotFound" => {
-            crate::error::DeleteAlarmsError::ResourceNotFound({
+            crate::operation::delete_alarms::DeleteAlarmsError::ResourceNotFound({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::ResourceNotFoundBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found::de_resource_not_found_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteAlarmsError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found::de_resource_not_found_xml_err(response.body().as_ref(), output).map_err(crate::operation::delete_alarms::DeleteAlarmsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -32,17 +36,21 @@ pub fn de_delete_alarms_http_error(
                 tmp
             })
         }
-        _ => crate::error::DeleteAlarmsError::generic(generic),
+        _ => crate::operation::delete_alarms::DeleteAlarmsError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_alarms_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::DeleteAlarmsOutput, crate::error::DeleteAlarmsError> {
+) -> std::result::Result<
+    crate::operation::delete_alarms::DeleteAlarmsOutput,
+    crate::operation::delete_alarms::DeleteAlarmsError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::delete_alarms_output::Builder::default();
+        let mut output =
+            crate::operation::delete_alarms::builders::DeleteAlarmsOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_security_group_rule_request(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::SecurityGroupRuleRequest,
+    input: &crate::types::SecurityGroupRuleRequest,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("IpProtocol");

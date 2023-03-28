@@ -4,35 +4,35 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     /// <p>You do not have sufficient access to perform this action. Access denied errors appear when Amazon Security Lake explicitly or implicitly denies an authorization request. An explicit denial occurs when a policy contains a Deny statement for the specific Amazon Web Services action. An implicit denial occurs when there is no applicable Deny statement and also no applicable Allow statement.</p>
-    AccessDeniedException(crate::error::AccessDeniedException),
+    AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>Amazon Security Lake cannot find an Amazon Web Services account with the accountID that you specified, or the account whose credentials you used to make this request isn't a member of an organization.</p>
-    AccountNotFoundException(crate::error::AccountNotFoundException),
+    AccountNotFoundException(crate::types::error::AccountNotFoundException),
     /// <p>Amazon Security Lake generally returns 404 errors if the requested object is missing from the bucket.</p>
-    BucketNotFoundException(crate::error::BucketNotFoundException),
+    BucketNotFoundException(crate::types::error::BucketNotFoundException),
     /// <p>More than one process tried to modify a resource at the same time. </p>
-    ConcurrentModificationException(crate::error::ConcurrentModificationException),
+    ConcurrentModificationException(crate::types::error::ConcurrentModificationException),
     /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
-    ConflictException(crate::error::ConflictException),
+    ConflictException(crate::types::error::ConflictException),
     /// <p>There was a conflict when you attempted to modify a Security Lake source name. </p>
-    ConflictSourceNamesException(crate::error::ConflictSourceNamesException),
+    ConflictSourceNamesException(crate::types::error::ConflictSourceNamesException),
     /// <p>A conflicting subscription exception operation is in progress. </p>
-    ConflictSubscriptionException(crate::error::ConflictSubscriptionException),
+    ConflictSubscriptionException(crate::types::error::ConflictSubscriptionException),
     /// <p>Represents an error interacting with the Amazon EventBridge service.</p>
-    EventBridgeException(crate::error::EventBridgeException),
+    EventBridgeException(crate::types::error::EventBridgeException),
     /// <p>Internal service exceptions are sometimes caused by transient issues. Before you start troubleshooting, perform the operation again. </p>
-    InternalServerException(crate::error::InternalServerException),
+    InternalServerException(crate::types::error::InternalServerException),
     /// <p>The request was rejected because a value that's not valid or is out of range was supplied for an input parameter. </p>
-    InvalidInputException(crate::error::InvalidInputException),
+    InvalidInputException(crate::types::error::InvalidInputException),
     /// <p>The resource could not be found.</p>
-    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>Provides an extension of the AmazonServiceException for errors reported by Amazon S3 while processing a request. In particular, this class provides access to the Amazon S3 extended request ID. If Amazon S3 is incorrectly handling a request and you need to contact Amazon, this extended request ID may provide useful debugging information. </p>
-    S3Exception(crate::error::S3Exception),
+    S3Exception(crate::types::error::S3Exception),
     /// <p>You have exceeded your service quota. To perform the requested action, remove some of the relevant resources, or use Service Quotas to request a service quota increase. </p>
-    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>The limit on the number of requests per second was exceeded. </p>
-    ThrottlingException(crate::error::ThrottlingException),
+    ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>Your signing certificate could not be validated. </p>
-    ValidationException(crate::error::ValidationException),
+    ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled),
 }
@@ -58,242 +58,10 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateAwsLogSourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateAwsLogSourceError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::CreateAwsLogSourceError> for Error {
-    fn from(err: crate::error::CreateAwsLogSourceError) -> Self {
-        match err {
-            crate::error::CreateAwsLogSourceError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::CreateAwsLogSourceError::AccountNotFoundException(inner) => {
-                Error::AccountNotFoundException(inner)
-            }
-            crate::error::CreateAwsLogSourceError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::CreateAwsLogSourceError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::CreateAwsLogSourceError::S3Exception(inner) => Error::S3Exception(inner),
-            crate::error::CreateAwsLogSourceError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::CreateAwsLogSourceError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateCustomLogSourceError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateCustomLogSourceError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::CreateCustomLogSourceError> for Error {
-    fn from(err: crate::error::CreateCustomLogSourceError) -> Self {
-        match err {
-            crate::error::CreateCustomLogSourceError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::CreateCustomLogSourceError::AccountNotFoundException(inner) => {
-                Error::AccountNotFoundException(inner)
-            }
-            crate::error::CreateCustomLogSourceError::BucketNotFoundException(inner) => {
-                Error::BucketNotFoundException(inner)
-            }
-            crate::error::CreateCustomLogSourceError::ConflictSourceNamesException(inner) => {
-                Error::ConflictSourceNamesException(inner)
-            }
-            crate::error::CreateCustomLogSourceError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::CreateCustomLogSourceError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::CreateCustomLogSourceError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::CreateCustomLogSourceError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateDatalakeError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateDatalakeError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::CreateDatalakeError> for Error {
-    fn from(err: crate::error::CreateDatalakeError) -> Self {
-        match err {
-            crate::error::CreateDatalakeError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::CreateDatalakeError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::CreateDatalakeError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::CreateDatalakeError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::CreateDatalakeError::ServiceQuotaExceededException(inner) => {
-                Error::ServiceQuotaExceededException(inner)
-            }
-            crate::error::CreateDatalakeError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::CreateDatalakeError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::CreateDatalakeError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateDatalakeAutoEnableError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateDatalakeAutoEnableError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::CreateDatalakeAutoEnableError> for Error {
-    fn from(err: crate::error::CreateDatalakeAutoEnableError) -> Self {
-        match err {
-            crate::error::CreateDatalakeAutoEnableError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::CreateDatalakeAutoEnableError::AccountNotFoundException(inner) => {
-                Error::AccountNotFoundException(inner)
-            }
-            crate::error::CreateDatalakeAutoEnableError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::CreateDatalakeAutoEnableError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::CreateDatalakeAutoEnableError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateDatalakeDelegatedAdminError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateDatalakeDelegatedAdminError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::CreateDatalakeDelegatedAdminError> for Error {
-    fn from(err: crate::error::CreateDatalakeDelegatedAdminError) -> Self {
-        match err {
-            crate::error::CreateDatalakeDelegatedAdminError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::CreateDatalakeDelegatedAdminError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::CreateDatalakeDelegatedAdminError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::CreateDatalakeDelegatedAdminError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::CreateDatalakeDelegatedAdminError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
-            crate::error::CreateDatalakeExceptionsSubscriptionError,
+            crate::operation::create_aws_log_source::CreateAwsLogSourceError,
             R,
         >,
     > for Error
@@ -302,7 +70,7 @@ where
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::CreateDatalakeExceptionsSubscriptionError,
+            crate::operation::create_aws_log_source::CreateAwsLogSourceError,
             R,
         >,
     ) -> Self {
@@ -321,348 +89,959 @@ where
         }
     }
 }
-impl From<crate::error::CreateDatalakeExceptionsSubscriptionError> for Error {
-    fn from(err: crate::error::CreateDatalakeExceptionsSubscriptionError) -> Self {
+impl From<crate::operation::create_aws_log_source::CreateAwsLogSourceError> for Error {
+    fn from(err: crate::operation::create_aws_log_source::CreateAwsLogSourceError) -> Self {
         match err {
-            crate::error::CreateDatalakeExceptionsSubscriptionError::AccessDeniedException(
+            crate::operation::create_aws_log_source::CreateAwsLogSourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_aws_log_source::CreateAwsLogSourceError::AccountNotFoundException(inner) => Error::AccountNotFoundException(inner),
+            crate::operation::create_aws_log_source::CreateAwsLogSourceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_aws_log_source::CreateAwsLogSourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_aws_log_source::CreateAwsLogSourceError::S3Exception(inner) => Error::S3Exception(inner),
+            crate::operation::create_aws_log_source::CreateAwsLogSourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_aws_log_source::CreateAwsLogSourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_custom_log_source::CreateCustomLogSourceError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_custom_log_source::CreateCustomLogSourceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_custom_log_source::CreateCustomLogSourceError> for Error {
+    fn from(err: crate::operation::create_custom_log_source::CreateCustomLogSourceError) -> Self {
+        match err {
+            crate::operation::create_custom_log_source::CreateCustomLogSourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_custom_log_source::CreateCustomLogSourceError::AccountNotFoundException(inner) => Error::AccountNotFoundException(inner),
+            crate::operation::create_custom_log_source::CreateCustomLogSourceError::BucketNotFoundException(inner) => Error::BucketNotFoundException(inner),
+            crate::operation::create_custom_log_source::CreateCustomLogSourceError::ConflictSourceNamesException(inner) => Error::ConflictSourceNamesException(inner),
+            crate::operation::create_custom_log_source::CreateCustomLogSourceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_custom_log_source::CreateCustomLogSourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_custom_log_source::CreateCustomLogSourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_custom_log_source::CreateCustomLogSourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_datalake::CreateDatalakeError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_datalake::CreateDatalakeError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_datalake::CreateDatalakeError> for Error {
+    fn from(err: crate::operation::create_datalake::CreateDatalakeError) -> Self {
+        match err {
+            crate::operation::create_datalake::CreateDatalakeError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_datalake::CreateDatalakeError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_datalake::CreateDatalakeError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_datalake::CreateDatalakeError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_datalake::CreateDatalakeError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_datalake::CreateDatalakeError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_datalake::CreateDatalakeError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_datalake::CreateDatalakeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_datalake_auto_enable::CreateDatalakeAutoEnableError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_datalake_auto_enable::CreateDatalakeAutoEnableError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_datalake_auto_enable::CreateDatalakeAutoEnableError> for Error {
+    fn from(
+        err: crate::operation::create_datalake_auto_enable::CreateDatalakeAutoEnableError,
+    ) -> Self {
+        match err {
+            crate::operation::create_datalake_auto_enable::CreateDatalakeAutoEnableError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_datalake_auto_enable::CreateDatalakeAutoEnableError::AccountNotFoundException(inner) => Error::AccountNotFoundException(inner),
+            crate::operation::create_datalake_auto_enable::CreateDatalakeAutoEnableError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_datalake_auto_enable::CreateDatalakeAutoEnableError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_datalake_auto_enable::CreateDatalakeAutoEnableError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_datalake_delegated_admin::CreateDatalakeDelegatedAdminError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_datalake_delegated_admin::CreateDatalakeDelegatedAdminError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_datalake_delegated_admin::CreateDatalakeDelegatedAdminError>
+    for Error
+{
+    fn from(
+        err: crate::operation::create_datalake_delegated_admin::CreateDatalakeDelegatedAdminError,
+    ) -> Self {
+        match err {
+            crate::operation::create_datalake_delegated_admin::CreateDatalakeDelegatedAdminError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_datalake_delegated_admin::CreateDatalakeDelegatedAdminError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_datalake_delegated_admin::CreateDatalakeDelegatedAdminError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_datalake_delegated_admin::CreateDatalakeDelegatedAdminError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_datalake_delegated_admin::CreateDatalakeDelegatedAdminError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_datalake_exceptions_subscription::CreateDatalakeExceptionsSubscriptionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_datalake_exceptions_subscription::CreateDatalakeExceptionsSubscriptionError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::create_datalake_exceptions_subscription::CreateDatalakeExceptionsSubscriptionError> for Error {
+    fn from(err: crate::operation::create_datalake_exceptions_subscription::CreateDatalakeExceptionsSubscriptionError) -> Self {
+        match err {
+            crate::operation::create_datalake_exceptions_subscription::CreateDatalakeExceptionsSubscriptionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_datalake_exceptions_subscription::CreateDatalakeExceptionsSubscriptionError::AccountNotFoundException(inner) => Error::AccountNotFoundException(inner),
+            crate::operation::create_datalake_exceptions_subscription::CreateDatalakeExceptionsSubscriptionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_datalake_exceptions_subscription::CreateDatalakeExceptionsSubscriptionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_datalake_exceptions_subscription::CreateDatalakeExceptionsSubscriptionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_subscriber::CreateSubscriberError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_subscriber::CreateSubscriberError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_subscriber::CreateSubscriberError> for Error {
+    fn from(err: crate::operation::create_subscriber::CreateSubscriberError) -> Self {
+        match err {
+            crate::operation::create_subscriber::CreateSubscriberError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_subscriber::CreateSubscriberError::AccountNotFoundException(inner) => Error::AccountNotFoundException(inner),
+            crate::operation::create_subscriber::CreateSubscriberError::BucketNotFoundException(inner) => Error::BucketNotFoundException(inner),
+            crate::operation::create_subscriber::CreateSubscriberError::ConflictSubscriptionException(inner) => Error::ConflictSubscriptionException(inner),
+            crate::operation::create_subscriber::CreateSubscriberError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_subscriber::CreateSubscriberError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::create_subscriber::CreateSubscriberError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_subscriber::CreateSubscriberError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_subscriber::CreateSubscriberError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_subscription_notification_configuration::CreateSubscriptionNotificationConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_subscription_notification_configuration::CreateSubscriptionNotificationConfigurationError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::create_subscription_notification_configuration::CreateSubscriptionNotificationConfigurationError> for Error {
+    fn from(err: crate::operation::create_subscription_notification_configuration::CreateSubscriptionNotificationConfigurationError) -> Self {
+        match err {
+            crate::operation::create_subscription_notification_configuration::CreateSubscriptionNotificationConfigurationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_subscription_notification_configuration::CreateSubscriptionNotificationConfigurationError::AccountNotFoundException(inner) => Error::AccountNotFoundException(inner),
+            crate::operation::create_subscription_notification_configuration::CreateSubscriptionNotificationConfigurationError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::create_subscription_notification_configuration::CreateSubscriptionNotificationConfigurationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_subscription_notification_configuration::CreateSubscriptionNotificationConfigurationError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::create_subscription_notification_configuration::CreateSubscriptionNotificationConfigurationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_subscription_notification_configuration::CreateSubscriptionNotificationConfigurationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_subscription_notification_configuration::CreateSubscriptionNotificationConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_aws_log_source::DeleteAwsLogSourceError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_aws_log_source::DeleteAwsLogSourceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_aws_log_source::DeleteAwsLogSourceError> for Error {
+    fn from(err: crate::operation::delete_aws_log_source::DeleteAwsLogSourceError) -> Self {
+        match err {
+            crate::operation::delete_aws_log_source::DeleteAwsLogSourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_aws_log_source::DeleteAwsLogSourceError::AccountNotFoundException(inner) => Error::AccountNotFoundException(inner),
+            crate::operation::delete_aws_log_source::DeleteAwsLogSourceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_aws_log_source::DeleteAwsLogSourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_aws_log_source::DeleteAwsLogSourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_custom_log_source::DeleteCustomLogSourceError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_custom_log_source::DeleteCustomLogSourceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_custom_log_source::DeleteCustomLogSourceError> for Error {
+    fn from(err: crate::operation::delete_custom_log_source::DeleteCustomLogSourceError) -> Self {
+        match err {
+            crate::operation::delete_custom_log_source::DeleteCustomLogSourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_custom_log_source::DeleteCustomLogSourceError::AccountNotFoundException(inner) => Error::AccountNotFoundException(inner),
+            crate::operation::delete_custom_log_source::DeleteCustomLogSourceError::BucketNotFoundException(inner) => Error::BucketNotFoundException(inner),
+            crate::operation::delete_custom_log_source::DeleteCustomLogSourceError::ConflictSourceNamesException(inner) => Error::ConflictSourceNamesException(inner),
+            crate::operation::delete_custom_log_source::DeleteCustomLogSourceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_custom_log_source::DeleteCustomLogSourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_custom_log_source::DeleteCustomLogSourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_custom_log_source::DeleteCustomLogSourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_datalake::DeleteDatalakeError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_datalake::DeleteDatalakeError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_datalake::DeleteDatalakeError> for Error {
+    fn from(err: crate::operation::delete_datalake::DeleteDatalakeError) -> Self {
+        match err {
+            crate::operation::delete_datalake::DeleteDatalakeError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_datalake::DeleteDatalakeError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_datalake::DeleteDatalakeError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_datalake::DeleteDatalakeError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_datalake::DeleteDatalakeError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::delete_datalake::DeleteDatalakeError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_datalake::DeleteDatalakeError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_datalake::DeleteDatalakeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_datalake_auto_enable::DeleteDatalakeAutoEnableError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_datalake_auto_enable::DeleteDatalakeAutoEnableError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_datalake_auto_enable::DeleteDatalakeAutoEnableError> for Error {
+    fn from(
+        err: crate::operation::delete_datalake_auto_enable::DeleteDatalakeAutoEnableError,
+    ) -> Self {
+        match err {
+            crate::operation::delete_datalake_auto_enable::DeleteDatalakeAutoEnableError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_datalake_auto_enable::DeleteDatalakeAutoEnableError::AccountNotFoundException(inner) => Error::AccountNotFoundException(inner),
+            crate::operation::delete_datalake_auto_enable::DeleteDatalakeAutoEnableError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_datalake_auto_enable::DeleteDatalakeAutoEnableError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_datalake_auto_enable::DeleteDatalakeAutoEnableError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_datalake_delegated_admin::DeleteDatalakeDelegatedAdminError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_datalake_delegated_admin::DeleteDatalakeDelegatedAdminError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_datalake_delegated_admin::DeleteDatalakeDelegatedAdminError>
+    for Error
+{
+    fn from(
+        err: crate::operation::delete_datalake_delegated_admin::DeleteDatalakeDelegatedAdminError,
+    ) -> Self {
+        match err {
+            crate::operation::delete_datalake_delegated_admin::DeleteDatalakeDelegatedAdminError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_datalake_delegated_admin::DeleteDatalakeDelegatedAdminError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_datalake_delegated_admin::DeleteDatalakeDelegatedAdminError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_datalake_delegated_admin::DeleteDatalakeDelegatedAdminError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_datalake_delegated_admin::DeleteDatalakeDelegatedAdminError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_datalake_exceptions_subscription::DeleteDatalakeExceptionsSubscriptionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_datalake_exceptions_subscription::DeleteDatalakeExceptionsSubscriptionError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::delete_datalake_exceptions_subscription::DeleteDatalakeExceptionsSubscriptionError> for Error {
+    fn from(err: crate::operation::delete_datalake_exceptions_subscription::DeleteDatalakeExceptionsSubscriptionError) -> Self {
+        match err {
+            crate::operation::delete_datalake_exceptions_subscription::DeleteDatalakeExceptionsSubscriptionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_datalake_exceptions_subscription::DeleteDatalakeExceptionsSubscriptionError::AccountNotFoundException(inner) => Error::AccountNotFoundException(inner),
+            crate::operation::delete_datalake_exceptions_subscription::DeleteDatalakeExceptionsSubscriptionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_datalake_exceptions_subscription::DeleteDatalakeExceptionsSubscriptionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_datalake_exceptions_subscription::DeleteDatalakeExceptionsSubscriptionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_subscriber::DeleteSubscriberError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_subscriber::DeleteSubscriberError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_subscriber::DeleteSubscriberError> for Error {
+    fn from(err: crate::operation::delete_subscriber::DeleteSubscriberError) -> Self {
+        match err {
+            crate::operation::delete_subscriber::DeleteSubscriberError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_subscriber::DeleteSubscriberError::AccountNotFoundException(inner) => Error::AccountNotFoundException(inner),
+            crate::operation::delete_subscriber::DeleteSubscriberError::BucketNotFoundException(inner) => Error::BucketNotFoundException(inner),
+            crate::operation::delete_subscriber::DeleteSubscriberError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::delete_subscriber::DeleteSubscriberError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_subscriber::DeleteSubscriberError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::delete_subscriber::DeleteSubscriberError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_subscriber::DeleteSubscriberError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_subscriber::DeleteSubscriberError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_subscription_notification_configuration::DeleteSubscriptionNotificationConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_subscription_notification_configuration::DeleteSubscriptionNotificationConfigurationError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::delete_subscription_notification_configuration::DeleteSubscriptionNotificationConfigurationError> for Error {
+    fn from(err: crate::operation::delete_subscription_notification_configuration::DeleteSubscriptionNotificationConfigurationError) -> Self {
+        match err {
+            crate::operation::delete_subscription_notification_configuration::DeleteSubscriptionNotificationConfigurationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_subscription_notification_configuration::DeleteSubscriptionNotificationConfigurationError::AccountNotFoundException(inner) => Error::AccountNotFoundException(inner),
+            crate::operation::delete_subscription_notification_configuration::DeleteSubscriptionNotificationConfigurationError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::delete_subscription_notification_configuration::DeleteSubscriptionNotificationConfigurationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_subscription_notification_configuration::DeleteSubscriptionNotificationConfigurationError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::delete_subscription_notification_configuration::DeleteSubscriptionNotificationConfigurationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_subscription_notification_configuration::DeleteSubscriptionNotificationConfigurationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_subscription_notification_configuration::DeleteSubscriptionNotificationConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_datalake::GetDatalakeError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::get_datalake::GetDatalakeError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_datalake::GetDatalakeError> for Error {
+    fn from(err: crate::operation::get_datalake::GetDatalakeError) -> Self {
+        match err {
+            crate::operation::get_datalake::GetDatalakeError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_datalake::GetDatalakeError::AccountNotFoundException(inner) => {
+                Error::AccountNotFoundException(inner)
+            }
+            crate::operation::get_datalake::GetDatalakeError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_datalake::GetDatalakeError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_datalake::GetDatalakeError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_datalake::GetDatalakeError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_datalake_auto_enable::GetDatalakeAutoEnableError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_datalake_auto_enable::GetDatalakeAutoEnableError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_datalake_auto_enable::GetDatalakeAutoEnableError> for Error {
+    fn from(err: crate::operation::get_datalake_auto_enable::GetDatalakeAutoEnableError) -> Self {
+        match err {
+            crate::operation::get_datalake_auto_enable::GetDatalakeAutoEnableError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_datalake_auto_enable::GetDatalakeAutoEnableError::AccountNotFoundException(inner) => Error::AccountNotFoundException(inner),
+            crate::operation::get_datalake_auto_enable::GetDatalakeAutoEnableError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_datalake_auto_enable::GetDatalakeAutoEnableError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_datalake_auto_enable::GetDatalakeAutoEnableError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_datalake_exceptions_expiry::GetDatalakeExceptionsExpiryError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_datalake_exceptions_expiry::GetDatalakeExceptionsExpiryError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_datalake_exceptions_expiry::GetDatalakeExceptionsExpiryError>
+    for Error
+{
+    fn from(
+        err: crate::operation::get_datalake_exceptions_expiry::GetDatalakeExceptionsExpiryError,
+    ) -> Self {
+        match err {
+            crate::operation::get_datalake_exceptions_expiry::GetDatalakeExceptionsExpiryError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_datalake_exceptions_expiry::GetDatalakeExceptionsExpiryError::AccountNotFoundException(inner) => Error::AccountNotFoundException(inner),
+            crate::operation::get_datalake_exceptions_expiry::GetDatalakeExceptionsExpiryError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_datalake_exceptions_expiry::GetDatalakeExceptionsExpiryError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_datalake_exceptions_expiry::GetDatalakeExceptionsExpiryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_datalake_exceptions_subscription::GetDatalakeExceptionsSubscriptionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_datalake_exceptions_subscription::GetDatalakeExceptionsSubscriptionError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::get_datalake_exceptions_subscription::GetDatalakeExceptionsSubscriptionError> for Error {
+    fn from(err: crate::operation::get_datalake_exceptions_subscription::GetDatalakeExceptionsSubscriptionError) -> Self {
+        match err {
+            crate::operation::get_datalake_exceptions_subscription::GetDatalakeExceptionsSubscriptionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_datalake_exceptions_subscription::GetDatalakeExceptionsSubscriptionError::AccountNotFoundException(inner) => Error::AccountNotFoundException(inner),
+            crate::operation::get_datalake_exceptions_subscription::GetDatalakeExceptionsSubscriptionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_datalake_exceptions_subscription::GetDatalakeExceptionsSubscriptionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_datalake_exceptions_subscription::GetDatalakeExceptionsSubscriptionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_datalake_status::GetDatalakeStatusError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_datalake_status::GetDatalakeStatusError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_datalake_status::GetDatalakeStatusError> for Error {
+    fn from(err: crate::operation::get_datalake_status::GetDatalakeStatusError) -> Self {
+        match err {
+            crate::operation::get_datalake_status::GetDatalakeStatusError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_datalake_status::GetDatalakeStatusError::AccountNotFoundException(inner) => Error::AccountNotFoundException(inner),
+            crate::operation::get_datalake_status::GetDatalakeStatusError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_datalake_status::GetDatalakeStatusError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_datalake_status::GetDatalakeStatusError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::get_subscriber::GetSubscriberError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_subscriber::GetSubscriberError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_subscriber::GetSubscriberError> for Error {
+    fn from(err: crate::operation::get_subscriber::GetSubscriberError) -> Self {
+        match err {
+            crate::operation::get_subscriber::GetSubscriberError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_subscriber::GetSubscriberError::AccountNotFoundException(
+                inner,
+            ) => Error::AccountNotFoundException(inner),
+            crate::operation::get_subscriber::GetSubscriberError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::get_subscriber::GetSubscriberError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::get_subscriber::GetSubscriberError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_subscriber::GetSubscriberError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_datalake_exceptions::ListDatalakeExceptionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_datalake_exceptions::ListDatalakeExceptionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_datalake_exceptions::ListDatalakeExceptionsError> for Error {
+    fn from(err: crate::operation::list_datalake_exceptions::ListDatalakeExceptionsError) -> Self {
+        match err {
+            crate::operation::list_datalake_exceptions::ListDatalakeExceptionsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_datalake_exceptions::ListDatalakeExceptionsError::AccountNotFoundException(inner) => Error::AccountNotFoundException(inner),
+            crate::operation::list_datalake_exceptions::ListDatalakeExceptionsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_datalake_exceptions::ListDatalakeExceptionsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_datalake_exceptions::ListDatalakeExceptionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_log_sources::ListLogSourcesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_log_sources::ListLogSourcesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_log_sources::ListLogSourcesError> for Error {
+    fn from(err: crate::operation::list_log_sources::ListLogSourcesError) -> Self {
+        match err {
+            crate::operation::list_log_sources::ListLogSourcesError::AccessDeniedException(
                 inner,
             ) => Error::AccessDeniedException(inner),
-            crate::error::CreateDatalakeExceptionsSubscriptionError::AccountNotFoundException(
+            crate::operation::list_log_sources::ListLogSourcesError::AccountNotFoundException(
                 inner,
             ) => Error::AccountNotFoundException(inner),
-            crate::error::CreateDatalakeExceptionsSubscriptionError::InternalServerException(
+            crate::operation::list_log_sources::ListLogSourcesError::InternalServerException(
                 inner,
             ) => Error::InternalServerException(inner),
-            crate::error::CreateDatalakeExceptionsSubscriptionError::ValidationException(inner) => {
+            crate::operation::list_log_sources::ListLogSourcesError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_log_sources::ListLogSourcesError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
-            crate::error::CreateDatalakeExceptionsSubscriptionError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateSubscriberError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateSubscriberError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::CreateSubscriberError> for Error {
-    fn from(err: crate::error::CreateSubscriberError) -> Self {
-        match err {
-            crate::error::CreateSubscriberError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::CreateSubscriberError::AccountNotFoundException(inner) => {
-                Error::AccountNotFoundException(inner)
-            }
-            crate::error::CreateSubscriberError::BucketNotFoundException(inner) => {
-                Error::BucketNotFoundException(inner)
-            }
-            crate::error::CreateSubscriberError::ConflictSubscriptionException(inner) => {
-                Error::ConflictSubscriptionException(inner)
-            }
-            crate::error::CreateSubscriberError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::CreateSubscriberError::InvalidInputException(inner) => {
-                Error::InvalidInputException(inner)
-            }
-            crate::error::CreateSubscriberError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::CreateSubscriberError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::CreateSubscriberError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::CreateSubscriptionNotificationConfigurationError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::CreateSubscriptionNotificationConfigurationError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::CreateSubscriptionNotificationConfigurationError> for Error {
-    fn from(err: crate::error::CreateSubscriptionNotificationConfigurationError) -> Self {
-        match err {
-            crate::error::CreateSubscriptionNotificationConfigurationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::CreateSubscriptionNotificationConfigurationError::AccountNotFoundException(inner) => Error::AccountNotFoundException(inner),
-            crate::error::CreateSubscriptionNotificationConfigurationError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
-            crate::error::CreateSubscriptionNotificationConfigurationError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::CreateSubscriptionNotificationConfigurationError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::CreateSubscriptionNotificationConfigurationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::CreateSubscriptionNotificationConfigurationError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::CreateSubscriptionNotificationConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteAwsLogSourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteAwsLogSourceError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DeleteAwsLogSourceError> for Error {
-    fn from(err: crate::error::DeleteAwsLogSourceError) -> Self {
-        match err {
-            crate::error::DeleteAwsLogSourceError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::DeleteAwsLogSourceError::AccountNotFoundException(inner) => {
-                Error::AccountNotFoundException(inner)
-            }
-            crate::error::DeleteAwsLogSourceError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::DeleteAwsLogSourceError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::DeleteAwsLogSourceError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteCustomLogSourceError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteCustomLogSourceError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DeleteCustomLogSourceError> for Error {
-    fn from(err: crate::error::DeleteCustomLogSourceError) -> Self {
-        match err {
-            crate::error::DeleteCustomLogSourceError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::DeleteCustomLogSourceError::AccountNotFoundException(inner) => {
-                Error::AccountNotFoundException(inner)
-            }
-            crate::error::DeleteCustomLogSourceError::BucketNotFoundException(inner) => {
-                Error::BucketNotFoundException(inner)
-            }
-            crate::error::DeleteCustomLogSourceError::ConflictSourceNamesException(inner) => {
-                Error::ConflictSourceNamesException(inner)
-            }
-            crate::error::DeleteCustomLogSourceError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::DeleteCustomLogSourceError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DeleteCustomLogSourceError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::DeleteCustomLogSourceError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteDatalakeError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteDatalakeError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DeleteDatalakeError> for Error {
-    fn from(err: crate::error::DeleteDatalakeError) -> Self {
-        match err {
-            crate::error::DeleteDatalakeError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::DeleteDatalakeError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::DeleteDatalakeError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::DeleteDatalakeError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DeleteDatalakeError::ServiceQuotaExceededException(inner) => {
-                Error::ServiceQuotaExceededException(inner)
-            }
-            crate::error::DeleteDatalakeError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::DeleteDatalakeError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::DeleteDatalakeError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteDatalakeAutoEnableError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteDatalakeAutoEnableError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DeleteDatalakeAutoEnableError> for Error {
-    fn from(err: crate::error::DeleteDatalakeAutoEnableError) -> Self {
-        match err {
-            crate::error::DeleteDatalakeAutoEnableError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::DeleteDatalakeAutoEnableError::AccountNotFoundException(inner) => {
-                Error::AccountNotFoundException(inner)
-            }
-            crate::error::DeleteDatalakeAutoEnableError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::DeleteDatalakeAutoEnableError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::DeleteDatalakeAutoEnableError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteDatalakeDelegatedAdminError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteDatalakeDelegatedAdminError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DeleteDatalakeDelegatedAdminError> for Error {
-    fn from(err: crate::error::DeleteDatalakeDelegatedAdminError) -> Self {
-        match err {
-            crate::error::DeleteDatalakeDelegatedAdminError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::DeleteDatalakeDelegatedAdminError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::DeleteDatalakeDelegatedAdminError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::error::DeleteDatalakeDelegatedAdminError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::DeleteDatalakeDelegatedAdminError::Unhandled(inner) => {
+            crate::operation::list_log_sources::ListLogSourcesError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
         }
@@ -671,7 +1050,7 @@ impl From<crate::error::DeleteDatalakeDelegatedAdminError> for Error {
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
-            crate::error::DeleteDatalakeExceptionsSubscriptionError,
+            crate::operation::list_subscribers::ListSubscribersError,
             R,
         >,
     > for Error
@@ -680,7 +1059,7 @@ where
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::DeleteDatalakeExceptionsSubscriptionError,
+            crate::operation::list_subscribers::ListSubscribersError,
             R,
         >,
     ) -> Self {
@@ -699,84 +1078,37 @@ where
         }
     }
 }
-impl From<crate::error::DeleteDatalakeExceptionsSubscriptionError> for Error {
-    fn from(err: crate::error::DeleteDatalakeExceptionsSubscriptionError) -> Self {
+impl From<crate::operation::list_subscribers::ListSubscribersError> for Error {
+    fn from(err: crate::operation::list_subscribers::ListSubscribersError) -> Self {
         match err {
-            crate::error::DeleteDatalakeExceptionsSubscriptionError::AccessDeniedException(
+            crate::operation::list_subscribers::ListSubscribersError::AccessDeniedException(
                 inner,
             ) => Error::AccessDeniedException(inner),
-            crate::error::DeleteDatalakeExceptionsSubscriptionError::AccountNotFoundException(
+            crate::operation::list_subscribers::ListSubscribersError::AccountNotFoundException(
                 inner,
             ) => Error::AccountNotFoundException(inner),
-            crate::error::DeleteDatalakeExceptionsSubscriptionError::InternalServerException(
+            crate::operation::list_subscribers::ListSubscribersError::InternalServerException(
                 inner,
             ) => Error::InternalServerException(inner),
-            crate::error::DeleteDatalakeExceptionsSubscriptionError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::DeleteDatalakeExceptionsSubscriptionError::Unhandled(inner) => {
+            crate::operation::list_subscribers::ListSubscribersError::InvalidInputException(
+                inner,
+            ) => Error::InvalidInputException(inner),
+            crate::operation::list_subscribers::ListSubscribersError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_subscribers::ListSubscribersError::ValidationException(
+                inner,
+            ) => Error::ValidationException(inner),
+            crate::operation::list_subscribers::ListSubscribersError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteSubscriberError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteSubscriberError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::DeleteSubscriberError> for Error {
-    fn from(err: crate::error::DeleteSubscriberError) -> Self {
-        match err {
-            crate::error::DeleteSubscriberError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::DeleteSubscriberError::AccountNotFoundException(inner) => {
-                Error::AccountNotFoundException(inner)
-            }
-            crate::error::DeleteSubscriberError::BucketNotFoundException(inner) => {
-                Error::BucketNotFoundException(inner)
-            }
-            crate::error::DeleteSubscriberError::ConcurrentModificationException(inner) => {
-                Error::ConcurrentModificationException(inner)
-            }
-            crate::error::DeleteSubscriberError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::DeleteSubscriberError::InvalidInputException(inner) => {
-                Error::InvalidInputException(inner)
-            }
-            crate::error::DeleteSubscriberError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::DeleteSubscriberError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::DeleteSubscriberError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
-            crate::error::DeleteSubscriptionNotificationConfigurationError,
+            crate::operation::update_datalake::UpdateDatalakeError,
             R,
         >,
     > for Error
@@ -785,7 +1117,7 @@ where
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::DeleteSubscriptionNotificationConfigurationError,
+            crate::operation::update_datalake::UpdateDatalakeError,
             R,
         >,
     ) -> Self {
@@ -804,604 +1136,86 @@ where
         }
     }
 }
-impl From<crate::error::DeleteSubscriptionNotificationConfigurationError> for Error {
-    fn from(err: crate::error::DeleteSubscriptionNotificationConfigurationError) -> Self {
+impl From<crate::operation::update_datalake::UpdateDatalakeError> for Error {
+    fn from(err: crate::operation::update_datalake::UpdateDatalakeError) -> Self {
         match err {
-            crate::error::DeleteSubscriptionNotificationConfigurationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DeleteSubscriptionNotificationConfigurationError::AccountNotFoundException(inner) => Error::AccountNotFoundException(inner),
-            crate::error::DeleteSubscriptionNotificationConfigurationError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
-            crate::error::DeleteSubscriptionNotificationConfigurationError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DeleteSubscriptionNotificationConfigurationError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::DeleteSubscriptionNotificationConfigurationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DeleteSubscriptionNotificationConfigurationError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DeleteSubscriptionNotificationConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetDatalakeError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetDatalakeError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetDatalakeError> for Error {
-    fn from(err: crate::error::GetDatalakeError) -> Self {
-        match err {
-            crate::error::GetDatalakeError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::GetDatalakeError::AccountNotFoundException(inner) => {
-                Error::AccountNotFoundException(inner)
-            }
-            crate::error::GetDatalakeError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::GetDatalakeError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::GetDatalakeError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::GetDatalakeError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetDatalakeAutoEnableError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetDatalakeAutoEnableError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetDatalakeAutoEnableError> for Error {
-    fn from(err: crate::error::GetDatalakeAutoEnableError) -> Self {
-        match err {
-            crate::error::GetDatalakeAutoEnableError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::GetDatalakeAutoEnableError::AccountNotFoundException(inner) => {
-                Error::AccountNotFoundException(inner)
-            }
-            crate::error::GetDatalakeAutoEnableError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::GetDatalakeAutoEnableError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::GetDatalakeAutoEnableError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetDatalakeExceptionsExpiryError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetDatalakeExceptionsExpiryError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetDatalakeExceptionsExpiryError> for Error {
-    fn from(err: crate::error::GetDatalakeExceptionsExpiryError) -> Self {
-        match err {
-            crate::error::GetDatalakeExceptionsExpiryError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::GetDatalakeExceptionsExpiryError::AccountNotFoundException(inner) => {
-                Error::AccountNotFoundException(inner)
-            }
-            crate::error::GetDatalakeExceptionsExpiryError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::GetDatalakeExceptionsExpiryError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::GetDatalakeExceptionsExpiryError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::GetDatalakeExceptionsSubscriptionError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::GetDatalakeExceptionsSubscriptionError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetDatalakeExceptionsSubscriptionError> for Error {
-    fn from(err: crate::error::GetDatalakeExceptionsSubscriptionError) -> Self {
-        match err {
-            crate::error::GetDatalakeExceptionsSubscriptionError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::GetDatalakeExceptionsSubscriptionError::AccountNotFoundException(
+            crate::operation::update_datalake::UpdateDatalakeError::AccessDeniedException(
                 inner,
-            ) => Error::AccountNotFoundException(inner),
-            crate::error::GetDatalakeExceptionsSubscriptionError::InternalServerException(
-                inner,
-            ) => Error::InternalServerException(inner),
-            crate::error::GetDatalakeExceptionsSubscriptionError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::GetDatalakeExceptionsSubscriptionError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetDatalakeStatusError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetDatalakeStatusError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetDatalakeStatusError> for Error {
-    fn from(err: crate::error::GetDatalakeStatusError) -> Self {
-        match err {
-            crate::error::GetDatalakeStatusError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::GetDatalakeStatusError::AccountNotFoundException(inner) => {
-                Error::AccountNotFoundException(inner)
-            }
-            crate::error::GetDatalakeStatusError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::GetDatalakeStatusError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::GetDatalakeStatusError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetSubscriberError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetSubscriberError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::GetSubscriberError> for Error {
-    fn from(err: crate::error::GetSubscriberError) -> Self {
-        match err {
-            crate::error::GetSubscriberError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::GetSubscriberError::AccountNotFoundException(inner) => {
-                Error::AccountNotFoundException(inner)
-            }
-            crate::error::GetSubscriberError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::GetSubscriberError::InvalidInputException(inner) => {
-                Error::InvalidInputException(inner)
-            }
-            crate::error::GetSubscriberError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::GetSubscriberError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListDatalakeExceptionsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListDatalakeExceptionsError, R>,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::ListDatalakeExceptionsError> for Error {
-    fn from(err: crate::error::ListDatalakeExceptionsError) -> Self {
-        match err {
-            crate::error::ListDatalakeExceptionsError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::ListDatalakeExceptionsError::AccountNotFoundException(inner) => {
-                Error::AccountNotFoundException(inner)
-            }
-            crate::error::ListDatalakeExceptionsError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::ListDatalakeExceptionsError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::ListDatalakeExceptionsError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListLogSourcesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListLogSourcesError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::ListLogSourcesError> for Error {
-    fn from(err: crate::error::ListLogSourcesError) -> Self {
-        match err {
-            crate::error::ListLogSourcesError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::ListLogSourcesError::AccountNotFoundException(inner) => {
-                Error::AccountNotFoundException(inner)
-            }
-            crate::error::ListLogSourcesError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::ListLogSourcesError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::ListLogSourcesError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::ListLogSourcesError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListSubscribersError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListSubscribersError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::ListSubscribersError> for Error {
-    fn from(err: crate::error::ListSubscribersError) -> Self {
-        match err {
-            crate::error::ListSubscribersError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::ListSubscribersError::AccountNotFoundException(inner) => {
-                Error::AccountNotFoundException(inner)
-            }
-            crate::error::ListSubscribersError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::ListSubscribersError::InvalidInputException(inner) => {
-                Error::InvalidInputException(inner)
-            }
-            crate::error::ListSubscribersError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::ListSubscribersError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::ListSubscribersError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateDatalakeError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateDatalakeError, R>) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::UpdateDatalakeError> for Error {
-    fn from(err: crate::error::UpdateDatalakeError) -> Self {
-        match err {
-            crate::error::UpdateDatalakeError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::UpdateDatalakeError::EventBridgeException(inner) => {
+            ) => Error::AccessDeniedException(inner),
+            crate::operation::update_datalake::UpdateDatalakeError::EventBridgeException(inner) => {
                 Error::EventBridgeException(inner)
             }
-            crate::error::UpdateDatalakeError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::UpdateDatalakeError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::error::UpdateDatalakeError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::UpdateDatalakeError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::UpdateDatalakeExceptionsExpiryError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::UpdateDatalakeExceptionsExpiryError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::UpdateDatalakeExceptionsExpiryError> for Error {
-    fn from(err: crate::error::UpdateDatalakeExceptionsExpiryError) -> Self {
-        match err {
-            crate::error::UpdateDatalakeExceptionsExpiryError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::UpdateDatalakeExceptionsExpiryError::AccountNotFoundException(inner) => {
-                Error::AccountNotFoundException(inner)
-            }
-            crate::error::UpdateDatalakeExceptionsExpiryError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::UpdateDatalakeExceptionsExpiryError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::UpdateDatalakeExceptionsExpiryError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::UpdateDatalakeExceptionsSubscriptionError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::UpdateDatalakeExceptionsSubscriptionError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
-            _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
-        }
-    }
-}
-impl From<crate::error::UpdateDatalakeExceptionsSubscriptionError> for Error {
-    fn from(err: crate::error::UpdateDatalakeExceptionsSubscriptionError) -> Self {
-        match err {
-            crate::error::UpdateDatalakeExceptionsSubscriptionError::AccessDeniedException(
-                inner,
-            ) => Error::AccessDeniedException(inner),
-            crate::error::UpdateDatalakeExceptionsSubscriptionError::AccountNotFoundException(
-                inner,
-            ) => Error::AccountNotFoundException(inner),
-            crate::error::UpdateDatalakeExceptionsSubscriptionError::InternalServerException(
+            crate::operation::update_datalake::UpdateDatalakeError::InternalServerException(
                 inner,
             ) => Error::InternalServerException(inner),
-            crate::error::UpdateDatalakeExceptionsSubscriptionError::ValidationException(inner) => {
+            crate::operation::update_datalake::UpdateDatalakeError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_datalake::UpdateDatalakeError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
-            crate::error::UpdateDatalakeExceptionsSubscriptionError::Unhandled(inner) => {
+            crate::operation::update_datalake::UpdateDatalakeError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateSubscriberError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateSubscriberError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_datalake_exceptions_expiry::UpdateDatalakeExceptionsExpiryError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::update_datalake_exceptions_expiry::UpdateDatalakeExceptionsExpiryError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
-impl From<crate::error::UpdateSubscriberError> for Error {
-    fn from(err: crate::error::UpdateSubscriberError) -> Self {
+impl From<crate::operation::update_datalake_exceptions_expiry::UpdateDatalakeExceptionsExpiryError>
+    for Error
+{
+    fn from(
+        err: crate::operation::update_datalake_exceptions_expiry::UpdateDatalakeExceptionsExpiryError,
+    ) -> Self {
         match err {
-            crate::error::UpdateSubscriberError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::UpdateSubscriberError::AccountNotFoundException(inner) => {
-                Error::AccountNotFoundException(inner)
-            }
-            crate::error::UpdateSubscriberError::ConcurrentModificationException(inner) => {
-                Error::ConcurrentModificationException(inner)
-            }
-            crate::error::UpdateSubscriberError::ConflictSubscriptionException(inner) => {
-                Error::ConflictSubscriptionException(inner)
-            }
-            crate::error::UpdateSubscriberError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::error::UpdateSubscriberError::InvalidInputException(inner) => {
-                Error::InvalidInputException(inner)
-            }
-            crate::error::UpdateSubscriberError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::error::UpdateSubscriberError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::update_datalake_exceptions_expiry::UpdateDatalakeExceptionsExpiryError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_datalake_exceptions_expiry::UpdateDatalakeExceptionsExpiryError::AccountNotFoundException(inner) => Error::AccountNotFoundException(inner),
+            crate::operation::update_datalake_exceptions_expiry::UpdateDatalakeExceptionsExpiryError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_datalake_exceptions_expiry::UpdateDatalakeExceptionsExpiryError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_datalake_exceptions_expiry::UpdateDatalakeExceptionsExpiryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_datalake_exceptions_subscription::UpdateDatalakeExceptionsSubscriptionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::update_datalake_exceptions_subscription::UpdateDatalakeExceptionsSubscriptionError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::update_datalake_exceptions_subscription::UpdateDatalakeExceptionsSubscriptionError> for Error {
+    fn from(err: crate::operation::update_datalake_exceptions_subscription::UpdateDatalakeExceptionsSubscriptionError) -> Self {
+        match err {
+            crate::operation::update_datalake_exceptions_subscription::UpdateDatalakeExceptionsSubscriptionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_datalake_exceptions_subscription::UpdateDatalakeExceptionsSubscriptionError::AccountNotFoundException(inner) => Error::AccountNotFoundException(inner),
+            crate::operation::update_datalake_exceptions_subscription::UpdateDatalakeExceptionsSubscriptionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_datalake_exceptions_subscription::UpdateDatalakeExceptionsSubscriptionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_datalake_exceptions_subscription::UpdateDatalakeExceptionsSubscriptionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
-            crate::error::UpdateSubscriptionNotificationConfigurationError,
+            crate::operation::update_subscriber::UpdateSubscriberError,
             R,
         >,
     > for Error
@@ -1410,7 +1224,7 @@ where
 {
     fn from(
         err: aws_smithy_http::result::SdkError<
-            crate::error::UpdateSubscriptionNotificationConfigurationError,
+            crate::operation::update_subscriber::UpdateSubscriberError,
             R,
         >,
     ) -> Self {
@@ -1429,17 +1243,44 @@ where
         }
     }
 }
-impl From<crate::error::UpdateSubscriptionNotificationConfigurationError> for Error {
-    fn from(err: crate::error::UpdateSubscriptionNotificationConfigurationError) -> Self {
+impl From<crate::operation::update_subscriber::UpdateSubscriberError> for Error {
+    fn from(err: crate::operation::update_subscriber::UpdateSubscriberError) -> Self {
         match err {
-            crate::error::UpdateSubscriptionNotificationConfigurationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::UpdateSubscriptionNotificationConfigurationError::AccountNotFoundException(inner) => Error::AccountNotFoundException(inner),
-            crate::error::UpdateSubscriptionNotificationConfigurationError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
-            crate::error::UpdateSubscriptionNotificationConfigurationError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::UpdateSubscriptionNotificationConfigurationError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::UpdateSubscriptionNotificationConfigurationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::UpdateSubscriptionNotificationConfigurationError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::UpdateSubscriptionNotificationConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::update_subscriber::UpdateSubscriberError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_subscriber::UpdateSubscriberError::AccountNotFoundException(inner) => Error::AccountNotFoundException(inner),
+            crate::operation::update_subscriber::UpdateSubscriberError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::update_subscriber::UpdateSubscriberError::ConflictSubscriptionException(inner) => Error::ConflictSubscriptionException(inner),
+            crate::operation::update_subscriber::UpdateSubscriberError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_subscriber::UpdateSubscriberError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::update_subscriber::UpdateSubscriberError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_subscriber::UpdateSubscriberError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_subscription_notification_configuration::UpdateSubscriptionNotificationConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::update_subscription_notification_configuration::UpdateSubscriptionNotificationConfigurationError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::update_subscription_notification_configuration::UpdateSubscriptionNotificationConfigurationError> for Error {
+    fn from(err: crate::operation::update_subscription_notification_configuration::UpdateSubscriptionNotificationConfigurationError) -> Self {
+        match err {
+            crate::operation::update_subscription_notification_configuration::UpdateSubscriptionNotificationConfigurationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_subscription_notification_configuration::UpdateSubscriptionNotificationConfigurationError::AccountNotFoundException(inner) => Error::AccountNotFoundException(inner),
+            crate::operation::update_subscription_notification_configuration::UpdateSubscriptionNotificationConfigurationError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::update_subscription_notification_configuration::UpdateSubscriptionNotificationConfigurationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_subscription_notification_configuration::UpdateSubscriptionNotificationConfigurationError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::update_subscription_notification_configuration::UpdateSubscriptionNotificationConfigurationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_subscription_notification_configuration::UpdateSubscriptionNotificationConfigurationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_subscription_notification_configuration::UpdateSubscriptionNotificationConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

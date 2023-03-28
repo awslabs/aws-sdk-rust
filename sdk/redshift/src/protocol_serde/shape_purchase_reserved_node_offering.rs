@@ -3,97 +3,89 @@
 pub fn de_purchase_reserved_node_offering_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::PurchaseReservedNodeOfferingOutput,
-    crate::error::PurchaseReservedNodeOfferingError,
+    crate::operation::purchase_reserved_node_offering::PurchaseReservedNodeOfferingOutput,
+    crate::operation::purchase_reserved_node_offering::PurchaseReservedNodeOfferingError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::PurchaseReservedNodeOfferingError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::purchase_reserved_node_offering::PurchaseReservedNodeOfferingError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::PurchaseReservedNodeOfferingError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::purchase_reserved_node_offering::PurchaseReservedNodeOfferingError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ReservedNodeAlreadyExists" => {
-            crate::error::PurchaseReservedNodeOfferingError::ReservedNodeAlreadyExistsFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "ReservedNodeAlreadyExists" => crate::operation::purchase_reserved_node_offering::PurchaseReservedNodeOfferingError::ReservedNodeAlreadyExistsFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::reserved_node_already_exists_fault::Builder::default();
+                    let mut output = crate::types::error::builders::ReservedNodeAlreadyExistsFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_reserved_node_already_exists_fault::de_reserved_node_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PurchaseReservedNodeOfferingError::unhandled)?;
+                    output = crate::protocol_serde::shape_reserved_node_already_exists_fault::de_reserved_node_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::purchase_reserved_node_offering::PurchaseReservedNodeOfferingError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ReservedNodeOfferingNotFound" => {
-            crate::error::PurchaseReservedNodeOfferingError::ReservedNodeOfferingNotFoundFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ReservedNodeOfferingNotFound" => crate::operation::purchase_reserved_node_offering::PurchaseReservedNodeOfferingError::ReservedNodeOfferingNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::reserved_node_offering_not_found_fault::Builder::default();
+                    let mut output = crate::types::error::builders::ReservedNodeOfferingNotFoundFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_reserved_node_offering_not_found_fault::de_reserved_node_offering_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PurchaseReservedNodeOfferingError::unhandled)?;
+                    output = crate::protocol_serde::shape_reserved_node_offering_not_found_fault::de_reserved_node_offering_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::purchase_reserved_node_offering::PurchaseReservedNodeOfferingError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ReservedNodeQuotaExceeded" => {
-            crate::error::PurchaseReservedNodeOfferingError::ReservedNodeQuotaExceededFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ReservedNodeQuotaExceeded" => crate::operation::purchase_reserved_node_offering::PurchaseReservedNodeOfferingError::ReservedNodeQuotaExceededFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::reserved_node_quota_exceeded_fault::Builder::default();
+                    let mut output = crate::types::error::builders::ReservedNodeQuotaExceededFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_reserved_node_quota_exceeded_fault::de_reserved_node_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PurchaseReservedNodeOfferingError::unhandled)?;
+                    output = crate::protocol_serde::shape_reserved_node_quota_exceeded_fault::de_reserved_node_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::purchase_reserved_node_offering::PurchaseReservedNodeOfferingError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "UnsupportedOperation" => {
-            crate::error::PurchaseReservedNodeOfferingError::UnsupportedOperationFault({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "UnsupportedOperation" => crate::operation::purchase_reserved_node_offering::PurchaseReservedNodeOfferingError::UnsupportedOperationFault({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::unsupported_operation_fault::Builder::default();
+                    let mut output = crate::types::error::builders::UnsupportedOperationFaultBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_unsupported_operation_fault::de_unsupported_operation_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PurchaseReservedNodeOfferingError::unhandled)?;
+                    output = crate::protocol_serde::shape_unsupported_operation_fault::de_unsupported_operation_fault_xml_err(response.body().as_ref(), output).map_err(crate::operation::purchase_reserved_node_offering::PurchaseReservedNodeOfferingError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::PurchaseReservedNodeOfferingError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::purchase_reserved_node_offering::PurchaseReservedNodeOfferingError::generic(generic)
     })
 }
 
@@ -101,14 +93,14 @@ pub fn de_purchase_reserved_node_offering_http_error(
 pub fn de_purchase_reserved_node_offering_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::PurchaseReservedNodeOfferingOutput,
-    crate::error::PurchaseReservedNodeOfferingError,
+    crate::operation::purchase_reserved_node_offering::PurchaseReservedNodeOfferingOutput,
+    crate::operation::purchase_reserved_node_offering::PurchaseReservedNodeOfferingError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::purchase_reserved_node_offering_output::Builder::default();
+        let mut output = crate::operation::purchase_reserved_node_offering::builders::PurchaseReservedNodeOfferingOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_purchase_reserved_node_offering::de_purchase_reserved_node_offering(response.body().as_ref(), output).map_err(crate::error::PurchaseReservedNodeOfferingError::unhandled)?;
+        output = crate::protocol_serde::shape_purchase_reserved_node_offering::de_purchase_reserved_node_offering(response.body().as_ref(), output).map_err(crate::operation::purchase_reserved_node_offering::PurchaseReservedNodeOfferingError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -117,13 +109,7 @@ pub fn de_purchase_reserved_node_offering_http_response(
 }
 
 #[allow(unused_mut)]
-pub fn de_purchase_reserved_node_offering(
-    inp: &[u8],
-    mut builder: crate::output::purchase_reserved_node_offering_output::Builder,
-) -> Result<
-    crate::output::purchase_reserved_node_offering_output::Builder,
-    aws_smithy_xml::decode::XmlDecodeError,
-> {
+pub fn de_purchase_reserved_node_offering(inp: &[u8], mut builder: crate::operation::purchase_reserved_node_offering::builders::PurchaseReservedNodeOfferingOutputBuilder) -> Result<crate::operation::purchase_reserved_node_offering::builders::PurchaseReservedNodeOfferingOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

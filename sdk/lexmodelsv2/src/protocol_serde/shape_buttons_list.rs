@@ -2,7 +2,7 @@
 pub(crate) fn de_buttons_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Button>>,
+    Option<std::vec::Vec<crate::types::Button>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

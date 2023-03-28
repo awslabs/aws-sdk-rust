@@ -3,96 +3,93 @@
 pub fn de_describe_node_from_template_job_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeNodeFromTemplateJobOutput,
-    crate::error::DescribeNodeFromTemplateJobError,
+    crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobOutput,
+    crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeNodeFromTemplateJobError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::DescribeNodeFromTemplateJobError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => {
-            crate::error::DescribeNodeFromTemplateJobError::AccessDeniedException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "AccessDeniedException" => crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobError::AccessDeniedException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeNodeFromTemplateJobError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ConflictException" => crate::error::DescribeNodeFromTemplateJobError::ConflictException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::conflict_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeNodeFromTemplateJobError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "InternalServerException" => {
-            crate::error::DescribeNodeFromTemplateJobError::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "ConflictException" => crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeNodeFromTemplateJobError::unhandled)?;
+                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InternalServerException" => crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobError::InternalServerException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::protocol_serde::shape_internal_server_exception::de_retry_after_seconds_header(response.headers())
-                                                .map_err(|_|crate::error::DescribeNodeFromTemplateJobError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
                     );
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ValidationException" => {
-            crate::error::DescribeNodeFromTemplateJobError::ValidationException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ValidationException" => crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::validation_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeNodeFromTemplateJobError::unhandled)?;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DescribeNodeFromTemplateJobError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobError::generic(generic)
     })
 }
 
@@ -100,14 +97,14 @@ pub fn de_describe_node_from_template_job_http_error(
 pub fn de_describe_node_from_template_job_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeNodeFromTemplateJobOutput,
-    crate::error::DescribeNodeFromTemplateJobError,
+    crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobOutput,
+    crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::describe_node_from_template_job_output::Builder::default();
+        let mut output = crate::operation::describe_node_from_template_job::builders::DescribeNodeFromTemplateJobOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_describe_node_from_template_job::de_describe_node_from_template_job(response.body().as_ref(), output).map_err(crate::error::DescribeNodeFromTemplateJobError::unhandled)?;
+        output = crate::protocol_serde::shape_describe_node_from_template_job::de_describe_node_from_template_job(response.body().as_ref(), output).map_err(crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -115,13 +112,7 @@ pub fn de_describe_node_from_template_job_http_response(
     })
 }
 
-pub(crate) fn de_describe_node_from_template_job(
-    value: &[u8],
-    mut builder: crate::output::describe_node_from_template_job_output::Builder,
-) -> Result<
-    crate::output::describe_node_from_template_job_output::Builder,
-    aws_smithy_json::deserialize::error::DeserializeError,
-> {
+pub(crate) fn de_describe_node_from_template_job(value: &[u8], mut builder: crate::operation::describe_node_from_template_job::builders::DescribeNodeFromTemplateJobOutputBuilder) -> Result<crate::operation::describe_node_from_template_job::builders::DescribeNodeFromTemplateJobOutputBuilder, aws_smithy_json::deserialize::error::DeserializeError>{
     let mut tokens_owned =
         aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
             .peekable();
@@ -205,7 +196,7 @@ pub(crate) fn de_describe_node_from_template_job(
                             )?
                             .map(|s| {
                                 s.to_unescaped().map(|u| {
-                                    crate::model::NodeFromTemplateJobStatus::from(u.as_ref())
+                                    crate::types::NodeFromTemplateJobStatus::from(u.as_ref())
                                 })
                             })
                             .transpose()?,
@@ -232,7 +223,7 @@ pub(crate) fn de_describe_node_from_template_job(
                             )?
                             .map(|s| {
                                 s.to_unescaped()
-                                    .map(|u| crate::model::TemplateType::from(u.as_ref()))
+                                    .map(|u| crate::types::TemplateType::from(u.as_ref()))
                             })
                             .transpose()?,
                         );

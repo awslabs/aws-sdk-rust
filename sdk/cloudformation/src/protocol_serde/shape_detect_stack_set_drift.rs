@@ -3,75 +3,79 @@
 pub fn de_detect_stack_set_drift_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DetectStackSetDriftOutput,
-    crate::error::DetectStackSetDriftError,
+    crate::operation::detect_stack_set_drift::DetectStackSetDriftOutput,
+    crate::operation::detect_stack_set_drift::DetectStackSetDriftError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DetectStackSetDriftError::unhandled)?;
+        .map_err(crate::operation::detect_stack_set_drift::DetectStackSetDriftError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::DetectStackSetDriftError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::detect_stack_set_drift::DetectStackSetDriftError::unhandled(
+                    generic,
+                ),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidOperationException" => {
-            crate::error::DetectStackSetDriftError::InvalidOperationException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidOperationException" => crate::operation::detect_stack_set_drift::DetectStackSetDriftError::InvalidOperationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_operation_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidOperationExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_operation_exception::de_invalid_operation_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DetectStackSetDriftError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_operation_exception::de_invalid_operation_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::detect_stack_set_drift::DetectStackSetDriftError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "OperationInProgressException" => {
-            crate::error::DetectStackSetDriftError::OperationInProgressException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "OperationInProgressException" => crate::operation::detect_stack_set_drift::DetectStackSetDriftError::OperationInProgressException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::operation_in_progress_exception::Builder::default();
+                    let mut output = crate::types::error::builders::OperationInProgressExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_operation_in_progress_exception::de_operation_in_progress_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DetectStackSetDriftError::unhandled)?;
+                    output = crate::protocol_serde::shape_operation_in_progress_exception::de_operation_in_progress_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::detect_stack_set_drift::DetectStackSetDriftError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "StackSetNotFoundException" => {
-            crate::error::DetectStackSetDriftError::StackSetNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "StackSetNotFoundException" => crate::operation::detect_stack_set_drift::DetectStackSetDriftError::StackSetNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::stack_set_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::StackSetNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_stack_set_not_found_exception::de_stack_set_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DetectStackSetDriftError::unhandled)?;
+                    output = crate::protocol_serde::shape_stack_set_not_found_exception::de_stack_set_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::detect_stack_set_drift::DetectStackSetDriftError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DetectStackSetDriftError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::detect_stack_set_drift::DetectStackSetDriftError::generic(generic)
     })
 }
 
@@ -79,18 +83,18 @@ pub fn de_detect_stack_set_drift_http_error(
 pub fn de_detect_stack_set_drift_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DetectStackSetDriftOutput,
-    crate::error::DetectStackSetDriftError,
+    crate::operation::detect_stack_set_drift::DetectStackSetDriftOutput,
+    crate::operation::detect_stack_set_drift::DetectStackSetDriftError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::detect_stack_set_drift_output::Builder::default();
+        let mut output = crate::operation::detect_stack_set_drift::builders::DetectStackSetDriftOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_detect_stack_set_drift::de_detect_stack_set_drift(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::DetectStackSetDriftError::unhandled)?;
+        .map_err(crate::operation::detect_stack_set_drift::DetectStackSetDriftError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -101,9 +105,9 @@ pub fn de_detect_stack_set_drift_http_response(
 #[allow(unused_mut)]
 pub fn de_detect_stack_set_drift(
     inp: &[u8],
-    mut builder: crate::output::detect_stack_set_drift_output::Builder,
+    mut builder: crate::operation::detect_stack_set_drift::builders::DetectStackSetDriftOutputBuilder,
 ) -> Result<
-    crate::output::detect_stack_set_drift_output::Builder,
+    crate::operation::detect_stack_set_drift::builders::DetectStackSetDriftOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

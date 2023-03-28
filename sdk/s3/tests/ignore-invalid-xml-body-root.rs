@@ -5,7 +5,7 @@
 
 use aws_credential_types::provider::SharedCredentialsProvider;
 use aws_http::user_agent::AwsUserAgent;
-use aws_sdk_s3::{model::ObjectAttributes, Client, Credentials, Region};
+use aws_sdk_s3::{config::Credentials, config::Region, types::ObjectAttributes, Client};
 use aws_smithy_client::test_connection::TestConnection;
 use aws_smithy_http::body::SdkBody;
 use aws_types::SdkConfig;

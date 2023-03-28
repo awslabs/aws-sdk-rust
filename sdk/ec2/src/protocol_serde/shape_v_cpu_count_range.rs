@@ -2,7 +2,7 @@
 #[allow(unused_mut)]
 pub fn ser_v_cpu_count_range(
     mut writer: aws_smithy_query::QueryValueWriter,
-    input: &crate::model::VCpuCountRange,
+    input: &crate::types::VCpuCountRange,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Min");
@@ -25,9 +25,9 @@ pub fn ser_v_cpu_count_range(
 
 pub fn de_v_cpu_count_range(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::model::VCpuCountRange, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<crate::types::VCpuCountRange, aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
-    let mut builder = crate::model::VCpuCountRange::builder();
+    let mut builder = crate::types::VCpuCountRange::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("min") /* Min com.amazonaws.ec2#VCpuCountRange$Min */ =>  {

@@ -2,7 +2,7 @@
 pub(crate) fn de_utterance_aggregation_duration<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::UtteranceAggregationDuration>,
+    Option<crate::types::UtteranceAggregationDuration>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,8 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::utterance_aggregation_duration::Builder::default();
+            let mut builder =
+                crate::types::builders::UtteranceAggregationDurationBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -53,7 +54,7 @@ where
 
 pub fn ser_utterance_aggregation_duration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::UtteranceAggregationDuration,
+    input: &crate::types::UtteranceAggregationDuration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.relative_aggregation_duration {
         #[allow(unused_mut)]

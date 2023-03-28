@@ -2,7 +2,7 @@
 pub(crate) fn de_wireless_device_statistics_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::WirelessDeviceStatistics>>,
+    Option<std::vec::Vec<crate::types::WirelessDeviceStatistics>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

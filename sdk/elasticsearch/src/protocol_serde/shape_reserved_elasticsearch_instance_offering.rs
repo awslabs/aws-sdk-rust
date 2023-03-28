@@ -2,7 +2,7 @@
 pub(crate) fn de_reserved_elasticsearch_instance_offering<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ReservedElasticsearchInstanceOffering>,
+    Option<crate::types::ReservedElasticsearchInstanceOffering>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -18,7 +18,7 @@ where
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder =
-                crate::model::reserved_elasticsearch_instance_offering::Builder::default();
+                crate::types::builders::ReservedElasticsearchInstanceOfferingBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -40,7 +40,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::EsPartitionInstanceType::from(u.as_ref())
+                                            crate::types::EsPartitionInstanceType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,
@@ -84,7 +84,7 @@ where
                                 builder = builder.set_payment_option(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?.map(|s|
                                         s.to_unescaped().map(|u|
-                                            crate::model::ReservedElasticsearchInstancePaymentOption::from(u.as_ref())
+                                            crate::types::ReservedElasticsearchInstancePaymentOption::from(u.as_ref())
                                         )
                                     ).transpose()?
                                 );

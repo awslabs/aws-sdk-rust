@@ -2,7 +2,7 @@
 pub(crate) fn de_lending_detection_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::LendingDetection>>,
+    Option<std::vec::Vec<crate::types::LendingDetection>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

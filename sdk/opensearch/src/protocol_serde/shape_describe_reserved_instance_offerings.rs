@@ -3,92 +3,89 @@
 pub fn de_describe_reserved_instance_offerings_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeReservedInstanceOfferingsOutput,
-    crate::error::DescribeReservedInstanceOfferingsError,
+    crate::operation::describe_reserved_instance_offerings::DescribeReservedInstanceOfferingsOutput,
+    crate::operation::describe_reserved_instance_offerings::DescribeReservedInstanceOfferingsError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::DescribeReservedInstanceOfferingsError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::describe_reserved_instance_offerings::DescribeReservedInstanceOfferingsError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::DescribeReservedInstanceOfferingsError::unhandled(generic))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::describe_reserved_instance_offerings::DescribeReservedInstanceOfferingsError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DisabledOperationException" => {
-            crate::error::DescribeReservedInstanceOfferingsError::DisabledOperationException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "DisabledOperationException" => crate::operation::describe_reserved_instance_offerings::DescribeReservedInstanceOfferingsError::DisabledOperationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::disabled_operation_exception::Builder::default();
+                    let mut output = crate::types::error::builders::DisabledOperationExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_disabled_operation_exception::de_disabled_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeReservedInstanceOfferingsError::unhandled)?;
+                    output = crate::protocol_serde::shape_disabled_operation_exception::de_disabled_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_reserved_instance_offerings::DescribeReservedInstanceOfferingsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "InternalException" => {
-            crate::error::DescribeReservedInstanceOfferingsError::InternalException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "InternalException" => crate::operation::describe_reserved_instance_offerings::DescribeReservedInstanceOfferingsError::InternalException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InternalExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_exception::de_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeReservedInstanceOfferingsError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_exception::de_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_reserved_instance_offerings::DescribeReservedInstanceOfferingsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ResourceNotFoundException" => {
-            crate::error::DescribeReservedInstanceOfferingsError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::describe_reserved_instance_offerings::DescribeReservedInstanceOfferingsError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeReservedInstanceOfferingsError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_reserved_instance_offerings::DescribeReservedInstanceOfferingsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ValidationException" => {
-            crate::error::DescribeReservedInstanceOfferingsError::ValidationException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ValidationException" => crate::operation::describe_reserved_instance_offerings::DescribeReservedInstanceOfferingsError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::validation_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeReservedInstanceOfferingsError::unhandled)?;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::describe_reserved_instance_offerings::DescribeReservedInstanceOfferingsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::DescribeReservedInstanceOfferingsError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::describe_reserved_instance_offerings::DescribeReservedInstanceOfferingsError::generic(generic)
     })
 }
 
@@ -96,15 +93,14 @@ pub fn de_describe_reserved_instance_offerings_http_error(
 pub fn de_describe_reserved_instance_offerings_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::DescribeReservedInstanceOfferingsOutput,
-    crate::error::DescribeReservedInstanceOfferingsError,
+    crate::operation::describe_reserved_instance_offerings::DescribeReservedInstanceOfferingsOutput,
+    crate::operation::describe_reserved_instance_offerings::DescribeReservedInstanceOfferingsError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output =
-            crate::output::describe_reserved_instance_offerings_output::Builder::default();
+        let mut output = crate::operation::describe_reserved_instance_offerings::builders::DescribeReservedInstanceOfferingsOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_describe_reserved_instance_offerings::de_describe_reserved_instance_offerings(response.body().as_ref(), output).map_err(crate::error::DescribeReservedInstanceOfferingsError::unhandled)?;
+        output = crate::protocol_serde::shape_describe_reserved_instance_offerings::de_describe_reserved_instance_offerings(response.body().as_ref(), output).map_err(crate::operation::describe_reserved_instance_offerings::DescribeReservedInstanceOfferingsError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -112,13 +108,7 @@ pub fn de_describe_reserved_instance_offerings_http_response(
     })
 }
 
-pub(crate) fn de_describe_reserved_instance_offerings(
-    value: &[u8],
-    mut builder: crate::output::describe_reserved_instance_offerings_output::Builder,
-) -> Result<
-    crate::output::describe_reserved_instance_offerings_output::Builder,
-    aws_smithy_json::deserialize::error::DeserializeError,
-> {
+pub(crate) fn de_describe_reserved_instance_offerings(value: &[u8], mut builder: crate::operation::describe_reserved_instance_offerings::builders::DescribeReservedInstanceOfferingsOutputBuilder) -> Result<crate::operation::describe_reserved_instance_offerings::builders::DescribeReservedInstanceOfferingsOutputBuilder, aws_smithy_json::deserialize::error::DeserializeError>{
     let mut tokens_owned =
         aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
             .peekable();

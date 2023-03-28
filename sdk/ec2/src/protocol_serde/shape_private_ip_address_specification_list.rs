@@ -2,7 +2,7 @@
 pub fn de_private_ip_address_specification_list(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::PrivateIpAddressSpecification>,
+    std::vec::Vec<crate::types::PrivateIpAddressSpecification>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();

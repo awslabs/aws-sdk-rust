@@ -2,7 +2,7 @@
 pub(crate) fn de_deletion_config<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::DeletionConfig>,
+    Option<crate::types::DeletionConfig>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::deletion_config::Builder::default();
+            let mut builder = crate::types::builders::DeletionConfigBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -69,7 +69,7 @@ where
 
 pub fn ser_deletion_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::DeletionConfig,
+    input: &crate::types::DeletionConfig,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.edge_retention_in_hours {
         object.key("EdgeRetentionInHours").number(

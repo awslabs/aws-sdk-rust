@@ -2,7 +2,7 @@
 pub(crate) fn de_lending_result_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::LendingResult>>,
+    Option<std::vec::Vec<crate::types::LendingResult>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

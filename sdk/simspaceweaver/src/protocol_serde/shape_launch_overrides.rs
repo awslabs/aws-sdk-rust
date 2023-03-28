@@ -2,7 +2,7 @@
 pub(crate) fn de_launch_overrides<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::LaunchOverrides>,
+    Option<crate::types::LaunchOverrides>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::launch_overrides::Builder::default();
+            let mut builder = crate::types::builders::LaunchOverridesBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -53,7 +53,7 @@ where
 
 pub fn ser_launch_overrides(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::LaunchOverrides,
+    input: &crate::types::LaunchOverrides,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.launch_commands {
         let mut array_2 = object.key("LaunchCommands").start_array();

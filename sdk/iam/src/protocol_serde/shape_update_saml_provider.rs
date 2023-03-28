@@ -3,82 +3,107 @@
 pub fn de_update_saml_provider_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::UpdateSamlProviderOutput,
-    crate::error::UpdateSAMLProviderError,
+    crate::operation::update_saml_provider::UpdateSamlProviderOutput,
+    crate::operation::update_saml_provider::UpdateSAMLProviderError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::UpdateSAMLProviderError::unhandled)?;
+        .map_err(crate::operation::update_saml_provider::UpdateSAMLProviderError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::UpdateSAMLProviderError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::update_saml_provider::UpdateSAMLProviderError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidInput" => crate::error::UpdateSAMLProviderError::InvalidInputException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::invalid_input_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_input_exception::de_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateSAMLProviderError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "LimitExceeded" => crate::error::UpdateSAMLProviderError::LimitExceededException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::limit_exceeded_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateSAMLProviderError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "NoSuchEntity" => crate::error::UpdateSAMLProviderError::NoSuchEntityException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::no_such_entity_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_no_such_entity_exception::de_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateSAMLProviderError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ServiceFailure" => crate::error::UpdateSAMLProviderError::ServiceFailureException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::service_failure_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateSAMLProviderError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::UpdateSAMLProviderError::generic(generic),
+        "InvalidInput" => {
+            crate::operation::update_saml_provider::UpdateSAMLProviderError::InvalidInputException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::types::error::builders::InvalidInputExceptionBuilder::default();
+                        let _ = response;
+                        output = crate::protocol_serde::shape_invalid_input_exception::de_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::update_saml_provider::UpdateSAMLProviderError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        "LimitExceeded" => {
+            crate::operation::update_saml_provider::UpdateSAMLProviderError::LimitExceededException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::types::error::builders::LimitExceededExceptionBuilder::default();
+                        let _ = response;
+                        output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::update_saml_provider::UpdateSAMLProviderError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        "NoSuchEntity" => {
+            crate::operation::update_saml_provider::UpdateSAMLProviderError::NoSuchEntityException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::types::error::builders::NoSuchEntityExceptionBuilder::default();
+                        let _ = response;
+                        output = crate::protocol_serde::shape_no_such_entity_exception::de_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::update_saml_provider::UpdateSAMLProviderError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        "ServiceFailure" => {
+            crate::operation::update_saml_provider::UpdateSAMLProviderError::ServiceFailureException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::types::error::builders::ServiceFailureExceptionBuilder::default(
+                            );
+                        let _ = response;
+                        output = crate::protocol_serde::shape_service_failure_exception::de_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::operation::update_saml_provider::UpdateSAMLProviderError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        _ => crate::operation::update_saml_provider::UpdateSAMLProviderError::generic(generic),
     })
 }
 
@@ -86,18 +111,18 @@ pub fn de_update_saml_provider_http_error(
 pub fn de_update_saml_provider_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::UpdateSamlProviderOutput,
-    crate::error::UpdateSAMLProviderError,
+    crate::operation::update_saml_provider::UpdateSamlProviderOutput,
+    crate::operation::update_saml_provider::UpdateSAMLProviderError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::update_saml_provider_output::Builder::default();
+        let mut output = crate::operation::update_saml_provider::builders::UpdateSamlProviderOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_update_saml_provider::de_update_saml_provider(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::UpdateSAMLProviderError::unhandled)?;
+        .map_err(crate::operation::update_saml_provider::UpdateSAMLProviderError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -108,9 +133,9 @@ pub fn de_update_saml_provider_http_response(
 #[allow(unused_mut)]
 pub fn de_update_saml_provider(
     inp: &[u8],
-    mut builder: crate::output::update_saml_provider_output::Builder,
+    mut builder: crate::operation::update_saml_provider::builders::UpdateSamlProviderOutputBuilder,
 ) -> Result<
-    crate::output::update_saml_provider_output::Builder,
+    crate::operation::update_saml_provider::builders::UpdateSamlProviderOutputBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;

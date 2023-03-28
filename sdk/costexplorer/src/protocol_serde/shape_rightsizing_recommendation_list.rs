@@ -2,7 +2,7 @@
 pub(crate) fn de_rightsizing_recommendation_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::RightsizingRecommendation>>,
+    Option<std::vec::Vec<crate::types::RightsizingRecommendation>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

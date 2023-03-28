@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_platform_version_still_referenced_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::platform_version_still_referenced_exception::Builder,
+    mut builder: crate::types::error::builders::PlatformVersionStillReferencedExceptionBuilder,
 ) -> Result<
-    crate::error::platform_version_still_referenced_exception::Builder,
+    crate::types::error::builders::PlatformVersionStillReferencedExceptionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

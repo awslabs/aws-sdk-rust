@@ -2,7 +2,7 @@
 pub(crate) fn de_kinesis_data_stream_destinations<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::KinesisDataStreamDestination>>,
+    Option<std::vec::Vec<crate::types::KinesisDataStreamDestination>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

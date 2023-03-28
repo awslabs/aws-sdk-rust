@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_invalid_public_key_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::invalid_public_key_exception::Builder,
+    mut builder: crate::types::error::builders::InvalidPublicKeyExceptionBuilder,
 ) -> Result<
-    crate::error::invalid_public_key_exception::Builder,
+    crate::types::error::builders::InvalidPublicKeyExceptionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

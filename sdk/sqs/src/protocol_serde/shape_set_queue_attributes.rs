@@ -3,37 +3,44 @@
 pub fn de_set_queue_attributes_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::SetQueueAttributesOutput,
-    crate::error::SetQueueAttributesError,
+    crate::operation::set_queue_attributes::SetQueueAttributesOutput,
+    crate::operation::set_queue_attributes::SetQueueAttributesError,
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::SetQueueAttributesError::unhandled)?;
+        .map_err(crate::operation::set_queue_attributes::SetQueueAttributesError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::SetQueueAttributesError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::set_queue_attributes::SetQueueAttributesError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidAttributeName" => crate::error::SetQueueAttributesError::InvalidAttributeName({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "InvalidAttributeName" => {
+            crate::operation::set_queue_attributes::SetQueueAttributesError::InvalidAttributeName({
                 #[allow(unused_mut)]
-                let mut output = crate::error::invalid_attribute_name::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_attribute_name::de_invalid_attribute_name_xml_err(response.body().as_ref(), output).map_err(crate::error::SetQueueAttributesError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::SetQueueAttributesError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InvalidAttributeNameBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_attribute_name::de_invalid_attribute_name_xml_err(response.body().as_ref(), output).map_err(crate::operation::set_queue_attributes::SetQueueAttributesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::set_queue_attributes::SetQueueAttributesError::generic(generic),
     })
 }
 
@@ -41,12 +48,12 @@ pub fn de_set_queue_attributes_http_error(
 pub fn de_set_queue_attributes_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::SetQueueAttributesOutput,
-    crate::error::SetQueueAttributesError,
+    crate::operation::set_queue_attributes::SetQueueAttributesOutput,
+    crate::operation::set_queue_attributes::SetQueueAttributesError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::set_queue_attributes_output::Builder::default();
+        let mut output = crate::operation::set_queue_attributes::builders::SetQueueAttributesOutputBuilder::default();
         let _ = response;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),

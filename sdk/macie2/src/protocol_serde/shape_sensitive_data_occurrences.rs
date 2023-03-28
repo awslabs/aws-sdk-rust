@@ -5,7 +5,7 @@ pub(crate) fn de_sensitive_data_occurrences<'a, I>(
     Option<
         std::collections::HashMap<
             std::string::String,
-            std::vec::Vec<crate::model::DetectedDataDetails>,
+            std::vec::Vec<crate::types::DetectedDataDetails>,
         >,
     >,
     aws_smithy_json::deserialize::error::DeserializeError,

@@ -2,7 +2,7 @@
 pub(crate) fn de_delivery_channel_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DeliveryChannel>>,
+    Option<std::vec::Vec<crate::types::DeliveryChannel>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

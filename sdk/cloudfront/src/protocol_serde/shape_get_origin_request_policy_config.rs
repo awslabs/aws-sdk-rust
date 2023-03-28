@@ -3,63 +3,55 @@
 pub fn de_get_origin_request_policy_config_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetOriginRequestPolicyConfigOutput,
-    crate::error::GetOriginRequestPolicyConfigError,
+    crate::operation::get_origin_request_policy_config::GetOriginRequestPolicyConfigOutput,
+    crate::operation::get_origin_request_policy_config::GetOriginRequestPolicyConfigError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetOriginRequestPolicyConfigError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::get_origin_request_policy_config::GetOriginRequestPolicyConfigError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::GetOriginRequestPolicyConfigError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::get_origin_request_policy_config::GetOriginRequestPolicyConfigError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDenied" => crate::error::GetOriginRequestPolicyConfigError::AccessDenied({
+        "AccessDenied" => crate::operation::get_origin_request_policy_config::GetOriginRequestPolicyConfigError::AccessDenied({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::access_denied::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_access_denied::de_access_denied_xml_err(
-                    response.body().as_ref(),
-                    output,
-                )
-                .map_err(crate::error::GetOriginRequestPolicyConfigError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "NoSuchOriginRequestPolicy" => {
-            crate::error::GetOriginRequestPolicyConfigError::NoSuchOriginRequestPolicy({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::no_such_origin_request_policy::Builder::default();
+                    let mut output = crate::types::error::builders::AccessDeniedBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_no_such_origin_request_policy::de_no_such_origin_request_policy_xml_err(response.body().as_ref(), output).map_err(crate::error::GetOriginRequestPolicyConfigError::unhandled)?;
+                    output = crate::protocol_serde::shape_access_denied::de_access_denied_xml_err(response.body().as_ref(), output).map_err(crate::operation::get_origin_request_policy_config::GetOriginRequestPolicyConfigError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::GetOriginRequestPolicyConfigError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "NoSuchOriginRequestPolicy" => crate::operation::get_origin_request_policy_config::GetOriginRequestPolicyConfigError::NoSuchOriginRequestPolicy({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::NoSuchOriginRequestPolicyBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_no_such_origin_request_policy::de_no_such_origin_request_policy_xml_err(response.body().as_ref(), output).map_err(crate::operation::get_origin_request_policy_config::GetOriginRequestPolicyConfigError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::get_origin_request_policy_config::GetOriginRequestPolicyConfigError::generic(generic)
     })
 }
 
@@ -67,22 +59,16 @@ pub fn de_get_origin_request_policy_config_http_error(
 pub fn de_get_origin_request_policy_config_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetOriginRequestPolicyConfigOutput,
-    crate::error::GetOriginRequestPolicyConfigError,
+    crate::operation::get_origin_request_policy_config::GetOriginRequestPolicyConfigOutput,
+    crate::operation::get_origin_request_policy_config::GetOriginRequestPolicyConfigError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_origin_request_policy_config_output::Builder::default();
+        let mut output = crate::operation::get_origin_request_policy_config::builders::GetOriginRequestPolicyConfigOutputBuilder::default();
         let _ = response;
         output = output.set_e_tag(
-            crate::protocol_serde::shape_get_origin_request_policy_config_output::de_e_tag_header(
-                response.headers(),
-            )
-            .map_err(|_| {
-                crate::error::GetOriginRequestPolicyConfigError::unhandled(
-                    "Failed to parse ETag from header `ETag",
-                )
-            })?,
+            crate::protocol_serde::shape_get_origin_request_policy_config_output::de_e_tag_header(response.headers())
+                                    .map_err(|_|crate::operation::get_origin_request_policy_config::GetOriginRequestPolicyConfigError::unhandled("Failed to parse ETag from header `ETag"))?
         );
         output = output.set_origin_request_policy_config(
             crate::protocol_serde::shape_get_origin_request_policy_config_output::de_origin_request_policy_config_payload(response.body().as_ref())?

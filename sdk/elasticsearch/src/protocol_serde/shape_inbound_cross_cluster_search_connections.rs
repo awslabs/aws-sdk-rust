@@ -2,7 +2,7 @@
 pub(crate) fn de_inbound_cross_cluster_search_connections<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::InboundCrossClusterSearchConnection>>,
+    Option<std::vec::Vec<crate::types::InboundCrossClusterSearchConnection>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

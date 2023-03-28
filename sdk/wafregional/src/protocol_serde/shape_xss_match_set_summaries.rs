@@ -2,7 +2,7 @@
 pub(crate) fn de_xss_match_set_summaries<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::XssMatchSetSummary>>,
+    Option<std::vec::Vec<crate::types::XssMatchSetSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

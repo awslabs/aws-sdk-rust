@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_invalid_tracking_options_exception_xml_err(
     inp: &[u8],
-    mut builder: crate::error::invalid_tracking_options_exception::Builder,
+    mut builder: crate::types::error::builders::InvalidTrackingOptionsExceptionBuilder,
 ) -> Result<
-    crate::error::invalid_tracking_options_exception::Builder,
+    crate::types::error::builders::InvalidTrackingOptionsExceptionBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

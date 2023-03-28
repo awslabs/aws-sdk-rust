@@ -2,7 +2,7 @@
 pub(crate) fn de_batch_read_exception<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::BatchReadException>,
+    Option<crate::types::BatchReadException>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::batch_read_exception::Builder::default();
+            let mut builder = crate::types::builders::BatchReadExceptionBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::BatchReadExceptionType::from(u.as_ref())
+                                            crate::types::BatchReadExceptionType::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

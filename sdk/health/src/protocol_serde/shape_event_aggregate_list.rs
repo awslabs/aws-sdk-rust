@@ -2,7 +2,7 @@
 pub(crate) fn de_event_aggregate_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::EventAggregate>>,
+    Option<std::vec::Vec<crate::types::EventAggregate>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

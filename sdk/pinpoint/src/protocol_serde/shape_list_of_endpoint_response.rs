@@ -2,7 +2,7 @@
 pub(crate) fn de_list_of_endpoint_response<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::EndpointResponse>>,
+    Option<std::vec::Vec<crate::types::EndpointResponse>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

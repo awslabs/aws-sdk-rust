@@ -2,7 +2,7 @@
 pub(crate) fn de_repository_trigger_event_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::RepositoryTriggerEventEnum>>,
+    Option<std::vec::Vec<crate::types::RepositoryTriggerEventEnum>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -29,7 +29,7 @@ where
                         )?
                         .map(|s| {
                             s.to_unescaped()
-                                .map(|u| crate::model::RepositoryTriggerEventEnum::from(u.as_ref()))
+                                .map(|u| crate::types::RepositoryTriggerEventEnum::from(u.as_ref()))
                         })
                         .transpose()?;
                         if let Some(value) = value {

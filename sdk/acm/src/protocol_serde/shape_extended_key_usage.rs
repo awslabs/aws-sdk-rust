@@ -2,7 +2,7 @@
 pub(crate) fn de_extended_key_usage<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ExtendedKeyUsage>,
+    Option<crate::types::ExtendedKeyUsage>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::extended_key_usage::Builder::default();
+            let mut builder = crate::types::builders::ExtendedKeyUsageBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -30,7 +30,7 @@ where
                                     )?
                                     .map(|s| {
                                         s.to_unescaped().map(|u| {
-                                            crate::model::ExtendedKeyUsageName::from(u.as_ref())
+                                            crate::types::ExtendedKeyUsageName::from(u.as_ref())
                                         })
                                     })
                                     .transpose()?,

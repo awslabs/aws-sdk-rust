@@ -2,7 +2,7 @@
 pub(crate) fn de_aws_cloud_formation_stack_outputs_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AwsCloudFormationStackOutputsDetails>>,
+    Option<std::vec::Vec<crate::types::AwsCloudFormationStackOutputsDetails>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

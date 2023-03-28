@@ -2,7 +2,7 @@
 pub(crate) fn de_timers<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::Timer>>,
+    Option<std::vec::Vec<crate::types::Timer>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_rules_package_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::RulesPackage>>,
+    Option<std::vec::Vec<crate::types::RulesPackage>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

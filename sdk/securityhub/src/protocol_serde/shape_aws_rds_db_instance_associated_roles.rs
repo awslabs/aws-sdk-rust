@@ -2,7 +2,7 @@
 pub(crate) fn de_aws_rds_db_instance_associated_roles<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AwsRdsDbInstanceAssociatedRole>>,
+    Option<std::vec::Vec<crate::types::AwsRdsDbInstanceAssociatedRole>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_entity_recognizer_augmented_manifests_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AugmentedManifestsListItem>>,
+    Option<std::vec::Vec<crate::types::AugmentedManifestsListItem>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

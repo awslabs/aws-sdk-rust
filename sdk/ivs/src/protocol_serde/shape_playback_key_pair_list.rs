@@ -2,7 +2,7 @@
 pub(crate) fn de_playback_key_pair_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::PlaybackKeyPairSummary>>,
+    Option<std::vec::Vec<crate::types::PlaybackKeyPairSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -2,7 +2,7 @@
 pub(crate) fn de_user_access_logging_settings_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::UserAccessLoggingSettingsSummary>>,
+    Option<std::vec::Vec<crate::types::UserAccessLoggingSettingsSummary>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

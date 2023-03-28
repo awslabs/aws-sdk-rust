@@ -2,7 +2,7 @@
 pub(crate) fn de_worker_type_specification_map<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::collections::HashMap<std::string::String, crate::model::WorkerTypeSpecification>>,
+    Option<std::collections::HashMap<std::string::String, crate::types::WorkerTypeSpecification>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

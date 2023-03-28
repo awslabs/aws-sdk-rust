@@ -2,7 +2,7 @@
 pub(crate) fn de_typed_link_specifier<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::TypedLinkSpecifier>,
+    Option<crate::types::TypedLinkSpecifier>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::typed_link_specifier::Builder::default();
+            let mut builder = crate::types::builders::TypedLinkSpecifierBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -68,7 +68,7 @@ where
 
 pub fn ser_typed_link_specifier(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::TypedLinkSpecifier,
+    input: &crate::types::TypedLinkSpecifier,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.typed_link_facet {
         #[allow(unused_mut)]

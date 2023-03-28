@@ -2,8 +2,11 @@
 #[allow(unused_mut)]
 pub fn de_last_vpc_association_xml_err(
     inp: &[u8],
-    mut builder: crate::error::last_vpc_association::Builder,
-) -> Result<crate::error::last_vpc_association::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    mut builder: crate::types::error::builders::LastVpcAssociationBuilder,
+) -> Result<
+    crate::types::error::builders::LastVpcAssociationBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     if inp.is_empty() {
         return Ok(builder);
     }

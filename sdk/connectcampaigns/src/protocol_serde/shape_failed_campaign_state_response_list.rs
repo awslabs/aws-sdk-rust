@@ -2,7 +2,7 @@
 pub(crate) fn de_failed_campaign_state_response_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::FailedCampaignStateResponse>>,
+    Option<std::vec::Vec<crate::types::FailedCampaignStateResponse>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

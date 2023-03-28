@@ -2,7 +2,7 @@
 pub(crate) fn de_throttle_settings<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::ThrottleSettings>,
+    Option<crate::types::ThrottleSettings>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::throttle_settings::Builder::default();
+            let mut builder = crate::types::builders::ThrottleSettingsBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -65,7 +65,7 @@ where
 
 pub fn ser_throttle_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::ThrottleSettings,
+    input: &crate::types::ThrottleSettings,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if input.burst_limit != 0 {
         object.key("burstLimit").number(

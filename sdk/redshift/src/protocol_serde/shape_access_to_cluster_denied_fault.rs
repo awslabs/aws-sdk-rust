@@ -2,9 +2,9 @@
 #[allow(unused_mut)]
 pub fn de_access_to_cluster_denied_fault_xml_err(
     inp: &[u8],
-    mut builder: crate::error::access_to_cluster_denied_fault::Builder,
+    mut builder: crate::types::error::builders::AccessToClusterDeniedFaultBuilder,
 ) -> Result<
-    crate::error::access_to_cluster_denied_fault::Builder,
+    crate::types::error::builders::AccessToClusterDeniedFaultBuilder,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {

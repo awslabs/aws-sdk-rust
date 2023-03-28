@@ -3,97 +3,89 @@
 pub fn de_get_backup_vault_access_policy_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetBackupVaultAccessPolicyOutput,
-    crate::error::GetBackupVaultAccessPolicyError,
+    crate::operation::get_backup_vault_access_policy::GetBackupVaultAccessPolicyOutput,
+    crate::operation::get_backup_vault_access_policy::GetBackupVaultAccessPolicyError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetBackupVaultAccessPolicyError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(crate::operation::get_backup_vault_access_policy::GetBackupVaultAccessPolicyError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
-        Some(code) => code,
-        None => {
-            return Err(crate::error::GetBackupVaultAccessPolicyError::unhandled(
-                generic,
-            ))
-        }
-    };
+                                Some(code) => code,
+                                None => return Err(crate::operation::get_backup_vault_access_policy::GetBackupVaultAccessPolicyError::unhandled(generic))
+                            };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => {
-            crate::error::GetBackupVaultAccessPolicyError::InvalidParameterValueException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InvalidParameterValueException" => crate::operation::get_backup_vault_access_policy::GetBackupVaultAccessPolicyError::InvalidParameterValueException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_parameter_value_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetBackupVaultAccessPolicyError::unhandled)?;
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_backup_vault_access_policy::GetBackupVaultAccessPolicyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "MissingParameterValueException" => {
-            crate::error::GetBackupVaultAccessPolicyError::MissingParameterValueException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "MissingParameterValueException" => crate::operation::get_backup_vault_access_policy::GetBackupVaultAccessPolicyError::MissingParameterValueException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::missing_parameter_value_exception::Builder::default();
+                    let mut output = crate::types::error::builders::MissingParameterValueExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_missing_parameter_value_exception::de_missing_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetBackupVaultAccessPolicyError::unhandled)?;
+                    output = crate::protocol_serde::shape_missing_parameter_value_exception::de_missing_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_backup_vault_access_policy::GetBackupVaultAccessPolicyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ResourceNotFoundException" => {
-            crate::error::GetBackupVaultAccessPolicyError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::get_backup_vault_access_policy::GetBackupVaultAccessPolicyError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetBackupVaultAccessPolicyError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_backup_vault_access_policy::GetBackupVaultAccessPolicyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ServiceUnavailableException" => {
-            crate::error::GetBackupVaultAccessPolicyError::ServiceUnavailableException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ServiceUnavailableException" => crate::operation::get_backup_vault_access_policy::GetBackupVaultAccessPolicyError::ServiceUnavailableException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::service_unavailable_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetBackupVaultAccessPolicyError::unhandled)?;
+                    output = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_backup_vault_access_policy::GetBackupVaultAccessPolicyError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::GetBackupVaultAccessPolicyError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::get_backup_vault_access_policy::GetBackupVaultAccessPolicyError::generic(generic)
     })
 }
 
@@ -101,14 +93,14 @@ pub fn de_get_backup_vault_access_policy_http_error(
 pub fn de_get_backup_vault_access_policy_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetBackupVaultAccessPolicyOutput,
-    crate::error::GetBackupVaultAccessPolicyError,
+    crate::operation::get_backup_vault_access_policy::GetBackupVaultAccessPolicyOutput,
+    crate::operation::get_backup_vault_access_policy::GetBackupVaultAccessPolicyError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_backup_vault_access_policy_output::Builder::default();
+        let mut output = crate::operation::get_backup_vault_access_policy::builders::GetBackupVaultAccessPolicyOutputBuilder::default();
         let _ = response;
-        output = crate::protocol_serde::shape_get_backup_vault_access_policy::de_get_backup_vault_access_policy(response.body().as_ref(), output).map_err(crate::error::GetBackupVaultAccessPolicyError::unhandled)?;
+        output = crate::protocol_serde::shape_get_backup_vault_access_policy::de_get_backup_vault_access_policy(response.body().as_ref(), output).map_err(crate::operation::get_backup_vault_access_policy::GetBackupVaultAccessPolicyError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -116,13 +108,7 @@ pub fn de_get_backup_vault_access_policy_http_response(
     })
 }
 
-pub(crate) fn de_get_backup_vault_access_policy(
-    value: &[u8],
-    mut builder: crate::output::get_backup_vault_access_policy_output::Builder,
-) -> Result<
-    crate::output::get_backup_vault_access_policy_output::Builder,
-    aws_smithy_json::deserialize::error::DeserializeError,
-> {
+pub(crate) fn de_get_backup_vault_access_policy(value: &[u8], mut builder: crate::operation::get_backup_vault_access_policy::builders::GetBackupVaultAccessPolicyOutputBuilder) -> Result<crate::operation::get_backup_vault_access_policy::builders::GetBackupVaultAccessPolicyOutputBuilder, aws_smithy_json::deserialize::error::DeserializeError>{
     let mut tokens_owned =
         aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
             .peekable();

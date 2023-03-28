@@ -2,7 +2,7 @@
 pub(crate) fn de_condition_parameters<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ConditionParameter>>,
+    Option<std::vec::Vec<crate::types::ConditionParameter>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

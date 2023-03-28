@@ -2,7 +2,7 @@
 pub(crate) fn de_aws_ec2_network_interface_ip_v6_address_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AwsEc2NetworkInterfaceIpV6AddressDetail>>,
+    Option<std::vec::Vec<crate::types::AwsEc2NetworkInterfaceIpV6AddressDetail>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

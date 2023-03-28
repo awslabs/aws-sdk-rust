@@ -2,7 +2,7 @@
 pub(crate) fn de_histogram<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::HistogramEntry>>,
+    Option<std::vec::Vec<crate::types::HistogramEntry>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

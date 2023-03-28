@@ -2,7 +2,7 @@
 pub(crate) fn de_auto_enable_new_region_configuration_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::AutoEnableNewRegionConfiguration>>,
+    Option<std::vec::Vec<crate::types::AutoEnableNewRegionConfiguration>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

@@ -4,8 +4,8 @@ pub(crate) fn de_connector_configurations_map<'a, I>(
 ) -> Result<
     Option<
         std::collections::HashMap<
-            crate::model::ConnectorType,
-            crate::model::ConnectorConfiguration,
+            crate::types::ConnectorType,
+            crate::types::ConnectorConfiguration,
         >,
     >,
     aws_smithy_json::deserialize::error::DeserializeError,
@@ -28,7 +28,7 @@ where
                     Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         let key = key
                             .to_unescaped()
-                            .map(|u| crate::model::ConnectorType::from(u.as_ref()))?;
+                            .map(|u| crate::types::ConnectorType::from(u.as_ref()))?;
                         let value =
                             crate::protocol_serde::shape_connector_configuration::de_connector_configuration(tokens)?
                         ;

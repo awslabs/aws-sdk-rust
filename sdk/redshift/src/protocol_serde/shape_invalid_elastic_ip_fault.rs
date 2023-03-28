@@ -2,9 +2,11 @@
 #[allow(unused_mut)]
 pub fn de_invalid_elastic_ip_fault_xml_err(
     inp: &[u8],
-    mut builder: crate::error::invalid_elastic_ip_fault::Builder,
-) -> Result<crate::error::invalid_elastic_ip_fault::Builder, aws_smithy_xml::decode::XmlDecodeError>
-{
+    mut builder: crate::types::error::builders::InvalidElasticIpFaultBuilder,
+) -> Result<
+    crate::types::error::builders::InvalidElasticIpFaultBuilder,
+    aws_smithy_xml::decode::XmlDecodeError,
+> {
     if inp.is_empty() {
         return Ok(builder);
     }

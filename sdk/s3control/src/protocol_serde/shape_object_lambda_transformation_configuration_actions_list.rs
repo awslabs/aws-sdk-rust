@@ -2,7 +2,7 @@
 pub fn de_object_lambda_transformation_configuration_actions_list(
     decoder: &mut aws_smithy_xml::decode::ScopedDecoder,
 ) -> Result<
-    std::vec::Vec<crate::model::ObjectLambdaTransformationConfigurationAction>,
+    std::vec::Vec<crate::types::ObjectLambdaTransformationConfigurationAction>,
     aws_smithy_xml::decode::XmlDecodeError,
 > {
     let mut out = std::vec::Vec::new();
@@ -10,8 +10,8 @@ pub fn de_object_lambda_transformation_configuration_actions_list(
         match tag.start_el() {
             s if s.matches("Action") /* member com.amazonaws.s3control#ObjectLambdaTransformationConfigurationActionsList$member */ =>  {
                 out.push(
-                    Result::<crate::model::ObjectLambdaTransformationConfigurationAction, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                        crate::model::ObjectLambdaTransformationConfigurationAction::from(
+                    Result::<crate::types::ObjectLambdaTransformationConfigurationAction, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                        crate::types::ObjectLambdaTransformationConfigurationAction::from(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                         )
                     )

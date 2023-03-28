@@ -2,42 +2,53 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_subscribers_http_error(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListSubscribersOutput, crate::error::ListSubscribersError> {
+) -> std::result::Result<
+    crate::operation::list_subscribers::ListSubscribersOutput,
+    crate::operation::list_subscribers::ListSubscribersError,
+> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::ListSubscribersError::unhandled)?;
+        .map_err(crate::operation::list_subscribers::ListSubscribersError::unhandled)?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => return Err(crate::error::ListSubscribersError::unhandled(generic)),
+        None => {
+            return Err(
+                crate::operation::list_subscribers::ListSubscribersError::unhandled(generic),
+            )
+        }
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::ListSubscribersError::AccessDeniedException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "AccessDeniedException" => {
+            crate::operation::list_subscribers::ListSubscribersError::AccessDeniedException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::access_denied_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSubscribersError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::AccessDeniedExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_subscribers::ListSubscribersError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "AccountNotFoundException" => {
-            crate::error::ListSubscribersError::AccountNotFoundException({
+            crate::operation::list_subscribers::ListSubscribersError::AccountNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::account_not_found_exception::Builder::default();
+                    let mut output =
+                        crate::types::error::builders::AccountNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_account_not_found_exception::de_account_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSubscribersError::unhandled)?;
+                    output = crate::protocol_serde::shape_account_not_found_exception::de_account_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_subscribers::ListSubscribersError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -47,48 +58,19 @@ pub fn de_list_subscribers_http_error(
                 tmp
             })
         }
-        "InternalServerException" => crate::error::ListSubscribersError::InternalServerException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "InternalServerException" => {
+            crate::operation::list_subscribers::ListSubscribersError::InternalServerException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::internal_server_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSubscribersError::unhandled)?;
-                output = output.set_retry_after_seconds(
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InternalServerExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_subscribers::ListSubscribersError::unhandled)?;
+                    output = output.set_retry_after_seconds(
                         crate::protocol_serde::shape_internal_server_exception::de_retry_after_seconds_header(response.headers())
-                                                .map_err(|_|crate::error::ListSubscribersError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
+                                                .map_err(|_|crate::operation::list_subscribers::ListSubscribersError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InvalidInputException" => crate::error::ListSubscribersError::InvalidInputException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::invalid_input_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_invalid_input_exception::de_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSubscribersError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ResourceNotFoundException" => {
-            crate::error::ListSubscribersError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
-                    let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSubscribersError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -98,38 +80,81 @@ pub fn de_list_subscribers_http_error(
                 tmp
             })
         }
-        "ValidationException" => crate::error::ListSubscribersError::ValidationException({
-            #[allow(unused_mut)]
-            let mut tmp = {
+        "InvalidInputException" => {
+            crate::operation::list_subscribers::ListSubscribersError::InvalidInputException({
                 #[allow(unused_mut)]
-                let mut output = crate::error::validation_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSubscribersError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        _ => crate::error::ListSubscribersError::generic(generic),
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::InvalidInputExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_invalid_input_exception::de_invalid_input_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_subscribers::ListSubscribersError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::operation::list_subscribers::ListSubscribersError::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_subscribers::ListSubscribersError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ValidationException" => {
+            crate::operation::list_subscribers::ListSubscribersError::ValidationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ValidationExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::list_subscribers::ListSubscribersError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        _ => crate::operation::list_subscribers::ListSubscribersError::generic(generic),
     })
 }
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_subscribers_http_response(
     response: &http::Response<bytes::Bytes>,
-) -> std::result::Result<crate::output::ListSubscribersOutput, crate::error::ListSubscribersError> {
+) -> std::result::Result<
+    crate::operation::list_subscribers::ListSubscribersOutput,
+    crate::operation::list_subscribers::ListSubscribersError,
+> {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::list_subscribers_output::Builder::default();
+        let mut output =
+            crate::operation::list_subscribers::builders::ListSubscribersOutputBuilder::default();
         let _ = response;
         output = crate::protocol_serde::shape_list_subscribers::de_list_subscribers(
             response.body().as_ref(),
             output,
         )
-        .map_err(crate::error::ListSubscribersError::unhandled)?;
+        .map_err(crate::operation::list_subscribers::ListSubscribersError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -139,9 +164,9 @@ pub fn de_list_subscribers_http_response(
 
 pub(crate) fn de_list_subscribers(
     value: &[u8],
-    mut builder: crate::output::list_subscribers_output::Builder,
+    mut builder: crate::operation::list_subscribers::builders::ListSubscribersOutputBuilder,
 ) -> Result<
-    crate::output::list_subscribers_output::Builder,
+    crate::operation::list_subscribers::builders::ListSubscribersOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

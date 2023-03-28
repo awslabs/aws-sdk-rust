@@ -2,7 +2,7 @@
 pub(crate) fn de_delta_target_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::DeltaTarget>>,
+    Option<std::vec::Vec<crate::types::DeltaTarget>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

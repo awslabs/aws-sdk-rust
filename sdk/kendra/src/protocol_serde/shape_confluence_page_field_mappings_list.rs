@@ -2,7 +2,7 @@
 pub(crate) fn de_confluence_page_field_mappings_list<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<crate::model::ConfluencePageToIndexFieldMapping>>,
+    Option<std::vec::Vec<crate::types::ConfluencePageToIndexFieldMapping>>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where

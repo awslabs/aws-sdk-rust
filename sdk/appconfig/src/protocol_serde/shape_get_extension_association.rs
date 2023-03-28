@@ -3,75 +3,78 @@
 pub fn de_get_extension_association_http_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetExtensionAssociationOutput,
-    crate::error::GetExtensionAssociationError,
+    crate::operation::get_extension_association::GetExtensionAssociationOutput,
+    crate::operation::get_extension_association::GetExtensionAssociationError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response)
-        .map_err(crate::error::GetExtensionAssociationError::unhandled)?;
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(response).map_err(
+        crate::operation::get_extension_association::GetExtensionAssociationError::unhandled,
+    )?;
     generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
-        None => {
-            return Err(crate::error::GetExtensionAssociationError::unhandled(
+        None => return Err(
+            crate::operation::get_extension_association::GetExtensionAssociationError::unhandled(
                 generic,
-            ))
-        }
+            ),
+        ),
     };
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::GetExtensionAssociationError::BadRequestException({
+        "BadRequestException" => crate::operation::get_extension_association::GetExtensionAssociationError::BadRequestException({
             #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::error::bad_request_exception::Builder::default();
-                let _ = response;
-                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetExtensionAssociationError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
+                    let _ = response;
+                    output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_extension_association::GetExtensionAssociationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
             if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
+                                                        tmp.message = _error_message;
+                                                    }
             tmp
         }),
-        "InternalServerException" => {
-            crate::error::GetExtensionAssociationError::InternalServerException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+        "InternalServerException" => crate::operation::get_extension_association::GetExtensionAssociationError::InternalServerException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetExtensionAssociationError::unhandled)?;
+                    output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_extension_association::GetExtensionAssociationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        "ResourceNotFoundException" => {
-            crate::error::GetExtensionAssociationError::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::get_extension_association::GetExtensionAssociationError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     let _ = response;
-                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetExtensionAssociationError::unhandled)?;
+                    output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::operation::get_extension_association::GetExtensionAssociationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
                 }
-                tmp
-            })
-        }
-        _ => crate::error::GetExtensionAssociationError::generic(generic),
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::get_extension_association::GetExtensionAssociationError::generic(generic)
     })
 }
 
@@ -79,19 +82,14 @@ pub fn de_get_extension_association_http_error(
 pub fn de_get_extension_association_http_response(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
-    crate::output::GetExtensionAssociationOutput,
-    crate::error::GetExtensionAssociationError,
+    crate::operation::get_extension_association::GetExtensionAssociationOutput,
+    crate::operation::get_extension_association::GetExtensionAssociationError,
 > {
     Ok({
         #[allow(unused_mut)]
-        let mut output = crate::output::get_extension_association_output::Builder::default();
+        let mut output = crate::operation::get_extension_association::builders::GetExtensionAssociationOutputBuilder::default();
         let _ = response;
-        output =
-            crate::protocol_serde::shape_get_extension_association::de_get_extension_association(
-                response.body().as_ref(),
-                output,
-            )
-            .map_err(crate::error::GetExtensionAssociationError::unhandled)?;
+        output = crate::protocol_serde::shape_get_extension_association::de_get_extension_association(response.body().as_ref(), output).map_err(crate::operation::get_extension_association::GetExtensionAssociationError::unhandled)?;
         output._set_request_id(
             aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
@@ -101,9 +99,9 @@ pub fn de_get_extension_association_http_response(
 
 pub(crate) fn de_get_extension_association(
     value: &[u8],
-    mut builder: crate::output::get_extension_association_output::Builder,
+    mut builder: crate::operation::get_extension_association::builders::GetExtensionAssociationOutputBuilder,
 ) -> Result<
-    crate::output::get_extension_association_output::Builder,
+    crate::operation::get_extension_association::builders::GetExtensionAssociationOutputBuilder,
     aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =

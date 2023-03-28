@@ -2,7 +2,7 @@
 pub(crate) fn de_source_code_type<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<
-    Option<crate::model::SourceCodeType>,
+    Option<crate::types::SourceCodeType>,
     aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
@@ -17,7 +17,7 @@ where
         Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
         Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
-            let mut builder = crate::model::source_code_type::Builder::default();
+            let mut builder = crate::types::builders::SourceCodeTypeBuilder::default();
             loop {
                 match tokens.next().transpose()? {
                     Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
@@ -73,7 +73,7 @@ where
 
 pub fn ser_source_code_type(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
-    input: &crate::model::SourceCodeType,
+    input: &crate::types::SourceCodeType,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.commit_diff {
         #[allow(unused_mut)]
